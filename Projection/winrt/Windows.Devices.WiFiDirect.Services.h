@@ -1545,4 +1545,184 @@ inline WiFiDirectServiceAdvertiser::WiFiDirectServiceAdvertiser(hstring_view ser
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectService>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdvertiser>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdvertiser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdvertiserFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdvertiserFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceProvisioningInfo>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceProvisioningInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceRemotePortAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceRemotePortAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSession>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSessionDeferredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSessionDeferredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSessionRequest>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSessionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSessionRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSessionRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectService>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAutoAcceptSessionConnectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAutoAcceptSessionConnectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceProvisioningInfo>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceProvisioningInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceRemotePortAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceRemotePortAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionDeferredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionDeferredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionRequest>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

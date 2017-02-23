@@ -1719,4 +1719,30 @@ void WriteDefinitionsForRequiredInterfaces(Output & out)
     });
 }
 
+void WriteHashes(Output & out)
+{
+    GetInterfaceDefinitions([&]
+    {
+        Write(out,
+            Strings::WriteInterfaceHash,
+            Settings::Namespace,
+            Settings::InterfaceName,
+            Settings::Namespace,
+            Settings::InterfaceName);
+    });
+
+    GetClasses([&]
+    {
+        if (!Settings::ClassDefaultInterface.empty())
+        {
+            Write(out,
+                Strings::WriteInterfaceHash,
+                Settings::Namespace,
+                Settings::ClassName,
+                Settings::Namespace,
+                Settings::ClassName);
+        }
+    });
+}
+
 }

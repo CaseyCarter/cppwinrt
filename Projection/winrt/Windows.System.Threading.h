@@ -337,4 +337,40 @@ inline Windows::System::Threading::ThreadPoolTimer ThreadPoolTimer::CreateTimer(
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::System::Threading::IThreadPoolStatics>
+{
+    size_t operator()(const winrt::Windows::System::Threading::IThreadPoolStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Threading::IThreadPoolTimer>
+{
+    size_t operator()(const winrt::Windows::System::Threading::IThreadPoolTimer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Threading::IThreadPoolTimerStatics>
+{
+    size_t operator()(const winrt::Windows::System::Threading::IThreadPoolTimerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Threading::ThreadPoolTimer>
+{
+    size_t operator()(const winrt::Windows::System::Threading::ThreadPoolTimer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

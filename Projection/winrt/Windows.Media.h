@@ -3259,4 +3259,445 @@ inline VideoFrame::VideoFrame(Windows::Graphics::Imaging::BitmapPixelFormat form
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::IAudioBuffer>
+{
+    size_t operator()(const winrt::Windows::Media::IAudioBuffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IAudioFrame>
+{
+    size_t operator()(const winrt::Windows::Media::IAudioFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IAudioFrameFactory>
+{
+    size_t operator()(const winrt::Windows::Media::IAudioFrameFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IAutoRepeatModeChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::IAutoRepeatModeChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IImageDisplayProperties>
+{
+    size_t operator()(const winrt::Windows::Media::IImageDisplayProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMediaExtension>
+{
+    size_t operator()(const winrt::Windows::Media::IMediaExtension & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMediaExtensionManager>
+{
+    size_t operator()(const winrt::Windows::Media::IMediaExtensionManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMediaFrame>
+{
+    size_t operator()(const winrt::Windows::Media::IMediaFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMediaMarker>
+{
+    size_t operator()(const winrt::Windows::Media::IMediaMarker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMediaMarkerTypesStatics>
+{
+    size_t operator()(const winrt::Windows::Media::IMediaMarkerTypesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMediaMarkers>
+{
+    size_t operator()(const winrt::Windows::Media::IMediaMarkers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMediaProcessingTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Media::IMediaProcessingTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMediaTimelineController>
+{
+    size_t operator()(const winrt::Windows::Media::IMediaTimelineController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMusicDisplayProperties>
+{
+    size_t operator()(const winrt::Windows::Media::IMusicDisplayProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMusicDisplayProperties2>
+{
+    size_t operator()(const winrt::Windows::Media::IMusicDisplayProperties2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMusicDisplayProperties3>
+{
+    size_t operator()(const winrt::Windows::Media::IMusicDisplayProperties3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IPlaybackPositionChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::IPlaybackPositionChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IPlaybackRateChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::IPlaybackRateChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IShuffleEnabledChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::IShuffleEnabledChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ISystemMediaTransportControls>
+{
+    size_t operator()(const winrt::Windows::Media::ISystemMediaTransportControls & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ISystemMediaTransportControls2>
+{
+    size_t operator()(const winrt::Windows::Media::ISystemMediaTransportControls2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ISystemMediaTransportControlsButtonPressedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::ISystemMediaTransportControlsButtonPressedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ISystemMediaTransportControlsDisplayUpdater>
+{
+    size_t operator()(const winrt::Windows::Media::ISystemMediaTransportControlsDisplayUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ISystemMediaTransportControlsPropertyChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::ISystemMediaTransportControlsPropertyChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ISystemMediaTransportControlsStatics>
+{
+    size_t operator()(const winrt::Windows::Media::ISystemMediaTransportControlsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ISystemMediaTransportControlsTimelineProperties>
+{
+    size_t operator()(const winrt::Windows::Media::ISystemMediaTransportControlsTimelineProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IVideoDisplayProperties>
+{
+    size_t operator()(const winrt::Windows::Media::IVideoDisplayProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IVideoDisplayProperties2>
+{
+    size_t operator()(const winrt::Windows::Media::IVideoDisplayProperties2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IVideoEffectsStatics>
+{
+    size_t operator()(const winrt::Windows::Media::IVideoEffectsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IVideoFrame>
+{
+    size_t operator()(const winrt::Windows::Media::IVideoFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IVideoFrameFactory>
+{
+    size_t operator()(const winrt::Windows::Media::IVideoFrameFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::AudioBuffer>
+{
+    size_t operator()(const winrt::Windows::Media::AudioBuffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::AudioFrame>
+{
+    size_t operator()(const winrt::Windows::Media::AudioFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::AutoRepeatModeChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::AutoRepeatModeChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ImageDisplayProperties>
+{
+    size_t operator()(const winrt::Windows::Media::ImageDisplayProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaExtensionManager>
+{
+    size_t operator()(const winrt::Windows::Media::MediaExtensionManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProcessingTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProcessingTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaTimelineController>
+{
+    size_t operator()(const winrt::Windows::Media::MediaTimelineController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MusicDisplayProperties>
+{
+    size_t operator()(const winrt::Windows::Media::MusicDisplayProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlaybackPositionChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlaybackPositionChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlaybackRateChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlaybackRateChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ShuffleEnabledChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::ShuffleEnabledChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SystemMediaTransportControls>
+{
+    size_t operator()(const winrt::Windows::Media::SystemMediaTransportControls & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SystemMediaTransportControlsDisplayUpdater>
+{
+    size_t operator()(const winrt::Windows::Media::SystemMediaTransportControlsDisplayUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SystemMediaTransportControlsTimelineProperties>
+{
+    size_t operator()(const winrt::Windows::Media::SystemMediaTransportControlsTimelineProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::VideoDisplayProperties>
+{
+    size_t operator()(const winrt::Windows::Media::VideoDisplayProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::VideoFrame>
+{
+    size_t operator()(const winrt::Windows::Media::VideoFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

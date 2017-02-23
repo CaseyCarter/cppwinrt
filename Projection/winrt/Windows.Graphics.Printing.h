@@ -2016,4 +2016,292 @@ inline hstring StandardPrintTaskOptions::Bordering()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintDocumentSource>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintDocumentSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintManager>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintManagerStatic>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintManagerStatic & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintManagerStatic2>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintManagerStatic2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintPageInfo>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintPageInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTask>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTask & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTask2>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTask2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskOptions>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskOptionsCore>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskOptionsCore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskOptionsCoreProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskOptionsCoreUIConfiguration>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskOptionsCoreUIConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskProgressingEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskProgressingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskRequest>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskRequestedDeferral>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskRequestedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskSourceRequestedDeferral>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskSourceRequestedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IPrintTaskTargetDeviceSupport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic2>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::IStandardPrintTaskOptionsStatic2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::PrintManager>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::PrintManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::PrintPageInfo>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::PrintPageInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::PrintTask>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::PrintTask & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::PrintTaskCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::PrintTaskCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::PrintTaskOptions>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::PrintTaskOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::PrintTaskProgressingEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::PrintTaskProgressingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::PrintTaskRequest>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::PrintTaskRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::PrintTaskRequestedDeferral>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::PrintTaskRequestedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::PrintTaskRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::PrintTaskRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::PrintTaskSourceRequestedArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::PrintTaskSourceRequestedArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing::PrintTaskSourceRequestedDeferral>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing::PrintTaskSourceRequestedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

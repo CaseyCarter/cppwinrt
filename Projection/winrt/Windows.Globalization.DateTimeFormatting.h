@@ -735,4 +735,49 @@ inline Windows::Globalization::DateTimeFormatting::DateTimeFormatter DateTimeFor
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Globalization::DateTimeFormatting::IDateTimeFormatter>
+{
+    size_t operator()(const winrt::Windows::Globalization::DateTimeFormatting::IDateTimeFormatter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::DateTimeFormatting::IDateTimeFormatter2>
+{
+    size_t operator()(const winrt::Windows::Globalization::DateTimeFormatting::IDateTimeFormatter2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::DateTimeFormatting::IDateTimeFormatterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics>
+{
+    size_t operator()(const winrt::Windows::Globalization::DateTimeFormatting::IDateTimeFormatterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::DateTimeFormatting::DateTimeFormatter>
+{
+    size_t operator()(const winrt::Windows::Globalization::DateTimeFormatting::DateTimeFormatter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

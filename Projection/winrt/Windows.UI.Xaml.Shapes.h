@@ -1685,4 +1685,211 @@ inline Windows::UI::Xaml::DependencyProperty Shape::StretchProperty()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IEllipse>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IEllipse & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::ILine>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::ILine & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::ILineStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::ILineStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IPath>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IPath & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IPathFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IPathFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IPathStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IPathStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IPolygon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IPolygon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IPolygonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IPolygonStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IPolyline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IPolyline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IPolylineStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IPolylineStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IRectangle>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IRectangle & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IRectangleStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IRectangleStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IShape>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IShape & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IShape2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IShape2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IShapeFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IShapeFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::IShapeStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::IShapeStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::Ellipse>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::Ellipse & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::Line>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::Line & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::Path>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::Path & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::Polygon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::Polygon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::Polyline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::Polyline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::Rectangle>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::Rectangle & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Shapes::Shape>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Shapes::Shape & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

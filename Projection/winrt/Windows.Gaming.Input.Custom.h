@@ -532,4 +532,112 @@ inline void GameControllerFactoryManager::RegisterCustomFactoryForXusbType(const
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::ICustomGameControllerFactory>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::ICustomGameControllerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::IGameControllerInputSink>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::IGameControllerInputSink & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::IGameControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::IGameControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::IGipFirmwareUpdateResult>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::IGipFirmwareUpdateResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::IGipGameControllerInputSink>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::IGipGameControllerInputSink & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::IGipGameControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::IGipGameControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::IXusbGameControllerInputSink>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::IXusbGameControllerInputSink & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::IXusbGameControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::IXusbGameControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::GipFirmwareUpdateResult>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::GipFirmwareUpdateResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::GipGameControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::GipGameControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::XusbGameControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::XusbGameControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

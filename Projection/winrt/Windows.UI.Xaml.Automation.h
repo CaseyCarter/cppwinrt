@@ -5100,4 +5100,751 @@ inline Windows::UI::Xaml::Automation::AutomationProperty WindowPatternIdentifier
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationAnnotation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationAnnotation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationAnnotationFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationAnnotationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationAnnotationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationAnnotationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationProperties>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationProperty>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationProperty & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IDockPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IDockPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IDockPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IDockPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IDragPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IDragPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IDragPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IGridItemPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IGridItemPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IGridItemPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IGridPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IGridPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IGridPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IGridPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IScrollPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IScrollPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IScrollPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ISelectionPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ISelectionPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ISelectionPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IStylesPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IStylesPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IStylesPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ITableItemPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ITableItemPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ITableItemPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ITableItemPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ITablePatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ITablePatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ITablePatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ITogglePatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ITogglePatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ITogglePatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ITogglePatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ITransformPattern2Identifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ITransformPattern2Identifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ITransformPattern2IdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ITransformPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ITransformPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ITransformPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ITransformPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IValuePatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IValuePatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IValuePatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IValuePatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IWindowPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IWindowPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IWindowPatternIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::AnnotationPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::AnnotationPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::AutomationAnnotation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::AutomationAnnotation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::AutomationElementIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::AutomationElementIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::AutomationProperties>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::AutomationProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::AutomationProperty>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::AutomationProperty & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::DockPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::DockPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::DragPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::DragPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::DropTargetPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::DropTargetPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ExpandCollapsePatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ExpandCollapsePatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::GridItemPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::GridItemPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::GridPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::GridPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::MultipleViewPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::MultipleViewPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::RangeValuePatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::RangeValuePatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ScrollPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ScrollPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::SelectionItemPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::SelectionItemPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::SelectionPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::SelectionPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::SpreadsheetItemPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::SpreadsheetItemPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::StylesPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::StylesPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::TableItemPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::TableItemPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::TablePatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::TablePatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::TogglePatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::TogglePatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::TransformPattern2Identifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::TransformPattern2Identifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::TransformPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::TransformPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::ValuePatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::ValuePatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::WindowPatternIdentifiers>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::WindowPatternIdentifiers & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -4816,4 +4816,922 @@ inline Windows::Networking::NetworkOperators::UssdSession UssdSession::CreateFro
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IHotspotAuthenticationContext>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IHotspotAuthenticationContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IHotspotAuthenticationContext2>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IHotspotAuthenticationContext2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IHotspotAuthenticationContextStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IHotspotAuthenticationEventDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IHotspotAuthenticationEventDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IHotspotCredentialsAuthenticationResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IHotspotCredentialsAuthenticationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IKnownCSimFilePathsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IKnownRuimFilePathsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IKnownSimFilePathsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IKnownUSimFilePathsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccount>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccount & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccount2>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccount2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccountStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccountUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccountUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccountWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceCommandSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceDataSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceServiceTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandModem>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandModem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandModemConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandModemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandNetwork>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandNetwork & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandNetwork2>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandNetwork2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChange>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandPin>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandPin & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChange>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChangeTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandPinLockStateChangeTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandPinManager>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandPinManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandPinOperationResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandPinOperationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChange>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChangeTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandRadioStateChangeTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandUicc>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandUicc & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandUiccApp & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppReadRecordResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppReadRecordResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppRecordDetailsResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppRecordDetailsResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppsResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandUiccAppsResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringAccessPointConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringClient>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringClient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringClientManager>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringClientManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringManagerStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringOperationResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::INetworkOperatorTetheringOperationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IProvisionFromXmlDocumentResults>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IProvisionFromXmlDocumentResults & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IProvisionedProfile>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IProvisionedProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IProvisioningAgent>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IProvisioningAgent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IProvisioningAgentStaticMethods & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IUssdMessage>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IUssdMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IUssdMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IUssdMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IUssdReply>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IUssdReply & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IUssdSession>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IUssdSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IUssdSessionStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IUssdSessionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::HotspotAuthenticationContext>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::HotspotAuthenticationContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::HotspotAuthenticationEventDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::HotspotAuthenticationEventDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandAccount>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandAccount & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandAccountUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceService>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandSession>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandModem>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandModem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandModemConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandNetwork>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandNetwork & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChangeTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChangeTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPin>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandPin & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChangeTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChangeTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinManager>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinOperationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChangeTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChangeTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandUicc>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandUicc & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandUiccApp>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandUiccApp & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::NetworkOperatorTetheringAccessPointConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::NetworkOperatorTetheringOperationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::ProvisionedProfile>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::ProvisionedProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::ProvisioningAgent>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::ProvisioningAgent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::UssdMessage>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::UssdMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::UssdReply>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::UssdReply & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::UssdSession>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::UssdSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

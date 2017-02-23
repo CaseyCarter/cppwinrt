@@ -481,4 +481,103 @@ inline Windows::System::Profile::SystemIdentificationInfo SystemIdentification::
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::IAnalyticsInfoStatics>
+{
+    size_t operator()(const winrt::Windows::System::Profile::IAnalyticsInfoStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::IAnalyticsVersionInfo>
+{
+    size_t operator()(const winrt::Windows::System::Profile::IAnalyticsVersionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::IHardwareIdentificationStatics>
+{
+    size_t operator()(const winrt::Windows::System::Profile::IHardwareIdentificationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::IHardwareToken>
+{
+    size_t operator()(const winrt::Windows::System::Profile::IHardwareToken & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics>
+{
+    size_t operator()(const winrt::Windows::System::Profile::IPlatformDiagnosticsAndUsageDataSettingsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::ISharedModeSettingsStatics>
+{
+    size_t operator()(const winrt::Windows::System::Profile::ISharedModeSettingsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::ISystemIdentificationInfo>
+{
+    size_t operator()(const winrt::Windows::System::Profile::ISystemIdentificationInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::ISystemIdentificationStatics>
+{
+    size_t operator()(const winrt::Windows::System::Profile::ISystemIdentificationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::AnalyticsVersionInfo>
+{
+    size_t operator()(const winrt::Windows::System::Profile::AnalyticsVersionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::HardwareToken>
+{
+    size_t operator()(const winrt::Windows::System::Profile::HardwareToken & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::SystemIdentificationInfo>
+{
+    size_t operator()(const winrt::Windows::System::Profile::SystemIdentificationInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

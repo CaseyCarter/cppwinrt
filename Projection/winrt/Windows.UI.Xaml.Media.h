@@ -7588,4 +7588,1390 @@ inline Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IArcSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IArcSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IArcSegmentStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IArcSegmentStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IBezierSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IBezierSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IBezierSegmentStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IBezierSegmentStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IBitmapCache>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IBitmapCache & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IBrushFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IBrushFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IBrushStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IBrushStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ICacheMode>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ICacheMode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ICacheModeFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ICacheModeFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ICompositeTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ICompositeTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ICompositeTransformStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ICompositeTransformStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ICompositionTarget>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ICompositionTarget & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ICompositionTargetStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ICompositionTargetStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IEllipseGeometry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IEllipseGeometry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IEllipseGeometryStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IEllipseGeometryStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IFontFamily>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IFontFamily & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IFontFamilyFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IFontFamilyFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IFontFamilyStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IFontFamilyStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGeneralTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGeneralTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGeneralTransformFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGeneralTransformFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGeneralTransformOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGeneralTransformOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGeometry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGeometry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGeometryFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGeometryFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGeometryGroup>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGeometryGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGeometryGroupStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGeometryGroupStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGeometryStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGeometryStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGradientBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGradientBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGradientBrushFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGradientBrushFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGradientBrushStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGradientBrushStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGradientStop>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGradientStop & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IGradientStopStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IGradientStopStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IImageBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IImageBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IImageBrushStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IImageBrushStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IImageSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IImageSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IImageSourceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IImageSourceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ILineGeometry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ILineGeometry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ILineGeometryStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ILineGeometryStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ILineSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ILineSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ILineSegmentStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ILineSegmentStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ILinearGradientBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ILinearGradientBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ILinearGradientBrushFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ILinearGradientBrushFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ILinearGradientBrushStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ILinearGradientBrushStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IMatrix3DProjection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IMatrix3DProjection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IMatrix3DProjectionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IMatrix3DProjectionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IMatrixHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IMatrixHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IMatrixHelperStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IMatrixHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IMatrixTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IMatrixTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IMatrixTransformStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IMatrixTransformStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IMediaTransportControlsThumbnailRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IMediaTransportControlsThumbnailRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPartialMediaFailureDetectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPartialMediaFailureDetectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPartialMediaFailureDetectedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPartialMediaFailureDetectedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPathFigure>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPathFigure & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPathFigureStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPathFigureStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPathGeometry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPathGeometry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPathGeometryStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPathGeometryStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPathSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPathSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPathSegmentFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPathSegmentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPlaneProjection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPlaneProjection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPlaneProjectionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPlaneProjectionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPolyBezierSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPolyBezierSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPolyBezierSegmentStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPolyBezierSegmentStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPolyLineSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPolyLineSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPolyLineSegmentStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPolyLineSegmentStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPolyQuadraticBezierSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPolyQuadraticBezierSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IPolyQuadraticBezierSegmentStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IPolyQuadraticBezierSegmentStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IProjection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IProjection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IProjectionFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IProjectionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IQuadraticBezierSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IQuadraticBezierSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IQuadraticBezierSegmentStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IQuadraticBezierSegmentStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IRateChangedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IRateChangedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IRectangleGeometry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IRectangleGeometry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IRectangleGeometryStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IRectangleGeometryStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IRenderingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IRenderingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IRotateTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IRotateTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IRotateTransformStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IRotateTransformStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IScaleTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IScaleTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IScaleTransformStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IScaleTransformStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ISkewTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ISkewTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ISkewTransformStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ISkewTransformStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ISolidColorBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ISolidColorBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ISolidColorBrushFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ISolidColorBrushFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ISolidColorBrushStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ISolidColorBrushStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITileBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITileBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITileBrushFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITileBrushFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITileBrushStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITileBrushStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITimelineMarker>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITimelineMarker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITimelineMarkerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITimelineMarkerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITransformFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITransformFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITransformGroup>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITransformGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITransformGroupStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITransformGroupStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITranslateTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITranslateTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ITranslateTransformStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ITranslateTransformStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IVisualTreeHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IVisualTreeHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IVisualTreeHelperStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IVisualTreeHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IVisualTreeHelperStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IVisualTreeHelperStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ArcSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ArcSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::BezierSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::BezierSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::BitmapCache>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::BitmapCache & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Brush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Brush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::BrushCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::BrushCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::CacheMode>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::CacheMode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::CompositeTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::CompositeTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::CompositionTarget>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::CompositionTarget & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::DoubleCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::DoubleCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::EllipseGeometry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::EllipseGeometry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::FontFamily>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::FontFamily & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::GeneralTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::GeneralTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Geometry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Geometry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::GeometryCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::GeometryCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::GeometryGroup>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::GeometryGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::GradientBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::GradientBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::GradientStop>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::GradientStop & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::GradientStopCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::GradientStopCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ImageBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ImageBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ImageSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ImageSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::LineGeometry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::LineGeometry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::LineSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::LineSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::LinearGradientBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::LinearGradientBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Matrix3DProjection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Matrix3DProjection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::MatrixHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::MatrixHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::MatrixTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::MatrixTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::MediaTransportControlsThumbnailRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::MediaTransportControlsThumbnailRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::PartialMediaFailureDetectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::PartialMediaFailureDetectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::PathFigure>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::PathFigure & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::PathFigureCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::PathFigureCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::PathGeometry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::PathGeometry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::PathSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::PathSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::PathSegmentCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::PathSegmentCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::PlaneProjection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::PlaneProjection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::PointCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::PointCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::PolyBezierSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::PolyBezierSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::PolyLineSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::PolyLineSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::PolyQuadraticBezierSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::PolyQuadraticBezierSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Projection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Projection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::QuadraticBezierSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::QuadraticBezierSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::RateChangedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::RateChangedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::RectangleGeometry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::RectangleGeometry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::RenderingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::RenderingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::RotateTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::RotateTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ScaleTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ScaleTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::SkewTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::SkewTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::SolidColorBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::SolidColorBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::TileBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::TileBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::TimelineMarker>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::TimelineMarker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::TimelineMarkerCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::TimelineMarkerCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::TimelineMarkerRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::TimelineMarkerRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Transform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Transform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::TransformCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::TransformCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::TransformGroup>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::TransformGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::TranslateTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::TranslateTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::VisualTreeHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::VisualTreeHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -1075,4 +1075,31 @@ inline void PowerManager::RemainingDischargeTimeChanged(event_token token)
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::System::Power::IBackgroundEnergyManagerStatics>
+{
+    size_t operator()(const winrt::Windows::System::Power::IBackgroundEnergyManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Power::IForegroundEnergyManagerStatics>
+{
+    size_t operator()(const winrt::Windows::System::Power::IForegroundEnergyManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Power::IPowerManagerStatics>
+{
+    size_t operator()(const winrt::Windows::System::Power::IPowerManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

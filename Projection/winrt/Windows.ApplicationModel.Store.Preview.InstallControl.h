@@ -1285,4 +1285,112 @@ inline AppInstallManager::AppInstallManager() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallStatus>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

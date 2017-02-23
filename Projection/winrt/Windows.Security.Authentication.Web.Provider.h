@@ -1367,4 +1367,292 @@ inline WebProviderTokenResponse::WebProviderTokenResponse(const Windows::Securit
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountClientView>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountClientView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountClientViewFactory>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountClientViewFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountMapManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountMapManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderAddAccountOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderAddAccountOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderBaseReportOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderBaseReportOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderDeleteAccountOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderDeleteAccountOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderManageAccountOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderManageAccountOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderRetrieveCookiesOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderRetrieveCookiesOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderSignOutAccountOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderSignOutAccountOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderSilentReportOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderSilentReportOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderUIReportOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderUIReportOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountScopeManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountScopeManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebProviderTokenRequest>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebProviderTokenRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebProviderTokenRequest2>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebProviderTokenRequest2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebProviderTokenResponse>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebProviderTokenResponse & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebProviderTokenResponseFactory>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebProviderTokenResponseFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::WebAccountClientView>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::WebAccountClientView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderAddAccountOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderAddAccountOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderDeleteAccountOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderDeleteAccountOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderGetTokenSilentOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderGetTokenSilentOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderManageAccountOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderManageAccountOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderRequestTokenOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderRequestTokenOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderRetrieveCookiesOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderRetrieveCookiesOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderSignOutAccountOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderSignOutAccountOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::WebAccountProviderTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::WebProviderTokenRequest>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::WebProviderTokenRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

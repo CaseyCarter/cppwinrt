@@ -602,4 +602,76 @@ inline hstring AppointmentsProviderLaunchActionVerbs::ShowAppointmentDetails()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::IAppointmentsProviderLaunchActionVerbsStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

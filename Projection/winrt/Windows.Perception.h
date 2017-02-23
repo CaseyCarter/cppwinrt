@@ -96,4 +96,31 @@ inline Windows::Perception::PerceptionTimestamp PerceptionTimestampHelper::FromH
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Perception::IPerceptionTimestamp>
+{
+    size_t operator()(const winrt::Windows::Perception::IPerceptionTimestamp & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::IPerceptionTimestampHelperStatics>
+{
+    size_t operator()(const winrt::Windows::Perception::IPerceptionTimestampHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::PerceptionTimestamp>
+{
+    size_t operator()(const winrt::Windows::Perception::PerceptionTimestamp & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

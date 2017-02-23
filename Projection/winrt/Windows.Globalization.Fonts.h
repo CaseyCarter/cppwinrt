@@ -406,4 +406,49 @@ inline LanguageFontGroup::LanguageFontGroup(hstring_view languageTag) :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Fonts::ILanguageFont>
+{
+    size_t operator()(const winrt::Windows::Globalization::Fonts::ILanguageFont & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Fonts::ILanguageFontGroup>
+{
+    size_t operator()(const winrt::Windows::Globalization::Fonts::ILanguageFontGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Fonts::ILanguageFontGroupFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::Fonts::ILanguageFontGroupFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Fonts::LanguageFont>
+{
+    size_t operator()(const winrt::Windows::Globalization::Fonts::LanguageFont & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Fonts::LanguageFontGroup>
+{
+    size_t operator()(const winrt::Windows::Globalization::Fonts::LanguageFontGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

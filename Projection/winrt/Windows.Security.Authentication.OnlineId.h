@@ -529,4 +529,103 @@ inline OnlineIdServiceTicketRequest::OnlineIdServiceTicketRequest(hstring_view s
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::IOnlineIdAuthenticator>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::IOnlineIdAuthenticator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicket>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequestFactory>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequestFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::IUserIdentity>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::IUserIdentity & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::OnlineIdAuthenticator>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::OnlineIdAuthenticator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::SignOutUserOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::SignOutUserOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::UserAuthenticationOperation>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::UserAuthenticationOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::UserIdentity>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::UserIdentity & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

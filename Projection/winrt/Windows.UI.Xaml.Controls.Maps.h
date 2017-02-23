@@ -8201,4 +8201,868 @@ inline Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Controls::Maps::S
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSourceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSourceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSourceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSourceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSourceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSourceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangingEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangingEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapCamera>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapCamera & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapCameraFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapCameraFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControl2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControl3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapControl3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControl4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapControl4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapCustomExperience>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapCustomExperience & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapCustomExperienceChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapCustomExperienceChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapCustomExperienceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapCustomExperienceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapElement2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapElement2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapElementClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapElementClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapElementFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapElementFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapElementPointerEnteredEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapElementPointerEnteredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapElementPointerExitedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapElementPointerExitedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapElementStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapElementStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapElementStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapElementStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapIcon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapIcon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapIcon2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapIcon2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapIconStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapIconStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapIconStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapIconStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapInputEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapInputEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapItemsControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapItemsControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapItemsControlStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapItemsControlStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapPolygon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapPolygon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapPolygon2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapPolygon2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapPolygonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapPolygonStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapPolyline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapPolyline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapPolylineStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapPolylineStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapRightTappedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapRightTappedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapRouteView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapRouteView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapRouteViewFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapRouteViewFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapScene>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapScene & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapSceneStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapSceneStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTileDataSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTileDataSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTileDataSourceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTileDataSourceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTileSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTileSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTileSourceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTileSourceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTileSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTileUriRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTileUriRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IStreetsideExperience>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IStreetsideExperience & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IStreetsideExperienceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IStreetsideExperienceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IStreetsidePanorama>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IStreetsidePanorama & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IStreetsidePanoramaStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IStreetsidePanoramaStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::CustomMapTileDataSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::CustomMapTileDataSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapActualCameraChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapActualCameraChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapActualCameraChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapActualCameraChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapCamera>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapCamera & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapCustomExperience>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapCustomExperience & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapCustomExperienceChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapCustomExperienceChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapElementClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapElementClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapElementPointerEnteredEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapElementPointerEnteredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapElementPointerExitedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapElementPointerExitedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapIcon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapIcon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapInputEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapInputEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapItemsControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapItemsControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapPolygon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapPolygon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapPolyline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapPolyline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapRightTappedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapRightTappedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapRouteView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapRouteView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapScene>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapScene & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapTileDataSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapTileDataSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapTileSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapTileSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapTileUriRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapTileUriRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapTileUriRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapTileUriRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapTileUriRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapTileUriRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::StreetsideExperience>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::StreetsideExperience & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::StreetsidePanorama>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::StreetsidePanorama & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

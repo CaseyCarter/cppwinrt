@@ -304,4 +304,58 @@ inline Windows::System::Threading::Core::SignalNotifier SignalNotifier::AttachTo
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::System::Threading::Core::IPreallocatedWorkItem>
+{
+    size_t operator()(const winrt::Windows::System::Threading::Core::IPreallocatedWorkItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Threading::Core::IPreallocatedWorkItemFactory>
+{
+    size_t operator()(const winrt::Windows::System::Threading::Core::IPreallocatedWorkItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Threading::Core::ISignalNotifier>
+{
+    size_t operator()(const winrt::Windows::System::Threading::Core::ISignalNotifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Threading::Core::ISignalNotifierStatics>
+{
+    size_t operator()(const winrt::Windows::System::Threading::Core::ISignalNotifierStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Threading::Core::PreallocatedWorkItem>
+{
+    size_t operator()(const winrt::Windows::System::Threading::Core::PreallocatedWorkItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Threading::Core::SignalNotifier>
+{
+    size_t operator()(const winrt::Windows::System::Threading::Core::SignalNotifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

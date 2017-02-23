@@ -226,4 +226,31 @@ inline Windows::UI::Notifications::Management::UserNotificationListener UserNoti
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::Management::IUserNotificationListener>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::Management::IUserNotificationListener & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::Management::IUserNotificationListenerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::Management::IUserNotificationListenerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::Management::UserNotificationListener>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::Management::UserNotificationListener & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -2566,4 +2566,355 @@ inline XmlLoadSettings::XmlLoadSettings() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IDtdEntity>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IDtdEntity & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IDtdNotation>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IDtdNotation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlAttribute>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlAttribute & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlCDataSection>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlCDataSection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlCharacterData>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlCharacterData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlComment>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlComment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlDocument>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlDocument & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlDocumentFragment>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlDocumentFragment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlDocumentIO>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlDocumentIO & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlDocumentIO2>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlDocumentIO2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlDocumentStatics>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlDocumentStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlDocumentType>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlDocumentType & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlDomImplementation>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlDomImplementation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlElement>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlEntityReference>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlEntityReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlLoadSettings>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlLoadSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlNamedNodeMap>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlNamedNodeMap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlNode>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlNodeList>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlNodeList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlNodeSelector>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlNodeSelector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlNodeSerializer>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlNodeSerializer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlProcessingInstruction>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlProcessingInstruction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::IXmlText>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::IXmlText & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::DtdEntity>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::DtdEntity & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::DtdNotation>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::DtdNotation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlAttribute>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlAttribute & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlCDataSection>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlCDataSection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlComment>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlComment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlDocument>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlDocument & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlDocumentFragment>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlDocumentFragment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlDocumentType>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlDocumentType & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlDomImplementation>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlDomImplementation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlElement>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlEntityReference>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlEntityReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlLoadSettings>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlLoadSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlNamedNodeMap>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlNamedNodeMap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlNodeList>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlNodeList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlProcessingInstruction>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlProcessingInstruction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Dom::XmlText>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Dom::XmlText & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

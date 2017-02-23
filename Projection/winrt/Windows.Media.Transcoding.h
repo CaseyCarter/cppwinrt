@@ -466,4 +466,49 @@ inline MediaTranscoder::MediaTranscoder() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Transcoding::IMediaTranscoder>
+{
+    size_t operator()(const winrt::Windows::Media::Transcoding::IMediaTranscoder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Transcoding::IMediaTranscoder2>
+{
+    size_t operator()(const winrt::Windows::Media::Transcoding::IMediaTranscoder2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Transcoding::IPrepareTranscodeResult>
+{
+    size_t operator()(const winrt::Windows::Media::Transcoding::IPrepareTranscodeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Transcoding::MediaTranscoder>
+{
+    size_t operator()(const winrt::Windows::Media::Transcoding::MediaTranscoder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Transcoding::PrepareTranscodeResult>
+{
+    size_t operator()(const winrt::Windows::Media::Transcoding::PrepareTranscodeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

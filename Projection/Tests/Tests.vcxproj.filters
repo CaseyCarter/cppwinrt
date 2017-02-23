@@ -43,6 +43,7 @@
     <ClCompile Include="collection_map_view.cpp" />
     <ClCompile Include="collection_vector.cpp" />
     <ClCompile Include="collection_map.cpp" />
+    <ClCompile Include="Hash.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

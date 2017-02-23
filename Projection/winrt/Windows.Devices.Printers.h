@@ -175,4 +175,49 @@ inline hstring Print3DDevice::GetDeviceSelector()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::IPrint3DDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::IPrint3DDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::IPrint3DDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::IPrint3DDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::IPrintSchema>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::IPrintSchema & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::Print3DDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::Print3DDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::PrintSchema>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::PrintSchema & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

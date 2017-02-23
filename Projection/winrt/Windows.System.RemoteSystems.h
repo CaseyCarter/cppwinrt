@@ -866,4 +866,229 @@ inline RemoteSystemStatusTypeFilter::RemoteSystemStatusTypeFilter(Windows::Syste
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystem>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemConnectionRequest>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemConnectionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemConnectionRequestFactory>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemConnectionRequestFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilter>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilterFactory>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemFilter>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemKindFilter>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemKindFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemKindFilterFactory>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemKindFilterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemKindStatics>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemKindStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemStatics>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilter>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilterFactory>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::IRemoteSystemWatcher>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::IRemoteSystemWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::RemoteSystem>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::RemoteSystem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::RemoteSystemAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::RemoteSystemAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::RemoteSystemConnectionRequest>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::RemoteSystemConnectionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::RemoteSystemDiscoveryTypeFilter>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::RemoteSystemDiscoveryTypeFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::RemoteSystemKindFilter>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::RemoteSystemKindFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::RemoteSystemRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::RemoteSystemRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::RemoteSystemStatusTypeFilter>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::RemoteSystemStatusTypeFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteSystems::RemoteSystemWatcher>
+{
+    size_t operator()(const winrt::Windows::System::RemoteSystems::RemoteSystemWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

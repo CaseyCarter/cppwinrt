@@ -249,4 +249,58 @@ inline Windows::ApplicationModel::Resources::ResourceLoader ResourceLoader::GetF
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::IResourceLoader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::IResourceLoader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::IResourceLoader2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::IResourceLoader2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::IResourceLoaderFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::IResourceLoaderFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::IResourceLoaderStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::IResourceLoaderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::IResourceLoaderStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::IResourceLoaderStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::ResourceLoader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::ResourceLoader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

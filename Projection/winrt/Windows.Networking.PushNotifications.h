@@ -520,4 +520,94 @@ inline Windows::Networking::PushNotifications::PushNotificationChannelManagerFor
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Networking::PushNotifications::IPushNotificationChannel>
+{
+    size_t operator()(const winrt::Windows::Networking::PushNotifications::IPushNotificationChannel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser>
+{
+    size_t operator()(const winrt::Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::PushNotifications::IPushNotificationChannelManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::PushNotifications::IPushNotificationChannelManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::PushNotifications::IPushNotificationChannelManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::Networking::PushNotifications::IPushNotificationChannelManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::PushNotifications::IPushNotificationReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::PushNotifications::IPushNotificationReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::PushNotifications::IRawNotification>
+{
+    size_t operator()(const winrt::Windows::Networking::PushNotifications::IRawNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::PushNotifications::PushNotificationChannel>
+{
+    size_t operator()(const winrt::Windows::Networking::PushNotifications::PushNotificationChannel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser>
+{
+    size_t operator()(const winrt::Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::PushNotifications::PushNotificationReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::PushNotifications::PushNotificationReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::PushNotifications::RawNotification>
+{
+    size_t operator()(const winrt::Windows::Networking::PushNotifications::RawNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

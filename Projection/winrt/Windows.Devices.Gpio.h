@@ -459,4 +459,76 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::Gpio::GpioControll
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::IGpioController>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::IGpioController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::IGpioControllerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::IGpioControllerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::IGpioControllerStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::IGpioControllerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::IGpioPin>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::IGpioPin & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::IGpioPinValueChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::IGpioPinValueChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::GpioController>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::GpioController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::GpioPin>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::GpioPin & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::GpioPinValueChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::GpioPinValueChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

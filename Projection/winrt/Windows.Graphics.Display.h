@@ -1148,4 +1148,67 @@ inline void DisplayProperties::DisplayContentsInvalidated(event_token token)
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Display::IDisplayInformation>
+{
+    size_t operator()(const winrt::Windows::Graphics::Display::IDisplayInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Display::IDisplayInformation2>
+{
+    size_t operator()(const winrt::Windows::Graphics::Display::IDisplayInformation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Display::IDisplayInformation3>
+{
+    size_t operator()(const winrt::Windows::Graphics::Display::IDisplayInformation3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Display::IDisplayInformation4>
+{
+    size_t operator()(const winrt::Windows::Graphics::Display::IDisplayInformation4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Display::IDisplayInformationStatics>
+{
+    size_t operator()(const winrt::Windows::Graphics::Display::IDisplayInformationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Display::IDisplayPropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Graphics::Display::IDisplayPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Display::DisplayInformation>
+{
+    size_t operator()(const winrt::Windows::Graphics::Display::DisplayInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

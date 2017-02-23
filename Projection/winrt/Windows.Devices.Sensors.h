@@ -5198,4 +5198,1219 @@ inline Windows::Devices::Sensors::SimpleOrientationSensor SimpleOrientationSenso
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAccelerometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAccelerometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAccelerometer2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAccelerometer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAccelerometer3>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAccelerometer3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAccelerometer4>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAccelerometer4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAccelerometerDeviceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAccelerometerDeviceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAccelerometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAccelerometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAccelerometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAccelerometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAccelerometerShakenEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAccelerometerShakenEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAccelerometerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAccelerometerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAccelerometerStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAccelerometerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IActivitySensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IActivitySensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IActivitySensorReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IActivitySensorReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IActivitySensorReadingChangeReport>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IActivitySensorReadingChangeReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IActivitySensorReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IActivitySensorReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IActivitySensorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IActivitySensorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IActivitySensorTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IActivitySensorTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAltimeter>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAltimeter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAltimeterReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAltimeterReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAltimeterReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAltimeterReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IAltimeterStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IAltimeterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IBarometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IBarometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IBarometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IBarometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IBarometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IBarometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IBarometerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IBarometerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ICompass>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ICompass & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ICompass2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ICompass2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ICompassDeviceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ICompassDeviceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ICompassReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ICompassReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ICompassReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ICompassReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ICompassReadingHeadingAccuracy>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ICompassReadingHeadingAccuracy & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ICompassStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ICompassStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IGyrometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IGyrometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IGyrometer2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IGyrometer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IGyrometerDeviceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IGyrometerDeviceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IGyrometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IGyrometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IGyrometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IGyrometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IGyrometerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IGyrometerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IInclinometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IInclinometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IInclinometer2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IInclinometer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IInclinometerDeviceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IInclinometerDeviceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IInclinometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IInclinometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IInclinometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IInclinometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IInclinometerReadingYawAccuracy>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IInclinometerReadingYawAccuracy & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IInclinometerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IInclinometerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IInclinometerStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IInclinometerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IInclinometerStatics3>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IInclinometerStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ILightSensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ILightSensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ILightSensorDeviceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ILightSensorDeviceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ILightSensorReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ILightSensorReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ILightSensorReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ILightSensorReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ILightSensorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ILightSensorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IMagnetometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IMagnetometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IMagnetometer2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IMagnetometer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IMagnetometerDeviceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IMagnetometerDeviceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IMagnetometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IMagnetometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IMagnetometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IMagnetometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IMagnetometerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IMagnetometerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IOrientationSensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IOrientationSensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IOrientationSensor2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IOrientationSensor2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IOrientationSensorDeviceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IOrientationSensorDeviceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IOrientationSensorReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IOrientationSensorReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IOrientationSensorReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IOrientationSensorReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IOrientationSensorReadingYawAccuracy>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IOrientationSensorReadingYawAccuracy & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IOrientationSensorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IOrientationSensorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IOrientationSensorStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IOrientationSensorStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IOrientationSensorStatics3>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IOrientationSensorStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IPedometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IPedometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IPedometer2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IPedometer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IPedometerDataThresholdFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IPedometerDataThresholdFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IPedometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IPedometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IPedometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IPedometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IPedometerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IPedometerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IPedometerStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IPedometerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IProximitySensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IProximitySensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IProximitySensorDataThresholdFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IProximitySensorDataThresholdFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IProximitySensorReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IProximitySensorReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IProximitySensorReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IProximitySensorReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IProximitySensorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IProximitySensorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::IProximitySensorStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::IProximitySensorStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ISensorDataThreshold>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ISensorDataThreshold & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ISensorQuaternion>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ISensorQuaternion & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ISensorRotationMatrix>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ISensorRotationMatrix & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ISimpleOrientationSensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ISimpleOrientationSensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ISimpleOrientationSensor2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ISimpleOrientationSensor2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ISimpleOrientationSensorDeviceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ISimpleOrientationSensorDeviceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ISimpleOrientationSensorOrientationChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ISimpleOrientationSensorOrientationChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ISimpleOrientationSensorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ISimpleOrientationSensorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Accelerometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Accelerometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::AccelerometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::AccelerometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::AccelerometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::AccelerometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::AccelerometerShakenEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::AccelerometerShakenEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ActivitySensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ActivitySensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ActivitySensorReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ActivitySensorReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ActivitySensorReadingChangeReport>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ActivitySensorReadingChangeReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ActivitySensorReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ActivitySensorReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ActivitySensorTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ActivitySensorTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Altimeter>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Altimeter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::AltimeterReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::AltimeterReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::AltimeterReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::AltimeterReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Barometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Barometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::BarometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::BarometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::BarometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::BarometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Compass>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Compass & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::CompassReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::CompassReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::CompassReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::CompassReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Gyrometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Gyrometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::GyrometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::GyrometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::GyrometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::GyrometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Inclinometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Inclinometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::InclinometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::InclinometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::InclinometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::InclinometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::LightSensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::LightSensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::LightSensorReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::LightSensorReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::LightSensorReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::LightSensorReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Magnetometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Magnetometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::MagnetometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::MagnetometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::MagnetometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::MagnetometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::OrientationSensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::OrientationSensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::OrientationSensorReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::OrientationSensorReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::OrientationSensorReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::OrientationSensorReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Pedometer>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Pedometer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::PedometerDataThreshold>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::PedometerDataThreshold & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::PedometerReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::PedometerReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::PedometerReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::PedometerReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ProximitySensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ProximitySensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ProximitySensorDataThreshold>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ProximitySensorDataThreshold & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ProximitySensorDisplayOnOffController>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ProximitySensorDisplayOnOffController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ProximitySensorReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ProximitySensorReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::ProximitySensorReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::ProximitySensorReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::SensorDataThresholdTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::SensorDataThresholdTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::SensorQuaternion>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::SensorQuaternion & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::SensorRotationMatrix>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::SensorRotationMatrix & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::SimpleOrientationSensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::SimpleOrientationSensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::SimpleOrientationSensorOrientationChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::SimpleOrientationSensorOrientationChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

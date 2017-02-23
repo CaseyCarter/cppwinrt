@@ -510,4 +510,67 @@ inline Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult Pho
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatter>
+{
+    size_t operator()(const winrt::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatterStatics>
+{
+    size_t operator()(const winrt::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberFormatterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo>
+{
+    size_t operator()(const winrt::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoStatics>
+{
+    size_t operator()(const winrt::Windows::Globalization::PhoneNumberFormatting::IPhoneNumberInfoStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter>
+{
+    size_t operator()(const winrt::Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo>
+{
+    size_t operator()(const winrt::Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

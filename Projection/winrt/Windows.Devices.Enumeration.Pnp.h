@@ -607,4 +607,76 @@ inline Windows::Devices::Enumeration::Pnp::PnpObjectWatcher PnpObject::CreateWat
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::Pnp::IPnpObject>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::Pnp::IPnpObject & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::Pnp::IPnpObjectStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::Pnp::IPnpObjectStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::Pnp::IPnpObjectUpdate>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::Pnp::IPnpObjectUpdate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::Pnp::PnpObject>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::Pnp::PnpObject & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::Pnp::PnpObjectCollection>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::Pnp::PnpObjectCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::Pnp::PnpObjectUpdate>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::Pnp::PnpObjectUpdate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::Pnp::PnpObjectWatcher>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::Pnp::PnpObjectWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -140,4 +140,49 @@ inline void CustomXamlResourceLoader::Current(const Windows::UI::Xaml::Resources
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Resources::ICustomXamlResourceLoader>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Resources::ICustomXamlResourceLoader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Resources::ICustomXamlResourceLoaderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Resources::CustomXamlResourceLoader>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Resources::CustomXamlResourceLoader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

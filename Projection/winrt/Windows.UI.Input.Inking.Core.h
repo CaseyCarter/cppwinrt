@@ -763,4 +763,76 @@ inline Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource CoreWetStroke
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSource>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSourceStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::Core::ICoreInkIndependentInputSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSourceStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::Core::ICoreWetStrokeUpdateSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

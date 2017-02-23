@@ -2804,4 +2804,265 @@ inline SmsTextMessage2::SmsTextMessage2() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsAppMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsAppMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsBroadcastMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsBroadcastMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsDevice2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsDevice2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsDevice2Statics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsDevice2Statics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsFilterRule>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsFilterRule & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsFilterRuleFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsFilterRuleFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsFilterRules>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsFilterRules & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsFilterRulesFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsFilterRulesFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsMessageBase>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsMessageBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsMessageRegistration>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsMessageRegistration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsMessageRegistrationStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsMessageRegistrationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsSendMessageResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsSendMessageResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsStatusMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsStatusMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsTextMessage2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsTextMessage2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsVoicemailMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsVoicemailMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::ISmsWapMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::ISmsWapMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsAppMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsAppMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsBroadcastMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsBroadcastMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsDevice2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsDevice2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsFilterRule>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsFilterRule & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsFilterRules>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsFilterRules & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsMessageReceivedTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsMessageReceivedTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsMessageRegistration>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsMessageRegistration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsSendMessageResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsSendMessageResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsStatusMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsStatusMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsTextMessage2>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsTextMessage2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsVoicemailMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsVoicemailMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sms::SmsWapMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Sms::SmsWapMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

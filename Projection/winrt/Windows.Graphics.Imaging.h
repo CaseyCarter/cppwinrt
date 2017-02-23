@@ -2434,4 +2434,283 @@ inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::Software
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapBuffer>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapBuffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapCodecInformation>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapCodecInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapDecoder>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapDecoder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapDecoderStatics>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapDecoderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapEncoder>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapEncoder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapEncoderStatics>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapEncoderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapEncoderWithSoftwareBitmap>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapEncoderWithSoftwareBitmap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapFrame>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapFrameWithSoftwareBitmap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapProperties>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapPropertiesView>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapPropertiesView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapTransform>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapTypedValue>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapTypedValue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IBitmapTypedValueFactory>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IBitmapTypedValueFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::IPixelDataProvider>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::IPixelDataProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::ISoftwareBitmap>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::ISoftwareBitmap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::ISoftwareBitmapFactory>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::ISoftwareBitmapFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::ISoftwareBitmapStatics>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::ISoftwareBitmapStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::BitmapBuffer>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::BitmapBuffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::BitmapCodecInformation>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::BitmapCodecInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::BitmapDecoder>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::BitmapDecoder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::BitmapEncoder>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::BitmapEncoder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::BitmapFrame>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::BitmapFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::BitmapProperties>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::BitmapProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::BitmapPropertiesView>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::BitmapPropertiesView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::BitmapPropertySet>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::BitmapPropertySet & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::BitmapTransform>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::BitmapTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::BitmapTypedValue>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::BitmapTypedValue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::ImageStream>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::ImageStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::PixelDataProvider>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::PixelDataProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Imaging::SoftwareBitmap>
+{
+    size_t operator()(const winrt::Windows::Graphics::Imaging::SoftwareBitmap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -344,4 +344,49 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> Lamp
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Lights::ILamp>
+{
+    size_t operator()(const winrt::Windows::Devices::Lights::ILamp & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Lights::ILampAvailabilityChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Lights::ILampAvailabilityChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Lights::ILampStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Lights::ILampStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Lights::Lamp>
+{
+    size_t operator()(const winrt::Windows::Devices::Lights::Lamp & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Lights::LampAvailabilityChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Lights::LampAvailabilityChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

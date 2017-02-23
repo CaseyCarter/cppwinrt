@@ -197,4 +197,13 @@ inline bool GameBar::IsInputRedirected()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Gaming::UI::IGameBarStatics>
+{
+    size_t operator()(const winrt::Windows::Gaming::UI::IGameBarStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

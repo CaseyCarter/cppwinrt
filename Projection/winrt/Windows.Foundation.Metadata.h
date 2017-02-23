@@ -283,4 +283,13 @@ inline bool ApiInformation::IsApiContractPresent(hstring_view contractName, uint
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Metadata::IApiInformationStatics>
+{
+    size_t operator()(const winrt::Windows::Foundation::Metadata::IApiInformationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

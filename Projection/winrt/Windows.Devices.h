@@ -226,4 +226,58 @@ inline void LowLevelDevicesController::DefaultProvider(const Windows::Devices::I
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::ILowLevelDevicesAggregateProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::ILowLevelDevicesAggregateProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::ILowLevelDevicesAggregateProviderFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::ILowLevelDevicesAggregateProviderFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::ILowLevelDevicesController>
+{
+    size_t operator()(const winrt::Windows::Devices::ILowLevelDevicesController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::ILowLevelDevicesControllerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::ILowLevelDevicesControllerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::LowLevelDevicesAggregateProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::LowLevelDevicesAggregateProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::LowLevelDevicesController>
+{
+    size_t operator()(const winrt::Windows::Devices::LowLevelDevicesController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

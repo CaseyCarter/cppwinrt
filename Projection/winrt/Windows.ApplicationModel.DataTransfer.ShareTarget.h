@@ -401,4 +401,49 @@ inline QuickLink::QuickLink() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLink>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::ShareTarget::IQuickLink & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::ShareTarget::IShareOperation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

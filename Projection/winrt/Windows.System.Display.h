@@ -65,4 +65,22 @@ inline DisplayRequest::DisplayRequest() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::System::Display::IDisplayRequest>
+{
+    size_t operator()(const winrt::Windows::System::Display::IDisplayRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Display::DisplayRequest>
+{
+    size_t operator()(const winrt::Windows::System::Display::DisplayRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

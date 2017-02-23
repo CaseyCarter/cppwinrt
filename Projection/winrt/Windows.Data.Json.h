@@ -898,4 +898,112 @@ inline Windows::Data::Json::JsonValue JsonValue::CreateNullValue()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::IJsonArray>
+{
+    size_t operator()(const winrt::Windows::Data::Json::IJsonArray & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::IJsonArrayStatics>
+{
+    size_t operator()(const winrt::Windows::Data::Json::IJsonArrayStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::IJsonErrorStatics2>
+{
+    size_t operator()(const winrt::Windows::Data::Json::IJsonErrorStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::IJsonObject>
+{
+    size_t operator()(const winrt::Windows::Data::Json::IJsonObject & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::IJsonObjectStatics>
+{
+    size_t operator()(const winrt::Windows::Data::Json::IJsonObjectStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::IJsonObjectWithDefaultValues>
+{
+    size_t operator()(const winrt::Windows::Data::Json::IJsonObjectWithDefaultValues & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::IJsonValue>
+{
+    size_t operator()(const winrt::Windows::Data::Json::IJsonValue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::IJsonValueStatics>
+{
+    size_t operator()(const winrt::Windows::Data::Json::IJsonValueStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::IJsonValueStatics2>
+{
+    size_t operator()(const winrt::Windows::Data::Json::IJsonValueStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::JsonArray>
+{
+    size_t operator()(const winrt::Windows::Data::Json::JsonArray & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::JsonObject>
+{
+    size_t operator()(const winrt::Windows::Data::Json::JsonObject & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Json::JsonValue>
+{
+    size_t operator()(const winrt::Windows::Data::Json::JsonValue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

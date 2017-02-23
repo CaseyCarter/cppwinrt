@@ -1999,4 +1999,301 @@ inline Windows::UI::Text::Core::CoreTextServicesManager CoreTextServicesManager:
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextCompositionCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextCompositionSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextCompositionSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextCompositionStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextCompositionStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextEditContext>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextEditContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextEditContext2>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextEditContext2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextFormatUpdatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextLayoutBounds>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextLayoutBounds & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextLayoutRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextLayoutRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextLayoutRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextLayoutRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextSelectionRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextSelectionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextSelectionRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextSelectionRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextSelectionUpdatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextServicesManager>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextServicesManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextServicesManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextServicesManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextServicesStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextServicesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextTextRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextTextRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextTextRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextTextRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::ICoreTextTextUpdatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextCompositionSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextCompositionSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextEditContext>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextEditContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextLayoutBounds>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextLayoutBounds & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextLayoutRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextLayoutRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextSelectionRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextSelectionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextServicesManager>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextServicesManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextTextRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextTextRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextTextRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextTextRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

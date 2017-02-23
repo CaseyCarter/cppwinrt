@@ -468,4 +468,85 @@ inline AtomPubClient::AtomPubClient(const Windows::Security::Credentials::Passwo
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Web::AtomPub::IAtomPubClient>
+{
+    size_t operator()(const winrt::Windows::Web::AtomPub::IAtomPubClient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::AtomPub::IAtomPubClientFactory>
+{
+    size_t operator()(const winrt::Windows::Web::AtomPub::IAtomPubClientFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::AtomPub::IResourceCollection>
+{
+    size_t operator()(const winrt::Windows::Web::AtomPub::IResourceCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::AtomPub::IServiceDocument>
+{
+    size_t operator()(const winrt::Windows::Web::AtomPub::IServiceDocument & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::AtomPub::IWorkspace>
+{
+    size_t operator()(const winrt::Windows::Web::AtomPub::IWorkspace & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::AtomPub::AtomPubClient>
+{
+    size_t operator()(const winrt::Windows::Web::AtomPub::AtomPubClient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::AtomPub::ResourceCollection>
+{
+    size_t operator()(const winrt::Windows::Web::AtomPub::ResourceCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::AtomPub::ServiceDocument>
+{
+    size_t operator()(const winrt::Windows::Web::AtomPub::ServiceDocument & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::AtomPub::Workspace>
+{
+    size_t operator()(const winrt::Windows::Web::AtomPub::Workspace & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

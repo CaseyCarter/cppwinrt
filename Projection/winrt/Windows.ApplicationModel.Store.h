@@ -2062,4 +2062,265 @@ inline ProductPurchaseDisplayProperties::ProductPurchaseDisplayProperties(hstrin
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ICurrentApp>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ICurrentApp & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ICurrentApp2Statics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ICurrentApp2Statics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ICurrentAppSimulator>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ICurrentAppSimulator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ICurrentAppSimulatorStaticsWithFiltering>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ICurrentAppSimulatorStaticsWithFiltering & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ICurrentAppSimulatorWithCampaignId>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ICurrentAppSimulatorWithCampaignId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ICurrentAppSimulatorWithConsumables>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ICurrentAppSimulatorWithConsumables & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ICurrentAppStaticsWithFiltering>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ICurrentAppStaticsWithFiltering & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ICurrentAppWithCampaignId>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ICurrentAppWithCampaignId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ICurrentAppWithConsumables>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ICurrentAppWithConsumables & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ILicenseInformation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ILicenseInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IListingInformation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IListingInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IListingInformation2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IListingInformation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IProductLicense>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IProductLicense & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IProductLicenseWithFulfillment>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IProductLicenseWithFulfillment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IProductListing>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IProductListing & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IProductListing2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IProductListing2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IProductListingWithConsumables>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IProductListingWithConsumables & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IProductListingWithMetadata>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IProductListingWithMetadata & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IProductPurchaseDisplayProperties>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IProductPurchaseDisplayProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IProductPurchaseDisplayPropertiesFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IProductPurchaseDisplayPropertiesFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IPurchaseResults>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IPurchaseResults & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::IUnfulfilledConsumable>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::IUnfulfilledConsumable & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::LicenseInformation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::LicenseInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ListingInformation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ListingInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ProductLicense>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ProductLicense & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ProductListing>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ProductListing & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::PurchaseResults>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::PurchaseResults & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::UnfulfilledConsumable>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::UnfulfilledConsumable & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

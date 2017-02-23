@@ -8663,4 +8663,868 @@ inline hstring KnownContactField::ConvertTypeToName(Windows::ApplicationModel::C
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IAggregateContactManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IAggregateContactManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IAggregateContactManager2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IAggregateContactManager2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContact>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContact & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContact2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContact2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContact3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContact3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactAddress>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactAddress & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactAnnotation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactAnnotation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactAnnotationList>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactAnnotationList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactAnnotationStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactAnnotationStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactBatch>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactBatch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactCardDelayedDataLoader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactCardDelayedDataLoader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactCardOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactCardOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactCardOptions2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactCardOptions2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactChange>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactChangeReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactChangeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactChangeTracker>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactChangeTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactChangedDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactChangedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactConnectedServiceAccount>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactConnectedServiceAccount & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactDate>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactDate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactEmail>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactEmail & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactField>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactField & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactFieldFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactFieldFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactInformation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactInstantMessageField>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactInstantMessageField & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactInstantMessageFieldFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactJobInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactJobInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactLaunchActionVerbsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactList>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactList2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactList2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactListSyncConstraints>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactListSyncConstraints & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactListSyncManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactListSyncManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactListSyncManager2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactListSyncManager2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactLocationField>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactLocationField & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactLocationFieldFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactLocationFieldFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactManagerForUser>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactManagerStatics3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactManagerStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactManagerStatics4>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactManagerStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactMatchReason>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactMatchReason & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactName>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactName & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactPhone>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactPhone & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactPicker>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactPicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactPicker2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactPicker2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactQueryOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactQueryOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactQueryOptionsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactQueryTextSearch>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactQueryTextSearch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactSignificantOther>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactSignificantOther & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactSignificantOther2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactSignificantOther2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactStore2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactStore2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactStoreNotificationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactStoreNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactWebsite>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactWebsite & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IContactWebsite2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IContactWebsite2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IFullContactCardOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IFullContactCardOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::IKnownContactFieldStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::IKnownContactFieldStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::AggregateContactManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::AggregateContactManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::Contact>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::Contact & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactAddress>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactAddress & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactAnnotation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactAnnotation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactAnnotationList>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactAnnotationList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactAnnotationStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactAnnotationStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactBatch>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactBatch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactCardOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactCardOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactChange>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactChangeReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactChangeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactChangeTracker>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactChangeTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactChangedDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactChangedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactDate>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactDate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactEmail>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactEmail & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactField>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactField & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactFieldFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactFieldFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactInformation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactInstantMessageField>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactInstantMessageField & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactJobInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactJobInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactList>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactListSyncConstraints>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactListSyncConstraints & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactListSyncManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactListSyncManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactLocationField>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactLocationField & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactManagerForUser>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactMatchReason>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactMatchReason & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactPhone>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactPhone & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactPicker>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactPicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactQueryOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactQueryOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactQueryTextSearch>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactQueryTextSearch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactSignificantOther>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactSignificantOther & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactStoreNotificationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactStoreNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::ContactWebsite>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::ContactWebsite & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::FullContactCardOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::FullContactCardOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

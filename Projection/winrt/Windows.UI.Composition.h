@@ -7131,4 +7131,1075 @@ inline Compositor::Compositor() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IAmbientLight>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IAmbientLight & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IColorKeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IColorKeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionAnimation2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionAnimation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionAnimationBase>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionAnimationBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionAnimationFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionAnimationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionAnimationGroup>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionAnimationGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionBackdropBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionBackdropBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionBatchCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionBatchCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionBrushFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionBrushFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionClip>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionClip & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionClip2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionClip2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionClipFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionClipFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionColorBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionColorBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionCommitBatch>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionCommitBatch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionDrawingSurface>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionDrawingSurface & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionEasingFunction>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionEasingFunction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionEasingFunctionFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionEasingFunctionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionEffectBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionEffectBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionEffectFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionEffectFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionEffectSourceParameter>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionEffectSourceParameter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionEffectSourceParameterFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionEffectSourceParameterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionGraphicsDevice>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionGraphicsDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionLight>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionLight & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionLightFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionLightFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionMaskBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionMaskBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionNineGridBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionNineGridBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionObject>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionObject & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionObject2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionObject2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionObjectFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionObjectFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionPropertySet>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionPropertySet & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionPropertySet2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionPropertySet2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionScopedBatch>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionScopedBatch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionShadow>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionShadow & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionShadowFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionShadowFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionSurface>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionSurface & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionSurfaceBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionSurfaceBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionSurfaceBrush2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionSurfaceBrush2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionTarget>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionTarget & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositor>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositor2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositor2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IContainerVisual>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IContainerVisual & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IContainerVisualFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IContainerVisualFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICubicBezierEasingFunction>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICubicBezierEasingFunction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IDistantLight>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IDistantLight & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IDropShadow>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IDropShadow & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IExpressionAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IExpressionAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IImplicitAnimationCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IImplicitAnimationCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IInsetClip>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IInsetClip & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IKeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IKeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IKeyFrameAnimation2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IKeyFrameAnimation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IKeyFrameAnimationFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IKeyFrameAnimationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ILayerVisual>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ILayerVisual & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ILinearEasingFunction>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ILinearEasingFunction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IPointLight>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IPointLight & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IQuaternionKeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IQuaternionKeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IRenderingDeviceReplacedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IRenderingDeviceReplacedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IScalarKeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IScalarKeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ISpotLight>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ISpotLight & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ISpriteVisual>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ISpriteVisual & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ISpriteVisual2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ISpriteVisual2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IStepEasingFunction>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IStepEasingFunction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IVector2KeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IVector2KeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IVector3KeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IVector3KeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IVector4KeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IVector4KeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IVisual>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IVisual & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IVisualCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IVisualCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IVisualFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IVisualFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IVisualUnorderedCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IVisualUnorderedCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::AmbientLight>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::AmbientLight & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ColorKeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ColorKeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionAnimationGroup>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionAnimationGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionBackdropBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionBackdropBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionBatchCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionBatchCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionClip>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionClip & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionColorBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionColorBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionCommitBatch>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionCommitBatch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionDrawingSurface>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionDrawingSurface & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionEasingFunction>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionEasingFunction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionEffectBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionEffectBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionEffectFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionEffectFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionEffectSourceParameter>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionEffectSourceParameter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionGraphicsDevice>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionGraphicsDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionLight>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionLight & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionMaskBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionMaskBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionNineGridBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionNineGridBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionObject>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionObject & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionPropertySet>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionPropertySet & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionScopedBatch>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionScopedBatch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionShadow>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionShadow & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionSurfaceBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionSurfaceBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionTarget>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionTarget & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Compositor>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Compositor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ContainerVisual>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ContainerVisual & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CubicBezierEasingFunction>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CubicBezierEasingFunction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::DistantLight>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::DistantLight & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::DropShadow>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::DropShadow & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ExpressionAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ExpressionAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ImplicitAnimationCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ImplicitAnimationCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::InsetClip>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::InsetClip & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::KeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::KeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::LayerVisual>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::LayerVisual & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::LinearEasingFunction>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::LinearEasingFunction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::PointLight>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::PointLight & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::QuaternionKeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::QuaternionKeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::RenderingDeviceReplacedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::RenderingDeviceReplacedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ScalarKeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ScalarKeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::SpotLight>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::SpotLight & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::SpriteVisual>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::SpriteVisual & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::StepEasingFunction>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::StepEasingFunction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Vector2KeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Vector2KeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Vector3KeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Vector3KeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Vector4KeyFrameAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Vector4KeyFrameAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Visual>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Visual & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::VisualCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::VisualCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::VisualUnorderedCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::VisualUnorderedCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

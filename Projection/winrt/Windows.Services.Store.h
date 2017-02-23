@@ -3241,4 +3241,427 @@ inline Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendR
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreAcquireLicenseResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreAcquireLicenseResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreAppLicense>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreAppLicense & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreAvailability>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreAvailability & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreCollectionData>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreCollectionData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreConsumableResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreConsumableResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreContext>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreContextStatics>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreContextStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreImage>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreImage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreLicense>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreLicense & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStorePackageLicense>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStorePackageLicense & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStorePackageUpdate>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStorePackageUpdate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStorePackageUpdateResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStorePackageUpdateResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStorePrice>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStorePrice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreProduct>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreProduct & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreProductPagedQueryResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreProductPagedQueryResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreProductQueryResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreProductQueryResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreProductResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreProductResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStorePurchaseProperties>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStorePurchaseProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStorePurchasePropertiesFactory>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStorePurchasePropertiesFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStorePurchaseResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStorePurchaseResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreRequestHelperStatics>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreRequestHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreSendRequestResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreSendRequestResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreSku>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreSku & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreSubscriptionInfo>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreSubscriptionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreVideo>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreVideo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreAcquireLicenseResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreAcquireLicenseResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreAppLicense>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreAppLicense & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreAvailability>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreAvailability & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreCollectionData>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreCollectionData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreConsumableResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreConsumableResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreContext>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreImage>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreImage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreLicense>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreLicense & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StorePackageLicense>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StorePackageLicense & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StorePackageUpdate>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StorePackageUpdate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StorePackageUpdateResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StorePackageUpdateResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StorePrice>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StorePrice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreProduct>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreProduct & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreProductPagedQueryResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreProductPagedQueryResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreProductQueryResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreProductQueryResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreProductResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreProductResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StorePurchaseProperties>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StorePurchaseProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StorePurchaseResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StorePurchaseResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreSendRequestResult>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreSendRequestResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreSku>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreSku & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreSubscriptionInfo>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreSubscriptionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::StoreVideo>
+{
+    size_t operator()(const winrt::Windows::Services::Store::StoreVideo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

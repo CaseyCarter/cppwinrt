@@ -561,4 +561,58 @@ inline FileInformationFactory::FileInformationFactory(const Windows::Storage::Se
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Storage::BulkAccess::IFileInformationFactory>
+{
+    size_t operator()(const winrt::Windows::Storage::BulkAccess::IFileInformationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::BulkAccess::IFileInformationFactoryFactory>
+{
+    size_t operator()(const winrt::Windows::Storage::BulkAccess::IFileInformationFactoryFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::BulkAccess::IStorageItemInformation>
+{
+    size_t operator()(const winrt::Windows::Storage::BulkAccess::IStorageItemInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::BulkAccess::FileInformation>
+{
+    size_t operator()(const winrt::Windows::Storage::BulkAccess::FileInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::BulkAccess::FileInformationFactory>
+{
+    size_t operator()(const winrt::Windows::Storage::BulkAccess::FileInformationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::BulkAccess::FolderInformation>
+{
+    size_t operator()(const winrt::Windows::Storage::BulkAccess::FolderInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

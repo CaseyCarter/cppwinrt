@@ -729,4 +729,148 @@ inline DialDevicePicker::DialDevicePicker() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::IDialApp>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::IDialApp & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::IDialAppStateDetails>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::IDialAppStateDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::IDialDevice>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::IDialDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::IDialDevice2>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::IDialDevice2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::IDialDevicePicker>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::IDialDevicePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::IDialDevicePickerFilter>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::IDialDevicePickerFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::IDialDeviceSelectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::IDialDeviceSelectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::IDialDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::IDialDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::IDialDisconnectButtonClickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::IDialDisconnectButtonClickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::DialApp>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::DialApp & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::DialAppStateDetails>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::DialAppStateDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::DialDevice>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::DialDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::DialDevicePicker>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::DialDevicePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::DialDevicePickerFilter>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::DialDevicePickerFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::DialDeviceSelectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::DialDeviceSelectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::DialProtocol::DialDisconnectButtonClickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::DialProtocol::DialDisconnectButtonClickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

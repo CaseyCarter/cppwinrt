@@ -35,4 +35,40 @@ inline ValueSet::ValueSet() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Collections::IPropertySet>
+{
+    size_t operator()(const winrt::Windows::Foundation::Collections::IPropertySet & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Collections::PropertySet>
+{
+    size_t operator()(const winrt::Windows::Foundation::Collections::PropertySet & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Collections::StringMap>
+{
+    size_t operator()(const winrt::Windows::Foundation::Collections::StringMap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Collections::ValueSet>
+{
+    size_t operator()(const winrt::Windows::Foundation::Collections::ValueSet & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

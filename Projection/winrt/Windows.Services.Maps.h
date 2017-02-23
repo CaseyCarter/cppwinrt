@@ -1844,4 +1844,256 @@ inline hstring MapService::DataAttributions()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapAddress>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapAddress & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapAddress2>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapAddress2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapLocation>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapLocationFinderResult>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapLocationFinderResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapLocationFinderStatics>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapLocationFinderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapLocationFinderStatics2>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapLocationFinderStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRoute>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRoute & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRoute2>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRoute2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRouteDrivingOptions>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRouteDrivingOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRouteFinderResult>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRouteFinderResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRouteFinderResult2>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRouteFinderResult2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRouteFinderStatics>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRouteFinderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRouteFinderStatics2>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRouteFinderStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRouteLeg>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRouteLeg & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRouteManeuver>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRouteManeuver & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRouteManeuver2>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRouteManeuver2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapServiceStatics>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapServiceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapServiceStatics2>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapServiceStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapServiceStatics3>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapServiceStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::MapAddress>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::MapAddress & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::MapLocation>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::MapLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::MapLocationFinderResult>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::MapLocationFinderResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::MapRoute>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::MapRoute & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::MapRouteDrivingOptions>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::MapRouteDrivingOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::MapRouteFinderResult>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::MapRouteFinderResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::MapRouteLeg>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::MapRouteLeg & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::MapRouteManeuver>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::MapRouteManeuver & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

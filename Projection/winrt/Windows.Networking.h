@@ -412,4 +412,67 @@ inline int32_t HostName::Compare(hstring_view value1, hstring_view value2)
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Networking::IEndpointPair>
+{
+    size_t operator()(const winrt::Windows::Networking::IEndpointPair & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::IEndpointPairFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::IEndpointPairFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::IHostName>
+{
+    size_t operator()(const winrt::Windows::Networking::IHostName & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::IHostNameFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::IHostNameFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::IHostNameStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::IHostNameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::EndpointPair>
+{
+    size_t operator()(const winrt::Windows::Networking::EndpointPair & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::HostName>
+{
+    size_t operator()(const winrt::Windows::Networking::HostName & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

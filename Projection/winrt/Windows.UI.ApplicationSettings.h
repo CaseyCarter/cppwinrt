@@ -786,4 +786,202 @@ inline WebAccountProviderCommand::WebAccountProviderCommand(const Windows::Secur
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::IAccountsSettingsPane>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::IAccountsSettingsPane & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::IAccountsSettingsPaneCommandsRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::IAccountsSettingsPaneEventDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::IAccountsSettingsPaneStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::ICredentialCommand>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::ICredentialCommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::ICredentialCommandFactory>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::ICredentialCommandFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::ISettingsCommandFactory>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::ISettingsCommandFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::ISettingsCommandStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::ISettingsCommandStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::IWebAccountCommand>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::IWebAccountCommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::IWebAccountCommandFactory>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::IWebAccountCommandFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::IWebAccountInvokedArgs>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::IWebAccountInvokedArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::IWebAccountProviderCommand>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::IWebAccountProviderCommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::IWebAccountProviderCommandFactory>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::IWebAccountProviderCommandFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::AccountsSettingsPane>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::AccountsSettingsPane & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::AccountsSettingsPaneEventDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::AccountsSettingsPaneEventDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::CredentialCommand>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::CredentialCommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::SettingsCommand>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::SettingsCommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::WebAccountCommand>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::WebAccountCommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::WebAccountInvokedArgs>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::WebAccountInvokedArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ApplicationSettings::WebAccountProviderCommand>
+{
+    size_t operator()(const winrt::Windows::UI::ApplicationSettings::WebAccountProviderCommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

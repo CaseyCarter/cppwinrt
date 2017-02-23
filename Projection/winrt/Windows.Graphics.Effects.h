@@ -67,4 +67,22 @@ template <typename D> void impl_IGraphicsEffect<D>::Name(hstring_view name) cons
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Effects::IGraphicsEffect>
+{
+    size_t operator()(const winrt::Windows::Graphics::Effects::IGraphicsEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Effects::IGraphicsEffectSource>
+{
+    size_t operator()(const winrt::Windows::Graphics::Effects::IGraphicsEffectSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

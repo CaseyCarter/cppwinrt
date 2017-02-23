@@ -2959,4 +2959,256 @@ inline Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportS
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSourceResult>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSourceResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportFindItemsResult>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportFindItemsResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportFindItemsResult2>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportFindItemsResult2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportImportItemsResult>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportImportItemsResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportItem>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportItemImportedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportItemImportedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportOperation>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportSelectionChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportSelectionChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportSession>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportSession2>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportSession2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportSidecar>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportSidecar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportSource>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportSourceStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportStorageMedium>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportStorageMedium & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::IPhotoImportVideoSegment>
+{
+    size_t operator()(const winrt::Windows::Media::Import::IPhotoImportVideoSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportFindItemsResult>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportFindItemsResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportImportItemsResult>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportImportItemsResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportItem>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportItemImportedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportItemImportedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportOperation>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportSelectionChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportSelectionChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportSession>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportSidecar>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportSidecar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportSource>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportStorageMedium>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportStorageMedium & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Import::PhotoImportVideoSegment>
+{
+    size_t operator()(const winrt::Windows::Media::Import::PhotoImportVideoSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

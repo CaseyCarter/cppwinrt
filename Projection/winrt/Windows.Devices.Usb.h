@@ -3038,4 +3038,454 @@ inline UsbSetupPacket::UsbSetupPacket(const Windows::Storage::Streams::IBuffer &
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbBulkInEndpointDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbBulkInEndpointDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbBulkInPipe>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbBulkInPipe & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbBulkOutEndpointDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbBulkOutPipe>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbBulkOutPipe & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbConfiguration>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbConfigurationDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbConfigurationDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbConfigurationDescriptorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbConfigurationDescriptorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbControlRequestType>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbControlRequestType & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbDeviceClass>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbDeviceClass & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbDeviceClasses>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbDeviceClasses & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbDeviceClassesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbDeviceClassesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbDeviceDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbDeviceDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbEndpointDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbEndpointDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbEndpointDescriptorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbEndpointDescriptorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbInterface>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbInterface & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbInterfaceDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbInterfaceDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbInterfaceDescriptorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbInterfaceDescriptorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbInterfaceSetting>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbInterfaceSetting & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbInterruptInEndpointDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbInterruptInEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbInterruptInEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbInterruptInPipe>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbInterruptInPipe & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbInterruptOutEndpointDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbInterruptOutPipe>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbInterruptOutPipe & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbSetupPacket>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbSetupPacket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::IUsbSetupPacketFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::IUsbSetupPacketFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbBulkInEndpointDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbBulkInEndpointDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbBulkInPipe>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbBulkInPipe & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbBulkOutEndpointDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbBulkOutEndpointDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbBulkOutPipe>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbBulkOutPipe & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbConfiguration>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbConfigurationDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbConfigurationDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbControlRequestType>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbControlRequestType & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbDeviceClass>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbDeviceClass & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbDeviceClasses>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbDeviceClasses & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbDeviceDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbDeviceDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbEndpointDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbEndpointDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbInterface>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbInterface & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbInterfaceDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbInterfaceDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbInterfaceSetting>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbInterfaceSetting & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbInterruptInEndpointDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbInterruptInEndpointDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbInterruptInEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbInterruptInEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbInterruptInPipe>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbInterruptInPipe & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbInterruptOutPipe>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbInterruptOutPipe & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Usb::UsbSetupPacket>
+{
+    size_t operator()(const winrt::Windows::Devices::Usb::UsbSetupPacket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

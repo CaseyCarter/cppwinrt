@@ -4538,4 +4538,688 @@ inline void ToastNotificationManager::ConfigureNotificationMirroring(Windows::UI
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IAdaptiveNotificationContent>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IAdaptiveNotificationContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IAdaptiveNotificationText>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IAdaptiveNotificationText & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IBadgeNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IBadgeNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IBadgeNotificationFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IBadgeNotificationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IBadgeUpdateManagerForUser>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IBadgeUpdateManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IBadgeUpdateManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IBadgeUpdateManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IBadgeUpdateManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IBadgeUpdateManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IBadgeUpdater>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IBadgeUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IKnownAdaptiveNotificationHintsStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IKnownAdaptiveNotificationHintsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IKnownAdaptiveNotificationTextStylesStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IKnownAdaptiveNotificationTextStylesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IKnownNotificationBindingsStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IKnownNotificationBindingsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::INotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::INotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::INotificationBinding>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::INotificationBinding & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::INotificationVisual>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::INotificationVisual & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IScheduledTileNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IScheduledTileNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IScheduledTileNotificationFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IScheduledTileNotificationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IScheduledToastNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IScheduledToastNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IScheduledToastNotification2>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IScheduledToastNotification2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IScheduledToastNotification3>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IScheduledToastNotification3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IScheduledToastNotificationFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IScheduledToastNotificationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IShownTileNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IShownTileNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ITileFlyoutNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ITileFlyoutNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ITileFlyoutNotificationFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ITileFlyoutNotificationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ITileFlyoutUpdateManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ITileFlyoutUpdateManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ITileFlyoutUpdater>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ITileFlyoutUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ITileNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ITileNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ITileNotificationFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ITileNotificationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ITileUpdateManagerForUser>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ITileUpdateManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ITileUpdateManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ITileUpdateManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ITileUpdateManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ITileUpdateManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ITileUpdater>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ITileUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ITileUpdater2>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ITileUpdater2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastDismissedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastDismissedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotification2>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotification2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotification3>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotification3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotificationActionTriggerDetail>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotificationActionTriggerDetail & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotificationFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotificationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotificationHistory>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotificationHistory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotificationHistory2>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotificationHistory2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotificationManagerForUser>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotificationManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotificationManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotificationManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotificationManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotificationManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotificationManagerStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotificationManagerStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IToastNotifier>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IToastNotifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IUserNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IUserNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::IUserNotificationChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::IUserNotificationChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::AdaptiveNotificationText>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::AdaptiveNotificationText & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::BadgeNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::BadgeNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::BadgeUpdateManagerForUser>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::BadgeUpdateManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::BadgeUpdater>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::BadgeUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::Notification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::Notification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::NotificationBinding>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::NotificationBinding & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::NotificationVisual>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::NotificationVisual & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ScheduledTileNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ScheduledTileNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ScheduledToastNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ScheduledToastNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ShownTileNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ShownTileNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::TileFlyoutNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::TileFlyoutNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::TileFlyoutUpdater>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::TileFlyoutUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::TileNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::TileNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::TileUpdateManagerForUser>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::TileUpdateManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::TileUpdater>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::TileUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ToastActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ToastActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ToastDismissedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ToastDismissedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ToastFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ToastFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ToastNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ToastNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ToastNotificationActionTriggerDetail>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ToastNotificationActionTriggerDetail & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ToastNotificationHistory>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ToastNotificationHistory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ToastNotificationHistoryChangedTriggerDetail>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ToastNotificationHistoryChangedTriggerDetail & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ToastNotificationManagerForUser>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ToastNotificationManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::ToastNotifier>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::ToastNotifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::UserNotification>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::UserNotification & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Notifications::UserNotificationChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Notifications::UserNotificationChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

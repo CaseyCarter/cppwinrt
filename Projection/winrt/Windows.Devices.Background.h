@@ -137,4 +137,40 @@ template <typename D> Windows::Foundation::TimeSpan impl_IDeviceServicingDetails
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Background::IDeviceServicingDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Background::IDeviceServicingDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Background::IDeviceUseDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Background::IDeviceUseDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Background::DeviceServicingDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Background::DeviceServicingDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Background::DeviceUseDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Background::DeviceUseDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

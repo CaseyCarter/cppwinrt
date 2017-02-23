@@ -1301,4 +1301,112 @@ inline SocialItemThumbnail::SocialItemThumbnail() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::ISocialFeedChildItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::ISocialFeedContent>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::ISocialFeedContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::ISocialFeedItem>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::ISocialFeedItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::ISocialUserInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::ISocialUserInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::SocialFeedChildItem>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::SocialFeedChildItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::SocialFeedContent>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::SocialFeedContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::SocialFeedItem>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::SocialFeedItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::SocialItemThumbnail>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::SocialItemThumbnail & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::SocialUserInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::SocialUserInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

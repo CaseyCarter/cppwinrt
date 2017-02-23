@@ -1172,4 +1172,238 @@ inline Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::W
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement2>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectAdvertisement2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisherStatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectAdvertisementPublisherStatusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionListener & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionParameters2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionParametersStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionParametersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectConnectionRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectDeviceStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectInformationElement>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectInformationElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectInformationElementStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectInformationElementStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::IWiFiDirectLegacySettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::WiFiDirectAdvertisement>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::WiFiDirectAdvertisement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::WiFiDirectConnectionListener>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::WiFiDirectConnectionListener & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::WiFiDirectDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::WiFiDirectDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::WiFiDirectInformationElement>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::WiFiDirectInformationElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFiDirect::WiFiDirectLegacySettings>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFiDirect::WiFiDirectLegacySettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

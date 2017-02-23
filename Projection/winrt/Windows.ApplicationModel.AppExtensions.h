@@ -768,4 +768,139 @@ inline Windows::ApplicationModel::AppExtensions::AppExtensionCatalog AppExtensio
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtension>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::IAppExtension & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalogStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionCatalogStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageInstalledEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageInstalledEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageStatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageStatusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUninstallingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUninstallingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUpdatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUpdatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::AppExtension>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::AppExtension & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUninstallingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUninstallingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

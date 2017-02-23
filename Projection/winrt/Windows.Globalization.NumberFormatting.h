@@ -1374,4 +1374,229 @@ inline SignificantDigitsNumberRounder::SignificantDigitsNumberRounder() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::ICurrencyFormatter>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::ICurrencyFormatter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::ICurrencyFormatter2>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::ICurrencyFormatter2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::ICurrencyFormatterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::IDecimalFormatterFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::IDecimalFormatterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::IIncrementNumberRounder>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::IIncrementNumberRounder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::INumberFormatter>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::INumberFormatter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::INumberFormatter2>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::INumberFormatter2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::INumberFormatterOptions>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::INumberFormatterOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::INumberParser>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::INumberParser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::INumberRounder>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::INumberRounder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::INumberRounderOption>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::INumberRounderOption & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::INumeralSystemTranslator>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::INumeralSystemTranslator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::INumeralSystemTranslatorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::IPercentFormatterFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::IPercentFormatterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::IPermilleFormatterFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::IPermilleFormatterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::ISignedZeroOption>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::ISignedZeroOption & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::ISignificantDigitsNumberRounder>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::ISignificantDigitsNumberRounder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::ISignificantDigitsOption>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::ISignificantDigitsOption & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::CurrencyFormatter>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::CurrencyFormatter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::DecimalFormatter>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::DecimalFormatter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::IncrementNumberRounder>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::IncrementNumberRounder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::NumeralSystemTranslator>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::NumeralSystemTranslator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::PercentFormatter>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::PercentFormatter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::PermilleFormatter>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::PermilleFormatter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::NumberFormatting::SignificantDigitsNumberRounder>
+{
+    size_t operator()(const winrt::Windows::Globalization::NumberFormatting::SignificantDigitsNumberRounder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

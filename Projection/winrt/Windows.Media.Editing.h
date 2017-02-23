@@ -1663,4 +1663,175 @@ inline MediaOverlayLayer::MediaOverlayLayer(const Windows::Media::Effects::IVide
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IBackgroundAudioTrack>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IBackgroundAudioTrack & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IBackgroundAudioTrackStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IBackgroundAudioTrackStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IEmbeddedAudioTrack>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IEmbeddedAudioTrack & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IMediaClip>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IMediaClip & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IMediaClipStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IMediaClipStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IMediaClipStatics2>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IMediaClipStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IMediaComposition>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IMediaComposition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IMediaComposition2>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IMediaComposition2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IMediaCompositionStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IMediaCompositionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IMediaOverlay>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IMediaOverlay & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IMediaOverlayFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IMediaOverlayFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IMediaOverlayLayer>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IMediaOverlayLayer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::IMediaOverlayLayerFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::IMediaOverlayLayerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::BackgroundAudioTrack>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::BackgroundAudioTrack & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::EmbeddedAudioTrack>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::EmbeddedAudioTrack & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::MediaClip>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::MediaClip & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::MediaComposition>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::MediaComposition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::MediaOverlay>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::MediaOverlay & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Editing::MediaOverlayLayer>
+{
+    size_t operator()(const winrt::Windows::Media::Editing::MediaOverlayLayer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

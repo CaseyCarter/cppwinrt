@@ -3785,4 +3785,571 @@ inline AllJoynWatcherStoppedEventArgs::AllJoynWatcherStoppedEventArgs(int32_t st
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynAboutData>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynAboutData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynAboutDataView>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynAboutDataView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynAboutDataViewStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoinerEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynAuthenticationCompleteEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynBusAttachment>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynBusAttachment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynBusAttachment2>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynBusAttachment2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynBusAttachmentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynBusAttachmentStateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynBusAttachmentStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynBusObject>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynBusObject & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynBusObjectFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynBusObjectFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynBusObjectStoppedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynCredentials>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynCredentials & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynCredentialsRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynCredentialsVerificationRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynMessageInfo>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynMessageInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynMessageInfoFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynProducer>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynProducer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynProducerStoppedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynServiceInfo>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynServiceInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynServiceInfoFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynServiceInfoRemovedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynServiceInfoStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynSession>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynSessionJoinedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynSessionLostEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynSessionMemberAddedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynSessionMemberRemovedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynSessionStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynSessionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynStatusStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynStatusStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::IAllJoynWatcherStoppedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynAboutData>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynAboutData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynAboutDataView>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynAboutDataView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynBusAttachment>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynBusAttachment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynBusObject>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynBusObject & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynCredentials>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynCredentials & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynMessageInfo>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynMessageInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynServiceInfo>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynServiceInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynSession>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -4676,4 +4676,355 @@ inline Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider Symm
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IAsymmetricAlgorithmNamesStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProvider2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProvider2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProviderStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IAsymmetricKeyAlgorithmProviderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::ICryptographicEngineStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::ICryptographicEngineStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::ICryptographicEngineStatics2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::ICryptographicEngineStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::ICryptographicKey>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::ICryptographicKey & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IEccCurveNamesStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IEccCurveNamesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IEncryptedAndAuthenticatedData>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IEncryptedAndAuthenticatedData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IHashAlgorithmNamesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IHashAlgorithmProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IHashAlgorithmProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IHashAlgorithmProviderStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IHashAlgorithmProviderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IHashComputation>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IHashComputation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmNamesStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProviderStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IKeyDerivationAlgorithmProviderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IKeyDerivationParameters>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IKeyDerivationParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IKeyDerivationParameters2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IKeyDerivationParameters2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IKeyDerivationParametersStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IMacAlgorithmNamesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IMacAlgorithmProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IMacAlgorithmProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IMacAlgorithmProvider2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IMacAlgorithmProvider2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IMacAlgorithmProviderStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IMacAlgorithmProviderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::IPersistedKeyProviderStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::IPersistedKeyProviderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::ISymmetricAlgorithmNamesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProviderStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::ISymmetricKeyAlgorithmProviderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::CryptographicHash>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::CryptographicHash & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::CryptographicKey>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::CryptographicKey & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::EncryptedAndAuthenticatedData>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::EncryptedAndAuthenticatedData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::HashAlgorithmProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::HashAlgorithmProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::KeyDerivationParameters>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::KeyDerivationParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::MacAlgorithmProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::MacAlgorithmProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

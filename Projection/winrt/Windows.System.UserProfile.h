@@ -440,4 +440,103 @@ inline bool UserProfilePersonalizationSettings::IsSupported()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::IAdvertisingManagerForUser>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::IAdvertisingManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::IAdvertisingManagerStatics>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::IAdvertisingManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::IAdvertisingManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::IAdvertisingManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::IFirstSignInSettings>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::IFirstSignInSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::IFirstSignInSettingsStatics>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::IFirstSignInSettingsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::IGlobalizationPreferencesStatics>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::IGlobalizationPreferencesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::IUserProfilePersonalizationSettings>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::IUserProfilePersonalizationSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::IUserProfilePersonalizationSettingsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::AdvertisingManagerForUser>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::AdvertisingManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::FirstSignInSettings>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::FirstSignInSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::UserProfilePersonalizationSettings>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::UserProfilePersonalizationSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

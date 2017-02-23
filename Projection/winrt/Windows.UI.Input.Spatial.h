@@ -2273,4 +2273,490 @@ inline Windows::UI::Input::Spatial::SpatialPointerPose SpatialPointerPose::TryGe
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialGestureRecognizer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialGestureRecognizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialGestureRecognizerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialGestureRecognizerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialHoldCanceledEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialHoldCanceledEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialHoldCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialHoldCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialHoldStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialHoldStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteraction>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteraction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionManager>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSource>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceProperties>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceState>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceState & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialManipulationCanceledEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialManipulationCanceledEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialManipulationCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialManipulationCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialManipulationDelta>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialManipulationDelta & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialManipulationStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialManipulationStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialManipulationUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialManipulationUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialNavigationCanceledEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialNavigationCanceledEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialNavigationCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialNavigationCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialNavigationUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialNavigationUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialPointerPose>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialPointerPose & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialPointerPoseStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialPointerPoseStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialRecognitionEndedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialRecognitionEndedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialRecognitionStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialRecognitionStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialTappedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialTappedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialGestureRecognizer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialGestureRecognizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialInteraction>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialInteraction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialInteractionManager>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialInteractionManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialInteractionSource>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialInteractionSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceLocation>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceProperties>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceState>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialInteractionSourceState & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialManipulationDelta>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialManipulationDelta & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialPointerPose>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialPointerPose & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialTappedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialTappedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

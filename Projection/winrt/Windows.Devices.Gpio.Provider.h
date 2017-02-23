@@ -381,4 +381,58 @@ inline GpioPinProviderValueChangedEventArgs::GpioPinProviderValueChangedEventArg
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::Provider::IGpioControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::Provider::IGpioControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::Provider::IGpioPinProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::Provider::IGpioPinProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::Provider::IGpioPinProviderValueChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::Provider::IGpioPinProviderValueChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::Provider::IGpioPinProviderValueChangedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::Provider::IGpioPinProviderValueChangedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::Provider::IGpioProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::Provider::IGpioProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

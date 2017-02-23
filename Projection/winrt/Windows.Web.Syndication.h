@@ -3181,4 +3181,310 @@ inline SyndicationText::SyndicationText(hstring_view text, Windows::Web::Syndica
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationAttribute>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationAttribute & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationAttributeFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationAttributeFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationCategory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationCategory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationCategoryFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationCategoryFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationClient>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationClient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationClientFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationClientFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationContent>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationContentFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationContentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationErrorStatics>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationErrorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationFeed>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationFeed & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationFeedFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationFeedFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationGenerator>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationGeneratorFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationGeneratorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationItem>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationItemFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationLink>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationLink & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationLinkFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationLinkFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationNode>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationNodeFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationNodeFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationPerson>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationPerson & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationPersonFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationPersonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationText>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationText & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::ISyndicationTextFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::ISyndicationTextFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::SyndicationAttribute>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::SyndicationAttribute & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::SyndicationCategory>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::SyndicationCategory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::SyndicationClient>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::SyndicationClient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::SyndicationContent>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::SyndicationContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::SyndicationFeed>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::SyndicationFeed & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::SyndicationGenerator>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::SyndicationGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::SyndicationItem>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::SyndicationItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::SyndicationLink>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::SyndicationLink & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::SyndicationNode>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::SyndicationNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::SyndicationPerson>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::SyndicationPerson & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Syndication::SyndicationText>
+{
+    size_t operator()(const winrt::Windows::Web::Syndication::SyndicationText & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

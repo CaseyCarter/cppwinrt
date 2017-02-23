@@ -479,4 +479,76 @@ inline RatedContentRestrictions::RatedContentRestrictions(uint32_t maxAgeRating)
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::ContentRestrictions::IContentRestrictionsBrowsePolicy>
+{
+    size_t operator()(const winrt::Windows::Media::ContentRestrictions::IContentRestrictionsBrowsePolicy & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ContentRestrictions::IRatedContentDescription>
+{
+    size_t operator()(const winrt::Windows::Media::ContentRestrictions::IRatedContentDescription & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ContentRestrictions::IRatedContentDescriptionFactory>
+{
+    size_t operator()(const winrt::Windows::Media::ContentRestrictions::IRatedContentDescriptionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ContentRestrictions::IRatedContentRestrictions>
+{
+    size_t operator()(const winrt::Windows::Media::ContentRestrictions::IRatedContentRestrictions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ContentRestrictions::IRatedContentRestrictionsFactory>
+{
+    size_t operator()(const winrt::Windows::Media::ContentRestrictions::IRatedContentRestrictionsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy>
+{
+    size_t operator()(const winrt::Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ContentRestrictions::RatedContentDescription>
+{
+    size_t operator()(const winrt::Windows::Media::ContentRestrictions::RatedContentDescription & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::ContentRestrictions::RatedContentRestrictions>
+{
+    size_t operator()(const winrt::Windows::Media::ContentRestrictions::RatedContentRestrictions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

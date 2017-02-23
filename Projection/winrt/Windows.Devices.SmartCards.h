@@ -1310,4 +1310,229 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartC
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ICardAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ICardAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ICardRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ICardRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCard>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCard & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardChallengeContext>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardChallengeContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardConnect>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardConnect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardConnection>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardPinPolicy>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardPinPolicy & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardPinResetDeferral>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardPinResetDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardPinResetRequest>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardPinResetRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardProvisioning>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardProvisioning & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardProvisioning2>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardProvisioning2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardProvisioningStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardProvisioningStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardProvisioningStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardProvisioningStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardReader>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::ISmartCardReaderStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::ISmartCardReaderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::CardAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::CardAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::CardRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::CardRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::SmartCard>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::SmartCard & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::SmartCardChallengeContext>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::SmartCardChallengeContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::SmartCardConnection>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::SmartCardConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::SmartCardPinPolicy>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::SmartCardPinPolicy & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::SmartCardPinResetDeferral>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::SmartCardPinResetDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::SmartCardPinResetRequest>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::SmartCardPinResetRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::SmartCardProvisioning>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::SmartCardProvisioning & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SmartCards::SmartCardReader>
+{
+    size_t operator()(const winrt::Windows::Devices::SmartCards::SmartCardReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

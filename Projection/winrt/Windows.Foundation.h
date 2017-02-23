@@ -935,4 +935,184 @@ inline WwwFormUrlDecoder::WwwFormUrlDecoder(hstring_view query) :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IClosable>
+{
+    size_t operator()(const winrt::Windows::Foundation::IClosable & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IDeferral>
+{
+    size_t operator()(const winrt::Windows::Foundation::IDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IDeferralFactory>
+{
+    size_t operator()(const winrt::Windows::Foundation::IDeferralFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IGetActivationFactory>
+{
+    size_t operator()(const winrt::Windows::Foundation::IGetActivationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IMemoryBuffer>
+{
+    size_t operator()(const winrt::Windows::Foundation::IMemoryBuffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IMemoryBufferFactory>
+{
+    size_t operator()(const winrt::Windows::Foundation::IMemoryBufferFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IMemoryBufferReference>
+{
+    size_t operator()(const winrt::Windows::Foundation::IMemoryBufferReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IStringable>
+{
+    size_t operator()(const winrt::Windows::Foundation::IStringable & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IUriEscapeStatics>
+{
+    size_t operator()(const winrt::Windows::Foundation::IUriEscapeStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IUriRuntimeClass>
+{
+    size_t operator()(const winrt::Windows::Foundation::IUriRuntimeClass & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IUriRuntimeClassFactory>
+{
+    size_t operator()(const winrt::Windows::Foundation::IUriRuntimeClassFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri>
+{
+    size_t operator()(const winrt::Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IWwwFormUrlDecoderEntry>
+{
+    size_t operator()(const winrt::Windows::Foundation::IWwwFormUrlDecoderEntry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IWwwFormUrlDecoderRuntimeClass>
+{
+    size_t operator()(const winrt::Windows::Foundation::IWwwFormUrlDecoderRuntimeClass & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFactory>
+{
+    size_t operator()(const winrt::Windows::Foundation::IWwwFormUrlDecoderRuntimeClassFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Deferral>
+{
+    size_t operator()(const winrt::Windows::Foundation::Deferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::MemoryBuffer>
+{
+    size_t operator()(const winrt::Windows::Foundation::MemoryBuffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Uri>
+{
+    size_t operator()(const winrt::Windows::Foundation::Uri & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::WwwFormUrlDecoder>
+{
+    size_t operator()(const winrt::Windows::Foundation::WwwFormUrlDecoder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::WwwFormUrlDecoderEntry>
+{
+    size_t operator()(const winrt::Windows::Foundation::WwwFormUrlDecoderEntry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

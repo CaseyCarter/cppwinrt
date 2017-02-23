@@ -642,4 +642,76 @@ inline DnssdServiceInstance::DnssdServiceInstance(hstring_view dnssdServiceInsta
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Networking::ServiceDiscovery::Dnssd::IDnssdRegistrationResult>
+{
+    size_t operator()(const winrt::Windows::Networking::ServiceDiscovery::Dnssd::IDnssdRegistrationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceInstance>
+{
+    size_t operator()(const winrt::Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceInstance & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceInstanceFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceInstanceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWatcher>
+{
+    size_t operator()(const winrt::Windows::Networking::ServiceDiscovery::Dnssd::IDnssdServiceWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult>
+{
+    size_t operator()(const winrt::Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance>
+{
+    size_t operator()(const winrt::Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstanceCollection>
+{
+    size_t operator()(const winrt::Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstanceCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher>
+{
+    size_t operator()(const winrt::Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

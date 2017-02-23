@@ -667,4 +667,85 @@ inline NotifyCollectionChangedEventArgs::NotifyCollectionChangedEventArgs(Window
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Interop::IBindableIterable>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Interop::IBindableIterable & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Interop::IBindableIterator>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Interop::IBindableIterator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Interop::IBindableObservableVector>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Interop::IBindableObservableVector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Interop::IBindableVector>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Interop::IBindableVector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Interop::IBindableVectorView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Interop::IBindableVectorView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Interop::INotifyCollectionChanged>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Interop::INotifyCollectionChanged & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -336,4 +336,13 @@ inline Windows::Media::ClosedCaptioning::ClosedCaptionOpacity ClosedCaptionPrope
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Media::ClosedCaptioning::IClosedCaptionPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

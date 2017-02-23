@@ -179,4 +179,22 @@ inline void ForegroundEnergyDiagnostics::ResetTotalEnergyUsage()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnosticsStatics>
+{
+    size_t operator()(const winrt::Windows::System::Power::Diagnostics::IBackgroundEnergyDiagnosticsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Power::Diagnostics::IForegroundEnergyDiagnosticsStatics>
+{
+    size_t operator()(const winrt::Windows::System::Power::Diagnostics::IForegroundEnergyDiagnosticsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

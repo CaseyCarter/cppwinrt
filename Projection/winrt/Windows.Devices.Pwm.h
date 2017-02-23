@@ -380,4 +380,58 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Pwm::IPwmController>
+{
+    size_t operator()(const winrt::Windows::Devices::Pwm::IPwmController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Pwm::IPwmControllerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Pwm::IPwmControllerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Pwm::IPwmControllerStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Pwm::IPwmControllerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Pwm::IPwmPin>
+{
+    size_t operator()(const winrt::Windows::Devices::Pwm::IPwmPin & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Pwm::PwmController>
+{
+    size_t operator()(const winrt::Windows::Devices::Pwm::PwmController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Pwm::PwmPin>
+{
+    size_t operator()(const winrt::Windows::Devices::Pwm::PwmPin & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

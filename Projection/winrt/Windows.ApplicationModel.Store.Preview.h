@@ -908,4 +908,112 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::IStoreHardwareManufacturerInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::IStoreHardwareManufacturerInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::IStorePreview>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::IStorePreview & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewProductInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewProductInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewPurchaseResults>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewPurchaseResults & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

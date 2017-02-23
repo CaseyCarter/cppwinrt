@@ -745,4 +745,139 @@ inline Windows::System::Diagnostics::ProcessDiagnosticInfo ProcessDiagnosticInfo
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::IProcessCpuUsage>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::IProcessCpuUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::IProcessCpuUsageReport>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::IProcessCpuUsageReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::IProcessDiagnosticInfo>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::IProcessDiagnosticInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::IProcessDiagnosticInfoStatics>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::IProcessDiagnosticInfoStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::IProcessDiskUsage>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::IProcessDiskUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::IProcessDiskUsageReport>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::IProcessDiskUsageReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::IProcessMemoryUsage>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::IProcessMemoryUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::IProcessMemoryUsageReport>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::IProcessMemoryUsageReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::ProcessCpuUsage>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::ProcessCpuUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::ProcessCpuUsageReport>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::ProcessCpuUsageReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::ProcessDiagnosticInfo>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::ProcessDiagnosticInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::ProcessDiskUsage>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::ProcessDiskUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::ProcessDiskUsageReport>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::ProcessDiskUsageReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::ProcessMemoryUsage>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::ProcessMemoryUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Diagnostics::ProcessMemoryUsageReport>
+{
+    size_t operator()(const winrt::Windows::System::Diagnostics::ProcessMemoryUsageReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

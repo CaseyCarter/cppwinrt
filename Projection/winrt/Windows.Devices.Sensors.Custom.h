@@ -306,4 +306,67 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::C
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Custom::ICustomSensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Custom::ICustomSensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Custom::ICustomSensorReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Custom::ICustomSensorReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Custom::ICustomSensorReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Custom::ICustomSensorReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Custom::ICustomSensorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Custom::ICustomSensorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Custom::CustomSensor>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Custom::CustomSensor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Custom::CustomSensorReading>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Custom::CustomSensorReading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Sensors::Custom::CustomSensorReadingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Sensors::Custom::CustomSensorReadingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

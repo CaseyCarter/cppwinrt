@@ -656,4 +656,121 @@ inline RampForceEffect::RampForceEffect() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::IConditionForceEffect>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::IConditionForceEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::IConditionForceEffectFactory>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::IConditionForceEffectFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::IConstantForceEffect>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::IConstantForceEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffect>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffectFactory>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::IPeriodicForceEffectFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::IRampForceEffect>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::IRampForceEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::ConditionForceEffect>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::ConditionForceEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::ConstantForceEffect>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::ConstantForceEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::PeriodicForceEffect>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::PeriodicForceEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ForceFeedback::RampForceEffect>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ForceFeedback::RampForceEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -298,4 +298,49 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IVariablePhotoSeque
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Core::IVariablePhotoCapturedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Core::IVariablePhotoCapturedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Core::IVariablePhotoSequenceCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Core::IVariablePhotoSequenceCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Core::IVariablePhotoSequenceCapture2>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Core::IVariablePhotoSequenceCapture2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Core::VariablePhotoSequenceCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Core::VariablePhotoSequenceCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -3775,4 +3775,571 @@ inline Windows::UI::Core::SystemNavigationManager SystemNavigationManager::GetFo
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IAcceleratorKeyEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IAcceleratorKeyEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IAcceleratorKeyEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IAcceleratorKeyEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IAutomationProviderRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IAutomationProviderRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IBackRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IBackRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICharacterReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICharacterReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreAcceleratorKeys>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreAcceleratorKeys & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreClosestInteractiveBoundsRequested>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreClosestInteractiveBoundsRequested & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreComponentFocusable>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreComponentFocusable & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreCursor>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreCursor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreCursorFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreCursorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreDispatcher>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreDispatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreDispatcher2>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreDispatcher2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreDispatcherWithTaskPriority>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreDispatcherWithTaskPriority & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreInputSourceBase>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreInputSourceBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreKeyboardInputSource>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreKeyboardInputSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreKeyboardInputSource2>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreKeyboardInputSource2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICorePointerInputSource>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICorePointerInputSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICorePointerRedirector>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICorePointerRedirector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreTouchHitTesting>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreTouchHitTesting & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreWindow>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreWindow & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreWindow2>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreWindow2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreWindow3>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreWindow3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreWindowEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreWindowEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreWindowResizeManager>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreWindowResizeManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreWindowResizeManagerLayoutCapability>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreWindowResizeManagerLayoutCapability & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreWindowResizeManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreWindowResizeManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreWindowStatic>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreWindowStatic & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IIdleDispatchedHandlerArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IIdleDispatchedHandlerArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IInitializeWithCoreWindow>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IInitializeWithCoreWindow & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IInputEnabledEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IInputEnabledEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IKeyEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IKeyEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IKeyEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IKeyEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IPointerEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IPointerEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ISystemNavigationManager>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ISystemNavigationManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ISystemNavigationManager2>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ISystemNavigationManager2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ISystemNavigationManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ISystemNavigationManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ITouchHitTestingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ITouchHitTestingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IVisibilityChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IVisibilityChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IWindowActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IWindowActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IWindowSizeChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IWindowSizeChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::AcceleratorKeyEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::AcceleratorKeyEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::AutomationProviderRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::AutomationProviderRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::BackRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::BackRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::CharacterReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::CharacterReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::CoreAcceleratorKeys>
+{
+    size_t operator()(const winrt::Windows::UI::Core::CoreAcceleratorKeys & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::CoreComponentInputSource>
+{
+    size_t operator()(const winrt::Windows::UI::Core::CoreComponentInputSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::CoreCursor>
+{
+    size_t operator()(const winrt::Windows::UI::Core::CoreCursor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::CoreDispatcher>
+{
+    size_t operator()(const winrt::Windows::UI::Core::CoreDispatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::CoreIndependentInputSource>
+{
+    size_t operator()(const winrt::Windows::UI::Core::CoreIndependentInputSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::CoreWindow>
+{
+    size_t operator()(const winrt::Windows::UI::Core::CoreWindow & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::CoreWindowEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::CoreWindowEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::CoreWindowResizeManager>
+{
+    size_t operator()(const winrt::Windows::UI::Core::CoreWindowResizeManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::IdleDispatchedHandlerArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::IdleDispatchedHandlerArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::InputEnabledEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::InputEnabledEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::KeyEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::KeyEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::PointerEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::PointerEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::SystemNavigationManager>
+{
+    size_t operator()(const winrt::Windows::UI::Core::SystemNavigationManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::TouchHitTestingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::TouchHitTestingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::VisibilityChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::VisibilityChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::WindowActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::WindowActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::WindowSizeChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Core::WindowSizeChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -4773,4 +4773,661 @@ inline ReverbEffectDefinition::ReverbEffectDefinition(const Windows::Media::Audi
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioDeviceInputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioDeviceInputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioDeviceOutputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioDeviceOutputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioFileInputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioFileInputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioFileOutputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioFileOutputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioFrameCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioFrameCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioFrameInputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioFrameInputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioFrameOutputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioFrameOutputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioGraph>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioGraph & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioGraph2>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioGraph2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioGraphConnection>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioGraphConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioGraphSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioGraphSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioGraphSettingsFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioGraphSettingsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioGraphStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioGraphStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioGraphUnrecoverableErrorOccurredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioGraphUnrecoverableErrorOccurredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioInputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioInputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioInputNode2>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioInputNode2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNodeEmitter>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNodeEmitter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNodeEmitter2>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNodeEmitter2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNodeEmitterConeProperties>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNodeEmitterConeProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNodeEmitterDecayModel>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNodeEmitterDecayModel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNodeEmitterDecayModelStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNodeEmitterDecayModelStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNodeEmitterFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNodeEmitterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNodeEmitterNaturalDecayModelProperties>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNodeEmitterNaturalDecayModelProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNodeEmitterShape>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNodeEmitterShape & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNodeEmitterShapeStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNodeEmitterShapeStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNodeListener>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNodeListener & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IAudioNodeWithListener>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IAudioNodeWithListener & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::ICreateAudioDeviceInputNodeResult>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::ICreateAudioDeviceInputNodeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::ICreateAudioDeviceOutputNodeResult>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::ICreateAudioDeviceOutputNodeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::ICreateAudioFileInputNodeResult>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::ICreateAudioFileInputNodeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::ICreateAudioFileOutputNodeResult>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::ICreateAudioFileOutputNodeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::ICreateAudioGraphResult>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::ICreateAudioGraphResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IEchoEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IEchoEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IEchoEffectDefinitionFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IEchoEffectDefinitionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IEqualizerBand>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IEqualizerBand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IEqualizerEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IEqualizerEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IEqualizerEffectDefinitionFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IEqualizerEffectDefinitionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IFrameInputNodeQuantumStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IFrameInputNodeQuantumStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::ILimiterEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::ILimiterEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::ILimiterEffectDefinitionFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::ILimiterEffectDefinitionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IReverbEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IReverbEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::IReverbEffectDefinitionFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::IReverbEffectDefinitionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioDeviceInputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioDeviceInputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioDeviceOutputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioDeviceOutputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioFileInputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioFileInputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioFileOutputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioFileOutputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioFrameCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioFrameCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioFrameInputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioFrameInputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioFrameOutputNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioFrameOutputNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioGraph>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioGraph & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioGraphBatchUpdater>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioGraphBatchUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioGraphConnection>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioGraphConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioGraphSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioGraphSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioNodeEmitter>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioNodeEmitter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioNodeEmitterConeProperties>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioNodeEmitterConeProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioNodeEmitterDecayModel>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioNodeEmitterDecayModel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioNodeEmitterNaturalDecayModelProperties>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioNodeEmitterNaturalDecayModelProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioNodeEmitterShape>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioNodeEmitterShape & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioNodeListener>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioNodeListener & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::AudioSubmixNode>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::AudioSubmixNode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::CreateAudioDeviceInputNodeResult>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::CreateAudioDeviceInputNodeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::CreateAudioDeviceOutputNodeResult>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::CreateAudioDeviceOutputNodeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::CreateAudioFileInputNodeResult>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::CreateAudioFileInputNodeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::CreateAudioFileOutputNodeResult>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::CreateAudioFileOutputNodeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::CreateAudioGraphResult>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::CreateAudioGraphResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::EchoEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::EchoEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::EqualizerBand>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::EqualizerBand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::EqualizerEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::EqualizerEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::LimiterEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::LimiterEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Audio::ReverbEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Audio::ReverbEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -497,4 +497,103 @@ inline void CachedFileUpdater::SetUpdateInformation(const Windows::Storage::ISto
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Storage::Provider::ICachedFileUpdaterStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::Provider::ICachedFileUpdaterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Provider::ICachedFileUpdaterUI>
+{
+    size_t operator()(const winrt::Windows::Storage::Provider::ICachedFileUpdaterUI & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Provider::ICachedFileUpdaterUI2>
+{
+    size_t operator()(const winrt::Windows::Storage::Provider::ICachedFileUpdaterUI2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Provider::IFileUpdateRequest>
+{
+    size_t operator()(const winrt::Windows::Storage::Provider::IFileUpdateRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Provider::IFileUpdateRequest2>
+{
+    size_t operator()(const winrt::Windows::Storage::Provider::IFileUpdateRequest2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Provider::IFileUpdateRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::Storage::Provider::IFileUpdateRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Provider::IFileUpdateRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Storage::Provider::IFileUpdateRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Provider::CachedFileUpdaterUI>
+{
+    size_t operator()(const winrt::Windows::Storage::Provider::CachedFileUpdaterUI & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Provider::FileUpdateRequest>
+{
+    size_t operator()(const winrt::Windows::Storage::Provider::FileUpdateRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Provider::FileUpdateRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::Storage::Provider::FileUpdateRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Provider::FileUpdateRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Storage::Provider::FileUpdateRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

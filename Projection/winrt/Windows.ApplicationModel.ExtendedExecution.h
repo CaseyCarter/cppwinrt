@@ -242,4 +242,40 @@ inline ExtendedExecutionSession::ExtendedExecutionSession() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionRevokedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionRevokedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionSession>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -1300,4 +1300,229 @@ inline PerceptionVideoFrameAllocator::PerceptionVideoFrameAllocator(uint32_t max
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IKnownPerceptionFrameKindStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IKnownPerceptionFrameKindStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionControlGroup>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionControlGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionControlGroupFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionControlGroupFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionCorrelation>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionCorrelation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionCorrelationFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionCorrelationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionCorrelationGroup>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionCorrelationGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionCorrelationGroupFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionCorrelationGroupFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroupFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroupFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionFrame>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionFrameProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionFrameProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionFrameProviderInfo>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionFrameProviderInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionFrameProviderManagerServiceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionFrameProviderManagerServiceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionPropertyChangeRequest>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionPropertyChangeRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionVideoFrameAllocator>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionVideoFrameAllocator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::IPerceptionVideoFrameAllocatorFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::IPerceptionVideoFrameAllocatorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::PerceptionControlGroup>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::PerceptionControlGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::PerceptionCorrelation>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::PerceptionCorrelation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::PerceptionCorrelationGroup>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::PerceptionCorrelationGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::PerceptionFrame>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::PerceptionFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::Provider::PerceptionVideoFrameAllocator>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::Provider::PerceptionVideoFrameAllocator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

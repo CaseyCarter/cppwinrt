@@ -2721,4 +2721,364 @@ inline hstring StandardDataFormats::ApplicationLink()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IClipboardStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IClipboardStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackage>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackage2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackage2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView4>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataPackageView4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataProviderDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataProviderDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataProviderRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataProviderRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataTransferManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataTransferManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IHtmlFormatHelperStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IHtmlFormatHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::IStandardDataFormatsStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::ITargetApplicationChosenEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::ITargetApplicationChosenEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DataPackage>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DataPackage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DataPackagePropertySet>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DataPackagePropertySet & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DataPackageView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DataPackageView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DataProviderDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DataProviderDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DataProviderRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DataProviderRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DataRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DataRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DataRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DataRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DataTransferManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DataTransferManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

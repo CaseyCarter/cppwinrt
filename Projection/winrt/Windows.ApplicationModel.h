@@ -2100,4 +2100,364 @@ inline Windows::ApplicationModel::PackageCatalog PackageCatalog::OpenForCurrentU
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IAppDisplayInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IAppDisplayInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IAppInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IAppInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IDesignModeStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IDesignModeStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IEnteredBackgroundEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IEnteredBackgroundEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::ILeavingBackgroundEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::ILeavingBackgroundEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackage>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackage2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackage2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackage3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackage3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackage4>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackage4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageCatalog>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageCatalog & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageCatalogStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageCatalogStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageId>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageIdWithMetadata>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageIdWithMetadata & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageInstallingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageInstallingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageStagingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageStagingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageStatus>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageStatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageStatusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageUninstallingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageUninstallingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageUpdatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageUpdatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageWithMetadata>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageWithMetadata & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::ISuspendingDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::ISuspendingDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::ISuspendingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::ISuspendingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::ISuspendingOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::ISuspendingOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppDisplayInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppDisplayInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::EnteredBackgroundEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::EnteredBackgroundEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LeavingBackgroundEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LeavingBackgroundEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Package>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Package & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::PackageCatalog>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::PackageCatalog & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::PackageId>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::PackageId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::PackageInstallingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::PackageInstallingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::PackageStagingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::PackageStagingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::PackageStatus>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::PackageStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::PackageStatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::PackageStatusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::PackageUninstallingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::PackageUninstallingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::PackageUpdatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::PackageUpdatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SuspendingDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SuspendingDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SuspendingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SuspendingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SuspendingOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SuspendingOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

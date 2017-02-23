@@ -1267,4 +1267,193 @@ inline VoiceCommandUserMessage::VoiceCommandUserMessage() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommand>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandConfirmationResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandConfirmationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandContentTile>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandContentTile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinition>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinitionManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandDefinitionManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandDisambiguationResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandDisambiguationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponse>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponse & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponseStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandResponseStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnectionStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandServiceConnectionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMessage>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::IVoiceCommandUserMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommand>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandConfirmationResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandConfirmationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandDisambiguationResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandDisambiguationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

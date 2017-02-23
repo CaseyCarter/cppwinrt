@@ -373,4 +373,85 @@ inline Windows::Media::Ocr::OcrEngine OcrEngine::TryCreateFromUserProfileLanguag
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Ocr::IOcrEngine>
+{
+    size_t operator()(const winrt::Windows::Media::Ocr::IOcrEngine & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Ocr::IOcrEngineStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Ocr::IOcrEngineStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Ocr::IOcrLine>
+{
+    size_t operator()(const winrt::Windows::Media::Ocr::IOcrLine & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Ocr::IOcrResult>
+{
+    size_t operator()(const winrt::Windows::Media::Ocr::IOcrResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Ocr::IOcrWord>
+{
+    size_t operator()(const winrt::Windows::Media::Ocr::IOcrWord & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Ocr::OcrEngine>
+{
+    size_t operator()(const winrt::Windows::Media::Ocr::OcrEngine & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Ocr::OcrLine>
+{
+    size_t operator()(const winrt::Windows::Media::Ocr::OcrLine & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Ocr::OcrResult>
+{
+    size_t operator()(const winrt::Windows::Media::Ocr::OcrResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Ocr::OcrWord>
+{
+    size_t operator()(const winrt::Windows::Media::Ocr::OcrWord & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

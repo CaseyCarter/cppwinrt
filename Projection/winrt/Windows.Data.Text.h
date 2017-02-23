@@ -1443,4 +1443,256 @@ inline WordsSegmenter::WordsSegmenter(hstring_view language) :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::IAlternateWordForm>
+{
+    size_t operator()(const winrt::Windows::Data::Text::IAlternateWordForm & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ISelectableWordSegment>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ISelectableWordSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ISelectableWordsSegmenter>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ISelectableWordsSegmenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ISelectableWordsSegmenterFactory>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ISelectableWordsSegmenterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ISemanticTextQuery>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ISemanticTextQuery & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ISemanticTextQueryFactory>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ISemanticTextQueryFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ITextConversionGenerator>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ITextConversionGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ITextConversionGeneratorFactory>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ITextConversionGeneratorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ITextPhoneme>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ITextPhoneme & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ITextPredictionGenerator>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ITextPredictionGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ITextPredictionGeneratorFactory>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ITextPredictionGeneratorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ITextReverseConversionGenerator>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ITextReverseConversionGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ITextReverseConversionGenerator2>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ITextReverseConversionGenerator2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::ITextReverseConversionGeneratorFactory>
+{
+    size_t operator()(const winrt::Windows::Data::Text::ITextReverseConversionGeneratorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::IUnicodeCharactersStatics>
+{
+    size_t operator()(const winrt::Windows::Data::Text::IUnicodeCharactersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::IWordSegment>
+{
+    size_t operator()(const winrt::Windows::Data::Text::IWordSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::IWordsSegmenter>
+{
+    size_t operator()(const winrt::Windows::Data::Text::IWordsSegmenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::IWordsSegmenterFactory>
+{
+    size_t operator()(const winrt::Windows::Data::Text::IWordsSegmenterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::AlternateWordForm>
+{
+    size_t operator()(const winrt::Windows::Data::Text::AlternateWordForm & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::SelectableWordSegment>
+{
+    size_t operator()(const winrt::Windows::Data::Text::SelectableWordSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::SelectableWordsSegmenter>
+{
+    size_t operator()(const winrt::Windows::Data::Text::SelectableWordsSegmenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::SemanticTextQuery>
+{
+    size_t operator()(const winrt::Windows::Data::Text::SemanticTextQuery & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::TextConversionGenerator>
+{
+    size_t operator()(const winrt::Windows::Data::Text::TextConversionGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::TextPhoneme>
+{
+    size_t operator()(const winrt::Windows::Data::Text::TextPhoneme & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::TextPredictionGenerator>
+{
+    size_t operator()(const winrt::Windows::Data::Text::TextPredictionGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::TextReverseConversionGenerator>
+{
+    size_t operator()(const winrt::Windows::Data::Text::TextReverseConversionGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::WordSegment>
+{
+    size_t operator()(const winrt::Windows::Data::Text::WordSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Text::WordsSegmenter>
+{
+    size_t operator()(const winrt::Windows::Data::Text::WordsSegmenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

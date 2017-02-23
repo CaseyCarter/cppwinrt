@@ -5233,4 +5233,616 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception:
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IKnownCameraIntrinsicsPropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IKnownCameraIntrinsicsPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IKnownPerceptionColorFrameSourcePropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IKnownPerceptionColorFrameSourcePropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IKnownPerceptionDepthFrameSourcePropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IKnownPerceptionDepthFrameSourcePropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IKnownPerceptionFrameSourcePropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IKnownPerceptionFrameSourcePropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IKnownPerceptionFrameSourcePropertiesStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IKnownPerceptionFrameSourcePropertiesStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IKnownPerceptionInfraredFrameSourcePropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IKnownPerceptionInfraredFrameSourcePropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IKnownPerceptionVideoFrameSourcePropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IKnownPerceptionVideoFrameSourcePropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IKnownPerceptionVideoProfilePropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IKnownPerceptionVideoProfilePropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionColorFrame>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionColorFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionColorFrameArrivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionColorFrameArrivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionColorFrameReader>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionColorFrameReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionColorFrameSource>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionColorFrameSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionColorFrameSource2>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionColorFrameSource2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionColorFrameSourceAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionColorFrameSourceAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionColorFrameSourceRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionColorFrameSourceRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionColorFrameSourceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionColorFrameSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionColorFrameSourceWatcher>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionColorFrameSourceWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionControlSession>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionControlSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionDepthCorrelatedCameraIntrinsics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionDepthCorrelatedCameraIntrinsics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordinateMapper>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordinateMapper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionDepthFrame>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionDepthFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionDepthFrameArrivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionDepthFrameArrivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionDepthFrameReader>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionDepthFrameReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionDepthFrameSource>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionDepthFrameSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionDepthFrameSource2>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionDepthFrameSource2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionDepthFrameSourceAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionDepthFrameSourceAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionDepthFrameSourceRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionDepthFrameSourceRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionDepthFrameSourceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionDepthFrameSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionDepthFrameSourceWatcher>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionDepthFrameSourceWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionFrameSourcePropertiesChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionFrameSourcePropertiesChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionFrameSourcePropertyChangeResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionFrameSourcePropertyChangeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionInfraredFrame>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionInfraredFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionInfraredFrameArrivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionInfraredFrameArrivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionInfraredFrameReader>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionInfraredFrameReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSource>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSource2>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSource2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSourceAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSourceAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSourceRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSourceRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSourceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSourceWatcher>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionInfraredFrameSourceWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::IPerceptionVideoProfile>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::IPerceptionVideoProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionColorFrame>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionColorFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionColorFrameReader>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionColorFrameReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionColorFrameSource>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionColorFrameSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionColorFrameSourceWatcher>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionColorFrameSourceWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionControlSession>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionControlSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionDepthFrame>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionDepthFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionDepthFrameReader>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionDepthFrameReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionDepthFrameSource>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionDepthFrameSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionInfraredFrame>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionInfraredFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionInfraredFrameReader>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionInfraredFrameReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionInfraredFrameSource>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionInfraredFrameSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Perception::PerceptionVideoProfile>
+{
+    size_t operator()(const winrt::Windows::Devices::Perception::PerceptionVideoProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

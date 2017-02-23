@@ -465,4 +465,49 @@ inline Windows::Foundation::IAsyncAction SocialInfoProviderManager::DeprovisionA
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::Provider::ISocialDashboardItemUpdater>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::Provider::ISocialDashboardItemUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUpdater>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoProviderManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::Provider::ISocialInfoProviderManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -2285,4 +2285,373 @@ inline RelativeSource::RelativeSource()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IBinding>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IBinding & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IBinding2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IBinding2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IBindingBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IBindingBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IBindingBaseFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IBindingBaseFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IBindingExpression>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IBindingExpression & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IBindingExpressionBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IBindingExpressionBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IBindingExpressionBaseFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IBindingExpressionBaseFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IBindingExpressionFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IBindingExpressionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IBindingFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IBindingFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IBindingOperations>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IBindingOperations & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IBindingOperationsStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IBindingOperationsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ICollectionView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ICollectionView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ICollectionViewFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ICollectionViewFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ICollectionViewGroup>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ICollectionViewGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ICollectionViewSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ICollectionViewSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ICollectionViewSourceStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ICollectionViewSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ICurrentChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ICurrentChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ICurrentChangingEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ICurrentChangingEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ICustomProperty>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ICustomProperty & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ICustomPropertyProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ICustomPropertyProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IItemIndexRange>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IItemIndexRange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IItemIndexRangeFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IItemIndexRangeFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IItemsRangeInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IItemsRangeInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::INotifyPropertyChanged>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::INotifyPropertyChanged & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IPropertyChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IPropertyChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IPropertyChangedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IPropertyChangedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IRelativeSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IRelativeSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IRelativeSourceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IRelativeSourceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ISelectionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ISelectionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ISupportIncrementalLoading>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ISupportIncrementalLoading & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::IValueConverter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::IValueConverter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::Binding>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::Binding & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::BindingBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::BindingBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::BindingExpression>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::BindingExpression & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::BindingExpressionBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::BindingExpressionBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::BindingOperations>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::BindingOperations & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::CollectionViewSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::CollectionViewSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::CurrentChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::CurrentChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::ItemIndexRange>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::ItemIndexRange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::PropertyChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::PropertyChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Data::RelativeSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Data::RelativeSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

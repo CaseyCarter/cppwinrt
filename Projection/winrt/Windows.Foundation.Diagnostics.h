@@ -4011,4 +4011,310 @@ inline RuntimeBrokerErrorSettings::RuntimeBrokerErrorSettings() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::IAsyncCausalityTracerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::IErrorDetails>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::IErrorDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::IErrorDetailsStatics>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::IErrorDetailsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::IErrorReportingSettings>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::IErrorReportingSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::IFileLoggingSession>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::IFileLoggingSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::IFileLoggingSessionFactory>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::IFileLoggingSessionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingActivity>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingActivity & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingActivity2>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingActivity2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingActivityFactory>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingActivityFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingChannel>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingChannel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingChannel2>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingChannel2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingChannelFactory>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingChannelFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingChannelFactory2>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingChannelFactory2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingChannelOptions>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingChannelOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingChannelOptionsFactory>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingChannelOptionsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingFields>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingFields & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingOptions>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingOptionsFactory>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingOptionsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingSession>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingSessionFactory>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingSessionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ILoggingTarget>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ILoggingTarget & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ITracingStatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ITracingStatusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::ErrorDetails>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::ErrorDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::FileLoggingSession>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::FileLoggingSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::LoggingActivity>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::LoggingActivity & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::LoggingChannel>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::LoggingChannel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::LoggingChannelOptions>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::LoggingChannelOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::LoggingFields>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::LoggingFields & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::LoggingOptions>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::LoggingOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::LoggingSession>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::LoggingSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::RuntimeBrokerErrorSettings>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::RuntimeBrokerErrorSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -101,4 +101,40 @@ inline XsltProcessor::XsltProcessor(const Windows::Data::Xml::Dom::XmlDocument &
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Xsl::IXsltProcessor>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Xsl::IXsltProcessor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Xsl::IXsltProcessor2>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Xsl::IXsltProcessor2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Xsl::IXsltProcessorFactory>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Xsl::IXsltProcessorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Xml::Xsl::XsltProcessor>
+{
+    size_t operator()(const winrt::Windows::Data::Xml::Xsl::XsltProcessor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

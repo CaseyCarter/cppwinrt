@@ -230,7 +230,15 @@ namespace Windows::Foundation
 {
     inline bool operator==(const IUnknown & left, const IUnknown & right) noexcept
     {
-        return get_abi(left) == get_abi(right);
+        if (get_abi(left) == get_abi(right))
+        {
+            return true;
+        }
+        if (!left || !right)
+        {
+            return false;
+        }
+        return get_abi(left.as<IUnknown>()) == get_abi(right.as<IUnknown>());
     }
 
     inline bool operator!=(const IUnknown & left, const IUnknown & right) noexcept
@@ -240,7 +248,15 @@ namespace Windows::Foundation
 
     inline bool operator<(const IUnknown & left, const IUnknown & right) noexcept
     {
-        return get_abi(left) < get_abi(right);
+        if (get_abi(left) == get_abi(right))
+        {
+            return false;
+        }
+        if (!left || !right)
+        {
+            return get_abi(left) < get_abi(right);
+        }
+        return get_abi(left.as<IUnknown>()) < get_abi(right.as<IUnknown>());
     }
 
     inline bool operator>(const IUnknown & left, const IUnknown & right) noexcept

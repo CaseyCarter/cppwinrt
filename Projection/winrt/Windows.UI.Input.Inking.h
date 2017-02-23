@@ -3090,4 +3090,427 @@ inline InkStrokeContainer::InkStrokeContainer() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkDrawingAttributes>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkDrawingAttributes & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkDrawingAttributes2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkDrawingAttributes2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkDrawingAttributes3>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkDrawingAttributes3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkDrawingAttributesStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkDrawingAttributesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkInputProcessingConfiguration>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkInputProcessingConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkManager>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPoint>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPoint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPointFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPointFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPresenterRuler>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPresenterRuler & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPresenterRulerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPresenterRulerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPresenterStencil>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPresenterStencil & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkRecognitionResult>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkRecognitionResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkRecognizer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkRecognizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkRecognizerContainer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkRecognizerContainer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStroke>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStroke & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStroke2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStroke2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeBuilder>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokeBuilder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeBuilder2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokeBuilder2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeContainer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokeContainer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeContainer2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokeContainer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeInput>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokeInput & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeRenderingSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokeRenderingSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokesCollectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokesCollectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokesErasedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokesErasedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkSynchronizer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkSynchronizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkUnprocessedInput>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkUnprocessedInput & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkDrawingAttributes>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkDrawingAttributes & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkInputProcessingConfiguration>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkInputProcessingConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkManager>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkPoint>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkPoint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkPresenterRuler>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkPresenterRuler & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkRecognitionResult>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkRecognitionResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkRecognizer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkRecognizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkRecognizerContainer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkRecognizerContainer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkStroke>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkStroke & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkStrokeBuilder>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkStrokeBuilder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkStrokeContainer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkStrokeContainer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkStrokeInput>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkStrokeInput & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkStrokeRenderingSegment>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkStrokeRenderingSegment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkStrokesCollectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkStrokesCollectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkStrokesErasedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkStrokesErasedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkSynchronizer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkSynchronizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkUnprocessedInput>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkUnprocessedInput & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

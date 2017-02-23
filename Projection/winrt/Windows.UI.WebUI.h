@@ -1123,4 +1123,445 @@ inline Windows::UI::WebUI::IWebUIBackgroundTaskInstance WebUIBackgroundTaskInsta
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::IActivatedDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::IActivatedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::IActivatedEventArgsDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::IActivatedEventArgsDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::IActivatedOperation>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::IActivatedOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::IHtmlPrintDocumentSource>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::IHtmlPrintDocumentSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::IWebUIActivationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::IWebUIActivationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::IWebUIActivationStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::IWebUIActivationStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::IWebUIBackgroundTaskInstance>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::IWebUIBackgroundTaskInstance & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::IWebUIBackgroundTaskInstanceStatics>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::IWebUIBackgroundTaskInstanceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::IWebUINavigatedDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::IWebUINavigatedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::IWebUINavigatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::IWebUINavigatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::IWebUINavigatedOperation>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::IWebUINavigatedOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::ActivatedDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::ActivatedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::ActivatedOperation>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::ActivatedOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::EnteredBackgroundEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::EnteredBackgroundEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::HtmlPrintDocumentSource>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::HtmlPrintDocumentSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::LeavingBackgroundEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::LeavingBackgroundEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::SuspendingDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::SuspendingDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::SuspendingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::SuspendingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::SuspendingOperation>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::SuspendingOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIAppointmentsProviderAddAppointmentActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIAppointmentsProviderAddAppointmentActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIAppointmentsProviderRemoveAppointmentActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIAppointmentsProviderRemoveAppointmentActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIAppointmentsProviderReplaceAppointmentActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIAppointmentsProviderReplaceAppointmentActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIAppointmentsProviderShowAppointmentDetailsActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIAppointmentsProviderShowAppointmentDetailsActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIAppointmentsProviderShowTimeFrameActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIAppointmentsProviderShowTimeFrameActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIBackgroundTaskInstanceRuntimeClass>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIBackgroundTaskInstanceRuntimeClass & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUICachedFileUpdaterActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUICachedFileUpdaterActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIDeviceActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIDeviceActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIDevicePairingActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIDevicePairingActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIDialReceiverActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIDialReceiverActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIFileActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIFileActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIFileOpenPickerActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIFileOpenPickerActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIFileOpenPickerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIFileOpenPickerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIFileSavePickerActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIFileSavePickerActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIFileSavePickerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIFileSavePickerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIFolderPickerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIFolderPickerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUILaunchActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUILaunchActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUILockScreenActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUILockScreenActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUINavigatedDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUINavigatedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUINavigatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUINavigatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUINavigatedOperation>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUINavigatedOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIProtocolActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIProtocolActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIProtocolForResultsActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIProtocolForResultsActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIRestrictedLaunchActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIRestrictedLaunchActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIShareTargetActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIShareTargetActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIToastNotificationActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIToastNotificationActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIUserDataAccountProviderActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIUserDataAccountProviderActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIVoiceCommandActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIVoiceCommandActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIWebAccountProviderActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIWebAccountProviderActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIWebAuthenticationBrokerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIWebAuthenticationBrokerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

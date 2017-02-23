@@ -133,6 +133,7 @@
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/bigobj /await /std:c++latest /d1permissive- %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,6 +154,7 @@
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/bigobj /await /std:c++latest /d1permissive- %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -180,6 +182,7 @@
     <ClCompile Include="delegate_lambda.cpp" />
     <ClCompile Include="event_consume.cpp" />
     <ClCompile Include="event_produce.cpp" />
+    <ClCompile Include="Hash.cpp" />
     <ClCompile Include="IInspectable_GetIids.cpp" />
     <ClCompile Include="IInspectable_GetRuntimeClassName.cpp" />
     <ClCompile Include="IInspectable_GetTrustLevel.cpp" />

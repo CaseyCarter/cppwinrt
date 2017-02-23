@@ -3839,4 +3839,688 @@ inline GUID PlayReadyStatics::ProtectionSystemId()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDClient>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDClient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDClientFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDClientFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDCustomData>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDCustomData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDCustomDataFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDCustomDataFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDDownloadEngine>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDDownloadEngine & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDDownloadEngineNotifier>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDDownloadEngineNotifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptorFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDLicenseFetchResult>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDLicenseFetchResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDMessenger>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDMessenger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDSendResult>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDSendResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDStartResult>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDStartResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDStorageFileHelper>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDStorageFileHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDStreamParser>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDStreamParser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDStreamParserNotifier>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDStreamParserNotifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDTCPMessengerFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDTCPMessengerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::INDTransmitterProperties>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::INDTransmitterProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader2>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyContentHeader2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory2>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyContentHeaderFactory2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyContentResolver>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyContentResolver & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyDomain>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyDomain & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyDomainIterableFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyDomainIterableFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyITADataGenerator>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyITADataGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyIndividualizationServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyIndividualizationServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicense>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicense & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest2>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseIterableFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseIterableFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseManagement>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseManagement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSessionFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSessionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyMeteringReportServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyMeteringReportServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyRevocationServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyRevocationServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadySecureStopIterableFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadySecureStopIterableFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequestFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequestFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadySoapMessage>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadySoapMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics2>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics3>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics4>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::NDClient>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::NDClient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::NDCustomData>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::NDCustomData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::NDDownloadEngineNotifier>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::NDDownloadEngineNotifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::NDLicenseFetchDescriptor>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::NDLicenseFetchDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::NDStorageFileHelper>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::NDStorageFileHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::NDStreamParserNotifier>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::NDStreamParserNotifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::NDTCPMessenger>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::NDTCPMessenger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyContentHeader>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyContentHeader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyDomain>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyDomain & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyDomainIterable>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyDomainIterable & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyDomainIterator>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyDomainIterator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyDomainJoinServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyDomainJoinServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyDomainLeaveServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyDomainLeaveServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyITADataGenerator>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyITADataGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyIndividualizationServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyIndividualizationServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyLicense>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyLicense & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyLicenseAcquisitionServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyLicenseAcquisitionServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyLicenseIterator>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyLicenseIterator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyLicenseSession>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyLicenseSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyMeteringReportServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyMeteringReportServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadyRevocationServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadyRevocationServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadySecureStopIterable>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadySecureStopIterable & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadySecureStopIterator>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadySecureStopIterator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::PlayReadySoapMessage>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::PlayReadySoapMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -632,4 +632,157 @@ inline AppServiceConnection::AppServiceConnection() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::IAppServiceCatalogStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::IAppServiceCatalogStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::IAppServiceClosedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::IAppServiceClosedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::IAppServiceConnection>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::IAppServiceConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::IAppServiceConnection2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::IAppServiceConnection2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::IAppServiceDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::IAppServiceDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::IAppServiceRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::IAppServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::IAppServiceRequestReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::IAppServiceRequestReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::IAppServiceResponse>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::IAppServiceResponse & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::IAppServiceTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::IAppServiceTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::IAppServiceTriggerDetails2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::IAppServiceTriggerDetails2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::AppServiceClosedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::AppServiceClosedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::AppServiceConnection>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::AppServiceConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::AppServiceDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::AppServiceDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::AppServiceRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::AppServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::AppServiceResponse>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::AppServiceResponse & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::AppService::AppServiceTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::AppService::AppServiceTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

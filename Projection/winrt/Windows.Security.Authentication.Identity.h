@@ -190,4 +190,49 @@ inline Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegis
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationInfo>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManager>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

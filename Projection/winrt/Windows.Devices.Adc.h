@@ -323,4 +323,58 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::Adc::AdcController
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Adc::IAdcChannel>
+{
+    size_t operator()(const winrt::Windows::Devices::Adc::IAdcChannel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Adc::IAdcController>
+{
+    size_t operator()(const winrt::Windows::Devices::Adc::IAdcController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Adc::IAdcControllerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Adc::IAdcControllerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Adc::IAdcControllerStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Adc::IAdcControllerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Adc::AdcChannel>
+{
+    size_t operator()(const winrt::Windows::Devices::Adc::AdcChannel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Adc::AdcController>
+{
+    size_t operator()(const winrt::Windows::Devices::Adc::AdcController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

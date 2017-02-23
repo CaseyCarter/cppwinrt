@@ -6429,4 +6429,508 @@ inline Underline::Underline() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IBlock>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IBlock & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IBlockFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IBlockFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IBlockStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IBlockStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IBold>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IBold & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IGlyphs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IGlyphs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IGlyphs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IGlyphs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IGlyphsStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IGlyphsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IGlyphsStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IGlyphsStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlink>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IHyperlink & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlink2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IHyperlink2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlink3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IHyperlink3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlinkStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IHyperlinkStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlinkStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IHyperlinkStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlinkStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IHyperlinkStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IInline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IInline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IInlineFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IInlineFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IInlineUIContainer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IInlineUIContainer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IItalic>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IItalic & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ILineBreak>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ILineBreak & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IParagraph>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IParagraph & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IParagraphStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IParagraphStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IRun>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IRun & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IRunStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IRunStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ISpan>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ISpan & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ISpanFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ISpanFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElement2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElement2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElement3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElement3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElementFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElementFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElementOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElementOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElementStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElementStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElementStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElementStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElementStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElementStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextPointer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextPointer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITypography>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITypography & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITypographyStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITypographyStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IUnderline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IUnderline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::Block>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::Block & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::BlockCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::BlockCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::Bold>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::Bold & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::Glyphs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::Glyphs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::Hyperlink>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::Hyperlink & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::HyperlinkClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::HyperlinkClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::Inline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::Inline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::InlineCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::InlineCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::InlineUIContainer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::InlineUIContainer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::Italic>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::Italic & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::LineBreak>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::LineBreak & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::Paragraph>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::Paragraph & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::Run>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::Run & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::Span>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::Span & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::TextElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::TextElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::TextPointer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::TextPointer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::Typography>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::Typography & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::Underline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::Underline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

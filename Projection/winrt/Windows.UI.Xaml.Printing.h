@@ -508,4 +508,94 @@ inline Windows::UI::Xaml::DependencyProperty PrintDocument::DocumentSourceProper
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Printing::IAddPagesEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Printing::IAddPagesEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Printing::IPaginateEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Printing::IPaginateEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Printing::IPrintDocument>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Printing::IPrintDocument & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Printing::IPrintDocumentFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Printing::IPrintDocumentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Printing::IPrintDocumentStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Printing::IPrintDocumentStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Printing::AddPagesEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Printing::AddPagesEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Printing::GetPreviewPageEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Printing::GetPreviewPageEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Printing::PaginateEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Printing::PaginateEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Printing::PrintDocument>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Printing::PrintDocument & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

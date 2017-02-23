@@ -1578,4 +1578,283 @@ inline hstring MediaFrameSourceGroup::GetDeviceSelector()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IBufferMediaFrame>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IBufferMediaFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IDepthMediaFrame>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IDepthMediaFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IDepthMediaFrameFormat>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IDepthMediaFrameFormat & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IInfraredMediaFrame>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IInfraredMediaFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IMediaFrameArrivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IMediaFrameArrivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IMediaFrameFormat>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IMediaFrameFormat & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IMediaFrameReader>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IMediaFrameReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IMediaFrameReference>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IMediaFrameReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IMediaFrameSource>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IMediaFrameSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IMediaFrameSourceController>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IMediaFrameSourceController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyResult>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IMediaFrameSourceGroup>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IMediaFrameSourceGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IMediaFrameSourceGroupStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IMediaFrameSourceGroupStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IMediaFrameSourceInfo>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IMediaFrameSourceInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IVideoMediaFrame>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IVideoMediaFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::IVideoMediaFrameFormat>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::IVideoMediaFrameFormat & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::BufferMediaFrame>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::BufferMediaFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::DepthMediaFrame>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::DepthMediaFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::DepthMediaFrameFormat>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::DepthMediaFrameFormat & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::InfraredMediaFrame>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::InfraredMediaFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::MediaFrameFormat>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::MediaFrameFormat & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::MediaFrameReader>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::MediaFrameReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::MediaFrameReference>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::MediaFrameReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::MediaFrameSource>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::MediaFrameSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::MediaFrameSourceController>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::MediaFrameSourceController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::MediaFrameSourceGroup>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::MediaFrameSourceGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::MediaFrameSourceInfo>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::MediaFrameSourceInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::VideoMediaFrame>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::VideoMediaFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::Frames::VideoMediaFrameFormat>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::Frames::VideoMediaFrameFormat & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

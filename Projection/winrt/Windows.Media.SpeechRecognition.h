@@ -1902,4 +1902,382 @@ inline Windows::Foundation::Collections::IVectorView<Windows::Globalization::Lan
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionResultGeneratedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionResultGeneratedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionCompilationResult>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionCompilationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraint>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraintFactory>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraintFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesis>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesis & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesisGeneratedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesisGeneratedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraintFactory>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraintFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionQualityDegradingEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionQualityDegradingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionResult>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionResult2>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionResult2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionSemanticInterpretation>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionSemanticInterpretation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraintFactory>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraintFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionVoiceCommandDefinitionConstraint>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognitionVoiceCommandDefinitionConstraint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognizer>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognizer2>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognizer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognizerFactory>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognizerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognizerStateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognizerStateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognizerStatics>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognizerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognitionCompilationResult>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognitionCompilationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognitionHypothesis>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognitionHypothesis & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognitionHypothesisGeneratedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognitionHypothesisGeneratedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognitionQualityDegradingEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognitionQualityDegradingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognitionResult>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognitionResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognitionSemanticInterpretation>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognitionSemanticInterpretation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognitionVoiceCommandDefinitionConstraint>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognitionVoiceCommandDefinitionConstraint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognizer>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognizerStateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognizerStateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognizerTimeouts>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognizerTimeouts & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechRecognition::SpeechRecognizerUIOptions>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechRecognition::SpeechRecognizerUIOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

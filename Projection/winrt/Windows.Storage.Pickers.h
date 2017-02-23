@@ -1026,4 +1026,139 @@ inline FolderPicker::FolderPicker() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::IFileOpenPicker>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::IFileOpenPicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::IFileOpenPicker2>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::IFileOpenPicker2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::IFileOpenPickerStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::IFileOpenPickerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::IFileOpenPickerWithOperationId>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::IFileOpenPickerWithOperationId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::IFileSavePicker>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::IFileSavePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::IFileSavePicker2>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::IFileSavePicker2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::IFileSavePicker3>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::IFileSavePicker3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::IFolderPicker>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::IFolderPicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::IFolderPicker2>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::IFolderPicker2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::FileExtensionVector>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::FileExtensionVector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::FileOpenPicker>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::FileOpenPicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::FilePickerFileTypesOrderedMap>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::FilePickerFileTypesOrderedMap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::FilePickerSelectedFilesArray>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::FilePickerSelectedFilesArray & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::FileSavePicker>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::FileSavePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::FolderPicker>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::FolderPicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

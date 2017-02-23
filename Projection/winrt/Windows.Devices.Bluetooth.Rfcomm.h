@@ -901,4 +901,139 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm:
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService3>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServiceStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServicesResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServicesResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceIdStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProviderStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProviderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

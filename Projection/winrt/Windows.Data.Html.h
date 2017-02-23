@@ -49,4 +49,13 @@ inline hstring HtmlUtilities::ConvertToText(hstring_view html)
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Data::Html::IHtmlUtilities>
+{
+    size_t operator()(const winrt::Windows::Data::Html::IHtmlUtilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

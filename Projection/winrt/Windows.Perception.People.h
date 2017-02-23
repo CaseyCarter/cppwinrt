@@ -86,4 +86,22 @@ template <typename D> Windows::Foundation::Numerics::float3 impl_IHeadPose<D>::U
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Perception::People::IHeadPose>
+{
+    size_t operator()(const winrt::Windows::Perception::People::IHeadPose & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::People::HeadPose>
+{
+    size_t operator()(const winrt::Windows::Perception::People::HeadPose & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

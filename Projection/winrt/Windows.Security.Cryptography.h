@@ -317,4 +317,13 @@ inline hstring CryptographicBuffer::ConvertBinaryToString(Windows::Security::Cry
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::ICryptographicBufferStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::ICryptographicBufferStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

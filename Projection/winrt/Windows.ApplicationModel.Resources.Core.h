@@ -1094,4 +1094,238 @@ inline bool ResourceManager::IsResourceReference(hstring_view resourceReference)
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::INamedResource>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::INamedResource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::IResourceCandidate>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::IResourceCandidate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::IResourceCandidate2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::IResourceCandidate2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::IResourceContext>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::IResourceContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::IResourceContextStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::IResourceContextStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::IResourceContextStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::IResourceContextStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::IResourceContextStatics3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::IResourceContextStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::IResourceManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::IResourceManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::IResourceManager2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::IResourceManager2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::IResourceManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::IResourceManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::IResourceMap>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::IResourceMap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::IResourceQualifier>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::IResourceQualifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::NamedResource>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::NamedResource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceCandidate>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceCandidate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceCandidateVectorView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceCandidateVectorView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceContext>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceContextLanguagesVectorView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceContextLanguagesVectorView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceMap>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceMap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceMapIterator>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceMapIterator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceMapMapView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceMapMapView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceMapMapViewIterator>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceMapMapViewIterator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceQualifier>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceQualifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceQualifierMapView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceQualifierMapView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceQualifierObservableMap>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceQualifierObservableMap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Resources::Core::ResourceQualifierVectorView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Resources::Core::ResourceQualifierVectorView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

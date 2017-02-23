@@ -3726,4 +3726,58 @@ inline Windows::UI::Color Colors::YellowGreen()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::IColorHelper>
+{
+    size_t operator()(const winrt::Windows::UI::IColorHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::IColorHelperStatics>
+{
+    size_t operator()(const winrt::Windows::UI::IColorHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::IColors>
+{
+    size_t operator()(const winrt::Windows::UI::IColors & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::IColorsStatics>
+{
+    size_t operator()(const winrt::Windows::UI::IColorsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ColorHelper>
+{
+    size_t operator()(const winrt::Windows::UI::ColorHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Colors>
+{
+    size_t operator()(const winrt::Windows::UI::Colors & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -3001,4 +3001,1039 @@ inline UserNotificationChangedTrigger::UserNotificationChangedTrigger(Windows::U
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IActivitySensorTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IActivitySensorTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IActivitySensorTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IActivitySensorTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IApplicationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IApplicationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IApplicationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IApplicationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IAppointmentStoreNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IAppointmentStoreNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundCondition>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundCondition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundExecutionManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTask>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTask & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskBuilder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskBuilder2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskBuilder2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskBuilder3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskBuilder3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskInstance>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskInstance & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskInstance2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskInstance2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskInstance4>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskInstance4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistration>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistration2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistration2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundWorkCostStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundWorkCostStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBluetoothLEAdvertisementPublisherTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBluetoothLEAdvertisementPublisherTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ICachedFileUpdaterTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ICachedFileUpdaterTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ICachedFileUpdaterTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ICachedFileUpdaterTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IChatMessageNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IChatMessageNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IChatMessageReceivedNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IChatMessageReceivedNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IContactStoreNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IContactStoreNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IContentPrefetchTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IContentPrefetchTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IContentPrefetchTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IContentPrefetchTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IDeviceConnectionChangeTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IDeviceConnectionChangeTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IDeviceConnectionChangeTriggerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IDeviceConnectionChangeTriggerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IDeviceServicingTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IDeviceServicingTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IDeviceUseTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IDeviceUseTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IDeviceWatcherTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IDeviceWatcherTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IEmailStoreNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IEmailStoreNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ILocationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ILocationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ILocationTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ILocationTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IMaintenanceTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IMaintenanceTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IMaintenanceTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IMaintenanceTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IMediaProcessingTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IMediaProcessingTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::INetworkOperatorHotspotAuthenticationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::INetworkOperatorHotspotAuthenticationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::INetworkOperatorNotificationTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::INetworkOperatorNotificationTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IPushNotificationTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IPushNotificationTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IRcsEndUserMessageAvailableTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IRcsEndUserMessageAvailableTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IRfcommConnectionTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IRfcommConnectionTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ISecondaryAuthenticationFactorAuthenticationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ISecondaryAuthenticationFactorAuthenticationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ISensorDataThresholdTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ISensorDataThresholdTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ISensorDataThresholdTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ISensorDataThresholdTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ISmsMessageReceivedTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ISmsMessageReceivedTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ISocketActivityTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ISocketActivityTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IStorageLibraryContentChangedTriggerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ISystemCondition>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ISystemCondition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ISystemConditionFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ISystemConditionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ISystemTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ISystemTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ISystemTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ISystemTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ITimeTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ITimeTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ITimeTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ITimeTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IToastNotificationActionTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IToastNotificationHistoryChangedTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IUserNotificationChangedTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ActivitySensorTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ActivitySensorTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ApplicationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ApplicationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ApplicationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ApplicationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::AppointmentStoreNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::AppointmentStoreNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::BackgroundTaskBuilder>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::BackgroundTaskBuilder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::BackgroundTaskCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::BackgroundTaskCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::BackgroundTaskDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::BackgroundTaskDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::BackgroundTaskProgressEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::BackgroundTaskProgressEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::BackgroundTaskRegistration>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::BackgroundTaskRegistration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::BluetoothLEAdvertisementPublisherTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::BluetoothLEAdvertisementPublisherTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::BluetoothLEAdvertisementWatcherTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::BluetoothLEAdvertisementWatcherTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::CachedFileUpdaterTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::CachedFileUpdaterTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::CachedFileUpdaterTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::CachedFileUpdaterTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ChatMessageNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ChatMessageNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ChatMessageReceivedNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ChatMessageReceivedNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ContactStoreNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ContactStoreNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ContentPrefetchTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ContentPrefetchTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::DeviceServicingTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::DeviceServicingTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::DeviceUseTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::DeviceUseTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::DeviceWatcherTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::DeviceWatcherTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::EmailStoreNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::EmailStoreNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::LocationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::LocationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::MaintenanceTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::MaintenanceTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::MediaProcessingTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::MediaProcessingTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::MobileBroadbandDeviceServiceNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::MobileBroadbandDeviceServiceNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::MobileBroadbandPinLockStateChangeTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::MobileBroadbandPinLockStateChangeTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::MobileBroadbandRadioStateChangeTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::MobileBroadbandRadioStateChangeTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::MobileBroadbandRegistrationStateChangeTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::MobileBroadbandRegistrationStateChangeTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::NetworkOperatorHotspotAuthenticationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::NetworkOperatorHotspotAuthenticationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::PushNotificationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::PushNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::RcsEndUserMessageAvailableTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::RcsEndUserMessageAvailableTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::RfcommConnectionTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::RfcommConnectionTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::SecondaryAuthenticationFactorAuthenticationTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::SecondaryAuthenticationFactorAuthenticationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::SensorDataThresholdTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::SensorDataThresholdTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::SmsMessageReceivedTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::SmsMessageReceivedTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::SocketActivityTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::SocketActivityTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::SystemCondition>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::SystemCondition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::SystemTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::SystemTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::TimeTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::TimeTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ToastNotificationActionTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ToastNotificationActionTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::UserNotificationChangedTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::UserNotificationChangedTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

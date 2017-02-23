@@ -312,4 +312,49 @@ inline hstring Battery::GetDeviceSelector()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Power::IBattery>
+{
+    size_t operator()(const winrt::Windows::Devices::Power::IBattery & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Power::IBatteryReport>
+{
+    size_t operator()(const winrt::Windows::Devices::Power::IBatteryReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Power::IBatteryStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Power::IBatteryStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Power::Battery>
+{
+    size_t operator()(const winrt::Windows::Devices::Power::Battery & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Power::BatteryReport>
+{
+    size_t operator()(const winrt::Windows::Devices::Power::BatteryReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

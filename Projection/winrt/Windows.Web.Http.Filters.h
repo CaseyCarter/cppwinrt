@@ -843,4 +843,94 @@ inline HttpBaseProtocolFilter::HttpBaseProtocolFilter() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::Filters::IHttpBaseProtocolFilter>
+{
+    size_t operator()(const winrt::Windows::Web::Http::Filters::IHttpBaseProtocolFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::Filters::IHttpBaseProtocolFilter2>
+{
+    size_t operator()(const winrt::Windows::Web::Http::Filters::IHttpBaseProtocolFilter2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::Filters::IHttpBaseProtocolFilter3>
+{
+    size_t operator()(const winrt::Windows::Web::Http::Filters::IHttpBaseProtocolFilter3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::Filters::IHttpBaseProtocolFilter4>
+{
+    size_t operator()(const winrt::Windows::Web::Http::Filters::IHttpBaseProtocolFilter4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::Filters::IHttpCacheControl>
+{
+    size_t operator()(const winrt::Windows::Web::Http::Filters::IHttpCacheControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::Filters::IHttpFilter>
+{
+    size_t operator()(const winrt::Windows::Web::Http::Filters::IHttpFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::Filters::IHttpServerCustomValidationRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Web::Http::Filters::IHttpServerCustomValidationRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::Filters::HttpBaseProtocolFilter>
+{
+    size_t operator()(const winrt::Windows::Web::Http::Filters::HttpBaseProtocolFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::Filters::HttpCacheControl>
+{
+    size_t operator()(const winrt::Windows::Web::Http::Filters::HttpCacheControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

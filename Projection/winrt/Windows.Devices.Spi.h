@@ -666,4 +666,103 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiDevice> Sp
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::ISpiBusInfo>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::ISpiBusInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::ISpiConnectionSettings>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::ISpiConnectionSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::ISpiConnectionSettingsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::ISpiConnectionSettingsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::ISpiController>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::ISpiController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::ISpiControllerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::ISpiControllerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::ISpiDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::ISpiDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::ISpiDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::ISpiDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::SpiBusInfo>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::SpiBusInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::SpiConnectionSettings>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::SpiConnectionSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::SpiController>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::SpiController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::SpiDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::SpiDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

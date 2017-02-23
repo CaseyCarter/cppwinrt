@@ -1577,4 +1577,112 @@ inline PackageManager::PackageManager() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::IDeploymentResult>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::IDeploymentResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::IPackageManager>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::IPackageManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::IPackageManager2>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::IPackageManager2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::IPackageManager3>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::IPackageManager3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::IPackageManager4>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::IPackageManager4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::IPackageUserInformation>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::IPackageUserInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::IPackageVolume>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::IPackageVolume & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::IPackageVolume2>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::IPackageVolume2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::DeploymentResult>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::DeploymentResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::PackageManager>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::PackageManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::PackageUserInformation>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::PackageUserInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::PackageVolume>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::PackageVolume & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

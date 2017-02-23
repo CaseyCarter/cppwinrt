@@ -135,4 +135,31 @@ inline Windows::UI::Composition::CompositionPropertySet ElementCompositionPrevie
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreview>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreview & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Hosting::ElementCompositionPreview>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Hosting::ElementCompositionPreview & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

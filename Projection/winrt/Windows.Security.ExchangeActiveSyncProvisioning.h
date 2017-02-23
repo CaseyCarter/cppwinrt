@@ -205,4 +205,31 @@ inline EasClientDeviceInformation::EasClientDeviceInformation() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation>
+{
+    size_t operator()(const winrt::Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation2>
+{
+    size_t operator()(const winrt::Windows::Security::ExchangeActiveSyncProvisioning::IEasClientDeviceInformation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::ExchangeActiveSyncProvisioning::EasClientDeviceInformation>
+{
+    size_t operator()(const winrt::Windows::Security::ExchangeActiveSyncProvisioning::EasClientDeviceInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

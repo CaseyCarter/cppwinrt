@@ -1058,4 +1058,103 @@ inline Windows::UI::Input::Preview::Injection::InputInjector InputInjector::TryC
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Preview::Injection::IInjectedInputKeyboardInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Preview::Injection::IInjectedInputKeyboardInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Preview::Injection::IInjectedInputMouseInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Preview::Injection::IInjectedInputMouseInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Preview::Injection::IInjectedInputPenInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Preview::Injection::IInjectedInputTouchInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Preview::Injection::IInputInjector>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Preview::Injection::IInputInjector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Preview::Injection::IInputInjectorStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Preview::Injection::IInputInjectorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Preview::Injection::InjectedInputPenInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Preview::Injection::InjectedInputPenInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Preview::Injection::InputInjector>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Preview::Injection::InputInjector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

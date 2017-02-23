@@ -310,4 +310,67 @@ template <typename D> void impl_IPrint3DWorkflow2<D>::PrinterChanged(event_token
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::Extensions::IPrint3DWorkflow>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::Extensions::IPrint3DWorkflow & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::Extensions::IPrint3DWorkflow2>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::Extensions::IPrint3DWorkflow2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrintRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrinterChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::Extensions::IPrint3DWorkflowPrinterChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::Extensions::Print3DWorkflow>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::Extensions::Print3DWorkflow & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

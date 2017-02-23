@@ -8024,4 +8024,778 @@ inline EmailRecipientResolutionResult::EmailRecipientResolutionResult() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailAttachment>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailAttachment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailAttachment2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailAttachment2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailAttachmentFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailAttachmentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailAttachmentFactory2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailAttachmentFactory2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailConversation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailConversation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailConversationBatch>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailConversationBatch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailConversationReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailConversationReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailFolder>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailFolder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailIrmInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailIrmInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailIrmInfoFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailIrmInfoFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailIrmTemplate>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailIrmTemplate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailIrmTemplateFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailIrmTemplateFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailItemCounts>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailItemCounts & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailbox>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailbox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailbox2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailbox2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailbox3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailbox3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailbox4>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailbox4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxAction>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxAction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxAutoReply>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxAutoReply & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettings>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxAutoReplySettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxCapabilities>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxCapabilities2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxCapabilities2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxCapabilities3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxCapabilities3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxChange>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxChangeReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxChangeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxChangeTracker>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxChangeTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxChangedDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxChangedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxCreateFolderResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxCreateFolderResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxPolicies>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxPolicies & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxPolicies2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxPolicies2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxPolicies3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxPolicies3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxSyncManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxSyncManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMailboxSyncManager2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMailboxSyncManager2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailManagerForUser>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailManagerStatics3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailManagerStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMeetingInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMeetingInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMeetingInfo2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMeetingInfo2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMessage>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMessage2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMessage2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMessage3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMessage3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMessageBatch>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMessageBatch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMessageReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMessageReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailQueryOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailQueryOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailQueryOptionsFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailQueryOptionsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailQueryTextSearch>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailQueryTextSearch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailRecipient>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailRecipient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailRecipientFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailRecipientFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailRecipientResolutionResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailRecipientResolutionResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailRecipientResolutionResult2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailRecipientResolutionResult2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailStoreNotificationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailStoreNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailAttachment>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailAttachment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailConversation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailConversation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailConversationBatch>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailConversationBatch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailConversationReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailConversationReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailFolder>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailFolder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailIrmInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailIrmInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailIrmTemplate>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailIrmTemplate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailItemCounts>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailItemCounts & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailbox>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailbox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxAction>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxAction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxAutoReply>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxAutoReply & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxCapabilities>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxChange>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxChangeReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxChangeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxChangeTracker>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxChangeTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxChangedDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxChangedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxCreateFolderResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxCreateFolderResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxPolicies>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxPolicies & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMailboxSyncManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMailboxSyncManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailManagerForUser>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMeetingInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMeetingInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMessage>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMessageBatch>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMessageBatch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailMessageReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailMessageReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailQueryOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailQueryOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailQueryTextSearch>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailQueryTextSearch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailRecipient>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailRecipient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailRecipientResolutionResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailRecipientResolutionResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::EmailStoreNotificationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::EmailStoreNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

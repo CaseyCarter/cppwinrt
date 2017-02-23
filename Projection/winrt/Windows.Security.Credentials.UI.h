@@ -732,4 +732,58 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credential
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::UI::ICredentialPickerOptions>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::UI::ICredentialPickerOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::UI::ICredentialPickerResults>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::UI::ICredentialPickerResults & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::UI::ICredentialPickerStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::UI::ICredentialPickerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::UI::IUserConsentVerifierStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::UI::IUserConsentVerifierStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::UI::CredentialPickerOptions>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::UI::CredentialPickerOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::UI::CredentialPickerResults>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::UI::CredentialPickerResults & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

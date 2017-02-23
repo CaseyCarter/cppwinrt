@@ -952,4 +952,157 @@ inline Windows::Graphics::Holographic::HolographicSpace HolographicSpace::Create
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicCamera>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicCamera & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicCameraPose>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicCameraPose & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicCameraRenderingParameters>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicCameraRenderingParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicFrame>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicFramePrediction>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicFramePrediction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicSpace>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicSpace & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicSpaceCameraAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicSpaceCameraAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicSpaceCameraRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicSpaceCameraRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicSpaceStatics>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicSpaceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::HolographicCamera>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicCamera & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::HolographicCameraPose>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicCameraPose & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::HolographicCameraRenderingParameters>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicCameraRenderingParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::HolographicFrame>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::HolographicFramePrediction>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicFramePrediction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::HolographicSpace>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicSpace & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

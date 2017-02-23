@@ -3119,4 +3119,193 @@ inline BluetoothSignalStrengthFilter::BluetoothSignalStrengthFilter() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothClassOfDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothClassOfDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothClassOfDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothClassOfDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothDevice2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothDevice2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothDevice3>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothDevice3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothDeviceStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothDeviceStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothLEAppearance>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothLEAppearance & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothLEAppearanceCategoriesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothLEAppearanceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothLEAppearanceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategoriesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothLEAppearanceSubcategoriesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothLEDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothLEDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothLEDevice2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothLEDevice2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::BluetoothClassOfDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::BluetoothClassOfDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::BluetoothDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::BluetoothDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::BluetoothLEAppearance>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::BluetoothLEAppearance & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::BluetoothLEDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::BluetoothLEDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

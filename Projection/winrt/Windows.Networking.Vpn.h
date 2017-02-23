@@ -4593,4 +4593,733 @@ inline VpnTrafficFilterAssignment::VpnTrafficFilterAssignment() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnAppId>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnAppId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnAppIdFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnAppIdFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnChannel>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnChannel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnChannel2>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnChannel2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnChannelActivityEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnChannelActivityEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnChannelActivityStateChangedArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnChannelConfiguration>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnChannelConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnChannelConfiguration2>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnChannelConfiguration2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnChannelStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnChannelStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCredential>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCredential & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCustomCheckBox>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCustomCheckBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCustomComboBox>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCustomComboBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCustomEditBox>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCustomEditBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCustomErrorBox>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCustomErrorBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCustomPrompt>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCustomPrompt & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCustomPromptBooleanInput>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCustomPromptBooleanInput & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCustomPromptElement>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCustomPromptElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCustomPromptOptionSelector>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCustomPromptOptionSelector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCustomPromptText>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCustomPromptText & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCustomPromptTextInput>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCustomPromptTextInput & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnCustomTextBox>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnCustomTextBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnDomainNameAssignment>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnDomainNameAssignment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnDomainNameInfo>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnDomainNameInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnDomainNameInfo2>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnDomainNameInfo2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnDomainNameInfoFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnDomainNameInfoFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnInterfaceId>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnInterfaceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnInterfaceIdFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnInterfaceIdFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnManagementAgent>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnManagementAgent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnNamespaceAssignment>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnNamespaceAssignment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnNamespaceInfo>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnNamespaceInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnNamespaceInfoFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnNamespaceInfoFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnNativeProfile>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnNativeProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnNativeProfile2>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnNativeProfile2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnPacketBuffer>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnPacketBuffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnPacketBuffer2>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnPacketBuffer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnPacketBufferFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnPacketBufferFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnPacketBufferList>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnPacketBufferList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnPacketBufferList2>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnPacketBufferList2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnPickedCredential>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnPickedCredential & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnPlugIn>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnPlugIn & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnPlugInProfile>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnPlugInProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnPlugInProfile2>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnPlugInProfile2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnProfile>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnRoute>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnRoute & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnRouteAssignment>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnRouteAssignment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnRouteFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnRouteFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnSystemHealth>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnSystemHealth & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnTrafficFilter>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnTrafficFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnTrafficFilterAssignment>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnTrafficFilterAssignment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::IVpnTrafficFilterFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::IVpnTrafficFilterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnAppId>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnAppId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnChannel>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnChannel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnChannelActivityEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnChannelActivityEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnChannelConfiguration>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnChannelConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnCredential>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnCredential & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnCustomCheckBox>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnCustomCheckBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnCustomComboBox>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnCustomComboBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnCustomEditBox>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnCustomEditBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnCustomErrorBox>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnCustomErrorBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnCustomPromptBooleanInput>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnCustomPromptBooleanInput & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnCustomPromptOptionSelector>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnCustomPromptOptionSelector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnCustomPromptText>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnCustomPromptText & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnCustomPromptTextInput>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnCustomPromptTextInput & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnCustomTextBox>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnCustomTextBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnDomainNameAssignment>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnDomainNameAssignment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnDomainNameInfo>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnDomainNameInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnInterfaceId>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnInterfaceId & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnManagementAgent>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnManagementAgent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnNamespaceAssignment>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnNamespaceAssignment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnNamespaceInfo>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnNamespaceInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnNativeProfile>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnNativeProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnPacketBuffer>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnPacketBuffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnPacketBufferList>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnPacketBufferList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnPickedCredential>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnPickedCredential & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnPlugInProfile>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnPlugInProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnRoute>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnRoute & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnRouteAssignment>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnRouteAssignment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnSystemHealth>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnSystemHealth & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnTrafficFilter>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnTrafficFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Vpn::VpnTrafficFilterAssignment>
+{
+    size_t operator()(const winrt::Windows::Networking::Vpn::VpnTrafficFilterAssignment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

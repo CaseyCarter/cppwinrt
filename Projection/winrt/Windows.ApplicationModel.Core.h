@@ -1560,4 +1560,220 @@ inline Windows::ApplicationModel::Core::CoreApplicationView CoreApplication::Cre
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::IAppListEntry>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::IAppListEntry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreApplication>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreApplication & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreApplication2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreApplication2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreApplicationExit>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreApplicationExit & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreApplicationUnhandledError>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreApplicationUnhandledError & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreApplicationUseCount>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreApplicationUseCount & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreApplicationView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreApplicationView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreApplicationView2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreApplicationView2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreApplicationView3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreApplicationView3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreImmersiveApplication>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreImmersiveApplication & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreImmersiveApplication2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreImmersiveApplication2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreImmersiveApplication3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreImmersiveApplication3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::IFrameworkView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::IFrameworkView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::IFrameworkViewSource>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::IFrameworkViewSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::IHostedViewClosingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::IHostedViewClosingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::IUnhandledError>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::IUnhandledError & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::IUnhandledErrorDetectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::IUnhandledErrorDetectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::AppListEntry>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::AppListEntry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::CoreApplicationView>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::CoreApplicationView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::CoreApplicationViewTitleBar>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::CoreApplicationViewTitleBar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::HostedViewClosingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::HostedViewClosingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::UnhandledError>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::UnhandledError & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -5145,4 +5145,2227 @@ inline ToggleSwitchAutomationPeer::ToggleSwitchAutomationPeer(const Windows::UI:
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAppBarAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAppBarAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAppBarAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAppBarAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAppBarButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAppBarButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAppBarButtonAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAppBarButtonAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAppBarToggleButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAppBarToggleButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAppBarToggleButtonAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAppBarToggleButtonAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutoSuggestBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutoSuggestBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutoSuggestBoxAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutoSuggestBoxAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotationFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotationFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ICaptureElementAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ICaptureElementAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ICaptureElementAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ICaptureElementAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ICheckBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ICheckBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ICheckBoxAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ICheckBoxAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxItemDataAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IComboBoxItemDataAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IDatePickerAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IDatePickerAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IDatePickerAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IDatePickerAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IDatePickerFlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IDatePickerFlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewItemDataAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IFlipViewItemDataAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IFlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IFlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IFlyoutPresenterAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IFlyoutPresenterAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IGridViewHeaderItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IGridViewHeaderItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IGridViewHeaderItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IGridViewHeaderItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IGridViewItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IGridViewItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IGridViewItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IGridViewItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IGridViewItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IGridViewItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IGridViewItemDataAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IGridViewItemDataAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IGroupItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IGroupItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IGroupItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IGroupItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IHubAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IHubAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IHubAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IHubAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IHubSectionAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IHubSectionAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IHubSectionAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IHubSectionAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IHyperlinkButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IHyperlinkButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IHyperlinkButtonAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IHyperlinkButtonAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IImageAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IImageAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IImageAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IImageAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IInkToolbarAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IInkToolbarAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListBoxItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListBoxItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListBoxItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListBoxItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListBoxItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListBoxItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListBoxItemDataAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListBoxItemDataAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListPickerFlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListPickerFlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewHeaderItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewHeaderItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewHeaderItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewHeaderItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IListViewItemDataAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IListViewItemDataAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ILoopingSelectorAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ILoopingSelectorAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ILoopingSelectorItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ILoopingSelectorItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ILoopingSelectorItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ILoopingSelectorItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IMapControlAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IMapControlAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IMediaElementAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IMediaElementAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IMediaElementAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IMediaElementAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IMediaPlayerElementAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IMediaPlayerElementAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IMediaPlayerElementAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IMediaPlayerElementAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutPresenterAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IMenuFlyoutPresenterAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IPasswordBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IPasswordBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IPasswordBoxAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IPasswordBoxAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IPickerFlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IPickerFlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IPivotAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IPivotAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IPivotAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IPivotAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IPivotItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IPivotItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IPivotItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IPivotItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IPivotItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IPivotItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IPivotItemDataAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IPivotItemDataAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IProgressBarAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IProgressBarAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IProgressBarAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IProgressBarAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IProgressRingAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IProgressRingAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IProgressRingAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IProgressRingAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRadioButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRadioButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRadioButtonAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRadioButtonAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRepeatButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRepeatButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRepeatButtonAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRepeatButtonAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRichEditBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRichEditBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRichEditBoxAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRichEditBoxAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRichTextBlockAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRichTextBlockAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRichTextBlockAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRichTextBlockAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRichTextBlockOverflowAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRichTextBlockOverflowAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IRichTextBlockOverflowAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IRichTextBlockOverflowAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IScrollBarAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IScrollBarAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IScrollBarAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IScrollBarAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IScrollViewerAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IScrollViewerAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IScrollViewerAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IScrollViewerAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISearchBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISearchBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISearchBoxAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISearchBoxAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISemanticZoomAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISemanticZoomAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISemanticZoomAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISemanticZoomAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISettingsFlyoutAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISettingsFlyoutAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISettingsFlyoutAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISettingsFlyoutAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISliderAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISliderAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ISliderAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ISliderAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ITextBlockAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ITextBlockAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ITextBlockAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ITextBlockAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ITextBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ITextBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ITextBoxAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ITextBoxAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IThumbAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IThumbAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IThumbAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IThumbAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ITimePickerAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ITimePickerAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ITimePickerAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ITimePickerAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ITimePickerFlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ITimePickerFlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IToggleMenuFlyoutItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IToggleMenuFlyoutItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IToggleMenuFlyoutItemAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IToggleMenuFlyoutItemAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IToggleSwitchAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IToggleSwitchAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IToggleSwitchAutomationPeerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IToggleSwitchAutomationPeerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::AppBarAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::AppBarAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::AppBarButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::AppBarButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::AppBarToggleButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::AppBarToggleButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::AutoSuggestBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::AutoSuggestBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::AutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::AutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ButtonBaseAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ButtonBaseAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::CaptureElementAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::CaptureElementAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::CheckBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::CheckBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ComboBoxItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ComboBoxItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ComboBoxItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ComboBoxItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::DatePickerAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::DatePickerAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::DatePickerFlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::DatePickerFlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::FlipViewItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::FlipViewItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::FlipViewItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::FlipViewItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::FlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::FlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::FrameworkElementAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::FrameworkElementAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::GridViewHeaderItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::GridViewHeaderItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::GridViewItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::GridViewItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::GridViewItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::GridViewItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::GroupItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::GroupItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::HubAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::HubAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::HubSectionAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::HubSectionAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::HyperlinkButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::HyperlinkButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ImageAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ImageAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::InkToolbarAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::InkToolbarAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ListBoxItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ListBoxItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ListBoxItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ListBoxItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ListPickerFlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ListPickerFlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ListViewAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ListViewAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ListViewBaseHeaderItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ListViewBaseHeaderItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ListViewHeaderItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ListViewHeaderItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ListViewItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ListViewItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ListViewItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ListViewItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::LoopingSelectorAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::LoopingSelectorAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::LoopingSelectorItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::LoopingSelectorItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::LoopingSelectorItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::LoopingSelectorItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::MapControlAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::MapControlAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::MediaElementAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::MediaElementAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::MediaPlayerElementAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::MediaPlayerElementAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::MediaTransportControlsAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::MediaTransportControlsAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::MenuFlyoutItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::MenuFlyoutItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::MenuFlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::MenuFlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::PasswordBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::PasswordBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::PickerFlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::PickerFlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::PivotAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::PivotAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::PivotItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::PivotItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::PivotItemDataAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::PivotItemDataAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ProgressBarAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ProgressBarAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ProgressRingAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ProgressRingAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::RadioButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::RadioButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::RangeBaseAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::RangeBaseAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::RepeatButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::RepeatButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::RichEditBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::RichEditBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::RichTextBlockAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::RichTextBlockAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::RichTextBlockOverflowAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::RichTextBlockOverflowAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ScrollBarAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ScrollBarAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ScrollViewerAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ScrollViewerAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::SearchBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::SearchBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::SelectorItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::SelectorItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::SemanticZoomAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::SemanticZoomAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::SettingsFlyoutAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::SettingsFlyoutAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::SliderAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::SliderAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::TextBlockAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::TextBlockAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::TextBoxAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::TextBoxAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ThumbAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ThumbAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::TimePickerAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::TimePickerAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::TimePickerFlyoutPresenterAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::TimePickerFlyoutPresenterAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ToggleButtonAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ToggleButtonAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ToggleMenuFlyoutItemAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ToggleMenuFlyoutItemAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::ToggleSwitchAutomationPeer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::ToggleSwitchAutomationPeer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

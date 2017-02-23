@@ -183,4 +183,58 @@ inline Decompressor::Decompressor(const Windows::Storage::Streams::IInputStream 
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Storage::Compression::ICompressor>
+{
+    size_t operator()(const winrt::Windows::Storage::Compression::ICompressor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Compression::ICompressorFactory>
+{
+    size_t operator()(const winrt::Windows::Storage::Compression::ICompressorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Compression::IDecompressor>
+{
+    size_t operator()(const winrt::Windows::Storage::Compression::IDecompressor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Compression::IDecompressorFactory>
+{
+    size_t operator()(const winrt::Windows::Storage::Compression::IDecompressorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Compression::Compressor>
+{
+    size_t operator()(const winrt::Windows::Storage::Compression::Compressor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Compression::Decompressor>
+{
+    size_t operator()(const winrt::Windows::Storage::Compression::Decompressor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

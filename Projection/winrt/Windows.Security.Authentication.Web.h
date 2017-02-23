@@ -303,4 +303,40 @@ inline Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::W
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics2>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::IWebAuthenticationBrokerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::IWebAuthenticationResult>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::IWebAuthenticationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::WebAuthenticationResult>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::WebAuthenticationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

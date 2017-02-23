@@ -1881,4 +1881,148 @@ inline Windows::Foundation::IAsyncAction GeotagHelper::SetGeotagAsync(const Wind
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::IBasicProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::IBasicProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::IDocumentProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::IDocumentProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::IGeotagHelperStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::IGeotagHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::IImageProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::IImageProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::IMusicProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::IMusicProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::IStorageItemContentProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::IStorageItemContentProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::IStorageItemExtraProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::IStorageItemExtraProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::IThumbnailProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::IThumbnailProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::IVideoProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::IVideoProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::BasicProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::BasicProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::DocumentProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::DocumentProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::ImageProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::ImageProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::MusicProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::MusicProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::StorageItemContentProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::StorageItemContentProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::StorageItemThumbnail>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::StorageItemThumbnail & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::FileProperties::VideoProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::FileProperties::VideoProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

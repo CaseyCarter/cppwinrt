@@ -243,7 +243,10 @@ static void GenerateClassImpl(bool overridesExist, bool composablesExist, std::v
     
     out.WriteNamespace();
     WriteRootNamespaceEnd(out);
-    Write(out, Strings::PragmaWarningPop);
+
+    WriteHashes(out);
+
+    Write(out, Strings::PragmaWarningPop); 
     out.WriteTo("..\\" + Settings::FileNamespaceDotName + ".h");
 }
 

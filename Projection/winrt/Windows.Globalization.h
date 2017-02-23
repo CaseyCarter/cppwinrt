@@ -8828,4 +8828,211 @@ inline hstring NumeralSystemIdentifiers::ZmthMono()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Globalization::IApplicationLanguagesStatics>
+{
+    size_t operator()(const winrt::Windows::Globalization::IApplicationLanguagesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ICalendar>
+{
+    size_t operator()(const winrt::Windows::Globalization::ICalendar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ICalendarFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::ICalendarFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ICalendarFactory2>
+{
+    size_t operator()(const winrt::Windows::Globalization::ICalendarFactory2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ICalendarIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::Globalization::ICalendarIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ICalendarIdentifiersStatics2>
+{
+    size_t operator()(const winrt::Windows::Globalization::ICalendarIdentifiersStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ICalendarIdentifiersStatics3>
+{
+    size_t operator()(const winrt::Windows::Globalization::ICalendarIdentifiersStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::IClockIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::Globalization::IClockIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ICurrencyIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::Globalization::ICurrencyIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::IGeographicRegion>
+{
+    size_t operator()(const winrt::Windows::Globalization::IGeographicRegion & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::IGeographicRegionFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::IGeographicRegionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::IGeographicRegionStatics>
+{
+    size_t operator()(const winrt::Windows::Globalization::IGeographicRegionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ILanguage>
+{
+    size_t operator()(const winrt::Windows::Globalization::ILanguage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ILanguageExtensionSubtags>
+{
+    size_t operator()(const winrt::Windows::Globalization::ILanguageExtensionSubtags & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ILanguageFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::ILanguageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ILanguageStatics>
+{
+    size_t operator()(const winrt::Windows::Globalization::ILanguageStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ILanguageStatics2>
+{
+    size_t operator()(const winrt::Windows::Globalization::ILanguageStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::INumeralSystemIdentifiersStatics>
+{
+    size_t operator()(const winrt::Windows::Globalization::INumeralSystemIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::INumeralSystemIdentifiersStatics2>
+{
+    size_t operator()(const winrt::Windows::Globalization::INumeralSystemIdentifiersStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ITimeZoneOnCalendar>
+{
+    size_t operator()(const winrt::Windows::Globalization::ITimeZoneOnCalendar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Calendar>
+{
+    size_t operator()(const winrt::Windows::Globalization::Calendar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::GeographicRegion>
+{
+    size_t operator()(const winrt::Windows::Globalization::GeographicRegion & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Language>
+{
+    size_t operator()(const winrt::Windows::Globalization::Language & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -4516,4 +4516,571 @@ inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::Cr
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::ICrossSlidingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::ICrossSlidingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IDraggingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IDraggingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IEdgeGesture>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IEdgeGesture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IEdgeGestureEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IEdgeGestureEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IEdgeGestureStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IEdgeGestureStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IGestureRecognizer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IGestureRecognizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IHoldingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IHoldingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IKeyboardDeliveryInterceptor>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IKeyboardDeliveryInterceptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IKeyboardDeliveryInterceptorStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IKeyboardDeliveryInterceptorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IManipulationCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IManipulationCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IManipulationInertiaStartingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IManipulationInertiaStartingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IManipulationStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IManipulationStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IManipulationUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IManipulationUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IMouseWheelParameters>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IMouseWheelParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IPointerPoint>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IPointerPoint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IPointerPointProperties>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IPointerPointProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IPointerPointProperties2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IPointerPointProperties2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IPointerPointStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IPointerPointStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IPointerPointTransform>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IPointerPointTransform & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IPointerVisualizationSettings>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IPointerVisualizationSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IPointerVisualizationSettingsStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IPointerVisualizationSettingsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialController>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerButtonClickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerButtonClickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerConfiguration>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerConfigurationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerConfigurationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerControlAcquiredEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerControlAcquiredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerMenu>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerMenu & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerMenuItem>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerMenuItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerMenuItemStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerMenuItemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerRotationChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerRotationChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerScreenContact>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerScreenContact & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRightTappedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRightTappedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::ITappedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::ITappedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::CrossSlidingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::CrossSlidingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::DraggingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::DraggingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::EdgeGesture>
+{
+    size_t operator()(const winrt::Windows::UI::Input::EdgeGesture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::EdgeGestureEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::EdgeGestureEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::GestureRecognizer>
+{
+    size_t operator()(const winrt::Windows::UI::Input::GestureRecognizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::HoldingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::HoldingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::KeyboardDeliveryInterceptor>
+{
+    size_t operator()(const winrt::Windows::UI::Input::KeyboardDeliveryInterceptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::ManipulationCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::ManipulationCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::ManipulationInertiaStartingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::ManipulationInertiaStartingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::ManipulationStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::ManipulationStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::ManipulationUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::ManipulationUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::MouseWheelParameters>
+{
+    size_t operator()(const winrt::Windows::UI::Input::MouseWheelParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::PointerPoint>
+{
+    size_t operator()(const winrt::Windows::UI::Input::PointerPoint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::PointerPointProperties>
+{
+    size_t operator()(const winrt::Windows::UI::Input::PointerPointProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::PointerVisualizationSettings>
+{
+    size_t operator()(const winrt::Windows::UI::Input::PointerVisualizationSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialController>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerButtonClickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerButtonClickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerConfiguration>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerControlAcquiredEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerControlAcquiredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerMenu>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerMenu & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerMenuItem>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerMenuItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerRotationChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerRotationChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerScreenContact>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerScreenContact & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerScreenContactStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerScreenContactStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RightTappedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RightTappedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::TappedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::TappedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

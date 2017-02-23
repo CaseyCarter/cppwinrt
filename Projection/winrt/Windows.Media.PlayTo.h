@@ -2080,4 +2080,310 @@ inline PlayToReceiver::PlayToReceiver() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::ICurrentTimeChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::ICurrentTimeChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IMuteChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IMuteChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToConnection>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToConnectionErrorEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToConnectionErrorEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToConnectionStateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToConnectionStateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToConnectionTransferredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToConnectionTransferredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToManager>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToReceiver>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToReceiver & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToSource>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToSourceDeferral>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToSourceDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToSourceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToSourceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToSourceRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToSourceRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlayToSourceWithPreferredSourceUri>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlayToSourceWithPreferredSourceUri & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IPlaybackRateChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IPlaybackRateChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::ISourceChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::ISourceChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::IVolumeChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::IVolumeChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::MuteChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::MuteChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlayToConnection>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlayToConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlayToConnectionErrorEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlayToConnectionErrorEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlayToManager>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlayToManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlayToReceiver>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlayToReceiver & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlayToSource>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlayToSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlayToSourceDeferral>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlayToSourceDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlayToSourceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlayToSourceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlayToSourceRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlayToSourceRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlayToSourceSelectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlayToSourceSelectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::SourceChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::SourceChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::PlayTo::VolumeChangeRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::PlayTo::VolumeChangeRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

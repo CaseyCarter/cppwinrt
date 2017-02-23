@@ -3975,4 +3975,634 @@ inline WebSocketKeepAlive::WebSocketKeepAlive() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IDatagramSocket>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IDatagramSocket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IDatagramSocket2>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IDatagramSocket2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IDatagramSocket3>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IDatagramSocket3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IDatagramSocketControl>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IDatagramSocketControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IDatagramSocketControl2>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IDatagramSocketControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IDatagramSocketControl3>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IDatagramSocketControl3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IDatagramSocketInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IDatagramSocketInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IDatagramSocketMessageReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IDatagramSocketMessageReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IDatagramSocketStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IDatagramSocketStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IMessageWebSocket>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IMessageWebSocket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IMessageWebSocket2>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IMessageWebSocket2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IMessageWebSocketControl>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IMessageWebSocketControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IMessageWebSocketMessageReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IMessageWebSocketMessageReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::ISocketActivityContext>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::ISocketActivityContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::ISocketActivityContextFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::ISocketActivityContextFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::ISocketActivityInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::ISocketActivityInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::ISocketActivityInformationStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::ISocketActivityInformationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::ISocketActivityTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::ISocketActivityTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::ISocketErrorStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::ISocketErrorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocket>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocket2>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocket2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocket3>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocket3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketControl>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketControl2>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketControl3>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketControl3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketInformation2>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketInformation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketListener>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketListener & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketListener2>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketListener2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketListener3>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketListener3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketListenerConnectionReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketListenerConnectionReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketListenerControl>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketListenerControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketListenerControl2>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketListenerControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketListenerInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketListenerInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamSocketStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamSocketStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamWebSocket>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamWebSocket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamWebSocket2>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamWebSocket2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IStreamWebSocketControl>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IStreamWebSocketControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IWebSocket>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IWebSocket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IWebSocketClosedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IWebSocketClosedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IWebSocketControl>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IWebSocketControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IWebSocketControl2>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IWebSocketControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IWebSocketErrorStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IWebSocketErrorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IWebSocketInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IWebSocketInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IWebSocketInformation2>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IWebSocketInformation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::IWebSocketServerCustomValidationRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::IWebSocketServerCustomValidationRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::DatagramSocket>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::DatagramSocket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::DatagramSocketControl>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::DatagramSocketControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::DatagramSocketInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::DatagramSocketInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::MessageWebSocket>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::MessageWebSocket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::MessageWebSocketControl>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::MessageWebSocketControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::MessageWebSocketInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::MessageWebSocketInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::SocketActivityContext>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::SocketActivityContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::SocketActivityInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::SocketActivityInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::SocketActivityTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::SocketActivityTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::StreamSocket>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::StreamSocket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::StreamSocketControl>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::StreamSocketControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::StreamSocketInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::StreamSocketInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::StreamSocketListener>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::StreamSocketListener & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::StreamSocketListenerControl>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::StreamSocketListenerControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::StreamSocketListenerInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::StreamSocketListenerInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::StreamWebSocket>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::StreamWebSocket & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::StreamWebSocketControl>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::StreamWebSocketControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::StreamWebSocketInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::StreamWebSocketInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::WebSocketClosedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::WebSocketClosedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::WebSocketKeepAlive>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::WebSocketKeepAlive & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

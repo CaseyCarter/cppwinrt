@@ -5134,4 +5134,643 @@ inline Windows::Storage::SystemImageProperties SystemProperties::Image()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Storage::IApplicationData>
+{
+    size_t operator()(const winrt::Windows::Storage::IApplicationData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IApplicationData2>
+{
+    size_t operator()(const winrt::Windows::Storage::IApplicationData2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IApplicationData3>
+{
+    size_t operator()(const winrt::Windows::Storage::IApplicationData3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IApplicationDataContainer>
+{
+    size_t operator()(const winrt::Windows::Storage::IApplicationDataContainer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IApplicationDataStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::IApplicationDataStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IApplicationDataStatics2>
+{
+    size_t operator()(const winrt::Windows::Storage::IApplicationDataStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ICachedFileManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::ICachedFileManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IDownloadsFolderStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::IDownloadsFolderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IDownloadsFolderStatics2>
+{
+    size_t operator()(const winrt::Windows::Storage::IDownloadsFolderStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IFileIOStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::IFileIOStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IKnownFoldersCameraRollStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::IKnownFoldersCameraRollStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IKnownFoldersPlaylistsStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::IKnownFoldersPlaylistsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IKnownFoldersSavedPicturesStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::IKnownFoldersSavedPicturesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IKnownFoldersStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::IKnownFoldersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IKnownFoldersStatics2>
+{
+    size_t operator()(const winrt::Windows::Storage::IKnownFoldersStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IKnownFoldersStatics3>
+{
+    size_t operator()(const winrt::Windows::Storage::IKnownFoldersStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IPathIOStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::IPathIOStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ISetVersionDeferral>
+{
+    size_t operator()(const winrt::Windows::Storage::ISetVersionDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ISetVersionRequest>
+{
+    size_t operator()(const winrt::Windows::Storage::ISetVersionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageFile>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageFile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageFile2>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageFile2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageFilePropertiesWithAvailability>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageFilePropertiesWithAvailability & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageFileStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageFileStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageFolder>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageFolder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageFolder2>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageFolder2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageFolderStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageFolderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageItem>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageItem2>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageItem2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageItemProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageItemProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageItemProperties2>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageItemProperties2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageItemPropertiesWithProvider>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageItemPropertiesWithProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageLibrary>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageLibrary & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageLibrary2>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageLibrary2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageLibraryChange>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageLibraryChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageLibraryChangeReader>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageLibraryChangeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageLibraryChangeTracker>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageLibraryChangeTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageLibraryStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageLibraryStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageLibraryStatics2>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageLibraryStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageProvider>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStorageStreamTransaction>
+{
+    size_t operator()(const winrt::Windows::Storage::IStorageStreamTransaction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::IStreamedFileDataRequest>
+{
+    size_t operator()(const winrt::Windows::Storage::IStreamedFileDataRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ISystemAudioProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::ISystemAudioProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ISystemGPSProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::ISystemGPSProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ISystemImageProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::ISystemImageProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ISystemMediaProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::ISystemMediaProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ISystemMusicProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::ISystemMusicProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ISystemPhotoProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::ISystemPhotoProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ISystemProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::ISystemProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ISystemVideoProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::ISystemVideoProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ApplicationData>
+{
+    size_t operator()(const winrt::Windows::Storage::ApplicationData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ApplicationDataCompositeValue>
+{
+    size_t operator()(const winrt::Windows::Storage::ApplicationDataCompositeValue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ApplicationDataContainer>
+{
+    size_t operator()(const winrt::Windows::Storage::ApplicationDataContainer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::ApplicationDataContainerSettings>
+{
+    size_t operator()(const winrt::Windows::Storage::ApplicationDataContainerSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::SetVersionDeferral>
+{
+    size_t operator()(const winrt::Windows::Storage::SetVersionDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::SetVersionRequest>
+{
+    size_t operator()(const winrt::Windows::Storage::SetVersionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::StorageFile>
+{
+    size_t operator()(const winrt::Windows::Storage::StorageFile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::StorageFolder>
+{
+    size_t operator()(const winrt::Windows::Storage::StorageFolder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::StorageLibrary>
+{
+    size_t operator()(const winrt::Windows::Storage::StorageLibrary & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::StorageLibraryChange>
+{
+    size_t operator()(const winrt::Windows::Storage::StorageLibraryChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::StorageLibraryChangeReader>
+{
+    size_t operator()(const winrt::Windows::Storage::StorageLibraryChangeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::StorageLibraryChangeTracker>
+{
+    size_t operator()(const winrt::Windows::Storage::StorageLibraryChangeTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::StorageProvider>
+{
+    size_t operator()(const winrt::Windows::Storage::StorageProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::StorageStreamTransaction>
+{
+    size_t operator()(const winrt::Windows::Storage::StorageStreamTransaction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::StreamedFileDataRequest>
+{
+    size_t operator()(const winrt::Windows::Storage::StreamedFileDataRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::SystemAudioProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::SystemAudioProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::SystemGPSProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::SystemGPSProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::SystemImageProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::SystemImageProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::SystemMediaProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::SystemMediaProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::SystemMusicProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::SystemMusicProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::SystemPhotoProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::SystemPhotoProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::SystemVideoProperties>
+{
+    size_t operator()(const winrt::Windows::Storage::SystemVideoProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

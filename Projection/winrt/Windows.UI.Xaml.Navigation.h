@@ -619,4 +619,112 @@ inline Windows::UI::Xaml::DependencyProperty PageStackEntry::SourcePageTypePrope
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::INavigationEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::INavigationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::INavigationEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::INavigationEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::INavigationFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::INavigationFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::IPageStackEntry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::IPageStackEntry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::IPageStackEntryFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::IPageStackEntryFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::IPageStackEntryStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::IPageStackEntryStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::NavigationEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::NavigationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::NavigationFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::NavigationFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Navigation::PageStackEntry>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Navigation::PageStackEntry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

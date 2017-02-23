@@ -254,4 +254,22 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Adc::Provider::IAdcControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Adc::Provider::IAdcControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Adc::Provider::IAdcProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Adc::Provider::IAdcProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

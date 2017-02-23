@@ -250,4 +250,22 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Pwm::Provider::IPwmControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Pwm::Provider::IPwmControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Pwm::Provider::IPwmProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Pwm::Provider::IPwmProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

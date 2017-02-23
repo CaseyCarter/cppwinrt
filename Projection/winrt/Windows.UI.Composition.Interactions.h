@@ -1964,4 +1964,283 @@ inline Windows::UI::Composition::Interactions::VisualInteractionSource VisualInt
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::ICompositionInteractionSource>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::ICompositionInteractionSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::ICompositionInteractionSourceCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::ICompositionInteractionSourceCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTracker>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerCustomAnimationStateEnteredArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerCustomAnimationStateEnteredArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerIdleStateEnteredArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerIdleStateEnteredArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaModifier>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaModifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaModifierFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaModifierFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaMotion>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaMotion & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaMotionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaMotionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaRestingValue>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaRestingValue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaRestingValueStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaRestingValueStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaStateEnteredArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInertiaStateEnteredArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInteractingStateEnteredArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerInteractingStateEnteredArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerOwner>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerOwner & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerRequestIgnoredArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerRequestIgnoredArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTrackerValuesChangedArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTrackerValuesChangedArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IVisualInteractionSource>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IVisualInteractionSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IVisualInteractionSourceStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IVisualInteractionSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::CompositionInteractionSourceCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::CompositionInteractionSourceCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::InteractionTracker>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::InteractionTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::InteractionTrackerCustomAnimationStateEnteredArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::InteractionTrackerCustomAnimationStateEnteredArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::InteractionTrackerIdleStateEnteredArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::InteractionTrackerIdleStateEnteredArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::InteractionTrackerInertiaMotion>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::InteractionTrackerInertiaMotion & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::InteractionTrackerInertiaRestingValue>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::InteractionTrackerInertiaRestingValue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::InteractionTrackerInertiaStateEnteredArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::InteractionTrackerInertiaStateEnteredArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::InteractionTrackerInteractingStateEnteredArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::InteractionTrackerInteractingStateEnteredArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::InteractionTrackerRequestIgnoredArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::InteractionTrackerRequestIgnoredArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::InteractionTrackerValuesChangedArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::InteractionTrackerValuesChangedArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::VisualInteractionSource>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::VisualInteractionSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

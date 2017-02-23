@@ -757,4 +757,112 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial:
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuffer>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptions>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptionsStatics>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptionsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

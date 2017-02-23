@@ -1757,4 +1757,157 @@ inline Windows::Networking::Proximity::ProximityDevice ProximityDevice::FromId(h
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::IConnectionRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::IConnectionRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::IPeerFinderStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::IPeerFinderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::IPeerFinderStatics2>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::IPeerFinderStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::IPeerInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::IPeerInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::IPeerInformation3>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::IPeerInformation3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::IPeerInformationWithHostAndService>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::IPeerInformationWithHostAndService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::IPeerWatcher>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::IPeerWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::IProximityDevice>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::IProximityDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::IProximityDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::IProximityDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::IProximityMessage>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::IProximityMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::ITriggeredConnectionStateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::ITriggeredConnectionStateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::ConnectionRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::ConnectionRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::PeerInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::PeerInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::PeerWatcher>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::PeerWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::ProximityDevice>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::ProximityDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::ProximityMessage>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::ProximityMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

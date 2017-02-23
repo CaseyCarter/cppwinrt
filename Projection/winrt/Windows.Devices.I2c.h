@@ -513,4 +513,85 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> I2
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::II2cConnectionSettings>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::II2cConnectionSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::II2cConnectionSettingsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::II2cConnectionSettingsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::II2cController>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::II2cController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::II2cControllerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::II2cControllerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::II2cDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::II2cDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::II2cDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::II2cDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::I2cConnectionSettings>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::I2cConnectionSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::I2cController>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::I2cController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::I2cDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::I2cDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

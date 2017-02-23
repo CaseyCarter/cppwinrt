@@ -278,4 +278,49 @@ inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Li
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

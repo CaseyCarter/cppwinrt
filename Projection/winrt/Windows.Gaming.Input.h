@@ -1262,4 +1262,148 @@ inline Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::UIN
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::IArcadeStick>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::IArcadeStick & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::IArcadeStickStatics>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::IArcadeStickStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::IGameController>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::IGameController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::IGamepad>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::IGamepad & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::IGamepad2>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::IGamepad2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::IGamepadStatics>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::IGamepadStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::IHeadset>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::IHeadset & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::IRacingWheel>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::IRacingWheel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::IRacingWheelStatics>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::IRacingWheelStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::IUINavigationController>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::IUINavigationController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::IUINavigationControllerStatics>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::IUINavigationControllerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::ArcadeStick>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::ArcadeStick & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Gamepad>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Gamepad & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Headset>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Headset & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::RacingWheel>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::RacingWheel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::UINavigationController>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::UINavigationController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

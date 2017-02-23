@@ -156,4 +156,22 @@ inline Windows::Management::Workplace::MessagingSyncPolicy MdmPolicy::GetMessagi
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Management::Workplace::IMdmAllowPolicyStatics>
+{
+    size_t operator()(const winrt::Windows::Management::Workplace::IMdmAllowPolicyStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Workplace::IMdmPolicyStatics2>
+{
+    size_t operator()(const winrt::Windows::Management::Workplace::IMdmPolicyStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

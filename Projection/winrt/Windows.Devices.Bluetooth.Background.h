@@ -429,4 +429,112 @@ template <typename D> Windows::Devices::Bluetooth::BluetoothError impl_IBluetoot
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertisementPublisherTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertisementPublisherTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertisementWatcherTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertisementWatcherTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::IRfcommConnectionTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::IRfcommConnectionTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::IRfcommInboundConnectionInformation>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::IRfcommInboundConnectionInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::IRfcommOutboundConnectionInformation>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::IRfcommOutboundConnectionInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::BluetoothLEAdvertisementPublisherTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::BluetoothLEAdvertisementPublisherTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::BluetoothLEAdvertisementWatcherTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::BluetoothLEAdvertisementWatcherTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::GattCharacteristicNotificationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::GattCharacteristicNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::RfcommConnectionTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::RfcommConnectionTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::RfcommInboundConnectionInformation>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::RfcommInboundConnectionInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::RfcommOutboundConnectionInformation>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::RfcommOutboundConnectionInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

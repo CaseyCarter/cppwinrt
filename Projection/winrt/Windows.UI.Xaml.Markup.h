@@ -1408,4 +1408,139 @@ inline Windows::Foundation::IInspectable XamlReader::LoadWithInitialTemplateVali
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IComponentConnector>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IComponentConnector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IComponentConnector2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IComponentConnector2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IDataTemplateComponent>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IDataTemplateComponent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlBinaryWriter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlBinaryWriter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlBinaryWriterStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlBinaryWriterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlBindingHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlBindingHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlBindingHelperStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlBindingHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlMember>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlMember & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlMetadataProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlMetadataProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlReader>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlReaderStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlReaderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlType>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlType & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::XamlBinaryWriter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::XamlBinaryWriter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::XamlBindingHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::XamlBindingHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::XamlReader>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::XamlReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

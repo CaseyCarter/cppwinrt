@@ -870,4 +870,67 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunicatio
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::SerialCommunication::IErrorReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::SerialCommunication::IErrorReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SerialCommunication::IPinChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::SerialCommunication::IPinChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SerialCommunication::ISerialDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::SerialCommunication::ISerialDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SerialCommunication::ISerialDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::SerialCommunication::ISerialDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SerialCommunication::ErrorReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::SerialCommunication::ErrorReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SerialCommunication::PinChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::SerialCommunication::PinChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::SerialCommunication::SerialDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::SerialCommunication::SerialDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

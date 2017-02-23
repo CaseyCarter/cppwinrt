@@ -342,4 +342,49 @@ template <typename D> Windows::Devices::I2c::Provider::ProviderI2cTransferResult
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::Provider::II2cControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::Provider::II2cControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::Provider::II2cDeviceProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::Provider::II2cDeviceProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::Provider::II2cProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::Provider::II2cProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::Provider::IProviderI2cConnectionSettings>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::Provider::IProviderI2cConnectionSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::I2c::Provider::ProviderI2cConnectionSettings>
+{
+    size_t operator()(const winrt::Windows::Devices::I2c::Provider::ProviderI2cConnectionSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

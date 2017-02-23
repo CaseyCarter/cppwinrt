@@ -98,4 +98,40 @@ inline CharacterGroupings::CharacterGroupings() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Collation::ICharacterGrouping>
+{
+    size_t operator()(const winrt::Windows::Globalization::Collation::ICharacterGrouping & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Collation::ICharacterGroupings>
+{
+    size_t operator()(const winrt::Windows::Globalization::Collation::ICharacterGroupings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Collation::CharacterGrouping>
+{
+    size_t operator()(const winrt::Windows::Globalization::Collation::CharacterGrouping & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Collation::CharacterGroupings>
+{
+    size_t operator()(const winrt::Windows::Globalization::Collation::CharacterGroupings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

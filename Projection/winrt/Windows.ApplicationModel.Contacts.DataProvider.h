@@ -483,4 +483,112 @@ template <typename D> Windows::Foundation::Deferral impl_IContactListServerSearc
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactDataProviderConnection>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactDataProviderConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactDataProviderTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactDataProviderTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactListServerSearchReadBatchRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactListServerSearchReadBatchRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactListServerSearchReadBatchRequestEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactListServerSearchReadBatchRequestEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactListSyncManagerSyncRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactListSyncManagerSyncRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactListSyncManagerSyncRequestEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::IContactListSyncManagerSyncRequestEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequestEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequestEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequestEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequestEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

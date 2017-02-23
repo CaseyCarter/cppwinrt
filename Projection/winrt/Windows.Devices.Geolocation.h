@@ -1855,4 +1855,346 @@ inline Geopoint::Geopoint(const Windows::Devices::Geolocation::BasicGeoposition 
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::ICivicAddress>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::ICivicAddress & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeoboundingBox>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeoboundingBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeoboundingBoxFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeoboundingBoxFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeoboundingBoxStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeoboundingBoxStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeocircle>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeocircle & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeocircleFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeocircleFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeocoordinate>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeocoordinate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeocoordinateSatelliteData>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeocoordinateSatelliteData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeocoordinateWithPoint>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeocoordinateWithPoint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeocoordinateWithPositionData>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeocoordinateWithPositionData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeocoordinateWithPositionSourceTimestamp>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeocoordinateWithPositionSourceTimestamp & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeolocator>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeolocator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeolocator2>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeolocator2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeolocatorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeolocatorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeolocatorStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeolocatorStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeolocatorWithScalarAccuracy & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeopath>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeopath & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeopathFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeopathFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeopoint>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeopoint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeopointFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeopointFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeoposition>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeoposition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeoposition2>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeoposition2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IGeoshape>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IGeoshape & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IPositionChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IPositionChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IStatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IStatusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::IVenueData>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::IVenueData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::CivicAddress>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::CivicAddress & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::GeoboundingBox>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::GeoboundingBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geocircle>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geocircle & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geocoordinate>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geocoordinate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::GeocoordinateSatelliteData>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::GeocoordinateSatelliteData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geolocator>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geolocator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geopath>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geopath & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geopoint>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geopoint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geoposition>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geoposition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::PositionChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::PositionChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::StatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::StatusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::VenueData>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::VenueData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

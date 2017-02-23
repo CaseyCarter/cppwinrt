@@ -2103,4 +2103,328 @@ inline HttpStringContent::HttpStringContent(hstring_view content, Windows::Stora
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpBufferContentFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpBufferContentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpClient>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpClient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpClientFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpClientFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpContent>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpCookie>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpCookie & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpCookieFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpCookieFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpCookieManager>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpCookieManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpFormUrlEncodedContentFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpFormUrlEncodedContentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpMethod>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpMethod & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpMethodFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpMethodFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpMethodStatics>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpMethodStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpMultipartContent>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpMultipartContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpMultipartContentFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpMultipartContentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpMultipartFormDataContent>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpMultipartFormDataContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpMultipartFormDataContentFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpMultipartFormDataContentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpRequestMessage>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpRequestMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpRequestMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpRequestMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpResponseMessage>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpResponseMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpResponseMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpResponseMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpStreamContentFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpStreamContentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpStringContentFactory>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpStringContentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::IHttpTransportInformation>
+{
+    size_t operator()(const winrt::Windows::Web::Http::IHttpTransportInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpBufferContent>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpBufferContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpClient>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpClient & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpCookie>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpCookie & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpCookieCollection>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpCookieCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpCookieManager>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpCookieManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpFormUrlEncodedContent>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpFormUrlEncodedContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpMethod>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpMethod & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpMultipartContent>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpMultipartContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpMultipartFormDataContent>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpMultipartFormDataContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpRequestMessage>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpRequestMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpResponseMessage>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpResponseMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpStreamContent>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpStreamContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpStringContent>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpStringContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::Http::HttpTransportInformation>
+{
+    size_t operator()(const winrt::Windows::Web::Http::HttpTransportInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -147,4 +147,31 @@ inline DataProtectionProvider::DataProtectionProvider(hstring_view protectionDes
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::DataProtection::IDataProtectionProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::DataProtection::IDataProtectionProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::DataProtection::IDataProtectionProviderFactory>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::DataProtection::IDataProtectionProviderFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::DataProtection::DataProtectionProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::DataProtection::DataProtectionProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

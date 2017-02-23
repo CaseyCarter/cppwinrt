@@ -4417,4 +4417,508 @@ inline SubjectAlternativeNameInfo::SubjectAlternativeNameInfo() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificate>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificate2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificate2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificate3>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificate3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateChain>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateChain & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics3>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateEnrollmentManagerStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateFactory>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateKeyUsages>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateKeyUsages & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateQuery>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateQuery & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateQuery2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateQuery2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateRequestProperties>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateRequestProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateRequestProperties2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateRequestProperties2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateRequestProperties3>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateRequestProperties3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateStore>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateStore2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateStore2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateStoresStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateStoresStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICertificateStoresStatics2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICertificateStoresStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IChainBuildingParameters>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IChainBuildingParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IChainValidationParameters>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IChainValidationParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICmsAttachedSignature>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICmsAttachedSignature & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICmsAttachedSignatureFactory>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICmsAttachedSignatureFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICmsAttachedSignatureStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICmsAttachedSignatureStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICmsDetachedSignature>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICmsDetachedSignature & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICmsDetachedSignatureFactory>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICmsDetachedSignatureFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICmsDetachedSignatureStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICmsDetachedSignatureStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICmsSignerInfo>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICmsSignerInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ICmsTimestampInfo>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ICmsTimestampInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IKeyAlgorithmNamesStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IKeyAlgorithmNamesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IKeyAlgorithmNamesStatics2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IKeyAlgorithmNamesStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IKeyAttestationHelperStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IKeyAttestationHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IKeyAttestationHelperStatics2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IKeyAttestationHelperStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IKeyStorageProviderNamesStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IKeyStorageProviderNamesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IKeyStorageProviderNamesStatics2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IKeyStorageProviderNamesStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IPfxImportParameters>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IPfxImportParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IStandardCertificateStoreNamesStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IStandardCertificateStoreNamesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager2>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::IUserCertificateStore>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::IUserCertificateStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::Certificate>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::Certificate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::CertificateChain>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::CertificateChain & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::CertificateKeyUsages>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::CertificateKeyUsages & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::CertificateQuery>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::CertificateQuery & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::CertificateRequestProperties>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::CertificateRequestProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::CertificateStore>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::CertificateStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ChainBuildingParameters>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ChainBuildingParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::ChainValidationParameters>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::ChainValidationParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::CmsAttachedSignature>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::CmsAttachedSignature & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::CmsDetachedSignature>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::CmsDetachedSignature & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::CmsSignerInfo>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::CmsSignerInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::CmsTimestampInfo>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::CmsTimestampInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::PfxImportParameters>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::PfxImportParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::SubjectAlternativeNameInfo>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::SubjectAlternativeNameInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Cryptography::Certificates::UserCertificateStore>
+{
+    size_t operator()(const winrt::Windows::Security::Cryptography::Certificates::UserCertificateStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

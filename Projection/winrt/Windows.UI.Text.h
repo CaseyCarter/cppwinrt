@@ -4312,4 +4312,85 @@ inline Windows::UI::Text::FontStyle TextConstants::UndefinedFontStyle()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::IFontWeights>
+{
+    size_t operator()(const winrt::Windows::UI::Text::IFontWeights & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::IFontWeightsStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Text::IFontWeightsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::ITextCharacterFormat>
+{
+    size_t operator()(const winrt::Windows::UI::Text::ITextCharacterFormat & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::ITextConstantsStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Text::ITextConstantsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::ITextDocument>
+{
+    size_t operator()(const winrt::Windows::UI::Text::ITextDocument & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::ITextParagraphFormat>
+{
+    size_t operator()(const winrt::Windows::UI::Text::ITextParagraphFormat & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::ITextRange>
+{
+    size_t operator()(const winrt::Windows::UI::Text::ITextRange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::ITextSelection>
+{
+    size_t operator()(const winrt::Windows::UI::Text::ITextSelection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::FontWeights>
+{
+    size_t operator()(const winrt::Windows::UI::Text::FontWeights & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

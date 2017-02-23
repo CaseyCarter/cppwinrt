@@ -49,4 +49,13 @@ inline bool InteractiveSession::IsRemote()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteDesktop::IInteractiveSessionStatics>
+{
+    size_t operator()(const winrt::Windows::System::RemoteDesktop::IInteractiveSessionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

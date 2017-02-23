@@ -3392,4 +3392,427 @@ inline bool UserPicker::IsSupported()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::System::IAppMemoryReport>
+{
+    size_t operator()(const winrt::Windows::System::IAppMemoryReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IAppMemoryUsageLimitChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::IAppMemoryUsageLimitChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IFolderLauncherOptions>
+{
+    size_t operator()(const winrt::Windows::System::IFolderLauncherOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IKnownUserPropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::System::IKnownUserPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ILaunchUriResult>
+{
+    size_t operator()(const winrt::Windows::System::ILaunchUriResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ILauncherOptions>
+{
+    size_t operator()(const winrt::Windows::System::ILauncherOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ILauncherOptions2>
+{
+    size_t operator()(const winrt::Windows::System::ILauncherOptions2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ILauncherOptions3>
+{
+    size_t operator()(const winrt::Windows::System::ILauncherOptions3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ILauncherStatics>
+{
+    size_t operator()(const winrt::Windows::System::ILauncherStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ILauncherStatics2>
+{
+    size_t operator()(const winrt::Windows::System::ILauncherStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ILauncherStatics3>
+{
+    size_t operator()(const winrt::Windows::System::ILauncherStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ILauncherStatics4>
+{
+    size_t operator()(const winrt::Windows::System::ILauncherStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ILauncherUIOptions>
+{
+    size_t operator()(const winrt::Windows::System::ILauncherUIOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ILauncherViewOptions>
+{
+    size_t operator()(const winrt::Windows::System::ILauncherViewOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IMemoryManagerStatics>
+{
+    size_t operator()(const winrt::Windows::System::IMemoryManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IMemoryManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::System::IMemoryManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IMemoryManagerStatics3>
+{
+    size_t operator()(const winrt::Windows::System::IMemoryManagerStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IProcessMemoryReport>
+{
+    size_t operator()(const winrt::Windows::System::IProcessMemoryReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IProtocolForResultsOperation>
+{
+    size_t operator()(const winrt::Windows::System::IProtocolForResultsOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IRemoteLauncherOptions>
+{
+    size_t operator()(const winrt::Windows::System::IRemoteLauncherOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IRemoteLauncherStatics>
+{
+    size_t operator()(const winrt::Windows::System::IRemoteLauncherStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IUser>
+{
+    size_t operator()(const winrt::Windows::System::IUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IUserAuthenticationStatusChangeDeferral>
+{
+    size_t operator()(const winrt::Windows::System::IUserAuthenticationStatusChangeDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IUserAuthenticationStatusChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::IUserAuthenticationStatusChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IUserChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::IUserChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IUserDeviceAssociationChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::IUserDeviceAssociationChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IUserDeviceAssociationStatics>
+{
+    size_t operator()(const winrt::Windows::System::IUserDeviceAssociationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IUserPicker>
+{
+    size_t operator()(const winrt::Windows::System::IUserPicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IUserPickerStatics>
+{
+    size_t operator()(const winrt::Windows::System::IUserPickerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IUserStatics>
+{
+    size_t operator()(const winrt::Windows::System::IUserStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IUserWatcher>
+{
+    size_t operator()(const winrt::Windows::System::IUserWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::AppMemoryReport>
+{
+    size_t operator()(const winrt::Windows::System::AppMemoryReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::AppMemoryUsageLimitChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::AppMemoryUsageLimitChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::FolderLauncherOptions>
+{
+    size_t operator()(const winrt::Windows::System::FolderLauncherOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::LaunchUriResult>
+{
+    size_t operator()(const winrt::Windows::System::LaunchUriResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::LauncherOptions>
+{
+    size_t operator()(const winrt::Windows::System::LauncherOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::LauncherUIOptions>
+{
+    size_t operator()(const winrt::Windows::System::LauncherUIOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ProcessMemoryReport>
+{
+    size_t operator()(const winrt::Windows::System::ProcessMemoryReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ProtocolForResultsOperation>
+{
+    size_t operator()(const winrt::Windows::System::ProtocolForResultsOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::RemoteLauncherOptions>
+{
+    size_t operator()(const winrt::Windows::System::RemoteLauncherOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::User>
+{
+    size_t operator()(const winrt::Windows::System::User & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserAuthenticationStatusChangeDeferral>
+{
+    size_t operator()(const winrt::Windows::System::UserAuthenticationStatusChangeDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserAuthenticationStatusChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::UserAuthenticationStatusChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::UserChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserDeviceAssociationChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::System::UserDeviceAssociationChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserPicker>
+{
+    size_t operator()(const winrt::Windows::System::UserPicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserWatcher>
+{
+    size_t operator()(const winrt::Windows::System::UserWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

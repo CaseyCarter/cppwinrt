@@ -1246,4 +1246,112 @@ inline Windows::UI::Xaml::DependencyProperty PerspectiveTransform3D::OffsetYProp
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::ICompositeTransform3DStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::IMatrix3DHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::IMatrix3DHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::IMatrix3DHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3DStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::ITransform3D>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::ITransform3D & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::ITransform3DFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::ITransform3DFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::CompositeTransform3D>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::CompositeTransform3D & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::Matrix3DHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::Matrix3DHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::PerspectiveTransform3D>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::PerspectiveTransform3D & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Media3D::Transform3D>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Media3D::Transform3D & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

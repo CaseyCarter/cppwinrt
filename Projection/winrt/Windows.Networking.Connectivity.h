@@ -2836,4 +2836,481 @@ inline RoutePolicy::RoutePolicy(const Windows::Networking::Connectivity::Connect
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IAttributedNetworkUsage>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IAttributedNetworkUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::ICellularApnContext>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::ICellularApnContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IConnectionCost>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IConnectionCost & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IConnectionCost2>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IConnectionCost2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IConnectionProfile>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IConnectionProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IConnectionProfile2>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IConnectionProfile2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IConnectionProfile3>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IConnectionProfile3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IConnectionProfileFilter>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IConnectionProfileFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IConnectionProfileFilter2>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IConnectionProfileFilter2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IConnectionSession>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IConnectionSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IConnectivityInterval>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IConnectivityInterval & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IConnectivityManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IConnectivityManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IDataPlanStatus>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IDataPlanStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IDataPlanUsage>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IDataPlanUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IDataUsage>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IDataUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IIPInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IIPInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::ILanIdentifier>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::ILanIdentifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::ILanIdentifierData>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::ILanIdentifierData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::INetworkAdapter>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::INetworkAdapter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::INetworkInformationStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::INetworkInformationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::INetworkInformationStatics2>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::INetworkInformationStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::INetworkItem>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::INetworkItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::INetworkSecuritySettings>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::INetworkSecuritySettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::INetworkStateChangeEventDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::INetworkStateChangeEventDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::INetworkStateChangeEventDetails2>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::INetworkStateChangeEventDetails2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::INetworkUsage>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::INetworkUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IProxyConfiguration>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IProxyConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IRoutePolicy>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IRoutePolicy & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IRoutePolicyFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IRoutePolicyFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IWlanConnectionProfileDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IWlanConnectionProfileDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IWwanConnectionProfileDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IWwanConnectionProfileDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::AttributedNetworkUsage>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::AttributedNetworkUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::CellularApnContext>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::CellularApnContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::ConnectionCost>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::ConnectionCost & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::ConnectionProfile>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::ConnectionProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::ConnectionProfileFilter>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::ConnectionProfileFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::ConnectionSession>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::ConnectionSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::ConnectivityInterval>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::ConnectivityInterval & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::DataPlanStatus>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::DataPlanStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::DataPlanUsage>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::DataPlanUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::DataUsage>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::DataUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::IPInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::IPInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::LanIdentifier>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::LanIdentifier & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::LanIdentifierData>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::LanIdentifierData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::NetworkAdapter>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::NetworkAdapter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::NetworkItem>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::NetworkItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::NetworkSecuritySettings>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::NetworkSecuritySettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::NetworkStateChangeEventDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::NetworkStateChangeEventDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::NetworkUsage>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::NetworkUsage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::ProxyConfiguration>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::ProxyConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::RoutePolicy>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::RoutePolicy & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::WlanConnectionProfileDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::WlanConnectionProfileDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::Connectivity::WwanConnectionProfileDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::Connectivity::WwanConnectionProfileDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -1167,4 +1167,220 @@ inline WebAccountProvider::WebAccountProvider(hstring_view id, hstring_view disp
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::ICredentialFactory>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::ICredentialFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IKeyCredential>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IKeyCredential & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IKeyCredentialAttestationResult>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IKeyCredentialAttestationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IKeyCredentialManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IKeyCredentialManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IKeyCredentialOperationResult>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IKeyCredentialOperationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IKeyCredentialRetrievalResult>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IKeyCredentialRetrievalResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IPasswordCredential>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IPasswordCredential & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IPasswordVault>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IPasswordVault & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IWebAccount>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IWebAccount & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IWebAccount2>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IWebAccount2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IWebAccountFactory>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IWebAccountFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IWebAccountProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IWebAccountProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IWebAccountProvider2>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IWebAccountProvider2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IWebAccountProvider3>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IWebAccountProvider3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::IWebAccountProviderFactory>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::IWebAccountProviderFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::KeyCredential>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::KeyCredential & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::KeyCredentialAttestationResult>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::KeyCredentialAttestationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::KeyCredentialOperationResult>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::KeyCredentialOperationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::KeyCredentialRetrievalResult>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::KeyCredentialRetrievalResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::PasswordCredential>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::PasswordCredential & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::PasswordCredentialPropertyStore>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::PasswordCredentialPropertyStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::PasswordVault>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::PasswordVault & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::WebAccount>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::WebAccount & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Credentials::WebAccountProvider>
+{
+    size_t operator()(const winrt::Windows::Security::Credentials::WebAccountProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

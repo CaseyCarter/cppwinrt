@@ -7161,4 +7161,841 @@ inline PlaybackMediaMarker::PlaybackMediaMarker(const Windows::Foundation::TimeS
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IBackgroundMediaPlayerStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IBackgroundMediaPlayerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaBreak>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaBreak & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaBreakEndedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaBreakEndedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaBreakFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaBreakFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaBreakManager>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaBreakManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaBreakSchedule>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaBreakSchedule & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaBreakSeekedOverEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaBreakSeekedOverEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaBreakSkippedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaBreakSkippedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaBreakStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaBreakStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaEnginePlaybackSource>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaEnginePlaybackSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaItemDisplayProperties>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaItemDisplayProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManager>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerCommandBehavior>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerCommandBehavior & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerFastForwardReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerFastForwardReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerNextReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerNextReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerPauseReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerPauseReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerPlayReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerPlayReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerPositionReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerPositionReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerPreviousReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerPreviousReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerRateReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerRateReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerRewindReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerRewindReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerShuffleReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackCommandManagerShuffleReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackItem>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackItem2>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackItem2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackItemError>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackItemError & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackItemFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackItemFactory2>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackItemFactory2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackItemFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackItemFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackItemOpenedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackItemOpenedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackItemStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackItemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackList>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackList2>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackList2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackSession>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackSource>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackTimedMetadataTrackList>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackTimedMetadataTrackList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayer>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayer2>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayer3>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayer3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayer4>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayer4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayerDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayerDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayerEffects>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayerEffects & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayerEffects2>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayerEffects2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayerFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayerFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayerRateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayerRateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayerSource>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayerSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayerSource2>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayerSource2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayerSurface>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayerSurface & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IPlaybackMediaMarker>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IPlaybackMediaMarker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IPlaybackMediaMarkerFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IPlaybackMediaMarkerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IPlaybackMediaMarkerReachedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IPlaybackMediaMarkerReachedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IPlaybackMediaMarkerSequence>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IPlaybackMediaMarkerSequence & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::ITimedMetadataPresentationModeChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::ITimedMetadataPresentationModeChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::CurrentMediaPlaybackItemChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::CurrentMediaPlaybackItemChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaBreak>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaBreak & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaBreakEndedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaBreakEndedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaBreakManager>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaBreakManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaBreakSchedule>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaBreakSchedule & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaBreakSeekedOverEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaBreakSeekedOverEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaBreakSkippedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaBreakSkippedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaBreakStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaBreakStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaItemDisplayProperties>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaItemDisplayProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackAudioTrackList>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackAudioTrackList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManager>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManagerFastForwardReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManagerFastForwardReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManagerNextReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManagerNextReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManagerPauseReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManagerPauseReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManagerPlayReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManagerPlayReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManagerPositionReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManagerPositionReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManagerPreviousReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManagerPreviousReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManagerRateReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManagerRateReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManagerRewindReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManagerRewindReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackCommandManagerShuffleReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackCommandManagerShuffleReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackItem>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackItemError>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackItemError & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackItemFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackItemFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackItemOpenedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackItemOpenedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackList>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackSession>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackVideoTrackList>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackVideoTrackList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlayer>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlayer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlayerDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlayerDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlayerFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlayerFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlayerRateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlayerRateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlayerSurface>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlayerSurface & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::PlaybackMediaMarker>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::PlaybackMediaMarker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::PlaybackMediaMarkerSequence>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::PlaybackMediaMarkerSequence & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::TimedMetadataPresentationModeChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::TimedMetadataPresentationModeChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

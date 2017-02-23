@@ -67,4 +67,22 @@ template <typename D> Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDes
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice>
+{
+    size_t operator()(const winrt::Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface>
+{
+    size_t operator()(const winrt::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

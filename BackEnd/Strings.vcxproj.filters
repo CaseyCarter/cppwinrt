@@ -296,6 +296,9 @@
     <ClInclude Include="Source\Modern\WriteInterfaceConsumerForward.h">
       <Filter>Assets</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Modern\WriteInterfaceHash.h">
+      <Filter>Assets</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Source\Modern\ConsoleHeader.txt">

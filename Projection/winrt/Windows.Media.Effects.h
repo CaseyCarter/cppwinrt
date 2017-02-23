@@ -1513,4 +1513,256 @@ inline VideoTransformEffectDefinition::VideoTransformEffectDefinition() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IAudioCaptureEffectsManager>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IAudioCaptureEffectsManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IAudioEffect>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IAudioEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IAudioEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IAudioEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IAudioEffectDefinitionFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IAudioEffectDefinitionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IAudioEffectsManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IAudioEffectsManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IAudioRenderEffectsManager>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IAudioRenderEffectsManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IAudioRenderEffectsManager2>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IAudioRenderEffectsManager2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IBasicAudioEffect>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IBasicAudioEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IBasicVideoEffect>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IBasicVideoEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::ICompositeVideoFrameContext>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::ICompositeVideoFrameContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IProcessAudioFrameContext>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IProcessAudioFrameContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IProcessVideoFrameContext>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IProcessVideoFrameContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IVideoCompositor>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IVideoCompositor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IVideoCompositorDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IVideoCompositorDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IVideoCompositorDefinitionFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IVideoCompositorDefinitionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IVideoEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IVideoEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IVideoEffectDefinitionFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IVideoEffectDefinitionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::IVideoTransformEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::IVideoTransformEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::AudioCaptureEffectsManager>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::AudioCaptureEffectsManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::AudioEffect>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::AudioEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::AudioEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::AudioEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::AudioRenderEffectsManager>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::AudioRenderEffectsManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::CompositeVideoFrameContext>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::CompositeVideoFrameContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::ProcessAudioFrameContext>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::ProcessAudioFrameContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::ProcessVideoFrameContext>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::ProcessVideoFrameContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::VideoCompositorDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::VideoCompositorDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::VideoEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::VideoEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Effects::VideoTransformEffectDefinition>
+{
+    size_t operator()(const winrt::Windows::Media::Effects::VideoTransformEffectDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -68814,4 +68814,6799 @@ inline Windows::UI::Xaml::DependencyProperty WrapGrid::MaximumRowsOrColumnsPrope
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBar>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBar2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBar2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBar3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBar3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBar4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBar4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarButton3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarButton3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarButtonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarButtonStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarButtonStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarButtonStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarOverrides3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarOverrides3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarSeparator>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarSeparator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarSeparatorFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarSeparatorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarSeparatorStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarSeparatorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarSeparatorStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarSeparatorStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarToggleButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarToggleButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarToggleButton3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarToggleButton3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarToggleButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarToggleButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarToggleButtonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarToggleButtonStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAppBarToggleButtonStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAppBarToggleButtonStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAutoSuggestBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAutoSuggestBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAutoSuggestBox2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAutoSuggestBox2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAutoSuggestBox3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAutoSuggestBox3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxQuerySubmittedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxQuerySubmittedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxSuggestionChosenEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxSuggestionChosenEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxTextChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxTextChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxTextChangedEventArgsStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IAutoSuggestBoxTextChangedEventArgsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IBackClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IBackClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IBitmapIcon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IBitmapIcon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IBitmapIconFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IBitmapIconFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IBitmapIconStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IBitmapIconStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IBorder>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IBorder & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IBorderStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IBorderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IButtonStaticsWithFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IButtonStaticsWithFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IButtonWithFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IButtonWithFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarDatePicker>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarDatePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarDatePicker2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarDatePicker2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarDatePickerDateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarDatePickerDateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarDatePickerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarDatePickerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarDatePickerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarDatePickerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarDatePickerStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarDatePickerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarViewDayItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarViewDayItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarViewDayItemChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarViewDayItemChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarViewDayItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarViewDayItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarViewDayItemStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarViewDayItemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarViewFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarViewFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarViewSelectedDatesChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarViewSelectedDatesChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICalendarViewStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICalendarViewStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICandidateWindowBoundsChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICandidateWindowBoundsChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICanvas>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICanvas & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICanvasFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICanvasFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICanvasStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICanvasStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICaptureElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICaptureElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICaptureElementStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICaptureElementStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICheckBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICheckBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICheckBoxFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICheckBoxFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IChoosingGroupHeaderContainerEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IChoosingGroupHeaderContainerEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IChoosingItemContainerEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IChoosingItemContainerEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IColumnDefinition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IColumnDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IColumnDefinitionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IColumnDefinitionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBox2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBox2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBox3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBox3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBoxFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBoxFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBoxItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBoxItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBoxItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBoxItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBoxOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBoxOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBoxStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBoxStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBoxStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBoxStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBoxStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBoxStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICommandBar>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICommandBar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICommandBar2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICommandBar2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICommandBar3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICommandBar3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICommandBarElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICommandBarElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICommandBarElement2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICommandBarElement2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICommandBarFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICommandBarFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICommandBarOverflowPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICommandBarOverflowPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICommandBarOverflowPresenterFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICommandBarOverflowPresenterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICommandBarStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICommandBarStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICommandBarStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICommandBarStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ICommandBarStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ICommandBarStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContainerContentChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContainerContentChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentControl2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentControlFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentControlFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentControlOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentControlOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentControlStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentControlStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialog>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialog & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialogButtonClickDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialogButtonClickDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialogButtonClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialogButtonClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialogClosedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialogClosedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialogClosingDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialogClosingDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialogClosingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialogClosingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialogFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialogFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialogOpenedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialogOpenedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialogStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialogStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentPresenter2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentPresenter2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentPresenter3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentPresenter3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentPresenter4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentPresenter4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentPresenterFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentPresenterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentPresenterOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentPresenterOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentPresenterStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentPresenterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentPresenterStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentPresenterStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentPresenterStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentPresenterStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentPresenterStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentPresenterStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContextMenuEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContextMenuEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControl2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControl3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControl3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControl4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControl4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControlFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControlFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControlOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControlOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControlProtected>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControlProtected & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControlStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControlStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControlStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControlStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControlStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControlStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControlStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControlStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControlTemplate>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControlTemplate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDataTemplateSelector>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDataTemplateSelector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDataTemplateSelector2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDataTemplateSelector2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDataTemplateSelectorFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDataTemplateSelectorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDataTemplateSelectorOverrides2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePicker>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePicker2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePicker2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickerFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickerFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickerFlyout2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickerFlyout2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickerFlyoutItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickerFlyoutItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickerFlyoutItemStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickerFlyoutItemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickerFlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickerFlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickerFlyoutStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickerFlyoutStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickerFlyoutStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickerFlyoutStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickerStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDatePickerValueChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDatePickerValueChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDragItemsCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDragItemsCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDragItemsStartingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDragItemsStartingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IDynamicOverflowItemsChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IDynamicOverflowItemsChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFlipView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFlipView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFlipView2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFlipView2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFlipViewFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFlipViewFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFlipViewItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFlipViewItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFlipViewItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFlipViewItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFlipViewStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFlipViewStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFlyoutFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFlyoutFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFlyoutPresenterFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFlyoutPresenterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFlyoutStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFlyoutStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFocusDisengagedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFocusDisengagedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFocusEngagedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFocusEngagedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFontIcon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFontIcon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFontIcon2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFontIcon2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFontIcon3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFontIcon3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFontIconFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFontIconFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFontIconStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFontIconStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFontIconStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFontIconStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFontIconStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFontIconStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFrame2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFrame2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFrame3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFrame3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFrameFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFrameFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFrameStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFrameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFrameStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFrameStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGrid>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGrid & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGrid2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGrid2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGridFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGridFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGridStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGridStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGridStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGridStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGridView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGridView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGridViewFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGridViewFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGridViewHeaderItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGridViewHeaderItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGridViewHeaderItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGridViewHeaderItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGridViewItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGridViewItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGridViewItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGridViewItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGroupItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGroupItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGroupItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGroupItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGroupStyle>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGroupStyle & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGroupStyle2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGroupStyle2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGroupStyleFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGroupStyleFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGroupStyleSelector>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGroupStyleSelector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGroupStyleSelectorFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGroupStyleSelectorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IGroupStyleSelectorOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IGroupStyleSelectorOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IHub>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IHub & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IHubFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IHubFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IHubSection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IHubSection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IHubSectionFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IHubSectionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IHubSectionHeaderClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IHubSectionHeaderClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IHubSectionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IHubSectionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IHubStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IHubStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IHyperlinkButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IHyperlinkButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IHyperlinkButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IHyperlinkButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IHyperlinkButtonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IHyperlinkButtonStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IIconElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IIconElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IIconElementFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IIconElementFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IIconElementStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IIconElementStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IImage>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IImage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IImage2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IImage2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IImage3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IImage3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IImageStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IImageStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkCanvas>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkCanvas & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkCanvasFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkCanvasFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbar>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPen>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPen & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPenButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPenButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPenButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPenButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPenButtonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPenButtonStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPenFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPenFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPenOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomPenOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomToggleButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomToggleButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomToggleButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomToggleButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomToolButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomToolButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomToolButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomToolButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomToolButtonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarCustomToolButtonStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarHighlighterButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarHighlighterButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarHighlighterButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarHighlighterButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarPenButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarPenButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarPenButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarPenButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarPenButtonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarPenButtonStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarPenConfigurationControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarPenConfigurationControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarPenConfigurationControlFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarPenConfigurationControlFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarPenConfigurationControlStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarPenConfigurationControlStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarPencilButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarPencilButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarPencilButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarPencilButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarRulerButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarRulerButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarRulerButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarRulerButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarRulerButtonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarRulerButtonStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarToggleButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarToggleButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarToggleButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarToggleButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarToolButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarToolButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarToolButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarToolButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarToolButtonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarToolButtonStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInsertionPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInsertionPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemContainerGenerator>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemContainerGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemContainerMapping>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemContainerMapping & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsControl2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsControl3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsControl3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsControlFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsControlFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsControlOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsControlOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsControlStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsControlStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsPanelTemplate>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsPanelTemplate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsPickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsPickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsPresenter2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsPresenter2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsPresenterStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsPresenterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsPresenterStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsPresenterStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsStackPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsStackPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsStackPanel2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsStackPanel2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsStackPanelStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsStackPanelStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsStackPanelStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsStackPanelStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsWrapGrid>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsWrapGrid & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsWrapGrid2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsWrapGrid2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsWrapGridStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsWrapGridStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IItemsWrapGridStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IItemsWrapGridStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListBox2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListBox2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListBoxFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListBoxFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListBoxItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListBoxItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListBoxItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListBoxItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListBoxStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListBoxStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListBoxStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListBoxStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListPickerFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListPickerFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListPickerFlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListPickerFlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListPickerFlyoutStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListPickerFlyoutStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBase2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBase2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBase3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBase3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBase4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBase4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBase5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBase5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBaseFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBaseFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBaseHeaderItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBaseHeaderItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBaseHeaderItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBaseHeaderItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBaseStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBaseStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBaseStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBaseStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBaseStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBaseStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBaseStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBaseStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBaseStatics5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBaseStatics5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewHeaderItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewHeaderItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewHeaderItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewHeaderItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewPersistenceHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewPersistenceHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewPersistenceHelperStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewPersistenceHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaElement2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaElement2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaElement3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaElement3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaElementStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaElementStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaElementStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaElementStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaPlayerElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaPlayerElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaPlayerElementFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaPlayerElementFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaPlayerElementStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaPlayerElementStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaPlayerPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaPlayerPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaPlayerPresenterFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaPlayerPresenterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaPlayerPresenterStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaPlayerPresenterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaTransportControls>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaTransportControls & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaTransportControls2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaTransportControls2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaTransportControlsFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaTransportControlsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaTransportControlsHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaTransportControlsHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaTransportControlsHelperStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaTransportControlsHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaTransportControlsStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaTransportControlsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMediaTransportControlsStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMediaTransportControlsStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyout2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyout2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemBaseFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemBaseFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutPresenter2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutPresenter2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutPresenterFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutPresenterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSeparator>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSeparator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSeparatorFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSeparatorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSubItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSubItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::INavigate>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::INavigate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::INotifyEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::INotifyEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::INotifyEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::INotifyEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPage>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPageFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPageOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPageOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPageStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPageStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPanelFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPanelFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPanelStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPanelStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPasswordBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPasswordBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPasswordBox2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPasswordBox2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPasswordBox3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPasswordBox3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPasswordBoxStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPasswordBoxStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPasswordBoxStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPasswordBoxStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPasswordBoxStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPasswordBoxStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPathIcon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPathIcon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPathIconFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPathIconFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPathIconStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPathIconStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPickerConfirmedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPickerConfirmedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPickerFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPickerFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPickerFlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPickerFlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPickerFlyoutStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPickerFlyoutStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPivot>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPivot & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPivot2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPivot2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPivot3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPivot3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPivotFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPivotFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPivotItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPivotItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPivotItemEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPivotItemEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPivotItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPivotItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPivotItemStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPivotItemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPivotStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPivotStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPivotStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPivotStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IPivotStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IPivotStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IProgressBar>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IProgressBar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IProgressBarFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IProgressBarFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IProgressBarStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IProgressBarStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IProgressRing>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IProgressRing & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IProgressRingStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IProgressRingStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRadioButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRadioButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRadioButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRadioButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRadioButtonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRadioButtonStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRelativePanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRelativePanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRelativePanelFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRelativePanelFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRelativePanelStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRelativePanelStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBox2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBox2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBox3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBox3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBox4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBox4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBoxFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBoxFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBoxStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBoxStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBoxStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBoxStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBoxStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBoxStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBoxStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBoxStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlock>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlock & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlock2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlock2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlock3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlock3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlockOverflow>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlockOverflow & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlockOverflow2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlockOverflow2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlockOverflowStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlockOverflowStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlockOverflowStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlockOverflowStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlockStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlockStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlockStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlockStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlockStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlockStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRowDefinition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRowDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRowDefinitionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRowDefinitionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IScrollContentPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IScrollContentPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IScrollViewer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IScrollViewer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IScrollViewer2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IScrollViewer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IScrollViewer3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IScrollViewer3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IScrollViewerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IScrollViewerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IScrollViewerStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IScrollViewerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IScrollViewerView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IScrollViewerView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IScrollViewerViewChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IScrollViewerViewChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IScrollViewerViewChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IScrollViewerViewChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISearchBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISearchBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISearchBoxFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISearchBoxFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISearchBoxQueryChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISearchBoxQueryChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISearchBoxQuerySubmittedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISearchBoxQuerySubmittedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISearchBoxResultSuggestionChosenEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISearchBoxResultSuggestionChosenEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISearchBoxStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISearchBoxStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISearchBoxSuggestionsRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISearchBoxSuggestionsRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISectionsInViewChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISectionsInViewChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISectionsInViewChangedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISectionsInViewChangedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISelectionChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISelectionChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISelectionChangedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISelectionChangedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISemanticZoom>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISemanticZoom & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISemanticZoomInformation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISemanticZoomInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISemanticZoomLocation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISemanticZoomLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISemanticZoomStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISemanticZoomStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISettingsFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISettingsFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISettingsFlyoutFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISettingsFlyoutFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISettingsFlyoutStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISettingsFlyoutStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISlider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISlider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISlider2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISlider2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISliderFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISliderFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISliderStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISliderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISliderStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISliderStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISplitView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISplitView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISplitView2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISplitView2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISplitViewFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISplitViewFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISplitViewPaneClosingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISplitViewPaneClosingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISplitViewStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISplitViewStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISplitViewStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISplitViewStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IStackPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IStackPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IStackPanel2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IStackPanel2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IStackPanelFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IStackPanelFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IStackPanelStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IStackPanelStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IStackPanelStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IStackPanelStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IStyleSelector>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IStyleSelector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IStyleSelectorFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IStyleSelectorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IStyleSelectorOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IStyleSelectorOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISwapChainBackgroundPanelFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISwapChainBackgroundPanelFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISwapChainPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISwapChainPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISwapChainPanelFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISwapChainPanelFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISwapChainPanelStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISwapChainPanelStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISymbolIcon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISymbolIcon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISymbolIconFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISymbolIconFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ISymbolIconStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ISymbolIconStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlock>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBlock & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlock2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBlock2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlock3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBlock3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlock4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBlock4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlockStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBlockStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlockStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBlockStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlockStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBlockStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBox2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBox2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBox3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBox3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBox4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBox4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBoxFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBoxFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBoxStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBoxStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBoxStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBoxStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBoxStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBoxStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextCompositionChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextCompositionChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextCompositionEndedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextCompositionEndedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextCompositionStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextCompositionStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextControlPasteEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextControlPasteEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITimePickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITimePickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITimePicker>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITimePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITimePicker2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITimePicker2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITimePickerFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITimePickerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITimePickerFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITimePickerFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITimePickerFlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITimePickerFlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITimePickerFlyoutStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITimePickerFlyoutStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITimePickerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITimePickerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITimePickerStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITimePickerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITimePickerValueChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITimePickerValueChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IToggleMenuFlyoutItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IToggleMenuFlyoutItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IToggleMenuFlyoutItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IToggleMenuFlyoutItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IToggleMenuFlyoutItemStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IToggleMenuFlyoutItemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IToggleSwitch>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IToggleSwitch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IToggleSwitchOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IToggleSwitchOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IToggleSwitchStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IToggleSwitchStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IToolTip>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IToolTip & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IToolTipFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IToolTipFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IToolTipService>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IToolTipService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IToolTipServiceStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IToolTipServiceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IToolTipStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IToolTipStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IUIElementCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IUIElementCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IUserControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IUserControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IUserControlFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IUserControlFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IUserControlStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IUserControlStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IVariableSizedWrapGrid>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IVariableSizedWrapGrid & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IVariableSizedWrapGridStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IVariableSizedWrapGridStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IViewbox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IViewbox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IViewboxStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IViewboxStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IVirtualizingPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IVirtualizingPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IVirtualizingPanelFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IVirtualizingPanelFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IVirtualizingPanelOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IVirtualizingPanelOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IVirtualizingPanelProtected>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IVirtualizingPanelProtected & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IVirtualizingStackPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IVirtualizingStackPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IVirtualizingStackPanelOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IVirtualizingStackPanelOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IVirtualizingStackPanelStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IVirtualizingStackPanelStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebView2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebView2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebView3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebView3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebView4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebView4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebView5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebView5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewBrushStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewBrushStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewContentLoadingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewContentLoadingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewDOMContentLoadedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewDOMContentLoadedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewDeferredPermissionRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewDeferredPermissionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewFactory4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewFactory4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewLongRunningScriptDetectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewLongRunningScriptDetectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewNavigationCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewNavigationCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewNavigationFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewNavigationFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewNavigationStartingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewNavigationStartingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewNewWindowRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewNewWindowRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewPermissionRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewPermissionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewPermissionRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewPermissionRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewSettings>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewStatics5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewStatics5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewUnsupportedUriSchemeIdentifiedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewUnsupportedUriSchemeIdentifiedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewUnviewableContentIdentifiedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewUnviewableContentIdentifiedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWebViewUnviewableContentIdentifiedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWebViewUnviewableContentIdentifiedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWrapGrid>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWrapGrid & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IWrapGridStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IWrapGridStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::AppBar>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::AppBar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::AppBarButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::AppBarButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::AppBarSeparator>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::AppBarSeparator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::AppBarToggleButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::AppBarToggleButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::AutoSuggestBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::AutoSuggestBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::AutoSuggestBoxQuerySubmittedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::AutoSuggestBoxQuerySubmittedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::AutoSuggestBoxSuggestionChosenEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::AutoSuggestBoxSuggestionChosenEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::AutoSuggestBoxTextChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::AutoSuggestBoxTextChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::BackClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::BackClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::BitmapIcon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::BitmapIcon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Border>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Border & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Button>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Button & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CalendarDatePicker>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CalendarDatePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CalendarDatePickerDateChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CalendarDatePickerDateChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CalendarView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CalendarView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CalendarViewDayItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CalendarViewDayItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CalendarViewSelectedDatesChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CalendarViewSelectedDatesChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Canvas>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Canvas & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CaptureElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CaptureElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CheckBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CheckBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ChoosingGroupHeaderContainerEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ChoosingGroupHeaderContainerEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ChoosingItemContainerEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ChoosingItemContainerEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ColumnDefinition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ColumnDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ColumnDefinitionCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ColumnDefinitionCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ComboBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ComboBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ComboBoxItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ComboBoxItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CommandBar>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CommandBar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::CommandBarOverflowPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::CommandBarOverflowPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ContentControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ContentControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ContentDialog>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ContentDialog & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ContentDialogButtonClickDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ContentDialogButtonClickDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ContentDialogClosedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ContentDialogClosedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ContentDialogClosingDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ContentDialogClosingDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ContentDialogClosingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ContentDialogClosingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ContentDialogOpenedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ContentDialogOpenedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ContentPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ContentPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ContextMenuEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ContextMenuEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Control>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Control & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ControlTemplate>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ControlTemplate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::DataTemplateSelector>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::DataTemplateSelector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::DatePickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::DatePickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::DatePicker>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::DatePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::DatePickerFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::DatePickerFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::DatePickerFlyoutItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::DatePickerFlyoutItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::DatePickerFlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::DatePickerFlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::DatePickerValueChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::DatePickerValueChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::DragItemsCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::DragItemsCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::DragItemsStartingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::DragItemsStartingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::DynamicOverflowItemsChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::DynamicOverflowItemsChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::FlipView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::FlipView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::FlipViewItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::FlipViewItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Flyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Flyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::FlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::FlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::FocusDisengagedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::FocusDisengagedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::FocusEngagedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::FocusEngagedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::FontIcon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::FontIcon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Frame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Frame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Grid>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Grid & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::GridView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::GridView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::GridViewHeaderItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::GridViewHeaderItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::GridViewItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::GridViewItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::GroupItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::GroupItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::GroupStyle>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::GroupStyle & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::GroupStyleSelector>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::GroupStyleSelector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Hub>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Hub & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::HubSection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::HubSection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::HubSectionCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::HubSectionCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::HubSectionHeaderClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::HubSectionHeaderClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::HyperlinkButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::HyperlinkButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IconElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IconElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Image>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Image & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkCanvas>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkCanvas & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbar>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarBallpointPenButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarBallpointPenButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarCustomPen>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarCustomPen & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarCustomPenButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarCustomPenButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarCustomToggleButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarCustomToggleButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarCustomToolButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarCustomToolButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarEraserButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarEraserButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarHighlighterButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarHighlighterButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarPenButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarPenButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarPenConfigurationControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarPenConfigurationControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarPencilButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarPencilButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarRulerButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarRulerButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarToggleButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarToggleButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarToolButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarToolButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ItemClickEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ItemClickEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ItemCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ItemCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ItemContainerGenerator>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ItemContainerGenerator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ItemsControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ItemsControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ItemsPanelTemplate>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ItemsPanelTemplate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ItemsPickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ItemsPickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ItemsPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ItemsPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ItemsStackPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ItemsStackPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ItemsWrapGrid>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ItemsWrapGrid & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ListBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ListBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ListBoxItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ListBoxItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ListPickerFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ListPickerFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ListPickerFlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ListPickerFlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ListView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ListView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ListViewBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ListViewBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ListViewBaseHeaderItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ListViewBaseHeaderItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ListViewHeaderItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ListViewHeaderItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ListViewItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ListViewItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ListViewPersistenceHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ListViewPersistenceHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::MediaElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::MediaElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::MediaPlayerElement>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::MediaPlayerElement & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::MediaPlayerPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::MediaPlayerPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::MediaTransportControls>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::MediaTransportControls & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::MediaTransportControlsHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::MediaTransportControlsHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::MenuFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::MenuFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::MenuFlyoutItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::MenuFlyoutItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::MenuFlyoutItemBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::MenuFlyoutItemBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::MenuFlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::MenuFlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::MenuFlyoutSeparator>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::MenuFlyoutSeparator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::MenuFlyoutSubItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::MenuFlyoutSubItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::NotifyEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::NotifyEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Page>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Page & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Panel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Panel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::PasswordBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::PasswordBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::PathIcon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::PathIcon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::PickerConfirmedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::PickerConfirmedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::PickerFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::PickerFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::PickerFlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::PickerFlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Pivot>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Pivot & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::PivotItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::PivotItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::PivotItemEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::PivotItemEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ProgressBar>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ProgressBar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ProgressRing>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ProgressRing & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::RadioButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::RadioButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::RelativePanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::RelativePanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::RichEditBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::RichEditBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::RichTextBlock>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::RichTextBlock & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::RichTextBlockOverflow>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::RichTextBlockOverflow & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::RowDefinition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::RowDefinition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::RowDefinitionCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::RowDefinitionCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ScrollContentPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ScrollContentPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ScrollViewer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ScrollViewer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ScrollViewerView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ScrollViewerView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ScrollViewerViewChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ScrollViewerViewChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SearchBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SearchBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SearchBoxQueryChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SearchBoxQueryChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SearchBoxQuerySubmittedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SearchBoxQuerySubmittedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SearchBoxResultSuggestionChosenEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SearchBoxResultSuggestionChosenEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SearchBoxSuggestionsRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SearchBoxSuggestionsRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SectionsInViewChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SectionsInViewChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SelectionChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SemanticZoom>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SemanticZoom & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SemanticZoomLocation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SemanticZoomLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SemanticZoomViewChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SemanticZoomViewChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SettingsFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SettingsFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Slider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Slider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SplitView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SplitView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SplitViewPaneClosingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SplitViewPaneClosingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::StackPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::StackPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::StyleSelector>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::StyleSelector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SwapChainBackgroundPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SwapChainBackgroundPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SwapChainPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SwapChainPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::SymbolIcon>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::SymbolIcon & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TextBlock>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TextBlock & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TextBox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TextBox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TextBoxTextChangingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TextBoxTextChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TextChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TextChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TextControlPasteEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TextControlPasteEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TimePickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TimePickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TimePicker>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TimePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TimePickerFlyout>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TimePickerFlyout & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TimePickerFlyoutPresenter>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TimePickerFlyoutPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::TimePickerValueChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::TimePickerValueChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ToggleSwitch>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ToggleSwitch & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ToolTip>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ToolTip & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ToolTipService>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ToolTipService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::UIElementCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::UIElementCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::UserControl>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::UserControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::VariableSizedWrapGrid>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::VariableSizedWrapGrid & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Viewbox>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Viewbox & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::VirtualizingPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::VirtualizingPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::VirtualizingStackPanel>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::VirtualizingStackPanel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebView>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewBrush>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewContentLoadingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewContentLoadingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewDOMContentLoadedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewDOMContentLoadedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewDeferredPermissionRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewDeferredPermissionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewLongRunningScriptDetectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewLongRunningScriptDetectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewNavigationFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewNavigationFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewNavigationStartingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewNavigationStartingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewNewWindowRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewNewWindowRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewPermissionRequest>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewPermissionRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewPermissionRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewPermissionRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewSettings>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewUnsupportedUriSchemeIdentifiedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewUnsupportedUriSchemeIdentifiedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WebViewUnviewableContentIdentifiedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WebViewUnviewableContentIdentifiedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::WrapGrid>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::WrapGrid & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

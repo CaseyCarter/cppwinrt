@@ -2206,4 +2206,184 @@ inline WalletVerb::WalletVerb(hstring_view name) :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletBarcode>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletBarcode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletBarcodeFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletBarcodeFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletItem>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletItemCustomProperty>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletItemCustomProperty & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletItemCustomPropertyFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletItemCustomPropertyFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletItemFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletItemStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletItemStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletItemStore2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletItemStore2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletRelevantLocation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletRelevantLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletTransaction>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletTransaction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletVerb>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletVerb & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::IWalletVerbFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::IWalletVerbFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::WalletBarcode>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::WalletBarcode & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::WalletItem>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::WalletItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::WalletItemCustomProperty>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::WalletItemCustomProperty & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::WalletItemStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::WalletItemStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::WalletRelevantLocation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::WalletRelevantLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::WalletTransaction>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::WalletTransaction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::WalletVerb>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::WalletVerb & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

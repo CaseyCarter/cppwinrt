@@ -2166,4 +2166,202 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::IJumpList>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::IJumpList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::IJumpListItem>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::IJumpListItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::IJumpListItemStatics>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::IJumpListItemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::IJumpListStatics>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::IJumpListStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::ISecondaryTile>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::ISecondaryTile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::ISecondaryTile2>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::ISecondaryTile2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::ISecondaryTileFactory>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::ISecondaryTileFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::ISecondaryTileFactory2>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::ISecondaryTileFactory2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::ISecondaryTileStatics>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::ISecondaryTileStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::ISecondaryTileVisualElements>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::ISecondaryTileVisualElements & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::ISecondaryTileVisualElements2>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::ISecondaryTileVisualElements2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::ISecondaryTileVisualElements3>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::ISecondaryTileVisualElements3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::IVisualElementsRequest>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::IVisualElementsRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::IVisualElementsRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::IVisualElementsRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::IVisualElementsRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::IVisualElementsRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::JumpList>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::JumpList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::JumpListItem>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::JumpListItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::SecondaryTile>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::SecondaryTile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::SecondaryTileVisualElements>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::SecondaryTileVisualElements & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::VisualElementsRequest>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::VisualElementsRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::VisualElementsRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::VisualElementsRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::VisualElementsRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::VisualElementsRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

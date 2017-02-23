@@ -215,4 +215,40 @@ inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::S
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::System::IWalletItemSystemStore2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::System::IWalletManagerSystemStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::System::IWalletManagerSystemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Wallet::System::WalletItemSystemStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Wallet::System::WalletItemSystemStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

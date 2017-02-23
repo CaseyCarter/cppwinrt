@@ -766,4 +766,130 @@ inline CoreDragOperation::CoreDragOperation() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragDropManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragDropManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragDropManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragDropManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragInfo2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragInfo2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragOperation2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragOperation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragUIOverride>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDragUIOverride & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTarget>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTarget & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTargetRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTargetRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragOperation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDropOperationTargetRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDropOperationTargetRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

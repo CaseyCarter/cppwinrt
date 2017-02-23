@@ -10474,4 +10474,895 @@ inline uint32_t PosPrinterCharacterSetIds::Ansi()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScanner>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScanner & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScanner2>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScanner2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScannerCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScannerCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScannerCapabilities1>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScannerCapabilities1 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScannerDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScannerDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScannerErrorOccurredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScannerErrorOccurredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScannerImagePreviewReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScannerImagePreviewReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScannerReport>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScannerReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScannerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScannerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScannerStatusUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScannerStatusUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeSymbologiesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeSymbologiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICashDrawer>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICashDrawer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICashDrawerCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICashDrawerCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICashDrawerCloseAlarm>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICashDrawerCloseAlarm & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICashDrawerEventSource>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICashDrawerEventSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICashDrawerEventSourceEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICashDrawerEventSourceEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICashDrawerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICashDrawerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICashDrawerStatus>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICashDrawerStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICashDrawerStatusUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICashDrawerStatusUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedBarcodeScanner>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedBarcodeScanner & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedBarcodeScanner1>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedBarcodeScanner1 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedCashDrawer>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedCashDrawer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedJournalPrinter>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedJournalPrinter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedMagneticStripeReader>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedMagneticStripeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedPosPrinter>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedPosPrinter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedReceiptPrinter>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedReceiptPrinter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedSlipPrinter>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedSlipPrinter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICommonClaimedPosPrinterStation>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICommonClaimedPosPrinterStation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICommonPosPrintStationCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICommonPosPrintStationCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICommonReceiptSlipCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICommonReceiptSlipCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IJournalPrinterCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IJournalPrinterCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReader>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCardDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCardDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderBankCardDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderBankCardDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderCardTypesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderCardTypesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderEncryptionAlgorithmsStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderEncryptionAlgorithmsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderErrorOccurredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderErrorOccurredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderReport>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderStatusUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderStatusUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderTrackData>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderTrackData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IPosPrinter>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IPosPrinter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IPosPrinterCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IPosPrinterCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IPosPrinterCharacterSetIdsStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IPosPrinterCharacterSetIdsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IPosPrinterJob>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IPosPrinterJob & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IPosPrinterReleaseDeviceRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IPosPrinterReleaseDeviceRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IPosPrinterStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IPosPrinterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IPosPrinterStatus>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IPosPrinterStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IPosPrinterStatusUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IPosPrinterStatusUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IReceiptOrSlipJob>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IReceiptOrSlipJob & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IReceiptPrintJob>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IReceiptPrintJob & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IReceiptPrinterCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IReceiptPrinterCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ISlipPrinterCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ISlipPrinterCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IUnifiedPosErrorData>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IUnifiedPosErrorData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::BarcodeScanner>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::BarcodeScanner & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::BarcodeScannerCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::BarcodeScannerCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::BarcodeScannerReport>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::BarcodeScannerReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::CashDrawer>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::CashDrawer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::CashDrawerCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::CashDrawerCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::CashDrawerCloseAlarm>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::CashDrawerCloseAlarm & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::CashDrawerClosedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::CashDrawerClosedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::CashDrawerEventSource>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::CashDrawerEventSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::CashDrawerOpenedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::CashDrawerOpenedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::CashDrawerStatus>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::CashDrawerStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::CashDrawerStatusUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::CashDrawerStatusUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ClaimedBarcodeScanner>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ClaimedBarcodeScanner & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ClaimedCashDrawer>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ClaimedCashDrawer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ClaimedJournalPrinter>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ClaimedJournalPrinter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ClaimedMagneticStripeReader>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ClaimedMagneticStripeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ClaimedPosPrinter>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ClaimedPosPrinter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ClaimedReceiptPrinter>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ClaimedReceiptPrinter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ClaimedSlipPrinter>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ClaimedSlipPrinter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::JournalPrintJob>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::JournalPrintJob & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::JournalPrinterCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::JournalPrinterCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::MagneticStripeReader>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::MagneticStripeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::MagneticStripeReaderCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::MagneticStripeReaderCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::MagneticStripeReaderReport>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::MagneticStripeReaderReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::MagneticStripeReaderStatusUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::MagneticStripeReaderStatusUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::MagneticStripeReaderTrackData>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::MagneticStripeReaderTrackData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::PosPrinter>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::PosPrinter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::PosPrinterCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::PosPrinterCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::PosPrinterStatus>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::PosPrinterStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::PosPrinterStatusUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::PosPrinterStatusUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ReceiptPrintJob>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ReceiptPrintJob & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ReceiptPrinterCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ReceiptPrinterCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::SlipPrintJob>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::SlipPrintJob & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::SlipPrinterCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::SlipPrinterCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::UnifiedPosErrorData>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::UnifiedPosErrorData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

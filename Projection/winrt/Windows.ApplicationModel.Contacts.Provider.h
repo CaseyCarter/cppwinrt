@@ -248,4 +248,49 @@ template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::Provider::IContactPickerUI>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::Provider::IContactPickerUI & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::Provider::IContactPickerUI2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::Provider::IContactPickerUI2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::Provider::IContactRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::Provider::IContactRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::Provider::ContactPickerUI>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::Provider::ContactPickerUI & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

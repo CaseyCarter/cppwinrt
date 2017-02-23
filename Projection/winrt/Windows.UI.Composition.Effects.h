@@ -230,4 +230,22 @@ inline SceneLightingEffect::SceneLightingEffect() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Effects::ISceneLightingEffect>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Effects::ISceneLightingEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Effects::SceneLightingEffect>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Effects::SceneLightingEffect & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

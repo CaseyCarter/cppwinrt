@@ -2937,4 +2937,526 @@ inline TappedRoutedEventArgs::TappedRoutedEventArgs() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IAccessKeyDisplayDismissedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IAccessKeyDisplayDismissedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IAccessKeyDisplayRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IAccessKeyDisplayRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IAccessKeyInvokedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IAccessKeyInvokedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IAccessKeyManager>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IAccessKeyManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IAccessKeyManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IAccessKeyManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::ICommand>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::ICommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IContextRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IContextRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IFocusManager>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IFocusManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IFocusManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IFocusManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IFocusManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IFocusManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IFocusManagerStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IFocusManagerStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IHoldingRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IHoldingRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IInertiaExpansionBehavior>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IInertiaExpansionBehavior & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IInertiaRotationBehavior>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IInertiaRotationBehavior & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IInertiaTranslationBehavior>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IInertiaTranslationBehavior & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IInputScope>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IInputScope & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IInputScopeName>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IInputScopeName & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IInputScopeNameFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IInputScopeNameFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IKeyRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IKeyRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IKeyRoutedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IKeyRoutedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IKeyRoutedEventArgs3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IKeyRoutedEventArgs3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IManipulationPivot>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IManipulationPivot & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IManipulationPivotFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IManipulationPivotFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgsFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IPointer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IPointer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IPointerRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IPointerRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::ITappedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::ITappedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::AccessKeyManager>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::AccessKeyManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::ContextRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::ContextRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::FocusManager>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::FocusManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::HoldingRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::HoldingRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::InertiaExpansionBehavior>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::InertiaExpansionBehavior & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::InertiaRotationBehavior>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::InertiaRotationBehavior & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::InertiaTranslationBehavior>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::InertiaTranslationBehavior & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::InputScope>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::InputScope & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::InputScopeName>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::InputScopeName & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::ManipulationPivot>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::ManipulationPivot & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::Pointer>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::Pointer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::PointerRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::PointerRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::RightTappedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::RightTappedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::TappedRoutedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::TappedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

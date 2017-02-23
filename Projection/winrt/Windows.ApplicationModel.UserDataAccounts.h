@@ -800,4 +800,121 @@ inline Windows::ApplicationModel::UserDataAccounts::UserDataAccountManagerForUse
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccount>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccount & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccount2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccount2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::UserDataAccount>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::UserDataAccount & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::UserDataAccountManagerForUser>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::UserDataAccountManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

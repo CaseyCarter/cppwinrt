@@ -1378,4 +1378,463 @@ inline MidiTuneRequestMessage::MidiTuneRequestMessage() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiChannelPressureMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiChannelPressureMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiChannelPressureMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiChannelPressureMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiControlChangeMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiControlChangeMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiControlChangeMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiControlChangeMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiInPort>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiInPort & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiInPortStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiInPortStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiMessageReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiMessageReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiNoteOffMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiNoteOffMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiNoteOffMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiNoteOffMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiNoteOnMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiNoteOnMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiNoteOnMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiNoteOnMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiOutPort>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiOutPort & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiOutPortStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiOutPortStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiPitchBendChangeMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiPitchBendChangeMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiPitchBendChangeMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiPitchBendChangeMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiProgramChangeMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiProgramChangeMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiProgramChangeMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiProgramChangeMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiSongPositionPointerMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiSongPositionPointerMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiSongPositionPointerMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiSongPositionPointerMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiSongSelectMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiSongSelectMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiSongSelectMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiSongSelectMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiSynthesizer>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiSynthesizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiSynthesizerStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiSynthesizerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiSystemExclusiveMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiSystemExclusiveMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiTimeCodeMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiTimeCodeMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::IMidiTimeCodeMessageFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::IMidiTimeCodeMessageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiActiveSensingMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiActiveSensingMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiChannelPressureMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiChannelPressureMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiContinueMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiContinueMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiControlChangeMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiControlChangeMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiInPort>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiInPort & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiMessageReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiMessageReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiNoteOffMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiNoteOffMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiNoteOnMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiNoteOnMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiOutPort>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiOutPort & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiPitchBendChangeMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiPitchBendChangeMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiPolyphonicKeyPressureMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiPolyphonicKeyPressureMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiProgramChangeMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiProgramChangeMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiSongPositionPointerMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiSongPositionPointerMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiSongSelectMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiSongSelectMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiStartMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiStartMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiStopMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiStopMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiSynthesizer>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiSynthesizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiSystemExclusiveMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiSystemExclusiveMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiSystemResetMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiSystemResetMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiTimeCodeMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiTimeCodeMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiTimingClockMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiTimingClockMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Midi::MidiTuneRequestMessage>
+{
+    size_t operator()(const winrt::Windows::Devices::Midi::MidiTuneRequestMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

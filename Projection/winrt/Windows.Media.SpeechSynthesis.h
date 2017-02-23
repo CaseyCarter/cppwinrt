@@ -313,4 +313,67 @@ inline Windows::Media::SpeechSynthesis::VoiceInformation SpeechSynthesizer::Defa
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechSynthesis::IInstalledVoicesStatic>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechSynthesis::IInstalledVoicesStatic & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechSynthesis::ISpeechSynthesisStream>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechSynthesis::ISpeechSynthesisStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechSynthesis::ISpeechSynthesizer>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechSynthesis::ISpeechSynthesizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechSynthesis::IVoiceInformation>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechSynthesis::IVoiceInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechSynthesis::SpeechSynthesisStream>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechSynthesis::SpeechSynthesisStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechSynthesis::SpeechSynthesizer>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechSynthesis::SpeechSynthesizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechSynthesis::VoiceInformation>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechSynthesis::VoiceInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

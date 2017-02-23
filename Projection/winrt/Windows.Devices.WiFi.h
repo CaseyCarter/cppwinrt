@@ -645,4 +645,85 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::WiFi::WiFiA
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFi::IWiFiAdapter>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFi::IWiFiAdapter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFi::IWiFiAdapterStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFi::IWiFiAdapterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFi::IWiFiAvailableNetwork>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFi::IWiFiAvailableNetwork & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFi::IWiFiConnectionResult>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFi::IWiFiConnectionResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFi::IWiFiNetworkReport>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFi::IWiFiNetworkReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFi::WiFiAdapter>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFi::WiFiAdapter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFi::WiFiAvailableNetwork>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFi::WiFiAvailableNetwork & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFi::WiFiConnectionResult>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFi::WiFiConnectionResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::WiFi::WiFiNetworkReport>
+{
+    size_t operator()(const winrt::Windows::Devices::WiFi::WiFiNetworkReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

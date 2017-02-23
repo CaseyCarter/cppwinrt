@@ -736,4 +736,85 @@ inline PdfPageRenderOptions::PdfPageRenderOptions() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Data::Pdf::IPdfDocument>
+{
+    size_t operator()(const winrt::Windows::Data::Pdf::IPdfDocument & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Pdf::IPdfDocumentStatics>
+{
+    size_t operator()(const winrt::Windows::Data::Pdf::IPdfDocumentStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Pdf::IPdfPage>
+{
+    size_t operator()(const winrt::Windows::Data::Pdf::IPdfPage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Pdf::IPdfPageDimensions>
+{
+    size_t operator()(const winrt::Windows::Data::Pdf::IPdfPageDimensions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Pdf::IPdfPageRenderOptions>
+{
+    size_t operator()(const winrt::Windows::Data::Pdf::IPdfPageRenderOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Pdf::PdfDocument>
+{
+    size_t operator()(const winrt::Windows::Data::Pdf::PdfDocument & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Pdf::PdfPage>
+{
+    size_t operator()(const winrt::Windows::Data::Pdf::PdfPage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Pdf::PdfPageDimensions>
+{
+    size_t operator()(const winrt::Windows::Data::Pdf::PdfPageDimensions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Data::Pdf::PdfPageRenderOptions>
+{
+    size_t operator()(const winrt::Windows::Data::Pdf::PdfPageRenderOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -75,4 +75,22 @@ inline Windows::Web::WebErrorStatus WebError::GetStatus(int32_t hresult)
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Web::IUriToStreamResolver>
+{
+    size_t operator()(const winrt::Windows::Web::IUriToStreamResolver & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Web::IWebErrorStatics>
+{
+    size_t operator()(const winrt::Windows::Web::IWebErrorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

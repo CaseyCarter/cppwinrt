@@ -3051,4 +3051,373 @@ inline Windows::UI::ViewManagement::UIViewSettings UIViewSettings::GetForCurrent
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IAccessibilitySettings>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IAccessibilitySettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IActivationViewSwitcher>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IActivationViewSwitcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationView>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationView2>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationView2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationView3>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationView3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewFullscreenStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewFullscreenStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewInteropStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewInteropStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewScaling>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewScaling & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewScalingStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewScalingStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewSwitcherStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewSwitcherStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewTitleBar>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewTitleBar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewTransferContext>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewTransferContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewTransferContextStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewTransferContextStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IInputPane>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IInputPane & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IInputPane2>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IInputPane2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IInputPaneControl>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IInputPaneControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IInputPaneStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IInputPaneStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IProjectionManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IProjectionManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IProjectionManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IProjectionManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IUISettings>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IUISettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IUISettings2>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IUISettings2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IUISettings3>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IUISettings3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IUIViewSettings>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IUIViewSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IUIViewSettingsStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IUIViewSettingsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::AccessibilitySettings>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::AccessibilitySettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::ActivationViewSwitcher>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::ActivationViewSwitcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::ApplicationView>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::ApplicationView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::ApplicationViewScaling>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::ApplicationViewScaling & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::ApplicationViewTitleBar>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::ApplicationViewTitleBar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::ApplicationViewTransferContext>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::ApplicationViewTransferContext & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::InputPane>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::InputPane & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::InputPaneVisibilityEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::InputPaneVisibilityEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::UISettings>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::UISettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::UIViewSettings>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::UIViewSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

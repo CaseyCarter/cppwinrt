@@ -2301,4 +2301,382 @@ inline Windows::Foundation::IReference<Windows::Foundation::DateTime> ContentPre
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloader>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloader2>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloader2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloader3>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloader3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloaderFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloaderFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods2>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloaderStaticMethods2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloaderUserConsent>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundDownloaderUserConsent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferBase>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroupTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferCompletionGroupTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPart & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferContentPartFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferErrorStaticMethods>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferErrorStaticMethods & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroupStatics>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroupStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferOperationPriority>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundTransferOperationPriority & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploader>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploader2>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploader2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploader3>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploader3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploaderFactory>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploaderFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods2>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploaderStaticMethods2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploaderUserConsent>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IBackgroundUploaderUserConsent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IContentPrefetcher>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IContentPrefetcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IContentPrefetcherTime>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IContentPrefetcherTime & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IDownloadOperation>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IDownloadOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IDownloadOperation2>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IDownloadOperation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IResponseInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IResponseInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IUnconstrainedTransferRequestResult>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IUnconstrainedTransferRequestResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IUploadOperation>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IUploadOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::IUploadOperation2>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::IUploadOperation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::BackgroundDownloader>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::BackgroundDownloader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroupTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroupTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferGroup>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::BackgroundUploader>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::BackgroundUploader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::DownloadOperation>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::DownloadOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::ResponseInformation>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::ResponseInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::BackgroundTransfer::UploadOperation>
+{
+    size_t operator()(const winrt::Windows::Networking::BackgroundTransfer::UploadOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

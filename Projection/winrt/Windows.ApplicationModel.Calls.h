@@ -2185,4 +2185,256 @@ inline Windows::ApplicationModel::Calls::VoipCallCoordinator VoipCallCoordinator
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::ICallAnswerEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::ICallAnswerEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::ICallRejectEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::ICallRejectEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::ICallStateChangeEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::ICallStateChangeEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IMuteChangeEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IMuteChangeEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddress>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddress & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddressFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddressFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryQueryOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryQueryOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerForUser>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IPhoneCallHistoryStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IVoipCallCoordinator>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IVoipCallCoordinator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IVoipCallCoordinatorStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IVoipCallCoordinatorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::IVoipPhoneCall>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::IVoipPhoneCall & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::CallAnswerEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::CallAnswerEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::CallRejectEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::CallRejectEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::CallStateChangeEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::CallStateChangeEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::MuteChangeEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::MuteChangeEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntry>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntry & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryManagerForUser>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::PhoneCallHistoryStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::VoipCallCoordinator>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::VoipCallCoordinator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Calls::VoipPhoneCall>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Calls::VoipPhoneCall & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

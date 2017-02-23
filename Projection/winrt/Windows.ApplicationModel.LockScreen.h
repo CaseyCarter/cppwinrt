@@ -574,4 +574,103 @@ inline Windows::ApplicationModel::LockScreen::LockApplicationHost LockApplicatio
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LockScreen::ILockApplicationHost>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LockScreen::ILockApplicationHost & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LockScreen::ILockApplicationHostStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LockScreen::ILockApplicationHostStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LockScreen::ILockScreenBadge>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LockScreen::ILockScreenBadge & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LockScreen::ILockScreenInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LockScreen::ILockScreenInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LockScreen::ILockScreenUnlockingDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LockScreen::ILockScreenUnlockingDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LockScreen::ILockScreenUnlockingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LockScreen::ILockScreenUnlockingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LockScreen::LockApplicationHost>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LockScreen::LockApplicationHost & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LockScreen::LockScreenBadge>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LockScreen::LockScreenBadge & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LockScreen::LockScreenInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LockScreen::LockScreenInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LockScreen::LockScreenUnlockingDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LockScreen::LockScreenUnlockingDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::LockScreen::LockScreenUnlockingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::LockScreen::LockScreenUnlockingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

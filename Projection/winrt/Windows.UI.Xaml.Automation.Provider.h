@@ -2941,4 +2941,337 @@ template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvide
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IAnnotationProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IAnnotationProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ICustomNavigationProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ICustomNavigationProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IDockProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IDockProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IDragProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IDragProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IDropTargetProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IDropTargetProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IExpandCollapseProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IExpandCollapseProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IGridItemProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IGridItemProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IGridProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IGridProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IIRawElementProviderSimple & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IInvokeProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IInvokeProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IItemContainerProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IItemContainerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IMultipleViewProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IMultipleViewProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IObjectModelProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IObjectModelProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IRangeValueProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IRangeValueProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IScrollItemProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IScrollItemProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IScrollProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IScrollProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ISelectionItemProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ISelectionProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ISelectionProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ISpreadsheetItemProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ISpreadsheetItemProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ISpreadsheetProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ISpreadsheetProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IStylesProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IStylesProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ISynchronizedInputProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ISynchronizedInputProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ITableItemProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ITableItemProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ITableProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ITableProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ITextChildProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ITextChildProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ITextEditProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ITextEditProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ITextProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ITextProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ITextProvider2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ITextProvider2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ITextRangeProvider2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IToggleProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IToggleProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ITransformProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ITransformProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::ITransformProvider2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::ITransformProvider2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IValueProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IValueProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IVirtualizedItemProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IWindowProvider>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IWindowProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

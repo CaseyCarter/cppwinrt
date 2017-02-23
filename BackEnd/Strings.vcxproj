@@ -103,6 +103,7 @@
     <ClInclude Include="Source\Modern\WriteInterfaceConsumerForward.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceDefinition.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceEventMethodDeclaration.h" />
+    <ClInclude Include="Source\Modern\WriteInterfaceHash.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceMethodDeclaration.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceProducer.h" />
     <ClInclude Include="Source\Modern\WriteInterfaceProducerVirtualMethod.h" />

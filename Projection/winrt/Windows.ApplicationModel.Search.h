@@ -513,4 +513,121 @@ inline SearchQueryLinguisticDetails::SearchQueryLinguisticDetails(iterable<hstri
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::ILocalContentSuggestionSettings>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::ILocalContentSuggestionSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::ISearchPaneQueryLinguisticDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::ISearchPaneQueryLinguisticDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::ISearchQueryLinguisticDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::ISearchQueryLinguisticDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::ISearchQueryLinguisticDetailsFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::ISearchQueryLinguisticDetailsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::ISearchSuggestionCollection>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::ISearchSuggestionCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::ISearchSuggestionsRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::ISearchSuggestionsRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::ISearchSuggestionsRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::ISearchSuggestionsRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::LocalContentSuggestionSettings>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::LocalContentSuggestionSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::SearchQueryLinguisticDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::SearchQueryLinguisticDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::SearchSuggestionCollection>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::SearchSuggestionCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::SearchSuggestionsRequest>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::SearchSuggestionsRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

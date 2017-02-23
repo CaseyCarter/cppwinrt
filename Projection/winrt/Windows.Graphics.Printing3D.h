@@ -3452,4 +3452,598 @@ inline Printing3DTextureResource::Printing3DTextureResource() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrint3DManager>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrint3DManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrint3DManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrint3DManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrint3DTask>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrint3DTask & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrint3DTaskCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrint3DTaskRequest>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrint3DTaskRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrint3DTaskRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrint3DTaskRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrint3DTaskSourceChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrint3DTaskSourceChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrint3DTaskSourceRequestedArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrint3DTaskSourceRequestedArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3D3MFPackage>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3D3MFPackage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3D3MFPackageStatics>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3D3MFPackageStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DBaseMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DBaseMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroupFactory>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DBaseMaterialGroupFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DBaseMaterialStatics>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DBaseMaterialStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DColorMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DColorMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DColorMaterial2>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DColorMaterial2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroupFactory>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DColorMaterialGroupFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DComponent>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DComponent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DComponentWithMatrix & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DCompositeMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DCompositeMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup2>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroup2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroupFactory>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DCompositeMaterialGroupFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DFaceReductionOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DMesh>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DMesh & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResult>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DMeshVerificationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DModel>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DModel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DModel2>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DModel2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DModelTexture>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DModelTexture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroup>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroupFactory>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DMultiplePropertyMaterialGroupFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup2>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroup2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroupFactory>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DTexture2CoordMaterialGroupFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::IPrinting3DTextureResource>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::IPrinting3DTextureResource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Print3DManager>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Print3DManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Print3DTask>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Print3DTask & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Print3DTaskCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Print3DTaskRequest>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Print3DTaskRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Print3DTaskSourceChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Print3DTaskSourceChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Print3DTaskSourceRequestedArgs>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Print3DTaskSourceRequestedArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3D3MFPackage>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3D3MFPackage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DBaseMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DBaseMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DColorMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DColorMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DColorMaterialGroup>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DColorMaterialGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DComponent>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DComponent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DComponentWithMatrix>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DComponentWithMatrix & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DCompositeMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DCompositeMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DCompositeMaterialGroup>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DCompositeMaterialGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DFaceReductionOptions>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DFaceReductionOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DMesh>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DMesh & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DMeshVerificationResult>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DMeshVerificationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DModel>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DModel & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DModelTexture>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DModelTexture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterialGroup>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterialGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterial>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterial & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterialGroup>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterialGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Printing3D::Printing3DTextureResource>
+{
+    size_t operator()(const winrt::Windows::Graphics::Printing3D::Printing3DTextureResource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

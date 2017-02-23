@@ -430,4 +430,58 @@ inline ProviderSpiConnectionSettings::ProviderSpiConnectionSettings(int32_t chip
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettingsFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::Provider::IProviderSpiConnectionSettingsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::Provider::ISpiControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::Provider::ISpiControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::Provider::ISpiDeviceProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::Provider::ISpiDeviceProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::Provider::ISpiProvider>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::Provider::ISpiProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings>
+{
+    size_t operator()(const winrt::Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

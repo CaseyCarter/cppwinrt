@@ -4837,4 +4837,256 @@ inline GUID GattServiceUuids::TxPower()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristicUuidsStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDescriptorUuidsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceService2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattDeviceServiceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormat>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormat & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattPresentationFormatTypesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadClientCharacteristicConfigurationDescriptorResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadClientCharacteristicConfigurationDescriptorResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReadResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReliableWriteTransaction>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattReliableWriteTransaction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceUuidsStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattValueChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattValueChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadClientCharacteristicConfigurationDescriptorResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadClientCharacteristicConfigurationDescriptorResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReliableWriteTransaction>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReliableWriteTransaction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

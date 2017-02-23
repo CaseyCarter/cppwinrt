@@ -936,4 +936,139 @@ inline CastingDevicePicker::CastingDevicePicker() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::ICastingConnection>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::ICastingConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::ICastingConnectionErrorOccurredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::ICastingConnectionErrorOccurredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::ICastingDevice>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::ICastingDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::ICastingDevicePicker>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::ICastingDevicePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::ICastingDevicePickerFilter>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::ICastingDevicePickerFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::ICastingDeviceSelectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::ICastingDeviceSelectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::ICastingDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::ICastingDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::ICastingSource>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::ICastingSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::CastingConnection>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::CastingConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::CastingConnectionErrorOccurredEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::CastingConnectionErrorOccurredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::CastingDevice>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::CastingDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::CastingDevicePicker>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::CastingDevicePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::CastingDevicePickerFilter>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::CastingDevicePickerFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::CastingDeviceSelectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::CastingDeviceSelectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Casting::CastingSource>
+{
+    size_t operator()(const winrt::Windows::Media::Casting::CastingSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

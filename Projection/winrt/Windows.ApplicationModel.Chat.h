@@ -5325,4 +5325,742 @@ inline Windows::Foundation::IAsyncAction RcsManager::LeaveConversationAsync(cons
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatCapabilities>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatCapabilitiesManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatCapabilitiesManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatConversation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatConversation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatConversation2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatConversation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatConversationReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatConversationReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatConversationThreadingInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatConversationThreadingInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatItem>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessage>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessage2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessage2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessage3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessage3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessage4>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessage4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageAttachment>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageAttachment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageAttachment2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageAttachment2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageAttachmentFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageAttachmentFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageBlockingStatic>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageBlockingStatic & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageChange>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageChangeReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageChangeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageChangeTracker>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageChangeTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageChangedDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageChangedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageManager2Statics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageManager2Statics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageManagerStatic>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageManagerStatic & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageManagerStatics3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageManagerStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageNotificationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageNotificationTriggerDetails2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageNotificationTriggerDetails2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageReader2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageReader2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageStore2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageStore2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageStore3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageStore3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageStoreChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageStoreChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageTransport>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageTransport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageTransport2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageTransport2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageTransportConfiguration>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageTransportConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatMessageValidationResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatMessageValidationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatQueryOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatQueryOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatRecipientDeliveryInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatSearchReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatSearchReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatSyncConfiguration>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatSyncConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IChatSyncManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IChatSyncManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IRcsEndUserMessage>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IRcsEndUserMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IRcsEndUserMessageAction>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IRcsEndUserMessageAction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IRcsEndUserMessageAvailableEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IRcsEndUserMessageAvailableEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IRcsEndUserMessageAvailableTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IRcsEndUserMessageAvailableTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IRcsEndUserMessageManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IRcsEndUserMessageManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IRcsManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IRcsManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IRcsServiceKindSupportedChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IRcsServiceKindSupportedChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IRcsTransport>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IRcsTransport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IRcsTransportConfiguration>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IRcsTransportConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::IRemoteParticipantComposingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::IRemoteParticipantComposingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatCapabilities>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatConversation>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatConversation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatConversationReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatConversationReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatConversationThreadingInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatConversationThreadingInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessage>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageAttachment>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageAttachment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageChange>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageChangeReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageChangeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageChangeTracker>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageChangeTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageChangedDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageChangedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageNotificationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageStoreChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageStoreChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageTransport>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageTransport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageTransportConfiguration>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageTransportConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatMessageValidationResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatMessageValidationResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatQueryOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatQueryOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatRecipientDeliveryInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatRecipientDeliveryInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatSearchReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatSearchReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatSyncConfiguration>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatSyncConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::ChatSyncManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::ChatSyncManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::RcsEndUserMessage>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::RcsEndUserMessage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::RcsEndUserMessageAction>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::RcsEndUserMessageAction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::RcsEndUserMessageManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::RcsEndUserMessageManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::RcsServiceKindSupportedChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::RcsServiceKindSupportedChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::RcsTransport>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::RcsTransport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::RcsTransportConfiguration>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::RcsTransportConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Chat::RemoteParticipantComposingChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Chat::RemoteParticipantComposingChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

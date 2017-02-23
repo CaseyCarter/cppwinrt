@@ -3021,4 +3021,238 @@ inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingPro
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IAudioEncodingProperties>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IAudioEncodingProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IAudioEncodingPropertiesWithFormatUserData>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IAudioEncodingPropertiesWithFormatUserData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IContainerEncodingProperties>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IContainerEncodingProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IH264ProfileIdsStatics>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IH264ProfileIdsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IImageEncodingProperties>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IImageEncodingProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IImageEncodingPropertiesStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IMediaEncodingProfile>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IMediaEncodingProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IMediaEncodingProfileStatics>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IMediaEncodingProfileStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IMediaEncodingProfileStatics2>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IMediaEncodingProfileStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IMediaEncodingProperties>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IMediaEncodingProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IMediaRatio>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IMediaRatio & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IMpeg2ProfileIdsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IVideoEncodingProperties>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IVideoEncodingProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IVideoEncodingProperties2>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IVideoEncodingProperties2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IVideoEncodingProperties3>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IVideoEncodingProperties3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::AudioEncodingProperties>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::AudioEncodingProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::ContainerEncodingProperties>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::ContainerEncodingProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::ImageEncodingProperties>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::ImageEncodingProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::MediaEncodingProfile>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::MediaEncodingProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::MediaPropertySet>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::MediaPropertySet & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::MediaRatio>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::MediaRatio & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::VideoEncodingProperties>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::VideoEncodingProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

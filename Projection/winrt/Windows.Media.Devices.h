@@ -5191,4 +5191,580 @@ inline ZoomSettings::ZoomSettings() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IAdvancedPhotoCaptureSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAdvancedPhotoCaptureSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IAdvancedPhotoControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAdvancedPhotoControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController2>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController3>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController4>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IAudioDeviceController>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAudioDeviceController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IExposureCompensationControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IExposureCompensationControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IExposureControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IExposureControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IExposurePriorityVideoControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IExposurePriorityVideoControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IFlashControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IFlashControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IFlashControl2>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IFlashControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IFocusControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IFocusControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IFocusControl2>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IFocusControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IFocusSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IFocusSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IHdrVideoControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IHdrVideoControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IIsoSpeedControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IIsoSpeedControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IIsoSpeedControl2>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IIsoSpeedControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::ILowLagPhotoControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::ILowLagPhotoControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::ILowLagPhotoSequenceControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::ILowLagPhotoSequenceControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IMediaDeviceControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IMediaDeviceControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IMediaDeviceControlCapabilities>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IMediaDeviceControlCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IMediaDeviceController>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IMediaDeviceController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IMediaDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IMediaDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IOpticalImageStabilizationControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IOpticalImageStabilizationControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IPhotoConfirmationControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IPhotoConfirmationControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IRegionOfInterest>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IRegionOfInterest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IRegionOfInterest2>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IRegionOfInterest2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IRegionsOfInterestControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IRegionsOfInterestControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::ISceneModeControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::ISceneModeControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::ITorchControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::ITorchControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IVideoDeviceController>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IVideoDeviceController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IWhiteBalanceControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IWhiteBalanceControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IZoomControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IZoomControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IZoomControl2>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IZoomControl2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IZoomSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IZoomSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::AdvancedPhotoCaptureSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::AdvancedPhotoCaptureSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::AdvancedPhotoControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::AdvancedPhotoControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::AudioDeviceController>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::AudioDeviceController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::ExposureCompensationControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::ExposureCompensationControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::ExposureControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::ExposureControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::ExposurePriorityVideoControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::ExposurePriorityVideoControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::FlashControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::FlashControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::FocusControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::FocusControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::FocusSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::FocusSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::HdrVideoControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::HdrVideoControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IsoSpeedControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IsoSpeedControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::LowLagPhotoControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::LowLagPhotoControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::LowLagPhotoSequenceControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::LowLagPhotoSequenceControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::MediaDeviceControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::MediaDeviceControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::MediaDeviceControlCapabilities>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::MediaDeviceControlCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::OpticalImageStabilizationControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::OpticalImageStabilizationControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::PhotoConfirmationControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::PhotoConfirmationControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::RegionOfInterest>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::RegionOfInterest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::RegionsOfInterestControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::RegionsOfInterestControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::SceneModeControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::SceneModeControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::TorchControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::TorchControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::VideoDeviceController>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::VideoDeviceController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::WhiteBalanceControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::WhiteBalanceControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::ZoomControl>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::ZoomControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::ZoomSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::ZoomSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -2707,4 +2707,463 @@ inline DevicePicker::DevicePicker() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceAccessInformation>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceAccessInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceAccessInformationStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceAccessInformationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceDisconnectButtonClickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceDisconnectButtonClickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceInformation>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceInformation2>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceInformation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceInformationCustomPairing>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceInformationCustomPairing & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceInformationPairing>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceInformationPairing & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceInformationPairing2>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceInformationPairing2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceInformationPairingStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceInformationPairingStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceInformationStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceInformationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceInformationStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceInformationStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceInformationUpdate>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceInformationUpdate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceInformationUpdate2>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceInformationUpdate2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDevicePairingResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDevicePairingResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDevicePairingSettings>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDevicePairingSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDevicePicker>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDevicePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDevicePickerAppearance>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDevicePickerAppearance & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDevicePickerFilter>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDevicePickerFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceSelectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceSelectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceUnpairingResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceUnpairingResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceWatcher>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceWatcher2>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceWatcher2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceWatcherEvent>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceWatcherEvent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IEnclosureLocation>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IEnclosureLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::IEnclosureLocation2>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::IEnclosureLocation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceAccessChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceAccessChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceAccessInformation>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceAccessInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceConnectionChangeTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceConnectionChangeTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceInformation>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceInformationCollection>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceInformationCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceInformationCustomPairing>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceInformationCustomPairing & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceInformationPairing>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceInformationPairing & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceInformationUpdate>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceInformationUpdate & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DevicePairingRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DevicePairingRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DevicePairingResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DevicePairingResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DevicePicker>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DevicePicker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DevicePickerAppearance>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DevicePickerAppearance & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DevicePickerFilter>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DevicePickerFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceSelectedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceSelectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceThumbnail>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceThumbnail & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceUnpairingResult>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceUnpairingResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceWatcher>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceWatcherEvent>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceWatcherEvent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::DeviceWatcherTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::DeviceWatcherTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Enumeration::EnclosureLocation>
+{
+    size_t operator()(const winrt::Windows::Devices::Enumeration::EnclosureLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

@@ -502,4 +502,76 @@ inline bool FaceTracker::IsSupported()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::FaceAnalysis::IDetectedFace>
+{
+    size_t operator()(const winrt::Windows::Media::FaceAnalysis::IDetectedFace & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::FaceAnalysis::IFaceDetector>
+{
+    size_t operator()(const winrt::Windows::Media::FaceAnalysis::IFaceDetector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::FaceAnalysis::IFaceDetectorStatics>
+{
+    size_t operator()(const winrt::Windows::Media::FaceAnalysis::IFaceDetectorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::FaceAnalysis::IFaceTracker>
+{
+    size_t operator()(const winrt::Windows::Media::FaceAnalysis::IFaceTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::FaceAnalysis::IFaceTrackerStatics>
+{
+    size_t operator()(const winrt::Windows::Media::FaceAnalysis::IFaceTrackerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::FaceAnalysis::DetectedFace>
+{
+    size_t operator()(const winrt::Windows::Media::FaceAnalysis::DetectedFace & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::FaceAnalysis::FaceDetector>
+{
+    size_t operator()(const winrt::Windows::Media::FaceAnalysis::FaceDetector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::FaceAnalysis::FaceTracker>
+{
+    size_t operator()(const winrt::Windows::Media::FaceAnalysis::FaceTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

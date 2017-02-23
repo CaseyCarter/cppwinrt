@@ -661,4 +661,85 @@ inline UICommandSeparator::UICommandSeparator() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Popups::IMessageDialog>
+{
+    size_t operator()(const winrt::Windows::UI::Popups::IMessageDialog & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Popups::IMessageDialogFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Popups::IMessageDialogFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Popups::IPopupMenu>
+{
+    size_t operator()(const winrt::Windows::UI::Popups::IPopupMenu & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Popups::IUICommand>
+{
+    size_t operator()(const winrt::Windows::UI::Popups::IUICommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Popups::IUICommandFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Popups::IUICommandFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Popups::MessageDialog>
+{
+    size_t operator()(const winrt::Windows::UI::Popups::MessageDialog & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Popups::PopupMenu>
+{
+    size_t operator()(const winrt::Windows::UI::Popups::PopupMenu & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Popups::UICommand>
+{
+    size_t operator()(const winrt::Windows::UI::Popups::UICommand & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Popups::UICommandSeparator>
+{
+    size_t operator()(const winrt::Windows::UI::Popups::UICommandSeparator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

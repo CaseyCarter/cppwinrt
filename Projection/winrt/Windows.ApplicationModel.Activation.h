@@ -1508,4 +1508,688 @@ template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionResult
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IActivatedEventArgsWithUser>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IActivatedEventArgsWithUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IApplicationViewActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IApplicationViewActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderAddAppointmentActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderAddAppointmentActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderRemoveAppointmentActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderRemoveAppointmentActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderReplaceAppointmentActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderReplaceAppointmentActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderShowTimeFrameActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IAppointmentsProviderShowTimeFrameActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IDeviceActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IDeviceActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IDevicePairingActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IDevicePairingActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IDialReceiverActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IDialReceiverActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IFileActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IFileActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IFileActivatedEventArgsWithCallerPackageFamilyName>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IFileActivatedEventArgsWithCallerPackageFamilyName & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IFileActivatedEventArgsWithNeighboringFiles>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IFileActivatedEventArgsWithNeighboringFiles & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IFileOpenPickerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IFileOpenPickerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IFileSavePickerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IFileSavePickerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IFolderPickerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IFolderPickerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ILockScreenActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ILockScreenActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IPickerReturnedActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IPickerReturnedActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IPrelaunchActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IPrelaunchActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IProtocolActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IProtocolActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IProtocolForResultsActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IProtocolForResultsActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IRestrictedLaunchActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IRestrictedLaunchActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ISearchActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ISearchActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ISearchActivatedEventArgsWithLinguisticDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ISearchActivatedEventArgsWithLinguisticDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IShareTargetActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IShareTargetActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ISplashScreen>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ISplashScreen & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ITileActivatedInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ITileActivatedInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IToastNotificationActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IToastNotificationActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IUserDataAccountProviderActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IUserDataAccountProviderActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IViewSwitcherProvider>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IViewSwitcherProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IVoiceCommandActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IVoiceCommandActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IWebAccountProviderActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IWebAccountProviderActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IWebAuthenticationBrokerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IWebAuthenticationBrokerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::AppointmentsProviderAddAppointmentActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::AppointmentsProviderAddAppointmentActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::AppointmentsProviderRemoveAppointmentActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::AppointmentsProviderRemoveAppointmentActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::AppointmentsProviderReplaceAppointmentActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::AppointmentsProviderReplaceAppointmentActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::AppointmentsProviderShowAppointmentDetailsActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::AppointmentsProviderShowAppointmentDetailsActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::AppointmentsProviderShowTimeFrameActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::AppointmentsProviderShowTimeFrameActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::DeviceActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::DeviceActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::DevicePairingActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::DevicePairingActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::DialReceiverActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::DialReceiverActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::FileActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::FileActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::FileOpenPickerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::FileOpenPickerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::FileSavePickerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::FileSavePickerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::FolderPickerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::FolderPickerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::LaunchActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::LaunchActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::LockScreenActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::LockScreenActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::PickerReturnedActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::PickerReturnedActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ProtocolForResultsActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ProtocolForResultsActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::RestrictedLaunchActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::RestrictedLaunchActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::SearchActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::SearchActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::SplashScreen>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::SplashScreen & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::TileActivatedInfo>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::TileActivatedInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ToastNotificationActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ToastNotificationActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::UserDataAccountProviderActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::UserDataAccountProviderActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::VoiceCommandActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::VoiceCommandActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::WebAccountProviderActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::WebAccountProviderActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::WebAuthenticationBrokerContinuationEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::WebAuthenticationBrokerContinuationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

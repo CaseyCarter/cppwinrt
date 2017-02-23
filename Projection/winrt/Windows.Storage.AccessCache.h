@@ -541,4 +541,85 @@ inline Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList StorageApp
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Storage::AccessCache::IItemRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Storage::AccessCache::IItemRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::AccessCache::IStorageApplicationPermissionsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::AccessCache::IStorageItemAccessList>
+{
+    size_t operator()(const winrt::Windows::Storage::AccessCache::IStorageItemAccessList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList>
+{
+    size_t operator()(const winrt::Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList2>
+{
+    size_t operator()(const winrt::Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::AccessCache::AccessListEntryView>
+{
+    size_t operator()(const winrt::Windows::Storage::AccessCache::AccessListEntryView & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::AccessCache::ItemRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Storage::AccessCache::ItemRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::AccessCache::StorageItemAccessList>
+{
+    size_t operator()(const winrt::Windows::Storage::AccessCache::StorageItemAccessList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList>
+{
+    size_t operator()(const winrt::Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

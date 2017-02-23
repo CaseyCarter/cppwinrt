@@ -532,4 +532,139 @@ inline TouchCapabilities::TouchCapabilities() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::IKeyboardCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::IKeyboardCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::IMouseCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::IMouseCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::IMouseDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::IMouseDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::IMouseDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::IMouseDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::IMouseEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::IMouseEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::IPointerDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::IPointerDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::IPointerDevice2>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::IPointerDevice2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::IPointerDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::IPointerDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::ITouchCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::ITouchCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::KeyboardCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::KeyboardCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::MouseCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::MouseCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::MouseDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::MouseDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::MouseEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::MouseEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::PointerDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::PointerDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Input::TouchCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::Input::TouchCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

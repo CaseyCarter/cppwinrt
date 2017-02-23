@@ -1942,4 +1942,238 @@ inline ValueAndLanguage::ValueAndLanguage() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IContentIndexer>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IContentIndexer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IContentIndexerQuery>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IContentIndexerQuery & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IContentIndexerQueryOperations>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IContentIndexerQueryOperations & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IContentIndexerStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IContentIndexerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IIndexableContent>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IIndexableContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IQueryOptions>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IQueryOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IQueryOptionsFactory>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IQueryOptionsFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IQueryOptionsWithProviderFilter>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IQueryOptionsWithProviderFilter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IStorageFileQueryResult>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IStorageFileQueryResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IStorageFileQueryResult2>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IStorageFileQueryResult2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IStorageFolderQueryOperations>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IStorageFolderQueryOperations & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IStorageFolderQueryResult>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IStorageFolderQueryResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IStorageItemQueryResult>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IStorageItemQueryResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IStorageLibraryContentChangedTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IStorageLibraryContentChangedTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IStorageQueryResultBase>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IStorageQueryResultBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IValueAndLanguage>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IValueAndLanguage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::ContentIndexer>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::ContentIndexer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::ContentIndexerQuery>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::ContentIndexerQuery & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::IndexableContent>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::IndexableContent & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::QueryOptions>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::QueryOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::SortEntryVector>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::SortEntryVector & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::StorageFileQueryResult>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::StorageFileQueryResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::StorageFolderQueryResult>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::StorageFolderQueryResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::StorageItemQueryResult>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::StorageItemQueryResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::StorageLibraryContentChangedTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::StorageLibraryContentChangedTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Search::ValueAndLanguage>
+{
+    size_t operator()(const winrt::Windows::Storage::Search::ValueAndLanguage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

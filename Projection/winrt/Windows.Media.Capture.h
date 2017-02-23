@@ -4688,4 +4688,607 @@ inline MediaCaptureInitializationSettings::MediaCaptureInitializationSettings() 
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IAdvancedCapturedPhoto>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IAdvancedCapturedPhoto & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IAdvancedCapturedPhoto2>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IAdvancedCapturedPhoto2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IAdvancedPhotoCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IAdvancedPhotoCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IAppCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IAppCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IAppCaptureStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IAppCaptureStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ICameraCaptureUI>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ICameraCaptureUI & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ICameraCaptureUIPhotoCaptureSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ICameraCaptureUIPhotoCaptureSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ICameraCaptureUIVideoCaptureSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ICameraCaptureUIVideoCaptureSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ICapturedFrame>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ICapturedFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ICapturedFrameControlValues>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ICapturedFrameControlValues & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ICapturedFrameControlValues2>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ICapturedFrameControlValues2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ICapturedFrameWithSoftwareBitmap>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ICapturedFrameWithSoftwareBitmap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ICapturedPhoto>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ICapturedPhoto & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ILowLagMediaRecording>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ILowLagMediaRecording & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ILowLagMediaRecording2>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ILowLagMediaRecording2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ILowLagMediaRecording3>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ILowLagMediaRecording3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ILowLagPhotoCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ILowLagPhotoCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::ILowLagPhotoSequenceCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::ILowLagPhotoSequenceCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCapture2>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCapture2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCapture3>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCapture3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCapture4>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCapture4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCapture5>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCapture5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureFocusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureFocusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings2>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings3>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings4>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings5>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCapturePauseResult>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCapturePauseResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureSettings2>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureSettings2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureStopResult>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureStopResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureVideoPreview>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureVideoPreview & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureVideoProfile>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureVideoProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IOptionalReferencePhotoCapturedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IOptionalReferencePhotoCapturedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IPhotoCapturedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IPhotoCapturedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IPhotoConfirmationCapturedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IPhotoConfirmationCapturedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IVideoStreamConfiguration>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IVideoStreamConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::AdvancedCapturedPhoto>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::AdvancedCapturedPhoto & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::AdvancedPhotoCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::AdvancedPhotoCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::AppCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::AppCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::CameraCaptureUI>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::CameraCaptureUI & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::CameraCaptureUIPhotoCaptureSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::CameraCaptureUIPhotoCaptureSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::CameraCaptureUIVideoCaptureSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::CameraCaptureUIVideoCaptureSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::CapturedFrame>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::CapturedFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::CapturedFrameControlValues>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::CapturedFrameControlValues & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::CapturedPhoto>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::CapturedPhoto & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::LowLagMediaRecording>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::LowLagMediaRecording & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::LowLagPhotoCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::LowLagPhotoCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::LowLagPhotoSequenceCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::LowLagPhotoSequenceCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::MediaCapture>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::MediaCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::MediaCaptureFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::MediaCaptureFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::MediaCaptureFocusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::MediaCaptureFocusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::MediaCaptureInitializationSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::MediaCaptureInitializationSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::MediaCapturePauseResult>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::MediaCapturePauseResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::MediaCaptureSettings>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::MediaCaptureSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::MediaCaptureStopResult>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::MediaCaptureStopResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::MediaCaptureVideoProfile>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::MediaCaptureVideoProfile & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::OptionalReferencePhotoCapturedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::OptionalReferencePhotoCapturedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::PhotoCapturedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::PhotoCapturedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::PhotoConfirmationCapturedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::PhotoConfirmationCapturedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::VideoStreamConfiguration>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::VideoStreamConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

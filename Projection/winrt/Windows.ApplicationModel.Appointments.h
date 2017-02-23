@@ -5407,4 +5407,436 @@ inline FindAppointmentsOptions::FindAppointmentsOptions() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointment>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointment2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointment2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointment3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointment3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentCalendar>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentCalendar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentCalendar2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentCalendar2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentCalendar3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentCalendar3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentCalendarSyncManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentCalendarSyncManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentCalendarSyncManager2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentCalendarSyncManager2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentConflictResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentConflictResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentException>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentException & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentInvitee>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentInvitee & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentManagerForUser>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentManagerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentManagerStatics3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentManagerStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentParticipant>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentParticipant & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentPropertiesStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentPropertiesStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentPropertiesStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentRecurrence>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentRecurrence & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentRecurrence2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentRecurrence2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentRecurrence3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentRecurrence3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentStore2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentStore2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChange>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChange2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChange2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChangeReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChangeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChangeTracker>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChangeTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChangedDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChangedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreNotificationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IAppointmentStoreNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::IFindAppointmentsOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::IFindAppointmentsOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::Appointment>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::Appointment & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentCalendar>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentCalendar & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentConflictResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentConflictResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentException>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentException & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentInvitee>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentInvitee & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentManagerForUser>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentOrganizer>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentOrganizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentRecurrence>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentRecurrence & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentStore>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentStoreChange>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentStoreChange & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentStoreChangeReader>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentStoreChangeReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentStoreChangeTracker>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentStoreChangeTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentStoreChangedDeferral>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentStoreChangedDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentStoreChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentStoreChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::AppointmentStoreNotificationTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::AppointmentStoreNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Appointments::FindAppointmentsOptions>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Appointments::FindAppointmentsOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

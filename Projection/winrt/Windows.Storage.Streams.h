@@ -1879,4 +1879,274 @@ inline Windows::Storage::Streams::RandomAccessStreamReference RandomAccessStream
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IBuffer>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IBuffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IBufferFactory>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IBufferFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IBufferStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IBufferStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IContentTypeProvider>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IContentTypeProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IDataReader>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IDataReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IDataReaderFactory>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IDataReaderFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IDataReaderStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IDataReaderStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IDataWriter>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IDataWriter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IDataWriterFactory>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IDataWriterFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IInputStream>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IInputStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IInputStreamReference>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IInputStreamReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IOutputStream>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IOutputStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IRandomAccessStream>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IRandomAccessStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IRandomAccessStreamReference>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IRandomAccessStreamReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IRandomAccessStreamReferenceStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IRandomAccessStreamReferenceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IRandomAccessStreamStatics>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IRandomAccessStreamStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::IRandomAccessStreamWithContentType>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::IRandomAccessStreamWithContentType & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::Buffer>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::Buffer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::DataReader>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::DataReader & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::DataReaderLoadOperation>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::DataReaderLoadOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::DataWriter>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::DataWriter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::DataWriterStoreOperation>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::DataWriterStoreOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::FileInputStream>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::FileInputStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::FileOutputStream>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::FileOutputStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::FileRandomAccessStream>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::FileRandomAccessStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::InMemoryRandomAccessStream>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::InMemoryRandomAccessStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::InputStreamOverStream>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::InputStreamOverStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::OutputStreamOverStream>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::OutputStreamOverStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::RandomAccessStreamOverStream>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::RandomAccessStreamOverStream & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Streams::RandomAccessStreamReference>
+{
+    size_t operator()(const winrt::Windows::Storage::Streams::RandomAccessStreamReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

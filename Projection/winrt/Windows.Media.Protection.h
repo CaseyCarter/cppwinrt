@@ -776,4 +776,193 @@ inline ProtectionCapabilities::ProtectionCapabilities() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IComponentLoadFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IComponentLoadFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IHdcpSession>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IHdcpSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IMediaProtectionManager>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IMediaProtectionManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IMediaProtectionPMPServer>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IMediaProtectionPMPServer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IMediaProtectionPMPServerFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IMediaProtectionPMPServerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IMediaProtectionServiceCompletion>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IMediaProtectionServiceCompletion & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IMediaProtectionServiceRequest>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IMediaProtectionServiceRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IProtectionCapabilities>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IProtectionCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IRevocationAndRenewalInformation>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IRevocationAndRenewalInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IRevocationAndRenewalItem>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IRevocationAndRenewalItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IServiceRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IServiceRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::IServiceRequestedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::IServiceRequestedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::ComponentLoadFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::ComponentLoadFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::HdcpSession>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::HdcpSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::MediaProtectionManager>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::MediaProtectionManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::MediaProtectionPMPServer>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::MediaProtectionPMPServer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::MediaProtectionServiceCompletion>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::MediaProtectionServiceCompletion & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::ProtectionCapabilities>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::ProtectionCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::RevocationAndRenewalInformation>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::RevocationAndRenewalInformation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::RevocationAndRenewalItem>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::RevocationAndRenewalItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::ServiceRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::ServiceRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

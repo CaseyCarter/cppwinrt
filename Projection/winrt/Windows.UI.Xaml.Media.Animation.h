@@ -10151,4 +10151,2029 @@ inline TransitionCollection::TransitionCollection() :
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IAddDeleteThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IAddDeleteThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IBackEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IBackEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IBackEaseStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IBackEaseStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IBeginStoryboard>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IBeginStoryboard & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IBeginStoryboardStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IBeginStoryboardStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IBounceEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IBounceEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IBounceEaseStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IBounceEaseStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ICircleEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ICircleEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IColorAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IColorAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IColorAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IColorAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFrames>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFrames & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFramesStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFramesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IColorKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IColorKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IColorKeyFrameFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IColorKeyFrameFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IColorKeyFrameStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IColorKeyFrameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ICommonNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ICommonNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ICommonNavigationTransitionInfoStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ICommonNavigationTransitionInfoStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IConnectedAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IConnectedAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IConnectedAnimationService>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IConnectedAnimationService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IConnectedAnimationServiceStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IConnectedAnimationServiceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IContentThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IContentThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IContentThemeTransitionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IContentThemeTransitionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IContinuumNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IContinuumNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IContinuumNavigationTransitionInfoStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IContinuumNavigationTransitionInfoStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ICubicEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ICubicEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDiscreteColorKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDiscreteColorKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDiscreteDoubleKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDiscreteDoubleKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDiscreteObjectKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDiscreteObjectKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDiscretePointKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDiscretePointKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDoubleAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDoubleAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDoubleAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyFrames>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyFrames & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyFramesStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyFramesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDoubleKeyFrameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDragItemThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDragItemThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDragItemThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDragItemThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDrillInNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDrillInNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDropTargetItemThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDropTargetItemThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IDropTargetItemThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IDropTargetItemThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEasingColorKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEasingColorKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEasingColorKeyFrameStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEasingColorKeyFrameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEasingDoubleKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEasingDoubleKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEasingDoubleKeyFrameStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEasingDoubleKeyFrameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEasingFunctionBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEasingFunctionBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEasingFunctionBaseFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEasingFunctionBaseFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEasingFunctionBaseStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEasingFunctionBaseStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEasingPointKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEasingPointKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEasingPointKeyFrameStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEasingPointKeyFrameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEdgeUIThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEdgeUIThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEdgeUIThemeTransitionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEdgeUIThemeTransitionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IElasticEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IElasticEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IElasticEaseStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IElasticEaseStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEntranceNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEntranceNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEntranceNavigationTransitionInfoStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEntranceNavigationTransitionInfoStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IEntranceThemeTransitionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IEntranceThemeTransitionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IExponentialEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IExponentialEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IExponentialEaseStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IExponentialEaseStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IFadeInThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IFadeInThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IFadeInThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IFadeInThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IKeySpline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IKeySpline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IKeyTimeHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IKeyTimeHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IKeyTimeHelperStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IKeyTimeHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ILinearColorKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ILinearColorKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ILinearDoubleKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ILinearDoubleKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ILinearPointKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ILinearPointKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::INavigationThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::INavigationThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::INavigationThemeTransitionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::INavigationThemeTransitionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::INavigationTransitionInfoOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyFrames>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyFrames & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyFramesStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyFramesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IObjectKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IObjectKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IObjectKeyFrameFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IObjectKeyFrameFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IObjectKeyFrameStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IObjectKeyFrameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPaneThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPaneThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPaneThemeTransitionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPaneThemeTransitionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPointAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPointAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPointAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPointAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFrames>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFrames & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFramesStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFramesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPointKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPointKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPointKeyFrameFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPointKeyFrameFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPointKeyFrameStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPointKeyFrameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPointerDownThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPointerDownThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPointerDownThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPointerDownThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPointerUpThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPointerUpThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPointerUpThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPointerUpThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPopInThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPopInThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPopOutThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPopOutThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPopOutThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPopOutThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPopupThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPopupThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPopupThemeTransitionStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPopupThemeTransitionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPowerEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPowerEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IPowerEaseStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IPowerEaseStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IQuadraticEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IQuadraticEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IQuarticEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IQuarticEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IQuinticEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IQuinticEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IReorderThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IReorderThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IRepositionThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IRepositionThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IRepositionThemeTransition2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IRepositionThemeTransition2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IRepositionThemeTransitionStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IRepositionThemeTransitionStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISineEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISineEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISlideNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISlideNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISplineColorKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISplineColorKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISplineColorKeyFrameStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISplineColorKeyFrameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISplineDoubleKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISplineDoubleKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISplineDoubleKeyFrameStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISplineDoubleKeyFrameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISplinePointKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISplinePointKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISplinePointKeyFrameStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISplinePointKeyFrameStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IStoryboard>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IStoryboard & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IStoryboardStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IStoryboardStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISuppressNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISuppressNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimationStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ITimeline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ITimeline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ITimelineFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ITimelineFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ITimelineStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ITimelineStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ITransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ITransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ITransitionFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ITransitionFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::AddDeleteThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::AddDeleteThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::BackEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::BackEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::BeginStoryboard>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::BeginStoryboard & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::BounceEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::BounceEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::CircleEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::CircleEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ColorAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ColorAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ColorAnimationUsingKeyFrames>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ColorAnimationUsingKeyFrames & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ColorKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ColorKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ColorKeyFrameCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ColorKeyFrameCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::CommonNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::CommonNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ConnectedAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ConnectedAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ConnectedAnimationService>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ConnectedAnimationService & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ContentThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ContentThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ContinuumNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ContinuumNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::CubicEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::CubicEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DiscreteColorKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DiscreteColorKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DiscreteDoubleKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DiscreteDoubleKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DiscreteObjectKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DiscreteObjectKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DiscretePointKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DiscretePointKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DoubleAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DoubleAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DoubleAnimationUsingKeyFrames>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DoubleAnimationUsingKeyFrames & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DoubleKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DoubleKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DoubleKeyFrameCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DoubleKeyFrameCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DragItemThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DragItemThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DragOverThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DragOverThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DrillInNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DrillInNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DrillInThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DrillInThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DrillOutThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DrillOutThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::DropTargetItemThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::DropTargetItemThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::EasingColorKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::EasingColorKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::EasingDoubleKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::EasingDoubleKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::EasingFunctionBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::EasingPointKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::EasingPointKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::EdgeUIThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::EdgeUIThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ElasticEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ElasticEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::EntranceNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::EntranceNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::EntranceThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::EntranceThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ExponentialEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ExponentialEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::FadeInThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::FadeInThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::FadeOutThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::FadeOutThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::KeySpline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::KeySpline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::KeyTimeHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::KeyTimeHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::LinearColorKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::LinearColorKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::LinearDoubleKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::LinearDoubleKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::LinearPointKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::LinearPointKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::NavigationThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::NavigationThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ObjectAnimationUsingKeyFrames>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ObjectAnimationUsingKeyFrames & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ObjectKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ObjectKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ObjectKeyFrameCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ObjectKeyFrameCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::PaneThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::PaneThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::PointAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::PointAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::PointAnimationUsingKeyFrames>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::PointAnimationUsingKeyFrames & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::PointKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::PointKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::PointKeyFrameCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::PointKeyFrameCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::PointerDownThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::PointerDownThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::PointerUpThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::PointerUpThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::PopInThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::PopInThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::PopOutThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::PopOutThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::PopupThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::PopupThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::PowerEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::PowerEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::QuadraticEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::QuadraticEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::QuarticEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::QuarticEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::QuinticEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::QuinticEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::ReorderThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::ReorderThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::RepeatBehaviorHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::RepeatBehaviorHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::RepositionThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::RepositionThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::RepositionThemeTransition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::RepositionThemeTransition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::SineEase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::SineEase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::SlideNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::SlideNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::SplineColorKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::SplineColorKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::SplineDoubleKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::SplineDoubleKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::SplinePointKeyFrame>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::SplinePointKeyFrame & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::SplitCloseThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::SplitCloseThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::SplitOpenThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::SplitOpenThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::Storyboard>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::Storyboard & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::SuppressNavigationTransitionInfo>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::SuppressNavigationTransitionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::SwipeBackThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::SwipeBackThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::SwipeHintThemeAnimation>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::SwipeHintThemeAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::Timeline>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::Timeline & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::TimelineCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::TimelineCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::Transition>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::Transition & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::TransitionCollection>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

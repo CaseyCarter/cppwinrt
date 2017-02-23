@@ -267,4 +267,31 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::Rad
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Radios::IRadio>
+{
+    size_t operator()(const winrt::Windows::Devices::Radios::IRadio & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Radios::IRadioStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Radios::IRadioStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Radios::Radio>
+{
+    size_t operator()(const winrt::Windows::Devices::Radios::Radio & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

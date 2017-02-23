@@ -1944,4 +1944,202 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevi
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidBooleanControl>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidBooleanControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription2>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidBooleanControlDescription2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidCollection>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidDeviceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidFeatureReport>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidFeatureReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidInputReport>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidInputReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidInputReportReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidInputReportReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidNumericControl>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidNumericControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidNumericControlDescription>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidNumericControlDescription & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::IHidOutputReport>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::IHidOutputReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::HidBooleanControl>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::HidBooleanControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::HidCollection>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::HidCollection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::HidDevice>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::HidDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::HidFeatureReport>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::HidFeatureReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::HidInputReport>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::HidInputReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::HidNumericControl>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::HidNumericControl & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::HumanInterfaceDevice::HidOutputReport>
+{
+    size_t operator()(const winrt::Windows::Devices::HumanInterfaceDevice::HidOutputReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

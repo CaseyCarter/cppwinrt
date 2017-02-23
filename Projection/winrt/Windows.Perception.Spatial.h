@@ -1285,4 +1285,238 @@ inline Windows::Perception::Spatial::SpatialLocator SpatialLocator::GetDefault()
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialAnchor>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialAnchor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialAnchor2>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialAnchor2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialAnchorManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialAnchorManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialAnchorStatics>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialAnchorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialAnchorStore>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialAnchorStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialAnchorTransferManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialBoundingVolume>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialBoundingVolume & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialBoundingVolumeStatics>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialBoundingVolumeStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialCoordinateSystem>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialCoordinateSystem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialLocation>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialLocator>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialLocator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialLocatorStatics>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialLocatorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialStationaryFrameOfReference>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialStationaryFrameOfReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialAnchor>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialAnchor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialAnchorStore>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialAnchorStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialBoundingVolume>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialBoundingVolume & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialCoordinateSystem>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialCoordinateSystem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialLocation>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialLocation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialLocator>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialLocator & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialStationaryFrameOfReference>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialStationaryFrameOfReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

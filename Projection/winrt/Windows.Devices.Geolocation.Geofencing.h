@@ -585,4 +585,76 @@ inline Windows::Devices::Geolocation::Geofencing::GeofenceMonitor GeofenceMonito
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geofencing::IGeofence>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geofencing::IGeofence & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geofencing::IGeofenceFactory>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geofencing::IGeofenceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geofencing::IGeofenceMonitorStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geofencing::IGeofenceMonitorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geofencing::IGeofenceStateChangeReport>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geofencing::IGeofenceStateChangeReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geofencing::Geofence>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geofencing::Geofence & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geofencing::GeofenceMonitor>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geofencing::GeofenceMonitor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport>
+{
+    size_t operator()(const winrt::Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

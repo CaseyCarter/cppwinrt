@@ -1453,4 +1453,292 @@ inline WriteableBitmap::WriteableBitmap(int32_t pixelWidth, int32_t pixelHeight)
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImage>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImage2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImage2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImage3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImage3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImageFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImageFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IBitmapImageStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IBitmapSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IBitmapSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IBitmapSourceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IBitmapSourceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IBitmapSourceStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IBitmapSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IDownloadProgressEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmap>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmapStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmapStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::ISoftwareBitmapSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::ISoftwareBitmapSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::ISurfaceImageSourceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::ISurfaceImageSourceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSourceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSourceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IWriteableBitmap>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IWriteableBitmap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IWriteableBitmapFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IWriteableBitmapFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::BitmapImage>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::BitmapImage & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::BitmapSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::BitmapSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::DownloadProgressEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::DownloadProgressEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::RenderTargetBitmap>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::RenderTargetBitmap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::SoftwareBitmapSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::SoftwareBitmapSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::SurfaceImageSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::SurfaceImageSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::WriteableBitmap>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::WriteableBitmap & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

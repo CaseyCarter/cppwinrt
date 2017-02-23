@@ -785,4 +785,166 @@ template <typename D> void impl_ITargetFileRequestDeferral<D>::Complete() const
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::IFileOpenPickerUI>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::IFileOpenPickerUI & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::IFileRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::IFileRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::IFileSavePickerUI>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::IFileSavePickerUI & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::IPickerClosingDeferral>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::IPickerClosingDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::IPickerClosingEventArgs>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::IPickerClosingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::IPickerClosingOperation>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::IPickerClosingOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::ITargetFileRequest>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::ITargetFileRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::ITargetFileRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::ITargetFileRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::ITargetFileRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::ITargetFileRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::FileOpenPickerUI>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::FileOpenPickerUI & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::FileRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::FileRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::FileSavePickerUI>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::FileSavePickerUI & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::PickerClosingDeferral>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::PickerClosingDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::PickerClosingEventArgs>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::PickerClosingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::PickerClosingOperation>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::PickerClosingOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::TargetFileRequest>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::TargetFileRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::TargetFileRequestDeferral>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::TargetFileRequestDeferral & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)

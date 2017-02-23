@@ -54,4 +54,31 @@ inline Windows::Storage::ApplicationData ApplicationDataManager::CreateForPackag
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::Management::Core::IApplicationDataManager>
+{
+    size_t operator()(const winrt::Windows::Management::Core::IApplicationDataManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Core::IApplicationDataManagerStatics>
+{
+    size_t operator()(const winrt::Windows::Management::Core::IApplicationDataManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Core::ApplicationDataManager>
+{
+    size_t operator()(const winrt::Windows::Management::Core::ApplicationDataManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 #pragma warning(pop)
