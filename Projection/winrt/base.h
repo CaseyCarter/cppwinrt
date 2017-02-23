@@ -2765,6 +2765,10 @@ agile_ref<T> make_agile(const T & object)
 struct event_token
 {
     int64_t value{};
+    event_token() = default;
+    explicit event_token(int64_t arg)
+        : value{ arg }
+    {}
 };
 
 inline bool operator==(const event_token & left, const event_token & right) noexcept
@@ -3125,7 +3129,7 @@ namespace impl
 
         event_token get_token(const storage_type & delegate) const noexcept
         {
-            return{ reinterpret_cast<int64_t>(get(delegate)) };
+            return event_token{ reinterpret_cast<int64_t>(get(delegate)) };
         }
 
         no_lock_guard get_swap_guard() const noexcept
@@ -3155,7 +3159,7 @@ namespace impl
 
         event_token get_token(const storage_type & delegate) const noexcept
         {
-            return{ reinterpret_cast<int64_t>(get_abi(delegate.get())) };
+            return event_token{ reinterpret_cast<int64_t>(get_abi(delegate.get())) };
         }
     };
 
@@ -3175,7 +3179,7 @@ namespace impl
 
         event_token get_token(const storage_type & delegate) const noexcept
         {
-            return{ reinterpret_cast<int64_t>(get_abi(delegate)) };
+            return event_token{ reinterpret_cast<int64_t>(get_abi(delegate)) };
         }
     };
 }

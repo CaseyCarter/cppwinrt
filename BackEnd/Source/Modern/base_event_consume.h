@@ -2,6 +2,10 @@
 struct event_token
 {
     int64_t value{};
+    event_token() = default;
+    explicit event_token(int64_t arg)
+        : value{ arg }
+    {}
 };
 
 inline bool operator==(const event_token & left, const event_token & right) noexcept
