@@ -874,7 +874,7 @@ Windows::Media::Core::MediaSource|MediaSource||Windows::Media::Core::IMediaSourc
 Windows::Media::Core::MediaSourceError|MediaSourceError||Windows::Media::Core::IMediaSourceError|0|
 Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs|MediaSourceOpenOperationCompletedEventArgs||Windows::Media::Core::IMediaSourceOpenOperationCompletedEventArgs|0|
 Windows::Media::Core::MediaStreamSample|MediaStreamSample||Windows::Media::Core::IMediaStreamSample|0|
-Windows::Media::Core::MediaStreamSamplePropertySet|MediaStreamSamplePropertySet||Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>|0|
+Windows::Media::Core::MediaStreamSamplePropertySet|MediaStreamSamplePropertySet||Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable>|0|
 Windows::Media::Core::MediaStreamSampleProtectionProperties|MediaStreamSampleProtectionProperties||Windows::Media::Core::IMediaStreamSampleProtectionProperties|0|
 Windows::Media::Core::MediaStreamSource|MediaStreamSource||Windows::Media::Core::IMediaStreamSource|0|
 Windows::Media::Core::MediaStreamSourceClosedEventArgs|MediaStreamSourceClosedEventArgs||Windows::Media::Core::IMediaStreamSourceClosedEventArgs|0|
@@ -1002,7 +1002,7 @@ Windows::Media::MediaProperties::H264ProfileIds|H264ProfileIds|||0|
 Windows::Media::MediaProperties::ImageEncodingProperties|ImageEncodingProperties||Windows::Media::MediaProperties::IImageEncodingProperties|1|
 Windows::Media::MediaProperties::MediaEncodingProfile|MediaEncodingProfile||Windows::Media::MediaProperties::IMediaEncodingProfile|1|
 Windows::Media::MediaProperties::MediaEncodingSubtypes|MediaEncodingSubtypes|||0|
-Windows::Media::MediaProperties::MediaPropertySet|MediaPropertySet||Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>|1|
+Windows::Media::MediaProperties::MediaPropertySet|MediaPropertySet||Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable>|1|
 Windows::Media::MediaProperties::MediaRatio|MediaRatio||Windows::Media::MediaProperties::IMediaRatio|0|
 Windows::Media::MediaProperties::Mpeg2ProfileIds|Mpeg2ProfileIds|||0|
 Windows::Media::MediaProperties::VideoEncodingProperties|VideoEncodingProperties||Windows::Media::MediaProperties::IVideoEncodingProperties|1|
@@ -1870,7 +1870,7 @@ Windows::UI::Xaml::Controls::IconElement|IconElement||Windows::UI::Xaml::Control
 Windows::UI::Xaml::Controls::Image|Image||Windows::UI::Xaml::Controls::IImage|1|
 Windows::UI::Xaml::Controls::InkCanvas|InkCanvas||Windows::UI::Xaml::Controls::IInkCanvas|0|
 Windows::UI::Xaml::Controls::ItemClickEventArgs|ItemClickEventArgs||Windows::UI::Xaml::Controls::IItemClickEventArgs|1|
-Windows::UI::Xaml::Controls::ItemCollection|ItemCollection||Windows::Foundation::Collections::IObservableVector<Windows::IInspectable>|0|
+Windows::UI::Xaml::Controls::ItemCollection|ItemCollection||Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable>|0|
 Windows::UI::Xaml::Controls::ItemContainerGenerator|ItemContainerGenerator||Windows::UI::Xaml::Controls::IItemContainerGenerator|0|
 Windows::UI::Xaml::Controls::ItemsControl|ItemsControl||Windows::UI::Xaml::Controls::IItemsControl|0|
 Windows::UI::Xaml::Controls::ItemsPanelTemplate|ItemsPanelTemplate||Windows::UI::Xaml::Controls::IItemsPanelTemplate|1|
