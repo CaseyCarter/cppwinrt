@@ -17,5 +17,6 @@ popd
 echo.
 echo Executing Back End Tests
 pushd Projection\Tests
+msbuild Tests.sln /nologo /m /p:Configuration=%BuildConfiguration% /p:Platform=%BuildPlatform%
 call RunTests.cmd
 popd
