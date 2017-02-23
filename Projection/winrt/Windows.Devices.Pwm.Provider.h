@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Devices.Pwm.Provider.3.h"
@@ -248,3 +250,4 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
 }
 
 }
+#pragma warning(pop)

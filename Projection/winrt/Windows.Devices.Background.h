@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Devices.Background.3.h"
@@ -135,3 +137,4 @@ template <typename D> Windows::Foundation::TimeSpan impl_IDeviceServicingDetails
 }
 
 }
+#pragma warning(pop)

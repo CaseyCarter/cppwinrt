@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Management.Workplace.3.h"
 
@@ -154,3 +156,4 @@ inline Windows::Management::Workplace::MessagingSyncPolicy MdmPolicy::GetMessagi
 }
 
 }
+#pragma warning(pop)

@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.System.RemoteDesktop.3.h"
 #include "Windows.System.h"
@@ -47,3 +49,4 @@ inline bool InteractiveSession::IsRemote()
 }
 
 }
+#pragma warning(pop)

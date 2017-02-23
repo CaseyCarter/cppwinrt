@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Security.Credentials.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
@@ -1056,3 +1058,4 @@ inline WebTokenResponse::WebTokenResponse(hstring_view token, const Windows::Sec
 }
 
 }
+#pragma warning(pop)

@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Storage.3.h"
 #include "internal/Windows.Management.Core.3.h"
@@ -52,3 +54,4 @@ inline Windows::Storage::ApplicationData ApplicationDataManager::CreateForPackag
 }
 
 }
+#pragma warning(pop)

@@ -92,6 +92,8 @@ extern char const Logo[100];
 extern char const OutputError[24];
 extern char const PostSql[5110];
 extern char const PragmaOnce[17];
+extern char const PragmaWarningPop[23];
+extern char const PragmaWarningPush[56];
 extern char const SQLiteError[24];
 extern char const TimeCompleted[28];
 extern char const Usage[235];

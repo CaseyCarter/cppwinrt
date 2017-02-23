@@ -1,4 +1,4 @@
-Modern::Test::EnumTestNoFlags|Modern::Test|EnumTestNoFlags|0|0
-Modern::Test::EnumTestsWithFlags|Modern::Test|EnumTestsWithFlags|1|0
-Modern::Test::DeprecatedEnum|Modern::Test|DeprecatedEnum|0|1
-Modern::Test::EnumWithDeprecatedValue|Modern::Test|EnumWithDeprecatedValue|0|0
+Modern::Test::EnumTestNoFlags|Modern::Test|EnumTestNoFlags|0|
+Modern::Test::EnumTestsWithFlags|Modern::Test|EnumTestsWithFlags|1|
+Modern::Test::DeprecatedEnum|Modern::Test|DeprecatedEnum|0|Awesome deprecated text
+Modern::Test::EnumWithDeprecatedValue|Modern::Test|EnumWithDeprecatedValue|0|

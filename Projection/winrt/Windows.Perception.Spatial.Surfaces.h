@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Graphics.DirectX.3.h"
 #include "internal/Windows.Storage.Streams.3.h"
@@ -755,3 +757,4 @@ inline Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial:
 }
 
 }
+#pragma warning(pop)

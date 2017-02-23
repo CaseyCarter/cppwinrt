@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.UI.Text.3.h"
 #include "internal/Windows.Globalization.Fonts.3.h"
@@ -404,3 +406,4 @@ inline LanguageFontGroup::LanguageFontGroup(hstring_view languageTag) :
 }
 
 }
+#pragma warning(pop)

@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Devices.I2c.Provider.3.h"
@@ -340,3 +342,4 @@ template <typename D> Windows::Devices::I2c::Provider::ProviderI2cTransferResult
 }
 
 }
+#pragma warning(pop)

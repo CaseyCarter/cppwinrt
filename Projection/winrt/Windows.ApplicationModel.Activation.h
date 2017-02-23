@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.ApplicationModel.Appointments.AppointmentsProvider.3.h"
@@ -1506,3 +1508,4 @@ template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionResult
 }
 
 }
+#pragma warning(pop)

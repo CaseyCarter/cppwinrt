@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Globalization.Collation.3.h"
 #include "Windows.Globalization.h"
@@ -96,3 +98,4 @@ inline CharacterGroupings::CharacterGroupings() :
 }
 
 }
+#pragma warning(pop)

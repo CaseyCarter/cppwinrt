@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.UI.Xaml.3.h"
 #include "internal/Windows.UI.Xaml.Automation.Peers.3.h"
@@ -5098,3 +5100,4 @@ inline Windows::UI::Xaml::Automation::AutomationProperty WindowPatternIdentifier
 }
 
 }
+#pragma warning(pop)

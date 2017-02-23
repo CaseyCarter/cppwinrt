@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Media.Render.3.h"
 #include "Windows.Media.h"
@@ -13,3 +15,4 @@ namespace impl {
 }
 
 }
+#pragma warning(pop)

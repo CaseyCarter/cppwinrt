@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.System.3.h"
@@ -5132,3 +5134,4 @@ inline Windows::Storage::SystemImageProperties SystemProperties::Image()
 }
 
 }
+#pragma warning(pop)

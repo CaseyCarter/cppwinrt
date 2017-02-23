@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.UI.3.h"
 #include "internal/Windows.Media.ClosedCaptioning.3.h"
@@ -334,3 +336,4 @@ inline Windows::Media::ClosedCaptioning::ClosedCaptionOpacity ClosedCaptionPrope
 }
 
 }
+#pragma warning(pop)

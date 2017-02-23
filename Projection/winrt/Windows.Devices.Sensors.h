@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Graphics.Display.3.h"
@@ -5196,3 +5198,4 @@ inline Windows::Devices::Sensors::SimpleOrientationSensor SimpleOrientationSenso
 }
 
 }
+#pragma warning(pop)

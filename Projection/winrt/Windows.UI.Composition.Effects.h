@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Graphics.Effects.3.h"
 #include "internal/Windows.UI.Composition.Effects.3.h"
@@ -228,3 +230,4 @@ inline SceneLightingEffect::SceneLightingEffect() :
 }
 
 }
+#pragma warning(pop)

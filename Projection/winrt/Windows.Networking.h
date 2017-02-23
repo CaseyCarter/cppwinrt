@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Networking.Connectivity.3.h"
 #include "internal/Windows.Networking.3.h"
@@ -410,3 +412,4 @@ inline int32_t HostName::Compare(hstring_view value1, hstring_view value2)
 }
 
 }
+#pragma warning(pop)

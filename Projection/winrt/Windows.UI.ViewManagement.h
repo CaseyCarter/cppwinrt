@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Core.3.h"
@@ -3049,3 +3051,4 @@ inline Windows::UI::ViewManagement::UIViewSettings UIViewSettings::GetForCurrent
 }
 
 }
+#pragma warning(pop)

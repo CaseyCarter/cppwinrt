@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Foundation.3.h"
@@ -1441,3 +1443,4 @@ inline WordsSegmenter::WordsSegmenter(hstring_view language) :
 }
 
 }
+#pragma warning(pop)

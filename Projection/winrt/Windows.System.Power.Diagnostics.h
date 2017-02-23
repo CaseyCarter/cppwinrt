@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.System.Power.Diagnostics.3.h"
 #include "Windows.System.Power.h"
@@ -177,3 +179,4 @@ inline void ForegroundEnergyDiagnostics::ResetTotalEnergyUsage()
 }
 
 }
+#pragma warning(pop)

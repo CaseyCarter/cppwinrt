@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.UI.3.h"
 
@@ -3724,3 +3726,4 @@ inline Windows::UI::Color Colors::YellowGreen()
 }
 
 }
+#pragma warning(pop)

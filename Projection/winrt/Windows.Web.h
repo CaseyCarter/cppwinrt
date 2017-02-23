@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Web.3.h"
@@ -73,3 +75,4 @@ inline Windows::Web::WebErrorStatus WebError::GetStatus(int32_t hresult)
 }
 
 }
+#pragma warning(pop)

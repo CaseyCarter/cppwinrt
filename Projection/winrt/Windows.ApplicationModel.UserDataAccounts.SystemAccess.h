@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Security.Credentials.3.h"
 #include "internal/Windows.Foundation.3.h"
@@ -1954,3 +1956,4 @@ inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataA
 }
 
 }
+#pragma warning(pop)

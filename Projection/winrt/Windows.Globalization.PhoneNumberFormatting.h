@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Globalization.PhoneNumberFormatting.3.h"
 #include "Windows.Globalization.h"
@@ -508,3 +510,4 @@ inline Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult Pho
 }
 
 }
+#pragma warning(pop)

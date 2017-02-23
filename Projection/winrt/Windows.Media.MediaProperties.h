@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Storage.3.h"
@@ -3019,3 +3021,4 @@ inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingPro
 }
 
 }
+#pragma warning(pop)

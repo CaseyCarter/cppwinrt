@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Security.EnterpriseData.3.h"
 
@@ -12,3 +14,4 @@ namespace impl {
 }
 
 }
+#pragma warning(pop)

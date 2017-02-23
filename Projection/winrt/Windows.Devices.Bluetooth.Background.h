@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.Devices.Bluetooth.Rfcomm.3.h"
@@ -427,3 +429,4 @@ template <typename D> Windows::Devices::Bluetooth::BluetoothError impl_IBluetoot
 }
 
 }
+#pragma warning(pop)

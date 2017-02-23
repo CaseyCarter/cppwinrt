@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Devices.Printers.Extensions.3.h"
@@ -308,3 +310,4 @@ template <typename D> void impl_IPrint3DWorkflow2<D>::PrinterChanged(event_token
 }
 
 }
+#pragma warning(pop)

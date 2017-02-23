@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Graphics.DirectX.Direct3D11.3.h"
 #include "Windows.Graphics.DirectX.h"
@@ -65,3 +67,4 @@ template <typename D> Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDes
 }
 
 }
+#pragma warning(pop)

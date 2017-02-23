@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Data.Json.3.h"
 #include "Windows.Foundation.h"
@@ -896,3 +898,4 @@ inline Windows::Data::Json::JsonValue JsonValue::CreateNullValue()
 }
 
 }
+#pragma warning(pop)

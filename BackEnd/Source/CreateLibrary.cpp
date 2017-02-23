@@ -198,6 +198,7 @@ static void GenerateClassImpl(bool overridesExist, bool composablesExist, std::v
     Output out;
     WriteLogo(out);
     Write(out, Strings::PragmaOnce);
+    Write(out, Strings::PragmaWarningPush);
 
     WriteRequiredClasses(out);
     Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + Settings::ClassDeclLayerExtension);
@@ -237,6 +238,7 @@ static void GenerateClassImpl(bool overridesExist, bool composablesExist, std::v
     
     out.WriteNamespace();
     WriteRootNamespaceEnd(out);
+    Write(out, Strings::PragmaWarningPop);
     out.WriteTo("..\\" + Settings::FileNamespaceDotName + ".h");
 }
 

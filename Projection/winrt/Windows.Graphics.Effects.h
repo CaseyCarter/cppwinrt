@@ -2,6 +2,8 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4996)
 
 #include "internal/Windows.Graphics.Effects.3.h"
 
@@ -65,3 +67,4 @@ template <typename D> void impl_IGraphicsEffect<D>::Name(hstring_view name) cons
 }
 
 }
+#pragma warning(pop)
