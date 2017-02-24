@@ -4427,7 +4427,7 @@ template <typename D> void impl_IAutomationPeer3<D>::SetParent(const Windows::UI
     check_hresult(WINRT_SHIM(IAutomationPeer3)->abi_SetParent(get_abi(peer)));
 }
 
-template <typename D> void impl_IAutomationPeer3<D>::RaiseTextEditTextChangedEvent(Windows::UI::Xaml::Automation::AutomationTextEditChangeType automationTextEditChangeType, const Windows::Foundation::Collections::IVectorView<hstring> & changedData) const
+template <typename D> void impl_IAutomationPeer3<D>::RaiseTextEditTextChangedEvent(Windows::UI::Xaml::Automation::AutomationTextEditChangeType automationTextEditChangeType, vector_view<hstring> changedData) const
 {
     check_hresult(WINRT_SHIM(IAutomationPeer3)->abi_RaiseTextEditTextChangedEvent(automationTextEditChangeType, get_abi(changedData)));
 }

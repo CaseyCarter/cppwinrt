@@ -1889,7 +1889,7 @@ template <typename D> void impl_IDeviceAccountConfiguration2<D>::IsSyncScheduleM
     check_hresult(WINRT_SHIM(IDeviceAccountConfiguration2)->put_IsSyncScheduleManagedBySystem(value));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IUserDataAccountSystemAccessManagerStatics<D>::AddAndShowDeviceAccountsAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> & accounts) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IUserDataAccountSystemAccessManagerStatics<D>::AddAndShowDeviceAccountsAsync(iterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> accounts) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result;
     check_hresult(WINRT_SHIM(IUserDataAccountSystemAccessManagerStatics)->abi_AddAndShowDeviceAccountsAsync(get_abi(accounts), put_abi(result)));
@@ -1928,7 +1928,7 @@ inline DeviceAccountConfiguration::DeviceAccountConfiguration() :
     DeviceAccountConfiguration(activate_instance<DeviceAccountConfiguration>())
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> UserDataAccountSystemAccessManager::AddAndShowDeviceAccountsAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> & accounts)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> UserDataAccountSystemAccessManager::AddAndShowDeviceAccountsAsync(iterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> accounts)
 {
     return get_activation_factory<UserDataAccountSystemAccessManager, IUserDataAccountSystemAccessManagerStatics>().AddAndShowDeviceAccountsAsync(accounts);
 }

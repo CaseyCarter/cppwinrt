@@ -1647,28 +1647,28 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Ma
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(iterable<Windows::Devices::Geolocation::Geopoint> wayPoints) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
     check_hresult(WINRT_SHIM(IMapRouteFinderStatics)->abi_GetDrivingRouteFromWaypointsAsync(get_abi(wayPoints), put_abi(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(iterable<Windows::Devices::Geolocation::Geopoint> wayPoints, Windows::Services::Maps::MapRouteOptimization optimization) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
     check_hresult(WINRT_SHIM(IMapRouteFinderStatics)->abi_GetDrivingRouteFromWaypointsAndOptimizationAsync(get_abi(wayPoints), optimization, put_abi(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(iterable<Windows::Devices::Geolocation::Geopoint> wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
     check_hresult(WINRT_SHIM(IMapRouteFinderStatics)->abi_GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(get_abi(wayPoints), optimization, restrictions, put_abi(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(iterable<Windows::Devices::Geolocation::Geopoint> wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
     check_hresult(WINRT_SHIM(IMapRouteFinderStatics)->abi_GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(get_abi(wayPoints), optimization, restrictions, headingInDegrees, put_abi(result)));
@@ -1682,7 +1682,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Ma
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetWalkingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetWalkingRouteFromWaypointsAsync(iterable<Windows::Devices::Geolocation::Geopoint> wayPoints) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
     check_hresult(WINRT_SHIM(IMapRouteFinderStatics)->abi_GetWalkingRouteFromWaypointsAsync(get_abi(wayPoints), put_abi(result)));
@@ -1786,22 +1786,22 @@ inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFin
     return get_activation_factory<MapRouteFinder, IMapRouteFinderStatics>().GetDrivingRouteAsync(startPoint, endPoint, optimization, restrictions, headingInDegrees);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints)
+inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(iterable<Windows::Devices::Geolocation::Geopoint> wayPoints)
 {
     return get_activation_factory<MapRouteFinder, IMapRouteFinderStatics>().GetDrivingRouteFromWaypointsAsync(wayPoints);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization)
+inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(iterable<Windows::Devices::Geolocation::Geopoint> wayPoints, Windows::Services::Maps::MapRouteOptimization optimization)
 {
     return get_activation_factory<MapRouteFinder, IMapRouteFinderStatics>().GetDrivingRouteFromWaypointsAsync(wayPoints, optimization);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions)
+inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(iterable<Windows::Devices::Geolocation::Geopoint> wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions)
 {
     return get_activation_factory<MapRouteFinder, IMapRouteFinderStatics>().GetDrivingRouteFromWaypointsAsync(wayPoints, optimization, restrictions);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees)
+inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromWaypointsAsync(iterable<Windows::Devices::Geolocation::Geopoint> wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees)
 {
     return get_activation_factory<MapRouteFinder, IMapRouteFinderStatics>().GetDrivingRouteFromWaypointsAsync(wayPoints, optimization, restrictions, headingInDegrees);
 }
@@ -1811,7 +1811,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFin
     return get_activation_factory<MapRouteFinder, IMapRouteFinderStatics>().GetWalkingRouteAsync(startPoint, endPoint);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetWalkingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints)
+inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetWalkingRouteFromWaypointsAsync(iterable<Windows::Devices::Geolocation::Geopoint> wayPoints)
 {
     return get_activation_factory<MapRouteFinder, IMapRouteFinderStatics>().GetWalkingRouteFromWaypointsAsync(wayPoints);
 }

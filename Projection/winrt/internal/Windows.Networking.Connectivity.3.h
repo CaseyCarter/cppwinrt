@@ -136,7 +136,7 @@ struct NetworkInformation
     static Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::LanIdentifier> GetLanIdentifiers();
     static Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> GetHostNames();
     static Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ProxyConfiguration> GetProxyConfigurationAsync(const Windows::Foundation::Uri & uri);
-    static Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> GetSortedEndpointPairs(const Windows::Foundation::Collections::IIterable<Windows::Networking::EndpointPair> & destinationList, Windows::Networking::HostNameSortOptions sortOptions);
+    static Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> GetSortedEndpointPairs(iterable<Windows::Networking::EndpointPair> destinationList, Windows::Networking::HostNameSortOptions sortOptions);
     static event_token NetworkStatusChanged(const Windows::Networking::Connectivity::NetworkStatusChangedEventHandler & networkStatusHandler);
     using NetworkStatusChanged_revoker = factory_event_revoker<INetworkInformationStatics>;
     static NetworkStatusChanged_revoker NetworkStatusChanged(auto_revoke_t, const Windows::Networking::Connectivity::NetworkStatusChangedEventHandler & networkStatusHandler);

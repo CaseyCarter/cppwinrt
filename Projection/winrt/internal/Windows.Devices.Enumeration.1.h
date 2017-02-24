@@ -385,24 +385,24 @@ template <typename D>
 struct WINRT_EBO impl_IDeviceInformationStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId, iterable<hstring> additionalProperties) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter, iterable<hstring> additionalProperties) const;
     Windows::Devices::Enumeration::DeviceWatcher CreateWatcher() const;
     Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
     Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter) const;
-    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
+    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter, iterable<hstring> additionalProperties) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDeviceInformationStatics2
 {
     hstring GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
-    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
 };
 
 template <typename D>
@@ -536,7 +536,7 @@ struct WINRT_EBO impl_IDeviceWatcher
 template <typename D>
 struct WINRT_EBO impl_IDeviceWatcher2
 {
-    Windows::ApplicationModel::Background::DeviceWatcherTrigger GetBackgroundTrigger(const Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> & requestedEventKinds) const;
+    Windows::ApplicationModel::Background::DeviceWatcherTrigger GetBackgroundTrigger(iterable<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> requestedEventKinds) const;
 };
 
 template <typename D>

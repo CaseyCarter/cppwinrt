@@ -1742,14 +1742,14 @@ template <typename D> hstring impl_IProductListing2<D>::CurrencyCode() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> impl_ICurrentAppStaticsWithFiltering<D>::LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> impl_ICurrentAppStaticsWithFiltering<D>::LoadListingInformationByProductIdsAsync(iterable<hstring> productIds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> loadListingOperation;
     check_hresult(WINRT_SHIM(ICurrentAppStaticsWithFiltering)->abi_LoadListingInformationByProductIdsAsync(get_abi(productIds), put_abi(loadListingOperation)));
     return loadListingOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> impl_ICurrentAppStaticsWithFiltering<D>::LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> impl_ICurrentAppStaticsWithFiltering<D>::LoadListingInformationByKeywordsAsync(iterable<hstring> keywords) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> loadListingOperation;
     check_hresult(WINRT_SHIM(ICurrentAppStaticsWithFiltering)->abi_LoadListingInformationByKeywordsAsync(get_abi(keywords), put_abi(loadListingOperation)));
@@ -1761,14 +1761,14 @@ template <typename D> void impl_ICurrentAppStaticsWithFiltering<D>::ReportProduc
     check_hresult(WINRT_SHIM(ICurrentAppStaticsWithFiltering)->abi_ReportProductFulfillment(get_abi(productId)));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> impl_ICurrentAppSimulatorStaticsWithFiltering<D>::LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> impl_ICurrentAppSimulatorStaticsWithFiltering<D>::LoadListingInformationByProductIdsAsync(iterable<hstring> productIds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> loadListingOperation;
     check_hresult(WINRT_SHIM(ICurrentAppSimulatorStaticsWithFiltering)->abi_LoadListingInformationByProductIdsAsync(get_abi(productIds), put_abi(loadListingOperation)));
     return loadListingOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> impl_ICurrentAppSimulatorStaticsWithFiltering<D>::LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> impl_ICurrentAppSimulatorStaticsWithFiltering<D>::LoadListingInformationByKeywordsAsync(iterable<hstring> keywords) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> loadListingOperation;
     check_hresult(WINRT_SHIM(ICurrentAppSimulatorStaticsWithFiltering)->abi_LoadListingInformationByKeywordsAsync(get_abi(keywords), put_abi(loadListingOperation)));
@@ -1931,12 +1931,12 @@ inline Windows::Foundation::IAsyncOperation<hstring> CurrentApp::GetCustomerColl
     return get_activation_factory<CurrentApp, ICurrentApp2Statics>().GetCustomerCollectionsIdAsync(serviceTicket, publisherUserId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentApp::LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentApp::LoadListingInformationByProductIdsAsync(iterable<hstring> productIds)
 {
     return get_activation_factory<CurrentApp, ICurrentAppStaticsWithFiltering>().LoadListingInformationByProductIdsAsync(productIds);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentApp::LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentApp::LoadListingInformationByKeywordsAsync(iterable<hstring> keywords)
 {
     return get_activation_factory<CurrentApp, ICurrentAppStaticsWithFiltering>().LoadListingInformationByKeywordsAsync(keywords);
 }
@@ -2016,12 +2016,12 @@ inline Windows::Foundation::IAsyncAction CurrentAppSimulator::ReloadSimulatorAsy
     return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulator>().ReloadSimulatorAsync(simulatorSettingsFile);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentAppSimulator::LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentAppSimulator::LoadListingInformationByProductIdsAsync(iterable<hstring> productIds)
 {
     return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorStaticsWithFiltering>().LoadListingInformationByProductIdsAsync(productIds);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentAppSimulator::LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> CurrentAppSimulator::LoadListingInformationByKeywordsAsync(iterable<hstring> keywords)
 {
     return get_activation_factory<CurrentAppSimulator, ICurrentAppSimulatorStaticsWithFiltering>().LoadListingInformationByKeywordsAsync(keywords);
 }

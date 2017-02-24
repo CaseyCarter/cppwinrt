@@ -1292,7 +1292,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Im
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::ImageStream>> impl_IMediaComposition<D>::GetThumbnailsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::TimeSpan> & timesFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::ImageStream>> impl_IMediaComposition<D>::GetThumbnailsAsync(iterable<Windows::Foundation::TimeSpan> timesFromStart, int32_t scaledWidth, int32_t scaledHeight, Windows::Media::Editing::VideoFramePrecision framePrecision) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::ImageStream>> operation;
     check_hresult(WINRT_SHIM(IMediaComposition)->abi_GetThumbnailsAsync(get_abi(timesFromStart), scaledWidth, scaledHeight, framePrecision, put_abi(operation)));

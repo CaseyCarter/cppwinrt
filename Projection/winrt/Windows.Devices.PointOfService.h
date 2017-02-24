@@ -7599,7 +7599,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IBarcodeSc
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IBarcodeScanner<D>::RetrieveStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IBarcodeScanner<D>::RetrieveStatisticsAsync(iterable<hstring> statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
     check_hresult(WINRT_SHIM(IBarcodeScanner)->abi_RetrieveStatisticsAsync(get_abi(statisticsCategories), put_abi(operation)));
@@ -8176,7 +8176,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Poi
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IMagneticStripeReader<D>::RetrieveStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IMagneticStripeReader<D>::RetrieveStatisticsAsync(iterable<hstring> statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
     check_hresult(WINRT_SHIM(IMagneticStripeReader)->abi_RetrieveStatisticsAsync(get_abi(statisticsCategories), put_abi(operation)));
@@ -8578,7 +8578,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IPosPri
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IPosPrinter<D>::GetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IPosPrinter<D>::GetStatisticsAsync(iterable<hstring> statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(IPosPrinter)->abi_GetStatisticsAsync(get_abi(statisticsCategories), put_abi(operation)));
@@ -9145,7 +9145,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICashDr
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICashDrawer<D>::GetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICashDrawer<D>::GetStatisticsAsync(iterable<hstring> statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
     check_hresult(WINRT_SHIM(ICashDrawer)->abi_GetStatisticsAsync(get_abi(statisticsCategories), put_abi(operation)));
@@ -9298,21 +9298,21 @@ template <typename D> void impl_IClaimedBarcodeScanner<D>::RetainDevice() const
     check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_RetainDevice());
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::SetActiveSymbologiesAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & symbologies) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::SetActiveSymbologiesAsync(iterable<uint32_t> symbologies) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_SetActiveSymbologiesAsync(get_abi(symbologies), put_abi(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::ResetStatisticsAsync(iterable<hstring> statisticsCategories) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_ResetStatisticsAsync(get_abi(statisticsCategories), put_abi(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_UpdateStatisticsAsync(get_abi(statistics), put_abi(result)));
@@ -9575,14 +9575,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStr
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::ResetStatisticsAsync(iterable<hstring> statisticsCategories) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_ResetStatisticsAsync(get_abi(statisticsCategories), put_abi(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_UpdateStatisticsAsync(get_abi(statistics), put_abi(result)));
@@ -9773,14 +9773,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPo
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::ResetStatisticsAsync(iterable<hstring> statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_ResetStatisticsAsync(get_abi(statisticsCategories), put_abi(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_UpdateStatisticsAsync(get_abi(statistics), put_abi(result)));
@@ -9860,14 +9860,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCa
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCashDrawer<D>::ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCashDrawer<D>::ResetStatisticsAsync(iterable<hstring> statisticsCategories) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IClaimedCashDrawer)->abi_ResetStatisticsAsync(get_abi(statisticsCategories), put_abi(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCashDrawer<D>::UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedCashDrawer<D>::UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IClaimedCashDrawer)->abi_UpdateStatisticsAsync(get_abi(statistics), put_abi(result)));

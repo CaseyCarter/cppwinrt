@@ -321,13 +321,13 @@ struct WINRT_EBO impl_IPhoneCallHistoryStore
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader GetEntryReader(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryOptions & queryOptions) const;
     Windows::Foundation::IAsyncAction SaveEntryAsync(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry & callHistoryEntry) const;
     Windows::Foundation::IAsyncAction DeleteEntryAsync(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry & callHistoryEntry) const;
-    Windows::Foundation::IAsyncAction DeleteEntriesAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> & callHistoryEntries) const;
+    Windows::Foundation::IAsyncAction DeleteEntriesAsync(iterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> callHistoryEntries) const;
     Windows::Foundation::IAsyncAction MarkEntryAsSeenAsync(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry & callHistoryEntry) const;
-    Windows::Foundation::IAsyncAction MarkEntriesAsSeenAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> & callHistoryEntries) const;
+    Windows::Foundation::IAsyncAction MarkEntriesAsSeenAsync(iterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> callHistoryEntries) const;
     Windows::Foundation::IAsyncOperation<uint32_t> GetUnseenCountAsync() const;
     Windows::Foundation::IAsyncAction MarkAllAsSeenAsync() const;
-    Windows::Foundation::IAsyncOperation<uint32_t> GetSourcesUnseenCountAsync(const Windows::Foundation::Collections::IIterable<hstring> & sourceIds) const;
-    Windows::Foundation::IAsyncAction MarkSourcesAsSeenAsync(const Windows::Foundation::Collections::IIterable<hstring> & sourceIds) const;
+    Windows::Foundation::IAsyncOperation<uint32_t> GetSourcesUnseenCountAsync(iterable<hstring> sourceIds) const;
+    Windows::Foundation::IAsyncAction MarkSourcesAsSeenAsync(iterable<hstring> sourceIds) const;
 };
 
 template <typename D>

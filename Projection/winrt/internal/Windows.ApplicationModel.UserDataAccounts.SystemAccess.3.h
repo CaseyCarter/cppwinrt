@@ -20,7 +20,7 @@ struct WINRT_EBO DeviceAccountConfiguration :
 struct UserDataAccountSystemAccessManager
 {
     UserDataAccountSystemAccessManager() = delete;
-    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> AddAndShowDeviceAccountsAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> & accounts);
+    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> AddAndShowDeviceAccountsAsync(iterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> accounts);
     static Windows::Foundation::IAsyncAction SuppressLocalAccountWithAccountAsync(hstring_view userDataAccountId);
     static Windows::Foundation::IAsyncOperation<hstring> CreateDeviceAccountAsync(const Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration & account);
     static Windows::Foundation::IAsyncAction DeleteDeviceAccountAsync(hstring_view accountId);

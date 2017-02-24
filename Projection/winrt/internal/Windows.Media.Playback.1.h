@@ -1000,7 +1000,7 @@ struct WINRT_EBO impl_IMediaPlaybackList2
     Windows::Media::Playback::MediaPlaybackItem StartingItem() const;
     void StartingItem(const Windows::Media::Playback::MediaPlaybackItem & value) const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Playback::MediaPlaybackItem> ShuffledItems() const;
-    void SetShuffledItems(const Windows::Foundation::Collections::IIterable<Windows::Media::Playback::MediaPlaybackItem> & value) const;
+    void SetShuffledItems(iterable<Windows::Media::Playback::MediaPlaybackItem> value) const;
 };
 
 template <typename D>

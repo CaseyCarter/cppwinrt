@@ -392,20 +392,20 @@ struct WINRT_EBO impl_IStoreContext
     Windows::Foundation::IAsyncOperation<hstring> GetCustomerCollectionsIdAsync(hstring_view serviceTicket, hstring_view publisherUserId) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAppLicense> GetAppLicenseAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductResult> GetStoreProductForCurrentAppAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetStoreProductsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, const Windows::Foundation::Collections::IIterable<hstring> & storeIds) const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetAssociatedStoreProductsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds) const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetAssociatedStoreProductsWithPagingAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, uint32_t maxItemsToRetrievePerPage) const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetUserCollectionAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds) const;
-    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetUserCollectionWithPagingAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, uint32_t maxItemsToRetrievePerPage) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetStoreProductsAsync(iterable<hstring> productKinds, iterable<hstring> storeIds) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetAssociatedStoreProductsAsync(iterable<hstring> productKinds) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetAssociatedStoreProductsWithPagingAsync(iterable<hstring> productKinds, uint32_t maxItemsToRetrievePerPage) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetUserCollectionAsync(iterable<hstring> productKinds) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetUserCollectionWithPagingAsync(iterable<hstring> productKinds, uint32_t maxItemsToRetrievePerPage) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> ReportConsumableFulfillmentAsync(hstring_view productStoreId, uint32_t quantity, GUID trackingId) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> GetConsumableBalanceRemainingAsync(hstring_view productStoreId) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAcquireLicenseResult> AcquireStoreLicenseForOptionalPackageAsync(const Windows::ApplicationModel::Package & optionalPackage) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(hstring_view storeId) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(hstring_view storeId, const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StorePackageUpdate>> GetAppAndOptionalStorePackageUpdatesAsync() const;
-    Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> RequestDownloadStorePackageUpdatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> & storePackageUpdates) const;
-    Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> RequestDownloadAndInstallStorePackageUpdatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> & storePackageUpdates) const;
-    Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> RequestDownloadAndInstallStorePackagesAsync(const Windows::Foundation::Collections::IIterable<hstring> & storeIds) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> RequestDownloadStorePackageUpdatesAsync(iterable<Windows::Services::Store::StorePackageUpdate> storePackageUpdates) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> RequestDownloadAndInstallStorePackageUpdatesAsync(iterable<Windows::Services::Store::StorePackageUpdate> storePackageUpdates) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> RequestDownloadAndInstallStorePackagesAsync(iterable<hstring> storeIds) const;
 };
 
 template <typename D>

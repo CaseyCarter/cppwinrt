@@ -2403,12 +2403,12 @@ template <typename D> void impl_IDataPackage<D>::SetBitmap(const Windows::Storag
     check_hresult(WINRT_SHIM(IDataPackage)->abi_SetBitmap(get_abi(value)));
 }
 
-template <typename D> void impl_IDataPackage<D>::SetStorageItems(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> & value) const
+template <typename D> void impl_IDataPackage<D>::SetStorageItems(iterable<Windows::Storage::IStorageItem> value) const
 {
     check_hresult(WINRT_SHIM(IDataPackage)->abi_SetStorageItemsReadOnly(get_abi(value)));
 }
 
-template <typename D> void impl_IDataPackage<D>::SetStorageItems(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> & value, bool readOnly) const
+template <typename D> void impl_IDataPackage<D>::SetStorageItems(iterable<Windows::Storage::IStorageItem> value, bool readOnly) const
 {
     check_hresult(WINRT_SHIM(IDataPackage)->abi_SetStorageItems(get_abi(value), readOnly));
 }

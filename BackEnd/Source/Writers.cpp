@@ -429,61 +429,109 @@ static void WriteAbiParameters(Output & out)
     }
 }
 
+static void WriteInterfaceParameter(Output & out, Parameter const & param)
+{
+    MODERN_ASSERT(param.IsIn());
+    MODERN_ASSERT(param.Category == TypeCategory::Interface);
+
+    static constexpr char iterable[] = "Windows::Foundation::Collections::IIterable";
+    static constexpr char vector_view[] = "Windows::Foundation::Collections::IVectorView";
+    static constexpr char map_view[] = "Windows::Foundation::Collections::IMapView";
+    static constexpr char optional[] = "Windows::Foundation::IReference";
+
+    if (!StartsWith(Settings::MethodAbi, "put_")) // Only update methods and constructors
+    {
+        if (StartsWith(param.Type, iterable))
+        {
+            Write(out, "iterable% %", param.Type.data() + strlen(iterable), param.Name);
+            return;
+        }
+
+        if (StartsWith(param.Type, vector_view))
+        {
+            Write(out, "vector_view% %", param.Type.data() + strlen(vector_view), param.Name);
+            return;
+        }
+
+        if (StartsWith(param.Type, map_view))
+        {
+            Write(out, "map_view% %", param.Type.data() + strlen(map_view), param.Name);
+            return;
+        }
+    }
+
+    if (StartsWith(param.Type, optional))
+    {
+        Write(out, "const optional% & %", param.Type.data() + strlen(optional), param.Name);
+        return;
+    }
+
+    Write(out, "const % & %", param.Type, param.Name);
+}
+
 static void WriteParameter(Output & out, Parameter const & param)
 {
+    if (param.IsReturn())
+    {
+        return;
+    }
+
     if (param.IsArray())
     {
         if (param.IsIn())
         {
             Write(out, "array_view<const %> %", param.ModernType(), param.Name);
+            return;
         }
-        else if (param.IsOut())
-        {
-            if (param.IsReferenceOrReturn())
-            {
-                Write(out, "com_array<%> & %", param.ModernType(), param.Name);
-            }
-            else
-            {
-                Write(out, "array_view<%> %", param.ModernType(), param.Name);
-            }
-        }
-    }
-    else
-    {
-        if (param.IsIn())
-        {
-            if (param.Category == TypeCategory::String)
-            {
-                Write(out, "hstring_view %", param.Name);
-            }
-            else if (param.Category == TypeCategory::Structure || param.Category == TypeCategory::Interface)
-            {
-                static const char refInterface[] = "Windows::Foundation::IReference";
 
-                if (param.Category == TypeCategory::Interface && StartsWith(param.Type, refInterface))
-                {
-                    Write(out, "const optional% & %", param.Type.data() + strlen(refInterface), param.Name);
-                }
-                else
-                {
-                    Write(out, "const % & %", param.ModernType(), param.Name);
-                }
-            }
-            else if (param.Category == TypeCategory::Delegate)
-            {
-                Write(out, "const % & %", param.Type, param.Name);
-            }
-            else
-            {
-                Write(out, "% %", param.Type, param.Name);
-            }
-        }
-        else if (param.IsOut())
+        if (param.IsReference())
         {
-            Write(out, "% & %", param.ModernType(), param.Name);
+            Write(out, "com_array<%> & %", param.ModernType(), param.Name);
+            return;
         }
+
+        Write(out, "array_view<%> %", param.ModernType(), param.Name);
+        return;
     }
+
+    if (param.IsOut())
+    {
+        Write(out, "% & %", param.ModernType(), param.Name);
+        return;
+    }
+
+    if (param.Category == TypeCategory::String)
+    {
+        Write(out, "hstring_view %", param.Name);
+        return;
+    }
+
+    if (param.Category == TypeCategory::Interface)
+    {
+        if (!param.ClassType.empty())
+        {
+            Write(out, "const % & %", param.ClassType, param.Name);
+            return;
+        }
+
+        WriteInterfaceParameter(out, param);
+        return;
+    }
+
+    if (param.Category == TypeCategory::Structure)
+    {
+        Write(out, "const % & %", param.Type, param.Name);
+        return;
+    }
+
+    if (param.Category == TypeCategory::Delegate)
+    {
+        Write(out, "const % & %", param.Type, param.Name);
+        return;
+    }
+
+    Write(out, "% %", param.Type, param.Name);
+    return;
 }
 
 static void WriteComposableConstructorParameters(Output & out)

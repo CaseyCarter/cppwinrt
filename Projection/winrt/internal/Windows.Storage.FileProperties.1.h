@@ -246,8 +246,8 @@ struct WINRT_EBO impl_IStorageItemContentProperties
 template <typename D>
 struct WINRT_EBO impl_IStorageItemExtraProperties
 {
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>> RetrievePropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const;
-    Windows::Foundation::IAsyncAction SavePropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> & propertiesToSave) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>> RetrievePropertiesAsync(iterable<hstring> propertiesToRetrieve) const;
+    Windows::Foundation::IAsyncAction SavePropertiesAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> propertiesToSave) const;
     Windows::Foundation::IAsyncAction SavePropertiesAsync() const;
 };
 

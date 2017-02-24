@@ -891,8 +891,8 @@ struct WINRT_EBO impl_IMobileBroadbandUiccApp
 {
     Windows::Storage::Streams::IBuffer Id() const;
     Windows::Networking::NetworkOperators::UiccAppKind Kind() const;
-    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult> GetRecordDetailsAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & uiccFilePath) const;
-    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult> ReadRecordAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & uiccFilePath, int32_t recordIndex) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult> GetRecordDetailsAsync(iterable<uint32_t> uiccFilePath) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult> ReadRecordAsync(iterable<uint32_t> uiccFilePath, int32_t recordIndex) const;
 };
 
 template <typename D>

@@ -761,12 +761,12 @@ template <typename D> Windows::ApplicationModel::Resources::Core::ResourceContex
     return value;
 }
 
-template <typename D> void impl_IResourceManager<D>::LoadPriFiles(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> & files) const
+template <typename D> void impl_IResourceManager<D>::LoadPriFiles(iterable<Windows::Storage::IStorageFile> files) const
 {
     check_hresult(WINRT_SHIM(IResourceManager)->abi_LoadPriFiles(get_abi(files)));
 }
 
-template <typename D> void impl_IResourceManager<D>::UnloadPriFiles(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> & files) const
+template <typename D> void impl_IResourceManager<D>::UnloadPriFiles(iterable<Windows::Storage::IStorageFile> files) const
 {
     check_hresult(WINRT_SHIM(IResourceManager)->abi_UnloadPriFiles(get_abi(files)));
 }
@@ -846,12 +846,12 @@ template <typename D> void impl_IResourceContext<D>::Reset() const
     check_hresult(WINRT_SHIM(IResourceContext)->abi_Reset());
 }
 
-template <typename D> void impl_IResourceContext<D>::Reset(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames) const
+template <typename D> void impl_IResourceContext<D>::Reset(iterable<hstring> qualifierNames) const
 {
     check_hresult(WINRT_SHIM(IResourceContext)->abi_ResetQualifierValues(get_abi(qualifierNames)));
 }
 
-template <typename D> void impl_IResourceContext<D>::OverrideToMatch(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result) const
+template <typename D> void impl_IResourceContext<D>::OverrideToMatch(iterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> result) const
 {
     check_hresult(WINRT_SHIM(IResourceContext)->abi_OverrideToMatch(get_abi(result)));
 }
@@ -875,7 +875,7 @@ template <typename D> void impl_IResourceContext<D>::Languages(const Windows::Fo
     check_hresult(WINRT_SHIM(IResourceContext)->put_Languages(get_abi(languages)));
 }
 
-template <typename D> Windows::ApplicationModel::Resources::Core::ResourceContext impl_IResourceContextStatics<D>::CreateMatchingContext(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result) const
+template <typename D> Windows::ApplicationModel::Resources::Core::ResourceContext impl_IResourceContextStatics<D>::CreateMatchingContext(iterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> result) const
 {
     Windows::ApplicationModel::Resources::Core::ResourceContext value { nullptr };
     check_hresult(WINRT_SHIM(IResourceContextStatics)->abi_CreateMatchingContext(get_abi(result), put_abi(value)));
@@ -899,7 +899,7 @@ template <typename D> void impl_IResourceContextStatics2<D>::ResetGlobalQualifie
     check_hresult(WINRT_SHIM(IResourceContextStatics2)->abi_ResetGlobalQualifierValues());
 }
 
-template <typename D> void impl_IResourceContextStatics2<D>::ResetGlobalQualifierValues(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames) const
+template <typename D> void impl_IResourceContextStatics2<D>::ResetGlobalQualifierValues(iterable<hstring> qualifierNames) const
 {
     check_hresult(WINRT_SHIM(IResourceContextStatics2)->abi_ResetGlobalQualifierValuesForSpecifiedQualifiers(get_abi(qualifierNames)));
 }
@@ -1046,7 +1046,7 @@ inline ResourceContext::ResourceContext() :
     ResourceContext(activate_instance<ResourceContext>())
 {}
 
-inline Windows::ApplicationModel::Resources::Core::ResourceContext ResourceContext::CreateMatchingContext(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result)
+inline Windows::ApplicationModel::Resources::Core::ResourceContext ResourceContext::CreateMatchingContext(iterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> result)
 {
     return get_activation_factory<ResourceContext, IResourceContextStatics>().CreateMatchingContext(result);
 }
@@ -1066,7 +1066,7 @@ inline void ResourceContext::ResetGlobalQualifierValues()
     get_activation_factory<ResourceContext, IResourceContextStatics2>().ResetGlobalQualifierValues();
 }
 
-inline void ResourceContext::ResetGlobalQualifierValues(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames)
+inline void ResourceContext::ResetGlobalQualifierValues(iterable<hstring> qualifierNames)
 {
     get_activation_factory<ResourceContext, IResourceContextStatics2>().ResetGlobalQualifierValues(qualifierNames);
 }

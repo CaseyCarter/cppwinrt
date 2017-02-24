@@ -704,7 +704,7 @@ template <typename D> void impl_ISpatialSurfaceObserver<D>::SetBoundingVolume(co
     check_hresult(WINRT_SHIM(ISpatialSurfaceObserver)->abi_SetBoundingVolume(get_abi(bounds)));
 }
 
-template <typename D> void impl_ISpatialSurfaceObserver<D>::SetBoundingVolumes(const Windows::Foundation::Collections::IIterable<Windows::Perception::Spatial::SpatialBoundingVolume> & bounds) const
+template <typename D> void impl_ISpatialSurfaceObserver<D>::SetBoundingVolumes(iterable<Windows::Perception::Spatial::SpatialBoundingVolume> bounds) const
 {
     check_hresult(WINRT_SHIM(ISpatialSurfaceObserver)->abi_SetBoundingVolumes(get_abi(bounds)));
 }

@@ -94,7 +94,7 @@ struct WINRT_EBO CmsAttachedSignature :
 {
     CmsAttachedSignature(std::nullptr_t) noexcept {}
     CmsAttachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob);
-    static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates);
+    static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, iterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> signers, iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates);
 };
 
 struct WINRT_EBO CmsDetachedSignature :
@@ -102,7 +102,7 @@ struct WINRT_EBO CmsDetachedSignature :
 {
     CmsDetachedSignature(std::nullptr_t) noexcept {}
     CmsDetachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob);
-    static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates);
+    static Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, iterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> signers, iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates);
 };
 
 struct WINRT_EBO CmsSignerInfo :

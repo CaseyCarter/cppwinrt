@@ -756,7 +756,7 @@ template <typename D> Windows::ApplicationModel::Store::Preview::StoreHardwareMa
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> impl_IStoreConfigurationStatics<D>::FilterUnsupportedSystemFeaturesAsync(const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> & systemFeatures) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> impl_IStoreConfigurationStatics<D>::FilterUnsupportedSystemFeaturesAsync(iterable<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> systemFeatures) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> operation;
     check_hresult(WINRT_SHIM(IStoreConfigurationStatics)->abi_FilterUnsupportedSystemFeaturesAsync(get_abi(systemFeatures), put_abi(operation)));
@@ -845,7 +845,7 @@ inline Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo 
     return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().HardwareManufacturerInfo();
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> StoreConfiguration::FilterUnsupportedSystemFeaturesAsync(const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> & systemFeatures)
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> StoreConfiguration::FilterUnsupportedSystemFeaturesAsync(iterable<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> systemFeatures)
 {
     return get_activation_factory<StoreConfiguration, IStoreConfigurationStatics>().FilterUnsupportedSystemFeaturesAsync(systemFeatures);
 }

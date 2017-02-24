@@ -755,7 +755,7 @@ struct WINRT_EBO impl_IBarcodeScanner
     Windows::Foundation::IAsyncOperation<hstring> CheckHealthAsync(Windows::Devices::PointOfService::UnifiedPosHealthCheckLevel level) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<uint32_t>> GetSupportedSymbologiesAsync() const;
     Windows::Foundation::IAsyncOperation<bool> IsSymbologySupportedAsync(uint32_t barcodeSymbology) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> RetrieveStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> RetrieveStatisticsAsync(iterable<hstring> statisticsCategories) const;
     Windows::Foundation::Collections::IVectorView<hstring> GetSupportedProfiles() const;
     bool IsProfileSupported(hstring_view profile) const;
     event_token StatusUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::BarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs> & handler) const;
@@ -937,7 +937,7 @@ struct WINRT_EBO impl_ICashDrawer
     Windows::Devices::PointOfService::CashDrawerEventSource DrawerEventSource() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedCashDrawer> ClaimDrawerAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> CheckHealthAsync(Windows::Devices::PointOfService::UnifiedPosHealthCheckLevel level) const;
-    Windows::Foundation::IAsyncOperation<hstring> GetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetStatisticsAsync(iterable<hstring> statisticsCategories) const;
     event_token StatusUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawer, Windows::Devices::PointOfService::CashDrawerStatusUpdatedEventArgs> & handler) const;
     using StatusUpdated_revoker = event_revoker<ICashDrawer>;
     StatusUpdated_revoker StatusUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawer, Windows::Devices::PointOfService::CashDrawerStatusUpdatedEventArgs> & handler) const;
@@ -1025,9 +1025,9 @@ struct WINRT_EBO impl_IClaimedBarcodeScanner
     Windows::Foundation::IAsyncAction EnableAsync() const;
     Windows::Foundation::IAsyncAction DisableAsync() const;
     void RetainDevice() const;
-    Windows::Foundation::IAsyncAction SetActiveSymbologiesAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & symbologies) const;
-    Windows::Foundation::IAsyncAction ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
-    Windows::Foundation::IAsyncAction UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const;
+    Windows::Foundation::IAsyncAction SetActiveSymbologiesAsync(iterable<uint32_t> symbologies) const;
+    Windows::Foundation::IAsyncAction ResetStatisticsAsync(iterable<hstring> statisticsCategories) const;
+    Windows::Foundation::IAsyncAction UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const;
     Windows::Foundation::IAsyncAction SetActiveProfileAsync(hstring_view profile) const;
     event_token DataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> & handler) const;
     using DataReceived_revoker = event_revoker<IClaimedBarcodeScanner>;
@@ -1073,8 +1073,8 @@ struct WINRT_EBO impl_IClaimedCashDrawer
     Windows::Foundation::IAsyncOperation<bool> EnableAsync() const;
     Windows::Foundation::IAsyncOperation<bool> DisableAsync() const;
     Windows::Foundation::IAsyncOperation<bool> RetainDeviceAsync() const;
-    Windows::Foundation::IAsyncOperation<bool> ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
-    Windows::Foundation::IAsyncOperation<bool> UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const;
+    Windows::Foundation::IAsyncOperation<bool> ResetStatisticsAsync(iterable<hstring> statisticsCategories) const;
+    Windows::Foundation::IAsyncOperation<bool> UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const;
     event_token ReleaseDeviceRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable> & handler) const;
     using ReleaseDeviceRequested_revoker = event_revoker<IClaimedCashDrawer>;
     ReleaseDeviceRequested_revoker ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable> & handler) const;
@@ -1111,8 +1111,8 @@ struct WINRT_EBO impl_IClaimedMagneticStripeReader
     Windows::Foundation::IAsyncAction AuthenticateDeviceAsync(array_view<const uint8_t> responseToken) const;
     Windows::Foundation::IAsyncAction DeAuthenticateDeviceAsync(array_view<const uint8_t> responseToken) const;
     Windows::Foundation::IAsyncAction UpdateKeyAsync(hstring_view key, hstring_view keyName) const;
-    Windows::Foundation::IAsyncAction ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
-    Windows::Foundation::IAsyncAction UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const;
+    Windows::Foundation::IAsyncAction ResetStatisticsAsync(iterable<hstring> statisticsCategories) const;
+    Windows::Foundation::IAsyncAction UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const;
     event_token BankCardDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> & handler) const;
     using BankCardDataReceived_revoker = event_revoker<IClaimedMagneticStripeReader>;
     BankCardDataReceived_revoker BankCardDataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> & handler) const;
@@ -1153,8 +1153,8 @@ struct WINRT_EBO impl_IClaimedPosPrinter
     Windows::Foundation::IAsyncOperation<bool> EnableAsync() const;
     Windows::Foundation::IAsyncOperation<bool> DisableAsync() const;
     Windows::Foundation::IAsyncOperation<bool> RetainDeviceAsync() const;
-    Windows::Foundation::IAsyncOperation<bool> ResetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
-    Windows::Foundation::IAsyncOperation<bool> UpdateStatisticsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & statistics) const;
+    Windows::Foundation::IAsyncOperation<bool> ResetStatisticsAsync(iterable<hstring> statisticsCategories) const;
+    Windows::Foundation::IAsyncOperation<bool> UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const;
     event_token ReleaseDeviceRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> & handler) const;
     using ReleaseDeviceRequested_revoker = event_revoker<IClaimedPosPrinter>;
     ReleaseDeviceRequested_revoker ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> & handler) const;
@@ -1260,7 +1260,7 @@ struct WINRT_EBO impl_IMagneticStripeReader
     Windows::Devices::PointOfService::MagneticStripeReaderAuthenticationProtocol DeviceAuthenticationProtocol() const;
     Windows::Foundation::IAsyncOperation<hstring> CheckHealthAsync(Windows::Devices::PointOfService::UnifiedPosHealthCheckLevel level) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> ClaimReaderAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> RetrieveStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> RetrieveStatisticsAsync(iterable<hstring> statisticsCategories) const;
     Windows::Devices::PointOfService::MagneticStripeReaderErrorReportingType GetErrorReportingType() const;
     event_token StatusUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::MagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderStatusUpdatedEventArgs> & handler) const;
     using StatusUpdated_revoker = event_revoker<IMagneticStripeReader>;
@@ -1403,7 +1403,7 @@ struct WINRT_EBO impl_IPosPrinter
     Windows::Devices::PointOfService::PosPrinterStatus Status() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedPosPrinter> ClaimPrinterAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> CheckHealthAsync(Windows::Devices::PointOfService::UnifiedPosHealthCheckLevel level) const;
-    Windows::Foundation::IAsyncOperation<hstring> GetStatisticsAsync(const Windows::Foundation::Collections::IIterable<hstring> & statisticsCategories) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetStatisticsAsync(iterable<hstring> statisticsCategories) const;
     event_token StatusUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::PosPrinter, Windows::Devices::PointOfService::PosPrinterStatusUpdatedEventArgs> & handler) const;
     using StatusUpdated_revoker = event_revoker<IPosPrinter>;
     StatusUpdated_revoker StatusUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::PosPrinter, Windows::Devices::PointOfService::PosPrinterStatusUpdatedEventArgs> & handler) const;

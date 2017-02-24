@@ -108,7 +108,7 @@ struct WINRT_EBO impl_ISearchQueryLinguisticDetails
 template <typename D>
 struct WINRT_EBO impl_ISearchQueryLinguisticDetailsFactory
 {
-    Windows::ApplicationModel::Search::SearchQueryLinguisticDetails CreateInstance(const Windows::Foundation::Collections::IIterable<hstring> & queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) const;
+    Windows::ApplicationModel::Search::SearchQueryLinguisticDetails CreateInstance(iterable<hstring> queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) const;
 };
 
 template <typename D>
@@ -116,7 +116,7 @@ struct WINRT_EBO impl_ISearchSuggestionCollection
 {
     uint32_t Size() const;
     void AppendQuerySuggestion(hstring_view text) const;
-    void AppendQuerySuggestions(const Windows::Foundation::Collections::IIterable<hstring> & suggestions) const;
+    void AppendQuerySuggestions(iterable<hstring> suggestions) const;
     void AppendResultSuggestion(hstring_view text, hstring_view detailText, hstring_view tag, const Windows::Storage::Streams::IRandomAccessStreamReference & image, hstring_view imageAlternateText) const;
     void AppendSearchSeparator(hstring_view label) const;
 };

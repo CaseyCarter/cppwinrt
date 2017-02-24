@@ -180,7 +180,7 @@ struct WINRT_EBO impl_IPerceptionControlGroup
 template <typename D>
 struct WINRT_EBO impl_IPerceptionControlGroupFactory
 {
-    Windows::Devices::Perception::Provider::PerceptionControlGroup Create(const Windows::Foundation::Collections::IIterable<hstring> & ids) const;
+    Windows::Devices::Perception::Provider::PerceptionControlGroup Create(iterable<hstring> ids) const;
 };
 
 template <typename D>
@@ -206,7 +206,7 @@ struct WINRT_EBO impl_IPerceptionCorrelationGroup
 template <typename D>
 struct WINRT_EBO impl_IPerceptionCorrelationGroupFactory
 {
-    Windows::Devices::Perception::Provider::PerceptionCorrelationGroup Create(const Windows::Foundation::Collections::IIterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> & relativeLocations) const;
+    Windows::Devices::Perception::Provider::PerceptionCorrelationGroup Create(iterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> relativeLocations) const;
 };
 
 template <typename D>
@@ -218,7 +218,7 @@ struct WINRT_EBO impl_IPerceptionFaceAuthenticationGroup
 template <typename D>
 struct WINRT_EBO impl_IPerceptionFaceAuthenticationGroupFactory
 {
-    Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup Create(const Windows::Foundation::Collections::IIterable<hstring> & ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler) const;
+    Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup Create(iterable<hstring> ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler) const;
 };
 
 template <typename D>

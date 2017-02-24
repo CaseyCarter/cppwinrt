@@ -3607,7 +3607,7 @@ template <typename D> void impl_IVpnChannel<D>::AssociateTransport(const Windows
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_AssociateTransport(get_abi(mainOuterTunnelTransport), get_abi(optionalOuterTunnelTransport)));
 }
 
-template <typename D> void impl_IVpnChannel<D>::Start(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & routeScope, const Windows::Networking::Vpn::VpnNamespaceAssignment & namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport) const
+template <typename D> void impl_IVpnChannel<D>::Start(vector_view<Windows::Networking::HostName> assignedClientIPv4list, vector_view<Windows::Networking::HostName> assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & routeScope, const Windows::Networking::Vpn::VpnNamespaceAssignment & namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_Start(get_abi(assignedClientIPv4list), get_abi(assignedClientIPv6list), get_abi(vpnInterfaceId), get_abi(routeScope), get_abi(namespaceScope), mtuSize, maxFrameSize, optimizeForLowCostNetwork, get_abi(mainOuterTunnelTransport), get_abi(optionalOuterTunnelTransport)));
 }
@@ -3684,7 +3684,7 @@ template <typename D> Windows::Networking::Vpn::VpnSystemHealth impl_IVpnChannel
     return value;
 }
 
-template <typename D> void impl_IVpnChannel<D>::RequestCustomPrompt(const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> & customPrompt) const
+template <typename D> void impl_IVpnChannel<D>::RequestCustomPrompt(vector_view<Windows::Networking::Vpn::IVpnCustomPrompt> customPrompt) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_RequestCustomPrompt(get_abi(customPrompt)));
 }
@@ -3699,12 +3699,12 @@ template <typename D> void impl_IVpnChannel<D>::SetAllowedSslTlsVersions(const W
     check_hresult(WINRT_SHIM(IVpnChannel)->abi_SetAllowedSslTlsVersions(get_abi(tunnelTransport), useTls12));
 }
 
-template <typename D> void impl_IVpnChannel2<D>::StartWithMainTransport(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport) const
+template <typename D> void impl_IVpnChannel2<D>::StartWithMainTransport(vector_view<Windows::Networking::HostName> assignedClientIPv4list, vector_view<Windows::Networking::HostName> assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartWithMainTransport(get_abi(assignedClientIPv4list), get_abi(assignedClientIPv6list), get_abi(vpnInterfaceId), get_abi(assignedRoutes), get_abi(assignedDomainName), mtuSize, maxFrameSize, Reserved, get_abi(mainOuterTunnelTransport)));
 }
 
-template <typename D> void impl_IVpnChannel2<D>::StartExistingTransports(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) const
+template <typename D> void impl_IVpnChannel2<D>::StartExistingTransports(vector_view<Windows::Networking::HostName> assignedClientIPv4list, vector_view<Windows::Networking::HostName> assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartExistingTransports(get_abi(assignedClientIPv4list), get_abi(assignedClientIPv6list), get_abi(vpnInterfaceId), get_abi(assignedRoutes), get_abi(assignedDomainName), mtuSize, maxFrameSize, Reserved));
 }
@@ -3740,7 +3740,7 @@ template <typename D> Windows::Networking::Vpn::VpnPacketBuffer impl_IVpnChannel
     return vpnReceivePacketBuffer;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IVpnChannel2<D>::RequestCustomPromptAsync(const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement> & customPromptElement) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IVpnChannel2<D>::RequestCustomPromptAsync(vector_view<Windows::Networking::Vpn::IVpnCustomPromptElement> customPromptElement) const
 {
     Windows::Foundation::IAsyncAction action;
     check_hresult(WINRT_SHIM(IVpnChannel2)->abi_RequestCustomPromptAsync(get_abi(customPromptElement), put_abi(action)));
@@ -3773,7 +3773,7 @@ template <typename D> void impl_IVpnChannel2<D>::TerminateConnection(hstring_vie
     check_hresult(WINRT_SHIM(IVpnChannel2)->abi_TerminateConnection(get_abi(message)));
 }
 
-template <typename D> void impl_IVpnChannel2<D>::StartWithTrafficFilter(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv4List, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv6List, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport, const Windows::Networking::Vpn::VpnTrafficFilterAssignment & assignedTrafficFilters) const
+template <typename D> void impl_IVpnChannel2<D>::StartWithTrafficFilter(vector_view<Windows::Networking::HostName> assignedClientIpv4List, vector_view<Windows::Networking::HostName> assignedClientIpv6List, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport, const Windows::Networking::Vpn::VpnTrafficFilterAssignment & assignedTrafficFilters) const
 {
     check_hresult(WINRT_SHIM(IVpnChannel2)->abi_StartWithTrafficFilter(get_abi(assignedClientIpv4List), get_abi(assignedClientIpv6List), get_abi(vpnInterfaceId), get_abi(assignedRoutes), get_abi(assignedNamespace), mtuSize, maxFrameSize, reserved, get_abi(mainOuterTunnelTransport), get_abi(optionalOuterTunnelTransport), get_abi(assignedTrafficFilters)));
 }
@@ -4019,7 +4019,7 @@ template <typename D> Windows::Networking::Vpn::VpnChannelActivityEventType impl
     return value;
 }
 
-template <typename D> Windows::Networking::Vpn::VpnDomainNameInfo impl_IVpnDomainNameInfoFactory<D>::CreateVpnDomainNameInfo(hstring_view name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) const
+template <typename D> Windows::Networking::Vpn::VpnDomainNameInfo impl_IVpnDomainNameInfoFactory<D>::CreateVpnDomainNameInfo(hstring_view name, Windows::Networking::Vpn::VpnDomainNameType nameType, iterable<Windows::Networking::HostName> dnsServerList, iterable<Windows::Networking::HostName> proxyServerList) const
 {
     Windows::Networking::Vpn::VpnDomainNameInfo domainNameInfo { nullptr };
     check_hresult(WINRT_SHIM(IVpnDomainNameInfoFactory)->abi_CreateVpnDomainNameInfo(get_abi(name), nameType, get_abi(dnsServerList), get_abi(proxyServerList), put_abi(domainNameInfo)));
@@ -4542,7 +4542,7 @@ inline VpnDomainNameAssignment::VpnDomainNameAssignment() :
     VpnDomainNameAssignment(activate_instance<VpnDomainNameAssignment>())
 {}
 
-inline VpnDomainNameInfo::VpnDomainNameInfo(hstring_view name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) :
+inline VpnDomainNameInfo::VpnDomainNameInfo(hstring_view name, Windows::Networking::Vpn::VpnDomainNameType nameType, iterable<Windows::Networking::HostName> dnsServerList, iterable<Windows::Networking::HostName> proxyServerList) :
     VpnDomainNameInfo(get_activation_factory<VpnDomainNameInfo, IVpnDomainNameInfoFactory>().CreateVpnDomainNameInfo(name, nameType, dnsServerList, proxyServerList))
 {}
 

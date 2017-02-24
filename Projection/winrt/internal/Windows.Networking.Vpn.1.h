@@ -483,7 +483,7 @@ template <typename D>
 struct WINRT_EBO impl_IVpnChannel
 {
     void AssociateTransport(const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport) const;
-    void Start(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & routeScope, const Windows::Networking::Vpn::VpnNamespaceAssignment & namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport) const;
+    void Start(vector_view<Windows::Networking::HostName> assignedClientIPv4list, vector_view<Windows::Networking::HostName> assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & routeScope, const Windows::Networking::Vpn::VpnNamespaceAssignment & namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport) const;
     void Stop() const;
     Windows::Networking::Vpn::VpnPickedCredential RequestCredentials(Windows::Networking::Vpn::VpnCredentialType credType, bool isRetry, bool isSingleSignOnCredential, const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
     void RequestVpnPacketBuffer(Windows::Networking::Vpn::VpnDataPathType type, Windows::Networking::Vpn::VpnPacketBuffer & vpnPacketBuffer) const;
@@ -497,7 +497,7 @@ struct WINRT_EBO impl_IVpnChannel
     void PlugInContext(const Windows::Foundation::IInspectable & value) const;
     Windows::Foundation::IInspectable PlugInContext() const;
     Windows::Networking::Vpn::VpnSystemHealth SystemHealth() const;
-    void RequestCustomPrompt(const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPrompt> & customPrompt) const;
+    void RequestCustomPrompt(vector_view<Windows::Networking::Vpn::IVpnCustomPrompt> customPrompt) const;
     void SetErrorMessage(hstring_view message) const;
     void SetAllowedSslTlsVersions(const Windows::Foundation::IInspectable & tunnelTransport, bool useTls12) const;
 };
@@ -505,20 +505,20 @@ struct WINRT_EBO impl_IVpnChannel
 template <typename D>
 struct WINRT_EBO impl_IVpnChannel2
 {
-    void StartWithMainTransport(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport) const;
-    void StartExistingTransports(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) const;
+    void StartWithMainTransport(vector_view<Windows::Networking::HostName> assignedClientIPv4list, vector_view<Windows::Networking::HostName> assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport) const;
+    void StartExistingTransports(vector_view<Windows::Networking::HostName> assignedClientIPv4list, vector_view<Windows::Networking::HostName> assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) const;
     event_token ActivityStateChange(const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> & handler) const;
     using ActivityStateChange_revoker = event_revoker<IVpnChannel2>;
     ActivityStateChange_revoker ActivityStateChange(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> & handler) const;
     void ActivityStateChange(event_token token) const;
     Windows::Networking::Vpn::VpnPacketBuffer GetVpnSendPacketBuffer() const;
     Windows::Networking::Vpn::VpnPacketBuffer GetVpnReceivePacketBuffer() const;
-    Windows::Foundation::IAsyncAction RequestCustomPromptAsync(const Windows::Foundation::Collections::IVectorView<Windows::Networking::Vpn::IVpnCustomPromptElement> & customPromptElement) const;
+    Windows::Foundation::IAsyncAction RequestCustomPromptAsync(vector_view<Windows::Networking::Vpn::IVpnCustomPromptElement> customPromptElement) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions, const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType, uint32_t credOptions) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::Vpn::VpnCredential> RequestCredentialsAsync(Windows::Networking::Vpn::VpnCredentialType credType) const;
     void TerminateConnection(hstring_view message) const;
-    void StartWithTrafficFilter(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv4List, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIpv6List, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport, const Windows::Networking::Vpn::VpnTrafficFilterAssignment & assignedTrafficFilters) const;
+    void StartWithTrafficFilter(vector_view<Windows::Networking::HostName> assignedClientIpv4List, vector_view<Windows::Networking::HostName> assignedClientIpv6List, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedNamespace, uint32_t mtuSize, uint32_t maxFrameSize, bool reserved, const Windows::Foundation::IInspectable & mainOuterTunnelTransport, const Windows::Foundation::IInspectable & optionalOuterTunnelTransport, const Windows::Networking::Vpn::VpnTrafficFilterAssignment & assignedTrafficFilters) const;
 };
 
 template <typename D>
@@ -682,7 +682,7 @@ struct WINRT_EBO impl_IVpnDomainNameInfo2
 template <typename D>
 struct WINRT_EBO impl_IVpnDomainNameInfoFactory
 {
-    Windows::Networking::Vpn::VpnDomainNameInfo CreateVpnDomainNameInfo(hstring_view name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) const;
+    Windows::Networking::Vpn::VpnDomainNameInfo CreateVpnDomainNameInfo(hstring_view name, Windows::Networking::Vpn::VpnDomainNameType nameType, iterable<Windows::Networking::HostName> dnsServerList, iterable<Windows::Networking::HostName> proxyServerList) const;
 };
 
 template <typename D>

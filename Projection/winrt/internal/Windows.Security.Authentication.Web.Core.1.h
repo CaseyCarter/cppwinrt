@@ -168,7 +168,7 @@ struct WINRT_EBO impl_IWebAuthenticationCoreManagerStatics2
 template <typename D>
 struct WINRT_EBO impl_IWebAuthenticationCoreManagerStatics3
 {
-    Windows::Security::Authentication::Web::Core::WebAccountMonitor CreateWebAccountMonitor(const Windows::Foundation::Collections::IIterable<Windows::Security::Credentials::WebAccount> & webAccounts) const;
+    Windows::Security::Authentication::Web::Core::WebAccountMonitor CreateWebAccountMonitor(iterable<Windows::Security::Credentials::WebAccount> webAccounts) const;
 };
 
 template <typename D>

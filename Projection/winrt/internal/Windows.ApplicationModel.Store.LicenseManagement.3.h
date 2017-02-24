@@ -13,7 +13,7 @@ struct LicenseManager
 {
     LicenseManager() = delete;
     static Windows::Foundation::IAsyncAction AddLicenseAsync(const Windows::Storage::Streams::IBuffer & license);
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> GetSatisfactionInfosAsync(const Windows::Foundation::Collections::IIterable<hstring> & contentIds, const Windows::Foundation::Collections::IIterable<hstring> & keyIds);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> GetSatisfactionInfosAsync(iterable<hstring> contentIds, iterable<hstring> keyIds);
 };
 
 struct WINRT_EBO LicenseSatisfactionInfo :

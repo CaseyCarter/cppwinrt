@@ -1585,17 +1585,17 @@ template <typename D> void impl_IInteractionTracker<D>::AdjustPositionYIfGreater
     check_hresult(WINRT_SHIM(IInteractionTracker)->abi_AdjustPositionYIfGreaterThanThreshold(adjustment, positionThreshold));
 }
 
-template <typename D> void impl_IInteractionTracker<D>::ConfigurePositionXInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const
+template <typename D> void impl_IInteractionTracker<D>::ConfigurePositionXInertiaModifiers(iterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> modifiers) const
 {
     check_hresult(WINRT_SHIM(IInteractionTracker)->abi_ConfigurePositionXInertiaModifiers(get_abi(modifiers)));
 }
 
-template <typename D> void impl_IInteractionTracker<D>::ConfigurePositionYInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const
+template <typename D> void impl_IInteractionTracker<D>::ConfigurePositionYInertiaModifiers(iterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> modifiers) const
 {
     check_hresult(WINRT_SHIM(IInteractionTracker)->abi_ConfigurePositionYInertiaModifiers(get_abi(modifiers)));
 }
 
-template <typename D> void impl_IInteractionTracker<D>::ConfigureScaleInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const
+template <typename D> void impl_IInteractionTracker<D>::ConfigureScaleInertiaModifiers(iterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> modifiers) const
 {
     check_hresult(WINRT_SHIM(IInteractionTracker)->abi_ConfigureScaleInertiaModifiers(get_abi(modifiers)));
 }

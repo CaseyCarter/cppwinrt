@@ -1015,7 +1015,7 @@ template <typename D> void impl_IPerceptionFrameProviderInfo<D>::Hidden(bool val
     check_hresult(WINRT_SHIM(IPerceptionFrameProviderInfo)->put_Hidden(value));
 }
 
-template <typename D> Windows::Devices::Perception::Provider::PerceptionControlGroup impl_IPerceptionControlGroupFactory<D>::Create(const Windows::Foundation::Collections::IIterable<hstring> & ids) const
+template <typename D> Windows::Devices::Perception::Provider::PerceptionControlGroup impl_IPerceptionControlGroupFactory<D>::Create(iterable<hstring> ids) const
 {
     Windows::Devices::Perception::Provider::PerceptionControlGroup result { nullptr };
     check_hresult(WINRT_SHIM(IPerceptionControlGroupFactory)->abi_Create(get_abi(ids), put_abi(result)));
@@ -1029,7 +1029,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<hstring> imp
     return value;
 }
 
-template <typename D> Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup impl_IPerceptionFaceAuthenticationGroupFactory<D>::Create(const Windows::Foundation::Collections::IIterable<hstring> & ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler) const
+template <typename D> Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup impl_IPerceptionFaceAuthenticationGroupFactory<D>::Create(iterable<hstring> ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler) const
 {
     Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup result { nullptr };
     check_hresult(WINRT_SHIM(IPerceptionFaceAuthenticationGroupFactory)->abi_Create(get_abi(ids), get_abi(startHandler), get_abi(stopHandler), put_abi(result)));
@@ -1071,7 +1071,7 @@ template <typename D> Windows::Foundation::Numerics::quaternion impl_IPerception
     return value;
 }
 
-template <typename D> Windows::Devices::Perception::Provider::PerceptionCorrelationGroup impl_IPerceptionCorrelationGroupFactory<D>::Create(const Windows::Foundation::Collections::IIterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> & relativeLocations) const
+template <typename D> Windows::Devices::Perception::Provider::PerceptionCorrelationGroup impl_IPerceptionCorrelationGroupFactory<D>::Create(iterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> relativeLocations) const
 {
     Windows::Devices::Perception::Provider::PerceptionCorrelationGroup result { nullptr };
     check_hresult(WINRT_SHIM(IPerceptionCorrelationGroupFactory)->abi_Create(get_abi(relativeLocations), put_abi(result)));
@@ -1223,7 +1223,7 @@ inline hstring KnownPerceptionFrameKind::Infrared()
     return get_activation_factory<KnownPerceptionFrameKind, IKnownPerceptionFrameKindStatics>().Infrared();
 }
 
-inline PerceptionControlGroup::PerceptionControlGroup(const Windows::Foundation::Collections::IIterable<hstring> & ids) :
+inline PerceptionControlGroup::PerceptionControlGroup(iterable<hstring> ids) :
     PerceptionControlGroup(get_activation_factory<PerceptionControlGroup, IPerceptionControlGroupFactory>().Create(ids))
 {}
 
@@ -1231,11 +1231,11 @@ inline PerceptionCorrelation::PerceptionCorrelation(hstring_view targetId, const
     PerceptionCorrelation(get_activation_factory<PerceptionCorrelation, IPerceptionCorrelationFactory>().Create(targetId, position, orientation))
 {}
 
-inline PerceptionCorrelationGroup::PerceptionCorrelationGroup(const Windows::Foundation::Collections::IIterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> & relativeLocations) :
+inline PerceptionCorrelationGroup::PerceptionCorrelationGroup(iterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> relativeLocations) :
     PerceptionCorrelationGroup(get_activation_factory<PerceptionCorrelationGroup, IPerceptionCorrelationGroupFactory>().Create(relativeLocations))
 {}
 
-inline PerceptionFaceAuthenticationGroup::PerceptionFaceAuthenticationGroup(const Windows::Foundation::Collections::IIterable<hstring> & ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler) :
+inline PerceptionFaceAuthenticationGroup::PerceptionFaceAuthenticationGroup(iterable<hstring> ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler) :
     PerceptionFaceAuthenticationGroup(get_activation_factory<PerceptionFaceAuthenticationGroup, IPerceptionFaceAuthenticationGroupFactory>().Create(ids, startHandler, stopHandler))
 {}
 

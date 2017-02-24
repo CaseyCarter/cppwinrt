@@ -2793,7 +2793,7 @@ template <typename D> Windows::Devices::AllJoyn::AllJoynBusAttachment impl_IAllJ
     return defaultBusAttachment;
 }
 
-template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IAllJoynBusAttachmentStatics<D>::GetWatcher(const Windows::Foundation::Collections::IIterable<hstring> & requiredInterfaces) const
+template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IAllJoynBusAttachmentStatics<D>::GetWatcher(iterable<hstring> requiredInterfaces) const
 {
     Windows::Devices::Enumeration::DeviceWatcher deviceWatcher { nullptr };
     check_hresult(WINRT_SHIM(IAllJoynBusAttachmentStatics)->abi_GetWatcher(get_abi(requiredInterfaces), put_abi(deviceWatcher)));
@@ -3620,7 +3620,7 @@ inline Windows::Devices::AllJoyn::AllJoynBusAttachment AllJoynBusAttachment::Get
     return get_activation_factory<AllJoynBusAttachment, IAllJoynBusAttachmentStatics>().GetDefault();
 }
 
-inline Windows::Devices::Enumeration::DeviceWatcher AllJoynBusAttachment::GetWatcher(const Windows::Foundation::Collections::IIterable<hstring> & requiredInterfaces)
+inline Windows::Devices::Enumeration::DeviceWatcher AllJoynBusAttachment::GetWatcher(iterable<hstring> requiredInterfaces)
 {
     return get_activation_factory<AllJoynBusAttachment, IAllJoynBusAttachmentStatics>().GetWatcher(requiredInterfaces);
 }

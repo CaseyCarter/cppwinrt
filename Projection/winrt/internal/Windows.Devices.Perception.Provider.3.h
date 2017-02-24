@@ -61,7 +61,7 @@ struct WINRT_EBO PerceptionControlGroup :
     Windows::Devices::Perception::Provider::IPerceptionControlGroup
 {
     PerceptionControlGroup(std::nullptr_t) noexcept {}
-    PerceptionControlGroup(const Windows::Foundation::Collections::IIterable<hstring> & ids);
+    PerceptionControlGroup(iterable<hstring> ids);
 };
 
 struct WINRT_EBO PerceptionCorrelation :
@@ -75,14 +75,14 @@ struct WINRT_EBO PerceptionCorrelationGroup :
     Windows::Devices::Perception::Provider::IPerceptionCorrelationGroup
 {
     PerceptionCorrelationGroup(std::nullptr_t) noexcept {}
-    PerceptionCorrelationGroup(const Windows::Foundation::Collections::IIterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> & relativeLocations);
+    PerceptionCorrelationGroup(iterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> relativeLocations);
 };
 
 struct WINRT_EBO PerceptionFaceAuthenticationGroup :
     Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup
 {
     PerceptionFaceAuthenticationGroup(std::nullptr_t) noexcept {}
-    PerceptionFaceAuthenticationGroup(const Windows::Foundation::Collections::IIterable<hstring> & ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler);
+    PerceptionFaceAuthenticationGroup(iterable<hstring> ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler);
 };
 
 struct WINRT_EBO PerceptionFrame :

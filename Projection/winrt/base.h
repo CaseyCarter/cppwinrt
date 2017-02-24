@@ -471,10 +471,12 @@ struct require_one : consume<D, I>
     operator I() const
     {
         const auto& d = *static_cast<const D*>(this);
+
         if (d)
         {
             return d.template as<I>();
         }
+
         return nullptr;
     }
 };
@@ -489,10 +491,12 @@ struct bases_one
     operator I() const
     {
         const auto& d = *static_cast<const D*>(this);
+
         if (d)
         {
             return d.template as<I>();
         }
+
         return nullptr;
     }
 };
@@ -533,6 +537,9 @@ template <typename T>
 using abi_default_interface = ABI::default_interface<abi<T>>;
 
 }
+
+template<HRESULT ... ValuesToIgnore>
+__forceinline void check_hresult(HRESULT result);
 
 namespace Windows::Foundation
 {
@@ -787,8 +794,6 @@ bool operator>=(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 {
     return !(left < right);
 }
-template<HRESULT... ValuesToIgnore>
-__forceinline void check_hresult(HRESULT result);
 
 namespace impl {
 
@@ -1556,11 +1561,6 @@ private:
     com_ptr<IRestrictedErrorInfo> m_info;
 };
 
-[[noreturn]] inline void throw_last_error()
-{
-    throw hresult_error(HRESULT_FROM_WIN32(GetLastError()));
-}
-
 struct hresult_access_denied : hresult_error
 {
     hresult_access_denied() : hresult_error(E_ACCESSDENIED) {}
@@ -1762,6 +1762,11 @@ inline __declspec(noinline) HRESULT to_hresult() noexcept
     return value;
 }
 
+}
+
+[[noreturn]] inline void throw_last_error()
+{
+    impl::throw_hresult(HRESULT_FROM_WIN32(GetLastError()));
 }
 
 template<HRESULT... ValuesToIgnore>
@@ -2662,9 +2667,6 @@ inline TrustLevel GetTrustLevel(const IInspectable & object)
 }
 
 }
-
-using unknown = Windows::Foundation::IUnknown;
-using inspectable = Windows::Foundation::IInspectable;
 
 namespace impl {
 
@@ -4230,24 +4232,6 @@ struct WINRT_EBO TypedEventHandler : IUnknown
 
 }
 
-struct empty_collection_t {};
-constexpr empty_collection_t empty_collection{};
-
-namespace impl {
-
-template <typename K, typename V, typename Container> struct map_view_standalone;
-template <typename K, typename V, typename Container> struct map_view_from_map;
-template <typename K, typename V, typename Container> struct map;
-template <typename K, typename V> struct key_value_pair;
-template <typename T, typename Container> struct iterator_standalone;
-template <typename T, typename Container> struct iterator;
-template <typename T, typename Container> struct iterable;
-template <typename T> struct vector_view_from_vector;
-template <typename T> struct vector_view_standalone;
-template <typename T> struct vector;
-
-}
-
 namespace Windows::Foundation::Collections {
 
 enum class CollectionChange
@@ -4649,8 +4633,14 @@ template <typename T> struct traits<Windows::Foundation::Collections::IObservabl
 };
 
 template <typename T>
-struct fast_iterator : std::iterator<std::input_iterator_tag, T>
+struct fast_iterator
 {
+    using iterator_category = std::input_iterator_tag;
+    using value_type = T;
+    using difference_type = ptrdiff_t;
+    using pointer = T *;
+    using reference = T &;
+
     fast_iterator(const T & collection, const uint32_t index) noexcept :
         m_collection(&collection),
         m_index(index)
@@ -4720,6 +4710,12 @@ struct WINRT_EBO IIterator :
     IInspectable,
     impl::consume<IIterator<T>>
 {
+    using iterator_category = std::input_iterator_tag;
+    using value_type = T;
+    using difference_type = ptrdiff_t;
+    using pointer = T *;
+    using reference = T &;
+
     IIterator(std::nullptr_t = nullptr) noexcept {}
 };
 
@@ -4729,22 +4725,6 @@ struct WINRT_EBO IIterable :
     impl::consume<IIterable<T>>
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
-
-    IIterable(std::vector<T> && values) : IIterable(make<impl::iterable<T, std::vector<T>>>(std::forward<std::vector<T>>(values)))
-    {}
-
-    IIterable(const std::vector<T> & values) : IIterable(std::vector<T>(values))
-    {}
-
-    IIterable(empty_collection_t) : IIterable(std::vector<T>())
-    {}
-
-    template<class InputIt>
-    IIterable(InputIt first, InputIt last) : IIterable(std::vector<T>(first, last))
-    {}
-
-    IIterable(std::initializer_list<T> values) : IIterable(std::vector<T>(values.begin(), values.end()))
-    {}
 };
 
 template <typename K, typename V>
@@ -4753,28 +4733,6 @@ struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
     impl::consume<IIterable<IKeyValuePair<K, V>>>
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
-
-    IIterable(std::map<K, V> && values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
-    {}
-
-    IIterable(const std::map<K, V> & values) : IIterable(std::map<K, V>(values))
-    {}
-
-    IIterable(std::unordered_map<K, V> && values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
-    {}
-
-    IIterable(const std::unordered_map<K, V> & values) : IIterable(std::unordered_map<K, V>(values))
-    {}
-
-    IIterable(empty_collection_t) : IIterable(std::unordered_map<K, V>())
-    {}
-
-    template<class InputIt>
-    IIterable(InputIt first, InputIt last) : IIterable(std::unordered_map<K, V>(first, last))
-    {}
-
-    IIterable(std::initializer_list<std::pair<K, V>> values) : IIterable(std::unordered_map<K, V>(values.begin(), values.end()))
-    {}
 };
 
 template <typename K, typename V>
@@ -4792,22 +4750,6 @@ struct WINRT_EBO IVectorView :
     impl::require<IVectorView<T>, IIterable<T>>
 {
     IVectorView(std::nullptr_t = nullptr) noexcept {}
-
-    IVectorView(std::vector<T> && values) : IVectorView(make<impl::vector_view_standalone<T>>(std::forward<std::vector<T>>(values)))
-    {}
-
-    IVectorView(const std::vector<T> & values) : IVectorView(std::vector<T>(values))
-    {}
-
-    IVectorView(empty_collection_t) : IVectorView(std::vector<T>())
-    {}
-
-    template<class InputIt>
-    IVectorView(InputIt first, InputIt last) : IVectorView(std::vector<T>(first, last))
-    {}
-
-    IVectorView(std::initializer_list<T> values) : IVectorView(std::vector<T>(values.begin(), values.end()))
-    {}
 };
 
 template <typename T>
@@ -4817,22 +4759,6 @@ struct WINRT_EBO IVector :
     impl::require<IVector<T>, IIterable<T>>
 {
     IVector(std::nullptr_t = nullptr) noexcept {}
-
-    IVector(std::vector<T> && values) : IVector(make<impl::vector<T>>(std::forward<std::vector<T>>(values)))
-    {}
-
-    IVector(const std::vector<T> & values) : IVector(std::vector<T>(values))
-    {}
-
-    IVector(empty_collection_t) : IVector(std::vector<T>())
-    {}
-
-    template<class InputIt>
-    IVector(InputIt first, InputIt last) : IVector(std::vector<T>(first, last))
-    {}
-
-    IVector(std::initializer_list<T> values) : IVector(std::vector<T>(values.begin(), values.end()))
-    {}
 };
 
 template <typename K, typename V>
@@ -4842,28 +4768,6 @@ struct WINRT_EBO IMapView :
     impl::require<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IMapView(std::nullptr_t = nullptr) noexcept {}
-
-    IMapView(std::map<K, V> && values) : IMapView(make<impl::map_view_standalone<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
-    {}
-
-    IMapView(const std::map<K, V> & values) : IMapView(std::map<K, V>(values))
-    {}
-
-    IMapView(std::unordered_map<K, V> && values) : IMapView(make<impl::map_view_standalone<K, V, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
-    {}
-
-    IMapView(const std::unordered_map<K, V> & values) : IMapView(std::unordered_map<K, V>(values))
-    {}
-
-    IMapView(empty_collection_t) : IMapView(std::unordered_map<K, V>())
-    {}
-
-    template<class InputIt>
-    IMapView(InputIt first, InputIt last) : IMapView(std::unordered_map<K, V>(first, last))
-    {}
-
-    IMapView(std::initializer_list<std::pair<K, V>> values) : IMapView(std::unordered_map<K, V>(values.begin(), values.end()))
-    {}
 };
 
 template <typename K, typename V>
@@ -4873,28 +4777,6 @@ struct WINRT_EBO IMap :
     impl::require<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IMap(std::nullptr_t = nullptr) noexcept {}
-
-    IMap(std::map<K, V> && values) : IMap(make<impl::map<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
-    {}
-
-    IMap(const std::map<K, V> & values) : IMap(std::map<K, V>(values))
-    {}
-
-    IMap(std::unordered_map<K, V> && values) : IMap(make<impl::map<K, V, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
-    {}
-
-    IMap(const std::unordered_map<K, V> & values) : IMap(std::unordered_map<K, V>(values))
-    {}
-
-    IMap(empty_collection_t) : IMap(std::unordered_map<K, V>())
-    {}
-
-    template<class InputIt>
-    IMap(InputIt first, InputIt last) : IMap(std::unordered_map<K, V>(first, last))
-    {}
-
-    IMap(std::initializer_list<std::pair<K, V>> values) : IMap(std::unordered_map<K, V>(values.begin(), values.end()))
-    {}
 };
 
 template <typename K>
@@ -6001,45 +5883,27 @@ struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : prod
 
 namespace impl
 {
-    struct collection_version
+    namespace wfc = Windows::Foundation::Collections;
+
+    template <typename K, typename V>
+    struct key_value_pair : implements<key_value_pair<K, V>, wfc::IKeyValuePair<K, V>>
     {
-        collection_version()
+        explicit key_value_pair(std::pair<const K, V> const & value) : m_value(value)
         {}
 
-        void increment()  noexcept
+        K Key() const
         {
-            m_version++;
+            return m_value.first;
         }
 
-        uint32_t get() const noexcept
+        V Value() const
         {
-            return m_version;
+            return m_value.second;
         }
 
     private:
 
-        uint32_t m_version = 0;
-    };
-
-    struct collection_version_validator
-    {
-        collection_version_validator(collection_version& owner_version, uint32_t expected_version) noexcept : 
-            m_expected_version(expected_version),
-            m_owner_version(owner_version)
-        {}
-
-        void validate() const
-        {
-            if (m_expected_version != m_owner_version.get())
-            {
-                throw hresult_changed_state();
-            }
-        }
-
-    private:
-
-        const uint32_t m_expected_version;
-        collection_version& m_owner_version;
+        std::pair<const K, V> const m_value;
     };
 
     template <typename T>
@@ -6051,595 +5915,1363 @@ namespace impl
         }
 
         template<typename InputIt, typename Size, typename OutputIt>
-        static void copy_n(InputIt first, Size count, OutputIt result)
+        static auto copy_n(InputIt first, Size count, OutputIt result)
         {
-            std::copy_n(first, count, result);
+            return std::copy_n(first, count, result);
         }
     };
 
     template <typename K, typename V>
-    struct collection_traits<Windows::Foundation::Collections::IKeyValuePair<K, V>>
+    struct collection_traits<wfc::IKeyValuePair<K, V>>
     {
         static auto copy(std::pair<const K, V> const & value)
         {
-            return make<impl::key_value_pair<K, V>>(value.first, value.second);
+            return make<key_value_pair<K, V>>(value);
         }
 
         template<typename InputIt, typename Size, typename OutputIt>
-        static void copy_n(InputIt first, Size count, OutputIt result)
+        static auto copy_n(InputIt first, Size count, OutputIt result)
         {
-            std::transform(first, std::next(first, count), result, [](std::pair<const K, V> value)
+            return std::transform(first, std::next(first, count), result, [](std::pair<const K, V> const & value)
             {
-                return make<impl::key_value_pair<K, V>>(value.first, value.second);
+                return make<key_value_pair<K, V>>(value);
             });
         }
     };
 
-    template <typename T>
-    struct vector : implements<vector<T>,
-                               Windows::Foundation::Collections::IVector<T>,
-                               Windows::Foundation::Collections::IIterable<T>>
+    struct input_scope
     {
-        vector() = default;
-
-        vector(std::vector<T> && values) : m_storage(std::move(values))
-        {}
-
-        void Append(const T & value)
+        void invalidate_scope() noexcept
         {
-            m_version.increment();
-            m_storage.push_back(value);
+            m_invalid = true;
         }
 
-        void Clear() noexcept
+        void check_scope() const
         {
-            m_version.increment();
-            m_storage.clear();
+            if (m_invalid)
+            {
+                throw hresult_illegal_method_call();
+            }
+        }
+
+    private:
+
+        bool m_invalid{};
+    };
+}
+
+namespace impl
+{
+    template <typename T, typename Container>
+    struct input_iterable : implements<input_iterable<T, Container>, non_agile, no_weak_ref, wfc::IIterable<T>>
+    {
+        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+
+        explicit input_iterable(Container && values) : m_values(std::forward<Container>(values))
+        {
+        }
+
+        wfc::IIterator<T> First()
+        {
+            return make<iterator>(this);
+        }
+
+    private:
+
+        Container const m_values;
+
+        struct iterator : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<T>>
+        {
+            explicit iterator(input_iterable<T, Container> * owner) noexcept :
+                m_current(owner->m_values.begin()),
+                m_end(owner->m_values.end())
+            {
+                m_owner.copy_from(owner);
+            }
+
+            T Current() const
+            {
+                if (m_current == m_end)
+                {
+                    throw hresult_out_of_bounds();
+                }
+
+                return collection_traits<T>::copy(*m_current);
+            }
+
+            bool HasCurrent() const noexcept
+            {
+                return m_current != m_end;
+            }
+
+            bool MoveNext() noexcept
+            {
+                if (m_current != m_end)
+                {
+                    ++m_current;
+                }
+
+                return HasCurrent();
+            }
+
+            uint32_t GetMany(array_view<T> values)
+            {
+                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
+
+                if (actual > values.size())
+                {
+                    actual = values.size();
+                }
+
+                collection_traits<T>::copy_n(m_current, actual, values.begin());
+                std::advance(m_current, actual);
+                return actual;
+            }
+
+        private:
+
+            com_ptr<input_iterable<T, Container>> m_owner;
+            typename Container::const_iterator m_current;
+            typename Container::const_iterator const m_end;
+        };
+    };
+
+    template <typename T, typename InputIt>
+    struct scoped_input_iterable : input_scope, implements<scoped_input_iterable<T, InputIt>, non_agile, no_weak_ref, wfc::IIterable<T>>
+    {
+        void abi_enter() const
+        {
+            check_scope();
+        }
+
+        scoped_input_iterable(InputIt first, InputIt last) : m_begin(first), m_end(last)
+        {
+        }
+
+        wfc::IIterator<T> First()
+        {
+            return make<iterator>(this);
+        }
+
+    private:
+
+        InputIt const m_begin;
+        InputIt const m_end;
+
+        struct iterator : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<T>>
+        {
+            void abi_enter() const
+            {
+                m_owner->check_scope();
+            }
+
+            explicit iterator(scoped_input_iterable<T, InputIt> * owner) noexcept :
+                m_current(owner->m_begin),
+                m_end(owner->m_end)
+            {
+                m_owner.copy_from(owner);
+            }
+
+            T Current() const
+            {
+                if (m_current == m_end)
+                {
+                    throw hresult_out_of_bounds();
+                }
+
+                return collection_traits<T>::copy(*m_current);
+            }
+
+            bool HasCurrent() const noexcept
+            {
+                return m_current != m_end;
+            }
+
+            bool MoveNext() noexcept
+            {
+                if (m_current != m_end)
+                {
+                    ++m_current;
+                }
+
+                return HasCurrent();
+            }
+
+            uint32_t GetMany(array_view<T> values)
+            {
+                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
+
+                if (actual > values.size())
+                {
+                    actual = values.size();
+                }
+
+                collection_traits<T>::copy_n(m_current, actual, values.begin());
+                std::advance(m_current, actual);
+                return actual;
+            }
+
+        private:
+
+            com_ptr<scoped_input_iterable<T, InputIt>> m_owner;
+            InputIt m_current;
+            InputIt const m_end;
+        };
+    };
+
+    template <typename T, typename Container>
+    auto make_input_iterable(Container && values)
+    {
+        return make<input_iterable<T, Container>>(std::forward<Container>(values));
+    }
+
+    template <typename T, typename InputIt>
+    auto make_scoped_input_iterable(InputIt first, InputIt last)
+    {
+        using interface_type = wfc::IIterable<T>;
+        std::pair<interface_type, input_scope *> result;
+        auto ptr = new scoped_input_iterable<T, InputIt>(first, last);
+        *put_abi(result.first) = to_abi<interface_type>(ptr);
+        result.second = ptr;
+        return result;
+    }
+}
+
+template <typename T>
+struct iterable
+{
+    using value_type = T;
+    using interface_type = Windows::Foundation::Collections::IIterable<value_type>;
+
+    iterable(std::nullptr_t) noexcept
+    {
+    }
+
+    iterable(iterable const & values) noexcept : m_owned(false)
+    {
+        attach_abi(m_pair.first, get_abi(values));
+    }
+
+    iterable(interface_type const & values) noexcept : m_owned(false)
+    {
+        attach_abi(m_pair.first, get_abi(values));
+    }
+
+    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    iterable(Collection const & values) noexcept : m_owned(true)
+    {
+        m_pair.first = values;
+    }
+
+    template <typename Allocator>
+    iterable(std::vector<value_type, Allocator> && values) : m_pair(impl::make_input_iterable<value_type>(std::move(values)), nullptr)
+    {
+    }
+
+    template <typename Allocator>
+    iterable(std::vector<value_type, Allocator> const & values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
+    {
+    }
+
+    iterable(std::initializer_list<value_type> values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
+    {
+    }
+
+    template<class InputIt>
+    iterable(InputIt first, InputIt last) : m_pair(impl::make_scoped_input_iterable<value_type>(first, last))
+    {
+    }
+
+    ~iterable() noexcept
+    {
+        if (m_pair.second)
+        {
+            m_pair.second->invalidate_scope();
+        }
+
+        if (!m_owned)
+        {
+            detach_abi(m_pair.first);
+        }
+    }
+
+private:
+
+    std::pair<interface_type, impl::input_scope *> m_pair;
+    bool m_owned{true};
+};
+
+template <typename K, typename V>
+struct iterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>
+{
+    using value_type = Windows::Foundation::Collections::IKeyValuePair<K, V>;
+    using interface_type = Windows::Foundation::Collections::IIterable<value_type>;
+
+    iterable(std::nullptr_t) noexcept
+    {
+    }
+
+    iterable(iterable const & values) noexcept : m_owned(false)
+    {
+        attach_abi(m_pair.first, get_abi(values));
+    }
+
+    iterable(interface_type const & values) noexcept : m_owned(false)
+    {
+        attach_abi(m_pair.first, get_abi(values));
+    }
+
+    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    iterable(Collection const & values) noexcept : m_owned(true)
+    {
+        m_pair.first = values;
+    }
+
+    template <typename Compare, typename Allocator>
+    iterable(std::map<K, V, Compare, Allocator> && values) : m_pair(impl::make_input_iterable<value_type>(std::move(values)), nullptr)
+    {
+    }
+
+    template <typename Compare, typename Allocator>
+    iterable(std::map<K, V, Compare, Allocator> const & values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
+    {
+    }
+
+    template <typename Hash, typename KeyEqual, typename Allocator>
+    iterable(std::unordered_map<K, V, Hash, KeyEqual, Allocator> && values) : m_pair(impl::make_input_iterable<value_type>(std::move(values)), nullptr)
+    {
+    }
+
+    template <typename Hash, typename KeyEqual, typename Allocator>
+    iterable(std::unordered_map<K, V, Hash, KeyEqual, Allocator> const & values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
+    {
+    }
+
+    iterable(std::initializer_list<std::pair<K const, V>> values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
+    {
+    }
+
+    template<class InputIt>
+    iterable(InputIt first, InputIt last) : m_pair(impl::make_scoped_input_iterable<value_type>(first, last))
+    {
+    }
+
+    ~iterable() noexcept
+    {
+        if (m_pair.second)
+        {
+            m_pair.second->invalidate_scope();
+        }
+
+        if (!m_owned)
+        {
+            detach_abi(m_pair.first);
+        }
+    }
+
+private:
+
+    std::pair<interface_type, impl::input_scope *> m_pair;
+    bool m_owned{ true };
+};
+
+template <typename T>
+auto get_abi(const iterable<T> & object) noexcept
+{
+    return *reinterpret_cast<abi<Windows::Foundation::Collections::IIterable<T>> **>(&const_cast<iterable<T> &>(object));
+}
+
+namespace impl
+{
+    template <typename T, typename Container>
+    struct input_vector_view : implements<input_vector_view<T, Container>, non_agile, no_weak_ref, wfc::IVectorView<T>, wfc::IIterable<T>>
+    {
+        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+
+        explicit input_vector_view(Container && values) : m_values(std::forward<Container>(values))
+        {
         }
 
         T GetAt(const uint32_t index) const
         {
-            if (index >= m_storage.size())
+            if (index >= Size())
             {
                 throw hresult_out_of_bounds();
             }
 
-            return m_storage[index];
+            return m_values[index];
+        }
+
+        uint32_t Size() const noexcept
+        {
+            return static_cast<uint32_t>(m_values.size());
+        }
+
+        bool IndexOf(const T & value, uint32_t & index) const noexcept
+        {
+            index = static_cast<uint32_t>(std::find(m_values.begin(), m_values.end(), value) - m_values.begin());
+            return index < m_values.size();
         }
 
         uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
         {
-            if (startIndex >= m_storage.size())
+            if (startIndex >= Size())
             {
                 return 0;
             }
 
-            uint32_t actual = static_cast<uint32_t>(m_storage.size() - startIndex);
+            uint32_t actual = Size() - startIndex;
 
             if (actual > values.size())
             {
                 actual = values.size();
             }
 
-            std::copy_n(m_storage.begin() + startIndex, actual, values.begin());
+            std::copy_n(m_values.begin() + startIndex, actual, values.begin());
             return actual;
         }
 
-        Windows::Foundation::Collections::IVectorView<T> GetView()
+        wfc::IIterator<T> First()
         {
-            return make<vector_view_from_vector<T>>(this, m_version, m_version.get());
+            return make<iterator>(this);
+        }
+
+    private:
+
+        Container const m_values;
+
+        struct iterator : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<T>>
+        {
+            explicit iterator(input_vector_view<T, Container> * owner) noexcept :
+                m_current(owner->m_values.begin()),
+                m_end(owner->m_values.end())
+            {
+                m_owner.copy_from(owner);
+            }
+
+            T Current() const
+            {
+                if (m_current == m_end)
+                {
+                    throw hresult_out_of_bounds();
+                }
+
+                return *m_current;
+            }
+
+            bool HasCurrent() const noexcept
+            {
+                return m_current != m_end;
+            }
+
+            bool MoveNext() noexcept
+            {
+                if (m_current != m_end)
+                {
+                    ++m_current;
+                }
+
+                return HasCurrent();
+            }
+
+            uint32_t GetMany(array_view<T> values)
+            {
+                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
+
+                if (actual > values.size())
+                {
+                    actual = values.size();
+                }
+
+                std::copy_n(m_current, actual, values.begin());
+                std::advance(m_current, actual);
+                return actual;
+            }
+
+        private:
+
+            com_ptr<input_vector_view<T, Container>> m_owner;
+            typename Container::const_iterator m_current;
+            typename Container::const_iterator const m_end;
+        };
+    };
+
+    template <typename T, typename InputIt>
+    struct scoped_input_vector_view : input_scope, implements<scoped_input_vector_view<T, InputIt>, non_agile, no_weak_ref, wfc::IVectorView<T>, wfc::IIterable<T>>
+    {
+        void abi_enter() const
+        {
+            check_scope();
+        }
+
+        scoped_input_vector_view(InputIt first, InputIt last) : m_begin(first), m_end(last)
+        {
+        }
+
+        T GetAt(const uint32_t index) const
+        {
+            if (index >= Size())
+            {
+                throw hresult_out_of_bounds();
+            }
+
+            return *std::next(m_begin, index);
+        }
+
+        uint32_t Size() const noexcept
+        {
+            return static_cast<uint32_t>(std::distance(m_begin, m_end));
         }
 
         bool IndexOf(const T & value, uint32_t & index) const noexcept
         {
-            uint32_t pos = static_cast<uint32_t>(std::find(m_storage.begin(), m_storage.end(), value) - m_storage.begin());
-            const bool valid_index = index < m_storage.size();
-
-            index = valid_index ? pos : 0;
-            return valid_index;
+            index = static_cast<uint32_t>(std::find(m_begin, m_end, value) - m_begin);
+            return index < Size();
         }
 
-        void InsertAt(const uint32_t index, const T & value)
+        uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
         {
-            if (index > m_storage.size())
+            if (startIndex >= Size())
+            {
+                return 0;
+            }
+
+            uint32_t actual = Size() - startIndex;
+
+            if (actual > values.size())
+            {
+                actual = values.size();
+            }
+
+            std::copy_n(m_begin + startIndex, actual, values.begin());
+            return actual;
+        }
+
+        wfc::IIterator<T> First()
+        {
+            return make<iterator>(this);
+        }
+
+    private:
+
+        InputIt const m_begin;
+        InputIt const m_end;
+
+        struct iterator : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<T>>
+        {
+            void abi_enter() const
+            {
+                m_owner->check_scope();
+            }
+
+            explicit iterator(scoped_input_vector_view<T, InputIt> * owner) noexcept :
+                m_current(owner->m_begin),
+                m_end(owner->m_end)
+            {
+                m_owner.copy_from(owner);
+            }
+
+            T Current() const
+            {
+                if (m_current == m_end)
+                {
+                    throw hresult_out_of_bounds();
+                }
+
+                return *m_current;
+            }
+
+            bool HasCurrent() const noexcept
+            {
+                return m_current != m_end;
+            }
+
+            bool MoveNext() noexcept
+            {
+                if (m_current != m_end)
+                {
+                    ++m_current;
+                }
+
+                return HasCurrent();
+            }
+
+            uint32_t GetMany(array_view<T> values)
+            {
+                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
+
+                if (actual > values.size())
+                {
+                    actual = values.size();
+                }
+
+                std::copy_n(m_current, actual, values.begin());
+                std::advance(m_current, actual);
+                return actual;
+            }
+
+        private:
+
+            com_ptr<scoped_input_vector_view<T, InputIt>> m_owner;
+            InputIt m_current;
+            InputIt const m_end;
+        };
+    };
+
+    template <typename T, typename InputIt>
+    auto make_scoped_input_vector_view(InputIt first, InputIt last)
+    {
+        using interface_type = wfc::IVectorView<T>;
+        std::pair<interface_type, input_scope *> result;
+        auto ptr = new scoped_input_vector_view<T, InputIt>(first, last);
+        *put_abi(result.first) = to_abi<interface_type>(ptr);
+        result.second = ptr;
+        return result;
+    }
+}
+
+template <typename T>
+struct vector_view
+{
+    using value_type = T;
+    using interface_type = Windows::Foundation::Collections::IVectorView<value_type>;
+
+    vector_view(std::nullptr_t) noexcept
+    {
+    }
+
+    vector_view(vector_view const & values) noexcept : m_owned(false)
+    {
+        attach_abi(m_pair.first, get_abi(values));
+    }
+
+    vector_view(interface_type const & values) noexcept : m_owned(false)
+    {
+        attach_abi(m_pair.first, get_abi(values));
+    }
+
+    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    vector_view(Collection const & values) noexcept : m_owned(true)
+    {
+        m_pair.first = values;
+    }
+
+    template <typename Allocator>
+    vector_view(std::vector<value_type, Allocator> && values) : m_pair(make<impl::input_vector_view<value_type, std::vector<value_type, Allocator>>>(std::move(values)), nullptr)
+    {
+    }
+
+    template <typename Allocator>
+    vector_view(std::vector<value_type, Allocator> const & values) : m_pair(impl::make_scoped_input_vector_view<value_type>(values.begin(), values.end()))
+    {
+    }
+
+    vector_view(std::initializer_list<value_type> values) : m_pair(impl::make_scoped_input_vector_view<value_type>(values.begin(), values.end()))
+    {
+    }
+
+    template<class InputIt>
+    vector_view(InputIt first, InputIt last) : m_pair(impl::make_scoped_input_vector_view<value_type>(first, last))
+    {
+    }
+
+    ~vector_view() noexcept
+    {
+        if (m_pair.second)
+        {
+            m_pair.second->invalidate_scope();
+        }
+
+        if (!m_owned)
+        {
+            detach_abi(m_pair.first);
+        }
+    }
+
+private:
+
+    std::pair<interface_type, impl::input_scope *> m_pair;
+    bool m_owned{ true };
+};
+
+template <typename T>
+auto get_abi(const vector_view<T> & object) noexcept
+{
+    return *reinterpret_cast<abi<Windows::Foundation::Collections::IVectorView<T>> **>(&const_cast<vector_view<T> &>(object));
+}
+
+namespace impl
+{
+    template <typename K, typename V, typename Container>
+    struct input_map_view : implements<input_map_view<K, V, Container>, non_agile, no_weak_ref, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>
+    {
+        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+
+        using value_type = wfc::IKeyValuePair<K, V>;
+        using interface_type = wfc::IMapView<K, V>;
+
+        explicit input_map_view(Container && values) : m_values(std::forward<Container>(values))
+        {
+        }
+
+        V Lookup(K const & key) const
+        {
+            auto pair = m_values.find(key);
+
+            if (pair == m_values.end())
             {
                 throw hresult_out_of_bounds();
             }
 
-            m_version.increment();
-            m_storage.insert(m_storage.begin() + index, value);
+            return pair->second;
         }
 
-        void RemoveAt(const uint32_t index)
+        uint32_t Size() const noexcept
         {
-            if (index >= m_storage.size())
+            return static_cast<uint32_t>(m_values.size());
+        }
+
+        bool HasKey(K const & key) const noexcept
+        {
+            return m_values.find(key) != m_values.end();
+        }
+
+        void Split(interface_type & first, interface_type & second) const noexcept
+        {
+            first = nullptr;
+            second = nullptr;
+        }
+
+        wfc::IIterator<value_type> First()
+        {
+            return make<iterator>(this);
+        }
+
+    private:
+
+        Container const m_values;
+
+        struct iterator : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<value_type>>
+        {
+            explicit iterator(input_map_view<K, V, Container> * owner) noexcept :
+                m_current(owner->m_values.begin()),
+                m_end(owner->m_values.end())
+            {
+                m_owner.copy_from(owner);
+            }
+
+            value_type Current() const
+            {
+                if (m_current == m_end)
+                {
+                    throw hresult_out_of_bounds();
+                }
+
+                return collection_traits<value_type>::copy(*m_current);
+            }
+
+            bool HasCurrent() const noexcept
+            {
+                return m_current != m_end;
+            }
+
+            bool MoveNext() noexcept
+            {
+                if (m_current != m_end)
+                {
+                    ++m_current;
+                }
+
+                return HasCurrent();
+            }
+
+            uint32_t GetMany(array_view<value_type> values)
+            {
+                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
+
+                if (actual > values.size())
+                {
+                    actual = values.size();
+                }
+
+                collection_traits<value_type>::copy_n(m_current, actual, values.begin());
+                std::advance(m_current, actual);
+                return actual;
+            }
+
+        private:
+
+            com_ptr<input_map_view<K, V, Container>> m_owner;
+            typename Container::const_iterator m_current;
+            typename Container::const_iterator const m_end;
+        };
+    };
+
+    template <typename K, typename V, typename Container>
+    struct scoped_input_map_view : input_scope, implements<scoped_input_map_view<K, V, Container>, non_agile, no_weak_ref, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>
+    {
+        using value_type = wfc::IKeyValuePair<K, V>;
+        using interface_type = wfc::IMapView<K, V>;
+
+        void abi_enter() const
+        {
+            check_scope();
+        }
+
+        explicit scoped_input_map_view(Container const & values) : m_values(values)
+        {
+        }
+
+        V Lookup(K const & key) const
+        {
+            auto pair = m_values.find(key);
+
+            if (pair == m_values.end())
             {
                 throw hresult_out_of_bounds();
             }
 
-            m_version.increment();
-            m_storage.erase(m_storage.begin() + index);
+            return pair->second;
         }
 
-        void RemoveAtEnd()
+        uint32_t Size() const noexcept
         {
-            if (m_storage.empty())
+            return static_cast<uint32_t>(m_values.size());
+        }
+
+        bool HasKey(K const & key) const noexcept
+        {
+            return m_values.find(key) != m_values.end();
+        }
+
+        void Split(interface_type & first, interface_type & second) const noexcept
+        {
+            first = nullptr;
+            second = nullptr;
+        }
+
+        wfc::IIterator<value_type> First()
+        {
+            return make<iterator>(this);
+        }
+
+    private:
+
+        Container const & m_values;
+
+        struct iterator : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<value_type>>
+        {
+            void abi_enter() const
+            {
+                m_owner->check_scope();
+            }
+
+            explicit iterator(scoped_input_map_view<K, V, Container> * owner) noexcept :
+                m_current(owner->m_values.begin()),
+                m_end(owner->m_values.end())
+            {
+                m_owner.copy_from(owner);
+            }
+
+            value_type Current() const
+            {
+                if (m_current == m_end)
+                {
+                    throw hresult_out_of_bounds();
+                }
+
+                return collection_traits<value_type>::copy(*m_current);
+            }
+
+            bool HasCurrent() const noexcept
+            {
+                return m_current != m_end;
+            }
+
+            bool MoveNext() noexcept
+            {
+                if (m_current != m_end)
+                {
+                    ++m_current;
+                }
+
+                return HasCurrent();
+            }
+
+            uint32_t GetMany(array_view<value_type> values)
+            {
+                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
+
+                if (actual > values.size())
+                {
+                    actual = values.size();
+                }
+
+                collection_traits<value_type>::copy_n(m_current, actual, values.begin());
+                std::advance(m_current, actual);
+                return actual;
+            }
+
+        private:
+
+            com_ptr<scoped_input_map_view<K, V, Container>> m_owner;
+            typename Container::const_iterator m_current;
+            typename Container::const_iterator const m_end;
+        };
+    };
+
+    template <typename K, typename V, typename Container>
+    auto make_input_map_view(Container && values)
+    {
+        return make<input_map_view<K, V, Container>>(std::forward<Container>(values));
+    }
+
+    template <typename K, typename V, typename Container>
+    auto make_scoped_input_map_view(Container const & values)
+    {
+        using interface_type = wfc::IMapView<K, V>;
+        std::pair<interface_type, input_scope *> result;
+        auto ptr = new scoped_input_map_view<K, V, Container>(values);
+        *put_abi(result.first) = to_abi<interface_type>(ptr);
+        result.second = ptr;
+        return result;
+    }
+}
+
+template <typename K, typename V>
+struct map_view
+{
+    using value_type = Windows::Foundation::Collections::IKeyValuePair<K, V>;
+    using interface_type = Windows::Foundation::Collections::IMapView<K, V>;
+
+    map_view(std::nullptr_t) noexcept
+    {
+    }
+
+    map_view(map_view const & values) noexcept : m_owned(false)
+    {
+        attach_abi(m_pair.first, get_abi(values));
+    }
+
+    map_view(interface_type const & values) noexcept : m_owned(false)
+    {
+        attach_abi(m_pair.first, get_abi(values));
+    }
+
+    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    map_view(Collection const & values) noexcept : m_owned(true)
+    {
+        m_pair.first = values;
+    }
+
+    template <typename Compare, typename Allocator>
+    map_view(std::map<K, V, Compare, Allocator> && values) : m_pair(impl::make_input_map_view<K, V>(std::move(values)), nullptr)
+    {
+    }
+
+    template <typename Compare, typename Allocator>
+    map_view(std::map<K, V, Compare, Allocator> const & values) : m_pair(impl::make_scoped_input_map_view<K, V>(values))
+    {
+    }
+
+    template <typename Hash, typename KeyEqual, typename Allocator>
+    map_view(std::unordered_map<K, V, Hash, KeyEqual, Allocator> && values) : m_pair(impl::make_input_map_view<K, V>(std::move(values)), nullptr)
+    {
+    }
+
+    template <typename Hash, typename KeyEqual, typename Allocator>
+    map_view(std::unordered_map<K, V, Hash, KeyEqual, Allocator> const & values) : m_pair(impl::make_scoped_input_map_view<K, V>(values))
+    {
+    }
+
+    map_view(std::initializer_list<std::pair<K const, V>> values) : m_pair(impl::make_input_map_view<K, V>(std::map<K, V>(values)), nullptr)
+    {
+    }
+
+    ~map_view() noexcept
+    {
+        if (m_pair.second)
+        {
+            m_pair.second->invalidate_scope();
+        }
+
+        if (!m_owned)
+        {
+            detach_abi(m_pair.first);
+        }
+    }
+
+private:
+
+    std::pair<interface_type, impl::input_scope *> m_pair;
+    bool m_owned{ true };
+};
+
+template <typename K, typename V>
+auto get_abi(const map_view<K, V> & object) noexcept
+{
+    return *reinterpret_cast<abi<Windows::Foundation::Collections::IMapView<K, V>> **>(&const_cast<map_view<K, V> &>(object));
+}
+
+namespace impl
+{
+    template <typename T, typename Container>
+    struct single_threaded_vector : implements<single_threaded_vector<T, Container>, wfc::IVector<T>, wfc::IVectorView<T>, wfc::IIterable<T>>
+    {
+        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+
+        explicit single_threaded_vector(Container && values) : m_values(std::forward<Container>(values))
+        {
+        }
+
+        T GetAt(const uint32_t index) const
+        {
+            if (index >= m_values.size())
             {
                 throw hresult_out_of_bounds();
             }
 
-            m_version.increment();
-            m_storage.pop_back();
+            return m_values[index];
         }
 
-        void ReplaceAll(array_view<const T> value)
+        uint32_t Size() const noexcept
         {
-            m_version.increment();
-            m_storage.assign(value.begin(), value.end());
+            return static_cast<uint32_t>(m_values.size());
+        }
+
+        wfc::IVectorView<T> GetView()
+        {
+            return *this;
+        }
+
+        bool IndexOf(const T & value, uint32_t & index) const noexcept
+        {
+            index = static_cast<uint32_t>(std::find(m_values.begin(), m_values.end(), value) - m_values.begin());
+            return index < m_values.size();
         }
 
         void SetAt(const uint32_t index, const T & value)
         {
-            if (index >= m_storage.size())
+            if (index >= m_values.size())
             {
                 throw hresult_out_of_bounds();
             }
 
-            m_version.increment();
-            m_storage[index] = value;
+            ++m_version;
+            m_values[index] = value;
         }
 
-        uint32_t Size() const noexcept
+        void InsertAt(const uint32_t index, const T & value)
         {
-            return static_cast<uint32_t>(m_storage.size());
-        }
-
-        Windows::Foundation::Collections::IIterator<T> First()
-        {
-            return make<iterator<T, std::vector<T>>>(*this, m_storage, m_version, m_version.get());
-        }
-
-    private:
-
-        std::vector<T> m_storage;
-        collection_version m_version;
-    };
-
-    template <typename T>
-    struct vector_view_standalone : implements<vector_view_standalone<T>,
-                                               Windows::Foundation::Collections::IVectorView<T>,
-                                               Windows::Foundation::Collections::IIterable<T>>
-    {
-        vector_view_standalone() = default;
-
-        vector_view_standalone(std::vector<T> && values) : m_storage(std::move(values))
-        {}
-
-        T GetAt(const uint32_t index) const
-        {
-            if (index >= m_storage.size())
+            if (index > m_values.size())
             {
                 throw hresult_out_of_bounds();
             }
 
-            return m_storage[index];
+            ++m_version;
+            m_values.insert(m_values.begin() + index, value);
         }
 
-        uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
+        void RemoveAt(const uint32_t index)
         {
-            if (startIndex >= m_storage.size())
+            if (index >= m_values.size())
+            {
+                throw hresult_out_of_bounds();
+            }
+
+            ++m_version;
+            m_values.erase(m_values.begin() + index);
+        }
+        
+        void Append(T const & value)
+        {
+            ++m_version;
+            m_values.push_back(value);
+        }
+
+        void RemoveAtEnd()
+        {
+            if (m_values.empty())
+            {
+                throw hresult_out_of_bounds();
+            }
+
+            ++m_version;
+            m_values.pop_back();
+        }
+        
+        void Clear() noexcept
+        {
+            ++m_version;
+            m_values.clear();
+        }
+        
+        uint32_t GetMany(uint32_t const startIndex, array_view<T> values) const
+        {
+            if (startIndex >= m_values.size())
             {
                 return 0;
             }
 
-            uint32_t actual = static_cast<uint32_t>(m_storage.size() - startIndex);
+            uint32_t actual = static_cast<uint32_t>(m_values.size() - startIndex);
 
             if (actual > values.size())
             {
                 actual = values.size();
             }
 
-            std::copy_n(m_storage.begin() + startIndex, actual, values.begin());
+            std::copy_n(m_values.begin() + startIndex, actual, values.begin());
             return actual;
         }
 
-        bool IndexOf(const T & value, uint32_t & index) const noexcept
+        void ReplaceAll(array_view<const T> value)
         {
-            uint32_t pos = static_cast<uint32_t>(std::find(m_storage.begin(), m_storage.end(), value) - m_storage.begin());
-            const bool valid_index = index < m_storage.size();
-
-            index = valid_index ? pos : 0;
-            return valid_index;
+            ++m_version;
+            m_values.assign(value.begin(), value.end());
         }
 
-        uint32_t Size() const noexcept
+        wfc::IIterator<T> First()
         {
-            return static_cast<uint32_t>(m_storage.size());
-        }
-
-        Windows::Foundation::Collections::IIterator<T> First() const
-        {
-            return make<iterator_standalone<T, std::vector<T>>>(*this, m_storage);
+            return make<iterator>(this);
         }
 
     private:
 
-        const std::vector<T> m_storage;
-    };
+        Container m_values;
+        uint32_t m_version{};
 
-    template <typename T>
-    struct vector_view_from_vector : implements<vector_view_from_vector<T>,
-                                                Windows::Foundation::Collections::IVectorView<T>,
-                                                Windows::Foundation::Collections::IIterable<T>>
-    {
-        vector_view_from_vector(vector<T>* vector, collection_version & owner_version, const uint32_t expected_version) :
-            version_validator(owner_version, expected_version)
+        struct iterator : implements<iterator, wfc::IIterator<T>>
         {
-            m_storage.copy_from(vector);
-        }
-
-        T GetAt(const uint32_t index) const
-        {
-            version_validator.validate();
-            return m_storage->GetAt(index);
-        }
-
-        uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
-        {
-            version_validator.validate();
-            return m_storage->GetMany(startIndex, values);
-        }
-
-        bool IndexOf(const T & value, uint32_t & index) const
-        {
-            version_validator.validate();
-            return m_storage->IndexOf(value, index);
-        }
-
-        uint32_t Size() const
-        {
-            version_validator.validate();
-            return m_storage->Size();
-        }
-
-        Windows::Foundation::Collections::IIterator<T> First()
-        {
-            version_validator.validate();
-            return m_storage->First();
-        }
-
-    private:
-
-        com_ptr<vector<T>> m_storage;
-        collection_version_validator version_validator;
-    };
-
-    template <typename T, typename Container>
-    struct iterable : implements<iterable<T, Container>,
-                                 Windows::Foundation::Collections::IIterable<T>>
-    {
-        iterable(Container && values) : m_storage(std::move(values))
-        {}
-
-        Windows::Foundation::Collections::IIterator<T> First() const
-        {
-            return make<iterator_standalone<T, Container>>(*this, m_storage);
-        }
-
-    private:
-
-        const Container m_storage;
-    };
-
-    template <typename T, typename Container>
-    struct iterator : implements<iterator<T, Container>,
-                                 Windows::Foundation::Collections::IIterator<T>>
-    {
-        iterator(const Windows::Foundation::Collections::IIterable<T> & owner, const Container & values, collection_version & owner_version, const uint32_t storage_version) noexcept :
-            m_storage(owner),
-            version_validator(owner_version, storage_version),
-            m_current(values.begin()),
-            m_end(values.end())
-        {}
-
-        T Current() const
-        {
-            version_validator.validate();
-
-            if (m_current == m_end)
+            explicit iterator(single_threaded_vector<T, Container> * owner) noexcept :
+                m_version(owner->m_version),
+                m_current(owner->m_values.begin()),
+                m_end(owner->m_values.end())
             {
-                throw hresult_out_of_bounds();
+                m_owner.copy_from(owner);
             }
 
-            return collection_traits<T>::copy(*m_current);
-        }
-
-        bool HasCurrent() const
-        {
-            version_validator.validate();
-            return m_current != m_end;
-        }
-
-        bool MoveNext()
-        {
-            version_validator.validate();
-
-            if (m_current != m_end)
+            void abi_enter() const
             {
-                ++m_current;
+                if (m_version != m_owner->m_version)
+                {
+                    throw hresult_changed_state();
+                }
             }
 
-            return m_current != m_end;
-        }
-
-        uint32_t GetMany(array_view<T> values)
-        {
-            version_validator.validate();
-
-            uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
-
-            if (actual > values.size())
+            T Current() const
             {
-                actual = values.size();
+                if (m_current == m_end)
+                {
+                    throw hresult_out_of_bounds();
+                }
+
+                return *m_current;
             }
 
-            collection_traits<T>::copy_n(m_current, actual, values.begin());
-            std::advance(m_current, actual);
-            return actual;
-        }
+            bool HasCurrent() const noexcept
+            {
+                return m_current != m_end;
+            }
 
-    private:
+            bool MoveNext() noexcept
+            {
+                if (m_current != m_end)
+                {
+                    ++m_current;
+                }
 
-        const Windows::Foundation::Collections::IIterable<T> m_storage;
-        collection_version_validator version_validator;
-        typename Container::const_iterator m_current;
-        typename Container::const_iterator m_end;
+                return HasCurrent();
+            }
+
+            uint32_t GetMany(array_view<T> values)
+            {
+                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
+
+                if (actual > values.size())
+                {
+                    actual = values.size();
+                }
+
+                std::copy_n(m_current, actual, values.begin());
+                std::advance(m_current, actual);
+                return actual;
+            }
+
+        private:
+
+            com_ptr<single_threaded_vector<T, Container>> m_owner;
+            uint32_t const m_version;
+            typename Container::const_iterator m_current;
+            typename Container::const_iterator const m_end;
+        };
     };
+}
 
-    template <typename T, typename Container>
-    struct iterator_standalone : implements<iterator_standalone<T, Container>,
-                                            Windows::Foundation::Collections::IIterator<T>>
-    {
-        iterator_standalone(const Windows::Foundation::Collections::IIterable<T> & owner, const Container & values) noexcept :
-            m_storage(owner),
-            m_current(values.begin()),
-            m_end(values.end())
-        {}
+template <typename T, typename Allocator = std::allocator<T>>
+Windows::Foundation::Collections::IVector<T> single_threaded_vector(std::vector<T, Allocator> && values = {})
+{
+    return make<impl::single_threaded_vector<T, std::vector<T, Allocator>>>(std::move(values));
+}
 
-        T Current() const
-        {
-            if (m_current == m_end)
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            return collection_traits<T>::copy(*m_current);
-        }
-
-        bool HasCurrent() const
-        {
-            return m_current != m_end;
-        }
-
-        bool MoveNext()
-        {
-            if (m_current != m_end)
-            {
-                ++m_current;
-            }
-
-            return HasCurrent();
-        }
-
-        uint32_t GetMany(array_view<T> values)
-        {
-            uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
-
-            if (actual > values.size())
-            {
-                actual = values.size();
-            }
-
-            collection_traits<T>::copy_n(m_current, actual, values.begin());
-            std::advance(m_current, actual);
-            return actual;
-        }
-
-    private:
-
-        const Windows::Foundation::Collections::IIterable<T> m_storage;
-        typename Container::const_iterator m_current;
-        typename Container::const_iterator m_end;
-    };
-
-    template <typename K, typename V>
-    struct key_value_pair : implements<key_value_pair<K, V>,
-                                       Windows::Foundation::Collections::IKeyValuePair<K, V>>
-    {
-        key_value_pair(const K & key, const V & value) :
-            m_key(key),
-            m_value(value)
-        {}
-
-        K Key() const
-        {
-            return m_key;
-        }
-
-        V Value() const
-        {
-            return m_value;
-        }
-
-    private:
-
-        K m_key;
-        V m_value;
-    };
-
+namespace impl
+{
     template <typename K, typename V, typename Container>
-    struct map : implements<map<K, V, Container>,
-                            Windows::Foundation::Collections::IMap<K, V>,
-                            Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>>
+    struct single_threaded_map : implements<single_threaded_map<K, V, Container>, wfc::IMap<K, V>, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>
     {
-        map() = default;
+        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
-        map(Container && values) : m_storage(std::move(values))
-        {}
+        using value_type = wfc::IKeyValuePair<K, V>;
 
-        void Clear() noexcept
+        explicit single_threaded_map(Container && values) : m_values(std::forward<Container>(values))
         {
-            m_version.increment();
-            m_storage.clear();
+        }
+
+        V Lookup(K const & key) const
+        {
+            auto pair = m_values.find(key);
+
+            if (pair == m_values.end())
+            {
+                throw hresult_out_of_bounds();
+            }
+
+            return pair->second;
         }
 
         uint32_t Size() const noexcept
         {
-            return static_cast<uint32_t>(m_storage.size());
+            return static_cast<uint32_t>(m_values.size());
         }
 
-        Windows::Foundation::Collections::IMapView<K, V> GetView()
+        bool HasKey(K const & key) const noexcept
         {
-            return make<map_view_from_map<K, V, Container>>(this, m_version, m_version.get());
+            return m_values.find(key) != m_values.end();
         }
 
-        bool HasKey(const K & key) const noexcept
+        wfc::IMapView<K, V> GetView() const
         {
-            return m_storage.find(key) != m_storage.end();
+            return *this;
         }
 
         bool Insert(const K & key, const V & value)
         {
-            m_version.increment();
-            auto pair = m_storage.insert_or_assign(key, value);
+            ++m_version;
+            auto pair = m_values.insert_or_assign(key, value);
             return !pair.second;
+
         }
 
-        V Lookup(const K & key) const
+        void Remove(const K & key)
         {
-            auto pair = m_storage.find(key);
+            ++m_version;
+            m_values.erase(key);
+        }
 
-            if (pair == m_storage.end())
+        void Clear() noexcept
+        {
+            ++m_version;
+            m_values.clear();
+        }
+
+        void Split(wfc::IMapView<K, V> & first, wfc::IMapView<K, V> & second) const noexcept
+        {
+            first = nullptr;
+            second = nullptr;
+        }
+
+        wfc::IIterator<value_type> First()
+        {
+            return make<iterator>(this);
+        }
+
+    private:
+
+        Container m_values;
+        uint32_t m_version{};
+
+        struct iterator : implements<iterator, wfc::IIterator<value_type>>
+        {
+            explicit iterator(single_threaded_map<K, V, Container> * owner) noexcept :
+                m_version(owner->m_version),
+                m_current(owner->m_values.begin()),
+                m_end(owner->m_values.end())
             {
-                throw hresult_out_of_bounds();
+                m_owner.copy_from(owner);
             }
 
-            return pair->second;
-        }
-
-        void Remove(const K & key) noexcept
-        {
-            m_version.increment();
-            m_storage.erase(key);
-        }
-
-        Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<K, V>> First()
-        {
-            return make<iterator<Windows::Foundation::Collections::IKeyValuePair<K, V>, Container>>(*this, m_storage, m_version, m_version.get());
-        }
-
-    private:
-
-        Container m_storage;
-        collection_version m_version;
-    };
-
-    template <typename K, typename V, typename Container>
-    struct map_view_from_map : implements<map_view_from_map<K, V, Container>,
-                                          Windows::Foundation::Collections::IMapView<K, V>,
-                                          Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>>
-    {
-        map_view_from_map(map<K, V, Container>* map, collection_version & owner_version, const uint32_t storage_version) : 
-            version_validator(owner_version, storage_version)
-        {
-            m_storage.copy_from(map);
-        }
-
-        bool HasKey(const K & key) const
-        {
-            version_validator.validate();
-            return m_storage->HasKey(key);
-        }
-
-        V Lookup(const K & key) const
-        {
-            version_validator.validate();
-            return m_storage->Lookup(key);
-        }
-
-        uint32_t Size() const
-        {
-            version_validator.validate();
-            return m_storage->Size();
-        }
-
-        void Split(Windows::Foundation::Collections::IMapView<K, V> & firstPartition, Windows::Foundation::Collections::IMapView<K, V> & secondPartition) const
-        {
-            version_validator.validate();
-
-            firstPartition = nullptr;
-            secondPartition = nullptr;
-        }
-
-        Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<K, V>> First()
-        {
-            version_validator.validate();
-            return m_storage->First();
-        }
-
-    private:
-
-        com_ptr<map<K, V, Container>> m_storage;
-        collection_version_validator version_validator;
-    };
-
-    template <typename K, typename V, typename Container>
-    struct map_view_standalone: implements<map_view_standalone<K, V, Container>,
-                                           Windows::Foundation::Collections::IMapView<K, V>,
-                                           Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>>
-    {
-        map_view_standalone() = default;
-
-        map_view_standalone(Container && values) : m_storage(std::move(values))
-        {}
-
-        bool HasKey(const K & key) const noexcept
-        {
-            return m_storage.find(key) != m_storage.end();
-        }
-
-        V Lookup(const K & key) const
-        {
-            auto pair = m_storage.find(key);
-
-            if (pair == m_storage.end())
+            void abi_enter() const
             {
-                throw hresult_out_of_bounds();
+                if (m_version != m_owner->m_version)
+                {
+                    throw hresult_changed_state();
+                }
             }
 
-            return pair->second;
-        }
+            value_type Current() const
+            {
+                if (m_current == m_end)
+                {
+                    throw hresult_out_of_bounds();
+                }
 
-        uint32_t Size() const noexcept
-        {
-           return static_cast<uint32_t>(m_storage.size());
-        }
+                return collection_traits<value_type>::copy(*m_current);
+            }
 
-        void Split(Windows::Foundation::Collections::IMapView<K, V> & firstPartition, Windows::Foundation::Collections::IMapView<K, V> & secondPartition) const noexcept
-        {
-            firstPartition = nullptr;
-            secondPartition = nullptr;
-        }
+            bool HasCurrent() const noexcept
+            {
+                return m_current != m_end;
+            }
 
-        Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<K, V>> First()
-        {
-            return make<impl::iterator_standalone<Windows::Foundation::Collections::IKeyValuePair<K, V>, Container>>(*this, m_storage);
-        }
+            bool MoveNext() noexcept
+            {
+                if (m_current != m_end)
+                {
+                    ++m_current;
+                }
 
-    private:
+                return HasCurrent();
+            }
 
-        Container m_storage;
+            uint32_t GetMany(array_view<value_type> values)
+            {
+                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
+
+                if (actual > values.size())
+                {
+                    actual = values.size();
+                }
+
+                collection_traits<value_type>::copy_n(m_current, actual, values.begin());
+                std::advance(m_current, actual);
+                return actual;
+            }
+
+        private:
+
+            com_ptr<single_threaded_map<K, V, Container>> m_owner;
+            uint32_t const m_version;
+            typename Container::const_iterator m_current;
+            typename Container::const_iterator const m_end;
+        };
     };
+}
+
+template <typename K, typename V, typename Compare = std::less<K>, typename Allocator = std::allocator<std::pair<K const, V>>>
+Windows::Foundation::Collections::IMap<K, V> single_threaded_map()
+{
+    return make<impl::single_threaded_map<K, V, std::map<K, V, Compare, Allocator>>>(std::map<K, V, Compare, Allocator>{});
+}
+
+template <typename K, typename V, typename Compare = std::less<K>, typename Allocator = std::allocator<std::pair<K const, V>>>
+Windows::Foundation::Collections::IMap<K, V> single_threaded_map(std::map<K, V, Compare, Allocator> && values)
+{
+    return make<impl::single_threaded_map<K, V, std::map<K, V, Compare, Allocator>>>(std::move(values));
+}
+
+template <typename K, typename V, typename Hash = std::hash<K>, typename KeyEqual = std::equal_to<K>, typename Allocator = std::allocator<std::pair<const K, V>>>
+Windows::Foundation::Collections::IMap<K, V> single_threaded_map(std::unordered_map<K, V, Hash, KeyEqual, Allocator> && values)
+{
+    return make<impl::single_threaded_map<K, V, std::unordered_map<K, V, Hash, KeyEqual, Allocator>>>(std::move(values));
 }
 
 namespace Windows::Foundation

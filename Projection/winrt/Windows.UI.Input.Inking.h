@@ -2843,7 +2843,7 @@ template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStrokeBuild
     return stroke;
 }
 
-template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStrokeBuilder<D>::CreateStroke(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> & points) const
+template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStrokeBuilder<D>::CreateStroke(iterable<Windows::Foundation::Point> points) const
 {
     Windows::UI::Input::Inking::InkStroke stroke { nullptr };
     check_hresult(WINRT_SHIM(IInkStrokeBuilder)->abi_CreateStroke(get_abi(points), put_abi(stroke)));
@@ -2855,7 +2855,7 @@ template <typename D> void impl_IInkStrokeBuilder<D>::SetDefaultDrawingAttribute
     check_hresult(WINRT_SHIM(IInkStrokeBuilder)->abi_SetDefaultDrawingAttributes(get_abi(drawingAttributes)));
 }
 
-template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStrokeBuilder2<D>::CreateStrokeFromInkPoints(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> & inkPoints, const Windows::Foundation::Numerics::float3x2 & transform) const
+template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStrokeBuilder2<D>::CreateStrokeFromInkPoints(iterable<Windows::UI::Input::Inking::InkPoint> inkPoints, const Windows::Foundation::Numerics::float3x2 & transform) const
 {
     Windows::UI::Input::Inking::InkStroke result { nullptr };
     check_hresult(WINRT_SHIM(IInkStrokeBuilder2)->abi_CreateStrokeFromInkPoints(get_abi(inkPoints), get_abi(transform), put_abi(result)));
@@ -2909,7 +2909,7 @@ template <typename D> Windows::Foundation::Rect impl_IInkStrokeContainer<D>::Mov
     return invalidatedRectangle;
 }
 
-template <typename D> Windows::Foundation::Rect impl_IInkStrokeContainer<D>::SelectWithPolyLine(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> & polyline) const
+template <typename D> Windows::Foundation::Rect impl_IInkStrokeContainer<D>::SelectWithPolyLine(iterable<Windows::Foundation::Point> polyline) const
 {
     Windows::Foundation::Rect invalidatedRectangle {};
     check_hresult(WINRT_SHIM(IInkStrokeContainer)->abi_SelectWithPolyLine(get_abi(polyline), put_abi(invalidatedRectangle)));
@@ -2956,7 +2956,7 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint32_t,
     return outputStreamOperation;
 }
 
-template <typename D> void impl_IInkStrokeContainer<D>::UpdateRecognitionResults(const Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> & recognitionResults) const
+template <typename D> void impl_IInkStrokeContainer<D>::UpdateRecognitionResults(vector_view<Windows::UI::Input::Inking::InkRecognitionResult> recognitionResults) const
 {
     check_hresult(WINRT_SHIM(IInkStrokeContainer)->abi_UpdateRecognitionResults(get_abi(recognitionResults)));
 }
@@ -2975,7 +2975,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI:
     return recognitionResults;
 }
 
-template <typename D> void impl_IInkStrokeContainer2<D>::AddStrokes(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke> & strokes) const
+template <typename D> void impl_IInkStrokeContainer2<D>::AddStrokes(iterable<Windows::UI::Input::Inking::InkStroke> strokes) const
 {
     check_hresult(WINRT_SHIM(IInkStrokeContainer2)->abi_AddStrokes(get_abi(strokes)));
 }

@@ -148,7 +148,7 @@ struct WINRT_EBO impl_ISpatialSurfaceObserver
 {
     Windows::Foundation::Collections::IMapView<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> GetObservedSurfaces() const;
     void SetBoundingVolume(const Windows::Perception::Spatial::SpatialBoundingVolume & bounds) const;
-    void SetBoundingVolumes(const Windows::Foundation::Collections::IIterable<Windows::Perception::Spatial::SpatialBoundingVolume> & bounds) const;
+    void SetBoundingVolumes(iterable<Windows::Perception::Spatial::SpatialBoundingVolume> bounds) const;
     event_token ObservedSurfacesChanged(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> & handler) const;
     using ObservedSurfacesChanged_revoker = event_revoker<ISpatialSurfaceObserver>;
     ObservedSurfacesChanged_revoker ObservedSurfacesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::Foundation::IInspectable> & handler) const;

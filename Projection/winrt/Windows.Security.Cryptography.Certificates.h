@@ -3676,14 +3676,14 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Sec
     return certificates;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> impl_ICertificate<D>::BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> impl_ICertificate<D>::BuildChainAsync(iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> value;
     check_hresult(WINRT_SHIM(ICertificate)->abi_BuildChainAsync(get_abi(certificates), put_abi(value)));
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> impl_ICertificate<D>::BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates, const Windows::Security::Cryptography::Certificates::ChainBuildingParameters & parameters) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> impl_ICertificate<D>::BuildChainAsync(iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates, const Windows::Security::Cryptography::Certificates::ChainBuildingParameters & parameters) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> value;
     check_hresult(WINRT_SHIM(ICertificate)->abi_BuildChainWithParametersAsync(get_abi(certificates), get_abi(parameters), put_abi(value)));
@@ -4158,7 +4158,7 @@ template <typename D> Windows::Security::Cryptography::Certificates::CmsAttached
     return cmsSignedData;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ICmsAttachedSignatureStatics<D>::GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ICmsAttachedSignatureStatics<D>::GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, iterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> signers, iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> outputBlob;
     check_hresult(WINRT_SHIM(ICmsAttachedSignatureStatics)->abi_GenerateSignatureAsync(get_abi(data), get_abi(signers), get_abi(certificates), put_abi(outputBlob)));
@@ -4193,7 +4193,7 @@ template <typename D> Windows::Security::Cryptography::Certificates::CmsDetached
     return cmsSignedData;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ICmsDetachedSignatureStatics<D>::GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ICmsDetachedSignatureStatics<D>::GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, iterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> signers, iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> outputBlob;
     check_hresult(WINRT_SHIM(ICmsDetachedSignatureStatics)->abi_GenerateSignatureAsync(get_abi(data), get_abi(signers), get_abi(certificates), put_abi(outputBlob)));
@@ -4288,7 +4288,7 @@ inline CmsAttachedSignature::CmsAttachedSignature(const Windows::Storage::Stream
     CmsAttachedSignature(get_activation_factory<CmsAttachedSignature, ICmsAttachedSignatureFactory>().CreateCmsAttachedSignature(inputBlob))
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CmsAttachedSignature::GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CmsAttachedSignature::GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, iterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> signers, iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates)
 {
     return get_activation_factory<CmsAttachedSignature, ICmsAttachedSignatureStatics>().GenerateSignatureAsync(data, signers, certificates);
 }
@@ -4297,7 +4297,7 @@ inline CmsDetachedSignature::CmsDetachedSignature(const Windows::Storage::Stream
     CmsDetachedSignature(get_activation_factory<CmsDetachedSignature, ICmsDetachedSignatureFactory>().CreateCmsDetachedSignature(inputBlob))
 {}
 
-inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CmsDetachedSignature::GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates)
+inline Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> CmsDetachedSignature::GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, iterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> signers, iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates)
 {
     return get_activation_factory<CmsDetachedSignature, ICmsDetachedSignatureStatics>().GenerateSignatureAsync(data, signers, certificates);
 }

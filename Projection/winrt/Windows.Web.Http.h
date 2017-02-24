@@ -1937,7 +1937,7 @@ template <typename D> Windows::Web::Http::HttpStreamContent impl_IHttpStreamCont
     return streamContent;
 }
 
-template <typename D> Windows::Web::Http::HttpFormUrlEncodedContent impl_IHttpFormUrlEncodedContentFactory<D>::Create(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & content) const
+template <typename D> Windows::Web::Http::HttpFormUrlEncodedContent impl_IHttpFormUrlEncodedContentFactory<D>::Create(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> content) const
 {
     Windows::Web::Http::HttpFormUrlEncodedContent formUrlEncodedContent { nullptr };
     check_hresult(WINRT_SHIM(IHttpFormUrlEncodedContentFactory)->abi_Create(get_abi(content), put_abi(formUrlEncodedContent)));
@@ -2005,7 +2005,7 @@ inline HttpCookie::HttpCookie(hstring_view name, hstring_view domain, hstring_vi
     HttpCookie(get_activation_factory<HttpCookie, IHttpCookieFactory>().Create(name, domain, path))
 {}
 
-inline HttpFormUrlEncodedContent::HttpFormUrlEncodedContent(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & content) :
+inline HttpFormUrlEncodedContent::HttpFormUrlEncodedContent(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> content) :
     HttpFormUrlEncodedContent(get_activation_factory<HttpFormUrlEncodedContent, IHttpFormUrlEncodedContentFactory>().Create(content))
 {}
 

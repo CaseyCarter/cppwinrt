@@ -44,8 +44,8 @@ struct CurrentApp
     static Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_view productId);
     static Windows::Foundation::IAsyncOperation<hstring> GetCustomerPurchaseIdAsync(hstring_view serviceTicket, hstring_view publisherUserId);
     static Windows::Foundation::IAsyncOperation<hstring> GetCustomerCollectionsIdAsync(hstring_view serviceTicket, hstring_view publisherUserId);
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds);
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(iterable<hstring> productIds);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(iterable<hstring> keywords);
     static void ReportProductFulfillment(hstring_view productId);
     static Windows::Foundation::IAsyncOperation<hstring> GetAppPurchaseCampaignIdAsync();
     static Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(hstring_view productId, GUID transactionId);
@@ -66,8 +66,8 @@ struct CurrentAppSimulator
     static Windows::Foundation::IAsyncOperation<hstring> GetAppReceiptAsync();
     static Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_view productId);
     static Windows::Foundation::IAsyncAction ReloadSimulatorAsync(const Windows::Storage::StorageFile & simulatorSettingsFile);
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds);
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(iterable<hstring> productIds);
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(iterable<hstring> keywords);
     static Windows::Foundation::IAsyncOperation<hstring> GetAppPurchaseCampaignIdAsync();
     static Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(hstring_view productId, GUID transactionId);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_view productId);

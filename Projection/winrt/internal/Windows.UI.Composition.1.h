@@ -1054,7 +1054,7 @@ struct WINRT_EBO impl_ICompositor
     Windows::UI::Composition::ContainerVisual CreateContainerVisual() const;
     Windows::UI::Composition::CubicBezierEasingFunction CreateCubicBezierEasingFunction(const Windows::Foundation::Numerics::float2 & controlPoint1, const Windows::Foundation::Numerics::float2 & controlPoint2) const;
     Windows::UI::Composition::CompositionEffectFactory CreateEffectFactory(const Windows::Graphics::Effects::IGraphicsEffect & graphicsEffect) const;
-    Windows::UI::Composition::CompositionEffectFactory CreateEffectFactory(const Windows::Graphics::Effects::IGraphicsEffect & graphicsEffect, const Windows::Foundation::Collections::IIterable<hstring> & animatableProperties) const;
+    Windows::UI::Composition::CompositionEffectFactory CreateEffectFactory(const Windows::Graphics::Effects::IGraphicsEffect & graphicsEffect, iterable<hstring> animatableProperties) const;
     Windows::UI::Composition::ExpressionAnimation CreateExpressionAnimation() const;
     Windows::UI::Composition::ExpressionAnimation CreateExpressionAnimation(hstring_view expression) const;
     Windows::UI::Composition::InsetClip CreateInsetClip() const;

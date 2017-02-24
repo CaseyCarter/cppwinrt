@@ -479,14 +479,14 @@ struct WINRT_EBO impl_IInkStrokeBuilder
     void BeginStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const;
     Windows::UI::Input::PointerPoint AppendToStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const;
     Windows::UI::Input::Inking::InkStroke EndStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const;
-    Windows::UI::Input::Inking::InkStroke CreateStroke(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> & points) const;
+    Windows::UI::Input::Inking::InkStroke CreateStroke(iterable<Windows::Foundation::Point> points) const;
     void SetDefaultDrawingAttributes(const Windows::UI::Input::Inking::InkDrawingAttributes & drawingAttributes) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IInkStrokeBuilder2
 {
-    Windows::UI::Input::Inking::InkStroke CreateStrokeFromInkPoints(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> & inkPoints, const Windows::Foundation::Numerics::float3x2 & transform) const;
+    Windows::UI::Input::Inking::InkStroke CreateStrokeFromInkPoints(iterable<Windows::UI::Input::Inking::InkPoint> inkPoints, const Windows::Foundation::Numerics::float3x2 & transform) const;
 };
 
 template <typename D>
@@ -496,14 +496,14 @@ struct WINRT_EBO impl_IInkStrokeContainer
     void AddStroke(const Windows::UI::Input::Inking::InkStroke & stroke) const;
     Windows::Foundation::Rect DeleteSelected() const;
     Windows::Foundation::Rect MoveSelected(const Windows::Foundation::Point & translation) const;
-    Windows::Foundation::Rect SelectWithPolyLine(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> & polyline) const;
+    Windows::Foundation::Rect SelectWithPolyLine(iterable<Windows::Foundation::Point> polyline) const;
     Windows::Foundation::Rect SelectWithLine(const Windows::Foundation::Point & from, const Windows::Foundation::Point & to) const;
     void CopySelectedToClipboard() const;
     Windows::Foundation::Rect PasteFromClipboard(const Windows::Foundation::Point & position) const;
     bool CanPasteFromClipboard() const;
     Windows::Foundation::IAsyncActionWithProgress<uint64_t> LoadAsync(const Windows::Storage::Streams::IInputStream & inputStream) const;
     Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> SaveAsync(const Windows::Storage::Streams::IOutputStream & outputStream) const;
-    void UpdateRecognitionResults(const Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> & recognitionResults) const;
+    void UpdateRecognitionResults(vector_view<Windows::UI::Input::Inking::InkRecognitionResult> recognitionResults) const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> GetStrokes() const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> GetRecognitionResults() const;
 };
@@ -511,7 +511,7 @@ struct WINRT_EBO impl_IInkStrokeContainer
 template <typename D>
 struct WINRT_EBO impl_IInkStrokeContainer2
 {
-    void AddStrokes(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke> & strokes) const;
+    void AddStrokes(iterable<Windows::UI::Input::Inking::InkStroke> strokes) const;
     void Clear() const;
 };
 

@@ -74,7 +74,7 @@ template <typename D>
 struct WINRT_EBO impl_IOnlineIdAuthenticator
 {
     Windows::Security::Authentication::OnlineId::UserAuthenticationOperation AuthenticateUserAsync(const Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest & request) const;
-    Windows::Security::Authentication::OnlineId::UserAuthenticationOperation AuthenticateUserAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> & requests, Windows::Security::Authentication::OnlineId::CredentialPromptType credentialPromptType) const;
+    Windows::Security::Authentication::OnlineId::UserAuthenticationOperation AuthenticateUserAsync(iterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> requests, Windows::Security::Authentication::OnlineId::CredentialPromptType credentialPromptType) const;
     Windows::Security::Authentication::OnlineId::SignOutUserOperation SignOutUserAsync() const;
     void ApplicationId(GUID value) const;
     GUID ApplicationId() const;

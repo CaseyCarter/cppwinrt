@@ -780,17 +780,17 @@ struct WINRT_EBO impl_IChatMessageStore
 template <typename D>
 struct WINRT_EBO impl_IChatMessageStore2
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> ForwardMessageAsync(hstring_view localChatMessageId, const Windows::Foundation::Collections::IIterable<hstring> & addresses) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> ForwardMessageAsync(hstring_view localChatMessageId, iterable<hstring> addresses) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> GetConversationAsync(hstring_view conversationId) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> GetConversationAsync(hstring_view conversationId, const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> GetConversationAsync(hstring_view conversationId, iterable<hstring> transportIds) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> GetConversationFromThreadingInfoAsync(const Windows::ApplicationModel::Chat::ChatConversationThreadingInfo & threadingInfo) const;
     Windows::ApplicationModel::Chat::ChatConversationReader GetConversationReader() const;
-    Windows::ApplicationModel::Chat::ChatConversationReader GetConversationReader(const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const;
+    Windows::ApplicationModel::Chat::ChatConversationReader GetConversationReader(iterable<hstring> transportIds) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> GetMessageByRemoteIdAsync(hstring_view transportId, hstring_view remoteId) const;
     Windows::Foundation::IAsyncOperation<int32_t> GetUnseenCountAsync() const;
-    Windows::Foundation::IAsyncOperation<int32_t> GetUnseenCountAsync(const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const;
+    Windows::Foundation::IAsyncOperation<int32_t> GetUnseenCountAsync(iterable<hstring> transportIds) const;
     Windows::Foundation::IAsyncAction MarkAsSeenAsync() const;
-    Windows::Foundation::IAsyncAction MarkAsSeenAsync(const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const;
+    Windows::Foundation::IAsyncAction MarkAsSeenAsync(iterable<hstring> transportIds) const;
     Windows::ApplicationModel::Chat::ChatSearchReader GetSearchReader(const Windows::ApplicationModel::Chat::ChatQueryOptions & value) const;
     Windows::Foundation::IAsyncAction SaveMessageAsync(const Windows::ApplicationModel::Chat::ChatMessage & chatMessage) const;
     Windows::Foundation::IAsyncOperation<bool> TryCancelDownloadMessageAsync(hstring_view localChatMessageId) const;

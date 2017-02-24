@@ -523,7 +523,7 @@ template <typename D>
 struct WINRT_EBO impl_IAllJoynBusAttachmentStatics
 {
     Windows::Devices::AllJoyn::AllJoynBusAttachment GetDefault() const;
-    Windows::Devices::Enumeration::DeviceWatcher GetWatcher(const Windows::Foundation::Collections::IIterable<hstring> & requiredInterfaces) const;
+    Windows::Devices::Enumeration::DeviceWatcher GetWatcher(iterable<hstring> requiredInterfaces) const;
 };
 
 template <typename D>

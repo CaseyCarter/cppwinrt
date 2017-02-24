@@ -234,7 +234,7 @@ struct WINRT_EBO impl_IDeviceAccountConfiguration2
 template <typename D>
 struct WINRT_EBO impl_IUserDataAccountSystemAccessManagerStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> AddAndShowDeviceAccountsAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> & accounts) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> AddAndShowDeviceAccountsAsync(iterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> accounts) const;
 };
 
 template <typename D>

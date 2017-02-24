@@ -37,7 +37,7 @@ struct WINRT_EBO QueryOptions :
 {
     QueryOptions(std::nullptr_t) noexcept {}
     QueryOptions();
-    QueryOptions(Windows::Storage::Search::CommonFileQuery query, const Windows::Foundation::Collections::IIterable<hstring> & fileTypeFilter);
+    QueryOptions(Windows::Storage::Search::CommonFileQuery query, iterable<hstring> fileTypeFilter);
     QueryOptions(Windows::Storage::Search::CommonFolderQuery query);
 };
 

@@ -1576,7 +1576,7 @@ struct produce<D, Windows::UI::Xaml::Data::IValueConverter> : produce_base<D, Wi
 
 namespace Windows::UI::Xaml::Data {
 
-template <typename D> void impl_IItemsRangeInfo<D>::RangesChanged(const Windows::UI::Xaml::Data::ItemIndexRange & visibleRange, const Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Data::ItemIndexRange> & trackedItems) const
+template <typename D> void impl_IItemsRangeInfo<D>::RangesChanged(const Windows::UI::Xaml::Data::ItemIndexRange & visibleRange, vector_view<Windows::UI::Xaml::Data::ItemIndexRange> trackedItems) const
 {
     check_hresult(WINRT_SHIM(IItemsRangeInfo)->abi_RangesChanged(get_abi(visibleRange), get_abi(trackedItems)));
 }

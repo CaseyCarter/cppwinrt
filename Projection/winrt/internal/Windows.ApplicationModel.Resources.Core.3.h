@@ -33,11 +33,11 @@ struct WINRT_EBO ResourceContext :
 {
     ResourceContext(std::nullptr_t) noexcept {}
     ResourceContext();
-    [[deprecated("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")]] static Windows::ApplicationModel::Resources::Core::ResourceContext CreateMatchingContext(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result);
+    [[deprecated("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")]] static Windows::ApplicationModel::Resources::Core::ResourceContext CreateMatchingContext(iterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> result);
     static Windows::ApplicationModel::Resources::Core::ResourceContext GetForCurrentView();
     static void SetGlobalQualifierValue(hstring_view key, hstring_view value);
     static void ResetGlobalQualifierValues();
-    static void ResetGlobalQualifierValues(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames);
+    static void ResetGlobalQualifierValues(iterable<hstring> qualifierNames);
     static Windows::ApplicationModel::Resources::Core::ResourceContext GetForViewIndependentUse();
     static void SetGlobalQualifierValue(hstring_view key, hstring_view value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence);
 };

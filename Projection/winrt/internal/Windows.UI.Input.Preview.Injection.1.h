@@ -197,10 +197,10 @@ struct WINRT_EBO impl_IInjectedInputTouchInfo
 template <typename D>
 struct WINRT_EBO impl_IInputInjector
 {
-    void InjectKeyboardInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> & input) const;
-    void InjectMouseInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> & input) const;
+    void InjectKeyboardInput(iterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> input) const;
+    void InjectMouseInput(iterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> input) const;
     void InitializeTouchInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) const;
-    void InjectTouchInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo> & input) const;
+    void InjectTouchInput(iterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo> input) const;
     void UninitializeTouchInjection() const;
     void InitializePenInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) const;
     void InjectPenInput(const Windows::UI::Input::Preview::Injection::InjectedInputPenInfo & input) const;

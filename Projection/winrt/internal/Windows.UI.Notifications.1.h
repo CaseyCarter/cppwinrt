@@ -729,8 +729,8 @@ struct WINRT_EBO impl_ITileUpdater
     void StartPeriodicUpdate(const Windows::Foundation::Uri & tileContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const;
     void StartPeriodicUpdate(const Windows::Foundation::Uri & tileContent, const Windows::Foundation::DateTime & startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const;
     void StopPeriodicUpdate() const;
-    void StartPeriodicUpdateBatch(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & tileContents, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const;
-    void StartPeriodicUpdateBatch(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & tileContents, const Windows::Foundation::DateTime & startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const;
+    void StartPeriodicUpdateBatch(iterable<Windows::Foundation::Uri> tileContents, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const;
+    void StartPeriodicUpdateBatch(iterable<Windows::Foundation::Uri> tileContents, const Windows::Foundation::DateTime & startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const;
 };
 
 template <typename D>

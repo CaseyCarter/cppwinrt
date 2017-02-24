@@ -24,9 +24,9 @@ struct WINRT_EBO Calendar :
 {
     Calendar(std::nullptr_t) noexcept {}
     Calendar();
-    Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId);
-    Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages);
-    Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock);
+    Calendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId);
+    Calendar(iterable<hstring> languages);
+    Calendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock);
 };
 
 struct CalendarIdentifiers

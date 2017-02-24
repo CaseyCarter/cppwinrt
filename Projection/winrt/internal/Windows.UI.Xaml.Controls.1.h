@@ -6058,7 +6058,7 @@ struct WINRT_EBO impl_ICalendarViewDayItem
     bool IsBlackout() const;
     void IsBlackout(bool value) const;
     Windows::Foundation::DateTime Date() const;
-    void SetDensityColors(const Windows::Foundation::Collections::IIterable<Windows::UI::Color> & colors) const;
+    void SetDensityColors(iterable<Windows::UI::Color> colors) const;
 };
 
 template <typename D>
@@ -11119,7 +11119,7 @@ struct WINRT_EBO impl_IWebView2
     void Refresh() const;
     void Stop() const;
     Windows::Foundation::IAsyncAction CapturePreviewToStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & stream) const;
-    Windows::Foundation::IAsyncOperation<hstring> InvokeScriptAsync(hstring_view scriptName, const Windows::Foundation::Collections::IIterable<hstring> & arguments) const;
+    Windows::Foundation::IAsyncOperation<hstring> InvokeScriptAsync(hstring_view scriptName, iterable<hstring> arguments) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::DataTransfer::DataPackage> CaptureSelectedContentToDataPackageAsync() const;
     void NavigateToLocalStreamUri(const Windows::Foundation::Uri & source, const Windows::Web::IUriToStreamResolver & streamResolver) const;
     Windows::Foundation::Uri BuildLocalStreamUri(hstring_view contentIdentifier, hstring_view relativePath) const;

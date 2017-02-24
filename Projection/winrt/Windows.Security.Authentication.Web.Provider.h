@@ -1000,14 +1000,14 @@ template <typename D> Windows::Security::Authentication::Web::Provider::WebAccou
     return view;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics<D>::UpdateWebAccountPropertiesAsync(const Windows::Security::Credentials::WebAccount & webAccount, hstring_view webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & additionalProperties) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics<D>::UpdateWebAccountPropertiesAsync(const Windows::Security::Credentials::WebAccount & webAccount, hstring_view webAccountUserName, map_view<hstring, hstring> additionalProperties) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
     check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_UpdateWebAccountPropertiesAsync(get_abi(webAccount), get_abi(webAccountUserName), get_abi(additionalProperties), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountManagerStatics<D>::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountManagerStatics<D>::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> asyncInfo;
     check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_AddWebAccountAsync(get_abi(webAccountId), get_abi(webAccountUserName), get_abi(props), put_abi(asyncInfo)));
@@ -1028,7 +1028,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics<D>::PushCookiesAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IVectorView<Windows::Web::Http::HttpCookie> & cookies) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerStatics<D>::PushCookiesAsync(const Windows::Foundation::Uri & uri, vector_view<Windows::Web::Http::HttpCookie> cookies) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
     check_hresult(WINRT_SHIM(IWebAccountManagerStatics)->abi_PushCookiesAsync(get_abi(uri), get_abi(cookies), put_abi(asyncInfo)));
@@ -1077,7 +1077,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountManagerS
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountScopeManagerStatics<D>::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountScopeManagerStatics<D>::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> asyncInfo;
     check_hresult(WINRT_SHIM(IWebAccountScopeManagerStatics)->abi_AddWebAccountWithScopeAsync(get_abi(webAccountId), get_abi(webAccountUserName), get_abi(props), scope, put_abi(asyncInfo)));
@@ -1098,7 +1098,7 @@ template <typename D> Windows::Security::Authentication::Web::Provider::WebAccou
     return scope;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountMapManagerStatics<D>::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_view perUserWebAccountId) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountMapManagerStatics<D>::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_view perUserWebAccountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> asyncInfo;
     check_hresult(WINRT_SHIM(IWebAccountMapManagerStatics)->abi_AddWebAccountWithScopeAndMapAsync(get_abi(webAccountId), get_abi(webAccountUserName), get_abi(props), scope, get_abi(perUserWebAccountId), put_abi(asyncInfo)));
@@ -1270,12 +1270,12 @@ inline WebAccountClientView::WebAccountClientView(Windows::Security::Authenticat
     WebAccountClientView(get_activation_factory<WebAccountClientView, IWebAccountClientViewFactory>().CreateWithPairwiseId(viewType, applicationCallbackUri, accountPairwiseId))
 {}
 
-inline Windows::Foundation::IAsyncAction WebAccountManager::UpdateWebAccountPropertiesAsync(const Windows::Security::Credentials::WebAccount & webAccount, hstring_view webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & additionalProperties)
+inline Windows::Foundation::IAsyncAction WebAccountManager::UpdateWebAccountPropertiesAsync(const Windows::Security::Credentials::WebAccount & webAccount, hstring_view webAccountUserName, map_view<hstring, hstring> additionalProperties)
 {
     return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().UpdateWebAccountPropertiesAsync(webAccount, webAccountUserName, additionalProperties);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props)
 {
     return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().AddWebAccountAsync(webAccountId, webAccountUserName, props);
 }
@@ -1290,7 +1290,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().FindAllProviderWebAccountsAsync();
 }
 
-inline Windows::Foundation::IAsyncAction WebAccountManager::PushCookiesAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IVectorView<Windows::Web::Http::HttpCookie> & cookies)
+inline Windows::Foundation::IAsyncAction WebAccountManager::PushCookiesAsync(const Windows::Foundation::Uri & uri, vector_view<Windows::Web::Http::HttpCookie> cookies)
 {
     return get_activation_factory<WebAccountManager, IWebAccountManagerStatics>().PushCookiesAsync(uri, cookies);
 }
@@ -1325,7 +1325,7 @@ inline Windows::Foundation::IAsyncAction WebAccountManager::PullCookiesAsync(hst
     return get_activation_factory<WebAccountManager, IWebAccountManagerStatics2>().PullCookiesAsync(uriString, callerPFN);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_view perUserWebAccountId)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_view perUserWebAccountId)
 {
     return get_activation_factory<WebAccountManager, IWebAccountMapManagerStatics>().AddWebAccountAsync(webAccountId, webAccountUserName, props, scope, perUserWebAccountId);
 }
@@ -1345,7 +1345,7 @@ inline Windows::Foundation::IAsyncAction WebAccountManager::ClearPerUserFromPerA
     return get_activation_factory<WebAccountManager, IWebAccountMapManagerStatics>().ClearPerUserFromPerAppAccountAsync(perAppAccount);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope)
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope)
 {
     return get_activation_factory<WebAccountManager, IWebAccountScopeManagerStatics>().AddWebAccountAsync(webAccountId, webAccountUserName, props, scope);
 }

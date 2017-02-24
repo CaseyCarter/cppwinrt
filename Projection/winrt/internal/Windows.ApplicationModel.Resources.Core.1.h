@@ -185,8 +185,8 @@ struct WINRT_EBO impl_IResourceContext
 {
     Windows::Foundation::Collections::IObservableMap<hstring, hstring> QualifierValues() const;
     void Reset() const;
-    void Reset(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames) const;
-    void OverrideToMatch(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result) const;
+    void Reset(iterable<hstring> qualifierNames) const;
+    void OverrideToMatch(iterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> result) const;
     Windows::ApplicationModel::Resources::Core::ResourceContext Clone() const;
     Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
     void Languages(const Windows::Foundation::Collections::IVectorView<hstring> & languages) const;
@@ -195,7 +195,7 @@ struct WINRT_EBO impl_IResourceContext
 template <typename D>
 struct WINRT_EBO impl_IResourceContextStatics
 {
-    [[deprecated("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")]] Windows::ApplicationModel::Resources::Core::ResourceContext CreateMatchingContext(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result) const;
+    [[deprecated("CreateMatchingContext may be altered or unavailable for releases after Windows 8.1. Instead, use ResourceContext.GetForCurrentView.OverrideToMatch.")]] Windows::ApplicationModel::Resources::Core::ResourceContext CreateMatchingContext(iterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> result) const;
 };
 
 template <typename D>
@@ -204,7 +204,7 @@ struct WINRT_EBO impl_IResourceContextStatics2
     Windows::ApplicationModel::Resources::Core::ResourceContext GetForCurrentView() const;
     void SetGlobalQualifierValue(hstring_view key, hstring_view value) const;
     void ResetGlobalQualifierValues() const;
-    void ResetGlobalQualifierValues(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames) const;
+    void ResetGlobalQualifierValues(iterable<hstring> qualifierNames) const;
     Windows::ApplicationModel::Resources::Core::ResourceContext GetForViewIndependentUse() const;
 };
 
@@ -220,8 +220,8 @@ struct WINRT_EBO impl_IResourceManager
     Windows::ApplicationModel::Resources::Core::ResourceMap MainResourceMap() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Resources::Core::ResourceMap> AllResourceMaps() const;
     [[deprecated("DefaultContext may be altered or unavailable for releases after Windows Phone 'OSVersion' (TBD). Instead, use ResourceContext.GetForCurrentView.")]] Windows::ApplicationModel::Resources::Core::ResourceContext DefaultContext() const;
-    void LoadPriFiles(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> & files) const;
-    void UnloadPriFiles(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> & files) const;
+    void LoadPriFiles(iterable<Windows::Storage::IStorageFile> files) const;
+    void UnloadPriFiles(iterable<Windows::Storage::IStorageFile> files) const;
 };
 
 template <typename D>

@@ -368,7 +368,7 @@ struct WINRT_EBO StorageLibraryContentChangedTrigger :
 {
     StorageLibraryContentChangedTrigger(std::nullptr_t) noexcept {}
     static Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger Create(const Windows::Storage::StorageLibrary & storageLibrary);
-    static Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger CreateFromLibraries(const Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> & storageLibraries);
+    static Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger CreateFromLibraries(iterable<Windows::Storage::StorageLibrary> storageLibraries);
 };
 
 struct WINRT_EBO SystemCondition :

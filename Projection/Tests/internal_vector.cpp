@@ -1,14 +1,15 @@
 #include "pch.h"
 #include "catch.hpp"
 
-using namespace winrt::Windows::Foundation::Collections;
+using namespace winrt;
+using namespace Windows::Foundation::Collections;
 
 #pragma region "Tests, IVector"
 
 TEST_CASE("IVector,create,rvalue")
 {
     std::vector<int> stdVector{ 1, 2 };
-    IVector<int> vector(std::move(stdVector));
+    IVector<int> vector = single_threaded_vector(std::move(stdVector));
     REQUIRE(vector != nullptr);
     REQUIRE(vector.Size() == 2);
     REQUIRE(vector.GetAt(0) == 1);
@@ -18,7 +19,7 @@ TEST_CASE("IVector,create,rvalue")
 TEST_CASE("IVector,append")
 {
     std::vector<int> stdVector{1, 2, 3};
-    IVector<int> vector(std::vector<int>({}));
+    IVector<int> vector = single_threaded_vector<int>();
 
     for (auto& value : stdVector)
     {

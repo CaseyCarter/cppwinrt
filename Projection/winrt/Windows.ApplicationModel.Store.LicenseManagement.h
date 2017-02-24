@@ -258,7 +258,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_ILicenseManagerStat
     return action;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> impl_ILicenseManagerStatics<D>::GetSatisfactionInfosAsync(const Windows::Foundation::Collections::IIterable<hstring> & contentIds, const Windows::Foundation::Collections::IIterable<hstring> & keyIds) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> impl_ILicenseManagerStatics<D>::GetSatisfactionInfosAsync(iterable<hstring> contentIds, iterable<hstring> keyIds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> operation;
     check_hresult(WINRT_SHIM(ILicenseManagerStatics)->abi_GetSatisfactionInfosAsync(get_abi(contentIds), get_abi(keyIds), put_abi(operation)));
@@ -270,7 +270,7 @@ inline Windows::Foundation::IAsyncAction LicenseManager::AddLicenseAsync(const W
     return get_activation_factory<LicenseManager, ILicenseManagerStatics>().AddLicenseAsync(license);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> LicenseManager::GetSatisfactionInfosAsync(const Windows::Foundation::Collections::IIterable<hstring> & contentIds, const Windows::Foundation::Collections::IIterable<hstring> & keyIds)
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> LicenseManager::GetSatisfactionInfosAsync(iterable<hstring> contentIds, iterable<hstring> keyIds)
 {
     return get_activation_factory<LicenseManager, ILicenseManagerStatics>().GetSatisfactionInfosAsync(contentIds, keyIds);
 }

@@ -2329,7 +2329,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::
     return value;
 }
 
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> impl_INetworkInformationStatics<D>::GetSortedEndpointPairs(const Windows::Foundation::Collections::IIterable<Windows::Networking::EndpointPair> & destinationList, Windows::Networking::HostNameSortOptions sortOptions) const
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> impl_INetworkInformationStatics<D>::GetSortedEndpointPairs(iterable<Windows::Networking::EndpointPair> destinationList, Windows::Networking::HostNameSortOptions sortOptions) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> value;
     check_hresult(WINRT_SHIM(INetworkInformationStatics)->abi_GetSortedEndpointPairs(get_abi(destinationList), sortOptions, put_abi(value)));
@@ -2803,7 +2803,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::P
     return get_activation_factory<NetworkInformation, INetworkInformationStatics>().GetProxyConfigurationAsync(uri);
 }
 
-inline Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> NetworkInformation::GetSortedEndpointPairs(const Windows::Foundation::Collections::IIterable<Windows::Networking::EndpointPair> & destinationList, Windows::Networking::HostNameSortOptions sortOptions)
+inline Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> NetworkInformation::GetSortedEndpointPairs(iterable<Windows::Networking::EndpointPair> destinationList, Windows::Networking::HostNameSortOptions sortOptions)
 {
     return get_activation_factory<NetworkInformation, INetworkInformationStatics>().GetSortedEndpointPairs(destinationList, sortOptions);
 }

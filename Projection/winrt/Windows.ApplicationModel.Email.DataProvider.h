@@ -2968,7 +2968,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<hstring> imp
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxResolveRecipientsRequest<D>::ReportCompletedAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> & resolutionResults) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxResolveRecipientsRequest<D>::ReportCompletedAsync(iterable<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> resolutionResults) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IEmailMailboxResolveRecipientsRequest)->abi_ReportCompletedAsync(get_abi(resolutionResults), put_abi(result)));
@@ -2996,7 +2996,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Sec
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxValidateCertificatesRequest<D>::ReportCompletedAsync(const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> & validationStatuses) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IEmailMailboxValidateCertificatesRequest<D>::ReportCompletedAsync(iterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> validationStatuses) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IEmailMailboxValidateCertificatesRequest)->abi_ReportCompletedAsync(get_abi(validationStatuses), put_abi(result)));

@@ -766,7 +766,7 @@ struct WINRT_EBO impl_IRadialControllerButtonClickedEventArgs
 template <typename D>
 struct WINRT_EBO impl_IRadialControllerConfiguration
 {
-    void SetDefaultMenuItems(const Windows::Foundation::Collections::IIterable<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> & buttons) const;
+    void SetDefaultMenuItems(iterable<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> buttons) const;
     void ResetToDefaultMenuItems() const;
     bool TrySelectDefaultMenuItem(Windows::UI::Input::RadialControllerSystemMenuItemKind type) const;
 };

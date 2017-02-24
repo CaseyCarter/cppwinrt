@@ -170,10 +170,14 @@
     <ClCompile Include="casts.cpp" />
     <ClCompile Include="clock.cpp" />
     <ClCompile Include="Collections.cpp" />
+    <ClCompile Include="collection_iterable.cpp" />
+    <ClCompile Include="collection_map.cpp" />
+    <ClCompile Include="collection_map_view.cpp" />
+    <ClCompile Include="collection_vector.cpp" />
+    <ClCompile Include="collection_vector_view.cpp" />
     <ClCompile Include="com_ptr.cpp" />
     <ClCompile Include="delegate.cpp" />
     <ClCompile Include="delegate_lambda.cpp" />
-    <ClCompile Include="empty_collection.cpp" />
     <ClCompile Include="event_consume.cpp" />
     <ClCompile Include="event_produce.cpp" />
     <ClCompile Include="IInspectable_GetIids.cpp" />
@@ -188,8 +192,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="internal_map.cpp" />
-    <ClCompile Include="internal_vector.cpp" />
     <ClCompile Include="IReference.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="make_self.cpp" />

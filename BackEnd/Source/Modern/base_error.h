@@ -122,11 +122,6 @@ private:
     com_ptr<IRestrictedErrorInfo> m_info;
 };
 
-[[noreturn]] inline void throw_last_error()
-{
-    throw hresult_error(HRESULT_FROM_WIN32(GetLastError()));
-}
-
 struct hresult_access_denied : hresult_error
 {
     hresult_access_denied() : hresult_error(E_ACCESSDENIED) {}
@@ -328,6 +323,11 @@ inline __declspec(noinline) HRESULT to_hresult() noexcept
     return value;
 }
 
+}
+
+[[noreturn]] inline void throw_last_error()
+{
+    impl::throw_hresult(HRESULT_FROM_WIN32(GetLastError()));
 }
 
 template<HRESULT... ValuesToIgnore>

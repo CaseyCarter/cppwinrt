@@ -1228,8 +1228,8 @@ struct WINRT_EBO impl_IMapSceneStatics
     Windows::UI::Xaml::Controls::Maps::MapScene CreateFromLocation(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees, double pitchInDegrees) const;
     Windows::UI::Xaml::Controls::Maps::MapScene CreateFromLocationAndRadius(const Windows::Devices::Geolocation::Geopoint & location, double radiusInMeters) const;
     Windows::UI::Xaml::Controls::Maps::MapScene CreateFromLocationAndRadius(const Windows::Devices::Geolocation::Geopoint & location, double radiusInMeters, double headingInDegrees, double pitchInDegrees) const;
-    Windows::UI::Xaml::Controls::Maps::MapScene CreateFromLocations(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & locations) const;
-    Windows::UI::Xaml::Controls::Maps::MapScene CreateFromLocations(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & locations, double headingInDegrees, double pitchInDegrees) const;
+    Windows::UI::Xaml::Controls::Maps::MapScene CreateFromLocations(iterable<Windows::Devices::Geolocation::Geopoint> locations) const;
+    Windows::UI::Xaml::Controls::Maps::MapScene CreateFromLocations(iterable<Windows::Devices::Geolocation::Geopoint> locations, double headingInDegrees, double pitchInDegrees) const;
 };
 
 template <typename D>

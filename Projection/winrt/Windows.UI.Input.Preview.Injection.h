@@ -982,12 +982,12 @@ template <typename D> void impl_IInjectedInputKeyboardInfo<D>::VirtualKey(uint16
     check_hresult(WINRT_SHIM(IInjectedInputKeyboardInfo)->put_VirtualKey(value));
 }
 
-template <typename D> void impl_IInputInjector<D>::InjectKeyboardInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> & input) const
+template <typename D> void impl_IInputInjector<D>::InjectKeyboardInput(iterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> input) const
 {
     check_hresult(WINRT_SHIM(IInputInjector)->abi_InjectKeyboardInput(get_abi(input)));
 }
 
-template <typename D> void impl_IInputInjector<D>::InjectMouseInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> & input) const
+template <typename D> void impl_IInputInjector<D>::InjectMouseInput(iterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> input) const
 {
     check_hresult(WINRT_SHIM(IInputInjector)->abi_InjectMouseInput(get_abi(input)));
 }
@@ -997,7 +997,7 @@ template <typename D> void impl_IInputInjector<D>::InitializeTouchInjection(Wind
     check_hresult(WINRT_SHIM(IInputInjector)->abi_InitializeTouchInjection(visualMode));
 }
 
-template <typename D> void impl_IInputInjector<D>::InjectTouchInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo> & input) const
+template <typename D> void impl_IInputInjector<D>::InjectTouchInput(iterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo> input) const
 {
     check_hresult(WINRT_SHIM(IInputInjector)->abi_InjectTouchInput(get_abi(input)));
 }

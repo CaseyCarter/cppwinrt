@@ -3039,35 +3039,35 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::St
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> impl_IStoreContext<D>::GetStoreProductsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, const Windows::Foundation::Collections::IIterable<hstring> & storeIds) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> impl_IStoreContext<D>::GetStoreProductsAsync(iterable<hstring> productKinds, iterable<hstring> storeIds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_GetStoreProductsAsync(get_abi(productKinds), get_abi(storeIds), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> impl_IStoreContext<D>::GetAssociatedStoreProductsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> impl_IStoreContext<D>::GetAssociatedStoreProductsAsync(iterable<hstring> productKinds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_GetAssociatedStoreProductsAsync(get_abi(productKinds), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> impl_IStoreContext<D>::GetAssociatedStoreProductsWithPagingAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, uint32_t maxItemsToRetrievePerPage) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> impl_IStoreContext<D>::GetAssociatedStoreProductsWithPagingAsync(iterable<hstring> productKinds, uint32_t maxItemsToRetrievePerPage) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_GetAssociatedStoreProductsWithPagingAsync(get_abi(productKinds), maxItemsToRetrievePerPage, put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> impl_IStoreContext<D>::GetUserCollectionAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> impl_IStoreContext<D>::GetUserCollectionAsync(iterable<hstring> productKinds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_GetUserCollectionAsync(get_abi(productKinds), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> impl_IStoreContext<D>::GetUserCollectionWithPagingAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, uint32_t maxItemsToRetrievePerPage) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> impl_IStoreContext<D>::GetUserCollectionWithPagingAsync(iterable<hstring> productKinds, uint32_t maxItemsToRetrievePerPage) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_GetUserCollectionWithPagingAsync(get_abi(productKinds), maxItemsToRetrievePerPage, put_abi(operation)));
@@ -3116,21 +3116,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> impl_IStoreContext<D>::RequestDownloadStorePackageUpdatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> & storePackageUpdates) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> impl_IStoreContext<D>::RequestDownloadStorePackageUpdatesAsync(iterable<Windows::Services::Store::StorePackageUpdate> storePackageUpdates) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_RequestDownloadStorePackageUpdatesAsync(get_abi(storePackageUpdates), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> impl_IStoreContext<D>::RequestDownloadAndInstallStorePackageUpdatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> & storePackageUpdates) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> impl_IStoreContext<D>::RequestDownloadAndInstallStorePackageUpdatesAsync(iterable<Windows::Services::Store::StorePackageUpdate> storePackageUpdates) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_RequestDownloadAndInstallStorePackageUpdatesAsync(get_abi(storePackageUpdates), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> impl_IStoreContext<D>::RequestDownloadAndInstallStorePackagesAsync(const Windows::Foundation::Collections::IIterable<hstring> & storeIds) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> impl_IStoreContext<D>::RequestDownloadAndInstallStorePackagesAsync(iterable<hstring> storeIds) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> operation;
     check_hresult(WINRT_SHIM(IStoreContext)->abi_RequestDownloadAndInstallStorePackagesAsync(get_abi(storeIds), put_abi(operation)));

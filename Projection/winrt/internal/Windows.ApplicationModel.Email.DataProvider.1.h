@@ -561,7 +561,7 @@ struct WINRT_EBO impl_IEmailMailboxResolveRecipientsRequest
 {
     hstring EmailMailboxId() const;
     Windows::Foundation::Collections::IVectorView<hstring> Recipients() const;
-    Windows::Foundation::IAsyncAction ReportCompletedAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> & resolutionResults) const;
+    Windows::Foundation::IAsyncAction ReportCompletedAsync(iterable<Windows::ApplicationModel::Email::EmailRecipientResolutionResult> resolutionResults) const;
     Windows::Foundation::IAsyncAction ReportFailedAsync() const;
 };
 
@@ -648,7 +648,7 @@ struct WINRT_EBO impl_IEmailMailboxValidateCertificatesRequest
 {
     hstring EmailMailboxId() const;
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> Certificates() const;
-    Windows::Foundation::IAsyncAction ReportCompletedAsync(const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> & validationStatuses) const;
+    Windows::Foundation::IAsyncAction ReportCompletedAsync(iterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> validationStatuses) const;
     Windows::Foundation::IAsyncAction ReportFailedAsync() const;
 };
 

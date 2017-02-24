@@ -4641,7 +4641,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointme
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentCalendar2<D>::TryForwardMeetingAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Appointments::AppointmentInvitee> & invitees, hstring_view subject, hstring_view forwardHeader, hstring_view comment) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppointmentCalendar2<D>::TryForwardMeetingAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, iterable<Windows::ApplicationModel::Appointments::AppointmentInvitee> invitees, hstring_view subject, hstring_view forwardHeader, hstring_view comment) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IAppointmentCalendar2)->abi_TryForwardMeetingAsync(get_abi(meeting), get_abi(invitees), get_abi(subject), get_abi(forwardHeader), get_abi(comment), put_abi(result)));

@@ -1,22 +1,4 @@
 
-struct empty_collection_t {};
-constexpr empty_collection_t empty_collection{};
-
-namespace impl {
-
-template <typename K, typename V, typename Container> struct map_view_standalone;
-template <typename K, typename V, typename Container> struct map_view_from_map;
-template <typename K, typename V, typename Container> struct map;
-template <typename K, typename V> struct key_value_pair;
-template <typename T, typename Container> struct iterator_standalone;
-template <typename T, typename Container> struct iterator;
-template <typename T, typename Container> struct iterable;
-template <typename T> struct vector_view_from_vector;
-template <typename T> struct vector_view_standalone;
-template <typename T> struct vector;
-
-}
-
 namespace Windows::Foundation::Collections {
 
 enum class CollectionChange
@@ -418,8 +400,14 @@ template <typename T> struct traits<Windows::Foundation::Collections::IObservabl
 };
 
 template <typename T>
-struct fast_iterator : std::iterator<std::input_iterator_tag, T>
+struct fast_iterator
 {
+    using iterator_category = std::input_iterator_tag;
+    using value_type = T;
+    using difference_type = ptrdiff_t;
+    using pointer = T *;
+    using reference = T &;
+
     fast_iterator(const T & collection, const uint32_t index) noexcept :
         m_collection(&collection),
         m_index(index)
@@ -489,6 +477,12 @@ struct WINRT_EBO IIterator :
     IInspectable,
     impl::consume<IIterator<T>>
 {
+    using iterator_category = std::input_iterator_tag;
+    using value_type = T;
+    using difference_type = ptrdiff_t;
+    using pointer = T *;
+    using reference = T &;
+
     IIterator(std::nullptr_t = nullptr) noexcept {}
 };
 
@@ -498,22 +492,6 @@ struct WINRT_EBO IIterable :
     impl::consume<IIterable<T>>
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
-
-    IIterable(std::vector<T> && values) : IIterable(make<impl::iterable<T, std::vector<T>>>(std::forward<std::vector<T>>(values)))
-    {}
-
-    IIterable(const std::vector<T> & values) : IIterable(std::vector<T>(values))
-    {}
-
-    IIterable(empty_collection_t) : IIterable(std::vector<T>())
-    {}
-
-    template<class InputIt>
-    IIterable(InputIt first, InputIt last) : IIterable(std::vector<T>(first, last))
-    {}
-
-    IIterable(std::initializer_list<T> values) : IIterable(std::vector<T>(values.begin(), values.end()))
-    {}
 };
 
 template <typename K, typename V>
@@ -522,28 +500,6 @@ struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
     impl::consume<IIterable<IKeyValuePair<K, V>>>
 {
     IIterable(std::nullptr_t = nullptr) noexcept {}
-
-    IIterable(std::map<K, V> && values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
-    {}
-
-    IIterable(const std::map<K, V> & values) : IIterable(std::map<K, V>(values))
-    {}
-
-    IIterable(std::unordered_map<K, V> && values) : IIterable(make<impl::iterable<IKeyValuePair<K, V>, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
-    {}
-
-    IIterable(const std::unordered_map<K, V> & values) : IIterable(std::unordered_map<K, V>(values))
-    {}
-
-    IIterable(empty_collection_t) : IIterable(std::unordered_map<K, V>())
-    {}
-
-    template<class InputIt>
-    IIterable(InputIt first, InputIt last) : IIterable(std::unordered_map<K, V>(first, last))
-    {}
-
-    IIterable(std::initializer_list<std::pair<K, V>> values) : IIterable(std::unordered_map<K, V>(values.begin(), values.end()))
-    {}
 };
 
 template <typename K, typename V>
@@ -561,22 +517,6 @@ struct WINRT_EBO IVectorView :
     impl::require<IVectorView<T>, IIterable<T>>
 {
     IVectorView(std::nullptr_t = nullptr) noexcept {}
-
-    IVectorView(std::vector<T> && values) : IVectorView(make<impl::vector_view_standalone<T>>(std::forward<std::vector<T>>(values)))
-    {}
-
-    IVectorView(const std::vector<T> & values) : IVectorView(std::vector<T>(values))
-    {}
-
-    IVectorView(empty_collection_t) : IVectorView(std::vector<T>())
-    {}
-
-    template<class InputIt>
-    IVectorView(InputIt first, InputIt last) : IVectorView(std::vector<T>(first, last))
-    {}
-
-    IVectorView(std::initializer_list<T> values) : IVectorView(std::vector<T>(values.begin(), values.end()))
-    {}
 };
 
 template <typename T>
@@ -586,22 +526,6 @@ struct WINRT_EBO IVector :
     impl::require<IVector<T>, IIterable<T>>
 {
     IVector(std::nullptr_t = nullptr) noexcept {}
-
-    IVector(std::vector<T> && values) : IVector(make<impl::vector<T>>(std::forward<std::vector<T>>(values)))
-    {}
-
-    IVector(const std::vector<T> & values) : IVector(std::vector<T>(values))
-    {}
-
-    IVector(empty_collection_t) : IVector(std::vector<T>())
-    {}
-
-    template<class InputIt>
-    IVector(InputIt first, InputIt last) : IVector(std::vector<T>(first, last))
-    {}
-
-    IVector(std::initializer_list<T> values) : IVector(std::vector<T>(values.begin(), values.end()))
-    {}
 };
 
 template <typename K, typename V>
@@ -611,28 +535,6 @@ struct WINRT_EBO IMapView :
     impl::require<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IMapView(std::nullptr_t = nullptr) noexcept {}
-
-    IMapView(std::map<K, V> && values) : IMapView(make<impl::map_view_standalone<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
-    {}
-
-    IMapView(const std::map<K, V> & values) : IMapView(std::map<K, V>(values))
-    {}
-
-    IMapView(std::unordered_map<K, V> && values) : IMapView(make<impl::map_view_standalone<K, V, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
-    {}
-
-    IMapView(const std::unordered_map<K, V> & values) : IMapView(std::unordered_map<K, V>(values))
-    {}
-
-    IMapView(empty_collection_t) : IMapView(std::unordered_map<K, V>())
-    {}
-
-    template<class InputIt>
-    IMapView(InputIt first, InputIt last) : IMapView(std::unordered_map<K, V>(first, last))
-    {}
-
-    IMapView(std::initializer_list<std::pair<K, V>> values) : IMapView(std::unordered_map<K, V>(values.begin(), values.end()))
-    {}
 };
 
 template <typename K, typename V>
@@ -642,28 +544,6 @@ struct WINRT_EBO IMap :
     impl::require<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
 {
     IMap(std::nullptr_t = nullptr) noexcept {}
-
-    IMap(std::map<K, V> && values) : IMap(make<impl::map<K, V, std::map<K, V>>>(std::forward<std::map<K, V>>(values)))
-    {}
-
-    IMap(const std::map<K, V> & values) : IMap(std::map<K, V>(values))
-    {}
-
-    IMap(std::unordered_map<K, V> && values) : IMap(make<impl::map<K, V, std::unordered_map<K, V>>>(std::forward<std::unordered_map<K, V>>(values)))
-    {}
-
-    IMap(const std::unordered_map<K, V> & values) : IMap(std::unordered_map<K, V>(values))
-    {}
-
-    IMap(empty_collection_t) : IMap(std::unordered_map<K, V>())
-    {}
-
-    template<class InputIt>
-    IMap(InputIt first, InputIt last) : IMap(std::unordered_map<K, V>(first, last))
-    {}
-
-    IMap(std::initializer_list<std::pair<K, V>> values) : IMap(std::unordered_map<K, V>(values.begin(), values.end()))
-    {}
 };
 
 template <typename K>

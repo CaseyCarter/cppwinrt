@@ -310,8 +310,8 @@ struct WINRT_EBO impl_IDataPackage
     Windows::Foundation::Collections::IMap<hstring, Windows::Storage::Streams::RandomAccessStreamReference> ResourceMap() const;
     void SetRtf(hstring_view value) const;
     void SetBitmap(const Windows::Storage::Streams::RandomAccessStreamReference & value) const;
-    void SetStorageItems(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> & value) const;
-    void SetStorageItems(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> & value, bool readOnly) const;
+    void SetStorageItems(iterable<Windows::Storage::IStorageItem> value) const;
+    void SetStorageItems(iterable<Windows::Storage::IStorageItem> value, bool readOnly) const;
 };
 
 template <typename D>

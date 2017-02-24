@@ -395,7 +395,7 @@ template <typename D> void impl_ISearchSuggestionCollection<D>::AppendQuerySugge
     check_hresult(WINRT_SHIM(ISearchSuggestionCollection)->abi_AppendQuerySuggestion(get_abi(text)));
 }
 
-template <typename D> void impl_ISearchSuggestionCollection<D>::AppendQuerySuggestions(const Windows::Foundation::Collections::IIterable<hstring> & suggestions) const
+template <typename D> void impl_ISearchSuggestionCollection<D>::AppendQuerySuggestions(iterable<hstring> suggestions) const
 {
     check_hresult(WINRT_SHIM(ISearchSuggestionCollection)->abi_AppendQuerySuggestions(get_abi(suggestions)));
 }
@@ -448,7 +448,7 @@ template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IL
     return value;
 }
 
-template <typename D> Windows::ApplicationModel::Search::SearchQueryLinguisticDetails impl_ISearchQueryLinguisticDetailsFactory<D>::CreateInstance(const Windows::Foundation::Collections::IIterable<hstring> & queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) const
+template <typename D> Windows::ApplicationModel::Search::SearchQueryLinguisticDetails impl_ISearchQueryLinguisticDetailsFactory<D>::CreateInstance(iterable<hstring> queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) const
 {
     Windows::ApplicationModel::Search::SearchQueryLinguisticDetails value { nullptr };
     check_hresult(WINRT_SHIM(ISearchQueryLinguisticDetailsFactory)->abi_CreateInstance(get_abi(queryTextAlternatives), queryTextCompositionStart, queryTextCompositionLength, put_abi(value)));
@@ -506,7 +506,7 @@ inline LocalContentSuggestionSettings::LocalContentSuggestionSettings() :
     LocalContentSuggestionSettings(activate_instance<LocalContentSuggestionSettings>())
 {}
 
-inline SearchQueryLinguisticDetails::SearchQueryLinguisticDetails(const Windows::Foundation::Collections::IIterable<hstring> & queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) :
+inline SearchQueryLinguisticDetails::SearchQueryLinguisticDetails(iterable<hstring> queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) :
     SearchQueryLinguisticDetails(get_activation_factory<SearchQueryLinguisticDetails, ISearchQueryLinguisticDetailsFactory>().CreateInstance(queryTextAlternatives, queryTextCompositionStart, queryTextCompositionLength))
 {}
 

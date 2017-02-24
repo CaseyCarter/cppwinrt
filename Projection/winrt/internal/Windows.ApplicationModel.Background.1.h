@@ -886,7 +886,7 @@ template <typename D>
 struct WINRT_EBO impl_IStorageLibraryContentChangedTriggerStatics
 {
     Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger Create(const Windows::Storage::StorageLibrary & storageLibrary) const;
-    Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger CreateFromLibraries(const Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> & storageLibraries) const;
+    Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger CreateFromLibraries(iterable<Windows::Storage::StorageLibrary> storageLibraries) const;
 };
 
 template <typename D>

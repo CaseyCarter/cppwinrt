@@ -4063,28 +4063,28 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return linesOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteLinesAsync(const Windows::Storage::IStorageFile & file, iterable<hstring> lines) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IFileIOStatics)->abi_WriteLinesAsync(get_abi(file), get_abi(lines), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteLinesAsync(const Windows::Storage::IStorageFile & file, iterable<hstring> lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IFileIOStatics)->abi_WriteLinesWithEncodingAsync(get_abi(file), get_abi(lines), encoding, put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendLinesAsync(const Windows::Storage::IStorageFile & file, iterable<hstring> lines) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IFileIOStatics)->abi_AppendLinesAsync(get_abi(file), get_abi(lines), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendLinesAsync(const Windows::Storage::IStorageFile & file, iterable<hstring> lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IFileIOStatics)->abi_AppendLinesWithEncodingAsync(get_abi(file), get_abi(lines), encoding, put_abi(operation)));
@@ -4168,28 +4168,28 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return linesOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteLinesAsync(hstring_view absolutePath, iterable<hstring> lines) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_WriteLinesAsync(get_abi(absolutePath), get_abi(lines), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteLinesAsync(hstring_view absolutePath, iterable<hstring> lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_WriteLinesWithEncodingAsync(get_abi(absolutePath), get_abi(lines), encoding, put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendLinesAsync(hstring_view absolutePath, iterable<hstring> lines) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_AppendLinesAsync(get_abi(absolutePath), get_abi(lines), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendLinesAsync(hstring_view absolutePath, iterable<hstring> lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IPathIOStatics)->abi_AppendLinesWithEncodingAsync(get_abi(absolutePath), get_abi(lines), encoding, put_abi(operation)));
@@ -4841,22 +4841,22 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<FileIO, IFileIOStatics>().ReadLinesAsync(file, encoding);
 }
 
-inline Windows::Foundation::IAsyncAction FileIO::WriteLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines)
+inline Windows::Foundation::IAsyncAction FileIO::WriteLinesAsync(const Windows::Storage::IStorageFile & file, iterable<hstring> lines)
 {
     return get_activation_factory<FileIO, IFileIOStatics>().WriteLinesAsync(file, lines);
 }
 
-inline Windows::Foundation::IAsyncAction FileIO::WriteLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncAction FileIO::WriteLinesAsync(const Windows::Storage::IStorageFile & file, iterable<hstring> lines, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<FileIO, IFileIOStatics>().WriteLinesAsync(file, lines, encoding);
 }
 
-inline Windows::Foundation::IAsyncAction FileIO::AppendLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines)
+inline Windows::Foundation::IAsyncAction FileIO::AppendLinesAsync(const Windows::Storage::IStorageFile & file, iterable<hstring> lines)
 {
     return get_activation_factory<FileIO, IFileIOStatics>().AppendLinesAsync(file, lines);
 }
 
-inline Windows::Foundation::IAsyncAction FileIO::AppendLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncAction FileIO::AppendLinesAsync(const Windows::Storage::IStorageFile & file, iterable<hstring> lines, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<FileIO, IFileIOStatics>().AppendLinesAsync(file, lines, encoding);
 }
@@ -4986,22 +4986,22 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<PathIO, IPathIOStatics>().ReadLinesAsync(absolutePath, encoding);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::WriteLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines)
+inline Windows::Foundation::IAsyncAction PathIO::WriteLinesAsync(hstring_view absolutePath, iterable<hstring> lines)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().WriteLinesAsync(absolutePath, lines);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::WriteLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncAction PathIO::WriteLinesAsync(hstring_view absolutePath, iterable<hstring> lines, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().WriteLinesAsync(absolutePath, lines, encoding);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines)
+inline Windows::Foundation::IAsyncAction PathIO::AppendLinesAsync(hstring_view absolutePath, iterable<hstring> lines)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().AppendLinesAsync(absolutePath, lines);
 }
 
-inline Windows::Foundation::IAsyncAction PathIO::AppendLinesAsync(hstring_view absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding)
+inline Windows::Foundation::IAsyncAction PathIO::AppendLinesAsync(hstring_view absolutePath, iterable<hstring> lines, Windows::Storage::Streams::UnicodeEncoding encoding)
 {
     return get_activation_factory<PathIO, IPathIOStatics>().AppendLinesAsync(absolutePath, lines, encoding);
 }

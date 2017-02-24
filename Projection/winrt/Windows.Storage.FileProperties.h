@@ -1352,14 +1352,14 @@ template <typename D> Windows::Storage::FileProperties::ThumbnailType impl_IThum
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>> impl_IStorageItemExtraProperties<D>::RetrievePropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>> impl_IStorageItemExtraProperties<D>::RetrievePropertiesAsync(iterable<hstring> propertiesToRetrieve) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>> operation;
     check_hresult(WINRT_SHIM(IStorageItemExtraProperties)->abi_RetrievePropertiesAsync(get_abi(propertiesToRetrieve), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItemExtraProperties<D>::SavePropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> & propertiesToSave) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItemExtraProperties<D>::SavePropertiesAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>> propertiesToSave) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IStorageItemExtraProperties)->abi_SavePropertiesAsync(get_abi(propertiesToSave), put_abi(operation)));

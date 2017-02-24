@@ -476,7 +476,7 @@ struct WINRT_EBO impl_IItemIndexRangeFactory
 template <typename D>
 struct WINRT_EBO impl_IItemsRangeInfo
 {
-    void RangesChanged(const Windows::UI::Xaml::Data::ItemIndexRange & visibleRange, const Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Data::ItemIndexRange> & trackedItems) const;
+    void RangesChanged(const Windows::UI::Xaml::Data::ItemIndexRange & visibleRange, vector_view<Windows::UI::Xaml::Data::ItemIndexRange> trackedItems) const;
 };
 
 template <typename D>

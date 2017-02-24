@@ -25,7 +25,7 @@ template <typename O, typename M> SelectableWordSegmentsTokenizingHandler::Selec
     SelectableWordSegmentsTokenizingHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void SelectableWordSegmentsTokenizingHandler::operator()(const Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment> & precedingWords, const Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment> & words) const
+inline void SelectableWordSegmentsTokenizingHandler::operator()(iterable<Windows::Data::Text::SelectableWordSegment> precedingWords, iterable<Windows::Data::Text::SelectableWordSegment> words) const
 {
     check_hresult((*(abi<SelectableWordSegmentsTokenizingHandler> **)this)->abi_Invoke(get_abi(precedingWords), get_abi(words)));
 }
@@ -42,7 +42,7 @@ template <typename O, typename M> WordSegmentsTokenizingHandler::WordSegmentsTok
     WordSegmentsTokenizingHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
 {}
 
-inline void WordSegmentsTokenizingHandler::operator()(const Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment> & precedingWords, const Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment> & words) const
+inline void WordSegmentsTokenizingHandler::operator()(iterable<Windows::Data::Text::WordSegment> precedingWords, iterable<Windows::Data::Text::WordSegment> words) const
 {
     check_hresult((*(abi<WordSegmentsTokenizingHandler> **)this)->abi_Invoke(get_abi(precedingWords), get_abi(words)));
 }

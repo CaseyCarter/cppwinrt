@@ -4211,7 +4211,7 @@ template <typename D> void impl_IChatMessageStore<D>::MessageChanged(event_token
     check_hresult(WINRT_SHIM(IChatMessageStore)->remove_MessageChanged(value));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> impl_IChatMessageStore2<D>::ForwardMessageAsync(hstring_view localChatMessageId, const Windows::Foundation::Collections::IIterable<hstring> & addresses) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> impl_IChatMessageStore2<D>::ForwardMessageAsync(hstring_view localChatMessageId, iterable<hstring> addresses) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> result;
     check_hresult(WINRT_SHIM(IChatMessageStore2)->abi_ForwardMessageAsync(get_abi(localChatMessageId), get_abi(addresses), put_abi(result)));
@@ -4225,7 +4225,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> impl_IChatMessageStore2<D>::GetConversationAsync(hstring_view conversationId, const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> impl_IChatMessageStore2<D>::GetConversationAsync(hstring_view conversationId, iterable<hstring> transportIds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> result;
     check_hresult(WINRT_SHIM(IChatMessageStore2)->abi_GetConversationForTransportsAsync(get_abi(conversationId), get_abi(transportIds), put_abi(result)));
@@ -4246,7 +4246,7 @@ template <typename D> Windows::ApplicationModel::Chat::ChatConversationReader im
     return result;
 }
 
-template <typename D> Windows::ApplicationModel::Chat::ChatConversationReader impl_IChatMessageStore2<D>::GetConversationReader(const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const
+template <typename D> Windows::ApplicationModel::Chat::ChatConversationReader impl_IChatMessageStore2<D>::GetConversationReader(iterable<hstring> transportIds) const
 {
     Windows::ApplicationModel::Chat::ChatConversationReader result { nullptr };
     check_hresult(WINRT_SHIM(IChatMessageStore2)->abi_GetConversationForTransportsReader(get_abi(transportIds), put_abi(result)));
@@ -4267,7 +4267,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<int32_t> impl_IChatMe
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<int32_t> impl_IChatMessageStore2<D>::GetUnseenCountAsync(const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const
+template <typename D> Windows::Foundation::IAsyncOperation<int32_t> impl_IChatMessageStore2<D>::GetUnseenCountAsync(iterable<hstring> transportIds) const
 {
     Windows::Foundation::IAsyncOperation<int32_t> result;
     check_hresult(WINRT_SHIM(IChatMessageStore2)->abi_GetUnseenCountForTransportsReaderAsync(get_abi(transportIds), put_abi(result)));
@@ -4281,7 +4281,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IChatMessageStore2<
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IChatMessageStore2<D>::MarkAsSeenAsync(const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IChatMessageStore2<D>::MarkAsSeenAsync(iterable<hstring> transportIds) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IChatMessageStore2)->abi_MarkAsSeenForTransportsAsync(get_abi(transportIds), put_abi(result)));

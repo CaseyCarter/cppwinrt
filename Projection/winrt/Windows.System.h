@@ -2301,7 +2301,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> impl_IUser<D>::GetPropertiesAsync(const Windows::Foundation::Collections::IVectorView<hstring> & values) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> impl_IUser<D>::GetPropertiesAsync(vector_view<hstring> values) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> operation;
     check_hresult(WINRT_SHIM(IUser)->abi_GetPropertiesAsync(get_abi(values), put_abi(operation)));

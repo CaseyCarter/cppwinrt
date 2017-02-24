@@ -3502,12 +3502,12 @@ template <typename D> void impl_ITileUpdater<D>::StopPeriodicUpdate() const
     check_hresult(WINRT_SHIM(ITileUpdater)->abi_StopPeriodicUpdate());
 }
 
-template <typename D> void impl_ITileUpdater<D>::StartPeriodicUpdateBatch(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & tileContents, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
+template <typename D> void impl_ITileUpdater<D>::StartPeriodicUpdateBatch(iterable<Windows::Foundation::Uri> tileContents, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
 {
     check_hresult(WINRT_SHIM(ITileUpdater)->abi_StartPeriodicUpdateBatch(get_abi(tileContents), requestedInterval));
 }
 
-template <typename D> void impl_ITileUpdater<D>::StartPeriodicUpdateBatch(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & tileContents, const Windows::Foundation::DateTime & startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
+template <typename D> void impl_ITileUpdater<D>::StartPeriodicUpdateBatch(iterable<Windows::Foundation::Uri> tileContents, const Windows::Foundation::DateTime & startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
 {
     check_hresult(WINRT_SHIM(ITileUpdater)->abi_StartPeriodicUpdateBatchAtTime(get_abi(tileContents), get_abi(startTime), requestedInterval));
 }

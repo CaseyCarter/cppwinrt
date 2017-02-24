@@ -2074,7 +2074,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistorySt
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::DeleteEntriesAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> & callHistoryEntries) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::DeleteEntriesAsync(iterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> callHistoryEntries) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_DeleteEntriesAsync(get_abi(callHistoryEntries), put_abi(result)));
@@ -2088,7 +2088,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistorySt
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::MarkEntriesAsSeenAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> & callHistoryEntries) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::MarkEntriesAsSeenAsync(iterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> callHistoryEntries) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_MarkEntriesAsSeenAsync(get_abi(callHistoryEntries), put_abi(result)));
@@ -2109,14 +2109,14 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistorySt
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IPhoneCallHistoryStore<D>::GetSourcesUnseenCountAsync(const Windows::Foundation::Collections::IIterable<hstring> & sourceIds) const
+template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IPhoneCallHistoryStore<D>::GetSourcesUnseenCountAsync(iterable<hstring> sourceIds) const
 {
     Windows::Foundation::IAsyncOperation<uint32_t> result;
     check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_GetSourcesUnseenCountAsync(get_abi(sourceIds), put_abi(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::MarkSourcesAsSeenAsync(const Windows::Foundation::Collections::IIterable<hstring> & sourceIds) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IPhoneCallHistoryStore<D>::MarkSourcesAsSeenAsync(iterable<hstring> sourceIds) const
 {
     Windows::Foundation::IAsyncAction result;
     check_hresult(WINRT_SHIM(IPhoneCallHistoryStore)->abi_MarkSourcesAsSeenAsync(get_abi(sourceIds), put_abi(result)));

@@ -2183,7 +2183,7 @@ template <typename D> void impl_IDeviceWatcher<D>::Stop() const
     check_hresult(WINRT_SHIM(IDeviceWatcher)->abi_Stop());
 }
 
-template <typename D> Windows::ApplicationModel::Background::DeviceWatcherTrigger impl_IDeviceWatcher2<D>::GetBackgroundTrigger(const Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> & requestedEventKinds) const
+template <typename D> Windows::ApplicationModel::Background::DeviceWatcherTrigger impl_IDeviceWatcher2<D>::GetBackgroundTrigger(iterable<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> requestedEventKinds) const
 {
     Windows::ApplicationModel::Background::DeviceWatcherTrigger trigger { nullptr };
     check_hresult(WINRT_SHIM(IDeviceWatcher2)->abi_GetBackgroundTrigger(get_abi(requestedEventKinds), put_abi(trigger)));
@@ -2197,7 +2197,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enu
     return asyncOp;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> impl_IDeviceInformationStatics<D>::CreateFromIdAsync(hstring_view deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> impl_IDeviceInformationStatics<D>::CreateFromIdAsync(hstring_view deviceId, iterable<hstring> additionalProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> asyncOp;
     check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_CreateFromIdAsyncAdditionalProperties(get_abi(deviceId), get_abi(additionalProperties), put_abi(asyncOp)));
@@ -2225,7 +2225,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enu
     return asyncOp;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> impl_IDeviceInformationStatics<D>::FindAllAsync(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> impl_IDeviceInformationStatics<D>::FindAllAsync(hstring_view aqsFilter, iterable<hstring> additionalProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> asyncOp;
     check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_FindAllAsyncAqsFilterAndAdditionalProperties(get_abi(aqsFilter), get_abi(additionalProperties), put_abi(asyncOp)));
@@ -2253,7 +2253,7 @@ template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IDeviceI
     return watcher;
 }
 
-template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IDeviceInformationStatics<D>::CreateWatcher(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const
+template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IDeviceInformationStatics<D>::CreateWatcher(hstring_view aqsFilter, iterable<hstring> additionalProperties) const
 {
     Windows::Devices::Enumeration::DeviceWatcher watcher { nullptr };
     check_hresult(WINRT_SHIM(IDeviceInformationStatics)->abi_CreateWatcherAqsFilterAndAdditionalProperties(get_abi(aqsFilter), get_abi(additionalProperties), put_abi(watcher)));
@@ -2267,21 +2267,21 @@ template <typename D> hstring impl_IDeviceInformationStatics2<D>::GetAqsFilterFr
     return aqsFilter;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> impl_IDeviceInformationStatics2<D>::CreateFromIdAsync(hstring_view deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> impl_IDeviceInformationStatics2<D>::CreateFromIdAsync(hstring_view deviceId, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> asyncOp;
     check_hresult(WINRT_SHIM(IDeviceInformationStatics2)->abi_CreateFromIdAsyncWithKindAndAdditionalProperties(get_abi(deviceId), get_abi(additionalProperties), kind, put_abi(asyncOp)));
     return asyncOp;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> impl_IDeviceInformationStatics2<D>::FindAllAsync(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> impl_IDeviceInformationStatics2<D>::FindAllAsync(hstring_view aqsFilter, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> asyncOp;
     check_hresult(WINRT_SHIM(IDeviceInformationStatics2)->abi_FindAllAsyncWithKindAqsFilterAndAdditionalProperties(get_abi(aqsFilter), get_abi(additionalProperties), kind, put_abi(asyncOp)));
     return asyncOp;
 }
 
-template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IDeviceInformationStatics2<D>::CreateWatcher(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const
+template <typename D> Windows::Devices::Enumeration::DeviceWatcher impl_IDeviceInformationStatics2<D>::CreateWatcher(hstring_view aqsFilter, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const
 {
     Windows::Devices::Enumeration::DeviceWatcher watcher { nullptr };
     check_hresult(WINRT_SHIM(IDeviceInformationStatics2)->abi_CreateWatcherWithKindAqsFilterAndAdditionalProperties(get_abi(aqsFilter), get_abi(additionalProperties), kind, put_abi(watcher)));
@@ -2630,7 +2630,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Devic
     return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().CreateFromIdAsync(deviceId);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> DeviceInformation::CreateFromIdAsync(hstring_view deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> DeviceInformation::CreateFromIdAsync(hstring_view deviceId, iterable<hstring> additionalProperties)
 {
     return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().CreateFromIdAsync(deviceId, additionalProperties);
 }
@@ -2650,7 +2650,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Devic
     return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().FindAllAsync(aqsFilter);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(hstring_view aqsFilter, iterable<hstring> additionalProperties)
 {
     return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().FindAllAsync(aqsFilter, additionalProperties);
 }
@@ -2670,7 +2670,7 @@ inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWat
     return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().CreateWatcher(aqsFilter);
 }
 
-inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties)
+inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(hstring_view aqsFilter, iterable<hstring> additionalProperties)
 {
     return get_activation_factory<DeviceInformation, IDeviceInformationStatics>().CreateWatcher(aqsFilter, additionalProperties);
 }
@@ -2680,17 +2680,17 @@ inline hstring DeviceInformation::GetAqsFilterFromDeviceClass(Windows::Devices::
     return get_activation_factory<DeviceInformation, IDeviceInformationStatics2>().GetAqsFilterFromDeviceClass(deviceClass);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> DeviceInformation::CreateFromIdAsync(hstring_view deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> DeviceInformation::CreateFromIdAsync(hstring_view deviceId, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind)
 {
     return get_activation_factory<DeviceInformation, IDeviceInformationStatics2>().CreateFromIdAsync(deviceId, additionalProperties, kind);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind)
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> DeviceInformation::FindAllAsync(hstring_view aqsFilter, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind)
 {
     return get_activation_factory<DeviceInformation, IDeviceInformationStatics2>().FindAllAsync(aqsFilter, additionalProperties, kind);
 }
 
-inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind)
+inline Windows::Devices::Enumeration::DeviceWatcher DeviceInformation::CreateWatcher(hstring_view aqsFilter, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind)
 {
     return get_activation_factory<DeviceInformation, IDeviceInformationStatics2>().CreateWatcher(aqsFilter, additionalProperties, kind);
 }

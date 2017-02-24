@@ -55126,7 +55126,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IWebView2<D>::Captu
     return returnValue;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IWebView2<D>::InvokeScriptAsync(hstring_view scriptName, const Windows::Foundation::Collections::IIterable<hstring> & arguments) const
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IWebView2<D>::InvokeScriptAsync(hstring_view scriptName, iterable<hstring> arguments) const
 {
     Windows::Foundation::IAsyncOperation<hstring> returnValue;
     check_hresult(WINRT_SHIM(IWebView2)->abi_InvokeScriptAsync(get_abi(scriptName), get_abi(arguments), put_abi(returnValue)));
@@ -57072,7 +57072,7 @@ template <typename D> Windows::Foundation::DateTime impl_ICalendarViewDayItem<D>
     return value;
 }
 
-template <typename D> void impl_ICalendarViewDayItem<D>::SetDensityColors(const Windows::Foundation::Collections::IIterable<Windows::UI::Color> & colors) const
+template <typename D> void impl_ICalendarViewDayItem<D>::SetDensityColors(iterable<Windows::UI::Color> colors) const
 {
     check_hresult(WINRT_SHIM(ICalendarViewDayItem)->abi_SetDensityColors(get_abi(colors)));
 }

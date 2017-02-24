@@ -241,9 +241,9 @@ struct WINRT_EBO impl_IInteractionTracker
     float ScaleVelocityInPercentPerSecond() const;
     void AdjustPositionXIfGreaterThanThreshold(float adjustment, float positionThreshold) const;
     void AdjustPositionYIfGreaterThanThreshold(float adjustment, float positionThreshold) const;
-    void ConfigurePositionXInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const;
-    void ConfigurePositionYInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const;
-    void ConfigureScaleInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const;
+    void ConfigurePositionXInertiaModifiers(iterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> modifiers) const;
+    void ConfigurePositionYInertiaModifiers(iterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> modifiers) const;
+    void ConfigureScaleInertiaModifiers(iterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> modifiers) const;
     int32_t TryUpdatePosition(const Windows::Foundation::Numerics::float3 & value) const;
     int32_t TryUpdatePositionBy(const Windows::Foundation::Numerics::float3 & amount) const;
     int32_t TryUpdatePositionWithAnimation(const Windows::UI::Composition::CompositionAnimation & animation) const;

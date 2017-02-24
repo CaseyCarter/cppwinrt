@@ -26,7 +26,7 @@ struct WINRT_EBO SearchQueryLinguisticDetails :
     Windows::ApplicationModel::Search::ISearchQueryLinguisticDetails
 {
     SearchQueryLinguisticDetails(std::nullptr_t) noexcept {}
-    SearchQueryLinguisticDetails(const Windows::Foundation::Collections::IIterable<hstring> & queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength);
+    SearchQueryLinguisticDetails(iterable<hstring> queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength);
 };
 
 struct WINRT_EBO SearchSuggestionCollection :

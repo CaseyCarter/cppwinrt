@@ -44,7 +44,7 @@ struct WINRT_EBO AllJoynBusAttachment :
     AllJoynBusAttachment();
     AllJoynBusAttachment(hstring_view connectionSpecification);
     static Windows::Devices::AllJoyn::AllJoynBusAttachment GetDefault();
-    static Windows::Devices::Enumeration::DeviceWatcher GetWatcher(const Windows::Foundation::Collections::IIterable<hstring> & requiredInterfaces);
+    static Windows::Devices::Enumeration::DeviceWatcher GetWatcher(iterable<hstring> requiredInterfaces);
 };
 
 struct WINRT_EBO AllJoynBusAttachmentStateChangedEventArgs :

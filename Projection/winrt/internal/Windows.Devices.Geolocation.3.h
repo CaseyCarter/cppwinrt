@@ -22,9 +22,9 @@ struct WINRT_EBO GeoboundingBox :
     GeoboundingBox(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner);
     GeoboundingBox(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem);
     GeoboundingBox(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId);
-    static Windows::Devices::Geolocation::GeoboundingBox TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions);
-    static Windows::Devices::Geolocation::GeoboundingBox TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem);
-    static Windows::Devices::Geolocation::GeoboundingBox TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId);
+    static Windows::Devices::Geolocation::GeoboundingBox TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions);
+    static Windows::Devices::Geolocation::GeoboundingBox TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem);
+    static Windows::Devices::Geolocation::GeoboundingBox TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId);
 };
 
 struct WINRT_EBO Geocircle :
@@ -67,9 +67,9 @@ struct WINRT_EBO Geopath :
     Windows::Devices::Geolocation::IGeopath
 {
     Geopath(std::nullptr_t) noexcept {}
-    Geopath(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions);
-    Geopath(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem);
-    Geopath(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId);
+    Geopath(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions);
+    Geopath(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem);
+    Geopath(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId);
 };
 
 struct WINRT_EBO Geopoint :

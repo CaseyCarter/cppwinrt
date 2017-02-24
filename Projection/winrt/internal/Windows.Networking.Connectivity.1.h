@@ -504,7 +504,7 @@ struct WINRT_EBO impl_INetworkInformationStatics
     Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::LanIdentifier> GetLanIdentifiers() const;
     Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> GetHostNames() const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ProxyConfiguration> GetProxyConfigurationAsync(const Windows::Foundation::Uri & uri) const;
-    Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> GetSortedEndpointPairs(const Windows::Foundation::Collections::IIterable<Windows::Networking::EndpointPair> & destinationList, Windows::Networking::HostNameSortOptions sortOptions) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> GetSortedEndpointPairs(iterable<Windows::Networking::EndpointPair> destinationList, Windows::Networking::HostNameSortOptions sortOptions) const;
     event_token NetworkStatusChanged(const Windows::Networking::Connectivity::NetworkStatusChangedEventHandler & networkStatusHandler) const;
     using NetworkStatusChanged_revoker = event_revoker<INetworkInformationStatics>;
     NetworkStatusChanged_revoker NetworkStatusChanged(auto_revoke_t, const Windows::Networking::Connectivity::NetworkStatusChangedEventHandler & networkStatusHandler) const;

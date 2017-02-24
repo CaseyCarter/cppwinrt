@@ -4425,7 +4425,7 @@ template <typename D> void impl_IRadialControllerMenuItem<D>::Invoked(event_toke
     check_hresult(WINRT_SHIM(IRadialControllerMenuItem)->remove_Invoked(token));
 }
 
-template <typename D> void impl_IRadialControllerConfiguration<D>::SetDefaultMenuItems(const Windows::Foundation::Collections::IIterable<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> & buttons) const
+template <typename D> void impl_IRadialControllerConfiguration<D>::SetDefaultMenuItems(iterable<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> buttons) const
 {
     check_hresult(WINRT_SHIM(IRadialControllerConfiguration)->abi_SetDefaultMenuItems(get_abi(buttons)));
 }

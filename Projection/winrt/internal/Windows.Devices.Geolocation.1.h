@@ -262,9 +262,9 @@ struct WINRT_EBO impl_IGeoboundingBoxFactory
 template <typename D>
 struct WINRT_EBO impl_IGeoboundingBoxStatics
 {
-    Windows::Devices::Geolocation::GeoboundingBox TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions) const;
-    Windows::Devices::Geolocation::GeoboundingBox TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem) const;
-    Windows::Devices::Geolocation::GeoboundingBox TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId) const;
+    Windows::Devices::Geolocation::GeoboundingBox TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions) const;
+    Windows::Devices::Geolocation::GeoboundingBox TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem) const;
+    Windows::Devices::Geolocation::GeoboundingBox TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId) const;
 };
 
 template <typename D>
@@ -382,9 +382,9 @@ struct WINRT_EBO impl_IGeopath
 template <typename D>
 struct WINRT_EBO impl_IGeopathFactory
 {
-    Windows::Devices::Geolocation::Geopath Create(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions) const;
-    Windows::Devices::Geolocation::Geopath CreateWithAltitudeReference(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const;
-    Windows::Devices::Geolocation::Geopath CreateWithAltitudeReferenceAndSpatialReference(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const;
+    Windows::Devices::Geolocation::Geopath Create(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions) const;
+    Windows::Devices::Geolocation::Geopath CreateWithAltitudeReference(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const;
+    Windows::Devices::Geolocation::Geopath CreateWithAltitudeReferenceAndSpatialReference(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const;
 };
 
 template <typename D>

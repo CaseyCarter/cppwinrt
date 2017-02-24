@@ -183,7 +183,7 @@ struct WINRT_EBO impl_IVoiceCommandDefinition
 {
     hstring Language() const;
     hstring Name() const;
-    Windows::Foundation::IAsyncAction SetPhraseListAsync(hstring_view phraseListName, const Windows::Foundation::Collections::IIterable<hstring> & phraseList) const;
+    Windows::Foundation::IAsyncAction SetPhraseListAsync(hstring_view phraseListName, iterable<hstring> phraseList) const;
 };
 
 template <typename D>
@@ -216,9 +216,9 @@ struct WINRT_EBO impl_IVoiceCommandResponseStatics
 {
     uint32_t MaxSupportedVoiceCommandContentTiles() const;
     Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & userMessage) const;
-    Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> & contentTiles) const;
+    Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, iterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> contentTiles) const;
     Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse CreateResponseForPrompt(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & repeatMessage) const;
-    Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse CreateResponseForPrompt(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & repeatMessage, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> & contentTiles) const;
+    Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse CreateResponseForPrompt(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & repeatMessage, iterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> contentTiles) const;
 };
 
 template <typename D>

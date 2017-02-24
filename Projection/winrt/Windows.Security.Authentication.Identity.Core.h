@@ -578,14 +578,14 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Secur
     return asyncOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::GetSessionsAsync(const Windows::Foundation::Collections::IIterable<hstring> & userAccountIdList) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::GetSessionsAsync(iterable<hstring> userAccountIdList) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult> asyncOperation;
     check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_GetSessionsAsync(get_abi(userAccountIdList), put_abi(asyncOperation)));
     return asyncOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::GetSessionsAndUnregisteredAccountsAsync(const Windows::Foundation::Collections::IIterable<hstring> & userAccountIdList) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo> impl_IMicrosoftAccountMultiFactorAuthenticationManager<D>::GetSessionsAndUnregisteredAccountsAsync(iterable<hstring> userAccountIdList) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo> asyncOperation;
     check_hresult(WINRT_SHIM(IMicrosoftAccountMultiFactorAuthenticationManager)->abi_GetSessionsAndUnregisteredAccountsAsync(get_abi(userAccountIdList), put_abi(asyncOperation)));

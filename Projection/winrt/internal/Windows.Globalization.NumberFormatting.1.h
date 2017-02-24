@@ -178,13 +178,13 @@ template <typename D>
 struct WINRT_EBO impl_ICurrencyFormatterFactory
 {
     Windows::Globalization::NumberFormatting::CurrencyFormatter CreateCurrencyFormatterCode(hstring_view currencyCode) const;
-    Windows::Globalization::NumberFormatting::CurrencyFormatter CreateCurrencyFormatterCodeContext(hstring_view currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const;
+    Windows::Globalization::NumberFormatting::CurrencyFormatter CreateCurrencyFormatterCodeContext(hstring_view currencyCode, iterable<hstring> languages, hstring_view geographicRegion) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IDecimalFormatterFactory
 {
-    Windows::Globalization::NumberFormatting::DecimalFormatter CreateDecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const;
+    Windows::Globalization::NumberFormatting::DecimalFormatter CreateDecimalFormatter(iterable<hstring> languages, hstring_view geographicRegion) const;
 };
 
 template <typename D>
@@ -270,19 +270,19 @@ struct WINRT_EBO impl_INumeralSystemTranslator
 template <typename D>
 struct WINRT_EBO impl_INumeralSystemTranslatorFactory
 {
-    Windows::Globalization::NumberFormatting::NumeralSystemTranslator Create(const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
+    Windows::Globalization::NumberFormatting::NumeralSystemTranslator Create(iterable<hstring> languages) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPercentFormatterFactory
 {
-    Windows::Globalization::NumberFormatting::PercentFormatter CreatePercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const;
+    Windows::Globalization::NumberFormatting::PercentFormatter CreatePercentFormatter(iterable<hstring> languages, hstring_view geographicRegion) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPermilleFormatterFactory
 {
-    Windows::Globalization::NumberFormatting::PermilleFormatter CreatePermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion) const;
+    Windows::Globalization::NumberFormatting::PermilleFormatter CreatePermilleFormatter(iterable<hstring> languages, hstring_view geographicRegion) const;
 };
 
 template <typename D>

@@ -776,8 +776,8 @@ template <typename D>
 struct WINRT_EBO impl_IRegionsOfInterestControl
 {
     uint32_t MaxRegions() const;
-    Windows::Foundation::IAsyncAction SetRegionsAsync(const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> & regions) const;
-    Windows::Foundation::IAsyncAction SetRegionsAsync(const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> & regions, bool lockValues) const;
+    Windows::Foundation::IAsyncAction SetRegionsAsync(iterable<Windows::Media::Devices::RegionOfInterest> regions) const;
+    Windows::Foundation::IAsyncAction SetRegionsAsync(iterable<Windows::Media::Devices::RegionOfInterest> regions, bool lockValues) const;
     Windows::Foundation::IAsyncAction ClearRegionsAsync() const;
     bool AutoFocusSupported() const;
     bool AutoWhiteBalanceSupported() const;

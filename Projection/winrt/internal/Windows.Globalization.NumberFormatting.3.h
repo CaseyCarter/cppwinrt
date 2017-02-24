@@ -15,7 +15,7 @@ struct WINRT_EBO CurrencyFormatter :
 {
     CurrencyFormatter(std::nullptr_t) noexcept {}
     CurrencyFormatter(hstring_view currencyCode);
-    CurrencyFormatter(hstring_view currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion);
+    CurrencyFormatter(hstring_view currencyCode, iterable<hstring> languages, hstring_view geographicRegion);
 };
 
 struct WINRT_EBO DecimalFormatter :
@@ -24,7 +24,7 @@ struct WINRT_EBO DecimalFormatter :
 {
     DecimalFormatter(std::nullptr_t) noexcept {}
     DecimalFormatter();
-    DecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion);
+    DecimalFormatter(iterable<hstring> languages, hstring_view geographicRegion);
 };
 
 struct WINRT_EBO IncrementNumberRounder :
@@ -40,7 +40,7 @@ struct WINRT_EBO NumeralSystemTranslator :
 {
     NumeralSystemTranslator(std::nullptr_t) noexcept {}
     NumeralSystemTranslator();
-    NumeralSystemTranslator(const Windows::Foundation::Collections::IIterable<hstring> & languages);
+    NumeralSystemTranslator(iterable<hstring> languages);
 };
 
 struct WINRT_EBO PercentFormatter :
@@ -49,7 +49,7 @@ struct WINRT_EBO PercentFormatter :
 {
     PercentFormatter(std::nullptr_t) noexcept {}
     PercentFormatter();
-    PercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion);
+    PercentFormatter(iterable<hstring> languages, hstring_view geographicRegion);
 };
 
 struct WINRT_EBO PermilleFormatter :
@@ -58,7 +58,7 @@ struct WINRT_EBO PermilleFormatter :
 {
     PermilleFormatter(std::nullptr_t) noexcept {}
     PermilleFormatter();
-    PermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view geographicRegion);
+    PermilleFormatter(iterable<hstring> languages, hstring_view geographicRegion);
 };
 
 struct WINRT_EBO SignificantDigitsNumberRounder :

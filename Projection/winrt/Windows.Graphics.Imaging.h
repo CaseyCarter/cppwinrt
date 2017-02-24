@@ -1675,14 +1675,14 @@ template <typename D> Windows::Graphics::Imaging::BitmapTypedValue impl_IBitmapT
     return bitmapTypedValue;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapPropertySet> impl_IBitmapPropertiesView<D>::GetPropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapPropertySet> impl_IBitmapPropertiesView<D>::GetPropertiesAsync(iterable<hstring> propertiesToRetrieve) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapPropertySet> asyncInfo;
     check_hresult(WINRT_SHIM(IBitmapPropertiesView)->abi_GetPropertiesAsync(get_abi(propertiesToRetrieve), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IBitmapProperties<D>::SetPropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & propertiesToSet) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IBitmapProperties<D>::SetPropertiesAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> propertiesToSet) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
     check_hresult(WINRT_SHIM(IBitmapProperties)->abi_SetPropertiesAsync(get_abi(propertiesToSet), put_abi(asyncInfo)));
@@ -1990,7 +1990,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Im
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> impl_IBitmapEncoderStatics<D>::CreateAsync(GUID encoderId, const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & encodingOptions) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> impl_IBitmapEncoderStatics<D>::CreateAsync(GUID encoderId, const Windows::Storage::Streams::IRandomAccessStream & stream, iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> encodingOptions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> asyncInfo;
     check_hresult(WINRT_SHIM(IBitmapEncoderStatics)->abi_CreateWithEncodingOptionsAsync(encoderId, get_abi(stream), get_abi(encodingOptions), put_abi(asyncInfo)));
@@ -2087,7 +2087,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IBitmapEncoder<D>::
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IBitmapEncoder<D>::GoToNextFrameAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & encodingOptions) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IBitmapEncoder<D>::GoToNextFrameAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> encodingOptions) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
     check_hresult(WINRT_SHIM(IBitmapEncoder)->abi_GoToNextFrameWithEncodingOptionsAsync(get_abi(encodingOptions), put_abi(asyncInfo)));
@@ -2361,7 +2361,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEn
     return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().CreateAsync(encoderId, stream);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateAsync(GUID encoderId, const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & encodingOptions)
+inline Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> BitmapEncoder::CreateAsync(GUID encoderId, const Windows::Storage::Streams::IRandomAccessStream & stream, iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> encodingOptions)
 {
     return get_activation_factory<BitmapEncoder, IBitmapEncoderStatics>().CreateAsync(encoderId, stream, encodingOptions);
 }

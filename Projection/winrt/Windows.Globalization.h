@@ -7574,7 +7574,7 @@ template <typename D> bool impl_ICalendar<D>::IsDaylightSavingTime() const
     return value;
 }
 
-template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory2<D>::CreateCalendarWithTimeZone(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId) const
+template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory2<D>::CreateCalendarWithTimeZone(iterable<hstring> languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId) const
 {
     Windows::Globalization::Calendar result { nullptr };
     check_hresult(WINRT_SHIM(ICalendarFactory2)->abi_CreateCalendarWithTimeZone(get_abi(languages), get_abi(calendar), get_abi(clock), get_abi(timeZoneId), put_abi(result)));
@@ -7607,14 +7607,14 @@ template <typename D> hstring impl_ITimeZoneOnCalendar<D>::TimeZoneAsString(int3
     return result;
 }
 
-template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory<D>::CreateCalendarDefaultCalendarAndClock(const Windows::Foundation::Collections::IIterable<hstring> & languages) const
+template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory<D>::CreateCalendarDefaultCalendarAndClock(iterable<hstring> languages) const
 {
     Windows::Globalization::Calendar result { nullptr };
     check_hresult(WINRT_SHIM(ICalendarFactory)->abi_CreateCalendarDefaultCalendarAndClock(get_abi(languages), put_abi(result)));
     return result;
 }
 
-template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory<D>::CreateCalendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock) const
+template <typename D> Windows::Globalization::Calendar impl_ICalendarFactory<D>::CreateCalendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock) const
 {
     Windows::Globalization::Calendar result { nullptr };
     check_hresult(WINRT_SHIM(ICalendarFactory)->abi_CreateCalendar(get_abi(languages), get_abi(calendar), get_abi(clock), put_abi(result)));
@@ -7671,15 +7671,15 @@ inline Calendar::Calendar() :
     Calendar(activate_instance<Calendar>())
 {}
 
-inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId) :
+inline Calendar::Calendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId) :
     Calendar(get_activation_factory<Calendar, ICalendarFactory2>().CreateCalendarWithTimeZone(languages, calendar, clock, timeZoneId))
 {}
 
-inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages) :
+inline Calendar::Calendar(iterable<hstring> languages) :
     Calendar(get_activation_factory<Calendar, ICalendarFactory>().CreateCalendarDefaultCalendarAndClock(languages))
 {}
 
-inline Calendar::Calendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock) :
+inline Calendar::Calendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock) :
     Calendar(get_activation_factory<Calendar, ICalendarFactory>().CreateCalendar(languages, calendar, clock))
 {}
 

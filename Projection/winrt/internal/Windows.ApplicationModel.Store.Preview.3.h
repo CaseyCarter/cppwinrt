@@ -17,7 +17,7 @@ struct StoreConfiguration
     static void SetStoreWebAccountId(hstring_view webAccountId);
     static bool IsStoreWebAccountId(hstring_view webAccountId);
     static Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo HardwareManufacturerInfo();
-    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> FilterUnsupportedSystemFeaturesAsync(const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> & systemFeatures);
+    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> FilterUnsupportedSystemFeaturesAsync(iterable<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> systemFeatures);
     static Windows::Foundation::IReference<uint32_t> PurchasePromptingPolicy();
     static void PurchasePromptingPolicy(const optional<uint32_t> & value);
     static bool HasStoreWebAccount();

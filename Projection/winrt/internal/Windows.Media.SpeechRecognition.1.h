@@ -308,8 +308,8 @@ struct WINRT_EBO impl_ISpeechRecognitionListConstraint
 template <typename D>
 struct WINRT_EBO impl_ISpeechRecognitionListConstraintFactory
 {
-    Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint Create(const Windows::Foundation::Collections::IIterable<hstring> & commands) const;
-    Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint CreateWithTag(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_view tag) const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint Create(iterable<hstring> commands) const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint CreateWithTag(iterable<hstring> commands, hstring_view tag) const;
 };
 
 template <typename D>

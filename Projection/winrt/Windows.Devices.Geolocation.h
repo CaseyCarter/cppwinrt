@@ -1285,21 +1285,21 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Dev
     return value;
 }
 
-template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::Create(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions) const
+template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::Create(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions) const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
     check_hresult(WINRT_SHIM(IGeopathFactory)->abi_Create(get_abi(positions), put_abi(value)));
     return value;
 }
 
-template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::CreateWithAltitudeReference(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const
+template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::CreateWithAltitudeReference(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
     check_hresult(WINRT_SHIM(IGeopathFactory)->abi_CreateWithAltitudeReference(get_abi(positions), altitudeReferenceSystem, put_abi(value)));
     return value;
 }
 
-template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::CreateWithAltitudeReferenceAndSpatialReference(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const
+template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::CreateWithAltitudeReferenceAndSpatialReference(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
     check_hresult(WINRT_SHIM(IGeopathFactory)->abi_CreateWithAltitudeReferenceAndSpatialReference(get_abi(positions), altitudeReferenceSystem, spatialReferenceId, put_abi(value)));
@@ -1362,21 +1362,21 @@ template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeobou
     return value;
 }
 
-template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions) const
+template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
     check_hresult(WINRT_SHIM(IGeoboundingBoxStatics)->abi_TryCompute(get_abi(positions), put_abi(value)));
     return value;
 }
 
-template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem) const
+template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
     check_hresult(WINRT_SHIM(IGeoboundingBoxStatics)->abi_TryComputeWithAltitudeReference(get_abi(positions), altitudeRefSystem, put_abi(value)));
     return value;
 }
 
-template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId) const
+template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
     check_hresult(WINRT_SHIM(IGeoboundingBoxStatics)->abi_TryComputeWithAltitudeReferenceAndSpatialReference(get_abi(positions), altitudeRefSystem, spatialReferenceId, put_abi(value)));
@@ -1767,17 +1767,17 @@ inline GeoboundingBox::GeoboundingBox(const Windows::Devices::Geolocation::Basic
     GeoboundingBox(get_activation_factory<GeoboundingBox, IGeoboundingBoxFactory>().CreateWithAltitudeReferenceAndSpatialReference(northwestCorner, southeastCorner, altitudeReferenceSystem, spatialReferenceId))
 {}
 
-inline Windows::Devices::Geolocation::GeoboundingBox GeoboundingBox::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions)
+inline Windows::Devices::Geolocation::GeoboundingBox GeoboundingBox::TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions)
 {
     return get_activation_factory<GeoboundingBox, IGeoboundingBoxStatics>().TryCompute(positions);
 }
 
-inline Windows::Devices::Geolocation::GeoboundingBox GeoboundingBox::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem)
+inline Windows::Devices::Geolocation::GeoboundingBox GeoboundingBox::TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem)
 {
     return get_activation_factory<GeoboundingBox, IGeoboundingBoxStatics>().TryCompute(positions, altitudeRefSystem);
 }
 
-inline Windows::Devices::Geolocation::GeoboundingBox GeoboundingBox::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId)
+inline Windows::Devices::Geolocation::GeoboundingBox GeoboundingBox::TryCompute(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId)
 {
     return get_activation_factory<GeoboundingBox, IGeoboundingBoxStatics>().TryCompute(positions, altitudeRefSystem, spatialReferenceId);
 }
@@ -1828,15 +1828,15 @@ inline Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeopo
     return get_activation_factory<Geolocator, IGeolocatorStatics2>().DefaultGeoposition();
 }
 
-inline Geopath::Geopath(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions) :
+inline Geopath::Geopath(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions) :
     Geopath(get_activation_factory<Geopath, IGeopathFactory>().Create(positions))
 {}
 
-inline Geopath::Geopath(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) :
+inline Geopath::Geopath(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) :
     Geopath(get_activation_factory<Geopath, IGeopathFactory>().CreateWithAltitudeReference(positions, altitudeReferenceSystem))
 {}
 
-inline Geopath::Geopath(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) :
+inline Geopath::Geopath(iterable<Windows::Devices::Geolocation::BasicGeoposition> positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) :
     Geopath(get_activation_factory<Geopath, IGeopathFactory>().CreateWithAltitudeReferenceAndSpatialReference(positions, altitudeReferenceSystem, spatialReferenceId))
 {}
 

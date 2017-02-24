@@ -4210,14 +4210,14 @@ template <typename D> Windows::Networking::NetworkOperators::UiccAppKind impl_IM
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult> impl_IMobileBroadbandUiccApp<D>::GetRecordDetailsAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & uiccFilePath) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult> impl_IMobileBroadbandUiccApp<D>::GetRecordDetailsAsync(iterable<uint32_t> uiccFilePath) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult> asyncInfo;
     check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->abi_GetRecordDetailsAsync(get_abi(uiccFilePath), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult> impl_IMobileBroadbandUiccApp<D>::ReadRecordAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & uiccFilePath, int32_t recordIndex) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult> impl_IMobileBroadbandUiccApp<D>::ReadRecordAsync(iterable<uint32_t> uiccFilePath, int32_t recordIndex) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppReadRecordResult> asyncInfo;
     check_hresult(WINRT_SHIM(IMobileBroadbandUiccApp)->abi_ReadRecordAsync(get_abi(uiccFilePath), recordIndex, put_abi(asyncInfo)));

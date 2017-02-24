@@ -160,7 +160,7 @@ struct SelectableWordSegmentsTokenizingHandler : Windows::Foundation::IUnknown
     template <typename L> SelectableWordSegmentsTokenizingHandler(L lambda);
     template <typename F> SelectableWordSegmentsTokenizingHandler (F * function);
     template <typename O, typename M> SelectableWordSegmentsTokenizingHandler(O * object, M method);
-    void operator()(const Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment> & precedingWords, const Windows::Foundation::Collections::IIterable<Windows::Data::Text::SelectableWordSegment> & words) const;
+    void operator()(iterable<Windows::Data::Text::SelectableWordSegment> precedingWords, iterable<Windows::Data::Text::SelectableWordSegment> words) const;
 };
 
 struct WordSegmentsTokenizingHandler : Windows::Foundation::IUnknown
@@ -169,7 +169,7 @@ struct WordSegmentsTokenizingHandler : Windows::Foundation::IUnknown
     template <typename L> WordSegmentsTokenizingHandler(L lambda);
     template <typename F> WordSegmentsTokenizingHandler (F * function);
     template <typename O, typename M> WordSegmentsTokenizingHandler(O * object, M method);
-    void operator()(const Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment> & precedingWords, const Windows::Foundation::Collections::IIterable<Windows::Data::Text::WordSegment> & words) const;
+    void operator()(iterable<Windows::Data::Text::WordSegment> precedingWords, iterable<Windows::Data::Text::WordSegment> words) const;
 };
 
 struct IAlternateWordForm :

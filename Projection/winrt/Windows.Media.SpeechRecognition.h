@@ -1540,14 +1540,14 @@ template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IS
     return value;
 }
 
-template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint impl_ISpeechRecognitionListConstraintFactory<D>::Create(const Windows::Foundation::Collections::IIterable<hstring> & commands) const
+template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint impl_ISpeechRecognitionListConstraintFactory<D>::Create(iterable<hstring> commands) const
 {
     Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint constraint { nullptr };
     check_hresult(WINRT_SHIM(ISpeechRecognitionListConstraintFactory)->abi_Create(get_abi(commands), put_abi(constraint)));
     return constraint;
 }
 
-template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint impl_ISpeechRecognitionListConstraintFactory<D>::CreateWithTag(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_view tag) const
+template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint impl_ISpeechRecognitionListConstraintFactory<D>::CreateWithTag(iterable<hstring> commands, hstring_view tag) const
 {
     Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint constraint { nullptr };
     check_hresult(WINRT_SHIM(ISpeechRecognitionListConstraintFactory)->abi_CreateWithTag(get_abi(commands), get_abi(tag), put_abi(constraint)));
@@ -1860,11 +1860,11 @@ inline SpeechRecognitionGrammarFileConstraint::SpeechRecognitionGrammarFileConst
     SpeechRecognitionGrammarFileConstraint(get_activation_factory<SpeechRecognitionGrammarFileConstraint, ISpeechRecognitionGrammarFileConstraintFactory>().CreateWithTag(file, tag))
 {}
 
-inline SpeechRecognitionListConstraint::SpeechRecognitionListConstraint(const Windows::Foundation::Collections::IIterable<hstring> & commands) :
+inline SpeechRecognitionListConstraint::SpeechRecognitionListConstraint(iterable<hstring> commands) :
     SpeechRecognitionListConstraint(get_activation_factory<SpeechRecognitionListConstraint, ISpeechRecognitionListConstraintFactory>().Create(commands))
 {}
 
-inline SpeechRecognitionListConstraint::SpeechRecognitionListConstraint(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_view tag) :
+inline SpeechRecognitionListConstraint::SpeechRecognitionListConstraint(iterable<hstring> commands, hstring_view tag) :
     SpeechRecognitionListConstraint(get_activation_factory<SpeechRecognitionListConstraint, ISpeechRecognitionListConstraintFactory>().CreateWithTag(commands, tag))
 {}
 

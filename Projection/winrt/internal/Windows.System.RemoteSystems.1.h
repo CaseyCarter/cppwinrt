@@ -182,7 +182,7 @@ struct WINRT_EBO impl_IRemoteSystemKindFilter
 template <typename D>
 struct WINRT_EBO impl_IRemoteSystemKindFilterFactory
 {
-    Windows::System::RemoteSystems::RemoteSystemKindFilter Create(const Windows::Foundation::Collections::IIterable<hstring> & remoteSystemKinds) const;
+    Windows::System::RemoteSystems::RemoteSystemKindFilter Create(iterable<hstring> remoteSystemKinds) const;
 };
 
 template <typename D>
@@ -206,7 +206,7 @@ struct WINRT_EBO impl_IRemoteSystemStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::System::RemoteSystems::RemoteSystem> FindByHostNameAsync(const Windows::Networking::HostName & hostName) const;
     Windows::System::RemoteSystems::RemoteSystemWatcher CreateWatcher() const;
-    Windows::System::RemoteSystems::RemoteSystemWatcher CreateWatcher(const Windows::Foundation::Collections::IIterable<Windows::System::RemoteSystems::IRemoteSystemFilter> & filters) const;
+    Windows::System::RemoteSystems::RemoteSystemWatcher CreateWatcher(iterable<Windows::System::RemoteSystems::IRemoteSystemFilter> filters) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteSystems::RemoteSystemAccessStatus> RequestAccessAsync() const;
 };
 

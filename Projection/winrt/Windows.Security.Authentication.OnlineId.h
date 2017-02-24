@@ -474,7 +474,7 @@ template <typename D> Windows::Security::Authentication::OnlineId::UserAuthentic
     return authenticationOperation;
 }
 
-template <typename D> Windows::Security::Authentication::OnlineId::UserAuthenticationOperation impl_IOnlineIdAuthenticator<D>::AuthenticateUserAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> & requests, Windows::Security::Authentication::OnlineId::CredentialPromptType credentialPromptType) const
+template <typename D> Windows::Security::Authentication::OnlineId::UserAuthenticationOperation impl_IOnlineIdAuthenticator<D>::AuthenticateUserAsync(iterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> requests, Windows::Security::Authentication::OnlineId::CredentialPromptType credentialPromptType) const
 {
     Windows::Security::Authentication::OnlineId::UserAuthenticationOperation authenticationOperation { nullptr };
     check_hresult(WINRT_SHIM(IOnlineIdAuthenticator)->abi_AuthenticateUserAsyncAdvanced(get_abi(requests), credentialPromptType, put_abi(authenticationOperation)));

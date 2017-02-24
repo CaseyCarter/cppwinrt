@@ -32,7 +32,7 @@ struct WebAuthenticationCoreManager
     static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_view webAccountProviderId);
     static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_view webAccountProviderId, hstring_view authority);
     static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> FindAccountProviderAsync(hstring_view webAccountProviderId, hstring_view authority, const Windows::System::User & user);
-    static Windows::Security::Authentication::Web::Core::WebAccountMonitor CreateWebAccountMonitor(const Windows::Foundation::Collections::IIterable<Windows::Security::Credentials::WebAccount> & webAccounts);
+    static Windows::Security::Authentication::Web::Core::WebAccountMonitor CreateWebAccountMonitor(iterable<Windows::Security::Credentials::WebAccount> webAccounts);
 };
 
 struct WINRT_EBO WebProviderError :

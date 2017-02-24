@@ -331,7 +331,7 @@ struct WINRT_EBO impl_IHttpCookieManager
 template <typename D>
 struct WINRT_EBO impl_IHttpFormUrlEncodedContentFactory
 {
-    Windows::Web::Http::HttpFormUrlEncodedContent Create(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & content) const;
+    Windows::Web::Http::HttpFormUrlEncodedContent Create(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> content) const;
 };
 
 template <typename D>

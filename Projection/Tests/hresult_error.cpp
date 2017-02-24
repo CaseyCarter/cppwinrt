@@ -502,3 +502,10 @@ TEST_CASE("hresult, exception")
         REQUIRE(E_FAIL == impl::to_hresult());
     }
 }
+
+TEST_CASE("hresult, throw_last_error")
+{
+    SetLastError(ERROR_CANCELLED);
+
+    REQUIRE_THROWS_AS(throw_last_error(), hresult_canceled);
+}

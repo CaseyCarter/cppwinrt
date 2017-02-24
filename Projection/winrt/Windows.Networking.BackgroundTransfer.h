@@ -1641,14 +1641,14 @@ template <typename D> bool impl_IUnconstrainedTransferRequestResult<D>::IsUncons
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> impl_IBackgroundDownloaderUserConsent<D>::RequestUnconstrainedDownloadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> & operations) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> impl_IBackgroundDownloaderUserConsent<D>::RequestUnconstrainedDownloadsAsync(iterable<Windows::Networking::BackgroundTransfer::DownloadOperation> operations) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> operation;
     check_hresult(WINRT_SHIM(IBackgroundDownloaderUserConsent)->abi_RequestUnconstrainedDownloadsAsync(get_abi(operations), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> impl_IBackgroundUploaderUserConsent<D>::RequestUnconstrainedUploadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> & operations) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> impl_IBackgroundUploaderUserConsent<D>::RequestUnconstrainedUploadsAsync(iterable<Windows::Networking::BackgroundTransfer::UploadOperation> operations) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> operation;
     check_hresult(WINRT_SHIM(IBackgroundUploaderUserConsent)->abi_RequestUnconstrainedUploadsAsync(get_abi(operations), put_abi(operation)));
@@ -1757,21 +1757,21 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, iterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> parts) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> operation;
     check_hresult(WINRT_SHIM(IBackgroundUploader)->abi_CreateUploadWithFormDataAndAutoBoundaryAsync(get_abi(uri), get_abi(parts), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_view subType) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, iterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> parts, hstring_view subType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> operation;
     check_hresult(WINRT_SHIM(IBackgroundUploader)->abi_CreateUploadWithSubTypeAsync(get_abi(uri), get_abi(parts), get_abi(subType), put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_view subType, hstring_view boundary) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, iterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> parts, hstring_view subType, hstring_view boundary) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> operation;
     check_hresult(WINRT_SHIM(IBackgroundUploader)->abi_CreateUploadWithSubTypeAndBoundaryAsync(get_abi(uri), get_abi(parts), get_abi(subType), get_abi(boundary), put_abi(operation)));
@@ -2219,7 +2219,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<BackgroundDownloader, IBackgroundDownloaderStaticMethods2>().GetCurrentDownloadsForTransferGroupAsync(group);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> BackgroundDownloader::RequestUnconstrainedDownloadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> & operations)
+inline Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> BackgroundDownloader::RequestUnconstrainedDownloadsAsync(iterable<Windows::Networking::BackgroundTransfer::DownloadOperation> operations)
 {
     return get_activation_factory<BackgroundDownloader, IBackgroundDownloaderUserConsent>().RequestUnconstrainedDownloadsAsync(operations);
 }
@@ -2273,7 +2273,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
     return get_activation_factory<BackgroundUploader, IBackgroundUploaderStaticMethods2>().GetCurrentUploadsForTransferGroupAsync(group);
 }
 
-inline Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> BackgroundUploader::RequestUnconstrainedUploadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> & operations)
+inline Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> BackgroundUploader::RequestUnconstrainedUploadsAsync(iterable<Windows::Networking::BackgroundTransfer::UploadOperation> operations)
 {
     return get_activation_factory<BackgroundUploader, IBackgroundUploaderUserConsent>().RequestUnconstrainedUploadsAsync(operations);
 }

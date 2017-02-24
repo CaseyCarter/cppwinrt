@@ -6944,7 +6944,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMail
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryForwardMeetingAsync(const Windows::ApplicationModel::Email::EmailMessage & meeting, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipient> & recipients, hstring_view subject, Windows::ApplicationModel::Email::EmailMessageBodyKind forwardHeaderType, hstring_view forwardHeader, hstring_view comment) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IEmailMailbox<D>::TryForwardMeetingAsync(const Windows::ApplicationModel::Email::EmailMessage & meeting, iterable<Windows::ApplicationModel::Email::EmailRecipient> recipients, hstring_view subject, Windows::ApplicationModel::Email::EmailMessageBodyKind forwardHeaderType, hstring_view forwardHeader, hstring_view comment) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
     check_hresult(WINRT_SHIM(IEmailMailbox)->abi_TryForwardMeetingAsync(get_abi(meeting), get_abi(recipients), get_abi(subject), forwardHeaderType, get_abi(forwardHeader), get_abi(comment), put_abi(result)));
@@ -7017,14 +7017,14 @@ template <typename D> hstring impl_IEmailMailbox2<D>::NetworkId() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailRecipientResolutionResult>> impl_IEmailMailbox3<D>::ResolveRecipientsAsync(const Windows::Foundation::Collections::IIterable<hstring> & recipients) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailRecipientResolutionResult>> impl_IEmailMailbox3<D>::ResolveRecipientsAsync(iterable<hstring> recipients) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailRecipientResolutionResult>> result;
     check_hresult(WINRT_SHIM(IEmailMailbox3)->abi_ResolveRecipientsAsync(get_abi(recipients), put_abi(result)));
     return result;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus>> impl_IEmailMailbox3<D>::ValidateCertificatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus>> impl_IEmailMailbox3<D>::ValidateCertificatesAsync(iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus>> result;
     check_hresult(WINRT_SHIM(IEmailMailbox3)->abi_ValidateCertificatesAsync(get_abi(certificates), put_abi(result)));
@@ -7078,7 +7078,7 @@ template <typename D> void impl_IEmailRecipientResolutionResult2<D>::Status(Wind
     check_hresult(WINRT_SHIM(IEmailRecipientResolutionResult2)->put_Status(value));
 }
 
-template <typename D> void impl_IEmailRecipientResolutionResult2<D>::SetPublicKeys(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & value) const
+template <typename D> void impl_IEmailRecipientResolutionResult2<D>::SetPublicKeys(iterable<Windows::Security::Cryptography::Certificates::Certificate> value) const
 {
     check_hresult(WINRT_SHIM(IEmailRecipientResolutionResult2)->abi_SetPublicKeys(get_abi(value)));
 }

@@ -52,7 +52,7 @@ struct WINRT_EBO HttpFormUrlEncodedContent :
     impl::require<HttpFormUrlEncodedContent, Windows::Foundation::IStringable>
 {
     HttpFormUrlEncodedContent(std::nullptr_t) noexcept {}
-    HttpFormUrlEncodedContent(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & content);
+    HttpFormUrlEncodedContent(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> content);
 };
 
 struct WINRT_EBO HttpMethod :

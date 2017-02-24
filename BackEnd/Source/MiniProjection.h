@@ -25,29 +25,21 @@ struct IClosable;
 struct IStringable;
 
 template <typename D>
-class WINRT_EBO impl_IClosable
+struct WINRT_EBO impl_IClosable
 {
-    auto shim() const { return impl::shim<D, IClosable>(this); }
-
-public:
-
     void Close() const
     {
-        check_hresult(shim()->abi_Close());
+        check_hresult(WINRT_SHIM(IClosable)->abi_Close());
     }
 };
 
 template <typename D>
-class WINRT_EBO impl_IStringable
+struct WINRT_EBO impl_IStringable
 {
-    auto shim() const { return impl::shim<D, IStringable>(this); }
-
-public:
-
     hstring ToString() const
     {
         hstring value;
-        check_hresult(shim()->abi_ToString(put_abi(value)));
+        check_hresult(WINRT_SHIM(IStringable)->abi_ToString(put(value)));
         return value;
     }
 };
@@ -77,7 +69,6 @@ struct IClosable :
     impl::consume<IClosable>
 {
     IClosable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClosable>(m_ptr); }
 };
 
 struct IStringable :
@@ -85,7 +76,6 @@ struct IStringable :
     impl::consume<IStringable>
 {
     IStringable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStringable>(m_ptr); }
 };
 
 }
@@ -117,7 +107,7 @@ struct produce<D, Windows::Foundation::IClosable> : produce_base<D, Windows::Fou
     {
         try
         {
-            shim().Close();
+            this->shim().Close();
             return S_OK;
         }
         catch (...)

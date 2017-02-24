@@ -1414,7 +1414,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IContentIndexer<D>:
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IContentIndexer<D>::DeleteMultipleAsync(const Windows::Foundation::Collections::IIterable<hstring> & contentIds) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IContentIndexer<D>::DeleteMultipleAsync(iterable<hstring> contentIds) const
 {
     Windows::Foundation::IAsyncAction operation;
     check_hresult(WINRT_SHIM(IContentIndexer)->abi_DeleteMultipleAsync(get_abi(contentIds), put_abi(operation)));
@@ -1428,7 +1428,7 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IContentIndexer<D>:
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> impl_IContentIndexer<D>::RetrievePropertiesAsync(hstring_view contentId, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> impl_IContentIndexer<D>::RetrievePropertiesAsync(hstring_view contentId, iterable<hstring> propertiesToRetrieve) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>> operation;
     check_hresult(WINRT_SHIM(IContentIndexer)->abi_RetrievePropertiesAsync(get_abi(contentId), get_abi(propertiesToRetrieve), put_abi(operation)));
@@ -1466,21 +1466,21 @@ template <typename D> void impl_IValueAndLanguage<D>::Value(const Windows::Found
     check_hresult(WINRT_SHIM(IValueAndLanguage)->put_Value(get_abi(value)));
 }
 
-template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_view searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve, const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> & sortOrder, hstring_view searchFilterLanguage) const
+template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_view searchFilter, iterable<hstring> propertiesToRetrieve, iterable<Windows::Storage::Search::SortEntry> sortOrder, hstring_view searchFilterLanguage) const
 {
     Windows::Storage::Search::ContentIndexerQuery query { nullptr };
     check_hresult(WINRT_SHIM(IContentIndexerQueryOperations)->abi_CreateQueryWithSortOrderAndLanguage(get_abi(searchFilter), get_abi(propertiesToRetrieve), get_abi(sortOrder), get_abi(searchFilterLanguage), put_abi(query)));
     return query;
 }
 
-template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_view searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve, const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> & sortOrder) const
+template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_view searchFilter, iterable<hstring> propertiesToRetrieve, iterable<Windows::Storage::Search::SortEntry> sortOrder) const
 {
     Windows::Storage::Search::ContentIndexerQuery query { nullptr };
     check_hresult(WINRT_SHIM(IContentIndexerQueryOperations)->abi_CreateQueryWithSortOrder(get_abi(searchFilter), get_abi(propertiesToRetrieve), get_abi(sortOrder), put_abi(query)));
     return query;
 }
 
-template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_view searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
+template <typename D> Windows::Storage::Search::ContentIndexerQuery impl_IContentIndexerQueryOperations<D>::CreateQuery(hstring_view searchFilter, iterable<hstring> propertiesToRetrieve) const
 {
     Windows::Storage::Search::ContentIndexerQuery query { nullptr };
     check_hresult(WINRT_SHIM(IContentIndexerQueryOperations)->abi_CreateQuery(get_abi(searchFilter), get_abi(propertiesToRetrieve), put_abi(query)));
@@ -1634,7 +1634,7 @@ template <typename D> void impl_IQueryOptions<D>::SetThumbnailPrefetch(Windows::
     check_hresult(WINRT_SHIM(IQueryOptions)->abi_SetThumbnailPrefetch(mode, requestedSize, options));
 }
 
-template <typename D> void impl_IQueryOptions<D>::SetPropertyPrefetch(Windows::Storage::FileProperties::PropertyPrefetchOptions options, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
+template <typename D> void impl_IQueryOptions<D>::SetPropertyPrefetch(Windows::Storage::FileProperties::PropertyPrefetchOptions options, iterable<hstring> propertiesToRetrieve) const
 {
     check_hresult(WINRT_SHIM(IQueryOptions)->abi_SetPropertyPrefetch(options, get_abi(propertiesToRetrieve)));
 }
@@ -1646,7 +1646,7 @@ template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IQ
     return value;
 }
 
-template <typename D> Windows::Storage::Search::QueryOptions impl_IQueryOptionsFactory<D>::CreateCommonFileQuery(Windows::Storage::Search::CommonFileQuery query, const Windows::Foundation::Collections::IIterable<hstring> & fileTypeFilter) const
+template <typename D> Windows::Storage::Search::QueryOptions impl_IQueryOptionsFactory<D>::CreateCommonFileQuery(Windows::Storage::Search::CommonFileQuery query, iterable<hstring> fileTypeFilter) const
 {
     Windows::Storage::Search::QueryOptions queryOptions { nullptr };
     check_hresult(WINRT_SHIM(IQueryOptionsFactory)->abi_CreateCommonFileQuery(query, get_abi(fileTypeFilter), put_abi(queryOptions)));
@@ -1927,7 +1927,7 @@ inline QueryOptions::QueryOptions() :
     QueryOptions(activate_instance<QueryOptions>())
 {}
 
-inline QueryOptions::QueryOptions(Windows::Storage::Search::CommonFileQuery query, const Windows::Foundation::Collections::IIterable<hstring> & fileTypeFilter) :
+inline QueryOptions::QueryOptions(Windows::Storage::Search::CommonFileQuery query, iterable<hstring> fileTypeFilter) :
     QueryOptions(get_activation_factory<QueryOptions, IQueryOptionsFactory>().CreateCommonFileQuery(query, fileTypeFilter))
 {}
 

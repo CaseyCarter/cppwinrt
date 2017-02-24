@@ -395,8 +395,8 @@ namespace Windows::Security::Cryptography::Certificates {
 template <typename D>
 struct WINRT_EBO impl_ICertificate
 {
-    Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const;
-    Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates, const Windows::Security::Cryptography::Certificates::ChainBuildingParameters & parameters) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> BuildChainAsync(iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> BuildChainAsync(iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates, const Windows::Security::Cryptography::Certificates::ChainBuildingParameters & parameters) const;
     com_array<uint8_t> SerialNumber() const;
     com_array<uint8_t> GetHashValue() const;
     com_array<uint8_t> GetHashValue(hstring_view hashAlgorithmName) const;
@@ -634,7 +634,7 @@ struct WINRT_EBO impl_ICmsAttachedSignatureFactory
 template <typename D>
 struct WINRT_EBO impl_ICmsAttachedSignatureStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, iterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> signers, iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates) const;
 };
 
 template <typename D>
@@ -654,7 +654,7 @@ struct WINRT_EBO impl_ICmsDetachedSignatureFactory
 template <typename D>
 struct WINRT_EBO impl_ICmsDetachedSignatureStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, iterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> signers, iterable<Windows::Security::Cryptography::Certificates::Certificate> certificates) const;
 };
 
 template <typename D>

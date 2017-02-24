@@ -811,7 +811,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cr
     return asyncInfo;
 }
 
-template <typename D> Windows::Security::Authentication::Web::Core::WebAccountMonitor impl_IWebAuthenticationCoreManagerStatics3<D>::CreateWebAccountMonitor(const Windows::Foundation::Collections::IIterable<Windows::Security::Credentials::WebAccount> & webAccounts) const
+template <typename D> Windows::Security::Authentication::Web::Core::WebAccountMonitor impl_IWebAuthenticationCoreManagerStatics3<D>::CreateWebAccountMonitor(iterable<Windows::Security::Credentials::WebAccount> webAccounts) const
 {
     Windows::Security::Authentication::Web::Core::WebAccountMonitor result { nullptr };
     check_hresult(WINRT_SHIM(IWebAuthenticationCoreManagerStatics3)->abi_CreateWebAccountMonitor(get_abi(webAccounts), put_abi(result)));
@@ -1014,7 +1014,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebA
     return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics2>().FindAccountProviderAsync(webAccountProviderId, authority, user);
 }
 
-inline Windows::Security::Authentication::Web::Core::WebAccountMonitor WebAuthenticationCoreManager::CreateWebAccountMonitor(const Windows::Foundation::Collections::IIterable<Windows::Security::Credentials::WebAccount> & webAccounts)
+inline Windows::Security::Authentication::Web::Core::WebAccountMonitor WebAuthenticationCoreManager::CreateWebAccountMonitor(iterable<Windows::Security::Credentials::WebAccount> webAccounts)
 {
     return get_activation_factory<WebAuthenticationCoreManager, IWebAuthenticationCoreManagerStatics3>().CreateWebAccountMonitor(webAccounts);
 }

@@ -1123,14 +1123,14 @@ template <typename D> Windows::Management::Deployment::PackageInstallState impl_
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::AddPackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::AddPackageAsync(const Windows::Foundation::Uri & packageUri, iterable<Windows::Foundation::Uri> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_AddPackageAsync(get_abi(packageUri), get_abi(dependencyPackageUris), deploymentOptions, put_abi(deploymentOperation)));
     return deploymentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::UpdatePackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::UpdatePackageAsync(const Windows::Foundation::Uri & packageUri, iterable<Windows::Foundation::Uri> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_UpdatePackageAsync(get_abi(packageUri), get_abi(dependencyPackageUris), deploymentOptions, put_abi(deploymentOperation)));
@@ -1144,14 +1144,14 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return deploymentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::StagePackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::StagePackageAsync(const Windows::Foundation::Uri & packageUri, iterable<Windows::Foundation::Uri> dependencyPackageUris) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_StagePackageAsync(get_abi(packageUri), get_abi(dependencyPackageUris), put_abi(deploymentOperation)));
     return deploymentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::RegisterPackageAsync(const Windows::Foundation::Uri & manifestUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager<D>::RegisterPackageAsync(const Windows::Foundation::Uri & manifestUri, iterable<Windows::Foundation::Uri> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager)->abi_RegisterPackageAsync(get_abi(manifestUri), get_abi(dependencyPackageUris), deploymentOptions, put_abi(deploymentOperation)));
@@ -1240,14 +1240,14 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return deploymentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager2<D>::StagePackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager2<D>::StagePackageAsync(const Windows::Foundation::Uri & packageUri, iterable<Windows::Foundation::Uri> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager2)->abi_StagePackageWithOptionsAsync(get_abi(packageUri), get_abi(dependencyPackageUris), deploymentOptions, put_abi(deploymentOperation)));
     return deploymentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager2<D>::RegisterPackageByFullNameAsync(hstring_view mainPackageFullName, const Windows::Foundation::Collections::IIterable<hstring> & dependencyPackageFullNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager2<D>::RegisterPackageByFullNameAsync(hstring_view mainPackageFullName, iterable<hstring> dependencyPackageFullNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager2)->abi_RegisterPackageByFullNameAsync(get_abi(mainPackageFullName), get_abi(dependencyPackageFullNames), deploymentOptions, put_abi(deploymentOperation)));
@@ -1310,7 +1310,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Management::
     return packageVolume;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager3<D>::AddPackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager3<D>::AddPackageAsync(const Windows::Foundation::Uri & packageUri, iterable<Windows::Foundation::Uri> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager3)->abi_AddPackageToVolumeAsync(get_abi(packageUri), get_abi(dependencyPackageUris), deploymentOptions, get_abi(targetVolume), put_abi(deploymentOperation)));
@@ -1322,7 +1322,7 @@ template <typename D> void impl_IPackageManager3<D>::ClearPackageStatus(hstring_
     check_hresult(WINRT_SHIM(IPackageManager3)->abi_ClearPackageStatus(get_abi(packageFullName), status));
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager3<D>::RegisterPackageAsync(const Windows::Foundation::Uri & manifestUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & appDataVolume) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager3<D>::RegisterPackageAsync(const Windows::Foundation::Uri & manifestUri, iterable<Windows::Foundation::Uri> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & appDataVolume) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager3)->abi_RegisterPackageWithAppDataVolumeAsync(get_abi(manifestUri), get_abi(dependencyPackageUris), deploymentOptions, get_abi(appDataVolume), put_abi(deploymentOperation)));
@@ -1388,7 +1388,7 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return deploymentOperation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager3<D>::StagePackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume) const
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager3<D>::StagePackageAsync(const Windows::Foundation::Uri & packageUri, iterable<Windows::Foundation::Uri> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
     check_hresult(WINRT_SHIM(IPackageManager3)->abi_StagePackageToVolumeAsync(get_abi(packageUri), get_abi(dependencyPackageUris), deploymentOptions, get_abi(targetVolume), put_abi(deploymentOperation)));

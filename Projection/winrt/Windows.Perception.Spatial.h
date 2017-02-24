@@ -965,7 +965,7 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISpatialAnchorTransferManagerStatics<D>::TryExportAnchorsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> & anchors, const Windows::Storage::Streams::IOutputStream & stream) const
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ISpatialAnchorTransferManagerStatics<D>::TryExportAnchorsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> anchors, const Windows::Storage::Streams::IOutputStream & stream) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
     check_hresult(WINRT_SHIM(ISpatialAnchorTransferManagerStatics)->abi_TryExportAnchorsAsync(get_abi(anchors), get_abi(stream), put_abi(operation)));
@@ -1247,7 +1247,7 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IM
     return get_activation_factory<SpatialAnchorTransferManager, ISpatialAnchorTransferManagerStatics>().TryImportAnchorsAsync(stream);
 }
 
-inline Windows::Foundation::IAsyncOperation<bool> SpatialAnchorTransferManager::TryExportAnchorsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> & anchors, const Windows::Storage::Streams::IOutputStream & stream)
+inline Windows::Foundation::IAsyncOperation<bool> SpatialAnchorTransferManager::TryExportAnchorsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> anchors, const Windows::Storage::Streams::IOutputStream & stream)
 {
     return get_activation_factory<SpatialAnchorTransferManager, ISpatialAnchorTransferManagerStatics>().TryExportAnchorsAsync(anchors, stream);
 }

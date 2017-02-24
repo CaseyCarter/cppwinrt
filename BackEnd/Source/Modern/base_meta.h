@@ -75,10 +75,12 @@ struct require_one : consume<D, I>
     operator I() const
     {
         const auto& d = *static_cast<const D*>(this);
+
         if (d)
         {
             return d.template as<I>();
         }
+
         return nullptr;
     }
 };
@@ -93,10 +95,12 @@ struct bases_one
     operator I() const
     {
         const auto& d = *static_cast<const D*>(this);
+
         if (d)
         {
             return d.template as<I>();
         }
+
         return nullptr;
     }
 };

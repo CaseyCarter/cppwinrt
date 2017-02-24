@@ -7005,7 +7005,7 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Med
     return value;
 }
 
-template <typename D> void impl_IMediaPlaybackList2<D>::SetShuffledItems(const Windows::Foundation::Collections::IIterable<Windows::Media::Playback::MediaPlaybackItem> & value) const
+template <typename D> void impl_IMediaPlaybackList2<D>::SetShuffledItems(iterable<Windows::Media::Playback::MediaPlaybackItem> value) const
 {
     check_hresult(WINRT_SHIM(IMediaPlaybackList2)->abi_SetShuffledItems(get_abi(value)));
 }

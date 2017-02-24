@@ -6010,7 +6010,7 @@ template <typename D> Windows::UI::Composition::CompositionEffectFactory impl_IC
     return result;
 }
 
-template <typename D> Windows::UI::Composition::CompositionEffectFactory impl_ICompositor<D>::CreateEffectFactory(const Windows::Graphics::Effects::IGraphicsEffect & graphicsEffect, const Windows::Foundation::Collections::IIterable<hstring> & animatableProperties) const
+template <typename D> Windows::UI::Composition::CompositionEffectFactory impl_ICompositor<D>::CreateEffectFactory(const Windows::Graphics::Effects::IGraphicsEffect & graphicsEffect, iterable<hstring> animatableProperties) const
 {
     Windows::UI::Composition::CompositionEffectFactory result { nullptr };
     check_hresult(WINRT_SHIM(ICompositor)->abi_CreateEffectFactoryWithProperties(get_abi(graphicsEffect), get_abi(animatableProperties), put_abi(result)));

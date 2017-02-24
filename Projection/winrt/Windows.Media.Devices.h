@@ -4399,14 +4399,14 @@ template <typename D> uint32_t impl_IRegionsOfInterestControl<D>::MaxRegions() c
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IRegionsOfInterestControl<D>::SetRegionsAsync(const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> & regions) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IRegionsOfInterestControl<D>::SetRegionsAsync(iterable<Windows::Media::Devices::RegionOfInterest> regions) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
     check_hresult(WINRT_SHIM(IRegionsOfInterestControl)->abi_SetRegionsAsync(get_abi(regions), put_abi(asyncInfo)));
     return asyncInfo;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IRegionsOfInterestControl<D>::SetRegionsAsync(const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> & regions, bool lockValues) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IRegionsOfInterestControl<D>::SetRegionsAsync(iterable<Windows::Media::Devices::RegionOfInterest> regions, bool lockValues) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
     check_hresult(WINRT_SHIM(IRegionsOfInterestControl)->abi_SetRegionsWithLockAsync(get_abi(regions), lockValues, put_abi(asyncInfo)));

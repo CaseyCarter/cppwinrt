@@ -43,19 +43,19 @@ struct WINRT_EBO DeviceInformation :
 {
     DeviceInformation(std::nullptr_t) noexcept {}
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId);
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId, iterable<hstring> additionalProperties);
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync();
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(Windows::Devices::Enumeration::DeviceClass deviceClass);
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter);
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter, iterable<hstring> additionalProperties);
     static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher();
     static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(Windows::Devices::Enumeration::DeviceClass deviceClass);
     static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter);
-    static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties);
+    static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter, iterable<hstring> additionalProperties);
     static hstring GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass);
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
-    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
-    static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_view deviceId, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_view aqsFilter, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
+    static Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_view aqsFilter, iterable<hstring> additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind);
 };
 
 struct WINRT_EBO DeviceInformationCollection :

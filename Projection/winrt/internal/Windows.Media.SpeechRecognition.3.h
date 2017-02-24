@@ -57,8 +57,8 @@ struct WINRT_EBO SpeechRecognitionListConstraint :
     Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint
 {
     SpeechRecognitionListConstraint(std::nullptr_t) noexcept {}
-    SpeechRecognitionListConstraint(const Windows::Foundation::Collections::IIterable<hstring> & commands);
-    SpeechRecognitionListConstraint(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_view tag);
+    SpeechRecognitionListConstraint(iterable<hstring> commands);
+    SpeechRecognitionListConstraint(iterable<hstring> commands, hstring_view tag);
 };
 
 struct WINRT_EBO SpeechRecognitionQualityDegradingEventArgs :

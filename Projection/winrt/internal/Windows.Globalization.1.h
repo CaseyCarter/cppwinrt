@@ -568,14 +568,14 @@ struct WINRT_EBO impl_ICalendar
 template <typename D>
 struct WINRT_EBO impl_ICalendarFactory
 {
-    Windows::Globalization::Calendar CreateCalendarDefaultCalendarAndClock(const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
-    Windows::Globalization::Calendar CreateCalendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock) const;
+    Windows::Globalization::Calendar CreateCalendarDefaultCalendarAndClock(iterable<hstring> languages) const;
+    Windows::Globalization::Calendar CreateCalendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ICalendarFactory2
 {
-    Windows::Globalization::Calendar CreateCalendarWithTimeZone(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId) const;
+    Windows::Globalization::Calendar CreateCalendarWithTimeZone(iterable<hstring> languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId) const;
 };
 
 template <typename D>

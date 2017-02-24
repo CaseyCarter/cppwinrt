@@ -1070,7 +1070,7 @@ struct WINRT_EBO impl_IAutomationPeer3
     Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetControlledPeers() const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation> GetAnnotations() const;
     void SetParent(const Windows::UI::Xaml::Automation::Peers::AutomationPeer & peer) const;
-    void RaiseTextEditTextChangedEvent(Windows::UI::Xaml::Automation::AutomationTextEditChangeType automationTextEditChangeType, const Windows::Foundation::Collections::IVectorView<hstring> & changedData) const;
+    void RaiseTextEditTextChangedEvent(Windows::UI::Xaml::Automation::AutomationTextEditChangeType automationTextEditChangeType, vector_view<hstring> changedData) const;
     int32_t GetPositionInSet() const;
     int32_t GetSizeOfSet() const;
     int32_t GetLevel() const;

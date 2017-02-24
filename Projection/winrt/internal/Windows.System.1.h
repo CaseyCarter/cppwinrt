@@ -515,7 +515,7 @@ struct WINRT_EBO impl_IUser
     Windows::System::UserAuthenticationStatus AuthenticationStatus() const;
     Windows::System::UserType Type() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::IInspectable> GetPropertyAsync(hstring_view value) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> GetPropertiesAsync(const Windows::Foundation::Collections::IVectorView<hstring> & values) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> GetPropertiesAsync(vector_view<hstring> values) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> GetPictureAsync(Windows::System::UserPictureSize desiredSize) const;
 };
 

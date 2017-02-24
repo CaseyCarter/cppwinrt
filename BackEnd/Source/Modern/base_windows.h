@@ -308,9 +308,6 @@ inline TrustLevel GetTrustLevel(const IInspectable & object)
 
 }
 
-using unknown = Windows::Foundation::IUnknown;
-using inspectable = Windows::Foundation::IInspectable;
-
 namespace impl {
 
 template <typename T, std::enable_if_t<!std::is_base_of<Windows::Foundation::IUnknown, T>::value> * = nullptr>

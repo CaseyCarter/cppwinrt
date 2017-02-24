@@ -889,7 +889,7 @@ template <typename D> hstring impl_IVoiceCommandDefinition<D>::Name() const
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncAction impl_IVoiceCommandDefinition<D>::SetPhraseListAsync(hstring_view phraseListName, const Windows::Foundation::Collections::IIterable<hstring> & phraseList) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IVoiceCommandDefinition<D>::SetPhraseListAsync(hstring_view phraseListName, iterable<hstring> phraseList) const
 {
     Windows::Foundation::IAsyncAction updateAction;
     check_hresult(WINRT_SHIM(IVoiceCommandDefinition)->abi_SetPhraseListAsync(get_abi(phraseListName), get_abi(phraseList), put_abi(updateAction)));
@@ -1152,7 +1152,7 @@ template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandResp
     return response;
 }
 
-template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse impl_IVoiceCommandResponseStatics<D>::CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> & contentTiles) const
+template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse impl_IVoiceCommandResponseStatics<D>::CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, iterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> contentTiles) const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse response { nullptr };
     check_hresult(WINRT_SHIM(IVoiceCommandResponseStatics)->abi_CreateResponseWithTiles(get_abi(message), get_abi(contentTiles), put_abi(response)));
@@ -1166,7 +1166,7 @@ template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandResp
     return response;
 }
 
-template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse impl_IVoiceCommandResponseStatics<D>::CreateResponseForPrompt(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & repeatMessage, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> & contentTiles) const
+template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse impl_IVoiceCommandResponseStatics<D>::CreateResponseForPrompt(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & repeatMessage, iterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> contentTiles) const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse response { nullptr };
     check_hresult(WINRT_SHIM(IVoiceCommandResponseStatics)->abi_CreateResponseForPromptWithTiles(get_abi(message), get_abi(repeatMessage), get_abi(contentTiles), put_abi(response)));
@@ -1240,7 +1240,7 @@ inline Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse VoiceComma
     return get_activation_factory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponse(userMessage);
 }
 
-inline Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse VoiceCommandResponse::CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> & contentTiles)
+inline Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse VoiceCommandResponse::CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, iterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> contentTiles)
 {
     return get_activation_factory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponse(message, contentTiles);
 }
@@ -1250,7 +1250,7 @@ inline Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse VoiceComma
     return get_activation_factory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponseForPrompt(message, repeatMessage);
 }
 
-inline Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse VoiceCommandResponse::CreateResponseForPrompt(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & repeatMessage, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> & contentTiles)
+inline Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse VoiceCommandResponse::CreateResponseForPrompt(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & repeatMessage, iterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> contentTiles)
 {
     return get_activation_factory<VoiceCommandResponse, IVoiceCommandResponseStatics>().CreateResponseForPrompt(message, repeatMessage, contentTiles);
 }

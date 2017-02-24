@@ -241,8 +241,8 @@ struct WINRT_EBO impl_ICurrentAppSimulator
 template <typename D>
 struct WINRT_EBO impl_ICurrentAppSimulatorStaticsWithFiltering
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(iterable<hstring> productIds) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(iterable<hstring> keywords) const;
 };
 
 template <typename D>
@@ -263,8 +263,8 @@ struct WINRT_EBO impl_ICurrentAppSimulatorWithConsumables
 template <typename D>
 struct WINRT_EBO impl_ICurrentAppStaticsWithFiltering
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(iterable<hstring> productIds) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(iterable<hstring> keywords) const;
     void ReportProductFulfillment(hstring_view productId) const;
 };
 

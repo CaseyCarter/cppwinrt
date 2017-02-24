@@ -5876,14 +5876,14 @@ template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapScene
     return returnValue;
 }
 
-template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromLocations(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & locations) const
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromLocations(iterable<Windows::Devices::Geolocation::Geopoint> locations) const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene returnValue { nullptr };
     check_hresult(WINRT_SHIM(IMapSceneStatics)->abi_CreateFromLocations(get_abi(locations), put_abi(returnValue)));
     return returnValue;
 }
 
-template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromLocations(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & locations, double headingInDegrees, double pitchInDegrees) const
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapSceneStatics<D>::CreateFromLocations(iterable<Windows::Devices::Geolocation::Geopoint> locations, double headingInDegrees, double pitchInDegrees) const
 {
     Windows::UI::Xaml::Controls::Maps::MapScene returnValue { nullptr };
     check_hresult(WINRT_SHIM(IMapSceneStatics)->abi_CreateFromLocationsWithHeadingAndPitch(get_abi(locations), headingInDegrees, pitchInDegrees, put_abi(returnValue)));
@@ -8051,12 +8051,12 @@ inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocationA
     return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromLocationAndRadius(location, radiusInMeters, headingInDegrees, pitchInDegrees);
 }
 
-inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocations(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & locations)
+inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocations(iterable<Windows::Devices::Geolocation::Geopoint> locations)
 {
     return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromLocations(locations);
 }
 
-inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocations(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & locations, double headingInDegrees, double pitchInDegrees)
+inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocations(iterable<Windows::Devices::Geolocation::Geopoint> locations, double headingInDegrees, double pitchInDegrees)
 {
     return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromLocations(locations, headingInDegrees, pitchInDegrees);
 }

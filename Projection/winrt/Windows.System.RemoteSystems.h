@@ -580,7 +580,7 @@ template <typename D> Windows::System::RemoteSystems::RemoteSystemWatcher impl_I
     return result;
 }
 
-template <typename D> Windows::System::RemoteSystems::RemoteSystemWatcher impl_IRemoteSystemStatics<D>::CreateWatcher(const Windows::Foundation::Collections::IIterable<Windows::System::RemoteSystems::IRemoteSystemFilter> & filters) const
+template <typename D> Windows::System::RemoteSystems::RemoteSystemWatcher impl_IRemoteSystemStatics<D>::CreateWatcher(iterable<Windows::System::RemoteSystems::IRemoteSystemFilter> filters) const
 {
     Windows::System::RemoteSystems::RemoteSystemWatcher result { nullptr };
     check_hresult(WINRT_SHIM(IRemoteSystemStatics)->abi_CreateWatcherWithFilters(get_abi(filters), put_abi(result)));
@@ -760,7 +760,7 @@ template <typename D> hstring impl_IRemoteSystemKindStatics<D>::Xbox() const
     return value;
 }
 
-template <typename D> Windows::System::RemoteSystems::RemoteSystemKindFilter impl_IRemoteSystemKindFilterFactory<D>::Create(const Windows::Foundation::Collections::IIterable<hstring> & remoteSystemKinds) const
+template <typename D> Windows::System::RemoteSystems::RemoteSystemKindFilter impl_IRemoteSystemKindFilterFactory<D>::Create(iterable<hstring> remoteSystemKinds) const
 {
     Windows::System::RemoteSystems::RemoteSystemKindFilter result { nullptr };
     check_hresult(WINRT_SHIM(IRemoteSystemKindFilterFactory)->abi_Create(get_abi(remoteSystemKinds), put_abi(result)));
@@ -812,7 +812,7 @@ inline Windows::System::RemoteSystems::RemoteSystemWatcher RemoteSystem::CreateW
     return get_activation_factory<RemoteSystem, IRemoteSystemStatics>().CreateWatcher();
 }
 
-inline Windows::System::RemoteSystems::RemoteSystemWatcher RemoteSystem::CreateWatcher(const Windows::Foundation::Collections::IIterable<Windows::System::RemoteSystems::IRemoteSystemFilter> & filters)
+inline Windows::System::RemoteSystems::RemoteSystemWatcher RemoteSystem::CreateWatcher(iterable<Windows::System::RemoteSystems::IRemoteSystemFilter> filters)
 {
     return get_activation_factory<RemoteSystem, IRemoteSystemStatics>().CreateWatcher(filters);
 }
@@ -830,7 +830,7 @@ inline RemoteSystemDiscoveryTypeFilter::RemoteSystemDiscoveryTypeFilter(Windows:
     RemoteSystemDiscoveryTypeFilter(get_activation_factory<RemoteSystemDiscoveryTypeFilter, IRemoteSystemDiscoveryTypeFilterFactory>().Create(discoveryType))
 {}
 
-inline RemoteSystemKindFilter::RemoteSystemKindFilter(const Windows::Foundation::Collections::IIterable<hstring> & remoteSystemKinds) :
+inline RemoteSystemKindFilter::RemoteSystemKindFilter(iterable<hstring> remoteSystemKinds) :
     RemoteSystemKindFilter(get_activation_factory<RemoteSystemKindFilter, IRemoteSystemKindFilterFactory>().Create(remoteSystemKinds))
 {}
 

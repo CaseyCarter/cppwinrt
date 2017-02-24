@@ -2360,7 +2360,7 @@ template <typename D> Windows::ApplicationModel::Background::StorageLibraryConte
     return result;
 }
 
-template <typename D> Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger impl_IStorageLibraryContentChangedTriggerStatics<D>::CreateFromLibraries(const Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> & storageLibraries) const
+template <typename D> Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger impl_IStorageLibraryContentChangedTriggerStatics<D>::CreateFromLibraries(iterable<Windows::Storage::StorageLibrary> storageLibraries) const
 {
     Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger result { nullptr };
     check_hresult(WINRT_SHIM(IStorageLibraryContentChangedTriggerStatics)->abi_CreateFromLibraries(get_abi(storageLibraries), put_abi(result)));
@@ -2961,7 +2961,7 @@ inline Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigge
     return get_activation_factory<StorageLibraryContentChangedTrigger, IStorageLibraryContentChangedTriggerStatics>().Create(storageLibrary);
 }
 
-inline Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger StorageLibraryContentChangedTrigger::CreateFromLibraries(const Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> & storageLibraries)
+inline Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger StorageLibraryContentChangedTrigger::CreateFromLibraries(iterable<Windows::Storage::StorageLibrary> storageLibraries)
 {
     return get_activation_factory<StorageLibraryContentChangedTrigger, IStorageLibraryContentChangedTriggerStatics>().CreateFromLibraries(storageLibraries);
 }

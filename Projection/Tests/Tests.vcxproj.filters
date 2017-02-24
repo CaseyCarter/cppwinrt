@@ -31,16 +31,18 @@
     <ClCompile Include="make_self.cpp" />
     <ClCompile Include="range_for.cpp" />
     <ClCompile Include="ppl.cpp" />
-    <ClCompile Include="internal_vector.cpp" />
-    <ClCompile Include="internal_map.cpp" />
     <ClCompile Include="async.cpp" />
-    <ClCompile Include="empty_collection.cpp" />
     <ClCompile Include="event_produce.cpp" />
     <ClCompile Include="abi_guard.cpp" />
     <ClCompile Include="casts.cpp" />
     <ClCompile Include="Reference.cpp" />
     <ClCompile Include="IReference.cpp" />
     <ClCompile Include="clock.cpp" />
+    <ClCompile Include="collection_iterable.cpp" />
+    <ClCompile Include="collection_vector_view.cpp" />
+    <ClCompile Include="collection_map_view.cpp" />
+    <ClCompile Include="collection_vector.cpp" />
+    <ClCompile Include="collection_map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

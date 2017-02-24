@@ -302,7 +302,7 @@ struct WINRT_EBO impl_IBitmapEncoder
     Windows::Graphics::Imaging::BitmapTransform BitmapTransform() const;
     void SetPixelData(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, uint32_t width, uint32_t height, double dpiX, double dpiY, array_view<const uint8_t> pixels) const;
     Windows::Foundation::IAsyncAction GoToNextFrameAsync() const;
-    Windows::Foundation::IAsyncAction GoToNextFrameAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & encodingOptions) const;
+    Windows::Foundation::IAsyncAction GoToNextFrameAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> encodingOptions) const;
     Windows::Foundation::IAsyncAction FlushAsync() const;
 };
 
@@ -317,7 +317,7 @@ struct WINRT_EBO impl_IBitmapEncoderStatics
     GUID JpegXREncoderId() const;
     Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation> GetEncoderInformationEnumerator() const;
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> CreateAsync(GUID encoderId, const Windows::Storage::Streams::IRandomAccessStream & stream) const;
-    Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> CreateAsync(GUID encoderId, const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & encodingOptions) const;
+    Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> CreateAsync(GUID encoderId, const Windows::Storage::Streams::IRandomAccessStream & stream, iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> encodingOptions) const;
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> CreateForTranscodingAsync(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Graphics::Imaging::BitmapDecoder & bitmapDecoder) const;
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> CreateForInPlacePropertyEncodingAsync(const Windows::Graphics::Imaging::BitmapDecoder & bitmapDecoder) const;
 };
@@ -356,13 +356,13 @@ struct WINRT_EBO impl_IBitmapFrameWithSoftwareBitmap
 template <typename D>
 struct WINRT_EBO impl_IBitmapProperties
 {
-    Windows::Foundation::IAsyncAction SetPropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & propertiesToSet) const;
+    Windows::Foundation::IAsyncAction SetPropertiesAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> propertiesToSet) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IBitmapPropertiesView
 {
-    Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapPropertySet> GetPropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const;
+    Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapPropertySet> GetPropertiesAsync(iterable<hstring> propertiesToRetrieve) const;
 };
 
 template <typename D>
