@@ -1,7 +1,7 @@
 
 struct event_token
 {
-    int64_t value;
+    int64_t value{};
 };
 
 inline bool operator==(const event_token & left, const event_token & right) noexcept
