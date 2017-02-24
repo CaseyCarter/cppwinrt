@@ -67,7 +67,7 @@ extern "C"
 template <typename ... Args>
 void WINRT_TRACE(const char * const message, Args ... args) noexcept
 {
-    char buffer[1024] {};
+    char buffer[1024]{};
     snprintf(buffer, sizeof(buffer), message, args ...);
     OutputDebugStringA(buffer);
 }
@@ -131,13 +131,13 @@ void WINRT_TRACE(const char * const message, Args ... args) noexcept
 
 namespace winrt::ABI::Windows::Foundation::Numerics {
 
-using float2 = winrt::Windows::Foundation::Numerics::float2;
-using float3 = winrt::Windows::Foundation::Numerics::float3;
-using float4 = winrt::Windows::Foundation::Numerics::float4;
-using float3x2 = winrt::Windows::Foundation::Numerics::float3x2;
-using float4x4 = winrt::Windows::Foundation::Numerics::float4x4;
-using plane = winrt::Windows::Foundation::Numerics::plane;
-using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
+    using float2 = winrt::Windows::Foundation::Numerics::float2;
+    using float3 = winrt::Windows::Foundation::Numerics::float3;
+    using float4 = winrt::Windows::Foundation::Numerics::float4;
+    using float3x2 = winrt::Windows::Foundation::Numerics::float3x2;
+    using float4x4 = winrt::Windows::Foundation::Numerics::float4x4;
+    using plane = winrt::Windows::Foundation::Numerics::plane;
+    using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
 
 }
 
@@ -148,58 +148,56 @@ using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
 
 WINRT_EXPORT namespace winrt {
 
-namespace impl {
-
-template <typename T>
-struct traits
+namespace impl
 {
-    using abi = T;
-};
-
+    template <typename T>
+    struct traits
+    {
+        using abi = T;
+    };
 }
 
 template <typename T>
 using abi = typename impl::traits<T>::abi;
 
-namespace impl {
-
-template <typename T, typename Enable = void>
-struct accessors
+namespace impl
 {
-    static abi<T> get(const T & object) noexcept
+    template <typename T, typename Enable = void>
+    struct accessors
     {
-        return reinterpret_cast<const abi<T> &>(object);
-    }
+        static abi<T> get(const T & object) noexcept
+        {
+            return reinterpret_cast<const abi<T> &>(object);
+        }
 
-    static abi<T> * put(T & object) noexcept
+        static abi<T> * put(T & object) noexcept
+        {
+            return reinterpret_cast<abi<T> *>(&object);
+        }
+
+        static void copy_from(T & object, const abi<T> & value) noexcept
+        {
+            object = reinterpret_cast<const T &>(value);
+        }
+
+        static void copy_to(const T & object, abi<T> & value) noexcept
+        {
+            reinterpret_cast<T &>(value) = object;
+        }
+
+        static abi<T> detach(T & object) noexcept
+        {
+            abi<T> result{};
+            reinterpret_cast<T &>(result) = std::move(object);
+            return result;
+        }
+    };
+
+    template <typename T>
+    auto put_size_abi(T & object) noexcept
     {
-        return reinterpret_cast<abi<T> *>(&object);
+        return accessors<T>::put_size(object);
     }
-
-    static void copy_from(T & object, const abi<T> & value) noexcept
-    {
-        object = reinterpret_cast<const T &>(value);
-    }
-
-    static void copy_to(const T & object, abi<T> & value) noexcept
-    {
-        reinterpret_cast<T &>(value) = object;
-    }
-
-    static abi<T> detach(T & object) noexcept
-    {
-        abi<T> result {};
-        reinterpret_cast<T &>(result) = std::move(object);
-        return result;
-    }
-};
-
-template <typename T>
-auto put_size_abi(T & object) noexcept
-{
-    return accessors<T>::put_size(object);
-}
-
 }
 
 template <typename T>
@@ -243,299 +241,296 @@ auto detach_abi(T && object)
 {
     return impl::accessors<T>::detach(object);
 }
-namespace impl {
 
-template <typename T>
-struct handle_traits
+namespace impl
 {
-    using type = T;
-
-    constexpr static type invalid() noexcept
+    template <typename T>
+    struct handle_traits
     {
-        return nullptr;
-    }
+        using type = T;
 
-    // static void close(type value) noexcept;
-};
+        constexpr static type invalid() noexcept
+        {
+            return nullptr;
+        }
 
-template <typename T>
-struct handle
-{
-    using type = typename T::type;
+        // static void close(type value) noexcept;
+    };
 
-    handle() noexcept = default;
+    template <typename T>
+    struct handle
+    {
+        using type = typename T::type;
 
-    handle(type value) noexcept :
+        handle() noexcept = default;
+
+        handle(type value) noexcept :
         m_value(value)
-    {}
+        {}
 
-    handle(handle && other) noexcept :
-        m_value(detach_abi(other))
-    {}
+        handle(handle && other) noexcept :
+            m_value(detach_abi(other))
+        {}
 
-    handle & operator=(handle && other) noexcept
-    {
-        if (this != &other)
+        handle & operator=(handle && other) noexcept
         {
-            attach_abi(*this, detach_abi(other));
+            if (this != &other)
+            {
+                attach_abi(*this, detach_abi(other));
+            }
+
+            return *this;
         }
 
-        return *this;
-    }
-
-    ~handle() noexcept
-    {
-        close();
-    }
-
-    void close() noexcept
-    {
-        if (*this)
+        ~handle() noexcept
         {
-            T::close(m_value);
-            m_value = T::invalid();
-        }
-    }
-
-    explicit operator bool() const noexcept
-    {
-        return T::invalid() != m_value;
-    }
-
-    friend type impl_get(const handle & handle) noexcept
-    {
-        return handle.m_value;
-    }
-
-    friend type * impl_put(handle & handle) noexcept
-    {
-        WINRT_ASSERT(!handle);
-        return &handle.m_value;
-    }
-
-    friend type impl_detach(handle & handle) noexcept
-    {
-        type value = handle.m_value;
-        handle.m_value = T::invalid();
-        return value;
-    }
-
-    friend void swap(handle & left, handle & right) noexcept
-    {
-        std::swap(left.m_value, right.m_value);
-    }
-
-private:
-
-    type m_value = T::invalid();
-};
-
-template <typename T>
-bool operator==(const handle<T> & left, const handle<T> & right) noexcept
-{
-    return get_abi(left) == get_abi(right);
-}
-
-template <typename T>
-bool operator!=(const handle<T> & left, const handle<T> & right) noexcept
-{
-    return !(left == right);
-}
-
-template <typename T>
-bool operator<(const handle<T> & left, const handle<T> & right) noexcept
-{
-    return get_abi(left) < get_abi(right);
-}
-
-template <typename T>
-bool operator>(const handle<T> & left, const handle<T> & right) noexcept
-{
-    return right < left;
-}
-
-template <typename T>
-bool operator<=(const handle<T> & left, const handle<T> & right) noexcept
-{
-    return !(right < left);
-}
-
-template <typename T>
-bool operator>=(const handle<T> & left, const handle<T> & right) noexcept
-{
-    return !(left < right);
-}
-
-template <typename T>
-struct accessors<handle<T>>
-{
-    using type = typename handle<T>::type;
-
-    static type get(const handle<T> & object) noexcept
-    {
-        return impl_get(object);
-    }
-
-    static type * put(handle<T> & object) noexcept
-    {
-        return impl_put(object);
-    }
-
-    static void attach(handle<T> & object, type value) noexcept
-    {
-        object.close();
-        *put(object) = value;
-    }
-
-    static type detach(handle<T> & object) noexcept
-    {
-        return impl_detach(object);
-    }
-};
-
-}
-
-namespace impl {
-
-template <typename Base, typename Derived>
-constexpr bool is_base_of_v = std::is_base_of<Base, Derived>::value;
-
-template<typename T, typename U>
-constexpr bool is_same_v = std::is_same<T, U>::value;
-
-template<typename ...>
-struct disjunction : std::false_type {};
-
-template<typename B>
-struct disjunction<B> : B {};
-
-template<typename B1, typename ... Bn>
-struct disjunction<B1, Bn ...> : std::conditional_t<B1::value, B1, disjunction<Bn ...>> {};
-
-template<typename ... B>
-constexpr bool disjunction_v = disjunction<B ...>::value;
-
-template<typename ...>
-struct conjunction : std::true_type {};
-
-template<typename B>
-struct conjunction<B> : B {};
-
-template<typename B1, typename ... Bn>
-struct conjunction<B1, Bn ...> : std::conditional_t<B1::value, conjunction<Bn ...>, B1> {};
-
-template<typename ... B>
-constexpr bool conjunction_v = conjunction<B ...>::value;
-
-template<typename T>
-constexpr bool sequence_contains(T)
-{
-    return false;
-}
-
-template<typename T, T First, T... Rest>
-constexpr bool sequence_contains(T value)
-{
-    return (value == First) || sequence_contains<T, Rest...>(value);
-}
-
-}
-
-namespace ABI {
-
-template <typename T>
-struct traits
-{
-    using default_interface = T;
-};
-
-template <typename T>
-using default_interface = typename traits<T>::default_interface;
-
-template <typename T>
-using arg_in = std::conditional_t<impl::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> *, T>;
-
-template <typename T>
-using arg_out = std::conditional_t<impl::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> **, T *>;
-
-}
-
-namespace impl {
-
-template <typename D, typename I = D>
-using consume = typename traits<I>::template consume<D>;
-
-template <typename D, typename I>
-struct require_one : consume<D, I>
-{
-    operator I() const
-    {
-        const auto& d = *static_cast<const D*>(this);
-
-        if (d)
-        {
-            return d.template as<I>();
+            close();
         }
 
-        return nullptr;
-    }
-};
-
-template <typename D, typename ... I>
-struct WINRT_EBO require : impl::require_one<D, I> ...
-{};
-
-template <typename D, typename I>
-struct bases_one
-{
-    operator I() const
-    {
-        const auto& d = *static_cast<const D*>(this);
-
-        if (d)
+        void close() noexcept
         {
-            return d.template as<I>();
+            if (*this)
+            {
+                T::close(m_value);
+                m_value = T::invalid();
+            }
         }
 
-        return nullptr;
+        explicit operator bool() const noexcept
+        {
+            return T::invalid() != m_value;
+        }
+
+        friend type impl_get(const handle & handle) noexcept
+        {
+            return handle.m_value;
+        }
+
+        friend type * impl_put(handle & handle) noexcept
+        {
+            WINRT_ASSERT(!handle);
+            return &handle.m_value;
+        }
+
+        friend type impl_detach(handle & handle) noexcept
+        {
+            type value = handle.m_value;
+            handle.m_value = T::invalid();
+            return value;
+        }
+
+        friend void swap(handle & left, handle & right) noexcept
+        {
+            std::swap(left.m_value, right.m_value);
+        }
+
+    private:
+
+        type m_value = T::invalid();
+    };
+
+    template <typename T>
+    bool operator==(const handle<T> & left, const handle<T> & right) noexcept
+    {
+        return get_abi(left) == get_abi(right);
     }
-};
 
-template <typename D, typename ... I>
-struct WINRT_EBO bases : impl::bases_one<D, I> ...
-{};
+    template <typename T>
+    bool operator!=(const handle<T> & left, const handle<T> & right) noexcept
+    {
+        return !(left == right);
+    }
 
-template <typename T>
-class no_ref : public T
+    template <typename T>
+    bool operator<(const handle<T> & left, const handle<T> & right) noexcept
+    {
+        return get_abi(left) < get_abi(right);
+    }
+
+    template <typename T>
+    bool operator>(const handle<T> & left, const handle<T> & right) noexcept
+    {
+        return right < left;
+    }
+
+    template <typename T>
+    bool operator<=(const handle<T> & left, const handle<T> & right) noexcept
+    {
+        return !(right < left);
+    }
+
+    template <typename T>
+    bool operator>=(const handle<T> & left, const handle<T> & right) noexcept
+    {
+        return !(left < right);
+    }
+
+    template <typename T>
+    struct accessors<handle<T>>
+    {
+        using type = typename handle<T>::type;
+
+        static type get(const handle<T> & object) noexcept
+        {
+            return impl_get(object);
+        }
+
+        static type * put(handle<T> & object) noexcept
+        {
+            return impl_put(object);
+        }
+
+        static void attach(handle<T> & object, type value) noexcept
+        {
+            object.close();
+            *put(object) = value;
+        }
+
+        static type detach(handle<T> & object) noexcept
+        {
+            return impl_detach(object);
+        }
+    };
+}
+
+namespace impl
 {
-    unsigned long __stdcall AddRef() noexcept;
-    unsigned long __stdcall Release() noexcept;
-};
+    template <typename Base, typename Derived>
+    constexpr bool is_base_of_v = std::is_base_of<Base, Derived>::value;
 
-template <typename T>
-struct not_specialized_type
+    template<typename T, typename U>
+    constexpr bool is_same_v = std::is_same<T, U>::value;
+
+    template<typename ...>
+    struct disjunction : std::false_type {};
+
+    template<typename B>
+    struct disjunction<B> : B {};
+
+    template<typename B1, typename ... Bn>
+    struct disjunction<B1, Bn ...> : std::conditional_t<B1::value, B1, disjunction<Bn ...>> {};
+
+    template<typename ... B>
+    constexpr bool disjunction_v = disjunction<B ...>::value;
+
+    template<typename ...>
+    struct conjunction : std::true_type {};
+
+    template<typename B>
+    struct conjunction<B> : B {};
+
+    template<typename B1, typename ... Bn>
+    struct conjunction<B1, Bn ...> : std::conditional_t<B1::value, conjunction<Bn ...>, B1> {};
+
+    template<typename ... B>
+    constexpr bool conjunction_v = conjunction<B ...>::value;
+
+    template<typename T>
+    constexpr bool sequence_contains(T)
+    {
+        return false;
+    }
+
+    template<typename T, T First, T... Rest>
+    constexpr bool sequence_contains(T value)
+    {
+        return (value == First) || sequence_contains<T, Rest...>(value);
+    }
+}
+
+namespace ABI
 {
-    static constexpr bool value = false;
-};
+    template <typename T>
+    struct traits
+    {
+        using default_interface = T;
+    };
 
-template <typename T>
-struct not_specialized
+    template <typename T>
+    using default_interface = typename traits<T>::default_interface;
+
+    template <typename T>
+    using arg_in = std::conditional_t<impl::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> *, T>;
+
+    template <typename T>
+    using arg_out = std::conditional_t<impl::is_base_of_v< ::IUnknown, default_interface<T>>, default_interface<T> **, T *>;
+}
+
+namespace impl
 {
-    static_assert(not_specialized_type<T>::value,
-        "This generic interface has not been specialized. "
-        "Each distinct instantiation of this generic interface requires a corresponding UUID. "
-        "This UUID must be provided by a template specialization.");
-};
+    template <typename D, typename I = D>
+    using consume = typename traits<I>::template consume<D>;
 
-template <typename T>
-using abi_arg_in = ABI::arg_in<abi<T>>;
+    template <typename D, typename I>
+    struct require_one : consume<D, I>
+    {
+        operator I() const
+        {
+            const auto& d = *static_cast<const D*>(this);
 
-template <typename T>
-using abi_arg_out = ABI::arg_out<abi<T>>;
+            if (d)
+            {
+                return d.template as<I>();
+            }
 
-template <typename T>
-using abi_default_interface = ABI::default_interface<abi<T>>;
+            return nullptr;
+        }
+    };
 
+    template <typename D, typename ... I>
+    struct WINRT_EBO require : impl::require_one<D, I> ...
+    {};
+
+    template <typename D, typename I>
+    struct bases_one
+    {
+        operator I() const
+        {
+            const auto& d = *static_cast<const D*>(this);
+
+            if (d)
+            {
+                return d.template as<I>();
+            }
+
+            return nullptr;
+        }
+    };
+
+    template <typename D, typename ... I>
+    struct WINRT_EBO bases : impl::bases_one<D, I> ...
+    {};
+
+    template <typename T>
+    class no_ref : public T
+    {
+        unsigned long __stdcall AddRef() noexcept;
+        unsigned long __stdcall Release() noexcept;
+    };
+
+    template <typename T>
+    struct not_specialized_type
+    {
+        static constexpr bool value = false;
+    };
+
+    template <typename T>
+    struct not_specialized
+    {
+        static_assert(not_specialized_type<T>::value,
+                      "This generic interface has not been specialized. "
+                      "Each distinct instantiation of this generic interface requires a corresponding UUID. "
+                      "This UUID must be provided by a template specialization.");
+    };
+
+    template <typename T>
+    using abi_arg_in = ABI::arg_in<abi<T>>;
+
+    template <typename T>
+    using abi_arg_out = ABI::arg_out<abi<T>>;
+
+    template <typename T>
+    using abi_default_interface = ABI::default_interface<abi<T>>;
 }
 
 template<HRESULT ... ValuesToIgnore>
@@ -554,21 +549,21 @@ struct com_ptr
     com_ptr(std::nullptr_t = nullptr) noexcept {}
 
     com_ptr(const com_ptr & other) noexcept :
-        m_ptr(other.m_ptr)
+    m_ptr(other.m_ptr)
     {
         addref();
     }
 
     template <typename U>
     com_ptr(const com_ptr<U> & other) noexcept :
-        m_ptr(other.m_ptr)
+    m_ptr(other.m_ptr)
     {
         addref();
     }
 
     template <typename U>
     com_ptr(com_ptr<U> && other) noexcept :
-        m_ptr(other.m_ptr)
+    m_ptr(other.m_ptr)
     {
         other.m_ptr = nullptr;
     }
@@ -657,7 +652,7 @@ struct com_ptr
         m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp)));
         return temp;
     }
-    
+
     void copy_from(type * other) noexcept
     {
         copy(other);
@@ -668,7 +663,7 @@ struct com_ptr
         addref();
         *other = m_ptr;
     }
-    
+
 private:
 
     void copy(type * other) noexcept
@@ -706,33 +701,32 @@ private:
     type * m_ptr = nullptr;
 };
 
-namespace impl {
-
-template <typename T>
-struct accessors<com_ptr<T>>
+namespace impl
 {
-    static auto get(const com_ptr<T> & object) noexcept
+    template <typename T>
+    struct accessors<com_ptr<T>>
     {
-        return impl_get(object);
-    }
+        static auto get(const com_ptr<T> & object) noexcept
+        {
+            return impl_get(object);
+        }
 
-    static auto put(com_ptr<T> & object) noexcept
-    {
-        return impl_put(object);
-    }
+        static auto put(com_ptr<T> & object) noexcept
+        {
+            return impl_put(object);
+        }
 
-    static void attach(com_ptr<T> & object, abi<T> * value) noexcept
-    {
-        object = nullptr;
-        *put(object) = value;
-    }
+        static void attach(com_ptr<T> & object, abi<T> * value) noexcept
+        {
+            object = nullptr;
+            *put(object) = value;
+        }
 
-    static auto detach(com_ptr<T> & object) noexcept
-    {
-        return impl_detach(object);
-    }
-};
-
+        static auto detach(com_ptr<T> & object) noexcept
+        {
+            return impl_detach(object);
+        }
+    };
 }
 
 template <typename T>
@@ -795,37 +789,36 @@ bool operator>=(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
     return !(left < right);
 }
 
-namespace impl {
-
-inline HSTRING duplicate_string(HSTRING other)
+namespace impl
 {
-    HSTRING result = nullptr;
-    check_hresult(WindowsDuplicateString(other, &result));
-    return result;
-}
-
-inline HSTRING create_string(const wchar_t * value, const uint32_t length)
-{
-    HSTRING result = nullptr;
-    check_hresult(WindowsCreateString(value, length, &result));
-    return result;
-}
-
-inline bool embedded_null(HSTRING value) noexcept
-{
-    BOOL result = 0;
-    WINRT_VERIFY_(S_OK, WindowsStringHasEmbeddedNull(value, &result));
-    return 0 != result;
-}
-
-struct hstring_traits : handle_traits<HSTRING>
-{
-    static void close(type value) noexcept
+    inline HSTRING duplicate_string(HSTRING other)
     {
-        WINRT_VERIFY_(S_OK, WindowsDeleteString(value));
+        HSTRING result = nullptr;
+        check_hresult(WindowsDuplicateString(other, &result));
+        return result;
     }
-};
 
+    inline HSTRING create_string(const wchar_t * value, const uint32_t length)
+    {
+        HSTRING result = nullptr;
+        check_hresult(WindowsCreateString(value, length, &result));
+        return result;
+    }
+
+    inline bool embedded_null(HSTRING value) noexcept
+    {
+        BOOL result = 0;
+        WINRT_VERIFY_(S_OK, WindowsStringHasEmbeddedNull(value, &result));
+        return 0 != result;
+    }
+
+    struct hstring_traits : handle_traits<HSTRING>
+    {
+        static void close(type value) noexcept
+        {
+            WINRT_VERIFY_(S_OK, WindowsDeleteString(value));
+        }
+    };
 }
 
 struct hstring_view;
@@ -939,77 +932,76 @@ private:
     HSTRING_HEADER m_header;
 };
 
-namespace impl {
-
-template <> struct traits<hstring>
+namespace impl
 {
-    using abi = HSTRING;
-};
-
-template <> struct accessors<hstring>
-{
-    static HSTRING get(const hstring & object) noexcept
+    template <> struct traits<hstring>
     {
-        return impl_get(object);
-    }
+        using abi = HSTRING;
+    };
 
-    static HSTRING * put(hstring & object) noexcept
+    template <> struct accessors<hstring>
     {
-        return impl_put(object);
-    }
+        static HSTRING get(const hstring & object) noexcept
+        {
+            return impl_get(object);
+        }
 
-    static void attach(hstring & object, HSTRING value) noexcept
+        static HSTRING * put(hstring & object) noexcept
+        {
+            return impl_put(object);
+        }
+
+        static void attach(hstring & object, HSTRING value) noexcept
+        {
+            object.clear();
+            *put(object) = value;
+        }
+
+        static void copy_from(hstring & object, HSTRING value)
+        {
+            attach(object, duplicate_string(value));
+        }
+
+        static void copy_to(const hstring & object, HSTRING & value)
+        {
+            WINRT_ASSERT(value == nullptr);
+            value = duplicate_string(get(object));
+        }
+
+        static HSTRING detach(hstring & object) noexcept
+        {
+            return impl_detach(object);
+        }
+    };
+
+    template <> struct accessors<hstring_view>
     {
-        object.clear();
-        *put(object) = value;
-    }
+        static HSTRING get(hstring_view object) noexcept
+        {
+            return impl_get(object);
+        }
 
-    static void copy_from(hstring & object, HSTRING value)
+        static HSTRING detach(hstring_view object)
+        {
+            return duplicate_string(get(object));
+        }
+    };
+
+    template <> struct accessors<const wchar_t *>
     {
-        attach(object, duplicate_string(value));
-    }
+        static HSTRING detach(const wchar_t * const value)
+        {
+            return create_string(value, static_cast<uint32_t>(wcslen(value)));
+        }
+    };
 
-    static void copy_to(const hstring & object, HSTRING & value)
+    template <> struct accessors<std::wstring>
     {
-        WINRT_ASSERT(value == nullptr);
-        value = duplicate_string(get(object));
-    }
-
-    static HSTRING detach(hstring & object) noexcept
-    {
-        return impl_detach(object);
-    }
-};
-
-template <> struct accessors<hstring_view>
-{
-    static HSTRING get(hstring_view object) noexcept
-    {
-        return impl_get(object);
-    }
-
-    static HSTRING detach(hstring_view object)
-    {
-        return duplicate_string(get(object));
-    }
-};
-
-template <> struct accessors<const wchar_t *>
-{
-    static HSTRING detach(const wchar_t * const value)
-    {
-        return create_string(value, static_cast<uint32_t>(wcslen(value)));
-    }
-};
-
-template <> struct accessors<std::wstring>
-{
-    static HSTRING detach(const std::wstring & value)
-    {
-        return create_string(value.c_str(), static_cast<uint32_t>(value.size()));
-    }
-};
-
+        static HSTRING detach(const std::wstring & value)
+        {
+            return create_string(value.c_str(), static_cast<uint32_t>(value.size()));
+        }
+    };
 }
 
 inline bool embedded_null(hstring_view value) noexcept
@@ -1036,7 +1028,7 @@ inline hstring & hstring::operator=(const hstring & value)
 }
 
 inline hstring::hstring(hstring && value) noexcept :
-    m_handle(std::move(value.m_handle))
+m_handle(std::move(value.m_handle))
 {}
 
 inline hstring & hstring::operator=(hstring && value) noexcept
@@ -1152,7 +1144,7 @@ inline hstring::size_type hstring::size() const noexcept
 }
 
 inline hstring_view::hstring_view(const std::wstring & value) noexcept :
-    hstring_view(value.c_str(), static_cast<size_type>(value.size()))
+hstring_view(value.c_str(), static_cast<size_type>(value.size()))
 {}
 
 inline hstring_view::hstring_view(const hstring & value) noexcept :
@@ -1169,7 +1161,7 @@ inline hstring_view::hstring_view(const wchar_t * const value, const size_type s
 }
 
 inline hstring_view::hstring_view(HSTRING value) noexcept :
-    m_handle(value)
+m_handle(value)
 {}
 
 inline hstring_view::operator std::wstring() const
@@ -1438,64 +1430,63 @@ inline bool operator >(const std::wstring & left, const hstring & right) noexcep
 inline bool operator<=(const std::wstring & left, const hstring & right) noexcept { return !(right < left); }
 inline bool operator>=(const std::wstring & left, const hstring & right) noexcept { return !(left < right); }
 
-namespace impl {
-
-struct heap_traits : handle_traits<wchar_t *>
+namespace impl
 {
-    static void close(type value) noexcept
+    struct heap_traits : handle_traits<wchar_t *>
     {
-        WINRT_VERIFY(HeapFree(GetProcessHeap(), 0, value));
-    }
-};
+        static void close(type value) noexcept
+        {
+            WINRT_VERIFY(HeapFree(GetProcessHeap(), 0, value));
+        }
+    };
 
-struct bstr_traits : handle_traits<BSTR>
-{
-    static void close(type value) noexcept
+    struct bstr_traits : handle_traits<BSTR>
     {
-        SysFreeString(value);
-    }
-};
+        static void close(type value) noexcept
+        {
+            SysFreeString(value);
+        }
+    };
 
-inline hstring trim_hresult_message(const wchar_t * const message, uint32_t size) noexcept
-{
-    const wchar_t * back = message + size - 1;
-
-    while (size && isspace(*back))
+    inline hstring trim_hresult_message(const wchar_t * const message, uint32_t size) noexcept
     {
-        --size;
-        --back;
+        const wchar_t * back = message + size - 1;
+
+        while (size && isspace(*back))
+        {
+            --size;
+            --back;
+        }
+
+        hstring result;
+        WindowsCreateString(message, size, put_abi(result));
+        return result;
     }
-
-    hstring result;
-    WindowsCreateString(message, size, put_abi(result));
-    return result;
-}
-
 }
 
 struct hresult_error
 {
     struct from_abi_t {};
-    static constexpr from_abi_t from_abi {};
+    static constexpr from_abi_t from_abi{};
 
     hresult_error() noexcept = default;
 
     explicit hresult_error(const HRESULT code) noexcept :
-        m_code(code)
+    m_code(code)
     {
         WINRT_RoOriginateError(code, nullptr);
         WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
     hresult_error(const HRESULT code, hstring_view message) noexcept :
-        m_code(code)
+    m_code(code)
     {
         WINRT_RoOriginateError(code, get_abi(message));
         WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
     hresult_error(const HRESULT code, from_abi_t) noexcept :
-        m_code(code)
+    m_code(code)
     {
         WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
@@ -1651,116 +1642,116 @@ struct hresult_canceled : hresult_error
     hresult_canceled(hstring_view message) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), message) {}
     hresult_canceled(from_abi_t) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), from_abi) {}
 };
- 
-namespace impl {
 
-[[noreturn]] inline __declspec(noinline) void throw_hresult(const HRESULT result)
+namespace impl
 {
-    if (result == E_OUTOFMEMORY)
+    [[noreturn]] inline __declspec(noinline) void throw_hresult(const HRESULT result)
     {
-        throw std::bad_alloc();
+        if (result == E_OUTOFMEMORY)
+        {
+            throw std::bad_alloc();
+        }
+
+        if (result == E_ACCESSDENIED)
+        {
+            throw hresult_access_denied(hresult_error::from_abi);
+        }
+
+        if (result == RPC_E_WRONG_THREAD)
+        {
+            throw hresult_wrong_thread(hresult_error::from_abi);
+        }
+
+        if (result == E_NOTIMPL)
+        {
+            throw hresult_not_implemented(hresult_error::from_abi);
+        }
+
+        if (result == E_INVALIDARG)
+        {
+            throw hresult_invalid_argument(hresult_error::from_abi);
+        }
+
+        if (result == E_BOUNDS)
+        {
+            throw hresult_out_of_bounds(hresult_error::from_abi);
+        }
+
+        if (result == E_NOINTERFACE)
+        {
+            throw hresult_no_interface(hresult_error::from_abi);
+        }
+
+        if (result == RPC_E_DISCONNECTED)
+        {
+            throw hresult_disconnected(hresult_error::from_abi);
+        }
+
+        if (result == CLASS_E_CLASSNOTAVAILABLE)
+        {
+            throw hresult_class_not_available(hresult_error::from_abi);
+        }
+
+        if (result == E_CHANGED_STATE)
+        {
+            throw hresult_changed_state(hresult_error::from_abi);
+        }
+
+        if (result == E_ILLEGAL_METHOD_CALL)
+        {
+            throw hresult_illegal_method_call(hresult_error::from_abi);
+        }
+
+        if (result == E_ILLEGAL_STATE_CHANGE)
+        {
+            throw hresult_illegal_state_change(hresult_error::from_abi);
+        }
+
+        if (result == E_ILLEGAL_DELEGATE_ASSIGNMENT)
+        {
+            throw hresult_illegal_delegate_assignment(hresult_error::from_abi);
+        }
+
+        if (result == HRESULT_FROM_WIN32(ERROR_CANCELLED))
+        {
+            throw hresult_canceled(hresult_error::from_abi);
+        }
+
+        throw hresult_error(result, hresult_error::from_abi);
     }
 
-    if (result == E_ACCESSDENIED)
+    inline __declspec(noinline) HRESULT to_hresult() noexcept
     {
-        throw hresult_access_denied(hresult_error::from_abi);
-    }
+        HRESULT value = S_OK;
 
-    if (result == RPC_E_WRONG_THREAD)
-    {
-        throw hresult_wrong_thread(hresult_error::from_abi);
-    }
+        try
+        {
+            throw;
+        }
+        catch (const hresult_error & e)
+        {
+            return e.to_abi();
+        }
+        catch (const std::bad_alloc &)
+        {
+            return E_OUTOFMEMORY;
+        }
+        catch (const std::out_of_range &)
+        {
+            value = E_BOUNDS;
+        }
+        catch (const std::invalid_argument &)
+        {
+            value = E_INVALIDARG;
+        }
+        catch (const std::exception &)
+        {
+            value = E_FAIL;
+        }
 
-    if (result == E_NOTIMPL)
-    {
-        throw hresult_not_implemented(hresult_error::from_abi);
+        WINRT_RoOriginateError(value, nullptr);
+        return value;
     }
-
-    if (result == E_INVALIDARG)
-    {
-        throw hresult_invalid_argument(hresult_error::from_abi);
-    }
-
-    if (result == E_BOUNDS)
-    {
-        throw hresult_out_of_bounds(hresult_error::from_abi);
-    }
-
-    if (result == E_NOINTERFACE)
-    {
-        throw hresult_no_interface(hresult_error::from_abi);
-    }
-
-    if (result == RPC_E_DISCONNECTED)
-    {
-        throw hresult_disconnected(hresult_error::from_abi);
-    }
-
-    if (result == CLASS_E_CLASSNOTAVAILABLE)
-    {
-        throw hresult_class_not_available(hresult_error::from_abi);
-    }
-
-    if (result == E_CHANGED_STATE)
-    {
-        throw hresult_changed_state(hresult_error::from_abi);
-    }
-
-    if (result == E_ILLEGAL_METHOD_CALL)
-    {
-        throw hresult_illegal_method_call(hresult_error::from_abi);
-    }
-
-    if (result == E_ILLEGAL_STATE_CHANGE)
-    {
-        throw hresult_illegal_state_change(hresult_error::from_abi);
-    }
-
-    if (result == E_ILLEGAL_DELEGATE_ASSIGNMENT)
-    {
-        throw hresult_illegal_delegate_assignment(hresult_error::from_abi);
-    }
-
-    if (result == HRESULT_FROM_WIN32(ERROR_CANCELLED))
-    {
-        throw hresult_canceled(hresult_error::from_abi);
-    }
-
-    throw hresult_error(result, hresult_error::from_abi);
-}
-
-inline __declspec(noinline) HRESULT to_hresult() noexcept
-{
-    HRESULT value = S_OK;
-
-    try
-    {
-        throw;
-    }
-    catch (const hresult_error & e)
-    {
-        return e.to_abi();
-    }
-    catch (const std::bad_alloc &)
-    {
-        return E_OUTOFMEMORY;
-    }
-    catch (const std::out_of_range &)
-    {
-        value = E_BOUNDS;
-    }
-    catch (const std::invalid_argument &)
-    {
-        value = E_INVALIDARG;
-    }
-    catch (const std::exception &)
-    {
-        value = E_FAIL;
-    }
-
-    WINRT_RoOriginateError(value, nullptr);
-    return value;
-}
 
 }
 
@@ -1778,115 +1769,113 @@ __forceinline void check_hresult(const HRESULT result)
     }
 }
 
-namespace impl {
-
-struct lock
+namespace impl
 {
-    lock(const lock &) = delete;
-    lock & operator=(const lock &) = delete;
-    lock() noexcept = default;
-
-    void enter() noexcept
+    struct lock
     {
-        AcquireSRWLockExclusive(&m_lock);
-    }
+        lock(const lock &) = delete;
+        lock & operator=(const lock &) = delete;
+        lock() noexcept = default;
 
-    bool try_enter() noexcept
-    {
-        return 0 != TryAcquireSRWLockExclusive(&m_lock);
-    }
-
-    void exit() noexcept
-    {
-        ReleaseSRWLockExclusive(&m_lock);
-    }
-
-    PSRWLOCK get() noexcept
-    {
-        return &m_lock;
-    }
-
-private:
-
-    SRWLOCK m_lock{};
-};
-
-struct lock_guard
-{
-    explicit lock_guard(lock & lock) noexcept :
-        m_lock(lock)
-    {
-        m_lock.enter();
-    }
-
-    ~lock_guard() noexcept
-    {
-        m_lock.exit();
-    }
-
-private:
-
-    lock & m_lock;
-};
-
-struct condition_variable
-{
-    condition_variable(condition_variable const &) = delete;
-    condition_variable const & operator=(condition_variable const &) = delete;
-    condition_variable() noexcept = default;
-
-    template <typename T>
-    void wait_while(lock & x, T predicate)
-    {
-        while (predicate())
+        void enter() noexcept
         {
-            WINRT_VERIFY(SleepConditionVariableSRW(&m_cv, x.get(), INFINITE, 0));
+            AcquireSRWLockExclusive(&m_lock);
         }
-    }
 
-    void wake_one() noexcept
+        bool try_enter() noexcept
+        {
+            return 0 != TryAcquireSRWLockExclusive(&m_lock);
+        }
+
+        void exit() noexcept
+        {
+            ReleaseSRWLockExclusive(&m_lock);
+        }
+
+        PSRWLOCK get() noexcept
+        {
+            return &m_lock;
+        }
+
+    private:
+
+        SRWLOCK m_lock{};
+    };
+
+    struct lock_guard
     {
-        WakeConditionVariable(&m_cv);
-    }
+        explicit lock_guard(lock & lock) noexcept :
+        m_lock(lock)
+        {
+            m_lock.enter();
+        }
 
-    void wake_all() noexcept
+        ~lock_guard() noexcept
+        {
+            m_lock.exit();
+        }
+
+    private:
+
+        lock & m_lock;
+    };
+
+    struct condition_variable
     {
-        WakeAllConditionVariable(&m_cv);
-    }
+        condition_variable(condition_variable const &) = delete;
+        condition_variable const & operator=(condition_variable const &) = delete;
+        condition_variable() noexcept = default;
 
-private:
+        template <typename T>
+        void wait_while(lock & x, T predicate)
+        {
+            while (predicate())
+            {
+                WINRT_VERIFY(SleepConditionVariableSRW(&m_cv, x.get(), INFINITE, 0));
+            }
+        }
 
-    CONDITION_VARIABLE m_cv{};
-};
+        void wake_one() noexcept
+        {
+            WakeConditionVariable(&m_cv);
+        }
 
+        void wake_all() noexcept
+        {
+            WakeAllConditionVariable(&m_cv);
+        }
+
+    private:
+
+        CONDITION_VARIABLE m_cv{};
+    };
 }
 
-namespace impl {
-
+namespace impl
+{
 #ifdef WINRT_CHECKED_ITERATORS
 
-template <typename T>
-using array_iterator = stdext::checked_array_iterator<T *>;
+    template <typename T>
+    using array_iterator = stdext::checked_array_iterator<T *>;
 
-template <typename T>
-auto make_array_iterator(T * data, uint32_t size, uint32_t index = 0) noexcept
-{
-    return array_iterator<T>(data, size, index);
-}
+    template <typename T>
+    auto make_array_iterator(T * data, uint32_t size, uint32_t index = 0) noexcept
+    {
+        return array_iterator<T>(data, size, index);
+    }
 
 #else
 
-template <typename T>
-using array_iterator = T *;
+    template <typename T>
+    using array_iterator = T *;
 
-template <typename T>
-auto make_array_iterator(T * data, uint32_t, uint32_t index = 0) noexcept
-{
-    return data + index;
-}
+    template <typename T>
+    auto make_array_iterator(T * data, uint32_t, uint32_t index = 0) noexcept
+    {
+        return data + index;
+    }
 
 #endif
-
 }
 
 template <typename T>
@@ -1906,7 +1895,7 @@ struct array_view
     array_view() noexcept = default;
 
     array_view(pointer first, pointer last) noexcept :
-        m_data(first),
+    m_data(first),
         m_size(static_cast<size_type>(last - first))
     {}
 
@@ -2131,7 +2120,7 @@ struct com_array : array_view<T>
     {}
 
     template <size_type N>
-    explicit com_array(const value_type (&value)[N]) :
+    explicit com_array(const value_type(&value)[N]) :
         com_array(value, value + N)
     {}
 
@@ -2250,107 +2239,106 @@ template <typename T> bool operator>(const array_view<T> & left, const array_vie
 template <typename T> bool operator<=(const array_view<T> & left, const array_view<T> & right) noexcept { return !(right < left); }
 template <typename T> bool operator>=(const array_view<T> & left, const array_view<T> & right) noexcept { return !(left < right); }
 
-namespace impl {
-
-template <typename T>
-struct array_size_proxy
+namespace impl
 {
-    array_size_proxy & operator=(const array_size_proxy &) = delete;
+    template <typename T>
+    struct array_size_proxy
+    {
+        array_size_proxy & operator=(const array_size_proxy &) = delete;
 
-    array_size_proxy(com_array<T> & value) noexcept :
+        array_size_proxy(com_array<T> & value) noexcept :
         m_value(value)
-    {}
+        {}
 
-    ~array_size_proxy() noexcept
+        ~array_size_proxy() noexcept
+        {
+            impl_put_size(m_value, m_size);
+        }
+
+        operator uint32_t * () noexcept
+        {
+            return &m_size;
+        }
+
+        operator unsigned long * () noexcept
+        {
+            return reinterpret_cast<unsigned long *>(&m_size);
+        }
+
+    private:
+
+        com_array<T> & m_value;
+        uint32_t m_size = 0;
+    };
+
+    template <typename T>
+    struct com_array_proxy
     {
-        impl_put_size(m_value, m_size);
-    }
-
-    operator uint32_t * () noexcept
-    {
-        return &m_size;
-    }
-
-    operator unsigned long * () noexcept
-    {
-        return reinterpret_cast<unsigned long *>(&m_size);
-    }
-
-private:
-
-    com_array<T> & m_value;
-    uint32_t m_size = 0;
-};
-
-template <typename T>
-struct com_array_proxy
-{
-    com_array_proxy(uint32_t * size, abi_arg_out<T> * value) noexcept :
+        com_array_proxy(uint32_t * size, abi_arg_out<T> * value) noexcept :
         m_size(size),
-        m_value(value)
-    {}
+            m_value(value)
+        {}
 
-    ~com_array_proxy() noexcept
+        ~com_array_proxy() noexcept
+        {
+            std::tie(*m_size, *m_value) = impl_detach(m_temp);
+        }
+
+        operator com_array<T> &() noexcept
+        {
+            return m_temp;
+        }
+
+        com_array_proxy(const com_array_proxy &) noexcept
+        {
+            WINRT_ASSERT(false);
+        }
+
+        com_array_proxy & operator=(const com_array_proxy &) noexcept
+        {
+            WINRT_ASSERT(false);
+            return *this;
+        }
+
+    private:
+
+        uint32_t * m_size;
+        abi_arg_out<T> * m_value;
+        com_array<T> m_temp;
+    };
+
+    template <typename T>
+    struct accessors<com_array<T>>
     {
-        std::tie(*m_size, *m_value) = impl_detach(m_temp);
-    }
+        static auto put(com_array<T> & object) noexcept
+        {
+            return impl_put(object);
+        }
 
-    operator com_array<T> &() noexcept
+        static array_size_proxy<T> put_size(com_array<T> & object) noexcept
+        {
+            return array_size_proxy<T>(object);
+        }
+
+        static auto detach(com_array<T> & object) noexcept
+        {
+            return impl_detach(object);
+        }
+
+        static auto data(com_array<T> & object) noexcept
+        {
+            return impl_data(object);
+        }
+    };
+
+    template <typename T>
+    struct accessors<array_view<T>>
     {
-        return m_temp;
-    }
-
-    com_array_proxy(const com_array_proxy &) noexcept
-    {
-        WINRT_ASSERT(false);
-    }
-
-    com_array_proxy & operator=(const com_array_proxy &) noexcept
-    {
-        WINRT_ASSERT(false);
-        return *this;
-    }
-
-private:
-
-    uint32_t * m_size;
-    abi_arg_out<T> * m_value;
-    com_array<T> m_temp;
-};
-
-template <typename T>
-struct accessors<com_array<T>>
-{
-    static auto put(com_array<T> & object) noexcept
-    {
-        return impl_put(object);
-    }
-
-    static array_size_proxy<T> put_size(com_array<T> & object) noexcept
-    {
-        return array_size_proxy<T>(object);
-    }
-
-    static auto detach(com_array<T> & object) noexcept
-    {
-        return impl_detach(object);
-    }
-
-    static auto data(com_array<T> & object) noexcept
-    {
-        return impl_data(object);
-    }
-};
-
-template <typename T>
-struct accessors<array_view<T>>
-{
-    static auto get(array_view<T> object) noexcept
-    {
-        return reinterpret_cast<abi_arg_out<std::remove_const_t<T>>>(const_cast<std::remove_const_t<T> *>(object.data()));
-    }
-};
-
+        static auto get(array_view<T> object) noexcept
+        {
+            return reinterpret_cast<abi_arg_out<std::remove_const_t<T>>>(const_cast<std::remove_const_t<T> *>(object.data()));
+        }
+    };
 }
 
 template <typename T>
@@ -2361,7 +2349,7 @@ auto detach_abi(uint32_t * __valueSize, impl::abi_arg_out<T> * value) noexcept
 
 namespace Windows::Foundation
 {
-enum class TrustLevel
+    enum class TrustLevel
     {
         BaseTrust,
         PartialTrust,
@@ -2371,336 +2359,327 @@ enum class TrustLevel
 
 namespace ABI::Windows::Foundation
 {
-struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novtable) IInspectable : IUnknown
-{
-    virtual HRESULT __stdcall abi_GetIids(uint32_t * iidCount, GUID ** iids) = 0;
-    virtual HRESULT __stdcall abi_GetRuntimeClassName(HSTRING * className) = 0;
-    virtual HRESULT __stdcall abi_GetTrustLevel(winrt::Windows::Foundation::TrustLevel * trustLevel) = 0;
-};
+    struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novtable) IInspectable : IUnknown
+    {
+        virtual HRESULT __stdcall abi_GetIids(uint32_t * iidCount, GUID ** iids) = 0;
+        virtual HRESULT __stdcall abi_GetRuntimeClassName(HSTRING * className) = 0;
+        virtual HRESULT __stdcall abi_GetTrustLevel(winrt::Windows::Foundation::TrustLevel * trustLevel) = 0;
+    };
 
-struct __declspec(uuid("00000035-0000-0000-c000-000000000046")) __declspec(novtable) IActivationFactory : IInspectable
-{
-    virtual HRESULT __stdcall abi_ActivateInstance(IInspectable ** instance) = 0;
-};
+    struct __declspec(uuid("00000035-0000-0000-c000-000000000046")) __declspec(novtable) IActivationFactory : IInspectable
+    {
+        virtual HRESULT __stdcall abi_ActivateInstance(IInspectable ** instance) = 0;
+    };
 }
 
 namespace Windows::Foundation
 {
+    struct IUnknown
+    {
+        IUnknown() noexcept = default;
+        IUnknown(std::nullptr_t) noexcept {}
+        void * operator new(size_t) = delete;
 
-struct IUnknown
-{
-    IUnknown() noexcept = default;
-    IUnknown(std::nullptr_t) noexcept {}
-    void * operator new(size_t) = delete;
-
-    IUnknown(const IUnknown & other) noexcept :
+        IUnknown(const IUnknown & other) noexcept :
         m_ptr(other.m_ptr)
-    {
-        impl_addref();
-    }
-
-    IUnknown(IUnknown && other) noexcept :
-        m_ptr(other.m_ptr)
-    {
-        other.m_ptr = nullptr;
-    }
-
-    ~IUnknown() noexcept
-    {
-        impl_release();
-    }
-
-    IUnknown & operator=(const IUnknown & other) noexcept
-    {
-        impl_copy(other);
-        return *this;
-    }
-
-    IUnknown & operator=(IUnknown && other) noexcept
-    {
-        impl_move(std::forward<IUnknown>(other));
-        return *this;
-    }
-
-    explicit operator bool() const noexcept
-    {
-        return nullptr != m_ptr;
-    }
-
-    IUnknown & operator=(std::nullptr_t) noexcept
-    {
-        impl_release();
-        return *this;
-    }
-
-    template <typename U>
-    auto as() const
-    {
-        std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        check_hresult(m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp))));
-        return temp;
-    }
-
-    template <typename U>
-    auto try_as() const
-    {
-        std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp)));
-        return temp;
-    }
-
-    friend auto impl_get(const IUnknown & object) noexcept
-    {
-        return object.m_ptr;
-    }
-
-    friend auto impl_put(IUnknown & object) noexcept
-    {
-        WINRT_ASSERT(!object);
-        return &object.m_ptr;
-    }
-
-    friend auto impl_detach(IUnknown & object) noexcept
-    {
-        auto temp = object.m_ptr;
-        object.m_ptr = nullptr;
-        return temp;
-    }
-
-    friend void swap(IUnknown & left, IUnknown & right) noexcept
-    {
-        std::swap(left.m_ptr, right.m_ptr);
-    }
-
-protected:
-
-    void impl_copy(::IUnknown * other) noexcept
-    {
-        if (m_ptr != other)
         {
-            impl_release();
-            m_ptr = other;
             impl_addref();
         }
-    }
 
-    void impl_copy(const IUnknown & other) noexcept
-    {
-        if (this != &other)
+        IUnknown(IUnknown && other) noexcept :
+        m_ptr(other.m_ptr)
         {
-            impl_release();
-            m_ptr = other.m_ptr;
-            impl_addref();
-        }
-    }
-
-    void impl_move(IUnknown && other) noexcept
-    {
-        if (this != &other)
-        {
-            impl_release();
-            m_ptr = other.m_ptr;
             other.m_ptr = nullptr;
         }
-    }
 
-    ::IUnknown * m_ptr = nullptr;
-
-private:
-
-    void impl_addref() const noexcept
-    {
-        if (m_ptr)
+        ~IUnknown() noexcept
         {
-            m_ptr->AddRef();
+            impl_release();
         }
-    }
 
-    void impl_release() noexcept
-    {
-        auto temp = m_ptr;
-
-        if (temp)
+        IUnknown & operator=(const IUnknown & other) noexcept
         {
-            m_ptr = nullptr;
-            temp->Release();
+            impl_copy(other);
+            return *this;
         }
-    }
-};
 
+        IUnknown & operator=(IUnknown && other) noexcept
+        {
+            impl_move(std::forward<IUnknown>(other));
+            return *this;
+        }
+
+        explicit operator bool() const noexcept
+        {
+            return nullptr != m_ptr;
+        }
+
+        IUnknown & operator=(std::nullptr_t) noexcept
+        {
+            impl_release();
+            return *this;
+        }
+
+        template <typename U>
+        auto as() const
+        {
+            std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+            check_hresult(m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp))));
+            return temp;
+        }
+
+        template <typename U>
+        auto try_as() const
+        {
+            std::conditional_t<impl::is_base_of_v<IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+            m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp)));
+            return temp;
+        }
+
+        friend auto impl_get(const IUnknown & object) noexcept
+        {
+            return object.m_ptr;
+        }
+
+        friend auto impl_put(IUnknown & object) noexcept
+        {
+            WINRT_ASSERT(!object);
+            return &object.m_ptr;
+        }
+
+        friend auto impl_detach(IUnknown & object) noexcept
+        {
+            auto temp = object.m_ptr;
+            object.m_ptr = nullptr;
+            return temp;
+        }
+
+        friend void swap(IUnknown & left, IUnknown & right) noexcept
+        {
+            std::swap(left.m_ptr, right.m_ptr);
+        }
+
+    protected:
+
+        void impl_copy(::IUnknown * other) noexcept
+        {
+            if (m_ptr != other)
+            {
+                impl_release();
+                m_ptr = other;
+                impl_addref();
+            }
+        }
+
+        void impl_copy(const IUnknown & other) noexcept
+        {
+            if (this != &other)
+            {
+                impl_release();
+                m_ptr = other.m_ptr;
+                impl_addref();
+            }
+        }
+
+        void impl_move(IUnknown && other) noexcept
+        {
+            if (this != &other)
+            {
+                impl_release();
+                m_ptr = other.m_ptr;
+                other.m_ptr = nullptr;
+            }
+        }
+
+        ::IUnknown * m_ptr = nullptr;
+
+    private:
+
+        void impl_addref() const noexcept
+        {
+            if (m_ptr)
+            {
+                m_ptr->AddRef();
+            }
+        }
+
+        void impl_release() noexcept
+        {
+            auto temp = m_ptr;
+
+            if (temp)
+            {
+                m_ptr = nullptr;
+                temp->Release();
+            }
+        }
+    };
 }
 
-namespace impl {
-
-template <> struct traits<Windows::Foundation::IUnknown>
+namespace impl
 {
-    using abi = ::IUnknown;
-};
-
-template <typename T>
-struct accessors<T, std::enable_if_t<std::is_base_of<Windows::Foundation::IUnknown, T>::value>>
-{
-    static auto get(const T & object) noexcept
+    template <> struct traits<Windows::Foundation::IUnknown>
     {
-        return static_cast<abi_arg_in<T>>(impl_get(object));
-    }
+        using abi = ::IUnknown;
+    };
 
-    static auto put(T & object) noexcept
+    template <typename T>
+    struct accessors<T, std::enable_if_t<std::is_base_of<Windows::Foundation::IUnknown, T>::value>>
     {
-        return reinterpret_cast<abi_arg_out<T>>(impl_put(object));
-    }
-
-    static void attach(T & object, abi_arg_in<T> value) noexcept
-    {
-        object = nullptr;
-        *put(object) = value;
-    }
-
-    static void copy_from(T & object, abi_arg_in<T> value) noexcept
-    {
-        object = nullptr;
-
-        if (value)
+        static auto get(const T & object) noexcept
         {
-            value->AddRef();
+            return static_cast<abi_arg_in<T>>(impl_get(object));
+        }
+
+        static auto put(T & object) noexcept
+        {
+            return reinterpret_cast<abi_arg_out<T>>(impl_put(object));
+        }
+
+        static void attach(T & object, abi_arg_in<T> value) noexcept
+        {
+            object = nullptr;
             *put(object) = value;
         }
-    }
 
-    template <typename V>
-    static void copy_to(const T & object, V & value) noexcept
-    {
-        if (object)
+        static void copy_from(T & object, abi_arg_in<T> value) noexcept
         {
-            value = get(object);
-            value->AddRef();
+            object = nullptr;
+
+            if (value)
+            {
+                value->AddRef();
+                *put(object) = value;
+            }
         }
-        else
+
+        template <typename V>
+        static void copy_to(const T & object, V & value) noexcept
         {
-            value = nullptr;
+            if (object)
+            {
+                value = get(object);
+                value->AddRef();
+            }
+            else
+            {
+                value = nullptr;
+            }
         }
-    }
 
-    static auto detach(T & object) noexcept
+        static auto detach(T & object) noexcept
+        {
+            return static_cast<abi_arg_in<T>>(impl_detach(object));
+        }
+    };
+}
+
+namespace Windows::Foundation
+{
+    inline bool operator==(const IUnknown & left, const IUnknown & right) noexcept
     {
-        return static_cast<abi_arg_in<T>>(impl_detach(object));
+        return get_abi(left) == get_abi(right);
     }
-};
 
-}
-
-namespace Windows::Foundation {
-
-inline bool operator==(const IUnknown & left, const IUnknown & right) noexcept
-{
-    return get_abi(left) == get_abi(right);
-}
-
-inline bool operator!=(const IUnknown & left, const IUnknown & right) noexcept
-{
-    return !(left == right);
-}
-
-inline bool operator<(const IUnknown & left, const IUnknown & right) noexcept
-{
-    return get_abi(left) < get_abi(right);
-}
-
-inline bool operator>(const IUnknown & left, const IUnknown & right) noexcept
-{
-    return right < left;
-}
-
-inline bool operator<=(const IUnknown & left, const IUnknown & right) noexcept
-{
-    return !(right < left);
-}
-
-inline bool operator>=(const IUnknown & left, const IUnknown & right) noexcept
-{
-    return !(left < right);
-}
-
-}
-
-namespace Windows::Foundation {
-
-struct IInspectable;
-
-}
-
-namespace impl {
-
-template <> struct traits<Windows::Foundation::IInspectable>
-{
-    using abi = ABI::Windows::Foundation::IInspectable;
-};
-
-}
-
-namespace Windows::Foundation {
-
-struct IInspectable : IUnknown
-{
-    IInspectable(std::nullptr_t = nullptr) noexcept {}
-};
-
-inline com_array<GUID> GetIids(const IInspectable & object)
-{
-    com_array<GUID> value;
-    check_hresult((*(abi<IInspectable> **)&object)->abi_GetIids(impl::put_size_abi(value), put_abi(value)));
-    return value;
-}
-
-inline hstring GetRuntimeClassName(const IInspectable & object)
-{
-    hstring value;
-    check_hresult((*(abi<IInspectable> **)&object)->abi_GetRuntimeClassName(put_abi(value)));
-    return value;
-}
-
-inline TrustLevel GetTrustLevel(const IInspectable & object)
-{
-    TrustLevel value{};
-    check_hresult((*(abi<IInspectable> **)&object)->abi_GetTrustLevel(&value));
-    return value;
-}
-
-}
-
-namespace impl {
-
-template <typename T, std::enable_if_t<!std::is_base_of<Windows::Foundation::IUnknown, T>::value> * = nullptr>
-T empty_value()
-{
-    return {};
-}
-
-template <typename T, std::enable_if_t<std::is_base_of<Windows::Foundation::IUnknown, T>::value> * = nullptr>
-T empty_value()
-{
-    return nullptr;
-}
-
-}
-
-namespace ABI::Windows::Foundation {
-
-struct __declspec(uuid("00000037-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReference : ::IUnknown
-{
-    virtual HRESULT __stdcall abi_Resolve(const GUID & iid, IInspectable ** objectReference) = 0;
-
-    template <typename Qi> HRESULT __stdcall abi_Resolve(Qi ** objectReference) noexcept
+    inline bool operator!=(const IUnknown & left, const IUnknown & right) noexcept
     {
-        return abi_Resolve(__uuidof(Qi), reinterpret_cast<IInspectable **>(objectReference));
+        return !(left == right);
     }
-};
 
-struct __declspec(uuid("00000038-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReferenceSource : ::IUnknown
+    inline bool operator<(const IUnknown & left, const IUnknown & right) noexcept
+    {
+        return get_abi(left) < get_abi(right);
+    }
+
+    inline bool operator>(const IUnknown & left, const IUnknown & right) noexcept
+    {
+        return right < left;
+    }
+
+    inline bool operator<=(const IUnknown & left, const IUnknown & right) noexcept
+    {
+        return !(right < left);
+    }
+
+    inline bool operator>=(const IUnknown & left, const IUnknown & right) noexcept
+    {
+        return !(left < right);
+    }
+}
+
+namespace Windows::Foundation
 {
-    virtual HRESULT __stdcall abi_GetWeakReference(IWeakReference ** weakReference) = 0;
-};
+    struct IInspectable;
+}
 
+namespace impl
+{
+    template <> struct traits<Windows::Foundation::IInspectable>
+    {
+        using abi = ABI::Windows::Foundation::IInspectable;
+    };
+}
+
+namespace Windows::Foundation
+{
+    struct IInspectable : IUnknown
+    {
+        IInspectable(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    inline com_array<GUID> GetIids(const IInspectable & object)
+    {
+        com_array<GUID> value;
+        check_hresult((*(abi<IInspectable> **)&object)->abi_GetIids(impl::put_size_abi(value), put_abi(value)));
+        return value;
+    }
+
+    inline hstring GetRuntimeClassName(const IInspectable & object)
+    {
+        hstring value;
+        check_hresult((*(abi<IInspectable> **)&object)->abi_GetRuntimeClassName(put_abi(value)));
+        return value;
+    }
+
+    inline TrustLevel GetTrustLevel(const IInspectable & object)
+    {
+        TrustLevel value{};
+        check_hresult((*(abi<IInspectable> **)&object)->abi_GetTrustLevel(&value));
+        return value;
+    }
+}
+
+namespace impl
+{
+    template <typename T, std::enable_if_t<!std::is_base_of<Windows::Foundation::IUnknown, T>::value> * = nullptr>
+    T empty_value()
+    {
+        return {};
+    }
+
+    template <typename T, std::enable_if_t<std::is_base_of<Windows::Foundation::IUnknown, T>::value> * = nullptr>
+    T empty_value()
+    {
+        return nullptr;
+    }
+}
+
+namespace ABI::Windows::Foundation
+{
+    struct __declspec(uuid("00000037-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReference : ::IUnknown
+    {
+        virtual HRESULT __stdcall abi_Resolve(const GUID & iid, IInspectable ** objectReference) = 0;
+
+        template <typename Qi> HRESULT __stdcall abi_Resolve(Qi ** objectReference) noexcept
+        {
+            return abi_Resolve(__uuidof(Qi), reinterpret_cast<IInspectable **>(objectReference));
+        }
+    };
+
+    struct __declspec(uuid("00000038-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReferenceSource : ::IUnknown
+    {
+        virtual HRESULT __stdcall abi_GetWeakReference(IWeakReference ** weakReference) = 0;
+    };
 }
 
 template <typename T>
@@ -2785,7 +2764,7 @@ agile_ref<T> make_agile(const T & object)
 
 struct event_token
 {
-    int64_t value;
+    int64_t value{};
 };
 
 inline bool operator==(const event_token & left, const event_token & right) noexcept
@@ -2794,7 +2773,7 @@ inline bool operator==(const event_token & left, const event_token & right) noex
 }
 
 struct auto_revoke_t {};
-constexpr auto_revoke_t auto_revoke {};
+constexpr auto_revoke_t auto_revoke{};
 
 template <typename I>
 struct event_revoker
@@ -2836,8 +2815,8 @@ struct event_revoker
 private:
 
     weak_ref<I> m_object;
-    method_type m_method {};
-    event_token m_token {};
+    method_type m_method{};
+    event_token m_token{};
 };
 
 template <typename I>
@@ -2876,332 +2855,337 @@ struct factory_event_revoker
 private:
 
     I m_object;
-    method_type m_method {};
-    event_token m_token {};
+    method_type m_method{};
+    event_token m_token{};
 };
-
-namespace impl {
-
-template <typename D, typename I, typename S, typename M>
-auto make_event_revoker(S source, M method, event_token token)
-{
-    return event_revoker<I>(static_cast<const I &>(static_cast<const D &>(*source)), method, token);
-}
-
-}
-
 
 namespace impl
 {
-
-template <typename T>
-struct event_array
-{
-    using value_type = T;
-    using reference = value_type &;
-    using pointer = value_type *;
-    using iterator = impl::array_iterator<value_type>;
-
-    explicit event_array(const uint32_t count) noexcept : m_size(count)
+    template <typename D, typename I, typename S, typename M>
+    auto make_event_revoker(S source, M method, event_token token)
     {
-        std::uninitialized_fill_n(data(), count, value_type());
+        return event_revoker<I>(static_cast<const I &>(static_cast<const D &>(*source)), method, token);
     }
-
-    unsigned long AddRef() noexcept
-    {
-        return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
-    }
-
-    unsigned long Release() noexcept
-    {
-        const uint32_t remaining = m_references.fetch_sub(1, std::memory_order_release) - 1;
-
-        if (remaining == 0)
-        {
-            std::atomic_thread_fence(std::memory_order_acquire);
-            this->~event_array();
-            ::operator delete(static_cast<void*>(this));
-        }
-
-        return remaining;
-    }
-
-    reference back() noexcept
-    {
-        WINRT_ASSERT(m_size > 0);
-        return *(data() + m_size - 1);
-    }
-
-    iterator begin() noexcept
-    {
-        return impl::make_array_iterator(data(), m_size);
-    }
-
-    iterator end() noexcept
-    {
-        return impl::make_array_iterator(data(), m_size, m_size);
-    }
-
-    uint32_t size() const noexcept
-    {
-        return m_size;
-    }
-
-    ~event_array() noexcept
-    {
-        for (reference element : *this)
-        {
-            element.~T();
-        }
-    }
-
-private:
-
-    pointer data() noexcept
-    {
-        return reinterpret_cast<pointer>(this + 1);
-    }
-
-    std::atomic<uint32_t> m_references{ 1 };
-    uint32_t m_size{ 0 };
-};
-
-template <typename T>
-auto make_event_array(const uint32_t capacity)
-{
-    com_ptr<event_array<T>> instance;
-    void* raw = ::operator new(sizeof(event_array<T>) + (sizeof(T) * capacity));
-    *put_abi(instance) = new(raw) event_array<T>(capacity);
-    return instance;
 }
 
-template <typename Traits>
-struct event : Traits
+namespace impl
 {
-    using delegate_type = typename Traits::delegate_type;
-
-    event() = default;
-    event(const event<Traits> &) = delete;
-    event<Traits> & operator =(const event<Traits> &) = delete;
-
-    explicit operator bool() const noexcept
+    template <typename T>
+    struct event_array
     {
-        return m_targets != nullptr;
-    }
+        using value_type = T;
+        using reference = value_type &;
+        using pointer = value_type *;
+        using iterator = impl::array_iterator<value_type>;
 
-    event_token add(const delegate_type & delegate)
-    {
-        if (delegate == nullptr)
+        explicit event_array(const uint32_t count) noexcept : m_size(count)
         {
-            throw hresult_invalid_argument();
+            std::uninitialized_fill_n(data(), count, value_type());
         }
 
-        event_token token{};
-        delegate_array temp_targets;
-
+        unsigned long AddRef() noexcept
         {
-            auto change_guard = this->get_change_guard();
-            delegate_array new_targets = impl::make_event_array<storage_type>((!m_targets) ? 1 : m_targets->size() + 1);
-
-            if (m_targets)
-            {
-                std::copy_n(m_targets->begin(), m_targets->size(), new_targets->begin());
-            }
-
-            token.value = reinterpret_cast<int64_t>(get_abi(delegate));
-            new_targets->back() = delegate;
-
-            auto swap_guard = this->get_swap_guard();
-            temp_targets = m_targets;
-            m_targets = new_targets;
+            return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
         }
 
-        return token;
+        unsigned long Release() noexcept
+        {
+            const uint32_t remaining = m_references.fetch_sub(1, std::memory_order_release) - 1;
+
+            if (remaining == 0)
+            {
+                std::atomic_thread_fence(std::memory_order_acquire);
+                this->~event_array();
+                ::operator delete(static_cast<void*>(this));
+            }
+
+            return remaining;
+        }
+
+        reference back() noexcept
+        {
+            WINRT_ASSERT(m_size > 0);
+            return *(data() + m_size - 1);
+        }
+
+        iterator begin() noexcept
+        {
+            return impl::make_array_iterator(data(), m_size);
+        }
+
+        iterator end() noexcept
+        {
+            return impl::make_array_iterator(data(), m_size, m_size);
+        }
+
+        uint32_t size() const noexcept
+        {
+            return m_size;
+        }
+
+        ~event_array() noexcept
+        {
+            for (reference element : *this)
+            {
+                element.~T();
+            }
+        }
+
+    private:
+
+        pointer data() noexcept
+        {
+            return reinterpret_cast<pointer>(this + 1);
+        }
+
+        std::atomic<uint32_t> m_references{ 1 };
+        uint32_t m_size{ 0 };
+    };
+
+    template <typename T>
+    auto make_event_array(const uint32_t capacity)
+    {
+        com_ptr<event_array<T>> instance;
+        void* raw = ::operator new(sizeof(event_array<T>) + (sizeof(T) * capacity));
+        *put_abi(instance) = new(raw) event_array<T>(capacity);
+        return instance;
     }
 
-    void remove(const event_token token)
+    template <typename Traits>
+    struct event : Traits
     {
-        delegate_array temp_targets;
+        using delegate_type = typename Traits::delegate_type;
 
+        event() = default;
+        event(const event<Traits> &) = delete;
+        event<Traits> & operator =(const event<Traits> &) = delete;
+
+        explicit operator bool() const noexcept
         {
-            auto change_guard = this->get_change_guard();
+            return m_targets != nullptr;
+        }
 
-            if (!m_targets)
+        event_token add(const delegate_type & delegate)
+        {
+            if (delegate == nullptr)
             {
-                return;
+                throw hresult_invalid_argument();
             }
 
-            uint32_t available_slots = m_targets->size() - 1;
-            delegate_array new_targets;
-            bool removed = false;
+            event_token token{};
+            delegate_array temp_targets;
 
-            if (available_slots == 0)
             {
-                if (this->get_token(*m_targets->begin()) == token)
+                auto change_guard = this->get_change_guard();
+                delegate_array new_targets = impl::make_event_array<storage_type>((!m_targets) ? 1 : m_targets->size() + 1);
+
+                if (m_targets)
                 {
-                    removed = true;
+                    std::copy_n(m_targets->begin(), m_targets->size(), new_targets->begin());
                 }
-            }
-            else
-            {
-                new_targets = impl::make_event_array<storage_type>(available_slots);
-                auto new_iterator = new_targets->begin();
 
-                for (const storage_type & element : *m_targets)
-                {
-                    if (!removed && token == this->get_token(element))
-                    {
-                        removed = true;
-                        continue;
-                    }
+                token.value = reinterpret_cast<int64_t>(get_abi(delegate));
+                new_targets->back() = delegate;
 
-                    *new_iterator = element;
-                    ++new_iterator;
-                }
-            }
-
-            if (removed)
-            {
                 auto swap_guard = this->get_swap_guard();
                 temp_targets = m_targets;
                 m_targets = new_targets;
             }
-        }
-    }
 
-    template<typename ...Arg>
-    void operator()(const Arg & ... args)
-    {
-        delegate_array temp_targets;
-
-        {
-            auto swap_guard = this->get_swap_guard();
-            temp_targets = m_targets;
+            return token;
         }
 
-        if (temp_targets)
+        void remove(const event_token token)
         {
-            for (const storage_type & element : *temp_targets)
+            delegate_array temp_targets;
+
             {
-                bool remove_delegate = false;
+                auto change_guard = this->get_change_guard();
 
-                try
+                if (!m_targets)
                 {
-                    this->invoke(element, args...);
+                    return;
                 }
-                catch (const hresult_error& e)
+
+                uint32_t available_slots = m_targets->size() - 1;
+                delegate_array new_targets;
+                bool removed = false;
+
+                if (available_slots == 0)
                 {
-                    if (e.code() == JSCRIPT_E_CANTEXECUTE ||
-                        e.code() == RPC_S_SERVER_UNAVAILABLE ||
-                        e.code() == RPC_E_DISCONNECTED)
+                    if (this->get_token(*m_targets->begin()) == token)
                     {
-                        remove_delegate = true;
+                        removed = true;
+                    }
+                }
+                else
+                {
+                    new_targets = impl::make_event_array<storage_type>(available_slots);
+                    auto new_iterator = new_targets->begin();
+
+                    for (const storage_type & element : *m_targets)
+                    {
+                        if (!removed && token == this->get_token(element))
+                        {
+                            removed = true;
+                            continue;
+                        }
+
+                        *new_iterator = element;
+                        ++new_iterator;
                     }
                 }
 
-                if (remove_delegate)
+                if (removed)
                 {
-                    remove(this->get_token(element));
+                    auto swap_guard = this->get_swap_guard();
+                    temp_targets = m_targets;
+                    m_targets = new_targets;
                 }
             }
         }
-    }
 
-private:
+        template<typename ...Arg>
+        void operator()(const Arg & ... args)
+        {
+            delegate_array temp_targets;
 
-    using storage_type = typename Traits::storage_type;
-    using delegate_array = com_ptr<impl::event_array<storage_type>>;
+            {
+                auto swap_guard = this->get_swap_guard();
+                temp_targets = m_targets;
+            }
 
-    delegate_array m_targets;
-};
+            if (temp_targets)
+            {
+                for (const storage_type & element : *temp_targets)
+                {
+                    bool remove_delegate = false;
 
-struct no_lock_guard {};
+                    try
+                    {
+                        this->invoke(element, args...);
+                    }
+                    catch (const hresult_error& e)
+                    {
+                        if (e.code() == JSCRIPT_E_CANTEXECUTE ||
+                            e.code() == RPC_S_SERVER_UNAVAILABLE ||
+                            e.code() == RPC_E_DISCONNECTED)
+                        {
+                            remove_delegate = true;
+                        }
+                    }
 
-struct locked_event_traits
-{
-    lock_guard get_swap_guard() noexcept
+                    if (remove_delegate)
+                    {
+                        remove(this->get_token(element));
+                    }
+                }
+            }
+        }
+
+    private:
+
+        using storage_type = typename Traits::storage_type;
+        using delegate_array = com_ptr<impl::event_array<storage_type>>;
+
+        delegate_array m_targets;
+    };
+
+    struct no_lock_guard {};
+
+    struct locked_event_traits
     {
-        return lock_guard(m_swap);
-    }
+        lock_guard get_swap_guard() noexcept
+        {
+            return lock_guard(m_swap);
+        }
 
-    lock_guard get_change_guard() noexcept
+        lock_guard get_change_guard() noexcept
+        {
+            return lock_guard(m_change);
+        }
+
+    private:
+
+        lock m_swap;
+        lock m_change;
+    };
+
+    template <typename Delegate>
+    struct single_threaded_event_traits
     {
-        return lock_guard(m_change);
-    }
+        using delegate_type = Delegate;
+        using storage_type = Delegate;
 
-private:
+        template <typename ... Args>
+        void invoke(const storage_type & delegate, const Args & ... args) const
+        {
+            delegate(args ...);
+        }
 
-    lock m_swap;
-    lock m_change;
-};
+        event_token get_token(const storage_type & delegate) const noexcept
+        {
+            return{ reinterpret_cast<int64_t>(get(delegate)) };
+        }
 
-template <typename Delegate>
-struct single_threaded_event_traits
-{
-    using delegate_type = Delegate;
-    using storage_type = Delegate;
+        no_lock_guard get_swap_guard() const noexcept
+        {
+            return{};
+        }
 
-    template <typename ... Args>
-    void invoke(const storage_type & delegate, const Args & ... args) const
+        no_lock_guard get_change_guard() const noexcept
+        {
+            return{};
+        }
+    };
+
+#ifndef WINRT_NO_AGILE_REFERENCE
+
+    template <typename Delegate>
+    struct agile_event_traits : locked_event_traits
     {
-        delegate(args ...);
-    }
+        using delegate_type = Delegate;
+        using storage_type = agile_ref<Delegate>;
 
-    event_token get_token(const storage_type & delegate) const noexcept
+        template <typename ... Args>
+        void invoke(const storage_type & delegate, const Args & ... args) const
+        {
+            delegate.get()(args ...);
+        }
+
+        event_token get_token(const storage_type & delegate) const noexcept
+        {
+            return{ reinterpret_cast<int64_t>(get_abi(delegate.get())) };
+        }
+    };
+
+#endif
+
+    template <typename Delegate>
+    struct non_agile_event_traits : locked_event_traits
     {
-        return{ reinterpret_cast<int64_t>(get(delegate)) };
-    }
+        using delegate_type = Delegate;
+        using storage_type = Delegate;
 
-    no_lock_guard get_swap_guard() const noexcept
-    {
-        return{};
-    }
+        template <typename ... Args>
+        void invoke(const storage_type & delegate, const Args & ... args) const
+        {
+            delegate(args ...);
+        }
 
-    no_lock_guard get_change_guard() const noexcept
-    {
-        return{};
-    }
-};
-
-template <typename Delegate>
-struct agile_event_traits : locked_event_traits
-{
-    using delegate_type = Delegate;
-    using storage_type = agile_ref<Delegate>;
-
-    template <typename ... Args>
-    void invoke(const storage_type & delegate, const Args & ... args) const
-    {
-        delegate.get()(args ...);
-    }
-
-    event_token get_token(const storage_type & delegate) const noexcept
-    {
-        return{ reinterpret_cast<int64_t>(get_abi(delegate.get())) };
-    }
-};
-
-template <typename Delegate>
-struct non_agile_event_traits : locked_event_traits
-{
-    using delegate_type = Delegate;
-    using storage_type = Delegate;
-
-    template <typename ... Args>
-    void invoke(const storage_type & delegate, const Args & ... args) const
-    {
-        delegate(args ...);
-    }
-
-    event_token get_token(const storage_type & delegate) const noexcept
-    {
-        return{ reinterpret_cast<int64_t>(get_abi(delegate)) };
-    }
-};
+        event_token get_token(const storage_type & delegate) const noexcept
+        {
+            return{ reinterpret_cast<int64_t>(get_abi(delegate)) };
+        }
+    };
 }
+
+#ifndef WINRT_NO_AGILE_REFERENCE
 
 template <typename Delegate>
 using agile_event = impl::event<impl::agile_event_traits<Delegate>>;
+
+#endif
 
 template <typename Delegate>
 using non_agile_event = impl::event<impl::non_agile_event_traits<Delegate>>;
@@ -3984,89 +3968,88 @@ protected:
     Windows::Foundation::IInspectable m_inner;
 };
 
-namespace Windows::Foundation {
-
-struct IActivationFactory;
-
-template <typename D>
-struct WINRT_EBO impl_IActivationFactory
+namespace Windows::Foundation
 {
-    IInspectable ActivateInstance() const;
-};
 
-}
+    struct IActivationFactory;
 
-namespace impl {
-
-template <> struct traits<Windows::Foundation::IActivationFactory>
-{
-    using abi = ABI::Windows::Foundation::IActivationFactory;
-    template <typename D> using consume = Windows::Foundation::impl_IActivationFactory<D>;
-};
-
-template <typename D>
-struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Windows::Foundation::IActivationFactory>
-{
-    HRESULT __stdcall abi_ActivateInstance(abi_arg_out<Windows::Foundation::IInspectable> instance) noexcept final
+    template <typename D>
+    struct WINRT_EBO impl_IActivationFactory
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().ActivateInstance());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *instance = nullptr;
-            return impl::to_hresult();
-        }
-    }
-};
+        IInspectable ActivateInstance() const;
+    };
+}
 
-template <typename Class, typename Interface>
-Interface get_agile_activation_factory()
+namespace impl
 {
-    hstring_view classId(impl::traits<Class>::name());
-
-    Interface factory;
-    check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put_abi(factory))));
-
-    if (!factory.template try_as<IAgileObject>())
+    template <> struct traits<Windows::Foundation::IActivationFactory>
     {
-        return nullptr;
+        using abi = ABI::Windows::Foundation::IActivationFactory;
+        template <typename D> using consume = Windows::Foundation::impl_IActivationFactory<D>;
+    };
+
+    template <typename D>
+    struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Windows::Foundation::IActivationFactory>
+    {
+        HRESULT __stdcall abi_ActivateInstance(abi_arg_out<Windows::Foundation::IInspectable> instance) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *instance = detach_abi(this->shim().ActivateInstance());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *instance = nullptr;
+                return impl::to_hresult();
+            }
+        }
+    };
+
+    template <typename Class, typename Interface>
+    Interface get_agile_activation_factory()
+    {
+        hstring_view classId(impl::traits<Class>::name());
+
+        Interface factory;
+        check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put_abi(factory))));
+
+        if (!factory.template try_as<IAgileObject>())
+        {
+            return nullptr;
+        }
+
+        return factory;
     }
 
-    return factory;
+    template <typename Class, typename Interface>
+    Interface get_activation_factory()
+    {
+        hstring_view classId(impl::traits<Class>::name());
+
+        Interface factory;
+        check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put_abi(factory))));
+        return factory;
+    }
 }
 
-template <typename Class, typename Interface>
-Interface get_activation_factory()
+namespace Windows::Foundation
 {
-    hstring_view classId(impl::traits<Class>::name());
+    struct IActivationFactory :
+        IInspectable,
+        impl::consume<IActivationFactory>
+    {
+        IActivationFactory(std::nullptr_t = nullptr) noexcept {}
+    };
 
-    Interface factory;
-    check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put_abi(factory))));
-    return factory;
-}
-
-}
-
-namespace Windows::Foundation {
-
-struct IActivationFactory :
-    IInspectable,
-    impl::consume<IActivationFactory>
-{
-    IActivationFactory(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename D>
-IInspectable impl_IActivationFactory<D>::ActivateInstance() const
-{
-    IInspectable instance;
-    check_hresult(WINRT_SHIM(IActivationFactory)->abi_ActivateInstance(put_abi(instance)));
-    return instance;
-}
+    template <typename D>
+    IInspectable impl_IActivationFactory<D>::ActivateInstance() const
+    {
+        IInspectable instance;
+        check_hresult(WINRT_SHIM(IActivationFactory)->abi_ActivateInstance(put_abi(instance)));
+        return instance;
+    }
 
 }
 
@@ -4105,1780 +4088,1766 @@ Instance activate_instance()
     return get_activation_factory<Class>().ActivateInstance().template as<Instance>();
 }
 
-namespace ABI::Windows::Foundation {
-
-template <typename T> struct EventHandler;
-template <typename TSender, typename TArgs> struct TypedEventHandler;
-
-template <typename T>
-struct __declspec(novtable) impl_EventHandler : IUnknown
+namespace ABI::Windows::Foundation
 {
-    virtual HRESULT __stdcall abi_Invoke(IInspectable * sender, arg_in<T> args) = 0;
-};
+    template <typename T> struct EventHandler;
+    template <typename TSender, typename TArgs> struct TypedEventHandler;
 
-template <typename TSender, typename TArgs>
-struct __declspec(novtable) impl_TypedEventHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(arg_in<TSender> sender, arg_in<TArgs> args) = 0;
-};
-
-template <typename T> struct EventHandler : impl::not_specialized<EventHandler<T>> {};
-template <typename TSender, typename TArgs> struct TypedEventHandler : impl::not_specialized<TypedEventHandler<TSender, TArgs>> {};
-
-}
-
-namespace Windows::Foundation {
-
-template <typename T> struct EventHandler;
-template <typename TSender, typename TArgs> struct TypedEventHandler;
-
-}
-
-namespace impl {
-
-template <typename T> struct traits<Windows::Foundation::EventHandler<T>>
-{
-    using abi = ABI::Windows::Foundation::EventHandler<abi<T>>;
-};
-
-template <typename TSender, typename TArgs> struct traits<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
-{
-    using abi = ABI::Windows::Foundation::TypedEventHandler<abi<TSender>, abi<TArgs>>;
-};
-
-template <typename T, typename H>
-struct event_handler : implements<event_handler<T, H>, abi<Windows::Foundation::EventHandler<T>>>, H
-{
-    event_handler(H && handler) : H(std::forward<H>(handler)) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IInspectable> sender, abi_arg_in<T> args) noexcept override
+    template <typename T>
+    struct __declspec(novtable) impl_EventHandler : IUnknown
     {
-        try
+        virtual HRESULT __stdcall abi_Invoke(IInspectable * sender, arg_in<T> args) = 0;
+    };
+
+    template <typename TSender, typename TArgs>
+    struct __declspec(novtable) impl_TypedEventHandler : IUnknown
+    {
+        virtual HRESULT __stdcall abi_Invoke(arg_in<TSender> sender, arg_in<TArgs> args) = 0;
+    };
+
+    template <typename T> struct EventHandler : impl::not_specialized<EventHandler<T>> {};
+    template <typename TSender, typename TArgs> struct TypedEventHandler : impl::not_specialized<TypedEventHandler<TSender, TArgs>> {};
+}
+
+namespace Windows::Foundation
+{
+    template <typename T> struct EventHandler;
+    template <typename TSender, typename TArgs> struct TypedEventHandler;
+}
+
+namespace impl
+{
+    template <typename T> struct traits<Windows::Foundation::EventHandler<T>>
+    {
+        using abi = ABI::Windows::Foundation::EventHandler<abi<T>>;
+    };
+
+    template <typename TSender, typename TArgs> struct traits<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
+    {
+        using abi = ABI::Windows::Foundation::TypedEventHandler<abi<TSender>, abi<TArgs>>;
+    };
+
+    template <typename T, typename H>
+    struct event_handler : implements<event_handler<T, H>, abi<Windows::Foundation::EventHandler<T>>>, H
+    {
+        event_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+        HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IInspectable> sender, abi_arg_in<T> args) noexcept override
         {
-            (*this)(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&sender), *reinterpret_cast<const T *>(&args));
-            return S_OK;
+            try
+            {
+                (*this)(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&sender), *reinterpret_cast<const T *>(&args));
+                return S_OK;
+            }
+            catch (...) { return impl::to_hresult(); }
         }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
+    };
 
-template <typename TSender, typename TArgs, typename H>
-struct typed_event_handler : implements<typed_event_handler<TSender, TArgs, H>, abi<Windows::Foundation::TypedEventHandler<TSender, TArgs>>>, H
-{
-    typed_event_handler(H && handler) : H(std::forward<H>(handler)) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<TSender> sender, abi_arg_in<TArgs> args) noexcept override
+    template <typename TSender, typename TArgs, typename H>
+    struct typed_event_handler : implements<typed_event_handler<TSender, TArgs, H>, abi<Windows::Foundation::TypedEventHandler<TSender, TArgs>>>, H
     {
-        try
+        typed_event_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+        HRESULT __stdcall abi_Invoke(abi_arg_in<TSender> sender, abi_arg_in<TArgs> args) noexcept override
         {
-            (*this)(*reinterpret_cast<const TSender *>(&sender), *reinterpret_cast<const TArgs *>(&args));
-            return S_OK;
+            try
+            {
+                (*this)(*reinterpret_cast<const TSender *>(&sender), *reinterpret_cast<const TArgs *>(&args));
+                return S_OK;
+            }
+            catch (...) { return impl::to_hresult(); }
         }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
-
+    };
 }
 
-namespace Windows::Foundation {
-
-template <typename T>
-struct WINRT_EBO EventHandler : IUnknown
+namespace Windows::Foundation
 {
-    EventHandler(std::nullptr_t = nullptr) noexcept {}
-
-    template <typename L>
-    EventHandler(L handler) :
-        EventHandler(impl::make_delegate<impl::event_handler<T, L>, EventHandler<T>>(std::forward<L>(handler)))
-    {}
-
-    template <typename F> EventHandler(F * handler) :
-        EventHandler([=](auto && ... args) { handler(args ...); })
-    {}
-
-    template <typename O, typename M> EventHandler(O * object, M method) :
-        EventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
-    {}
-
-    void operator()(const IInspectable & sender, const T & args) const
+    template <typename T>
+    struct WINRT_EBO EventHandler : IUnknown
     {
-        check_hresult((*(abi<EventHandler<T>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
-    }
-};
+        EventHandler(std::nullptr_t = nullptr) noexcept {}
 
-template <typename TSender, typename TArgs>
-struct WINRT_EBO TypedEventHandler : IUnknown
-{
-    TypedEventHandler(std::nullptr_t = nullptr) noexcept {}
+        template <typename L>
+        EventHandler(L handler) :
+            EventHandler(impl::make_delegate<impl::event_handler<T, L>, EventHandler<T>>(std::forward<L>(handler)))
+        {}
 
-    template <typename L>
-    TypedEventHandler(L handler) :
-        TypedEventHandler(impl::make_delegate<impl::typed_event_handler<TSender, TArgs, L>, TypedEventHandler<TSender, TArgs>>(std::forward<L>(handler)))
-    {}
+        template <typename F> EventHandler(F * handler) :
+            EventHandler([=](auto && ... args) { handler(args ...); })
+        {}
 
-    template <typename F> TypedEventHandler(F * handler) :
-        TypedEventHandler([=](auto && ... args) { handler(args ...); })
-    {}
+        template <typename O, typename M> EventHandler(O * object, M method) :
+            EventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+        {}
 
-    template <typename O, typename M> TypedEventHandler(O * object, M method) :
-        TypedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
-    {}
-
-    void operator()(const TSender & sender, const TArgs & args) const
-    {
-        check_hresult((*(abi<TypedEventHandler<TSender, TArgs>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
-    }
-};
-
-}
-
-namespace Windows::Foundation::Collections {
-
-enum class CollectionChange
-{
-    Reset,
-    ItemInserted,
-    ItemRemoved,
-    ItemChanged,
-};
-
-}
-
-namespace impl {
-
-template <typename T>
-class has_GetAt
-{
-    template <typename U, typename = decltype(std::declval<U>().GetAt(0))> static constexpr bool get_value(int) { return true; }
-    template <typename> static constexpr bool get_value(...) { return false; }
-
-public:
-
-    static constexpr bool value = get_value<T>(0);
-};
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
-
-template <typename K, typename V> struct MapChangedEventHandler;
-template <typename T> struct VectorChangedEventHandler;
-
-template <typename T> struct IIterator;
-template <typename T> struct IIterable;
-template <typename K, typename V> struct IKeyValuePair;
-template <typename T> struct IVectorView;
-template <typename T> struct IVector;
-template <typename K, typename V> struct IMapView;
-template <typename K, typename V> struct IMap;
-template <typename K> struct IMapChangedEventArgs;
-template <typename K, typename V> struct IObservableMap;
-template <typename T> struct IObservableVector;
-
-struct __declspec(uuid("575933df-34fe-4480-af15-07691f3d5d9b")) __declspec(novtable) IVectorChangedEventArgs : IInspectable
-{
-    virtual HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) = 0;
-    virtual HRESULT __stdcall get_Index(uint32_t * value) = 0;
-};
-
-template <typename K, typename V>
-struct __declspec(novtable) impl_MapChangedEventHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IObservableMap<K, V> * sender, IMapChangedEventArgs<K> * args) = 0;
-};
-
-template <typename T>
-struct __declspec(novtable) impl_VectorChangedEventHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IObservableVector<T> * sender, IVectorChangedEventArgs * args) = 0;
-};
-
-template <typename T>
-struct __declspec(novtable) impl_IIterator : IInspectable
-{
-    virtual HRESULT __stdcall get_Current(arg_out<T> current) = 0;
-    virtual HRESULT __stdcall get_HasCurrent(bool * hasCurrent) = 0;
-    virtual HRESULT __stdcall abi_MoveNext(bool * hasCurrent) = 0;
-    virtual HRESULT __stdcall abi_GetMany(uint32_t capacity, arg_out<T> value, uint32_t * actual) = 0;
-};
-
-template <typename T>
-struct __declspec(novtable) impl_IIterable : IInspectable
-{
-    virtual HRESULT __stdcall abi_First(IIterator<T> ** first) = 0;
-};
-
-template <typename K, typename V>
-struct __declspec(novtable) impl_IKeyValuePair : IInspectable
-{
-    virtual HRESULT __stdcall get_Key(arg_out<K> key) = 0;
-    virtual HRESULT __stdcall get_Value(arg_out<V> value) = 0;
-};
-
-template <typename T>
-struct __declspec(novtable) impl_IVectorView : IInspectable
-{
-    virtual HRESULT __stdcall abi_GetAt(uint32_t index, arg_out<T> item) = 0;
-    virtual HRESULT __stdcall get_Size(uint32_t * size) = 0;
-    virtual HRESULT __stdcall abi_IndexOf(arg_in<T> value, uint32_t * index, bool * found) = 0;
-    virtual HRESULT __stdcall abi_GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t * actual) = 0;
-};
-
-template <typename T>
-struct __declspec(novtable) impl_IVector : IInspectable
-{
-    virtual HRESULT __stdcall abi_GetAt(uint32_t index, arg_out<T> item) = 0;
-    virtual HRESULT __stdcall get_Size(uint32_t * size) = 0;
-    virtual HRESULT __stdcall abi_GetView(IVectorView<T> ** view) = 0;
-    virtual HRESULT __stdcall abi_IndexOf(arg_in<T> value, uint32_t * index, bool * found) = 0;
-    virtual HRESULT __stdcall abi_SetAt(uint32_t index, arg_in<T> item) = 0;
-    virtual HRESULT __stdcall abi_InsertAt(uint32_t index, arg_in<T> item) = 0;
-    virtual HRESULT __stdcall abi_RemoveAt(uint32_t index) = 0;
-    virtual HRESULT __stdcall abi_Append(arg_in<T> item) = 0;
-    virtual HRESULT __stdcall abi_RemoveAtEnd() = 0;
-    virtual HRESULT __stdcall abi_Clear() = 0;
-    virtual HRESULT __stdcall abi_GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t * actual) = 0;
-    virtual HRESULT __stdcall abi_ReplaceAll(uint32_t count, arg_out<T> value) = 0;
-
-};
-
-template <typename K, typename V>
-struct __declspec(novtable) impl_IMapView : IInspectable
-{
-    virtual HRESULT __stdcall abi_Lookup(arg_in<K> key, arg_out<V> value) = 0;
-    virtual HRESULT __stdcall get_Size(uint32_t * size) = 0;
-    virtual HRESULT __stdcall abi_HasKey(arg_in<K> key, bool * found) = 0;
-    virtual HRESULT __stdcall abi_Split(IMapView<K, V> ** firstPartition, IMapView<K, V> ** secondPartition) = 0;
-};
-
-template <typename K, typename V>
-struct __declspec(novtable) impl_IMap : IInspectable
-{
-    virtual HRESULT __stdcall abi_Lookup(arg_in<K> key, arg_out<V> value) = 0;
-    virtual HRESULT __stdcall get_Size(uint32_t * size) = 0;
-    virtual HRESULT __stdcall abi_HasKey(arg_in<K> key, bool * found) = 0;
-    virtual HRESULT __stdcall abi_GetView(IMapView<K, V> ** view) = 0;
-    virtual HRESULT __stdcall abi_Insert(arg_in<K> key, arg_in<V> value, bool * replaced) = 0;
-    virtual HRESULT __stdcall abi_Remove(arg_in<K> key) = 0;
-    virtual HRESULT __stdcall abi_Clear() = 0;
-};
-
-template <typename K>
-struct __declspec(novtable) impl_IMapChangedEventArgs : IInspectable
-{
-    virtual HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) = 0;
-    virtual HRESULT __stdcall get_Key(arg_out<K> value) = 0;
-};
-
-template <typename K, typename V>
-struct __declspec(novtable) impl_IObservableMap : IInspectable
-{
-    virtual HRESULT __stdcall add_MapChanged(MapChangedEventHandler<K, V> * handler, event_token * token) = 0;
-    virtual HRESULT __stdcall remove_MapChanged(event_token token) = 0;
-};
-
-template <typename T>
-struct __declspec(novtable) impl_IObservableVector : IInspectable
-{
-    virtual HRESULT __stdcall add_VectorChanged(VectorChangedEventHandler<T> * handler, event_token *  token) = 0;
-    virtual HRESULT __stdcall remove_VectorChanged(event_token token) = 0;
-};
-
-template <typename K, typename V> struct MapChangedEventHandler : impl::not_specialized<MapChangedEventHandler<K, V>> {};
-template <typename T> struct VectorChangedEventHandler : impl::not_specialized <VectorChangedEventHandler<T>> {};
-template <typename T> struct IIterator : impl::not_specialized <IIterator<T>> {};
-template <typename T> struct IIterable : impl::not_specialized <IIterable<T>> {};
-template <typename K, typename V> struct IKeyValuePair : impl::not_specialized <IKeyValuePair<K, V>> {};
-template <typename T> struct IVectorView : impl::not_specialized <IVectorView<T>> {};
-template <typename T> struct IVector : impl::not_specialized <IVector<T>> {};
-template <typename K, typename V> struct IMapView : impl::not_specialized <IMapView<K, V>> {};
-template <typename K, typename V> struct IMap : impl::not_specialized <IMap<K, V>> {};
-template <typename K> struct IMapChangedEventArgs : impl::not_specialized <IMapChangedEventArgs<K>> {};
-template <typename K, typename V> struct IObservableMap : impl::not_specialized <IObservableMap<K, V>> {};
-template <typename T> struct IObservableVector : impl::not_specialized <IObservableVector<T>> {};
-
-}
-
-namespace Windows::Foundation::Collections {
-
-template <typename K, typename V> struct MapChangedEventHandler;
-template <typename T> struct VectorChangedEventHandler;
-
-struct IVectorChangedEventArgs;
-template <typename T> struct IIterator;
-template <typename T> struct IIterable;
-template <typename K, typename V> struct IKeyValuePair;
-template <typename T> struct IVectorView;
-template <typename T> struct IVector;
-template <typename K, typename V> struct IMapView;
-template <typename K, typename V> struct IMap;
-template <typename K> struct IMapChangedEventArgs;
-template <typename K, typename V> struct IObservableMap;
-template <typename T> struct IObservableVector;
-
-template <typename D>
-struct WINRT_EBO impl_IVectorChangedEventArgs
-{
-    CollectionChange CollectionChange() const;
-    uint32_t Index() const;
-};
-
-template <typename D, typename T>
-struct impl_IIterator
-{
-    T Current() const;
-    bool HasCurrent() const;
-    bool MoveNext() const;
-    uint32_t GetMany(array_view<T> values) const;
-
-    auto & operator++()
-    {
-        if (!MoveNext())
+        void operator()(const IInspectable & sender, const T & args) const
         {
-            static_cast<D &>(*this) = nullptr;
+            check_hresult((*(abi<EventHandler<T>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
+        }
+    };
+
+    template <typename TSender, typename TArgs>
+    struct WINRT_EBO TypedEventHandler : IUnknown
+    {
+        TypedEventHandler(std::nullptr_t = nullptr) noexcept {}
+
+        template <typename L>
+        TypedEventHandler(L handler) :
+            TypedEventHandler(impl::make_delegate<impl::typed_event_handler<TSender, TArgs, L>, TypedEventHandler<TSender, TArgs>>(std::forward<L>(handler)))
+        {}
+
+        template <typename F> TypedEventHandler(F * handler) :
+            TypedEventHandler([=](auto && ... args) { handler(args ...); })
+        {}
+
+        template <typename O, typename M> TypedEventHandler(O * object, M method) :
+            TypedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+        {}
+
+        void operator()(const TSender & sender, const TArgs & args) const
+        {
+            check_hresult((*(abi<TypedEventHandler<TSender, TArgs>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
+        }
+    };
+}
+
+namespace Windows::Foundation::Collections
+{
+    enum class CollectionChange
+    {
+        Reset,
+        ItemInserted,
+        ItemRemoved,
+        ItemChanged,
+    };
+}
+
+namespace impl
+{
+    template <typename T>
+    class has_GetAt
+    {
+        template <typename U, typename = decltype(std::declval<U>().GetAt(0))> static constexpr bool get_value(int) { return true; }
+        template <typename> static constexpr bool get_value(...) { return false; }
+
+    public:
+
+        static constexpr bool value = get_value<T>(0);
+    };
+}
+
+namespace ABI::Windows::Foundation::Collections
+{
+    template <typename K, typename V> struct MapChangedEventHandler;
+    template <typename T> struct VectorChangedEventHandler;
+
+    template <typename T> struct IIterator;
+    template <typename T> struct IIterable;
+    template <typename K, typename V> struct IKeyValuePair;
+    template <typename T> struct IVectorView;
+    template <typename T> struct IVector;
+    template <typename K, typename V> struct IMapView;
+    template <typename K, typename V> struct IMap;
+    template <typename K> struct IMapChangedEventArgs;
+    template <typename K, typename V> struct IObservableMap;
+    template <typename T> struct IObservableVector;
+
+    struct __declspec(uuid("575933df-34fe-4480-af15-07691f3d5d9b")) __declspec(novtable) IVectorChangedEventArgs : IInspectable
+    {
+        virtual HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) = 0;
+        virtual HRESULT __stdcall get_Index(uint32_t * value) = 0;
+    };
+
+    template <typename K, typename V>
+    struct __declspec(novtable) impl_MapChangedEventHandler : IUnknown
+    {
+        virtual HRESULT __stdcall abi_Invoke(IObservableMap<K, V> * sender, IMapChangedEventArgs<K> * args) = 0;
+    };
+
+    template <typename T>
+    struct __declspec(novtable) impl_VectorChangedEventHandler : IUnknown
+    {
+        virtual HRESULT __stdcall abi_Invoke(IObservableVector<T> * sender, IVectorChangedEventArgs * args) = 0;
+    };
+
+    template <typename T>
+    struct __declspec(novtable) impl_IIterator : IInspectable
+    {
+        virtual HRESULT __stdcall get_Current(arg_out<T> current) = 0;
+        virtual HRESULT __stdcall get_HasCurrent(bool * hasCurrent) = 0;
+        virtual HRESULT __stdcall abi_MoveNext(bool * hasCurrent) = 0;
+        virtual HRESULT __stdcall abi_GetMany(uint32_t capacity, arg_out<T> value, uint32_t * actual) = 0;
+    };
+
+    template <typename T>
+    struct __declspec(novtable) impl_IIterable : IInspectable
+    {
+        virtual HRESULT __stdcall abi_First(IIterator<T> ** first) = 0;
+    };
+
+    template <typename K, typename V>
+    struct __declspec(novtable) impl_IKeyValuePair : IInspectable
+    {
+        virtual HRESULT __stdcall get_Key(arg_out<K> key) = 0;
+        virtual HRESULT __stdcall get_Value(arg_out<V> value) = 0;
+    };
+
+    template <typename T>
+    struct __declspec(novtable) impl_IVectorView : IInspectable
+    {
+        virtual HRESULT __stdcall abi_GetAt(uint32_t index, arg_out<T> item) = 0;
+        virtual HRESULT __stdcall get_Size(uint32_t * size) = 0;
+        virtual HRESULT __stdcall abi_IndexOf(arg_in<T> value, uint32_t * index, bool * found) = 0;
+        virtual HRESULT __stdcall abi_GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t * actual) = 0;
+    };
+
+    template <typename T>
+    struct __declspec(novtable) impl_IVector : IInspectable
+    {
+        virtual HRESULT __stdcall abi_GetAt(uint32_t index, arg_out<T> item) = 0;
+        virtual HRESULT __stdcall get_Size(uint32_t * size) = 0;
+        virtual HRESULT __stdcall abi_GetView(IVectorView<T> ** view) = 0;
+        virtual HRESULT __stdcall abi_IndexOf(arg_in<T> value, uint32_t * index, bool * found) = 0;
+        virtual HRESULT __stdcall abi_SetAt(uint32_t index, arg_in<T> item) = 0;
+        virtual HRESULT __stdcall abi_InsertAt(uint32_t index, arg_in<T> item) = 0;
+        virtual HRESULT __stdcall abi_RemoveAt(uint32_t index) = 0;
+        virtual HRESULT __stdcall abi_Append(arg_in<T> item) = 0;
+        virtual HRESULT __stdcall abi_RemoveAtEnd() = 0;
+        virtual HRESULT __stdcall abi_Clear() = 0;
+        virtual HRESULT __stdcall abi_GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t * actual) = 0;
+        virtual HRESULT __stdcall abi_ReplaceAll(uint32_t count, arg_out<T> value) = 0;
+
+    };
+
+    template <typename K, typename V>
+    struct __declspec(novtable) impl_IMapView : IInspectable
+    {
+        virtual HRESULT __stdcall abi_Lookup(arg_in<K> key, arg_out<V> value) = 0;
+        virtual HRESULT __stdcall get_Size(uint32_t * size) = 0;
+        virtual HRESULT __stdcall abi_HasKey(arg_in<K> key, bool * found) = 0;
+        virtual HRESULT __stdcall abi_Split(IMapView<K, V> ** firstPartition, IMapView<K, V> ** secondPartition) = 0;
+    };
+
+    template <typename K, typename V>
+    struct __declspec(novtable) impl_IMap : IInspectable
+    {
+        virtual HRESULT __stdcall abi_Lookup(arg_in<K> key, arg_out<V> value) = 0;
+        virtual HRESULT __stdcall get_Size(uint32_t * size) = 0;
+        virtual HRESULT __stdcall abi_HasKey(arg_in<K> key, bool * found) = 0;
+        virtual HRESULT __stdcall abi_GetView(IMapView<K, V> ** view) = 0;
+        virtual HRESULT __stdcall abi_Insert(arg_in<K> key, arg_in<V> value, bool * replaced) = 0;
+        virtual HRESULT __stdcall abi_Remove(arg_in<K> key) = 0;
+        virtual HRESULT __stdcall abi_Clear() = 0;
+    };
+
+    template <typename K>
+    struct __declspec(novtable) impl_IMapChangedEventArgs : IInspectable
+    {
+        virtual HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) = 0;
+        virtual HRESULT __stdcall get_Key(arg_out<K> value) = 0;
+    };
+
+    template <typename K, typename V>
+    struct __declspec(novtable) impl_IObservableMap : IInspectable
+    {
+        virtual HRESULT __stdcall add_MapChanged(MapChangedEventHandler<K, V> * handler, event_token * token) = 0;
+        virtual HRESULT __stdcall remove_MapChanged(event_token token) = 0;
+    };
+
+    template <typename T>
+    struct __declspec(novtable) impl_IObservableVector : IInspectable
+    {
+        virtual HRESULT __stdcall add_VectorChanged(VectorChangedEventHandler<T> * handler, event_token *  token) = 0;
+        virtual HRESULT __stdcall remove_VectorChanged(event_token token) = 0;
+    };
+
+    template <typename K, typename V> struct MapChangedEventHandler : impl::not_specialized<MapChangedEventHandler<K, V>> {};
+    template <typename T> struct VectorChangedEventHandler : impl::not_specialized <VectorChangedEventHandler<T>> {};
+    template <typename T> struct IIterator : impl::not_specialized <IIterator<T>> {};
+    template <typename T> struct IIterable : impl::not_specialized <IIterable<T>> {};
+    template <typename K, typename V> struct IKeyValuePair : impl::not_specialized <IKeyValuePair<K, V>> {};
+    template <typename T> struct IVectorView : impl::not_specialized <IVectorView<T>> {};
+    template <typename T> struct IVector : impl::not_specialized <IVector<T>> {};
+    template <typename K, typename V> struct IMapView : impl::not_specialized <IMapView<K, V>> {};
+    template <typename K, typename V> struct IMap : impl::not_specialized <IMap<K, V>> {};
+    template <typename K> struct IMapChangedEventArgs : impl::not_specialized <IMapChangedEventArgs<K>> {};
+    template <typename K, typename V> struct IObservableMap : impl::not_specialized <IObservableMap<K, V>> {};
+    template <typename T> struct IObservableVector : impl::not_specialized <IObservableVector<T>> {};
+}
+
+namespace Windows::Foundation::Collections
+{
+    template <typename K, typename V> struct MapChangedEventHandler;
+    template <typename T> struct VectorChangedEventHandler;
+
+    struct IVectorChangedEventArgs;
+    template <typename T> struct IIterator;
+    template <typename T> struct IIterable;
+    template <typename K, typename V> struct IKeyValuePair;
+    template <typename T> struct IVectorView;
+    template <typename T> struct IVector;
+    template <typename K, typename V> struct IMapView;
+    template <typename K, typename V> struct IMap;
+    template <typename K> struct IMapChangedEventArgs;
+    template <typename K, typename V> struct IObservableMap;
+    template <typename T> struct IObservableVector;
+
+    template <typename D>
+    struct WINRT_EBO impl_IVectorChangedEventArgs
+    {
+        CollectionChange CollectionChange() const;
+        uint32_t Index() const;
+    };
+
+    template <typename D, typename T>
+    struct impl_IIterator
+    {
+        T Current() const;
+        bool HasCurrent() const;
+        bool MoveNext() const;
+        uint32_t GetMany(array_view<T> values) const;
+
+        auto & operator++()
+        {
+            if (!MoveNext())
+            {
+                static_cast<D &>(*this) = nullptr;
+            }
+
+            return *this;
         }
 
-        return *this;
-    }
+        T operator *() const
+        {
+            return Current();
+        }
+    };
 
-    T operator *() const
+    template <typename D, typename T>
+    struct impl_IIterable
     {
-        return Current();
-    }
-};
+        IIterator<T> First() const;
+    };
 
-template <typename D, typename T>
-struct impl_IIterable
-{
-    IIterator<T> First() const;
-};
-
-template <typename D, typename K, typename V>
-struct impl_IKeyValuePair
-{
-    K Key() const;
-    V Value() const;
-
-    bool operator==(const IKeyValuePair<K, V> & other) const
+    template <typename D, typename K, typename V>
+    struct impl_IKeyValuePair
     {
-        return Key() == other.Key() && Value() == other.Value();
-    }
+        K Key() const;
+        V Value() const;
 
-    bool operator!=(const IKeyValuePair<K, V> & other) const
+        bool operator==(const IKeyValuePair<K, V> & other) const
+        {
+            return Key() == other.Key() && Value() == other.Value();
+        }
+
+        bool operator!=(const IKeyValuePair<K, V> & other) const
+        {
+            return !(*this == other);
+        }
+    };
+
+    template <typename D, typename T>
+    struct impl_IVectorView
     {
-        return !(*this == other);
-    }
-};
+        T GetAt(const uint32_t index) const;
+        uint32_t Size() const;
+        bool IndexOf(const T & value, uint32_t & index) const;
+        uint32_t GetMany(uint32_t startIndex, array_view<T> values) const;
+    };
 
-template <typename D, typename T>
-struct impl_IVectorView
-{
-    T GetAt(const uint32_t index) const;
-    uint32_t Size() const;
-    bool IndexOf(const T & value, uint32_t & index) const;
-    uint32_t GetMany(uint32_t startIndex, array_view<T> values) const;
-};
-
-template <typename D, typename T>
-struct impl_IVector
-{
-    T GetAt(const uint32_t index) const;
-    uint32_t Size() const;
-    IVectorView<T> GetView() const;
-    bool IndexOf(const T & value, uint32_t & index) const;
-    void SetAt(const uint32_t index, const T & value) const;
-    void InsertAt(const uint32_t index, const T & value) const;
-    void RemoveAt(const uint32_t index) const;
-    void Append(const T & value) const;
-    void RemoveAtEnd() const;
-    void Clear() const;
-    uint32_t GetMany(uint32_t startIndex, array_view<T> values) const;
-    void ReplaceAll(array_view<const T> value) const;
-};
-
-template <typename D, typename K, typename V>
-struct impl_IMapView
-{
-    V Lookup(const K & key) const;
-    uint32_t Size() const;
-    bool HasKey(const K & key) const;
-    void Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition);
-};
-
-template <typename D, typename K, typename V>
-struct impl_IMap
-{
-    V Lookup(const K & key) const;
-    uint32_t Size() const;
-    bool HasKey(const K & key) const;
-    IMapView<K, V> GetView() const;
-    bool Insert(const K & key, const V & value) const;
-    void Remove(const K & key) const;
-    void Clear() const;
-};
-
-template <typename D, typename K>
-struct impl_IMapChangedEventArgs
-{
-    CollectionChange CollectionChange() const;
-    K Key() const;
-};
-
-template <typename D, typename K, typename V>
-struct impl_IObservableMap
-{
-    event_token MapChanged(const MapChangedEventHandler<K, V> & handler) const;
-    void MapChanged(const event_token cookie) const;
-
-    using MapChanged_revoker = event_revoker<IObservableMap<K, V>>;
-
-    MapChanged_revoker MapChanged(auto_revoke_t, const MapChangedEventHandler<K, V> & handler) const
+    template <typename D, typename T>
+    struct impl_IVector
     {
-        return impl::make_event_revoker<D, IObservableMap<K, V>>(this, &abi<IObservableMap<K, V>>::remove_MapChanged, MapChanged(handler));
-    }
-};
+        T GetAt(const uint32_t index) const;
+        uint32_t Size() const;
+        IVectorView<T> GetView() const;
+        bool IndexOf(const T & value, uint32_t & index) const;
+        void SetAt(const uint32_t index, const T & value) const;
+        void InsertAt(const uint32_t index, const T & value) const;
+        void RemoveAt(const uint32_t index) const;
+        void Append(const T & value) const;
+        void RemoveAtEnd() const;
+        void Clear() const;
+        uint32_t GetMany(uint32_t startIndex, array_view<T> values) const;
+        void ReplaceAll(array_view<const T> value) const;
+    };
 
-template <typename D, typename T>
-struct impl_IObservableVector
-{
-    event_token VectorChanged(const VectorChangedEventHandler<T> & handler) const;
-    void VectorChanged(const event_token cookie) const;
-
-    using VectorChanged_revoker = event_revoker<IObservableVector<T>>;
-
-    VectorChanged_revoker VectorChanged(auto_revoke_t, const VectorChangedEventHandler<T> & handler) const
+    template <typename D, typename K, typename V>
+    struct impl_IMapView
     {
-        return impl::make_event_revoker<D, IObservableVector<T>>(this, &abi<IObservableVector<T>>::remove_VectorChanged, VectorChanged(handler));
-    }
-};
+        V Lookup(const K & key) const;
+        uint32_t Size() const;
+        bool HasKey(const K & key) const;
+        void Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition);
+    };
 
+    template <typename D, typename K, typename V>
+    struct impl_IMap
+    {
+        V Lookup(const K & key) const;
+        uint32_t Size() const;
+        bool HasKey(const K & key) const;
+        IMapView<K, V> GetView() const;
+        bool Insert(const K & key, const V & value) const;
+        void Remove(const K & key) const;
+        void Clear() const;
+    };
+
+    template <typename D, typename K>
+    struct impl_IMapChangedEventArgs
+    {
+        CollectionChange CollectionChange() const;
+        K Key() const;
+    };
+
+    template <typename D, typename K, typename V>
+    struct impl_IObservableMap
+    {
+        event_token MapChanged(const MapChangedEventHandler<K, V> & handler) const;
+        void MapChanged(const event_token cookie) const;
+
+        using MapChanged_revoker = event_revoker<IObservableMap<K, V>>;
+
+        MapChanged_revoker MapChanged(auto_revoke_t, const MapChangedEventHandler<K, V> & handler) const
+        {
+            return impl::make_event_revoker<D, IObservableMap<K, V>>(this, &abi<IObservableMap<K, V>>::remove_MapChanged, MapChanged(handler));
+        }
+    };
+
+    template <typename D, typename T>
+    struct impl_IObservableVector
+    {
+        event_token VectorChanged(const VectorChangedEventHandler<T> & handler) const;
+        void VectorChanged(const event_token cookie) const;
+
+        using VectorChanged_revoker = event_revoker<IObservableVector<T>>;
+
+        VectorChanged_revoker VectorChanged(auto_revoke_t, const VectorChangedEventHandler<T> & handler) const
+        {
+            return impl::make_event_revoker<D, IObservableVector<T>>(this, &abi<IObservableVector<T>>::remove_VectorChanged, VectorChanged(handler));
+        }
+    };
 }
 
-namespace impl {
-
-template <> struct traits<Windows::Foundation::Collections::IVectorChangedEventArgs>
+namespace impl
 {
-    using abi = ABI::Windows::Foundation::Collections::IVectorChangedEventArgs;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IVectorChangedEventArgs<D>;
-};
+    template <> struct traits<Windows::Foundation::Collections::IVectorChangedEventArgs>
+    {
+        using abi = ABI::Windows::Foundation::Collections::IVectorChangedEventArgs;
+        template <typename D> using consume = Windows::Foundation::Collections::impl_IVectorChangedEventArgs<D>;
+    };
 
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::MapChangedEventHandler<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::MapChangedEventHandler<abi<K>, abi<V>>;
-};
+    template <typename K, typename V> struct traits<Windows::Foundation::Collections::MapChangedEventHandler<K, V>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::MapChangedEventHandler<abi<K>, abi<V>>;
+    };
 
-template <typename T> struct traits<Windows::Foundation::Collections::VectorChangedEventHandler<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::VectorChangedEventHandler<abi<T>>;
-};
+    template <typename T> struct traits<Windows::Foundation::Collections::VectorChangedEventHandler<T>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::VectorChangedEventHandler<abi<T>>;
+    };
 
-template <typename T> struct traits<Windows::Foundation::Collections::IIterator<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IIterator<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IIterator<D, T>;
-};
+    template <typename T> struct traits<Windows::Foundation::Collections::IIterator<T>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::IIterator<abi<T>>;
+        template <typename D> using consume = Windows::Foundation::Collections::impl_IIterator<D, T>;
+    };
 
-template <typename T> struct traits<Windows::Foundation::Collections::IIterable<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IIterable<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IIterable<D, T>;
-};
+    template <typename T> struct traits<Windows::Foundation::Collections::IIterable<T>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::IIterable<abi<T>>;
+        template <typename D> using consume = Windows::Foundation::Collections::impl_IIterable<D, T>;
+    };
 
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IKeyValuePair<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IKeyValuePair<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IKeyValuePair<D, K, V>;
-};
+    template <typename K, typename V> struct traits<Windows::Foundation::Collections::IKeyValuePair<K, V>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::IKeyValuePair<abi<K>, abi<V>>;
+        template <typename D> using consume = Windows::Foundation::Collections::impl_IKeyValuePair<D, K, V>;
+    };
 
-template <typename T> struct traits<Windows::Foundation::Collections::IVectorView<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IVectorView<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IVectorView<D, T>;
-};
+    template <typename T> struct traits<Windows::Foundation::Collections::IVectorView<T>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::IVectorView<abi<T>>;
+        template <typename D> using consume = Windows::Foundation::Collections::impl_IVectorView<D, T>;
+    };
 
-template <typename T> struct traits<Windows::Foundation::Collections::IVector<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IVector<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IVector<D, T>;
-};
+    template <typename T> struct traits<Windows::Foundation::Collections::IVector<T>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::IVector<abi<T>>;
+        template <typename D> using consume = Windows::Foundation::Collections::impl_IVector<D, T>;
+    };
 
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMapView<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IMapView<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IMapView<D, K, V>;
-};
+    template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMapView<K, V>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::IMapView<abi<K>, abi<V>>;
+        template <typename D> using consume = Windows::Foundation::Collections::impl_IMapView<D, K, V>;
+    };
 
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMap<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IMap<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IMap<D, K, V>;
-};
+    template <typename K, typename V> struct traits<Windows::Foundation::Collections::IMap<K, V>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::IMap<abi<K>, abi<V>>;
+        template <typename D> using consume = Windows::Foundation::Collections::impl_IMap<D, K, V>;
+    };
 
-template <typename K> struct traits<Windows::Foundation::Collections::IMapChangedEventArgs<K>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IMapChangedEventArgs<abi<K>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IMapChangedEventArgs<D, K>;
-};
+    template <typename K> struct traits<Windows::Foundation::Collections::IMapChangedEventArgs<K>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::IMapChangedEventArgs<abi<K>>;
+        template <typename D> using consume = Windows::Foundation::Collections::impl_IMapChangedEventArgs<D, K>;
+    };
 
-template <typename K, typename V> struct traits<Windows::Foundation::Collections::IObservableMap<K, V>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IObservableMap<abi<K>, abi<V>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IObservableMap<D, K, V>;
-};
+    template <typename K, typename V> struct traits<Windows::Foundation::Collections::IObservableMap<K, V>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::IObservableMap<abi<K>, abi<V>>;
+        template <typename D> using consume = Windows::Foundation::Collections::impl_IObservableMap<D, K, V>;
+    };
 
-template <typename T> struct traits<Windows::Foundation::Collections::IObservableVector<T>>
-{
-    using abi = ABI::Windows::Foundation::Collections::IObservableVector<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IObservableVector<D, T>;
-};
+    template <typename T> struct traits<Windows::Foundation::Collections::IObservableVector<T>>
+    {
+        using abi = ABI::Windows::Foundation::Collections::IObservableVector<abi<T>>;
+        template <typename D> using consume = Windows::Foundation::Collections::impl_IObservableVector<D, T>;
+    };
 
-template <typename T>
-struct fast_iterator
-{
-    using iterator_category = std::input_iterator_tag;
-    using value_type = T;
-    using difference_type = ptrdiff_t;
-    using pointer = T *;
-    using reference = T &;
+    template <typename T>
+    struct fast_iterator
+    {
+        using iterator_category = std::input_iterator_tag;
+        using value_type = T;
+        using difference_type = ptrdiff_t;
+        using pointer = T *;
+        using reference = T &;
 
-    fast_iterator(const T & collection, const uint32_t index) noexcept :
+        fast_iterator(const T & collection, const uint32_t index) noexcept :
         m_collection(&collection),
-        m_index(index)
+            m_index(index)
+        {}
+
+        fast_iterator & operator++() noexcept
+        {
+            ++m_index;
+            return *this;
+        }
+
+        auto operator *() const
+        {
+            return m_collection->GetAt(m_index);
+        }
+
+        bool operator==(const fast_iterator & other) const noexcept
+        {
+            WINRT_ASSERT(m_collection == other.m_collection);
+            return m_index == other.m_index;
+        }
+
+        bool operator!=(const fast_iterator & other) const noexcept
+        {
+            return !(*this == other);
+        }
+
+    private:
+
+        const T * m_collection = nullptr;
+        uint32_t m_index = 0;
+    };
+}
+
+namespace Windows::Foundation::Collections
+{
+    template <typename T>
+    struct WINRT_EBO VectorChangedEventHandler : IUnknown
+    {
+        VectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
+        template <typename L> VectorChangedEventHandler(L handler);
+        template <typename F> VectorChangedEventHandler(F * handler);
+        template <typename O, typename M> VectorChangedEventHandler(O * object, M method);
+        void operator()(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const;
+    };
+
+    template <typename K, typename V>
+    struct WINRT_EBO MapChangedEventHandler : IUnknown
+    {
+        MapChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
+        template <typename L> MapChangedEventHandler(L handler);
+        template <typename F> MapChangedEventHandler(F * handler);
+        template <typename O, typename M> MapChangedEventHandler(O * object, M method);
+        void operator()(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const;
+    };
+
+    struct IVectorChangedEventArgs :
+        IInspectable,
+        impl::consume<IVectorChangedEventArgs>
+    {
+        IVectorChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename T>
+    struct WINRT_EBO IIterator :
+        IInspectable,
+        impl::consume<IIterator<T>>
+    {
+        using iterator_category = std::input_iterator_tag;
+        using value_type = T;
+        using difference_type = ptrdiff_t;
+        using pointer = T *;
+        using reference = T &;
+
+        IIterator(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename T>
+    struct WINRT_EBO IIterable :
+        IInspectable,
+        impl::consume<IIterable<T>>
+    {
+        IIterable(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename K, typename V>
+    struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
+        IInspectable,
+        impl::consume<IIterable<IKeyValuePair<K, V>>>
+    {
+        IIterable(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename K, typename V>
+    struct WINRT_EBO IKeyValuePair :
+        IInspectable,
+        impl::consume<IKeyValuePair<K, V>>
+    {
+        IKeyValuePair(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename T>
+    struct WINRT_EBO IVectorView :
+        IInspectable,
+        impl::consume<IVectorView<T>>,
+        impl::require<IVectorView<T>, IIterable<T>>
+    {
+        IVectorView(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename T>
+    struct WINRT_EBO IVector :
+        IInspectable,
+        impl::consume<IVector<T>>,
+        impl::require<IVector<T>, IIterable<T>>
+    {
+        IVector(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename K, typename V>
+    struct WINRT_EBO IMapView :
+        IInspectable,
+        impl::consume<IMapView<K, V>>,
+        impl::require<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
+    {
+        IMapView(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename K, typename V>
+    struct WINRT_EBO IMap :
+        IInspectable,
+        impl::consume<IMap<K, V>>,
+        impl::require<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
+    {
+        IMap(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename K>
+    struct WINRT_EBO IMapChangedEventArgs :
+        IInspectable,
+        impl::consume<IMapChangedEventArgs<K>>
+    {
+        IMapChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename K, typename V>
+    struct WINRT_EBO IObservableMap :
+        IInspectable,
+        impl::consume<IObservableMap<K, V>>,
+        impl::require<IObservableMap<K, V>, IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
+    {
+        IObservableMap(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename T>
+    struct WINRT_EBO IObservableVector :
+        IInspectable,
+        impl::consume<IObservableVector<T>>,
+        impl::require<IObservableVector<T>, IVector<T>, IIterable<T>>
+    {
+        IObservableVector(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename D>
+    CollectionChange impl_IVectorChangedEventArgs<D>::CollectionChange() const
+    {
+        Collections::CollectionChange value{};
+        check_hresult((*(abi<IVectorChangedEventArgs> **)&static_cast<const IVectorChangedEventArgs &>(static_cast<const D &>(*this)))->get_CollectionChange(&value));
+        return value;
+    }
+
+    template <typename D>
+    uint32_t impl_IVectorChangedEventArgs<D>::Index() const
+    {
+        uint32_t index = 0;
+        check_hresult((*(abi<IVectorChangedEventArgs> **)&static_cast<const IVectorChangedEventArgs &>(static_cast<const D &>(*this)))->get_Index(&index));
+        return index;
+    }
+
+    template <typename D, typename T>
+    T impl_IIterator<D, T>::Current() const
+    {
+        T result = impl::empty_value<T>();
+        check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->get_Current(put_abi(result)));
+        return result;
+    }
+
+    template <typename D, typename T>
+    bool impl_IIterator<D, T>::HasCurrent() const
+    {
+        bool temp = false;
+        check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->get_HasCurrent(put_abi(temp)));
+        return temp;
+    }
+
+    template <typename D, typename T>
+    bool impl_IIterator<D, T>::MoveNext() const
+    {
+        bool temp = false;
+        check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_MoveNext(put_abi(temp)));
+        return temp;
+    }
+
+    template <typename D, typename T>
+    uint32_t impl_IIterator<D, T>::GetMany(array_view<T> values) const
+    {
+        uint32_t actual = 0;
+        check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_GetMany(values.size(), get_abi(values), &actual));
+        return actual;
+    }
+
+    template <typename D, typename T>
+    IIterator<T> impl_IIterable<D, T>::First() const
+    {
+        IIterator<T> iterator;
+        check_hresult((*(abi<IIterable<T>> **)&static_cast<const IIterable<T> &>(static_cast<const D &>(*this)))->abi_First(put_abi(iterator)));
+        return iterator;
+    }
+
+    template <typename D, typename K, typename V>
+    K impl_IKeyValuePair<D, K, V>::Key() const
+    {
+        K result = impl::empty_value<K>();
+        check_hresult((*(abi<IKeyValuePair<K, V>> **)&static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this)))->get_Key(put_abi(result)));
+        return result;
+    }
+
+    template <typename D, typename K, typename V>
+    V impl_IKeyValuePair<D, K, V>::Value() const
+    {
+        V result = impl::empty_value<V>();
+        check_hresult((*(abi<IKeyValuePair<K, V>> **)&static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this)))->get_Value(put_abi(result)));
+        return result;
+    }
+
+    template <typename D, typename T>
+    T impl_IVectorView<D, T>::GetAt(const uint32_t index) const
+    {
+        T result = impl::empty_value<T>();
+        check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetAt(index, put_abi(result)));
+        return result;
+    }
+
+    template <typename D, typename T>
+    uint32_t impl_IVectorView<D, T>::Size() const
+    {
+        uint32_t size = 0;
+        check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->get_Size(&size));
+        return size;
+    }
+
+    template <typename D, typename T>
+    bool impl_IVectorView<D, T>::IndexOf(const T & value, uint32_t & index) const
+    {
+        bool found = false;
+        check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_IndexOf(get_abi(value), &index, put_abi(found)));
+        return found;
+    }
+
+    template <typename D, typename T>
+    uint32_t impl_IVectorView<D, T>::GetMany(uint32_t startIndex, array_view<T> values) const
+    {
+        uint32_t actual = 0;
+        check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get_abi(values), &actual));
+        return actual;
+    }
+
+    template <typename D, typename T>
+    T impl_IVector<D, T>::GetAt(const uint32_t index) const
+    {
+        T result = impl::empty_value<T>();
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetAt(index, put_abi(result)));
+        return result;
+    }
+
+    template <typename D, typename T>
+    uint32_t impl_IVector<D, T>::Size() const
+    {
+        uint32_t size = 0;
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->get_Size(&size));
+        return size;
+    }
+
+    template <typename D, typename T>
+    IVectorView<T> impl_IVector<D, T>::GetView() const
+    {
+        IVectorView<T> view;
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetView(put_abi(view)));
+        return view;
+    }
+
+    template <typename D, typename T>
+    bool impl_IVector<D, T>::IndexOf(const T & value, uint32_t & index) const
+    {
+        bool found = false;
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_IndexOf(get_abi(value), &index, put_abi(found)));
+        return found;
+    }
+
+    template <typename D, typename T>
+    void impl_IVector<D, T>::SetAt(const uint32_t index, const T & value) const
+    {
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_SetAt(index, get_abi(value)));
+    }
+
+    template <typename D, typename T>
+    void impl_IVector<D, T>::InsertAt(const uint32_t index, const T & value) const
+    {
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_InsertAt(index, get_abi(value)));
+    }
+
+    template <typename D, typename T>
+    void impl_IVector<D, T>::RemoveAt(const uint32_t index) const
+    {
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_RemoveAt(index));
+    }
+
+    template <typename D, typename T>
+    void impl_IVector<D, T>::Append(const T & value) const
+    {
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_Append(get_abi(value)));
+    }
+
+    template <typename D, typename T>
+    void impl_IVector<D, T>::RemoveAtEnd() const
+    {
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_RemoveAtEnd());
+    }
+
+    template <typename D, typename T>
+    void impl_IVector<D, T>::Clear() const
+    {
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_Clear());
+    }
+
+    template <typename D, typename T>
+    uint32_t impl_IVector<D, T>::GetMany(uint32_t startIndex, array_view<T> values) const
+    {
+        uint32_t actual = 0;
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get_abi(values), &actual));
+        return actual;
+    }
+
+    template <typename D, typename T>
+    void impl_IVector<D, T>::ReplaceAll(array_view<const T> value) const
+    {
+        check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_ReplaceAll(value.size(), get_abi(value)));
+    }
+
+    template <typename D, typename K, typename V>
+    V impl_IMapView<D, K, V>::Lookup(const K & key) const
+    {
+        V result = impl::empty_value<V>();
+        check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_Lookup(get_abi(key), put_abi(result)));
+        return result;
+    }
+
+    template <typename D, typename K, typename V>
+    uint32_t impl_IMapView<D, K, V>::Size() const
+    {
+        uint32_t size = 0;
+        check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->get_Size(&size));
+        return size;
+    }
+
+    template <typename D, typename K, typename V>
+    bool impl_IMapView<D, K, V>::HasKey(const K & key) const
+    {
+        bool found = false;
+        check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_HasKey(get_abi(key), put_abi(found)));
+        return found;
+    }
+
+    template <typename D, typename K, typename V>
+    void impl_IMapView<D, K, V>::Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition)
+    {
+        check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_Split(put_abi(firstPartition), put_abi(secondPartition)));
+    }
+
+    template <typename D, typename K, typename V>
+    V impl_IMap<D, K, V>::Lookup(const K & key) const
+    {
+        V result = impl::empty_value<V>();
+        check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Lookup(get_abi(key), put_abi(result)));
+        return result;
+    }
+
+    template <typename D, typename K, typename V>
+    uint32_t impl_IMap<D, K, V>::Size() const
+    {
+        uint32_t size = 0;
+        check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->get_Size(&size));
+        return size;
+    }
+
+    template <typename D, typename K, typename V>
+    bool impl_IMap<D, K, V>::HasKey(const K & key) const
+    {
+        bool found = false;
+        check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_HasKey(get_abi(key), put_abi(found)));
+        return found;
+    }
+
+    template <typename D, typename K, typename V>
+    IMapView<K, V> impl_IMap<D, K, V>::GetView() const
+    {
+        IMapView<K, V> view;
+        check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_GetView(put_abi(view)));
+        return view;
+    }
+
+    template <typename D, typename K, typename V>
+    bool impl_IMap<D, K, V>::Insert(const K & key, const V & value) const
+    {
+        bool replaced = false;
+        check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Insert(get_abi(key), get_abi(value), put_abi(replaced)));
+        return replaced;
+    }
+
+    template <typename D, typename K, typename V>
+    void impl_IMap<D, K, V>::Remove(const K & key) const
+    {
+        check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Remove(get_abi(key)));
+    }
+
+    template <typename D, typename K, typename V>
+    void impl_IMap<D, K, V>::Clear() const
+    {
+        check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Clear());
+    }
+
+    template <typename D, typename K>
+    CollectionChange impl_IMapChangedEventArgs<D, K>::CollectionChange() const
+    {
+        Collections::CollectionChange value{};
+        check_hresult((*(abi<IMapChangedEventArgs<K>> **)&static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this)))->get_CollectionChange(&value));
+        return value;
+    }
+
+    template <typename D, typename K>
+    K impl_IMapChangedEventArgs<D, K>::Key() const
+    {
+        K result = impl::empty_value<K>();
+        check_hresult((*(abi<IMapChangedEventArgs<K>> **)&static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this)))->get_Key(put_abi(result)));
+        return result;
+    }
+
+    template <typename D, typename K, typename V>
+    event_token impl_IObservableMap<D, K, V>::MapChanged(const MapChangedEventHandler<K, V> & handler) const
+    {
+        event_token cookie{};
+        check_hresult((*(abi<IObservableMap<K, V>> **)&static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this)))->add_MapChanged(get_abi(handler), &cookie));
+        return cookie;
+    }
+
+    template <typename D, typename K, typename V>
+    void impl_IObservableMap<D, K, V>::MapChanged(const event_token cookie) const
+    {
+        check_hresult((*(abi<IObservableMap<K, V>> **)&static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this)))->remove_MapChanged(cookie));
+    }
+
+    template <typename D, typename T>
+    event_token impl_IObservableVector<D, T>::VectorChanged(const VectorChangedEventHandler<T> & handler) const
+    {
+        event_token cookie{};
+        check_hresult((*(abi<IObservableVector<T>> **)&static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this)))->add_VectorChanged(get_abi(handler), &cookie));
+        return cookie;
+    }
+
+    template <typename D, typename T>
+    void impl_IObservableVector<D, T>::VectorChanged(const event_token cookie) const
+    {
+        check_hresult((*(abi<IObservableVector<T>> **)&static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this)))->remove_VectorChanged(cookie));
+    }
+}
+
+namespace impl
+{
+    template <typename K, typename V, typename H>
+    struct map_changed_event_handler : implements<map_changed_event_handler<K, V, H>, abi<Windows::Foundation::Collections::MapChangedEventHandler<K, V>>>, H
+    {
+        map_changed_event_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+        HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IObservableMap<K, V>> sender, abi_arg_in<Windows::Foundation::Collections::IMapChangedEventArgs<K>> args) noexcept override
+        {
+            try
+            {
+                (*this)(*reinterpret_cast<const Windows::Foundation::Collections::IObservableMap<K, V> *>(&sender), *reinterpret_cast<const Windows::Foundation::Collections::IMapChangedEventArgs<K> *>(&args));
+                return S_OK;
+            }
+            catch (...) { return impl::to_hresult(); }
+        }
+    };
+
+    template <typename T, typename H>
+    struct vector_changed_event_handler : implements<vector_changed_event_handler<T, H>, abi<Windows::Foundation::Collections::VectorChangedEventHandler<T>>>, H
+    {
+        vector_changed_event_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+        HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IObservableVector<T>> sender, abi_arg_in<Windows::Foundation::Collections::IVectorChangedEventArgs> args) noexcept override
+        {
+            try
+            {
+                (*this)(*reinterpret_cast<const Windows::Foundation::Collections::IObservableVector<T> *>(&sender), *reinterpret_cast<const Windows::Foundation::Collections::IVectorChangedEventArgs *>(&args));
+                return S_OK;
+            }
+            catch (...) { return impl::to_hresult(); }
+        }
+    };
+}
+
+namespace Windows::Foundation::Collections
+{
+    template <typename K, typename V> template <typename L> MapChangedEventHandler<K, V>::MapChangedEventHandler(L handler) :
+        MapChangedEventHandler(impl::make_delegate<impl::map_changed_event_handler<K, V, L>, MapChangedEventHandler<K, V>>(std::forward<L>(handler)))
     {}
 
-    fast_iterator & operator++() noexcept
+    template <typename K, typename V> template <typename F> MapChangedEventHandler<K, V>::MapChangedEventHandler(F * handler) :
+        MapChangedEventHandler([=](auto && ... args) { handler(args ...); })
+    {}
+
+    template <typename K, typename V> template <typename O, typename M> MapChangedEventHandler<K, V>::MapChangedEventHandler(O * object, M method) :
+        MapChangedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+    {}
+
+    template <typename K, typename V> void MapChangedEventHandler<K, V>::operator()(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const
     {
-        ++m_index;
-        return *this;
+        check_hresult((*(abi<MapChangedEventHandler<K, V>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
     }
 
-    auto operator *() const
+    template <typename T> template <typename L> VectorChangedEventHandler<T>::VectorChangedEventHandler(L handler) :
+        VectorChangedEventHandler(impl::make_delegate<impl::vector_changed_event_handler<T, L>, VectorChangedEventHandler<T>>(std::forward<L>(handler)))
+    {}
+
+    template <typename T> template <typename F> VectorChangedEventHandler<T>::VectorChangedEventHandler(F * handler) :
+        VectorChangedEventHandler([=](auto && ... args) { handler(args ...); })
+    {}
+
+    template <typename T> template <typename O, typename M> VectorChangedEventHandler<T>::VectorChangedEventHandler(O * object, M method) :
+        VectorChangedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+    {}
+
+    template <typename T> void VectorChangedEventHandler<T>::operator()(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const
     {
-        return m_collection->GetAt(m_index);
+        check_hresult((*(abi<VectorChangedEventHandler<T>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
     }
 
-    bool operator==(const fast_iterator & other) const noexcept
+    template <typename T, std::enable_if_t<!impl::has_GetAt<T>::value> * = nullptr>
+    auto begin(const T & collection) -> decltype(collection.First())
     {
-        WINRT_ASSERT(m_collection == other.m_collection);
-        return m_index == other.m_index;
-    }
+        auto result = collection.First();
 
-    bool operator!=(const fast_iterator & other) const noexcept
-    {
-        return !(*this == other);
-    }
-
-private:
-
-    const T * m_collection = nullptr;
-    uint32_t m_index = 0;
-};
-
-}
-
-namespace Windows::Foundation::Collections {
-
-template <typename T>
-struct WINRT_EBO VectorChangedEventHandler : IUnknown
-{
-    VectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    template <typename L> VectorChangedEventHandler(L handler);
-    template <typename F> VectorChangedEventHandler(F * handler);
-    template <typename O, typename M> VectorChangedEventHandler(O * object, M method);
-    void operator()(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const;
-};
-
-template <typename K, typename V>
-struct WINRT_EBO MapChangedEventHandler : IUnknown
-{
-    MapChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
-    template <typename L> MapChangedEventHandler(L handler);
-    template <typename F> MapChangedEventHandler(F * handler);
-    template <typename O, typename M> MapChangedEventHandler(O * object, M method);
-    void operator()(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const;
-};
-
-struct IVectorChangedEventArgs :
-    IInspectable,
-    impl::consume<IVectorChangedEventArgs>
-{
-    IVectorChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename T>
-struct WINRT_EBO IIterator :
-    IInspectable,
-    impl::consume<IIterator<T>>
-{
-    using iterator_category = std::input_iterator_tag;
-    using value_type = T;
-    using difference_type = ptrdiff_t;
-    using pointer = T *;
-    using reference = T &;
-
-    IIterator(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename T>
-struct WINRT_EBO IIterable :
-    IInspectable,
-    impl::consume<IIterable<T>>
-{
-    IIterable(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename K, typename V>
-struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
-    IInspectable,
-    impl::consume<IIterable<IKeyValuePair<K, V>>>
-{
-    IIterable(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename K, typename V>
-struct WINRT_EBO IKeyValuePair :
-    IInspectable,
-    impl::consume<IKeyValuePair<K, V>>
-{
-    IKeyValuePair(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename T>
-struct WINRT_EBO IVectorView :
-    IInspectable,
-    impl::consume<IVectorView<T>>,
-    impl::require<IVectorView<T>, IIterable<T>>
-{
-    IVectorView(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename T>
-struct WINRT_EBO IVector :
-    IInspectable,
-    impl::consume<IVector<T>>,
-    impl::require<IVector<T>, IIterable<T>>
-{
-    IVector(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename K, typename V>
-struct WINRT_EBO IMapView :
-    IInspectable,
-    impl::consume<IMapView<K, V>>,
-    impl::require<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
-{
-    IMapView(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename K, typename V>
-struct WINRT_EBO IMap :
-    IInspectable,
-    impl::consume<IMap<K, V>>,
-    impl::require<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
-{
-    IMap(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename K>
-struct WINRT_EBO IMapChangedEventArgs :
-    IInspectable,
-    impl::consume<IMapChangedEventArgs<K>>
-{
-    IMapChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename K, typename V>
-struct WINRT_EBO IObservableMap :
-    IInspectable,
-    impl::consume<IObservableMap<K, V>>,
-    impl::require<IObservableMap<K, V>, IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
-{
-    IObservableMap(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename T>
-struct WINRT_EBO IObservableVector :
-    IInspectable,
-    impl::consume<IObservableVector<T>>,
-    impl::require<IObservableVector<T>, IVector<T>, IIterable<T>>
-{
-    IObservableVector(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename D>
-CollectionChange impl_IVectorChangedEventArgs<D>::CollectionChange() const
-{
-    Collections::CollectionChange value{};
-    check_hresult((*(abi<IVectorChangedEventArgs> **)&static_cast<const IVectorChangedEventArgs &>(static_cast<const D &>(*this)))->get_CollectionChange(&value));
-    return value;
-}
-
-template <typename D>
-uint32_t impl_IVectorChangedEventArgs<D>::Index() const
-{
-    uint32_t index = 0;
-    check_hresult((*(abi<IVectorChangedEventArgs> **)&static_cast<const IVectorChangedEventArgs &>(static_cast<const D &>(*this)))->get_Index(&index));
-    return index;
-}
-
-template <typename D, typename T>
-T impl_IIterator<D, T>::Current() const
-{
-    T result = impl::empty_value<T>();
-    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->get_Current(put_abi(result)));
-    return result;
-}
-
-template <typename D, typename T>
-bool impl_IIterator<D, T>::HasCurrent() const
-{
-    bool temp = false;
-    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->get_HasCurrent(put_abi(temp)));
-    return temp;
-}
-
-template <typename D, typename T>
-bool impl_IIterator<D, T>::MoveNext() const
-{
-    bool temp = false;
-    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_MoveNext(put_abi(temp)));
-    return temp;
-}
-
-template <typename D, typename T>
-uint32_t impl_IIterator<D, T>::GetMany(array_view<T> values) const
-{
-    uint32_t actual = 0;
-    check_hresult((*(abi<IIterator<T>> **)&static_cast<const IIterator<T> &>(static_cast<const D &>(*this)))->abi_GetMany(values.size(), get_abi(values), &actual));
-    return actual;
-}
-
-template <typename D, typename T>
-IIterator<T> impl_IIterable<D, T>::First() const
-{
-    IIterator<T> iterator;
-    check_hresult((*(abi<IIterable<T>> **)&static_cast<const IIterable<T> &>(static_cast<const D &>(*this)))->abi_First(put_abi(iterator)));
-    return iterator;
-}
-
-template <typename D, typename K, typename V>
-K impl_IKeyValuePair<D, K, V>::Key() const
-{
-    K result = impl::empty_value<K>();
-    check_hresult((*(abi<IKeyValuePair<K, V>> **)&static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this)))->get_Key(put_abi(result)));
-    return result;
-}
-
-template <typename D, typename K, typename V>
-V impl_IKeyValuePair<D, K, V>::Value() const
-{
-    V result = impl::empty_value<V>();
-    check_hresult((*(abi<IKeyValuePair<K, V>> **)&static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this)))->get_Value(put_abi(result)));
-    return result;
-}
-
-template <typename D, typename T>
-T impl_IVectorView<D, T>::GetAt(const uint32_t index) const
-{
-    T result = impl::empty_value<T>();
-    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetAt(index, put_abi(result)));
-    return result;
-}
-
-template <typename D, typename T>
-uint32_t impl_IVectorView<D, T>::Size() const
-{
-    uint32_t size = 0;
-    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->get_Size(&size));
-    return size;
-}
-
-template <typename D, typename T>
-bool impl_IVectorView<D, T>::IndexOf(const T & value, uint32_t & index) const
-{
-    bool found = false;
-    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_IndexOf(get_abi(value), &index, put_abi(found)));
-    return found;
-}
-
-template <typename D, typename T>
-uint32_t impl_IVectorView<D, T>::GetMany(uint32_t startIndex, array_view<T> values) const
-{
-    uint32_t actual = 0;
-    check_hresult((*(abi<IVectorView<T>> **)&static_cast<const IVectorView<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get_abi(values), &actual));
-    return actual;
-}
-
-template <typename D, typename T>
-T impl_IVector<D, T>::GetAt(const uint32_t index) const
-{
-    T result = impl::empty_value<T>();
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetAt(index, put_abi(result)));
-    return result;
-}
-
-template <typename D, typename T>
-uint32_t impl_IVector<D, T>::Size() const
-{
-    uint32_t size = 0;
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->get_Size(&size));
-    return size;
-}
-
-template <typename D, typename T>
-IVectorView<T> impl_IVector<D, T>::GetView() const
-{
-    IVectorView<T> view;
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetView(put_abi(view)));
-    return view;
-}
-
-template <typename D, typename T>
-bool impl_IVector<D, T>::IndexOf(const T & value, uint32_t & index) const
-{
-    bool found = false;
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_IndexOf(get_abi(value), &index, put_abi(found)));
-    return found;
-}
-
-template <typename D, typename T>
-void impl_IVector<D, T>::SetAt(const uint32_t index, const T & value) const
-{
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_SetAt(index, get_abi(value)));
-}
-
-template <typename D, typename T>
-void impl_IVector<D, T>::InsertAt(const uint32_t index, const T & value) const
-{
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_InsertAt(index, get_abi(value)));
-}
-
-template <typename D, typename T>
-void impl_IVector<D, T>::RemoveAt(const uint32_t index) const
-{
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_RemoveAt(index));
-}
-
-template <typename D, typename T>
-void impl_IVector<D, T>::Append(const T & value) const
-{
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_Append(get_abi(value)));
-}
-
-template <typename D, typename T>
-void impl_IVector<D, T>::RemoveAtEnd() const
-{
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_RemoveAtEnd());
-}
-
-template <typename D, typename T>
-void impl_IVector<D, T>::Clear() const
-{
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_Clear());
-}
-
-template <typename D, typename T>
-uint32_t impl_IVector<D, T>::GetMany(uint32_t startIndex, array_view<T> values) const
-{
-    uint32_t actual = 0;
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_GetMany(startIndex, values.size(), get_abi(values), &actual));
-    return actual;
-}
-
-template <typename D, typename T>
-void impl_IVector<D, T>::ReplaceAll(array_view<const T> value) const
-{
-    check_hresult((*(abi<IVector<T>> **)&static_cast<const IVector<T> &>(static_cast<const D &>(*this)))->abi_ReplaceAll(value.size(), get_abi(value)));
-}
-
-template <typename D, typename K, typename V>
-V impl_IMapView<D, K, V>::Lookup(const K & key) const
-{
-    V result = impl::empty_value<V>();
-    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_Lookup(get_abi(key), put_abi(result)));
-    return result;
-}
-
-template <typename D, typename K, typename V>
-uint32_t impl_IMapView<D, K, V>::Size() const
-{
-    uint32_t size = 0;
-    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->get_Size(&size));
-    return size;
-}
-
-template <typename D, typename K, typename V>
-bool impl_IMapView<D, K, V>::HasKey(const K & key) const
-{
-    bool found = false;
-    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_HasKey(get_abi(key), put_abi(found)));
-    return found;
-}
-
-template <typename D, typename K, typename V>
-void impl_IMapView<D, K, V>::Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition)
-{
-    check_hresult((*(abi<IMapView<K, V>> **)&static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this)))->abi_Split(put_abi(firstPartition), put_abi(secondPartition)));
-}
-
-template <typename D, typename K, typename V>
-V impl_IMap<D, K, V>::Lookup(const K & key) const
-{
-    V result = impl::empty_value<V>();
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Lookup(get_abi(key), put_abi(result)));
-    return result;
-}
-
-template <typename D, typename K, typename V>
-uint32_t impl_IMap<D, K, V>::Size() const
-{
-    uint32_t size = 0;
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->get_Size(&size));
-    return size;
-}
-
-template <typename D, typename K, typename V>
-bool impl_IMap<D, K, V>::HasKey(const K & key) const
-{
-    bool found = false;
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_HasKey(get_abi(key), put_abi(found)));
-    return found;
-}
-
-template <typename D, typename K, typename V>
-IMapView<K, V> impl_IMap<D, K, V>::GetView() const
-{
-    IMapView<K, V> view;
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_GetView(put_abi(view)));
-    return view;
-}
-
-template <typename D, typename K, typename V>
-bool impl_IMap<D, K, V>::Insert(const K & key, const V & value) const
-{
-    bool replaced = false;
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Insert(get_abi(key), get_abi(value), put_abi(replaced)));
-    return replaced;
-}
-
-template <typename D, typename K, typename V>
-void impl_IMap<D, K, V>::Remove(const K & key) const
-{
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Remove(get_abi(key)));
-}
-
-template <typename D, typename K, typename V>
-void impl_IMap<D, K, V>::Clear() const
-{
-    check_hresult((*(abi<IMap<K, V>> **)&static_cast<const IMap<K, V> &>(static_cast<const D &>(*this)))->abi_Clear());
-}
-
-template <typename D, typename K>
-CollectionChange impl_IMapChangedEventArgs<D, K>::CollectionChange() const
-{
-    Collections::CollectionChange value{};
-    check_hresult((*(abi<IMapChangedEventArgs<K>> **)&static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this)))->get_CollectionChange(&value));
-    return value;
-}
-
-template <typename D, typename K>
-K impl_IMapChangedEventArgs<D, K>::Key() const
-{
-    K result = impl::empty_value<K>();
-    check_hresult((*(abi<IMapChangedEventArgs<K>> **)&static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this)))->get_Key(put_abi(result)));
-    return result;
-}
-
-template <typename D, typename K, typename V>
-event_token impl_IObservableMap<D, K, V>::MapChanged(const MapChangedEventHandler<K, V> & handler) const
-{
-    event_token cookie{};
-    check_hresult((*(abi<IObservableMap<K, V>> **)&static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this)))->add_MapChanged(get_abi(handler), &cookie));
-    return cookie;
-}
-
-template <typename D, typename K, typename V>
-void impl_IObservableMap<D, K, V>::MapChanged(const event_token cookie) const
-{
-    check_hresult((*(abi<IObservableMap<K, V>> **)&static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this)))->remove_MapChanged(cookie));
-}
-
-template <typename D, typename T>
-event_token impl_IObservableVector<D, T>::VectorChanged(const VectorChangedEventHandler<T> & handler) const
-{
-    event_token cookie{};
-    check_hresult((*(abi<IObservableVector<T>> **)&static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this)))->add_VectorChanged(get_abi(handler), &cookie));
-    return cookie;
-}
-
-template <typename D, typename T>
-void impl_IObservableVector<D, T>::VectorChanged(const event_token cookie) const
-{
-    check_hresult((*(abi<IObservableVector<T>> **)&static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this)))->remove_VectorChanged(cookie));
-}
-
-
-}
-
-namespace impl {
-
-template <typename K, typename V, typename H>
-struct map_changed_event_handler : implements<map_changed_event_handler<K, V, H>, abi<Windows::Foundation::Collections::MapChangedEventHandler<K, V>>>, H
-{
-    map_changed_event_handler(H && handler) : H(std::forward<H>(handler)) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IObservableMap<K, V>> sender, abi_arg_in<Windows::Foundation::Collections::IMapChangedEventArgs<K>> args) noexcept override
-    {
-        try
+        if (!result.HasCurrent())
         {
-            (*this)(*reinterpret_cast<const Windows::Foundation::Collections::IObservableMap<K, V> *>(&sender), *reinterpret_cast<const Windows::Foundation::Collections::IMapChangedEventArgs<K> *>(&args));
-            return S_OK;
+            return {};
         }
-        catch (...) { return impl::to_hresult(); }
+
+        return result;
     }
-};
 
-template <typename T, typename H>
-struct vector_changed_event_handler : implements<vector_changed_event_handler<T, H>, abi<Windows::Foundation::Collections::VectorChangedEventHandler<T>>>, H
-{
-    vector_changed_event_handler(H && handler) : H(std::forward<H>(handler)) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::Collections::IObservableVector<T>> sender, abi_arg_in<Windows::Foundation::Collections::IVectorChangedEventArgs> args) noexcept override
+    template <typename T, std::enable_if_t<!impl::has_GetAt<T>::value> * = nullptr>
+    auto end(const T & collection) -> decltype(collection.First())
     {
-        try
-        {
-            (*this)(*reinterpret_cast<const Windows::Foundation::Collections::IObservableVector<T> *>(&sender), *reinterpret_cast<const Windows::Foundation::Collections::IVectorChangedEventArgs *>(&args));
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
-
-}
-
-namespace Windows::Foundation::Collections {
-
-template <typename K, typename V> template <typename L> MapChangedEventHandler<K, V>::MapChangedEventHandler(L handler) :
-    MapChangedEventHandler(impl::make_delegate<impl::map_changed_event_handler<K, V, L>, MapChangedEventHandler<K, V>>(std::forward<L>(handler)))
-{}
-
-template <typename K, typename V> template <typename F> MapChangedEventHandler<K, V>::MapChangedEventHandler(F * handler) :
-    MapChangedEventHandler([=](auto && ... args) { handler(args ...); })
-{}
-
-template <typename K, typename V> template <typename O, typename M> MapChangedEventHandler<K, V>::MapChangedEventHandler(O * object, M method) :
-    MapChangedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
-{}
-
-template <typename K, typename V> void MapChangedEventHandler<K, V>::operator()(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const
-{
-    check_hresult((*(abi<MapChangedEventHandler<K, V>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
-}
-
-template <typename T> template <typename L> VectorChangedEventHandler<T>::VectorChangedEventHandler(L handler) :
-    VectorChangedEventHandler(impl::make_delegate<impl::vector_changed_event_handler<T, L>, VectorChangedEventHandler<T>>(std::forward<L>(handler)))
-{}
-
-template <typename T> template <typename F> VectorChangedEventHandler<T>::VectorChangedEventHandler(F * handler) :
-    VectorChangedEventHandler([=](auto && ... args) { handler(args ...); })
-{}
-
-template <typename T> template <typename O, typename M> VectorChangedEventHandler<T>::VectorChangedEventHandler(O * object, M method) :
-    VectorChangedEventHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
-{}
-
-template <typename T> void VectorChangedEventHandler<T>::operator()(const IObservableVector<T> & sender, const IVectorChangedEventArgs & args) const
-{
-    check_hresult((*(abi<VectorChangedEventHandler<T>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
-}
-
-template <typename T, std::enable_if_t<!impl::has_GetAt<T>::value> * = nullptr>
-auto begin(const T & collection) -> decltype(collection.First())
-{
-    auto result = collection.First();
-
-    if (!result.HasCurrent())
-    {
+        collection;
         return {};
     }
 
-    return result;
+    template <typename T, std::enable_if_t<impl::has_GetAt<T>::value> * = nullptr>
+    impl::fast_iterator<T> begin(const T & collection) noexcept
+    {
+        return impl::fast_iterator<T>(collection, 0);
+    }
+
+    template <typename T, std::enable_if_t<impl::has_GetAt<T>::value> * = nullptr>
+    impl::fast_iterator<T> end(const T & collection)
+    {
+        return impl::fast_iterator<T>(collection, collection.Size());
+    }
 }
 
-template <typename T, std::enable_if_t<!impl::has_GetAt<T>::value> * = nullptr>
-auto end(const T & collection) -> decltype(collection.First())
+namespace impl
 {
-    collection;
-    return {};
-}
-
-template <typename T, std::enable_if_t<impl::has_GetAt<T>::value> * = nullptr>
-impl::fast_iterator<T> begin(const T & collection) noexcept
-{
-    return impl::fast_iterator<T>(collection, 0);
-}
-
-template <typename T, std::enable_if_t<impl::has_GetAt<T>::value> * = nullptr>
-impl::fast_iterator<T> end(const T & collection)
-{
-    return impl::fast_iterator<T>(collection, collection.Size());
-}
-
-}
-
-namespace impl {
-
-template <typename D>
-struct produce<D, Windows::Foundation::Collections::IVectorChangedEventArgs> : produce_base<D, Windows::Foundation::Collections::IVectorChangedEventArgs>
-{
-    HRESULT __stdcall get_CollectionChange(Windows::Foundation::Collections::CollectionChange * value) noexcept final
+    template <typename D>
+    struct produce<D, Windows::Foundation::Collections::IVectorChangedEventArgs> : produce_base<D, Windows::Foundation::Collections::IVectorChangedEventArgs>
     {
-        try
+        HRESULT __stdcall get_CollectionChange(Windows::Foundation::Collections::CollectionChange * value) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *value = this->shim().CollectionChange();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = this->shim().CollectionChange();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall get_Index(uint32_t * value) noexcept final
+        HRESULT __stdcall get_Index(uint32_t * value) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = this->shim().Index();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename T>
+    struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base<D, Windows::Foundation::Collections::IIterator<T>>
     {
-        try
+        HRESULT __stdcall get_Current(abi_arg_out<T> current) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *value = this->shim().Index();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *current = detach_abi(this->shim().Current());
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(current);
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-};
 
-template <typename D, typename T>
-struct produce<D, Windows::Foundation::Collections::IIterator<T>> : produce_base<D, Windows::Foundation::Collections::IIterator<T>>
-{
-    HRESULT __stdcall get_Current(abi_arg_out<T> current) noexcept final
+        HRESULT __stdcall get_HasCurrent(bool * hasCurrent) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *hasCurrent = this->shim().HasCurrent();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_MoveNext(bool * hasCurrent) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *hasCurrent = this->shim().MoveNext();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetMany(uint32_t capacity, abi_arg_out<T> value, uint32_t * actual) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *actual = this->shim().GetMany({ reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(value);
+                *actual = 0;
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename T>
+    struct produce<D, Windows::Foundation::Collections::IIterable<T>> : produce_base<D, Windows::Foundation::Collections::IIterable<T>>
     {
-        try
+        HRESULT __stdcall abi_First(abi_arg_out<Windows::Foundation::Collections::IIterator<T>> first) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *current = detach_abi(this->shim().Current());
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *first = detach_abi(this->shim().First());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *first = nullptr;
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            clear_abi(current);
-            return to_hresult();
-        }
-    }
+    };
 
-    HRESULT __stdcall get_HasCurrent(bool * hasCurrent) noexcept final
+    template <typename D, typename K, typename V>
+    struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produce_base<D, Windows::Foundation::Collections::IKeyValuePair<K, V>>
     {
-        try
+        HRESULT __stdcall get_Key(abi_arg_out<K> key) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *hasCurrent = this->shim().HasCurrent();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *key = detach_abi(this->shim().Key());
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(key);
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall abi_MoveNext(bool * hasCurrent) noexcept final
+        HRESULT __stdcall get_Value(abi_arg_out<V> value) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().Value());
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(value);
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename T>
+    struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_base<D, Windows::Foundation::Collections::IVectorView<T>>
     {
-        try
+        HRESULT __stdcall abi_GetAt(uint32_t index, abi_arg_out<T> item) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *hasCurrent = this->shim().MoveNext();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *item = detach_abi(this->shim().GetAt(index));
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(item);
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall abi_GetMany(uint32_t capacity, abi_arg_out<T> value, uint32_t * actual) noexcept final
+        HRESULT __stdcall get_Size(uint32_t * size) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_IndexOf(abi_arg_in<T> value, uint32_t * index, bool * found) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *found = this->shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetMany(uint32_t startIndex, uint32_t capacity, abi_arg_out<T> value, uint32_t * actual) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(value);
+                *actual = 0;
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename T>
+    struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D, Windows::Foundation::Collections::IVector<T>>
     {
-        try
+        HRESULT __stdcall abi_GetAt(uint32_t index, abi_arg_out<T> item) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *actual = this->shim().GetMany({ reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *item = detach_abi(this->shim().GetAt(index));
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(item);
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            clear_abi(value);
-            *actual = 0;
-            return to_hresult();
-        }
-    }
-};
 
-template <typename D, typename T>
-struct produce<D, Windows::Foundation::Collections::IIterable<T>> : produce_base<D, Windows::Foundation::Collections::IIterable<T>>
-{
-    HRESULT __stdcall abi_First(abi_arg_out<Windows::Foundation::Collections::IIterator<T>> first) noexcept final
+        HRESULT __stdcall get_Size(uint32_t * size) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetView(abi_arg_out<Windows::Foundation::Collections::IVectorView<T>> view) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *view = detach_abi(this->shim().GetView());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *view = nullptr;
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_IndexOf(abi_arg_in<T> value, uint32_t * index, bool * found) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *found = this->shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_SetAt(uint32_t index, abi_arg_in<T> item) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().SetAt(index, *reinterpret_cast<const T *>(&item));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_InsertAt(uint32_t index, abi_arg_in<T> item) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().InsertAt(index, *reinterpret_cast<const T *>(&item));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_RemoveAt(uint32_t index) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().RemoveAt(index);
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_Append(abi_arg_in<T> item) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Append(*reinterpret_cast<const T *>(&item));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_RemoveAtEnd() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().RemoveAtEnd();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_Clear() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Clear();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetMany(uint32_t startIndex, uint32_t capacity, abi_arg_out<T> value, uint32_t * actual) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(value);
+                *actual = 0;
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_ReplaceAll(uint32_t count, abi_arg_out<T> item) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().ReplaceAll({ reinterpret_cast<T const *>(item), reinterpret_cast<T const *>(item) + count });
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename K, typename V>
+    struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_base<D, Windows::Foundation::Collections::IMapView<K, V>>
     {
-        try
+        HRESULT __stdcall abi_Lookup(abi_arg_in<K> key, abi_arg_out<V> value) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *first = detach_abi(this->shim().First());
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(value);
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            *first = nullptr;
-            return to_hresult();
-        }
-    }
-};
 
-template <typename D, typename K, typename V>
-struct produce<D, Windows::Foundation::Collections::IKeyValuePair<K, V>> : produce_base<D, Windows::Foundation::Collections::IKeyValuePair<K, V>>
-{
-    HRESULT __stdcall get_Key(abi_arg_out<K> key) noexcept final
+        HRESULT __stdcall get_Size(uint32_t * size) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_HasKey(abi_arg_in<K> key, bool * found) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *found = this->shim().HasKey(*reinterpret_cast<const K *>(&key));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_Split(abi_arg_out<Windows::Foundation::Collections::IMapView<K, V>> firstPartition, abi_arg_out<Windows::Foundation::Collections::IMapView<K, V>> secondPartition) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Split(*reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(firstPartition), *reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(secondPartition));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *firstPartition = nullptr;
+                *secondPartition = nullptr;
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename K, typename V>
+    struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D, Windows::Foundation::Collections::IMap<K, V>>
     {
-        try
+        HRESULT __stdcall abi_Lookup(abi_arg_in<K> key, abi_arg_out<V> value) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *key = detach_abi(this->shim().Key());
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(value);
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            clear_abi(key);
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall get_Value(abi_arg_out<V> value) noexcept final
+        HRESULT __stdcall get_Size(uint32_t * size) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_HasKey(abi_arg_in<K> key, bool * found) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *found = this->shim().HasKey(*reinterpret_cast<const K *>(&key));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetView(abi_arg_out<Windows::Foundation::Collections::IMapView<K, V>> view) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *view = detach_abi(this->shim().GetView());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *view = nullptr;
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_Insert(abi_arg_in<K> key, abi_arg_in<V> value, bool * replaced) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *replaced = this->shim().Insert(*reinterpret_cast<const K *>(&key), *reinterpret_cast<const V *>(&value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_Remove(abi_arg_in<K> key) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Remove(*reinterpret_cast<const K *>(&key));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_Clear() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Clear();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename K>
+    struct produce<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>> : produce_base<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>>
     {
-        try
+        HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().Value());
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = this->shim().CollectionChange();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            clear_abi(value);
-            return to_hresult();
-        }
-    }
-};
 
-template <typename D, typename T>
-struct produce<D, Windows::Foundation::Collections::IVectorView<T>> : produce_base<D, Windows::Foundation::Collections::IVectorView<T>>
-{
-    HRESULT __stdcall abi_GetAt(uint32_t index, abi_arg_out<T> item) noexcept final
+        HRESULT __stdcall get_Key(abi_arg_out<K> value) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().Key());
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(value);
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename K, typename V>
+    struct produce<D, Windows::Foundation::Collections::IObservableMap<K, V>> : produce_base<D, Windows::Foundation::Collections::IObservableMap<K, V>>
     {
-        try
+        HRESULT __stdcall add_MapChanged(abi_arg_in<Windows::Foundation::Collections::MapChangedEventHandler<K, V>> handler, event_token * token) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *item = detach_abi(this->shim().GetAt(index));
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *token = this->shim().MapChanged(*reinterpret_cast<const Windows::Foundation::Collections::MapChangedEventHandler<K, V> *>(&handler));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            clear_abi(item);
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall get_Size(uint32_t * size) noexcept final
+        HRESULT __stdcall remove_MapChanged(event_token token) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().MapChanged(token);
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename T>
+    struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : produce_base<D, Windows::Foundation::Collections::IObservableVector<T>>
     {
-        try
+        HRESULT __stdcall add_VectorChanged(abi_arg_in<Windows::Foundation::Collections::VectorChangedEventHandler<T>> handler, event_token * token) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *size = this->shim().Size();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *token = this->shim().VectorChanged(*reinterpret_cast<const Windows::Foundation::Collections::VectorChangedEventHandler<T> *>(&handler));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall abi_IndexOf(abi_arg_in<T> value, uint32_t * index, bool * found) noexcept final
-    {
-        try
+        HRESULT __stdcall remove_VectorChanged(event_token token) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *found = this->shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().VectorChanged(token);
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetMany(uint32_t startIndex, uint32_t capacity, abi_arg_out<T> value, uint32_t * actual) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
-            return S_OK;
-        }
-        catch (...)
-        {
-            clear_abi(value);
-            *actual = 0;
-            return to_hresult();
-        }
-    }
-};
-
-template <typename D, typename T>
-struct produce<D, Windows::Foundation::Collections::IVector<T>> : produce_base<D, Windows::Foundation::Collections::IVector<T>>
-{
-    HRESULT __stdcall abi_GetAt(uint32_t index, abi_arg_out<T> item) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *item = detach_abi(this->shim().GetAt(index));
-            return S_OK;
-        }
-        catch (...)
-        {
-            clear_abi(item);
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_Size(uint32_t * size) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *size = this->shim().Size();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetView(abi_arg_out<Windows::Foundation::Collections::IVectorView<T>> view) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *view = detach_abi(this->shim().GetView());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *view = nullptr;
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_IndexOf(abi_arg_in<T> value, uint32_t * index, bool * found) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *found = this->shim().IndexOf(*reinterpret_cast<const T *>(&value), *index);
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_SetAt(uint32_t index, abi_arg_in<T> item) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().SetAt(index, *reinterpret_cast<const T *>(&item));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_InsertAt(uint32_t index, abi_arg_in<T> item) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().InsertAt(index, *reinterpret_cast<const T *>(&item));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_RemoveAt(uint32_t index) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RemoveAt(index);
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_Append(abi_arg_in<T> item) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Append(*reinterpret_cast<const T *>(&item));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_RemoveAtEnd() noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().RemoveAtEnd();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_Clear() noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Clear();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetMany(uint32_t startIndex, uint32_t capacity, abi_arg_out<T> value, uint32_t * actual) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T *>(value), reinterpret_cast<T *>(value) + capacity });
-            return S_OK;
-        }
-        catch (...)
-        {
-            clear_abi(value);
-            *actual = 0;
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_ReplaceAll(uint32_t count, abi_arg_out<T> item) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().ReplaceAll({ reinterpret_cast<T const *>(item), reinterpret_cast<T const *>(item) + count });
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-};
-
-template <typename D, typename K, typename V>
-struct produce<D, Windows::Foundation::Collections::IMapView<K, V>> : produce_base<D, Windows::Foundation::Collections::IMapView<K, V>>
-{
-    HRESULT __stdcall abi_Lookup(abi_arg_in<K> key, abi_arg_out<V> value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            clear_abi(value);
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_Size(uint32_t * size) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *size = this->shim().Size();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_HasKey(abi_arg_in<K> key, bool * found) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *found = this->shim().HasKey(*reinterpret_cast<const K *>(&key));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_Split(abi_arg_out<Windows::Foundation::Collections::IMapView<K, V>> firstPartition, abi_arg_out<Windows::Foundation::Collections::IMapView<K, V>> secondPartition) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Split(*reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(firstPartition), *reinterpret_cast<Windows::Foundation::Collections::IMapView<K, V> *>(secondPartition));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *firstPartition = nullptr;
-            *secondPartition = nullptr;
-            return to_hresult();
-        }
-    }
-};
-
-template <typename D, typename K, typename V>
-struct produce<D, Windows::Foundation::Collections::IMap<K, V>> : produce_base<D, Windows::Foundation::Collections::IMap<K, V>>
-{
-    HRESULT __stdcall abi_Lookup(abi_arg_in<K> key, abi_arg_out<V> value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().Lookup(*reinterpret_cast<const K *>(&key)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            clear_abi(value);
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_Size(uint32_t * size) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *size = this->shim().Size();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_HasKey(abi_arg_in<K> key, bool * found) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *found = this->shim().HasKey(*reinterpret_cast<const K *>(&key));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_GetView(abi_arg_out<Windows::Foundation::Collections::IMapView<K, V>> view) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *view = detach_abi(this->shim().GetView());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *view = nullptr;
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_Insert(abi_arg_in<K> key, abi_arg_in<V> value, bool * replaced) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *replaced = this->shim().Insert(*reinterpret_cast<const K *>(&key), *reinterpret_cast<const V *>(&value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_Remove(abi_arg_in<K> key) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Remove(*reinterpret_cast<const K *>(&key));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall abi_Clear() noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Clear();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-};
-
-template <typename D, typename K>
-struct produce<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>> : produce_base<D, Windows::Foundation::Collections::IMapChangedEventArgs<K>>
-{
-    HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = this->shim().CollectionChange();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall get_Key(abi_arg_out<K> value) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().Key());
-            return S_OK;
-        }
-        catch (...)
-        {
-            clear_abi(value);
-            return to_hresult();
-        }
-    }
-};
-
-template <typename D, typename K, typename V>
-struct produce<D, Windows::Foundation::Collections::IObservableMap<K, V>> : produce_base<D, Windows::Foundation::Collections::IObservableMap<K, V>>
-{
-    HRESULT __stdcall add_MapChanged(abi_arg_in<Windows::Foundation::Collections::MapChangedEventHandler<K, V>> handler, event_token * token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = this->shim().MapChanged(*reinterpret_cast<const Windows::Foundation::Collections::MapChangedEventHandler<K, V> *>(&handler));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_MapChanged(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().MapChanged(token);
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-};
-
-template <typename D, typename T>
-struct produce<D, Windows::Foundation::Collections::IObservableVector<T>> : produce_base<D, Windows::Foundation::Collections::IObservableVector<T>>
-{
-    HRESULT __stdcall add_VectorChanged(abi_arg_in<Windows::Foundation::Collections::VectorChangedEventHandler<T>> handler, event_token * token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *token = this->shim().VectorChanged(*reinterpret_cast<const Windows::Foundation::Collections::VectorChangedEventHandler<T> *>(&handler));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-
-    HRESULT __stdcall remove_VectorChanged(event_token token) noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().VectorChanged(token);
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-};
-
+    };
 }
 
 namespace impl
@@ -5983,7 +5952,7 @@ namespace impl
         struct iterator : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<T>>
         {
             explicit iterator(input_iterable<T, Container> * owner) noexcept :
-                m_current(owner->m_values.begin()),
+            m_current(owner->m_values.begin()),
                 m_end(owner->m_values.end())
             {
                 m_owner.copy_from(owner);
@@ -6066,7 +6035,7 @@ namespace impl
             }
 
             explicit iterator(scoped_input_iterable<T, InputIt> * owner) noexcept :
-                m_current(owner->m_begin),
+            m_current(owner->m_begin),
                 m_end(owner->m_end)
             {
                 m_owner.copy_from(owner);
@@ -6198,7 +6167,7 @@ struct iterable
 private:
 
     std::pair<interface_type, impl::input_scope *> m_pair;
-    bool m_owned{true};
+    bool m_owned{ true };
 };
 
 template <typename K, typename V>
@@ -6343,7 +6312,7 @@ namespace impl
         struct iterator : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<T>>
         {
             explicit iterator(input_vector_view<T, Container> * owner) noexcept :
-                m_current(owner->m_values.begin()),
+            m_current(owner->m_values.begin()),
                 m_end(owner->m_values.end())
             {
                 m_owner.copy_from(owner);
@@ -6465,7 +6434,7 @@ namespace impl
             }
 
             explicit iterator(scoped_input_vector_view<T, InputIt> * owner) noexcept :
-                m_current(owner->m_begin),
+            m_current(owner->m_begin),
                 m_end(owner->m_end)
             {
                 m_owner.copy_from(owner);
@@ -6654,7 +6623,7 @@ namespace impl
         struct iterator : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<value_type>>
         {
             explicit iterator(input_map_view<K, V, Container> * owner) noexcept :
-                m_current(owner->m_values.begin()),
+            m_current(owner->m_values.begin()),
                 m_end(owner->m_values.end())
             {
                 m_owner.copy_from(owner);
@@ -6767,7 +6736,7 @@ namespace impl
             }
 
             explicit iterator(scoped_input_map_view<K, V, Container> * owner) noexcept :
-                m_current(owner->m_values.begin()),
+            m_current(owner->m_values.begin()),
                 m_end(owner->m_values.end())
             {
                 m_owner.copy_from(owner);
@@ -6982,7 +6951,7 @@ namespace impl
             ++m_version;
             m_values.erase(m_values.begin() + index);
         }
-        
+
         void Append(T const & value)
         {
             ++m_version;
@@ -6999,13 +6968,13 @@ namespace impl
             ++m_version;
             m_values.pop_back();
         }
-        
+
         void Clear() noexcept
         {
             ++m_version;
             m_values.clear();
         }
-        
+
         uint32_t GetMany(uint32_t const startIndex, array_view<T> values) const
         {
             if (startIndex >= m_values.size())
@@ -7043,7 +7012,7 @@ namespace impl
         struct iterator : implements<iterator, wfc::IIterator<T>>
         {
             explicit iterator(single_threaded_vector<T, Container> * owner) noexcept :
-                m_version(owner->m_version),
+            m_version(owner->m_version),
                 m_current(owner->m_values.begin()),
                 m_end(owner->m_values.end())
             {
@@ -7192,7 +7161,7 @@ namespace impl
         struct iterator : implements<iterator, wfc::IIterator<value_type>>
         {
             explicit iterator(single_threaded_map<K, V, Container> * owner) noexcept :
-                m_version(owner->m_version),
+            m_version(owner->m_version),
                 m_current(owner->m_values.begin()),
                 m_end(owner->m_values.end())
             {
@@ -7276,65 +7245,63 @@ Windows::Foundation::Collections::IMap<K, V> single_threaded_map(std::unordered_
 
 namespace Windows::Foundation
 {
+    struct Point
+    {
+        float X;
+        float Y;
 
-struct Point
-{
-    float X;
-    float Y;
+        Point() noexcept = default;
 
-    Point() noexcept = default;
-
-    Point(float X, float Y) noexcept
-        : X(X), Y(Y)
-    {}
+        Point(float X, float Y) noexcept
+            : X(X), Y(Y)
+        {}
 
 #ifdef WINRT_NUMERICS
 
-    Point(const Numerics::float2 & value) noexcept
-        : X(value.x), Y(value.y)
-    {}
+        Point(const Numerics::float2 & value) noexcept
+            : X(value.x), Y(value.y)
+        {}
 
-    operator Numerics::float2() const noexcept
-    {
-        return { X, Y };
-    }
+        operator Numerics::float2() const noexcept
+        {
+            return { X, Y };
+        }
 
 #endif
-};
+    };
 
-struct Size
-{
-    float Width;
-    float Height;
+    struct Size
+    {
+        float Width;
+        float Height;
 
-    Size() noexcept = default;
+        Size() noexcept = default;
 
-    Size(float Width, float Height) noexcept
-        : Width(Width), Height(Height)
-    {}
+        Size(float Width, float Height) noexcept
+            : Width(Width), Height(Height)
+        {}
 
 #ifdef WINRT_NUMERICS
 
-    Size(const Numerics::float2 & value) noexcept
-        : Width(value.x), Height(value.y)
-    {}
+        Size(const Numerics::float2 & value) noexcept
+            : Width(value.x), Height(value.y)
+        {}
 
-    operator Numerics::float2() const noexcept
-    {
-        return { Width, Height };
-    }
+        operator Numerics::float2() const noexcept
+        {
+            return { Width, Height };
+        }
 
 #endif
-};
+    };
 
-struct Rect
-{
-    float X;
-    float Y;
-    float Width;
-    float Height;
-};
-
+    struct Rect
+    {
+        float X;
+        float Y;
+        float Width;
+        float Height;
+    };
 }
 
 namespace ABI::Windows::Foundation
@@ -7407,1100 +7374,1092 @@ struct clock
     }
 
 private:
+
     // Define 00:00:00, Jan 1 1970 UTC in FILETIME units
     static constexpr time_point time_t_epoch{ duration{ 0x019DB1DED53E8000 } };
     using time_t_duration = std::chrono::duration<time_t>;
 };
 
-namespace Windows::Foundation {
-
-enum class AsyncStatus
+namespace Windows::Foundation
 {
-    Started,
-    Completed,
-    Canceled,
-    Error,
-};
-
+    enum class AsyncStatus
+    {
+        Started,
+        Completed,
+        Canceled,
+        Error,
+    };
 }
 
-namespace impl {
-
-template <typename Async>
-void blocking_suspend(const Async & async)
+namespace impl
 {
-    if (async.Status() == Windows::Foundation::AsyncStatus::Completed)
+    template <typename Async>
+    void blocking_suspend(const Async & async)
     {
-        return;
-    }
+        if (async.Status() == Windows::Foundation::AsyncStatus::Completed)
+        {
+            return;
+        }
 
-    lock x;
-    condition_variable cv;
-    bool completed = false;
+        lock x;
+        condition_variable cv;
+        bool completed = false;
 
-    async.Completed([&](const Async &, Windows::Foundation::AsyncStatus)
-    {
+        async.Completed([&](const Async &, Windows::Foundation::AsyncStatus)
+        {
+            const lock_guard guard(x);
+            completed = true;
+            cv.wake_one();
+        });
+
         const lock_guard guard(x);
-        completed = true;
-        cv.wake_one();
-    });
-
-    const lock_guard guard(x);
-    cv.wait_while(x, [&] { return !completed; });
-}
-
-}
-
-namespace ABI::Windows::Foundation {
-
-struct AsyncActionCompletedHandler;
-template <typename TProgress> struct AsyncActionProgressHandler;
-template <typename TProgress> struct AsyncActionWithProgressCompletedHandler;
-template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler;
-template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
-template <typename TResult> struct AsyncOperationCompletedHandler;
-
-struct IAsyncInfo;
-struct IAsyncAction;
-template <typename TProgress> struct IAsyncActionWithProgress;
-template <typename TResult> struct IAsyncOperation;
-template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
-
-struct __declspec(uuid("a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7")) __declspec(novtable) AsyncActionCompletedHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncAction * asyncInfo, winrt::Windows::Foundation::AsyncStatus asyncStatus) = 0;
-};
-
-template <typename TProgress>
-struct __declspec(novtable) impl_AsyncActionProgressHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, arg_in<TProgress> progressInfo) = 0;
-};
-
-template <typename TProgress>
-struct __declspec(novtable) impl_AsyncActionWithProgressCompletedHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, winrt::Windows::Foundation::AsyncStatus status) = 0;
-};
-
-template <typename TResult, typename TProgress>
-struct __declspec(novtable) impl_AsyncOperationProgressHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, arg_in<TProgress> progressInfo) = 0;
-};
-
-template <typename TResult, typename TProgress>
-struct __declspec(novtable) impl_AsyncOperationWithProgressCompletedHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, winrt::Windows::Foundation::AsyncStatus status) = 0;
-};
-
-template <typename TResult>
-struct __declspec(novtable) impl_AsyncOperationCompletedHandler : IUnknown
-{
-    virtual HRESULT __stdcall abi_Invoke(IAsyncOperation<TResult> * asyncInfo, winrt::Windows::Foundation::AsyncStatus status) = 0;
-};
-
-struct __declspec(uuid("00000036-0000-0000-c000-000000000046")) __declspec(novtable) IAsyncInfo : IInspectable
-{
-    virtual HRESULT __stdcall get_Id(uint32_t * id) = 0;
-    virtual HRESULT __stdcall get_Status(winrt::Windows::Foundation::AsyncStatus * status) = 0;
-    virtual HRESULT __stdcall get_ErrorCode(HRESULT * errorCode) = 0;
-    virtual HRESULT __stdcall abi_Cancel() = 0;
-    virtual HRESULT __stdcall abi_Close() = 0;
-};
-
-struct __declspec(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")) __declspec(novtable) IAsyncAction : IInspectable
-{
-    virtual HRESULT __stdcall put_Completed(AsyncActionCompletedHandler * handler) = 0;
-    virtual HRESULT __stdcall get_Completed(AsyncActionCompletedHandler ** handler) = 0;
-    virtual HRESULT __stdcall abi_GetResults() = 0;
-};
-
-template <typename TProgress>
-struct __declspec(novtable) impl_IAsyncActionWithProgress : IInspectable
-{
-    virtual HRESULT __stdcall put_Progress(AsyncActionProgressHandler<TProgress> * handler) = 0;
-    virtual HRESULT __stdcall get_Progress(AsyncActionProgressHandler<TProgress> ** handler) = 0;
-    virtual HRESULT __stdcall put_Completed(AsyncActionWithProgressCompletedHandler<TProgress> * handler) = 0;
-    virtual HRESULT __stdcall get_Completed(AsyncActionWithProgressCompletedHandler<TProgress> ** handler) = 0;
-    virtual HRESULT __stdcall abi_GetResults() = 0;
-};
-
-
-template <typename TResult>
-struct __declspec(novtable) impl_IAsyncOperation : IInspectable
-{
-    virtual HRESULT __stdcall put_Completed(AsyncOperationCompletedHandler<TResult> * handler) = 0;
-    virtual HRESULT __stdcall get_Completed(AsyncOperationCompletedHandler<TResult> ** handler) = 0;
-    virtual HRESULT __stdcall abi_GetResults(arg_out<TResult> results) = 0;
-};
-
-template <typename TResult, typename TProgress>
-struct __declspec(novtable) impl_IAsyncOperationWithProgress : IInspectable
-{
-    virtual HRESULT __stdcall put_Progress(AsyncOperationProgressHandler<TResult, TProgress> * handler) = 0;
-    virtual HRESULT __stdcall get_Progress(AsyncOperationProgressHandler<TResult, TProgress> ** handler) = 0;
-    virtual HRESULT __stdcall put_Completed(AsyncOperationWithProgressCompletedHandler<TResult, TProgress> * handler) = 0;
-    virtual HRESULT __stdcall get_Completed(AsyncOperationWithProgressCompletedHandler<TResult, TProgress> ** handler) = 0;
-    virtual HRESULT __stdcall abi_GetResults(arg_out<TResult> results) = 0;
-};
-
-template <typename TProgress> struct AsyncActionProgressHandler : impl::not_specialized<AsyncActionProgressHandler<TProgress>> {};
-template <typename TProgress> struct AsyncActionWithProgressCompletedHandler : impl::not_specialized<AsyncActionWithProgressCompletedHandler<TProgress>> {};
-template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler : impl::not_specialized<AsyncOperationProgressHandler<TResult, TProgress>> {};
-template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler : impl::not_specialized<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> {};
-template <typename TResult> struct AsyncOperationCompletedHandler : impl::not_specialized<AsyncOperationCompletedHandler<TResult>> {};
-template <typename TProgress> struct IAsyncActionWithProgress : impl::not_specialized<IAsyncActionWithProgress<TProgress>> {};
-template <typename TResult> struct IAsyncOperation : impl::not_specialized<IAsyncOperation<TResult>> {};
-template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress : impl::not_specialized<IAsyncOperationWithProgress<TResult, TProgress>> {};
-
-}
-
-namespace Windows::Foundation {
-
-struct AsyncActionCompletedHandler;
-template <typename TProgress> struct AsyncActionProgressHandler;
-template <typename TProgress> struct AsyncActionWithProgressCompletedHandler;
-template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler;
-template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
-template <typename TResult> struct AsyncOperationCompletedHandler;
-
-struct IAsyncInfo;
-struct IAsyncAction;
-template <typename TProgress> struct IAsyncActionWithProgress;
-template <typename TResult> struct IAsyncOperation;
-template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
-
-template <typename D>
-struct WINRT_EBO impl_IAsyncInfo
-{
-    uint32_t Id() const;
-    AsyncStatus Status() const;
-    HRESULT ErrorCode() const;
-    void Cancel() const;
-    void Close() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAsyncAction
-{
-    void Completed(const AsyncActionCompletedHandler & handler) const;
-    AsyncActionCompletedHandler Completed() const;
-    void GetResults() const;
-    void get() const;
-};
-
-template <typename D, typename TProgress>
-struct impl_IAsyncActionWithProgress
-{
-    void Progress(const AsyncActionProgressHandler<TProgress> & handler) const;
-    AsyncActionProgressHandler<TProgress> Progress() const;
-    void Completed(const AsyncActionWithProgressCompletedHandler<TProgress> & handler) const;
-    AsyncActionWithProgressCompletedHandler<TProgress> Completed() const;
-    void GetResults() const;
-    void get() const;
-};
-
-template <typename D, typename TResult>
-struct impl_IAsyncOperation
-{
-    void Completed(const AsyncOperationCompletedHandler<TResult> & handler) const;
-    AsyncOperationCompletedHandler<TResult> Completed() const;
-    TResult GetResults() const;
-    TResult get() const;
-};
-
-template <typename D, typename TResult, typename TProgress>
-struct impl_IAsyncOperationWithProgress
-{
-    void Progress(const AsyncOperationProgressHandler<TResult, TProgress> & handler) const;
-    AsyncOperationProgressHandler<TResult, TProgress> Progress() const;
-    void Completed(const AsyncOperationWithProgressCompletedHandler<TResult, TProgress> & handler) const;
-    AsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const;
-    TResult GetResults() const;
-    TResult get() const;
-};
-
-}
-
-namespace impl {
-
-template <> struct traits<Windows::Foundation::AsyncActionCompletedHandler>
-{
-    using abi = ABI::Windows::Foundation::AsyncActionCompletedHandler;
-};
-
-template <typename TProgress> struct traits<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
-{
-    using abi = ABI::Windows::Foundation::AsyncActionProgressHandler<abi<TProgress>>;
-};
-
-template <typename TProgress> struct traits<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
-{
-    using abi = ABI::Windows::Foundation::AsyncActionWithProgressCompletedHandler<abi<TProgress>>;
-};
-
-template <typename TResult, typename TProgress> struct traits<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
-{
-    using abi = ABI::Windows::Foundation::AsyncOperationProgressHandler<abi<TResult>, abi<TProgress>>;
-};
-
-template <typename TResult, typename TProgress> struct traits<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
-{
-    using abi = ABI::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<abi<TResult>, abi<TProgress>>;
-};
-
-template <typename TResult> struct traits<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
-{
-    using abi = ABI::Windows::Foundation::AsyncOperationCompletedHandler<abi<TResult>>;
-};
-
-template <> struct traits<Windows::Foundation::IAsyncInfo>
-{
-    using abi = ABI::Windows::Foundation::IAsyncInfo;
-    template <typename D> using consume = Windows::Foundation::impl_IAsyncInfo<D>;
-};
-
-template <> struct traits<Windows::Foundation::IAsyncAction>
-{
-    using abi = ABI::Windows::Foundation::IAsyncAction;
-    template <typename D> using consume = Windows::Foundation::impl_IAsyncAction<D>;
-};
-
-template <typename TProgress> struct traits<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
-{
-    using abi = ABI::Windows::Foundation::IAsyncActionWithProgress<abi<TProgress>>;
-    template <typename D> using consume = Windows::Foundation::impl_IAsyncActionWithProgress<D, TProgress>;
-};
-
-template <typename TResult> struct traits<Windows::Foundation::IAsyncOperation<TResult>>
-{
-    using abi = ABI::Windows::Foundation::IAsyncOperation<abi<TResult>>;
-    template <typename D> using consume = Windows::Foundation::impl_IAsyncOperation<D, TResult>;
-};
-
-template <typename TResult, typename TProgress> struct traits<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
-{
-    using abi = ABI::Windows::Foundation::IAsyncOperationWithProgress<abi<TResult>, abi<TProgress>>;
-    template <typename D> using consume = Windows::Foundation::impl_IAsyncOperationWithProgress<D, TResult, TProgress>;
-};
-
-}
-
-namespace Windows::Foundation {
-
-struct AsyncActionCompletedHandler : IUnknown
-{
-    AsyncActionCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    template <typename L> AsyncActionCompletedHandler(L handler);
-    template <typename F> AsyncActionCompletedHandler(F * handler);
-    template <typename O, typename M> AsyncActionCompletedHandler(O * object, M method);
-    void operator()(const IAsyncAction & asyncInfo, AsyncStatus asyncStatus) const;
-};
-
-template <typename TProgress>
-struct WINRT_EBO AsyncActionProgressHandler : IUnknown
-{
-    AsyncActionProgressHandler(std::nullptr_t = nullptr) noexcept {}
-    template <typename L> AsyncActionProgressHandler(L handler);
-    template <typename F> AsyncActionProgressHandler(F * handler);
-    template <typename O, typename M> AsyncActionProgressHandler(O * object, M method);
-    void operator()(const IAsyncActionWithProgress<TProgress> & sender, const TProgress & args) const;
-};
-
-template <typename TProgress>
-struct WINRT_EBO AsyncActionWithProgressCompletedHandler : IUnknown
-{
-    AsyncActionWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    template <typename L> AsyncActionWithProgressCompletedHandler(L handler);
-    template <typename F> AsyncActionWithProgressCompletedHandler(F * handler);
-    template <typename O, typename M> AsyncActionWithProgressCompletedHandler(O * object, M method);
-    void operator()(const IAsyncActionWithProgress<TProgress> & sender, const AsyncStatus args) const;
-};
-
-template <typename TResult, typename TProgress>
-struct WINRT_EBO AsyncOperationProgressHandler : IUnknown
-{
-    AsyncOperationProgressHandler(std::nullptr_t = nullptr) noexcept {}
-    template <typename L> AsyncOperationProgressHandler(L handler);
-    template <typename F> AsyncOperationProgressHandler(F * handler);
-    template <typename O, typename M> AsyncOperationProgressHandler(O * object, M method);
-    void operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const TProgress & args) const;
-};
-
-template <typename TResult, typename TProgress>
-struct WINRT_EBO AsyncOperationWithProgressCompletedHandler : IUnknown
-{
-    AsyncOperationWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    template <typename L> AsyncOperationWithProgressCompletedHandler(L handler);
-    template <typename F> AsyncOperationWithProgressCompletedHandler(F * handler);
-    template <typename O, typename M> AsyncOperationWithProgressCompletedHandler(O * object, M method);
-    void operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const AsyncStatus args) const;
-};
-
-template <typename TResult>
-struct WINRT_EBO AsyncOperationCompletedHandler : IUnknown
-{
-    AsyncOperationCompletedHandler(std::nullptr_t = nullptr) noexcept {}
-    template <typename L> AsyncOperationCompletedHandler(L handler);
-    template <typename F> AsyncOperationCompletedHandler(F * handler);
-    template <typename O, typename M> AsyncOperationCompletedHandler(O * object, M method);
-    void operator()(const IAsyncOperation<TResult> & sender, const AsyncStatus args) const;
-};
-
-struct IAsyncInfo :
-    IUnknown,
-    impl::consume<IAsyncInfo>
-{
-    IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
-};
-
-struct IAsyncAction :
-    IInspectable,
-    impl::consume<IAsyncAction>,
-    impl::require<IAsyncAction, IAsyncInfo>
-{
-    IAsyncAction(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename TProgress>
-struct WINRT_EBO IAsyncActionWithProgress :
-    IInspectable,
-    impl::consume<IAsyncActionWithProgress<TProgress>>,
-    impl::require<IAsyncActionWithProgress<TProgress>, IAsyncInfo>
-{
-    IAsyncActionWithProgress(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename TResult>
-struct WINRT_EBO IAsyncOperation :
-    IInspectable,
-    impl::consume<IAsyncOperation<TResult>>,
-    impl::require<IAsyncOperation<TResult>, IAsyncInfo>
-{
-    IAsyncOperation(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename TResult, typename TProgress>
-struct WINRT_EBO IAsyncOperationWithProgress :
-    IInspectable,
-    impl::consume<IAsyncOperationWithProgress<TResult, TProgress>>,
-    impl::require<IAsyncOperationWithProgress<TResult, TProgress>, IAsyncInfo>
-{
-    IAsyncOperationWithProgress(std::nullptr_t = nullptr) noexcept {}
-};
-
-template <typename D>
-uint32_t impl_IAsyncInfo<D>::Id() const
-{
-    uint32_t id = 0;
-    check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->get_Id(&id));
-    return id;
-}
-
-template <typename D>
-AsyncStatus impl_IAsyncInfo<D>::Status() const
-{
-    AsyncStatus status{};
-    check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->get_Status(&status));
-    return status;
-}
-
-template <typename D>
-HRESULT impl_IAsyncInfo<D>::ErrorCode() const
-{
-    HRESULT code = S_OK;
-    check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->get_ErrorCode(&code));
-    return code;
-}
-
-template <typename D>
-void impl_IAsyncInfo<D>::Cancel() const
-{
-    check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->abi_Cancel());
-}
-
-template <typename D>
-void impl_IAsyncInfo<D>::Close() const
-{
-    check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->abi_Close());
-}
-
-template <typename D>
-void impl_IAsyncAction<D>::Completed(const AsyncActionCompletedHandler & handler) const
-{
-    check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
-}
-
-template <typename D>
-AsyncActionCompletedHandler impl_IAsyncAction<D>::Completed() const
-{
-    AsyncActionCompletedHandler handler{};
-    check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->get_Completed(put_abi(handler)));
-    return handler;
-}
-
-template <typename D>
-void impl_IAsyncAction<D>::GetResults() const
-{
-    check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->abi_GetResults());
-}
-
-template <typename D>
-void impl_IAsyncAction<D>::get() const
-{
-    impl::blocking_suspend(static_cast<const IAsyncAction &>(static_cast<const D &>(*this)));
-    GetResults();
-}
-
-template <typename D, typename TProgress>
-void impl_IAsyncActionWithProgress<D, TProgress>::Progress(const AsyncActionProgressHandler<TProgress> & handler) const
-{
-    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->put_Progress(winrt::get_abi(handler)));
-}
-
-template <typename D, typename TProgress>
-AsyncActionProgressHandler<TProgress> impl_IAsyncActionWithProgress<D, TProgress>::Progress() const
-{
-    AsyncActionProgressHandler<TProgress> handler;
-    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->get_Progress(put_abi(handler)));
-    return handler;
-}
-
-template <typename D, typename TProgress>
-void impl_IAsyncActionWithProgress<D, TProgress>::Completed(const AsyncActionWithProgressCompletedHandler<TProgress> & handler) const
-{
-    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
-}
-
-template <typename D, typename TProgress>
-AsyncActionWithProgressCompletedHandler<TProgress> impl_IAsyncActionWithProgress<D, TProgress>::Completed() const
-{
-    AsyncActionWithProgressCompletedHandler<TProgress> handler;
-    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->get_Completed(put_abi(handler)));
-    return handler;
-}
-
-template <typename D, typename TProgress>
-void impl_IAsyncActionWithProgress<D, TProgress>::GetResults() const
-{
-    check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->abi_GetResults());
-}
-
-template <typename D, typename TProgress>
-void impl_IAsyncActionWithProgress<D, TProgress>::get() const
-{
-    impl::blocking_suspend(static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)));
-    GetResults();
-}
-
-template <typename D, typename TResult>
-void impl_IAsyncOperation<D, TResult>::Completed(const AsyncOperationCompletedHandler<TResult> & handler) const
-{
-    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
-}
-
-template <typename D, typename TResult>
-AsyncOperationCompletedHandler<TResult> impl_IAsyncOperation<D, TResult>::Completed() const
-{
-    AsyncOperationCompletedHandler<TResult> temp;
-    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->get_Completed(put_abi(temp)));
-    return temp;
-}
-
-template <typename D, typename TResult>
-TResult impl_IAsyncOperation<D, TResult>::GetResults() const
-{
-    TResult result = impl::empty_value<TResult>();
-    check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->abi_GetResults(put_abi(result)));
-    return result;
-}
-
-template <typename D, typename TResult>
-TResult impl_IAsyncOperation<D, TResult>::get() const
-{
-    impl::blocking_suspend(static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)));
-    return GetResults();
-}
-
-template <typename D, typename TResult, typename TProgress>
-void impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress(const AsyncOperationProgressHandler<TResult, TProgress> & handler) const
-{
-    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->put_Progress(winrt::get_abi(handler)));
-}
-
-template <typename D, typename TResult, typename TProgress>
-AsyncOperationProgressHandler<TResult, TProgress> impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress() const
-{
-    AsyncOperationProgressHandler<TResult, TProgress> handler;
-    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->get_Progress(put_abi(handler)));
-    return handler;
-}
-
-template <typename D, typename TResult, typename TProgress>
-void impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed(const AsyncOperationWithProgressCompletedHandler<TResult, TProgress> & handler) const
-{
-    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
-}
-
-template <typename D, typename TResult, typename TProgress>
-AsyncOperationWithProgressCompletedHandler<TResult, TProgress> impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed() const
-{
-    AsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
-    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->get_Completed(put_abi(handler)));
-    return handler;
-}
-
-template <typename D, typename TResult, typename TProgress>
-TResult impl_IAsyncOperationWithProgress<D, TResult, TProgress>::GetResults() const
-{
-    TResult result = impl::empty_value<TResult>();
-    check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->abi_GetResults(put_abi(result)));
-    return result;
-}
-
-template <typename D, typename TResult, typename TProgress>
-TResult impl_IAsyncOperationWithProgress<D, TResult, TProgress>::get() const
-{
-    impl::blocking_suspend(static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)));
-    return GetResults();
-}
-
-}
-
-namespace impl {
-
-template <typename H> struct async_action_completed_handler : implements<async_action_completed_handler<H>, abi<Windows::Foundation::AsyncActionCompletedHandler>>, H
-{
-    async_action_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncAction> asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept override
-    {
-        try
-        {
-            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncAction *>(&asyncInfo), asyncStatus);
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        cv.wait_while(x, [&] { return !completed; });
     }
-};
+}
 
-template <typename TProgress, typename H>
-struct async_action_progress_handler : implements<async_action_progress_handler<TProgress, H>, abi<Windows::Foundation::AsyncActionProgressHandler<TProgress>>>, H
+namespace ABI::Windows::Foundation
 {
-    async_action_progress_handler(H && handler) : H(std::forward<H>(handler)) {}
+    struct AsyncActionCompletedHandler;
+    template <typename TProgress> struct AsyncActionProgressHandler;
+    template <typename TProgress> struct AsyncActionWithProgressCompletedHandler;
+    template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler;
+    template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
+    template <typename TResult> struct AsyncOperationCompletedHandler;
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncActionWithProgress<TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
+    struct IAsyncInfo;
+    struct IAsyncAction;
+    template <typename TProgress> struct IAsyncActionWithProgress;
+    template <typename TResult> struct IAsyncOperation;
+    template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
+
+    struct __declspec(uuid("a4ed5c81-76c9-40bd-8be6-b1d90fb20ae7")) __declspec(novtable) AsyncActionCompletedHandler : IUnknown
     {
-        try
-        {
-            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncActionWithProgress<TProgress> *>(&sender), *reinterpret_cast<const TProgress *>(&args));
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
+        virtual HRESULT __stdcall abi_Invoke(IAsyncAction * asyncInfo, winrt::Windows::Foundation::AsyncStatus asyncStatus) = 0;
+    };
 
-template <typename TProgress, typename H>
-struct async_action_with_progress_completed_handler : implements<async_action_with_progress_completed_handler<TProgress, H>, abi<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>>, H
-{
-    async_action_with_progress_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncActionWithProgress<TProgress>> sender, Windows::Foundation::AsyncStatus args) noexcept override
+    template <typename TProgress>
+    struct __declspec(novtable) impl_AsyncActionProgressHandler : IUnknown
     {
-        try
-        {
-            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncActionWithProgress<TProgress> *>(&sender), args);
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
+        virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, arg_in<TProgress> progressInfo) = 0;
+    };
 
-template <typename TResult, typename TProgress, typename H>
-struct async_operation_progress_handler : implements<async_operation_progress_handler<TResult, TProgress, H>, abi<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>>, H
-{
-    async_operation_progress_handler(H && handler) : H(std::forward<H>(handler)) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
+    template <typename TProgress>
+    struct __declspec(novtable) impl_AsyncActionWithProgressCompletedHandler : IUnknown
     {
-        try
-        {
-            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> *>(&sender), *reinterpret_cast<const TProgress *>(&args));
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
+        virtual HRESULT __stdcall abi_Invoke(IAsyncActionWithProgress<TProgress> * asyncInfo, winrt::Windows::Foundation::AsyncStatus status) = 0;
+    };
 
-template <typename TResult, typename TProgress, typename H>
-struct async_operation_with_progress_completed_handler : implements<async_operation_with_progress_completed_handler<TResult, TProgress, H>, abi<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>>, H
-{
-    async_operation_with_progress_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> sender, Windows::Foundation::AsyncStatus args) noexcept override
+    template <typename TResult, typename TProgress>
+    struct __declspec(novtable) impl_AsyncOperationProgressHandler : IUnknown
     {
-        try
-        {
-            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> *>(&sender), args);
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
+        virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, arg_in<TProgress> progressInfo) = 0;
+    };
 
-template <typename TResult, typename H>
-struct async_operation_completed_handler : implements<async_operation_completed_handler<TResult, H>, abi<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>>, H
-{
-    async_operation_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
-
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncOperation<TResult>> sender, Windows::Foundation::AsyncStatus args) noexcept override
+    template <typename TResult, typename TProgress>
+    struct __declspec(novtable) impl_AsyncOperationWithProgressCompletedHandler : IUnknown
     {
-        try
-        {
-            (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncOperation<TResult> *>(&sender), args);
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-};
+        virtual HRESULT __stdcall abi_Invoke(IAsyncOperationWithProgress<TResult, TProgress> * asyncInfo, winrt::Windows::Foundation::AsyncStatus status) = 0;
+    };
 
-}
-
-namespace Windows::Foundation {
-
-template <typename L> AsyncActionCompletedHandler::AsyncActionCompletedHandler(L handler) :
-    AsyncActionCompletedHandler(impl::make_delegate<impl::async_action_completed_handler<L>, AsyncActionCompletedHandler>(std::forward<L>(handler)))
-{}
-
-template <typename F> AsyncActionCompletedHandler::AsyncActionCompletedHandler(F * handler) :
-    AsyncActionCompletedHandler([=](auto && ... args) { handler(args ...); })
-{}
-
-template <typename O, typename M> AsyncActionCompletedHandler::AsyncActionCompletedHandler(O * object, M method) :
-    AsyncActionCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
-{}
-
-inline void AsyncActionCompletedHandler::operator()(const IAsyncAction & asyncInfo, const AsyncStatus asyncStatus) const
-{
-    check_hresult((*(abi<AsyncActionCompletedHandler> **)this)->abi_Invoke(get_abi(asyncInfo), asyncStatus));
-}
-
-template <typename TProgress> template <typename L> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(L handler) :
-    AsyncActionProgressHandler(impl::make_delegate<impl::async_action_progress_handler<TProgress, L>, AsyncActionProgressHandler>(std::forward<L>(handler)))
-{}
-
-template <typename TProgress> template <typename F> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(F * handler) :
-    AsyncActionProgressHandler([=](auto && ... args) { handler(args ...); })
-{}
-
-template <typename TProgress> template <typename O, typename M> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(O * object, M method) :
-    AsyncActionProgressHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
-{}
-
-template <typename TProgress> void AsyncActionProgressHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const TProgress & args) const
-{
-    check_hresult((*(abi<AsyncActionProgressHandler<TProgress>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
-}
-
-template <typename TProgress> template <typename L> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(L handler) :
-    AsyncActionWithProgressCompletedHandler(impl::make_delegate<impl::async_action_with_progress_completed_handler<TProgress, L>, AsyncActionWithProgressCompletedHandler<TProgress>>(std::forward<L>(handler)))
-{}
-
-template <typename TProgress> template <typename F> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(F * handler) :
-    AsyncActionWithProgressCompletedHandler([=](auto && ... args) { handler(args ...); })
-{}
-
-template <typename TProgress> template <typename O, typename M> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(O * object, M method) :
-    AsyncActionWithProgressCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
-{}
-
-template <typename TProgress> void AsyncActionWithProgressCompletedHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const AsyncStatus args) const
-{
-    check_hresult((*(abi<AsyncActionWithProgressCompletedHandler<TProgress>> **)this)->abi_Invoke(get_abi(sender), args));
-}
-
-template <typename TResult, typename TProgress> template <typename L> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(L handler) :
-    AsyncOperationProgressHandler(impl::make_delegate<impl::async_operation_progress_handler<TResult, TProgress, L>, AsyncOperationProgressHandler<TResult, TProgress>>(std::forward<L>(handler)))
-{}
-
-template <typename TResult, typename TProgress> template <typename F> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(F * handler) :
-    AsyncOperationProgressHandler([=](auto && ... args) { handler(args ...); })
-{}
-
-template <typename TResult, typename TProgress> template <typename O, typename M> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(O * object, M method) :
-    AsyncOperationProgressHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
-{}
-
-template <typename TResult, typename TProgress> void AsyncOperationProgressHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const TProgress & args) const
-{
-    check_hresult((*(abi<AsyncOperationProgressHandler<TResult, TProgress>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
-}
-
-template <typename TResult, typename TProgress> template <typename L> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(L handler) :
-    AsyncOperationWithProgressCompletedHandler(impl::make_delegate<impl::async_operation_with_progress_completed_handler<TResult, TProgress, L>, AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>(std::forward<L>(handler)))
-{}
-
-template <typename TResult, typename TProgress> template <typename F> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(F * handler) :
-    AsyncOperationWithProgressCompletedHandler([=](auto && ... args) { handler(args ...); })
-{}
-
-template <typename TResult, typename TProgress> template <typename O, typename M> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(O * object, M method) :
-    AsyncOperationWithProgressCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
-{}
-
-template <typename TResult, typename TProgress> void AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const AsyncStatus args) const
-{
-    check_hresult((*(abi<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> **)this)->abi_Invoke(get_abi(sender), args));
-}
-
-template <typename TResult> template <typename L> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(L handler) :
-    AsyncOperationCompletedHandler(impl::make_delegate<impl::async_operation_completed_handler<TResult, L>, AsyncOperationCompletedHandler<TResult>>(std::forward<L>(handler)))
-{}
-
-template <typename TResult> template <typename F> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(F * handler) :
-    AsyncOperationCompletedHandler([=](auto && ... args) { handler(args ...); })
-{}
-
-template <typename TResult> template <typename O, typename M> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(O * object, M method) :
-    AsyncOperationCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
-{}
-
-template <typename TResult> void AsyncOperationCompletedHandler<TResult>::operator()(const IAsyncOperation<TResult> & sender, const AsyncStatus args) const
-{
-    check_hresult((*(abi<AsyncOperationCompletedHandler<TResult>> **)this)->abi_Invoke(get_abi(sender), args));
-}
-
-}
-
-namespace impl {
-
-template <typename D>
-struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::Foundation::IAsyncAction>
-{
-    HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncActionCompletedHandler> handler) noexcept final
+    template <typename TResult>
+    struct __declspec(novtable) impl_AsyncOperationCompletedHandler : IUnknown
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionCompletedHandler *>(&handler));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        virtual HRESULT __stdcall abi_Invoke(IAsyncOperation<TResult> * asyncInfo, winrt::Windows::Foundation::AsyncStatus status) = 0;
+    };
+
+    struct __declspec(uuid("00000036-0000-0000-c000-000000000046")) __declspec(novtable) IAsyncInfo : IInspectable
+    {
+        virtual HRESULT __stdcall get_Id(uint32_t * id) = 0;
+        virtual HRESULT __stdcall get_Status(winrt::Windows::Foundation::AsyncStatus * status) = 0;
+        virtual HRESULT __stdcall get_ErrorCode(HRESULT * errorCode) = 0;
+        virtual HRESULT __stdcall abi_Cancel() = 0;
+        virtual HRESULT __stdcall abi_Close() = 0;
+    };
+
+    struct __declspec(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")) __declspec(novtable) IAsyncAction : IInspectable
+    {
+        virtual HRESULT __stdcall put_Completed(AsyncActionCompletedHandler * handler) = 0;
+        virtual HRESULT __stdcall get_Completed(AsyncActionCompletedHandler ** handler) = 0;
+        virtual HRESULT __stdcall abi_GetResults() = 0;
+    };
+
+    template <typename TProgress>
+    struct __declspec(novtable) impl_IAsyncActionWithProgress : IInspectable
+    {
+        virtual HRESULT __stdcall put_Progress(AsyncActionProgressHandler<TProgress> * handler) = 0;
+        virtual HRESULT __stdcall get_Progress(AsyncActionProgressHandler<TProgress> ** handler) = 0;
+        virtual HRESULT __stdcall put_Completed(AsyncActionWithProgressCompletedHandler<TProgress> * handler) = 0;
+        virtual HRESULT __stdcall get_Completed(AsyncActionWithProgressCompletedHandler<TProgress> ** handler) = 0;
+        virtual HRESULT __stdcall abi_GetResults() = 0;
+    };
+
+
+    template <typename TResult>
+    struct __declspec(novtable) impl_IAsyncOperation : IInspectable
+    {
+        virtual HRESULT __stdcall put_Completed(AsyncOperationCompletedHandler<TResult> * handler) = 0;
+        virtual HRESULT __stdcall get_Completed(AsyncOperationCompletedHandler<TResult> ** handler) = 0;
+        virtual HRESULT __stdcall abi_GetResults(arg_out<TResult> results) = 0;
+    };
+
+    template <typename TResult, typename TProgress>
+    struct __declspec(novtable) impl_IAsyncOperationWithProgress : IInspectable
+    {
+        virtual HRESULT __stdcall put_Progress(AsyncOperationProgressHandler<TResult, TProgress> * handler) = 0;
+        virtual HRESULT __stdcall get_Progress(AsyncOperationProgressHandler<TResult, TProgress> ** handler) = 0;
+        virtual HRESULT __stdcall put_Completed(AsyncOperationWithProgressCompletedHandler<TResult, TProgress> * handler) = 0;
+        virtual HRESULT __stdcall get_Completed(AsyncOperationWithProgressCompletedHandler<TResult, TProgress> ** handler) = 0;
+        virtual HRESULT __stdcall abi_GetResults(arg_out<TResult> results) = 0;
+    };
+
+    template <typename TProgress> struct AsyncActionProgressHandler : impl::not_specialized<AsyncActionProgressHandler<TProgress>> {};
+    template <typename TProgress> struct AsyncActionWithProgressCompletedHandler : impl::not_specialized<AsyncActionWithProgressCompletedHandler<TProgress>> {};
+    template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler : impl::not_specialized<AsyncOperationProgressHandler<TResult, TProgress>> {};
+    template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler : impl::not_specialized<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> {};
+    template <typename TResult> struct AsyncOperationCompletedHandler : impl::not_specialized<AsyncOperationCompletedHandler<TResult>> {};
+    template <typename TProgress> struct IAsyncActionWithProgress : impl::not_specialized<IAsyncActionWithProgress<TProgress>> {};
+    template <typename TResult> struct IAsyncOperation : impl::not_specialized<IAsyncOperation<TResult>> {};
+    template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress : impl::not_specialized<IAsyncOperationWithProgress<TResult, TProgress>> {};
+}
+
+namespace Windows::Foundation
+{
+    struct AsyncActionCompletedHandler;
+    template <typename TProgress> struct AsyncActionProgressHandler;
+    template <typename TProgress> struct AsyncActionWithProgressCompletedHandler;
+    template <typename TResult, typename TProgress> struct AsyncOperationProgressHandler;
+    template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
+    template <typename TResult> struct AsyncOperationCompletedHandler;
+
+    struct IAsyncInfo;
+    struct IAsyncAction;
+    template <typename TProgress> struct IAsyncActionWithProgress;
+    template <typename TResult> struct IAsyncOperation;
+    template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
+
+    template <typename D>
+    struct WINRT_EBO impl_IAsyncInfo
+    {
+        uint32_t Id() const;
+        AsyncStatus Status() const;
+        HRESULT ErrorCode() const;
+        void Cancel() const;
+        void Close() const;
+    };
+
+    template <typename D>
+    struct WINRT_EBO impl_IAsyncAction
+    {
+        void Completed(const AsyncActionCompletedHandler & handler) const;
+        AsyncActionCompletedHandler Completed() const;
+        void GetResults() const;
+        void get() const;
+    };
+
+    template <typename D, typename TProgress>
+    struct impl_IAsyncActionWithProgress
+    {
+        void Progress(const AsyncActionProgressHandler<TProgress> & handler) const;
+        AsyncActionProgressHandler<TProgress> Progress() const;
+        void Completed(const AsyncActionWithProgressCompletedHandler<TProgress> & handler) const;
+        AsyncActionWithProgressCompletedHandler<TProgress> Completed() const;
+        void GetResults() const;
+        void get() const;
+    };
+
+    template <typename D, typename TResult>
+    struct impl_IAsyncOperation
+    {
+        void Completed(const AsyncOperationCompletedHandler<TResult> & handler) const;
+        AsyncOperationCompletedHandler<TResult> Completed() const;
+        TResult GetResults() const;
+        TResult get() const;
+    };
+
+    template <typename D, typename TResult, typename TProgress>
+    struct impl_IAsyncOperationWithProgress
+    {
+        void Progress(const AsyncOperationProgressHandler<TResult, TProgress> & handler) const;
+        AsyncOperationProgressHandler<TResult, TProgress> Progress() const;
+        void Completed(const AsyncOperationWithProgressCompletedHandler<TResult, TProgress> & handler) const;
+        AsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const;
+        TResult GetResults() const;
+        TResult get() const;
+    };
+}
+
+namespace impl
+{
+    template <> struct traits<Windows::Foundation::AsyncActionCompletedHandler>
+    {
+        using abi = ABI::Windows::Foundation::AsyncActionCompletedHandler;
+    };
+
+    template <typename TProgress> struct traits<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
+    {
+        using abi = ABI::Windows::Foundation::AsyncActionProgressHandler<abi<TProgress>>;
+    };
+
+    template <typename TProgress> struct traits<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+    {
+        using abi = ABI::Windows::Foundation::AsyncActionWithProgressCompletedHandler<abi<TProgress>>;
+    };
+
+    template <typename TResult, typename TProgress> struct traits<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
+    {
+        using abi = ABI::Windows::Foundation::AsyncOperationProgressHandler<abi<TResult>, abi<TProgress>>;
+    };
+
+    template <typename TResult, typename TProgress> struct traits<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+    {
+        using abi = ABI::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<abi<TResult>, abi<TProgress>>;
+    };
+
+    template <typename TResult> struct traits<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
+    {
+        using abi = ABI::Windows::Foundation::AsyncOperationCompletedHandler<abi<TResult>>;
+    };
+
+    template <> struct traits<Windows::Foundation::IAsyncInfo>
+    {
+        using abi = ABI::Windows::Foundation::IAsyncInfo;
+        template <typename D> using consume = Windows::Foundation::impl_IAsyncInfo<D>;
+    };
+
+    template <> struct traits<Windows::Foundation::IAsyncAction>
+    {
+        using abi = ABI::Windows::Foundation::IAsyncAction;
+        template <typename D> using consume = Windows::Foundation::impl_IAsyncAction<D>;
+    };
+
+    template <typename TProgress> struct traits<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
+    {
+        using abi = ABI::Windows::Foundation::IAsyncActionWithProgress<abi<TProgress>>;
+        template <typename D> using consume = Windows::Foundation::impl_IAsyncActionWithProgress<D, TProgress>;
+    };
+
+    template <typename TResult> struct traits<Windows::Foundation::IAsyncOperation<TResult>>
+    {
+        using abi = ABI::Windows::Foundation::IAsyncOperation<abi<TResult>>;
+        template <typename D> using consume = Windows::Foundation::impl_IAsyncOperation<D, TResult>;
+    };
+
+    template <typename TResult, typename TProgress> struct traits<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
+    {
+        using abi = ABI::Windows::Foundation::IAsyncOperationWithProgress<abi<TResult>, abi<TProgress>>;
+        template <typename D> using consume = Windows::Foundation::impl_IAsyncOperationWithProgress<D, TResult, TProgress>;
+    };
+}
+
+namespace Windows::Foundation
+{
+    struct AsyncActionCompletedHandler : IUnknown
+    {
+        AsyncActionCompletedHandler(std::nullptr_t = nullptr) noexcept {}
+        template <typename L> AsyncActionCompletedHandler(L handler);
+        template <typename F> AsyncActionCompletedHandler(F * handler);
+        template <typename O, typename M> AsyncActionCompletedHandler(O * object, M method);
+        void operator()(const IAsyncAction & asyncInfo, AsyncStatus asyncStatus) const;
+    };
+
+    template <typename TProgress>
+    struct WINRT_EBO AsyncActionProgressHandler : IUnknown
+    {
+        AsyncActionProgressHandler(std::nullptr_t = nullptr) noexcept {}
+        template <typename L> AsyncActionProgressHandler(L handler);
+        template <typename F> AsyncActionProgressHandler(F * handler);
+        template <typename O, typename M> AsyncActionProgressHandler(O * object, M method);
+        void operator()(const IAsyncActionWithProgress<TProgress> & sender, const TProgress & args) const;
+    };
+
+    template <typename TProgress>
+    struct WINRT_EBO AsyncActionWithProgressCompletedHandler : IUnknown
+    {
+        AsyncActionWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
+        template <typename L> AsyncActionWithProgressCompletedHandler(L handler);
+        template <typename F> AsyncActionWithProgressCompletedHandler(F * handler);
+        template <typename O, typename M> AsyncActionWithProgressCompletedHandler(O * object, M method);
+        void operator()(const IAsyncActionWithProgress<TProgress> & sender, const AsyncStatus args) const;
+    };
+
+    template <typename TResult, typename TProgress>
+    struct WINRT_EBO AsyncOperationProgressHandler : IUnknown
+    {
+        AsyncOperationProgressHandler(std::nullptr_t = nullptr) noexcept {}
+        template <typename L> AsyncOperationProgressHandler(L handler);
+        template <typename F> AsyncOperationProgressHandler(F * handler);
+        template <typename O, typename M> AsyncOperationProgressHandler(O * object, M method);
+        void operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const TProgress & args) const;
+    };
+
+    template <typename TResult, typename TProgress>
+    struct WINRT_EBO AsyncOperationWithProgressCompletedHandler : IUnknown
+    {
+        AsyncOperationWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
+        template <typename L> AsyncOperationWithProgressCompletedHandler(L handler);
+        template <typename F> AsyncOperationWithProgressCompletedHandler(F * handler);
+        template <typename O, typename M> AsyncOperationWithProgressCompletedHandler(O * object, M method);
+        void operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const AsyncStatus args) const;
+    };
+
+    template <typename TResult>
+    struct WINRT_EBO AsyncOperationCompletedHandler : IUnknown
+    {
+        AsyncOperationCompletedHandler(std::nullptr_t = nullptr) noexcept {}
+        template <typename L> AsyncOperationCompletedHandler(L handler);
+        template <typename F> AsyncOperationCompletedHandler(F * handler);
+        template <typename O, typename M> AsyncOperationCompletedHandler(O * object, M method);
+        void operator()(const IAsyncOperation<TResult> & sender, const AsyncStatus args) const;
+    };
+
+    struct IAsyncInfo :
+        IUnknown,
+        impl::consume<IAsyncInfo>
+    {
+        IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    struct IAsyncAction :
+        IInspectable,
+        impl::consume<IAsyncAction>,
+        impl::require<IAsyncAction, IAsyncInfo>
+    {
+        IAsyncAction(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename TProgress>
+    struct WINRT_EBO IAsyncActionWithProgress :
+        IInspectable,
+        impl::consume<IAsyncActionWithProgress<TProgress>>,
+        impl::require<IAsyncActionWithProgress<TProgress>, IAsyncInfo>
+    {
+        IAsyncActionWithProgress(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename TResult>
+    struct WINRT_EBO IAsyncOperation :
+        IInspectable,
+        impl::consume<IAsyncOperation<TResult>>,
+        impl::require<IAsyncOperation<TResult>, IAsyncInfo>
+    {
+        IAsyncOperation(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename TResult, typename TProgress>
+    struct WINRT_EBO IAsyncOperationWithProgress :
+        IInspectable,
+        impl::consume<IAsyncOperationWithProgress<TResult, TProgress>>,
+        impl::require<IAsyncOperationWithProgress<TResult, TProgress>, IAsyncInfo>
+    {
+        IAsyncOperationWithProgress(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <typename D>
+    uint32_t impl_IAsyncInfo<D>::Id() const
+    {
+        uint32_t id = 0;
+        check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->get_Id(&id));
+        return id;
     }
 
-    HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncActionCompletedHandler> handler) noexcept final
+    template <typename D>
+    AsyncStatus impl_IAsyncInfo<D>::Status() const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *handler = detach_abi(this->shim().Completed());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *handler = nullptr;
-            return to_hresult();
-        }
+        AsyncStatus status{};
+        check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->get_Status(&status));
+        return status;
     }
 
-    HRESULT __stdcall abi_GetResults() noexcept final
+    template <typename D>
+    HRESULT impl_IAsyncInfo<D>::ErrorCode() const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetResults();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        HRESULT code = S_OK;
+        check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->get_ErrorCode(&code));
+        return code;
     }
-};
 
-template <typename D>
-struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Foundation::IAsyncInfo>
+    template <typename D>
+    void impl_IAsyncInfo<D>::Cancel() const
+    {
+        check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->abi_Cancel());
+    }
+
+    template <typename D>
+    void impl_IAsyncInfo<D>::Close() const
+    {
+        check_hresult((*(abi<IAsyncInfo> **)&static_cast<const IAsyncInfo &>(static_cast<const D &>(*this)))->abi_Close());
+    }
+
+    template <typename D>
+    void impl_IAsyncAction<D>::Completed(const AsyncActionCompletedHandler & handler) const
+    {
+        check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
+    }
+
+    template <typename D>
+    AsyncActionCompletedHandler impl_IAsyncAction<D>::Completed() const
+    {
+        AsyncActionCompletedHandler handler{};
+        check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->get_Completed(put_abi(handler)));
+        return handler;
+    }
+
+    template <typename D>
+    void impl_IAsyncAction<D>::GetResults() const
+    {
+        check_hresult((*(abi<IAsyncAction> **)&static_cast<const IAsyncAction &>(static_cast<const D &>(*this)))->abi_GetResults());
+    }
+
+    template <typename D>
+    void impl_IAsyncAction<D>::get() const
+    {
+        impl::blocking_suspend(static_cast<const IAsyncAction &>(static_cast<const D &>(*this)));
+        GetResults();
+    }
+
+    template <typename D, typename TProgress>
+    void impl_IAsyncActionWithProgress<D, TProgress>::Progress(const AsyncActionProgressHandler<TProgress> & handler) const
+    {
+        check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->put_Progress(winrt::get_abi(handler)));
+    }
+
+    template <typename D, typename TProgress>
+    AsyncActionProgressHandler<TProgress> impl_IAsyncActionWithProgress<D, TProgress>::Progress() const
+    {
+        AsyncActionProgressHandler<TProgress> handler;
+        check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->get_Progress(put_abi(handler)));
+        return handler;
+    }
+
+    template <typename D, typename TProgress>
+    void impl_IAsyncActionWithProgress<D, TProgress>::Completed(const AsyncActionWithProgressCompletedHandler<TProgress> & handler) const
+    {
+        check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
+    }
+
+    template <typename D, typename TProgress>
+    AsyncActionWithProgressCompletedHandler<TProgress> impl_IAsyncActionWithProgress<D, TProgress>::Completed() const
+    {
+        AsyncActionWithProgressCompletedHandler<TProgress> handler;
+        check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->get_Completed(put_abi(handler)));
+        return handler;
+    }
+
+    template <typename D, typename TProgress>
+    void impl_IAsyncActionWithProgress<D, TProgress>::GetResults() const
+    {
+        check_hresult((*(abi<IAsyncActionWithProgress<TProgress>> **)&static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)))->abi_GetResults());
+    }
+
+    template <typename D, typename TProgress>
+    void impl_IAsyncActionWithProgress<D, TProgress>::get() const
+    {
+        impl::blocking_suspend(static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)));
+        GetResults();
+    }
+
+    template <typename D, typename TResult>
+    void impl_IAsyncOperation<D, TResult>::Completed(const AsyncOperationCompletedHandler<TResult> & handler) const
+    {
+        check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
+    }
+
+    template <typename D, typename TResult>
+    AsyncOperationCompletedHandler<TResult> impl_IAsyncOperation<D, TResult>::Completed() const
+    {
+        AsyncOperationCompletedHandler<TResult> temp;
+        check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->get_Completed(put_abi(temp)));
+        return temp;
+    }
+
+    template <typename D, typename TResult>
+    TResult impl_IAsyncOperation<D, TResult>::GetResults() const
+    {
+        TResult result = impl::empty_value<TResult>();
+        check_hresult((*(abi<IAsyncOperation<TResult>> **)&static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)))->abi_GetResults(put_abi(result)));
+        return result;
+    }
+
+    template <typename D, typename TResult>
+    TResult impl_IAsyncOperation<D, TResult>::get() const
+    {
+        impl::blocking_suspend(static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)));
+        return GetResults();
+    }
+
+    template <typename D, typename TResult, typename TProgress>
+    void impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress(const AsyncOperationProgressHandler<TResult, TProgress> & handler) const
+    {
+        check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->put_Progress(winrt::get_abi(handler)));
+    }
+
+    template <typename D, typename TResult, typename TProgress>
+    AsyncOperationProgressHandler<TResult, TProgress> impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress() const
+    {
+        AsyncOperationProgressHandler<TResult, TProgress> handler;
+        check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->get_Progress(put_abi(handler)));
+        return handler;
+    }
+
+    template <typename D, typename TResult, typename TProgress>
+    void impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed(const AsyncOperationWithProgressCompletedHandler<TResult, TProgress> & handler) const
+    {
+        check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->put_Completed(winrt::get_abi(handler)));
+    }
+
+    template <typename D, typename TResult, typename TProgress>
+    AsyncOperationWithProgressCompletedHandler<TResult, TProgress> impl_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed() const
+    {
+        AsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
+        check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->get_Completed(put_abi(handler)));
+        return handler;
+    }
+
+    template <typename D, typename TResult, typename TProgress>
+    TResult impl_IAsyncOperationWithProgress<D, TResult, TProgress>::GetResults() const
+    {
+        TResult result = impl::empty_value<TResult>();
+        check_hresult((*(abi<IAsyncOperationWithProgress<TResult, TProgress>> **)&static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)))->abi_GetResults(put_abi(result)));
+        return result;
+    }
+
+    template <typename D, typename TResult, typename TProgress>
+    TResult impl_IAsyncOperationWithProgress<D, TResult, TProgress>::get() const
+    {
+        impl::blocking_suspend(static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)));
+        return GetResults();
+    }
+}
+
+namespace impl
 {
-    HRESULT __stdcall get_Id(uint32_t * id) noexcept final
+    template <typename H> struct async_action_completed_handler : implements<async_action_completed_handler<H>, abi<Windows::Foundation::AsyncActionCompletedHandler>>, H
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *id = this->shim().Id();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
+        async_action_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall get_Status(winrt::Windows::Foundation::AsyncStatus * status) noexcept final
+        HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncAction> asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept override
+        {
+            try
+            {
+                (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncAction *>(&asyncInfo), asyncStatus);
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+    };
+
+    template <typename TProgress, typename H>
+    struct async_action_progress_handler : implements<async_action_progress_handler<TProgress, H>, abi<Windows::Foundation::AsyncActionProgressHandler<TProgress>>>, H
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *status = this->shim().Status();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
+        async_action_progress_handler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall get_ErrorCode(HRESULT * errorCode) noexcept final
+        HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncActionWithProgress<TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
+        {
+            try
+            {
+                (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncActionWithProgress<TProgress> *>(&sender), *reinterpret_cast<const TProgress *>(&args));
+                return S_OK;
+            }
+            catch (...) { return impl::to_hresult(); }
+        }
+    };
+
+    template <typename TProgress, typename H>
+    struct async_action_with_progress_completed_handler : implements<async_action_with_progress_completed_handler<TProgress, H>, abi<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>>, H
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *errorCode = this->shim().ErrorCode();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
+        async_action_with_progress_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Cancel() noexcept final
+        HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncActionWithProgress<TProgress>> sender, Windows::Foundation::AsyncStatus args) noexcept override
+        {
+            try
+            {
+                (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncActionWithProgress<TProgress> *>(&sender), args);
+                return S_OK;
+            }
+            catch (...) { return impl::to_hresult(); }
+        }
+    };
+
+    template <typename TResult, typename TProgress, typename H>
+    struct async_operation_progress_handler : implements<async_operation_progress_handler<TResult, TProgress, H>, abi<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>>, H
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Cancel();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
+        async_operation_progress_handler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Close() noexcept final
+        HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> sender, abi_arg_in<TProgress> args) noexcept override
+        {
+            try
+            {
+                (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> *>(&sender), *reinterpret_cast<const TProgress *>(&args));
+                return S_OK;
+            }
+            catch (...) { return impl::to_hresult(); }
+        }
+    };
+
+    template <typename TResult, typename TProgress, typename H>
+    struct async_operation_with_progress_completed_handler : implements<async_operation_with_progress_completed_handler<TResult, TProgress, H>, abi<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>>, H
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Close();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-};
+        async_operation_with_progress_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
 
-template <typename D, typename TProgress>
-struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : produce_base<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>>
+        HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> sender, Windows::Foundation::AsyncStatus args) noexcept override
+        {
+            try
+            {
+                (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> *>(&sender), args);
+                return S_OK;
+            }
+            catch (...) { return impl::to_hresult(); }
+        }
+    };
+
+    template <typename TResult, typename H>
+    struct async_operation_completed_handler : implements<async_operation_completed_handler<TResult, H>, abi<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>>, H
+    {
+        async_operation_completed_handler(H && handler) : H(std::forward<H>(handler)) {}
+
+        HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::Foundation::IAsyncOperation<TResult>> sender, Windows::Foundation::AsyncStatus args) noexcept override
+        {
+            try
+            {
+                (*this)(*reinterpret_cast<const Windows::Foundation::IAsyncOperation<TResult> *>(&sender), args);
+                return S_OK;
+            }
+            catch (...) { return impl::to_hresult(); }
+        }
+    };
+}
+
+namespace Windows::Foundation
 {
-    HRESULT __stdcall put_Progress(abi_arg_in<Windows::Foundation::AsyncActionProgressHandler<TProgress>> handler) noexcept final
+    template <typename L> AsyncActionCompletedHandler::AsyncActionCompletedHandler(L handler) :
+        AsyncActionCompletedHandler(impl::make_delegate<impl::async_action_completed_handler<L>, AsyncActionCompletedHandler>(std::forward<L>(handler)))
+    {}
+
+    template <typename F> AsyncActionCompletedHandler::AsyncActionCompletedHandler(F * handler) :
+        AsyncActionCompletedHandler([=](auto && ... args) { handler(args ...); })
+    {}
+
+    template <typename O, typename M> AsyncActionCompletedHandler::AsyncActionCompletedHandler(O * object, M method) :
+        AsyncActionCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+    {}
+
+    inline void AsyncActionCompletedHandler::operator()(const IAsyncAction & asyncInfo, const AsyncStatus asyncStatus) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncActionProgressHandler<TProgress> *>(&handler));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        check_hresult((*(abi<AsyncActionCompletedHandler> **)this)->abi_Invoke(get_abi(asyncInfo), asyncStatus));
     }
 
-    HRESULT __stdcall get_Progress(abi_arg_out<Windows::Foundation::AsyncActionProgressHandler<TProgress>> handler) noexcept final
+    template <typename TProgress> template <typename L> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(L handler) :
+        AsyncActionProgressHandler(impl::make_delegate<impl::async_action_progress_handler<TProgress, L>, AsyncActionProgressHandler>(std::forward<L>(handler)))
+    {}
+
+    template <typename TProgress> template <typename F> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(F * handler) :
+        AsyncActionProgressHandler([=](auto && ... args) { handler(args ...); })
+    {}
+
+    template <typename TProgress> template <typename O, typename M> AsyncActionProgressHandler<TProgress>::AsyncActionProgressHandler(O * object, M method) :
+        AsyncActionProgressHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+    {}
+
+    template <typename TProgress> void AsyncActionProgressHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const TProgress & args) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *handler = detach_abi(this->shim().Progress());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *handler = nullptr;
-            return to_hresult();
-        }
+        check_hresult((*(abi<AsyncActionProgressHandler<TProgress>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
     }
 
-    HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>> handler) noexcept final
+    template <typename TProgress> template <typename L> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(L handler) :
+        AsyncActionWithProgressCompletedHandler(impl::make_delegate<impl::async_action_with_progress_completed_handler<TProgress, L>, AsyncActionWithProgressCompletedHandler<TProgress>>(std::forward<L>(handler)))
+    {}
+
+    template <typename TProgress> template <typename F> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(F * handler) :
+        AsyncActionWithProgressCompletedHandler([=](auto && ... args) { handler(args ...); })
+    {}
+
+    template <typename TProgress> template <typename O, typename M> AsyncActionWithProgressCompletedHandler<TProgress>::AsyncActionWithProgressCompletedHandler(O * object, M method) :
+        AsyncActionWithProgressCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+    {}
+
+    template <typename TProgress> void AsyncActionWithProgressCompletedHandler<TProgress>::operator()(const IAsyncActionWithProgress<TProgress> & sender, const AsyncStatus args) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> *>(&handler));
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
+        check_hresult((*(abi<AsyncActionWithProgressCompletedHandler<TProgress>> **)this)->abi_Invoke(get_abi(sender), args));
     }
 
-    HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>> handler) noexcept final
+    template <typename TResult, typename TProgress> template <typename L> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(L handler) :
+        AsyncOperationProgressHandler(impl::make_delegate<impl::async_operation_progress_handler<TResult, TProgress, L>, AsyncOperationProgressHandler<TResult, TProgress>>(std::forward<L>(handler)))
+    {}
+
+    template <typename TResult, typename TProgress> template <typename F> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(F * handler) :
+        AsyncOperationProgressHandler([=](auto && ... args) { handler(args ...); })
+    {}
+
+    template <typename TResult, typename TProgress> template <typename O, typename M> AsyncOperationProgressHandler<TResult, TProgress>::AsyncOperationProgressHandler(O * object, M method) :
+        AsyncOperationProgressHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+    {}
+
+    template <typename TResult, typename TProgress> void AsyncOperationProgressHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const TProgress & args) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *handler = detach_abi(this->shim().Completed());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *handler = nullptr;
-            return to_hresult();
-        }
+        check_hresult((*(abi<AsyncOperationProgressHandler<TResult, TProgress>> **)this)->abi_Invoke(get_abi(sender), get_abi(args)));
     }
 
-    HRESULT __stdcall abi_GetResults() noexcept final
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetResults();
-            return S_OK;
-        }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
-};
+    template <typename TResult, typename TProgress> template <typename L> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(L handler) :
+        AsyncOperationWithProgressCompletedHandler(impl::make_delegate<impl::async_operation_with_progress_completed_handler<TResult, TProgress, L>, AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>(std::forward<L>(handler)))
+    {}
 
-template <typename D, typename TResult>
-struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<D, Windows::Foundation::IAsyncOperation<TResult>>
+    template <typename TResult, typename TProgress> template <typename F> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(F * handler) :
+        AsyncOperationWithProgressCompletedHandler([=](auto && ... args) { handler(args ...); })
+    {}
+
+    template <typename TResult, typename TProgress> template <typename O, typename M> AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::AsyncOperationWithProgressCompletedHandler(O * object, M method) :
+        AsyncOperationWithProgressCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+    {}
+
+    template <typename TResult, typename TProgress> void AsyncOperationWithProgressCompletedHandler<TResult, TProgress>::operator()(const IAsyncOperationWithProgress<TResult, TProgress> & sender, const AsyncStatus args) const
+    {
+        check_hresult((*(abi<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> **)this)->abi_Invoke(get_abi(sender), args));
+    }
+
+    template <typename TResult> template <typename L> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(L handler) :
+        AsyncOperationCompletedHandler(impl::make_delegate<impl::async_operation_completed_handler<TResult, L>, AsyncOperationCompletedHandler<TResult>>(std::forward<L>(handler)))
+    {}
+
+    template <typename TResult> template <typename F> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(F * handler) :
+        AsyncOperationCompletedHandler([=](auto && ... args) { handler(args ...); })
+    {}
+
+    template <typename TResult> template <typename O, typename M> AsyncOperationCompletedHandler<TResult>::AsyncOperationCompletedHandler(O * object, M method) :
+        AsyncOperationCompletedHandler([=](auto && ... args) { ((*object).*(method))(args ...); })
+    {}
+
+    template <typename TResult> void AsyncOperationCompletedHandler<TResult>::operator()(const IAsyncOperation<TResult> & sender, const AsyncStatus args) const
+    {
+        check_hresult((*(abi<AsyncOperationCompletedHandler<TResult>> **)this)->abi_Invoke(get_abi(sender), args));
+    }
+}
+
+namespace impl
 {
-    HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncOperationCompletedHandler<TResult>> handler) noexcept final
+    template <typename D>
+    struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::Foundation::IAsyncAction>
     {
-        try
+        HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncActionCompletedHandler> handler) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationCompletedHandler<TResult> *>(&handler));
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionCompletedHandler *>(&handler));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncOperationCompletedHandler<TResult>> handler) noexcept final
+        HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncActionCompletedHandler> handler) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_abi(this->shim().Completed());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *handler = nullptr;
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetResults() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetResults();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D>
+    struct produce<D, Windows::Foundation::IAsyncInfo> : produce_base<D, Windows::Foundation::IAsyncInfo>
     {
-        try
+        HRESULT __stdcall get_Id(uint32_t * id) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *handler = detach_abi(this->shim().Completed());
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *id = this->shim().Id();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            *handler = nullptr;
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall abi_GetResults(abi_arg_out<TResult> results) noexcept final
+        HRESULT __stdcall get_Status(winrt::Windows::Foundation::AsyncStatus * status) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *status = this->shim().Status();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall get_ErrorCode(HRESULT * errorCode) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *errorCode = this->shim().ErrorCode();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_Cancel() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Cancel();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_Close() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Close();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename TProgress>
+    struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : produce_base<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>>
     {
-        try
+        HRESULT __stdcall put_Progress(abi_arg_in<Windows::Foundation::AsyncActionProgressHandler<TProgress>> handler) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *results = detach_abi(this->shim().GetResults());
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncActionProgressHandler<TProgress> *>(&handler));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            clear_abi(results);
-            return to_hresult();
-        }
-    }
-};
 
-template <typename D, typename TResult, typename TProgress>
-struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> : produce_base<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
-{
-    HRESULT __stdcall put_Progress(abi_arg_in<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>> handler) noexcept final
+        HRESULT __stdcall get_Progress(abi_arg_out<Windows::Foundation::AsyncActionProgressHandler<TProgress>> handler) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_abi(this->shim().Progress());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *handler = nullptr;
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>> handler) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> *>(&handler));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>> handler) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_abi(this->shim().Completed());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *handler = nullptr;
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetResults() noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetResults();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename TResult>
+    struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<D, Windows::Foundation::IAsyncOperation<TResult>>
     {
-        try
+        HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncOperationCompletedHandler<TResult>> handler) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> *>(&handler));
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationCompletedHandler<TResult> *>(&handler));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall get_Progress(abi_arg_out<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>> handler) noexcept final
+        HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncOperationCompletedHandler<TResult>> handler) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_abi(this->shim().Completed());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *handler = nullptr;
+                return to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetResults(abi_arg_out<TResult> results) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *results = detach_abi(this->shim().GetResults());
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(results);
+                return to_hresult();
+            }
+        }
+    };
+
+    template <typename D, typename TResult, typename TProgress>
+    struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> : produce_base<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
     {
-        try
+        HRESULT __stdcall put_Progress(abi_arg_in<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>> handler) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *handler = detach_abi(this->shim().Progress());
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Progress(*reinterpret_cast<const Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> *>(&handler));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            *handler = nullptr;
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> handler) noexcept final
-    {
-        try
+        HRESULT __stdcall get_Progress(abi_arg_out<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>> handler) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> *>(&handler));
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_abi(this->shim().Progress());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *handler = nullptr;
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> handler) noexcept final
-    {
-        try
+        HRESULT __stdcall put_Completed(abi_arg_in<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> handler) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *handler = detach_abi(this->shim().Completed());
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().Completed(*reinterpret_cast<const Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> *>(&handler));
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            *handler = nullptr;
-            return to_hresult();
-        }
-    }
 
-    HRESULT __stdcall abi_GetResults(abi_arg_out<TResult> results) noexcept final
-    {
-        try
+        HRESULT __stdcall get_Completed(abi_arg_out<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> handler) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *results = detach_abi(this->shim().GetResults());
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *handler = detach_abi(this->shim().Completed());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *handler = nullptr;
+                return to_hresult();
+            }
         }
-        catch (...)
-        {
-            clear_abi(results);
-            return to_hresult();
-        }
-    }
-};
 
+        HRESULT __stdcall abi_GetResults(abi_arg_out<TResult> results) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *results = detach_abi(this->shim().GetResults());
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(results);
+                return to_hresult();
+            }
+        }
+    };
 }
 
 #ifdef WINRT_ASYNC
@@ -8637,7 +8596,7 @@ private:
 struct resume_after
 {
     explicit resume_after(Windows::Foundation::TimeSpan duration) noexcept :
-        m_duration(duration)
+    m_duration(duration)
     {
     }
 
@@ -8685,7 +8644,7 @@ private:
 struct resume_on_signal
 {
     explicit resume_on_signal(HANDLE handle) noexcept :
-        m_handle(handle)
+    m_handle(handle)
     {}
 
     resume_on_signal(HANDLE handle, Windows::Foundation::TimeSpan timeout) noexcept :
@@ -8775,7 +8734,7 @@ struct resumable_io
         struct awaitable : awaitable_base, F
         {
             awaitable(PTP_IO io, F callback) noexcept :
-                m_io(io),
+            m_io(io),
                 F(callback)
             {}
 
@@ -8822,7 +8781,7 @@ struct resumable_io
         struct awaitable : awaitable_base, F
         {
             awaitable(PTP_IO io, F callback) noexcept :
-                m_io(io),
+            m_io(io),
                 F(callback)
             {}
 
@@ -9101,7 +9060,7 @@ namespace impl
     struct cancellation_token
     {
         cancellation_token(Promise * promise) noexcept :
-            m_promise(promise)
+        m_promise(promise)
         {
         }
 
@@ -9133,7 +9092,7 @@ namespace impl
     struct progress_token
     {
         progress_token(Promise * promise) noexcept :
-            m_promise(promise)
+        m_promise(promise)
         {
         }
 
@@ -9164,2482 +9123,2469 @@ namespace impl
 
 #endif
 
-namespace ABI::Windows::Foundation {
-    
-struct IPropertyValue;
-struct IPropertyValueStatics;
-    
-}
-
-namespace Windows::Foundation {
-
-struct IPropertyValue;
-struct IPropertyValueStatics;
-struct PropertyValue;
+namespace ABI::Windows::Foundation
+{
+    struct IPropertyValue;
+    struct IPropertyValueStatics;
+}
+
+namespace Windows::Foundation
+{
+    struct IPropertyValue;
+    struct IPropertyValueStatics;
+    struct PropertyValue;
+
+    enum class PropertyType
+    {
+        Empty = 0,
+        UInt8 = 1,
+        Int16 = 2,
+        UInt16 = 3,
+        Int32 = 4,
+        UInt32 = 5,
+        Int64 = 6,
+        UInt64 = 7,
+        Single = 8,
+        Double = 9,
+        Char16 = 10,
+        Boolean = 11,
+        String = 12,
+        Inspectable = 13,
+        DateTime = 14,
+        TimeSpan = 15,
+        Guid = 16,
+        Point = 17,
+        Size = 18,
+        Rect = 19,
+        OtherType = 20,
+        UInt8Array = 1025,
+        Int16Array = 1026,
+        UInt16Array = 1027,
+        Int32Array = 1028,
+        UInt32Array = 1029,
+        Int64Array = 1030,
+        UInt64Array = 1031,
+        SingleArray = 1032,
+        DoubleArray = 1033,
+        Char16Array = 1034,
+        BooleanArray = 1035,
+        StringArray = 1036,
+        InspectableArray = 1037,
+        DateTimeArray = 1038,
+        TimeSpanArray = 1039,
+        GuidArray = 1040,
+        PointArray = 1041,
+        SizeArray = 1042,
+        RectArray = 1043,
+        OtherTypeArray = 1044,
+    };
+}
+
+namespace ABI::Windows::Foundation
+{
+    struct __declspec(uuid("4bd682dd-7554-40e9-9a9b-82654ede7e62")) __declspec(novtable) IPropertyValue : IInspectable
+    {
+        virtual HRESULT __stdcall get_Type(winrt::Windows::Foundation::PropertyType * value) = 0;
+        virtual HRESULT __stdcall get_IsNumericScalar(bool * value) = 0;
+        virtual HRESULT __stdcall abi_GetUInt8(uint8_t * value) = 0;
+        virtual HRESULT __stdcall abi_GetInt16(int16_t * value) = 0;
+        virtual HRESULT __stdcall abi_GetUInt16(uint16_t * value) = 0;
+        virtual HRESULT __stdcall abi_GetInt32(int32_t * value) = 0;
+        virtual HRESULT __stdcall abi_GetUInt32(uint32_t * value) = 0;
+        virtual HRESULT __stdcall abi_GetInt64(int64_t * value) = 0;
+        virtual HRESULT __stdcall abi_GetUInt64(uint64_t * value) = 0;
+        virtual HRESULT __stdcall abi_GetSingle(float * value) = 0;
+        virtual HRESULT __stdcall abi_GetDouble(double * value) = 0;
+        virtual HRESULT __stdcall abi_GetChar16(wchar_t * value) = 0;
+        virtual HRESULT __stdcall abi_GetBoolean(bool * value) = 0;
+        virtual HRESULT __stdcall abi_GetString(hstring * value) = 0;
+        virtual HRESULT __stdcall abi_GetGuid(GUID * value) = 0;
+        virtual HRESULT __stdcall abi_GetDateTime(Windows::Foundation::DateTime * value) = 0;
+        virtual HRESULT __stdcall abi_GetTimeSpan(Windows::Foundation::TimeSpan * value) = 0;
+        virtual HRESULT __stdcall abi_GetPoint(Windows::Foundation::Point * value) = 0;
+        virtual HRESULT __stdcall abi_GetSize(Windows::Foundation::Size * value) = 0;
+        virtual HRESULT __stdcall abi_GetRect(Windows::Foundation::Rect * value) = 0;
+        virtual HRESULT __stdcall abi_GetUInt8Array(uint32_t * __valueSize, uint8_t ** value) = 0;
+        virtual HRESULT __stdcall abi_GetInt16Array(uint32_t * __valueSize, int16_t ** value) = 0;
+        virtual HRESULT __stdcall abi_GetUInt16Array(uint32_t * __valueSize, uint16_t ** value) = 0;
+        virtual HRESULT __stdcall abi_GetInt32Array(uint32_t * __valueSize, int32_t ** value) = 0;
+        virtual HRESULT __stdcall abi_GetUInt32Array(uint32_t * __valueSize, uint32_t ** value) = 0;
+        virtual HRESULT __stdcall abi_GetInt64Array(uint32_t * __valueSize, int64_t ** value) = 0;
+        virtual HRESULT __stdcall abi_GetUInt64Array(uint32_t * __valueSize, uint64_t ** value) = 0;
+        virtual HRESULT __stdcall abi_GetSingleArray(uint32_t * __valueSize, float ** value) = 0;
+        virtual HRESULT __stdcall abi_GetDoubleArray(uint32_t * __valueSize, double ** value) = 0;
+        virtual HRESULT __stdcall abi_GetChar16Array(uint32_t * __valueSize, wchar_t ** value) = 0;
+        virtual HRESULT __stdcall abi_GetBooleanArray(uint32_t * __valueSize, bool ** value) = 0;
+        virtual HRESULT __stdcall abi_GetStringArray(uint32_t * __valueSize, hstring ** value) = 0;
+        virtual HRESULT __stdcall abi_GetInspectableArray(uint32_t * __valueSize, IInspectable *** value) = 0;
+        virtual HRESULT __stdcall abi_GetGuidArray(uint32_t * __valueSize, GUID ** value) = 0;
+        virtual HRESULT __stdcall abi_GetDateTimeArray(uint32_t * __valueSize, Windows::Foundation::DateTime ** value) = 0;
+        virtual HRESULT __stdcall abi_GetTimeSpanArray(uint32_t * __valueSize, Windows::Foundation::TimeSpan ** value) = 0;
+        virtual HRESULT __stdcall abi_GetPointArray(uint32_t * __valueSize, Windows::Foundation::Point ** value) = 0;
+        virtual HRESULT __stdcall abi_GetSizeArray(uint32_t * __valueSize, Windows::Foundation::Size ** value) = 0;
+        virtual HRESULT __stdcall abi_GetRectArray(uint32_t * __valueSize, Windows::Foundation::Rect ** value) = 0;
+    };
+
+    struct __declspec(uuid("629bdbc8-d932-4ff4-96b9-8d96c5c1e858")) __declspec(novtable) IPropertyValueStatics : IInspectable
+    {
+        virtual HRESULT __stdcall abi_CreateEmpty(IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateUInt8(uint8_t value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateInt16(int16_t value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateUInt16(uint16_t value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateInt32(int32_t value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateUInt32(uint32_t value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateInt64(int64_t value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateUInt64(uint64_t value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateSingle(float value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateDouble(double value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateChar16(wchar_t value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateBoolean(bool value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateString(hstring value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateInspectable(IInspectable * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateGuid(GUID value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateDateTime(Windows::Foundation::DateTime value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateTimeSpan(Windows::Foundation::TimeSpan value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreatePoint(Windows::Foundation::Point value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateSize(Windows::Foundation::Size value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateRect(Windows::Foundation::Rect value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateUInt8Array(uint32_t __valueSize, uint8_t * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateInt16Array(uint32_t __valueSize, int16_t * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateUInt16Array(uint32_t __valueSize, uint16_t * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateInt32Array(uint32_t __valueSize, int32_t * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateUInt32Array(uint32_t __valueSize, uint32_t * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateInt64Array(uint32_t __valueSize, int64_t * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateUInt64Array(uint32_t __valueSize, uint64_t * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateSingleArray(uint32_t __valueSize, float * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateDoubleArray(uint32_t __valueSize, double * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateChar16Array(uint32_t __valueSize, wchar_t * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateBooleanArray(uint32_t __valueSize, bool * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateStringArray(uint32_t __valueSize, hstring * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateInspectableArray(uint32_t __valueSize, IInspectable ** value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateGuidArray(uint32_t __valueSize, GUID * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateDateTimeArray(uint32_t __valueSize, Windows::Foundation::DateTime * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateTimeSpanArray(uint32_t __valueSize, Windows::Foundation::TimeSpan * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreatePointArray(uint32_t __valueSize, Windows::Foundation::Point * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateSizeArray(uint32_t __valueSize, Windows::Foundation::Size * value, IInspectable ** propertyValue) = 0;
+        virtual HRESULT __stdcall abi_CreateRectArray(uint32_t __valueSize, Windows::Foundation::Rect * value, IInspectable ** propertyValue) = 0;
+    };
+}
+
+namespace Windows::Foundation
+{
+    template <typename D>
+    struct WINRT_EBO impl_IPropertyValue
+    {
+        Windows::Foundation::PropertyType Type() const;
+        bool IsNumericScalar() const;
+        uint8_t GetUInt8() const;
+        int16_t GetInt16() const;
+        uint16_t GetUInt16() const;
+        int32_t GetInt32() const;
+        uint32_t GetUInt32() const;
+        int64_t GetInt64() const;
+        uint64_t GetUInt64() const;
+        float GetSingle() const;
+        double GetDouble() const;
+        wchar_t GetChar16() const;
+        bool GetBoolean() const;
+        hstring GetString() const;
+        GUID GetGuid() const;
+        Windows::Foundation::DateTime GetDateTime() const;
+        Windows::Foundation::TimeSpan GetTimeSpan() const;
+        Windows::Foundation::Point GetPoint() const;
+        Windows::Foundation::Size GetSize() const;
+        Windows::Foundation::Rect GetRect() const;
+        void GetUInt8Array(com_array<uint8_t> & value) const;
+        void GetInt16Array(com_array<int16_t> & value) const;
+        void GetUInt16Array(com_array<uint16_t> & value) const;
+        void GetInt32Array(com_array<int32_t> & value) const;
+        void GetUInt32Array(com_array<uint32_t> & value) const;
+        void GetInt64Array(com_array<int64_t> & value) const;
+        void GetUInt64Array(com_array<uint64_t> & value) const;
+        void GetSingleArray(com_array<float> & value) const;
+        void GetDoubleArray(com_array<double> & value) const;
+        void GetChar16Array(com_array<wchar_t> & value) const;
+        void GetBooleanArray(com_array<bool> & value) const;
+        void GetStringArray(com_array<hstring> & value) const;
+        void GetInspectableArray(com_array<IInspectable> & value) const;
+        void GetGuidArray(com_array<GUID> & value) const;
+        void GetDateTimeArray(com_array<Windows::Foundation::DateTime> & value) const;
+        void GetTimeSpanArray(com_array<Windows::Foundation::TimeSpan> & value) const;
+        void GetPointArray(com_array<Windows::Foundation::Point> & value) const;
+        void GetSizeArray(com_array<Windows::Foundation::Size> & value) const;
+        void GetRectArray(com_array<Windows::Foundation::Rect> & value) const;
+    };
+
+    template <typename D>
+    struct WINRT_EBO impl_IPropertyValueStatics
+    {
+        IInspectable CreateEmpty() const;
+        IInspectable CreateUInt8(uint8_t value) const;
+        IInspectable CreateInt16(int16_t value) const;
+        IInspectable CreateUInt16(uint16_t value) const;
+        IInspectable CreateInt32(int32_t value) const;
+        IInspectable CreateUInt32(uint32_t value) const;
+        IInspectable CreateInt64(int64_t value) const;
+        IInspectable CreateUInt64(uint64_t value) const;
+        IInspectable CreateSingle(float value) const;
+        IInspectable CreateDouble(double value) const;
+        IInspectable CreateChar16(wchar_t value) const;
+        IInspectable CreateBoolean(bool value) const;
+        IInspectable CreateString(hstring_view value) const;
+        IInspectable CreateInspectable(const IInspectable & value) const;
+        IInspectable CreateGuid(GUID value) const;
+        IInspectable CreateDateTime(const Windows::Foundation::DateTime & value) const;
+        IInspectable CreateTimeSpan(const Windows::Foundation::TimeSpan & value) const;
+        IInspectable CreatePoint(const Windows::Foundation::Point & value) const;
+        IInspectable CreateSize(const Windows::Foundation::Size & value) const;
+        IInspectable CreateRect(const Windows::Foundation::Rect & value) const;
+        IInspectable CreateUInt8Array(array_view<const uint8_t> value) const;
+        IInspectable CreateInt16Array(array_view<const int16_t> value) const;
+        IInspectable CreateUInt16Array(array_view<const uint16_t> value) const;
+        IInspectable CreateInt32Array(array_view<const int32_t> value) const;
+        IInspectable CreateUInt32Array(array_view<const uint32_t> value) const;
+        IInspectable CreateInt64Array(array_view<const int64_t> value) const;
+        IInspectable CreateUInt64Array(array_view<const uint64_t> value) const;
+        IInspectable CreateSingleArray(array_view<const float> value) const;
+        IInspectable CreateDoubleArray(array_view<const double> value) const;
+        IInspectable CreateChar16Array(array_view<const wchar_t> value) const;
+        IInspectable CreateBooleanArray(array_view<const bool> value) const;
+        IInspectable CreateStringArray(array_view<const hstring> value) const;
+        IInspectable CreateInspectableArray(array_view<const IInspectable> value) const;
+        IInspectable CreateGuidArray(array_view<const GUID> value) const;
+        IInspectable CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value) const;
+        IInspectable CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value) const;
+        IInspectable CreatePointArray(array_view<const Windows::Foundation::Point> value) const;
+        IInspectable CreateSizeArray(array_view<const Windows::Foundation::Size> value) const;
+        IInspectable CreateRectArray(array_view<const Windows::Foundation::Rect> value) const;
+    };
+}
+
+namespace impl
+{
+    template <> struct traits<Windows::Foundation::IPropertyValue>
+    {
+        using abi = ABI::Windows::Foundation::IPropertyValue;
+        template <typename D> using consume = Windows::Foundation::impl_IPropertyValue<D>;
+    };
+
+    template <> struct traits<Windows::Foundation::IPropertyValueStatics>
+    {
+        using abi = ABI::Windows::Foundation::IPropertyValueStatics;
+        template <typename D> using consume = Windows::Foundation::impl_IPropertyValueStatics<D>;
+    };
+
+    template <> struct traits<Windows::Foundation::PropertyValue>
+    {
+        static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.PropertyValue"; }
+    };
+}
+
+namespace Windows::Foundation
+{
+    struct IPropertyValue :
+        IInspectable,
+        impl::consume<IPropertyValue>
+    {
+        IPropertyValue(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    struct IPropertyValueStatics :
+        IInspectable,
+        impl::consume<IPropertyValueStatics>
+    {
+        IPropertyValueStatics(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    struct PropertyValue
+    {
+        PropertyValue() = delete;
+        static IInspectable CreateEmpty();
+        static IInspectable CreateUInt8(uint8_t value);
+        static IInspectable CreateInt16(int16_t value);
+        static IInspectable CreateUInt16(uint16_t value);
+        static IInspectable CreateInt32(int32_t value);
+        static IInspectable CreateUInt32(uint32_t value);
+        static IInspectable CreateInt64(int64_t value);
+        static IInspectable CreateUInt64(uint64_t value);
+        static IInspectable CreateSingle(float value);
+        static IInspectable CreateDouble(double value);
+        static IInspectable CreateChar16(wchar_t value);
+        static IInspectable CreateBoolean(bool value);
+        static IInspectable CreateString(hstring_view value);
+        static IInspectable CreateInspectable(const IInspectable & value);
+        static IInspectable CreateGuid(GUID value);
+        static IInspectable CreateDateTime(const Windows::Foundation::DateTime & value);
+        static IInspectable CreateTimeSpan(const Windows::Foundation::TimeSpan & value);
+        static IInspectable CreatePoint(const Windows::Foundation::Point & value);
+        static IInspectable CreateSize(const Windows::Foundation::Size & value);
+        static IInspectable CreateRect(const Windows::Foundation::Rect & value);
+        static IInspectable CreateUInt8Array(array_view<const uint8_t> value);
+        static IInspectable CreateInt16Array(array_view<const int16_t> value);
+        static IInspectable CreateUInt16Array(array_view<const uint16_t> value);
+        static IInspectable CreateInt32Array(array_view<const int32_t> value);
+        static IInspectable CreateUInt32Array(array_view<const uint32_t> value);
+        static IInspectable CreateInt64Array(array_view<const int64_t> value);
+        static IInspectable CreateUInt64Array(array_view<const uint64_t> value);
+        static IInspectable CreateSingleArray(array_view<const float> value);
+        static IInspectable CreateDoubleArray(array_view<const double> value);
+        static IInspectable CreateChar16Array(array_view<const wchar_t> value);
+        static IInspectable CreateBooleanArray(array_view<const bool> value);
+        static IInspectable CreateStringArray(array_view<const hstring> value);
+        static IInspectable CreateInspectableArray(array_view<const IInspectable> value);
+        static IInspectable CreateGuidArray(array_view<const GUID> value);
+        static IInspectable CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value);
+        static IInspectable CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value);
+        static IInspectable CreatePointArray(array_view<const Windows::Foundation::Point> value);
+        static IInspectable CreateSizeArray(array_view<const Windows::Foundation::Size> value);
+        static IInspectable CreateRectArray(array_view<const Windows::Foundation::Rect> value);
+    };
+}
+
+namespace impl
+{
+    template <typename D>
+    struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows::Foundation::IPropertyValue>
+    {
+        HRESULT __stdcall get_Type(Windows::Foundation::PropertyType * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().Type());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall get_IsNumericScalar(bool * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().IsNumericScalar());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetUInt8(uint8_t * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetUInt8());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetInt16(int16_t * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetInt16());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetUInt16(uint16_t * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetUInt16());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetInt32(int32_t * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetInt32());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetUInt32(uint32_t * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetUInt32());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetInt64(int64_t * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetInt64());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetUInt64(uint64_t * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetUInt64());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetSingle(float * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetSingle());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetDouble(double * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetDouble());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetChar16(wchar_t * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetChar16());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetBoolean(bool * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetBoolean());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetString(abi_arg_out<hstring> value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetString());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetGuid(GUID * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetGuid());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetDateTime(abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetDateTime());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetTimeSpan(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetTimeSpan());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetPoint(abi_arg_out<Windows::Foundation::Point> value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetPoint());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetSize(abi_arg_out<Windows::Foundation::Size> value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetSize());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetRect(abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().GetRect());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetUInt8Array(uint32_t * __valueSize, abi_arg_out<uint8_t> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetUInt8Array(detach_abi<uint8_t>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetInt16Array(uint32_t * __valueSize, abi_arg_out<int16_t> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetInt16Array(detach_abi<int16_t>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetUInt16Array(uint32_t * __valueSize, abi_arg_out<uint16_t> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetUInt16Array(detach_abi<uint16_t>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetInt32Array(uint32_t * __valueSize, abi_arg_out<int32_t> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetInt32Array(detach_abi<int32_t>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetUInt32Array(uint32_t * __valueSize, abi_arg_out<uint32_t> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetUInt32Array(detach_abi<uint32_t>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetInt64Array(uint32_t * __valueSize, abi_arg_out<int64_t> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetInt64Array(detach_abi<int64_t>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetUInt64Array(uint32_t * __valueSize, abi_arg_out<uint64_t> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetUInt64Array(detach_abi<uint64_t>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetSingleArray(uint32_t * __valueSize, abi_arg_out<float> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetSingleArray(detach_abi<float>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetDoubleArray(uint32_t * __valueSize, abi_arg_out<double> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetDoubleArray(detach_abi<double>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetChar16Array(uint32_t * __valueSize, abi_arg_out<wchar_t> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetChar16Array(detach_abi<wchar_t>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetBooleanArray(uint32_t * __valueSize, abi_arg_out<bool> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetBooleanArray(detach_abi<bool>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetStringArray(uint32_t * __valueSize, abi_arg_out<hstring> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetStringArray(detach_abi<hstring>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetInspectableArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::IInspectable> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetInspectableArray(detach_abi<Windows::Foundation::IInspectable>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetGuidArray(uint32_t * __valueSize, abi_arg_out<GUID> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetGuidArray(detach_abi<GUID>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetDateTimeArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::DateTime> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetDateTimeArray(detach_abi<Windows::Foundation::DateTime>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetTimeSpanArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::TimeSpan> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetTimeSpanArray(detach_abi<Windows::Foundation::TimeSpan>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetPointArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::Point> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetPointArray(detach_abi<Windows::Foundation::Point>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetSizeArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::Size> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetSizeArray(detach_abi<Windows::Foundation::Size>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_GetRectArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::Rect> * value) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                this->shim().GetRectArray(detach_abi<Windows::Foundation::Rect>(__valueSize, value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *__valueSize = 0;
+                *value = nullptr;
+                return impl::to_hresult();
+            }
+        }
+    };
+
+    template <typename D>
+    struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, Windows::Foundation::IPropertyValueStatics>
+    {
+        HRESULT __stdcall abi_CreateEmpty(abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateEmpty());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateUInt8(uint8_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateUInt8(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateInt16(int16_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateInt16(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateUInt16(uint16_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateUInt16(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateInt32(int32_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateInt32(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateUInt32(uint32_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateUInt32(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateInt64(int64_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateInt64(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateUInt64(uint64_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateUInt64(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateSingle(float value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateSingle(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateDouble(double value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateDouble(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateChar16(wchar_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateChar16(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateBoolean(bool value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateBoolean(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateString(abi_arg_in<hstring> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateString(*reinterpret_cast<const hstring *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateInspectable(abi_arg_in<Windows::Foundation::IInspectable> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateInspectable(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateGuid(GUID value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateGuid(value));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateDateTime(abi_arg_in<Windows::Foundation::DateTime> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateTimeSpan(abi_arg_in<Windows::Foundation::TimeSpan> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreatePoint(abi_arg_in<Windows::Foundation::Point> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreatePoint(*reinterpret_cast<const Windows::Foundation::Point *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateSize(abi_arg_in<Windows::Foundation::Size> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateRect(abi_arg_in<Windows::Foundation::Rect> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateRect(*reinterpret_cast<const Windows::Foundation::Rect *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateUInt8Array(uint32_t __valueSize, abi_arg_in<uint8_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateUInt8Array(array_view<const uint8_t>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateInt16Array(uint32_t __valueSize, abi_arg_in<int16_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateInt16Array(array_view<const int16_t>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateUInt16Array(uint32_t __valueSize, abi_arg_in<uint16_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateUInt16Array(array_view<const uint16_t>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateInt32Array(uint32_t __valueSize, abi_arg_in<int32_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateInt32Array(array_view<const int32_t>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateUInt32Array(uint32_t __valueSize, abi_arg_in<uint32_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateUInt32Array(array_view<const uint32_t>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateInt64Array(uint32_t __valueSize, abi_arg_in<int64_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateInt64Array(array_view<const int64_t>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateUInt64Array(uint32_t __valueSize, abi_arg_in<uint64_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateUInt64Array(array_view<const uint64_t>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateSingleArray(uint32_t __valueSize, abi_arg_in<float> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateSingleArray(array_view<const float>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateDoubleArray(uint32_t __valueSize, abi_arg_in<double> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateDoubleArray(array_view<const double>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateChar16Array(uint32_t __valueSize, abi_arg_in<wchar_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateChar16Array(array_view<const wchar_t>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateBooleanArray(uint32_t __valueSize, abi_arg_in<bool> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateBooleanArray(array_view<const bool>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateStringArray(uint32_t __valueSize, abi_arg_in<hstring> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateStringArray(*reinterpret_cast<const hstring *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *value = nullptr;
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateInspectableArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::IInspectable> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateInspectableArray(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *value = nullptr;
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateGuidArray(uint32_t __valueSize, abi_arg_in<GUID> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateGuidArray(array_view<const GUID>(value, value + __valueSize)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateDateTimeArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::DateTime> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateDateTimeArray(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateTimeSpanArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::TimeSpan> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateTimeSpanArray(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreatePointArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Point> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreatePointArray(*reinterpret_cast<const Windows::Foundation::Point *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateSizeArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Size> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateSizeArray(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+
+        HRESULT __stdcall abi_CreateRectArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Rect> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *propertyValue = detach_abi(this->shim().CreateRectArray(*reinterpret_cast<const Windows::Foundation::Rect *>(&value)));
+                return S_OK;
+            }
+            catch (...)
+            {
+                *propertyValue = nullptr;
+                return impl::to_hresult();
+            }
+        }
+    };
+}
+
+namespace Windows::Foundation
+{
+    template <typename D> Windows::Foundation::PropertyType impl_IPropertyValue<D>::Type() const
+    {
+        Windows::Foundation::PropertyType value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->get_Type(&value));
+        return value;
+    }
+
+    template <typename D> bool impl_IPropertyValue<D>::IsNumericScalar() const
+    {
+        bool value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->get_IsNumericScalar(&value));
+        return value;
+    }
+
+    template <typename D> uint8_t impl_IPropertyValue<D>::GetUInt8() const
+    {
+        uint8_t value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt8(&value));
+        return value;
+    }
+
+    template <typename D> int16_t impl_IPropertyValue<D>::GetInt16() const
+    {
+        int16_t value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt16(&value));
+        return value;
+    }
+
+    template <typename D> uint16_t impl_IPropertyValue<D>::GetUInt16() const
+    {
+        uint16_t value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt16(&value));
+        return value;
+    }
+
+    template <typename D> int32_t impl_IPropertyValue<D>::GetInt32() const
+    {
+        int32_t value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt32(&value));
+        return value;
+    }
+
+    template <typename D> uint32_t impl_IPropertyValue<D>::GetUInt32() const
+    {
+        uint32_t value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt32(&value));
+        return value;
+    }
+
+    template <typename D> int64_t impl_IPropertyValue<D>::GetInt64() const
+    {
+        int64_t value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt64(&value));
+        return value;
+    }
+
+    template <typename D> uint64_t impl_IPropertyValue<D>::GetUInt64() const
+    {
+        uint64_t value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt64(&value));
+        return value;
+    }
+
+    template <typename D> float impl_IPropertyValue<D>::GetSingle() const
+    {
+        float value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetSingle(&value));
+        return value;
+    }
+
+    template <typename D> double impl_IPropertyValue<D>::GetDouble() const
+    {
+        double value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetDouble(&value));
+        return value;
+    }
+
+    template <typename D> wchar_t impl_IPropertyValue<D>::GetChar16() const
+    {
+        wchar_t value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetChar16(&value));
+        return value;
+    }
+
+    template <typename D> bool impl_IPropertyValue<D>::GetBoolean() const
+    {
+        bool value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetBoolean(&value));
+        return value;
+    }
+
+    template <typename D> hstring impl_IPropertyValue<D>::GetString() const
+    {
+        hstring value;
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetString(put_abi(value)));
+        return value;
+    }
+
+    template <typename D> GUID impl_IPropertyValue<D>::GetGuid() const
+    {
+        GUID value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetGuid(&value));
+        return value;
+    }
+
+    template <typename D> Windows::Foundation::DateTime impl_IPropertyValue<D>::GetDateTime() const
+    {
+        Windows::Foundation::DateTime value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetDateTime(put_abi(value)));
+        return value;
+    }
+
+    template <typename D> Windows::Foundation::TimeSpan impl_IPropertyValue<D>::GetTimeSpan() const
+    {
+        Windows::Foundation::TimeSpan value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetTimeSpan(put_abi(value)));
+        return value;
+    }
+
+    template <typename D> Windows::Foundation::Point impl_IPropertyValue<D>::GetPoint() const
+    {
+        Windows::Foundation::Point value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetPoint(put_abi(value)));
+        return value;
+    }
+
+    template <typename D> Windows::Foundation::Size impl_IPropertyValue<D>::GetSize() const
+    {
+        Windows::Foundation::Size value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetSize(put_abi(value)));
+        return value;
+    }
+
+    template <typename D> Windows::Foundation::Rect impl_IPropertyValue<D>::GetRect() const
+    {
+        Windows::Foundation::Rect value{};
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetRect(put_abi(value)));
+        return value;
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetUInt8Array(com_array<uint8_t> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt8Array(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetInt16Array(com_array<int16_t> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt16Array(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetUInt16Array(com_array<uint16_t> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt16Array(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetInt32Array(com_array<int32_t> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt32Array(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetUInt32Array(com_array<uint32_t> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt32Array(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetInt64Array(com_array<int64_t> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt64Array(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetUInt64Array(com_array<uint64_t> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt64Array(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetSingleArray(com_array<float> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetSingleArray(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetDoubleArray(com_array<double> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetDoubleArray(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetChar16Array(com_array<wchar_t> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetChar16Array(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetBooleanArray(com_array<bool> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetBooleanArray(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetStringArray(com_array<hstring> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetStringArray(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetInspectableArray(com_array<Windows::Foundation::IInspectable> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInspectableArray(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetGuidArray(com_array<GUID> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetGuidArray(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetDateTimeArray(com_array<Windows::Foundation::DateTime> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetDateTimeArray(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetTimeSpanArray(com_array<Windows::Foundation::TimeSpan> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetTimeSpanArray(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetPointArray(com_array<Windows::Foundation::Point> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetPointArray(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetSizeArray(com_array<Windows::Foundation::Size> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetSizeArray(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> void impl_IPropertyValue<D>::GetRectArray(com_array<Windows::Foundation::Rect> & value) const
+    {
+        check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetRectArray(impl::put_size_abi(value), put_abi(value)));
+    }
+
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateEmpty() const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateEmpty(put_abi(propertyValue)));
+        return propertyValue;
+    }
+
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt8(uint8_t value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt8(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
+
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt16(int16_t value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt16(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
+
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt16(uint16_t value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt16(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
+
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt32(int32_t value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt32(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
+
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt32(uint32_t value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt32(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
+
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt64(int64_t value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt64(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
+
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt64(uint64_t value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt64(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
+
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSingle(float value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSingle(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-enum class PropertyType
-{
-    Empty = 0,
-    UInt8 = 1,
-    Int16 = 2,
-    UInt16 = 3,
-    Int32 = 4,
-    UInt32 = 5,
-    Int64 = 6,
-    UInt64 = 7,
-    Single = 8,
-    Double = 9,
-    Char16 = 10,
-    Boolean = 11,
-    String = 12,
-    Inspectable = 13,
-    DateTime = 14,
-    TimeSpan = 15,
-    Guid = 16,
-    Point = 17,
-    Size = 18,
-    Rect = 19,
-    OtherType = 20,
-    UInt8Array = 1025,
-    Int16Array = 1026,
-    UInt16Array = 1027,
-    Int32Array = 1028,
-    UInt32Array = 1029,
-    Int64Array = 1030,
-    UInt64Array = 1031,
-    SingleArray = 1032,
-    DoubleArray = 1033,
-    Char16Array = 1034,
-    BooleanArray = 1035,
-    StringArray = 1036,
-    InspectableArray = 1037,
-    DateTimeArray = 1038,
-    TimeSpanArray = 1039,
-    GuidArray = 1040,
-    PointArray = 1041,
-    SizeArray = 1042,
-    RectArray = 1043,
-    OtherTypeArray = 1044,
-};
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDouble(double value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDouble(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-}
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateChar16(wchar_t value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateChar16(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-namespace ABI::Windows::Foundation {
-    
-struct __declspec(uuid("4bd682dd-7554-40e9-9a9b-82654ede7e62")) __declspec(novtable) IPropertyValue : IInspectable
-{
-    virtual HRESULT __stdcall get_Type(winrt::Windows::Foundation::PropertyType * value) = 0;
-    virtual HRESULT __stdcall get_IsNumericScalar(bool * value) = 0;
-    virtual HRESULT __stdcall abi_GetUInt8(uint8_t * value) = 0;
-    virtual HRESULT __stdcall abi_GetInt16(int16_t * value) = 0;
-    virtual HRESULT __stdcall abi_GetUInt16(uint16_t * value) = 0;
-    virtual HRESULT __stdcall abi_GetInt32(int32_t * value) = 0;
-    virtual HRESULT __stdcall abi_GetUInt32(uint32_t * value) = 0;
-    virtual HRESULT __stdcall abi_GetInt64(int64_t * value) = 0;
-    virtual HRESULT __stdcall abi_GetUInt64(uint64_t * value) = 0;
-    virtual HRESULT __stdcall abi_GetSingle(float * value) = 0;
-    virtual HRESULT __stdcall abi_GetDouble(double * value) = 0;
-    virtual HRESULT __stdcall abi_GetChar16(wchar_t * value) = 0;
-    virtual HRESULT __stdcall abi_GetBoolean(bool * value) = 0;
-    virtual HRESULT __stdcall abi_GetString(hstring * value) = 0;
-    virtual HRESULT __stdcall abi_GetGuid(GUID * value) = 0;
-    virtual HRESULT __stdcall abi_GetDateTime(Windows::Foundation::DateTime * value) = 0;
-    virtual HRESULT __stdcall abi_GetTimeSpan(Windows::Foundation::TimeSpan * value) = 0;
-    virtual HRESULT __stdcall abi_GetPoint(Windows::Foundation::Point * value) = 0;
-    virtual HRESULT __stdcall abi_GetSize(Windows::Foundation::Size * value) = 0;
-    virtual HRESULT __stdcall abi_GetRect(Windows::Foundation::Rect * value) = 0;
-    virtual HRESULT __stdcall abi_GetUInt8Array(uint32_t * __valueSize, uint8_t ** value) = 0;
-    virtual HRESULT __stdcall abi_GetInt16Array(uint32_t * __valueSize, int16_t ** value) = 0;
-    virtual HRESULT __stdcall abi_GetUInt16Array(uint32_t * __valueSize, uint16_t ** value) = 0;
-    virtual HRESULT __stdcall abi_GetInt32Array(uint32_t * __valueSize, int32_t ** value) = 0;
-    virtual HRESULT __stdcall abi_GetUInt32Array(uint32_t * __valueSize, uint32_t ** value) = 0;
-    virtual HRESULT __stdcall abi_GetInt64Array(uint32_t * __valueSize, int64_t ** value) = 0;
-    virtual HRESULT __stdcall abi_GetUInt64Array(uint32_t * __valueSize, uint64_t ** value) = 0;
-    virtual HRESULT __stdcall abi_GetSingleArray(uint32_t * __valueSize, float ** value) = 0;
-    virtual HRESULT __stdcall abi_GetDoubleArray(uint32_t * __valueSize, double ** value) = 0;
-    virtual HRESULT __stdcall abi_GetChar16Array(uint32_t * __valueSize, wchar_t ** value) = 0;
-    virtual HRESULT __stdcall abi_GetBooleanArray(uint32_t * __valueSize, bool ** value) = 0;
-    virtual HRESULT __stdcall abi_GetStringArray(uint32_t * __valueSize, hstring ** value) = 0;
-    virtual HRESULT __stdcall abi_GetInspectableArray(uint32_t * __valueSize, IInspectable *** value) = 0;
-    virtual HRESULT __stdcall abi_GetGuidArray(uint32_t * __valueSize, GUID ** value) = 0;
-    virtual HRESULT __stdcall abi_GetDateTimeArray(uint32_t * __valueSize, Windows::Foundation::DateTime ** value) = 0;
-    virtual HRESULT __stdcall abi_GetTimeSpanArray(uint32_t * __valueSize, Windows::Foundation::TimeSpan ** value) = 0;
-    virtual HRESULT __stdcall abi_GetPointArray(uint32_t * __valueSize, Windows::Foundation::Point ** value) = 0;
-    virtual HRESULT __stdcall abi_GetSizeArray(uint32_t * __valueSize, Windows::Foundation::Size ** value) = 0;
-    virtual HRESULT __stdcall abi_GetRectArray(uint32_t * __valueSize, Windows::Foundation::Rect ** value) = 0;
-};
-
-struct __declspec(uuid("629bdbc8-d932-4ff4-96b9-8d96c5c1e858")) __declspec(novtable) IPropertyValueStatics : IInspectable
-{
-    virtual HRESULT __stdcall abi_CreateEmpty(IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt8(uint8_t value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt16(int16_t value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt16(uint16_t value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt32(int32_t value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt32(uint32_t value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt64(int64_t value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt64(uint64_t value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateSingle(float value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateDouble(double value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateChar16(wchar_t value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateBoolean(bool value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateString(hstring value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInspectable(IInspectable * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateGuid(GUID value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateDateTime(Windows::Foundation::DateTime value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateTimeSpan(Windows::Foundation::TimeSpan value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreatePoint(Windows::Foundation::Point value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateSize(Windows::Foundation::Size value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateRect(Windows::Foundation::Rect value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt8Array(uint32_t __valueSize, uint8_t * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt16Array(uint32_t __valueSize, int16_t * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt16Array(uint32_t __valueSize, uint16_t * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt32Array(uint32_t __valueSize, int32_t * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt32Array(uint32_t __valueSize, uint32_t * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInt64Array(uint32_t __valueSize, int64_t * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateUInt64Array(uint32_t __valueSize, uint64_t * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateSingleArray(uint32_t __valueSize, float * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateDoubleArray(uint32_t __valueSize, double * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateChar16Array(uint32_t __valueSize, wchar_t * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateBooleanArray(uint32_t __valueSize, bool * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateStringArray(uint32_t __valueSize, hstring * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateInspectableArray(uint32_t __valueSize, IInspectable ** value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateGuidArray(uint32_t __valueSize, GUID * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateDateTimeArray(uint32_t __valueSize, Windows::Foundation::DateTime * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateTimeSpanArray(uint32_t __valueSize, Windows::Foundation::TimeSpan * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreatePointArray(uint32_t __valueSize, Windows::Foundation::Point * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateSizeArray(uint32_t __valueSize, Windows::Foundation::Size * value, IInspectable ** propertyValue) = 0;
-    virtual HRESULT __stdcall abi_CreateRectArray(uint32_t __valueSize, Windows::Foundation::Rect * value, IInspectable ** propertyValue) = 0;
-};
-    
-}
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateBoolean(bool value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateBoolean(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-namespace Windows::Foundation {
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateString(hstring_view value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateString(get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-template <typename D>
-struct WINRT_EBO impl_IPropertyValue
-{
-    Windows::Foundation::PropertyType Type() const;
-    bool IsNumericScalar() const;
-    uint8_t GetUInt8() const;
-    int16_t GetInt16() const;
-    uint16_t GetUInt16() const;
-    int32_t GetInt32() const;
-    uint32_t GetUInt32() const;
-    int64_t GetInt64() const;
-    uint64_t GetUInt64() const;
-    float GetSingle() const;
-    double GetDouble() const;
-    wchar_t GetChar16() const;
-    bool GetBoolean() const;
-    hstring GetString() const;
-    GUID GetGuid() const;
-    Windows::Foundation::DateTime GetDateTime() const;
-    Windows::Foundation::TimeSpan GetTimeSpan() const;
-    Windows::Foundation::Point GetPoint() const;
-    Windows::Foundation::Size GetSize() const;
-    Windows::Foundation::Rect GetRect() const;
-    void GetUInt8Array(com_array<uint8_t> & value) const;
-    void GetInt16Array(com_array<int16_t> & value) const;
-    void GetUInt16Array(com_array<uint16_t> & value) const;
-    void GetInt32Array(com_array<int32_t> & value) const;
-    void GetUInt32Array(com_array<uint32_t> & value) const;
-    void GetInt64Array(com_array<int64_t> & value) const;
-    void GetUInt64Array(com_array<uint64_t> & value) const;
-    void GetSingleArray(com_array<float> & value) const;
-    void GetDoubleArray(com_array<double> & value) const;
-    void GetChar16Array(com_array<wchar_t> & value) const;
-    void GetBooleanArray(com_array<bool> & value) const;
-    void GetStringArray(com_array<hstring> & value) const;
-    void GetInspectableArray(com_array<IInspectable> & value) const;
-    void GetGuidArray(com_array<GUID> & value) const;
-    void GetDateTimeArray(com_array<Windows::Foundation::DateTime> & value) const;
-    void GetTimeSpanArray(com_array<Windows::Foundation::TimeSpan> & value) const;
-    void GetPointArray(com_array<Windows::Foundation::Point> & value) const;
-    void GetSizeArray(com_array<Windows::Foundation::Size> & value) const;
-    void GetRectArray(com_array<Windows::Foundation::Rect> & value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPropertyValueStatics
-{
-    IInspectable CreateEmpty() const;
-    IInspectable CreateUInt8(uint8_t value) const;
-    IInspectable CreateInt16(int16_t value) const;
-    IInspectable CreateUInt16(uint16_t value) const;
-    IInspectable CreateInt32(int32_t value) const;
-    IInspectable CreateUInt32(uint32_t value) const;
-    IInspectable CreateInt64(int64_t value) const;
-    IInspectable CreateUInt64(uint64_t value) const;
-    IInspectable CreateSingle(float value) const;
-    IInspectable CreateDouble(double value) const;
-    IInspectable CreateChar16(wchar_t value) const;
-    IInspectable CreateBoolean(bool value) const;
-    IInspectable CreateString(hstring_view value) const;
-    IInspectable CreateInspectable(const IInspectable & value) const;
-    IInspectable CreateGuid(GUID value) const;
-    IInspectable CreateDateTime(const Windows::Foundation::DateTime & value) const;
-    IInspectable CreateTimeSpan(const Windows::Foundation::TimeSpan & value) const;
-    IInspectable CreatePoint(const Windows::Foundation::Point & value) const;
-    IInspectable CreateSize(const Windows::Foundation::Size & value) const;
-    IInspectable CreateRect(const Windows::Foundation::Rect & value) const;
-    IInspectable CreateUInt8Array(array_view<const uint8_t> value) const;
-    IInspectable CreateInt16Array(array_view<const int16_t> value) const;
-    IInspectable CreateUInt16Array(array_view<const uint16_t> value) const;
-    IInspectable CreateInt32Array(array_view<const int32_t> value) const;
-    IInspectable CreateUInt32Array(array_view<const uint32_t> value) const;
-    IInspectable CreateInt64Array(array_view<const int64_t> value) const;
-    IInspectable CreateUInt64Array(array_view<const uint64_t> value) const;
-    IInspectable CreateSingleArray(array_view<const float> value) const;
-    IInspectable CreateDoubleArray(array_view<const double> value) const;
-    IInspectable CreateChar16Array(array_view<const wchar_t> value) const;
-    IInspectable CreateBooleanArray(array_view<const bool> value) const;
-    IInspectable CreateStringArray(array_view<const hstring> value) const;
-    IInspectable CreateInspectableArray(array_view<const IInspectable> value) const;
-    IInspectable CreateGuidArray(array_view<const GUID> value) const;
-    IInspectable CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value) const;
-    IInspectable CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value) const;
-    IInspectable CreatePointArray(array_view<const Windows::Foundation::Point> value) const;
-    IInspectable CreateSizeArray(array_view<const Windows::Foundation::Size> value) const;
-    IInspectable CreateRectArray(array_view<const Windows::Foundation::Rect> value) const;
-};
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInspectable(const Windows::Foundation::IInspectable & value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInspectable(get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-}
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateGuid(GUID value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateGuid(value, put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-namespace impl {
-    
-template <> struct traits<Windows::Foundation::IPropertyValue>
-{
-    using abi = ABI::Windows::Foundation::IPropertyValue;
-    template <typename D> using consume = Windows::Foundation::impl_IPropertyValue<D>;
-};
-
-template <> struct traits<Windows::Foundation::IPropertyValueStatics>
-{
-    using abi = ABI::Windows::Foundation::IPropertyValueStatics;
-    template <typename D> using consume = Windows::Foundation::impl_IPropertyValueStatics<D>;
-};
-
-template <> struct traits<Windows::Foundation::PropertyValue>
-{
-    static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.PropertyValue"; }
-};
-    
-}
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDateTime(const Windows::Foundation::DateTime & value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDateTime(get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-namespace Windows::Foundation {
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateTimeSpan(const Windows::Foundation::TimeSpan & value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateTimeSpan(get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-struct IPropertyValue :
-    IInspectable,
-    impl::consume<IPropertyValue>
-{
-    IPropertyValue(std::nullptr_t = nullptr) noexcept {}
-};
-
-struct IPropertyValueStatics :
-    IInspectable,
-    impl::consume<IPropertyValueStatics>
-{
-    IPropertyValueStatics(std::nullptr_t = nullptr) noexcept {}
-};
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreatePoint(const Windows::Foundation::Point & value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreatePoint(get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-struct PropertyValue
-{
-    PropertyValue() = delete;
-    static IInspectable CreateEmpty();
-    static IInspectable CreateUInt8(uint8_t value);
-    static IInspectable CreateInt16(int16_t value);
-    static IInspectable CreateUInt16(uint16_t value);
-    static IInspectable CreateInt32(int32_t value);
-    static IInspectable CreateUInt32(uint32_t value);
-    static IInspectable CreateInt64(int64_t value);
-    static IInspectable CreateUInt64(uint64_t value);
-    static IInspectable CreateSingle(float value);
-    static IInspectable CreateDouble(double value);
-    static IInspectable CreateChar16(wchar_t value);
-    static IInspectable CreateBoolean(bool value);
-    static IInspectable CreateString(hstring_view value);
-    static IInspectable CreateInspectable(const IInspectable & value);
-    static IInspectable CreateGuid(GUID value);
-    static IInspectable CreateDateTime(const Windows::Foundation::DateTime & value);
-    static IInspectable CreateTimeSpan(const Windows::Foundation::TimeSpan & value);
-    static IInspectable CreatePoint(const Windows::Foundation::Point & value);
-    static IInspectable CreateSize(const Windows::Foundation::Size & value);
-    static IInspectable CreateRect(const Windows::Foundation::Rect & value);
-    static IInspectable CreateUInt8Array(array_view<const uint8_t> value);
-    static IInspectable CreateInt16Array(array_view<const int16_t> value);
-    static IInspectable CreateUInt16Array(array_view<const uint16_t> value);
-    static IInspectable CreateInt32Array(array_view<const int32_t> value);
-    static IInspectable CreateUInt32Array(array_view<const uint32_t> value);
-    static IInspectable CreateInt64Array(array_view<const int64_t> value);
-    static IInspectable CreateUInt64Array(array_view<const uint64_t> value);
-    static IInspectable CreateSingleArray(array_view<const float> value);
-    static IInspectable CreateDoubleArray(array_view<const double> value);
-    static IInspectable CreateChar16Array(array_view<const wchar_t> value);
-    static IInspectable CreateBooleanArray(array_view<const bool> value);
-    static IInspectable CreateStringArray(array_view<const hstring> value);
-    static IInspectable CreateInspectableArray(array_view<const IInspectable> value);
-    static IInspectable CreateGuidArray(array_view<const GUID> value);
-    static IInspectable CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value);
-    static IInspectable CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value);
-    static IInspectable CreatePointArray(array_view<const Windows::Foundation::Point> value);
-    static IInspectable CreateSizeArray(array_view<const Windows::Foundation::Size> value);
-    static IInspectable CreateRectArray(array_view<const Windows::Foundation::Rect> value);
-};
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSize(const Windows::Foundation::Size & value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSize(get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-}
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateRect(const Windows::Foundation::Rect & value) const
+    {
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateRect(get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
+    }
 
-namespace impl {
-    
-template <typename D>
-struct produce<D, Windows::Foundation::IPropertyValue> : produce_base<D, Windows::Foundation::IPropertyValue>
-{
-    HRESULT __stdcall get_Type(Windows::Foundation::PropertyType * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt8Array(array_view<const uint8_t> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().Type());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt8Array(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall get_IsNumericScalar(bool * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt16Array(array_view<const int16_t> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().IsNumericScalar());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt16Array(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetUInt8(uint8_t * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt16Array(array_view<const uint16_t> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetUInt8());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt16Array(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetInt16(int16_t * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt32Array(array_view<const int32_t> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetInt16());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt32Array(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetUInt16(uint16_t * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt32Array(array_view<const uint32_t> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetUInt16());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt32Array(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetInt32(int32_t * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt64Array(array_view<const int64_t> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetInt32());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt64Array(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetUInt32(uint32_t * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt64Array(array_view<const uint64_t> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetUInt32());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt64Array(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetInt64(int64_t * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSingleArray(array_view<const float> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetInt64());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSingleArray(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetUInt64(uint64_t * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDoubleArray(array_view<const double> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetUInt64());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDoubleArray(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetSingle(float * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateChar16Array(array_view<const wchar_t> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetSingle());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateChar16Array(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetDouble(double * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateBooleanArray(array_view<const bool> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetDouble());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateBooleanArray(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetChar16(wchar_t * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateStringArray(array_view<const hstring> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetChar16());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateStringArray(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetBoolean(bool * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInspectableArray(array_view<const Windows::Foundation::IInspectable> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetBoolean());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInspectableArray(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetString(abi_arg_out<hstring> value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateGuidArray(array_view<const GUID> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetString());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateGuidArray(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetGuid(GUID * value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetGuid());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDateTimeArray(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetDateTime(abi_arg_out<Windows::Foundation::DateTime> value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetDateTime());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateTimeSpanArray(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetTimeSpan(abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreatePointArray(array_view<const Windows::Foundation::Point> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetTimeSpan());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreatePointArray(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetPoint(abi_arg_out<Windows::Foundation::Point> value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSizeArray(array_view<const Windows::Foundation::Size> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetPoint());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSizeArray(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetSize(abi_arg_out<Windows::Foundation::Size> value) noexcept override
+    template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateRectArray(array_view<const Windows::Foundation::Rect> value) const
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetSize());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        Windows::Foundation::IInspectable propertyValue;
+        check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateRectArray(value.size(), get_abi(value), put_abi(propertyValue)));
+        return propertyValue;
     }
 
-    HRESULT __stdcall abi_GetRect(abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateEmpty()
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().GetRect());
-            return S_OK;
-        }
-        catch (...)
-        {
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateEmpty();
     }
 
-    HRESULT __stdcall abi_GetUInt8Array(uint32_t * __valueSize, abi_arg_out<uint8_t> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateUInt8(uint8_t value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetUInt8Array(detach_abi<uint8_t>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt8(value);
     }
 
-    HRESULT __stdcall abi_GetInt16Array(uint32_t * __valueSize, abi_arg_out<int16_t> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateInt16(int16_t value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetInt16Array(detach_abi<int16_t>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt16(value);
     }
 
-    HRESULT __stdcall abi_GetUInt16Array(uint32_t * __valueSize, abi_arg_out<uint16_t> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateUInt16(uint16_t value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetUInt16Array(detach_abi<uint16_t>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt16(value);
     }
 
-    HRESULT __stdcall abi_GetInt32Array(uint32_t * __valueSize, abi_arg_out<int32_t> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateInt32(int32_t value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetInt32Array(detach_abi<int32_t>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt32(value);
     }
 
-    HRESULT __stdcall abi_GetUInt32Array(uint32_t * __valueSize, abi_arg_out<uint32_t> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateUInt32(uint32_t value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetUInt32Array(detach_abi<uint32_t>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt32(value);
     }
 
-    HRESULT __stdcall abi_GetInt64Array(uint32_t * __valueSize, abi_arg_out<int64_t> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateInt64(int64_t value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetInt64Array(detach_abi<int64_t>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt64(value);
     }
 
-    HRESULT __stdcall abi_GetUInt64Array(uint32_t * __valueSize, abi_arg_out<uint64_t> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateUInt64(uint64_t value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetUInt64Array(detach_abi<uint64_t>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt64(value);
     }
 
-    HRESULT __stdcall abi_GetSingleArray(uint32_t * __valueSize, abi_arg_out<float> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateSingle(float value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetSingleArray(detach_abi<float>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSingle(value);
     }
 
-    HRESULT __stdcall abi_GetDoubleArray(uint32_t * __valueSize, abi_arg_out<double> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateDouble(double value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetDoubleArray(detach_abi<double>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDouble(value);
     }
 
-    HRESULT __stdcall abi_GetChar16Array(uint32_t * __valueSize, abi_arg_out<wchar_t> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateChar16(wchar_t value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetChar16Array(detach_abi<wchar_t>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateChar16(value);
     }
 
-    HRESULT __stdcall abi_GetBooleanArray(uint32_t * __valueSize, abi_arg_out<bool> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateBoolean(bool value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetBooleanArray(detach_abi<bool>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateBoolean(value);
     }
 
-    HRESULT __stdcall abi_GetStringArray(uint32_t * __valueSize, abi_arg_out<hstring> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateString(hstring_view value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetStringArray(detach_abi<hstring>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateString(value);
     }
 
-    HRESULT __stdcall abi_GetInspectableArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::IInspectable> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateInspectable(const Windows::Foundation::IInspectable & value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetInspectableArray(detach_abi<Windows::Foundation::IInspectable>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInspectable(value);
     }
 
-    HRESULT __stdcall abi_GetGuidArray(uint32_t * __valueSize, abi_arg_out<GUID> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateGuid(GUID value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetGuidArray(detach_abi<GUID>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateGuid(value);
     }
 
-    HRESULT __stdcall abi_GetDateTimeArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::DateTime> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateDateTime(const Windows::Foundation::DateTime & value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetDateTimeArray(detach_abi<Windows::Foundation::DateTime>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDateTime(value);
     }
 
-    HRESULT __stdcall abi_GetTimeSpanArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::TimeSpan> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateTimeSpan(const Windows::Foundation::TimeSpan & value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetTimeSpanArray(detach_abi<Windows::Foundation::TimeSpan>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateTimeSpan(value);
     }
 
-    HRESULT __stdcall abi_GetPointArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::Point> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreatePoint(const Windows::Foundation::Point & value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetPointArray(detach_abi<Windows::Foundation::Point>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreatePoint(value);
     }
 
-    HRESULT __stdcall abi_GetSizeArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::Size> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateSize(const Windows::Foundation::Size & value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetSizeArray(detach_abi<Windows::Foundation::Size>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSize(value);
     }
 
-    HRESULT __stdcall abi_GetRectArray(uint32_t * __valueSize, abi_arg_out<Windows::Foundation::Rect> * value) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateRect(const Windows::Foundation::Rect & value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            this->shim().GetRectArray(detach_abi<Windows::Foundation::Rect>(__valueSize, value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *__valueSize = 0;
-            *value = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateRect(value);
     }
-};
 
-template <typename D>
-struct produce<D, Windows::Foundation::IPropertyValueStatics> : produce_base<D, Windows::Foundation::IPropertyValueStatics>
-{
-    HRESULT __stdcall abi_CreateEmpty(abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateUInt8Array(array_view<const uint8_t> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateEmpty());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt8Array(value);
     }
 
-    HRESULT __stdcall abi_CreateUInt8(uint8_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateInt16Array(array_view<const int16_t> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateUInt8(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt16Array(value);
     }
 
-    HRESULT __stdcall abi_CreateInt16(int16_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateUInt16Array(array_view<const uint16_t> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateInt16(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt16Array(value);
     }
 
-    HRESULT __stdcall abi_CreateUInt16(uint16_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateInt32Array(array_view<const int32_t> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateUInt16(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt32Array(value);
     }
 
-    HRESULT __stdcall abi_CreateInt32(int32_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateUInt32Array(array_view<const uint32_t> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateInt32(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt32Array(value);
     }
 
-    HRESULT __stdcall abi_CreateUInt32(uint32_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateInt64Array(array_view<const int64_t> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateUInt32(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt64Array(value);
     }
 
-    HRESULT __stdcall abi_CreateInt64(int64_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateUInt64Array(array_view<const uint64_t> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateInt64(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt64Array(value);
     }
 
-    HRESULT __stdcall abi_CreateUInt64(uint64_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateSingleArray(array_view<const float> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateUInt64(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSingleArray(value);
     }
 
-    HRESULT __stdcall abi_CreateSingle(float value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateDoubleArray(array_view<const double> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateSingle(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDoubleArray(value);
     }
 
-    HRESULT __stdcall abi_CreateDouble(double value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateChar16Array(array_view<const wchar_t> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateDouble(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateChar16Array(value);
     }
 
-    HRESULT __stdcall abi_CreateChar16(wchar_t value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateBooleanArray(array_view<const bool> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateChar16(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateBooleanArray(value);
     }
 
-    HRESULT __stdcall abi_CreateBoolean(bool value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateStringArray(array_view<const hstring> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateBoolean(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateStringArray(value);
     }
 
-    HRESULT __stdcall abi_CreateString(abi_arg_in<hstring> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateInspectableArray(array_view<const Windows::Foundation::IInspectable> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateString(*reinterpret_cast<const hstring *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInspectableArray(value);
     }
 
-    HRESULT __stdcall abi_CreateInspectable(abi_arg_in<Windows::Foundation::IInspectable> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateGuidArray(array_view<const GUID> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateInspectable(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateGuidArray(value);
     }
 
-    HRESULT __stdcall abi_CreateGuid(GUID value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateGuid(value));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDateTimeArray(value);
     }
 
-    HRESULT __stdcall abi_CreateDateTime(abi_arg_in<Windows::Foundation::DateTime> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateDateTime(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateTimeSpanArray(value);
     }
 
-    HRESULT __stdcall abi_CreateTimeSpan(abi_arg_in<Windows::Foundation::TimeSpan> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreatePointArray(array_view<const Windows::Foundation::Point> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateTimeSpan(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreatePointArray(value);
     }
 
-    HRESULT __stdcall abi_CreatePoint(abi_arg_in<Windows::Foundation::Point> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateSizeArray(array_view<const Windows::Foundation::Size> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreatePoint(*reinterpret_cast<const Windows::Foundation::Point *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSizeArray(value);
     }
 
-    HRESULT __stdcall abi_CreateSize(abi_arg_in<Windows::Foundation::Size> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    inline Windows::Foundation::IInspectable PropertyValue::CreateRectArray(array_view<const Windows::Foundation::Rect> value)
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
+        return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateRectArray(value);
     }
+}
 
-    HRESULT __stdcall abi_CreateRect(abi_arg_in<Windows::Foundation::Rect> value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateRect(*reinterpret_cast<const Windows::Foundation::Rect *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+namespace Windows::Foundation
+{
+    template <typename T> struct IReference;
+}
 
-    HRESULT __stdcall abi_CreateUInt8Array(uint32_t __valueSize, abi_arg_in<uint8_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateUInt8Array(array_view<const uint8_t>(value, value + __valueSize)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+namespace ABI::Windows::Foundation
+{
+    template <typename T> struct IReference : impl::not_specialized<IReference<T>> {};
 
-    HRESULT __stdcall abi_CreateInt16Array(uint32_t __valueSize, abi_arg_in<int16_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <typename T>
+    struct __declspec(novtable) impl_IReference : IInspectable
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateInt16Array(array_view<const int16_t>(value, value + __valueSize)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        virtual HRESULT __stdcall get_Value(arg_out<T> value) = 0;
+    };
+}
 
-    HRESULT __stdcall abi_CreateUInt16Array(uint32_t __valueSize, abi_arg_in<uint16_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+namespace Windows::Foundation
+{
+    template <typename D, typename T> struct WINRT_EBO impl_IReference
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateUInt16Array(array_view<const uint16_t>(value, value + __valueSize)));
-            return S_OK;
-        }
-        catch (...)
+        T Value() const
         {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
+            T result{};
+            check_hresult((*(abi<IReference<T>> **)&static_cast<const IReference<T> &>(static_cast<const D &>(*this)))->get_Value(put_abi(result)));
+            return result;
         }
-    }
+    };
+}
 
-    HRESULT __stdcall abi_CreateInt32Array(uint32_t __valueSize, abi_arg_in<int32_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+namespace impl
+{
+    template <typename T> struct traits<Windows::Foundation::IReference<T>>
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateInt32Array(array_view<const int32_t>(value, value + __valueSize)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        using abi = ABI::Windows::Foundation::IReference<abi<T>>;
+        template <typename D> using consume = Windows::Foundation::impl_IReference<D, T>;
+    };
 
-    HRESULT __stdcall abi_CreateUInt32Array(uint32_t __valueSize, abi_arg_in<uint32_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <typename D, typename T>
+    struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows::Foundation::IReference<T>>
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateUInt32Array(array_view<const uint32_t>(value, value + __valueSize)));
-            return S_OK;
-        }
-        catch (...)
+        HRESULT __stdcall get_Value(abi_arg_out<T> value) noexcept final
         {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().Value());
+                return S_OK;
+            }
+            catch (...)
+            {
+                clear_abi(value);
+                return to_hresult();
+            }
         }
-    }
+    };
 
-    HRESULT __stdcall abi_CreateInt64Array(uint32_t __valueSize, abi_arg_in<int64_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <typename T>
+    struct reference : implements<reference<T>, Windows::Foundation::IReference<T>, Windows::Foundation::IPropertyValue>
     {
-        try
+        reference(T const & value)
         {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateInt64Array(array_view<const int64_t>(value, value + __valueSize)));
-            return S_OK;
+            m_value = value;
         }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
 
-    HRESULT __stdcall abi_CreateUInt64Array(uint32_t __valueSize, abi_arg_in<uint64_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
-    {
-        try
+        T Value() const
         {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateUInt64Array(array_view<const uint64_t>(value, value + __valueSize)));
-            return S_OK;
+            return m_value;
         }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
 
-    HRESULT __stdcall abi_CreateSingleArray(uint32_t __valueSize, abi_arg_in<float> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateSingleArray(array_view<const float>(value, value + __valueSize)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        Windows::Foundation::PropertyType Type() { throw hresult_not_implemented(); }
+        bool IsNumericScalar() { throw hresult_not_implemented(); }
+        uint8_t GetUInt8() { throw hresult_not_implemented(); }
+        int16_t GetInt16() { throw hresult_not_implemented(); }
+        uint16_t GetUInt16() { throw hresult_not_implemented(); }
+        int32_t GetInt32() { throw hresult_not_implemented(); }
+        uint32_t GetUInt32() { throw hresult_not_implemented(); }
+        int64_t GetInt64() { throw hresult_not_implemented(); }
+        uint64_t GetUInt64() { throw hresult_not_implemented(); }
+        float GetSingle() { throw hresult_not_implemented(); }
+        double GetDouble() { throw hresult_not_implemented(); }
+        wchar_t GetChar16() { throw hresult_not_implemented(); }
+        bool GetBoolean() { throw hresult_not_implemented(); }
+        hstring GetString() { throw hresult_not_implemented(); }
+        GUID GetGuid() { throw hresult_not_implemented(); }
+        Windows::Foundation::DateTime GetDateTime() { throw hresult_not_implemented(); }
+        Windows::Foundation::TimeSpan GetTimeSpan() { throw hresult_not_implemented(); }
+        Windows::Foundation::Point GetPoint() { throw hresult_not_implemented(); }
+        Windows::Foundation::Size GetSize() { throw hresult_not_implemented(); }
+        Windows::Foundation::Rect GetRect() { throw hresult_not_implemented(); }
+        void GetUInt8Array(com_array<uint8_t> &) { throw hresult_not_implemented(); }
+        void GetInt16Array(com_array<int16_t> &) { throw hresult_not_implemented(); }
+        void GetUInt16Array(com_array<uint16_t> &) { throw hresult_not_implemented(); }
+        void GetInt32Array(com_array<int32_t> &) { throw hresult_not_implemented(); }
+        void GetUInt32Array(com_array<uint32_t> &) { throw hresult_not_implemented(); }
+        void GetInt64Array(com_array<int64_t> &) { throw hresult_not_implemented(); }
+        void GetUInt64Array(com_array<uint64_t> &) { throw hresult_not_implemented(); }
+        void GetSingleArray(com_array<float> &) { throw hresult_not_implemented(); }
+        void GetDoubleArray(com_array<double> &) { throw hresult_not_implemented(); }
+        void GetChar16Array(com_array<wchar_t> &) { throw hresult_not_implemented(); }
+        void GetBooleanArray(com_array<bool> &) { throw hresult_not_implemented(); }
+        void GetStringArray(com_array<hstring> &) { throw hresult_not_implemented(); }
+        void GetInspectableArray(com_array<Windows::Foundation::IInspectable> &) { throw hresult_not_implemented(); }
+        void GetGuidArray(com_array<GUID> &) { throw hresult_not_implemented(); }
+        void GetDateTimeArray(com_array<Windows::Foundation::DateTime> &) { throw hresult_not_implemented(); }
+        void GetTimeSpanArray(com_array<Windows::Foundation::TimeSpan> &) { throw hresult_not_implemented(); }
+        void GetPointArray(com_array<Windows::Foundation::Point> &) { throw hresult_not_implemented(); }
+        void GetSizeArray(com_array<Windows::Foundation::Size> &) { throw hresult_not_implemented(); }
+        void GetRectArray(com_array<Windows::Foundation::Rect> &) { throw hresult_not_implemented(); }
 
-    HRESULT __stdcall abi_CreateDoubleArray(uint32_t __valueSize, abi_arg_in<double> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateDoubleArray(array_view<const double>(value, value + __valueSize)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+    private:
 
-    HRESULT __stdcall abi_CreateChar16Array(uint32_t __valueSize, abi_arg_in<wchar_t> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
-    {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateChar16Array(array_view<const wchar_t>(value, value + __valueSize)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        T m_value;
+    };
 
-    HRESULT __stdcall abi_CreateBooleanArray(uint32_t __valueSize, abi_arg_in<bool> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <typename T>
+    struct reference_traits
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateBooleanArray(array_view<const bool>(value, value + __valueSize)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        static Windows::Foundation::IInspectable make(T const & val) { return winrt::make<impl::reference<T>>(val); }
+    };
 
-    HRESULT __stdcall abi_CreateStringArray(uint32_t __valueSize, abi_arg_in<hstring> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <>
+    struct reference_traits <uint8_t>
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateStringArray(*reinterpret_cast<const hstring *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        static Windows::Foundation::IInspectable make(uint8_t val) { return Windows::Foundation::PropertyValue::CreateUInt8(val); }
+    };
 
-    HRESULT __stdcall abi_CreateInspectableArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::IInspectable> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <>
+    struct reference_traits <uint16_t>
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateInspectableArray(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *value = nullptr;
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        static Windows::Foundation::IInspectable make(uint16_t val) { return Windows::Foundation::PropertyValue::CreateUInt16(val); }
+    };
 
-    HRESULT __stdcall abi_CreateGuidArray(uint32_t __valueSize, abi_arg_in<GUID> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <>
+    struct reference_traits <int16_t>
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateGuidArray(array_view<const GUID>(value, value + __valueSize)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        static Windows::Foundation::IInspectable make(int16_t val) { return Windows::Foundation::PropertyValue::CreateInt16(val); }
+    };
 
-    HRESULT __stdcall abi_CreateDateTimeArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::DateTime> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <>
+    struct reference_traits <uint32_t>
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateDateTimeArray(*reinterpret_cast<const Windows::Foundation::DateTime *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        static Windows::Foundation::IInspectable make(uint32_t val) { return Windows::Foundation::PropertyValue::CreateUInt32(val); }
+    };
 
-    HRESULT __stdcall abi_CreateTimeSpanArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::TimeSpan> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <>
+    struct reference_traits <int32_t>
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateTimeSpanArray(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        static Windows::Foundation::IInspectable make(int32_t val) { return Windows::Foundation::PropertyValue::CreateInt32(val); }
+    };
 
-    HRESULT __stdcall abi_CreatePointArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Point> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <>
+    struct reference_traits <uint64_t>
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreatePointArray(*reinterpret_cast<const Windows::Foundation::Point *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        static Windows::Foundation::IInspectable make(uint64_t val) { return Windows::Foundation::PropertyValue::CreateUInt64(val); }
+    };
 
-    HRESULT __stdcall abi_CreateSizeArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Size> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <>
+    struct reference_traits <int64_t>
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateSizeArray(*reinterpret_cast<const Windows::Foundation::Size *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
+        static Windows::Foundation::IInspectable make(int64_t val) { return Windows::Foundation::PropertyValue::CreateInt64(val); }
+    };
 
-    HRESULT __stdcall abi_CreateRectArray(uint32_t __valueSize, abi_arg_in<Windows::Foundation::Rect> * value, abi_arg_out<Windows::Foundation::IInspectable> propertyValue) noexcept override
+    template <>
+    struct reference_traits <float>
     {
-        try
-        {
-            typename D::abi_guard guard(this->shim());
-            *propertyValue = detach_abi(this->shim().CreateRectArray(*reinterpret_cast<const Windows::Foundation::Rect *>(&value)));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *propertyValue = nullptr;
-            return impl::to_hresult();
-        }
-    }
-};
-    
-}
-
-namespace Windows::Foundation {
-    
-template <typename D> Windows::Foundation::PropertyType impl_IPropertyValue<D>::Type() const
-{
-    Windows::Foundation::PropertyType value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->get_Type(&value));
-    return value;
-}
-
-template <typename D> bool impl_IPropertyValue<D>::IsNumericScalar() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->get_IsNumericScalar(&value));
-    return value;
-}
-
-template <typename D> uint8_t impl_IPropertyValue<D>::GetUInt8() const
-{
-    uint8_t value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt8(&value));
-    return value;
-}
-
-template <typename D> int16_t impl_IPropertyValue<D>::GetInt16() const
-{
-    int16_t value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt16(&value));
-    return value;
-}
-
-template <typename D> uint16_t impl_IPropertyValue<D>::GetUInt16() const
-{
-    uint16_t value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt16(&value));
-    return value;
-}
-
-template <typename D> int32_t impl_IPropertyValue<D>::GetInt32() const
-{
-    int32_t value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt32(&value));
-    return value;
-}
-
-template <typename D> uint32_t impl_IPropertyValue<D>::GetUInt32() const
-{
-    uint32_t value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt32(&value));
-    return value;
-}
-
-template <typename D> int64_t impl_IPropertyValue<D>::GetInt64() const
-{
-    int64_t value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt64(&value));
-    return value;
-}
-
-template <typename D> uint64_t impl_IPropertyValue<D>::GetUInt64() const
-{
-    uint64_t value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt64(&value));
-    return value;
-}
-
-template <typename D> float impl_IPropertyValue<D>::GetSingle() const
-{
-    float value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetSingle(&value));
-    return value;
-}
-
-template <typename D> double impl_IPropertyValue<D>::GetDouble() const
-{
-    double value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetDouble(&value));
-    return value;
-}
-
-template <typename D> wchar_t impl_IPropertyValue<D>::GetChar16() const
-{
-    wchar_t value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetChar16(&value));
-    return value;
-}
-
-template <typename D> bool impl_IPropertyValue<D>::GetBoolean() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetBoolean(&value));
-    return value;
-}
-
-template <typename D> hstring impl_IPropertyValue<D>::GetString() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetString(put_abi(value)));
-    return value;
-}
-
-template <typename D> GUID impl_IPropertyValue<D>::GetGuid() const
-{
-    GUID value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetGuid(&value));
-    return value;
-}
-
-template <typename D> Windows::Foundation::DateTime impl_IPropertyValue<D>::GetDateTime() const
-{
-    Windows::Foundation::DateTime value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetDateTime(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::TimeSpan impl_IPropertyValue<D>::GetTimeSpan() const
-{
-    Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetTimeSpan(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::Point impl_IPropertyValue<D>::GetPoint() const
-{
-    Windows::Foundation::Point value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetPoint(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::Size impl_IPropertyValue<D>::GetSize() const
-{
-    Windows::Foundation::Size value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetSize(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::Rect impl_IPropertyValue<D>::GetRect() const
-{
-    Windows::Foundation::Rect value {};
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetRect(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IPropertyValue<D>::GetUInt8Array(com_array<uint8_t> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt8Array(impl::put_size_abi(value), put_abi(value)));
-}
-
-template <typename D> void impl_IPropertyValue<D>::GetInt16Array(com_array<int16_t> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt16Array(impl::put_size_abi(value), put_abi(value)));
-}
-
-template <typename D> void impl_IPropertyValue<D>::GetUInt16Array(com_array<uint16_t> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt16Array(impl::put_size_abi(value), put_abi(value)));
-}
-
-template <typename D> void impl_IPropertyValue<D>::GetInt32Array(com_array<int32_t> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt32Array(impl::put_size_abi(value), put_abi(value)));
-}
-
-template <typename D> void impl_IPropertyValue<D>::GetUInt32Array(com_array<uint32_t> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt32Array(impl::put_size_abi(value), put_abi(value)));
-}
-
-template <typename D> void impl_IPropertyValue<D>::GetInt64Array(com_array<int64_t> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInt64Array(impl::put_size_abi(value), put_abi(value)));
-}
-
-template <typename D> void impl_IPropertyValue<D>::GetUInt64Array(com_array<uint64_t> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetUInt64Array(impl::put_size_abi(value), put_abi(value)));
-}
+        static Windows::Foundation::IInspectable make(float val) { return Windows::Foundation::PropertyValue::CreateSingle(val); }
+    };
 
-template <typename D> void impl_IPropertyValue<D>::GetSingleArray(com_array<float> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetSingleArray(impl::put_size_abi(value), put_abi(value)));
-}
-
-template <typename D> void impl_IPropertyValue<D>::GetDoubleArray(com_array<double> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetDoubleArray(impl::put_size_abi(value), put_abi(value)));
-}
-
-template <typename D> void impl_IPropertyValue<D>::GetChar16Array(com_array<wchar_t> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetChar16Array(impl::put_size_abi(value), put_abi(value)));
-}
-
-template <typename D> void impl_IPropertyValue<D>::GetBooleanArray(com_array<bool> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetBooleanArray(impl::put_size_abi(value), put_abi(value)));
-}
-
-template <typename D> void impl_IPropertyValue<D>::GetStringArray(com_array<hstring> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetStringArray(impl::put_size_abi(value), put_abi(value)));
-}
+    template <>
+    struct reference_traits <double>
+    {
+        static Windows::Foundation::IInspectable make(double val) { return Windows::Foundation::PropertyValue::CreateDouble(val); }
+    };
 
-template <typename D> void impl_IPropertyValue<D>::GetInspectableArray(com_array<Windows::Foundation::IInspectable> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetInspectableArray(impl::put_size_abi(value), put_abi(value)));
-}
+    template <>
+    struct reference_traits <wchar_t>
+    {
+        static Windows::Foundation::IInspectable make(wchar_t val) { return Windows::Foundation::PropertyValue::CreateChar16(val); }
+    };
 
-template <typename D> void impl_IPropertyValue<D>::GetGuidArray(com_array<GUID> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetGuidArray(impl::put_size_abi(value), put_abi(value)));
-}
+    template <>
+    struct reference_traits <bool>
+    {
+        static Windows::Foundation::IInspectable make(bool val) { return Windows::Foundation::PropertyValue::CreateBoolean(val); }
+    };
 
-template <typename D> void impl_IPropertyValue<D>::GetDateTimeArray(com_array<Windows::Foundation::DateTime> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetDateTimeArray(impl::put_size_abi(value), put_abi(value)));
-}
+    template <>
+    struct reference_traits <hstring>
+    {
+        static Windows::Foundation::IInspectable make(hstring const & val) { return Windows::Foundation::PropertyValue::CreateString(val); }
+    };
 
-template <typename D> void impl_IPropertyValue<D>::GetTimeSpanArray(com_array<Windows::Foundation::TimeSpan> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetTimeSpanArray(impl::put_size_abi(value), put_abi(value)));
-}
+    template <>
+    struct reference_traits <hstring_view>
+    {
+        static Windows::Foundation::IInspectable make(hstring_view val) { return Windows::Foundation::PropertyValue::CreateString(val); }
+    };
 
-template <typename D> void impl_IPropertyValue<D>::GetPointArray(com_array<Windows::Foundation::Point> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetPointArray(impl::put_size_abi(value), put_abi(value)));
-}
+    template <>
+    struct reference_traits <Windows::Foundation::IInspectable>
+    {
+        static Windows::Foundation::IInspectable make(Windows::Foundation::IInspectable const & val) { return Windows::Foundation::PropertyValue::CreateInspectable(val); }
+    };
 
-template <typename D> void impl_IPropertyValue<D>::GetSizeArray(com_array<Windows::Foundation::Size> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetSizeArray(impl::put_size_abi(value), put_abi(value)));
-}
+    template <>
+    struct reference_traits <GUID>
+    {
+        static Windows::Foundation::IInspectable make(GUID const & val) { return Windows::Foundation::PropertyValue::CreateGuid(val); }
+    };
 
-template <typename D> void impl_IPropertyValue<D>::GetRectArray(com_array<Windows::Foundation::Rect> & value) const
-{
-    check_hresult(WINRT_SHIM(IPropertyValue)->abi_GetRectArray(impl::put_size_abi(value), put_abi(value)));
-}
+    template <>
+    struct reference_traits <Windows::Foundation::DateTime>
+    {
+        static Windows::Foundation::IInspectable make(Windows::Foundation::DateTime val) { return Windows::Foundation::PropertyValue::CreateDateTime(val); }
+    };
 
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateEmpty() const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateEmpty(put_abi(propertyValue)));
-    return propertyValue;
-}
+    template <>
+    struct reference_traits <Windows::Foundation::TimeSpan>
+    {
+        static Windows::Foundation::IInspectable make(Windows::Foundation::TimeSpan val) { return Windows::Foundation::PropertyValue::CreateTimeSpan(val); }
+    };
 
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt8(uint8_t value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt8(value, put_abi(propertyValue)));
-    return propertyValue;
-}
+    template <>
+    struct reference_traits  <Windows::Foundation::Point>
+    {
+        static Windows::Foundation::IInspectable make(Windows::Foundation::Point const & val) { return Windows::Foundation::PropertyValue::CreatePoint(val); }
+    };
 
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt16(int16_t value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt16(value, put_abi(propertyValue)));
-    return propertyValue;
-}
+    template <>
+    struct reference_traits <Windows::Foundation::Size>
+    {
+        static Windows::Foundation::IInspectable make(Windows::Foundation::Size const & val) { return Windows::Foundation::PropertyValue::CreateSize(val); }
+    };
 
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt16(uint16_t value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt16(value, put_abi(propertyValue)));
-    return propertyValue;
+    template <>
+    struct reference_traits <Windows::Foundation::Rect>
+    {
+        static Windows::Foundation::IInspectable make(Windows::Foundation::Rect const & val) { return Windows::Foundation::PropertyValue::CreateRect(val); }
+    };
 }
 
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt32(int32_t value) const
+namespace Windows::Foundation
 {
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt32(value, put_abi(propertyValue)));
-    return propertyValue;
-}
+    template <typename T>
+    struct WINRT_EBO IReference :
+        IInspectable,
+        impl::consume<IReference<T>>
+    {
+        IReference<T>(std::nullptr_t = nullptr) noexcept {}
 
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt32(uint32_t value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt32(value, put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt64(int64_t value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt64(value, put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt64(uint64_t value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt64(value, put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSingle(float value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSingle(value, put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDouble(double value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDouble(value, put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateChar16(wchar_t value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateChar16(value, put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateBoolean(bool value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateBoolean(value, put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateString(hstring_view value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateString(get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInspectable(const Windows::Foundation::IInspectable & value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInspectable(get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateGuid(GUID value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateGuid(value, put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDateTime(const Windows::Foundation::DateTime & value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDateTime(get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateTimeSpan(const Windows::Foundation::TimeSpan & value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateTimeSpan(get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreatePoint(const Windows::Foundation::Point & value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreatePoint(get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSize(const Windows::Foundation::Size & value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSize(get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateRect(const Windows::Foundation::Rect & value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateRect(get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt8Array(array_view<const uint8_t> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt8Array(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt16Array(array_view<const int16_t> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt16Array(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt16Array(array_view<const uint16_t> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt16Array(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt32Array(array_view<const int32_t> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt32Array(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt32Array(array_view<const uint32_t> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt32Array(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInt64Array(array_view<const int64_t> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInt64Array(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateUInt64Array(array_view<const uint64_t> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateUInt64Array(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSingleArray(array_view<const float> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSingleArray(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDoubleArray(array_view<const double> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDoubleArray(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateChar16Array(array_view<const wchar_t> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateChar16Array(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateBooleanArray(array_view<const bool> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateBooleanArray(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateStringArray(array_view<const hstring> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateStringArray(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateInspectableArray(array_view<const Windows::Foundation::IInspectable> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateInspectableArray(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateGuidArray(array_view<const GUID> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateGuidArray(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateDateTimeArray(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateTimeSpanArray(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreatePointArray(array_view<const Windows::Foundation::Point> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreatePointArray(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateSizeArray(array_view<const Windows::Foundation::Size> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateSizeArray(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IPropertyValueStatics<D>::CreateRectArray(array_view<const Windows::Foundation::Rect> value) const
-{
-    Windows::Foundation::IInspectable propertyValue;
-    check_hresult(WINRT_SHIM(IPropertyValueStatics)->abi_CreateRectArray(value.size(), get_abi(value), put_abi(propertyValue)));
-    return propertyValue;
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateEmpty()
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateEmpty();
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateUInt8(uint8_t value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt8(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateInt16(int16_t value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt16(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateUInt16(uint16_t value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt16(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateInt32(int32_t value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt32(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateUInt32(uint32_t value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt32(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateInt64(int64_t value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt64(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateUInt64(uint64_t value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt64(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateSingle(float value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSingle(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateDouble(double value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDouble(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateChar16(wchar_t value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateChar16(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateBoolean(bool value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateBoolean(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateString(hstring_view value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateString(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateInspectable(const Windows::Foundation::IInspectable & value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInspectable(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateGuid(GUID value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateGuid(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateDateTime(const Windows::Foundation::DateTime & value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDateTime(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateTimeSpan(const Windows::Foundation::TimeSpan & value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateTimeSpan(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreatePoint(const Windows::Foundation::Point & value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreatePoint(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateSize(const Windows::Foundation::Size & value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSize(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateRect(const Windows::Foundation::Rect & value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateRect(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateUInt8Array(array_view<const uint8_t> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt8Array(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateInt16Array(array_view<const int16_t> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt16Array(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateUInt16Array(array_view<const uint16_t> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt16Array(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateInt32Array(array_view<const int32_t> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt32Array(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateUInt32Array(array_view<const uint32_t> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt32Array(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateInt64Array(array_view<const int64_t> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInt64Array(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateUInt64Array(array_view<const uint64_t> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateUInt64Array(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateSingleArray(array_view<const float> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSingleArray(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateDoubleArray(array_view<const double> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDoubleArray(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateChar16Array(array_view<const wchar_t> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateChar16Array(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateBooleanArray(array_view<const bool> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateBooleanArray(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateStringArray(array_view<const hstring> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateStringArray(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateInspectableArray(array_view<const Windows::Foundation::IInspectable> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateInspectableArray(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateGuidArray(array_view<const GUID> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateGuidArray(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateDateTimeArray(array_view<const Windows::Foundation::DateTime> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateDateTimeArray(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateTimeSpanArray(array_view<const Windows::Foundation::TimeSpan> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateTimeSpanArray(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreatePointArray(array_view<const Windows::Foundation::Point> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreatePointArray(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateSizeArray(array_view<const Windows::Foundation::Size> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateSizeArray(value);
-}
-
-inline Windows::Foundation::IInspectable PropertyValue::CreateRectArray(array_view<const Windows::Foundation::Rect> value)
-{
-    return get_activation_factory<PropertyValue, IPropertyValueStatics>().CreateRectArray(value);
-}
-    
-}
-
-namespace Windows::Foundation {
-
-template <typename T> struct IReference;
-
-}
-
-namespace ABI::Windows::Foundation {
-
-template <typename T> struct IReference : impl::not_specialized<IReference<T>> {};
-
-template <typename T>
-struct __declspec(novtable) impl_IReference : IInspectable
-{
-    virtual HRESULT __stdcall get_Value(arg_out<T> value) = 0;
-};
-
-}
-
-namespace Windows::Foundation {
-
-template <typename D, typename T> struct WINRT_EBO impl_IReference
-{
-    T Value() const
-    {
-        T result{};
-        check_hresult((*(abi<IReference<T>> **)&static_cast<const IReference<T> &>(static_cast<const D &>(*this)))->get_Value(put_abi(result)));
-        return result;
-    }
-};
-
-}
-
-namespace impl {
-
-template <typename T> struct traits<Windows::Foundation::IReference<T>>
-{
-    using abi = ABI::Windows::Foundation::IReference<abi<T>>;
-    template <typename D> using consume = Windows::Foundation::impl_IReference<D, T>;
-};
-
-template <typename D, typename T>
-struct produce<D, Windows::Foundation::IReference<T>> : produce_base<D, Windows::Foundation::IReference<T>>
-{
-    HRESULT __stdcall get_Value(abi_arg_out<T> value) noexcept final
-    {
-        try
+        IReference<T>(T const & val)
         {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().Value());
-            return S_OK;
+            this->m_ptr = detach_abi((impl::reference_traits<T>::make(val)).template as<abi<IReference<T>>>());
         }
-        catch (...)
-        {
-            clear_abi(value);
-            return to_hresult();
-        }
-    }
-};
-
-template <typename T>
-struct reference : implements<reference<T>, Windows::Foundation::IReference<T>, Windows::Foundation::IPropertyValue>
-{
-    reference(T const & value)
-    {
-        m_value = value;
-    }
-
-    T Value() const
-    {
-        return m_value;
-    }
-
-    Windows::Foundation::PropertyType Type() { throw hresult_not_implemented(); }
-    bool IsNumericScalar() { throw hresult_not_implemented(); }
-    uint8_t GetUInt8() { throw hresult_not_implemented(); }
-    int16_t GetInt16() { throw hresult_not_implemented(); }
-    uint16_t GetUInt16() { throw hresult_not_implemented(); }
-    int32_t GetInt32() { throw hresult_not_implemented(); }
-    uint32_t GetUInt32() { throw hresult_not_implemented(); }
-    int64_t GetInt64() { throw hresult_not_implemented(); }
-    uint64_t GetUInt64() { throw hresult_not_implemented(); }
-    float GetSingle() { throw hresult_not_implemented(); }
-    double GetDouble() { throw hresult_not_implemented(); }
-    wchar_t GetChar16() { throw hresult_not_implemented(); }
-    bool GetBoolean() { throw hresult_not_implemented(); }
-    hstring GetString() { throw hresult_not_implemented(); }
-    GUID GetGuid() { throw hresult_not_implemented(); }
-    Windows::Foundation::DateTime GetDateTime() { throw hresult_not_implemented(); }
-    Windows::Foundation::TimeSpan GetTimeSpan() { throw hresult_not_implemented(); }
-    Windows::Foundation::Point GetPoint() { throw hresult_not_implemented(); }
-    Windows::Foundation::Size GetSize() { throw hresult_not_implemented(); }
-    Windows::Foundation::Rect GetRect() { throw hresult_not_implemented(); }
-    void GetUInt8Array(com_array<uint8_t> &) { throw hresult_not_implemented(); }
-    void GetInt16Array(com_array<int16_t> &) { throw hresult_not_implemented(); }
-    void GetUInt16Array(com_array<uint16_t> &) { throw hresult_not_implemented(); }
-    void GetInt32Array(com_array<int32_t> &) { throw hresult_not_implemented(); }
-    void GetUInt32Array(com_array<uint32_t> &) { throw hresult_not_implemented(); }
-    void GetInt64Array(com_array<int64_t> &) { throw hresult_not_implemented(); }
-    void GetUInt64Array(com_array<uint64_t> &) { throw hresult_not_implemented(); }
-    void GetSingleArray(com_array<float> &) { throw hresult_not_implemented(); }
-    void GetDoubleArray(com_array<double> &) { throw hresult_not_implemented(); }
-    void GetChar16Array(com_array<wchar_t> &) { throw hresult_not_implemented(); }
-    void GetBooleanArray(com_array<bool> &) { throw hresult_not_implemented(); }
-    void GetStringArray(com_array<hstring> &) { throw hresult_not_implemented(); }
-    void GetInspectableArray(com_array<Windows::Foundation::IInspectable> &) { throw hresult_not_implemented(); }
-    void GetGuidArray(com_array<GUID> &) { throw hresult_not_implemented(); }
-    void GetDateTimeArray(com_array<Windows::Foundation::DateTime> &) { throw hresult_not_implemented(); }
-    void GetTimeSpanArray(com_array<Windows::Foundation::TimeSpan> &) { throw hresult_not_implemented(); }
-    void GetPointArray(com_array<Windows::Foundation::Point> &) { throw hresult_not_implemented(); }
-    void GetSizeArray(com_array<Windows::Foundation::Size> &) { throw hresult_not_implemented(); }
-    void GetRectArray(com_array<Windows::Foundation::Rect> &) { throw hresult_not_implemented(); }
-
-private:
-    T m_value;
-};
-
-
-template <typename T>
-struct reference_traits
-{
-    static Windows::Foundation::IInspectable make(T const & val) { return winrt::make<impl::reference<T>>(val); }
-};
-
-template <>
-struct reference_traits <uint8_t>
-{
-    static Windows::Foundation::IInspectable make(uint8_t val) { return Windows::Foundation::PropertyValue::CreateUInt8(val); }
-};
-
-template <>
-struct reference_traits <uint16_t>
-{
-    static Windows::Foundation::IInspectable make(uint16_t val) { return Windows::Foundation::PropertyValue::CreateUInt16(val); }
-};
-
-template <>
-struct reference_traits <int16_t>
-{
-    static Windows::Foundation::IInspectable make(int16_t val) { return Windows::Foundation::PropertyValue::CreateInt16(val); }
-};
-
-template <>
-struct reference_traits <uint32_t>
-{
-    static Windows::Foundation::IInspectable make(uint32_t val) { return Windows::Foundation::PropertyValue::CreateUInt32(val); }
-};
-
-template <>
-struct reference_traits <int32_t>
-{
-    static Windows::Foundation::IInspectable make(int32_t val) { return Windows::Foundation::PropertyValue::CreateInt32(val); }
-};
-
-template <>
-struct reference_traits <uint64_t>
-{
-    static Windows::Foundation::IInspectable make(uint64_t val) { return Windows::Foundation::PropertyValue::CreateUInt64(val); }
-};
-
-template <>
-struct reference_traits <int64_t>
-{
-    static Windows::Foundation::IInspectable make(int64_t val) { return Windows::Foundation::PropertyValue::CreateInt64(val); }
-};
-
-template <>
-struct reference_traits <float>
-{
-    static Windows::Foundation::IInspectable make(float val) { return Windows::Foundation::PropertyValue::CreateSingle(val); }
-};
-
-template <>
-struct reference_traits <double>
-{
-    static Windows::Foundation::IInspectable make(double val) { return Windows::Foundation::PropertyValue::CreateDouble(val); }
-};
-
-template <>
-struct reference_traits <wchar_t>
-{
-    static Windows::Foundation::IInspectable make(wchar_t val) { return Windows::Foundation::PropertyValue::CreateChar16(val); }
-};
-
-template <>
-struct reference_traits <bool>
-{
-    static Windows::Foundation::IInspectable make(bool val) { return Windows::Foundation::PropertyValue::CreateBoolean(val); }
-};
-
-template <>
-struct reference_traits <hstring>
-{
-    static Windows::Foundation::IInspectable make(hstring const & val) { return Windows::Foundation::PropertyValue::CreateString(val); }
-};
-
-template <>
-struct reference_traits <hstring_view>
-{
-    static Windows::Foundation::IInspectable make(hstring_view val) { return Windows::Foundation::PropertyValue::CreateString(val); }
-};
-
-template <>
-struct reference_traits <Windows::Foundation::IInspectable>
-{
-    static Windows::Foundation::IInspectable make(Windows::Foundation::IInspectable const & val) { return Windows::Foundation::PropertyValue::CreateInspectable(val); }
-};
-
-template <>
-struct reference_traits <GUID>
-{
-    static Windows::Foundation::IInspectable make(GUID const & val) { return Windows::Foundation::PropertyValue::CreateGuid(val); }
-};
-
-template <>
-struct reference_traits <Windows::Foundation::DateTime>
-{
-    static Windows::Foundation::IInspectable make(Windows::Foundation::DateTime val) { return Windows::Foundation::PropertyValue::CreateDateTime(val); }
-};
-
-template <>
-struct reference_traits <Windows::Foundation::TimeSpan>
-{
-    static Windows::Foundation::IInspectable make(Windows::Foundation::TimeSpan val) { return Windows::Foundation::PropertyValue::CreateTimeSpan(val); }
-};
-
-template <>
-struct reference_traits  <Windows::Foundation::Point>
-{
-    static Windows::Foundation::IInspectable make(Windows::Foundation::Point const & val) { return Windows::Foundation::PropertyValue::CreatePoint(val); }
-};
-
-template <>
-struct reference_traits <Windows::Foundation::Size>
-{
-    static Windows::Foundation::IInspectable make(Windows::Foundation::Size const & val) { return Windows::Foundation::PropertyValue::CreateSize(val); }
-};
-
-template <>
-struct reference_traits <Windows::Foundation::Rect>
-{
-    static Windows::Foundation::IInspectable make(Windows::Foundation::Rect const & val) { return Windows::Foundation::PropertyValue::CreateRect(val); }
-};
-
-}
-
-namespace Windows::Foundation {
-
-template <typename T>
-struct WINRT_EBO IReference :
-    IInspectable,
-    impl::consume<IReference<T>>
-{
-    IReference<T>(std::nullptr_t = nullptr) noexcept {}
-
-    IReference<T>(T const & val)
-    {
-        this->m_ptr = detach_abi((impl::reference_traits<T>::make(val)).template as<abi<IReference<T>>>());
-    }
-};
-
+    };
 }
 
 template <typename T>
@@ -11647,38 +11593,37 @@ using optional = Windows::Foundation::IReference<T>;
 
 }
 
-namespace std {
-
-template <> struct hash<winrt::hstring>
+namespace std
 {
-    size_t operator()(const winrt::hstring & value) const noexcept
+    template <> struct hash<winrt::hstring>
     {
+        size_t operator()(const winrt::hstring & value) const noexcept
+        {
 #ifdef WINRT_64
-        const size_t fnv_offset_basis = 14695981039346656037ULL;
-        const size_t fnv_prime = 1099511628211ULL;
+            const size_t fnv_offset_basis = 14695981039346656037ULL;
+            const size_t fnv_prime = 1099511628211ULL;
 #else
-        const size_t fnv_offset_basis = 2166136261U;
-        const size_t fnv_prime = 16777619U;
+            const size_t fnv_offset_basis = 2166136261U;
+            const size_t fnv_prime = 16777619U;
 #endif
 
-        uint32_t length = 0;
+            uint32_t length = 0;
 
-        const uint8_t * const buffer = reinterpret_cast<const uint8_t *>(WindowsGetStringRawBuffer(get_abi(value),
-                                                                                                   &length));
+            const uint8_t * const buffer = reinterpret_cast<const uint8_t *>(WindowsGetStringRawBuffer(get_abi(value),
+                                                                                                       &length));
 
-        length *= sizeof(wchar_t);
-        size_t result = fnv_offset_basis;
+            length *= sizeof(wchar_t);
+            size_t result = fnv_offset_basis;
 
-        for (size_t next = 0; next < length; ++next)
-        {
-            result ^= buffer[next];
-            result *= fnv_prime;
+            for (size_t next = 0; next < length; ++next)
+            {
+                result ^= buffer[next];
+                result *= fnv_prime;
+            }
+
+            return result;
         }
-
-        return result;
-    }
-};
-
+    };
 }
 
 #ifdef WINRT_ASYNC
@@ -11715,7 +11660,7 @@ template <typename ... Args>
 struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
 {
     struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncAction,
-                                                                  winrt::Windows::Foundation::AsyncActionCompletedHandler>
+        winrt::Windows::Foundation::AsyncActionCompletedHandler>
     {
         void GetResults()
         {
@@ -11785,7 +11730,7 @@ template <typename TProgress, typename ... Args>
 struct coroutine_traits<winrt::Windows::Foundation::IAsyncActionWithProgress<TProgress>, Args ...>
 {
     struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncActionWithProgress<TProgress>,
-                                                                  winrt::Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+        winrt::Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
     {
         using ProgressHandler = winrt::Windows::Foundation::AsyncActionProgressHandler<TProgress>;
 
@@ -11884,7 +11829,7 @@ template <typename TResult, typename ... Args>
 struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperation<TResult>, Args ...>
 {
     struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncOperation<TResult>,
-                                                                  winrt::Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
+        winrt::Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
     {
         TResult GetResults()
         {
@@ -11957,7 +11902,7 @@ template <typename TResult, typename TProgress, typename ... Args>
 struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>, Args ...>
 {
     struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>,
-                                                                  winrt::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+        winrt::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
     {
         using ProgressHandler = winrt::Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>;
 
