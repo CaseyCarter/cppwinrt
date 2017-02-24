@@ -64,7 +64,7 @@ private:
 struct resume_after
 {
     explicit resume_after(Windows::Foundation::TimeSpan duration) noexcept :
-        m_duration(duration)
+    m_duration(duration)
     {
     }
 
@@ -112,7 +112,7 @@ private:
 struct resume_on_signal
 {
     explicit resume_on_signal(HANDLE handle) noexcept :
-        m_handle(handle)
+    m_handle(handle)
     {}
 
     resume_on_signal(HANDLE handle, Windows::Foundation::TimeSpan timeout) noexcept :
@@ -202,7 +202,7 @@ struct resumable_io
         struct awaitable : awaitable_base, F
         {
             awaitable(PTP_IO io, F callback) noexcept :
-                m_io(io),
+            m_io(io),
                 F(callback)
             {}
 
@@ -249,7 +249,7 @@ struct resumable_io
         struct awaitable : awaitable_base, F
         {
             awaitable(PTP_IO io, F callback) noexcept :
-                m_io(io),
+            m_io(io),
                 F(callback)
             {}
 
@@ -528,7 +528,7 @@ namespace impl
     struct cancellation_token
     {
         cancellation_token(Promise * promise) noexcept :
-            m_promise(promise)
+        m_promise(promise)
         {
         }
 
@@ -560,7 +560,7 @@ namespace impl
     struct progress_token
     {
         progress_token(Promise * promise) noexcept :
-            m_promise(promise)
+        m_promise(promise)
         {
         }
 

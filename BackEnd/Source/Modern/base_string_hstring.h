@@ -10,7 +10,7 @@ inline hstring & hstring::operator=(const hstring & value)
 }
 
 inline hstring::hstring(hstring && value) noexcept :
-    m_handle(std::move(value.m_handle))
+m_handle(std::move(value.m_handle))
 {}
 
 inline hstring & hstring::operator=(hstring && value) noexcept

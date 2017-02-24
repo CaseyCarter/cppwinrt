@@ -1,21 +1,20 @@
 
-namespace ABI::Windows::Foundation {
-
-struct __declspec(uuid("00000037-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReference : ::IUnknown
+namespace ABI::Windows::Foundation
 {
-    virtual HRESULT __stdcall abi_Resolve(const GUID & iid, IInspectable ** objectReference) = 0;
-
-    template <typename Qi> HRESULT __stdcall abi_Resolve(Qi ** objectReference) noexcept
+    struct __declspec(uuid("00000037-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReference : ::IUnknown
     {
-        return abi_Resolve(__uuidof(Qi), reinterpret_cast<IInspectable **>(objectReference));
-    }
-};
+        virtual HRESULT __stdcall abi_Resolve(const GUID & iid, IInspectable ** objectReference) = 0;
 
-struct __declspec(uuid("00000038-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReferenceSource : ::IUnknown
-{
-    virtual HRESULT __stdcall abi_GetWeakReference(IWeakReference ** weakReference) = 0;
-};
+        template <typename Qi> HRESULT __stdcall abi_Resolve(Qi ** objectReference) noexcept
+        {
+            return abi_Resolve(__uuidof(Qi), reinterpret_cast<IInspectable **>(objectReference));
+        }
+    };
 
+    struct __declspec(uuid("00000038-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReferenceSource : ::IUnknown
+    {
+        virtual HRESULT __stdcall abi_GetWeakReference(IWeakReference ** weakReference) = 0;
+    };
 }
 
 template <typename T>

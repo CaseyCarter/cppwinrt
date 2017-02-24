@@ -1,30 +1,29 @@
 
-namespace impl {
-
+namespace impl
+{
 #ifdef WINRT_CHECKED_ITERATORS
 
-template <typename T>
-using array_iterator = stdext::checked_array_iterator<T *>;
+    template <typename T>
+    using array_iterator = stdext::checked_array_iterator<T *>;
 
-template <typename T>
-auto make_array_iterator(T * data, uint32_t size, uint32_t index = 0) noexcept
-{
-    return array_iterator<T>(data, size, index);
-}
+    template <typename T>
+    auto make_array_iterator(T * data, uint32_t size, uint32_t index = 0) noexcept
+    {
+        return array_iterator<T>(data, size, index);
+    }
 
 #else
 
-template <typename T>
-using array_iterator = T *;
+    template <typename T>
+    using array_iterator = T *;
 
-template <typename T>
-auto make_array_iterator(T * data, uint32_t, uint32_t index = 0) noexcept
-{
-    return data + index;
-}
+    template <typename T>
+    auto make_array_iterator(T * data, uint32_t, uint32_t index = 0) noexcept
+    {
+        return data + index;
+    }
 
 #endif
-
 }
 
 template <typename T>
@@ -44,7 +43,7 @@ struct array_view
     array_view() noexcept = default;
 
     array_view(pointer first, pointer last) noexcept :
-        m_data(first),
+    m_data(first),
         m_size(static_cast<size_type>(last - first))
     {}
 
@@ -269,7 +268,7 @@ struct com_array : array_view<T>
     {}
 
     template <size_type N>
-    explicit com_array(const value_type (&value)[N]) :
+    explicit com_array(const value_type(&value)[N]) :
         com_array(value, value + N)
     {}
 
@@ -388,107 +387,106 @@ template <typename T> bool operator>(const array_view<T> & left, const array_vie
 template <typename T> bool operator<=(const array_view<T> & left, const array_view<T> & right) noexcept { return !(right < left); }
 template <typename T> bool operator>=(const array_view<T> & left, const array_view<T> & right) noexcept { return !(left < right); }
 
-namespace impl {
-
-template <typename T>
-struct array_size_proxy
+namespace impl
 {
-    array_size_proxy & operator=(const array_size_proxy &) = delete;
+    template <typename T>
+    struct array_size_proxy
+    {
+        array_size_proxy & operator=(const array_size_proxy &) = delete;
 
-    array_size_proxy(com_array<T> & value) noexcept :
+        array_size_proxy(com_array<T> & value) noexcept :
         m_value(value)
-    {}
+        {}
 
-    ~array_size_proxy() noexcept
+        ~array_size_proxy() noexcept
+        {
+            impl_put_size(m_value, m_size);
+        }
+
+        operator uint32_t * () noexcept
+        {
+            return &m_size;
+        }
+
+        operator unsigned long * () noexcept
+        {
+            return reinterpret_cast<unsigned long *>(&m_size);
+        }
+
+    private:
+
+        com_array<T> & m_value;
+        uint32_t m_size = 0;
+    };
+
+    template <typename T>
+    struct com_array_proxy
     {
-        impl_put_size(m_value, m_size);
-    }
-
-    operator uint32_t * () noexcept
-    {
-        return &m_size;
-    }
-
-    operator unsigned long * () noexcept
-    {
-        return reinterpret_cast<unsigned long *>(&m_size);
-    }
-
-private:
-
-    com_array<T> & m_value;
-    uint32_t m_size = 0;
-};
-
-template <typename T>
-struct com_array_proxy
-{
-    com_array_proxy(uint32_t * size, abi_arg_out<T> * value) noexcept :
+        com_array_proxy(uint32_t * size, abi_arg_out<T> * value) noexcept :
         m_size(size),
-        m_value(value)
-    {}
+            m_value(value)
+        {}
 
-    ~com_array_proxy() noexcept
+        ~com_array_proxy() noexcept
+        {
+            std::tie(*m_size, *m_value) = impl_detach(m_temp);
+        }
+
+        operator com_array<T> &() noexcept
+        {
+            return m_temp;
+        }
+
+        com_array_proxy(const com_array_proxy &) noexcept
+        {
+            WINRT_ASSERT(false);
+        }
+
+        com_array_proxy & operator=(const com_array_proxy &) noexcept
+        {
+            WINRT_ASSERT(false);
+            return *this;
+        }
+
+    private:
+
+        uint32_t * m_size;
+        abi_arg_out<T> * m_value;
+        com_array<T> m_temp;
+    };
+
+    template <typename T>
+    struct accessors<com_array<T>>
     {
-        std::tie(*m_size, *m_value) = impl_detach(m_temp);
-    }
+        static auto put(com_array<T> & object) noexcept
+        {
+            return impl_put(object);
+        }
 
-    operator com_array<T> &() noexcept
+        static array_size_proxy<T> put_size(com_array<T> & object) noexcept
+        {
+            return array_size_proxy<T>(object);
+        }
+
+        static auto detach(com_array<T> & object) noexcept
+        {
+            return impl_detach(object);
+        }
+
+        static auto data(com_array<T> & object) noexcept
+        {
+            return impl_data(object);
+        }
+    };
+
+    template <typename T>
+    struct accessors<array_view<T>>
     {
-        return m_temp;
-    }
-
-    com_array_proxy(const com_array_proxy &) noexcept
-    {
-        WINRT_ASSERT(false);
-    }
-
-    com_array_proxy & operator=(const com_array_proxy &) noexcept
-    {
-        WINRT_ASSERT(false);
-        return *this;
-    }
-
-private:
-
-    uint32_t * m_size;
-    abi_arg_out<T> * m_value;
-    com_array<T> m_temp;
-};
-
-template <typename T>
-struct accessors<com_array<T>>
-{
-    static auto put(com_array<T> & object) noexcept
-    {
-        return impl_put(object);
-    }
-
-    static array_size_proxy<T> put_size(com_array<T> & object) noexcept
-    {
-        return array_size_proxy<T>(object);
-    }
-
-    static auto detach(com_array<T> & object) noexcept
-    {
-        return impl_detach(object);
-    }
-
-    static auto data(com_array<T> & object) noexcept
-    {
-        return impl_data(object);
-    }
-};
-
-template <typename T>
-struct accessors<array_view<T>>
-{
-    static auto get(array_view<T> object) noexcept
-    {
-        return reinterpret_cast<abi_arg_out<std::remove_const_t<T>>>(const_cast<std::remove_const_t<T> *>(object.data()));
-    }
-};
-
+        static auto get(array_view<T> object) noexcept
+        {
+            return reinterpret_cast<abi_arg_out<std::remove_const_t<T>>>(const_cast<std::remove_const_t<T> *>(object.data()));
+        }
+    };
 }
 
 template <typename T>

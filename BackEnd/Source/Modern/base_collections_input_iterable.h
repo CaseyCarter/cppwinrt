@@ -22,7 +22,7 @@ namespace impl
         struct iterator : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<T>>
         {
             explicit iterator(input_iterable<T, Container> * owner) noexcept :
-                m_current(owner->m_values.begin()),
+            m_current(owner->m_values.begin()),
                 m_end(owner->m_values.end())
             {
                 m_owner.copy_from(owner);
@@ -105,7 +105,7 @@ namespace impl
             }
 
             explicit iterator(scoped_input_iterable<T, InputIt> * owner) noexcept :
-                m_current(owner->m_begin),
+            m_current(owner->m_begin),
                 m_end(owner->m_end)
             {
                 m_owner.copy_from(owner);
@@ -237,7 +237,7 @@ struct iterable
 private:
 
     std::pair<interface_type, impl::input_scope *> m_pair;
-    bool m_owned{true};
+    bool m_owned{ true };
 };
 
 template <typename K, typename V>

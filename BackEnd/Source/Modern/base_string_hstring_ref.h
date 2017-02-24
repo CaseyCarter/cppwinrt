@@ -1,6 +1,6 @@
 
 inline hstring_view::hstring_view(const std::wstring & value) noexcept :
-    hstring_view(value.c_str(), static_cast<size_type>(value.size()))
+hstring_view(value.c_str(), static_cast<size_type>(value.size()))
 {}
 
 inline hstring_view::hstring_view(const hstring & value) noexcept :
@@ -17,7 +17,7 @@ inline hstring_view::hstring_view(const wchar_t * const value, const size_type s
 }
 
 inline hstring_view::hstring_view(HSTRING value) noexcept :
-    m_handle(value)
+m_handle(value)
 {}
 
 inline hstring_view::operator std::wstring() const

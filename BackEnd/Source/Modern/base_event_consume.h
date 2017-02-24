@@ -10,7 +10,7 @@ inline bool operator==(const event_token & left, const event_token & right) noex
 }
 
 struct auto_revoke_t {};
-constexpr auto_revoke_t auto_revoke {};
+constexpr auto_revoke_t auto_revoke{};
 
 template <typename I>
 struct event_revoker
@@ -52,8 +52,8 @@ struct event_revoker
 private:
 
     weak_ref<I> m_object;
-    method_type m_method {};
-    event_token m_token {};
+    method_type m_method{};
+    event_token m_token{};
 };
 
 template <typename I>
@@ -92,16 +92,15 @@ struct factory_event_revoker
 private:
 
     I m_object;
-    method_type m_method {};
-    event_token m_token {};
+    method_type m_method{};
+    event_token m_token{};
 };
 
-namespace impl {
-
-template <typename D, typename I, typename S, typename M>
-auto make_event_revoker(S source, M method, event_token token)
+namespace impl
 {
-    return event_revoker<I>(static_cast<const I &>(static_cast<const D &>(*source)), method, token);
-}
-
+    template <typename D, typename I, typename S, typename M>
+    auto make_event_revoker(S source, M method, event_token token)
+    {
+        return event_revoker<I>(static_cast<const I &>(static_cast<const D &>(*source)), method, token);
+    }
 }

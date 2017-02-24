@@ -1,56 +1,54 @@
 
-namespace impl {
-
-template <typename T>
-struct traits
+namespace impl
 {
-    using abi = T;
-};
-
+    template <typename T>
+    struct traits
+    {
+        using abi = T;
+    };
 }
 
 template <typename T>
 using abi = typename impl::traits<T>::abi;
 
-namespace impl {
-
-template <typename T, typename Enable = void>
-struct accessors
+namespace impl
 {
-    static abi<T> get(const T & object) noexcept
+    template <typename T, typename Enable = void>
+    struct accessors
     {
-        return reinterpret_cast<const abi<T> &>(object);
-    }
+        static abi<T> get(const T & object) noexcept
+        {
+            return reinterpret_cast<const abi<T> &>(object);
+        }
 
-    static abi<T> * put(T & object) noexcept
+        static abi<T> * put(T & object) noexcept
+        {
+            return reinterpret_cast<abi<T> *>(&object);
+        }
+
+        static void copy_from(T & object, const abi<T> & value) noexcept
+        {
+            object = reinterpret_cast<const T &>(value);
+        }
+
+        static void copy_to(const T & object, abi<T> & value) noexcept
+        {
+            reinterpret_cast<T &>(value) = object;
+        }
+
+        static abi<T> detach(T & object) noexcept
+        {
+            abi<T> result{};
+            reinterpret_cast<T &>(result) = std::move(object);
+            return result;
+        }
+    };
+
+    template <typename T>
+    auto put_size_abi(T & object) noexcept
     {
-        return reinterpret_cast<abi<T> *>(&object);
+        return accessors<T>::put_size(object);
     }
-
-    static void copy_from(T & object, const abi<T> & value) noexcept
-    {
-        object = reinterpret_cast<const T &>(value);
-    }
-
-    static void copy_to(const T & object, abi<T> & value) noexcept
-    {
-        reinterpret_cast<T &>(value) = object;
-    }
-
-    static abi<T> detach(T & object) noexcept
-    {
-        abi<T> result {};
-        reinterpret_cast<T &>(result) = std::move(object);
-        return result;
-    }
-};
-
-template <typename T>
-auto put_size_abi(T & object) noexcept
-{
-    return accessors<T>::put_size(object);
-}
-
 }
 
 template <typename T>

@@ -62,6 +62,7 @@ struct clock
     }
 
 private:
+
     // Define 00:00:00, Jan 1 1970 UTC in FILETIME units
     static constexpr time_point time_t_epoch{ duration{ 0x019DB1DED53E8000 } };
     using time_t_duration = std::chrono::duration<time_t>;

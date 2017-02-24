@@ -3,7 +3,7 @@ template <typename ... Args>
 struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
 {
     struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncAction,
-                                                                  winrt::Windows::Foundation::AsyncActionCompletedHandler>
+        winrt::Windows::Foundation::AsyncActionCompletedHandler>
     {
         void GetResults()
         {

@@ -78,7 +78,7 @@ namespace impl
         struct iterator : implements<iterator, wfc::IIterator<value_type>>
         {
             explicit iterator(single_threaded_map<K, V, Container> * owner) noexcept :
-                m_version(owner->m_version),
+            m_version(owner->m_version),
                 m_current(owner->m_values.begin()),
                 m_end(owner->m_values.end())
             {

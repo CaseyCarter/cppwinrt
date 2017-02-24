@@ -68,7 +68,7 @@ namespace impl
             ++m_version;
             m_values.erase(m_values.begin() + index);
         }
-        
+
         void Append(T const & value)
         {
             ++m_version;
@@ -85,13 +85,13 @@ namespace impl
             ++m_version;
             m_values.pop_back();
         }
-        
+
         void Clear() noexcept
         {
             ++m_version;
             m_values.clear();
         }
-        
+
         uint32_t GetMany(uint32_t const startIndex, array_view<T> values) const
         {
             if (startIndex >= m_values.size())
@@ -129,7 +129,7 @@ namespace impl
         struct iterator : implements<iterator, wfc::IIterator<T>>
         {
             explicit iterator(single_threaded_vector<T, Container> * owner) noexcept :
-                m_version(owner->m_version),
+            m_version(owner->m_version),
                 m_current(owner->m_values.begin()),
                 m_end(owner->m_values.end())
             {

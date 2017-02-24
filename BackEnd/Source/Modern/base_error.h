@@ -1,62 +1,61 @@
 
-namespace impl {
-
-struct heap_traits : handle_traits<wchar_t *>
+namespace impl
 {
-    static void close(type value) noexcept
+    struct heap_traits : handle_traits<wchar_t *>
     {
-        WINRT_VERIFY(HeapFree(GetProcessHeap(), 0, value));
-    }
-};
+        static void close(type value) noexcept
+        {
+            WINRT_VERIFY(HeapFree(GetProcessHeap(), 0, value));
+        }
+    };
 
-struct bstr_traits : handle_traits<BSTR>
-{
-    static void close(type value) noexcept
+    struct bstr_traits : handle_traits<BSTR>
     {
-        SysFreeString(value);
-    }
-};
+        static void close(type value) noexcept
+        {
+            SysFreeString(value);
+        }
+    };
 
-inline hstring trim_hresult_message(const wchar_t * const message, uint32_t size) noexcept
-{
-    const wchar_t * back = message + size - 1;
-
-    while (size && isspace(*back))
+    inline hstring trim_hresult_message(const wchar_t * const message, uint32_t size) noexcept
     {
-        --size;
-        --back;
+        const wchar_t * back = message + size - 1;
+
+        while (size && isspace(*back))
+        {
+            --size;
+            --back;
+        }
+
+        hstring result;
+        WindowsCreateString(message, size, put_abi(result));
+        return result;
     }
-
-    hstring result;
-    WindowsCreateString(message, size, put_abi(result));
-    return result;
-}
-
 }
 
 struct hresult_error
 {
     struct from_abi_t {};
-    static constexpr from_abi_t from_abi {};
+    static constexpr from_abi_t from_abi{};
 
     hresult_error() noexcept = default;
 
     explicit hresult_error(const HRESULT code) noexcept :
-        m_code(code)
+    m_code(code)
     {
         WINRT_RoOriginateError(code, nullptr);
         WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
     hresult_error(const HRESULT code, hstring_view message) noexcept :
-        m_code(code)
+    m_code(code)
     {
         WINRT_RoOriginateError(code, get_abi(message));
         WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
     hresult_error(const HRESULT code, from_abi_t) noexcept :
-        m_code(code)
+    m_code(code)
     {
         WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
@@ -212,116 +211,116 @@ struct hresult_canceled : hresult_error
     hresult_canceled(hstring_view message) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), message) {}
     hresult_canceled(from_abi_t) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), from_abi) {}
 };
- 
-namespace impl {
 
-[[noreturn]] inline __declspec(noinline) void throw_hresult(const HRESULT result)
+namespace impl
 {
-    if (result == E_OUTOFMEMORY)
+    [[noreturn]] inline __declspec(noinline) void throw_hresult(const HRESULT result)
     {
-        throw std::bad_alloc();
+        if (result == E_OUTOFMEMORY)
+        {
+            throw std::bad_alloc();
+        }
+
+        if (result == E_ACCESSDENIED)
+        {
+            throw hresult_access_denied(hresult_error::from_abi);
+        }
+
+        if (result == RPC_E_WRONG_THREAD)
+        {
+            throw hresult_wrong_thread(hresult_error::from_abi);
+        }
+
+        if (result == E_NOTIMPL)
+        {
+            throw hresult_not_implemented(hresult_error::from_abi);
+        }
+
+        if (result == E_INVALIDARG)
+        {
+            throw hresult_invalid_argument(hresult_error::from_abi);
+        }
+
+        if (result == E_BOUNDS)
+        {
+            throw hresult_out_of_bounds(hresult_error::from_abi);
+        }
+
+        if (result == E_NOINTERFACE)
+        {
+            throw hresult_no_interface(hresult_error::from_abi);
+        }
+
+        if (result == RPC_E_DISCONNECTED)
+        {
+            throw hresult_disconnected(hresult_error::from_abi);
+        }
+
+        if (result == CLASS_E_CLASSNOTAVAILABLE)
+        {
+            throw hresult_class_not_available(hresult_error::from_abi);
+        }
+
+        if (result == E_CHANGED_STATE)
+        {
+            throw hresult_changed_state(hresult_error::from_abi);
+        }
+
+        if (result == E_ILLEGAL_METHOD_CALL)
+        {
+            throw hresult_illegal_method_call(hresult_error::from_abi);
+        }
+
+        if (result == E_ILLEGAL_STATE_CHANGE)
+        {
+            throw hresult_illegal_state_change(hresult_error::from_abi);
+        }
+
+        if (result == E_ILLEGAL_DELEGATE_ASSIGNMENT)
+        {
+            throw hresult_illegal_delegate_assignment(hresult_error::from_abi);
+        }
+
+        if (result == HRESULT_FROM_WIN32(ERROR_CANCELLED))
+        {
+            throw hresult_canceled(hresult_error::from_abi);
+        }
+
+        throw hresult_error(result, hresult_error::from_abi);
     }
 
-    if (result == E_ACCESSDENIED)
+    inline __declspec(noinline) HRESULT to_hresult() noexcept
     {
-        throw hresult_access_denied(hresult_error::from_abi);
-    }
+        HRESULT value = S_OK;
 
-    if (result == RPC_E_WRONG_THREAD)
-    {
-        throw hresult_wrong_thread(hresult_error::from_abi);
-    }
+        try
+        {
+            throw;
+        }
+        catch (const hresult_error & e)
+        {
+            return e.to_abi();
+        }
+        catch (const std::bad_alloc &)
+        {
+            return E_OUTOFMEMORY;
+        }
+        catch (const std::out_of_range &)
+        {
+            value = E_BOUNDS;
+        }
+        catch (const std::invalid_argument &)
+        {
+            value = E_INVALIDARG;
+        }
+        catch (const std::exception &)
+        {
+            value = E_FAIL;
+        }
 
-    if (result == E_NOTIMPL)
-    {
-        throw hresult_not_implemented(hresult_error::from_abi);
+        WINRT_RoOriginateError(value, nullptr);
+        return value;
     }
-
-    if (result == E_INVALIDARG)
-    {
-        throw hresult_invalid_argument(hresult_error::from_abi);
-    }
-
-    if (result == E_BOUNDS)
-    {
-        throw hresult_out_of_bounds(hresult_error::from_abi);
-    }
-
-    if (result == E_NOINTERFACE)
-    {
-        throw hresult_no_interface(hresult_error::from_abi);
-    }
-
-    if (result == RPC_E_DISCONNECTED)
-    {
-        throw hresult_disconnected(hresult_error::from_abi);
-    }
-
-    if (result == CLASS_E_CLASSNOTAVAILABLE)
-    {
-        throw hresult_class_not_available(hresult_error::from_abi);
-    }
-
-    if (result == E_CHANGED_STATE)
-    {
-        throw hresult_changed_state(hresult_error::from_abi);
-    }
-
-    if (result == E_ILLEGAL_METHOD_CALL)
-    {
-        throw hresult_illegal_method_call(hresult_error::from_abi);
-    }
-
-    if (result == E_ILLEGAL_STATE_CHANGE)
-    {
-        throw hresult_illegal_state_change(hresult_error::from_abi);
-    }
-
-    if (result == E_ILLEGAL_DELEGATE_ASSIGNMENT)
-    {
-        throw hresult_illegal_delegate_assignment(hresult_error::from_abi);
-    }
-
-    if (result == HRESULT_FROM_WIN32(ERROR_CANCELLED))
-    {
-        throw hresult_canceled(hresult_error::from_abi);
-    }
-
-    throw hresult_error(result, hresult_error::from_abi);
-}
-
-inline __declspec(noinline) HRESULT to_hresult() noexcept
-{
-    HRESULT value = S_OK;
-
-    try
-    {
-        throw;
-    }
-    catch (const hresult_error & e)
-    {
-        return e.to_abi();
-    }
-    catch (const std::bad_alloc &)
-    {
-        return E_OUTOFMEMORY;
-    }
-    catch (const std::out_of_range &)
-    {
-        value = E_BOUNDS;
-    }
-    catch (const std::invalid_argument &)
-    {
-        value = E_INVALIDARG;
-    }
-    catch (const std::exception &)
-    {
-        value = E_FAIL;
-    }
-
-    WINRT_RoOriginateError(value, nullptr);
-    return value;
-}
 
 }
 

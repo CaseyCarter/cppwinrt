@@ -53,7 +53,7 @@ namespace impl
         struct iterator : implements<iterator, non_agile, no_weak_ref, wfc::IIterator<value_type>>
         {
             explicit iterator(input_map_view<K, V, Container> * owner) noexcept :
-                m_current(owner->m_values.begin()),
+            m_current(owner->m_values.begin()),
                 m_end(owner->m_values.end())
             {
                 m_owner.copy_from(owner);
@@ -166,7 +166,7 @@ namespace impl
             }
 
             explicit iterator(scoped_input_map_view<K, V, Container> * owner) noexcept :
-                m_current(owner->m_values.begin()),
+            m_current(owner->m_values.begin()),
                 m_end(owner->m_values.end())
             {
                 m_owner.copy_from(owner);

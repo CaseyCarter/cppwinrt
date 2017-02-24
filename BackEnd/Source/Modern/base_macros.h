@@ -11,7 +11,7 @@
 template <typename ... Args>
 void WINRT_TRACE(const char * const message, Args ... args) noexcept
 {
-    char buffer[1024] {};
+    char buffer[1024]{};
     snprintf(buffer, sizeof(buffer), message, args ...);
     OutputDebugStringA(buffer);
 }
@@ -75,13 +75,13 @@ void WINRT_TRACE(const char * const message, Args ... args) noexcept
 
 namespace winrt::ABI::Windows::Foundation::Numerics {
 
-using float2 = winrt::Windows::Foundation::Numerics::float2;
-using float3 = winrt::Windows::Foundation::Numerics::float3;
-using float4 = winrt::Windows::Foundation::Numerics::float4;
-using float3x2 = winrt::Windows::Foundation::Numerics::float3x2;
-using float4x4 = winrt::Windows::Foundation::Numerics::float4x4;
-using plane = winrt::Windows::Foundation::Numerics::plane;
-using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
+    using float2 = winrt::Windows::Foundation::Numerics::float2;
+    using float3 = winrt::Windows::Foundation::Numerics::float3;
+    using float4 = winrt::Windows::Foundation::Numerics::float4;
+    using float3x2 = winrt::Windows::Foundation::Numerics::float3x2;
+    using float4x4 = winrt::Windows::Foundation::Numerics::float4x4;
+    using plane = winrt::Windows::Foundation::Numerics::plane;
+    using quaternion = winrt::Windows::Foundation::Numerics::quaternion;
 
 }
 
