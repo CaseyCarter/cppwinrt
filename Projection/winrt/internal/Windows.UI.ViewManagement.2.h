@@ -101,12 +101,13 @@ struct IApplicationViewConsolidatedEventArgs :
     IApplicationViewConsolidatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct [[deprecated("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")]] IApplicationViewFullscreenStatics :
+struct IApplicationViewFullscreenStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IApplicationViewFullscreenStatics>
 {
     IApplicationViewFullscreenStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")]] IApplicationViewFullscreenStatics;
 
 struct IApplicationViewInteropStatics :
     Windows::Foundation::IInspectable,
@@ -129,12 +130,13 @@ struct IApplicationViewScalingStatics :
     IApplicationViewScalingStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct [[deprecated("ApplicationView static methods may be altered or unavailable for releases after Windows 8.1. Instead, use ApplicationView.GetForCurrentView to get an instance of ApplicationView.")]] IApplicationViewStatics :
+struct IApplicationViewStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IApplicationViewStatics>
 {
     IApplicationViewStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("ApplicationView static methods may be altered or unavailable for releases after Windows 8.1. Instead, use ApplicationView.GetForCurrentView to get an instance of ApplicationView.")]] IApplicationViewStatics;
 
 struct IApplicationViewStatics2 :
     Windows::Foundation::IInspectable,

@@ -1,2 +1,2 @@
-#pragma warning(push)
-#pragma warning(disable: 4996)
+
+WINRT_WARNING_PUSH

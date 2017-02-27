@@ -1,4 +1,4 @@
-select RowId, Name, Namespace, ifnull(Deprecated, '') 'Deprecated'
+select RowId, Name, Namespace, ifnull(Deprecated, '')
 from Interfaces
 where not Delegate 
   and Namespace = ?1

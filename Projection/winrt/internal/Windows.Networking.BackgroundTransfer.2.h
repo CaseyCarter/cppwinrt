@@ -307,12 +307,13 @@ struct IBackgroundDownloaderStaticMethods2 :
     IBackgroundDownloaderStaticMethods2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct [[deprecated("IBackgroundDownloaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")]] IBackgroundDownloaderUserConsent :
+struct IBackgroundDownloaderUserConsent :
     Windows::Foundation::IInspectable,
     impl::consume<IBackgroundDownloaderUserConsent>
 {
     IBackgroundDownloaderUserConsent(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("IBackgroundDownloaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")]] IBackgroundDownloaderUserConsent;
 
 struct IBackgroundTransferBase :
     Windows::Foundation::IInspectable,
@@ -427,12 +428,13 @@ struct IBackgroundUploaderStaticMethods2 :
     IBackgroundUploaderStaticMethods2(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct [[deprecated("IBackgroundUploaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")]] IBackgroundUploaderUserConsent :
+struct IBackgroundUploaderUserConsent :
     Windows::Foundation::IInspectable,
     impl::consume<IBackgroundUploaderUserConsent>
 {
     IBackgroundUploaderUserConsent(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("IBackgroundUploaderUserConsent is deprecated and may not work on all platforms. For more info, see MSDN.")]] IBackgroundUploaderUserConsent;
 
 struct IContentPrefetcher :
     Windows::Foundation::IInspectable,
@@ -470,12 +472,13 @@ struct IResponseInformation :
     IResponseInformation(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct [[deprecated("IUnconstrainedTransferRequestResult is deprecated and may not work on all platforms. For more info, see MSDN.")]] IUnconstrainedTransferRequestResult :
+struct IUnconstrainedTransferRequestResult :
     Windows::Foundation::IInspectable,
     impl::consume<IUnconstrainedTransferRequestResult>
 {
     IUnconstrainedTransferRequestResult(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("IUnconstrainedTransferRequestResult is deprecated and may not work on all platforms. For more info, see MSDN.")]] IUnconstrainedTransferRequestResult;
 
 struct IUploadOperation :
     Windows::Foundation::IInspectable,

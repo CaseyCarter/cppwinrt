@@ -2,8 +2,9 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
-#pragma warning(push)
-#pragma warning(disable: 4996)
+
+#include "base.h"
+WINRT_WARNING_PUSH
 
 #include "internal/Windows.Perception.People.3.h"
 #include "Windows.Perception.h"
@@ -104,4 +105,5 @@ struct std::hash<winrt::Windows::Perception::People::HeadPose>
         return winrt::impl::hash_unknown(value);
     }
 };
-#pragma warning(pop)
+
+WINRT_WARNING_POP

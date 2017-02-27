@@ -1186,12 +1186,13 @@ struct IFullContactCardOptions :
     IFullContactCardOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] IKnownContactFieldStatics :
+struct IKnownContactFieldStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IKnownContactFieldStatics>
 {
     IKnownContactFieldStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] IKnownContactFieldStatics;
 
 }
 

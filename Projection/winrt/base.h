@@ -145,6 +145,17 @@ namespace winrt::ABI::Windows::Foundation::Numerics {
 
 #define WINRT_SHIM(Type) (*(abi<Type> **)&static_cast<const Type &>(static_cast<const D &>(*this)))
 
+#if defined(_MSC_VER) 
+#define WINRT_WARNING_PUSH \
+__pragma(warning(push)) \
+__pragma(warning(disable: 4996))
+#define WINRT_WARNING_POP \
+__pragma(warning(pop))
+#else
+#define WINRT_WARNING_PUSH
+#define WINRT_WARNING_POP
+#endif
+
 
 WINRT_EXPORT namespace winrt {
 

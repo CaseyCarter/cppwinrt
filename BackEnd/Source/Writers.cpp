@@ -1323,12 +1323,18 @@ void WriteInterfaceDefinitions(Output & out)
 
         Write(out,
               Strings::WriteInterfaceDefinition,
-              Bind(WriteDeprecatedAttribute),
               Settings::InterfaceName,
               Settings::InterfaceName,
               Bind(WriteRequiredInterfaces),
               Settings::InterfaceName,
               Bind(WriteUsingMethodsForInterface));
+        if (!Settings::Deprecated.empty())
+        {
+            Write(out,
+                "struct [[deprecated(\"%\")]] %;\r\n", 
+                Settings::Deprecated, 
+                Settings::InterfaceName);
+        }
     });
 }
 

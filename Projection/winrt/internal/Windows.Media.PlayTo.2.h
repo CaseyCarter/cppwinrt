@@ -133,47 +133,53 @@ struct IMuteChangeRequestedEventArgs :
     IMuteChangeRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] IPlayToConnection :
+struct IPlayToConnection :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToConnection>
 {
     IPlayToConnection(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToConnection may be altered or unavailable for releases after Windows 10. Instead, use CastingConnection.")]] IPlayToConnection;
 
-struct [[deprecated("PlayToConnectionErrorEventArgs may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorOccurredEventArgs.")]] IPlayToConnectionErrorEventArgs :
+struct IPlayToConnectionErrorEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToConnectionErrorEventArgs>
 {
     IPlayToConnectionErrorEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToConnectionErrorEventArgs may be altered or unavailable for releases after Windows 10. Instead, use CastingConnectionErrorOccurredEventArgs.")]] IPlayToConnectionErrorEventArgs;
 
-struct [[deprecated("PlayToConnectionStateChangedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToConnectionStateChangedEventArgs :
+struct IPlayToConnectionStateChangedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToConnectionStateChangedEventArgs>
 {
     IPlayToConnectionStateChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToConnectionStateChangedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToConnectionStateChangedEventArgs;
 
-struct [[deprecated("PlayToConnectionTransferredEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToConnectionTransferredEventArgs :
+struct IPlayToConnectionTransferredEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToConnectionTransferredEventArgs>
 {
     IPlayToConnectionTransferredEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToConnectionTransferredEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToConnectionTransferredEventArgs;
 
-struct [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] IPlayToManager :
+struct IPlayToManager :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToManager>
 {
     IPlayToManager(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] IPlayToManager;
 
-struct [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] IPlayToManagerStatics :
+struct IPlayToManagerStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToManagerStatics>
 {
     IPlayToManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToManager may be altered or unavailable for releases after Windows 10.")]] IPlayToManagerStatics;
 
 struct IPlayToReceiver :
     Windows::Foundation::IInspectable,
@@ -182,47 +188,53 @@ struct IPlayToReceiver :
     IPlayToReceiver(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] IPlayToSource :
+struct IPlayToSource :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToSource>
 {
     IPlayToSource(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] IPlayToSource;
 
-struct [[deprecated("PlayToSourceDeferral may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceDeferral :
+struct IPlayToSourceDeferral :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToSourceDeferral>
 {
     IPlayToSourceDeferral(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToSourceDeferral may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceDeferral;
 
-struct [[deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceRequest :
+struct IPlayToSourceRequest :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToSourceRequest>
 {
     IPlayToSourceRequest(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToSourceRequest may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceRequest;
 
-struct [[deprecated("PlayToSourceRequestedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceRequestedEventArgs :
+struct IPlayToSourceRequestedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToSourceRequestedEventArgs>
 {
     IPlayToSourceRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToSourceRequestedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceRequestedEventArgs;
 
-struct [[deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceSelectedEventArgs :
+struct IPlayToSourceSelectedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToSourceSelectedEventArgs>
 {
     IPlayToSourceSelectedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToSourceSelectedEventArgs may be altered or unavailable for releases after Windows 10.")]] IPlayToSourceSelectedEventArgs;
 
-struct [[deprecated("PlayToSourceWithPreferredSourceUri may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] IPlayToSourceWithPreferredSourceUri :
+struct IPlayToSourceWithPreferredSourceUri :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayToSourceWithPreferredSourceUri>
 {
     IPlayToSourceWithPreferredSourceUri(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PlayToSourceWithPreferredSourceUri may be altered or unavailable for releases after Windows 10. Instead, use CastingSource.")]] IPlayToSourceWithPreferredSourceUri;
 
 struct IPlaybackRateChangeRequestedEventArgs :
     Windows::Foundation::IInspectable,

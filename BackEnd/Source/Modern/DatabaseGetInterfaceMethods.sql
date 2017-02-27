@@ -1,3 +1,3 @@
-select RowId, Name, AbiName, ifnull(Deprecated, '') 'Deprecated'
+select RowId, Name, AbiName, ifnull(Deprecated, '')
 from Methods
 where InterfaceId = ?

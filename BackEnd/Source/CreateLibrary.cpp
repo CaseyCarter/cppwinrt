@@ -203,6 +203,7 @@ static void GenerateClassImpl(bool overridesExist, bool composablesExist, std::v
     Output out;
     WriteLogo(out);
     Write(out, Strings::PragmaOnce);
+    Write(out, Strings::WriteInclude, "base.h");
     Write(out, Strings::PragmaWarningPush);
 
     WriteRequiredClasses(out);

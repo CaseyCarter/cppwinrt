@@ -79,12 +79,13 @@ struct IDisplayInformationStatics :
     IDisplayInformationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] IDisplayPropertiesStatics :
+struct IDisplayPropertiesStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IDisplayPropertiesStatics>
 {
     IDisplayPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]] IDisplayPropertiesStatics;
 
 }
 

@@ -365,6 +365,11 @@ TEST_CASE("async, Suspend_IAsyncOperationWithProgress")
 
 namespace
 {
+#if defined(_MSC_VER) 
+    __pragma(warning(push))
+    __pragma(warning(disable: 4702))    // unreachable code
+#endif
+
     IAsyncAction Throw_IAsyncAction(HANDLE go)
     {
         co_await resume_on_signal(go);
@@ -390,6 +395,10 @@ namespace
         throw hresult_invalid_argument(L"Throw_IAsyncOperationWithProgress");
         return 456;
     }
+
+#if defined(_MSC_VER) 
+    __pragma(warning(pop))
+#endif
 }
 
 TEST_CASE("async, Throw_IAsyncAction")

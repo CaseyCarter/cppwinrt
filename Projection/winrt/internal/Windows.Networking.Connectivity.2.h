@@ -433,12 +433,13 @@ struct IDataPlanUsage :
     IDataPlanUsage(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct [[deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")]] IDataUsage :
+struct IDataUsage :
     Windows::Foundation::IInspectable,
     impl::consume<IDataUsage>
 {
     IDataUsage(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("IDataUsage may be altered or unavailable for releases after Windows 8.1. Instead, use INetworkUsage.")]] IDataUsage;
 
 struct IIPInformation :
     Windows::Foundation::IInspectable,

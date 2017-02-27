@@ -1,6 +1,6 @@
 @echo off
 
-rem Script to run front end and back end unit tests
+rem Script to run front end and projection unit tests
 
 set BuildPlatform=%1
 if "%BuildPlatform%"=="" set BuildPlatform=x86
@@ -8,15 +8,5 @@ if "%BuildPlatform%"=="" set BuildPlatform=x86
 set BuildConfiguration=%2
 if "%BuildConfiguration%"=="" set BuildConfiguration=Release
 
-echo.
-echo Executing Front End Tests
-pushd FrontEnd\FrontEndTests\bin\%BuildConfiguration%
-call vstest.console.exe FrontEndTests.dll /Platform:%BuildPlatform%
-popd
-
-echo.
-echo Executing Back End Tests
-pushd Projection\Tests
-msbuild Tests.sln /nologo /m /p:Configuration=%BuildConfiguration% /p:Platform=%BuildPlatform%
-call RunTests.cmd
-popd
+call TestFrontEnd %BuildPlatform% %BuildConfiguration%
+call TestProjection %BuildPlatform% %BuildConfiguration%

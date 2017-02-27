@@ -10,6 +10,8 @@ if "%BuildConfiguration%"=="" set BuildConfiguration=Release
 
 call :Build FrontEnd
 call :Build BackEnd
+call Strings.bat
+call :Build BackEnd
 goto :eof
 
 :Build 

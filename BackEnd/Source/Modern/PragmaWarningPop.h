@@ -1,1 +1,2 @@
-#pragma warning(pop)
+
+WINRT_WARNING_POP

@@ -2,8 +2,9 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
-#pragma warning(push)
-#pragma warning(disable: 4996)
+
+#include "base.h"
+WINRT_WARNING_PUSH
 
 #include "internal/Windows.UI.Text.3.h"
 #include "internal/Windows.Globalization.Fonts.3.h"
@@ -451,4 +452,5 @@ struct std::hash<winrt::Windows::Globalization::Fonts::LanguageFontGroup>
         return winrt::impl::hash_unknown(value);
     }
 };
-#pragma warning(pop)
+
+WINRT_WARNING_POP

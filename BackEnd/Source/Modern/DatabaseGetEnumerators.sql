@@ -1,3 +1,3 @@
-select Name, Value, ifnull(Deprecated, '') 'Deprecated'
+select Name, Value, ifnull(Deprecated, '')
 from Enumerators
 where EnumerationId = ?

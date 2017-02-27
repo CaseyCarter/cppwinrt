@@ -147,12 +147,13 @@ struct IAudioRenderEffectsManager :
     IAudioRenderEffectsManager(std::nullptr_t = nullptr) noexcept {}
 };
 
-struct [[deprecated("Not supported starting in windows 10")]] IAudioRenderEffectsManager2 :
+struct IAudioRenderEffectsManager2 :
     Windows::Foundation::IInspectable,
     impl::consume<IAudioRenderEffectsManager2>
 {
     IAudioRenderEffectsManager2(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("Not supported starting in windows 10")]] IAudioRenderEffectsManager2;
 
 struct IBasicAudioEffect :
     Windows::Foundation::IInspectable,

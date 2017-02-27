@@ -2,8 +2,9 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
-#pragma warning(push)
-#pragma warning(disable: 4996)
+
+#include "base.h"
+WINRT_WARNING_PUSH
 
 #include "internal/Windows.Web.Syndication.3.h"
 #include "internal/Windows.Foundation.3.h"
@@ -549,4 +550,5 @@ struct std::hash<winrt::Windows::Web::AtomPub::Workspace>
         return winrt::impl::hash_unknown(value);
     }
 };
-#pragma warning(pop)
+
+WINRT_WARNING_POP

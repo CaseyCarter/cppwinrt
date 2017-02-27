@@ -2,8 +2,9 @@
 // Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
-#pragma warning(push)
-#pragma warning(disable: 4996)
+
+#include "base.h"
+WINRT_WARNING_PUSH
 
 #include "internal/Windows.Graphics.DirectX.Direct3D11.3.h"
 #include "Windows.Graphics.DirectX.h"
@@ -85,4 +86,5 @@ struct std::hash<winrt::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface
         return winrt::impl::hash_unknown(value);
     }
 };
-#pragma warning(pop)
+
+WINRT_WARNING_POP
