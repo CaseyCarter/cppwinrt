@@ -68,3 +68,4 @@ Modern::HandleDuplicates2|Modern::TestBase|16
 Modern::HandleDuplicates2|Windows::Foundation::Collections|16
 Windows::Foundation::Collections||2
 Windows::Foundation::Collections||16
+Windows::Foundation::Collections|Windows::Foundation|16
