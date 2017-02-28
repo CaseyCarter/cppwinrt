@@ -436,6 +436,12 @@ namespace impl
     template<typename ... B>
     constexpr bool conjunction_v = conjunction<B ...>::value;
 
+    template<typename B>
+    struct negation : std::bool_constant<!B::value> {};
+
+    template<typename From, typename To>
+    constexpr bool is_convertible_v = std::is_convertible<From, To>::value;
+
     template<typename T>
     constexpr bool sequence_contains(T)
     {
@@ -3253,7 +3259,7 @@ namespace impl
     using uncloak_t = typename uncloak<T>::type;
 
     template <typename I>
-    struct is_cloaked : std::negation<std::is_base_of<ABI::Windows::Foundation::IInspectable, abi<I>>> {};
+    struct is_cloaked : negation<std::is_base_of<ABI::Windows::Foundation::IInspectable, abi<I>>> {};
 
     template <typename I>
     struct is_cloaked<cloaked<I>> : std::true_type {};
@@ -3689,10 +3695,10 @@ private:
     void abi_enter() noexcept {}
     void abi_exit() noexcept {}
 
-    using is_agile = std::negation<impl::disjunction<std::is_same<non_agile, I> ...>>;
+    using is_agile = impl::negation<impl::disjunction<std::is_same<non_agile, I> ...>>;
     using is_factory = impl::disjunction<std::is_same<ABI::Windows::Foundation::IActivationFactory, abi<I>> ...>;
     using is_inspectable = impl::disjunction<std::is_base_of<ABI::Windows::Foundation::IInspectable, abi<I>> ...>;
-    using is_weak_ref_source = impl::conjunction<is_inspectable, std::negation<is_factory>, std::negation<impl::disjunction<std::is_same<no_weak_ref, I> ...>>>;
+    using is_weak_ref_source = impl::conjunction<is_inspectable, impl::negation<is_factory>, impl::negation<impl::disjunction<std::is_same<no_weak_ref, I> ...>>>;
     using weak_ref_t = impl::weak_ref<is_agile::value>;
 
     static_assert(!is_factory::value || (is_factory::value && is_agile::value), "winrt::implements - activation factories must be agile.");
@@ -5965,7 +5971,7 @@ namespace impl
     template <typename T, typename Container>
     struct input_iterable : implements<input_iterable<T, Container>, non_agile, no_weak_ref, wfc::IIterable<T>>
     {
-        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+        static_assert(is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
         explicit input_iterable(Container && values) : m_values(std::forward<Container>(values))
         {
@@ -6157,7 +6163,7 @@ struct iterable
         attach_abi(m_pair.first, get_abi(values));
     }
 
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    template <typename Collection, std::enable_if_t<impl::is_convertible_v<Collection, interface_type>> * = nullptr>
     iterable(Collection const & values) noexcept : m_owned(true)
     {
         m_pair.first = values;
@@ -6221,7 +6227,7 @@ struct iterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>
         attach_abi(m_pair.first, get_abi(values));
     }
 
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    template <typename Collection, std::enable_if_t<impl::is_convertible_v<Collection, interface_type>> * = nullptr>
     iterable(Collection const & values) noexcept : m_owned(true)
     {
         m_pair.first = values;
@@ -6286,7 +6292,7 @@ namespace impl
     template <typename T, typename Container>
     struct input_vector_view : implements<input_vector_view<T, Container>, non_agile, no_weak_ref, wfc::IVectorView<T>, wfc::IIterable<T>>
     {
-        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+        static_assert(is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
         explicit input_vector_view(Container && values) : m_values(std::forward<Container>(values))
         {
@@ -6550,7 +6556,7 @@ struct vector_view
         attach_abi(m_pair.first, get_abi(values));
     }
 
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    template <typename Collection, std::enable_if_t<impl::is_convertible_v<Collection, interface_type>> * = nullptr>
     vector_view(Collection const & values) noexcept : m_owned(true)
     {
         m_pair.first = values;
@@ -6605,7 +6611,7 @@ namespace impl
     template <typename K, typename V, typename Container>
     struct input_map_view : implements<input_map_view<K, V, Container>, non_agile, no_weak_ref, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>
     {
-        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+        static_assert(is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
         using value_type = wfc::IKeyValuePair<K, V>;
         using interface_type = wfc::IMapView<K, V>;
@@ -6858,7 +6864,7 @@ struct map_view
         attach_abi(m_pair.first, get_abi(values));
     }
 
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    template <typename Collection, std::enable_if_t<impl::is_convertible_v<Collection, interface_type>> * = nullptr>
     map_view(Collection const & values) noexcept : m_owned(true)
     {
         m_pair.first = values;
@@ -6918,7 +6924,7 @@ namespace impl
     template <typename T, typename Container>
     struct single_threaded_vector : implements<single_threaded_vector<T, Container>, wfc::IVector<T>, wfc::IVectorView<T>, wfc::IIterable<T>>
     {
-        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+        static_assert(is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
         explicit single_threaded_vector(Container && values) : m_values(std::forward<Container>(values))
         {
@@ -7118,7 +7124,7 @@ namespace impl
     template <typename K, typename V, typename Container>
     struct single_threaded_map : implements<single_threaded_map<K, V, Container>, wfc::IMap<K, V>, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>
     {
-        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+        static_assert(is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
         using value_type = wfc::IKeyValuePair<K, V>;
 

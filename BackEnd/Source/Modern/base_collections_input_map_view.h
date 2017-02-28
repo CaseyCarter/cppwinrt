@@ -4,7 +4,7 @@ namespace impl
     template <typename K, typename V, typename Container>
     struct input_map_view : implements<input_map_view<K, V, Container>, non_agile, no_weak_ref, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>
     {
-        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+        static_assert(is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
         using value_type = wfc::IKeyValuePair<K, V>;
         using interface_type = wfc::IMapView<K, V>;
@@ -257,7 +257,7 @@ struct map_view
         attach_abi(m_pair.first, get_abi(values));
     }
 
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    template <typename Collection, std::enable_if_t<impl::is_convertible_v<Collection, interface_type>> * = nullptr>
     map_view(Collection const & values) noexcept : m_owned(true)
     {
         m_pair.first = values;

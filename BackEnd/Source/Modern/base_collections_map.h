@@ -4,7 +4,7 @@ namespace impl
     template <typename K, typename V, typename Container>
     struct single_threaded_map : implements<single_threaded_map<K, V, Container>, wfc::IMap<K, V>, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>
     {
-        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+        static_assert(is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
         using value_type = wfc::IKeyValuePair<K, V>;
 

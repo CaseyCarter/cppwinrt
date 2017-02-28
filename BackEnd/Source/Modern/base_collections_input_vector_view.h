@@ -4,7 +4,7 @@ namespace impl
     template <typename T, typename Container>
     struct input_vector_view : implements<input_vector_view<T, Container>, non_agile, no_weak_ref, wfc::IVectorView<T>, wfc::IIterable<T>>
     {
-        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+        static_assert(is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
         explicit input_vector_view(Container && values) : m_values(std::forward<Container>(values))
         {
@@ -268,7 +268,7 @@ struct vector_view
         attach_abi(m_pair.first, get_abi(values));
     }
 
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    template <typename Collection, std::enable_if_t<impl::is_convertible_v<Collection, interface_type>> * = nullptr>
     vector_view(Collection const & values) noexcept : m_owned(true)
     {
         m_pair.first = values;

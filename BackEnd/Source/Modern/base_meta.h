@@ -31,6 +31,12 @@ namespace impl
     template<typename ... B>
     constexpr bool conjunction_v = conjunction<B ...>::value;
 
+    template<typename B>
+    struct negation : std::bool_constant<!B::value> {};
+
+    template<typename From, typename To>
+    constexpr bool is_convertible_v = std::is_convertible<From, To>::value;
+
     template<typename T>
     constexpr bool sequence_contains(T)
     {

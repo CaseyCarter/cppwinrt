@@ -4,7 +4,7 @@ namespace impl
     template <typename T, typename Container>
     struct input_iterable : implements<input_iterable<T, Container>, non_agile, no_weak_ref, wfc::IIterable<T>>
     {
-        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+        static_assert(is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
         explicit input_iterable(Container && values) : m_values(std::forward<Container>(values))
         {
@@ -196,7 +196,7 @@ struct iterable
         attach_abi(m_pair.first, get_abi(values));
     }
 
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    template <typename Collection, std::enable_if_t<impl::is_convertible_v<Collection, interface_type>> * = nullptr>
     iterable(Collection const & values) noexcept : m_owned(true)
     {
         m_pair.first = values;
@@ -260,7 +260,7 @@ struct iterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>
         attach_abi(m_pair.first, get_abi(values));
     }
 
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>> * = nullptr>
+    template <typename Collection, std::enable_if_t<impl::is_convertible_v<Collection, interface_type>> * = nullptr>
     iterable(Collection const & values) noexcept : m_owned(true)
     {
         m_pair.first = values;

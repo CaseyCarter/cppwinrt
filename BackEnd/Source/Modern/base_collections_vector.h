@@ -4,7 +4,7 @@ namespace impl
     template <typename T, typename Container>
     struct single_threaded_vector : implements<single_threaded_vector<T, Container>, wfc::IVector<T>, wfc::IVectorView<T>, wfc::IIterable<T>>
     {
-        static_assert(std::is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
+        static_assert(is_same_v<Container, std::remove_reference_t<Container>>, "Must be constructed with rvalue.");
 
         explicit single_threaded_vector(Container && values) : m_values(std::forward<Container>(values))
         {

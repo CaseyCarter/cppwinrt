@@ -28,7 +28,7 @@ namespace impl
     using uncloak_t = typename uncloak<T>::type;
 
     template <typename I>
-    struct is_cloaked : std::negation<std::is_base_of<ABI::Windows::Foundation::IInspectable, abi<I>>> {};
+    struct is_cloaked : negation<std::is_base_of<ABI::Windows::Foundation::IInspectable, abi<I>>> {};
 
     template <typename I>
     struct is_cloaked<cloaked<I>> : std::true_type {};
@@ -464,10 +464,10 @@ private:
     void abi_enter() noexcept {}
     void abi_exit() noexcept {}
 
-    using is_agile = std::negation<impl::disjunction<std::is_same<non_agile, I> ...>>;
+    using is_agile = impl::negation<impl::disjunction<std::is_same<non_agile, I> ...>>;
     using is_factory = impl::disjunction<std::is_same<ABI::Windows::Foundation::IActivationFactory, abi<I>> ...>;
     using is_inspectable = impl::disjunction<std::is_base_of<ABI::Windows::Foundation::IInspectable, abi<I>> ...>;
-    using is_weak_ref_source = impl::conjunction<is_inspectable, std::negation<is_factory>, std::negation<impl::disjunction<std::is_same<no_weak_ref, I> ...>>>;
+    using is_weak_ref_source = impl::conjunction<is_inspectable, impl::negation<is_factory>, impl::negation<impl::disjunction<std::is_same<no_weak_ref, I> ...>>>;
     using weak_ref_t = impl::weak_ref<is_agile::value>;
 
     static_assert(!is_factory::value || (is_factory::value && is_agile::value), "winrt::implements - activation factories must be agile.");
