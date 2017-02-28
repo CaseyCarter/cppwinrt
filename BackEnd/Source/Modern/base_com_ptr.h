@@ -1,8 +1,10 @@
 
-namespace Windows {
+template<HRESULT ... ValuesToIgnore>
+__forceinline void check_hresult(HRESULT result);
 
-struct IUnknown;
-
+namespace Windows::Foundation
+{
+    struct IUnknown;
 }
 
 template <typename T>
@@ -13,21 +15,21 @@ struct com_ptr
     com_ptr(std::nullptr_t = nullptr) noexcept {}
 
     com_ptr(const com_ptr & other) noexcept :
-        m_ptr(other.m_ptr)
+    m_ptr(other.m_ptr)
     {
         addref();
     }
 
     template <typename U>
     com_ptr(const com_ptr<U> & other) noexcept :
-        m_ptr(other.m_ptr)
+    m_ptr(other.m_ptr)
     {
         addref();
     }
 
     template <typename U>
     com_ptr(com_ptr<U> && other) noexcept :
-        m_ptr(other.m_ptr)
+    m_ptr(other.m_ptr)
     {
         other.m_ptr = nullptr;
     }
@@ -73,7 +75,7 @@ struct com_ptr
         return static_cast<impl::no_ref<type> *>(m_ptr);
     }
 
-    const T & operator *() const noexcept
+    T & operator *() const noexcept
     {
         return *m_ptr;
     }
@@ -104,16 +106,16 @@ struct com_ptr
     template <typename U>
     auto as() const
     {
-        std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        check_hresult(m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp))));
+        std::conditional_t<impl::is_base_of_v<Windows::Foundation::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        check_hresult(m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp))));
         return temp;
     }
 
     template <typename U>
     auto try_as() const
     {
-        std::conditional_t<impl::is_base_of_v<Windows::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
-        m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
+        std::conditional_t<impl::is_base_of_v<Windows::Foundation::IUnknown, U>, U, com_ptr<U>> temp = nullptr;
+        m_ptr->QueryInterface(__uuidof(impl::abi_default_interface<U>), reinterpret_cast<void **>(put_abi(temp)));
         return temp;
     }
 
@@ -165,39 +167,50 @@ private:
     type * m_ptr = nullptr;
 };
 
-namespace impl {
-
-template <typename T>
-struct accessors<com_ptr<T>>
+namespace impl
 {
-    static auto get(const com_ptr<T> & object) noexcept
+    template <typename T>
+    struct accessors<com_ptr<T>>
     {
-        return impl_get(object);
-    }
+        static auto get(const com_ptr<T> & object) noexcept
+        {
+            return impl_get(object);
+        }
 
-    static auto put(com_ptr<T> & object) noexcept
-    {
-        return impl_put(object);
-    }
+        static auto put(com_ptr<T> & object) noexcept
+        {
+            return impl_put(object);
+        }
 
-    static void attach(com_ptr<T> & object, abi<T> * value) noexcept
-    {
-        object = nullptr;
-        *put(object) = value;
-    }
+        static void attach(com_ptr<T> & object, abi<T> * value) noexcept
+        {
+            object = nullptr;
+            *put(object) = value;
+        }
 
-    static auto detach(com_ptr<T> & object) noexcept
-    {
-        return impl_detach(object);
-    }
-};
-
+        static auto detach(com_ptr<T> & object) noexcept
+        {
+            return impl_detach(object);
+        }
+    };
 }
 
 template <typename T>
 bool operator==(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 {
-    return get(left) == get(right);
+    return get_abi(left) == get_abi(right);
+}
+
+template <typename T>
+bool operator==(const com_ptr<T> & left, std::nullptr_t) noexcept
+{
+    return get_abi(left) == nullptr;
+}
+
+template <typename T>
+bool operator==(std::nullptr_t, const com_ptr<T> & right) noexcept
+{
+    return nullptr == get_abi(right);
 }
 
 template <typename T>
@@ -207,9 +220,21 @@ bool operator!=(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 }
 
 template <typename T>
+bool operator!=(const com_ptr<T> & left, std::nullptr_t) noexcept
+{
+    return !(left == nullptr);
+}
+
+template <typename T>
+bool operator!=(std::nullptr_t, const com_ptr<T> & right) noexcept
+{
+    return !(nullptr == right);
+}
+
+template <typename T>
 bool operator<(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 {
-    return get(left) < get(right);
+    return get_abi(left) < get_abi(right);
 }
 
 template <typename T>

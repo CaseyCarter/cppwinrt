@@ -1,7 +1,7 @@
-Windows::ApplicationModel::DataTransfer::DataPackagePropertySet|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|0|0|0
-Windows::ApplicationModel::DataTransfer::DataPackagePropertySet|Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>|0|0|0
-Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|0|0|0
-Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView|Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>|0|0|0
+Windows::ApplicationModel::DataTransfer::DataPackagePropertySet|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>|0|0|0
+Windows::ApplicationModel::DataTransfer::DataPackagePropertySet|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>|0|0|0
+Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>|0|0|0
+Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView|Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>|0|0|0
 Windows::ApplicationModel::Resources::Core::ResourceCandidateVectorView|Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceCandidate>|1|0|0
 Windows::ApplicationModel::Resources::Core::ResourceContextLanguagesVectorView|Windows::Foundation::Collections::IVectorView<hstring>|1|0|0
 Windows::ApplicationModel::Resources::Core::ResourceMap|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::ApplicationModel::Resources::Core::NamedResource>>|0|0|0
@@ -22,20 +22,20 @@ Windows::Data::Xml::Dom::XmlNodeList|Windows::Foundation::Collections::IIterable
 Windows::Data::Xml::Dom::XmlNodeList|Windows::Foundation::Collections::IVectorView<Windows::Data::Xml::Dom::IXmlNode>|0|0|0
 Windows::Devices::Enumeration::DeviceInformationCollection|Windows::Foundation::Collections::IVectorView<Windows::Devices::Enumeration::DeviceInformation>|1|0|0
 Windows::Devices::Enumeration::Pnp::PnpObjectCollection|Windows::Foundation::Collections::IVectorView<Windows::Devices::Enumeration::Pnp::PnpObject>|1|0|0
-Windows::Foundation::Collections::PropertySet|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|0|0|0
-Windows::Foundation::Collections::PropertySet|Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>|0|0|0
-Windows::Foundation::Collections::PropertySet|Windows::Foundation::Collections::IObservableMap<hstring, Windows::IInspectable>|0|0|0
+Windows::Foundation::Collections::PropertySet|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>|0|0|0
+Windows::Foundation::Collections::PropertySet|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>|0|0|0
+Windows::Foundation::Collections::PropertySet|Windows::Foundation::Collections::IObservableMap<hstring, Windows::Foundation::IInspectable>|0|0|0
 Windows::Foundation::Collections::StringMap|Windows::Foundation::Collections::IMap<hstring, hstring>|1|0|0
-Windows::Foundation::Collections::ValueSet|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|0|0|0
-Windows::Foundation::Collections::ValueSet|Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>|0|0|0
-Windows::Foundation::Collections::ValueSet|Windows::Foundation::Collections::IObservableMap<hstring, Windows::IInspectable>|0|0|0
+Windows::Foundation::Collections::ValueSet|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>|0|0|0
+Windows::Foundation::Collections::ValueSet|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>|0|0|0
+Windows::Foundation::Collections::ValueSet|Windows::Foundation::Collections::IObservableMap<hstring, Windows::Foundation::IInspectable>|0|0|0
 Windows::Foundation::WwwFormUrlDecoder|Windows::Foundation::Collections::IIterable<Windows::Foundation::IWwwFormUrlDecoderEntry>|0|0|0
 Windows::Foundation::WwwFormUrlDecoder|Windows::Foundation::Collections::IVectorView<Windows::Foundation::IWwwFormUrlDecoderEntry>|0|0|0
 Windows::Globalization::Collation::CharacterGroupings|Windows::Foundation::Collections::IIterable<Windows::Globalization::Collation::CharacterGrouping>|0|0|0
 Windows::Globalization::Collation::CharacterGroupings|Windows::Foundation::Collections::IVectorView<Windows::Globalization::Collation::CharacterGrouping>|0|0|0
 Windows::Graphics::Imaging::BitmapPropertySet|Windows::Foundation::Collections::IMap<hstring, Windows::Graphics::Imaging::BitmapTypedValue>|1|0|0
-Windows::Media::Core::MediaStreamSamplePropertySet|Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>|1|0|0
-Windows::Media::MediaProperties::MediaPropertySet|Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>|1|0|0
+Windows::Media::Core::MediaStreamSamplePropertySet|Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable>|1|0|0
+Windows::Media::MediaProperties::MediaPropertySet|Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable>|1|0|0
 Windows::Media::Playback::MediaPlaybackAudioTrackList|Windows::Foundation::Collections::IVectorView<Windows::Media::Core::AudioTrack>|1|0|0
 Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList|Windows::Foundation::Collections::IVectorView<Windows::Media::Core::TimedMetadataTrack>|1|0|0
 Windows::Media::Playback::MediaPlaybackVideoTrackList|Windows::Foundation::Collections::IVectorView<Windows::Media::Core::VideoTrack>|1|0|0
@@ -49,28 +49,28 @@ Windows::Media::Protection::PlayReady::PlayReadySecureStopIterator|Windows::Foun
 Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstanceCollection|Windows::Foundation::Collections::IVectorView<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance>|1|0|0
 Windows::Networking::Vpn::VpnPacketBufferList|Windows::Foundation::Collections::IIterable<Windows::Networking::Vpn::VpnPacketBuffer>|0|0|0
 Windows::Security::Authentication::OnlineId::UserAuthenticationOperation|Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::OnlineId::UserIdentity>|1|0|0
-Windows::Security::Credentials::PasswordCredentialPropertyStore|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|0|0|0
-Windows::Security::Credentials::PasswordCredentialPropertyStore|Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>|0|0|0
-Windows::Security::Credentials::PasswordCredentialPropertyStore|Windows::Foundation::Collections::IObservableMap<hstring, Windows::IInspectable>|0|0|0
+Windows::Security::Credentials::PasswordCredentialPropertyStore|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>|0|0|0
+Windows::Security::Credentials::PasswordCredentialPropertyStore|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>|0|0|0
+Windows::Security::Credentials::PasswordCredentialPropertyStore|Windows::Foundation::Collections::IObservableMap<hstring, Windows::Foundation::IInspectable>|0|0|0
 Windows::Storage::AccessCache::AccessListEntryView|Windows::Foundation::Collections::IVectorView<Windows::Storage::AccessCache::AccessListEntry>|1|0|0
-Windows::Storage::ApplicationDataCompositeValue|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|0|0|0
-Windows::Storage::ApplicationDataCompositeValue|Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>|0|0|0
-Windows::Storage::ApplicationDataCompositeValue|Windows::Foundation::Collections::IObservableMap<hstring, Windows::IInspectable>|0|0|0
-Windows::Storage::ApplicationDataContainerSettings|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|0|0|0
-Windows::Storage::ApplicationDataContainerSettings|Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>|0|0|0
-Windows::Storage::ApplicationDataContainerSettings|Windows::Foundation::Collections::IObservableMap<hstring, Windows::IInspectable>|0|0|0
+Windows::Storage::ApplicationDataCompositeValue|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>|0|0|0
+Windows::Storage::ApplicationDataCompositeValue|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>|0|0|0
+Windows::Storage::ApplicationDataCompositeValue|Windows::Foundation::Collections::IObservableMap<hstring, Windows::Foundation::IInspectable>|0|0|0
+Windows::Storage::ApplicationDataContainerSettings|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>|0|0|0
+Windows::Storage::ApplicationDataContainerSettings|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>|0|0|0
+Windows::Storage::ApplicationDataContainerSettings|Windows::Foundation::Collections::IObservableMap<hstring, Windows::Foundation::IInspectable>|0|0|0
 Windows::Storage::Pickers::FileExtensionVector|Windows::Foundation::Collections::IVector<hstring>|1|0|0
 Windows::Storage::Pickers::FilePickerFileTypesOrderedMap|Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<hstring>>|1|0|0
 Windows::Storage::Pickers::FilePickerSelectedFilesArray|Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>|1|0|0
 Windows::Storage::Search::SortEntryVector|Windows::Foundation::Collections::IVector<Windows::Storage::Search::SortEntry>|1|0|0
 Windows::Storage::Streams::DataReaderLoadOperation|Windows::Foundation::IAsyncOperation<uint32_t>|1|0|0
 Windows::Storage::Streams::DataWriterStoreOperation|Windows::Foundation::IAsyncOperation<uint32_t>|1|0|0
-Windows::System::UserProfile::FirstSignInSettings|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>>|0|0|0
-Windows::System::UserProfile::FirstSignInSettings|Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>|0|0|0
+Windows::System::UserProfile::FirstSignInSettings|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Foundation::IInspectable>>|0|0|0
+Windows::System::UserProfile::FirstSignInSettings|Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable>|0|0|0
 Windows::UI::Composition::VisualCollection|Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Visual>|0|0|0
 Windows::UI::Xaml::Controls::ColumnDefinitionCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::ColumnDefinition>|1|0|0
 Windows::UI::Xaml::Controls::HubSectionCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection>|1|0|0
-Windows::UI::Xaml::Controls::ItemCollection|Windows::Foundation::Collections::IObservableVector<Windows::IInspectable>|1|0|0
+Windows::UI::Xaml::Controls::ItemCollection|Windows::Foundation::Collections::IObservableVector<Windows::Foundation::IInspectable>|1|0|0
 Windows::UI::Xaml::Controls::RowDefinitionCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::RowDefinition>|1|0|0
 Windows::UI::Xaml::Controls::UIElementCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::UIElement>|1|0|0
 Windows::UI::Xaml::DependencyObjectCollection|Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::DependencyObject>|1|0|0
@@ -90,8 +90,8 @@ Windows::UI::Xaml::Media::PathSegmentCollection|Windows::Foundation::Collections
 Windows::UI::Xaml::Media::PointCollection|Windows::Foundation::Collections::IVector<Windows::Foundation::Point>|1|0|0
 Windows::UI::Xaml::Media::TimelineMarkerCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::TimelineMarker>|1|0|0
 Windows::UI::Xaml::Media::TransformCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Transform>|1|0|0
-Windows::UI::Xaml::ResourceDictionary|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<Windows::IInspectable, Windows::IInspectable>>|0|0|0
-Windows::UI::Xaml::ResourceDictionary|Windows::Foundation::Collections::IMap<Windows::IInspectable, Windows::IInspectable>|0|0|0
+Windows::UI::Xaml::ResourceDictionary|Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable>>|0|0|0
+Windows::UI::Xaml::ResourceDictionary|Windows::Foundation::Collections::IMap<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable>|0|0|0
 Windows::UI::Xaml::SetterBaseCollection|Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::SetterBase>|0|0|0
 Windows::UI::Xaml::SetterBaseCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::SetterBase>|0|0|0
 Windows::UI::Xaml::TriggerActionCollection|Windows::Foundation::Collections::IVector<Windows::UI::Xaml::TriggerAction>|1|0|0

@@ -1,11 +1,20 @@
 
 struct event_token
 {
-    int64_t value;
+    int64_t value{};
+    event_token() = default;
+    explicit event_token(int64_t arg)
+        : value{ arg }
+    {}
 };
 
+inline bool operator==(const event_token & left, const event_token & right) noexcept
+{
+    return left.value == right.value;
+}
+
 struct auto_revoke_t {};
-constexpr auto_revoke_t auto_revoke {};
+constexpr auto_revoke_t auto_revoke{};
 
 template <typename I>
 struct event_revoker
@@ -38,7 +47,7 @@ struct event_revoker
 
         if (I object = m_object.get())
         {
-            ((*get(object)).*(m_method))(m_token);
+            ((*get_abi(object)).*(m_method))(m_token);
         }
 
         m_object = nullptr;
@@ -47,8 +56,8 @@ struct event_revoker
 private:
 
     weak_ref<I> m_object;
-    method_type m_method {};
-    event_token m_token {};
+    method_type m_method{};
+    event_token m_token{};
 };
 
 template <typename I>
@@ -80,23 +89,22 @@ struct factory_event_revoker
             return;
         }
 
-        ((*get(m_object)).*(m_method))(m_token);
+        ((*get_abi(m_object)).*(m_method))(m_token);
         m_object = nullptr;
     }
 
 private:
 
     I m_object;
-    method_type m_method {};
-    event_token m_token {};
+    method_type m_method{};
+    event_token m_token{};
 };
 
-namespace impl {
-
-template <typename D, typename I, typename S, typename M>
-auto make_event_revoker(S source, M method, event_token token)
+namespace impl
 {
-    return event_revoker<I>(static_cast<const I &>(static_cast<const D &>(*source)), method, token);
-}
-
+    template <typename D, typename I, typename S, typename M>
+    auto make_event_revoker(S source, M method, event_token token)
+    {
+        return event_revoker<I>(static_cast<const I &>(static_cast<const D &>(*source)), method, token);
+    }
 }

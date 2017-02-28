@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -27,6 +27,15 @@ struct IPrint3DWorkflowPrinterChangedEventArgs;
 struct Print3DWorkflow;
 struct Print3DWorkflowPrintRequestedEventArgs;
 struct Print3DWorkflowPrinterChangedEventArgs;
+
+}
+
+namespace Windows::Devices::Printers::Extensions {
+
+template <typename T> struct impl_IPrint3DWorkflow;
+template <typename T> struct impl_IPrint3DWorkflow2;
+template <typename T> struct impl_IPrint3DWorkflowPrintRequestedEventArgs;
+template <typename T> struct impl_IPrint3DWorkflowPrinterChangedEventArgs;
 
 }
 

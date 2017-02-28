@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Security::ExchangeActiveSyncProvisioning {
 
-struct __declspec(uuid("54dfd981-1968-4ca3-b958-e595d16505eb")) __declspec(novtable) IEasClientDeviceInformation : Windows::IInspectable
+struct __declspec(uuid("54dfd981-1968-4ca3-b958-e595d16505eb")) __declspec(novtable) IEasClientDeviceInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(GUID * value) = 0;
     virtual HRESULT __stdcall get_OperatingSystem(hstring * value) = 0;
@@ -20,7 +20,7 @@ struct __declspec(uuid("54dfd981-1968-4ca3-b958-e595d16505eb")) __declspec(novta
     virtual HRESULT __stdcall get_SystemSku(hstring * value) = 0;
 };
 
-struct __declspec(uuid("ffb35923-bb26-4d6a-81bc-165aee0ad754")) __declspec(novtable) IEasClientDeviceInformation2 : Windows::IInspectable
+struct __declspec(uuid("ffb35923-bb26-4d6a-81bc-165aee0ad754")) __declspec(novtable) IEasClientDeviceInformation2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SystemHardwareVersion(hstring * value) = 0;
     virtual HRESULT __stdcall get_SystemFirmwareVersion(hstring * value) = 0;
@@ -36,8 +36,23 @@ template <> struct traits<Windows::Security::ExchangeActiveSyncProvisioning::Eas
 
 namespace Windows::Security::ExchangeActiveSyncProvisioning {
 
-template <typename T> struct impl_IEasClientDeviceInformation;
-template <typename T> struct impl_IEasClientDeviceInformation2;
+template <typename D>
+struct WINRT_EBO impl_IEasClientDeviceInformation
+{
+    GUID Id() const;
+    hstring OperatingSystem() const;
+    hstring FriendlyName() const;
+    hstring SystemManufacturer() const;
+    hstring SystemProductName() const;
+    hstring SystemSku() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEasClientDeviceInformation2
+{
+    hstring SystemHardwareVersion() const;
+    hstring SystemFirmwareVersion() const;
+};
 
 }
 

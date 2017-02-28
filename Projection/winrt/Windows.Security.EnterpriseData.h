@@ -1,7 +1,10 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+
+#include "base.h"
+WINRT_WARNING_PUSH
 
 #include "internal/Windows.Security.EnterpriseData.3.h"
 
@@ -12,3 +15,5 @@ namespace impl {
 }
 
 }
+
+WINRT_WARNING_POP

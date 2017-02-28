@@ -110,7 +110,7 @@ namespace Microsoft.Wcl.DataStore
                 new { Command = EnumCommand,  TableName = "Enumerations",   ColumnNames =  new string []{ "FullName", "Namespace", "Name", "Flags", "Deprecated" } },
                 new { Command = EnumFieldCommand,  TableName = "Enumerators",   ColumnNames =  new string []{ "Name", "Value", "EnumerationId", "Deprecated" } },
                 new { Command = StructCommand,  TableName = "Structures",   ColumnNames =  new string []{ "FullName", "Namespace", "Name", "Depends", "Deprecated" } },
-                new { Command = StructFieldCommand,  TableName = "Fields",   ColumnNames =  new string []{ "Name", "Type", "TypeNamespace", "TypeName", "StructureId" } },
+                new { Command = StructFieldCommand,  TableName = "Fields",   ColumnNames =  new string []{ "Name", "Type", "TypeNamespace", "TypeName", "StructureId", "Deprecated" } },
                 new { Command = GenericInterfacesCommand,  TableName = "GenericInterfaces",   ColumnNames =  new string []{ "FullName", "Namespace", "Name", "Uuid", "MetadataFullNameInDotForm", "MetadataFullNameInCppForm", "Depth" } },
                 new { Command = NamespaceToTypeCategoryDependencyCommand,  TableName = "NamespaceToTypeCategoryDependency",   ColumnNames =  new string []{ "Namespace", "DependentNamespace", "TypeCategory" } },
                 new { Command = NamespaceToGenericInterfaceDepedencyCommand,  TableName = "NamespaceToGenericInterfaceDependency",   ColumnNames =  new string []{ "Namespace", "GenericInterfaceId" } },
@@ -286,7 +286,7 @@ namespace Microsoft.Wcl.DataStore
         {
             foreach (var info in structFieldsInfo)
             {
-                object[] values = { info.Name, info.Type, info.TypeNamespace, info.TypeName, structRowId };
+                object[] values = { info.Name, info.Type, info.TypeNamespace, info.TypeName, structRowId, info.Deprecated };
                 FrontEndDatabase.UpdateCommandValues(this.StructFieldCommand, values);
                 var insertedCount = this.StructFieldCommand.ExecuteNonQuery();
                 this.ThrowIfCommandQueryFailed(insertedCount, 1, this.StructFieldCommand.CommandText);
@@ -1162,7 +1162,8 @@ namespace Microsoft.Wcl.DataStore
                 TypeNamespace,
                 TypeName,
                 Category,
-                StructureId
+                StructureId,
+                Deprecated
             );
 
             create table NamespaceToTypeCategoryDependency

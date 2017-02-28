@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -83,6 +83,28 @@ struct SmsStatusMessage;
 struct SmsTextMessage2;
 struct SmsVoicemailMessage;
 struct SmsWapMessage;
+
+}
+
+namespace Windows::Devices::Sms {
+
+template <typename T> struct impl_ISmsAppMessage;
+template <typename T> struct impl_ISmsBroadcastMessage;
+template <typename T> struct impl_ISmsDevice2;
+template <typename T> struct impl_ISmsDevice2Statics;
+template <typename T> struct impl_ISmsFilterRule;
+template <typename T> struct impl_ISmsFilterRuleFactory;
+template <typename T> struct impl_ISmsFilterRules;
+template <typename T> struct impl_ISmsFilterRulesFactory;
+template <typename T> struct impl_ISmsMessageBase;
+template <typename T> struct impl_ISmsMessageReceivedTriggerDetails;
+template <typename T> struct impl_ISmsMessageRegistration;
+template <typename T> struct impl_ISmsMessageRegistrationStatics;
+template <typename T> struct impl_ISmsSendMessageResult;
+template <typename T> struct impl_ISmsStatusMessage;
+template <typename T> struct impl_ISmsTextMessage2;
+template <typename T> struct impl_ISmsVoicemailMessage;
+template <typename T> struct impl_ISmsWapMessage;
 
 }
 

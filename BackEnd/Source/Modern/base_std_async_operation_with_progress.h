@@ -3,25 +3,25 @@ template <typename TResult, typename TProgress, typename ... Args>
 struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>, Args ...>
 {
     struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>,
-                                                                  winrt::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+        winrt::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
     {
         using ProgressHandler = winrt::Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>;
 
         void Progress(const ProgressHandler & handler)
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
             m_progress = handler;
         }
 
         ProgressHandler Progress()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
             return m_progress;
         }
 
         TResult GetResults()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
 
             if (this->m_status == AsyncStatus::Completed)
             {
@@ -43,7 +43,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<
             winrt::Windows::Foundation::AsyncStatus status;
 
             {
-                const winrt::lock_guard guard(this->m_lock);
+                const winrt::impl::lock_guard guard(this->m_lock);
 
                 if (this->m_status == AsyncStatus::Started)
                 {

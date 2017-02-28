@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -31,7 +31,7 @@ template <typename H> struct impl_IdleDispatchedHandler : implements<impl_IdleDi
 {
     impl_IdleDispatchedHandler(H && handler) : H(std::forward<H>(handler)) {}
 
-    HRESULT __stdcall abi_Invoke(abi_arg_in<Windows::UI::Core::IIdleDispatchedHandlerArgs> e) noexcept override
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::UI::Core::IIdleDispatchedHandlerArgs> e) noexcept override
     {
         try
         {

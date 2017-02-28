@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -147,6 +147,48 @@ struct ZoomSettings;
 
 namespace Windows::Media::Devices {
 
+template <typename T> struct impl_IAdvancedPhotoCaptureSettings;
+template <typename T> struct impl_IAdvancedPhotoControl;
+template <typename T> struct impl_IAdvancedVideoCaptureDeviceController;
+template <typename T> struct impl_IAdvancedVideoCaptureDeviceController2;
+template <typename T> struct impl_IAdvancedVideoCaptureDeviceController3;
+template <typename T> struct impl_IAdvancedVideoCaptureDeviceController4;
+template <typename T> struct impl_IAudioDeviceController;
+template <typename T> struct impl_IDefaultAudioDeviceChangedEventArgs;
+template <typename T> struct impl_IExposureCompensationControl;
+template <typename T> struct impl_IExposureControl;
+template <typename T> struct impl_IExposurePriorityVideoControl;
+template <typename T> struct impl_IFlashControl;
+template <typename T> struct impl_IFlashControl2;
+template <typename T> struct impl_IFocusControl;
+template <typename T> struct impl_IFocusControl2;
+template <typename T> struct impl_IFocusSettings;
+template <typename T> struct impl_IHdrVideoControl;
+template <typename T> struct impl_IIsoSpeedControl;
+template <typename T> struct impl_IIsoSpeedControl2;
+template <typename T> struct impl_ILowLagPhotoControl;
+template <typename T> struct impl_ILowLagPhotoSequenceControl;
+template <typename T> struct impl_IMediaDeviceControl;
+template <typename T> struct impl_IMediaDeviceControlCapabilities;
+template <typename T> struct impl_IMediaDeviceController;
+template <typename T> struct impl_IMediaDeviceStatics;
+template <typename T> struct impl_IOpticalImageStabilizationControl;
+template <typename T> struct impl_IPhotoConfirmationControl;
+template <typename T> struct impl_IRegionOfInterest;
+template <typename T> struct impl_IRegionOfInterest2;
+template <typename T> struct impl_IRegionsOfInterestControl;
+template <typename T> struct impl_ISceneModeControl;
+template <typename T> struct impl_ITorchControl;
+template <typename T> struct impl_IVideoDeviceController;
+template <typename T> struct impl_IWhiteBalanceControl;
+template <typename T> struct impl_IZoomControl;
+template <typename T> struct impl_IZoomControl2;
+template <typename T> struct impl_IZoomSettings;
+
+}
+
+namespace Windows::Media::Devices {
+
 enum class AdvancedPhotoMode
 {
     Auto = 0,
@@ -237,7 +279,7 @@ enum class HdrVideoMode
     Auto = 2,
 };
 
-enum class IsoSpeedPreset
+enum class [[deprecated("IsoSpeedPreset may not be available in future versions of Windows Phone. Starting with Windows Phone 8.1, use SetAutoAsync, Auto, SetValueAsync, and Value instead")]] IsoSpeedPreset
 {
     Auto = 0,
     Iso50 = 1,

@@ -61,7 +61,7 @@ namespace winrt::samples
                 return HasCurrent();
             }
 
-            uint32_t GetMany(array_ref<T> values)
+            uint32_t GetMany(array_view<T> values)
             {
                 uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
 

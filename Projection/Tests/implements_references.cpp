@@ -34,7 +34,7 @@ TEST_CASE("implements_references")
     bool destroyed = false;
     com_ptr<References> ref = make_self<References>(destroyed);
 
-    References * p = get(ref);
+    References * p = get_abi(ref);
 
     REQUIRE(p->Release() == 1);
 

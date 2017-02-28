@@ -1,7 +1,10 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
+
+#include "base.h"
+WINRT_WARNING_PUSH
 
 #include "internal/Windows.UI.Xaml.3.h"
 #include "internal/Windows.UI.Composition.3.h"
@@ -20,11 +23,12 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreview> : prod
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics> : produce_base<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
 {
-    HRESULT __stdcall abi_GetElementVisual(abi_arg_in<Windows::UI::Xaml::IUIElement> element, abi_arg_out<Windows::UI::Composition::IVisual> result) noexcept override
+    HRESULT __stdcall abi_GetElementVisual(impl::abi_arg_in<Windows::UI::Xaml::IUIElement> element, impl::abi_arg_out<Windows::UI::Composition::IVisual> result) noexcept override
     {
         try
         {
-            *result = detach(this->shim().GetElementVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetElementVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -34,11 +38,12 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
         }
     }
 
-    HRESULT __stdcall abi_GetElementChildVisual(abi_arg_in<Windows::UI::Xaml::IUIElement> element, abi_arg_out<Windows::UI::Composition::IVisual> result) noexcept override
+    HRESULT __stdcall abi_GetElementChildVisual(impl::abi_arg_in<Windows::UI::Xaml::IUIElement> element, impl::abi_arg_out<Windows::UI::Composition::IVisual> result) noexcept override
     {
         try
         {
-            *result = detach(this->shim().GetElementChildVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetElementChildVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element)));
             return S_OK;
         }
         catch (...)
@@ -48,10 +53,11 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
         }
     }
 
-    HRESULT __stdcall abi_SetElementChildVisual(abi_arg_in<Windows::UI::Xaml::IUIElement> element, abi_arg_in<Windows::UI::Composition::IVisual> visual) noexcept override
+    HRESULT __stdcall abi_SetElementChildVisual(impl::abi_arg_in<Windows::UI::Xaml::IUIElement> element, impl::abi_arg_in<Windows::UI::Composition::IVisual> visual) noexcept override
     {
         try
         {
+            typename D::abi_guard guard(this->shim());
             this->shim().SetElementChildVisual(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), *reinterpret_cast<const Windows::UI::Composition::Visual *>(&visual));
             return S_OK;
         }
@@ -61,11 +67,12 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
         }
     }
 
-    HRESULT __stdcall abi_GetScrollViewerManipulationPropertySet(abi_arg_in<Windows::UI::Xaml::Controls::IScrollViewer> scrollViewer, abi_arg_out<Windows::UI::Composition::ICompositionPropertySet> result) noexcept override
+    HRESULT __stdcall abi_GetScrollViewerManipulationPropertySet(impl::abi_arg_in<Windows::UI::Xaml::Controls::IScrollViewer> scrollViewer, impl::abi_arg_out<Windows::UI::Composition::ICompositionPropertySet> result) noexcept override
     {
         try
         {
-            *result = detach(this->shim().GetScrollViewerManipulationPropertySet(*reinterpret_cast<const Windows::UI::Xaml::Controls::ScrollViewer *>(&scrollViewer)));
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetScrollViewerManipulationPropertySet(*reinterpret_cast<const Windows::UI::Xaml::Controls::ScrollViewer *>(&scrollViewer)));
             return S_OK;
         }
         catch (...)
@@ -83,26 +90,26 @@ namespace Windows::UI::Xaml::Hosting {
 template <typename D> Windows::UI::Composition::Visual impl_IElementCompositionPreviewStatics<D>::GetElementVisual(const Windows::UI::Xaml::UIElement & element) const
 {
     Windows::UI::Composition::Visual result { nullptr };
-    check_hresult(static_cast<const IElementCompositionPreviewStatics &>(static_cast<const D &>(*this))->abi_GetElementVisual(get(element), put(result)));
+    check_hresult(WINRT_SHIM(IElementCompositionPreviewStatics)->abi_GetElementVisual(get_abi(element), put_abi(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Composition::Visual impl_IElementCompositionPreviewStatics<D>::GetElementChildVisual(const Windows::UI::Xaml::UIElement & element) const
 {
     Windows::UI::Composition::Visual result { nullptr };
-    check_hresult(static_cast<const IElementCompositionPreviewStatics &>(static_cast<const D &>(*this))->abi_GetElementChildVisual(get(element), put(result)));
+    check_hresult(WINRT_SHIM(IElementCompositionPreviewStatics)->abi_GetElementChildVisual(get_abi(element), put_abi(result)));
     return result;
 }
 
 template <typename D> void impl_IElementCompositionPreviewStatics<D>::SetElementChildVisual(const Windows::UI::Xaml::UIElement & element, const Windows::UI::Composition::Visual & visual) const
 {
-    check_hresult(static_cast<const IElementCompositionPreviewStatics &>(static_cast<const D &>(*this))->abi_SetElementChildVisual(get(element), get(visual)));
+    check_hresult(WINRT_SHIM(IElementCompositionPreviewStatics)->abi_SetElementChildVisual(get_abi(element), get_abi(visual)));
 }
 
 template <typename D> Windows::UI::Composition::CompositionPropertySet impl_IElementCompositionPreviewStatics<D>::GetScrollViewerManipulationPropertySet(const Windows::UI::Xaml::Controls::ScrollViewer & scrollViewer) const
 {
     Windows::UI::Composition::CompositionPropertySet result { nullptr };
-    check_hresult(static_cast<const IElementCompositionPreviewStatics &>(static_cast<const D &>(*this))->abi_GetScrollViewerManipulationPropertySet(get(scrollViewer), put(result)));
+    check_hresult(WINRT_SHIM(IElementCompositionPreviewStatics)->abi_GetScrollViewerManipulationPropertySet(get_abi(scrollViewer), put_abi(result)));
     return result;
 }
 
@@ -129,3 +136,32 @@ inline Windows::UI::Composition::CompositionPropertySet ElementCompositionPrevie
 }
 
 }
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreview>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreview & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Hosting::ElementCompositionPreview>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Hosting::ElementCompositionPreview & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+WINRT_WARNING_POP

@@ -102,7 +102,7 @@ TEST_CASE("hresult,restricted,producing")
 
     try
     {
-        WINRT_RoOriginateError(E_INVALIDARG, get(hstring_ref(L"Correctly matched error info")));
+        WINRT_RoOriginateError(E_INVALIDARG, get_abi(hstring_view(L"Correctly matched error info")));
         throw hresult_invalid_argument(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_invalid_argument const & e)
@@ -113,7 +113,7 @@ TEST_CASE("hresult,restricted,producing")
 
     try
     {
-        WINRT_RoOriginateError(E_FAIL, get(hstring_ref(L"Incorrectly matched error info")));
+        WINRT_RoOriginateError(E_FAIL, get_abi(hstring_view(L"Incorrectly matched error info")));
         throw hresult_invalid_argument(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_invalid_argument const & e)
@@ -501,4 +501,11 @@ TEST_CASE("hresult, exception")
     {
         REQUIRE(E_FAIL == impl::to_hresult());
     }
+}
+
+TEST_CASE("hresult, throw_last_error")
+{
+    SetLastError(ERROR_CANCELLED);
+
+    REQUIRE_THROWS_AS(throw_last_error(), hresult_canceled);
 }

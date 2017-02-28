@@ -1,111 +1,101 @@
 
-namespace ABI::Windows::Foundation {
-
-struct __declspec(uuid("00000035-0000-0000-c000-000000000046")) __declspec(novtable) IActivationFactory : IInspectable
+namespace Windows::Foundation
 {
-    virtual HRESULT __stdcall abi_ActivateInstance(IInspectable ** instance) = 0;
-};
 
+    struct IActivationFactory;
+
+    template <typename D>
+    struct WINRT_EBO impl_IActivationFactory
+    {
+        IInspectable ActivateInstance() const;
+    };
 }
 
-namespace Windows::Foundation {
-
-struct IActivationFactory;
-
-template <typename D>
-struct WINRT_EBO impl_IActivationFactory
+namespace impl
 {
-    IInspectable ActivateInstance() const;
-};
-
-}
-
-namespace impl {
-
-template <> struct traits<Windows::Foundation::IActivationFactory>
-{
-    using abi = ABI::Windows::Foundation::IActivationFactory;
-    template <typename D> using consume = Windows::Foundation::impl_IActivationFactory<D>;
-};
-
-template <typename D>
-struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Windows::Foundation::IActivationFactory>
-{
-    HRESULT __stdcall abi_ActivateInstance(abi_arg_out<Windows::IInspectable> instance) noexcept final
+    template <> struct traits<Windows::Foundation::IActivationFactory>
     {
-        try
-        {
-            *instance = detach(this->shim().ActivateInstance());
-            return S_OK;
-        }
-        catch (...)
-        {
-            *instance = nullptr;
-            return impl::to_hresult();
-        }
-    }
-};
+        using abi = ABI::Windows::Foundation::IActivationFactory;
+        template <typename D> using consume = Windows::Foundation::impl_IActivationFactory<D>;
+    };
 
-template <typename Class, typename Interface>
-Interface get_agile_activation_factory()
-{
-    hstring_ref classId(impl::traits<Class>::name());
-
-    Interface factory;
-    check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
-
-    if (!factory.template try_as<IAgileObject>())
+    template <typename D>
+    struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Windows::Foundation::IActivationFactory>
     {
-        return nullptr;
+        HRESULT __stdcall abi_ActivateInstance(abi_arg_out<Windows::Foundation::IInspectable> instance) noexcept final
+        {
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *instance = detach_abi(this->shim().ActivateInstance());
+                return S_OK;
+            }
+            catch (...)
+            {
+                *instance = nullptr;
+                return impl::to_hresult();
+            }
+        }
+    };
+
+    template <typename Class, typename Interface>
+    Interface get_agile_activation_factory()
+    {
+        hstring_view classId(impl::traits<Class>::name());
+
+        Interface factory;
+        check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put_abi(factory))));
+
+        if (!factory.template try_as<IAgileObject>())
+        {
+            return nullptr;
+        }
+
+        return factory;
     }
 
-    return factory;
+    template <typename Class, typename Interface>
+    Interface get_activation_factory()
+    {
+        hstring_view classId(impl::traits<Class>::name());
+
+        Interface factory;
+        check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put_abi(factory))));
+        return factory;
+    }
 }
 
-template <typename Class, typename Interface>
-Interface get_activation_factory()
+namespace Windows::Foundation
 {
-    hstring_ref classId(impl::traits<Class>::name());
+    struct IActivationFactory :
+        IInspectable,
+        impl::consume<IActivationFactory>
+    {
+        IActivationFactory(std::nullptr_t = nullptr) noexcept {}
+    };
 
-    Interface factory;
-    check_hresult(WINRT_RoGetActivationFactory(get(classId), __uuidof(abi<Interface>), reinterpret_cast<void **>(put(factory))));
-    return factory;
-}
-
-}
-
-namespace Windows::Foundation {
-
-struct IActivationFactory :
-    IInspectable,
-    impl::consume<IActivationFactory>
-{
-    IActivationFactory(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IActivationFactory>(m_ptr); }
-};
-
-template <typename D>
-IInspectable impl_IActivationFactory<D>::ActivateInstance() const
-{
-    IInspectable instance;
-    check_hresult(static_cast<const IActivationFactory &>(static_cast<const D &>(*this))->abi_ActivateInstance(put(instance)));
-    return instance;
-}
+    template <typename D>
+    IInspectable impl_IActivationFactory<D>::ActivateInstance() const
+    {
+        IInspectable instance;
+        check_hresult(WINRT_SHIM(IActivationFactory)->abi_ActivateInstance(put_abi(instance)));
+        return instance;
+    }
 
 }
 
-enum class initialize_type
+enum class apartment_type
 {
     single_threaded,
     multi_threaded
 };
 
-inline void initialize(const initialize_type type = initialize_type::multi_threaded)
+inline void init_apartment(const apartment_type type = apartment_type::multi_threaded)
 {
-    check_hresult(WINRT_RoInitialize(static_cast<uint32_t>(type)));
+    check_hresult<S_FALSE>(WINRT_RoInitialize(static_cast<uint32_t>(type)));
 }
 
-inline void uninitialize() noexcept
+inline void uninit_apartment() noexcept
 {
     WINRT_RoUninitialize();
 }

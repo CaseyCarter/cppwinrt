@@ -44,7 +44,8 @@ namespace Microsoft.Wcl.Parsers
             {
                 var field = assembly.GetFieldDefinition(fieldHandle);
                 var fieldName = assembly.GetString(field.Name);
-                
+                var customAttributes = CustomAttributeMetadataParser.GetAttributes(assembly, field.GetCustomAttributes());
+
                 var blobReader = assembly.GetBlobReader(field.Signature);
                 var signatureTypeHeader = blobReader.ReadSignatureHeader();
                 Debug.Assert(signatureTypeHeader.Kind == SignatureKind.Field);
@@ -60,6 +61,7 @@ namespace Microsoft.Wcl.Parsers
                 fieldInfo.Name = fieldName;
                 fieldInfo.Type = fullTypeName;
                 fieldInfo.StructFullTypeName = structFullTypeName;
+                fieldInfo.Deprecated = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributes, CustomAttributeKind.Deprecated);
 
                 list.Add(fieldInfo);
             }

@@ -11,7 +11,7 @@
 //
 
 using namespace winrt;
-using namespace Windows;
+using namespace Windows::Foundation;
 
 struct Test_GetIids : implements<Test_GetIids,
                                  non_agile,

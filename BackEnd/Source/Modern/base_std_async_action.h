@@ -3,11 +3,11 @@ template <typename ... Args>
 struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
 {
     struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncAction,
-                                                                  winrt::Windows::Foundation::AsyncActionCompletedHandler>
+        winrt::Windows::Foundation::AsyncActionCompletedHandler>
     {
         void GetResults()
         {
-            const winrt::lock_guard guard(this->m_lock);
+            const winrt::impl::lock_guard guard(this->m_lock);
 
             if (this->m_status == AsyncStatus::Completed)
             {
@@ -29,7 +29,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
             winrt::Windows::Foundation::AsyncStatus status;
 
             {
-                const winrt::lock_guard guard(this->m_lock);
+                const winrt::impl::lock_guard guard(this->m_lock);
 
                 if (this->m_status == AsyncStatus::Started)
                 {

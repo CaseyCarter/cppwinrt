@@ -55,7 +55,7 @@ private:
             return HasCurrent();
         }
 
-        uint32_t GetMany(array_ref<T> values) noexcept
+        uint32_t GetMany(array_view<T> values) noexcept
         {
             uint32_t actual = static_cast<uint32_t>(m_end - m_current);
 

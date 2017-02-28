@@ -17,7 +17,7 @@ namespace Microsoft.Wcl.Projection
     {
         static IDictionary<string, ProjectedTypeInfo> MetadataTypeToProjectedTypeTable = new Dictionary<string, ProjectedTypeInfo>()
         {
-                { "Object", new ProjectedTypeInfo() { ProjectedType = "Windows::IInspectable", TypeCategory = TypeCategory.Interface } },
+                { "Object", new ProjectedTypeInfo() { ProjectedType = "Windows::Foundation::IInspectable", TypeCategory = TypeCategory.Interface } },
                 { "Int16", new ProjectedTypeInfo() { ProjectedType = "int16_t", TypeCategory = TypeCategory.Value } },
                 { "Int32", new ProjectedTypeInfo() { ProjectedType = "int32_t", TypeCategory = TypeCategory.Value } },
                 { "Int64", new ProjectedTypeInfo() { ProjectedType = "int64_t", TypeCategory = TypeCategory.Value } },

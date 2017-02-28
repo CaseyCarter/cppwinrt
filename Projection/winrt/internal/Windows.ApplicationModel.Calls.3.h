@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -45,7 +45,7 @@ struct WINRT_EBO PhoneCallHistoryEntryAddress :
 {
     PhoneCallHistoryEntryAddress(std::nullptr_t) noexcept {}
     PhoneCallHistoryEntryAddress();
-    PhoneCallHistoryEntryAddress(hstring_ref rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind);
+    PhoneCallHistoryEntryAddress(hstring_view rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind);
 };
 
 struct WINRT_EBO PhoneCallHistoryEntryQueryOptions :

@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -16,6 +16,12 @@ namespace Windows::Foundation::Metadata {
 
 struct IApiInformationStatics;
 struct ApiInformation;
+
+}
+
+namespace Windows::Foundation::Metadata {
+
+template <typename T> struct impl_IApiInformationStatics;
 
 }
 

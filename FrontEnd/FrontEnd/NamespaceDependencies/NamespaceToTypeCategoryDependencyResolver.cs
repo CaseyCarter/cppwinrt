@@ -96,6 +96,30 @@ namespace Microsoft.Wcl.NamespaceDependencies
             {
                 string projectedType = null;
                 MetadataTypeToProjectedTypeConverter.GetProjectedTypeAndCategoryFromMetadataType(fullTypeName, false, this.Repository, out projectedType, out typeCategory);
+
+                // Once it is determined that the type is an interface, determine if the projected type's namespace is different than the type namespace.
+                // If so we are dealing with a runtime class whos default interface is in a different namespace. This affects generic dependencies.
+                if (typeCategory == TypeCategory.Interface)
+                {
+                    string projectedTypeNamespaceName = TypeNameUtilities.GetNamespaceNameFromType(projectedType);
+
+                    if (projectedTypeNamespaceName != targetTypeNamespaceName && !GenericInterfaceParser.IsGenericInterface(projectedType))
+                    {
+                        NamespaceDependencyInfo.NamespaceToTypeCategoryDependencyInfoEntry dependentDefaultInterfaceNamespace = null;
+                        if (!namespaceDependencyInfo.DependentNamespaceTypeCategoriesTable.TryGetValue(projectedTypeNamespaceName, out dependentDefaultInterfaceNamespace))
+                        {
+                            dependentDefaultInterfaceNamespace = new NamespaceDependencyInfo.NamespaceToTypeCategoryDependencyInfoEntry();
+                            dependentDefaultInterfaceNamespace.DependentNamespaceName = projectedTypeNamespaceName;
+                            namespaceDependencyInfo.DependentNamespaceTypeCategoriesTable.Add(projectedTypeNamespaceName, dependentDefaultInterfaceNamespace);
+                        }
+
+                        if (!dependentDefaultInterfaceNamespace.Categories.Contains(typeCategory))
+                        {
+                            Debug.Assert(typeCategory != TypeCategory.Unknown);
+                            dependentDefaultInterfaceNamespace.Categories.Add(typeCategory);
+                        }
+                    }
+                }
             }
 
             if (!dependentNamespace.Categories.Contains(typeCategory))

@@ -1,12 +1,19 @@
 delete from Interfaces
-where FullName = 'Windows::Foundation::IAsyncAction';
+where FullName = 'Windows::Foundation::IAsyncAction'
+or FullName = 'Windows::Foundation::AsyncActionCompletedHandler'
+or FullName = 'Windows::Foundation::IPropertyValue'
+or FullName = 'Windows::Foundation::IPropertyValueStatics';
 
-delete from Interfaces
-where FullName = 'Windows::Foundation::AsyncActionCompletedHandler';
+delete from Classes
+where FullName = 'Windows::Foundation::PropertyValue';
+
+delete from Enumerations where FullName = 'Windows::Foundation::PropertyType';
 
 delete from Structures where FullName = 'Windows::Foundation::Point';
 delete from Structures where FullName = 'Windows::Foundation::Size';
 delete from Structures where FullName = 'Windows::Foundation::TimeSpan';
+delete from Structures where FullName = 'Windows::Foundation::DateTime';
+delete from Structures where FullName = 'Windows::Foundation::Rect';
 
 delete from Structures where FullName = 'Windows::Foundation::Numerics::Vector2';
 delete from Structures where FullName = 'Windows::Foundation::Numerics::Vector3';

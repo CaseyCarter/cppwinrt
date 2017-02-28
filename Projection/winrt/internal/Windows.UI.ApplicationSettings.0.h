@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -63,6 +63,28 @@ struct SettingsCommand;
 struct WebAccountCommand;
 struct WebAccountInvokedArgs;
 struct WebAccountProviderCommand;
+
+}
+
+namespace Windows::UI::ApplicationSettings {
+
+template <typename T> struct impl_IAccountsSettingsPane;
+template <typename T> struct impl_IAccountsSettingsPaneCommandsRequestedEventArgs;
+template <typename T> struct impl_IAccountsSettingsPaneEventDeferral;
+template <typename T> struct impl_IAccountsSettingsPaneStatics;
+template <typename T> struct impl_IAccountsSettingsPaneStatics2;
+template <typename T> struct impl_ICredentialCommand;
+template <typename T> struct impl_ICredentialCommandFactory;
+template <typename T> struct impl_ISettingsCommandFactory;
+template <typename T> struct impl_ISettingsCommandStatics;
+template <typename T> struct impl_IWebAccountCommand;
+template <typename T> struct impl_IWebAccountCommandFactory;
+template <typename T> struct impl_IWebAccountInvokedArgs;
+template <typename T> struct impl_IWebAccountProviderCommand;
+template <typename T> struct impl_IWebAccountProviderCommandFactory;
+template <typename T> struct impl_CredentialCommandCredentialDeletedHandler;
+template <typename T> struct impl_WebAccountCommandInvokedHandler;
+template <typename T> struct impl_WebAccountProviderCommandInvokedHandler;
 
 }
 

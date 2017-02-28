@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -70,6 +70,29 @@ struct ProcessVideoFrameContext;
 struct VideoCompositorDefinition;
 struct VideoEffectDefinition;
 struct VideoTransformEffectDefinition;
+
+}
+
+namespace Windows::Media::Effects {
+
+template <typename T> struct impl_IAudioCaptureEffectsManager;
+template <typename T> struct impl_IAudioEffect;
+template <typename T> struct impl_IAudioEffectDefinition;
+template <typename T> struct impl_IAudioEffectDefinitionFactory;
+template <typename T> struct impl_IAudioEffectsManagerStatics;
+template <typename T> struct impl_IAudioRenderEffectsManager;
+template <typename T> struct impl_IAudioRenderEffectsManager2;
+template <typename T> struct impl_IBasicAudioEffect;
+template <typename T> struct impl_IBasicVideoEffect;
+template <typename T> struct impl_ICompositeVideoFrameContext;
+template <typename T> struct impl_IProcessAudioFrameContext;
+template <typename T> struct impl_IProcessVideoFrameContext;
+template <typename T> struct impl_IVideoCompositor;
+template <typename T> struct impl_IVideoCompositorDefinition;
+template <typename T> struct impl_IVideoCompositorDefinitionFactory;
+template <typename T> struct impl_IVideoEffectDefinition;
+template <typename T> struct impl_IVideoEffectDefinitionFactory;
+template <typename T> struct impl_IVideoTransformEffectDefinition;
 
 }
 

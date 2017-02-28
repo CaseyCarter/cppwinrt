@@ -14,7 +14,7 @@ namespace Microsoft.Wcl
     {
         static int Main(string[] args)
         {
-            if (Debugger.IsAttached)
+            if (Debugger.IsAttached && args.Length == 0)
             {
                 args = new string[] {
                 // For reference, the below 3 are the smallest set that can be used to satisfy the dependencies needed by universal api contract

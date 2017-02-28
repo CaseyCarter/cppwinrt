@@ -30,7 +30,7 @@ struct thread_context
 {
     thread_context()
     {
-        check_hresult(CoGetObjectContext(__uuidof(m_context), reinterpret_cast<void **>(put(m_context))));
+        check_hresult(CoGetObjectContext(__uuidof(m_context), reinterpret_cast<void **>(put_abi(m_context))));
     }
 
     bool await_ready() const noexcept
@@ -64,7 +64,7 @@ private:
 struct resume_after
 {
     explicit resume_after(Windows::Foundation::TimeSpan duration) noexcept :
-        m_duration(duration)
+    m_duration(duration)
     {
     }
 
@@ -83,7 +83,7 @@ struct resume_after
         }
 
         int64_t relative_count = -m_duration.count();
-        SetThreadpoolTimer(get(m_timer), reinterpret_cast<PFILETIME>(&relative_count), 0, 0);
+        SetThreadpoolTimer(get_abi(m_timer), reinterpret_cast<PFILETIME>(&relative_count), 0, 0);
     }
 
     void await_resume() const noexcept
@@ -97,7 +97,7 @@ private:
         std::experimental::coroutine_handle<>::from_address(context)();
     }
 
-    struct timer_traits : handle_traits<PTP_TIMER>
+    struct timer_traits : impl::handle_traits<PTP_TIMER>
     {
         static void close(type value) noexcept
         {
@@ -105,14 +105,14 @@ private:
         }
     };
 
-    handle<timer_traits> m_timer;
+    impl::handle<timer_traits> m_timer;
     Windows::Foundation::TimeSpan m_duration;
 };
 
 struct resume_on_signal
 {
     explicit resume_on_signal(HANDLE handle) noexcept :
-        m_handle(handle)
+    m_handle(handle)
     {}
 
     resume_on_signal(HANDLE handle, Windows::Foundation::TimeSpan timeout) noexcept :
@@ -137,7 +137,7 @@ struct resume_on_signal
 
         int64_t relative_count = -m_timeout.count();
         PFILETIME file_time = relative_count != 0 ? reinterpret_cast<PFILETIME>(&relative_count) : nullptr;
-        SetThreadpoolWait(get(m_wait), m_handle, file_time);
+        SetThreadpoolWait(get_abi(m_wait), m_handle, file_time);
     }
 
     bool await_resume() const noexcept
@@ -154,7 +154,7 @@ private:
         that->m_resume();
     }
 
-    struct wait_traits : handle_traits<PTP_WAIT>
+    struct wait_traits : impl::handle_traits<PTP_WAIT>
     {
         static void close(type value) noexcept
         {
@@ -162,7 +162,7 @@ private:
         }
     };
 
-    handle<wait_traits> m_wait;
+    impl::handle<wait_traits> m_wait;
     Windows::Foundation::TimeSpan m_timeout{ 0 };
     HANDLE m_handle{};
     uint32_t m_result{};
@@ -202,7 +202,7 @@ struct resumable_io
         struct awaitable : awaitable_base, F
         {
             awaitable(PTP_IO io, F callback) noexcept :
-                m_io(io),
+            m_io(io),
                 F(callback)
             {}
 
@@ -249,7 +249,7 @@ struct resumable_io
         struct awaitable : awaitable_base, F
         {
             awaitable(PTP_IO io, F callback) noexcept :
-                m_io(io),
+            m_io(io),
                 F(callback)
             {}
 
@@ -299,12 +299,12 @@ struct resumable_io
 
     PTP_IO get() const noexcept
     {
-        return winrt::get(m_io);
+        return winrt::get_abi(m_io);
     }
 
 private:
 
-    struct io_traits : handle_traits<PTP_IO>
+    struct io_traits : impl::handle_traits<PTP_IO>
     {
         static void close(type value) noexcept
         {
@@ -312,7 +312,7 @@ private:
         }
     };
 
-    handle<io_traits> m_io;
+    impl::handle<io_traits> m_io;
 };
 
 inline auto operator co_await(Windows::Foundation::TimeSpan duration)
@@ -345,7 +345,7 @@ namespace impl
 
         unsigned long __stdcall Release() noexcept
         {
-            const uint32_t remaining = just_release();
+            const uint32_t remaining = this->subtract_reference();
 
             if (remaining == 0)
             {
@@ -466,7 +466,14 @@ namespace impl
 
             bool await_suspend(std::experimental::coroutine_handle<>) const noexcept
             {
-                return 0 < promise->just_release();
+                const uint32_t remaining = promise->subtract_reference();
+
+                if (remaining == 0)
+                {
+                    std::atomic_thread_fence(std::memory_order_acquire);
+                }
+
+                return remaining > 0;
             }
         };
 
@@ -481,7 +488,7 @@ namespace impl
             AsyncStatus status;
 
             {
-                const winrt::lock_guard guard(m_lock);
+                const lock_guard guard(m_lock);
                 WINRT_ASSERT(m_status == AsyncStatus::Started || m_status == AsyncStatus::Canceled);
 
                 try
@@ -511,24 +518,17 @@ namespace impl
     protected:
 
         std::aligned_union_t<0, std::exception_ptr> m_exception;
-        winrt::lock m_lock;
+        lock m_lock;
         CompletedHandler m_completed;
         AsyncStatus m_status{ AsyncStatus::Started };
         bool m_completed_assigned{ false };
-
-    private:
-
-        uint32_t just_release() noexcept
-        {
-            return this->m_references.fetch_sub(1, std::memory_order_acq_rel) - 1;
-        }
     };
 
     template <typename Promise>
     struct cancellation_token
     {
         cancellation_token(Promise * promise) noexcept :
-            m_promise(promise)
+        m_promise(promise)
         {
         }
 
@@ -560,7 +560,7 @@ namespace impl
     struct progress_token
     {
         progress_token(Promise * promise) noexcept :
-            m_promise(promise)
+        m_promise(promise)
         {
         }
 

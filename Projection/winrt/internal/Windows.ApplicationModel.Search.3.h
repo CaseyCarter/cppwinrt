@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -26,7 +26,7 @@ struct WINRT_EBO SearchQueryLinguisticDetails :
     Windows::ApplicationModel::Search::ISearchQueryLinguisticDetails
 {
     SearchQueryLinguisticDetails(std::nullptr_t) noexcept {}
-    SearchQueryLinguisticDetails(const Windows::Foundation::Collections::IIterable<hstring> & queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength);
+    SearchQueryLinguisticDetails(iterable<hstring> queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength);
 };
 
 struct WINRT_EBO SearchSuggestionCollection :

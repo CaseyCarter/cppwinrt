@@ -29,5 +29,5 @@ void WriteRequiredClasses(Output & out);
 void WriteDelegateShims(Output & out);
 void WriteRequiredOverrides(Output & out);
 void WriteDefinitionsForRequiredInterfaces(Output & out);
-
+void WriteHashes(Output & out);
 }

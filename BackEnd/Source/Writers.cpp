@@ -16,6 +16,14 @@ bool StartsWith(std::string const & target, char const (&match)[Count]) noexcept
     return target.compare(0, Count - 1, match) == 0;
 }
 
+static void WriteDeprecatedAttribute(Output & out)
+{
+    if (!Settings::Deprecated.empty())
+    {
+        Write(out, "[[deprecated(\"%\")]] ", Settings::Deprecated);
+    }
+}
+
 static void WriteEnumeratorsFlag(Output & out)
 {
     GetEnumeratorsFlag([&]
@@ -34,6 +42,7 @@ static void WriteEnumerators(Output & out)
         Write(out, 
               Strings::WriteEnumerator,
               Settings::EnumeratorName,
+              Bind(WriteDeprecatedAttribute),
               Settings::EnumeratorValue);
     });
 }
@@ -44,6 +53,7 @@ static void WriteStructureFields(Output & out)
     {
         Write(out,
               Strings::WriteStructureField,
+              Bind(WriteDeprecatedAttribute),
               Settings::FieldType,
               Settings::FieldName);
     });
@@ -57,6 +67,7 @@ static void WriteAbiStructureFields(Output & out)
         {
             Write(out,
                   Strings::WriteStructureField,
+                  Bind(WriteDeprecatedAttribute),
                   "winrt::" + Settings::FieldType,
                   Settings::FieldName);
         }
@@ -64,6 +75,7 @@ static void WriteAbiStructureFields(Output & out)
         {
             Write(out,
                   Strings::WriteStructureField,
+                  Bind(WriteDeprecatedAttribute),
                   Settings::FieldType + " *",
                   Settings::FieldName);
         }
@@ -71,6 +83,7 @@ static void WriteAbiStructureFields(Output & out)
         {
             Write(out,
                   Strings::WriteStructureField,
+                  Bind(WriteDeprecatedAttribute),
                   Settings::FieldType,
                   Settings::FieldName);
         }
@@ -94,7 +107,7 @@ static void WriteProducerForwardArgument(Output & out, Parameter const & param)
         else if (param.IsArray())
         {
             Write(out,
-                  "array_ref<const %>(%, % + __%Size)",
+                  "array_view<const %>(%, % + __%Size)",
                   param.ModernType(),
                   param.Name,
                   param.Name,
@@ -111,7 +124,7 @@ static void WriteProducerForwardArgument(Output & out, Parameter const & param)
             param.IsReferenceOrReturn())
         {
             Write(out,
-                  "detach<%>(__%Size, %)",
+                  "detach_abi<%>(__%Size, %)",
                   param.ModernType(),
                   param.Name,
                   param.Name);
@@ -150,11 +163,11 @@ static void WriteAbiArgument(Output & out, Parameter const & param)
     {
         if (param.IsIn() || !param.IsReferenceOrReturn())
         {
-            Write(out, "%.size(), get(%)", param.Name, param.Name);
+            Write(out, "%.size(), get_abi(%)", param.Name, param.Name);
         }
         else
         {
-            Write(out, "put_size(%), put(%)", param.Name, param.Name);
+            Write(out, "impl::put_size_abi(%), put_abi(%)", param.Name, param.Name);
         }
     }
     else
@@ -174,11 +187,11 @@ static void WriteAbiArgument(Output & out, Parameter const & param)
         {
             if (param.IsIn())
             {
-                Write(out, "get(%)", param.Name);
+                Write(out, "get_abi(%)", param.Name);
             }
             else
             {
-                Write(out, "put(%)", param.Name);
+                Write(out, "put_abi(%)", param.Name);
             }
         }
     }
@@ -247,7 +260,7 @@ static void WriteAbiProducerParameter(Output & out, Parameter const & param)
     {
         if (param.IsArray())
         {
-            Write(out, "uint32_t __%Size, abi_arg_in<%> * %", param.Name, param.Type, param.Name);
+            Write(out, "uint32_t __%Size, impl::abi_arg_in<%> * %", param.Name, param.Type, param.Name);
         }
         else if (param.Category == TypeCategory::Value || param.Category == TypeCategory::Enumeration)
         {
@@ -255,7 +268,7 @@ static void WriteAbiProducerParameter(Output & out, Parameter const & param)
         }
         else
         {
-            Write(out, "abi_arg_in<%> %", param.Type, param.Name);
+            Write(out, "impl::abi_arg_in<%> %", param.Type, param.Name);
         }
     }
     else
@@ -264,11 +277,11 @@ static void WriteAbiProducerParameter(Output & out, Parameter const & param)
         {
             if (param.IsReferenceOrReturn())
             {
-                Write(out, "uint32_t * __%Size, abi_arg_out<%> * %", param.Name, param.Type, param.Name);
+                Write(out, "uint32_t * __%Size, impl::abi_arg_out<%> * %", param.Name, param.Type, param.Name);
             }
             else
             {
-                Write(out, "uint32_t __%Size, abi_arg_out<%> %", param.Name, param.Type, param.Name);
+                Write(out, "uint32_t __%Size, impl::abi_arg_out<%> %", param.Name, param.Type, param.Name);
             }
         }
         else if (param.Category == TypeCategory::Value || param.Category == TypeCategory::Enumeration)
@@ -277,7 +290,7 @@ static void WriteAbiProducerParameter(Output & out, Parameter const & param)
         }
         else
         {
-            Write(out, "abi_arg_out<%> %", param.Type, param.Name);
+            Write(out, "impl::abi_arg_out<%> %", param.Type, param.Name);
         }
     }
 }
@@ -416,52 +429,109 @@ static void WriteAbiParameters(Output & out)
     }
 }
 
+static void WriteInterfaceParameter(Output & out, Parameter const & param)
+{
+    MODERN_ASSERT(param.IsIn());
+    MODERN_ASSERT(param.Category == TypeCategory::Interface);
+
+    static constexpr char iterable[] = "Windows::Foundation::Collections::IIterable";
+    static constexpr char vector_view[] = "Windows::Foundation::Collections::IVectorView";
+    static constexpr char map_view[] = "Windows::Foundation::Collections::IMapView";
+    static constexpr char optional[] = "Windows::Foundation::IReference";
+
+    if (!StartsWith(Settings::MethodAbi, "put_")) // Only update methods and constructors
+    {
+        if (StartsWith(param.Type, iterable))
+        {
+            Write(out, "iterable% %", param.Type.data() + strlen(iterable), param.Name);
+            return;
+        }
+
+        if (StartsWith(param.Type, vector_view))
+        {
+            Write(out, "vector_view% %", param.Type.data() + strlen(vector_view), param.Name);
+            return;
+        }
+
+        if (StartsWith(param.Type, map_view))
+        {
+            Write(out, "map_view% %", param.Type.data() + strlen(map_view), param.Name);
+            return;
+        }
+    }
+
+    if (StartsWith(param.Type, optional))
+    {
+        Write(out, "const optional% & %", param.Type.data() + strlen(optional), param.Name);
+        return;
+    }
+
+    Write(out, "const % & %", param.Type, param.Name);
+}
+
 static void WriteParameter(Output & out, Parameter const & param)
 {
+    if (param.IsReturn())
+    {
+        return;
+    }
+
     if (param.IsArray())
     {
         if (param.IsIn())
         {
-            Write(out, "array_ref<const %> %", param.ModernType(), param.Name);
+            Write(out, "array_view<const %> %", param.ModernType(), param.Name);
+            return;
         }
-        else if (param.IsOut())
+
+        if (param.IsReference())
         {
-            if (param.IsReferenceOrReturn())
-            {
-                Write(out, "com_array<%> & %", param.ModernType(), param.Name);
-            }
-            else
-            {
-                Write(out, "array_ref<%> %", param.ModernType(), param.Name);
-            }
+            Write(out, "com_array<%> & %", param.ModernType(), param.Name);
+            return;
         }
+
+        Write(out, "array_view<%> %", param.ModernType(), param.Name);
+        return;
     }
-    else
+
+    if (param.IsOut())
     {
-        if (param.IsIn())
-        {
-            if (param.Category == TypeCategory::String)
-            {
-                Write(out, "hstring_ref %", param.Name);
-            }
-            else if (param.Category == TypeCategory::Structure || param.Category == TypeCategory::Interface)
-            {
-                Write(out, "const % & %", param.ModernType(), param.Name);
-            }
-            else if (param.Category == TypeCategory::Delegate)
-            {
-                Write(out, "const % & %", param.Type, param.Name);
-            }
-            else
-            {
-                Write(out, "% %", param.Type, param.Name);
-            }
-        }
-        else if (param.IsOut())
-        {
-            Write(out, "% & %", param.ModernType(), param.Name);
-        }
+        Write(out, "% & %", param.ModernType(), param.Name);
+        return;
     }
+
+    if (param.Category == TypeCategory::String)
+    {
+        Write(out, "hstring_view %", param.Name);
+        return;
+    }
+
+    if (param.Category == TypeCategory::Interface)
+    {
+        if (!param.ClassType.empty())
+        {
+            Write(out, "const % & %", param.ClassType, param.Name);
+            return;
+        }
+
+        WriteInterfaceParameter(out, param);
+        return;
+    }
+
+    if (param.Category == TypeCategory::Structure)
+    {
+        Write(out, "const % & %", param.Type, param.Name);
+        return;
+    }
+
+    if (param.Category == TypeCategory::Delegate)
+    {
+        Write(out, "const % & %", param.Type, param.Name);
+        return;
+    }
+
+    Write(out, "% %", param.Type, param.Name);
+    return;
 }
 
 static void WriteComposableConstructorParameters(Output & out)
@@ -555,6 +625,7 @@ static void WriteInterfaceMethodDeclaration(Output & out)
 {
     Write(out,
           Strings::WriteInterfaceMethodDeclaration,
+          Bind(WriteDeprecatedAttribute),
           Settings::ParameterInfo.ReturnType,
           Settings::MethodName,
           Bind(WriteParameters));
@@ -565,6 +636,7 @@ static void WriteInterfaceMethodDeclaration(Output & out)
               Strings::WriteInterfaceEventMethodDeclaration,
               Settings::MethodName,
               Settings::InterfaceName,
+              Bind(WriteDeprecatedAttribute),
               Settings::MethodName,
               Settings::MethodName,
               Bind(WriteParameters));
@@ -664,6 +736,7 @@ static void WriteStaticMethodDeclaration(Output & out)
 {
     Write(out,
           Strings::WriteStaticMethodDeclaration,
+          Bind(WriteDeprecatedAttribute),
           Settings::ParameterInfo.ReturnType,
           Settings::MethodName,
           Bind(WriteParameters));
@@ -674,6 +747,7 @@ static void WriteStaticMethodDeclaration(Output & out)
               Strings::WriteStaticEventMethodDeclaration,
               Settings::MethodName,
               Settings::InterfaceName,
+              Bind(WriteDeprecatedAttribute),
               Settings::MethodName,
               Settings::MethodName,
               Bind(WriteParameters));
@@ -770,7 +844,7 @@ static void WriteComposableOverridables(Output & out)
 
     if (first) // no overrides
     {
-        Write(out, "Windows::IInspectable");
+        Write(out, "Windows::Foundation::IInspectable");
     }
 }
 
@@ -839,7 +913,7 @@ static void WriteDelegateOverrideVirtualInternalCall(Output & out)
         }
 
         Write(out,
-              " = detach((*this)(%))",
+              " = detach_abi((*this)(%))",
               Bind(WriteProducerForwardArguments));
     }
     else
@@ -866,7 +940,7 @@ static void WriteOverrideVirtualInternalCall(Output & out)
         }
 
         Write(out,
-              " = detach(this->shim().%(%))",
+              " = detach_abi(this->shim().%(%))",
               Settings::MethodName,
               Bind(WriteProducerForwardArguments));
     }
@@ -1020,6 +1094,7 @@ static void WriteClassDeclaration(Output & out)
 {
     Write(out,
           Strings::WriteClassDeclaration,
+          Bind(WriteDeprecatedAttribute),
           Settings::ClassName,
           Settings::ClassDefaultInterface,
           Bind(WriteBases),
@@ -1033,6 +1108,7 @@ static void WriteStaticClassDeclaration(Output & out)
 {
     Write(out,
           Strings::WriteStaticClassDeclaration,
+          Bind(WriteDeprecatedAttribute),
           Settings::ClassName,
           Settings::ClassName,
           Bind(WriteStaticMethodDeclarations));
@@ -1056,6 +1132,7 @@ void WriteEnumerations(Output & out)
         {
             Write(out,
                   Strings::WriteEnumeration,
+                  Bind(WriteDeprecatedAttribute),
                   Settings::EnumerationName,
                   Bind(WriteEnumerators));
         }
@@ -1070,6 +1147,7 @@ void WriteStructures(Output & out)
 
         Write(out,
               Strings::WriteStructure,
+              Bind(WriteDeprecatedAttribute),
               Settings::StructureName,
               Bind(WriteAbiStructureFields));
     });
@@ -1096,6 +1174,7 @@ void WriteStructures(Output & out)
 
         Write(out,
               Strings::WriteStructure,
+              Bind(WriteDeprecatedAttribute),
               Settings::StructureName,
               Bind(WriteStructureFields));
     });
@@ -1228,7 +1307,7 @@ void WriteInterfaceDefinitions(Output & out)
 
         Write(out,
               Strings::WriteDelegateDefinition,
-              Settings::InterfaceName,
+              Bind(WriteDeprecatedAttribute),
               Settings::InterfaceName,
               Settings::InterfaceName,
               Settings::InterfaceName,
@@ -1248,8 +1327,14 @@ void WriteInterfaceDefinitions(Output & out)
               Settings::InterfaceName,
               Bind(WriteRequiredInterfaces),
               Settings::InterfaceName,
-              Settings::InterfaceName,
               Bind(WriteUsingMethodsForInterface));
+        if (!Settings::Deprecated.empty())
+        {
+            Write(out,
+                "struct [[deprecated(\"%\")]] %;\r\n", 
+                Settings::Deprecated, 
+                Settings::InterfaceName);
+        }
     });
 }
 
@@ -1263,7 +1348,7 @@ void WriteAbiInterfaces(Output & out)
               Strings::WriteAbiInterface,
               Settings::InterfaceGuid,
               Settings::InterfaceName,
-              Settings::InterfaceDelegate ? "IUnknown" : "Windows::IInspectable",
+              Settings::InterfaceDelegate ? "IUnknown" : "Windows::Foundation::IInspectable",
               Bind(WriteAbiInterfaceMethods));
     });
 }
@@ -1273,7 +1358,7 @@ void WriteInterfacesMethodDefinitions(Output & out)
     GetInterfaceMethodDefinitions([&]
     {
         out.WriteNamespace(Settings::Namespace);
-        Settings::MethodShim = "static_cast<const " + Settings::InterfaceName + " &>(static_cast<const D &>(*this))";
+        Settings::MethodShim = "WINRT_SHIM(" + Settings::InterfaceName + ")";
 
         Write(out,
               Strings::WriteInterfacesMethodDefinition,
@@ -1549,7 +1634,7 @@ void WriteRequiredAbiHeadersForAbi(Output & out)
 
 void WriteRequiredAbiHeadersForInterface(Output & out)
 {
-    GetFieldNamespaces([&]
+    GetRequiredAbis([&]
     {
         Write(out, Strings::WriteInclude, Settings::NamespaceDotName + Settings::AbiLayerExtension);
     });
@@ -1598,13 +1683,13 @@ void WriteRequiredOverrides(Output & out)
 
 void WriteDelegateShims(Output & out)
 {
-    Settings::MethodShim = "(*this)";
     Settings::MethodAbi = "abi_Invoke";
 
     GetDelegates([&]
     {
         out.WriteNamespace(Settings::Namespace);
 
+        Settings::MethodShim = "(*(abi<" + Settings::DelegateName + "> **)this)";
         char const * const hasReturn = Settings::ParameterInfo.HasReturnType ? "return " : "";
 
         Write(out,
@@ -1636,6 +1721,32 @@ void WriteDefinitionsForRequiredInterfaces(Output & out)
         if (Settings::FileNamespace.find(Settings::Namespace) == std::string::npos)
         {
             Write(out, Strings::WriteInclude, Settings::NamespaceDotName + ".h");
+        }
+    });
+}
+
+void WriteHashes(Output & out)
+{
+    GetInterfaceDefinitions([&]
+    {
+        Write(out,
+            Strings::WriteInterfaceHash,
+            Settings::Namespace,
+            Settings::InterfaceName,
+            Settings::Namespace,
+            Settings::InterfaceName);
+    });
+
+    GetClasses([&]
+    {
+        if (!Settings::ClassDefaultInterface.empty())
+        {
+            Write(out,
+                Strings::WriteInterfaceHash,
+                Settings::Namespace,
+                Settings::ClassName,
+                Settings::Namespace,
+                Settings::ClassName);
         }
     });
 }

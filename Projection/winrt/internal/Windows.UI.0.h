@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -37,6 +37,15 @@ struct IColors;
 struct IColorsStatics;
 struct ColorHelper;
 struct Colors;
+
+}
+
+namespace Windows::UI {
+
+template <typename T> struct impl_IColorHelper;
+template <typename T> struct impl_IColorHelperStatics;
+template <typename T> struct impl_IColors;
+template <typename T> struct impl_IColorsStatics;
 
 }
 

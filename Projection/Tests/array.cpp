@@ -45,7 +45,7 @@ static std::future<SyndicationFeed> GetSyndicationFeed()
 }
 
 //
-// This test illustrates an array_ref<T const> and a com_array<T> as a retval.
+// This test illustrates an array_view<T const> and a com_array<T> as a retval.
 //
 TEST_CASE("array,SmsBinaryMessage")
 {
@@ -76,7 +76,7 @@ TEST_CASE("array,CreateInt32Array,GetInt32Array")
 }
 
 //
-// This test illustrates an array_ref<T> (non-const) bound to a std::array<T, N>
+// This test illustrates an array_view<T> (non-const) bound to a std::array<T, N>
 //
 TEST_CASE("array,DataReader")
 {
@@ -92,7 +92,7 @@ TEST_CASE("array,DataReader")
 }
 
 //
-// This test illustrates an array_ref<T> (non-const) bound to a std::vector<T>
+// This test illustrates an array_view<T> (non-const) bound to a std::vector<T>
 //
 TEST_CASE("array,DataReader,std::vector")
 {
@@ -171,15 +171,22 @@ TEST_CASE("array,EBO")
 // Now some tests to cover the array members.
 //
 
+static void test_array_ref(array_view<int const> a)
+{
+    REQUIRE(a[0] == 1);
+    REQUIRE(a[1] == 2);
+    REQUIRE(a[2] == 3);
+}
+
 //
 // Here we're testing 'operator[]' for the three array patterns.
 //
 TEST_CASE("array,[N]")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> a = v;
+        array_view<int> a = v;
 
         a[1] = 20;
 
@@ -191,11 +198,7 @@ TEST_CASE("array,[N]")
 
     SECTION("array_cref")
     {
-        array_ref<int const> a{ 1, 2, 3 };
-
-        REQUIRE(a[0] == 1);
-        REQUIRE(a[1] == 2);
-        REQUIRE(a[2] == 3);
+        test_array_ref({ 1, 2, 3 });
     }
 
     SECTION("com_array")
@@ -208,6 +211,13 @@ TEST_CASE("array,[N]")
         REQUIRE(a[1] == 20);
         REQUIRE(a[2] == 3);
     }
+}
+
+static void test_array_ref_n(array_view<int const> const a)
+{
+    REQUIRE(a[0] == 1);
+    REQUIRE(a[1] == 2);
+    REQUIRE(a[2] == 3);
 }
 
 //
@@ -215,10 +225,10 @@ TEST_CASE("array,[N]")
 //
 TEST_CASE("array,[N],const")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> const a = v;
+        array_view<int> const a = v;
 
         REQUIRE(a[0] == 1);
         REQUIRE(a[1] == 2);
@@ -227,11 +237,7 @@ TEST_CASE("array,[N],const")
 
     SECTION("array_cref")
     {
-        array_ref<int const> const a{ 1, 2, 3 };
-
-        REQUIRE(a[0] == 1);
-        REQUIRE(a[1] == 2);
-        REQUIRE(a[2] == 3);
+        test_array_ref_n({ 1, 2, 3 });
     }
 
     SECTION("com_array")
@@ -244,15 +250,22 @@ TEST_CASE("array,[N],const")
     }
 }
 
+static void test_array_ref_at(array_view<int const> a)
+{
+    REQUIRE(a.at(0) == 1);
+    REQUIRE(a.at(1) == 2);
+    REQUIRE(a.at(2) == 3);
+}
+
 //
 // Here we're testing 'at()' for the three array patterns.
 //
 TEST_CASE("array,at")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> a = v;
+        array_view<int> a = v;
 
         a.at(1) = 20;
 
@@ -264,11 +277,7 @@ TEST_CASE("array,at")
 
     SECTION("array_cref")
     {
-        array_ref<int const> a{ 1, 2, 3 };
-
-        REQUIRE(a.at(0) == 1);
-        REQUIRE(a.at(1) == 2);
-        REQUIRE(a.at(2) == 3);
+        test_array_ref_at({ 1, 2, 3 });
     }
 
     SECTION("com_array")
@@ -283,38 +292,9 @@ TEST_CASE("array,at")
     }
 }
 
-//
-// Here we're testing 'at() const' for the three array patterns.
-//
-TEST_CASE("array,at,const")
+static void test_array_ref_at_throw(array_view<int const> const a)
 {
-    SECTION("array_ref")
-    {
-        std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> const a = v;
-
-        REQUIRE(a.at(0) == 1);
-        REQUIRE(a.at(1) == 2);
-        REQUIRE(a.at(2) == 3);
-    }
-
-    SECTION("array_cref")
-    {
-        array_ref<int const> const a{ 1, 2, 3 };
-
-        REQUIRE(a.at(0) == 1);
-        REQUIRE(a.at(1) == 2);
-        REQUIRE(a.at(2) == 3);
-    }
-
-    SECTION("com_array")
-    {
-        com_array<int> const a{ 1, 2, 3 };
-
-        REQUIRE(a.at(0) == 1);
-        REQUIRE(a.at(1) == 2);
-        REQUIRE(a.at(2) == 3);
-    }
+    a.at(4);
 }
 
 //
@@ -322,10 +302,10 @@ TEST_CASE("array,at,const")
 //
 TEST_CASE("array,at,throw")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> const a = v;
+        array_view<int> const a = v;
 
         try
         {
@@ -340,11 +320,9 @@ TEST_CASE("array,at,throw")
 
     SECTION("array_cref")
     {
-        array_ref<int const> const a{ 1, 2, 3 };
-
         try
         {
-            a.at(4);
+            test_array_ref_at_throw({ 1, 2, 3 });
             FAIL(L"Previous line should throw");
         }
         catch (std::out_of_range const & e)
@@ -369,15 +347,21 @@ TEST_CASE("array,at,throw")
     }
 }
 
+static void test_array_ref_front_back(array_view<int const> a)
+{
+    REQUIRE(a.front() == 1);
+    REQUIRE(a.back() == 3);
+}
+
 //
 // Tests for the front/back methods for the three array patterns.
 //
 TEST_CASE("array,front,back")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> a = v;
+        array_view<int> a = v;
 
         a.front() = 10;
         a.back() = 30;
@@ -388,10 +372,7 @@ TEST_CASE("array,front,back")
 
     SECTION("array_cref")
     {
-        array_ref<int const> a{ 1, 2, 3 };
-
-        REQUIRE(a.front() == 1);
-        REQUIRE(a.back() == 3);
+        test_array_ref_front_back({ 1, 2, 3 });
     }
 
     SECTION("com_array")
@@ -406,15 +387,21 @@ TEST_CASE("array,front,back")
     }
 }
 
+static void test_array_ref_front_back_const(array_view<int const> const a)
+{
+    REQUIRE(a.front() == 1);
+    REQUIRE(a.back() == 3);
+}
+
 //
 // Tests for the front/back methods for the three array patterns (const versions).
 //
 TEST_CASE("array,front,back,const")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> const a = v;
+        array_view<int> const a = v;
 
         REQUIRE(a.front() == 1);
         REQUIRE(a.back() == 3);
@@ -422,10 +409,7 @@ TEST_CASE("array,front,back,const")
 
     SECTION("array_cref")
     {
-        array_ref<int const> const a{ 1, 2, 3 };
-
-        REQUIRE(a.front() == 1);
-        REQUIRE(a.back() == 3);
+        test_array_ref_front_back_const({ 1, 2, 3 });
     }
 
     SECTION("com_array")
@@ -442,10 +426,10 @@ TEST_CASE("array,front,back,const")
 //
 TEST_CASE("array,data")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> a = v;
+        array_view<int> a = v;
         REQUIRE(v.data() == a.data());
 
         int * p = a.data();
@@ -464,7 +448,7 @@ TEST_CASE("array,data")
     SECTION("array_cref")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int const> a = v;
+        array_view<int const> a = v;
         REQUIRE(v.data() == a.data());
 
         int const * p = a.data();
@@ -492,15 +476,24 @@ TEST_CASE("array,data")
     }
 }
 
+static void test_array_cref(array_view<int const> const a)
+{
+    int const * p = a.data();
+
+    REQUIRE(p[0] == 1);
+    REQUIRE(p[1] == 2);
+    REQUIRE(p[2] == 3);
+}
+
 //
 // Tests for the 'data' method for the three array patterns.
 //
 TEST_CASE("array,data,const")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> const a = v;
+        array_view<int> const a = v;
 
         int const * p = a.data();
 
@@ -511,13 +504,7 @@ TEST_CASE("array,data,const")
 
     SECTION("array_cref")
     {
-        array_ref<int const> const a{ 1, 2, 3 };
-
-        int const * p = a.data();
-
-        REQUIRE(p[0] == 1);
-        REQUIRE(p[1] == 2);
-        REQUIRE(p[2] == 3);
+        test_array_cref({ 1, 2, 3 });
     }
 
     SECTION("com_array")
@@ -537,10 +524,10 @@ TEST_CASE("array,data,const")
 //
 TEST_CASE("array,begin,end")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> a = v;
+        array_view<int> a = v;
 
         auto first = a.begin();
         auto last = a.end();
@@ -558,7 +545,7 @@ TEST_CASE("array,begin,end")
     SECTION("array_cref")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int const> a = v;
+        array_view<int const> a = v;
 
         std::vector<int> copy(a.begin(), a.end());
         REQUIRE(v == copy);
@@ -588,10 +575,10 @@ TEST_CASE("array,begin,end")
 //
 TEST_CASE("array,begin,end,const")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> const a = v;
+        array_view<int> const a = v;
 
         std::vector<int> copy(a.begin(), a.end());
         REQUIRE(v == copy);
@@ -600,7 +587,7 @@ TEST_CASE("array,begin,end,const")
     SECTION("array_cref")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int const> const a = v;
+        array_view<int const> const a = v;
 
         std::vector<int> copy(a.begin(), a.end());
         REQUIRE(v == copy);
@@ -621,10 +608,10 @@ TEST_CASE("array,begin,end,const")
 //
 TEST_CASE("array,cbegin,cend,const")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> const a = v;
+        array_view<int> const a = v;
 
         std::vector<int> copy(a.cbegin(), a.cend());
         REQUIRE(v == copy);
@@ -633,7 +620,7 @@ TEST_CASE("array,cbegin,cend,const")
     SECTION("array_cref")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int const> const a = v;
+        array_view<int const> const a = v;
 
         std::vector<int> copy(a.cbegin(), a.cend());
         REQUIRE(v == copy);
@@ -654,10 +641,10 @@ TEST_CASE("array,cbegin,cend,const")
 //
 TEST_CASE("array,rbegin,rend")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> a = v;
+        array_view<int> a = v;
 
         auto first = a.rbegin();
         auto last = a.rend();
@@ -677,7 +664,7 @@ TEST_CASE("array,rbegin,rend")
     SECTION("array_cref")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int const> a = v;
+        array_view<int const> a = v;
 
         std::vector<int> copy(a.rbegin(), a.rend());
 
@@ -711,10 +698,10 @@ TEST_CASE("array,rbegin,rend")
 //
 TEST_CASE("array,rbegin,rend,const")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> const a = v;
+        array_view<int> const a = v;
 
         std::vector<int> copy(a.rbegin(), a.rend());
         std::reverse(v.begin(), v.end());
@@ -724,7 +711,7 @@ TEST_CASE("array,rbegin,rend,const")
     SECTION("array_cref")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int const> const a = v;
+        array_view<int const> const a = v;
 
         std::vector<int> copy(a.rbegin(), a.rend());
         std::reverse(v.begin(), v.end());
@@ -747,10 +734,10 @@ TEST_CASE("array,rbegin,rend,const")
 //
 TEST_CASE("array,crbegin,crend,const")
 {
-    SECTION("array_ref")
+    SECTION("array_view")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int> const a = v;
+        array_view<int> const a = v;
 
         std::vector<int> copy(a.crbegin(), a.crend());
         std::reverse(v.begin(), v.end());
@@ -760,7 +747,7 @@ TEST_CASE("array,crbegin,crend,const")
     SECTION("array_cref")
     {
         std::vector<int> v{ 1, 2, 3 };
-        array_ref<int const> const a = v;
+        array_view<int const> const a = v;
 
         std::vector<int> copy(a.crbegin(), a.crend());
         std::reverse(v.begin(), v.end());
@@ -779,123 +766,127 @@ TEST_CASE("array,crbegin,crend,const")
 }
 
 //
-// array_ref
+// array_view
 //
 
 //
-// Tests array_ref support for ranges.
+// Tests array_view support for ranges.
 //
-TEST_CASE("array_ref,range")
+TEST_CASE("array_view,range")
 {
     {
         int v[] { 1, 2, 3 };
-        array_ref<int> a(v, v + _countof(v));
+        array_view<int> a(v, v + _countof(v));
         REQUIRE(a.data() == v);
         REQUIRE(a.size() == _countof(v));
     }
 
     {
         int v[]{ 1, 2, 3 };
-        array_ref<int const> a(v, v + _countof(v));
+        array_view<int const> a(v, v + _countof(v));
         REQUIRE(a.data() == v);
         REQUIRE(a.size() == _countof(v));
     }
 
     {
         int const v[]{ 1, 2, 3 };
-        array_ref<int const> a(v, v + _countof(v));
+        array_view<int const> a(v, v + _countof(v));
         REQUIRE(a.data() == v);
         REQUIRE(a.size() == _countof(v));
     }
 }
 
-//
-// Tests array_ref support for initializer list construction.
-//
-TEST_CASE("array_ref,initializer_list")
+static void test_array_ref_init_list(array_view<int const> a)
 {
-    // initializer_list cannot be used with array_ref of non-const T
-
-    array_ref<int const> a { 1, 2, 3 };
     REQUIRE(a.size() == 3);
 }
 
 //
-// Tests array_ref support for various C-style array construction.
+// Tests array_view support for initializer list construction.
 //
-TEST_CASE("array_ref,C-style array")
+TEST_CASE("array_view,initializer_list")
+{
+    // initializer_list cannot be used with array_view of non-const T
+
+    test_array_ref_init_list({ 1, 2, 3 });
+}
+
+//
+// Tests array_view support for various C-style array construction.
+//
+TEST_CASE("array_view,C-style array")
 {
     {
         int v[] = { 1, 2, 3 };
-        array_ref<int> a = v;
+        array_view<int> a = v;
         REQUIRE(a.data() == v);
         REQUIRE(a.size() == 3);
     }
 
     {
         int v[] = { 1, 2, 3 };
-        array_ref<int const> a = v;
+        array_view<int const> a = v;
         REQUIRE(a.data() == v);
         REQUIRE(a.size() == 3);
     }
 
     {
         int const v[] = { 1, 2, 3 };
-        array_ref<int const> a = v;
+        array_view<int const> a = v;
         REQUIRE(a.data() == v);
         REQUIRE(a.size() == 3);
     }
 }
 
 //
-// Tests array_ref support for various std::vector construction.
+// Tests array_view support for various std::vector construction.
 //
-TEST_CASE("array_ref,vector")
+TEST_CASE("array_view,vector")
 {
     {
         std::vector<int> v = { 1, 2, 3 };
-        array_ref<int> a = v;
+        array_view<int> a = v;
         REQUIRE(a.data() == v.data());
         REQUIRE(a.size() == 3);
     }
 
     {
         std::vector<int> v = { 1, 2, 3 };
-        array_ref<int const> a = v;
+        array_view<int const> a = v;
         REQUIRE(a.data() == v.data());
         REQUIRE(a.size() == 3);
     }
 
     {
         std::vector<int> const v = { 1, 2, 3 };
-        array_ref<int const> a = v;
+        array_view<int const> a = v;
         REQUIRE(a.data() == v.data());
         REQUIRE(a.size() == 3);
     }
 }
 
 //
-// Tests array_ref support for various std::array construction.
+// Tests array_view support for various std::array construction.
 //
-TEST_CASE("array_ref,array")
+TEST_CASE("array_view,array")
 {
     {
         std::array<int, 3> v = { 1, 2, 3 };
-        array_ref<int> a = v;
+        array_view<int> a = v;
         REQUIRE(a.data() == v.data());
         REQUIRE(a.size() == 3);
     }
 
     {
         std::array<int, 3> v = { 1, 2, 3 };
-        array_ref<int const> a = v;
+        array_view<int const> a = v;
         REQUIRE(a.data() == v.data());
         REQUIRE(a.size() == 3);
     }
 
     {
         std::array<int, 3> const v = { 1, 2, 3 };
-        array_ref<int const> a = v;
+        array_view<int const> a = v;
         REQUIRE(a.data() == v.data());
         REQUIRE(a.size() == 3);
     }
@@ -1093,7 +1084,7 @@ TEST_CASE("array,PropertyValue")
         auto inspectable = PropertyValue::CreateInspectableArray({ Uri(L"http://one/"), Uri(L"http://two/"), Uri(L"http://three/") });
         auto pv = inspectable.as<IPropertyValue>();
 
-        com_array<Windows::IInspectable> a;
+        com_array<Windows::Foundation::IInspectable> a;
         pv.GetInspectableArray(a);
 
         REQUIRE(3 == a.size());
@@ -1106,7 +1097,7 @@ TEST_CASE("array,PropertyValue")
     {
         auto pv = make<produce_IPropertyValue>();
 
-        com_array<Windows::IInspectable> a;
+        com_array<Windows::Foundation::IInspectable> a;
         pv.GetInspectableArray(a);
 
         REQUIRE(3 == a.size());
@@ -1117,7 +1108,7 @@ TEST_CASE("array,PropertyValue")
 }
 
 //
-// Testing comparisons of array_ref is tricky because we need to ensure that the array storage remains alive for the duration
+// Testing comparisons of array_view is tricky because we need to ensure that the array storage remains alive for the duration
 // of the test. Previously this was done with an initializer_list but the list went out of scope before the comparison was performed
 // leading to failures in some builds.
 //
@@ -1145,7 +1136,7 @@ static compare_results compare_com_array(com_array<char> const & left, com_array
     };
 }
 
-static compare_results compare_array_ref(array_ref<char const> left, array_ref<char const> right)
+static compare_results compare_array_ref(array_view<char const> left, array_view<char const> right)
 {
     return
     {
@@ -1187,7 +1178,7 @@ TEST_CASE("com_array,compare,com_array")
     REQUIRE(!result.less_equal);
 }
 
-TEST_CASE("array_ref,compare,array_ref")
+TEST_CASE("array_view,compare,array_view")
 {
     compare_results result{};
 

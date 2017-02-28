@@ -24,8 +24,8 @@ struct TestNonAgile : implements<TestNonAgile, non_agile, IClosable>
 
 TEST_CASE("TestAgile")
 {
-    using Windows::IUnknown;
-    using Windows::IInspectable;
+    using Windows::Foundation::IUnknown;
+    using Windows::Foundation::IInspectable;
 
     bool destroyed = false;
 
@@ -57,7 +57,7 @@ TEST_CASE("TestAgile")
 
 TEST_CASE("TestNonAgile")
 {
-    using Windows::IInspectable;
+    using Windows::Foundation::IInspectable;
 
     IInspectable object = make<TestNonAgile>();
 

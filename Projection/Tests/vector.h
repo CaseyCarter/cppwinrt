@@ -1,7 +1,5 @@
 #pragma once
 
-#include "event.h"
-
 namespace winrt { namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 
 template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b66")) __declspec(novtable) IIterable<Windows::Web::Http::HttpProgress> : impl_IIterable<Windows::Web::Http::HttpProgress> {};
@@ -79,7 +77,7 @@ struct Iterator : implements<Iterator<T>,
         return ++i < v.Size();
     }
 
-    uint32_t GetMany(array_ref<T> values) const
+    uint32_t GetMany(array_view<T> values) const
     {
         return v.GetMany(i, values);
     }
@@ -186,7 +184,7 @@ struct Vector : implements<Vector<T>,
         v.clear();
     }
 
-    uint32_t GetMany(const uint32_t startIndex, array_ref<T> values) const
+    uint32_t GetMany(const uint32_t startIndex, array_view<T> values) const
     {
         if (v.size() <= startIndex)
         {
@@ -206,7 +204,7 @@ struct Vector : implements<Vector<T>,
         return actual;
     }
 
-    void ReplaceAll(array_ref<const T> value)
+    void ReplaceAll(array_view<const T> value)
     {
         v.assign(std::begin(value), std::end(value));
     }
@@ -238,7 +236,7 @@ private:
     }
 
     std::vector<T> v;
-    event<Windows::Foundation::Collections::VectorChangedEventHandler<T>> m_vectorChanged;
+    agile_event<Windows::Foundation::Collections::VectorChangedEventHandler<T>> m_vectorChanged;
 };
 
 }}

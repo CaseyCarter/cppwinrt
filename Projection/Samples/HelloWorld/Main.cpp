@@ -6,7 +6,7 @@ using namespace Windows::Graphics::Display;
 
 int main()
 {
-    initialize();
+    init_apartment();
 
     Uri uri(L"https://github.com/microsoft/cppwinrt");
 

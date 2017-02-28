@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -16,6 +16,12 @@ namespace Windows::Media::ClosedCaptioning {
 
 struct IClosedCaptionPropertiesStatics;
 struct ClosedCaptionProperties;
+
+}
+
+namespace Windows::Media::ClosedCaptioning {
+
+template <typename T> struct impl_IClosedCaptionPropertiesStatics;
 
 }
 

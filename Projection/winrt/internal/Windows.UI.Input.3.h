@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -145,8 +145,8 @@ struct WINRT_EBO RadialControllerMenuItem :
     Windows::UI::Input::IRadialControllerMenuItem
 {
     RadialControllerMenuItem(std::nullptr_t) noexcept {}
-    static Windows::UI::Input::RadialControllerMenuItem CreateFromIcon(hstring_ref displayText, const Windows::Storage::Streams::RandomAccessStreamReference & icon);
-    static Windows::UI::Input::RadialControllerMenuItem CreateFromKnownIcon(hstring_ref displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value);
+    static Windows::UI::Input::RadialControllerMenuItem CreateFromIcon(hstring_view displayText, const Windows::Storage::Streams::RandomAccessStreamReference & icon);
+    static Windows::UI::Input::RadialControllerMenuItem CreateFromKnownIcon(hstring_view displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value);
 };
 
 struct WINRT_EBO RadialControllerRotationChangedEventArgs :

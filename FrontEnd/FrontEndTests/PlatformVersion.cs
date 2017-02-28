@@ -28,7 +28,7 @@ namespace Microsoft.Wtl.Tests
                 "Classes.base",
                 @"TestData\PlatformVersion",
                 "Classes.test",
-                "SELECT FullName, Name, (SELECT FullName FROM Classes C1 WHERE C1.FullName = Classes.Base), DefaultInterface, Activatable, ifnull(Deprecated, 0) FROM Classes WHERE FullName NOT LIKE 'Windows::Foundation%' ORDER BY FullName;");
+                "SELECT FullName, Name, (SELECT FullName FROM Classes C1 WHERE C1.FullName = Classes.Base), DefaultInterface, Activatable, Deprecated FROM Classes WHERE FullName NOT LIKE 'Windows::Foundation%' ORDER BY FullName;");
         }
 
         [TestMethod]

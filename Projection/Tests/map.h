@@ -1,7 +1,5 @@
 #pragma once
 
-#include "event.h"
-
 namespace winrt { namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
 
 template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b64")) __declspec(novtable) IMapChangedEventArgs<uint32_t> : impl_IMapChangedEventArgs<uint32_t> {};
@@ -87,11 +85,11 @@ struct KeyValuePairIterator : implements<KeyValuePairIterator<C>,
     using value_type = Windows::Foundation::Collections::IKeyValuePair<key_type, mapped_type>;
     using const_iterator = typename C::const_iterator;
 
-    Windows::IInspectable m_reference;
+    Windows::Foundation::IInspectable m_reference;
     const_iterator m_iterator;
     const_iterator m_end;
 
-    KeyValuePairIterator(const Windows::IInspectable & reference,
+    KeyValuePairIterator(const Windows::Foundation::IInspectable & reference,
                          const C & container) :
         m_reference(reference),
         m_iterator(begin(container)),
@@ -123,7 +121,7 @@ struct KeyValuePairIterator : implements<KeyValuePairIterator<C>,
         return ++m_iterator != m_end;
     }
 
-    uint32_t GetMany(array_ref<Windows::Foundation::Collections::IKeyValuePair<typename C::key_type, typename C::mapped_type>> values)
+    uint32_t GetMany(array_view<Windows::Foundation::Collections::IKeyValuePair<typename C::key_type, typename C::mapped_type>> values)
     {
         uint32_t capacity = values.size();
         uint32_t actual = 0;
@@ -151,7 +149,7 @@ struct Map : implements<Map<C>,
     using mapped_type = typename C::mapped_type;
 
     C m;
-    event<Windows::Foundation::Collections::MapChangedEventHandler<key_type, mapped_type>> m_mapChanged;
+    agile_event<Windows::Foundation::Collections::MapChangedEventHandler<key_type, mapped_type>> m_mapChanged;
 
     Map() = default;
 

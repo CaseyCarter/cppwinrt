@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -10,7 +10,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Management::Workplace {
 
-struct __declspec(uuid("c39709e7-741c-41f2-a4b6-314c31502586")) __declspec(novtable) IMdmAllowPolicyStatics : Windows::IInspectable
+struct __declspec(uuid("c39709e7-741c-41f2-a4b6-314c31502586")) __declspec(novtable) IMdmAllowPolicyStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_IsBrowserAllowed(bool * value) = 0;
     virtual HRESULT __stdcall abi_IsCameraAllowed(bool * value) = 0;
@@ -18,7 +18,7 @@ struct __declspec(uuid("c39709e7-741c-41f2-a4b6-314c31502586")) __declspec(novta
     virtual HRESULT __stdcall abi_IsStoreAllowed(bool * value) = 0;
 };
 
-struct __declspec(uuid("c99c7526-03d4-49f9-a993-43efccd265c4")) __declspec(novtable) IMdmPolicyStatics2 : Windows::IInspectable
+struct __declspec(uuid("c99c7526-03d4-49f9-a993-43efccd265c4")) __declspec(novtable) IMdmPolicyStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetMessagingSyncPolicy(winrt::Windows::Management::Workplace::MessagingSyncPolicy * value) = 0;
 };
@@ -32,8 +32,20 @@ namespace ABI {
 
 namespace Windows::Management::Workplace {
 
-template <typename T> struct impl_IMdmAllowPolicyStatics;
-template <typename T> struct impl_IMdmPolicyStatics2;
+template <typename D>
+struct WINRT_EBO impl_IMdmAllowPolicyStatics
+{
+    bool IsBrowserAllowed() const;
+    bool IsCameraAllowed() const;
+    bool IsMicrosoftAccountAllowed() const;
+    bool IsStoreAllowed() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMdmPolicyStatics2
+{
+    Windows::Management::Workplace::MessagingSyncPolicy GetMessagingSyncPolicy() const;
+};
 
 }
 

@@ -1,3 +1,3 @@
-select RowId, Name, Namespace
+select RowId, Name, Namespace, ifnull(Deprecated, '')
 from Structures
 where Namespace = ?1

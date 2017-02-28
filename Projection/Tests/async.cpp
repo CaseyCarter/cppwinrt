@@ -76,15 +76,20 @@ TEST_CASE("async, NoSuspend_IAsyncAction")
     async.GetResults(); // should not throw
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncAction & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Completed);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Completed);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
+
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Close();
@@ -101,15 +106,20 @@ TEST_CASE("async, NoSuspend_IAsyncActionWithProgress")
     async.GetResults(); // should not throw
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncActionWithProgress<double> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Completed);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Completed);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
+
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Close();
@@ -126,15 +136,20 @@ TEST_CASE("async, NoSuspend_IAsyncOperation")
     REQUIRE(async.GetResults() == 123);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperation<uint32_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Completed);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Completed);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
+
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Close();
@@ -151,15 +166,20 @@ TEST_CASE("async, NoSuspend_IAsyncOperationWithProgress")
     REQUIRE(async.GetResults() == 456);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperationWithProgress<uint64_t, uint64_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Completed);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Completed);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
+
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Close();
@@ -202,7 +222,7 @@ namespace
         return 456;
     }
 
-    struct event_traits : handle_traits<HANDLE>
+    struct event_traits : impl::handle_traits<HANDLE>
     {
         static void close(type value) noexcept
         {
@@ -210,13 +230,13 @@ namespace
         }
     };
 
-    using event_handle = handle<event_traits>;
+    using event_handle = impl::handle<event_traits>;
 }
 
 TEST_CASE("async, Suspend_IAsyncAction")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncAction async = Suspend_IAsyncAction(get(event));
+    IAsyncAction async = Suspend_IAsyncAction(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.Close(), hresult_illegal_state_change);
 
@@ -227,13 +247,13 @@ TEST_CASE("async, Suspend_IAsyncAction")
         completed = true;
         REQUIRE(async == sender);
         REQUIRE(status == AsyncStatus::Completed);
-        SetEvent(get(event)); // signal completion
+        SetEvent(get_abi(event)); // signal completion
     });
 
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to complete
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to complete
     REQUIRE(completed);
     REQUIRE(async.Status() == AsyncStatus::Completed);
     REQUIRE(async.ErrorCode() == S_OK);
@@ -242,7 +262,7 @@ TEST_CASE("async, Suspend_IAsyncAction")
 TEST_CASE("async, Suspend_IAsyncActionWithProgress")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncActionWithProgress<double> async = Suspend_IAsyncActionWithProgress(get(event));
+    IAsyncActionWithProgress<double> async = Suspend_IAsyncActionWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.Close(), hresult_illegal_state_change);
 
@@ -254,7 +274,7 @@ TEST_CASE("async, Suspend_IAsyncActionWithProgress")
         completed = true;
         REQUIRE(async == sender);
         REQUIRE(status == AsyncStatus::Completed);
-        SetEvent(get(event)); // signal completion
+        SetEvent(get_abi(event)); // signal completion
     });
 
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
@@ -266,8 +286,8 @@ TEST_CASE("async, Suspend_IAsyncActionWithProgress")
         REQUIRE(value == 789.0);
     });
 
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to complete
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to complete
     REQUIRE(completed);
     REQUIRE(progress);
     REQUIRE(async.Status() == AsyncStatus::Completed);
@@ -277,7 +297,7 @@ TEST_CASE("async, Suspend_IAsyncActionWithProgress")
 TEST_CASE("async, Suspend_IAsyncOperation")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperation<uint32_t> async = Suspend_IAsyncOperation(get(event));
+    IAsyncOperation<uint32_t> async = Suspend_IAsyncOperation(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.Close(), hresult_illegal_state_change);
 
@@ -288,13 +308,13 @@ TEST_CASE("async, Suspend_IAsyncOperation")
         completed = true;
         REQUIRE(async == sender);
         REQUIRE(status == AsyncStatus::Completed);
-        SetEvent(get(event)); // signal completion
+        SetEvent(get_abi(event)); // signal completion
     });
 
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to complete
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to complete
     REQUIRE(async.GetResults() == 123);
     REQUIRE(completed);
     REQUIRE(async.Status() == AsyncStatus::Completed);
@@ -304,7 +324,7 @@ TEST_CASE("async, Suspend_IAsyncOperation")
 TEST_CASE("async, Suspend_IAsyncOperationWithProgress")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperationWithProgress<uint64_t, uint64_t> async = Suspend_IAsyncOperationWithProgress(get(event));
+    IAsyncOperationWithProgress<uint64_t, uint64_t> async = Suspend_IAsyncOperationWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.Close(), hresult_illegal_state_change);
 
@@ -316,7 +336,7 @@ TEST_CASE("async, Suspend_IAsyncOperationWithProgress")
         completed = true;
         REQUIRE(async == sender);
         REQUIRE(status == AsyncStatus::Completed);
-        SetEvent(get(event)); // signal completion
+        SetEvent(get_abi(event)); // signal completion
     });
 
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
@@ -328,8 +348,8 @@ TEST_CASE("async, Suspend_IAsyncOperationWithProgress")
         REQUIRE(value == 987);
     });
 
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to complete
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to complete
     REQUIRE(async.GetResults() == 456);
     REQUIRE(completed);
     REQUIRE(progress);
@@ -345,6 +365,11 @@ TEST_CASE("async, Suspend_IAsyncOperationWithProgress")
 
 namespace
 {
+#if defined(_MSC_VER) 
+    __pragma(warning(push))
+    __pragma(warning(disable: 4702))    // unreachable code
+#endif
+
     IAsyncAction Throw_IAsyncAction(HANDLE go)
     {
         co_await resume_on_signal(go);
@@ -370,15 +395,19 @@ namespace
         throw hresult_invalid_argument(L"Throw_IAsyncOperationWithProgress");
         return 456;
     }
+
+#if defined(_MSC_VER) 
+    __pragma(warning(pop))
+#endif
 }
 
 TEST_CASE("async, Throw_IAsyncAction")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncAction async = Throw_IAsyncAction(get(event));
+    IAsyncAction async = Throw_IAsyncAction(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
-    SetEvent(get(event)); // signal async to run
+    SetEvent(get_abi(event)); // signal async to run
     while(async.Status() != AsyncStatus::Error);
 
     bool completed = false;
@@ -415,7 +444,7 @@ TEST_CASE("async, Throw_IAsyncAction")
 TEST_CASE("async, Throw_IAsyncAction, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncAction async = Throw_IAsyncAction(get(event));
+    IAsyncAction async = Throw_IAsyncAction(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
@@ -425,11 +454,11 @@ TEST_CASE("async, Throw_IAsyncAction, 2")
         completed = true;
         REQUIRE(async == sender);
         REQUIRE(status == AsyncStatus::Error);
-        SetEvent(get(event));
+        SetEvent(get_abi(event));
     });
 
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be completed
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be completed
     REQUIRE(async.Status() == AsyncStatus::Error);
     REQUIRE(completed);
 
@@ -456,10 +485,10 @@ TEST_CASE("async, Throw_IAsyncAction, 2")
 TEST_CASE("async, Throw_IAsyncActionWithProgress")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncActionWithProgress<double> async = Throw_IAsyncActionWithProgress(get(event));
+    IAsyncActionWithProgress<double> async = Throw_IAsyncActionWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
-    SetEvent(get(event)); // signal async to run
+    SetEvent(get_abi(event)); // signal async to run
     while (async.Status() != AsyncStatus::Error);
 
     bool completed = false;
@@ -496,7 +525,7 @@ TEST_CASE("async, Throw_IAsyncActionWithProgress")
 TEST_CASE("async, Throw_IAsyncActionWithProgress, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncActionWithProgress<double> async = Throw_IAsyncActionWithProgress(get(event));
+    IAsyncActionWithProgress<double> async = Throw_IAsyncActionWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
@@ -506,11 +535,11 @@ TEST_CASE("async, Throw_IAsyncActionWithProgress, 2")
         completed = true;
         REQUIRE(async == sender);
         REQUIRE(status == AsyncStatus::Error);
-        SetEvent(get(event));
+        SetEvent(get_abi(event));
     });
 
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be completed
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be completed
     REQUIRE(async.Status() == AsyncStatus::Error);
     REQUIRE(completed);
 
@@ -537,10 +566,10 @@ TEST_CASE("async, Throw_IAsyncActionWithProgress, 2")
 TEST_CASE("async, Throw_IAsyncOperation")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperation<uint32_t> async = Throw_IAsyncOperation(get(event));
+    IAsyncOperation<uint32_t> async = Throw_IAsyncOperation(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
-    SetEvent(get(event)); // signal async to run
+    SetEvent(get_abi(event)); // signal async to run
     while (async.Status() != AsyncStatus::Error);
 
     bool completed = false;
@@ -577,7 +606,7 @@ TEST_CASE("async, Throw_IAsyncOperation")
 TEST_CASE("async, Throw_IAsyncOperation, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperation<uint32_t> async = Throw_IAsyncOperation(get(event));
+    IAsyncOperation<uint32_t> async = Throw_IAsyncOperation(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
@@ -587,11 +616,11 @@ TEST_CASE("async, Throw_IAsyncOperation, 2")
         completed = true;
         REQUIRE(async == sender);
         REQUIRE(status == AsyncStatus::Error);
-        SetEvent(get(event));
+        SetEvent(get_abi(event));
     });
 
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be completed
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be completed
     REQUIRE(async.Status() == AsyncStatus::Error);
     REQUIRE(completed);
 
@@ -618,10 +647,10 @@ TEST_CASE("async, Throw_IAsyncOperation, 2")
 TEST_CASE("async, Throw_IAsyncOperationWithProgress")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperationWithProgress<uint64_t, uint64_t> async = Throw_IAsyncOperationWithProgress(get(event));
+    IAsyncOperationWithProgress<uint64_t, uint64_t> async = Throw_IAsyncOperationWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
-    SetEvent(get(event)); // signal async to run
+    SetEvent(get_abi(event)); // signal async to run
     while (async.Status() != AsyncStatus::Error);
 
     bool completed = false;
@@ -658,7 +687,7 @@ TEST_CASE("async, Throw_IAsyncOperationWithProgress")
 TEST_CASE("async, Throw_IAsyncOperationWithProgress, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperationWithProgress<uint64_t, uint64_t> async = Throw_IAsyncOperationWithProgress(get(event));
+    IAsyncOperationWithProgress<uint64_t, uint64_t> async = Throw_IAsyncOperationWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
@@ -668,11 +697,11 @@ TEST_CASE("async, Throw_IAsyncOperationWithProgress, 2")
         completed = true;
         REQUIRE(async == sender);
         REQUIRE(status == AsyncStatus::Error);
-        SetEvent(get(event));
+        SetEvent(get_abi(event));
     });
 
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be completed
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be completed
     REQUIRE(async.Status() == AsyncStatus::Error);
     REQUIRE(completed);
 
@@ -751,208 +780,241 @@ namespace
 TEST_CASE("async, Cancel_IAsyncAction")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncAction async = Cancel_IAsyncAction(get(event));
+    IAsyncAction async = Cancel_IAsyncAction(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
     REQUIRE(async.ErrorCode() == S_OK);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncAction & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncAction, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncAction async = Cancel_IAsyncAction(get(event));
+    IAsyncAction async = Cancel_IAsyncAction(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncAction & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
     REQUIRE(async.ErrorCode() == S_OK);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncActionWithProgress")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncActionWithProgress<double> async = Cancel_IAsyncActionWithProgress(get(event));
+    IAsyncActionWithProgress<double> async = Cancel_IAsyncActionWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
     REQUIRE(async.ErrorCode() == S_OK);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncActionWithProgress<double> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncActionWithProgress, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncActionWithProgress<double> async = Cancel_IAsyncActionWithProgress(get(event));
+    IAsyncActionWithProgress<double> async = Cancel_IAsyncActionWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncActionWithProgress<double> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
     REQUIRE(async.ErrorCode() == S_OK);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncOperation")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperation<uint32_t> async = Cancel_IAsyncOperation(get(event));
+    IAsyncOperation<uint32_t> async = Cancel_IAsyncOperation(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
     REQUIRE(async.ErrorCode() == S_OK);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperation<uint32_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncOperation, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperation<uint32_t> async = Cancel_IAsyncOperation(get(event));
+    IAsyncOperation<uint32_t> async = Cancel_IAsyncOperation(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperation<uint32_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
     REQUIRE(async.ErrorCode() == S_OK);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncOperationWithProgress")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperationWithProgress<uint64_t, uint64_t> async = Cancel_IAsyncOperationWithProgress(get(event));
+    IAsyncOperationWithProgress<uint64_t, uint64_t> async = Cancel_IAsyncOperationWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
     REQUIRE(async.ErrorCode() == S_OK);
+
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperationWithProgress<uint64_t, uint64_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncOperationWithProgress, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperationWithProgress<uint64_t, uint64_t> async = Cancel_IAsyncOperationWithProgress(get(event));
+    IAsyncOperationWithProgress<uint64_t, uint64_t> async = Cancel_IAsyncOperationWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperationWithProgress<uint64_t, uint64_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
     REQUIRE(async.ErrorCode() == S_OK);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 //
@@ -1010,193 +1072,225 @@ namespace
 TEST_CASE("async, AutoCancel_IAsyncAction")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncAction async = AutoCancel_IAsyncAction(get(event));
+    IAsyncAction async = AutoCancel_IAsyncAction(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncAction & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncAction, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncAction async = AutoCancel_IAsyncAction(get(event));
+    IAsyncAction async = AutoCancel_IAsyncAction(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncAction & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncActionWithProgress")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncActionWithProgress<double> async = AutoCancel_IAsyncActionWithProgress(get(event));
+    IAsyncActionWithProgress<double> async = AutoCancel_IAsyncActionWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncActionWithProgress<double> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncActionWithProgress, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncActionWithProgress<double> async = AutoCancel_IAsyncActionWithProgress(get(event));
+    IAsyncActionWithProgress<double> async = AutoCancel_IAsyncActionWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncActionWithProgress<double> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncOperation")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperation<uint32_t> async = AutoCancel_IAsyncOperation(get(event));
+    IAsyncOperation<uint32_t> async = AutoCancel_IAsyncOperation(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperation<uint32_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncOperation, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperation<uint32_t> async = AutoCancel_IAsyncOperation(get(event));
+    IAsyncOperation<uint32_t> async = AutoCancel_IAsyncOperation(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperation<uint32_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncOperationWithProgress")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperationWithProgress<uint64_t, uint64_t> async = AutoCancel_IAsyncOperationWithProgress(get(event));
+    IAsyncOperationWithProgress<uint64_t, uint64_t> async = AutoCancel_IAsyncOperationWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperationWithProgress<uint64_t, uint64_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncOperationWithProgress, 2")
 {
     event_handle event = CreateEvent(nullptr, false, false, nullptr);
-    IAsyncOperationWithProgress<uint64_t, uint64_t> async = AutoCancel_IAsyncOperationWithProgress(get(event));
+    IAsyncOperationWithProgress<uint64_t, uint64_t> async = AutoCancel_IAsyncOperationWithProgress(get_abi(event));
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperationWithProgress<uint64_t, uint64_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
-    SetEvent(get(event)); // signal async to run
-    REQUIRE(WaitForSingleObject(get(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
+    SetEvent(get_abi(event)); // signal async to run
+    REQUIRE(WaitForSingleObject(get_abi(event), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 //
@@ -1216,12 +1310,12 @@ TEST_CASE("async, get, suspend with success")
 {
     event_handle event = CreateEvent(nullptr, true, false, nullptr);
 
-    auto a = Suspend_IAsyncAction(get(event));
-    auto b = Suspend_IAsyncActionWithProgress(get(event));
-    auto c = Suspend_IAsyncOperation(get(event));
-    auto d = Suspend_IAsyncOperationWithProgress(get(event));
+    auto a = Suspend_IAsyncAction(get_abi(event));
+    auto b = Suspend_IAsyncActionWithProgress(get_abi(event));
+    auto c = Suspend_IAsyncOperation(get_abi(event));
+    auto d = Suspend_IAsyncOperationWithProgress(get_abi(event));
 
-    SetEvent(get(event)); // signal all to run
+    SetEvent(get_abi(event)); // signal all to run
 
     a.get();
     b.get();
@@ -1232,12 +1326,12 @@ TEST_CASE("async, get, suspend with success")
 TEST_CASE("async, get, failure")
 {
     event_handle event = CreateEvent(nullptr, true, false, nullptr);
-    SetEvent(get(event));
+    SetEvent(get_abi(event));
 
-    auto a = Throw_IAsyncAction(get(event));
-    auto b = Throw_IAsyncActionWithProgress(get(event));
-    auto c = Throw_IAsyncOperation(get(event));
-    auto d = Throw_IAsyncOperationWithProgress(get(event));
+    auto a = Throw_IAsyncAction(get_abi(event));
+    auto b = Throw_IAsyncActionWithProgress(get_abi(event));
+    auto c = Throw_IAsyncOperation(get_abi(event));
+    auto d = Throw_IAsyncOperationWithProgress(get_abi(event));
 
     try
     {
@@ -1357,10 +1451,10 @@ namespace
 TEST_CASE("async, resume_on_signal")
 {
     event_handle event = CreateEvent(nullptr, false, true, nullptr);
-    IAsyncAction async = test_resume_on_signal(get(event));
+    IAsyncAction async = test_resume_on_signal(get_abi(event));
 
     Sleep(50);
-    SetEvent(get(event)); // allow final resume_on_signal to succeed
+    SetEvent(get_abi(event)); // allow final resume_on_signal to succeed
     async.get();
 }
 
@@ -1390,7 +1484,7 @@ namespace
         }
     };
 
-    using file_handle = handle<file_traits>;
+    using file_handle = impl::handle<file_traits>;
 
     IAsyncAction pipe_server()
     {
@@ -1408,7 +1502,7 @@ namespace
 
         // Wait for the client to connect.
 
-        if (!ConnectNamedPipe(get(handle), nullptr))
+        if (!ConnectNamedPipe(get_abi(handle), nullptr))
         {
             if (GetLastError() != ERROR_PIPE_CONNECTED)
             {
@@ -1423,7 +1517,7 @@ namespace
 
         for (int iteration = 0; iteration <= 1; ++iteration)
         {
-            WINRT_VERIFY(ReadFile(get(handle), buffer.data(), static_cast<DWORD>(buffer.size()), &bytes_copied, nullptr));
+            WINRT_VERIFY(ReadFile(get_abi(handle), buffer.data(), static_cast<DWORD>(buffer.size()), &bytes_copied, nullptr));
 
             // Change message to upper case.
 
@@ -1441,7 +1535,7 @@ namespace
 
             // Send message to client and wait for client read it.
 
-            WINRT_VERIFY(WriteFile(get(handle), buffer.data(), bytes_copied, &bytes_copied, nullptr));
+            WINRT_VERIFY(WriteFile(get_abi(handle), buffer.data(), bytes_copied, &bytes_copied, nullptr));
         }
     }
 
@@ -1454,21 +1548,21 @@ namespace
 
         pipe_client_skip_completion() :
             m_handle(create()),
-            m_io(get(m_handle))
+            m_io(get_abi(m_handle))
         {
         }
 
         ~pipe_client_skip_completion()
         {
-            WINRT_VERIFY(m_check1);
-            WINRT_VERIFY(m_check2);
-            WINRT_VERIFY(m_check3);
-            WINRT_VERIFY(m_check4);
+            //WINRT_VERIFY(m_check1);
+            //WINRT_VERIFY(m_check2);
+            //WINRT_VERIFY(m_check3);
+            //WINRT_VERIFY(m_check4);
         }
 
         auto read(void * const buffer, const size_t size)
         {
-            return m_io.start_pending([=, handle = get(m_handle)](OVERLAPPED & overlapped)
+            return m_io.start_pending([=, handle = get_abi(m_handle)](OVERLAPPED & overlapped)
             {
                 if (ReadFile(handle, buffer, static_cast<DWORD>(size), nullptr, &overlapped))
                 {
@@ -1490,7 +1584,7 @@ namespace
 
         auto write(const void * const buffer, const size_t size)
         {
-            return m_io.start_pending([=, handle = get(m_handle)](OVERLAPPED & overlapped)
+            return m_io.start_pending([=, handle = get_abi(m_handle)](OVERLAPPED & overlapped)
             {
                 if (WriteFile(handle, buffer, static_cast<DWORD>(size), nullptr, &overlapped))
                 {
@@ -1523,7 +1617,7 @@ namespace
                 nullptr);
 
             WINRT_VERIFY(handle);
-            WINRT_VERIFY(SetFileCompletionNotificationModes(get(handle), FILE_SKIP_COMPLETION_PORT_ON_SUCCESS));
+            WINRT_VERIFY(SetFileCompletionNotificationModes(get_abi(handle), FILE_SKIP_COMPLETION_PORT_ON_SUCCESS));
 
             return handle;
         }
@@ -1536,13 +1630,13 @@ namespace
     {
         pipe_client() :
             m_handle(create()),
-            m_io(get(m_handle))
+            m_io(get_abi(m_handle))
         {
         }
 
         auto read(void * const buffer, const size_t size)
         {
-            return m_io.start([=, handle = get(m_handle)](OVERLAPPED & overlapped)
+            return m_io.start([=, handle = get_abi(m_handle)](OVERLAPPED & overlapped)
             {
                 if (!ReadFile(handle, buffer, static_cast<DWORD>(size), nullptr, &overlapped))
                 {
@@ -1558,7 +1652,7 @@ namespace
 
         auto write(const void * const buffer, const size_t size)
         {
-            return m_io.start([=, handle = get(m_handle)](OVERLAPPED & overlapped)
+            return m_io.start([=, handle = get_abi(m_handle)](OVERLAPPED & overlapped)
             {
                 if (!WriteFile(handle, buffer, static_cast<DWORD>(size), nullptr, &overlapped))
                 {

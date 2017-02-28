@@ -4,12 +4,12 @@ namespace winrt {
 
 namespace ABI::Windows::Foundation {
 
-struct __declspec(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")) __declspec(novtable) IClosable : Windows::IInspectable
+struct __declspec(uuid("30d5a829-7fa4-4026-83bb-d75bae4ea99e")) __declspec(novtable) IClosable : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Close() = 0;
 };
 
-struct __declspec(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3")) __declspec(novtable) IStringable : Windows::IInspectable
+struct __declspec(uuid("96369f54-8eb6-48f0-abce-c1b211e627c3")) __declspec(novtable) IStringable : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ToString(hstring * value) = 0;
 };
@@ -25,29 +25,21 @@ struct IClosable;
 struct IStringable;
 
 template <typename D>
-class WINRT_EBO impl_IClosable
+struct WINRT_EBO impl_IClosable
 {
-    auto shim() const { return impl::shim<D, IClosable>(this); }
-
-public:
-
     void Close() const
     {
-        check_hresult(shim()->abi_Close());
+        check_hresult(WINRT_SHIM(IClosable)->abi_Close());
     }
 };
 
 template <typename D>
-class WINRT_EBO impl_IStringable
+struct WINRT_EBO impl_IStringable
 {
-    auto shim() const { return impl::shim<D, IStringable>(this); }
-
-public:
-
     hstring ToString() const
     {
         hstring value;
-        check_hresult(shim()->abi_ToString(put(value)));
+        check_hresult(WINRT_SHIM(IStringable)->abi_ToString(put(value)));
         return value;
     }
 };
@@ -73,19 +65,17 @@ template <> struct traits<Windows::Foundation::IStringable>
 namespace Windows::Foundation {
 
 struct IClosable :
-    Windows::IInspectable,
+    IInspectable,
     impl::consume<IClosable>
 {
     IClosable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IClosable>(m_ptr); }
 };
 
 struct IStringable :
-    Windows::IInspectable,
+    IInspectable,
     impl::consume<IStringable>
 {
     IStringable(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IStringable>(m_ptr); }
 };
 
 }
@@ -99,7 +89,7 @@ struct produce<D, Windows::Foundation::IStringable> : produce_base<D, Windows::F
     {
         try
         {
-            *value = detach(this->shim().ToString());
+            *value = detach_abi(this->shim().ToString());
             return S_OK;
         }
         catch (...)
@@ -117,7 +107,7 @@ struct produce<D, Windows::Foundation::IClosable> : produce_base<D, Windows::Fou
     {
         try
         {
-            shim().Close();
+            this->shim().Close();
             return S_OK;
         }
         catch (...)

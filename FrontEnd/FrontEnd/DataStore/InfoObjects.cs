@@ -16,7 +16,7 @@ namespace Microsoft.Wcl.DataStore
         public string Namespace;
         public string Name;
         public bool Flags;
-        public bool Deprecated;
+        public string Deprecated;
 
         public IList<EnumFieldInfo> FieldNames;
     }
@@ -25,7 +25,7 @@ namespace Microsoft.Wcl.DataStore
     {
         public string Name;
         public object Value;
-        public bool Deprecated;
+        public string Deprecated;
 
         // Not in the database.
         public string EnumerationFullTypeName;
@@ -38,7 +38,7 @@ namespace Microsoft.Wcl.DataStore
         public string Name;
         public bool Delegate;
         public string Uuid;
-        public bool Deprecated;
+        public string Deprecated;
 
         public IList<InterfaceMethodInfo> MethodsInfo;
         public IList<InterfaceRequiredInterfaceInfo> RequiredInterfacesInfo;
@@ -48,7 +48,7 @@ namespace Microsoft.Wcl.DataStore
     {
         public string Name;
         public string AbiName;
-        public bool Deprecated;
+        public string Deprecated;
 
         public IList<InterfaceMethodParameterInfo> ParametersInfo;
 
@@ -94,7 +94,7 @@ namespace Microsoft.Wcl.DataStore
         public string Base;
         public string DefaultInterface;
         public bool Activatable;
-        public bool Deprecated;
+        public string Deprecated;
 
         public IList<RuntimeClassInterfaceInfo> InterfacesInfo;
         public IList<RuntimeClassStaticInterfaceInfo> StaticInterfacesInfo;
@@ -137,7 +137,7 @@ namespace Microsoft.Wcl.DataStore
         public string Namespace;
         public string Name;
         public int Depends;
-        public bool Deprecated;
+        public string Deprecated;
 
         public IList<StructFieldInfo> FieldsInfo;
     }
@@ -149,6 +149,7 @@ namespace Microsoft.Wcl.DataStore
         public string TypeNamespace;
         public string TypeName;
         public string Category;
+        public string Deprecated;
 
         public string StructFullTypeName;
     }

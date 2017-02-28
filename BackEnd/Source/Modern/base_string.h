@@ -1,40 +1,37 @@
 
-__forceinline void check_hresult(HRESULT result);
-
-namespace impl {
-
-inline HSTRING duplicate_string(HSTRING other)
+namespace impl
 {
-    HSTRING result = nullptr;
-    check_hresult(WindowsDuplicateString(other, &result));
-    return result;
-}
-
-inline HSTRING create_string(const wchar_t * value, const uint32_t length)
-{
-    HSTRING result = nullptr;
-    check_hresult(WindowsCreateString(value, length, &result));
-    return result;
-}
-
-inline bool embedded_null(HSTRING value) noexcept
-{
-    BOOL result = 0;
-    WINRT_VERIFY_(S_OK, WindowsStringHasEmbeddedNull(value, &result));
-    return 0 != result;
-}
-
-struct hstring_traits : handle_traits<HSTRING>
-{
-    static void close(type value) noexcept
+    inline HSTRING duplicate_string(HSTRING other)
     {
-        WINRT_VERIFY_(S_OK, WindowsDeleteString(value));
+        HSTRING result = nullptr;
+        check_hresult(WindowsDuplicateString(other, &result));
+        return result;
     }
-};
 
+    inline HSTRING create_string(const wchar_t * value, const uint32_t length)
+    {
+        HSTRING result = nullptr;
+        check_hresult(WindowsCreateString(value, length, &result));
+        return result;
+    }
+
+    inline bool embedded_null(HSTRING value) noexcept
+    {
+        BOOL result = 0;
+        WINRT_VERIFY_(S_OK, WindowsStringHasEmbeddedNull(value, &result));
+        return 0 != result;
+    }
+
+    struct hstring_traits : handle_traits<HSTRING>
+    {
+        static void close(type value) noexcept
+        {
+            WINRT_VERIFY_(S_OK, WindowsDeleteString(value));
+        }
+    };
 }
 
-struct hstring_ref;
+struct hstring_view;
 
 struct hstring
 {
@@ -52,7 +49,7 @@ struct hstring
     hstring & operator=(hstring && value) noexcept;
 
     hstring(const std::wstring & value);
-    hstring(hstring_ref value);
+    hstring(hstring_view value);
     hstring(const wchar_t * value);
     hstring(const wchar_t * value, size_type size);
 
@@ -77,17 +74,17 @@ struct hstring
 
     friend HSTRING impl_get(const hstring & string) noexcept
     {
-        return get(string.m_handle);
+        return get_abi(string.m_handle);
     }
 
     friend HSTRING * impl_put(hstring & string) noexcept
     {
-        return put(string.m_handle);
+        return put_abi(string.m_handle);
     }
 
     friend HSTRING impl_detach(hstring & string) noexcept
     {
-        return detach(string.m_handle);
+        return detach_abi(string.m_handle);
     }
 
     friend void swap(hstring & left, hstring & right) noexcept
@@ -97,10 +94,10 @@ struct hstring
 
 private:
 
-    handle<impl::hstring_traits> m_handle;
+    impl::handle<impl::hstring_traits> m_handle;
 };
 
-struct hstring_ref
+struct hstring_view
 {
     using value_type = wchar_t;
     using size_type = uint32_t;
@@ -109,10 +106,10 @@ struct hstring_ref
     using const_iterator = const_pointer;
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
-    hstring_ref(const std::wstring & value) noexcept;
-    hstring_ref(const hstring & value) noexcept;
-    hstring_ref(const wchar_t * value) noexcept;
-    explicit hstring_ref(HSTRING value) noexcept;
+    hstring_view(const std::wstring & value) noexcept;
+    hstring_view(const hstring & value) noexcept;
+    hstring_view(const wchar_t * value) noexcept;
+    explicit hstring_view(HSTRING value) noexcept;
 
     operator std::wstring() const;
 
@@ -132,100 +129,99 @@ struct hstring_ref
     bool empty() const noexcept;
     size_type size() const noexcept;
 
-    friend HSTRING impl_get(hstring_ref string) noexcept
+    friend HSTRING impl_get(hstring_view string) noexcept
     {
         return string.m_handle;
     }
 
 private:
 
-    hstring_ref(const wchar_t * value, size_type size) noexcept;
+    hstring_view(const wchar_t * value, size_type size) noexcept;
 
     HSTRING m_handle;
     HSTRING_HEADER m_header;
 };
 
-namespace impl {
-
-template <> struct traits<hstring>
+namespace impl
 {
-    using abi = HSTRING;
-};
-
-template <> struct accessors<hstring>
-{
-    static HSTRING get(const hstring & object) noexcept
+    template <> struct traits<hstring>
     {
-        return impl_get(object);
-    }
+        using abi = HSTRING;
+    };
 
-    static HSTRING * put(hstring & object) noexcept
+    template <> struct accessors<hstring>
     {
-        return impl_put(object);
-    }
+        static HSTRING get(const hstring & object) noexcept
+        {
+            return impl_get(object);
+        }
 
-    static void attach(hstring & object, HSTRING value) noexcept
+        static HSTRING * put(hstring & object) noexcept
+        {
+            return impl_put(object);
+        }
+
+        static void attach(hstring & object, HSTRING value) noexcept
+        {
+            object.clear();
+            *put(object) = value;
+        }
+
+        static void copy_from(hstring & object, HSTRING value)
+        {
+            attach(object, duplicate_string(value));
+        }
+
+        static void copy_to(const hstring & object, HSTRING & value)
+        {
+            WINRT_ASSERT(value == nullptr);
+            value = duplicate_string(get(object));
+        }
+
+        static HSTRING detach(hstring & object) noexcept
+        {
+            return impl_detach(object);
+        }
+    };
+
+    template <> struct accessors<hstring_view>
     {
-        object.clear();
-        *put(object) = value;
-    }
+        static HSTRING get(hstring_view object) noexcept
+        {
+            return impl_get(object);
+        }
 
-    static void copy_from(hstring & object, HSTRING value)
+        static HSTRING detach(hstring_view object)
+        {
+            return duplicate_string(get(object));
+        }
+    };
+
+    template <> struct accessors<const wchar_t *>
     {
-        attach(object, duplicate_string(value));
-    }
+        static HSTRING detach(const wchar_t * const value)
+        {
+            return create_string(value, static_cast<uint32_t>(wcslen(value)));
+        }
+    };
 
-    static void copy_to(const hstring & object, HSTRING & value)
+    template <> struct accessors<std::wstring>
     {
-        WINRT_ASSERT(value == nullptr);
-        value = duplicate_string(get(object));
-    }
-
-    static HSTRING detach(hstring & object) noexcept
-    {
-        return impl_detach(object);
-    }
-};
-
-template <> struct accessors<hstring_ref>
-{
-    static HSTRING get(hstring_ref object) noexcept
-    {
-        return impl_get(object);
-    }
-
-    static HSTRING detach(hstring_ref object)
-    {
-        return duplicate_string(get(object));
-    }
-};
-
-template <> struct accessors<const wchar_t *>
-{
-    static HSTRING detach(const wchar_t * const value)
-    {
-        return create_string(value, static_cast<uint32_t>(wcslen(value)));
-    }
-};
-
-template <> struct accessors<std::wstring>
-{
-    static HSTRING detach(const std::wstring & value)
-    {
-        return create_string(value.c_str(), static_cast<uint32_t>(value.size()));
-    }
-};
-
+        static HSTRING detach(const std::wstring & value)
+        {
+            return create_string(value.c_str(), static_cast<uint32_t>(value.size()));
+        }
+    };
 }
 
-inline bool embedded_null(hstring_ref value) noexcept
+inline bool embedded_null(hstring_view value) noexcept
 {
-    return impl::embedded_null(get(value));
+    return impl::embedded_null(get_abi(value));
 }
 
 inline bool embedded_null(const hstring & value) noexcept
 {
-    return impl::embedded_null(get(value));
+    return impl::embedded_null(get_abi(value));
 }
 
 // TODO: this must be removed. The ABI projection should just use HSTRING directly.

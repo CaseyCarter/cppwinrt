@@ -14,7 +14,7 @@ struct overrides : implements<D, R ...>
 
         if (result == E_NOINTERFACE)
         {
-            result = m_inner->QueryInterface(id, object);
+            result = get_abi(m_inner)->QueryInterface(id, object);
         }
 
         return result;
@@ -22,5 +22,5 @@ struct overrides : implements<D, R ...>
 
 protected:
 
-    Windows::IInspectable m_inner;
+    Windows::Foundation::IInspectable m_inner;
 };

@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -13,7 +13,7 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::ApplicationModel::Search {
 
-struct __declspec(uuid("eeaeb062-743d-456e-84a3-23f06f2d15d7")) __declspec(novtable) ILocalContentSuggestionSettings : Windows::IInspectable
+struct __declspec(uuid("eeaeb062-743d-456e-84a3-23f06f2d15d7")) __declspec(novtable) ILocalContentSuggestionSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Enabled(bool value) = 0;
     virtual HRESULT __stdcall get_Enabled(bool * value) = 0;
@@ -23,26 +23,26 @@ struct __declspec(uuid("eeaeb062-743d-456e-84a3-23f06f2d15d7")) __declspec(novta
     virtual HRESULT __stdcall get_PropertiesToMatch(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
 };
 
-struct __declspec(uuid("82fb460e-0940-4b6d-b8d0-642b30989e15")) __declspec(novtable) ISearchPaneQueryLinguisticDetails : Windows::IInspectable
+struct __declspec(uuid("82fb460e-0940-4b6d-b8d0-642b30989e15")) __declspec(novtable) ISearchPaneQueryLinguisticDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_QueryTextAlternatives(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
     virtual HRESULT __stdcall get_QueryTextCompositionStart(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_QueryTextCompositionLength(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("46a1205b-69c9-4745-b72f-a8a4fc8f24ae")) __declspec(novtable) ISearchQueryLinguisticDetails : Windows::IInspectable
+struct __declspec(uuid("46a1205b-69c9-4745-b72f-a8a4fc8f24ae")) __declspec(novtable) ISearchQueryLinguisticDetails : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_QueryTextAlternatives(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
     virtual HRESULT __stdcall get_QueryTextCompositionStart(uint32_t * value) = 0;
     virtual HRESULT __stdcall get_QueryTextCompositionLength(uint32_t * value) = 0;
 };
 
-struct __declspec(uuid("cac6c3b8-3c64-4dfd-ad9f-479e4d4065a4")) __declspec(novtable) ISearchQueryLinguisticDetailsFactory : Windows::IInspectable
+struct __declspec(uuid("cac6c3b8-3c64-4dfd-ad9f-479e4d4065a4")) __declspec(novtable) ISearchQueryLinguisticDetailsFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::Collections::IIterable<hstring> * queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength, Windows::ApplicationModel::Search::ISearchQueryLinguisticDetails ** value) = 0;
 };
 
-struct __declspec(uuid("323a8a4b-fbea-4446-abbc-3da7915fdd3a")) __declspec(novtable) ISearchSuggestionCollection : Windows::IInspectable
+struct __declspec(uuid("323a8a4b-fbea-4446-abbc-3da7915fdd3a")) __declspec(novtable) ISearchSuggestionCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Size(uint32_t * value) = 0;
     virtual HRESULT __stdcall abi_AppendQuerySuggestion(hstring text) = 0;
@@ -51,14 +51,14 @@ struct __declspec(uuid("323a8a4b-fbea-4446-abbc-3da7915fdd3a")) __declspec(novta
     virtual HRESULT __stdcall abi_AppendSearchSeparator(hstring label) = 0;
 };
 
-struct __declspec(uuid("4e4e26a7-44e5-4039-9099-6000ead1f0c6")) __declspec(novtable) ISearchSuggestionsRequest : Windows::IInspectable
+struct __declspec(uuid("4e4e26a7-44e5-4039-9099-6000ead1f0c6")) __declspec(novtable) ISearchSuggestionsRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsCanceled(bool * value) = 0;
     virtual HRESULT __stdcall get_SearchSuggestionCollection(Windows::ApplicationModel::Search::ISearchSuggestionCollection ** collection) = 0;
     virtual HRESULT __stdcall abi_GetDeferral(Windows::ApplicationModel::Search::ISearchSuggestionsRequestDeferral ** deferral) = 0;
 };
 
-struct __declspec(uuid("b71598a9-c065-456d-a845-1eccec5dc28b")) __declspec(novtable) ISearchSuggestionsRequestDeferral : Windows::IInspectable
+struct __declspec(uuid("b71598a9-c065-456d-a845-1eccec5dc28b")) __declspec(novtable) ISearchSuggestionsRequestDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
 };
@@ -78,13 +78,62 @@ template <> struct traits<Windows::ApplicationModel::Search::SearchSuggestionsRe
 
 namespace Windows::ApplicationModel::Search {
 
-template <typename T> struct impl_ILocalContentSuggestionSettings;
-template <typename T> struct impl_ISearchPaneQueryLinguisticDetails;
-template <typename T> struct impl_ISearchQueryLinguisticDetails;
-template <typename T> struct impl_ISearchQueryLinguisticDetailsFactory;
-template <typename T> struct impl_ISearchSuggestionCollection;
-template <typename T> struct impl_ISearchSuggestionsRequest;
-template <typename T> struct impl_ISearchSuggestionsRequestDeferral;
+template <typename D>
+struct WINRT_EBO impl_ILocalContentSuggestionSettings
+{
+    void Enabled(bool value) const;
+    bool Enabled() const;
+    Windows::Foundation::Collections::IVector<Windows::Storage::StorageFolder> Locations() const;
+    void AqsFilter(hstring_view value) const;
+    hstring AqsFilter() const;
+    Windows::Foundation::Collections::IVector<hstring> PropertiesToMatch() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchPaneQueryLinguisticDetails
+{
+    Windows::Foundation::Collections::IVectorView<hstring> QueryTextAlternatives() const;
+    uint32_t QueryTextCompositionStart() const;
+    uint32_t QueryTextCompositionLength() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchQueryLinguisticDetails
+{
+    Windows::Foundation::Collections::IVectorView<hstring> QueryTextAlternatives() const;
+    uint32_t QueryTextCompositionStart() const;
+    uint32_t QueryTextCompositionLength() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchQueryLinguisticDetailsFactory
+{
+    Windows::ApplicationModel::Search::SearchQueryLinguisticDetails CreateInstance(iterable<hstring> queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchSuggestionCollection
+{
+    uint32_t Size() const;
+    void AppendQuerySuggestion(hstring_view text) const;
+    void AppendQuerySuggestions(iterable<hstring> suggestions) const;
+    void AppendResultSuggestion(hstring_view text, hstring_view detailText, hstring_view tag, const Windows::Storage::Streams::IRandomAccessStreamReference & image, hstring_view imageAlternateText) const;
+    void AppendSearchSeparator(hstring_view label) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchSuggestionsRequest
+{
+    bool IsCanceled() const;
+    Windows::ApplicationModel::Search::SearchSuggestionCollection SearchSuggestionCollection() const;
+    Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchSuggestionsRequestDeferral
+{
+    void Complete() const;
+};
 
 }
 

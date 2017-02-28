@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -27,9 +27,9 @@ struct WINRT_EBO SmsDevice2 :
 {
     SmsDevice2(std::nullptr_t) noexcept {}
     static hstring GetDeviceSelector();
-    static Windows::Devices::Sms::SmsDevice2 FromId(hstring_ref deviceId);
+    static Windows::Devices::Sms::SmsDevice2 FromId(hstring_view deviceId);
     static Windows::Devices::Sms::SmsDevice2 GetDefault();
-    static Windows::Devices::Sms::SmsDevice2 FromParentId(hstring_ref parentDeviceId);
+    static Windows::Devices::Sms::SmsDevice2 FromParentId(hstring_view parentDeviceId);
 };
 
 struct WINRT_EBO SmsFilterRule :
@@ -57,7 +57,7 @@ struct WINRT_EBO SmsMessageRegistration :
 {
     SmsMessageRegistration(std::nullptr_t) noexcept {}
     static Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration> AllRegistrations();
-    static Windows::Devices::Sms::SmsMessageRegistration Register(hstring_ref id, const Windows::Devices::Sms::SmsFilterRules & filterRules);
+    static Windows::Devices::Sms::SmsMessageRegistration Register(hstring_view id, const Windows::Devices::Sms::SmsFilterRules & filterRules);
 };
 
 struct WINRT_EBO SmsSendMessageResult :

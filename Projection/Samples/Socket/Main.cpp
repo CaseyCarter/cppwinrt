@@ -31,7 +31,7 @@ IAsyncAction CoroutineSample()
 
 int main()
 {
-    initialize();
+    init_apartment();
 
     try
     {

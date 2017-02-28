@@ -27,7 +27,7 @@ namespace Microsoft.Wcl.Parsers
             info.Namespace = info.FullName.Substring(0, nameIndex);
             info.Name = info.FullName.Substring(nameIndex + 2);
 
-            info.Flags = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributeList, CustomAttributeKind.Flags); ;
+            info.Flags = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributeList, CustomAttributeKind.Flags);
             info.Deprecated = CustomAttributeMetadataParser.FindAttribute(assembly, customAttributeList, CustomAttributeKind.Deprecated);
             info.FieldNames = this.GetFieldsNames(assembly, typeDef.GetFields(), fullTypeName);
 

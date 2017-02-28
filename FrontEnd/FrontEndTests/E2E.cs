@@ -32,7 +32,7 @@ namespace Microsoft.Wtl.Tests
                 "Classes.base",
                 @"TestData\E2E",
                 "Classes.test",
-                "SELECT FullName, Name, (SELECT FullName FROM Classes C1 WHERE C1.FullName = Classes.Base), DefaultInterface, Activatable, ifnull(Deprecated, 0) FROM Classes ORDER BY FullName;");
+                "SELECT FullName, Name, (SELECT FullName FROM Classes C1 WHERE C1.FullName = Classes.Base), DefaultInterface, Activatable, Deprecated FROM Classes ORDER BY FullName;");
         }
 
         [TestMethod]
@@ -42,7 +42,7 @@ namespace Microsoft.Wtl.Tests
                 "Enumerations.base",
                 @"TestData\E2E",
                 "Enumerations.test",
-                "SELECT FullName, Name, Flags, ifnull(Deprecated, 0) FROM Enumerations ORDER BY FullName;");
+                "SELECT FullName, Name, Flags, Deprecated FROM Enumerations ORDER BY FullName;");
         }
 
         [TestMethod]
@@ -52,7 +52,7 @@ namespace Microsoft.Wtl.Tests
                 "Enumerators.base",
                 @"TestData\E2E",
                 "Enumerators.test",
-                "SELECT Enumerators.Name, Enumerators.Value, Enumerations.FullName, ifnull(Enumerators.Deprecated, 0) FROM Enumerators, Enumerations WHERE Enumerators.EnumerationId = Enumerations.RowId ORDER BY Enumerations.FullName, Enumerators.Name;");
+                "SELECT Enumerators.Name, Enumerators.Value, Enumerations.FullName, Enumerators.Deprecated FROM Enumerators, Enumerations WHERE Enumerators.EnumerationId = Enumerations.RowId ORDER BY Enumerations.FullName, Enumerators.Name;");
         }
 
         [TestMethod]
@@ -62,7 +62,7 @@ namespace Microsoft.Wtl.Tests
                 "Interfaces.base",
                 @"TestData\E2E",
                 "Interfaces.test",
-                "SELECT  FullName, Name, Delegate, Uuid, ifnull(Deprecated, 0) FROM Interfaces ORDER BY FullName;");
+                "SELECT  FullName, Name, Delegate, Uuid, Deprecated FROM Interfaces ORDER BY FullName;");
         }
 
         [TestMethod]
@@ -72,7 +72,7 @@ namespace Microsoft.Wtl.Tests
                 "Methods.base",
                 @"TestData\E2E",
                 "Methods.test",
-                "SELECT Methods.AbiName, Interfaces.FullName, ifnull(Methods.Deprecated, 0) FROM Methods, Interfaces WHERE Methods.InterfaceId = Interfaces.RowId ORDER BY Interfaces.FullName, Methods.AbiName;");
+                "SELECT Methods.AbiName, Interfaces.FullName, Methods.Deprecated FROM Methods, Interfaces WHERE Methods.InterfaceId = Interfaces.RowId ORDER BY Interfaces.FullName, Methods.AbiName;");
         }
 
         [TestMethod]
@@ -142,7 +142,7 @@ namespace Microsoft.Wtl.Tests
                 "Structures.base",
                 @"TestData\E2E",
                 "Structures.test",
-                "SELECT FullName, Name, Depends, ifnull(Deprecated, 0) FROM Structures ORDER BY FullName;");
+                "SELECT FullName, Name, Depends, Deprecated FROM Structures ORDER BY FullName;");
         }
 
         [TestMethod]

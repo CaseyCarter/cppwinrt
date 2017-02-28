@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
+// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -112,6 +112,42 @@ struct UserDeviceAssociation;
 struct UserDeviceAssociationChangedEventArgs;
 struct UserPicker;
 struct UserWatcher;
+
+}
+
+namespace Windows::System {
+
+template <typename T> struct impl_IAppMemoryReport;
+template <typename T> struct impl_IAppMemoryUsageLimitChangingEventArgs;
+template <typename T> struct impl_IFolderLauncherOptions;
+template <typename T> struct impl_IKnownUserPropertiesStatics;
+template <typename T> struct impl_ILaunchUriResult;
+template <typename T> struct impl_ILauncherOptions;
+template <typename T> struct impl_ILauncherOptions2;
+template <typename T> struct impl_ILauncherOptions3;
+template <typename T> struct impl_ILauncherStatics;
+template <typename T> struct impl_ILauncherStatics2;
+template <typename T> struct impl_ILauncherStatics3;
+template <typename T> struct impl_ILauncherStatics4;
+template <typename T> struct impl_ILauncherUIOptions;
+template <typename T> struct impl_ILauncherViewOptions;
+template <typename T> struct impl_IMemoryManagerStatics;
+template <typename T> struct impl_IMemoryManagerStatics2;
+template <typename T> struct impl_IMemoryManagerStatics3;
+template <typename T> struct impl_IProcessMemoryReport;
+template <typename T> struct impl_IProtocolForResultsOperation;
+template <typename T> struct impl_IRemoteLauncherOptions;
+template <typename T> struct impl_IRemoteLauncherStatics;
+template <typename T> struct impl_IUser;
+template <typename T> struct impl_IUserAuthenticationStatusChangeDeferral;
+template <typename T> struct impl_IUserAuthenticationStatusChangingEventArgs;
+template <typename T> struct impl_IUserChangedEventArgs;
+template <typename T> struct impl_IUserDeviceAssociationChangedEventArgs;
+template <typename T> struct impl_IUserDeviceAssociationStatics;
+template <typename T> struct impl_IUserPicker;
+template <typename T> struct impl_IUserPickerStatics;
+template <typename T> struct impl_IUserStatics;
+template <typename T> struct impl_IUserWatcher;
 
 }
 

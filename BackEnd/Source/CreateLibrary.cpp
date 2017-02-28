@@ -37,13 +37,6 @@ static void WriteRootNamespaceEnd(Target & target)
     Write(target, "\r\n}\r\n");
 }
 
-static void WriteModule()
-{
-    OutputFile target("..\\winrt.ixx");
-    WriteLogo(target);
-    Write(target, Strings::base_module);
-}
-
 template <unsigned Count>
 static void WriteSupportingHeader(char const * filename, char const (&text)[Count])
 {
@@ -58,41 +51,50 @@ static void WriteBaseHeader()
     WriteLogo(out);
     Write(out, Strings::PragmaOnce);
 
-    Write(out, Strings::base_dependencies);          // #include "base_dependencies.h"
-    Write(out, Strings::base_macros);                // #include "base_macros.h"
+    Write(out, Strings::base_dependencies);                  // #include "base_dependencies.h"
+    Write(out, Strings::base_macros);                        // #include "base_macros.h"
 
     WriteRootNamespaceBegin(out);
 
-    Write(out, Strings::base_accessors);             // #include "base_accessors.h"
-    Write(out, Strings::base_handle);                // #include "base_handle.h"
-    Write(out, Strings::base_meta);                  // #include "base_meta.h"
-    Write(out, Strings::base_com_ptr);               // #include "base_com_ptr.h"
-    Write(out, Strings::base_string);                // #include "base_string.h"
-    Write(out, Strings::base_string_hstring);        // #include "base_string_hstring.h"
-    Write(out, Strings::base_string_hstring_ref);    // #include "base_string_hstring_ref.h"
-    Write(out, Strings::base_string_operators);      // #include "base_string_operators.h"
-    Write(out, Strings::base_error);                 // #include "base_error.h"
-    Write(out, Strings::base_lock);                  // #include "base_lock.h"
-    Write(out, Strings::base_array);                 // #include "base_array.h"
-    Write(out, Strings::base_windows);               // #include "base_windows.h"
-    Write(out, Strings::base_implements);            // #include "base_implements.h"
-    Write(out, Strings::base_weak);                  // #include "base_weak.h"
-    Write(out, Strings::base_composable);            // #include "base_composable.h"
-    Write(out, Strings::base_event_consume);         // #include "base_event_consume.h"
-    Write(out, Strings::base_activation);            // #include "base_activation.h"
-    Write(out, Strings::base_delegate);              // #include "base_delegate.h"
-    Write(out, Strings::base_reference);             // #include "base_reference.h"
-    Write(out, Strings::base_collections_consume);   // #include "base_collections_consume.h"
-    Write(out, Strings::base_collections_produce);   // #include "base_collections_produce.h"
-    Write(out, Strings::base_collections_impl);      // #include "base_collections_impl.h"
-    Write(out, Strings::base_foundation);            // #include "base_foundation.h"
-    Write(out, Strings::base_async_consume);         // #include "base_async_consume.h"
-    Write(out, Strings::base_async_produce);         // #include "base_async_produce.h"
-    Write(out, Strings::base_agile);                 // #include "base_agile.h"
-    Write(out, Strings::base_await_consume);         // #include "base_await_consume.h"
-    Write(out, Strings::base_await_produce);         // #include "base_await_produce.h"
+    Write(out, Strings::base_accessors);                     // #include "base_accessors.h"
+    Write(out, Strings::base_handle);                        // #include "base_handle.h"
+    Write(out, Strings::base_meta);                          // #include "base_meta.h"
+    Write(out, Strings::base_com_ptr);                       // #include "base_com_ptr.h"
+    Write(out, Strings::base_string);                        // #include "base_string.h"
+    Write(out, Strings::base_string_hstring);                // #include "base_string_hstring.h"
+    Write(out, Strings::base_string_hstring_ref);            // #include "base_string_hstring_ref.h"
+    Write(out, Strings::base_string_operators);              // #include "base_string_operators.h"
+    Write(out, Strings::base_error);                         // #include "base_error.h"
+    Write(out, Strings::base_lock);                          // #include "base_lock.h"
+    Write(out, Strings::base_array);                         // #include "base_array.h"
+    Write(out, Strings::base_windows);                       // #include "base_windows.h"
+    Write(out, Strings::base_weak);                          // #include "base_weak.h"
+    Write(out, Strings::base_agile);                         // #include "base_agile.h"
+    Write(out, Strings::base_event_consume);                 // #include "base_event_consume.h"
+    Write(out, Strings::base_event_produce);                 // #include "base_event_produce.h"
+    Write(out, Strings::base_implements);                    // #include "base_implements.h"
+    Write(out, Strings::base_composable);                    // #include "base_composable.h"
+    Write(out, Strings::base_activation);                    // #include "base_activation.h"
+    Write(out, Strings::base_delegate);                      // #include "base_delegate.h"
+    Write(out, Strings::base_collections_consume);           // #include "base_collections_consume.h"
+    Write(out, Strings::base_collections_produce);           // #include "base_collections_produce.h"
+    Write(out, Strings::base_collections_input);             // #include "base_collections_input.h"
+    Write(out, Strings::base_collections_input_iterable);    // #include "base_collections_input_iterable.h"
+    Write(out, Strings::base_collections_input_vector_view); // #include "base_collections_input_vector_view.h"
+    Write(out, Strings::base_collections_input_map_view);    // #include "base_collections_input_map_view.h"
+    Write(out, Strings::base_collections_vector);            // #include "base_collections_vector.h"
+    Write(out, Strings::base_collections_map);               // #include "base_collections_map.h"
+    Write(out, Strings::base_foundation);                    // #include "base_foundation.h"
+    Write(out, Strings::base_chrono);                        // #include "base_chrono.h"
+    Write(out, Strings::base_async_consume);                 // #include "base_async_consume.h"
+    Write(out, Strings::base_async_produce);                 // #include "base_async_produce.h"
+    Write(out, Strings::base_await_consume);                 // #include "base_await_consume.h"
+    Write(out, Strings::base_await_produce);                 // #include "base_await_produce.h"
+    Write(out, Strings::base_propertyvalue);                 // #include "base_propertyvalue.h"
+    Write(out, Strings::base_reference);                     // #include "base_reference.h"
 
     WriteRootNamespaceEnd(out);
+
     Write(out, Strings::base_std_hash);
 
     Write(out, "\r\n#ifdef WINRT_ASYNC\r\n");
@@ -125,6 +127,7 @@ static void GenerateForward()
     WriteRootNamespaceBegin(out);
 
     WriteForwards(out);
+    WriteInterfaceImplForwards(out);
     WriteEnumerations(out);
 
     out.WriteNamespace();
@@ -147,7 +150,7 @@ static void GenerateAbi()
     WriteAbiInterfaces(out);
     WriteAbiClassDeclarations(out);
 
-    WriteInterfaceImplForwards(out);
+    WriteInterfaceConsumers(out);
 
     WriteInterfaceTraits(out);
 
@@ -170,7 +173,6 @@ static void GenerateInterface()
     WriteRootNamespaceBegin(out);
 
     WriteGenericInterfaces(out);
-    WriteInterfaceConsumers(out);
     WriteInterfaceDefinitions(out);
 
     out.WriteNamespace();
@@ -201,6 +203,8 @@ static void GenerateClassImpl(bool overridesExist, bool composablesExist, std::v
     Output out;
     WriteLogo(out);
     Write(out, Strings::PragmaOnce);
+    Write(out, Strings::WriteInclude, "base.h");
+    Write(out, Strings::PragmaWarningPush);
 
     WriteRequiredClasses(out);
     Write(out, Strings::WriteInclude, Settings::InternalPath + Settings::FileNamespaceDotName + Settings::ClassDeclLayerExtension);
@@ -240,6 +244,10 @@ static void GenerateClassImpl(bool overridesExist, bool composablesExist, std::v
     
     out.WriteNamespace();
     WriteRootNamespaceEnd(out);
+
+    WriteHashes(out);
+
+    Write(out, Strings::PragmaWarningPop); 
     out.WriteTo("..\\" + Settings::FileNamespaceDotName + ".h");
 }
 
@@ -293,15 +301,10 @@ static void WriteLibrary()
     Path::CreateDirectory(path);
     Path::SetCurrentDirectory(path);
 
-    WriteModule();
     WriteBaseHeader();
     WritePplHeader();
 
     std::vector<std::string> processedNamespaces;
-
-    Output out;
-    WriteLogo(out);
-    Write(out, Strings::PragmaOnce);
 
     Database::GetNamespaces([&]()
     {
@@ -312,11 +315,7 @@ static void WriteLibrary()
         GenerateInterface();
         GenerateClassDecl();
         GenerateClassImpl(GenerateOverrides(), GenerateComposables(), processedNamespaces);
-
-        Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + ".h");
     });
-
-    out.WriteTo("..\\winrt.h");
 }
 
 }
