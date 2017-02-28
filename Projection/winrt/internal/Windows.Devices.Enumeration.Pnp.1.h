@@ -6,8 +6,8 @@
 #include "../base.h"
 #include "Windows.Devices.Enumeration.Pnp.0.h"
 #include "Windows.Devices.Enumeration.0.h"
-#include "Windows.Foundation.Collections.1.h"
 #include "Windows.Foundation.1.h"
+#include "Windows.Foundation.Collections.1.h"
 
 WINRT_EXPORT namespace winrt {
 

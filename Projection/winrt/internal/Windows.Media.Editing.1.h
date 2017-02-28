@@ -15,6 +15,7 @@
 #include "Windows.Foundation.Collections.1.h"
 #include "Windows.Media.Effects.1.h"
 #include "Windows.Graphics.Imaging.1.h"
+#include "Windows.Storage.Streams.1.h"
 #include "Windows.Foundation.1.h"
 #include "Windows.Media.Transcoding.1.h"
 

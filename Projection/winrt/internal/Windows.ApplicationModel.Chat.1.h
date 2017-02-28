@@ -9,8 +9,8 @@
 #include "Windows.Media.MediaProperties.0.h"
 #include "Windows.Security.Credentials.0.h"
 #include "Windows.Storage.Streams.0.h"
-#include "Windows.Foundation.Collections.1.h"
 #include "Windows.Foundation.1.h"
+#include "Windows.Foundation.Collections.1.h"
 
 WINRT_EXPORT namespace winrt {
 

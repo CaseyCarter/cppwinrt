@@ -5,6 +5,7 @@
 
 #include "../base.h"
 #include "Windows.Foundation.Collections.0.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 

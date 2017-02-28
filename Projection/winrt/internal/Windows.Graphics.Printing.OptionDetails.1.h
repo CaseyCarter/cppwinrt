@@ -7,8 +7,8 @@
 #include "Windows.Graphics.Printing.OptionDetails.0.h"
 #include "Windows.Foundation.0.h"
 #include "Windows.Graphics.Printing.0.h"
-#include "Windows.Foundation.Collections.1.h"
 #include "Windows.Foundation.1.h"
+#include "Windows.Foundation.Collections.1.h"
 
 WINRT_EXPORT namespace winrt {
 

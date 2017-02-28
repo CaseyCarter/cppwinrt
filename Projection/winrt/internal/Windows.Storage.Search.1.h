@@ -9,8 +9,8 @@
 #include "Windows.Storage.0.h"
 #include "Windows.Storage.FileProperties.0.h"
 #include "Windows.Storage.Streams.0.h"
-#include "Windows.Foundation.Collections.1.h"
 #include "Windows.Foundation.1.h"
+#include "Windows.Foundation.Collections.1.h"
 #include "Windows.Storage.1.h"
 #include "Windows.Data.Text.1.h"
 
