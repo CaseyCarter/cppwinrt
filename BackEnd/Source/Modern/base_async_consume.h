@@ -12,17 +12,13 @@ namespace Windows::Foundation
 
 namespace impl
 {
-#ifdef _DEBUG
-    static bool is_sta() noexcept
+    inline bool is_sta() noexcept
     {
         APTTYPE aptType;
         APTTYPEQUALIFIER aptTypeQualifier;
-        check_hresult(CoGetApartmentType(&aptType, &aptTypeQualifier));
-        return ((aptType == APTTYPE_STA) || (aptType == APTTYPE_MAINSTA));
+        return SUCCEEDED(CoGetApartmentType(&aptType, &aptTypeQualifier)) &&
+            ((aptType == APTTYPE_STA) || (aptType == APTTYPE_MAINSTA));
     }
-#else
-#define is_sta __noop
-#endif
 
     template <typename Async>
     void blocking_suspend(const Async & async)
