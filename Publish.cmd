@@ -29,7 +29,7 @@ XCOPY projection\Samples %PublishShare%\projection\Samples /D /S /R /Y /J /I
 XCOPY projection\SDKReferences %PublishShare%\projection\SDKReferences /D /S /R /Y /J /I 
 XCOPY projection\SDKResponseFiles %PublishShare%\projection\SDKResponseFiles /D /S /R /Y /J /I 
 XCOPY generated\Tests %PublishShare%\projection\Tests /D /R /Y /J /I 
-XCOPY generated\winrt %PublishShare%\projection\winrt /D /S /R /Y /J /I 
+rem XCOPY generated\winrt %PublishShare%\projection\winrt /D /S /R /Y /J /I 
 XCOPY generated\*.zip %PublishShare%\projection /D /R /Y /J /I 
 
 echo Publish GitHub Format 
@@ -50,5 +50,6 @@ mklink /d %github%\Samples\Video %PublishShare%\projection\Samples\Video
 mklink /d %github%\Samples\XamlCode %PublishShare%\projection\Samples\XamlCode 
 
 :github_copy
-XCOPY generated\winrt %github%\winrt /D /S /R /Y /J /I 
+rem XCOPY generated\winrt %github%\winrt /D /S /R /Y /J /I 
+XCOPY generated\*.zip %github% /D /R /Y /J /I 
 for %%x in (AsyncReader Blocks CL JustCoroutines Ocr Syndication Video XamlCode) do XCOPY projection\Samples\%%x %github%\Samples\%%x /S /R /Y /J /I 
