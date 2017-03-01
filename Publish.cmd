@@ -50,5 +50,6 @@ mklink /d %github%\Samples\Video %PublishShare%\projection\Samples\Video
 mklink /d %github%\Samples\XamlCode %PublishShare%\projection\Samples\XamlCode 
 
 :github_copy
-XCOPY generated\winrt %github%\winrt /D /S /R /Y /J /I 
+rem XCOPY generated\winrt %github%\winrt /D /S /R /Y /J /I 
+XCOPY generated\*.zip %github% /D /R /Y /J /I 
 for %%x in (AsyncReader Blocks CL JustCoroutines Ocr Syndication Video XamlCode) do XCOPY projection\Samples\%%x %github%\Samples\%%x /S /R /Y /J /I 
