@@ -122,7 +122,6 @@
     <OutDir>$(SolutionDir)x86\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)x86\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
     <TargetName>cppwinrt2</TargetName>
-    <CustomBuildBeforeTargets>BuildCompile</CustomBuildBeforeTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -221,16 +220,6 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
-    <CustomBuildStep>
-      <Command>MakeStrings.cmd</Command>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Message>Building Strings.cpp...</Message>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>Strings.h;Strings.cpp</Outputs>
-      <Inputs>modern\*;%(Inputs)</Inputs>
-    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
