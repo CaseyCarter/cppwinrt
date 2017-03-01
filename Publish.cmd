@@ -29,7 +29,7 @@ XCOPY projection\Samples %PublishShare%\projection\Samples /D /S /R /Y /J /I
 XCOPY projection\SDKReferences %PublishShare%\projection\SDKReferences /D /S /R /Y /J /I 
 XCOPY projection\SDKResponseFiles %PublishShare%\projection\SDKResponseFiles /D /S /R /Y /J /I 
 XCOPY generated\Tests %PublishShare%\projection\Tests /D /R /Y /J /I 
-XCOPY generated\winrt %PublishShare%\projection\winrt /D /S /R /Y /J /I 
+rem XCOPY generated\winrt %PublishShare%\projection\winrt /D /S /R /Y /J /I 
 XCOPY generated\*.zip %PublishShare%\projection /D /R /Y /J /I 
 
 echo Publish GitHub Format 
