@@ -18,6 +18,7 @@
 #include "winrt\Windows.Security.Cryptography.Certificates.h"
 #include "winrt\Windows.Storage.Streams.h"
 #include "winrt\Windows.System.Threading.h"
+#include "winrt\Windows.UI.Xaml.h"
 #include "winrt\Windows.UI.Xaml.Controls.h"
 #include "winrt\Windows.Web.AtomPub.h"
 #include "winrt\Windows.Web.Http.h"
