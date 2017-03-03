@@ -48,13 +48,6 @@ TEST_CASE("marshal non-agile")
     IStringable non = make<NonAgile>();
     WINRT_ASSERT(!non.try_as<IAgileObject>());
     WINRT_ASSERT(!non.try_as<IMarshal>());
-
-    com_ptr<IStream> stream;
-    check_hresult(CoMarshalInterThreadInterfaceInStream(__uuidof(abi<IStringable>), get_abi(non), put_abi(stream)));
-    IStringable copy;
-    check_hresult(CoUnmarshalInterface(get_abi(stream), __uuidof(abi<IStringable>), reinterpret_cast<void **>(put_abi(copy))));
-
-    REQUIRE(copy.ToString() == L"NonAgile");
 }
 
 TEST_CASE("marshal agile weak-ref")
@@ -87,14 +80,4 @@ TEST_CASE("marshal non-agile weak-ref")
 
     WINRT_ASSERT(!ref.try_as<IAgileObject>());
     WINRT_ASSERT(!ref.try_as<IMarshal>());
-
-    com_ptr<IStream> stream;
-    check_hresult(CoMarshalInterThreadInterfaceInStream(__uuidof(ABI::Windows::Foundation::IWeakReference), get_abi(ref), put_abi(stream)));
-    com_ptr<ABI::Windows::Foundation::IWeakReference> ref_copy;
-    check_hresult(CoUnmarshalInterface(get_abi(stream), __uuidof(ABI::Windows::Foundation::IWeakReference), reinterpret_cast<void **>(put_abi(ref_copy))));
-
-    IStringable copy;
-    check_hresult(ref_copy->abi_Resolve(put_abi(copy)));
-
-    REQUIRE(copy.ToString() == L"NonAgile");
 }
