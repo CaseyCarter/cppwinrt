@@ -6,6 +6,7 @@
 
 using namespace winrt;
 using namespace Windows::UI::Composition;
+using namespace Windows::UI::Xaml;
 
 // Test cast of null via bases
 TEST_CASE("cast_null_via_bases")
@@ -23,4 +24,16 @@ TEST_CASE("cast_null_via_requires")
     ContainerVisual derived(nullptr);
     const IVisual& base = derived;
     REQUIRE(!base);
+}
+
+namespace
+{
+    struct MyFrameworkElement : FrameworkElementT<MyFrameworkElement>
+    {
+        void CallIFrameworkElementMethod()
+        {
+            // This is simply a compile test, to verify that we can convert an "overrides" type to one of its "requires" interfaces.
+            this->Width();
+        }
+    };
 }

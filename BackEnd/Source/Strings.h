@@ -20,7 +20,7 @@ extern char const base_collections_input_vector_view[9102];
 extern char const base_collections_map[5065];
 extern char const base_collections_produce[20889];
 extern char const base_collections_vector[5509];
-extern char const base_composable[577];
+extern char const base_composable[679];
 extern char const base_com_ptr[5540];
 extern char const base_delegate[4642];
 extern char const base_dependencies[2098];
