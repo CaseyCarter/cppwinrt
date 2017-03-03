@@ -8,6 +8,8 @@ if "%BuildPlatform%"=="" set BuildPlatform=x86
 set BuildConfiguration=%2
 if "%BuildConfiguration%"=="" set BuildConfiguration=Release
 
+pushd Projection\Samples
+
 rem Clean targets
 for /f %%i in ('dir /s /b %BuildConfiguration%') do @rd %%i /s /q >nul
 
@@ -22,3 +24,5 @@ findstr /C:"): error" BuildAllOutput.txt
 echo.
 echo Warnings:
 findstr /C:"): warning" BuildAllOutput.txt
+
+popd

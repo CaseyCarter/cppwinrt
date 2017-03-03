@@ -1214,6 +1214,7 @@ struct WINRT_EBO Image :
     static Windows::UI::Xaml::DependencyProperty NineGridProperty();
     [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource.")]] static Windows::UI::Xaml::DependencyProperty PlayToSourceProperty();
 };
+struct [[deprecated("PlayToSource may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource.")]] Image;
 
 struct WINRT_EBO InkCanvas :
     Windows::UI::Xaml::Controls::IInkCanvas,
@@ -1633,6 +1634,7 @@ struct WINRT_EBO MediaElement :
     static Windows::UI::Xaml::DependencyProperty IsFullWindowProperty();
     [[deprecated("PlayToPreferredSourceUri may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource().PreferredSourceUri.")]] static Windows::UI::Xaml::DependencyProperty PlayToPreferredSourceUriProperty();
 };
+struct [[deprecated("PlayToPreferredSourceUri may be altered or unavailable for releases after Windows 10.0. Instead, use GetAsCastingSource().PreferredSourceUri.")]] MediaElement;
 
 struct WINRT_EBO MediaPlayerElement :
     Windows::UI::Xaml::Controls::IMediaPlayerElement,

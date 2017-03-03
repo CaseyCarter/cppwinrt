@@ -52,6 +52,9 @@ interface IFoo4 : IInspectable
     HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out, retval] Bar4** instance);
 }
 
+// MIDL4066 : A member name has been qualified with an interface name because name collisions occurred across interface members on a runtime class. 
+// "Do" has been renamed as "Modern.Test.IFoo1.Do" on runtime class "Modern.Test.Bar1"
+midl_pragma warning(disable : 4066)
 [activatable(Windows.Foundation.UniversalApiContract, 1)]
 [contract(Windows.Foundation.UniversalApiContract, 1)]
 runtimeclass Bar1
@@ -60,6 +63,7 @@ runtimeclass Bar1
     [default] interface IFoo2;
     interface IFoo0;
 }
+midl_pragma warning(default : 4066)
 
 [contract(Windows.Foundation.UniversalApiContract, 1)]
 runtimeclass Bar2
