@@ -39,7 +39,7 @@ struct WINRT_EBO impl_IStringable
     hstring ToString() const
     {
         hstring value;
-        check_hresult(WINRT_SHIM(IStringable)->abi_ToString(put(value)));
+        check_hresult(WINRT_SHIM(IStringable)->abi_ToString(put_abi(value)));
         return value;
     }
 };
