@@ -1,6 +1,5 @@
 
-template<HRESULT ... ValuesToIgnore>
-__forceinline void check_hresult(HRESULT result);
+void check_hresult(HRESULT result);
 
 namespace Windows::Foundation
 {

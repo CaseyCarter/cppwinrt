@@ -329,10 +329,13 @@ namespace impl
     impl::throw_hresult(HRESULT_FROM_WIN32(GetLastError()));
 }
 
-template<HRESULT... ValuesToIgnore>
 __forceinline void check_hresult(const HRESULT result)
 {
-    if (!impl::sequence_contains<HRESULT, S_OK, ValuesToIgnore...>(result))
+#ifdef WINRT_STRICT_HRESULT
+    if (result != S_OK)
+#else
+    if (result < 0)
+#endif
     {
         impl::throw_hresult(result);
     }

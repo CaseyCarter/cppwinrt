@@ -92,7 +92,12 @@ enum class apartment_type
 
 inline void init_apartment(const apartment_type type = apartment_type::multi_threaded)
 {
-    check_hresult<S_FALSE>(WINRT_RoInitialize(static_cast<uint32_t>(type)));
+    HRESULT const result = WINRT_RoInitialize(static_cast<uint32_t>(type));
+
+    if (result < 0)
+    {
+        impl::throw_hresult(result);
+    }
 }
 
 inline void uninit_apartment() noexcept

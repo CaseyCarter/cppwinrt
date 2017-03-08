@@ -4,7 +4,7 @@ namespace Modern::Strings {
 
 extern char const base[2];
 extern char const base_accessors[2073];
-extern char const base_activation[3334];
+extern char const base_activation[3408];
 extern char const base_agile[1068];
 extern char const base_array[12755];
 extern char const base_async_consume[38737];
@@ -21,10 +21,10 @@ extern char const base_collections_map[5065];
 extern char const base_collections_produce[20889];
 extern char const base_collections_vector[5509];
 extern char const base_composable[679];
-extern char const base_com_ptr[5540];
+extern char const base_com_ptr[5488];
 extern char const base_delegate[4642];
 extern char const base_dependencies[2098];
-extern char const base_error[10742];
+extern char const base_error[10718];
 extern char const base_event_consume[2611];
 extern char const base_event_produce[9131];
 extern char const base_foundation[1287];

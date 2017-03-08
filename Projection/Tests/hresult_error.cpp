@@ -13,10 +13,11 @@ TEST_CASE("hresult,S_OK")
 
 TEST_CASE("hresult,S_FALSE")
 {
-    // We consider S_FALSE a false positive - the caller can handle it explicitly.
+    // This won't throw (unless you define WINRT_STRICT_HRESULT)
 
-    // Incoming error...
-
+#ifndef WINRT_STRICT_HRESULT
+    check_hresult(S_FALSE);
+#else
     try
     {
         check_hresult(S_FALSE);
@@ -26,8 +27,7 @@ TEST_CASE("hresult,S_FALSE")
     {
         REQUIRE(S_FALSE == e.code());
     }
-
-    // Outgoing error...
+#endif
 
     try
     {
@@ -36,6 +36,22 @@ TEST_CASE("hresult,S_FALSE")
     catch (...)
     {
         REQUIRE(S_FALSE == impl::to_hresult());
+    }
+}
+
+TEST_CASE("hresult,init_apartment")
+{
+    init_apartment();
+    init_apartment();
+
+    try
+    {
+        init_apartment(apartment_type::single_threaded);
+        FAIL(L"Previous line should throw");
+    }
+    catch (hresult_error const & e)
+    {
+        REQUIRE(e.code() == RPC_E_CHANGED_MODE);
     }
 }
 
