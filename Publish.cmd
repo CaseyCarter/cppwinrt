@@ -17,39 +17,26 @@ echo Skipping publish for %BuildPlatform% %BuildConfiguration%
 goto :eof
 
 :publish
-echo Publishing Back-end EXE and PDB Files
-for %%x in (exe pdb) do XCOPY BackEnd\%BuildPlatform%\%BuildConfiguration%\*.%%x %PublishShare%\compiler /D /R /Y /J /I
+md %PublishShare%
 
-echo Publishing Front-end EXE, DLLs, and PDB Files
-for %%x in (dll exe pdb) do XCOPY FrontEnd\FrontEnd\bin\%BuildConfiguration%\*.%%x %PublishShare%\compiler /D /R /Y /J /I
-XCOPY FrontEnd\FrontEnd\bin\%BuildConfiguration%\x86\*.dll %PublishShare%\compiler\x86 /D /R /Y /J /I
-
-echo Publishing Projection 
-XCOPY projection\Samples %PublishShare%\projection\Samples /D /S /R /Y /J /I 
-XCOPY projection\SDKReferences %PublishShare%\projection\SDKReferences /D /S /R /Y /J /I 
-XCOPY projection\SDKResponseFiles %PublishShare%\projection\SDKResponseFiles /D /S /R /Y /J /I 
-XCOPY generated\Tests %PublishShare%\projection\Tests /D /R /Y /J /I 
-rem XCOPY generated\winrt %PublishShare%\projection\winrt /D /S /R /Y /J /I 
-XCOPY generated\*.zip %PublishShare%\projection /D /R /Y /J /I 
+echo Publishing Compiler
+for %%x in (exe pdb) do XCOPY BackEnd\%BuildPlatform%\%BuildConfiguration%\*.%%x compiler /D /R /Y /J /I
+for %%x in (dll exe pdb) do XCOPY FrontEnd\FrontEnd\bin\%BuildConfiguration%\*.%%x compiler /D /R /Y /J /I
+XCOPY FrontEnd\FrontEnd\bin\%BuildConfiguration%\x86\*.dll compiler\x86 /D /R /Y /J /I
+powershell -ExecutionPolicy ByPass -Command "& '%cd%\zip.ps1' -directory '%cd%\compiler' -name 'compiler.zip'"
+echo d | XCOPY compiler.zip %PublishShare% /D /R /Y /J 
 
 echo Publish GitHub Format 
-set github=%PublishShare%\github_release\10.0.14393.0
+XCOPY generated\winrt stage\winrt /D /S /R /Y /J /I 
+set PUBLIC_SAMPLES=AsyncReader Blocks CL IBuffer JustCoroutines Ocr Syndication Video XamlCode
+for %%x in (%PUBLIC_SAMPLES%) do XCOPY projection\Samples\%%x stage\Samples\%%x /D /S /R /Y /J /I 
+powershell -ExecutionPolicy ByPass -Command "& '%cd%\zip.ps1' -directory '%cd%\stage' -name 'github.zip'"
+echo d | XCOPY github.zip %PublishShare% /D /R /Y /J 
 
-rem Symlinks not supported over network?
-goto :github_copy
-md %github%
-mklink /d %github%\winrt %PublishShare%\projection\winrt 
-md %github%\Samples
-mklink /d %github%\Samples\AsyncReader %PublishShare%\projection\Samples\AsyncReader
-mklink /d %github%\Samples\Blocks %PublishShare%\projection\Samples\Blocks 
-mklink /d %github%\Samples\CL %PublishShare%\projection\Samples\CL 
-mklink /d %github%\Samples\JustCoroutines %PublishShare%\projection\Samples\JustCoroutines 
-mklink /d %github%\Samples\Ocr %PublishShare%\projection\Samples\Ocr 
-mklink /d %github%\Samples\Syndication %PublishShare%\projection\Samples\Syndication 
-mklink /d %github%\Samples\Video %PublishShare%\projection\Samples\Video 
-mklink /d %github%\Samples\XamlCode %PublishShare%\projection\Samples\XamlCode 
-
-:github_copy
-rem XCOPY generated\winrt %github%\winrt /D /S /R /Y /J /I 
-XCOPY generated\*.zip %github% /D /R /Y /J /I 
-for %%x in (AsyncReader Blocks CL JustCoroutines Ocr Syndication Video XamlCode) do XCOPY projection\Samples\%%x %github%\Samples\%%x /S /R /Y /J /I 
+echo Publish Projection 
+XCOPY projection\Samples stage\Samples /D /S /R /Y /J /I 
+XCOPY projection\SDKReferences stage\SDKReferences /D /S /R /Y /J /I 
+XCOPY projection\SDKResponseFiles stage\SDKResponseFiles /D /S /R /Y /J /I 
+XCOPY projection\Tests stage\Tests /D /R /Y /J /I 
+powershell -ExecutionPolicy ByPass -Command "& '%cd%\zip.ps1' -directory '%cd%\stage' -name 'projection.zip'"
+echo d | XCOPY projection.zip %PublishShare% /D /R /Y /J 

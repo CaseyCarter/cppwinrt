@@ -11,6 +11,5 @@ if "%BuildConfiguration%"=="" set BuildConfiguration=Release
 call BuildCompilers.cmd %BuildPlatform% %BuildConfiguration%
 call Projection.bat
 call TestAll.cmd %BuildPlatform% %BuildConfiguration%
-pushd Projection\Samples
-call BuildAll.cmd %BuildPlatform% %BuildConfiguration%
+call BuildSamples.cmd %BuildPlatform% %BuildConfiguration%
 popd

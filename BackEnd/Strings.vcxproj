@@ -93,6 +93,7 @@
     <ClInclude Include="Source\Modern\WriteDelegateProducer.h" />
     <ClInclude Include="Source\Modern\WriteDelegateShims.h" />
     <ClInclude Include="Source\Modern\WriteDelegateTraits.h" />
+    <ClInclude Include="Source\Modern\WriteDeprecatedStruct.h" />
     <ClInclude Include="Source\Modern\WriteEnumeration.h" />
     <ClInclude Include="Source\Modern\WriteEnumerationFlag.h" />
     <ClInclude Include="Source\Modern\WriteEnumerator.h" />

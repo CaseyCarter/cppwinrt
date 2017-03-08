@@ -24,6 +24,17 @@ static void WriteDeprecatedAttribute(Output & out)
     }
 }
 
+static void WriteDeprecatedStruct(Output & out, std::string const & name)
+{
+    if (!Settings::Deprecated.empty())
+    {
+        Write(out,
+            Strings::WriteDeprecatedStruct,
+            Settings::Deprecated,
+            name.c_str());
+    }
+}
+
 static void WriteEnumeratorsFlag(Output & out)
 {
     GetEnumeratorsFlag([&]
@@ -1094,7 +1105,6 @@ static void WriteClassDeclaration(Output & out)
 {
     Write(out,
           Strings::WriteClassDeclaration,
-          Bind(WriteDeprecatedAttribute),
           Settings::ClassName,
           Settings::ClassDefaultInterface,
           Bind(WriteBases),
@@ -1102,6 +1112,7 @@ static void WriteClassDeclaration(Output & out)
           Bind(WriteClassConstructorDeclarations),
           Bind(WriteUsingMethodsForClass),
           Bind(WriteStaticMethodDeclarations));
+    WriteDeprecatedStruct(out, Settings::ClassName);
 }
 
 static void WriteStaticClassDeclaration(Output & out)
@@ -1328,13 +1339,7 @@ void WriteInterfaceDefinitions(Output & out)
               Bind(WriteRequiredInterfaces),
               Settings::InterfaceName,
               Bind(WriteUsingMethodsForInterface));
-        if (!Settings::Deprecated.empty())
-        {
-            Write(out,
-                "struct [[deprecated(\"%\")]] %;\r\n", 
-                Settings::Deprecated, 
-                Settings::InterfaceName);
-        }
+        WriteDeprecatedStruct(out, Settings::InterfaceName);
     });
 }
 
