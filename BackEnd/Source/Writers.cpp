@@ -140,6 +140,13 @@ static void WriteProducerForwardArgument(Output & out, Parameter const & param)
                   param.Name,
                   param.Name);
         }
+        else if (param.Category == TypeCategory::Interface)
+        {
+            Write(out,
+                "*reinterpret_cast<% *>(%)",
+                param.ModernType(),
+                param.Name);
+        }
         else
         {
             Write(out,

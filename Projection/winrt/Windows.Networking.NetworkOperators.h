@@ -182,7 +182,7 @@ struct produce<D, Windows::Networking::NetworkOperators::IHotspotAuthenticationC
         try
         {
             typename D::abi_guard guard(this->shim());
-            *isValid = detach_abi(this->shim().TryGetAuthenticationContext(*reinterpret_cast<const hstring *>(&evenToken), *context));
+            *isValid = detach_abi(this->shim().TryGetAuthenticationContext(*reinterpret_cast<const hstring *>(&evenToken), *reinterpret_cast<Windows::Networking::NetworkOperators::HotspotAuthenticationContext *>(context)));
             return S_OK;
         }
         catch (...)

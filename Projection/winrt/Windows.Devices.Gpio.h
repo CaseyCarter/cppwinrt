@@ -68,7 +68,7 @@ struct produce<D, Windows::Devices::Gpio::IGpioController> : produce_base<D, Win
         try
         {
             typename D::abi_guard guard(this->shim());
-            *succeeded = detach_abi(this->shim().TryOpenPin(pinNumber, sharingMode, *pin, *openStatus));
+            *succeeded = detach_abi(this->shim().TryOpenPin(pinNumber, sharingMode, *reinterpret_cast<Windows::Devices::Gpio::GpioPin *>(pin), *openStatus));
             return S_OK;
         }
         catch (...)
