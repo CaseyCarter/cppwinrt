@@ -465,6 +465,25 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerStatics> : pr
 };
 
 template <typename D>
+struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerStatics2> : produce_base<D, Windows::Devices::PointOfService::IBarcodeScannerStatics2>
+{
+    HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetDeviceSelector(connectionTypes));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Devices::PointOfService::IBarcodeScannerStatusUpdatedEventArgs> : produce_base<D, Windows::Devices::PointOfService::IBarcodeScannerStatusUpdatedEventArgs>
 {
     HRESULT __stdcall get_Status(Windows::Devices::PointOfService::BarcodeScannerStatus * value) noexcept override
@@ -1818,6 +1837,210 @@ struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics> 
 };
 
 template <typename D>
+struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics2> : produce_base<D, Windows::Devices::PointOfService::IBarcodeSymbologiesStatics2>
+{
+    HRESULT __stdcall get_Gs1DWCode(uint32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Gs1DWCode());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::PointOfService::IBarcodeSymbologyAttributes> : produce_base<D, Windows::Devices::PointOfService::IBarcodeSymbologyAttributes>
+{
+    HRESULT __stdcall get_IsCheckDigitValidationEnabled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsCheckDigitValidationEnabled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsCheckDigitValidationEnabled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsCheckDigitValidationEnabled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsCheckDigitValidationSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsCheckDigitValidationSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsCheckDigitTransmissionEnabled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsCheckDigitTransmissionEnabled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsCheckDigitTransmissionEnabled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsCheckDigitTransmissionEnabled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsCheckDigitTransmissionSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsCheckDigitTransmissionSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DecodeLength1(uint32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DecodeLength1());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_DecodeLength1(uint32_t value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().DecodeLength1(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DecodeLength2(uint32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DecodeLength2());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_DecodeLength2(uint32_t value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().DecodeLength2(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DecodeLengthKind(Windows::Devices::PointOfService::BarcodeSymbologyDecodeLengthKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DecodeLengthKind());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_DecodeLengthKind(Windows::Devices::PointOfService::BarcodeSymbologyDecodeLengthKind value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().DecodeLengthKind(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsDecodeLengthSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsDecodeLengthSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Devices::PointOfService::ICashDrawer> : produce_base<D, Windows::Devices::PointOfService::ICashDrawer>
 {
     HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
@@ -2344,6 +2567,25 @@ struct produce<D, Windows::Devices::PointOfService::ICashDrawerStatics> : produc
 };
 
 template <typename D>
+struct produce<D, Windows::Devices::PointOfService::ICashDrawerStatics2> : produce_base<D, Windows::Devices::PointOfService::ICashDrawerStatics2>
+{
+    HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetDeviceSelector(connectionTypes));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Devices::PointOfService::ICashDrawerStatus> : produce_base<D, Windows::Devices::PointOfService::ICashDrawerStatus>
 {
     HRESULT __stdcall get_StatusKind(Windows::Devices::PointOfService::CashDrawerStatusKind * value) noexcept override
@@ -2790,6 +3032,40 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner1> : p
 };
 
 template <typename D>
+struct produce<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner2> : produce_base<D, Windows::Devices::PointOfService::IClaimedBarcodeScanner2>
+{
+    HRESULT __stdcall abi_GetSymbologyAttributesAsync(uint32_t barcodeSymbology, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeSymbologyAttributes>> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetSymbologyAttributesAsync(barcodeSymbology));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetSymbologyAttributesAsync(uint32_t barcodeSymbology, impl::abi_arg_in<Windows::Devices::PointOfService::IBarcodeSymbologyAttributes> attributes, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().SetSymbologyAttributesAsync(barcodeSymbology, *reinterpret_cast<const Windows::Devices::PointOfService::BarcodeSymbologyAttributes *>(&attributes)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Devices::PointOfService::IClaimedCashDrawer> : produce_base<D, Windows::Devices::PointOfService::IClaimedCashDrawer>
 {
     HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
@@ -2978,6 +3254,221 @@ struct produce<D, Windows::Devices::PointOfService::IClaimedJournalPrinter> : pr
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().CreateJob());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::PointOfService::IClaimedLineDisplay> : produce_base<D, Windows::Devices::PointOfService::IClaimedLineDisplay>
+{
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeviceId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Capabilities(impl::abi_arg_out<Windows::Devices::PointOfService::ILineDisplayCapabilities> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Capabilities());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_PhysicalDeviceName(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().PhysicalDeviceName());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_PhysicalDeviceDescription(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().PhysicalDeviceDescription());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DeviceControlDescription(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeviceControlDescription());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DeviceControlVersion(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeviceControlVersion());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DeviceServiceVersion(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeviceServiceVersion());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DefaultWindow(impl::abi_arg_out<Windows::Devices::PointOfService::ILineDisplayWindow> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DefaultWindow());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RetainDevice() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().RetainDevice();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_ReleaseDeviceRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedLineDisplay, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().ReleaseDeviceRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedLineDisplay, Windows::Foundation::IInspectable> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_ReleaseDeviceRequested(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ReleaseDeviceRequested(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::PointOfService::IClaimedLineDisplayStatics> : produce_base<D, Windows::Devices::PointOfService::IClaimedLineDisplayStatics>
+{
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDeviceSelector(impl::abi_arg_out<hstring> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetDeviceSelector());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetDeviceSelector(connectionTypes));
             return S_OK;
         }
         catch (...)
@@ -4614,6 +5105,586 @@ struct produce<D, Windows::Devices::PointOfService::IJournalPrinterCapabilities>
 {};
 
 template <typename D>
+struct produce<D, Windows::Devices::PointOfService::ILineDisplay> : produce_base<D, Windows::Devices::PointOfService::ILineDisplay>
+{
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeviceId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Capabilities(impl::abi_arg_out<Windows::Devices::PointOfService::ILineDisplayCapabilities> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Capabilities());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_PhysicalDeviceName(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().PhysicalDeviceName());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_PhysicalDeviceDescription(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().PhysicalDeviceDescription());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DeviceControlDescription(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeviceControlDescription());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DeviceControlVersion(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeviceControlVersion());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DeviceServiceVersion(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeviceServiceVersion());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ClaimAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay>> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().ClaimAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::PointOfService::ILineDisplayCapabilities> : produce_base<D, Windows::Devices::PointOfService::ILineDisplayCapabilities>
+{
+    HRESULT __stdcall get_IsStatisticsReportingSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsStatisticsReportingSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsStatisticsUpdatingSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsStatisticsUpdatingSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_PowerReportingType(Windows::Devices::PointOfService::UnifiedPosPowerReportingType * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().PowerReportingType());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CanChangeScreenSize(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CanChangeScreenSize());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CanDisplayBitmaps(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CanDisplayBitmaps());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CanReadCharacterAtCursor(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CanReadCharacterAtCursor());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CanMapCharacterSets(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CanMapCharacterSets());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CanDisplayCustomGlyphs(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CanDisplayCustomGlyphs());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CanReverse(Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CanReverse());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CanBlink(Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CanBlink());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CanChangeBlinkRate(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CanChangeBlinkRate());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsBrightnessSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsBrightnessSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsCursorSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsCursorSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsHorizontalMarqueeSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsHorizontalMarqueeSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsVerticalMarqueeSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsVerticalMarqueeSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsInterCharacterWaitSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsInterCharacterWaitSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SupportedDescriptors(uint32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SupportedDescriptors());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SupportedWindows(uint32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SupportedWindows());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::PointOfService::ILineDisplayStatics> : produce_base<D, Windows::Devices::PointOfService::ILineDisplayStatics>
+{
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDefaultAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay>> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetDefaultAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDeviceSelector(impl::abi_arg_out<hstring> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetDeviceSelector());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetDeviceSelector(connectionTypes));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::PointOfService::ILineDisplayWindow> : produce_base<D, Windows::Devices::PointOfService::ILineDisplayWindow>
+{
+    HRESULT __stdcall get_SizeInCharacters(impl::abi_arg_out<Windows::Foundation::Size> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SizeInCharacters());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_InterCharacterWaitInterval(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().InterCharacterWaitInterval());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_InterCharacterWaitInterval(impl::abi_arg_in<Windows::Foundation::TimeSpan> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().InterCharacterWaitInterval(*reinterpret_cast<const Windows::Foundation::TimeSpan *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryRefreshAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryRefreshAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryDisplayTextAsync(impl::abi_arg_in<hstring> text, Windows::Devices::PointOfService::LineDisplayTextAttribute displayAttribute, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryDisplayTextAsync(*reinterpret_cast<const hstring *>(&text), displayAttribute));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryDisplayTextAtPositionAsync(impl::abi_arg_in<hstring> text, Windows::Devices::PointOfService::LineDisplayTextAttribute displayAttribute, impl::abi_arg_in<Windows::Foundation::Point> startPosition, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryDisplayTextAsync(*reinterpret_cast<const hstring *>(&text), displayAttribute, *reinterpret_cast<const Windows::Foundation::Point *>(&startPosition)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryDisplayTextNormalAsync(impl::abi_arg_in<hstring> text, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryDisplayTextAsync(*reinterpret_cast<const hstring *>(&text)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryScrollTextAsync(Windows::Devices::PointOfService::LineDisplayScrollDirection direction, uint32_t numberOfColumnsOrRows, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryScrollTextAsync(direction, numberOfColumnsOrRows));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryClearTextAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryClearTextAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReader> : produce_base<D, Windows::Devices::PointOfService::IMagneticStripeReader>
 {
     HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
@@ -5734,6 +6805,25 @@ struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderStatics
 };
 
 template <typename D>
+struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderStatics2> : produce_base<D, Windows::Devices::PointOfService::IMagneticStripeReaderStatics2>
+{
+    HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetDeviceSelector(connectionTypes));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Devices::PointOfService::IMagneticStripeReaderStatusUpdatedEventArgs> : produce_base<D, Windows::Devices::PointOfService::IMagneticStripeReaderStatusUpdatedEventArgs>
 {
     HRESULT __stdcall get_Status(Windows::Devices::PointOfService::MagneticStripeReaderStatus * value) noexcept override
@@ -6282,6 +7372,25 @@ struct produce<D, Windows::Devices::PointOfService::IPosPrinterStatics> : produc
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().GetDeviceSelector());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::PointOfService::IPosPrinterStatics2> : produce_base<D, Windows::Devices::PointOfService::IPosPrinterStatics2>
+{
+    HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetDeviceSelector(connectionTypes));
             return S_OK;
         }
         catch (...)
@@ -7446,6 +8555,94 @@ template <typename D> hstring impl_IBarcodeSymbologiesStatics<D>::GetName(uint32
     return value;
 }
 
+template <typename D> uint32_t impl_IBarcodeSymbologiesStatics2<D>::Gs1DWCode() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(IBarcodeSymbologiesStatics2)->get_Gs1DWCode(&value));
+    return value;
+}
+
+template <typename D> bool impl_IBarcodeSymbologyAttributes<D>::IsCheckDigitValidationEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->get_IsCheckDigitValidationEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IBarcodeSymbologyAttributes<D>::IsCheckDigitValidationEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->put_IsCheckDigitValidationEnabled(value));
+}
+
+template <typename D> bool impl_IBarcodeSymbologyAttributes<D>::IsCheckDigitValidationSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->get_IsCheckDigitValidationSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_IBarcodeSymbologyAttributes<D>::IsCheckDigitTransmissionEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->get_IsCheckDigitTransmissionEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IBarcodeSymbologyAttributes<D>::IsCheckDigitTransmissionEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->put_IsCheckDigitTransmissionEnabled(value));
+}
+
+template <typename D> bool impl_IBarcodeSymbologyAttributes<D>::IsCheckDigitTransmissionSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->get_IsCheckDigitTransmissionSupported(&value));
+    return value;
+}
+
+template <typename D> uint32_t impl_IBarcodeSymbologyAttributes<D>::DecodeLength1() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->get_DecodeLength1(&value));
+    return value;
+}
+
+template <typename D> void impl_IBarcodeSymbologyAttributes<D>::DecodeLength1(uint32_t value) const
+{
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->put_DecodeLength1(value));
+}
+
+template <typename D> uint32_t impl_IBarcodeSymbologyAttributes<D>::DecodeLength2() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->get_DecodeLength2(&value));
+    return value;
+}
+
+template <typename D> void impl_IBarcodeSymbologyAttributes<D>::DecodeLength2(uint32_t value) const
+{
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->put_DecodeLength2(value));
+}
+
+template <typename D> Windows::Devices::PointOfService::BarcodeSymbologyDecodeLengthKind impl_IBarcodeSymbologyAttributes<D>::DecodeLengthKind() const
+{
+    Windows::Devices::PointOfService::BarcodeSymbologyDecodeLengthKind value {};
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->get_DecodeLengthKind(&value));
+    return value;
+}
+
+template <typename D> void impl_IBarcodeSymbologyAttributes<D>::DecodeLengthKind(Windows::Devices::PointOfService::BarcodeSymbologyDecodeLengthKind value) const
+{
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->put_DecodeLengthKind(value));
+}
+
+template <typename D> bool impl_IBarcodeSymbologyAttributes<D>::IsDecodeLengthSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBarcodeSymbologyAttributes)->get_IsDecodeLengthSupported(&value));
+    return value;
+}
+
 template <typename D> Windows::Devices::PointOfService::BarcodeScannerReport impl_IBarcodeScannerDataReceivedEventArgs<D>::Report() const
 {
     Windows::Devices::PointOfService::BarcodeScannerReport value { nullptr };
@@ -7558,6 +8755,13 @@ template <typename D> hstring impl_IBarcodeScannerStatics<D>::GetDeviceSelector(
     return value;
 }
 
+template <typename D> hstring impl_IBarcodeScannerStatics2<D>::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IBarcodeScannerStatics2)->abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, put_abi(value)));
+    return value;
+}
+
 template <typename D> hstring impl_IBarcodeScanner<D>::DeviceId() const
 {
     hstring value;
@@ -7643,6 +8847,221 @@ template <typename D> hstring impl_IBarcodeScanner2<D>::VideoDeviceId() const
     hstring value;
     check_hresult(WINRT_SHIM(IBarcodeScanner2)->get_VideoDeviceId(put_abi(value)));
     return value;
+}
+
+template <typename D> hstring impl_IClaimedBarcodeScanner<D>::DeviceId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_DeviceId(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IClaimedBarcodeScanner<D>::IsEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_IsEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IClaimedBarcodeScanner<D>::IsDisabledOnDataReceived(bool value) const
+{
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->put_IsDisabledOnDataReceived(value));
+}
+
+template <typename D> bool impl_IClaimedBarcodeScanner<D>::IsDisabledOnDataReceived() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_IsDisabledOnDataReceived(&value));
+    return value;
+}
+
+template <typename D> void impl_IClaimedBarcodeScanner<D>::IsDecodeDataEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->put_IsDecodeDataEnabled(value));
+}
+
+template <typename D> bool impl_IClaimedBarcodeScanner<D>::IsDecodeDataEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_IsDecodeDataEnabled(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::EnableAsync() const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_EnableAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::DisableAsync() const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_DisableAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> void impl_IClaimedBarcodeScanner<D>::RetainDevice() const
+{
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_RetainDevice());
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::SetActiveSymbologiesAsync(iterable<uint32_t> symbologies) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_SetActiveSymbologiesAsync(get_abi(symbologies), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::ResetStatisticsAsync(iterable<hstring> statisticsCategories) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_ResetStatisticsAsync(get_abi(statisticsCategories), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_UpdateStatisticsAsync(get_abi(statistics), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::SetActiveProfileAsync(hstring_view profile) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_SetActiveProfileAsync(get_abi(profile), put_abi(result)));
+    return result;
+}
+
+template <typename D> event_token impl_IClaimedBarcodeScanner<D>::DataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_DataReceived(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::DataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_DataReceived, DataReceived(handler));
+}
+
+template <typename D> void impl_IClaimedBarcodeScanner<D>::DataReceived(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_DataReceived(token));
+}
+
+template <typename D> event_token impl_IClaimedBarcodeScanner<D>::TriggerPressed(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_TriggerPressed(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::TriggerPressed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_TriggerPressed, TriggerPressed(handler));
+}
+
+template <typename D> void impl_IClaimedBarcodeScanner<D>::TriggerPressed(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_TriggerPressed(token));
+}
+
+template <typename D> event_token impl_IClaimedBarcodeScanner<D>::TriggerReleased(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_TriggerReleased(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::TriggerReleased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_TriggerReleased, TriggerReleased(handler));
+}
+
+template <typename D> void impl_IClaimedBarcodeScanner<D>::TriggerReleased(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_TriggerReleased(token));
+}
+
+template <typename D> event_token impl_IClaimedBarcodeScanner<D>::ReleaseDeviceRequested(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_ReleaseDeviceRequested(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_ReleaseDeviceRequested, ReleaseDeviceRequested(handler));
+}
+
+template <typename D> void impl_IClaimedBarcodeScanner<D>::ReleaseDeviceRequested(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_ReleaseDeviceRequested(token));
+}
+
+template <typename D> event_token impl_IClaimedBarcodeScanner<D>::ImagePreviewReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_ImagePreviewReceived(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::ImagePreviewReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_ImagePreviewReceived, ImagePreviewReceived(handler));
+}
+
+template <typename D> void impl_IClaimedBarcodeScanner<D>::ImagePreviewReceived(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_ImagePreviewReceived(token));
+}
+
+template <typename D> event_token impl_IClaimedBarcodeScanner<D>::ErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_ErrorOccurred(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::ErrorOccurred(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_ErrorOccurred, ErrorOccurred(handler));
+}
+
+template <typename D> void impl_IClaimedBarcodeScanner<D>::ErrorOccurred(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_ErrorOccurred(token));
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner1<D>::StartSoftwareTriggerAsync() const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner1)->abi_StartSoftwareTriggerAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner1<D>::StopSoftwareTriggerAsync() const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner1)->abi_StopSoftwareTriggerAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeSymbologyAttributes> impl_IClaimedBarcodeScanner2<D>::GetSymbologyAttributesAsync(uint32_t barcodeSymbology) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeSymbologyAttributes> result;
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner2)->abi_GetSymbologyAttributesAsync(barcodeSymbology, put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedBarcodeScanner2<D>::SetSymbologyAttributesAsync(uint32_t barcodeSymbology, const Windows::Devices::PointOfService::BarcodeSymbologyAttributes & attributes) const
+{
+    Windows::Foundation::IAsyncOperation<bool> result;
+    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner2)->abi_SetSymbologyAttributesAsync(barcodeSymbology, get_abi(attributes), put_abi(result)));
+    return result;
 }
 
 template <typename D> uint32_t impl_IMagneticStripeReaderEncryptionAlgorithmsStatics<D>::None() const
@@ -8114,6 +9533,238 @@ template <typename D> bool impl_IMagneticStripeReaderCapabilities<D>::IsTransmit
     return value;
 }
 
+template <typename D> hstring impl_IClaimedMagneticStripeReader<D>::DeviceId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_DeviceId(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::IsDisabledOnDataReceived(bool value) const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_IsDisabledOnDataReceived(value));
+}
+
+template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsDisabledOnDataReceived() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsDisabledOnDataReceived(&value));
+    return value;
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::IsDecodeDataEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_IsDecodeDataEnabled(value));
+}
+
+template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsDecodeDataEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsDecodeDataEnabled(&value));
+    return value;
+}
+
+template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsDeviceAuthenticated() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsDeviceAuthenticated(&value));
+    return value;
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::DataEncryptionAlgorithm(uint32_t value) const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_DataEncryptionAlgorithm(value));
+}
+
+template <typename D> uint32_t impl_IClaimedMagneticStripeReader<D>::DataEncryptionAlgorithm() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_DataEncryptionAlgorithm(&value));
+    return value;
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::TracksToRead(Windows::Devices::PointOfService::MagneticStripeReaderTrackIds value) const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_TracksToRead(value));
+}
+
+template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderTrackIds impl_IClaimedMagneticStripeReader<D>::TracksToRead() const
+{
+    Windows::Devices::PointOfService::MagneticStripeReaderTrackIds value {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_TracksToRead(&value));
+    return value;
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::IsTransmitSentinelsEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_IsTransmitSentinelsEnabled(value));
+}
+
+template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsTransmitSentinelsEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsTransmitSentinelsEnabled(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::EnableAsync() const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_EnableAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::DisableAsync() const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_DisableAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::RetainDevice() const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_RetainDevice());
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::SetErrorReportingType(Windows::Devices::PointOfService::MagneticStripeReaderErrorReportingType value) const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_SetErrorReportingType(value));
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IClaimedMagneticStripeReader<D>::RetrieveDeviceAuthenticationDataAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_RetrieveDeviceAuthenticationDataAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::AuthenticateDeviceAsync(array_view<const uint8_t> responseToken) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_AuthenticateDeviceAsync(responseToken.size(), get_abi(responseToken), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::DeAuthenticateDeviceAsync(array_view<const uint8_t> responseToken) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_DeAuthenticateDeviceAsync(responseToken.size(), get_abi(responseToken), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::UpdateKeyAsync(hstring_view key, hstring_view keyName) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_UpdateKeyAsync(get_abi(key), get_abi(keyName), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::ResetStatisticsAsync(iterable<hstring> statisticsCategories) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_ResetStatisticsAsync(get_abi(statisticsCategories), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_UpdateStatisticsAsync(get_abi(statistics), put_abi(result)));
+    return result;
+}
+
+template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::BankCardDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_BankCardDataReceived(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedMagneticStripeReader<D>::BankCardDataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedMagneticStripeReader>(this, &ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader::remove_BankCardDataReceived, BankCardDataReceived(handler));
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::BankCardDataReceived(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_BankCardDataReceived(token));
+}
+
+template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::AamvaCardDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_AamvaCardDataReceived(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedMagneticStripeReader<D>::AamvaCardDataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedMagneticStripeReader>(this, &ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader::remove_AamvaCardDataReceived, AamvaCardDataReceived(handler));
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::AamvaCardDataReceived(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_AamvaCardDataReceived(token));
+}
+
+template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::VendorSpecificDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_VendorSpecificDataReceived(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedMagneticStripeReader<D>::VendorSpecificDataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedMagneticStripeReader>(this, &ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader::remove_VendorSpecificDataReceived, VendorSpecificDataReceived(handler));
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::VendorSpecificDataReceived(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_VendorSpecificDataReceived(token));
+}
+
+template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::ReleaseDeviceRequested(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_ReleaseDeviceRequested(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedMagneticStripeReader<D>::ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedMagneticStripeReader>(this, &ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader::remove_ReleaseDeviceRequested, ReleaseDeviceRequested(handler));
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::ReleaseDeviceRequested(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_ReleaseDeviceRequested(token));
+}
+
+template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::ErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_ErrorOccurred(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedMagneticStripeReader<D>::ErrorOccurred(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedMagneticStripeReader>(this, &ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader::remove_ErrorOccurred, ErrorOccurred(handler));
+}
+
+template <typename D> void impl_IClaimedMagneticStripeReader<D>::ErrorOccurred(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_ErrorOccurred(token));
+}
+
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> impl_IMagneticStripeReaderStatics<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> result;
@@ -8132,6 +9783,13 @@ template <typename D> hstring impl_IMagneticStripeReaderStatics<D>::GetDeviceSel
 {
     hstring value;
     check_hresult(WINRT_SHIM(IMagneticStripeReaderStatics)->abi_GetDeviceSelector(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IMagneticStripeReaderStatics2<D>::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMagneticStripeReaderStatics2)->abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, put_abi(value)));
     return value;
 }
 
@@ -8527,6 +10185,13 @@ template <typename D> hstring impl_IPosPrinterStatics<D>::GetDeviceSelector() co
 {
     hstring value;
     check_hresult(WINRT_SHIM(IPosPrinterStatics)->abi_GetDeviceSelector(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IPosPrinterStatics2<D>::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IPosPrinterStatics2)->abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, put_abi(value)));
     return value;
 }
 
@@ -8972,6 +10637,136 @@ template <typename D> Windows::Devices::PointOfService::JournalPrintJob impl_ICl
     return value;
 }
 
+template <typename D> hstring impl_IClaimedPosPrinter<D>::DeviceId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_DeviceId(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IClaimedPosPrinter<D>::IsEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_IsEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IClaimedPosPrinter<D>::CharacterSet(uint32_t value) const
+{
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->put_CharacterSet(value));
+}
+
+template <typename D> uint32_t impl_IClaimedPosPrinter<D>::CharacterSet() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_CharacterSet(&value));
+    return value;
+}
+
+template <typename D> bool impl_IClaimedPosPrinter<D>::IsCoverOpen() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_IsCoverOpen(&value));
+    return value;
+}
+
+template <typename D> void impl_IClaimedPosPrinter<D>::IsCharacterSetMappingEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->put_IsCharacterSetMappingEnabled(value));
+}
+
+template <typename D> bool impl_IClaimedPosPrinter<D>::IsCharacterSetMappingEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_IsCharacterSetMappingEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IClaimedPosPrinter<D>::MapMode(Windows::Devices::PointOfService::PosPrinterMapMode value) const
+{
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->put_MapMode(value));
+}
+
+template <typename D> Windows::Devices::PointOfService::PosPrinterMapMode impl_IClaimedPosPrinter<D>::MapMode() const
+{
+    Windows::Devices::PointOfService::PosPrinterMapMode value {};
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_MapMode(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::PointOfService::ClaimedReceiptPrinter impl_IClaimedPosPrinter<D>::Receipt() const
+{
+    Windows::Devices::PointOfService::ClaimedReceiptPrinter value { nullptr };
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_Receipt(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::PointOfService::ClaimedSlipPrinter impl_IClaimedPosPrinter<D>::Slip() const
+{
+    Windows::Devices::PointOfService::ClaimedSlipPrinter value { nullptr };
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_Slip(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::PointOfService::ClaimedJournalPrinter impl_IClaimedPosPrinter<D>::Journal() const
+{
+    Windows::Devices::PointOfService::ClaimedJournalPrinter value { nullptr };
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_Journal(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::EnableAsync() const
+{
+    Windows::Foundation::IAsyncOperation<bool> result;
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_EnableAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::DisableAsync() const
+{
+    Windows::Foundation::IAsyncOperation<bool> result;
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_DisableAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::RetainDeviceAsync() const
+{
+    Windows::Foundation::IAsyncOperation<bool> result;
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_RetainDeviceAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::ResetStatisticsAsync(iterable<hstring> statisticsCategories) const
+{
+    Windows::Foundation::IAsyncOperation<bool> result;
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_ResetStatisticsAsync(get_abi(statisticsCategories), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const
+{
+    Windows::Foundation::IAsyncOperation<bool> result;
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_UpdateStatisticsAsync(get_abi(statistics), put_abi(result)));
+    return result;
+}
+
+template <typename D> event_token impl_IClaimedPosPrinter<D>::ReleaseDeviceRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->add_ReleaseDeviceRequested(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedPosPrinter> impl_IClaimedPosPrinter<D>::ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedPosPrinter>(this, &ABI::Windows::Devices::PointOfService::IClaimedPosPrinter::remove_ReleaseDeviceRequested, ReleaseDeviceRequested(handler));
+}
+
+template <typename D> void impl_IClaimedPosPrinter<D>::ReleaseDeviceRequested(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->remove_ReleaseDeviceRequested(token));
+}
+
 template <typename D> Windows::Devices::PointOfService::CashDrawerStatus impl_ICashDrawerStatusUpdatedEventArgs<D>::Status() const
 {
     Windows::Devices::PointOfService::CashDrawerStatus value { nullptr };
@@ -9094,6 +10889,13 @@ template <typename D> hstring impl_ICashDrawerStatics<D>::GetDeviceSelector() co
 {
     hstring value;
     check_hresult(WINRT_SHIM(ICashDrawerStatics)->abi_GetDeviceSelector(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICashDrawerStatics2<D>::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICashDrawerStatics2)->abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, put_abi(value)));
     return value;
 }
 
@@ -9242,569 +11044,6 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ICashDrawe
     return result;
 }
 
-template <typename D> hstring impl_IClaimedBarcodeScanner<D>::DeviceId() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_DeviceId(put_abi(value)));
-    return value;
-}
-
-template <typename D> bool impl_IClaimedBarcodeScanner<D>::IsEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_IsEnabled(&value));
-    return value;
-}
-
-template <typename D> void impl_IClaimedBarcodeScanner<D>::IsDisabledOnDataReceived(bool value) const
-{
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->put_IsDisabledOnDataReceived(value));
-}
-
-template <typename D> bool impl_IClaimedBarcodeScanner<D>::IsDisabledOnDataReceived() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_IsDisabledOnDataReceived(&value));
-    return value;
-}
-
-template <typename D> void impl_IClaimedBarcodeScanner<D>::IsDecodeDataEnabled(bool value) const
-{
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->put_IsDecodeDataEnabled(value));
-}
-
-template <typename D> bool impl_IClaimedBarcodeScanner<D>::IsDecodeDataEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->get_IsDecodeDataEnabled(&value));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::EnableAsync() const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_EnableAsync(put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::DisableAsync() const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_DisableAsync(put_abi(result)));
-    return result;
-}
-
-template <typename D> void impl_IClaimedBarcodeScanner<D>::RetainDevice() const
-{
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_RetainDevice());
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::SetActiveSymbologiesAsync(iterable<uint32_t> symbologies) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_SetActiveSymbologiesAsync(get_abi(symbologies), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::ResetStatisticsAsync(iterable<hstring> statisticsCategories) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_ResetStatisticsAsync(get_abi(statisticsCategories), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_UpdateStatisticsAsync(get_abi(statistics), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner<D>::SetActiveProfileAsync(hstring_view profile) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->abi_SetActiveProfileAsync(get_abi(profile), put_abi(result)));
-    return result;
-}
-
-template <typename D> event_token impl_IClaimedBarcodeScanner<D>::DataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_DataReceived(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::DataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_DataReceived, DataReceived(handler));
-}
-
-template <typename D> void impl_IClaimedBarcodeScanner<D>::DataReceived(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_DataReceived(token));
-}
-
-template <typename D> event_token impl_IClaimedBarcodeScanner<D>::TriggerPressed(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_TriggerPressed(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::TriggerPressed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_TriggerPressed, TriggerPressed(handler));
-}
-
-template <typename D> void impl_IClaimedBarcodeScanner<D>::TriggerPressed(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_TriggerPressed(token));
-}
-
-template <typename D> event_token impl_IClaimedBarcodeScanner<D>::TriggerReleased(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_TriggerReleased(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::TriggerReleased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_TriggerReleased, TriggerReleased(handler));
-}
-
-template <typename D> void impl_IClaimedBarcodeScanner<D>::TriggerReleased(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_TriggerReleased(token));
-}
-
-template <typename D> event_token impl_IClaimedBarcodeScanner<D>::ReleaseDeviceRequested(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_ReleaseDeviceRequested(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_ReleaseDeviceRequested, ReleaseDeviceRequested(handler));
-}
-
-template <typename D> void impl_IClaimedBarcodeScanner<D>::ReleaseDeviceRequested(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_ReleaseDeviceRequested(token));
-}
-
-template <typename D> event_token impl_IClaimedBarcodeScanner<D>::ImagePreviewReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_ImagePreviewReceived(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::ImagePreviewReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_ImagePreviewReceived, ImagePreviewReceived(handler));
-}
-
-template <typename D> void impl_IClaimedBarcodeScanner<D>::ImagePreviewReceived(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_ImagePreviewReceived(token));
-}
-
-template <typename D> event_token impl_IClaimedBarcodeScanner<D>::ErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->add_ErrorOccurred(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedBarcodeScanner> impl_IClaimedBarcodeScanner<D>::ErrorOccurred(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedBarcodeScanner>(this, &ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner::remove_ErrorOccurred, ErrorOccurred(handler));
-}
-
-template <typename D> void impl_IClaimedBarcodeScanner<D>::ErrorOccurred(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner)->remove_ErrorOccurred(token));
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner1<D>::StartSoftwareTriggerAsync() const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner1)->abi_StartSoftwareTriggerAsync(put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedBarcodeScanner1<D>::StopSoftwareTriggerAsync() const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedBarcodeScanner1)->abi_StopSoftwareTriggerAsync(put_abi(result)));
-    return result;
-}
-
-template <typename D> hstring impl_IClaimedMagneticStripeReader<D>::DeviceId() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_DeviceId(put_abi(value)));
-    return value;
-}
-
-template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsEnabled(&value));
-    return value;
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::IsDisabledOnDataReceived(bool value) const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_IsDisabledOnDataReceived(value));
-}
-
-template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsDisabledOnDataReceived() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsDisabledOnDataReceived(&value));
-    return value;
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::IsDecodeDataEnabled(bool value) const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_IsDecodeDataEnabled(value));
-}
-
-template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsDecodeDataEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsDecodeDataEnabled(&value));
-    return value;
-}
-
-template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsDeviceAuthenticated() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsDeviceAuthenticated(&value));
-    return value;
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::DataEncryptionAlgorithm(uint32_t value) const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_DataEncryptionAlgorithm(value));
-}
-
-template <typename D> uint32_t impl_IClaimedMagneticStripeReader<D>::DataEncryptionAlgorithm() const
-{
-    uint32_t value {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_DataEncryptionAlgorithm(&value));
-    return value;
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::TracksToRead(Windows::Devices::PointOfService::MagneticStripeReaderTrackIds value) const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_TracksToRead(value));
-}
-
-template <typename D> Windows::Devices::PointOfService::MagneticStripeReaderTrackIds impl_IClaimedMagneticStripeReader<D>::TracksToRead() const
-{
-    Windows::Devices::PointOfService::MagneticStripeReaderTrackIds value {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_TracksToRead(&value));
-    return value;
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::IsTransmitSentinelsEnabled(bool value) const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->put_IsTransmitSentinelsEnabled(value));
-}
-
-template <typename D> bool impl_IClaimedMagneticStripeReader<D>::IsTransmitSentinelsEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->get_IsTransmitSentinelsEnabled(&value));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::EnableAsync() const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_EnableAsync(put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::DisableAsync() const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_DisableAsync(put_abi(result)));
-    return result;
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::RetainDevice() const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_RetainDevice());
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::SetErrorReportingType(Windows::Devices::PointOfService::MagneticStripeReaderErrorReportingType value) const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_SetErrorReportingType(value));
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IClaimedMagneticStripeReader<D>::RetrieveDeviceAuthenticationDataAsync() const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_RetrieveDeviceAuthenticationDataAsync(put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::AuthenticateDeviceAsync(array_view<const uint8_t> responseToken) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_AuthenticateDeviceAsync(responseToken.size(), get_abi(responseToken), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::DeAuthenticateDeviceAsync(array_view<const uint8_t> responseToken) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_DeAuthenticateDeviceAsync(responseToken.size(), get_abi(responseToken), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::UpdateKeyAsync(hstring_view key, hstring_view keyName) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_UpdateKeyAsync(get_abi(key), get_abi(keyName), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::ResetStatisticsAsync(iterable<hstring> statisticsCategories) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_ResetStatisticsAsync(get_abi(statisticsCategories), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IClaimedMagneticStripeReader<D>::UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->abi_UpdateStatisticsAsync(get_abi(statistics), put_abi(result)));
-    return result;
-}
-
-template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::BankCardDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_BankCardDataReceived(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedMagneticStripeReader<D>::BankCardDataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedMagneticStripeReader>(this, &ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader::remove_BankCardDataReceived, BankCardDataReceived(handler));
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::BankCardDataReceived(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_BankCardDataReceived(token));
-}
-
-template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::AamvaCardDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_AamvaCardDataReceived(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedMagneticStripeReader<D>::AamvaCardDataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedMagneticStripeReader>(this, &ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader::remove_AamvaCardDataReceived, AamvaCardDataReceived(handler));
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::AamvaCardDataReceived(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_AamvaCardDataReceived(token));
-}
-
-template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::VendorSpecificDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_VendorSpecificDataReceived(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedMagneticStripeReader<D>::VendorSpecificDataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedMagneticStripeReader>(this, &ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader::remove_VendorSpecificDataReceived, VendorSpecificDataReceived(handler));
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::VendorSpecificDataReceived(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_VendorSpecificDataReceived(token));
-}
-
-template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::ReleaseDeviceRequested(const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_ReleaseDeviceRequested(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedMagneticStripeReader<D>::ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedMagneticStripeReader>(this, &ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader::remove_ReleaseDeviceRequested, ReleaseDeviceRequested(handler));
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::ReleaseDeviceRequested(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_ReleaseDeviceRequested(token));
-}
-
-template <typename D> event_token impl_IClaimedMagneticStripeReader<D>::ErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->add_ErrorOccurred(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedMagneticStripeReader> impl_IClaimedMagneticStripeReader<D>::ErrorOccurred(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedMagneticStripeReader>(this, &ABI::Windows::Devices::PointOfService::IClaimedMagneticStripeReader::remove_ErrorOccurred, ErrorOccurred(handler));
-}
-
-template <typename D> void impl_IClaimedMagneticStripeReader<D>::ErrorOccurred(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedMagneticStripeReader)->remove_ErrorOccurred(token));
-}
-
-template <typename D> hstring impl_IClaimedPosPrinter<D>::DeviceId() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_DeviceId(put_abi(value)));
-    return value;
-}
-
-template <typename D> bool impl_IClaimedPosPrinter<D>::IsEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_IsEnabled(&value));
-    return value;
-}
-
-template <typename D> void impl_IClaimedPosPrinter<D>::CharacterSet(uint32_t value) const
-{
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->put_CharacterSet(value));
-}
-
-template <typename D> uint32_t impl_IClaimedPosPrinter<D>::CharacterSet() const
-{
-    uint32_t value {};
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_CharacterSet(&value));
-    return value;
-}
-
-template <typename D> bool impl_IClaimedPosPrinter<D>::IsCoverOpen() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_IsCoverOpen(&value));
-    return value;
-}
-
-template <typename D> void impl_IClaimedPosPrinter<D>::IsCharacterSetMappingEnabled(bool value) const
-{
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->put_IsCharacterSetMappingEnabled(value));
-}
-
-template <typename D> bool impl_IClaimedPosPrinter<D>::IsCharacterSetMappingEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_IsCharacterSetMappingEnabled(&value));
-    return value;
-}
-
-template <typename D> void impl_IClaimedPosPrinter<D>::MapMode(Windows::Devices::PointOfService::PosPrinterMapMode value) const
-{
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->put_MapMode(value));
-}
-
-template <typename D> Windows::Devices::PointOfService::PosPrinterMapMode impl_IClaimedPosPrinter<D>::MapMode() const
-{
-    Windows::Devices::PointOfService::PosPrinterMapMode value {};
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_MapMode(&value));
-    return value;
-}
-
-template <typename D> Windows::Devices::PointOfService::ClaimedReceiptPrinter impl_IClaimedPosPrinter<D>::Receipt() const
-{
-    Windows::Devices::PointOfService::ClaimedReceiptPrinter value { nullptr };
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_Receipt(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Devices::PointOfService::ClaimedSlipPrinter impl_IClaimedPosPrinter<D>::Slip() const
-{
-    Windows::Devices::PointOfService::ClaimedSlipPrinter value { nullptr };
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_Slip(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Devices::PointOfService::ClaimedJournalPrinter impl_IClaimedPosPrinter<D>::Journal() const
-{
-    Windows::Devices::PointOfService::ClaimedJournalPrinter value { nullptr };
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->get_Journal(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::EnableAsync() const
-{
-    Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_EnableAsync(put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::DisableAsync() const
-{
-    Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_DisableAsync(put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::RetainDeviceAsync() const
-{
-    Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_RetainDeviceAsync(put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::ResetStatisticsAsync(iterable<hstring> statisticsCategories) const
-{
-    Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_ResetStatisticsAsync(get_abi(statisticsCategories), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IClaimedPosPrinter<D>::UpdateStatisticsAsync(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> statistics) const
-{
-    Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->abi_UpdateStatisticsAsync(get_abi(statistics), put_abi(result)));
-    return result;
-}
-
-template <typename D> event_token impl_IClaimedPosPrinter<D>::ReleaseDeviceRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->add_ReleaseDeviceRequested(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IClaimedPosPrinter> impl_IClaimedPosPrinter<D>::ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, IClaimedPosPrinter>(this, &ABI::Windows::Devices::PointOfService::IClaimedPosPrinter::remove_ReleaseDeviceRequested, ReleaseDeviceRequested(handler));
-}
-
-template <typename D> void impl_IClaimedPosPrinter<D>::ReleaseDeviceRequested(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IClaimedPosPrinter)->remove_ReleaseDeviceRequested(token));
-}
-
 template <typename D> hstring impl_IClaimedCashDrawer<D>::DeviceId() const
 {
     hstring value;
@@ -9892,6 +11131,376 @@ template <typename D> void impl_IClaimedCashDrawer<D>::ReleaseDeviceRequested(ev
     check_hresult(WINRT_SHIM(IClaimedCashDrawer)->remove_ReleaseDeviceRequested(token));
 }
 
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> impl_ILineDisplayStatics<D>::FromIdAsync(hstring_view deviceId) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> operation;
+    check_hresult(WINRT_SHIM(ILineDisplayStatics)->abi_FromIdAsync(get_abi(deviceId), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> impl_ILineDisplayStatics<D>::GetDefaultAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> result;
+    check_hresult(WINRT_SHIM(ILineDisplayStatics)->abi_GetDefaultAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> hstring impl_ILineDisplayStatics<D>::GetDeviceSelector() const
+{
+    hstring result;
+    check_hresult(WINRT_SHIM(ILineDisplayStatics)->abi_GetDeviceSelector(put_abi(result)));
+    return result;
+}
+
+template <typename D> hstring impl_ILineDisplayStatics<D>::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ILineDisplayStatics)->abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> impl_IClaimedLineDisplayStatics<D>::FromIdAsync(hstring_view deviceId) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> operation;
+    check_hresult(WINRT_SHIM(IClaimedLineDisplayStatics)->abi_FromIdAsync(get_abi(deviceId), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> hstring impl_IClaimedLineDisplayStatics<D>::GetDeviceSelector() const
+{
+    hstring result;
+    check_hresult(WINRT_SHIM(IClaimedLineDisplayStatics)->abi_GetDeviceSelector(put_abi(result)));
+    return result;
+}
+
+template <typename D> hstring impl_IClaimedLineDisplayStatics<D>::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IClaimedLineDisplayStatics)->abi_GetDeviceSelectorWithConnectionTypes(connectionTypes, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Size impl_ILineDisplayWindow<D>::SizeInCharacters() const
+{
+    Windows::Foundation::Size value {};
+    check_hresult(WINRT_SHIM(ILineDisplayWindow)->get_SizeInCharacters(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::TimeSpan impl_ILineDisplayWindow<D>::InterCharacterWaitInterval() const
+{
+    Windows::Foundation::TimeSpan value {};
+    check_hresult(WINRT_SHIM(ILineDisplayWindow)->get_InterCharacterWaitInterval(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ILineDisplayWindow<D>::InterCharacterWaitInterval(const Windows::Foundation::TimeSpan & value) const
+{
+    check_hresult(WINRT_SHIM(ILineDisplayWindow)->put_InterCharacterWaitInterval(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILineDisplayWindow<D>::TryRefreshAsync() const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(ILineDisplayWindow)->abi_TryRefreshAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILineDisplayWindow<D>::TryDisplayTextAsync(hstring_view text, Windows::Devices::PointOfService::LineDisplayTextAttribute displayAttribute) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(ILineDisplayWindow)->abi_TryDisplayTextAsync(get_abi(text), displayAttribute, put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILineDisplayWindow<D>::TryDisplayTextAsync(hstring_view text, Windows::Devices::PointOfService::LineDisplayTextAttribute displayAttribute, const Windows::Foundation::Point & startPosition) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(ILineDisplayWindow)->abi_TryDisplayTextAtPositionAsync(get_abi(text), displayAttribute, get_abi(startPosition), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILineDisplayWindow<D>::TryDisplayTextAsync(hstring_view text) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(ILineDisplayWindow)->abi_TryDisplayTextNormalAsync(get_abi(text), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILineDisplayWindow<D>::TryScrollTextAsync(Windows::Devices::PointOfService::LineDisplayScrollDirection direction, uint32_t numberOfColumnsOrRows) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(ILineDisplayWindow)->abi_TryScrollTextAsync(direction, numberOfColumnsOrRows, put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILineDisplayWindow<D>::TryClearTextAsync() const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(ILineDisplayWindow)->abi_TryClearTextAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::IsStatisticsReportingSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_IsStatisticsReportingSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::IsStatisticsUpdatingSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_IsStatisticsUpdatingSupported(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::PointOfService::UnifiedPosPowerReportingType impl_ILineDisplayCapabilities<D>::PowerReportingType() const
+{
+    Windows::Devices::PointOfService::UnifiedPosPowerReportingType value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_PowerReportingType(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::CanChangeScreenSize() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_CanChangeScreenSize(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::CanDisplayBitmaps() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_CanDisplayBitmaps(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::CanReadCharacterAtCursor() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_CanReadCharacterAtCursor(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::CanMapCharacterSets() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_CanMapCharacterSets(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::CanDisplayCustomGlyphs() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_CanDisplayCustomGlyphs(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity impl_ILineDisplayCapabilities<D>::CanReverse() const
+{
+    Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_CanReverse(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity impl_ILineDisplayCapabilities<D>::CanBlink() const
+{
+    Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_CanBlink(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::CanChangeBlinkRate() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_CanChangeBlinkRate(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::IsBrightnessSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_IsBrightnessSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::IsCursorSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_IsCursorSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::IsHorizontalMarqueeSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_IsHorizontalMarqueeSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::IsVerticalMarqueeSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_IsVerticalMarqueeSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILineDisplayCapabilities<D>::IsInterCharacterWaitSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_IsInterCharacterWaitSupported(&value));
+    return value;
+}
+
+template <typename D> uint32_t impl_ILineDisplayCapabilities<D>::SupportedDescriptors() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_SupportedDescriptors(&value));
+    return value;
+}
+
+template <typename D> uint32_t impl_ILineDisplayCapabilities<D>::SupportedWindows() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(ILineDisplayCapabilities)->get_SupportedWindows(&value));
+    return value;
+}
+
+template <typename D> hstring impl_ILineDisplay<D>::DeviceId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ILineDisplay)->get_DeviceId(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::PointOfService::LineDisplayCapabilities impl_ILineDisplay<D>::Capabilities() const
+{
+    Windows::Devices::PointOfService::LineDisplayCapabilities value { nullptr };
+    check_hresult(WINRT_SHIM(ILineDisplay)->get_Capabilities(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ILineDisplay<D>::PhysicalDeviceName() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ILineDisplay)->get_PhysicalDeviceName(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ILineDisplay<D>::PhysicalDeviceDescription() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ILineDisplay)->get_PhysicalDeviceDescription(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ILineDisplay<D>::DeviceControlDescription() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ILineDisplay)->get_DeviceControlDescription(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ILineDisplay<D>::DeviceControlVersion() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ILineDisplay)->get_DeviceControlVersion(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ILineDisplay<D>::DeviceServiceVersion() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ILineDisplay)->get_DeviceServiceVersion(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> impl_ILineDisplay<D>::ClaimAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> result;
+    check_hresult(WINRT_SHIM(ILineDisplay)->abi_ClaimAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> hstring impl_IClaimedLineDisplay<D>::DeviceId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IClaimedLineDisplay)->get_DeviceId(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::PointOfService::LineDisplayCapabilities impl_IClaimedLineDisplay<D>::Capabilities() const
+{
+    Windows::Devices::PointOfService::LineDisplayCapabilities value { nullptr };
+    check_hresult(WINRT_SHIM(IClaimedLineDisplay)->get_Capabilities(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IClaimedLineDisplay<D>::PhysicalDeviceName() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IClaimedLineDisplay)->get_PhysicalDeviceName(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IClaimedLineDisplay<D>::PhysicalDeviceDescription() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IClaimedLineDisplay)->get_PhysicalDeviceDescription(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IClaimedLineDisplay<D>::DeviceControlDescription() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IClaimedLineDisplay)->get_DeviceControlDescription(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IClaimedLineDisplay<D>::DeviceControlVersion() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IClaimedLineDisplay)->get_DeviceControlVersion(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IClaimedLineDisplay<D>::DeviceServiceVersion() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IClaimedLineDisplay)->get_DeviceServiceVersion(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::PointOfService::LineDisplayWindow impl_IClaimedLineDisplay<D>::DefaultWindow() const
+{
+    Windows::Devices::PointOfService::LineDisplayWindow value { nullptr };
+    check_hresult(WINRT_SHIM(IClaimedLineDisplay)->get_DefaultWindow(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IClaimedLineDisplay<D>::RetainDevice() const
+{
+    check_hresult(WINRT_SHIM(IClaimedLineDisplay)->abi_RetainDevice());
+}
+
+template <typename D> event_token impl_IClaimedLineDisplay<D>::ReleaseDeviceRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedLineDisplay, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IClaimedLineDisplay)->add_ReleaseDeviceRequested(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IClaimedLineDisplay> impl_IClaimedLineDisplay<D>::ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedLineDisplay, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, IClaimedLineDisplay>(this, &ABI::Windows::Devices::PointOfService::IClaimedLineDisplay::remove_ReleaseDeviceRequested, ReleaseDeviceRequested(handler));
+}
+
+template <typename D> void impl_IClaimedLineDisplay<D>::ReleaseDeviceRequested(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IClaimedLineDisplay)->remove_ReleaseDeviceRequested(token));
+}
+
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> BarcodeScanner::GetDefaultAsync()
 {
     return get_activation_factory<BarcodeScanner, IBarcodeScannerStatics>().GetDefaultAsync();
@@ -9905,6 +11514,11 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::Ba
 inline hstring BarcodeScanner::GetDeviceSelector()
 {
     return get_activation_factory<BarcodeScanner, IBarcodeScannerStatics>().GetDeviceSelector();
+}
+
+inline hstring BarcodeScanner::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes)
+{
+    return get_activation_factory<BarcodeScanner, IBarcodeScannerStatics2>().GetDeviceSelector(connectionTypes);
 }
 
 inline uint32_t BarcodeSymbologies::Unknown()
@@ -10377,6 +11991,11 @@ inline hstring BarcodeSymbologies::GetName(uint32_t scanDataType)
     return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics>().GetName(scanDataType);
 }
 
+inline uint32_t BarcodeSymbologies::Gs1DWCode()
+{
+    return get_activation_factory<BarcodeSymbologies, IBarcodeSymbologiesStatics2>().Gs1DWCode();
+}
+
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> CashDrawer::GetDefaultAsync()
 {
     return get_activation_factory<CashDrawer, ICashDrawerStatics>().GetDefaultAsync();
@@ -10392,6 +12011,46 @@ inline hstring CashDrawer::GetDeviceSelector()
     return get_activation_factory<CashDrawer, ICashDrawerStatics>().GetDeviceSelector();
 }
 
+inline hstring CashDrawer::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes)
+{
+    return get_activation_factory<CashDrawer, ICashDrawerStatics2>().GetDeviceSelector(connectionTypes);
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> ClaimedLineDisplay::FromIdAsync(hstring_view deviceId)
+{
+    return get_activation_factory<ClaimedLineDisplay, IClaimedLineDisplayStatics>().FromIdAsync(deviceId);
+}
+
+inline hstring ClaimedLineDisplay::GetDeviceSelector()
+{
+    return get_activation_factory<ClaimedLineDisplay, IClaimedLineDisplayStatics>().GetDeviceSelector();
+}
+
+inline hstring ClaimedLineDisplay::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes)
+{
+    return get_activation_factory<ClaimedLineDisplay, IClaimedLineDisplayStatics>().GetDeviceSelector(connectionTypes);
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> LineDisplay::FromIdAsync(hstring_view deviceId)
+{
+    return get_activation_factory<LineDisplay, ILineDisplayStatics>().FromIdAsync(deviceId);
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> LineDisplay::GetDefaultAsync()
+{
+    return get_activation_factory<LineDisplay, ILineDisplayStatics>().GetDefaultAsync();
+}
+
+inline hstring LineDisplay::GetDeviceSelector()
+{
+    return get_activation_factory<LineDisplay, ILineDisplayStatics>().GetDeviceSelector();
+}
+
+inline hstring LineDisplay::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes)
+{
+    return get_activation_factory<LineDisplay, ILineDisplayStatics>().GetDeviceSelector(connectionTypes);
+}
+
 inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> MagneticStripeReader::GetDefaultAsync()
 {
     return get_activation_factory<MagneticStripeReader, IMagneticStripeReaderStatics>().GetDefaultAsync();
@@ -10405,6 +12064,11 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::Ma
 inline hstring MagneticStripeReader::GetDeviceSelector()
 {
     return get_activation_factory<MagneticStripeReader, IMagneticStripeReaderStatics>().GetDeviceSelector();
+}
+
+inline hstring MagneticStripeReader::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes)
+{
+    return get_activation_factory<MagneticStripeReader, IMagneticStripeReaderStatics2>().GetDeviceSelector(connectionTypes);
 }
 
 inline uint32_t MagneticStripeReaderCardTypes::Unknown()
@@ -10455,6 +12119,11 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::Po
 inline hstring PosPrinter::GetDeviceSelector()
 {
     return get_activation_factory<PosPrinter, IPosPrinterStatics>().GetDeviceSelector();
+}
+
+inline hstring PosPrinter::GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes)
+{
+    return get_activation_factory<PosPrinter, IPosPrinterStatics2>().GetDeviceSelector(connectionTypes);
 }
 
 inline uint32_t PosPrinterCharacterSetIds::Utf16LE()
@@ -10558,6 +12227,15 @@ struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScannerStatics
 };
 
 template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScannerStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScannerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeScannerStatusUpdatedEventArgs>
 {
     size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeScannerStatusUpdatedEventArgs & value) const noexcept
@@ -10570,6 +12248,24 @@ template<>
 struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeSymbologiesStatics>
 {
     size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeSymbologiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeSymbologiesStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeSymbologiesStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IBarcodeSymbologyAttributes>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IBarcodeSymbologyAttributes & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -10630,6 +12326,15 @@ struct std::hash<winrt::Windows::Devices::PointOfService::ICashDrawerStatics>
 };
 
 template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ICashDrawerStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ICashDrawerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Devices::PointOfService::ICashDrawerStatus>
 {
     size_t operator()(const winrt::Windows::Devices::PointOfService::ICashDrawerStatus & value) const noexcept
@@ -10666,6 +12371,15 @@ struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedBarcodeScanner
 };
 
 template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedBarcodeScanner2>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedBarcodeScanner2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedCashDrawer>
 {
     size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedCashDrawer & value) const noexcept
@@ -10678,6 +12392,24 @@ template<>
 struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedJournalPrinter>
 {
     size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedJournalPrinter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedLineDisplay>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedLineDisplay & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IClaimedLineDisplayStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IClaimedLineDisplayStatics & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -10750,6 +12482,42 @@ template<>
 struct std::hash<winrt::Windows::Devices::PointOfService::IJournalPrinterCapabilities>
 {
     size_t operator()(const winrt::Windows::Devices::PointOfService::IJournalPrinterCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ILineDisplay>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ILineDisplay & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ILineDisplayCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ILineDisplayCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ILineDisplayStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ILineDisplayStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ILineDisplayWindow>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ILineDisplayWindow & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -10837,6 +12605,15 @@ struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderS
 };
 
 template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Devices::PointOfService::IMagneticStripeReaderStatusUpdatedEventArgs>
 {
     size_t operator()(const winrt::Windows::Devices::PointOfService::IMagneticStripeReaderStatusUpdatedEventArgs & value) const noexcept
@@ -10912,6 +12689,15 @@ template<>
 struct std::hash<winrt::Windows::Devices::PointOfService::IPosPrinterStatics>
 {
     size_t operator()(const winrt::Windows::Devices::PointOfService::IPosPrinterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::IPosPrinterStatics2>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::IPosPrinterStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -11044,6 +12830,15 @@ struct std::hash<winrt::Windows::Devices::PointOfService::BarcodeScannerStatusUp
 };
 
 template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::BarcodeSymbologyAttributes>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::BarcodeSymbologyAttributes & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Devices::PointOfService::CashDrawer>
 {
     size_t operator()(const winrt::Windows::Devices::PointOfService::CashDrawer & value) const noexcept
@@ -11143,6 +12938,15 @@ struct std::hash<winrt::Windows::Devices::PointOfService::ClaimedJournalPrinter>
 };
 
 template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::ClaimedLineDisplay>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::ClaimedLineDisplay & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Devices::PointOfService::ClaimedMagneticStripeReader>
 {
     size_t operator()(const winrt::Windows::Devices::PointOfService::ClaimedMagneticStripeReader & value) const noexcept
@@ -11191,6 +12995,33 @@ template<>
 struct std::hash<winrt::Windows::Devices::PointOfService::JournalPrinterCapabilities>
 {
     size_t operator()(const winrt::Windows::Devices::PointOfService::JournalPrinterCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::LineDisplay>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::LineDisplay & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::LineDisplayCapabilities>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::LineDisplayCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::PointOfService::LineDisplayWindow>
+{
+    size_t operator()(const winrt::Windows::Devices::PointOfService::LineDisplayWindow & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

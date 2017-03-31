@@ -33,6 +33,13 @@ struct IAnalyticsVersionInfo :
     IAnalyticsVersionInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IEducationSettingsStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IEducationSettingsStatics>
+{
+    IEducationSettingsStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IHardwareIdentificationStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IHardwareIdentificationStatics>
@@ -59,6 +66,13 @@ struct ISharedModeSettingsStatics :
     impl::consume<ISharedModeSettingsStatics>
 {
     ISharedModeSettingsStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISharedModeSettingsStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISharedModeSettingsStatics2>
+{
+    ISharedModeSettingsStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISystemIdentificationInfo :

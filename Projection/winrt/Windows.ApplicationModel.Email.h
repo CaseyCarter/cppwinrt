@@ -4938,6 +4938,54 @@ struct produce<D, Windows::ApplicationModel::Email::IEmailMessage3> : produce_ba
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::Email::IEmailMessage4> : produce_base<D, Windows::ApplicationModel::Email::IEmailMessage4>
+{
+    HRESULT __stdcall get_ReplyTo(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ReplyTo());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SentRepresenting(impl::abi_arg_out<Windows::ApplicationModel::Email::IEmailRecipient> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SentRepresenting());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_SentRepresenting(impl::abi_arg_in<Windows::ApplicationModel::Email::IEmailRecipient> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SentRepresenting(*reinterpret_cast<const Windows::ApplicationModel::Email::EmailRecipient *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::Email::IEmailMessageBatch> : produce_base<D, Windows::ApplicationModel::Email::IEmailMessageBatch>
 {
     HRESULT __stdcall get_Messages(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage>> value) noexcept override
@@ -6274,6 +6322,25 @@ template <typename D> Windows::ApplicationModel::Email::EmailMessageSmimeKind im
 template <typename D> void impl_IEmailMessage3<D>::SmimeKind(Windows::ApplicationModel::Email::EmailMessageSmimeKind value) const
 {
     check_hresult(WINRT_SHIM(IEmailMessage3)->put_SmimeKind(value));
+}
+
+template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient> impl_IEmailMessage4<D>::ReplyTo() const
+{
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient> value;
+    check_hresult(WINRT_SHIM(IEmailMessage4)->get_ReplyTo(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::Email::EmailRecipient impl_IEmailMessage4<D>::SentRepresenting() const
+{
+    Windows::ApplicationModel::Email::EmailRecipient value { nullptr };
+    check_hresult(WINRT_SHIM(IEmailMessage4)->get_SentRepresenting(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IEmailMessage4<D>::SentRepresenting(const Windows::ApplicationModel::Email::EmailRecipient & value) const
+{
+    check_hresult(WINRT_SHIM(IEmailMessage4)->put_SentRepresenting(get_abi(value)));
 }
 
 template <typename D> hstring impl_IEmailAttachment<D>::FileName() const
@@ -7943,12 +8010,12 @@ inline EmailAttachment::EmailAttachment() :
     EmailAttachment(activate_instance<EmailAttachment>())
 {}
 
-inline EmailAttachment::EmailAttachment(hstring_view fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data) :
-    EmailAttachment(get_activation_factory<EmailAttachment, IEmailAttachmentFactory>().Create(fileName, data))
-{}
-
 inline EmailAttachment::EmailAttachment(hstring_view fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_view mimeType) :
     EmailAttachment(get_activation_factory<EmailAttachment, IEmailAttachmentFactory2>().Create(fileName, data, mimeType))
+{}
+
+inline EmailAttachment::EmailAttachment(hstring_view fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data) :
+    EmailAttachment(get_activation_factory<EmailAttachment, IEmailAttachmentFactory>().Create(fileName, data))
 {}
 
 inline EmailIrmInfo::EmailIrmInfo() :
@@ -8408,6 +8475,15 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMessage3>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMessage3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Email::IEmailMessage4>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Email::IEmailMessage4 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

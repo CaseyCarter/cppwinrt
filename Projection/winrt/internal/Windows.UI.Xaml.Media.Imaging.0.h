@@ -25,6 +25,11 @@ struct IRenderTargetBitmapStatics;
 struct ISoftwareBitmapSource;
 struct ISurfaceImageSource;
 struct ISurfaceImageSourceFactory;
+struct ISvgImageSource;
+struct ISvgImageSourceFactory;
+struct ISvgImageSourceFailedEventArgs;
+struct ISvgImageSourceOpenedEventArgs;
+struct ISvgImageSourceStatics;
 struct IVirtualSurfaceImageSource;
 struct IVirtualSurfaceImageSourceFactory;
 struct IWriteableBitmap;
@@ -38,6 +43,9 @@ struct DownloadProgressEventArgs;
 struct RenderTargetBitmap;
 struct SoftwareBitmapSource;
 struct SurfaceImageSource;
+struct SvgImageSource;
+struct SvgImageSourceFailedEventArgs;
+struct SvgImageSourceOpenedEventArgs;
 struct VirtualSurfaceImageSource;
 struct WriteableBitmap;
 struct XamlRenderingBackgroundTask;
@@ -63,6 +71,11 @@ struct IRenderTargetBitmapStatics;
 struct ISoftwareBitmapSource;
 struct ISurfaceImageSource;
 struct ISurfaceImageSourceFactory;
+struct ISvgImageSource;
+struct ISvgImageSourceFactory;
+struct ISvgImageSourceFailedEventArgs;
+struct ISvgImageSourceOpenedEventArgs;
+struct ISvgImageSourceStatics;
 struct IVirtualSurfaceImageSource;
 struct IVirtualSurfaceImageSourceFactory;
 struct IWriteableBitmap;
@@ -76,6 +89,9 @@ struct DownloadProgressEventArgs;
 struct RenderTargetBitmap;
 struct SoftwareBitmapSource;
 struct SurfaceImageSource;
+struct SvgImageSource;
+struct SvgImageSourceFailedEventArgs;
+struct SvgImageSourceOpenedEventArgs;
 struct VirtualSurfaceImageSource;
 struct WriteableBitmap;
 struct XamlRenderingBackgroundTask;
@@ -100,6 +116,11 @@ template <typename T> struct impl_IRenderTargetBitmapStatics;
 template <typename T> struct impl_ISoftwareBitmapSource;
 template <typename T> struct impl_ISurfaceImageSource;
 template <typename T> struct impl_ISurfaceImageSourceFactory;
+template <typename T> struct impl_ISvgImageSource;
+template <typename T> struct impl_ISvgImageSourceFactory;
+template <typename T> struct impl_ISvgImageSourceFailedEventArgs;
+template <typename T> struct impl_ISvgImageSourceOpenedEventArgs;
+template <typename T> struct impl_ISvgImageSourceStatics;
 template <typename T> struct impl_IVirtualSurfaceImageSource;
 template <typename T> struct impl_IVirtualSurfaceImageSourceFactory;
 template <typename T> struct impl_IWriteableBitmap;
@@ -125,6 +146,14 @@ enum class DecodePixelType
 {
     Physical = 0,
     Logical = 1,
+};
+
+enum class SvgImageSourceLoadStatus
+{
+    Success = 0,
+    NetworkError = 1,
+    InvalidFormat = 2,
+    Other = 3,
 };
 
 }

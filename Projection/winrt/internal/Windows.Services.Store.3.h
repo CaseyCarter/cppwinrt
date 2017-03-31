@@ -40,7 +40,8 @@ struct WINRT_EBO StoreConsumableResult :
 };
 
 struct WINRT_EBO StoreContext :
-    Windows::Services::Store::IStoreContext
+    Windows::Services::Store::IStoreContext,
+    impl::require<StoreContext, Windows::Services::Store::IStoreContext2>
 {
     StoreContext(std::nullptr_t) noexcept {}
     static Windows::Services::Store::StoreContext GetDefault();
@@ -128,7 +129,8 @@ struct StoreRequestHelper
 };
 
 struct WINRT_EBO StoreSendRequestResult :
-    Windows::Services::Store::IStoreSendRequestResult
+    Windows::Services::Store::IStoreSendRequestResult,
+    impl::require<StoreSendRequestResult, Windows::Services::Store::IStoreSendRequestResult2>
 {
     StoreSendRequestResult(std::nullptr_t) noexcept {}
 };

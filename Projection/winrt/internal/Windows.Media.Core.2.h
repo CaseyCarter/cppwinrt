@@ -12,6 +12,16 @@
 
 WINRT_EXPORT namespace winrt {
 
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#endif
+
+
+}
+
 namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_513ef3af_e784_5325_a91e_97c2b8111cf3
@@ -19,15 +29,55 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3")) __declspec(novtable) IReference<uint32_t> : impl_IReference<uint32_t> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 #define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __declspec(novtable) IReference<Windows::Foundation::TimeSpan> : impl_IReference<Windows::Foundation::TimeSpan> {};
+#endif
+
+#ifndef WINRT_GENERIC_548cefbd_bc8a_5fa0_8df2_957440fc8bf4
+#define WINRT_GENERIC_548cefbd_bc8a_5fa0_8df2_957440fc8bf4
+template <> struct __declspec(uuid("548cefbd-bc8a-5fa0-8df2-957440fc8bf4")) __declspec(novtable) IReference<int32_t> : impl_IReference<int32_t> {};
+#endif
+
+#ifndef WINRT_GENERIC_2f2d6c29_5473_5f3e_92e7_96572bb990e2
+#define WINRT_GENERIC_2f2d6c29_5473_5f3e_92e7_96572bb990e2
+template <> struct __declspec(uuid("2f2d6c29-5473-5f3e-92e7-96572bb990e2")) __declspec(novtable) IReference<double> : impl_IReference<double> {};
 #endif
 
 
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_284f0441_e96d_58ad_9188_7bf46514dfcc
+#define WINRT_GENERIC_284f0441_e96d_58ad_9188_7bf46514dfcc
+template <> struct __declspec(uuid("284f0441-e96d-58ad-9188-7bf46514dfcc")) __declspec(novtable) IVector<Windows::Media::Core::TimedTextLine> : impl_IVector<Windows::Media::Core::TimedTextLine> {};
+#endif
+
+#ifndef WINRT_GENERIC_8786f392_f369_57ea_a16e_75870246a8c9
+#define WINRT_GENERIC_8786f392_f369_57ea_a16e_75870246a8c9
+template <> struct __declspec(uuid("8786f392-f369-57ea-a16e-75870246a8c9")) __declspec(novtable) IVector<Windows::Media::Core::TimedTextSubformat> : impl_IVector<Windows::Media::Core::TimedTextSubformat> {};
+#endif
 
 #ifndef WINRT_GENERIC_0dfd8e09_73f2_505c_a796_a8f031b4ede0
 #define WINRT_GENERIC_0dfd8e09_73f2_505c_a796_a8f031b4ede0
@@ -219,30 +269,25 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("2274d3a6-1ba0-5230-bb86-de90058b6403")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceStateChangedEventArgs> : impl_TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceStateChangedEventArgs> {};
 #endif
 
+#ifndef WINRT_GENERIC_21eb6e39_728a_56a9_8dce_062ba4c81bf5
+#define WINRT_GENERIC_21eb6e39_728a_56a9_8dce_062ba4c81bf5
+template <> struct __declspec(uuid("21eb6e39-728a-56a9-8dce-062ba4c81bf5")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::Foundation::IInspectable> {};
+#endif
+
 
 }
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_284f0441_e96d_58ad_9188_7bf46514dfcc
-#define WINRT_GENERIC_284f0441_e96d_58ad_9188_7bf46514dfcc
-template <> struct __declspec(uuid("284f0441-e96d-58ad-9188-7bf46514dfcc")) __declspec(novtable) IVector<Windows::Media::Core::TimedTextLine> : impl_IVector<Windows::Media::Core::TimedTextLine> {};
-#endif
-
-#ifndef WINRT_GENERIC_8786f392_f369_57ea_a16e_75870246a8c9
-#define WINRT_GENERIC_8786f392_f369_57ea_a16e_75870246a8c9
-template <> struct __declspec(uuid("8786f392-f369-57ea-a16e-75870246a8c9")) __declspec(novtable) IVector<Windows::Media::Core::TimedTextSubformat> : impl_IVector<Windows::Media::Core::TimedTextSubformat> {};
+#ifndef WINRT_GENERIC_0313ae7a_2803_5d45_b5a1_a0fc5cd55e7c
+#define WINRT_GENERIC_0313ae7a_2803_5d45_b5a1_a0fc5cd55e7c
+template <> struct __declspec(uuid("0313ae7a-2803-5d45-b5a1-a0fc5cd55e7c")) __declspec(novtable) IVectorView<Windows::Media::Core::TimedMetadataTrack> : impl_IVectorView<Windows::Media::Core::TimedMetadataTrack> {};
 #endif
 
 
 }
 
 namespace ABI::Windows::Foundation {
-
-#ifndef WINRT_GENERIC_21eb6e39_728a_56a9_8dce_062ba4c81bf5
-#define WINRT_GENERIC_21eb6e39_728a_56a9_8dce_062ba4c81bf5
-template <> struct __declspec(uuid("21eb6e39-728a-56a9-8dce-062ba4c81bf5")) __declspec(novtable) TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::Foundation::IInspectable> {};
-#endif
 
 #ifndef WINRT_GENERIC_4aac9411_c355_5c95_8c78_5a0f5ca1a54d
 #define WINRT_GENERIC_4aac9411_c355_5c95_8c78_5a0f5ca1a54d
@@ -262,11 +307,6 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_996421a1_625c_5d92_ad68_8b3911d294b0
 #define WINRT_GENERIC_996421a1_625c_5d92_ad68_8b3911d294b0
 template <> struct __declspec(uuid("996421a1-625c-5d92-ad68-8b3911d294b0")) __declspec(novtable) IVectorView<Windows::Media::Core::IMediaCue> : impl_IVectorView<Windows::Media::Core::IMediaCue> {};
-#endif
-
-#ifndef WINRT_GENERIC_0313ae7a_2803_5d45_b5a1_a0fc5cd55e7c
-#define WINRT_GENERIC_0313ae7a_2803_5d45_b5a1_a0fc5cd55e7c
-template <> struct __declspec(uuid("0313ae7a-2803-5d45-b5a1-a0fc5cd55e7c")) __declspec(novtable) IVectorView<Windows::Media::Core::TimedMetadataTrack> : impl_IVectorView<Windows::Media::Core::TimedMetadataTrack> {};
 #endif
 
 
@@ -297,6 +337,46 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_150a4454_03bb_5dd1_8153_6a600e851f71
 #define WINRT_GENERIC_150a4454_03bb_5dd1_8153_6a600e851f71
 template <> struct __declspec(uuid("150a4454-03bb-5dd1-8153-6a600e851f71")) __declspec(novtable) IIterable<Windows::Media::Core::TimedMetadataTrack> : impl_IIterable<Windows::Media::Core::TimedMetadataTrack> {};
+#endif
+
+#ifndef WINRT_GENERIC_1fd24a93_c3da_513d_b216_0c4c7f412b88
+#define WINRT_GENERIC_1fd24a93_c3da_513d_b216_0c4c7f412b88
+template <> struct __declspec(uuid("1fd24a93-c3da-513d-b216-0c4c7f412b88")) __declspec(novtable) IVectorView<Windows::Media::Core::CodecInfo> : impl_IVectorView<Windows::Media::Core::CodecInfo> {};
+#endif
+
+#ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
+#define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
+template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_84c4fcac_86d8_5c74_a138_d9bf37b749ec
+#define WINRT_GENERIC_84c4fcac_86d8_5c74_a138_d9bf37b749ec
+template <> struct __declspec(uuid("84c4fcac-86d8-5c74-a138-d9bf37b749ec")) __declspec(novtable) IIterator<Windows::Media::Core::TimedTextLine> : impl_IIterator<Windows::Media::Core::TimedTextLine> {};
+#endif
+
+#ifndef WINRT_GENERIC_aec710ad_3bd8_5a59_ae77_e7fc46fb105b
+#define WINRT_GENERIC_aec710ad_3bd8_5a59_ae77_e7fc46fb105b
+template <> struct __declspec(uuid("aec710ad-3bd8-5a59-ae77-e7fc46fb105b")) __declspec(novtable) IIterable<Windows::Media::Core::TimedTextLine> : impl_IIterable<Windows::Media::Core::TimedTextLine> {};
+#endif
+
+#ifndef WINRT_GENERIC_9532b5cc_73fc_5e3a_8531_794c30d7a1ae
+#define WINRT_GENERIC_9532b5cc_73fc_5e3a_8531_794c30d7a1ae
+template <> struct __declspec(uuid("9532b5cc-73fc-5e3a-8531-794c30d7a1ae")) __declspec(novtable) IVectorView<Windows::Media::Core::TimedTextLine> : impl_IVectorView<Windows::Media::Core::TimedTextLine> {};
+#endif
+
+#ifndef WINRT_GENERIC_65105e50_865c_591d_9bf4_96237de2533f
+#define WINRT_GENERIC_65105e50_865c_591d_9bf4_96237de2533f
+template <> struct __declspec(uuid("65105e50-865c-591d-9bf4-96237de2533f")) __declspec(novtable) IIterator<Windows::Media::Core::TimedTextSubformat> : impl_IIterator<Windows::Media::Core::TimedTextSubformat> {};
+#endif
+
+#ifndef WINRT_GENERIC_cee3ae43_c93c_56f7_8c55_9024ded72c76
+#define WINRT_GENERIC_cee3ae43_c93c_56f7_8c55_9024ded72c76
+template <> struct __declspec(uuid("cee3ae43-c93c-56f7-8c55-9024ded72c76")) __declspec(novtable) IIterable<Windows::Media::Core::TimedTextSubformat> : impl_IIterable<Windows::Media::Core::TimedTextSubformat> {};
+#endif
+
+#ifndef WINRT_GENERIC_411a0e26_42e2_5e65_b9c4_980c4c3f31f7
+#define WINRT_GENERIC_411a0e26_42e2_5e65_b9c4_980c4c3f31f7
+template <> struct __declspec(uuid("411a0e26-42e2-5e65-b9c4-980c4c3f31f7")) __declspec(novtable) IVectorView<Windows::Media::Core::TimedTextSubformat> : impl_IVectorView<Windows::Media::Core::TimedTextSubformat> {};
 #endif
 
 #ifndef WINRT_GENERIC_a0cf090e_0340_531f_898b_c21eafb9f4ae
@@ -404,36 +484,6 @@ template <> struct __declspec(uuid("859354e5-077b-5d53-b297-1a07b97f09c3")) __de
 template <> struct __declspec(uuid("c46d9e34-ea11-5bb2-9744-1617417ef016")) __declspec(novtable) IVector<Windows::Media::Core::TimedMetadataTrack> : impl_IVector<Windows::Media::Core::TimedMetadataTrack> {};
 #endif
 
-#ifndef WINRT_GENERIC_84c4fcac_86d8_5c74_a138_d9bf37b749ec
-#define WINRT_GENERIC_84c4fcac_86d8_5c74_a138_d9bf37b749ec
-template <> struct __declspec(uuid("84c4fcac-86d8-5c74-a138-d9bf37b749ec")) __declspec(novtable) IIterator<Windows::Media::Core::TimedTextLine> : impl_IIterator<Windows::Media::Core::TimedTextLine> {};
-#endif
-
-#ifndef WINRT_GENERIC_aec710ad_3bd8_5a59_ae77_e7fc46fb105b
-#define WINRT_GENERIC_aec710ad_3bd8_5a59_ae77_e7fc46fb105b
-template <> struct __declspec(uuid("aec710ad-3bd8-5a59-ae77-e7fc46fb105b")) __declspec(novtable) IIterable<Windows::Media::Core::TimedTextLine> : impl_IIterable<Windows::Media::Core::TimedTextLine> {};
-#endif
-
-#ifndef WINRT_GENERIC_9532b5cc_73fc_5e3a_8531_794c30d7a1ae
-#define WINRT_GENERIC_9532b5cc_73fc_5e3a_8531_794c30d7a1ae
-template <> struct __declspec(uuid("9532b5cc-73fc-5e3a-8531-794c30d7a1ae")) __declspec(novtable) IVectorView<Windows::Media::Core::TimedTextLine> : impl_IVectorView<Windows::Media::Core::TimedTextLine> {};
-#endif
-
-#ifndef WINRT_GENERIC_65105e50_865c_591d_9bf4_96237de2533f
-#define WINRT_GENERIC_65105e50_865c_591d_9bf4_96237de2533f
-template <> struct __declspec(uuid("65105e50-865c-591d-9bf4-96237de2533f")) __declspec(novtable) IIterator<Windows::Media::Core::TimedTextSubformat> : impl_IIterator<Windows::Media::Core::TimedTextSubformat> {};
-#endif
-
-#ifndef WINRT_GENERIC_cee3ae43_c93c_56f7_8c55_9024ded72c76
-#define WINRT_GENERIC_cee3ae43_c93c_56f7_8c55_9024ded72c76
-template <> struct __declspec(uuid("cee3ae43-c93c-56f7-8c55-9024ded72c76")) __declspec(novtable) IIterable<Windows::Media::Core::TimedTextSubformat> : impl_IIterable<Windows::Media::Core::TimedTextSubformat> {};
-#endif
-
-#ifndef WINRT_GENERIC_411a0e26_42e2_5e65_b9c4_980c4c3f31f7
-#define WINRT_GENERIC_411a0e26_42e2_5e65_b9c4_980c4c3f31f7
-template <> struct __declspec(uuid("411a0e26-42e2-5e65-b9c4-980c4c3f31f7")) __declspec(novtable) IVectorView<Windows::Media::Core::TimedTextSubformat> : impl_IVectorView<Windows::Media::Core::TimedTextSubformat> {};
-#endif
-
 #ifndef WINRT_GENERIC_be136c59_0332_52e1_8ab9_7b32aaf2cd05
 #define WINRT_GENERIC_be136c59_0332_52e1_8ab9_7b32aaf2cd05
 template <> struct __declspec(uuid("be136c59-0332-52e1-8ab9-7b32aaf2cd05")) __declspec(novtable) IVector<Windows::Media::Core::IMediaCue> : impl_IVector<Windows::Media::Core::IMediaCue> {};
@@ -449,14 +499,54 @@ template <> struct __declspec(uuid("1a594dc8-a64b-55ed-9b34-7b274e1d5c70")) __de
 template <> struct __declspec(uuid("737a2098-41bf-5d9f-a1d2-2f171c578b3c")) __declspec(novtable) IIterable<Windows::Media::Core::IMediaCue> : impl_IIterable<Windows::Media::Core::IMediaCue> {};
 #endif
 
+#ifndef WINRT_GENERIC_0e311d5a_e743_503e_af98_594c55f6142a
+#define WINRT_GENERIC_0e311d5a_e743_503e_af98_594c55f6142a
+template <> struct __declspec(uuid("0e311d5a-e743-503e-af98-594c55f6142a")) __declspec(novtable) IVector<Windows::Media::Core::CodecInfo> : impl_IVector<Windows::Media::Core::CodecInfo> {};
+#endif
+
+#ifndef WINRT_GENERIC_d4141d5b_23f6_564b_b85c_5d4609f81863
+#define WINRT_GENERIC_d4141d5b_23f6_564b_b85c_5d4609f81863
+template <> struct __declspec(uuid("d4141d5b-23f6-564b-b85c-5d4609f81863")) __declspec(novtable) IIterator<Windows::Media::Core::CodecInfo> : impl_IIterator<Windows::Media::Core::CodecInfo> {};
+#endif
+
+#ifndef WINRT_GENERIC_552f7709_3bc3_59fb_93e6_1ebd28d3c008
+#define WINRT_GENERIC_552f7709_3bc3_59fb_93e6_1ebd28d3c008
+template <> struct __declspec(uuid("552f7709-3bc3-59fb-93e6-1ebd28d3c008")) __declspec(novtable) IIterable<Windows::Media::Core::CodecInfo> : impl_IIterable<Windows::Media::Core::CodecInfo> {};
+#endif
+
 #ifndef WINRT_GENERIC_f3b20528_e3b3_5331_b2d0_0c2623aee785
 #define WINRT_GENERIC_f3b20528_e3b3_5331_b2d0_0c2623aee785
 template <> struct __declspec(uuid("f3b20528-e3b3-5331-b2d0-0c2623aee785")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_c1c59efc_71df_5534_b03f_e18a8fbe78bb
+#define WINRT_GENERIC_c1c59efc_71df_5534_b03f_e18a8fbe78bb
+template <> struct __declspec(uuid("c1c59efc-71df-5534-b03f-e18a8fbe78bb")) __declspec(novtable) IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Core::CodecInfo>> : impl_IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Core::CodecInfo>> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
 #ifndef WINRT_GENERIC_4f25059a_0b9a_5f25_9b9e_4b9f1d22ff65
 #define WINRT_GENERIC_4f25059a_0b9a_5f25_9b9e_4b9f1d22ff65
 template <> struct __declspec(uuid("4f25059a-0b9a-5f25-9b9e-4b9f1d22ff65")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::Foundation::IInspectable>> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_58bf2d7c_ae9b_5f1b_8b66_5ff1bbb1029a
+#define WINRT_GENERIC_58bf2d7c_ae9b_5f1b_8b66_5ff1bbb1029a
+template <> struct __declspec(uuid("58bf2d7c-ae9b-5f1b-8b66-5ff1bbb1029a")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Foundation::Collections::IVectorView<Windows::Media::Core::CodecInfo>> : impl_AsyncOperationCompletedHandler<Windows::Foundation::Collections::IVectorView<Windows::Media::Core::CodecInfo>> {};
 #endif
 
 
@@ -508,12 +598,49 @@ struct IAudioTrackSupportInfo :
     IAudioTrackSupportInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IChapterCue :
+    Windows::Foundation::IInspectable,
+    impl::consume<IChapterCue>,
+    impl::require<IChapterCue, Windows::Media::Core::IMediaCue>
+{
+    IChapterCue(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICodecInfo :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICodecInfo>
+{
+    ICodecInfo(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICodecQuery :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICodecQuery>
+{
+    ICodecQuery(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICodecSubtypesStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICodecSubtypesStatics>
+{
+    ICodecSubtypesStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IDataCue :
     Windows::Foundation::IInspectable,
     impl::consume<IDataCue>,
     impl::require<IDataCue, Windows::Media::Core::IMediaCue>
 {
     IDataCue(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IDataCue2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IDataCue2>,
+    impl::require<IDataCue2, Windows::Media::Core::IDataCue, Windows::Media::Core::IMediaCue>
+{
+    IDataCue2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFaceDetectedEventArgs :
@@ -561,6 +688,14 @@ struct IHighDynamicRangeOutput :
     IHighDynamicRangeOutput(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IImageCue :
+    Windows::Foundation::IInspectable,
+    impl::consume<IImageCue>,
+    impl::require<IImageCue, Windows::Media::Core::IMediaCue>
+{
+    IImageCue(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMediaBinder :
     Windows::Foundation::IInspectable,
     impl::consume<IMediaBinder>
@@ -573,6 +708,13 @@ struct IMediaBindingEventArgs :
     impl::consume<IMediaBindingEventArgs>
 {
     IMediaBindingEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMediaBindingEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaBindingEventArgs2>
+{
+    IMediaBindingEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCue :
@@ -610,6 +752,14 @@ struct IMediaSource3 :
     impl::require<IMediaSource3, Windows::Foundation::IClosable, Windows::Media::Core::IMediaSource2, Windows::Media::Playback::IMediaPlaybackSource>
 {
     IMediaSource3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMediaSource4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaSource4>,
+    impl::require<IMediaSource4, Windows::Foundation::IClosable, Windows::Media::Core::IMediaSource2, Windows::Media::Core::IMediaSource3, Windows::Media::Playback::IMediaPlaybackSource>
+{
+    IMediaSource4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaSourceError :
@@ -689,6 +839,14 @@ struct IMediaStreamSource2 :
     impl::require<IMediaStreamSource2, Windows::Media::Core::IMediaSource, Windows::Media::Core::IMediaStreamSource>
 {
     IMediaStreamSource2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMediaStreamSource3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaStreamSource3>,
+    impl::require<IMediaStreamSource3, Windows::Media::Core::IMediaSource, Windows::Media::Core::IMediaStreamSource>
+{
+    IMediaStreamSource3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaStreamSourceClosedEventArgs :
@@ -848,6 +1006,14 @@ struct ISingleSelectMediaTrackList :
     ISingleSelectMediaTrackList(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ISpeechCue :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpeechCue>,
+    impl::require<ISpeechCue, Windows::Media::Core::IMediaCue>
+{
+    ISpeechCue(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ITimedMetadataTrack :
     Windows::Foundation::IInspectable,
     impl::consume<ITimedMetadataTrack>,
@@ -883,6 +1049,13 @@ struct ITimedMetadataTrackFailedEventArgs :
     impl::consume<ITimedMetadataTrackFailedEventArgs>
 {
     ITimedMetadataTrackFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ITimedMetadataTrackProvider :
+    Windows::Foundation::IInspectable,
+    impl::consume<ITimedMetadataTrackProvider>
+{
+    ITimedMetadataTrackProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedTextCue :
@@ -928,11 +1101,25 @@ struct ITimedTextSourceStatics :
     ITimedTextSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ITimedTextSourceStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ITimedTextSourceStatics2>
+{
+    ITimedTextSourceStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ITimedTextStyle :
     Windows::Foundation::IInspectable,
     impl::consume<ITimedTextStyle>
 {
     ITimedTextStyle(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ITimedTextStyle2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ITimedTextStyle2>
+{
+    ITimedTextStyle2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITimedTextSubformat :

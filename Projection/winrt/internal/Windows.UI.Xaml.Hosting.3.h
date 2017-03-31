@@ -17,6 +17,10 @@ struct WINRT_EBO ElementCompositionPreview :
     static Windows::UI::Composition::Visual GetElementChildVisual(const Windows::UI::Xaml::UIElement & element);
     static void SetElementChildVisual(const Windows::UI::Xaml::UIElement & element, const Windows::UI::Composition::Visual & visual);
     static Windows::UI::Composition::CompositionPropertySet GetScrollViewerManipulationPropertySet(const Windows::UI::Xaml::Controls::ScrollViewer & scrollViewer);
+    static void SetImplicitShowAnimation(const Windows::UI::Xaml::UIElement & element, const Windows::UI::Composition::ICompositionAnimationBase & animation);
+    static void SetImplicitHideAnimation(const Windows::UI::Xaml::UIElement & element, const Windows::UI::Composition::ICompositionAnimationBase & animation);
+    static void SetIsTranslationEnabled(const Windows::UI::Xaml::UIElement & element, bool value);
+    static Windows::UI::Composition::CompositionPropertySet GetPointerPositionPropertySet(const Windows::UI::Xaml::UIElement & targetElement);
 };
 
 }

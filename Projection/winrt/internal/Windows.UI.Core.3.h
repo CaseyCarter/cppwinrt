@@ -116,7 +116,7 @@ struct WINRT_EBO CoreIndependentInputSource :
 
 struct WINRT_EBO CoreWindow :
     Windows::UI::Core::ICoreWindow,
-    impl::require<CoreWindow, Windows::UI::Core::ICoreWindow2, Windows::UI::Core::ICoreWindow3, Windows::UI::Core::ICorePointerRedirector>
+    impl::require<CoreWindow, Windows::UI::Core::ICoreWindow2, Windows::UI::Core::ICoreWindow3, Windows::UI::Core::ICoreWindow4, Windows::UI::Core::ICorePointerRedirector>
 {
     CoreWindow(std::nullptr_t) noexcept {}
     using impl_ICoreWindow::PointerPosition;

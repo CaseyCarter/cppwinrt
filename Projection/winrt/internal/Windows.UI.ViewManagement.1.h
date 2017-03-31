@@ -72,9 +72,23 @@ struct __declspec(uuid("903c9ce5-793a-4fdf-a2b2-af1ac21e3108")) __declspec(novta
     virtual HRESULT __stdcall abi_SetPreferredMinSize(Windows::Foundation::Size minSize) = 0;
 };
 
+struct __declspec(uuid("15e5cbec-9e0f-46b5-bc3f-9bf653e74b5e")) __declspec(novtable) IApplicationView4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ViewMode(winrt::Windows::UI::ViewManagement::ApplicationViewMode * value) = 0;
+    virtual HRESULT __stdcall abi_IsViewModeSupported(winrt::Windows::UI::ViewManagement::ApplicationViewMode viewMode, bool * isViewModeSupported) = 0;
+    virtual HRESULT __stdcall abi_TryEnterViewModeAsync(winrt::Windows::UI::ViewManagement::ApplicationViewMode viewMode, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_TryEnterViewModeWithPreferencesAsync(winrt::Windows::UI::ViewManagement::ApplicationViewMode viewMode, Windows::UI::ViewManagement::IViewModePreferences * viewModePreferences, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_TryConsolidateAsync(Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+};
+
 struct __declspec(uuid("514449ec-7ea2-4de7-a6a6-7dfbaaebb6fb")) __declspec(novtable) IApplicationViewConsolidatedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsUserInitiated(bool * value) = 0;
+};
+
+struct __declspec(uuid("1c199ecc-6dc1-40f4-afee-07d9ea296430")) __declspec(novtable) IApplicationViewConsolidatedEventArgs2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsAppInitiated(bool * value) = 0;
 };
 
 struct __declspec(uuid("bc792ebd-64fe-4b65-a0c0-901ce2b68636")) __declspec(novtable) IApplicationViewFullscreenStatics : Windows::Foundation::IInspectable
@@ -133,6 +147,12 @@ struct __declspec(uuid("975f2f1e-e656-4c5e-a0a1-717c6ffa7d64")) __declspec(novta
 struct __declspec(uuid("60e995cd-4fc2-48c4-b8e3-395f2b9f0fc1")) __declspec(novtable) IApplicationViewSwitcherStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_DisableSystemViewActivationPolicy() = 0;
+};
+
+struct __declspec(uuid("92059420-80a7-486d-b21f-c7a4a242a383")) __declspec(novtable) IApplicationViewSwitcherStatics3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_TryShowAsViewModeAsync(int32_t viewId, winrt::Windows::UI::ViewManagement::ApplicationViewMode viewMode, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_TryShowAsViewModeWithPreferencesAsync(int32_t viewId, winrt::Windows::UI::ViewManagement::ApplicationViewMode viewMode, Windows::UI::ViewManagement::IViewModePreferences * viewModePreferences, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
 };
 
 struct __declspec(uuid("00924ac0-932b-4a6b-9c4b-dc38c82478ce")) __declspec(novtable) IApplicationViewTitleBar : Windows::Foundation::IInspectable
@@ -256,6 +276,13 @@ struct __declspec(uuid("03021be4-5254-4781-8194-5168f7d06d7b")) __declspec(novta
     virtual HRESULT __stdcall remove_ColorValuesChanged(event_token cookie) = 0;
 };
 
+struct __declspec(uuid("52bb3002-919b-4d6b-9b78-8dd66ff4b93b")) __declspec(novtable) IUISettings4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AdvancedEffectsEnabled(bool * value) = 0;
+    virtual HRESULT __stdcall add_AdvancedEffectsEnabledChanged(Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> * handler, event_token * cookie) = 0;
+    virtual HRESULT __stdcall remove_AdvancedEffectsEnabledChanged(event_token cookie) = 0;
+};
+
 struct __declspec(uuid("c63657f6-8850-470d-88f8-455e16ea2c26")) __declspec(novtable) IUIViewSettings : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UserInteractionMode(winrt::Windows::UI::ViewManagement::UserInteractionMode * value) = 0;
@@ -264,6 +291,19 @@ struct __declspec(uuid("c63657f6-8850-470d-88f8-455e16ea2c26")) __declspec(novta
 struct __declspec(uuid("595c97a5-f8f6-41cf-b0fb-aacdb81fd5f6")) __declspec(novtable) IUIViewSettingsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForCurrentView(Windows::UI::ViewManagement::IUIViewSettings ** current) = 0;
+};
+
+struct __declspec(uuid("878fcd3a-0b99-42c9-84d0-d3f1d403554b")) __declspec(novtable) IViewModePreferences : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ViewSizePreference(winrt::Windows::UI::ViewManagement::ViewSizePreference * value) = 0;
+    virtual HRESULT __stdcall put_ViewSizePreference(winrt::Windows::UI::ViewManagement::ViewSizePreference value) = 0;
+    virtual HRESULT __stdcall get_CustomSize(Windows::Foundation::Size * value) = 0;
+    virtual HRESULT __stdcall put_CustomSize(Windows::Foundation::Size value) = 0;
+};
+
+struct __declspec(uuid("69b60a65-5de5-40d8-8306-3833df7a2274")) __declspec(novtable) IViewModePreferencesStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateDefault(winrt::Windows::UI::ViewManagement::ApplicationViewMode mode, Windows::UI::ViewManagement::IViewModePreferences ** result) = 0;
 };
 
 }
@@ -281,6 +321,7 @@ template <> struct traits<Windows::UI::ViewManagement::InputPane> { using defaul
 template <> struct traits<Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> { using default_interface = Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs; };
 template <> struct traits<Windows::UI::ViewManagement::UISettings> { using default_interface = Windows::UI::ViewManagement::IUISettings; };
 template <> struct traits<Windows::UI::ViewManagement::UIViewSettings> { using default_interface = Windows::UI::ViewManagement::IUIViewSettings; };
+template <> struct traits<Windows::UI::ViewManagement::ViewModePreferences> { using default_interface = Windows::UI::ViewManagement::IViewModePreferences; };
 
 }
 
@@ -353,9 +394,25 @@ struct WINRT_EBO impl_IApplicationView3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IApplicationView4
+{
+    Windows::UI::ViewManagement::ApplicationViewMode ViewMode() const;
+    bool IsViewModeSupported(Windows::UI::ViewManagement::ApplicationViewMode viewMode) const;
+    Windows::Foundation::IAsyncOperation<bool> TryEnterViewModeAsync(Windows::UI::ViewManagement::ApplicationViewMode viewMode) const;
+    Windows::Foundation::IAsyncOperation<bool> TryEnterViewModeAsync(Windows::UI::ViewManagement::ApplicationViewMode viewMode, const Windows::UI::ViewManagement::ViewModePreferences & viewModePreferences) const;
+    Windows::Foundation::IAsyncOperation<bool> TryConsolidateAsync() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IApplicationViewConsolidatedEventArgs
 {
     bool IsUserInitiated() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewConsolidatedEventArgs2
+{
+    bool IsAppInitiated() const;
 };
 
 template <typename D>
@@ -423,6 +480,13 @@ template <typename D>
 struct WINRT_EBO impl_IApplicationViewSwitcherStatics2
 {
     void DisableSystemViewActivationPolicy() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewSwitcherStatics3
+{
+    Windows::Foundation::IAsyncOperation<bool> TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode) const;
+    Windows::Foundation::IAsyncOperation<bool> TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode, const Windows::UI::ViewManagement::ViewModePreferences & viewModePreferences) const;
 };
 
 template <typename D>
@@ -570,6 +634,16 @@ struct WINRT_EBO impl_IUISettings3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IUISettings4
+{
+    bool AdvancedEffectsEnabled() const;
+    event_token AdvancedEffectsEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> & handler) const;
+    using AdvancedEffectsEnabledChanged_revoker = event_revoker<IUISettings4>;
+    AdvancedEffectsEnabledChanged_revoker AdvancedEffectsEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> & handler) const;
+    void AdvancedEffectsEnabledChanged(event_token cookie) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IUIViewSettings
 {
     Windows::UI::ViewManagement::UserInteractionMode UserInteractionMode() const;
@@ -579,6 +653,21 @@ template <typename D>
 struct WINRT_EBO impl_IUIViewSettingsStatics
 {
     Windows::UI::ViewManagement::UIViewSettings GetForCurrentView() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IViewModePreferences
+{
+    Windows::UI::ViewManagement::ViewSizePreference ViewSizePreference() const;
+    void ViewSizePreference(Windows::UI::ViewManagement::ViewSizePreference value) const;
+    Windows::Foundation::Size CustomSize() const;
+    void CustomSize(const Windows::Foundation::Size & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IViewModePreferencesStatics
+{
+    Windows::UI::ViewManagement::ViewModePreferences CreateDefault(Windows::UI::ViewManagement::ApplicationViewMode mode) const;
 };
 
 }
@@ -615,10 +704,22 @@ template <> struct traits<Windows::UI::ViewManagement::IApplicationView3>
     template <typename D> using consume = Windows::UI::ViewManagement::impl_IApplicationView3<D>;
 };
 
+template <> struct traits<Windows::UI::ViewManagement::IApplicationView4>
+{
+    using abi = ABI::Windows::UI::ViewManagement::IApplicationView4;
+    template <typename D> using consume = Windows::UI::ViewManagement::impl_IApplicationView4<D>;
+};
+
 template <> struct traits<Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs>
 {
     using abi = ABI::Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs;
     template <typename D> using consume = Windows::UI::ViewManagement::impl_IApplicationViewConsolidatedEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs2>
+{
+    using abi = ABI::Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs2;
+    template <typename D> using consume = Windows::UI::ViewManagement::impl_IApplicationViewConsolidatedEventArgs2<D>;
 };
 
 template <> struct traits<Windows::UI::ViewManagement::IApplicationViewFullscreenStatics>
@@ -673,6 +774,12 @@ template <> struct traits<Windows::UI::ViewManagement::IApplicationViewSwitcherS
 {
     using abi = ABI::Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2;
     template <typename D> using consume = Windows::UI::ViewManagement::impl_IApplicationViewSwitcherStatics2<D>;
+};
+
+template <> struct traits<Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3>
+{
+    using abi = ABI::Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3;
+    template <typename D> using consume = Windows::UI::ViewManagement::impl_IApplicationViewSwitcherStatics3<D>;
 };
 
 template <> struct traits<Windows::UI::ViewManagement::IApplicationViewTitleBar>
@@ -753,6 +860,12 @@ template <> struct traits<Windows::UI::ViewManagement::IUISettings3>
     template <typename D> using consume = Windows::UI::ViewManagement::impl_IUISettings3<D>;
 };
 
+template <> struct traits<Windows::UI::ViewManagement::IUISettings4>
+{
+    using abi = ABI::Windows::UI::ViewManagement::IUISettings4;
+    template <typename D> using consume = Windows::UI::ViewManagement::impl_IUISettings4<D>;
+};
+
 template <> struct traits<Windows::UI::ViewManagement::IUIViewSettings>
 {
     using abi = ABI::Windows::UI::ViewManagement::IUIViewSettings;
@@ -763,6 +876,18 @@ template <> struct traits<Windows::UI::ViewManagement::IUIViewSettingsStatics>
 {
     using abi = ABI::Windows::UI::ViewManagement::IUIViewSettingsStatics;
     template <typename D> using consume = Windows::UI::ViewManagement::impl_IUIViewSettingsStatics<D>;
+};
+
+template <> struct traits<Windows::UI::ViewManagement::IViewModePreferences>
+{
+    using abi = ABI::Windows::UI::ViewManagement::IViewModePreferences;
+    template <typename D> using consume = Windows::UI::ViewManagement::impl_IViewModePreferences<D>;
+};
+
+template <> struct traits<Windows::UI::ViewManagement::IViewModePreferencesStatics>
+{
+    using abi = ABI::Windows::UI::ViewManagement::IViewModePreferencesStatics;
+    template <typename D> using consume = Windows::UI::ViewManagement::impl_IViewModePreferencesStatics<D>;
 };
 
 template <> struct traits<Windows::UI::ViewManagement::AccessibilitySettings>
@@ -839,6 +964,12 @@ template <> struct traits<Windows::UI::ViewManagement::UIViewSettings>
 {
     using abi = ABI::Windows::UI::ViewManagement::UIViewSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.UIViewSettings"; }
+};
+
+template <> struct traits<Windows::UI::ViewManagement::ViewModePreferences>
+{
+    using abi = ABI::Windows::UI::ViewManagement::ViewModePreferences;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ViewModePreferences"; }
 };
 
 }

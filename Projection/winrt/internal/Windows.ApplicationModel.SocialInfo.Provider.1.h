@@ -60,35 +60,35 @@ namespace Windows::ApplicationModel::SocialInfo::Provider {
 template <typename D>
 struct WINRT_EBO impl_ISocialDashboardItemUpdater
 {
-    hstring OwnerRemoteId() const;
-    Windows::ApplicationModel::SocialInfo::SocialFeedContent Content() const;
-    Windows::Foundation::DateTime Timestamp() const;
-    void Timestamp(const Windows::Foundation::DateTime & value) const;
-    void Thumbnail(const Windows::ApplicationModel::SocialInfo::SocialItemThumbnail & value) const;
-    Windows::ApplicationModel::SocialInfo::SocialItemThumbnail Thumbnail() const;
-    Windows::Foundation::IAsyncAction CommitAsync() const;
-    Windows::Foundation::Uri TargetUri() const;
-    void TargetUri(const Windows::Foundation::Uri & value) const;
+    [[deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] hstring OwnerRemoteId() const;
+    [[deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialFeedContent Content() const;
+    [[deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::DateTime Timestamp() const;
+    [[deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Timestamp(const Windows::Foundation::DateTime & value) const;
+    [[deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Thumbnail(const Windows::ApplicationModel::SocialInfo::SocialItemThumbnail & value) const;
+    [[deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialItemThumbnail Thumbnail() const;
+    [[deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncAction CommitAsync() const;
+    [[deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Uri TargetUri() const;
+    [[deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] void TargetUri(const Windows::Foundation::Uri & value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISocialFeedUpdater
 {
-    hstring OwnerRemoteId() const;
-    Windows::ApplicationModel::SocialInfo::SocialFeedKind Kind() const;
-    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialFeedItem> Items() const;
-    Windows::Foundation::IAsyncAction CommitAsync() const;
+    [[deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] hstring OwnerRemoteId() const;
+    [[deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::ApplicationModel::SocialInfo::SocialFeedKind Kind() const;
+    [[deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialFeedItem> Items() const;
+    [[deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncAction CommitAsync() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_ISocialInfoProviderManagerStatics
 {
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_view ownerRemoteId) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> CreateDashboardItemUpdaterAsync(hstring_view ownerRemoteId) const;
-    void UpdateBadgeCountValue(hstring_view itemRemoteId, int32_t newCount) const;
-    void ReportNewContentAvailable(hstring_view contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind) const;
-    Windows::Foundation::IAsyncOperation<bool> ProvisionAsync() const;
-    Windows::Foundation::IAsyncAction DeprovisionAsync() const;
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_view ownerRemoteId) const;
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> CreateDashboardItemUpdaterAsync(hstring_view ownerRemoteId) const;
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] void UpdateBadgeCountValue(hstring_view itemRemoteId, int32_t newCount) const;
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] void ReportNewContentAvailable(hstring_view contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind) const;
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<bool> ProvisionAsync() const;
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncAction DeprovisionAsync() const;
 };
 
 }

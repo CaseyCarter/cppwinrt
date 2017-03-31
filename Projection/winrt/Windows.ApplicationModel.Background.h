@@ -8,10 +8,10 @@ WINRT_WARNING_PUSH
 
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.Provider.3.h"
 #include "internal/Windows.System.3.h"
 #include "internal/Windows.Devices.Sms.3.h"
 #include "internal/Windows.Storage.3.h"
-#include "internal/Windows.Storage.Provider.3.h"
 #include "internal/Windows.Devices.Bluetooth.Background.3.h"
 #include "internal/Windows.Networking.Sockets.3.h"
 #include "internal/Windows.Networking.3.h"
@@ -502,6 +502,39 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder3
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder4> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskBuilder4>
+{
+    HRESULT __stdcall get_TaskGroup(impl::abi_arg_out<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TaskGroup());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_TaskGroup(impl::abi_arg_in<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().TaskGroup(*reinterpret_cast<const Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs>
 {
     HRESULT __stdcall get_InstanceId(GUID * value) noexcept override
@@ -876,6 +909,136 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistration3> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistration3>
+{
+    HRESULT __stdcall get_TaskGroup(impl::abi_arg_out<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TaskGroup());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>
+{
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Id());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Name());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_BackgroundActivated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().BackgroundActivated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_BackgroundActivated(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().BackgroundActivated(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AllTasks(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AllTasks());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>
+{
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> id, impl::abi_arg_out<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup> group) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *group = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&id)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *group = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateWithName(impl::abi_arg_in<hstring> id, impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup> group) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *group = detach_abi(this->shim().CreateWithName(*reinterpret_cast<const hstring *>(&id), *reinterpret_cast<const hstring *>(&name)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *group = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics>
 {
     HRESULT __stdcall get_AllTasks(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>> tasks) noexcept override
@@ -889,6 +1052,40 @@ struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistra
         catch (...)
         {
             *tasks = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2> : produce_base<D, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>
+{
+    HRESULT __stdcall get_AllTaskGroups(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AllTaskGroups());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetTaskGroup(impl::abi_arg_in<hstring> groupId, impl::abi_arg_out<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetTaskGroup(*reinterpret_cast<const hstring *>(&groupId)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
             return impl::to_hresult();
         }
     }
@@ -1381,6 +1578,24 @@ struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNoti
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2> : produce_base<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2>
+{
+    HRESULT __stdcall get_EventTriggeringMode(Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().EventTriggeringMode());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory> : produce_base<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory>
 {
     HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic> characteristic, impl::abi_arg_out<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger> gattCharacteristicNotificationTrigger) noexcept override
@@ -1394,6 +1609,140 @@ struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNoti
         catch (...)
         {
             *gattCharacteristicNotificationTrigger = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2> : produce_base<D, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2>
+{
+    HRESULT __stdcall abi_CreateWithEventTriggeringMode(impl::abi_arg_in<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic> characteristic, Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode, impl::abi_arg_out<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic *>(&characteristic), eventTriggeringMode));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Background::IGattServiceProviderTrigger> : produce_base<D, Windows::ApplicationModel::Background::IGattServiceProviderTrigger>
+{
+    HRESULT __stdcall get_TriggerId(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TriggerId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Service(impl::abi_arg_out<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalService> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Service());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_AdvertisingParameters(impl::abi_arg_in<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisingParameters> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AdvertisingParameters(*reinterpret_cast<const Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AdvertisingParameters(impl::abi_arg_out<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisingParameters> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AdvertisingParameters());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult> : produce_base<D, Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult>
+{
+    HRESULT __stdcall get_Trigger(impl::abi_arg_out<Windows::ApplicationModel::Background::IGattServiceProviderTrigger> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Trigger());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Error());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics> : produce_base<D, Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics>
+{
+    HRESULT __stdcall abi_CreateAsync(impl::abi_arg_in<hstring> triggerId, GUID serviceUuid, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().CreateAsync(*reinterpret_cast<const hstring *>(&triggerId), serviceUuid));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
             return impl::to_hresult();
         }
     }
@@ -2014,6 +2363,76 @@ template <typename D> Windows::Foundation::Collections::ValueSet impl_IApplicati
     return value;
 }
 
+template <typename D> Windows::ApplicationModel::Background::ContentPrefetchTrigger impl_IContentPrefetchTriggerFactory<D>::Create(const Windows::Foundation::TimeSpan & waitInterval) const
+{
+    Windows::ApplicationModel::Background::ContentPrefetchTrigger trigger { nullptr };
+    check_hresult(WINRT_SHIM(IContentPrefetchTriggerFactory)->abi_Create(get_abi(waitInterval), put_abi(trigger)));
+    return trigger;
+}
+
+template <typename D> Windows::ApplicationModel::Background::SystemTrigger impl_ISystemTriggerFactory<D>::Create(Windows::ApplicationModel::Background::SystemTriggerType triggerType, bool oneShot) const
+{
+    Windows::ApplicationModel::Background::SystemTrigger trigger { nullptr };
+    check_hresult(WINRT_SHIM(ISystemTriggerFactory)->abi_Create(triggerType, oneShot, put_abi(trigger)));
+    return trigger;
+}
+
+template <typename D> Windows::ApplicationModel::Background::SystemCondition impl_ISystemConditionFactory<D>::Create(Windows::ApplicationModel::Background::SystemConditionType conditionType) const
+{
+    Windows::ApplicationModel::Background::SystemCondition condition { nullptr };
+    check_hresult(WINRT_SHIM(ISystemConditionFactory)->abi_Create(conditionType, put_abi(condition)));
+    return condition;
+}
+
+template <typename D> Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger impl_INetworkOperatorNotificationTriggerFactory<D>::Create(hstring_view networkAccountId) const
+{
+    Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger trigger { nullptr };
+    check_hresult(WINRT_SHIM(INetworkOperatorNotificationTriggerFactory)->abi_Create(get_abi(networkAccountId), put_abi(trigger)));
+    return trigger;
+}
+
+template <typename D> Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger impl_IDeviceManufacturerNotificationTriggerFactory<D>::Create(hstring_view triggerQualifier, bool oneShot) const
+{
+    Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger trigger { nullptr };
+    check_hresult(WINRT_SHIM(IDeviceManufacturerNotificationTriggerFactory)->abi_Create(get_abi(triggerQualifier), oneShot, put_abi(trigger)));
+    return trigger;
+}
+
+template <typename D> Windows::Storage::Provider::CachedFileTarget impl_ICachedFileUpdaterTriggerDetails<D>::UpdateTarget() const
+{
+    Windows::Storage::Provider::CachedFileTarget value {};
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterTriggerDetails)->get_UpdateTarget(&value));
+    return value;
+}
+
+template <typename D> Windows::Storage::Provider::FileUpdateRequest impl_ICachedFileUpdaterTriggerDetails<D>::UpdateRequest() const
+{
+    Windows::Storage::Provider::FileUpdateRequest value { nullptr };
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterTriggerDetails)->get_UpdateRequest(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_ICachedFileUpdaterTriggerDetails<D>::CanRequestUserInput() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ICachedFileUpdaterTriggerDetails)->get_CanRequestUserInput(&value));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::Background::TimeTrigger impl_ITimeTriggerFactory<D>::Create(uint32_t freshnessTime, bool oneShot) const
+{
+    Windows::ApplicationModel::Background::TimeTrigger trigger { nullptr };
+    check_hresult(WINRT_SHIM(ITimeTriggerFactory)->abi_Create(freshnessTime, oneShot, put_abi(trigger)));
+    return trigger;
+}
+
+template <typename D> Windows::ApplicationModel::Background::MaintenanceTrigger impl_IMaintenanceTriggerFactory<D>::Create(uint32_t freshnessTime, bool oneShot) const
+{
+    Windows::ApplicationModel::Background::MaintenanceTrigger trigger { nullptr };
+    check_hresult(WINRT_SHIM(IMaintenanceTriggerFactory)->abi_Create(freshnessTime, oneShot, put_abi(trigger)));
+    return trigger;
+}
+
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> impl_IBackgroundExecutionManagerStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> operation;
@@ -2235,11 +2654,102 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Appli
     return result;
 }
 
+template <typename D> Windows::Foundation::TimeSpan impl_IContentPrefetchTrigger<D>::WaitInterval() const
+{
+    Windows::Foundation::TimeSpan waitInterval {};
+    check_hresult(WINRT_SHIM(IContentPrefetchTrigger)->get_WaitInterval(put_abi(waitInterval)));
+    return waitInterval;
+}
+
+template <typename D> bool impl_ISystemTrigger<D>::OneShot() const
+{
+    bool oneShot {};
+    check_hresult(WINRT_SHIM(ISystemTrigger)->get_OneShot(&oneShot));
+    return oneShot;
+}
+
+template <typename D> Windows::ApplicationModel::Background::SystemTriggerType impl_ISystemTrigger<D>::TriggerType() const
+{
+    Windows::ApplicationModel::Background::SystemTriggerType triggerType {};
+    check_hresult(WINRT_SHIM(ISystemTrigger)->get_TriggerType(&triggerType));
+    return triggerType;
+}
+
+template <typename D> hstring impl_INetworkOperatorNotificationTrigger<D>::NetworkAccountId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(INetworkOperatorNotificationTrigger)->get_NetworkAccountId(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IDeviceManufacturerNotificationTrigger<D>::TriggerQualifier() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IDeviceManufacturerNotificationTrigger)->get_TriggerQualifier(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IDeviceManufacturerNotificationTrigger<D>::OneShot() const
+{
+    bool oneShot {};
+    check_hresult(WINRT_SHIM(IDeviceManufacturerNotificationTrigger)->get_OneShot(&oneShot));
+    return oneShot;
+}
+
+template <typename D> uint32_t impl_ITimeTrigger<D>::FreshnessTime() const
+{
+    uint32_t freshnessTime {};
+    check_hresult(WINRT_SHIM(ITimeTrigger)->get_FreshnessTime(&freshnessTime));
+    return freshnessTime;
+}
+
+template <typename D> bool impl_ITimeTrigger<D>::OneShot() const
+{
+    bool oneShot {};
+    check_hresult(WINRT_SHIM(ITimeTrigger)->get_OneShot(&oneShot));
+    return oneShot;
+}
+
+template <typename D> uint32_t impl_IMaintenanceTrigger<D>::FreshnessTime() const
+{
+    uint32_t freshnessTime {};
+    check_hresult(WINRT_SHIM(IMaintenanceTrigger)->get_FreshnessTime(&freshnessTime));
+    return freshnessTime;
+}
+
+template <typename D> bool impl_IMaintenanceTrigger<D>::OneShot() const
+{
+    bool oneShot {};
+    check_hresult(WINRT_SHIM(IMaintenanceTrigger)->get_OneShot(&oneShot));
+    return oneShot;
+}
+
+template <typename D> Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup impl_IBackgroundTaskRegistration3<D>::TaskGroup() const
+{
+    Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup value { nullptr };
+    check_hresult(WINRT_SHIM(IBackgroundTaskRegistration3)->get_TaskGroup(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> impl_IBackgroundTaskRegistrationStatics<D>::AllTasks() const
 {
     Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> tasks;
     check_hresult(WINRT_SHIM(IBackgroundTaskRegistrationStatics)->get_AllTasks(put_abi(tasks)));
     return tasks;
+}
+
+template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> impl_IBackgroundTaskRegistrationStatics2<D>::AllTaskGroups() const
+{
+    Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> value;
+    check_hresult(WINRT_SHIM(IBackgroundTaskRegistrationStatics2)->get_AllTaskGroups(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup impl_IBackgroundTaskRegistrationStatics2<D>::GetTaskGroup(hstring_view groupId) const
+{
+    Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup value { nullptr };
+    check_hresult(WINRT_SHIM(IBackgroundTaskRegistrationStatics2)->abi_GetTaskGroup(get_abi(groupId), put_abi(value)));
+    return value;
 }
 
 template <typename D> void impl_IBackgroundTaskBuilder<D>::TaskEntryPoint(hstring_view value) const
@@ -2283,6 +2793,13 @@ template <typename D> Windows::ApplicationModel::Background::BackgroundTaskRegis
     return task;
 }
 
+template <typename D> Windows::ApplicationModel::Background::SystemConditionType impl_ISystemCondition<D>::ConditionType() const
+{
+    Windows::ApplicationModel::Background::SystemConditionType conditionType {};
+    check_hresult(WINRT_SHIM(ISystemCondition)->get_ConditionType(&conditionType));
+    return conditionType;
+}
+
 template <typename D> void impl_IBackgroundTaskBuilder2<D>::CancelOnConditionLoss(bool value) const
 {
     check_hresult(WINRT_SHIM(IBackgroundTaskBuilder2)->put_CancelOnConditionLoss(value));
@@ -2305,6 +2822,18 @@ template <typename D> bool impl_IBackgroundTaskBuilder3<D>::IsNetworkRequested()
     bool value {};
     check_hresult(WINRT_SHIM(IBackgroundTaskBuilder3)->get_IsNetworkRequested(&value));
     return value;
+}
+
+template <typename D> Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup impl_IBackgroundTaskBuilder4<D>::TaskGroup() const
+{
+    Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup value { nullptr };
+    check_hresult(WINRT_SHIM(IBackgroundTaskBuilder4)->get_TaskGroup(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IBackgroundTaskBuilder4<D>::TaskGroup(const Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup & value) const
+{
+    check_hresult(WINRT_SHIM(IBackgroundTaskBuilder4)->put_TaskGroup(get_abi(value)));
 }
 
 template <typename D> GUID impl_IBackgroundTaskCompletedEventArgs<D>::InstanceId() const
@@ -2333,18 +2862,56 @@ template <typename D> uint32_t impl_IBackgroundTaskProgressEventArgs<D>::Progres
     return value;
 }
 
-template <typename D> Windows::Foundation::TimeSpan impl_IContentPrefetchTrigger<D>::WaitInterval() const
+template <typename D> hstring impl_IBackgroundTaskRegistrationGroup<D>::Id() const
 {
-    Windows::Foundation::TimeSpan waitInterval {};
-    check_hresult(WINRT_SHIM(IContentPrefetchTrigger)->get_WaitInterval(put_abi(waitInterval)));
-    return waitInterval;
+    hstring value;
+    check_hresult(WINRT_SHIM(IBackgroundTaskRegistrationGroup)->get_Id(put_abi(value)));
+    return value;
 }
 
-template <typename D> Windows::ApplicationModel::Background::ContentPrefetchTrigger impl_IContentPrefetchTriggerFactory<D>::Create(const Windows::Foundation::TimeSpan & waitInterval) const
+template <typename D> hstring impl_IBackgroundTaskRegistrationGroup<D>::Name() const
 {
-    Windows::ApplicationModel::Background::ContentPrefetchTrigger trigger { nullptr };
-    check_hresult(WINRT_SHIM(IContentPrefetchTriggerFactory)->abi_Create(get_abi(waitInterval), put_abi(trigger)));
-    return trigger;
+    hstring value;
+    check_hresult(WINRT_SHIM(IBackgroundTaskRegistrationGroup)->get_Name(put_abi(value)));
+    return value;
+}
+
+template <typename D> event_token impl_IBackgroundTaskRegistrationGroup<D>::BackgroundActivated(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IBackgroundTaskRegistrationGroup)->add_BackgroundActivated(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IBackgroundTaskRegistrationGroup> impl_IBackgroundTaskRegistrationGroup<D>::BackgroundActivated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IBackgroundTaskRegistrationGroup>(this, &ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup::remove_BackgroundActivated, BackgroundActivated(handler));
+}
+
+template <typename D> void impl_IBackgroundTaskRegistrationGroup<D>::BackgroundActivated(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IBackgroundTaskRegistrationGroup)->remove_BackgroundActivated(token));
+}
+
+template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> impl_IBackgroundTaskRegistrationGroup<D>::AllTasks() const
+{
+    Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> value;
+    check_hresult(WINRT_SHIM(IBackgroundTaskRegistrationGroup)->get_AllTasks(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup impl_IBackgroundTaskRegistrationGroupFactory<D>::Create(hstring_view id) const
+{
+    Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup group { nullptr };
+    check_hresult(WINRT_SHIM(IBackgroundTaskRegistrationGroupFactory)->abi_Create(get_abi(id), put_abi(group)));
+    return group;
+}
+
+template <typename D> Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup impl_IBackgroundTaskRegistrationGroupFactory<D>::CreateWithName(hstring_view id, hstring_view name) const
+{
+    Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup group { nullptr };
+    check_hresult(WINRT_SHIM(IBackgroundTaskRegistrationGroupFactory)->abi_CreateWithName(get_abi(id), get_abi(name), put_abi(group)));
+    return group;
 }
 
 template <typename D> Windows::ApplicationModel::Background::SmsMessageReceivedTrigger impl_ISmsMessageReceivedTriggerFactory<D>::Create(const Windows::Devices::Sms::SmsFilterRules & filterRules) const
@@ -2366,139 +2933,6 @@ template <typename D> Windows::ApplicationModel::Background::StorageLibraryConte
     Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger result { nullptr };
     check_hresult(WINRT_SHIM(IStorageLibraryContentChangedTriggerStatics)->abi_CreateFromLibraries(get_abi(storageLibraries), put_abi(result)));
     return result;
-}
-
-template <typename D> bool impl_ISystemTrigger<D>::OneShot() const
-{
-    bool oneShot {};
-    check_hresult(WINRT_SHIM(ISystemTrigger)->get_OneShot(&oneShot));
-    return oneShot;
-}
-
-template <typename D> Windows::ApplicationModel::Background::SystemTriggerType impl_ISystemTrigger<D>::TriggerType() const
-{
-    Windows::ApplicationModel::Background::SystemTriggerType triggerType {};
-    check_hresult(WINRT_SHIM(ISystemTrigger)->get_TriggerType(&triggerType));
-    return triggerType;
-}
-
-template <typename D> Windows::ApplicationModel::Background::SystemTrigger impl_ISystemTriggerFactory<D>::Create(Windows::ApplicationModel::Background::SystemTriggerType triggerType, bool oneShot) const
-{
-    Windows::ApplicationModel::Background::SystemTrigger trigger { nullptr };
-    check_hresult(WINRT_SHIM(ISystemTriggerFactory)->abi_Create(triggerType, oneShot, put_abi(trigger)));
-    return trigger;
-}
-
-template <typename D> Windows::ApplicationModel::Background::SystemConditionType impl_ISystemCondition<D>::ConditionType() const
-{
-    Windows::ApplicationModel::Background::SystemConditionType conditionType {};
-    check_hresult(WINRT_SHIM(ISystemCondition)->get_ConditionType(&conditionType));
-    return conditionType;
-}
-
-template <typename D> Windows::ApplicationModel::Background::SystemCondition impl_ISystemConditionFactory<D>::Create(Windows::ApplicationModel::Background::SystemConditionType conditionType) const
-{
-    Windows::ApplicationModel::Background::SystemCondition condition { nullptr };
-    check_hresult(WINRT_SHIM(ISystemConditionFactory)->abi_Create(conditionType, put_abi(condition)));
-    return condition;
-}
-
-template <typename D> hstring impl_INetworkOperatorNotificationTrigger<D>::NetworkAccountId() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(INetworkOperatorNotificationTrigger)->get_NetworkAccountId(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger impl_INetworkOperatorNotificationTriggerFactory<D>::Create(hstring_view networkAccountId) const
-{
-    Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger trigger { nullptr };
-    check_hresult(WINRT_SHIM(INetworkOperatorNotificationTriggerFactory)->abi_Create(get_abi(networkAccountId), put_abi(trigger)));
-    return trigger;
-}
-
-template <typename D> hstring impl_IDeviceManufacturerNotificationTrigger<D>::TriggerQualifier() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IDeviceManufacturerNotificationTrigger)->get_TriggerQualifier(put_abi(value)));
-    return value;
-}
-
-template <typename D> bool impl_IDeviceManufacturerNotificationTrigger<D>::OneShot() const
-{
-    bool oneShot {};
-    check_hresult(WINRT_SHIM(IDeviceManufacturerNotificationTrigger)->get_OneShot(&oneShot));
-    return oneShot;
-}
-
-template <typename D> Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger impl_IDeviceManufacturerNotificationTriggerFactory<D>::Create(hstring_view triggerQualifier, bool oneShot) const
-{
-    Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger trigger { nullptr };
-    check_hresult(WINRT_SHIM(IDeviceManufacturerNotificationTriggerFactory)->abi_Create(get_abi(triggerQualifier), oneShot, put_abi(trigger)));
-    return trigger;
-}
-
-template <typename D> Windows::Storage::Provider::CachedFileTarget impl_ICachedFileUpdaterTriggerDetails<D>::UpdateTarget() const
-{
-    Windows::Storage::Provider::CachedFileTarget value {};
-    check_hresult(WINRT_SHIM(ICachedFileUpdaterTriggerDetails)->get_UpdateTarget(&value));
-    return value;
-}
-
-template <typename D> Windows::Storage::Provider::FileUpdateRequest impl_ICachedFileUpdaterTriggerDetails<D>::UpdateRequest() const
-{
-    Windows::Storage::Provider::FileUpdateRequest value { nullptr };
-    check_hresult(WINRT_SHIM(ICachedFileUpdaterTriggerDetails)->get_UpdateRequest(put_abi(value)));
-    return value;
-}
-
-template <typename D> bool impl_ICachedFileUpdaterTriggerDetails<D>::CanRequestUserInput() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(ICachedFileUpdaterTriggerDetails)->get_CanRequestUserInput(&value));
-    return value;
-}
-
-template <typename D> uint32_t impl_ITimeTrigger<D>::FreshnessTime() const
-{
-    uint32_t freshnessTime {};
-    check_hresult(WINRT_SHIM(ITimeTrigger)->get_FreshnessTime(&freshnessTime));
-    return freshnessTime;
-}
-
-template <typename D> bool impl_ITimeTrigger<D>::OneShot() const
-{
-    bool oneShot {};
-    check_hresult(WINRT_SHIM(ITimeTrigger)->get_OneShot(&oneShot));
-    return oneShot;
-}
-
-template <typename D> Windows::ApplicationModel::Background::TimeTrigger impl_ITimeTriggerFactory<D>::Create(uint32_t freshnessTime, bool oneShot) const
-{
-    Windows::ApplicationModel::Background::TimeTrigger trigger { nullptr };
-    check_hresult(WINRT_SHIM(ITimeTriggerFactory)->abi_Create(freshnessTime, oneShot, put_abi(trigger)));
-    return trigger;
-}
-
-template <typename D> uint32_t impl_IMaintenanceTrigger<D>::FreshnessTime() const
-{
-    uint32_t freshnessTime {};
-    check_hresult(WINRT_SHIM(IMaintenanceTrigger)->get_FreshnessTime(&freshnessTime));
-    return freshnessTime;
-}
-
-template <typename D> bool impl_IMaintenanceTrigger<D>::OneShot() const
-{
-    bool oneShot {};
-    check_hresult(WINRT_SHIM(IMaintenanceTrigger)->get_OneShot(&oneShot));
-    return oneShot;
-}
-
-template <typename D> Windows::ApplicationModel::Background::MaintenanceTrigger impl_IMaintenanceTriggerFactory<D>::Create(uint32_t freshnessTime, bool oneShot) const
-{
-    Windows::ApplicationModel::Background::MaintenanceTrigger trigger { nullptr };
-    check_hresult(WINRT_SHIM(IMaintenanceTriggerFactory)->abi_Create(freshnessTime, oneShot, put_abi(trigger)));
-    return trigger;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceUseTrigger<D>::RequestAsync(hstring_view deviceId) const
@@ -2612,6 +3046,20 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
     return deviceChangeTrigger;
 }
 
+template <typename D> Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger impl_IGattCharacteristicNotificationTriggerFactory<D>::Create(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic) const
+{
+    Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger gattCharacteristicNotificationTrigger { nullptr };
+    check_hresult(WINRT_SHIM(IGattCharacteristicNotificationTriggerFactory)->abi_Create(get_abi(characteristic), put_abi(gattCharacteristicNotificationTrigger)));
+    return gattCharacteristicNotificationTrigger;
+}
+
+template <typename D> Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger impl_IGattCharacteristicNotificationTriggerFactory2<D>::Create(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic, Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode) const
+{
+    Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger result { nullptr };
+    check_hresult(WINRT_SHIM(IGattCharacteristicNotificationTriggerFactory2)->abi_CreateWithEventTriggeringMode(get_abi(characteristic), eventTriggeringMode, put_abi(result)));
+    return result;
+}
+
 template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic impl_IGattCharacteristicNotificationTrigger<D>::Characteristic() const
 {
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic value { nullptr };
@@ -2619,11 +3067,58 @@ template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::Gatt
     return value;
 }
 
-template <typename D> Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger impl_IGattCharacteristicNotificationTriggerFactory<D>::Create(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic) const
+template <typename D> Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode impl_IGattCharacteristicNotificationTrigger2<D>::EventTriggeringMode() const
 {
-    Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger gattCharacteristicNotificationTrigger { nullptr };
-    check_hresult(WINRT_SHIM(IGattCharacteristicNotificationTriggerFactory)->abi_Create(get_abi(characteristic), put_abi(gattCharacteristicNotificationTrigger)));
-    return gattCharacteristicNotificationTrigger;
+    Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode value {};
+    check_hresult(WINRT_SHIM(IGattCharacteristicNotificationTrigger2)->get_EventTriggeringMode(&value));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::Background::GattServiceProviderTrigger impl_IGattServiceProviderTriggerResult<D>::Trigger() const
+{
+    Windows::ApplicationModel::Background::GattServiceProviderTrigger value { nullptr };
+    check_hresult(WINRT_SHIM(IGattServiceProviderTriggerResult)->get_Trigger(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Bluetooth::BluetoothError impl_IGattServiceProviderTriggerResult<D>::Error() const
+{
+    Windows::Devices::Bluetooth::BluetoothError value {};
+    check_hresult(WINRT_SHIM(IGattServiceProviderTriggerResult)->get_Error(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> impl_IGattServiceProviderTriggerStatics<D>::CreateAsync(hstring_view triggerId, GUID serviceUuid) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> operation;
+    check_hresult(WINRT_SHIM(IGattServiceProviderTriggerStatics)->abi_CreateAsync(get_abi(triggerId), serviceUuid, put_abi(operation)));
+    return operation;
+}
+
+template <typename D> hstring impl_IGattServiceProviderTrigger<D>::TriggerId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IGattServiceProviderTrigger)->get_TriggerId(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalService impl_IGattServiceProviderTrigger<D>::Service() const
+{
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalService value { nullptr };
+    check_hresult(WINRT_SHIM(IGattServiceProviderTrigger)->get_Service(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IGattServiceProviderTrigger<D>::AdvertisingParameters(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters & value) const
+{
+    check_hresult(WINRT_SHIM(IGattServiceProviderTrigger)->put_AdvertisingParameters(get_abi(value)));
+}
+
+template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters impl_IGattServiceProviderTrigger<D>::AdvertisingParameters() const
+{
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters value { nullptr };
+    check_hresult(WINRT_SHIM(IGattServiceProviderTrigger)->get_AdvertisingParameters(put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBluetoothLEAdvertisementWatcherTrigger<D>::MinSamplingInterval() const
@@ -2827,6 +3322,24 @@ inline Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationMode
     return get_activation_factory<BackgroundTaskRegistration, IBackgroundTaskRegistrationStatics>().AllTasks();
 }
 
+inline Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> BackgroundTaskRegistration::AllTaskGroups()
+{
+    return get_activation_factory<BackgroundTaskRegistration, IBackgroundTaskRegistrationStatics2>().AllTaskGroups();
+}
+
+inline Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup BackgroundTaskRegistration::GetTaskGroup(hstring_view groupId)
+{
+    return get_activation_factory<BackgroundTaskRegistration, IBackgroundTaskRegistrationStatics2>().GetTaskGroup(groupId);
+}
+
+inline BackgroundTaskRegistrationGroup::BackgroundTaskRegistrationGroup(hstring_view id) :
+    BackgroundTaskRegistrationGroup(get_activation_factory<BackgroundTaskRegistrationGroup, IBackgroundTaskRegistrationGroupFactory>().Create(id))
+{}
+
+inline BackgroundTaskRegistrationGroup::BackgroundTaskRegistrationGroup(hstring_view id, hstring_view name) :
+    BackgroundTaskRegistrationGroup(get_activation_factory<BackgroundTaskRegistrationGroup, IBackgroundTaskRegistrationGroupFactory>().CreateWithName(id, name))
+{}
+
 inline Windows::ApplicationModel::Background::BackgroundWorkCostValue BackgroundWorkCost::CurrentBackgroundWorkCost()
 {
     return get_activation_factory<BackgroundWorkCost, IBackgroundWorkCostStatics>().CurrentBackgroundWorkCost();
@@ -2888,6 +3401,15 @@ inline EmailStoreNotificationTrigger::EmailStoreNotificationTrigger() :
 inline GattCharacteristicNotificationTrigger::GattCharacteristicNotificationTrigger(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic) :
     GattCharacteristicNotificationTrigger(get_activation_factory<GattCharacteristicNotificationTrigger, IGattCharacteristicNotificationTriggerFactory>().Create(characteristic))
 {}
+
+inline GattCharacteristicNotificationTrigger::GattCharacteristicNotificationTrigger(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic, Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode) :
+    GattCharacteristicNotificationTrigger(get_activation_factory<GattCharacteristicNotificationTrigger, IGattCharacteristicNotificationTriggerFactory2>().Create(characteristic, eventTriggeringMode))
+{}
+
+inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> GattServiceProviderTrigger::CreateAsync(hstring_view triggerId, GUID serviceUuid)
+{
+    return get_activation_factory<GattServiceProviderTrigger, IGattServiceProviderTriggerStatics>().CreateAsync(triggerId, serviceUuid);
+}
 
 inline LocationTrigger::LocationTrigger(Windows::ApplicationModel::Background::LocationTriggerType triggerType) :
     LocationTrigger(get_activation_factory<LocationTrigger, ILocationTriggerFactory>().Create(triggerType))
@@ -3103,6 +3625,15 @@ struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskBu
 };
 
 template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskBuilder4>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskBuilder4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs & value) const noexcept
@@ -3175,9 +3706,45 @@ struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskRe
 };
 
 template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistration3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistration3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3364,9 +3931,54 @@ struct std::hash<winrt::Windows::ApplicationModel::Background::IGattCharacterist
 };
 
 template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IGattServiceProviderTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IGattServiceProviderTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3697,6 +4309,15 @@ struct std::hash<winrt::Windows::ApplicationModel::Background::BackgroundTaskReg
 };
 
 template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::ApplicationModel::Background::BluetoothLEAdvertisementPublisherTrigger>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Background::BluetoothLEAdvertisementPublisherTrigger & value) const noexcept
@@ -3826,6 +4447,24 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::GattServiceProviderTrigger>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::GattServiceProviderTrigger & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Background::GattServiceProviderTriggerResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Background::GattServiceProviderTriggerResult & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

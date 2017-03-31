@@ -90,6 +90,48 @@ struct IProcessMemoryUsageReport :
     IProcessMemoryUsageReport(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ISystemCpuUsage :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISystemCpuUsage>
+{
+    ISystemCpuUsage(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISystemCpuUsageReport :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISystemCpuUsageReport>
+{
+    ISystemCpuUsageReport(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISystemDiagnosticInfo :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISystemDiagnosticInfo>
+{
+    ISystemDiagnosticInfo(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISystemDiagnosticInfoStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISystemDiagnosticInfoStatics>
+{
+    ISystemDiagnosticInfoStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISystemMemoryUsage :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISystemMemoryUsage>
+{
+    ISystemMemoryUsage(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISystemMemoryUsageReport :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISystemMemoryUsageReport>
+{
+    ISystemMemoryUsageReport(std::nullptr_t = nullptr) noexcept {}
+};
+
 }
 
 }

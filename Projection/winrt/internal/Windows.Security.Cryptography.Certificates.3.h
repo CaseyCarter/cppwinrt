@@ -34,6 +34,13 @@ struct CertificateEnrollmentManager
     static Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_view pfxData, hstring_view password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters);
 };
 
+struct WINRT_EBO CertificateExtension :
+    Windows::Security::Cryptography::Certificates::ICertificateExtension
+{
+    CertificateExtension(std::nullptr_t) noexcept {}
+    CertificateExtension();
+};
+
 struct WINRT_EBO CertificateKeyUsages :
     Windows::Security::Cryptography::Certificates::ICertificateKeyUsages
 {
@@ -51,7 +58,7 @@ struct WINRT_EBO CertificateQuery :
 
 struct WINRT_EBO CertificateRequestProperties :
     Windows::Security::Cryptography::Certificates::ICertificateRequestProperties,
-    impl::require<CertificateRequestProperties, Windows::Security::Cryptography::Certificates::ICertificateRequestProperties2, Windows::Security::Cryptography::Certificates::ICertificateRequestProperties3>
+    impl::require<CertificateRequestProperties, Windows::Security::Cryptography::Certificates::ICertificateRequestProperties2, Windows::Security::Cryptography::Certificates::ICertificateRequestProperties3, Windows::Security::Cryptography::Certificates::ICertificateRequestProperties4>
 {
     CertificateRequestProperties(std::nullptr_t) noexcept {}
     CertificateRequestProperties();
@@ -166,7 +173,8 @@ struct StandardCertificateStoreNames
 };
 
 struct WINRT_EBO SubjectAlternativeNameInfo :
-    Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo
+    Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo,
+    impl::require<SubjectAlternativeNameInfo, Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo2>
 {
     SubjectAlternativeNameInfo(std::nullptr_t) noexcept {}
     SubjectAlternativeNameInfo();

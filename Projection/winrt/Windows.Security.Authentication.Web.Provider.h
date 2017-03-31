@@ -12,6 +12,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Security.Authentication.Web.3.h"
 #include "internal/Windows.Security.Credentials.3.h"
 #include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.System.3.h"
 #include "internal/Windows.Security.Authentication.Web.Provider.3.h"
 #include "Windows.Security.Authentication.Web.h"
 
@@ -269,6 +270,70 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountM
         catch (...)
         {
             *asyncInfo = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics3> : produce_base<D, Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics3>
+{
+    HRESULT __stdcall abi_FindAllProviderWebAccountsForUserAsync(impl::abi_arg_in<Windows::System::IUser> user, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().FindAllProviderWebAccountsForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_AddWebAccountForUserAsync(impl::abi_arg_in<Windows::System::IUser> user, impl::abi_arg_in<hstring> webAccountId, impl::abi_arg_in<hstring> webAccountUserName, impl::abi_arg_in<Windows::Foundation::Collections::IMapView<hstring, hstring>> props, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().AddWebAccountForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&webAccountId), *reinterpret_cast<const hstring *>(&webAccountUserName), *reinterpret_cast<const Windows::Foundation::Collections::IMapView<hstring, hstring> *>(&props)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_AddWebAccountWithScopeForUserAsync(impl::abi_arg_in<Windows::System::IUser> user, impl::abi_arg_in<hstring> webAccountId, impl::abi_arg_in<hstring> webAccountUserName, impl::abi_arg_in<Windows::Foundation::Collections::IMapView<hstring, hstring>> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().AddWebAccountForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&webAccountId), *reinterpret_cast<const hstring *>(&webAccountUserName), *reinterpret_cast<const Windows::Foundation::Collections::IMapView<hstring, hstring> *>(&props), scope));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_AddWebAccountWithScopeAndMapForUserAsync(impl::abi_arg_in<Windows::System::IUser> user, impl::abi_arg_in<hstring> webAccountId, impl::abi_arg_in<hstring> webAccountUserName, impl::abi_arg_in<Windows::Foundation::Collections::IMapView<hstring, hstring>> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, impl::abi_arg_in<hstring> perUserWebAccountId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().AddWebAccountForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&webAccountId), *reinterpret_cast<const hstring *>(&webAccountUserName), *reinterpret_cast<const Windows::Foundation::Collections::IMapView<hstring, hstring> *>(&props), scope, *reinterpret_cast<const hstring *>(&perUserWebAccountId)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
             return impl::to_hresult();
         }
     }
@@ -626,6 +691,25 @@ struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountP
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().Operation());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects2> : produce_base<D, Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects2>
+{
+    HRESULT __stdcall get_User(impl::abi_arg_out<Windows::System::IUser> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().User());
             return S_OK;
         }
         catch (...)
@@ -1127,6 +1211,34 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccountMapManag
     return asyncInfo;
 }
 
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> impl_IWebAccountManagerStatics3<D>::FindAllProviderWebAccountsForUserAsync(const Windows::System::User & user) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> operation;
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics3)->abi_FindAllProviderWebAccountsForUserAsync(get_abi(user), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountManagerStatics3<D>::AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> operation;
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics3)->abi_AddWebAccountForUserAsync(get_abi(user), get_abi(webAccountId), get_abi(webAccountUserName), get_abi(props), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountManagerStatics3<D>::AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> operation;
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics3)->abi_AddWebAccountWithScopeForUserAsync(get_abi(user), get_abi(webAccountId), get_abi(webAccountUserName), get_abi(props), scope, put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAccountManagerStatics3<D>::AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_view perUserWebAccountId) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> operation;
+    check_hresult(WINRT_SHIM(IWebAccountManagerStatics3)->abi_AddWebAccountWithScopeAndMapForUserAsync(get_abi(user), get_abi(webAccountId), get_abi(webAccountUserName), get_abi(props), scope, get_abi(perUserWebAccountId), put_abi(operation)));
+    return operation;
+}
+
 template <typename D> void impl_IWebAccountProviderBaseReportOperation<D>::ReportCompleted() const
 {
     check_hresult(WINRT_SHIM(IWebAccountProviderBaseReportOperation)->abi_ReportCompleted());
@@ -1263,6 +1375,13 @@ template <typename D> Windows::Security::Authentication::Web::Provider::IWebAcco
     return value;
 }
 
+template <typename D> Windows::System::User impl_IWebAccountProviderTokenObjects2<D>::User() const
+{
+    Windows::System::User value { nullptr };
+    check_hresult(WINRT_SHIM(IWebAccountProviderTokenObjects2)->get_User(put_abi(value)));
+    return value;
+}
+
 inline WebAccountClientView::WebAccountClientView(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, const Windows::Foundation::Uri & applicationCallbackUri) :
     WebAccountClientView(get_activation_factory<WebAccountClientView, IWebAccountClientViewFactory>().Create(viewType, applicationCallbackUri))
 {}
@@ -1324,6 +1443,26 @@ inline Windows::Foundation::IAsyncAction WebAccountManager::ClearWebAccountPictu
 inline Windows::Foundation::IAsyncAction WebAccountManager::PullCookiesAsync(hstring_view uriString, hstring_view callerPFN)
 {
     return get_activation_factory<WebAccountManager, IWebAccountManagerStatics2>().PullCookiesAsync(uriString, callerPFN);
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> WebAccountManager::FindAllProviderWebAccountsForUserAsync(const Windows::System::User & user)
+{
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics3>().FindAllProviderWebAccountsForUserAsync(user);
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props)
+{
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics3>().AddWebAccountForUserAsync(user, webAccountId, webAccountUserName, props);
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope)
+{
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics3>().AddWebAccountForUserAsync(user, webAccountId, webAccountUserName, props, scope);
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_view perUserWebAccountId)
+{
+    return get_activation_factory<WebAccountManager, IWebAccountManagerStatics3>().AddWebAccountForUserAsync(user, webAccountId, webAccountUserName, props, scope, perUserWebAccountId);
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> WebAccountManager::AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_view perUserWebAccountId)
@@ -1400,6 +1539,15 @@ template<>
 struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics2>
 {
     size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics3>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -1490,6 +1638,15 @@ template<>
 struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects>
 {
     size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects2>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

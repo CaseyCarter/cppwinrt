@@ -310,6 +310,126 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount4> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccount4>
+{
+    HRESULT __stdcall get_CanShowCreateContactGroup(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CanShowCreateContactGroup());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_CanShowCreateContactGroup(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CanShowCreateContactGroup(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ProviderProperties(impl::abi_arg_out<Windows::Foundation::Collections::IPropertySet> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ProviderProperties());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_FindUserDataTaskListsAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataTasks::UserDataTaskList>>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().FindUserDataTaskListsAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_FindContactGroupsAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactGroup>>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().FindContactGroupsAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryShowCreateContactGroupAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<hstring>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryShowCreateContactGroupAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsProtectedUnderLock(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsProtectedUnderLock(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Icon(impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStreamReference> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Icon(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser>
 {
     HRESULT __stdcall abi_RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore>> result) noexcept override
@@ -523,6 +643,25 @@ struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountS
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore3> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore3>
+{
+    HRESULT __stdcall abi_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(impl::abi_arg_in<hstring> userDisplayName, impl::abi_arg_in<hstring> packageRelativeAppId, impl::abi_arg_in<hstring> enterpriseId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount>> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateAccountAsync(*reinterpret_cast<const hstring *>(&userDisplayName), *reinterpret_cast<const hstring *>(&packageRelativeAppId), *reinterpret_cast<const hstring *>(&enterpriseId)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs> : produce_base<D, Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs>
 {
     HRESULT __stdcall abi_GetDeferral(impl::abi_arg_out<Windows::Foundation::IDeferral> result) noexcept override
@@ -672,6 +811,56 @@ template <typename D> void impl_IUserDataAccount3<D>::DisplayName(hstring_view v
     check_hresult(WINRT_SHIM(IUserDataAccount3)->put_DisplayName(get_abi(value)));
 }
 
+template <typename D> bool impl_IUserDataAccount4<D>::CanShowCreateContactGroup() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IUserDataAccount4)->get_CanShowCreateContactGroup(&value));
+    return value;
+}
+
+template <typename D> void impl_IUserDataAccount4<D>::CanShowCreateContactGroup(bool value) const
+{
+    check_hresult(WINRT_SHIM(IUserDataAccount4)->put_CanShowCreateContactGroup(value));
+}
+
+template <typename D> Windows::Foundation::Collections::IPropertySet impl_IUserDataAccount4<D>::ProviderProperties() const
+{
+    Windows::Foundation::Collections::IPropertySet value;
+    check_hresult(WINRT_SHIM(IUserDataAccount4)->get_ProviderProperties(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataTasks::UserDataTaskList>> impl_IUserDataAccount4<D>::FindUserDataTaskListsAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataTasks::UserDataTaskList>> operation;
+    check_hresult(WINRT_SHIM(IUserDataAccount4)->abi_FindUserDataTaskListsAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactGroup>> impl_IUserDataAccount4<D>::FindContactGroupsAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactGroup>> operation;
+    check_hresult(WINRT_SHIM(IUserDataAccount4)->abi_FindContactGroupsAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IUserDataAccount4<D>::TryShowCreateContactGroupAsync() const
+{
+    Windows::Foundation::IAsyncOperation<hstring> operation;
+    check_hresult(WINRT_SHIM(IUserDataAccount4)->abi_TryShowCreateContactGroupAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> void impl_IUserDataAccount4<D>::IsProtectedUnderLock(bool value) const
+{
+    check_hresult(WINRT_SHIM(IUserDataAccount4)->put_IsProtectedUnderLock(value));
+}
+
+template <typename D> void impl_IUserDataAccount4<D>::Icon(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
+{
+    check_hresult(WINRT_SHIM(IUserDataAccount4)->put_Icon(get_abi(value)));
+}
+
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::UserDataAccount>> impl_IUserDataAccountStore<D>::FindAccountsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::UserDataAccount>> result;
@@ -715,6 +904,13 @@ template <typename D> event_revoker<IUserDataAccountStore2> impl_IUserDataAccoun
 template <typename D> void impl_IUserDataAccountStore2<D>::StoreChanged(event_token token) const
 {
     check_hresult(WINRT_SHIM(IUserDataAccountStore2)->remove_StoreChanged(token));
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> impl_IUserDataAccountStore3<D>::CreateAccountAsync(hstring_view userDisplayName, hstring_view packageRelativeAppId, hstring_view enterpriseId) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> result;
+    check_hresult(WINRT_SHIM(IUserDataAccountStore3)->abi_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(get_abi(userDisplayName), get_abi(packageRelativeAppId), get_abi(enterpriseId), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> impl_IUserDataAccountManagerStatics<D>::RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType) const
@@ -830,6 +1026,15 @@ struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAc
 };
 
 template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccount4>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccount4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser & value) const noexcept
@@ -869,6 +1074,15 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

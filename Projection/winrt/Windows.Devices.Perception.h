@@ -3928,6 +3928,30 @@ template <typename D> Windows::Foundation::IInspectable impl_IPerceptionFrameSou
     return value;
 }
 
+template <typename D> event_token impl_IPerceptionControlSession<D>::ControlLost(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IPerceptionControlSession)->add_ControlLost(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IPerceptionControlSession> impl_IPerceptionControlSession<D>::ControlLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, IPerceptionControlSession>(this, &ABI::Windows::Devices::Perception::IPerceptionControlSession::remove_ControlLost, ControlLost(handler));
+}
+
+template <typename D> void impl_IPerceptionControlSession<D>::ControlLost(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IPerceptionControlSession)->remove_ControlLost(token));
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionControlSession<D>::TrySetPropertyAsync(hstring_view name, const Windows::Foundation::IInspectable & value) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> result;
+    check_hresult(WINRT_SHIM(IPerceptionControlSession)->abi_TrySetPropertyAsync(get_abi(name), get_abi(value), put_abi(result)));
+    return result;
+}
+
 template <typename D> Windows::Foundation::Collections::CollectionChange impl_IPerceptionFrameSourcePropertiesChangedEventArgs<D>::CollectionChange() const
 {
     Windows::Foundation::Collections::CollectionChange value {};
@@ -4743,124 +4767,6 @@ template <typename D> bool impl_IPerceptionVideoProfile<D>::IsEqual(const Window
     return result;
 }
 
-template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionColorFrameArrivedEventArgs<D>::RelativeTime() const
-{
-    Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameArrivedEventArgs)->get_RelativeTime(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Devices::Perception::PerceptionColorFrame impl_IPerceptionColorFrameArrivedEventArgs<D>::TryOpenFrame() const
-{
-    Windows::Devices::Perception::PerceptionColorFrame result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionColorFrameArrivedEventArgs)->abi_TryOpenFrame(put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionDepthFrameArrivedEventArgs<D>::RelativeTime() const
-{
-    Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameArrivedEventArgs)->get_RelativeTime(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Devices::Perception::PerceptionDepthFrame impl_IPerceptionDepthFrameArrivedEventArgs<D>::TryOpenFrame() const
-{
-    Windows::Devices::Perception::PerceptionDepthFrame result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionDepthFrameArrivedEventArgs)->abi_TryOpenFrame(put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionInfraredFrameArrivedEventArgs<D>::RelativeTime() const
-{
-    Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameArrivedEventArgs)->get_RelativeTime(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Devices::Perception::PerceptionInfraredFrame impl_IPerceptionInfraredFrameArrivedEventArgs<D>::TryOpenFrame() const
-{
-    Windows::Devices::Perception::PerceptionInfraredFrame result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameArrivedEventArgs)->abi_TryOpenFrame(put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::Numerics::float3 impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectPixelAtCorrelatedDepth(const Windows::Foundation::Point & pixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const
-{
-    Windows::Foundation::Numerics::float3 result {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectPixelAtCorrelatedDepth(get_abi(pixelCoordinate), get_abi(depthFrame), put_abi(result)));
-    return result;
-}
-
-template <typename D> void impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectPixelsAtCorrelatedDepth(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
-{
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectPixelsAtCorrelatedDepth(sourceCoordinates.size(), get_abi(sourceCoordinates), get_abi(depthFrame), results.size(), get_abi(results)));
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectRegionPixelsAtCorrelatedDepthAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectRegionPixelsAtCorrelatedDepthAsync(get_abi(region), get_abi(depthFrame), results.size(), get_abi(results), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectAllPixelsAtCorrelatedDepthAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectAllPixelsAtCorrelatedDepthAsync(get_abi(depthFrame), results.size(), get_abi(results), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::Point impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapPixelToTarget(const Windows::Foundation::Point & sourcePixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const
-{
-    Windows::Foundation::Point result {};
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapPixelToTarget(get_abi(sourcePixelCoordinate), get_abi(depthFrame), put_abi(result)));
-    return result;
-}
-
-template <typename D> void impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapPixelsToTarget(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> results) const
-{
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapPixelsToTarget(sourceCoordinates.size(), get_abi(sourceCoordinates), get_abi(depthFrame), results.size(), get_abi(results)));
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapRegionOfPixelsToTargetAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapRegionOfPixelsToTargetAsync(get_abi(region), get_abi(depthFrame), targetCoordinates.size(), get_abi(targetCoordinates), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapAllPixelsToTargetAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const
-{
-    Windows::Foundation::IAsyncAction result;
-    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapAllPixelsToTargetAsync(get_abi(depthFrame), targetCoordinates.size(), get_abi(targetCoordinates), put_abi(result)));
-    return result;
-}
-
-template <typename D> event_token impl_IPerceptionControlSession<D>::ControlLost(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IPerceptionControlSession)->add_ControlLost(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IPerceptionControlSession> impl_IPerceptionControlSession<D>::ControlLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> & handler) const
-{
-    return impl::make_event_revoker<D, IPerceptionControlSession>(this, &ABI::Windows::Devices::Perception::IPerceptionControlSession::remove_ControlLost, ControlLost(handler));
-}
-
-template <typename D> void impl_IPerceptionControlSession<D>::ControlLost(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IPerceptionControlSession)->remove_ControlLost(token));
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> impl_IPerceptionControlSession<D>::TrySetPropertyAsync(hstring_view name, const Windows::Foundation::IInspectable & value) const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> result;
-    check_hresult(WINRT_SHIM(IPerceptionControlSession)->abi_TrySetPropertyAsync(get_abi(name), get_abi(value), put_abi(result)));
-    return result;
-}
-
 template <typename D> event_token impl_IPerceptionColorFrameReader<D>::FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> & handler) const
 {
     event_token token {};
@@ -5009,6 +4915,100 @@ template <typename D> Windows::Media::VideoFrame impl_IPerceptionInfraredFrame<D
     Windows::Media::VideoFrame value { nullptr };
     check_hresult(WINRT_SHIM(IPerceptionInfraredFrame)->get_VideoFrame(put_abi(value)));
     return value;
+}
+
+template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionColorFrameArrivedEventArgs<D>::RelativeTime() const
+{
+    Windows::Foundation::TimeSpan value {};
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameArrivedEventArgs)->get_RelativeTime(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Perception::PerceptionColorFrame impl_IPerceptionColorFrameArrivedEventArgs<D>::TryOpenFrame() const
+{
+    Windows::Devices::Perception::PerceptionColorFrame result { nullptr };
+    check_hresult(WINRT_SHIM(IPerceptionColorFrameArrivedEventArgs)->abi_TryOpenFrame(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionDepthFrameArrivedEventArgs<D>::RelativeTime() const
+{
+    Windows::Foundation::TimeSpan value {};
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameArrivedEventArgs)->get_RelativeTime(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Perception::PerceptionDepthFrame impl_IPerceptionDepthFrameArrivedEventArgs<D>::TryOpenFrame() const
+{
+    Windows::Devices::Perception::PerceptionDepthFrame result { nullptr };
+    check_hresult(WINRT_SHIM(IPerceptionDepthFrameArrivedEventArgs)->abi_TryOpenFrame(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionInfraredFrameArrivedEventArgs<D>::RelativeTime() const
+{
+    Windows::Foundation::TimeSpan value {};
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameArrivedEventArgs)->get_RelativeTime(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Perception::PerceptionInfraredFrame impl_IPerceptionInfraredFrameArrivedEventArgs<D>::TryOpenFrame() const
+{
+    Windows::Devices::Perception::PerceptionInfraredFrame result { nullptr };
+    check_hresult(WINRT_SHIM(IPerceptionInfraredFrameArrivedEventArgs)->abi_TryOpenFrame(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::Numerics::float3 impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectPixelAtCorrelatedDepth(const Windows::Foundation::Point & pixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const
+{
+    Windows::Foundation::Numerics::float3 result {};
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectPixelAtCorrelatedDepth(get_abi(pixelCoordinate), get_abi(depthFrame), put_abi(result)));
+    return result;
+}
+
+template <typename D> void impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectPixelsAtCorrelatedDepth(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
+{
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectPixelsAtCorrelatedDepth(sourceCoordinates.size(), get_abi(sourceCoordinates), get_abi(depthFrame), results.size(), get_abi(results)));
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectRegionPixelsAtCorrelatedDepthAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectRegionPixelsAtCorrelatedDepthAsync(get_abi(region), get_abi(depthFrame), results.size(), get_abi(results), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCameraIntrinsics<D>::UnprojectAllPixelsAtCorrelatedDepthAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCameraIntrinsics)->abi_UnprojectAllPixelsAtCorrelatedDepthAsync(get_abi(depthFrame), results.size(), get_abi(results), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::Point impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapPixelToTarget(const Windows::Foundation::Point & sourcePixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const
+{
+    Windows::Foundation::Point result {};
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapPixelToTarget(get_abi(sourcePixelCoordinate), get_abi(depthFrame), put_abi(result)));
+    return result;
+}
+
+template <typename D> void impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapPixelsToTarget(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> results) const
+{
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapPixelsToTarget(sourceCoordinates.size(), get_abi(sourceCoordinates), get_abi(depthFrame), results.size(), get_abi(results)));
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapRegionOfPixelsToTargetAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapRegionOfPixelsToTargetAsync(get_abi(region), get_abi(depthFrame), targetCoordinates.size(), get_abi(targetCoordinates), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IPerceptionDepthCorrelatedCoordinateMapper<D>::MapAllPixelsToTargetAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const
+{
+    Windows::Foundation::IAsyncAction result;
+    check_hresult(WINRT_SHIM(IPerceptionDepthCorrelatedCoordinateMapper)->abi_MapAllPixelsToTargetAsync(get_abi(depthFrame), targetCoordinates.size(), get_abi(targetCoordinates), put_abi(result)));
+    return result;
 }
 
 inline hstring KnownCameraIntrinsicsProperties::FocalLength()

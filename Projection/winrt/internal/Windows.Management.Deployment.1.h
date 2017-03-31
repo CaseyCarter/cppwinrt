@@ -38,6 +38,11 @@ struct __declspec(uuid("2563b9ae-b77d-4c1f-8a7b-20e6ad515ef3")) __declspec(novta
     virtual HRESULT __stdcall get_ExtendedErrorCode(HRESULT * value) = 0;
 };
 
+struct __declspec(uuid("fc0e715c-5a01-4bd7-bcf1-381c8c82e04a")) __declspec(novtable) IDeploymentResult2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsRegistered(bool * value) = 0;
+};
+
 struct __declspec(uuid("9a7d4b65-5e8f-4fc7-a2e5-7f6925cb8b53")) __declspec(novtable) IPackageManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_AddPackageAsync(Windows::Foundation::IUriRuntimeClass * packageUri, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> * dependencyPackageUris, winrt::Windows::Management::Deployment::DeploymentOptions deploymentOptions, Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> ** deploymentOperation) = 0;
@@ -96,6 +101,20 @@ struct __declspec(uuid("3c719963-bab6-46bf-8ff7-da4719230ae6")) __declspec(novta
     virtual HRESULT __stdcall abi_GetPackageVolumesAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Management::Deployment::PackageVolume>> ** operation) = 0;
 };
 
+struct __declspec(uuid("711f3117-1afd-4313-978c-9bb6e1b864a7")) __declspec(novtable) IPackageManager5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_AddPackageToVolumeAndOptionalPackagesAsync(Windows::Foundation::IUriRuntimeClass * packageUri, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> * dependencyPackageUris, winrt::Windows::Management::Deployment::DeploymentOptions deploymentOptions, Windows::Management::Deployment::IPackageVolume * targetVolume, Windows::Foundation::Collections::IIterable<hstring> * optionalPackageFamilyNames, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> * externalPackageUris, Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> ** deploymentOperation) = 0;
+    virtual HRESULT __stdcall abi_StagePackageToVolumeAndOptionalPackagesAsync(Windows::Foundation::IUriRuntimeClass * packageUri, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> * dependencyPackageUris, winrt::Windows::Management::Deployment::DeploymentOptions deploymentOptions, Windows::Management::Deployment::IPackageVolume * targetVolume, Windows::Foundation::Collections::IIterable<hstring> * optionalPackageFamilyNames, Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> * externalPackageUris, Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> ** deploymentOperation) = 0;
+    virtual HRESULT __stdcall abi_RegisterPackageByFamilyNameAndOptionalPackagesAsync(hstring mainPackageFamilyName, Windows::Foundation::Collections::IIterable<hstring> * dependencyPackageFamilyNames, winrt::Windows::Management::Deployment::DeploymentOptions deploymentOptions, Windows::Management::Deployment::IPackageVolume * appDataVolume, Windows::Foundation::Collections::IIterable<hstring> * optionalPackageFamilyNames, Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> ** deploymentOperation) = 0;
+    virtual HRESULT __stdcall get_DebugSettings(Windows::Management::Deployment::IPackageManagerDebugSettings ** value) = 0;
+};
+
+struct __declspec(uuid("1a611683-a988-4fcf-8f0f-ce175898e8eb")) __declspec(novtable) IPackageManagerDebugSettings : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_SetContentGroupStateAsync(Windows::ApplicationModel::IPackage * package, hstring contentGroupName, winrt::Windows::ApplicationModel::PackageContentGroupState state, Windows::Foundation::IAsyncAction ** action) = 0;
+    virtual HRESULT __stdcall abi_SetContentGroupStateWithPercentageAsync(Windows::ApplicationModel::IPackage * package, hstring contentGroupName, winrt::Windows::ApplicationModel::PackageContentGroupState state, double completionPercentage, Windows::Foundation::IAsyncAction ** action) = 0;
+};
+
 struct __declspec(uuid("f6383423-fa09-4cbc-9055-15ca275e2e7e")) __declspec(novtable) IPackageUserInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UserSecurityId(hstring * value) = 0;
@@ -139,6 +158,7 @@ namespace ABI {
 
 template <> struct traits<Windows::Management::Deployment::DeploymentResult> { using default_interface = Windows::Management::Deployment::IDeploymentResult; };
 template <> struct traits<Windows::Management::Deployment::PackageManager> { using default_interface = Windows::Management::Deployment::IPackageManager; };
+template <> struct traits<Windows::Management::Deployment::PackageManagerDebugSettings> { using default_interface = Windows::Management::Deployment::IPackageManagerDebugSettings; };
 template <> struct traits<Windows::Management::Deployment::PackageUserInformation> { using default_interface = Windows::Management::Deployment::IPackageUserInformation; };
 template <> struct traits<Windows::Management::Deployment::PackageVolume> { using default_interface = Windows::Management::Deployment::IPackageVolume; };
 
@@ -152,6 +172,12 @@ struct WINRT_EBO impl_IDeploymentResult
     hstring ErrorText() const;
     GUID ActivityId() const;
     HRESULT ExtendedErrorCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeploymentResult2
+{
+    bool IsRegistered() const;
 };
 
 template <typename D>
@@ -217,6 +243,22 @@ struct WINRT_EBO impl_IPackageManager4
 };
 
 template <typename D>
+struct WINRT_EBO impl_IPackageManager5
+{
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> AddPackageAsync(const Windows::Foundation::Uri & packageUri, iterable<Windows::Foundation::Uri> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume, iterable<hstring> optionalPackageFamilyNames, iterable<Windows::Foundation::Uri> externalPackageUris) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> StagePackageAsync(const Windows::Foundation::Uri & packageUri, iterable<Windows::Foundation::Uri> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume, iterable<hstring> optionalPackageFamilyNames, iterable<Windows::Foundation::Uri> externalPackageUris) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> RegisterPackageByFamilyNameAsync(hstring_view mainPackageFamilyName, iterable<hstring> dependencyPackageFamilyNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & appDataVolume, iterable<hstring> optionalPackageFamilyNames) const;
+    Windows::Management::Deployment::PackageManagerDebugSettings DebugSettings() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageManagerDebugSettings
+{
+    Windows::Foundation::IAsyncAction SetContentGroupStateAsync(const Windows::ApplicationModel::Package & package, hstring_view contentGroupName, Windows::ApplicationModel::PackageContentGroupState state) const;
+    Windows::Foundation::IAsyncAction SetContentGroupStateAsync(const Windows::ApplicationModel::Package & package, hstring_view contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, double completionPercentage) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IPackageUserInformation
 {
     hstring UserSecurityId() const;
@@ -266,6 +308,12 @@ template <> struct traits<Windows::Management::Deployment::IDeploymentResult>
     template <typename D> using consume = Windows::Management::Deployment::impl_IDeploymentResult<D>;
 };
 
+template <> struct traits<Windows::Management::Deployment::IDeploymentResult2>
+{
+    using abi = ABI::Windows::Management::Deployment::IDeploymentResult2;
+    template <typename D> using consume = Windows::Management::Deployment::impl_IDeploymentResult2<D>;
+};
+
 template <> struct traits<Windows::Management::Deployment::IPackageManager>
 {
     using abi = ABI::Windows::Management::Deployment::IPackageManager;
@@ -288,6 +336,18 @@ template <> struct traits<Windows::Management::Deployment::IPackageManager4>
 {
     using abi = ABI::Windows::Management::Deployment::IPackageManager4;
     template <typename D> using consume = Windows::Management::Deployment::impl_IPackageManager4<D>;
+};
+
+template <> struct traits<Windows::Management::Deployment::IPackageManager5>
+{
+    using abi = ABI::Windows::Management::Deployment::IPackageManager5;
+    template <typename D> using consume = Windows::Management::Deployment::impl_IPackageManager5<D>;
+};
+
+template <> struct traits<Windows::Management::Deployment::IPackageManagerDebugSettings>
+{
+    using abi = ABI::Windows::Management::Deployment::IPackageManagerDebugSettings;
+    template <typename D> using consume = Windows::Management::Deployment::impl_IPackageManagerDebugSettings<D>;
 };
 
 template <> struct traits<Windows::Management::Deployment::IPackageUserInformation>
@@ -318,6 +378,12 @@ template <> struct traits<Windows::Management::Deployment::PackageManager>
 {
     using abi = ABI::Windows::Management::Deployment::PackageManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Management.Deployment.PackageManager"; }
+};
+
+template <> struct traits<Windows::Management::Deployment::PackageManagerDebugSettings>
+{
+    using abi = ABI::Windows::Management::Deployment::PackageManagerDebugSettings;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Management.Deployment.PackageManagerDebugSettings"; }
 };
 
 template <> struct traits<Windows::Management::Deployment::PackageUserInformation>

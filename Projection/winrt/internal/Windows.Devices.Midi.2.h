@@ -20,14 +20,14 @@ template <> struct __declspec(uuid("cc664f0e-edb1-55c8-9ef7-ec9007e4561c")) __de
 template <> struct __declspec(uuid("32699a4d-1cc0-5a1c-9da6-875197875086")) __declspec(novtable) IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> : impl_IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> {};
 #endif
 
-#ifndef WINRT_GENERIC_9388b978_13f1_5e37_8133_94430d90dd50
-#define WINRT_GENERIC_9388b978_13f1_5e37_8133_94430d90dd50
-template <> struct __declspec(uuid("9388b978-13f1-5e37-8133-94430d90dd50")) __declspec(novtable) IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> : impl_IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> {};
-#endif
-
 #ifndef WINRT_GENERIC_50017240_cc39_5775_8a6b_f6f22386bfca
 #define WINRT_GENERIC_50017240_cc39_5775_8a6b_f6f22386bfca
 template <> struct __declspec(uuid("50017240-cc39-5775-8a6b-f6f22386bfca")) __declspec(novtable) TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_9388b978_13f1_5e37_8133_94430d90dd50
+#define WINRT_GENERIC_9388b978_13f1_5e37_8133_94430d90dd50
+template <> struct __declspec(uuid("9388b978-13f1-5e37-8133-94430d90dd50")) __declspec(novtable) IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> : impl_IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> {};
 #endif
 
 #ifndef WINRT_GENERIC_6c090fb2_8099_558f_8a92_9a8ea806e6fb

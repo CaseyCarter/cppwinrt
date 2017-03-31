@@ -19,6 +19,11 @@ template <> struct __declspec(uuid("f6d1f700-49c2-52ae-8154-826f9908773c")) __de
 template <> struct __declspec(uuid("60310303-49c5-52e6-abc6-a9b36eccc716")) __declspec(novtable) IKeyValuePair<hstring, hstring> : impl_IKeyValuePair<hstring, hstring> {};
 #endif
 
+#ifndef WINRT_GENERIC_b0d63b78_78ad_5e31_b6d8_e32a0e16c447
+#define WINRT_GENERIC_b0d63b78_78ad_5e31_b6d8_e32a0e16c447
+template <> struct __declspec(uuid("b0d63b78-78ad-5e31-b6d8-e32a0e16c447")) __declspec(novtable) IIterable<Windows::Foundation::Uri> : impl_IIterable<Windows::Foundation::Uri> {};
+#endif
+
 
 }
 
@@ -28,6 +33,21 @@ namespace ABI::Windows::Foundation {
 #define WINRT_GENERIC_5541d8a7_497c_5aa4_86fc_7713adbf2a2c
 template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __declspec(novtable) IReference<Windows::Foundation::DateTime> : impl_IReference<Windows::Foundation::DateTime> {};
 #endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_4b8385bd_a2cd_5ff1_bf74_7ea580423e50
+#define WINRT_GENERIC_4b8385bd_a2cd_5ff1_bf74_7ea580423e50
+template <> struct __declspec(uuid("4b8385bd-a2cd-5ff1-bf74-7ea580423e50")) __declspec(novtable) IVectorView<Windows::Foundation::Uri> : impl_IVectorView<Windows::Foundation::Uri> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 #define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
@@ -39,11 +59,6 @@ template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_b0d63b78_78ad_5e31_b6d8_e32a0e16c447
-#define WINRT_GENERIC_b0d63b78_78ad_5e31_b6d8_e32a0e16c447
-template <> struct __declspec(uuid("b0d63b78-78ad-5e31-b6d8-e32a0e16c447")) __declspec(novtable) IIterable<Windows::Foundation::Uri> : impl_IIterable<Windows::Foundation::Uri> {};
-#endif
-
 #ifndef WINRT_GENERIC_ac7f26f2_feb7_5b2a_8ac4_345bc62caede
 #define WINRT_GENERIC_ac7f26f2_feb7_5b2a_8ac4_345bc62caede
 template <> struct __declspec(uuid("ac7f26f2-feb7-5b2a-8ac4-345bc62caede")) __declspec(novtable) IMapView<hstring, hstring> : impl_IMapView<hstring, hstring> {};
@@ -52,11 +67,6 @@ template <> struct __declspec(uuid("ac7f26f2-feb7-5b2a-8ac4-345bc62caede")) __de
 #ifndef WINRT_GENERIC_0d82bd8d_fe62_5d67_a7b9_7886dd75bc4e
 #define WINRT_GENERIC_0d82bd8d_fe62_5d67_a7b9_7886dd75bc4e
 template <> struct __declspec(uuid("0d82bd8d-fe62-5d67-a7b9-7886dd75bc4e")) __declspec(novtable) IVector<Windows::Foundation::Uri> : impl_IVector<Windows::Foundation::Uri> {};
-#endif
-
-#ifndef WINRT_GENERIC_4b8385bd_a2cd_5ff1_bf74_7ea580423e50
-#define WINRT_GENERIC_4b8385bd_a2cd_5ff1_bf74_7ea580423e50
-template <> struct __declspec(uuid("4b8385bd-a2cd-5ff1-bf74-7ea580423e50")) __declspec(novtable) IVectorView<Windows::Foundation::Uri> : impl_IVectorView<Windows::Foundation::Uri> {};
 #endif
 
 #ifndef WINRT_GENERIC_7f7d8ad7_b4d2_5a03_be6f_2b89875fb32d
@@ -79,10 +89,20 @@ template <> struct __declspec(uuid("4f729c64-a213-52e9-af8b-58adca3e597f")) __de
 template <> struct __declspec(uuid("ba0aff1f-6a8a-5a7e-a9f7-505b6266a436")) __declspec(novtable) IVectorView<Windows::UI::Notifications::ScheduledToastNotification> : impl_IVectorView<Windows::UI::Notifications::ScheduledToastNotification> {};
 #endif
 
+#ifndef WINRT_GENERIC_e09d090a_12e2_569b_ad29_fb0dfb98a1da
+#define WINRT_GENERIC_e09d090a_12e2_569b_ad29_fb0dfb98a1da
+template <> struct __declspec(uuid("e09d090a-12e2-569b-ad29-fb0dfb98a1da")) __declspec(novtable) IVectorView<Windows::UI::Notifications::ToastCollection> : impl_IVectorView<Windows::UI::Notifications::ToastCollection> {};
+#endif
+
 
 }
 
 namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_9310ec47_9f0a_5999_80c2_4b31e9f77e8e
+#define WINRT_GENERIC_9310ec47_9f0a_5999_80c2_4b31e9f77e8e
+template <> struct __declspec(uuid("9310ec47-9f0a-5999-80c2-4b31e9f77e8e")) __declspec(novtable) IAsyncOperation<Windows::UI::Notifications::ToastCollection> : impl_IAsyncOperation<Windows::UI::Notifications::ToastCollection> {};
+#endif
 
 #ifndef WINRT_GENERIC_61c2402f_0ed0_5a18_ab69_59f4aa99a368
 #define WINRT_GENERIC_61c2402f_0ed0_5a18_ab69_59f4aa99a368
@@ -97,6 +117,16 @@ template <> struct __declspec(uuid("ab54de2d-97d9-5528-b6ad-105afe156530")) __de
 #ifndef WINRT_GENERIC_95e3e803_c969_5e3a_9753_ea2ad22a9a33
 #define WINRT_GENERIC_95e3e803_c969_5e3a_9753_ea2ad22a9a33
 template <> struct __declspec(uuid("95e3e803-c969-5e3a-9753-ea2ad22a9a33")) __declspec(novtable) TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastFailedEventArgs> : impl_TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastFailedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_2dddc10e_38e6_5655_adf3_820e8fb14dcc
+#define WINRT_GENERIC_2dddc10e_38e6_5655_adf3_820e8fb14dcc
+template <> struct __declspec(uuid("2dddc10e-38e6-5655-adf3-820e8fb14dcc")) __declspec(novtable) IAsyncOperation<Windows::UI::Notifications::ToastNotifier> : impl_IAsyncOperation<Windows::UI::Notifications::ToastNotifier> {};
+#endif
+
+#ifndef WINRT_GENERIC_2a22fecb_4b96_551f_b7b9_a7b5beecad05
+#define WINRT_GENERIC_2a22fecb_4b96_551f_b7b9_a7b5beecad05
+template <> struct __declspec(uuid("2a22fecb-4b96-551f-b7b9-a7b5beecad05")) __declspec(novtable) IAsyncOperation<Windows::UI::Notifications::ToastNotificationHistory> : impl_IAsyncOperation<Windows::UI::Notifications::ToastNotificationHistory> {};
 #endif
 
 
@@ -174,6 +204,46 @@ template <> struct __declspec(uuid("304238b6-888a-5dd2-96cd-bfca8927483b")) __de
 template <> struct __declspec(uuid("7a7b2a51-c182-5846-a861-4f9c036f24ad")) __declspec(novtable) IIterable<Windows::UI::Notifications::ScheduledToastNotification> : impl_IIterable<Windows::UI::Notifications::ScheduledToastNotification> {};
 #endif
 
+#ifndef WINRT_GENERIC_d0ee15ce_85f3_5ee1_8c83_e69bb60337da
+#define WINRT_GENERIC_d0ee15ce_85f3_5ee1_8c83_e69bb60337da
+template <> struct __declspec(uuid("d0ee15ce-85f3-5ee1-8c83-e69bb60337da")) __declspec(novtable) IVector<Windows::UI::Notifications::ToastCollection> : impl_IVector<Windows::UI::Notifications::ToastCollection> {};
+#endif
+
+#ifndef WINRT_GENERIC_1512ed75_8c74_5520_ac88_134a1403f7ad
+#define WINRT_GENERIC_1512ed75_8c74_5520_ac88_134a1403f7ad
+template <> struct __declspec(uuid("1512ed75-8c74-5520-ac88-134a1403f7ad")) __declspec(novtable) IIterator<Windows::UI::Notifications::ToastCollection> : impl_IIterator<Windows::UI::Notifications::ToastCollection> {};
+#endif
+
+#ifndef WINRT_GENERIC_8928d527_db5d_5a10_ae9b_430fa0906e74
+#define WINRT_GENERIC_8928d527_db5d_5a10_ae9b_430fa0906e74
+template <> struct __declspec(uuid("8928d527-db5d-5a10-ae9b-430fa0906e74")) __declspec(novtable) IIterable<Windows::UI::Notifications::ToastCollection> : impl_IIterable<Windows::UI::Notifications::ToastCollection> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_8d44ca1e_15d7_5bcb_b002_384c87171c74
+#define WINRT_GENERIC_8d44ca1e_15d7_5bcb_b002_384c87171c74
+template <> struct __declspec(uuid("8d44ca1e-15d7-5bcb-b002-384c87171c74")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::UI::Notifications::ToastCollection> : impl_AsyncOperationCompletedHandler<Windows::UI::Notifications::ToastCollection> {};
+#endif
+
+#ifndef WINRT_GENERIC_fde26ed7_bc37_5a7c_b3da_3e41ac97bba4
+#define WINRT_GENERIC_fde26ed7_bc37_5a7c_b3da_3e41ac97bba4
+template <> struct __declspec(uuid("fde26ed7-bc37-5a7c-b3da-3e41ac97bba4")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::UI::Notifications::ToastNotifier> : impl_AsyncOperationCompletedHandler<Windows::UI::Notifications::ToastNotifier> {};
+#endif
+
+#ifndef WINRT_GENERIC_c661d5da_6762_5d93_9138_e7dacd571056
+#define WINRT_GENERIC_c661d5da_6762_5d93_9138_e7dacd571056
+template <> struct __declspec(uuid("c661d5da-6762-5d93-9138-e7dacd571056")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::UI::Notifications::ToastNotificationHistory> : impl_AsyncOperationCompletedHandler<Windows::UI::Notifications::ToastNotificationHistory> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
 #ifndef WINRT_GENERIC_810f8c42_a267_5ba0_9538_48b9ecc433b8
 #define WINRT_GENERIC_810f8c42_a267_5ba0_9538_48b9ecc433b8
 template <> struct __declspec(uuid("810f8c42-a267-5ba0-9538-48b9ecc433b8")) __declspec(novtable) IVector<Windows::UI::Notifications::ToastNotification> : impl_IVector<Windows::UI::Notifications::ToastNotification> {};
@@ -194,9 +264,34 @@ template <> struct __declspec(uuid("52c9428b-d37a-554d-bf55-b8685d5f552d")) __de
 template <> struct __declspec(uuid("e9bdaaf0-cbf6-5c72-be90-29cbf3a1319b")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_34d4fa14_252b_5cb4_a7da_971ee5daec7c
+#define WINRT_GENERIC_34d4fa14_252b_5cb4_a7da_971ee5daec7c
+template <> struct __declspec(uuid("34d4fa14-252b-5cb4-a7da-971ee5daec7c")) __declspec(novtable) IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastCollection>> : impl_IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastCollection>> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
 #ifndef WINRT_GENERIC_05eb86f1_7140_5517_b88d_cbaebe57e6b1
 #define WINRT_GENERIC_05eb86f1_7140_5517_b88d_cbaebe57e6b1
 template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_4650e069_3052_530e_bc38_93c411773b77
+#define WINRT_GENERIC_4650e069_3052_530e_bc38_93c411773b77
+template <> struct __declspec(uuid("4650e069-3052-530e-bc38-93c411773b77")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastCollection>> : impl_AsyncOperationCompletedHandler<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastCollection>> {};
 #endif
 
 
@@ -294,6 +389,20 @@ struct INotificationBinding :
     impl::consume<INotificationBinding>
 {
     INotificationBinding(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct INotificationData :
+    Windows::Foundation::IInspectable,
+    impl::consume<INotificationData>
+{
+    INotificationData(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct INotificationDataFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<INotificationDataFactory>
+{
+    INotificationDataFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INotificationVisual :
@@ -436,6 +545,27 @@ struct IToastActivatedEventArgs :
     IToastActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IToastCollection :
+    Windows::Foundation::IInspectable,
+    impl::consume<IToastCollection>
+{
+    IToastCollection(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IToastCollectionFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IToastCollectionFactory>
+{
+    IToastCollectionFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IToastCollectionManager :
+    Windows::Foundation::IInspectable,
+    impl::consume<IToastCollectionManager>
+{
+    IToastCollectionManager(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IToastDismissedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IToastDismissedEventArgs>
@@ -469,6 +599,13 @@ struct IToastNotification3 :
     impl::consume<IToastNotification3>
 {
     IToastNotification3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IToastNotification4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IToastNotification4>
+{
+    IToastNotification4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationActionTriggerDetail :
@@ -506,11 +643,25 @@ struct IToastNotificationHistoryChangedTriggerDetail :
     IToastNotificationHistoryChangedTriggerDetail(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IToastNotificationHistoryChangedTriggerDetail2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IToastNotificationHistoryChangedTriggerDetail2>
+{
+    IToastNotificationHistoryChangedTriggerDetail2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IToastNotificationManagerForUser :
     Windows::Foundation::IInspectable,
     impl::consume<IToastNotificationManagerForUser>
 {
     IToastNotificationManagerForUser(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IToastNotificationManagerForUser2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IToastNotificationManagerForUser2>
+{
+    IToastNotificationManagerForUser2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IToastNotificationManagerStatics :
@@ -534,11 +685,25 @@ struct IToastNotificationManagerStatics4 :
     IToastNotificationManagerStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IToastNotificationManagerStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IToastNotificationManagerStatics5>
+{
+    IToastNotificationManagerStatics5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IToastNotifier :
     Windows::Foundation::IInspectable,
     impl::consume<IToastNotifier>
 {
     IToastNotifier(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IToastNotifier2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IToastNotifier2>
+{
+    IToastNotifier2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserNotification :

@@ -73,6 +73,7 @@ struct WINRT_EBO AutomationElementIdentifiers :
     static Windows::UI::Xaml::Automation::AutomationProperty DescribedByProperty();
     static Windows::UI::Xaml::Automation::AutomationProperty FlowsToProperty();
     static Windows::UI::Xaml::Automation::AutomationProperty FlowsFromProperty();
+    static Windows::UI::Xaml::Automation::AutomationProperty CultureProperty();
 };
 
 struct WINRT_EBO AutomationProperties :
@@ -149,6 +150,9 @@ struct WINRT_EBO AutomationProperties :
     static Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> GetFlowsTo(const Windows::UI::Xaml::DependencyObject & element);
     static Windows::UI::Xaml::DependencyProperty FlowsFromProperty();
     static Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> GetFlowsFrom(const Windows::UI::Xaml::DependencyObject & element);
+    static Windows::UI::Xaml::DependencyProperty CultureProperty();
+    static int32_t GetCulture(const Windows::UI::Xaml::DependencyObject & element);
+    static void SetCulture(const Windows::UI::Xaml::DependencyObject & element, int32_t value);
 };
 
 struct WINRT_EBO AutomationProperty :

@@ -10,7 +10,7 @@ namespace Windows::UI::Xaml::Documents {
 
 template <typename D, typename ... Interfaces> struct BlockT :
     overrides<D, Windows::UI::Xaml::Documents::ITextElementOverridesT<D>, Interfaces ...>,
-    impl::require<D, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::ITextElement3, Windows::UI::Xaml::Documents::IBlock, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
+    impl::require<D, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::ITextElement3, Windows::UI::Xaml::Documents::ITextElement4, Windows::UI::Xaml::Documents::IBlock, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
 {
     using composable = Block;
 
@@ -24,7 +24,7 @@ protected:
 
 template <typename D, typename ... Interfaces> struct InlineT :
     overrides<D, Windows::UI::Xaml::Documents::ITextElementOverridesT<D>, Interfaces ...>,
-    impl::require<D, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::ITextElement3, Windows::UI::Xaml::Documents::IInline, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
+    impl::require<D, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::ITextElement3, Windows::UI::Xaml::Documents::ITextElement4, Windows::UI::Xaml::Documents::IInline, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
 {
     using composable = Inline;
 
@@ -38,7 +38,7 @@ protected:
 
 template <typename D, typename ... Interfaces> struct SpanT :
     overrides<D, Windows::UI::Xaml::Documents::ITextElementOverridesT<D>, Interfaces ...>,
-    impl::require<D, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::ITextElement3, Windows::UI::Xaml::Documents::IInline, Windows::UI::Xaml::Documents::ISpan, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
+    impl::require<D, Windows::UI::Xaml::Documents::ITextElement, Windows::UI::Xaml::Documents::ITextElement2, Windows::UI::Xaml::Documents::ITextElement3, Windows::UI::Xaml::Documents::ITextElement4, Windows::UI::Xaml::Documents::IInline, Windows::UI::Xaml::Documents::ISpan, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2>
 {
     using composable = Span;
 

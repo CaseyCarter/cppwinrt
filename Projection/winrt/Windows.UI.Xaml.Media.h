@@ -11,11 +11,14 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Media.Playback.3.h"
 #include "internal/Windows.Storage.Streams.3.h"
+#include "internal/Windows.UI.Composition.3.h"
 #include "internal/Windows.UI.Xaml.Media.Media3D.3.h"
 #include "internal/Windows.UI.3.h"
 #include "internal/Windows.UI.Xaml.Media.3.h"
 #include "Windows.UI.Xaml.h"
+#include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"
+#include "Windows.UI.Composition.h"
 #include "internal/Windows.UI.Xaml.Media.4.h"
 #include "internal/Windows.UI.Xaml.Media.5.h"
 
@@ -2248,6 +2251,162 @@ struct produce<D, Windows::UI::Xaml::Media::ILinearGradientBrushStatics> : produ
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::ILoadedImageSourceLoadCompletedEventArgs> : produce_base<D, Windows::UI::Xaml::Media::ILoadedImageSourceLoadCompletedEventArgs>
+{
+    HRESULT __stdcall get_Status(Windows::UI::Xaml::Media::LoadedImageSourceLoadStatus * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Status());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::ILoadedImageSurface> : produce_base<D, Windows::UI::Xaml::Media::ILoadedImageSurface>
+{
+    HRESULT __stdcall get_DecodedPhysicalSize(impl::abi_arg_out<Windows::Foundation::Size> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DecodedPhysicalSize());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DecodedSize(impl::abi_arg_out<Windows::Foundation::Size> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DecodedSize());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_NaturalSize(impl::abi_arg_out<Windows::Foundation::Size> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().NaturalSize());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_LoadCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().LoadCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_LoadCompleted(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().LoadCompleted(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics> : produce_base<D, Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>
+{
+    HRESULT __stdcall abi_StartLoadFromUriWithSize(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> uri, impl::abi_arg_in<Windows::Foundation::Size> desiredMaxSize, impl::abi_arg_out<Windows::UI::Xaml::Media::ILoadedImageSurface> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().StartLoadFromUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Foundation::Size *>(&desiredMaxSize)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StartLoadFromUri(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> uri, impl::abi_arg_out<Windows::UI::Xaml::Media::ILoadedImageSurface> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().StartLoadFromUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StartLoadFromStreamWithSize(impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> stream, impl::abi_arg_in<Windows::Foundation::Size> desiredMaxSize, impl::abi_arg_out<Windows::UI::Xaml::Media::ILoadedImageSurface> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().StartLoadFromStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const Windows::Foundation::Size *>(&desiredMaxSize)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StartLoadFromStream(impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> stream, impl::abi_arg_out<Windows::UI::Xaml::Media::ILoadedImageSurface> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().StartLoadFromStream(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
             return impl::to_hresult();
         }
     }
@@ -4881,6 +5040,306 @@ struct produce<D, Windows::UI::Xaml::Media::IVisualTreeHelperStatics2> : produce
     }
 };
 
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBase> : produce_base<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBase>
+{
+    HRESULT __stdcall get_FallbackColor(impl::abi_arg_out<Windows::UI::Color> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().FallbackColor());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_FallbackColor(impl::abi_arg_in<Windows::UI::Color> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().FallbackColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory> : produce_base<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory>
+{
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IXamlCompositionBrushBase> instance) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *inner = nullptr;
+            *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides> : produce_base<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides>
+{
+    HRESULT __stdcall abi_OnConnected() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().OnConnected();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnDisconnected() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().OnDisconnected();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected> : produce_base<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
+{
+    HRESULT __stdcall get_CompositionBrush(impl::abi_arg_out<Windows::UI::Composition::ICompositionBrush> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CompositionBrush());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_CompositionBrush(impl::abi_arg_in<Windows::UI::Composition::ICompositionBrush> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CompositionBrush(*reinterpret_cast<const Windows::UI::Composition::CompositionBrush *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseStatics> : produce_base<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseStatics>
+{
+    HRESULT __stdcall get_FallbackColorProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().FallbackColorProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::IXamlLight> : produce_base<D, Windows::UI::Xaml::Media::IXamlLight>
+{};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::IXamlLightFactory> : produce_base<D, Windows::UI::Xaml::Media::IXamlLightFactory>
+{
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::IXamlLight> instance) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *inner = nullptr;
+            *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::IXamlLightOverrides> : produce_base<D, Windows::UI::Xaml::Media::IXamlLightOverrides>
+{
+    HRESULT __stdcall abi_GetId(impl::abi_arg_out<hstring> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().GetId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnConnected(impl::abi_arg_in<Windows::UI::Xaml::IUIElement> newElement) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().OnConnected(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&newElement));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OnDisconnected(impl::abi_arg_in<Windows::UI::Xaml::IUIElement> oldElement) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().OnDisconnected(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&oldElement));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::IXamlLightProtected> : produce_base<D, Windows::UI::Xaml::Media::IXamlLightProtected>
+{
+    HRESULT __stdcall get_CompositionLight(impl::abi_arg_out<Windows::UI::Composition::ICompositionLight> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CompositionLight());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_CompositionLight(impl::abi_arg_in<Windows::UI::Composition::ICompositionLight> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CompositionLight(*reinterpret_cast<const Windows::UI::Composition::CompositionLight *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::IXamlLightStatics> : produce_base<D, Windows::UI::Xaml::Media::IXamlLightStatics>
+{
+    HRESULT __stdcall abi_AddTargetElement(impl::abi_arg_in<hstring> lightId, impl::abi_arg_in<Windows::UI::Xaml::IUIElement> element) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AddTargetElement(*reinterpret_cast<const hstring *>(&lightId), *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RemoveTargetElement(impl::abi_arg_in<hstring> lightId, impl::abi_arg_in<Windows::UI::Xaml::IUIElement> element) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().RemoveTargetElement(*reinterpret_cast<const hstring *>(&lightId), *reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_AddTargetBrush(impl::abi_arg_in<hstring> lightId, impl::abi_arg_in<Windows::UI::Xaml::Media::IBrush> brush) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AddTargetBrush(*reinterpret_cast<const hstring *>(&lightId), *reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&brush));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RemoveTargetBrush(impl::abi_arg_in<hstring> lightId, impl::abi_arg_in<Windows::UI::Xaml::Media::IBrush> brush) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().RemoveTargetBrush(*reinterpret_cast<const hstring *>(&lightId), *reinterpret_cast<const Windows::UI::Xaml::Media::Brush *>(&brush));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
 }
 
 namespace Windows::UI::Xaml::Media {
@@ -5303,6 +5762,62 @@ template <typename D> Windows::UI::Xaml::Media::TimelineMarker impl_ITimelineMar
 template <typename D> void impl_ITimelineMarkerRoutedEventArgs<D>::Marker(const Windows::UI::Xaml::Media::TimelineMarker & value) const
 {
     check_hresult(WINRT_SHIM(ITimelineMarkerRoutedEventArgs)->put_Marker(get_abi(value)));
+}
+
+template <typename D> hstring impl_IXamlLightOverrides<D>::GetId() const
+{
+    hstring returnValue;
+    check_hresult(WINRT_SHIM(IXamlLightOverrides)->abi_GetId(put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> void impl_IXamlLightOverrides<D>::OnConnected(const Windows::UI::Xaml::UIElement & newElement) const
+{
+    check_hresult(WINRT_SHIM(IXamlLightOverrides)->abi_OnConnected(get_abi(newElement)));
+}
+
+template <typename D> void impl_IXamlLightOverrides<D>::OnDisconnected(const Windows::UI::Xaml::UIElement & oldElement) const
+{
+    check_hresult(WINRT_SHIM(IXamlLightOverrides)->abi_OnDisconnected(get_abi(oldElement)));
+}
+
+template <typename D> Windows::UI::Composition::CompositionLight impl_IXamlLightProtected<D>::CompositionLight() const
+{
+    Windows::UI::Composition::CompositionLight value { nullptr };
+    check_hresult(WINRT_SHIM(IXamlLightProtected)->get_CompositionLight(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IXamlLightProtected<D>::CompositionLight(const Windows::UI::Composition::CompositionLight & value) const
+{
+    check_hresult(WINRT_SHIM(IXamlLightProtected)->put_CompositionLight(get_abi(value)));
+}
+
+template <typename D> void impl_IXamlLightStatics<D>::AddTargetElement(hstring_view lightId, const Windows::UI::Xaml::UIElement & element) const
+{
+    check_hresult(WINRT_SHIM(IXamlLightStatics)->abi_AddTargetElement(get_abi(lightId), get_abi(element)));
+}
+
+template <typename D> void impl_IXamlLightStatics<D>::RemoveTargetElement(hstring_view lightId, const Windows::UI::Xaml::UIElement & element) const
+{
+    check_hresult(WINRT_SHIM(IXamlLightStatics)->abi_RemoveTargetElement(get_abi(lightId), get_abi(element)));
+}
+
+template <typename D> void impl_IXamlLightStatics<D>::AddTargetBrush(hstring_view lightId, const Windows::UI::Xaml::Media::Brush & brush) const
+{
+    check_hresult(WINRT_SHIM(IXamlLightStatics)->abi_AddTargetBrush(get_abi(lightId), get_abi(brush)));
+}
+
+template <typename D> void impl_IXamlLightStatics<D>::RemoveTargetBrush(hstring_view lightId, const Windows::UI::Xaml::Media::Brush & brush) const
+{
+    check_hresult(WINRT_SHIM(IXamlLightStatics)->abi_RemoveTargetBrush(get_abi(lightId), get_abi(brush)));
+}
+
+template <typename D> Windows::UI::Xaml::Media::XamlLight impl_IXamlLightFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
+{
+    Windows::UI::Xaml::Media::XamlLight instance { nullptr };
+    check_hresult(WINRT_SHIM(IXamlLightFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IMatrix3DProjection<D>::ProjectionMatrix() const
@@ -6074,6 +6589,79 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITranslateTrans
     return value;
 }
 
+template <typename D> Windows::UI::Xaml::Media::LoadedImageSourceLoadStatus impl_ILoadedImageSourceLoadCompletedEventArgs<D>::Status() const
+{
+    Windows::UI::Xaml::Media::LoadedImageSourceLoadStatus value {};
+    check_hresult(WINRT_SHIM(ILoadedImageSourceLoadCompletedEventArgs)->get_Status(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Size impl_ILoadedImageSurface<D>::DecodedPhysicalSize() const
+{
+    Windows::Foundation::Size value {};
+    check_hresult(WINRT_SHIM(ILoadedImageSurface)->get_DecodedPhysicalSize(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Size impl_ILoadedImageSurface<D>::DecodedSize() const
+{
+    Windows::Foundation::Size value {};
+    check_hresult(WINRT_SHIM(ILoadedImageSurface)->get_DecodedSize(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Size impl_ILoadedImageSurface<D>::NaturalSize() const
+{
+    Windows::Foundation::Size value {};
+    check_hresult(WINRT_SHIM(ILoadedImageSurface)->get_NaturalSize(put_abi(value)));
+    return value;
+}
+
+template <typename D> event_token impl_ILoadedImageSurface<D>::LoadCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ILoadedImageSurface)->add_LoadCompleted(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ILoadedImageSurface> impl_ILoadedImageSurface<D>::LoadCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, ILoadedImageSurface>(this, &ABI::Windows::UI::Xaml::Media::ILoadedImageSurface::remove_LoadCompleted, LoadCompleted(value));
+}
+
+template <typename D> void impl_ILoadedImageSurface<D>::LoadCompleted(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ILoadedImageSurface)->remove_LoadCompleted(token));
+}
+
+template <typename D> Windows::UI::Xaml::Media::LoadedImageSurface impl_ILoadedImageSurfaceStatics<D>::StartLoadFromUri(const Windows::Foundation::Uri & uri, const Windows::Foundation::Size & desiredMaxSize) const
+{
+    Windows::UI::Xaml::Media::LoadedImageSurface returnValue { nullptr };
+    check_hresult(WINRT_SHIM(ILoadedImageSurfaceStatics)->abi_StartLoadFromUriWithSize(get_abi(uri), get_abi(desiredMaxSize), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Media::LoadedImageSurface impl_ILoadedImageSurfaceStatics<D>::StartLoadFromUri(const Windows::Foundation::Uri & uri) const
+{
+    Windows::UI::Xaml::Media::LoadedImageSurface returnValue { nullptr };
+    check_hresult(WINRT_SHIM(ILoadedImageSurfaceStatics)->abi_StartLoadFromUri(get_abi(uri), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Media::LoadedImageSurface impl_ILoadedImageSurfaceStatics<D>::StartLoadFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Foundation::Size & desiredMaxSize) const
+{
+    Windows::UI::Xaml::Media::LoadedImageSurface returnValue { nullptr };
+    check_hresult(WINRT_SHIM(ILoadedImageSurfaceStatics)->abi_StartLoadFromStreamWithSize(get_abi(stream), get_abi(desiredMaxSize), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Media::LoadedImageSurface impl_ILoadedImageSurfaceStatics<D>::StartLoadFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream) const
+{
+    Windows::UI::Xaml::Media::LoadedImageSurface returnValue { nullptr };
+    check_hresult(WINRT_SHIM(ILoadedImageSurfaceStatics)->abi_StartLoadFromStream(get_abi(stream), put_abi(returnValue)));
+    return returnValue;
+}
+
 template <typename D> Windows::UI::Color impl_IGradientStop<D>::Color() const
 {
     Windows::UI::Color value {};
@@ -6772,6 +7360,54 @@ template <typename D> Windows::UI::Xaml::Media::TileBrush impl_ITileBrushFactory
     return instance;
 }
 
+template <typename D> Windows::UI::Color impl_IXamlCompositionBrushBase<D>::FallbackColor() const
+{
+    Windows::UI::Color value {};
+    check_hresult(WINRT_SHIM(IXamlCompositionBrushBase)->get_FallbackColor(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IXamlCompositionBrushBase<D>::FallbackColor(const Windows::UI::Color & value) const
+{
+    check_hresult(WINRT_SHIM(IXamlCompositionBrushBase)->put_FallbackColor(get_abi(value)));
+}
+
+template <typename D> void impl_IXamlCompositionBrushBaseOverrides<D>::OnConnected() const
+{
+    check_hresult(WINRT_SHIM(IXamlCompositionBrushBaseOverrides)->abi_OnConnected());
+}
+
+template <typename D> void impl_IXamlCompositionBrushBaseOverrides<D>::OnDisconnected() const
+{
+    check_hresult(WINRT_SHIM(IXamlCompositionBrushBaseOverrides)->abi_OnDisconnected());
+}
+
+template <typename D> Windows::UI::Composition::CompositionBrush impl_IXamlCompositionBrushBaseProtected<D>::CompositionBrush() const
+{
+    Windows::UI::Composition::CompositionBrush value { nullptr };
+    check_hresult(WINRT_SHIM(IXamlCompositionBrushBaseProtected)->get_CompositionBrush(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IXamlCompositionBrushBaseProtected<D>::CompositionBrush(const Windows::UI::Composition::CompositionBrush & value) const
+{
+    check_hresult(WINRT_SHIM(IXamlCompositionBrushBaseProtected)->put_CompositionBrush(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IXamlCompositionBrushBaseStatics<D>::FallbackColorProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IXamlCompositionBrushBaseStatics)->get_FallbackColorProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Media::XamlCompositionBrushBase impl_IXamlCompositionBrushBaseFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
+{
+    Windows::UI::Xaml::Media::XamlCompositionBrushBase instance { nullptr };
+    check_hresult(WINRT_SHIM(IXamlCompositionBrushBaseFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
 template <typename D> Windows::UI::Xaml::Media::ImageSource impl_IImageBrush<D>::ImageSource() const
 {
     Windows::UI::Xaml::Media::ImageSource value { nullptr };
@@ -7175,6 +7811,26 @@ inline Windows::UI::Xaml::DependencyProperty LinearGradientBrush::StartPointProp
 inline Windows::UI::Xaml::DependencyProperty LinearGradientBrush::EndPointProperty()
 {
     return get_activation_factory<LinearGradientBrush, ILinearGradientBrushStatics>().EndPointProperty();
+}
+
+inline Windows::UI::Xaml::Media::LoadedImageSurface LoadedImageSurface::StartLoadFromUri(const Windows::Foundation::Uri & uri, const Windows::Foundation::Size & desiredMaxSize)
+{
+    return get_activation_factory<LoadedImageSurface, ILoadedImageSurfaceStatics>().StartLoadFromUri(uri, desiredMaxSize);
+}
+
+inline Windows::UI::Xaml::Media::LoadedImageSurface LoadedImageSurface::StartLoadFromUri(const Windows::Foundation::Uri & uri)
+{
+    return get_activation_factory<LoadedImageSurface, ILoadedImageSurfaceStatics>().StartLoadFromUri(uri);
+}
+
+inline Windows::UI::Xaml::Media::LoadedImageSurface LoadedImageSurface::StartLoadFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Foundation::Size & desiredMaxSize)
+{
+    return get_activation_factory<LoadedImageSurface, ILoadedImageSurfaceStatics>().StartLoadFromStream(stream, desiredMaxSize);
+}
+
+inline Windows::UI::Xaml::Media::LoadedImageSurface LoadedImageSurface::StartLoadFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream)
+{
+    return get_activation_factory<LoadedImageSurface, ILoadedImageSurfaceStatics>().StartLoadFromStream(stream);
 }
 
 inline Matrix3DProjection::Matrix3DProjection() :
@@ -7586,6 +8242,37 @@ inline Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls
     return get_activation_factory<VisualTreeHelper, IVisualTreeHelperStatics2>().GetOpenPopups(window);
 }
 
+inline Windows::UI::Xaml::DependencyProperty XamlCompositionBrushBase::FallbackColorProperty()
+{
+    return get_activation_factory<XamlCompositionBrushBase, IXamlCompositionBrushBaseStatics>().FallbackColorProperty();
+}
+
+inline XamlLight::XamlLight()
+{
+    Windows::Foundation::IInspectable outer, inner;
+    impl_move(get_activation_factory<XamlLight, IXamlLightFactory>().CreateInstance(outer, inner));
+}
+
+inline void XamlLight::AddTargetElement(hstring_view lightId, const Windows::UI::Xaml::UIElement & element)
+{
+    get_activation_factory<XamlLight, IXamlLightStatics>().AddTargetElement(lightId, element);
+}
+
+inline void XamlLight::RemoveTargetElement(hstring_view lightId, const Windows::UI::Xaml::UIElement & element)
+{
+    get_activation_factory<XamlLight, IXamlLightStatics>().RemoveTargetElement(lightId, element);
+}
+
+inline void XamlLight::AddTargetBrush(hstring_view lightId, const Windows::UI::Xaml::Media::Brush & brush)
+{
+    get_activation_factory<XamlLight, IXamlLightStatics>().AddTargetBrush(lightId, brush);
+}
+
+inline void XamlLight::RemoveTargetBrush(hstring_view lightId, const Windows::UI::Xaml::Media::Brush & brush)
+{
+    get_activation_factory<XamlLight, IXamlLightStatics>().RemoveTargetBrush(lightId, brush);
+}
+
 }
 
 }
@@ -7972,6 +8659,33 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Media::ILinearGradientBrushStatics>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Media::ILinearGradientBrushStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ILoadedImageSourceLoadCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ILoadedImageSourceLoadCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ILoadedImageSurface>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ILoadedImageSurface & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -8473,6 +9187,96 @@ struct std::hash<winrt::Windows::UI::Xaml::Media::IVisualTreeHelperStatics2>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IXamlCompositionBrushBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IXamlCompositionBrushBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IXamlLight>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IXamlLight & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IXamlLightFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IXamlLightFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IXamlLightOverrides>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IXamlLightOverrides & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IXamlLightProtected>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IXamlLightProtected & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::IXamlLightStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::IXamlLightStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Media::ArcSegment>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Media::ArcSegment & value) const noexcept
@@ -8674,6 +9478,24 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Media::LinearGradientBrush>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Media::LinearGradientBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::LoadedImageSurface>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::LoadedImageSurface & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -8971,6 +9793,24 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Media::VisualTreeHelper>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Media::VisualTreeHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::XamlCompositionBrushBase>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::XamlCompositionBrushBase & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::XamlLight>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::XamlLight & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

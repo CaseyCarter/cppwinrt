@@ -14,7 +14,12 @@ struct IAdvancedVideoCaptureDeviceController;
 struct IAdvancedVideoCaptureDeviceController2;
 struct IAdvancedVideoCaptureDeviceController3;
 struct IAdvancedVideoCaptureDeviceController4;
+struct IAdvancedVideoCaptureDeviceController5;
 struct IAudioDeviceController;
+struct IAudioDeviceModule;
+struct IAudioDeviceModuleNotificationEventArgs;
+struct IAudioDeviceModulesManager;
+struct IAudioDeviceModulesManagerFactory;
 struct IDefaultAudioDeviceChangedEventArgs;
 struct IExposureCompensationControl;
 struct IExposureControl;
@@ -33,6 +38,7 @@ struct IMediaDeviceControl;
 struct IMediaDeviceControlCapabilities;
 struct IMediaDeviceController;
 struct IMediaDeviceStatics;
+struct IModuleCommandResult;
 struct IOpticalImageStabilizationControl;
 struct IPhotoConfirmationControl;
 struct IRegionOfInterest;
@@ -41,6 +47,7 @@ struct IRegionsOfInterestControl;
 struct ISceneModeControl;
 struct ITorchControl;
 struct IVideoDeviceController;
+struct IVideoDeviceControllerGetDevicePropertyResult;
 struct IWhiteBalanceControl;
 struct IZoomControl;
 struct IZoomControl2;
@@ -48,6 +55,9 @@ struct IZoomSettings;
 struct AdvancedPhotoCaptureSettings;
 struct AdvancedPhotoControl;
 struct AudioDeviceController;
+struct AudioDeviceModule;
+struct AudioDeviceModuleNotificationEventArgs;
+struct AudioDeviceModulesManager;
 struct DefaultAudioCaptureDeviceChangedEventArgs;
 struct DefaultAudioRenderDeviceChangedEventArgs;
 struct ExposureCompensationControl;
@@ -62,6 +72,7 @@ struct LowLagPhotoControl;
 struct LowLagPhotoSequenceControl;
 struct MediaDeviceControl;
 struct MediaDeviceControlCapabilities;
+struct ModuleCommandResult;
 struct OpticalImageStabilizationControl;
 struct PhotoConfirmationControl;
 struct RegionOfInterest;
@@ -69,6 +80,7 @@ struct RegionsOfInterestControl;
 struct SceneModeControl;
 struct TorchControl;
 struct VideoDeviceController;
+struct VideoDeviceControllerGetDevicePropertyResult;
 struct WhiteBalanceControl;
 struct ZoomControl;
 struct ZoomSettings;
@@ -83,7 +95,12 @@ struct IAdvancedVideoCaptureDeviceController;
 struct IAdvancedVideoCaptureDeviceController2;
 struct IAdvancedVideoCaptureDeviceController3;
 struct IAdvancedVideoCaptureDeviceController4;
+struct IAdvancedVideoCaptureDeviceController5;
 struct IAudioDeviceController;
+struct IAudioDeviceModule;
+struct IAudioDeviceModuleNotificationEventArgs;
+struct IAudioDeviceModulesManager;
+struct IAudioDeviceModulesManagerFactory;
 struct IDefaultAudioDeviceChangedEventArgs;
 struct IExposureCompensationControl;
 struct IExposureControl;
@@ -102,6 +119,7 @@ struct IMediaDeviceControl;
 struct IMediaDeviceControlCapabilities;
 struct IMediaDeviceController;
 struct IMediaDeviceStatics;
+struct IModuleCommandResult;
 struct IOpticalImageStabilizationControl;
 struct IPhotoConfirmationControl;
 struct IRegionOfInterest;
@@ -110,6 +128,7 @@ struct IRegionsOfInterestControl;
 struct ISceneModeControl;
 struct ITorchControl;
 struct IVideoDeviceController;
+struct IVideoDeviceControllerGetDevicePropertyResult;
 struct IWhiteBalanceControl;
 struct IZoomControl;
 struct IZoomControl2;
@@ -117,6 +136,9 @@ struct IZoomSettings;
 struct AdvancedPhotoCaptureSettings;
 struct AdvancedPhotoControl;
 struct AudioDeviceController;
+struct AudioDeviceModule;
+struct AudioDeviceModuleNotificationEventArgs;
+struct AudioDeviceModulesManager;
 struct DefaultAudioCaptureDeviceChangedEventArgs;
 struct DefaultAudioRenderDeviceChangedEventArgs;
 struct ExposureCompensationControl;
@@ -132,6 +154,7 @@ struct LowLagPhotoSequenceControl;
 struct MediaDevice;
 struct MediaDeviceControl;
 struct MediaDeviceControlCapabilities;
+struct ModuleCommandResult;
 struct OpticalImageStabilizationControl;
 struct PhotoConfirmationControl;
 struct RegionOfInterest;
@@ -139,6 +162,7 @@ struct RegionsOfInterestControl;
 struct SceneModeControl;
 struct TorchControl;
 struct VideoDeviceController;
+struct VideoDeviceControllerGetDevicePropertyResult;
 struct WhiteBalanceControl;
 struct ZoomControl;
 struct ZoomSettings;
@@ -153,7 +177,12 @@ template <typename T> struct impl_IAdvancedVideoCaptureDeviceController;
 template <typename T> struct impl_IAdvancedVideoCaptureDeviceController2;
 template <typename T> struct impl_IAdvancedVideoCaptureDeviceController3;
 template <typename T> struct impl_IAdvancedVideoCaptureDeviceController4;
+template <typename T> struct impl_IAdvancedVideoCaptureDeviceController5;
 template <typename T> struct impl_IAudioDeviceController;
+template <typename T> struct impl_IAudioDeviceModule;
+template <typename T> struct impl_IAudioDeviceModuleNotificationEventArgs;
+template <typename T> struct impl_IAudioDeviceModulesManager;
+template <typename T> struct impl_IAudioDeviceModulesManagerFactory;
 template <typename T> struct impl_IDefaultAudioDeviceChangedEventArgs;
 template <typename T> struct impl_IExposureCompensationControl;
 template <typename T> struct impl_IExposureControl;
@@ -172,6 +201,7 @@ template <typename T> struct impl_IMediaDeviceControl;
 template <typename T> struct impl_IMediaDeviceControlCapabilities;
 template <typename T> struct impl_IMediaDeviceController;
 template <typename T> struct impl_IMediaDeviceStatics;
+template <typename T> struct impl_IModuleCommandResult;
 template <typename T> struct impl_IOpticalImageStabilizationControl;
 template <typename T> struct impl_IPhotoConfirmationControl;
 template <typename T> struct impl_IRegionOfInterest;
@@ -180,6 +210,7 @@ template <typename T> struct impl_IRegionsOfInterestControl;
 template <typename T> struct impl_ISceneModeControl;
 template <typename T> struct impl_ITorchControl;
 template <typename T> struct impl_IVideoDeviceController;
+template <typename T> struct impl_IVideoDeviceControllerGetDevicePropertyResult;
 template <typename T> struct impl_IWhiteBalanceControl;
 template <typename T> struct impl_IZoomControl;
 template <typename T> struct impl_IZoomControl2;
@@ -339,6 +370,33 @@ enum class RegionOfInterestType
 {
     Unknown = 0,
     Face = 1,
+};
+
+enum class SendCommandStatus
+{
+    Success = 0,
+    DeviceNotAvailable = 1,
+};
+
+enum class VideoDeviceControllerGetDevicePropertyStatus
+{
+    Success = 0,
+    UnknownFailure = 1,
+    BufferTooSmall = 2,
+    NotSupported = 3,
+    DeviceNotAvailable = 4,
+    MaxPropertyValueSizeTooSmall = 5,
+    MaxPropertyValueSizeRequired = 6,
+};
+
+enum class VideoDeviceControllerSetDevicePropertyStatus
+{
+    Success = 0,
+    UnknownFailure = 1,
+    NotSupported = 2,
+    InvalidValue = 3,
+    DeviceNotAvailable = 4,
+    NotInControl = 5,
 };
 
 enum class ZoomTransitionMode

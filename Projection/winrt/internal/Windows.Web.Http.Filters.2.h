@@ -10,14 +10,19 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
-#define WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
-template <> struct __declspec(uuid("0c7d1423-e8fd-5a91-b55c-8bfbe7ac2d40")) __declspec(novtable) IIterable<Windows::Security::Cryptography::Certificates::Certificate> : impl_IIterable<Windows::Security::Cryptography::Certificates::Certificate> {};
-#endif
-
 #ifndef WINRT_GENERIC_963f7013_77c2_51c5_8038_b5bcef633edb
 #define WINRT_GENERIC_963f7013_77c2_51c5_8038_b5bcef633edb
 template <> struct __declspec(uuid("963f7013-77c2-51c5-8038-b5bcef633edb")) __declspec(novtable) IVectorView<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVectorView<Windows::Security::Cryptography::Certificates::Certificate> {};
+#endif
+
+#ifndef WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
+#define WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
+template <> struct __declspec(uuid("36282c0f-2f1f-57f4-b2b1-867af90c3d13")) __declspec(novtable) IVector<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVector<Windows::Security::Cryptography::Certificates::Certificate> {};
+#endif
+
+#ifndef WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
+#define WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
+template <> struct __declspec(uuid("0c7d1423-e8fd-5a91-b55c-8bfbe7ac2d40")) __declspec(novtable) IIterable<Windows::Security::Cryptography::Certificates::Certificate> : impl_IIterable<Windows::Security::Cryptography::Certificates::Certificate> {};
 #endif
 
 #ifndef WINRT_GENERIC_cb383486_c2bc_5756_912d_6a708a07e5bd
@@ -28,11 +33,6 @@ template <> struct __declspec(uuid("cb383486-c2bc-5756-912d-6a708a07e5bd")) __de
 #ifndef WINRT_GENERIC_d7828cf7_4301_58d3_aab5_06e5eefcf79f
 #define WINRT_GENERIC_d7828cf7_4301_58d3_aab5_06e5eefcf79f
 template <> struct __declspec(uuid("d7828cf7-4301-58d3-aab5-06e5eefcf79f")) __declspec(novtable) IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> : impl_IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> {};
-#endif
-
-#ifndef WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
-#define WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
-template <> struct __declspec(uuid("36282c0f-2f1f-57f4-b2b1-867af90c3d13")) __declspec(novtable) IVector<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVector<Windows::Security::Cryptography::Certificates::Certificate> {};
 #endif
 
 

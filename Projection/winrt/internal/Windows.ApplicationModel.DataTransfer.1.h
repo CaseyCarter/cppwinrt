@@ -63,6 +63,12 @@ struct __declspec(uuid("041c1fe9-2409-45e1-a538-4c53eeee04a7")) __declspec(novta
     virtual HRESULT __stdcall abi_SetWebLink(Windows::Foundation::IUriRuntimeClass * value) = 0;
 };
 
+struct __declspec(uuid("88f31f5d-787b-4d32-965a-a9838105a056")) __declspec(novtable) IDataPackage3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall add_ShareCompleted(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_ShareCompleted(event_token token) = 0;
+};
+
 struct __declspec(uuid("cd1c93eb-4c4c-443a-a8d3-f5c241e91689")) __declspec(novtable) IDataPackagePropertySet : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Title(hstring * value) = 0;
@@ -198,6 +204,12 @@ struct __declspec(uuid("a5caee9b-8708-49d1-8d36-67d25a8da00c")) __declspec(novta
     virtual HRESULT __stdcall remove_TargetApplicationChosen(event_token eventCookie) = 0;
 };
 
+struct __declspec(uuid("30ae7d71-8ba8-4c02-8e3f-ddb23b388715")) __declspec(novtable) IDataTransferManager2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall add_ShareProvidersRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_ShareProvidersRequested(event_token token) = 0;
+};
+
 struct __declspec(uuid("a9da01aa-e00e-4cfe-aa44-2dd932dca3d8")) __declspec(novtable) IDataTransferManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ShowShareUI() = 0;
@@ -223,6 +235,45 @@ struct __declspec(uuid("e7af329d-051d-4fab-b1a9-47fd77f70a41")) __declspec(novta
 struct __declspec(uuid("858fa073-1e19-4105-b2f7-c8478808d562")) __declspec(novtable) IOperationCompletedEventArgs2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AcceptedFormatId(hstring * value) = 0;
+};
+
+struct __declspec(uuid("4574c442-f913-4f60-9df7-cc4060ab1916")) __declspec(novtable) IShareCompletedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ShareTarget(Windows::ApplicationModel::DataTransfer::IShareTargetInfo ** value) = 0;
+};
+
+struct __declspec(uuid("2fabe026-443e-4cda-af25-8d81070efd80")) __declspec(novtable) IShareProvider : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Title(hstring * value) = 0;
+    virtual HRESULT __stdcall get_DisplayIcon(Windows::Storage::Streams::IRandomAccessStreamReference ** value) = 0;
+    virtual HRESULT __stdcall get_BackgroundColor(Windows::UI::Color * value) = 0;
+    virtual HRESULT __stdcall get_Tag(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_Tag(Windows::Foundation::IInspectable * value) = 0;
+};
+
+struct __declspec(uuid("172a174c-e79e-4f6d-b07d-128f469e0296")) __declspec(novtable) IShareProviderFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_Create(hstring title, Windows::Storage::Streams::IRandomAccessStreamReference * displayIcon, Windows::UI::Color backgroundColor, Windows::ApplicationModel::DataTransfer::ShareProviderHandler * handler, Windows::ApplicationModel::DataTransfer::IShareProvider ** result) = 0;
+};
+
+struct __declspec(uuid("19cef937-d435-4179-b6af-14e0492b69f6")) __declspec(novtable) IShareProviderOperation : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Data(Windows::ApplicationModel::DataTransfer::IDataPackageView ** value) = 0;
+    virtual HRESULT __stdcall get_Provider(Windows::ApplicationModel::DataTransfer::IShareProvider ** value) = 0;
+    virtual HRESULT __stdcall abi_ReportCompleted() = 0;
+};
+
+struct __declspec(uuid("f888f356-a3f8-4fce-85e4-8826e63be799")) __declspec(novtable) IShareProvidersRequestedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Providers(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::DataTransfer::ShareProvider> ** value) = 0;
+    virtual HRESULT __stdcall get_Data(Windows::ApplicationModel::DataTransfer::IDataPackageView ** value) = 0;
+    virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** value) = 0;
+};
+
+struct __declspec(uuid("385be607-c6e8-4114-b294-28f3bb6f9904")) __declspec(novtable) IShareTargetInfo : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AppUserModelId(hstring * value) = 0;
+    virtual HRESULT __stdcall get_ShareProvider(Windows::ApplicationModel::DataTransfer::IShareProvider ** value) = 0;
 };
 
 struct __declspec(uuid("c6132ada-34b1-4849-bd5f-d09fee3158c5")) __declspec(novtable) ISharedStorageAccessManagerStatics : Windows::Foundation::IInspectable
@@ -253,6 +304,11 @@ struct __declspec(uuid("ca6fb8ac-2987-4ee3-9c54-d8afbcb86c1d")) __declspec(novta
     virtual HRESULT __stdcall get_ApplicationName(hstring * value) = 0;
 };
 
+struct __declspec(uuid("e7f9d9ba-e1ba-4e4d-bd65-d43845d3212f")) __declspec(novtable) ShareProviderHandler : IUnknown
+{
+    virtual HRESULT __stdcall abi_Invoke(Windows::ApplicationModel::DataTransfer::IShareProviderOperation * operation) = 0;
+};
+
 }
 
 namespace ABI {
@@ -268,6 +324,11 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::DataRequestDe
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> { using default_interface = Windows::ApplicationModel::DataTransfer::IDataRequestedEventArgs; };
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataTransferManager> { using default_interface = Windows::ApplicationModel::DataTransfer::IDataTransferManager; };
 template <> struct traits<Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> { using default_interface = Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs; };
+template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> { using default_interface = Windows::ApplicationModel::DataTransfer::IShareCompletedEventArgs; };
+template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareProvider> { using default_interface = Windows::ApplicationModel::DataTransfer::IShareProvider; };
+template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareProviderOperation> { using default_interface = Windows::ApplicationModel::DataTransfer::IShareProviderOperation; };
+template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> { using default_interface = Windows::ApplicationModel::DataTransfer::IShareProvidersRequestedEventArgs; };
+template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareTargetInfo> { using default_interface = Windows::ApplicationModel::DataTransfer::IShareTargetInfo; };
 template <> struct traits<Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> { using default_interface = Windows::ApplicationModel::DataTransfer::ITargetApplicationChosenEventArgs; };
 
 }
@@ -319,6 +380,15 @@ struct WINRT_EBO impl_IDataPackage2
 {
     void SetApplicationLink(const Windows::Foundation::Uri & value) const;
     void SetWebLink(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackage3
+{
+    event_token ShareCompleted(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> & handler) const;
+    using ShareCompleted_revoker = event_revoker<IDataPackage3>;
+    ShareCompleted_revoker ShareCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> & handler) const;
+    void ShareCompleted(event_token token) const;
 };
 
 template <typename D>
@@ -447,7 +517,7 @@ struct WINRT_EBO impl_IDataRequest
     Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
     void Data(const Windows::ApplicationModel::DataTransfer::DataPackage & value) const;
     Windows::Foundation::DateTime Deadline() const;
-    [[deprecated("FailWithDisplayText is deprecated and might not work on all platforms. For more info, see MSDN.")]] void FailWithDisplayText(hstring_view value) const;
+    void FailWithDisplayText(hstring_view value) const;
     Windows::ApplicationModel::DataTransfer::DataRequestDeferral GetDeferral() const;
 };
 
@@ -474,6 +544,15 @@ struct WINRT_EBO impl_IDataTransferManager
     using TargetApplicationChosen_revoker = event_revoker<IDataTransferManager>;
     TargetApplicationChosen_revoker TargetApplicationChosen(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> & eventHandler) const;
     void TargetApplicationChosen(event_token eventCookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTransferManager2
+{
+    event_token ShareProvidersRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> & handler) const;
+    using ShareProvidersRequested_revoker = event_revoker<IDataTransferManager2>;
+    ShareProvidersRequested_revoker ShareProvidersRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> & handler) const;
+    void ShareProvidersRequested(event_token token) const;
 };
 
 template <typename D>
@@ -506,6 +585,51 @@ template <typename D>
 struct WINRT_EBO impl_IOperationCompletedEventArgs2
 {
     hstring AcceptedFormatId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShareCompletedEventArgs
+{
+    Windows::ApplicationModel::DataTransfer::ShareTargetInfo ShareTarget() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShareProvider
+{
+    hstring Title() const;
+    Windows::Storage::Streams::RandomAccessStreamReference DisplayIcon() const;
+    Windows::UI::Color BackgroundColor() const;
+    Windows::Foundation::IInspectable Tag() const;
+    void Tag(const Windows::Foundation::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShareProviderFactory
+{
+    Windows::ApplicationModel::DataTransfer::ShareProvider Create(hstring_view title, const Windows::Storage::Streams::RandomAccessStreamReference & displayIcon, const Windows::UI::Color & backgroundColor, const Windows::ApplicationModel::DataTransfer::ShareProviderHandler & handler) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShareProviderOperation
+{
+    Windows::ApplicationModel::DataTransfer::DataPackageView Data() const;
+    Windows::ApplicationModel::DataTransfer::ShareProvider Provider() const;
+    void ReportCompleted() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShareProvidersRequestedEventArgs
+{
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::DataTransfer::ShareProvider> Providers() const;
+    Windows::ApplicationModel::DataTransfer::DataPackageView Data() const;
+    Windows::Foundation::Deferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShareTargetInfo
+{
+    hstring AppUserModelId() const;
+    Windows::ApplicationModel::DataTransfer::ShareProvider ShareProvider() const;
 };
 
 template <typename D>
@@ -565,6 +689,12 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::IDataPackage2
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::IDataPackage2;
     template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_IDataPackage2<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::IDataPackage3>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::IDataPackage3;
+    template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_IDataPackage3<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet>
@@ -663,6 +793,12 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::IDataTransfer
     template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_IDataTransferManager<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::DataTransfer::IDataTransferManager2>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::IDataTransferManager2;
+    template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_IDataTransferManager2<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::IDataTransferManagerStatics;
@@ -693,6 +829,42 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::IOperationCom
     template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_IOperationCompletedEventArgs2<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::DataTransfer::IShareCompletedEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::IShareCompletedEventArgs;
+    template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_IShareCompletedEventArgs<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::IShareProvider>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::IShareProvider;
+    template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_IShareProvider<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::IShareProviderFactory>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::IShareProviderFactory;
+    template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_IShareProviderFactory<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::IShareProviderOperation>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::IShareProviderOperation;
+    template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_IShareProviderOperation<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::IShareProvidersRequestedEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::IShareProvidersRequestedEventArgs;
+    template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_IShareProvidersRequestedEventArgs<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::IShareTargetInfo>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::IShareTargetInfo;
+    template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_IShareTargetInfo<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::ISharedStorageAccessManagerStatics;
@@ -715,6 +887,11 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::ITargetApplic
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::ITargetApplicationChosenEventArgs;
     template <typename D> using consume = Windows::ApplicationModel::DataTransfer::impl_ITargetApplicationChosenEventArgs<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareProviderHandler>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::ShareProviderHandler;
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::Clipboard>
@@ -791,6 +968,36 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::OperationComp
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.ShareCompletedEventArgs"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareProvider>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::ShareProvider;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.ShareProvider"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareProviderOperation>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::ShareProviderOperation;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.ShareProviderOperation"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.ShareProvidersRequestedEventArgs"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareTargetInfo>
+{
+    using abi = ABI::Windows::ApplicationModel::DataTransfer::ShareTargetInfo;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.ShareTargetInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::SharedStorageAccessManager>

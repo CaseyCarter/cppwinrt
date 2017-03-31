@@ -11,11 +11,13 @@ namespace ABI::Windows::ApplicationModel::UserDataAccounts {
 struct IUserDataAccount;
 struct IUserDataAccount2;
 struct IUserDataAccount3;
+struct IUserDataAccount4;
 struct IUserDataAccountManagerForUser;
 struct IUserDataAccountManagerStatics;
 struct IUserDataAccountManagerStatics2;
 struct IUserDataAccountStore;
 struct IUserDataAccountStore2;
+struct IUserDataAccountStore3;
 struct IUserDataAccountStoreChangedEventArgs;
 struct UserDataAccount;
 struct UserDataAccountManagerForUser;
@@ -29,11 +31,13 @@ namespace Windows::ApplicationModel::UserDataAccounts {
 struct IUserDataAccount;
 struct IUserDataAccount2;
 struct IUserDataAccount3;
+struct IUserDataAccount4;
 struct IUserDataAccountManagerForUser;
 struct IUserDataAccountManagerStatics;
 struct IUserDataAccountManagerStatics2;
 struct IUserDataAccountStore;
 struct IUserDataAccountStore2;
+struct IUserDataAccountStore3;
 struct IUserDataAccountStoreChangedEventArgs;
 struct UserDataAccount;
 struct UserDataAccountManager;
@@ -48,11 +52,13 @@ namespace Windows::ApplicationModel::UserDataAccounts {
 template <typename T> struct impl_IUserDataAccount;
 template <typename T> struct impl_IUserDataAccount2;
 template <typename T> struct impl_IUserDataAccount3;
+template <typename T> struct impl_IUserDataAccount4;
 template <typename T> struct impl_IUserDataAccountManagerForUser;
 template <typename T> struct impl_IUserDataAccountManagerStatics;
 template <typename T> struct impl_IUserDataAccountManagerStatics2;
 template <typename T> struct impl_IUserDataAccountStore;
 template <typename T> struct impl_IUserDataAccountStore2;
+template <typename T> struct impl_IUserDataAccountStore3;
 template <typename T> struct impl_IUserDataAccountStoreChangedEventArgs;
 
 }

@@ -24,7 +24,7 @@ struct WINRT_EBO ActivationViewSwitcher :
 
 struct WINRT_EBO ApplicationView :
     Windows::UI::ViewManagement::IApplicationView,
-    impl::require<ApplicationView, Windows::UI::ViewManagement::IApplicationView2, Windows::UI::ViewManagement::IApplicationView3>
+    impl::require<ApplicationView, Windows::UI::ViewManagement::IApplicationView2, Windows::UI::ViewManagement::IApplicationView3, Windows::UI::ViewManagement::IApplicationView4>
 {
     ApplicationView(std::nullptr_t) noexcept {}
     [[deprecated("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")]] static bool TryUnsnapToFullscreen();
@@ -41,7 +41,8 @@ struct WINRT_EBO ApplicationView :
 };
 
 struct WINRT_EBO ApplicationViewConsolidatedEventArgs :
-    Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs
+    Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs,
+    impl::require<ApplicationViewConsolidatedEventArgs, Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs2>
 {
     ApplicationViewConsolidatedEventArgs(std::nullptr_t) noexcept {}
 };
@@ -66,6 +67,8 @@ struct ApplicationViewSwitcher
     static Windows::Foundation::IAsyncAction SwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options);
     static Windows::Foundation::IAsyncOperation<bool> PrepareForCustomAnimatedSwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options);
     static void DisableSystemViewActivationPolicy();
+    static Windows::Foundation::IAsyncOperation<bool> TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode);
+    static Windows::Foundation::IAsyncOperation<bool> TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode, const Windows::UI::ViewManagement::ViewModePreferences & viewModePreferences);
 };
 
 struct WINRT_EBO ApplicationViewTitleBar :
@@ -115,7 +118,7 @@ struct ProjectionManager
 
 struct WINRT_EBO UISettings :
     Windows::UI::ViewManagement::IUISettings,
-    impl::require<UISettings, Windows::UI::ViewManagement::IUISettings2, Windows::UI::ViewManagement::IUISettings3>
+    impl::require<UISettings, Windows::UI::ViewManagement::IUISettings2, Windows::UI::ViewManagement::IUISettings3, Windows::UI::ViewManagement::IUISettings4>
 {
     UISettings(std::nullptr_t) noexcept {}
     UISettings();
@@ -126,6 +129,13 @@ struct WINRT_EBO UIViewSettings :
 {
     UIViewSettings(std::nullptr_t) noexcept {}
     static Windows::UI::ViewManagement::UIViewSettings GetForCurrentView();
+};
+
+struct WINRT_EBO ViewModePreferences :
+    Windows::UI::ViewManagement::IViewModePreferences
+{
+    ViewModePreferences(std::nullptr_t) noexcept {}
+    static Windows::UI::ViewManagement::ViewModePreferences CreateDefault(Windows::UI::ViewManagement::ApplicationViewMode mode);
 };
 
 }

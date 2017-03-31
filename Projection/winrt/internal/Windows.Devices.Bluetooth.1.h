@@ -11,6 +11,7 @@
 #include "Windows.Foundation.0.h"
 #include "Windows.Networking.0.h"
 #include "Windows.Foundation.1.h"
+#include "Windows.Devices.Radios.1.h"
 #include "Windows.Storage.Streams.1.h"
 #include "Windows.Foundation.Collections.1.h"
 #include "Windows.Devices.Bluetooth.Rfcomm.1.h"
@@ -20,6 +21,25 @@
 WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Bluetooth {
+
+struct __declspec(uuid("7974f04c-5f7a-4a34-9225-a855f84b1a8b")) __declspec(novtable) IBluetoothAdapter : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
+    virtual HRESULT __stdcall get_BluetoothAddress(uint64_t * value) = 0;
+    virtual HRESULT __stdcall get_IsClassicSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsLowEnergySupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsPeripheralRoleSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsCentralRoleSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsAdvertisementOffloadSupported(bool * value) = 0;
+    virtual HRESULT __stdcall abi_GetRadioAsync(Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> ** operation) = 0;
+};
+
+struct __declspec(uuid("8b02fb6a-ac4c-4741-8661-8eab7d17ea9f")) __declspec(novtable) IBluetoothAdapterStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * result) = 0;
+    virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetDefaultAsync(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> ** operation) = 0;
+};
 
 struct __declspec(uuid("d640227e-d7d7-4661-9454-65039ca17a2b")) __declspec(novtable) IBluetoothClassOfDevice : Windows::Foundation::IInspectable
 {
@@ -66,6 +86,13 @@ struct __declspec(uuid("57fff78b-651a-4454-b90f-eb21ef0b0d71")) __declspec(novta
     virtual HRESULT __stdcall abi_GetRfcommServicesWithCacheModeAsync(winrt::Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetRfcommServicesForIdAsync(Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId * serviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> ** operation) = 0;
     virtual HRESULT __stdcall abi_GetRfcommServicesForIdWithCacheModeAsync(Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId * serviceId, winrt::Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> ** operation) = 0;
+};
+
+struct __declspec(uuid("c17949af-57c1-4642-bcce-e6c06b20ae76")) __declspec(novtable) IBluetoothDeviceId : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Id(hstring * value) = 0;
+    virtual HRESULT __stdcall get_IsClassicDevice(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsLowEnergyDevice(bool * value) = 0;
 };
 
 struct __declspec(uuid("0991df51-57db-4725-bbd7-84f64327ec2c")) __declspec(novtable) IBluetoothDeviceStatics : Windows::Foundation::IInspectable
@@ -179,6 +206,16 @@ struct __declspec(uuid("26f062b3-7aee-4d31-baba-b1b9775f5916")) __declspec(novta
     virtual HRESULT __stdcall get_BluetoothAddressType(winrt::Windows::Devices::Bluetooth::BluetoothAddressType * value) = 0;
 };
 
+struct __declspec(uuid("aee9e493-44ac-40dc-af33-b2c13c01ca46")) __declspec(novtable) IBluetoothLEDevice3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_DeviceAccessInformation(Windows::Devices::Enumeration::IDeviceAccessInformation ** value) = 0;
+    virtual HRESULT __stdcall abi_RequestAccessAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Enumeration::DeviceAccessStatus> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetGattServicesAsync(Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetGattServicesWithCacheModeAsync(winrt::Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetGattServicesForUuidAsync(GUID serviceUuid, Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetGattServicesForUuidWithCacheModeAsync(GUID serviceUuid, winrt::Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> ** operation) = 0;
+};
+
 struct __declspec(uuid("c8cf1a19-f0b6-4bf0-8689-41303de2d9f4")) __declspec(novtable) IBluetoothLEDeviceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> ** operation) = 0;
@@ -209,12 +246,20 @@ struct __declspec(uuid("df7b7391-6bb5-4cfe-90b1-5d7324edcf7f")) __declspec(novta
     virtual HRESULT __stdcall put_SamplingInterval(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> * value) = 0;
 };
 
+struct __declspec(uuid("17df0cd8-cf74-4b21-afe6-f57a11bcdea0")) __declspec(novtable) IBluetoothUuidHelperStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_FromShortId(uint32_t shortId, GUID * result) = 0;
+    virtual HRESULT __stdcall abi_TryGetShortId(GUID uuid, Windows::Foundation::IReference<uint32_t> ** result) = 0;
+};
+
 }
 
 namespace ABI {
 
+template <> struct traits<Windows::Devices::Bluetooth::BluetoothAdapter> { using default_interface = Windows::Devices::Bluetooth::IBluetoothAdapter; };
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothClassOfDevice> { using default_interface = Windows::Devices::Bluetooth::IBluetoothClassOfDevice; };
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothDevice> { using default_interface = Windows::Devices::Bluetooth::IBluetoothDevice; };
+template <> struct traits<Windows::Devices::Bluetooth::BluetoothDeviceId> { using default_interface = Windows::Devices::Bluetooth::IBluetoothDeviceId; };
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothLEAppearance> { using default_interface = Windows::Devices::Bluetooth::IBluetoothLEAppearance; };
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothLEDevice> { using default_interface = Windows::Devices::Bluetooth::IBluetoothLEDevice; };
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter> { using default_interface = Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter; };
@@ -222,6 +267,27 @@ template <> struct traits<Windows::Devices::Bluetooth::BluetoothSignalStrengthFi
 }
 
 namespace Windows::Devices::Bluetooth {
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothAdapter
+{
+    hstring DeviceId() const;
+    uint64_t BluetoothAddress() const;
+    bool IsClassicSupported() const;
+    bool IsLowEnergySupported() const;
+    bool IsPeripheralRoleSupported() const;
+    bool IsCentralRoleSupported() const;
+    bool IsAdvertisementOffloadSupported() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> GetRadioAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothAdapterStatics
+{
+    hstring GetDeviceSelector() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> FromIdAsync(hstring_view deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> GetDefaultAsync() const;
+};
 
 template <typename D>
 struct WINRT_EBO impl_IBluetoothClassOfDevice
@@ -279,6 +345,14 @@ struct WINRT_EBO impl_IBluetoothDevice3
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> GetRfcommServicesAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> GetRfcommServicesForIdAsync(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> GetRfcommServicesForIdAsync(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothDeviceId
+{
+    hstring Id() const;
+    bool IsClassicDevice() const;
+    bool IsLowEnergyDevice() const;
 };
 
 template <typename D>
@@ -380,10 +454,10 @@ struct WINRT_EBO impl_IBluetoothLEDevice
 {
     hstring DeviceId() const;
     hstring Name() const;
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GattServices() const;
+    [[deprecated("Use GetGattServicesAsync instead of GattServices.  For more information, see MSDN.")]] Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GattServices() const;
     Windows::Devices::Bluetooth::BluetoothConnectionStatus ConnectionStatus() const;
     uint64_t BluetoothAddress() const;
-    Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService GetGattService(GUID serviceUuid) const;
+    [[deprecated("Use GetGattServicesForUuidAsync instead of GetGattService.  For more information, see MSDN.")]] Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService GetGattService(GUID serviceUuid) const;
     event_token NameChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> & handler) const;
     using NameChanged_revoker = event_revoker<IBluetoothLEDevice>;
     NameChanged_revoker NameChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> & handler) const;
@@ -404,6 +478,17 @@ struct WINRT_EBO impl_IBluetoothLEDevice2
     Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
     Windows::Devices::Bluetooth::BluetoothLEAppearance Appearance() const;
     Windows::Devices::Bluetooth::BluetoothAddressType BluetoothAddressType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEDevice3
+{
+    Windows::Devices::Enumeration::DeviceAccessInformation DeviceAccessInformation() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Enumeration::DeviceAccessStatus> RequestAccessAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> GetGattServicesAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> GetGattServicesAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> GetGattServicesForUuidAsync(GUID serviceUuid) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> GetGattServicesForUuidAsync(GUID serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const;
 };
 
 template <typename D>
@@ -439,9 +524,28 @@ struct WINRT_EBO impl_IBluetoothSignalStrengthFilter
     void SamplingInterval(const optional<Windows::Foundation::TimeSpan> & value) const;
 };
 
+template <typename D>
+struct WINRT_EBO impl_IBluetoothUuidHelperStatics
+{
+    GUID FromShortId(uint32_t shortId) const;
+    Windows::Foundation::IReference<uint32_t> TryGetShortId(GUID uuid) const;
+};
+
 }
 
 namespace impl {
+
+template <> struct traits<Windows::Devices::Bluetooth::IBluetoothAdapter>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::IBluetoothAdapter;
+    template <typename D> using consume = Windows::Devices::Bluetooth::impl_IBluetoothAdapter<D>;
+};
+
+template <> struct traits<Windows::Devices::Bluetooth::IBluetoothAdapterStatics>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::IBluetoothAdapterStatics;
+    template <typename D> using consume = Windows::Devices::Bluetooth::impl_IBluetoothAdapterStatics<D>;
+};
 
 template <> struct traits<Windows::Devices::Bluetooth::IBluetoothClassOfDevice>
 {
@@ -471,6 +575,12 @@ template <> struct traits<Windows::Devices::Bluetooth::IBluetoothDevice3>
 {
     using abi = ABI::Windows::Devices::Bluetooth::IBluetoothDevice3;
     template <typename D> using consume = Windows::Devices::Bluetooth::impl_IBluetoothDevice3<D>;
+};
+
+template <> struct traits<Windows::Devices::Bluetooth::IBluetoothDeviceId>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::IBluetoothDeviceId;
+    template <typename D> using consume = Windows::Devices::Bluetooth::impl_IBluetoothDeviceId<D>;
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::IBluetoothDeviceStatics>
@@ -521,6 +631,12 @@ template <> struct traits<Windows::Devices::Bluetooth::IBluetoothLEDevice2>
     template <typename D> using consume = Windows::Devices::Bluetooth::impl_IBluetoothLEDevice2<D>;
 };
 
+template <> struct traits<Windows::Devices::Bluetooth::IBluetoothLEDevice3>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::IBluetoothLEDevice3;
+    template <typename D> using consume = Windows::Devices::Bluetooth::impl_IBluetoothLEDevice3<D>;
+};
+
 template <> struct traits<Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics>
 {
     using abi = ABI::Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics;
@@ -539,6 +655,18 @@ template <> struct traits<Windows::Devices::Bluetooth::IBluetoothSignalStrengthF
     template <typename D> using consume = Windows::Devices::Bluetooth::impl_IBluetoothSignalStrengthFilter<D>;
 };
 
+template <> struct traits<Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics;
+    template <typename D> using consume = Windows::Devices::Bluetooth::impl_IBluetoothUuidHelperStatics<D>;
+};
+
+template <> struct traits<Windows::Devices::Bluetooth::BluetoothAdapter>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::BluetoothAdapter;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothAdapter"; }
+};
+
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothClassOfDevice>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothClassOfDevice;
@@ -549,6 +677,12 @@ template <> struct traits<Windows::Devices::Bluetooth::BluetoothDevice>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothDevice"; }
+};
+
+template <> struct traits<Windows::Devices::Bluetooth::BluetoothDeviceId>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::BluetoothDeviceId;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothDeviceId"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothLEAppearance>
@@ -577,6 +711,11 @@ template <> struct traits<Windows::Devices::Bluetooth::BluetoothSignalStrengthFi
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter"; }
+};
+
+template <> struct traits<Windows::Devices::Bluetooth::BluetoothUuidHelper>
+{
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothUuidHelper"; }
 };
 
 }

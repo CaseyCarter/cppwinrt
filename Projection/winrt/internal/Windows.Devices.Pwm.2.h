@@ -91,6 +91,13 @@ struct IPwmControllerStatics2 :
     IPwmControllerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IPwmControllerStatics3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IPwmControllerStatics3>
+{
+    IPwmControllerStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IPwmPin :
     Windows::Foundation::IInspectable,
     impl::consume<IPwmPin>,

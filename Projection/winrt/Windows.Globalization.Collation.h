@@ -67,6 +67,25 @@ struct produce<D, Windows::Globalization::Collation::ICharacterGroupings> : prod
     }
 };
 
+template <typename D>
+struct produce<D, Windows::Globalization::Collation::ICharacterGroupingsFactory> : produce_base<D, Windows::Globalization::Collation::ICharacterGroupingsFactory>
+{
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> language, impl::abi_arg_out<Windows::Globalization::Collation::ICharacterGroupings> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&language)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
 }
 
 namespace Windows::Globalization::Collation {
@@ -85,6 +104,13 @@ template <typename D> hstring impl_ICharacterGrouping<D>::Label() const
     return value;
 }
 
+template <typename D> Windows::Globalization::Collation::CharacterGroupings impl_ICharacterGroupingsFactory<D>::Create(hstring_view language) const
+{
+    Windows::Globalization::Collation::CharacterGroupings result { nullptr };
+    check_hresult(WINRT_SHIM(ICharacterGroupingsFactory)->abi_Create(get_abi(language), put_abi(result)));
+    return result;
+}
+
 template <typename D> hstring impl_ICharacterGroupings<D>::Lookup(hstring_view text) const
 {
     hstring result;
@@ -94,6 +120,10 @@ template <typename D> hstring impl_ICharacterGroupings<D>::Lookup(hstring_view t
 
 inline CharacterGroupings::CharacterGroupings() :
     CharacterGroupings(activate_instance<CharacterGroupings>())
+{}
+
+inline CharacterGroupings::CharacterGroupings(hstring_view language) :
+    CharacterGroupings(get_activation_factory<CharacterGroupings, ICharacterGroupingsFactory>().Create(language))
 {}
 
 }
@@ -113,6 +143,15 @@ template<>
 struct std::hash<winrt::Windows::Globalization::Collation::ICharacterGroupings>
 {
     size_t operator()(const winrt::Windows::Globalization::Collation::ICharacterGroupings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::Collation::ICharacterGroupingsFactory>
+{
+    size_t operator()(const winrt::Windows::Globalization::Collation::ICharacterGroupingsFactory & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

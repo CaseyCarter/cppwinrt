@@ -255,6 +255,13 @@ struct WINRT_EBO WebUICachedFileUpdaterActivatedEventArgs :
     WebUICachedFileUpdaterActivatedEventArgs(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO WebUIContactPanelActivatedEventArgs :
+    Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs,
+    impl::require<WebUIContactPanelActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgsWithUser, Windows::UI::WebUI::IActivatedEventArgsDeferral>
+{
+    WebUIContactPanelActivatedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO WebUIDeviceActivatedEventArgs :
     Windows::ApplicationModel::Activation::IDeviceActivatedEventArgs,
     impl::require<WebUIDeviceActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgsWithUser, Windows::ApplicationModel::Activation::IApplicationViewActivatedEventArgs, Windows::UI::WebUI::IActivatedEventArgsDeferral>
@@ -332,6 +339,13 @@ struct WINRT_EBO WebUILockScreenActivatedEventArgs :
     WebUILockScreenActivatedEventArgs(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO WebUILockScreenComponentActivatedEventArgs :
+    Windows::ApplicationModel::Activation::IActivatedEventArgs,
+    impl::require<WebUILockScreenComponentActivatedEventArgs, Windows::UI::WebUI::IActivatedEventArgsDeferral>
+{
+    WebUILockScreenComponentActivatedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO WebUINavigatedDeferral :
     Windows::UI::WebUI::IWebUINavigatedDeferral
 {
@@ -348,6 +362,13 @@ struct WINRT_EBO WebUINavigatedOperation :
     Windows::UI::WebUI::IWebUINavigatedOperation
 {
     WebUINavigatedOperation(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO WebUIPrintWorkflowForegroundTaskActivatedEventArgs :
+    Windows::ApplicationModel::Activation::IActivatedEventArgs,
+    impl::require<WebUIPrintWorkflowForegroundTaskActivatedEventArgs, Windows::UI::WebUI::IActivatedEventArgsDeferral>
+{
+    WebUIPrintWorkflowForegroundTaskActivatedEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO WebUIProtocolActivatedEventArgs :

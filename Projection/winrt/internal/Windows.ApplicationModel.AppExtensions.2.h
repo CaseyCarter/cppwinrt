@@ -14,6 +14,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a")) __declspec(novtable) IAsyncOperation<bool> : impl_IAsyncOperation<bool> {};
 #endif
 
+#ifndef WINRT_GENERIC_490b0686_afd7_5037_9647_d8fe248f182c
+#define WINRT_GENERIC_490b0686_afd7_5037_9647_d8fe248f182c
+template <> struct __declspec(uuid("490b0686-afd7-5037-9647-d8fe248f182c")) __declspec(novtable) IAsyncOperation<Windows::Foundation::Collections::IPropertySet> : impl_IAsyncOperation<Windows::Foundation::Collections::IPropertySet> {};
+#endif
+
 #ifndef WINRT_GENERIC_6be9e7d7_e83a_5cbc_802c_1768960b52c3
 #define WINRT_GENERIC_6be9e7d7_e83a_5cbc_802c_1768960b52c3
 template <> struct __declspec(uuid("6be9e7d7-e83a-5cbc-802c-1768960b52c3")) __declspec(novtable) IAsyncOperation<Windows::Storage::StorageFolder> : impl_IAsyncOperation<Windows::Storage::StorageFolder> {};
@@ -59,14 +64,14 @@ template <> struct __declspec(uuid("60e847e8-2eca-54be-8b13-9e62dbd5b95d")) __de
 template <> struct __declspec(uuid("61a2a9c0-d3bb-5953-8df7-591fdd5bd74a")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs> : impl_TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs> {};
 #endif
 
-#ifndef WINRT_GENERIC_490b0686_afd7_5037_9647_d8fe248f182c
-#define WINRT_GENERIC_490b0686_afd7_5037_9647_d8fe248f182c
-template <> struct __declspec(uuid("490b0686-afd7-5037-9647-d8fe248f182c")) __declspec(novtable) IAsyncOperation<Windows::Foundation::Collections::IPropertySet> : impl_IAsyncOperation<Windows::Foundation::Collections::IPropertySet> {};
-#endif
-
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
 #define WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
 template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __declspec(novtable) AsyncOperationCompletedHandler<bool> : impl_AsyncOperationCompletedHandler<bool> {};
+#endif
+
+#ifndef WINRT_GENERIC_5075a55f_68ba_56f2_97e6_9b1cbfa2c5f2
+#define WINRT_GENERIC_5075a55f_68ba_56f2_97e6_9b1cbfa2c5f2
+template <> struct __declspec(uuid("5075a55f-68ba-56f2-97e6-9b1cbfa2c5f2")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Foundation::Collections::IPropertySet> : impl_AsyncOperationCompletedHandler<Windows::Foundation::Collections::IPropertySet> {};
 #endif
 
 #ifndef WINRT_GENERIC_c211026e_9e63_5452_ba54_3a07d6a96874
@@ -98,11 +103,6 @@ template <> struct __declspec(uuid("3b4fe356-1b13-59cb-ab1f-c4667a74756b")) __de
 }
 
 namespace ABI::Windows::Foundation {
-
-#ifndef WINRT_GENERIC_5075a55f_68ba_56f2_97e6_9b1cbfa2c5f2
-#define WINRT_GENERIC_5075a55f_68ba_56f2_97e6_9b1cbfa2c5f2
-template <> struct __declspec(uuid("5075a55f-68ba-56f2-97e6-9b1cbfa2c5f2")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Foundation::Collections::IPropertySet> : impl_AsyncOperationCompletedHandler<Windows::Foundation::Collections::IPropertySet> {};
-#endif
 
 #ifndef WINRT_GENERIC_83295bb9_10df_530f_a0d7_be05ba80cb18
 #define WINRT_GENERIC_83295bb9_10df_530f_a0d7_be05ba80cb18

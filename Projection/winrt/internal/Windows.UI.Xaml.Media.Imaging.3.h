@@ -95,6 +95,31 @@ struct WINRT_EBO SurfaceImageSource :
     SurfaceImageSource(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque);
 };
 
+struct WINRT_EBO SvgImageSource :
+    Windows::UI::Xaml::Media::Imaging::ISvgImageSource,
+    impl::bases<SvgImageSource, Windows::UI::Xaml::DependencyObject, Windows::UI::Xaml::Media::ImageSource>,
+    impl::require<SvgImageSource, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IImageSource>
+{
+    SvgImageSource(std::nullptr_t) noexcept {}
+    SvgImageSource();
+    SvgImageSource(const Windows::Foundation::Uri & uriSource);
+    static Windows::UI::Xaml::DependencyProperty UriSourceProperty();
+    static Windows::UI::Xaml::DependencyProperty RasterizePixelWidthProperty();
+    static Windows::UI::Xaml::DependencyProperty RasterizePixelHeightProperty();
+};
+
+struct WINRT_EBO SvgImageSourceFailedEventArgs :
+    Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs
+{
+    SvgImageSourceFailedEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO SvgImageSourceOpenedEventArgs :
+    Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs
+{
+    SvgImageSourceOpenedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO VirtualSurfaceImageSource :
     Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource,
     impl::bases<VirtualSurfaceImageSource, Windows::UI::Xaml::DependencyObject, Windows::UI::Xaml::Media::ImageSource, Windows::UI::Xaml::Media::Imaging::SurfaceImageSource>,

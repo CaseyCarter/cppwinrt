@@ -12,6 +12,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Devices.Enumeration.3.h"
 #include "internal/Windows.Media.Casting.3.h"
 #include "internal/Windows.UI.Composition.3.h"
+#include "internal/Windows.Graphics.DirectX.Direct3D11.3.h"
 #include "internal/Windows.Media.MediaProperties.3.h"
 #include "internal/Windows.Media.Protection.3.h"
 #include "internal/Windows.Storage.3.h"
@@ -187,6 +188,24 @@ struct produce<D, Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEven
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEventArgs2> : produce_base<D, Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEventArgs2>
+{
+    HRESULT __stdcall get_Reason(Windows::Media::Playback::MediaPlaybackItemChangedReason * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Reason());
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -2227,6 +2246,80 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackItem2> : produce_base<
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Playback::IMediaPlaybackItem3> : produce_base<D, Windows::Media::Playback::IMediaPlaybackItem3>
+{
+    HRESULT __stdcall get_IsDisabledInPlaybackList(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsDisabledInPlaybackList());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsDisabledInPlaybackList(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsDisabledInPlaybackList(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_TotalDownloadProgress(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TotalDownloadProgress());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AutoLoadedDisplayProperties(Windows::Media::Playback::AutoLoadedDisplayPropertyKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AutoLoadedDisplayProperties());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_AutoLoadedDisplayProperties(Windows::Media::Playback::AutoLoadedDisplayPropertyKind value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AutoLoadedDisplayProperties(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Playback::IMediaPlaybackItemError> : produce_base<D, Windows::Media::Playback::IMediaPlaybackItemError>
 {
     HRESULT __stdcall get_ErrorCode(Windows::Media::Playback::MediaPlaybackItemErrorCode * value) noexcept override
@@ -2698,6 +2791,39 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackList2> : produce_base<
         {
             typename D::abi_guard guard(this->shim());
             this->shim().SetShuffledItems(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Media::Playback::MediaPlaybackItem> *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Playback::IMediaPlaybackList3> : produce_base<D, Windows::Media::Playback::IMediaPlaybackList3>
+{
+    HRESULT __stdcall get_MaxPlayedItemsToKeepOpen(impl::abi_arg_out<Windows::Foundation::IReference<uint32_t>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MaxPlayedItemsToKeepOpen());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_MaxPlayedItemsToKeepOpen(impl::abi_arg_in<Windows::Foundation::IReference<uint32_t>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().MaxPlayedItemsToKeepOpen(*reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&value));
             return S_OK;
         }
         catch (...)
@@ -3245,8 +3371,370 @@ struct produce<D, Windows::Media::Playback::IMediaPlaybackSession> : produce_bas
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Playback::IMediaPlaybackSession2> : produce_base<D, Windows::Media::Playback::IMediaPlaybackSession2>
+{
+    HRESULT __stdcall add_BufferedRangesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().BufferedRangesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_BufferedRangesChanged(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().BufferedRangesChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_PlayedRangesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().PlayedRangesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_PlayedRangesChanged(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().PlayedRangesChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_SeekableRangesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().SeekableRangesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_SeekableRangesChanged(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SeekableRangesChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_SupportedPlaybackRatesChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().SupportedPlaybackRatesChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_SupportedPlaybackRatesChanged(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SupportedPlaybackRatesChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SphericalVideoProjection(impl::abi_arg_out<Windows::Media::Playback::IMediaPlaybackSphericalVideoProjection> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SphericalVideoProjection());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsMirroring(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsMirroring());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsMirroring(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsMirroring(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetBufferedRanges(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::MediaTimeRange>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetBufferedRanges());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetPlayedRanges(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::MediaTimeRange>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetPlayedRanges());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetSeekableRanges(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::MediaTimeRange>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetSeekableRanges());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_IsSupportedPlaybackRateRange(double rate1, double rate2, bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsSupportedPlaybackRateRange(rate1, rate2));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Playback::IMediaPlaybackSource> : produce_base<D, Windows::Media::Playback::IMediaPlaybackSource>
 {};
+
+template <typename D>
+struct produce<D, Windows::Media::Playback::IMediaPlaybackSphericalVideoProjection> : produce_base<D, Windows::Media::Playback::IMediaPlaybackSphericalVideoProjection>
+{
+    HRESULT __stdcall get_IsEnabled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsEnabled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsEnabled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsEnabled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_FrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().FrameFormat());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_FrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().FrameFormat(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_HorizontalFieldOfViewInDegrees(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().HorizontalFieldOfViewInDegrees());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_HorizontalFieldOfViewInDegrees(double value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().HorizontalFieldOfViewInDegrees(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ViewOrientation(impl::abi_arg_out<Windows::Foundation::Numerics::quaternion> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ViewOrientation());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_ViewOrientation(impl::abi_arg_in<Windows::Foundation::Numerics::quaternion> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ViewOrientation(*reinterpret_cast<const Windows::Foundation::Numerics::quaternion *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ProjectionMode(Windows::Media::Playback::SphericalVideoProjectionMode * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ProjectionMode());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_ProjectionMode(Windows::Media::Playback::SphericalVideoProjectionMode value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ProjectionMode(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
 
 template <typename D>
 struct produce<D, Windows::Media::Playback::IMediaPlaybackTimedMetadataTrackList> : produce_base<D, Windows::Media::Playback::IMediaPlaybackTimedMetadataTrackList>
@@ -4328,6 +4816,108 @@ struct produce<D, Windows::Media::Playback::IMediaPlayer4> : produce_base<D, Win
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Playback::IMediaPlayer5> : produce_base<D, Windows::Media::Playback::IMediaPlayer5>
+{
+    HRESULT __stdcall add_VideoFrameAvailable(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().VideoFrameAvailable(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_VideoFrameAvailable(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().VideoFrameAvailable(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsVideoFrameServerEnabled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsVideoFrameServerEnabled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsVideoFrameServerEnabled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsVideoFrameServerEnabled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CopyFrameToVideoSurface(impl::abi_arg_in<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> destination) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CopyFrameToVideoSurface(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&destination));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CopyFrameToVideoSurfaceWithTargetRectangle(impl::abi_arg_in<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> destination, impl::abi_arg_in<Windows::Foundation::Rect> targetRectangle) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CopyFrameToVideoSurface(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&destination), *reinterpret_cast<const Windows::Foundation::Rect *>(&targetRectangle));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CopyFrameToStereoscopicVideoSurfaces(impl::abi_arg_in<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> destinationLeftEye, impl::abi_arg_in<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> destinationRightEye) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CopyFrameToStereoscopicVideoSurfaces(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&destinationLeftEye), *reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&destinationRightEye));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Playback::IMediaPlayerDataReceivedEventArgs> : produce_base<D, Windows::Media::Playback::IMediaPlayerDataReceivedEventArgs>
 {
     HRESULT __stdcall get_Data(impl::abi_arg_out<Windows::Foundation::Collections::IPropertySet> value) noexcept override
@@ -5403,6 +5993,50 @@ template <typename D> Windows::Media::Playback::MediaPlayerSurface impl_IMediaPl
     return result;
 }
 
+template <typename D> event_token impl_IMediaPlayer5<D>::VideoFrameAvailable(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMediaPlayer5)->add_VideoFrameAvailable(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMediaPlayer5> impl_IMediaPlayer5<D>::VideoFrameAvailable(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::Foundation::IInspectable> & value) const
+{
+    return impl::make_event_revoker<D, IMediaPlayer5>(this, &ABI::Windows::Media::Playback::IMediaPlayer5::remove_VideoFrameAvailable, VideoFrameAvailable(value));
+}
+
+template <typename D> void impl_IMediaPlayer5<D>::VideoFrameAvailable(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlayer5)->remove_VideoFrameAvailable(token));
+}
+
+template <typename D> bool impl_IMediaPlayer5<D>::IsVideoFrameServerEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IMediaPlayer5)->get_IsVideoFrameServerEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IMediaPlayer5<D>::IsVideoFrameServerEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlayer5)->put_IsVideoFrameServerEnabled(value));
+}
+
+template <typename D> void impl_IMediaPlayer5<D>::CopyFrameToVideoSurface(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & destination) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlayer5)->abi_CopyFrameToVideoSurface(get_abi(destination)));
+}
+
+template <typename D> void impl_IMediaPlayer5<D>::CopyFrameToVideoSurface(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & destination, const Windows::Foundation::Rect & targetRectangle) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlayer5)->abi_CopyFrameToVideoSurfaceWithTargetRectangle(get_abi(destination), get_abi(targetRectangle)));
+}
+
+template <typename D> void impl_IMediaPlayer5<D>::CopyFrameToStereoscopicVideoSurfaces(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & destinationLeftEye, const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & destinationRightEye) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlayer5)->abi_CopyFrameToStereoscopicVideoSurfaces(get_abi(destinationLeftEye), get_abi(destinationRightEye)));
+}
+
 template <typename D> event_token impl_IMediaPlaybackSession<D>::PlaybackStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
 {
     event_token token {};
@@ -5689,6 +6323,181 @@ template <typename D> Windows::Media::MediaProperties::StereoscopicVideoPackingM
 template <typename D> void impl_IMediaPlaybackSession<D>::StereoscopicVideoPackingMode(Windows::Media::MediaProperties::StereoscopicVideoPackingMode value) const
 {
     check_hresult(WINRT_SHIM(IMediaPlaybackSession)->put_StereoscopicVideoPackingMode(value));
+}
+
+template <typename D> bool impl_IMediaPlaybackSphericalVideoProjection<D>::IsEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackSphericalVideoProjection)->get_IsEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IMediaPlaybackSphericalVideoProjection<D>::IsEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackSphericalVideoProjection)->put_IsEnabled(value));
+}
+
+template <typename D> Windows::Media::MediaProperties::SphericalVideoFrameFormat impl_IMediaPlaybackSphericalVideoProjection<D>::FrameFormat() const
+{
+    Windows::Media::MediaProperties::SphericalVideoFrameFormat value {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackSphericalVideoProjection)->get_FrameFormat(&value));
+    return value;
+}
+
+template <typename D> void impl_IMediaPlaybackSphericalVideoProjection<D>::FrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat value) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackSphericalVideoProjection)->put_FrameFormat(value));
+}
+
+template <typename D> double impl_IMediaPlaybackSphericalVideoProjection<D>::HorizontalFieldOfViewInDegrees() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackSphericalVideoProjection)->get_HorizontalFieldOfViewInDegrees(&value));
+    return value;
+}
+
+template <typename D> void impl_IMediaPlaybackSphericalVideoProjection<D>::HorizontalFieldOfViewInDegrees(double value) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackSphericalVideoProjection)->put_HorizontalFieldOfViewInDegrees(value));
+}
+
+template <typename D> Windows::Foundation::Numerics::quaternion impl_IMediaPlaybackSphericalVideoProjection<D>::ViewOrientation() const
+{
+    Windows::Foundation::Numerics::quaternion value {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackSphericalVideoProjection)->get_ViewOrientation(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMediaPlaybackSphericalVideoProjection<D>::ViewOrientation(const Windows::Foundation::Numerics::quaternion & value) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackSphericalVideoProjection)->put_ViewOrientation(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Playback::SphericalVideoProjectionMode impl_IMediaPlaybackSphericalVideoProjection<D>::ProjectionMode() const
+{
+    Windows::Media::Playback::SphericalVideoProjectionMode value {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackSphericalVideoProjection)->get_ProjectionMode(&value));
+    return value;
+}
+
+template <typename D> void impl_IMediaPlaybackSphericalVideoProjection<D>::ProjectionMode(Windows::Media::Playback::SphericalVideoProjectionMode value) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackSphericalVideoProjection)->put_ProjectionMode(value));
+}
+
+template <typename D> event_token impl_IMediaPlaybackSession2<D>::BufferedRangesChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->add_BufferedRangesChanged(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMediaPlaybackSession2> impl_IMediaPlaybackSession2<D>::BufferedRangesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
+{
+    return impl::make_event_revoker<D, IMediaPlaybackSession2>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession2::remove_BufferedRangesChanged, BufferedRangesChanged(value));
+}
+
+template <typename D> void impl_IMediaPlaybackSession2<D>::BufferedRangesChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->remove_BufferedRangesChanged(token));
+}
+
+template <typename D> event_token impl_IMediaPlaybackSession2<D>::PlayedRangesChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->add_PlayedRangesChanged(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMediaPlaybackSession2> impl_IMediaPlaybackSession2<D>::PlayedRangesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
+{
+    return impl::make_event_revoker<D, IMediaPlaybackSession2>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession2::remove_PlayedRangesChanged, PlayedRangesChanged(value));
+}
+
+template <typename D> void impl_IMediaPlaybackSession2<D>::PlayedRangesChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->remove_PlayedRangesChanged(token));
+}
+
+template <typename D> event_token impl_IMediaPlaybackSession2<D>::SeekableRangesChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->add_SeekableRangesChanged(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMediaPlaybackSession2> impl_IMediaPlaybackSession2<D>::SeekableRangesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
+{
+    return impl::make_event_revoker<D, IMediaPlaybackSession2>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession2::remove_SeekableRangesChanged, SeekableRangesChanged(value));
+}
+
+template <typename D> void impl_IMediaPlaybackSession2<D>::SeekableRangesChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->remove_SeekableRangesChanged(token));
+}
+
+template <typename D> event_token impl_IMediaPlaybackSession2<D>::SupportedPlaybackRatesChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->add_SupportedPlaybackRatesChanged(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMediaPlaybackSession2> impl_IMediaPlaybackSession2<D>::SupportedPlaybackRatesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::Foundation::IInspectable> & value) const
+{
+    return impl::make_event_revoker<D, IMediaPlaybackSession2>(this, &ABI::Windows::Media::Playback::IMediaPlaybackSession2::remove_SupportedPlaybackRatesChanged, SupportedPlaybackRatesChanged(value));
+}
+
+template <typename D> void impl_IMediaPlaybackSession2<D>::SupportedPlaybackRatesChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->remove_SupportedPlaybackRatesChanged(token));
+}
+
+template <typename D> Windows::Media::Playback::MediaPlaybackSphericalVideoProjection impl_IMediaPlaybackSession2<D>::SphericalVideoProjection() const
+{
+    Windows::Media::Playback::MediaPlaybackSphericalVideoProjection value { nullptr };
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->get_SphericalVideoProjection(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IMediaPlaybackSession2<D>::IsMirroring() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->get_IsMirroring(&value));
+    return value;
+}
+
+template <typename D> void impl_IMediaPlaybackSession2<D>::IsMirroring(bool value) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->put_IsMirroring(value));
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::MediaTimeRange> impl_IMediaPlaybackSession2<D>::GetBufferedRanges() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::MediaTimeRange> value;
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->abi_GetBufferedRanges(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::MediaTimeRange> impl_IMediaPlaybackSession2<D>::GetPlayedRanges() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::MediaTimeRange> value;
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->abi_GetPlayedRanges(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::MediaTimeRange> impl_IMediaPlaybackSession2<D>::GetSeekableRanges() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::MediaTimeRange> value;
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->abi_GetSeekableRanges(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IMediaPlaybackSession2<D>::IsSupportedPlaybackRateRange(double rate1, double rate2) const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackSession2)->abi_IsSupportedPlaybackRateRange(rate1, rate2, &value));
+    return value;
 }
 
 template <typename D> Windows::Media::Protection::MediaProtectionManager impl_IMediaPlayerSource<D>::ProtectionManager() const
@@ -6678,6 +7487,37 @@ template <typename D> void impl_IMediaPlaybackItem2<D>::ApplyDisplayProperties(c
     check_hresult(WINRT_SHIM(IMediaPlaybackItem2)->abi_ApplyDisplayProperties(get_abi(value)));
 }
 
+template <typename D> bool impl_IMediaPlaybackItem3<D>::IsDisabledInPlaybackList() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem3)->get_IsDisabledInPlaybackList(&value));
+    return value;
+}
+
+template <typename D> void impl_IMediaPlaybackItem3<D>::IsDisabledInPlaybackList(bool value) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem3)->put_IsDisabledInPlaybackList(value));
+}
+
+template <typename D> double impl_IMediaPlaybackItem3<D>::TotalDownloadProgress() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem3)->get_TotalDownloadProgress(&value));
+    return value;
+}
+
+template <typename D> Windows::Media::Playback::AutoLoadedDisplayPropertyKind impl_IMediaPlaybackItem3<D>::AutoLoadedDisplayProperties() const
+{
+    Windows::Media::Playback::AutoLoadedDisplayPropertyKind value {};
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem3)->get_AutoLoadedDisplayProperties(&value));
+    return value;
+}
+
+template <typename D> void impl_IMediaPlaybackItem3<D>::AutoLoadedDisplayProperties(Windows::Media::Playback::AutoLoadedDisplayPropertyKind value) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackItem3)->put_AutoLoadedDisplayProperties(value));
+}
+
 template <typename D> Windows::Media::Playback::MediaBreak impl_IMediaBreakFactory<D>::Create(Windows::Media::Playback::MediaBreakInsertionMethod insertionMethod) const
 {
     Windows::Media::Playback::MediaBreak result { nullptr };
@@ -6858,6 +7698,13 @@ template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_ICurrentM
     return value;
 }
 
+template <typename D> Windows::Media::Playback::MediaPlaybackItemChangedReason impl_ICurrentMediaPlaybackItemChangedEventArgs2<D>::Reason() const
+{
+    Windows::Media::Playback::MediaPlaybackItemChangedReason value {};
+    check_hresult(WINRT_SHIM(ICurrentMediaPlaybackItemChangedEventArgs2)->get_Reason(&value));
+    return value;
+}
+
 template <typename D> event_token impl_IMediaPlaybackList<D>::ItemFailed(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackList, Windows::Media::Playback::MediaPlaybackItemFailedEventArgs> & handler) const
 {
     event_token token {};
@@ -7011,6 +7858,18 @@ template <typename D> void impl_IMediaPlaybackList2<D>::SetShuffledItems(iterabl
     check_hresult(WINRT_SHIM(IMediaPlaybackList2)->abi_SetShuffledItems(get_abi(value)));
 }
 
+template <typename D> Windows::Foundation::IReference<uint32_t> impl_IMediaPlaybackList3<D>::MaxPlayedItemsToKeepOpen() const
+{
+    Windows::Foundation::IReference<uint32_t> value;
+    check_hresult(WINRT_SHIM(IMediaPlaybackList3)->get_MaxPlayedItemsToKeepOpen(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMediaPlaybackList3<D>::MaxPlayedItemsToKeepOpen(const optional<uint32_t> & value) const
+{
+    check_hresult(WINRT_SHIM(IMediaPlaybackList3)->put_MaxPlayedItemsToKeepOpen(get_abi(value)));
+}
+
 template <typename D> event_token impl_IMediaPlaybackTimedMetadataTrackList<D>::PresentationModeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList, Windows::Media::Playback::TimedMetadataPresentationModeChangedEventArgs> & handler) const
 {
     event_token token {};
@@ -7126,16 +7985,16 @@ inline MediaBreak::MediaBreak(Windows::Media::Playback::MediaBreakInsertionMetho
     MediaBreak(get_activation_factory<MediaBreak, IMediaBreakFactory>().CreateWithPresentationPosition(insertionMethod, presentationPosition))
 {}
 
-inline MediaPlaybackItem::MediaPlaybackItem(const Windows::Media::Core::MediaSource & source) :
-    MediaPlaybackItem(get_activation_factory<MediaPlaybackItem, IMediaPlaybackItemFactory>().Create(source))
-{}
-
 inline MediaPlaybackItem::MediaPlaybackItem(const Windows::Media::Core::MediaSource & source, const Windows::Foundation::TimeSpan & startTime) :
     MediaPlaybackItem(get_activation_factory<MediaPlaybackItem, IMediaPlaybackItemFactory2>().CreateWithStartTime(source, startTime))
 {}
 
 inline MediaPlaybackItem::MediaPlaybackItem(const Windows::Media::Core::MediaSource & source, const Windows::Foundation::TimeSpan & startTime, const Windows::Foundation::TimeSpan & durationLimit) :
     MediaPlaybackItem(get_activation_factory<MediaPlaybackItem, IMediaPlaybackItemFactory2>().CreateWithStartTimeAndDurationLimit(source, startTime, durationLimit))
+{}
+
+inline MediaPlaybackItem::MediaPlaybackItem(const Windows::Media::Core::MediaSource & source) :
+    MediaPlaybackItem(get_activation_factory<MediaPlaybackItem, IMediaPlaybackItemFactory>().Create(source))
 {}
 
 inline Windows::Media::Playback::MediaPlaybackItem MediaPlaybackItem::FindFromMediaSource(const Windows::Media::Core::MediaSource & source)
@@ -7176,6 +8035,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEventArgs>
 {
     size_t operator()(const winrt::Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEventArgs2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7398,6 +8266,15 @@ struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackItem2>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackItem3>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackItem3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackItemError>
 {
     size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackItemError & value) const noexcept
@@ -7470,6 +8347,15 @@ struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackList2>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackList3>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackList3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackSession>
 {
     size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackSession & value) const noexcept
@@ -7479,9 +8365,27 @@ struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackSession>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackSession2>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackSession2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackSource>
 {
     size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlaybackSphericalVideoProjection>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlaybackSphericalVideoProjection & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7527,6 +8431,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Playback::IMediaPlayer4>
 {
     size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayer4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::IMediaPlayer5>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::IMediaPlayer5 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7896,6 +8809,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackSession>
 {
     size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Playback::MediaPlaybackSphericalVideoProjection>
+{
+    size_t operator()(const winrt::Windows::Media::Playback::MediaPlaybackSphericalVideoProjection & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

@@ -14,6 +14,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation {
 
+#ifndef WINRT_GENERIC_3c00fd60_2950_5939_a21a_2d12c5a01b8a
+#define WINRT_GENERIC_3c00fd60_2950_5939_a21a_2d12c5a01b8a
+template <> struct __declspec(uuid("3c00fd60-2950-5939-a21a-2d12c5a01b8a")) __declspec(novtable) IReference<bool> : impl_IReference<bool> {};
+#endif
+
 #ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
 #define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
 template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::Foundation::IInspectable> : impl_EventHandler<Windows::Foundation::IInspectable> {};
@@ -28,21 +33,6 @@ namespace ABI::Windows::Foundation::Collections {
 #define WINRT_GENERIC_a6487363_b074_5c60_ab16_866dce4ee54d
 template <> struct __declspec(uuid("a6487363-b074-5c60-ab16-866dce4ee54d")) __declspec(novtable) IVectorView<Windows::Foundation::IInspectable> : impl_IVectorView<Windows::Foundation::IInspectable> {};
 #endif
-
-
-}
-
-namespace ABI::Windows::Foundation {
-
-#ifndef WINRT_GENERIC_3c00fd60_2950_5939_a21a_2d12c5a01b8a
-#define WINRT_GENERIC_3c00fd60_2950_5939_a21a_2d12c5a01b8a
-template <> struct __declspec(uuid("3c00fd60-2950-5939-a21a-2d12c5a01b8a")) __declspec(novtable) IReference<bool> : impl_IReference<bool> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_b32bdca4_5e52_5b27_bc5d_d66a1a268c2a
 #define WINRT_GENERIC_b32bdca4_5e52_5b27_bc5d_d66a1a268c2a
@@ -300,6 +290,13 @@ struct IFlyoutBase2 :
     IFlyoutBase2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IFlyoutBase3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IFlyoutBase3>
+{
+    IFlyoutBase3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IFlyoutBaseClosingEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IFlyoutBaseClosingEventArgs>
@@ -333,6 +330,13 @@ struct IFlyoutBaseStatics2 :
     impl::consume<IFlyoutBaseStatics2>
 {
     IFlyoutBaseStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IFlyoutBaseStatics3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IFlyoutBaseStatics3>
+{
+    IFlyoutBaseStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IGeneratorPositionHelper :

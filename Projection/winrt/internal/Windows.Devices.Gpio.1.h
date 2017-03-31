@@ -8,10 +8,74 @@
 #include "Windows.Devices.Gpio.Provider.0.h"
 #include "Windows.Foundation.0.h"
 #include "Windows.Foundation.1.h"
+#include "Windows.Foundation.Collections.1.h"
 
 WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Gpio {
+
+struct GpioChangeRecord
+{
+    Windows::Foundation::TimeSpan RelativeTime;
+    winrt::Windows::Devices::Gpio::GpioPinEdge Edge;
+};
+
+struct GpioChangeCount
+{
+    uint64_t Count;
+    Windows::Foundation::TimeSpan RelativeTime;
+};
+
+}
+
+namespace Windows::Devices::Gpio {
+
+using GpioChangeRecord = ABI::Windows::Devices::Gpio::GpioChangeRecord;
+using GpioChangeCount = ABI::Windows::Devices::Gpio::GpioChangeCount;
+
+}
+
+namespace ABI::Windows::Devices::Gpio {
+
+struct __declspec(uuid("cb5ec0de-6801-43ff-803d-4576628a8b26")) __declspec(novtable) IGpioChangeCounter : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall put_Polarity(winrt::Windows::Devices::Gpio::GpioChangePolarity value) = 0;
+    virtual HRESULT __stdcall get_Polarity(winrt::Windows::Devices::Gpio::GpioChangePolarity * value) = 0;
+    virtual HRESULT __stdcall get_IsStarted(bool * value) = 0;
+    virtual HRESULT __stdcall abi_Start() = 0;
+    virtual HRESULT __stdcall abi_Stop() = 0;
+    virtual HRESULT __stdcall abi_Read(Windows::Devices::Gpio::GpioChangeCount * value) = 0;
+    virtual HRESULT __stdcall abi_Reset(Windows::Devices::Gpio::GpioChangeCount * value) = 0;
+};
+
+struct __declspec(uuid("147d94b6-0a9e-410c-b4fa-f89f4052084d")) __declspec(novtable) IGpioChangeCounterFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_Create(Windows::Devices::Gpio::IGpioPin * pin, Windows::Devices::Gpio::IGpioChangeCounter ** value) = 0;
+};
+
+struct __declspec(uuid("0abc885f-e031-48e8-8590-70de78363c6d")) __declspec(novtable) IGpioChangeReader : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Capacity(int32_t * value) = 0;
+    virtual HRESULT __stdcall get_Length(int32_t * value) = 0;
+    virtual HRESULT __stdcall get_IsEmpty(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsOverflowed(bool * value) = 0;
+    virtual HRESULT __stdcall put_Polarity(winrt::Windows::Devices::Gpio::GpioChangePolarity value) = 0;
+    virtual HRESULT __stdcall get_Polarity(winrt::Windows::Devices::Gpio::GpioChangePolarity * value) = 0;
+    virtual HRESULT __stdcall get_IsStarted(bool * value) = 0;
+    virtual HRESULT __stdcall abi_Start() = 0;
+    virtual HRESULT __stdcall abi_Stop() = 0;
+    virtual HRESULT __stdcall abi_Clear() = 0;
+    virtual HRESULT __stdcall abi_GetNextItem(Windows::Devices::Gpio::GpioChangeRecord * value) = 0;
+    virtual HRESULT __stdcall abi_PeekNextItem(Windows::Devices::Gpio::GpioChangeRecord * value) = 0;
+    virtual HRESULT __stdcall abi_GetAllItems(Windows::Foundation::Collections::IVector<Windows::Devices::Gpio::GpioChangeRecord> ** value) = 0;
+    virtual HRESULT __stdcall abi_WaitForItemsAsync(int32_t count, Windows::Foundation::IAsyncAction ** operation) = 0;
+};
+
+struct __declspec(uuid("a9598ef3-390e-441a-9d1c-e8de0b2df0df")) __declspec(novtable) IGpioChangeReaderFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_Create(Windows::Devices::Gpio::IGpioPin * pin, Windows::Devices::Gpio::IGpioChangeReader ** value) = 0;
+    virtual HRESULT __stdcall abi_CreateWithCapacity(Windows::Devices::Gpio::IGpioPin * pin, int32_t minCapacity, Windows::Devices::Gpio::IGpioChangeReader ** value) = 0;
+};
 
 struct __declspec(uuid("284012e3-7461-469c-a8bc-61d69d08a53c")) __declspec(novtable) IGpioController : Windows::Foundation::IInspectable
 {
@@ -56,6 +120,8 @@ struct __declspec(uuid("3137aae1-703d-4059-bd24-b5b25dffb84e")) __declspec(novta
 
 namespace ABI {
 
+template <> struct traits<Windows::Devices::Gpio::GpioChangeCounter> { using default_interface = Windows::Devices::Gpio::IGpioChangeCounter; };
+template <> struct traits<Windows::Devices::Gpio::GpioChangeReader> { using default_interface = Windows::Devices::Gpio::IGpioChangeReader; };
 template <> struct traits<Windows::Devices::Gpio::GpioController> { using default_interface = Windows::Devices::Gpio::IGpioController; };
 template <> struct traits<Windows::Devices::Gpio::GpioPin> { using default_interface = Windows::Devices::Gpio::IGpioPin; };
 template <> struct traits<Windows::Devices::Gpio::GpioPinValueChangedEventArgs> { using default_interface = Windows::Devices::Gpio::IGpioPinValueChangedEventArgs; };
@@ -63,6 +129,50 @@ template <> struct traits<Windows::Devices::Gpio::GpioPinValueChangedEventArgs> 
 }
 
 namespace Windows::Devices::Gpio {
+
+template <typename D>
+struct WINRT_EBO impl_IGpioChangeCounter
+{
+    void Polarity(Windows::Devices::Gpio::GpioChangePolarity value) const;
+    Windows::Devices::Gpio::GpioChangePolarity Polarity() const;
+    bool IsStarted() const;
+    void Start() const;
+    void Stop() const;
+    Windows::Devices::Gpio::GpioChangeCount Read() const;
+    Windows::Devices::Gpio::GpioChangeCount Reset() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGpioChangeCounterFactory
+{
+    Windows::Devices::Gpio::GpioChangeCounter Create(const Windows::Devices::Gpio::GpioPin & pin) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGpioChangeReader
+{
+    int32_t Capacity() const;
+    int32_t Length() const;
+    bool IsEmpty() const;
+    bool IsOverflowed() const;
+    void Polarity(Windows::Devices::Gpio::GpioChangePolarity value) const;
+    Windows::Devices::Gpio::GpioChangePolarity Polarity() const;
+    bool IsStarted() const;
+    void Start() const;
+    void Stop() const;
+    void Clear() const;
+    Windows::Devices::Gpio::GpioChangeRecord GetNextItem() const;
+    Windows::Devices::Gpio::GpioChangeRecord PeekNextItem() const;
+    Windows::Foundation::Collections::IVector<Windows::Devices::Gpio::GpioChangeRecord> GetAllItems() const;
+    Windows::Foundation::IAsyncAction WaitForItemsAsync(int32_t count) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGpioChangeReaderFactory
+{
+    Windows::Devices::Gpio::GpioChangeReader Create(const Windows::Devices::Gpio::GpioPin & pin) const;
+    Windows::Devices::Gpio::GpioChangeReader CreateWithCapacity(const Windows::Devices::Gpio::GpioPin & pin, int32_t minCapacity) const;
+};
 
 template <typename D>
 struct WINRT_EBO impl_IGpioController
@@ -114,6 +224,30 @@ struct WINRT_EBO impl_IGpioPinValueChangedEventArgs
 
 namespace impl {
 
+template <> struct traits<Windows::Devices::Gpio::IGpioChangeCounter>
+{
+    using abi = ABI::Windows::Devices::Gpio::IGpioChangeCounter;
+    template <typename D> using consume = Windows::Devices::Gpio::impl_IGpioChangeCounter<D>;
+};
+
+template <> struct traits<Windows::Devices::Gpio::IGpioChangeCounterFactory>
+{
+    using abi = ABI::Windows::Devices::Gpio::IGpioChangeCounterFactory;
+    template <typename D> using consume = Windows::Devices::Gpio::impl_IGpioChangeCounterFactory<D>;
+};
+
+template <> struct traits<Windows::Devices::Gpio::IGpioChangeReader>
+{
+    using abi = ABI::Windows::Devices::Gpio::IGpioChangeReader;
+    template <typename D> using consume = Windows::Devices::Gpio::impl_IGpioChangeReader<D>;
+};
+
+template <> struct traits<Windows::Devices::Gpio::IGpioChangeReaderFactory>
+{
+    using abi = ABI::Windows::Devices::Gpio::IGpioChangeReaderFactory;
+    template <typename D> using consume = Windows::Devices::Gpio::impl_IGpioChangeReaderFactory<D>;
+};
+
 template <> struct traits<Windows::Devices::Gpio::IGpioController>
 {
     using abi = ABI::Windows::Devices::Gpio::IGpioController;
@@ -142,6 +276,18 @@ template <> struct traits<Windows::Devices::Gpio::IGpioPinValueChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Gpio::IGpioPinValueChangedEventArgs;
     template <typename D> using consume = Windows::Devices::Gpio::impl_IGpioPinValueChangedEventArgs<D>;
+};
+
+template <> struct traits<Windows::Devices::Gpio::GpioChangeCounter>
+{
+    using abi = ABI::Windows::Devices::Gpio::GpioChangeCounter;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Gpio.GpioChangeCounter"; }
+};
+
+template <> struct traits<Windows::Devices::Gpio::GpioChangeReader>
+{
+    using abi = ABI::Windows::Devices::Gpio::GpioChangeReader;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Gpio.GpioChangeReader"; }
 };
 
 template <> struct traits<Windows::Devices::Gpio::GpioController>

@@ -14,6 +14,7 @@ struct LicenseManager
     LicenseManager() = delete;
     static Windows::Foundation::IAsyncAction AddLicenseAsync(const Windows::Storage::Streams::IBuffer & license);
     static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> GetSatisfactionInfosAsync(iterable<hstring> contentIds, iterable<hstring> keyIds);
+    static Windows::Foundation::IAsyncAction RefreshLicensesAsync(Windows::ApplicationModel::Store::LicenseManagement::LicenseRefreshOption refreshOption);
 };
 
 struct WINRT_EBO LicenseSatisfactionInfo :

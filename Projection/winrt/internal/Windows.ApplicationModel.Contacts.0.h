@@ -15,8 +15,10 @@ struct IContact2;
 struct IContact3;
 struct IContactAddress;
 struct IContactAnnotation;
+struct IContactAnnotation2;
 struct IContactAnnotationList;
 struct IContactAnnotationStore;
+struct IContactAnnotationStore2;
 struct IContactBatch;
 struct IContactCardDelayedDataLoader;
 struct IContactCardOptions;
@@ -31,6 +33,7 @@ struct IContactDate;
 struct IContactEmail;
 struct IContactField;
 struct IContactFieldFactory;
+struct IContactGroup;
 struct IContactInformation;
 struct IContactInstantMessageField;
 struct IContactInstantMessageFieldFactory;
@@ -44,15 +47,22 @@ struct IContactListSyncManager2;
 struct IContactLocationField;
 struct IContactLocationFieldFactory;
 struct IContactManagerForUser;
+struct IContactManagerForUser2;
 struct IContactManagerStatics;
 struct IContactManagerStatics2;
 struct IContactManagerStatics3;
 struct IContactManagerStatics4;
+struct IContactManagerStatics5;
 struct IContactMatchReason;
 struct IContactName;
+struct IContactPanel;
+struct IContactPanelClosingEventArgs;
+struct IContactPanelLaunchFullAppRequestedEventArgs;
 struct IContactPhone;
 struct IContactPicker;
 struct IContactPicker2;
+struct IContactPicker3;
+struct IContactPickerStatics;
 struct IContactQueryOptions;
 struct IContactQueryOptionsFactory;
 struct IContactQueryTextSearch;
@@ -66,6 +76,9 @@ struct IContactWebsite;
 struct IContactWebsite2;
 struct IFullContactCardOptions;
 struct IKnownContactFieldStatics;
+struct IPinnedContactIdsQueryResult;
+struct IPinnedContactManager;
+struct IPinnedContactManagerStatics;
 struct AggregateContactManager;
 struct Contact;
 struct ContactAddress;
@@ -85,6 +98,7 @@ struct ContactDate;
 struct ContactEmail;
 struct ContactField;
 struct ContactFieldFactory;
+struct ContactGroup;
 struct ContactInformation;
 struct ContactInstantMessageField;
 struct ContactJobInfo;
@@ -94,6 +108,9 @@ struct ContactListSyncManager;
 struct ContactLocationField;
 struct ContactManagerForUser;
 struct ContactMatchReason;
+struct ContactPanel;
+struct ContactPanelClosingEventArgs;
+struct ContactPanelLaunchFullAppRequestedEventArgs;
 struct ContactPhone;
 struct ContactPicker;
 struct ContactQueryOptions;
@@ -104,6 +121,8 @@ struct ContactStore;
 struct ContactStoreNotificationTriggerDetails;
 struct ContactWebsite;
 struct FullContactCardOptions;
+struct PinnedContactIdsQueryResult;
+struct PinnedContactManager;
 
 }
 
@@ -116,8 +135,10 @@ struct IContact2;
 struct IContact3;
 struct IContactAddress;
 struct IContactAnnotation;
+struct IContactAnnotation2;
 struct IContactAnnotationList;
 struct IContactAnnotationStore;
+struct IContactAnnotationStore2;
 struct IContactBatch;
 struct IContactCardDelayedDataLoader;
 struct IContactCardOptions;
@@ -132,6 +153,7 @@ struct IContactDate;
 struct IContactEmail;
 struct IContactField;
 struct IContactFieldFactory;
+struct IContactGroup;
 struct IContactInformation;
 struct IContactInstantMessageField;
 struct IContactInstantMessageFieldFactory;
@@ -145,15 +167,22 @@ struct IContactListSyncManager2;
 struct IContactLocationField;
 struct IContactLocationFieldFactory;
 struct IContactManagerForUser;
+struct IContactManagerForUser2;
 struct IContactManagerStatics;
 struct IContactManagerStatics2;
 struct IContactManagerStatics3;
 struct IContactManagerStatics4;
+struct IContactManagerStatics5;
 struct IContactMatchReason;
 struct IContactName;
+struct IContactPanel;
+struct IContactPanelClosingEventArgs;
+struct IContactPanelLaunchFullAppRequestedEventArgs;
 struct IContactPhone;
 struct IContactPicker;
 struct IContactPicker2;
+struct IContactPicker3;
+struct IContactPickerStatics;
 struct IContactQueryOptions;
 struct IContactQueryOptionsFactory;
 struct IContactQueryTextSearch;
@@ -167,6 +196,9 @@ struct IContactWebsite;
 struct IContactWebsite2;
 struct IFullContactCardOptions;
 struct IKnownContactFieldStatics;
+struct IPinnedContactIdsQueryResult;
+struct IPinnedContactManager;
+struct IPinnedContactManagerStatics;
 struct AggregateContactManager;
 struct Contact;
 struct ContactAddress;
@@ -186,6 +218,7 @@ struct ContactDate;
 struct ContactEmail;
 struct ContactField;
 struct ContactFieldFactory;
+struct ContactGroup;
 struct ContactInformation;
 struct ContactInstantMessageField;
 struct ContactJobInfo;
@@ -197,6 +230,9 @@ struct ContactLocationField;
 struct ContactManager;
 struct ContactManagerForUser;
 struct ContactMatchReason;
+struct ContactPanel;
+struct ContactPanelClosingEventArgs;
+struct ContactPanelLaunchFullAppRequestedEventArgs;
 struct ContactPhone;
 struct ContactPicker;
 struct ContactQueryOptions;
@@ -208,6 +244,8 @@ struct ContactStoreNotificationTriggerDetails;
 struct ContactWebsite;
 struct FullContactCardOptions;
 struct KnownContactField;
+struct PinnedContactIdsQueryResult;
+struct PinnedContactManager;
 
 }
 
@@ -220,8 +258,10 @@ template <typename T> struct impl_IContact2;
 template <typename T> struct impl_IContact3;
 template <typename T> struct impl_IContactAddress;
 template <typename T> struct impl_IContactAnnotation;
+template <typename T> struct impl_IContactAnnotation2;
 template <typename T> struct impl_IContactAnnotationList;
 template <typename T> struct impl_IContactAnnotationStore;
+template <typename T> struct impl_IContactAnnotationStore2;
 template <typename T> struct impl_IContactBatch;
 template <typename T> struct impl_IContactCardDelayedDataLoader;
 template <typename T> struct impl_IContactCardOptions;
@@ -236,6 +276,7 @@ template <typename T> struct impl_IContactDate;
 template <typename T> struct impl_IContactEmail;
 template <typename T> struct impl_IContactField;
 template <typename T> struct impl_IContactFieldFactory;
+template <typename T> struct impl_IContactGroup;
 template <typename T> struct impl_IContactInformation;
 template <typename T> struct impl_IContactInstantMessageField;
 template <typename T> struct impl_IContactInstantMessageFieldFactory;
@@ -249,15 +290,22 @@ template <typename T> struct impl_IContactListSyncManager2;
 template <typename T> struct impl_IContactLocationField;
 template <typename T> struct impl_IContactLocationFieldFactory;
 template <typename T> struct impl_IContactManagerForUser;
+template <typename T> struct impl_IContactManagerForUser2;
 template <typename T> struct impl_IContactManagerStatics;
 template <typename T> struct impl_IContactManagerStatics2;
 template <typename T> struct impl_IContactManagerStatics3;
 template <typename T> struct impl_IContactManagerStatics4;
+template <typename T> struct impl_IContactManagerStatics5;
 template <typename T> struct impl_IContactMatchReason;
 template <typename T> struct impl_IContactName;
+template <typename T> struct impl_IContactPanel;
+template <typename T> struct impl_IContactPanelClosingEventArgs;
+template <typename T> struct impl_IContactPanelLaunchFullAppRequestedEventArgs;
 template <typename T> struct impl_IContactPhone;
 template <typename T> struct impl_IContactPicker;
 template <typename T> struct impl_IContactPicker2;
+template <typename T> struct impl_IContactPicker3;
+template <typename T> struct impl_IContactPickerStatics;
 template <typename T> struct impl_IContactQueryOptions;
 template <typename T> struct impl_IContactQueryOptionsFactory;
 template <typename T> struct impl_IContactQueryTextSearch;
@@ -271,6 +319,9 @@ template <typename T> struct impl_IContactWebsite;
 template <typename T> struct impl_IContactWebsite2;
 template <typename T> struct impl_IFullContactCardOptions;
 template <typename T> struct impl_IKnownContactFieldStatics;
+template <typename T> struct impl_IPinnedContactIdsQueryResult;
+template <typename T> struct impl_IPinnedContactManager;
+template <typename T> struct impl_IPinnedContactManagerStatics;
 
 }
 
@@ -291,6 +342,7 @@ enum class ContactAnnotationOperations : unsigned
     AudioCall = 0x4,
     VideoCall = 0x8,
     SocialFeeds = 0x10,
+    Share = 0x20,
 };
 
 DEFINE_ENUM_FLAG_OPERATORS(ContactAnnotationOperations)
@@ -475,6 +527,12 @@ enum class ContactStoreAccessType
     AppContactsReadWrite = 0,
     AllContactsReadOnly = 1,
     AllContactsReadWrite = 2,
+};
+
+enum class PinnedContactSurface
+{
+    StartMenu = 0,
+    Taskbar = 1,
 };
 
 }

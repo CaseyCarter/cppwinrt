@@ -21,6 +21,173 @@ WINRT_EXPORT namespace winrt {
 namespace impl {
 
 template <typename D>
+struct produce<D, Windows::Devices::Bluetooth::IBluetoothAdapter> : produce_base<D, Windows::Devices::Bluetooth::IBluetoothAdapter>
+{
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeviceId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_BluetoothAddress(uint64_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().BluetoothAddress());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsClassicSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsClassicSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsLowEnergySupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsLowEnergySupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsPeripheralRoleSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsPeripheralRoleSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsCentralRoleSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsCentralRoleSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsAdvertisementOffloadSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsAdvertisementOffloadSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetRadioAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().GetRadioAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::Bluetooth::IBluetoothAdapterStatics> : produce_base<D, Windows::Devices::Bluetooth::IBluetoothAdapterStatics>
+{
+    HRESULT __stdcall abi_GetDeviceSelector(impl::abi_arg_out<hstring> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetDeviceSelector());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDefaultAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().GetDefaultAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::IBluetoothClassOfDevice> : produce_base<D, Windows::Devices::Bluetooth::IBluetoothClassOfDevice>
 {
     HRESULT __stdcall get_RawValue(uint32_t * value) noexcept override
@@ -428,6 +595,53 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothDevice3> : produce_base
         catch (...)
         {
             *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::Bluetooth::IBluetoothDeviceId> : produce_base<D, Windows::Devices::Bluetooth::IBluetoothDeviceId>
+{
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Id());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsClassicDevice(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsClassicDevice());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsLowEnergyDevice(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsLowEnergyDevice());
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -1589,6 +1803,100 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice2> : produce_ba
 };
 
 template <typename D>
+struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDevice3> : produce_base<D, Windows::Devices::Bluetooth::IBluetoothLEDevice3>
+{
+    HRESULT __stdcall get_DeviceAccessInformation(impl::abi_arg_out<Windows::Devices::Enumeration::IDeviceAccessInformation> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeviceAccessInformation());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RequestAccessAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Enumeration::DeviceAccessStatus>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().RequestAccessAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetGattServicesAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().GetGattServicesAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetGattServicesWithCacheModeAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().GetGattServicesAsync(cacheMode));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetGattServicesForUuidAsync(GUID serviceUuid, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().GetGattServicesForUuidAsync(serviceUuid));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetGattServicesForUuidWithCacheModeAsync(GUID serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().GetGattServicesForUuidAsync(serviceUuid, cacheMode));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics> : produce_base<D, Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics>
 {
     HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice>> operation) noexcept override
@@ -1866,9 +2174,154 @@ struct produce<D, Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter> :
     }
 };
 
+template <typename D>
+struct produce<D, Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics> : produce_base<D, Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics>
+{
+    HRESULT __stdcall abi_FromShortId(uint32_t shortId, GUID * result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().FromShortId(shortId));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryGetShortId(GUID uuid, impl::abi_arg_out<Windows::Foundation::IReference<uint32_t>> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().TryGetShortId(uuid));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
 }
 
 namespace Windows::Devices::Bluetooth {
+
+template <typename D> hstring impl_IBluetoothAdapterStatics<D>::GetDeviceSelector() const
+{
+    hstring result;
+    check_hresult(WINRT_SHIM(IBluetoothAdapterStatics)->abi_GetDeviceSelector(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> impl_IBluetoothAdapterStatics<D>::FromIdAsync(hstring_view deviceId) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> operation;
+    check_hresult(WINRT_SHIM(IBluetoothAdapterStatics)->abi_FromIdAsync(get_abi(deviceId), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> impl_IBluetoothAdapterStatics<D>::GetDefaultAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> operation;
+    check_hresult(WINRT_SHIM(IBluetoothAdapterStatics)->abi_GetDefaultAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> hstring impl_IBluetoothAdapter<D>::DeviceId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IBluetoothAdapter)->get_DeviceId(put_abi(value)));
+    return value;
+}
+
+template <typename D> uint64_t impl_IBluetoothAdapter<D>::BluetoothAddress() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IBluetoothAdapter)->get_BluetoothAddress(&value));
+    return value;
+}
+
+template <typename D> bool impl_IBluetoothAdapter<D>::IsClassicSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBluetoothAdapter)->get_IsClassicSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_IBluetoothAdapter<D>::IsLowEnergySupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBluetoothAdapter)->get_IsLowEnergySupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_IBluetoothAdapter<D>::IsPeripheralRoleSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBluetoothAdapter)->get_IsPeripheralRoleSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_IBluetoothAdapter<D>::IsCentralRoleSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBluetoothAdapter)->get_IsCentralRoleSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_IBluetoothAdapter<D>::IsAdvertisementOffloadSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBluetoothAdapter)->get_IsAdvertisementOffloadSupported(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> impl_IBluetoothAdapter<D>::GetRadioAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> operation;
+    check_hresult(WINRT_SHIM(IBluetoothAdapter)->abi_GetRadioAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> hstring impl_IBluetoothDeviceId<D>::Id() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IBluetoothDeviceId)->get_Id(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IBluetoothDeviceId<D>::IsClassicDevice() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBluetoothDeviceId)->get_IsClassicDevice(&value));
+    return value;
+}
+
+template <typename D> bool impl_IBluetoothDeviceId<D>::IsLowEnergyDevice() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBluetoothDeviceId)->get_IsLowEnergyDevice(&value));
+    return value;
+}
+
+template <typename D> GUID impl_IBluetoothUuidHelperStatics<D>::FromShortId(uint32_t shortId) const
+{
+    GUID result {};
+    check_hresult(WINRT_SHIM(IBluetoothUuidHelperStatics)->abi_FromShortId(shortId, &result));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IReference<uint32_t> impl_IBluetoothUuidHelperStatics<D>::TryGetShortId(GUID uuid) const
+{
+    Windows::Foundation::IReference<uint32_t> result;
+    check_hresult(WINRT_SHIM(IBluetoothUuidHelperStatics)->abi_TryGetShortId(uuid, put_abi(result)));
+    return result;
+}
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> impl_IBluetoothDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
 {
@@ -2474,6 +2927,76 @@ template <typename D> Windows::Devices::Bluetooth::BluetoothLEAppearance impl_IB
     return appearance;
 }
 
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> impl_IBluetoothLEDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> operation;
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics)->abi_FromIdAsync(get_abi(deviceId), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> impl_IBluetoothLEDeviceStatics<D>::FromBluetoothAddressAsync(uint64_t bluetoothAddress) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> operation;
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics)->abi_FromBluetoothAddressAsync(bluetoothAddress, put_abi(operation)));
+    return operation;
+}
+
+template <typename D> hstring impl_IBluetoothLEDeviceStatics<D>::GetDeviceSelector() const
+{
+    hstring deviceSelector;
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics)->abi_GetDeviceSelector(put_abi(deviceSelector)));
+    return deviceSelector;
+}
+
+template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromPairingState(bool pairingState) const
+{
+    hstring deviceSelector;
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromPairingState(pairingState, put_abi(deviceSelector)));
+    return deviceSelector;
+}
+
+template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const
+{
+    hstring deviceSelector;
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromConnectionStatus(connectionStatus, put_abi(deviceSelector)));
+    return deviceSelector;
+}
+
+template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromDeviceName(hstring_view deviceName) const
+{
+    hstring deviceSelector;
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromDeviceName(get_abi(deviceName), put_abi(deviceSelector)));
+    return deviceSelector;
+}
+
+template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress) const
+{
+    hstring deviceSelector;
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromBluetoothAddress(bluetoothAddress, put_abi(deviceSelector)));
+    return deviceSelector;
+}
+
+template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType) const
+{
+    hstring deviceSelector;
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromBluetoothAddressWithBluetoothAddressType(bluetoothAddress, bluetoothAddressType, put_abi(deviceSelector)));
+    return deviceSelector;
+}
+
+template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromAppearance(const Windows::Devices::Bluetooth::BluetoothLEAppearance & appearance) const
+{
+    hstring deviceSelector;
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromAppearance(get_abi(appearance), put_abi(deviceSelector)));
+    return deviceSelector;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> impl_IBluetoothLEDeviceStatics2<D>::FromBluetoothAddressAsync(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> operation;
+    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_FromBluetoothAddressWithBluetoothAddressTypeAsync(bluetoothAddress, bluetoothAddressType, put_abi(operation)));
+    return operation;
+}
+
 template <typename D> hstring impl_IBluetoothLEDevice<D>::DeviceId() const
 {
     hstring value;
@@ -2588,73 +3111,45 @@ template <typename D> Windows::Devices::Bluetooth::BluetoothAddressType impl_IBl
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> impl_IBluetoothLEDeviceStatics<D>::FromIdAsync(hstring_view deviceId) const
+template <typename D> Windows::Devices::Enumeration::DeviceAccessInformation impl_IBluetoothLEDevice3<D>::DeviceAccessInformation() const
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> operation;
-    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics)->abi_FromIdAsync(get_abi(deviceId), put_abi(operation)));
+    Windows::Devices::Enumeration::DeviceAccessInformation value { nullptr };
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice3)->get_DeviceAccessInformation(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Enumeration::DeviceAccessStatus> impl_IBluetoothLEDevice3<D>::RequestAccessAsync() const
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Enumeration::DeviceAccessStatus> operation;
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice3)->abi_RequestAccessAsync(put_abi(operation)));
     return operation;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> impl_IBluetoothLEDeviceStatics<D>::FromBluetoothAddressAsync(uint64_t bluetoothAddress) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> impl_IBluetoothLEDevice3<D>::GetGattServicesAsync() const
 {
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> operation;
-    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics)->abi_FromBluetoothAddressAsync(bluetoothAddress, put_abi(operation)));
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> operation;
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice3)->abi_GetGattServicesAsync(put_abi(operation)));
     return operation;
 }
 
-template <typename D> hstring impl_IBluetoothLEDeviceStatics<D>::GetDeviceSelector() const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> impl_IBluetoothLEDevice3<D>::GetGattServicesAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const
 {
-    hstring deviceSelector;
-    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics)->abi_GetDeviceSelector(put_abi(deviceSelector)));
-    return deviceSelector;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> operation;
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice3)->abi_GetGattServicesWithCacheModeAsync(cacheMode, put_abi(operation)));
+    return operation;
 }
 
-template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromPairingState(bool pairingState) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> impl_IBluetoothLEDevice3<D>::GetGattServicesForUuidAsync(GUID serviceUuid) const
 {
-    hstring deviceSelector;
-    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromPairingState(pairingState, put_abi(deviceSelector)));
-    return deviceSelector;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> operation;
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice3)->abi_GetGattServicesForUuidAsync(serviceUuid, put_abi(operation)));
+    return operation;
 }
 
-template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> impl_IBluetoothLEDevice3<D>::GetGattServicesForUuidAsync(GUID serviceUuid, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const
 {
-    hstring deviceSelector;
-    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromConnectionStatus(connectionStatus, put_abi(deviceSelector)));
-    return deviceSelector;
-}
-
-template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromDeviceName(hstring_view deviceName) const
-{
-    hstring deviceSelector;
-    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromDeviceName(get_abi(deviceName), put_abi(deviceSelector)));
-    return deviceSelector;
-}
-
-template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress) const
-{
-    hstring deviceSelector;
-    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromBluetoothAddress(bluetoothAddress, put_abi(deviceSelector)));
-    return deviceSelector;
-}
-
-template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType) const
-{
-    hstring deviceSelector;
-    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromBluetoothAddressWithBluetoothAddressType(bluetoothAddress, bluetoothAddressType, put_abi(deviceSelector)));
-    return deviceSelector;
-}
-
-template <typename D> hstring impl_IBluetoothLEDeviceStatics2<D>::GetDeviceSelectorFromAppearance(const Windows::Devices::Bluetooth::BluetoothLEAppearance & appearance) const
-{
-    hstring deviceSelector;
-    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_GetDeviceSelectorFromAppearance(get_abi(appearance), put_abi(deviceSelector)));
-    return deviceSelector;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> impl_IBluetoothLEDeviceStatics2<D>::FromBluetoothAddressAsync(uint64_t bluetoothAddress, Windows::Devices::Bluetooth::BluetoothAddressType bluetoothAddressType) const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> operation;
-    check_hresult(WINRT_SHIM(IBluetoothLEDeviceStatics2)->abi_FromBluetoothAddressWithBluetoothAddressTypeAsync(bluetoothAddress, bluetoothAddressType, put_abi(operation)));
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> operation;
+    check_hresult(WINRT_SHIM(IBluetoothLEDevice3)->abi_GetGattServicesForUuidWithCacheModeAsync(serviceUuid, cacheMode, put_abi(operation)));
     return operation;
 }
 
@@ -2746,6 +3241,21 @@ template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeS
 template <typename D> void impl_IBluetoothSignalStrengthFilter<D>::SamplingInterval(const optional<Windows::Foundation::TimeSpan> & value) const
 {
     check_hresult(WINRT_SHIM(IBluetoothSignalStrengthFilter)->put_SamplingInterval(get_abi(value)));
+}
+
+inline hstring BluetoothAdapter::GetDeviceSelector()
+{
+    return get_activation_factory<BluetoothAdapter, IBluetoothAdapterStatics>().GetDeviceSelector();
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> BluetoothAdapter::FromIdAsync(hstring_view deviceId)
+{
+    return get_activation_factory<BluetoothAdapter, IBluetoothAdapterStatics>().FromIdAsync(deviceId);
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> BluetoothAdapter::GetDefaultAsync()
+{
+    return get_activation_factory<BluetoothAdapter, IBluetoothAdapterStatics>().GetDefaultAsync();
 }
 
 inline Windows::Devices::Bluetooth::BluetoothClassOfDevice BluetoothClassOfDevice::FromRawValue(uint32_t rawValue)
@@ -3117,9 +3627,37 @@ inline BluetoothSignalStrengthFilter::BluetoothSignalStrengthFilter() :
     BluetoothSignalStrengthFilter(activate_instance<BluetoothSignalStrengthFilter>())
 {}
 
+inline GUID BluetoothUuidHelper::FromShortId(uint32_t shortId)
+{
+    return get_activation_factory<BluetoothUuidHelper, IBluetoothUuidHelperStatics>().FromShortId(shortId);
+}
+
+inline Windows::Foundation::IReference<uint32_t> BluetoothUuidHelper::TryGetShortId(GUID uuid)
+{
+    return get_activation_factory<BluetoothUuidHelper, IBluetoothUuidHelperStatics>().TryGetShortId(uuid);
 }
 
 }
+
+}
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothAdapter>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothAdapter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothAdapterStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothAdapterStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 
 template<>
 struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothClassOfDevice>
@@ -3161,6 +3699,15 @@ template<>
 struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothDevice3>
 {
     size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothDevice3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothDeviceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothDeviceId & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3239,6 +3786,15 @@ struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothLEDevice2>
 };
 
 template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothLEDevice3>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothLEDevice3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics>
 {
     size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothLEDeviceStatics & value) const noexcept
@@ -3266,6 +3822,24 @@ struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothSignalStrengthFil
 };
 
 template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::IBluetoothUuidHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::BluetoothAdapter>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::BluetoothAdapter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Devices::Bluetooth::BluetoothClassOfDevice>
 {
     size_t operator()(const winrt::Windows::Devices::Bluetooth::BluetoothClassOfDevice & value) const noexcept
@@ -3278,6 +3852,15 @@ template<>
 struct std::hash<winrt::Windows::Devices::Bluetooth::BluetoothDevice>
 {
     size_t operator()(const winrt::Windows::Devices::Bluetooth::BluetoothDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::BluetoothDeviceId>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::BluetoothDeviceId & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

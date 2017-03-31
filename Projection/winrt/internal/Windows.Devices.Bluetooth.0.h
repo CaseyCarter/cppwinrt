@@ -8,11 +8,14 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Devices::Bluetooth {
 
+struct IBluetoothAdapter;
+struct IBluetoothAdapterStatics;
 struct IBluetoothClassOfDevice;
 struct IBluetoothClassOfDeviceStatics;
 struct IBluetoothDevice;
 struct IBluetoothDevice2;
 struct IBluetoothDevice3;
+struct IBluetoothDeviceId;
 struct IBluetoothDeviceStatics;
 struct IBluetoothDeviceStatics2;
 struct IBluetoothLEAppearance;
@@ -21,11 +24,15 @@ struct IBluetoothLEAppearanceStatics;
 struct IBluetoothLEAppearanceSubcategoriesStatics;
 struct IBluetoothLEDevice;
 struct IBluetoothLEDevice2;
+struct IBluetoothLEDevice3;
 struct IBluetoothLEDeviceStatics;
 struct IBluetoothLEDeviceStatics2;
 struct IBluetoothSignalStrengthFilter;
+struct IBluetoothUuidHelperStatics;
+struct BluetoothAdapter;
 struct BluetoothClassOfDevice;
 struct BluetoothDevice;
+struct BluetoothDeviceId;
 struct BluetoothLEAppearance;
 struct BluetoothLEDevice;
 struct BluetoothSignalStrengthFilter;
@@ -34,11 +41,14 @@ struct BluetoothSignalStrengthFilter;
 
 namespace Windows::Devices::Bluetooth {
 
+struct IBluetoothAdapter;
+struct IBluetoothAdapterStatics;
 struct IBluetoothClassOfDevice;
 struct IBluetoothClassOfDeviceStatics;
 struct IBluetoothDevice;
 struct IBluetoothDevice2;
 struct IBluetoothDevice3;
+struct IBluetoothDeviceId;
 struct IBluetoothDeviceStatics;
 struct IBluetoothDeviceStatics2;
 struct IBluetoothLEAppearance;
@@ -47,26 +57,34 @@ struct IBluetoothLEAppearanceStatics;
 struct IBluetoothLEAppearanceSubcategoriesStatics;
 struct IBluetoothLEDevice;
 struct IBluetoothLEDevice2;
+struct IBluetoothLEDevice3;
 struct IBluetoothLEDeviceStatics;
 struct IBluetoothLEDeviceStatics2;
 struct IBluetoothSignalStrengthFilter;
+struct IBluetoothUuidHelperStatics;
+struct BluetoothAdapter;
 struct BluetoothClassOfDevice;
 struct BluetoothDevice;
+struct BluetoothDeviceId;
 struct BluetoothLEAppearance;
 struct BluetoothLEAppearanceCategories;
 struct BluetoothLEAppearanceSubcategories;
 struct BluetoothLEDevice;
 struct BluetoothSignalStrengthFilter;
+struct BluetoothUuidHelper;
 
 }
 
 namespace Windows::Devices::Bluetooth {
 
+template <typename T> struct impl_IBluetoothAdapter;
+template <typename T> struct impl_IBluetoothAdapterStatics;
 template <typename T> struct impl_IBluetoothClassOfDevice;
 template <typename T> struct impl_IBluetoothClassOfDeviceStatics;
 template <typename T> struct impl_IBluetoothDevice;
 template <typename T> struct impl_IBluetoothDevice2;
 template <typename T> struct impl_IBluetoothDevice3;
+template <typename T> struct impl_IBluetoothDeviceId;
 template <typename T> struct impl_IBluetoothDeviceStatics;
 template <typename T> struct impl_IBluetoothDeviceStatics2;
 template <typename T> struct impl_IBluetoothLEAppearance;
@@ -75,9 +93,11 @@ template <typename T> struct impl_IBluetoothLEAppearanceStatics;
 template <typename T> struct impl_IBluetoothLEAppearanceSubcategoriesStatics;
 template <typename T> struct impl_IBluetoothLEDevice;
 template <typename T> struct impl_IBluetoothLEDevice2;
+template <typename T> struct impl_IBluetoothLEDevice3;
 template <typename T> struct impl_IBluetoothLEDeviceStatics;
 template <typename T> struct impl_IBluetoothLEDeviceStatics2;
 template <typename T> struct impl_IBluetoothSignalStrengthFilter;
+template <typename T> struct impl_IBluetoothUuidHelperStatics;
 
 }
 
@@ -87,6 +107,7 @@ enum class BluetoothAddressType
 {
     Public = 0,
     Random = 1,
+    Unspecified = 2,
 };
 
 enum class BluetoothCacheMode
@@ -112,6 +133,7 @@ enum class BluetoothError
     NotSupported = 6,
     DisabledByUser = 7,
     ConsentRequired = 8,
+    TransportNotSupported = 9,
 };
 
 enum class BluetoothMajorClass

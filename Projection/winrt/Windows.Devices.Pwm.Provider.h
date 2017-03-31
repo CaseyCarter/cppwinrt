@@ -45,12 +45,12 @@ struct produce<D, Windows::Devices::Pwm::Provider::IPwmControllerProvider> : pro
         }
     }
 
-    HRESULT __stdcall abi_SetDesiredFrequency(double frequency, double * value) noexcept override
+    HRESULT __stdcall abi_SetDesiredFrequency(double frequency, double * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().SetDesiredFrequency(frequency));
+            *result = detach_abi(this->shim().SetDesiredFrequency(frequency));
             return S_OK;
         }
         catch (...)
@@ -197,9 +197,9 @@ template <typename D> double impl_IPwmControllerProvider<D>::ActualFrequency() c
 
 template <typename D> double impl_IPwmControllerProvider<D>::SetDesiredFrequency(double frequency) const
 {
-    double value {};
-    check_hresult(WINRT_SHIM(IPwmControllerProvider)->abi_SetDesiredFrequency(frequency, &value));
-    return value;
+    double result {};
+    check_hresult(WINRT_SHIM(IPwmControllerProvider)->abi_SetDesiredFrequency(frequency, &result));
+    return result;
 }
 
 template <typename D> double impl_IPwmControllerProvider<D>::MaxFrequency() const

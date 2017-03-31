@@ -508,6 +508,24 @@ struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserve
     }
 };
 
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2> : produce_base<D, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2>
+{
+    HRESULT __stdcall abi_IsSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
 }
 
 namespace Windows::Perception::Spatial::Surfaces {
@@ -693,6 +711,13 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Perce
     return result;
 }
 
+template <typename D> bool impl_ISpatialSurfaceObserverStatics2<D>::IsSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialSurfaceObserverStatics2)->abi_IsSupported(&value));
+    return value;
+}
+
 template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> impl_ISpatialSurfaceObserver<D>::GetObservedSurfaces() const
 {
     Windows::Foundation::Collections::IMapView<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> value;
@@ -753,6 +778,11 @@ inline SpatialSurfaceObserver::SpatialSurfaceObserver() :
 inline Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> SpatialSurfaceObserver::RequestAccessAsync()
 {
     return get_activation_factory<SpatialSurfaceObserver, ISpatialSurfaceObserverStatics>().RequestAccessAsync();
+}
+
+inline bool SpatialSurfaceObserver::IsSupported()
+{
+    return get_activation_factory<SpatialSurfaceObserver, ISpatialSurfaceObserverStatics2>().IsSupported();
 }
 
 }
@@ -817,6 +847,15 @@ template<>
 struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics>
 {
     size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

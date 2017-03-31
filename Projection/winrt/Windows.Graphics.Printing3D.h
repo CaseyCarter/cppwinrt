@@ -11,6 +11,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.UI.3.h"
 #include "internal/Windows.Graphics.Printing3D.3.h"
+#include "Windows.Graphics.h"
 
 WINRT_EXPORT namespace winrt {
 

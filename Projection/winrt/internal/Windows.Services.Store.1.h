@@ -8,6 +8,7 @@
 #include "Windows.ApplicationModel.0.h"
 #include "Windows.Foundation.0.h"
 #include "Windows.System.0.h"
+#include "Windows.Web.Http.0.h"
 #include "Windows.Foundation.Collections.1.h"
 #include "Windows.Foundation.1.h"
 
@@ -124,6 +125,11 @@ struct __declspec(uuid("ac98b6be-f4fd-4912-babd-5035e5e8bcab")) __declspec(novta
     virtual HRESULT __stdcall abi_RequestDownloadStorePackageUpdatesAsync(Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> * storePackageUpdates, Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> ** operation) = 0;
     virtual HRESULT __stdcall abi_RequestDownloadAndInstallStorePackageUpdatesAsync(Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> * storePackageUpdates, Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> ** operation) = 0;
     virtual HRESULT __stdcall abi_RequestDownloadAndInstallStorePackagesAsync(Windows::Foundation::Collections::IIterable<hstring> * storeIds, Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> ** operation) = 0;
+};
+
+struct __declspec(uuid("18bc54da-7bd9-452c-9116-3bbd06ffc63a")) __declspec(novtable) IStoreContext2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_FindStoreProductForPackageAsync(Windows::Foundation::Collections::IIterable<hstring> * productKinds, Windows::ApplicationModel::IPackage * package, Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductResult> ** operation) = 0;
 };
 
 struct __declspec(uuid("9c06ee5f-15c0-4e72-9330-d6191cebd19c")) __declspec(novtable) IStoreContextStatics : Windows::Foundation::IInspectable
@@ -251,6 +257,11 @@ struct __declspec(uuid("c73abe60-8272-4502-8a69-6e75153a4299")) __declspec(novta
 {
     virtual HRESULT __stdcall get_Response(hstring * value) = 0;
     virtual HRESULT __stdcall get_ExtendedError(HRESULT * value) = 0;
+};
+
+struct __declspec(uuid("2901296f-c0b0-49d0-8e8d-aa940af9c10b")) __declspec(novtable) IStoreSendRequestResult2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_HttpStatusCode(winrt::Windows::Web::Http::HttpStatusCode * value) = 0;
 };
 
 struct __declspec(uuid("397e6f55-4440-4f03-863c-91f3fec83d79")) __declspec(novtable) IStoreSku : Windows::Foundation::IInspectable
@@ -409,6 +420,12 @@ struct WINRT_EBO impl_IStoreContext
 };
 
 template <typename D>
+struct WINRT_EBO impl_IStoreContext2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductResult> FindStoreProductForPackageAsync(iterable<hstring> productKinds, const Windows::ApplicationModel::Package & package) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IStoreContextStatics
 {
     Windows::Services::Store::StoreContext GetDefault() const;
@@ -554,6 +571,12 @@ struct WINRT_EBO impl_IStoreSendRequestResult
 };
 
 template <typename D>
+struct WINRT_EBO impl_IStoreSendRequestResult2
+{
+    Windows::Web::Http::HttpStatusCode HttpStatusCode() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IStoreSku
 {
     hstring StoreId() const;
@@ -636,6 +659,12 @@ template <> struct traits<Windows::Services::Store::IStoreContext>
 {
     using abi = ABI::Windows::Services::Store::IStoreContext;
     template <typename D> using consume = Windows::Services::Store::impl_IStoreContext<D>;
+};
+
+template <> struct traits<Windows::Services::Store::IStoreContext2>
+{
+    using abi = ABI::Windows::Services::Store::IStoreContext2;
+    template <typename D> using consume = Windows::Services::Store::impl_IStoreContext2<D>;
 };
 
 template <> struct traits<Windows::Services::Store::IStoreContextStatics>
@@ -732,6 +761,12 @@ template <> struct traits<Windows::Services::Store::IStoreSendRequestResult>
 {
     using abi = ABI::Windows::Services::Store::IStoreSendRequestResult;
     template <typename D> using consume = Windows::Services::Store::impl_IStoreSendRequestResult<D>;
+};
+
+template <> struct traits<Windows::Services::Store::IStoreSendRequestResult2>
+{
+    using abi = ABI::Windows::Services::Store::IStoreSendRequestResult2;
+    template <typename D> using consume = Windows::Services::Store::impl_IStoreSendRequestResult2<D>;
 };
 
 template <> struct traits<Windows::Services::Store::IStoreSku>

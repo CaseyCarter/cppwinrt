@@ -57,6 +57,13 @@ struct WINRT_EBO CachedFileUpdaterActivatedEventArgs :
     CachedFileUpdaterActivatedEventArgs(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO ContactPanelActivatedEventArgs :
+    Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs,
+    impl::require<ContactPanelActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgsWithUser>
+{
+    ContactPanelActivatedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO DeviceActivatedEventArgs :
     Windows::ApplicationModel::Activation::IDeviceActivatedEventArgs,
     impl::require<DeviceActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgsWithUser, Windows::ApplicationModel::Activation::IApplicationViewActivatedEventArgs, Windows::ApplicationModel::Activation::IViewSwitcherProvider>
@@ -134,6 +141,12 @@ struct WINRT_EBO LockScreenActivatedEventArgs :
     LockScreenActivatedEventArgs(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO LockScreenComponentActivatedEventArgs :
+    Windows::ApplicationModel::Activation::IActivatedEventArgs
+{
+    LockScreenComponentActivatedEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO PickerReturnedActivatedEventArgs :
     Windows::ApplicationModel::Activation::IPickerReturnedActivatedEventArgs
 {
@@ -189,7 +202,7 @@ struct WINRT_EBO TileActivatedInfo :
 
 struct WINRT_EBO ToastNotificationActivatedEventArgs :
     Windows::ApplicationModel::Activation::IToastNotificationActivatedEventArgs,
-    impl::require<ToastNotificationActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgsWithUser>
+    impl::require<ToastNotificationActivatedEventArgs, Windows::ApplicationModel::Activation::IActivatedEventArgsWithUser, Windows::ApplicationModel::Activation::IApplicationViewActivatedEventArgs>
 {
     ToastNotificationActivatedEventArgs(std::nullptr_t) noexcept {}
 };

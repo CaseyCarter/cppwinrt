@@ -85,6 +85,24 @@ struct produce<D, Windows::System::Profile::IAnalyticsVersionInfo> : produce_bas
 };
 
 template <typename D>
+struct produce<D, Windows::System::Profile::IEducationSettingsStatics> : produce_base<D, Windows::System::Profile::IEducationSettingsStatics>
+{
+    HRESULT __stdcall get_IsEducationEnvironment(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsEducationEnvironment());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::System::Profile::IHardwareIdentificationStatics> : produce_base<D, Windows::System::Profile::IHardwareIdentificationStatics>
 {
     HRESULT __stdcall abi_GetPackageSpecificToken(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> nonce, impl::abi_arg_out<Windows::System::Profile::IHardwareToken> packageSpecificHardwareToken) noexcept override
@@ -231,6 +249,24 @@ struct produce<D, Windows::System::Profile::ISharedModeSettingsStatics> : produc
 };
 
 template <typename D>
+struct produce<D, Windows::System::Profile::ISharedModeSettingsStatics2> : produce_base<D, Windows::System::Profile::ISharedModeSettingsStatics2>
+{
+    HRESULT __stdcall get_ShouldAvoidLocalStorage(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ShouldAvoidLocalStorage());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::System::Profile::ISystemIdentificationInfo> : produce_base<D, Windows::System::Profile::ISystemIdentificationInfo>
 {
     HRESULT __stdcall get_Id(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
@@ -301,6 +337,34 @@ struct produce<D, Windows::System::Profile::ISystemIdentificationStatics> : prod
 
 namespace Windows::System::Profile {
 
+template <typename D> Windows::Storage::Streams::IBuffer impl_ISystemIdentificationInfo<D>::Id() const
+{
+    Windows::Storage::Streams::IBuffer value;
+    check_hresult(WINRT_SHIM(ISystemIdentificationInfo)->get_Id(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::System::Profile::SystemIdentificationSource impl_ISystemIdentificationInfo<D>::Source() const
+{
+    Windows::System::Profile::SystemIdentificationSource value {};
+    check_hresult(WINRT_SHIM(ISystemIdentificationInfo)->get_Source(&value));
+    return value;
+}
+
+template <typename D> Windows::System::Profile::SystemIdentificationInfo impl_ISystemIdentificationStatics<D>::GetSystemIdForPublisher() const
+{
+    Windows::System::Profile::SystemIdentificationInfo result { nullptr };
+    check_hresult(WINRT_SHIM(ISystemIdentificationStatics)->abi_GetSystemIdForPublisher(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::System::Profile::SystemIdentificationInfo impl_ISystemIdentificationStatics<D>::GetSystemIdForUser(const Windows::System::User & user) const
+{
+    Windows::System::Profile::SystemIdentificationInfo result { nullptr };
+    check_hresult(WINRT_SHIM(ISystemIdentificationStatics)->abi_GetSystemIdForUser(get_abi(user), put_abi(result)));
+    return result;
+}
+
 template <typename D> Windows::System::Profile::AnalyticsVersionInfo impl_IAnalyticsInfoStatics<D>::VersionInfo() const
 {
     Windows::System::Profile::AnalyticsVersionInfo value { nullptr };
@@ -329,32 +393,11 @@ template <typename D> hstring impl_IAnalyticsVersionInfo<D>::DeviceFamilyVersion
     return value;
 }
 
-template <typename D> Windows::Storage::Streams::IBuffer impl_ISystemIdentificationInfo<D>::Id() const
+template <typename D> bool impl_IEducationSettingsStatics<D>::IsEducationEnvironment() const
 {
-    Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(ISystemIdentificationInfo)->get_Id(put_abi(value)));
+    bool value {};
+    check_hresult(WINRT_SHIM(IEducationSettingsStatics)->get_IsEducationEnvironment(&value));
     return value;
-}
-
-template <typename D> Windows::System::Profile::SystemIdentificationSource impl_ISystemIdentificationInfo<D>::Source() const
-{
-    Windows::System::Profile::SystemIdentificationSource value {};
-    check_hresult(WINRT_SHIM(ISystemIdentificationInfo)->get_Source(&value));
-    return value;
-}
-
-template <typename D> Windows::System::Profile::SystemIdentificationInfo impl_ISystemIdentificationStatics<D>::GetSystemIdForPublisher() const
-{
-    Windows::System::Profile::SystemIdentificationInfo result { nullptr };
-    check_hresult(WINRT_SHIM(ISystemIdentificationStatics)->abi_GetSystemIdForPublisher(put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::System::Profile::SystemIdentificationInfo impl_ISystemIdentificationStatics<D>::GetSystemIdForUser(const Windows::System::User & user) const
-{
-    Windows::System::Profile::SystemIdentificationInfo result { nullptr };
-    check_hresult(WINRT_SHIM(ISystemIdentificationStatics)->abi_GetSystemIdForUser(get_abi(user), put_abi(result)));
-    return result;
 }
 
 template <typename D> Windows::System::Profile::PlatformDataCollectionLevel impl_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevel() const
@@ -423,6 +466,13 @@ template <typename D> bool impl_ISharedModeSettingsStatics<D>::IsEnabled() const
     return value;
 }
 
+template <typename D> bool impl_ISharedModeSettingsStatics2<D>::ShouldAvoidLocalStorage() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISharedModeSettingsStatics2)->get_ShouldAvoidLocalStorage(&value));
+    return value;
+}
+
 inline Windows::System::Profile::AnalyticsVersionInfo AnalyticsInfo::VersionInfo()
 {
     return get_activation_factory<AnalyticsInfo, IAnalyticsInfoStatics>().VersionInfo();
@@ -431,6 +481,11 @@ inline Windows::System::Profile::AnalyticsVersionInfo AnalyticsInfo::VersionInfo
 inline hstring AnalyticsInfo::DeviceForm()
 {
     return get_activation_factory<AnalyticsInfo, IAnalyticsInfoStatics>().DeviceForm();
+}
+
+inline bool EducationSettings::IsEducationEnvironment()
+{
+    return get_activation_factory<EducationSettings, IEducationSettingsStatics>().IsEducationEnvironment();
 }
 
 inline Windows::System::Profile::HardwareToken HardwareIdentification::GetPackageSpecificToken(const Windows::Storage::Streams::IBuffer & nonce)
@@ -469,6 +524,11 @@ inline bool SharedModeSettings::IsEnabled()
     return get_activation_factory<SharedModeSettings, ISharedModeSettingsStatics>().IsEnabled();
 }
 
+inline bool SharedModeSettings::ShouldAvoidLocalStorage()
+{
+    return get_activation_factory<SharedModeSettings, ISharedModeSettingsStatics2>().ShouldAvoidLocalStorage();
+}
+
 inline Windows::System::Profile::SystemIdentificationInfo SystemIdentification::GetSystemIdForPublisher()
 {
     return get_activation_factory<SystemIdentification, ISystemIdentificationStatics>().GetSystemIdForPublisher();
@@ -496,6 +556,15 @@ template<>
 struct std::hash<winrt::Windows::System::Profile::IAnalyticsVersionInfo>
 {
     size_t operator()(const winrt::Windows::System::Profile::IAnalyticsVersionInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::IEducationSettingsStatics>
+{
+    size_t operator()(const winrt::Windows::System::Profile::IEducationSettingsStatics & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -532,6 +601,15 @@ template<>
 struct std::hash<winrt::Windows::System::Profile::ISharedModeSettingsStatics>
 {
     size_t operator()(const winrt::Windows::System::Profile::ISharedModeSettingsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::Profile::ISharedModeSettingsStatics2>
+{
+    size_t operator()(const winrt::Windows::System::Profile::ISharedModeSettingsStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

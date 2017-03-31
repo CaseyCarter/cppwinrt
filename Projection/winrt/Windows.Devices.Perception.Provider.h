@@ -9,8 +9,8 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Graphics.Imaging.3.h"
-#include "internal/Windows.Devices.Perception.3.h"
 #include "internal/Windows.Media.3.h"
+#include "internal/Windows.Devices.Perception.3.h"
 #include "internal/Windows.Devices.Perception.Provider.3.h"
 #include "Windows.Devices.Perception.h"
 #include "Windows.Foundation.h"
@@ -956,6 +956,49 @@ template <typename D> void impl_IPerceptionFrameProviderManagerServiceStatics<D>
     check_hresult(WINRT_SHIM(IPerceptionFrameProviderManagerServiceStatics)->abi_PublishFrameForProvider(get_abi(provider), get_abi(frame)));
 }
 
+template <typename D> Windows::Devices::Perception::Provider::IPerceptionFrameProvider impl_IPerceptionFrameProviderManager<D>::GetFrameProvider(const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo) const
+{
+    Windows::Devices::Perception::Provider::IPerceptionFrameProvider result;
+    check_hresult(WINRT_SHIM(IPerceptionFrameProviderManager)->abi_GetFrameProvider(get_abi(frameProviderInfo), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo impl_IPerceptionFrameProvider<D>::FrameProviderInfo() const
+{
+    Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo result { nullptr };
+    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->get_FrameProviderInfo(put_abi(result)));
+    return result;
+}
+
+template <typename D> bool impl_IPerceptionFrameProvider<D>::Available() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->get_Available(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IPropertySet impl_IPerceptionFrameProvider<D>::Properties() const
+{
+    Windows::Foundation::Collections::IPropertySet value;
+    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->get_Properties(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IPerceptionFrameProvider<D>::Start() const
+{
+    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->abi_Start());
+}
+
+template <typename D> void impl_IPerceptionFrameProvider<D>::Stop() const
+{
+    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->abi_Stop());
+}
+
+template <typename D> void impl_IPerceptionFrameProvider<D>::SetProperty(const Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest & value) const
+{
+    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->abi_SetProperty(get_abi(value)));
+}
+
 template <typename D> hstring impl_IPerceptionFrameProviderInfo<D>::Id() const
 {
     hstring value;
@@ -1119,6 +1162,20 @@ template <typename D> Windows::Devices::Perception::Provider::PerceptionVideoFra
     return result;
 }
 
+template <typename D> Windows::Devices::Perception::Provider::PerceptionFrame impl_IPerceptionVideoFrameAllocator<D>::AllocateFrame() const
+{
+    Windows::Devices::Perception::Provider::PerceptionFrame value { nullptr };
+    check_hresult(WINRT_SHIM(IPerceptionVideoFrameAllocator)->abi_AllocateFrame(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Perception::Provider::PerceptionFrame impl_IPerceptionVideoFrameAllocator<D>::CopyFromVideoFrame(const Windows::Media::VideoFrame & frame) const
+{
+    Windows::Devices::Perception::Provider::PerceptionFrame value { nullptr };
+    check_hresult(WINRT_SHIM(IPerceptionVideoFrameAllocator)->abi_CopyFromVideoFrame(get_abi(frame), put_abi(value)));
+    return value;
+}
+
 template <typename D> hstring impl_IPerceptionPropertyChangeRequest<D>::Name() const
 {
     hstring value;
@@ -1150,63 +1207,6 @@ template <typename D> Windows::Foundation::Deferral impl_IPerceptionPropertyChan
     Windows::Foundation::Deferral result { nullptr };
     check_hresult(WINRT_SHIM(IPerceptionPropertyChangeRequest)->abi_GetDeferral(put_abi(result)));
     return result;
-}
-
-template <typename D> Windows::Devices::Perception::Provider::IPerceptionFrameProvider impl_IPerceptionFrameProviderManager<D>::GetFrameProvider(const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo) const
-{
-    Windows::Devices::Perception::Provider::IPerceptionFrameProvider result;
-    check_hresult(WINRT_SHIM(IPerceptionFrameProviderManager)->abi_GetFrameProvider(get_abi(frameProviderInfo), put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo impl_IPerceptionFrameProvider<D>::FrameProviderInfo() const
-{
-    Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo result { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->get_FrameProviderInfo(put_abi(result)));
-    return result;
-}
-
-template <typename D> bool impl_IPerceptionFrameProvider<D>::Available() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->get_Available(&value));
-    return value;
-}
-
-template <typename D> Windows::Foundation::Collections::IPropertySet impl_IPerceptionFrameProvider<D>::Properties() const
-{
-    Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->get_Properties(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IPerceptionFrameProvider<D>::Start() const
-{
-    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->abi_Start());
-}
-
-template <typename D> void impl_IPerceptionFrameProvider<D>::Stop() const
-{
-    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->abi_Stop());
-}
-
-template <typename D> void impl_IPerceptionFrameProvider<D>::SetProperty(const Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest & value) const
-{
-    check_hresult(WINRT_SHIM(IPerceptionFrameProvider)->abi_SetProperty(get_abi(value)));
-}
-
-template <typename D> Windows::Devices::Perception::Provider::PerceptionFrame impl_IPerceptionVideoFrameAllocator<D>::AllocateFrame() const
-{
-    Windows::Devices::Perception::Provider::PerceptionFrame value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionVideoFrameAllocator)->abi_AllocateFrame(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Devices::Perception::Provider::PerceptionFrame impl_IPerceptionVideoFrameAllocator<D>::CopyFromVideoFrame(const Windows::Media::VideoFrame & frame) const
-{
-    Windows::Devices::Perception::Provider::PerceptionFrame value { nullptr };
-    check_hresult(WINRT_SHIM(IPerceptionVideoFrameAllocator)->abi_CopyFromVideoFrame(get_abi(frame), put_abi(value)));
-    return value;
 }
 
 inline hstring KnownPerceptionFrameKind::Color()

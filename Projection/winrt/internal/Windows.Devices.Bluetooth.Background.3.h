@@ -22,9 +22,23 @@ struct WINRT_EBO BluetoothLEAdvertisementWatcherTriggerDetails :
 };
 
 struct WINRT_EBO GattCharacteristicNotificationTriggerDetails :
-    Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails
+    Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails,
+    impl::require<GattCharacteristicNotificationTriggerDetails, Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails2>
 {
     GattCharacteristicNotificationTriggerDetails(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO GattServiceProviderConnection :
+    Windows::Devices::Bluetooth::Background::IGattServiceProviderConnection
+{
+    GattServiceProviderConnection(std::nullptr_t) noexcept {}
+    static Windows::Foundation::Collections::IMapView<hstring, Windows::Devices::Bluetooth::Background::GattServiceProviderConnection> AllServices();
+};
+
+struct WINRT_EBO GattServiceProviderTriggerDetails :
+    Windows::Devices::Bluetooth::Background::IGattServiceProviderTriggerDetails
+{
+    GattServiceProviderTriggerDetails(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO RfcommConnectionTriggerDetails :

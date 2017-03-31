@@ -37,6 +37,12 @@ struct __declspec(uuid("d3972af8-40c0-4fd7-aa6c-0aa13ca6188c")) __declspec(novta
     virtual HRESULT __stdcall abi_RestartWithTelemetry(hstring correlationVector) = 0;
 };
 
+struct __declspec(uuid("6f3dc998-dd47-433c-9234-560172d67a45")) __declspec(novtable) IAppInstallItem3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Children(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> ** value) = 0;
+    virtual HRESULT __stdcall get_ItemOperationsMightAffectOtherItems(bool * value) = 0;
+};
+
 struct __declspec(uuid("9353e170-8441-4b45-bd72-7c2fa925beee")) __declspec(novtable) IAppInstallManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AppInstallItems(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> ** value) = 0;
@@ -84,6 +90,18 @@ struct __declspec(uuid("95b24b17-e96a-4d0e-84e1-c8cb417a0178")) __declspec(novta
     virtual HRESULT __stdcall abi_MoveToFrontOfDownloadQueue(hstring productId, hstring correlationVector) = 0;
 };
 
+struct __declspec(uuid("260a2a16-5a9e-4ebd-b944-f2ba75c31159")) __declspec(novtable) IAppInstallManager4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetFreeUserEntitlementAsync(hstring storeId, hstring campaignId, hstring correlationVector, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> ** ppAsyncOperation) = 0;
+    virtual HRESULT __stdcall abi_GetFreeUserEntitlementForUserAsync(Windows::System::IUser * user, hstring storeId, hstring campaignId, hstring correlationVector, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> ** ppAsyncOperation) = 0;
+    virtual HRESULT __stdcall abi_GetFreeDeviceEntitlementAsync(hstring storeId, hstring campaignId, hstring correlationVector, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> ** ppAsyncOperation) = 0;
+};
+
+struct __declspec(uuid("3cd7be4c-1be9-4f7f-b675-aa1d64a529b2")) __declspec(novtable) IAppInstallManager5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AppInstallItemsWithGroupSupport(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> ** value) = 0;
+};
+
 struct __declspec(uuid("bc505743-4674-4dd1-957e-c25682086a14")) __declspec(novtable) IAppInstallManagerItemEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Item(Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem ** value) = 0;
@@ -104,6 +122,11 @@ struct __declspec(uuid("96e7818a-5e92-4aa9-8edc-58fed4b87e00")) __declspec(novta
     virtual HRESULT __stdcall get_ReadyForLaunch(bool * value) = 0;
 };
 
+struct __declspec(uuid("74fc843f-1a9e-4609-8e4d-819086d08a3d")) __declspec(novtable) IGetEntitlementResult : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Status(winrt::Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus * value) = 0;
+};
+
 }
 
 namespace ABI {
@@ -112,6 +135,7 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallCont
 template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager> { using default_interface = Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager; };
 template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> { using default_interface = Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallStatus> { using default_interface = Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus; };
+template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> { using default_interface = Windows::ApplicationModel::Store::Preview::InstallControl::IGetEntitlementResult; };
 
 }
 
@@ -144,6 +168,13 @@ struct WINRT_EBO impl_IAppInstallItem2
     void Cancel(hstring_view correlationVector) const;
     void Pause(hstring_view correlationVector) const;
     void Restart(hstring_view correlationVector) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppInstallItem3
+{
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> Children() const;
+    bool ItemOperationsMightAffectOtherItems() const;
 };
 
 template <typename D>
@@ -201,6 +232,20 @@ struct WINRT_EBO impl_IAppInstallManager3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IAppInstallManager4
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> GetFreeUserEntitlementAsync(hstring_view storeId, hstring_view campaignId, hstring_view correlationVector) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> GetFreeUserEntitlementForUserAsync(const Windows::System::User & user, hstring_view storeId, hstring_view campaignId, hstring_view correlationVector) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> GetFreeDeviceEntitlementAsync(hstring_view storeId, hstring_view campaignId, hstring_view correlationVector) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppInstallManager5
+{
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> AppInstallItemsWithGroupSupport() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IAppInstallManagerItemEventArgs
 {
     Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem Item() const;
@@ -223,6 +268,12 @@ struct WINRT_EBO impl_IAppInstallStatus2
     bool ReadyForLaunch() const;
 };
 
+template <typename D>
+struct WINRT_EBO impl_IGetEntitlementResult
+{
+    Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus Status() const;
+};
+
 }
 
 namespace impl {
@@ -237,6 +288,12 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallCont
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2;
     template <typename D> using consume = Windows::ApplicationModel::Store::Preview::InstallControl::impl_IAppInstallItem2<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3>
+{
+    using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3;
+    template <typename D> using consume = Windows::ApplicationModel::Store::Preview::InstallControl::impl_IAppInstallItem3<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager>
@@ -257,6 +314,18 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallCont
     template <typename D> using consume = Windows::ApplicationModel::Store::Preview::InstallControl::impl_IAppInstallManager3<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4>
+{
+    using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4;
+    template <typename D> using consume = Windows::ApplicationModel::Store::Preview::InstallControl::impl_IAppInstallManager4<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5>
+{
+    using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5;
+    template <typename D> using consume = Windows::ApplicationModel::Store::Preview::InstallControl::impl_IAppInstallManager5<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs;
@@ -273,6 +342,12 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallCont
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus2;
     template <typename D> using consume = Windows::ApplicationModel::Store::Preview::InstallControl::impl_IAppInstallStatus2<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::IGetEntitlementResult>
+{
+    using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::IGetEntitlementResult;
+    template <typename D> using consume = Windows::ApplicationModel::Store::Preview::InstallControl::impl_IGetEntitlementResult<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>
@@ -297,6 +372,12 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallCont
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallStatus;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.InstallControl.AppInstallStatus"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult>
+{
+    using abi = ABI::Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.InstallControl.GetEntitlementResult"; }
 };
 
 }

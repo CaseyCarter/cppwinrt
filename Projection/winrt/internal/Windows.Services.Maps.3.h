@@ -9,6 +9,19 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::Services::Maps {
 
+struct WINRT_EBO EnhancedWaypoint :
+    Windows::Services::Maps::IEnhancedWaypoint
+{
+    EnhancedWaypoint(std::nullptr_t) noexcept {}
+    EnhancedWaypoint(const Windows::Devices::Geolocation::Geopoint & point, Windows::Services::Maps::WaypointKind kind);
+};
+
+struct WINRT_EBO ManeuverWarning :
+    Windows::Services::Maps::IManeuverWarning
+{
+    ManeuverWarning(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO MapAddress :
     Windows::Services::Maps::IMapAddress,
     impl::require<MapAddress, Windows::Services::Maps::IMapAddress2>
@@ -46,7 +59,7 @@ struct MapManager
 
 struct WINRT_EBO MapRoute :
     Windows::Services::Maps::IMapRoute,
-    impl::require<MapRoute, Windows::Services::Maps::IMapRoute2>
+    impl::require<MapRoute, Windows::Services::Maps::IMapRoute2, Windows::Services::Maps::IMapRoute3>
 {
     MapRoute(std::nullptr_t) noexcept {}
 };
@@ -72,6 +85,8 @@ struct MapRouteFinder
     static Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetWalkingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint);
     static Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetWalkingRouteFromWaypointsAsync(iterable<Windows::Devices::Geolocation::Geopoint> wayPoints);
     static Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, const Windows::Services::Maps::MapRouteDrivingOptions & options);
+    static Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteFromEnhancedWaypointsAsync(iterable<Windows::Services::Maps::EnhancedWaypoint> waypoints);
+    static Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteFromEnhancedWaypointsAsync(iterable<Windows::Services::Maps::EnhancedWaypoint> waypoints, const Windows::Services::Maps::MapRouteDrivingOptions & options);
 };
 
 struct WINRT_EBO MapRouteFinderResult :
@@ -82,14 +97,15 @@ struct WINRT_EBO MapRouteFinderResult :
 };
 
 struct WINRT_EBO MapRouteLeg :
-    Windows::Services::Maps::IMapRouteLeg
+    Windows::Services::Maps::IMapRouteLeg,
+    impl::require<MapRouteLeg, Windows::Services::Maps::IMapRouteLeg2>
 {
     MapRouteLeg(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO MapRouteManeuver :
     Windows::Services::Maps::IMapRouteManeuver,
-    impl::require<MapRouteManeuver, Windows::Services::Maps::IMapRouteManeuver2>
+    impl::require<MapRouteManeuver, Windows::Services::Maps::IMapRouteManeuver2, Windows::Services::Maps::IMapRouteManeuver3>
 {
     MapRouteManeuver(std::nullptr_t) noexcept {}
 };
@@ -101,6 +117,8 @@ struct MapService
     static hstring ServiceToken();
     static hstring WorldViewRegionCode();
     static hstring DataAttributions();
+    static void DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference value);
+    static Windows::Services::Maps::MapServiceDataUsagePreference DataUsagePreference();
 };
 
 }

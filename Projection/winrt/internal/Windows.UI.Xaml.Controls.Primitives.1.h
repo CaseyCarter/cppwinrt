@@ -244,6 +244,12 @@ struct __declspec(uuid("f82b435e-65b3-41c6-a9e2-77b67bc4c00c")) __declspec(novta
     virtual HRESULT __stdcall remove_Closing(event_token token) = 0;
 };
 
+struct __declspec(uuid("a89c9712-48e0-4240-95b9-0dfd0826a8d3")) __declspec(novtable) IFlyoutBase3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_OverlayInputPassThroughElement(Windows::UI::Xaml::IDependencyObject ** value) = 0;
+    virtual HRESULT __stdcall put_OverlayInputPassThroughElement(Windows::UI::Xaml::IDependencyObject * value) = 0;
+};
+
 struct __declspec(uuid("d075852d-b09a-4fd1-b005-db2ba01206fb")) __declspec(novtable) IFlyoutBaseClosingEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Cancel(bool * value) = 0;
@@ -275,6 +281,11 @@ struct __declspec(uuid("a8e913fe-2d60-4307-aad9-56b450121b58")) __declspec(novta
     virtual HRESULT __stdcall get_LightDismissOverlayModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_AllowFocusWhenDisabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ElementSoundModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("7ba92e4f-dd16-4be4-99db-bd9d4406c0f8")) __declspec(novtable) IFlyoutBaseStatics3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_OverlayInputPassThroughElementProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("cd40318d-7745-40d9-ab9d-abbda4a7ffea")) __declspec(novtable) IGeneratorPositionHelper : Windows::Foundation::IInspectable
@@ -1238,6 +1249,13 @@ struct WINRT_EBO impl_IFlyoutBase2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IFlyoutBase3
+{
+    Windows::UI::Xaml::DependencyObject OverlayInputPassThroughElement() const;
+    void OverlayInputPassThroughElement(const Windows::UI::Xaml::DependencyObject & value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IFlyoutBaseClosingEventArgs
 {
     bool Cancel() const;
@@ -1273,6 +1291,12 @@ struct WINRT_EBO impl_IFlyoutBaseStatics2
     Windows::UI::Xaml::DependencyProperty LightDismissOverlayModeProperty() const;
     Windows::UI::Xaml::DependencyProperty AllowFocusWhenDisabledProperty() const;
     Windows::UI::Xaml::DependencyProperty ElementSoundModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlyoutBaseStatics3
+{
+    Windows::UI::Xaml::DependencyProperty OverlayInputPassThroughElementProperty() const;
 };
 
 template <typename D>
@@ -2180,6 +2204,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2>
     template <typename D> using consume = Windows::UI::Xaml::Controls::Primitives::impl_IFlyoutBase2<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::Primitives::IFlyoutBase3>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBase3;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::Primitives::impl_IFlyoutBase3<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseClosingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseClosingEventArgs;
@@ -2208,6 +2238,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseSt
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics2;
     template <typename D> using consume = Windows::UI::Xaml::Controls::Primitives::impl_IFlyoutBaseStatics2<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics3>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics3;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::Primitives::impl_IFlyoutBaseStatics3<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::IGeneratorPositionHelper>

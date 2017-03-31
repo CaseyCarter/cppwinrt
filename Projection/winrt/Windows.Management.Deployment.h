@@ -10,6 +10,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.ApplicationModel.3.h"
 #include "internal/Windows.Management.Deployment.3.h"
+#include "Windows.Management.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -53,6 +54,24 @@ struct produce<D, Windows::Management::Deployment::IDeploymentResult> : produce_
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().ExtendedErrorCode());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Management::Deployment::IDeploymentResult2> : produce_base<D, Windows::Management::Deployment::IDeploymentResult2>
+{
+    HRESULT __stdcall get_IsRegistered(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsRegistered());
             return S_OK;
         }
         catch (...)
@@ -705,6 +724,104 @@ struct produce<D, Windows::Management::Deployment::IPackageManager4> : produce_b
 };
 
 template <typename D>
+struct produce<D, Windows::Management::Deployment::IPackageManager5> : produce_base<D, Windows::Management::Deployment::IPackageManager5>
+{
+    HRESULT __stdcall abi_AddPackageToVolumeAndOptionalPackagesAsync(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> packageUri, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, impl::abi_arg_in<Windows::Management::Deployment::IPackageVolume> targetVolume, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> optionalPackageFamilyNames, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>> externalPackageUris, impl::abi_arg_out<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>> deploymentOperation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *deploymentOperation = detach_abi(this->shim().AddPackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions, *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&optionalPackageFamilyNames), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&externalPackageUris)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *deploymentOperation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StagePackageToVolumeAndOptionalPackagesAsync(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> packageUri, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, impl::abi_arg_in<Windows::Management::Deployment::IPackageVolume> targetVolume, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> optionalPackageFamilyNames, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri>> externalPackageUris, impl::abi_arg_out<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>> deploymentOperation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *deploymentOperation = detach_abi(this->shim().StagePackageAsync(*reinterpret_cast<const Windows::Foundation::Uri *>(&packageUri), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&dependencyPackageUris), deploymentOptions, *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&targetVolume), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&optionalPackageFamilyNames), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> *>(&externalPackageUris)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *deploymentOperation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RegisterPackageByFamilyNameAndOptionalPackagesAsync(impl::abi_arg_in<hstring> mainPackageFamilyName, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> dependencyPackageFamilyNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions, impl::abi_arg_in<Windows::Management::Deployment::IPackageVolume> appDataVolume, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> optionalPackageFamilyNames, impl::abi_arg_out<Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress>> deploymentOperation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *deploymentOperation = detach_abi(this->shim().RegisterPackageByFamilyNameAsync(*reinterpret_cast<const hstring *>(&mainPackageFamilyName), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&dependencyPackageFamilyNames), deploymentOptions, *reinterpret_cast<const Windows::Management::Deployment::PackageVolume *>(&appDataVolume), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&optionalPackageFamilyNames)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *deploymentOperation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DebugSettings(impl::abi_arg_out<Windows::Management::Deployment::IPackageManagerDebugSettings> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DebugSettings());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Management::Deployment::IPackageManagerDebugSettings> : produce_base<D, Windows::Management::Deployment::IPackageManagerDebugSettings>
+{
+    HRESULT __stdcall abi_SetContentGroupStateAsync(impl::abi_arg_in<Windows::ApplicationModel::IPackage> package, impl::abi_arg_in<hstring> contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, impl::abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *action = detach_abi(this->shim().SetContentGroupStateAsync(*reinterpret_cast<const Windows::ApplicationModel::Package *>(&package), *reinterpret_cast<const hstring *>(&contentGroupName), state));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *action = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetContentGroupStateWithPercentageAsync(impl::abi_arg_in<Windows::ApplicationModel::IPackage> package, impl::abi_arg_in<hstring> contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, double completionPercentage, impl::abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *action = detach_abi(this->shim().SetContentGroupStateAsync(*reinterpret_cast<const Windows::ApplicationModel::Package *>(&package), *reinterpret_cast<const hstring *>(&contentGroupName), state, completionPercentage));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *action = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Management::Deployment::IPackageUserInformation> : produce_base<D, Windows::Management::Deployment::IPackageUserInformation>
 {
     HRESULT __stdcall get_UserSecurityId(impl::abi_arg_out<hstring> value) noexcept override
@@ -1110,6 +1227,13 @@ template <typename D> HRESULT impl_IDeploymentResult<D>::ExtendedErrorCode() con
     return value;
 }
 
+template <typename D> bool impl_IDeploymentResult2<D>::IsRegistered() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IDeploymentResult2)->get_IsRegistered(&value));
+    return value;
+}
+
 template <typename D> hstring impl_IPackageUserInformation<D>::UserSecurityId() const
 {
     hstring value;
@@ -1410,6 +1534,34 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     return operation;
 }
 
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager5<D>::AddPackageAsync(const Windows::Foundation::Uri & packageUri, iterable<Windows::Foundation::Uri> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume, iterable<hstring> optionalPackageFamilyNames, iterable<Windows::Foundation::Uri> externalPackageUris) const
+{
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
+    check_hresult(WINRT_SHIM(IPackageManager5)->abi_AddPackageToVolumeAndOptionalPackagesAsync(get_abi(packageUri), get_abi(dependencyPackageUris), deploymentOptions, get_abi(targetVolume), get_abi(optionalPackageFamilyNames), get_abi(externalPackageUris), put_abi(deploymentOperation)));
+    return deploymentOperation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager5<D>::StagePackageAsync(const Windows::Foundation::Uri & packageUri, iterable<Windows::Foundation::Uri> dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume, iterable<hstring> optionalPackageFamilyNames, iterable<Windows::Foundation::Uri> externalPackageUris) const
+{
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
+    check_hresult(WINRT_SHIM(IPackageManager5)->abi_StagePackageToVolumeAndOptionalPackagesAsync(get_abi(packageUri), get_abi(dependencyPackageUris), deploymentOptions, get_abi(targetVolume), get_abi(optionalPackageFamilyNames), get_abi(externalPackageUris), put_abi(deploymentOperation)));
+    return deploymentOperation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> impl_IPackageManager5<D>::RegisterPackageByFamilyNameAsync(hstring_view mainPackageFamilyName, iterable<hstring> dependencyPackageFamilyNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & appDataVolume, iterable<hstring> optionalPackageFamilyNames) const
+{
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> deploymentOperation;
+    check_hresult(WINRT_SHIM(IPackageManager5)->abi_RegisterPackageByFamilyNameAndOptionalPackagesAsync(get_abi(mainPackageFamilyName), get_abi(dependencyPackageFamilyNames), deploymentOptions, get_abi(appDataVolume), get_abi(optionalPackageFamilyNames), put_abi(deploymentOperation)));
+    return deploymentOperation;
+}
+
+template <typename D> Windows::Management::Deployment::PackageManagerDebugSettings impl_IPackageManager5<D>::DebugSettings() const
+{
+    Windows::Management::Deployment::PackageManagerDebugSettings value { nullptr };
+    check_hresult(WINRT_SHIM(IPackageManager5)->get_DebugSettings(put_abi(value)));
+    return value;
+}
+
 template <typename D> bool impl_IPackageVolume<D>::IsOffline() const
 {
     bool value {};
@@ -1571,6 +1723,20 @@ template <typename D> Windows::Foundation::IAsyncOperation<uint64_t> impl_IPacka
     return operation;
 }
 
+template <typename D> Windows::Foundation::IAsyncAction impl_IPackageManagerDebugSettings<D>::SetContentGroupStateAsync(const Windows::ApplicationModel::Package & package, hstring_view contentGroupName, Windows::ApplicationModel::PackageContentGroupState state) const
+{
+    Windows::Foundation::IAsyncAction action;
+    check_hresult(WINRT_SHIM(IPackageManagerDebugSettings)->abi_SetContentGroupStateAsync(get_abi(package), get_abi(contentGroupName), state, put_abi(action)));
+    return action;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IPackageManagerDebugSettings<D>::SetContentGroupStateAsync(const Windows::ApplicationModel::Package & package, hstring_view contentGroupName, Windows::ApplicationModel::PackageContentGroupState state, double completionPercentage) const
+{
+    Windows::Foundation::IAsyncAction action;
+    check_hresult(WINRT_SHIM(IPackageManagerDebugSettings)->abi_SetContentGroupStateWithPercentageAsync(get_abi(package), get_abi(contentGroupName), state, completionPercentage, put_abi(action)));
+    return action;
+}
+
 inline PackageManager::PackageManager() :
     PackageManager(activate_instance<PackageManager>())
 {}
@@ -1583,6 +1749,15 @@ template<>
 struct std::hash<winrt::Windows::Management::Deployment::IDeploymentResult>
 {
     size_t operator()(const winrt::Windows::Management::Deployment::IDeploymentResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::IDeploymentResult2>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::IDeploymentResult2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -1619,6 +1794,24 @@ template<>
 struct std::hash<winrt::Windows::Management::Deployment::IPackageManager4>
 {
     size_t operator()(const winrt::Windows::Management::Deployment::IPackageManager4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::IPackageManager5>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::IPackageManager5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::IPackageManagerDebugSettings>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::IPackageManagerDebugSettings & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -1664,6 +1857,15 @@ template<>
 struct std::hash<winrt::Windows::Management::Deployment::PackageManager>
 {
     size_t operator()(const winrt::Windows::Management::Deployment::PackageManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Management::Deployment::PackageManagerDebugSettings>
+{
+    size_t operator()(const winrt::Windows::Management::Deployment::PackageManagerDebugSettings & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

@@ -22,6 +22,7 @@ namespace ABI::Windows::UI {
 
 struct IColorHelper;
 struct IColorHelperStatics;
+struct IColorHelperStatics2;
 struct IColors;
 struct IColorsStatics;
 struct ColorHelper;
@@ -33,6 +34,7 @@ namespace Windows::UI {
 
 struct IColorHelper;
 struct IColorHelperStatics;
+struct IColorHelperStatics2;
 struct IColors;
 struct IColorsStatics;
 struct ColorHelper;
@@ -44,6 +46,7 @@ namespace Windows::UI {
 
 template <typename T> struct impl_IColorHelper;
 template <typename T> struct impl_IColorHelperStatics;
+template <typename T> struct impl_IColorHelperStatics2;
 template <typename T> struct impl_IColors;
 template <typename T> struct impl_IColorsStatics;
 

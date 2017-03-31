@@ -2039,6 +2039,66 @@ struct produce<D, Windows::UI::Core::ICoreWindow3> : produce_base<D, Windows::UI
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Core::ICoreWindow4> : produce_base<D, Windows::UI::Core::ICoreWindow4>
+{
+    HRESULT __stdcall add_ResizeStarted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable>> handler, event_token * pCookie) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *pCookie = detach_abi(this->shim().ResizeStarted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_ResizeStarted(event_token cookie) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ResizeStarted(cookie);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_ResizeCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable>> handler, event_token * pCookie) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *pCookie = detach_abi(this->shim().ResizeCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_ResizeCompleted(event_token cookie) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ResizeCompleted(cookie);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Core::ICoreWindowEventArgs> : produce_base<D, Windows::UI::Core::ICoreWindowEventArgs>
 {
     HRESULT __stdcall get_Handled(bool * value) noexcept override
@@ -2539,6 +2599,54 @@ struct produce<D, Windows::UI::Core::IWindowSizeChangedEventArgs> : produce_base
 }
 
 namespace Windows::UI::Core {
+
+template <typename D> event_token impl_ISystemNavigationManager<D>::BackRequested(const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ISystemNavigationManager)->add_BackRequested(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ISystemNavigationManager> impl_ISystemNavigationManager<D>::BackRequested(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, ISystemNavigationManager>(this, &ABI::Windows::UI::Core::ISystemNavigationManager::remove_BackRequested, BackRequested(handler));
+}
+
+template <typename D> void impl_ISystemNavigationManager<D>::BackRequested(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ISystemNavigationManager)->remove_BackRequested(token));
+}
+
+template <typename D> Windows::UI::Core::AppViewBackButtonVisibility impl_ISystemNavigationManager2<D>::AppViewBackButtonVisibility() const
+{
+    Windows::UI::Core::AppViewBackButtonVisibility value {};
+    check_hresult(WINRT_SHIM(ISystemNavigationManager2)->get_AppViewBackButtonVisibility(&value));
+    return value;
+}
+
+template <typename D> void impl_ISystemNavigationManager2<D>::AppViewBackButtonVisibility(Windows::UI::Core::AppViewBackButtonVisibility value) const
+{
+    check_hresult(WINRT_SHIM(ISystemNavigationManager2)->put_AppViewBackButtonVisibility(value));
+}
+
+template <typename D> Windows::UI::Core::SystemNavigationManager impl_ISystemNavigationManagerStatics<D>::GetForCurrentView() const
+{
+    Windows::UI::Core::SystemNavigationManager loader { nullptr };
+    check_hresult(WINRT_SHIM(ISystemNavigationManagerStatics)->abi_GetForCurrentView(put_abi(loader)));
+    return loader;
+}
+
+template <typename D> bool impl_IBackRequestedEventArgs<D>::Handled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBackRequestedEventArgs)->get_Handled(&value));
+    return value;
+}
+
+template <typename D> void impl_IBackRequestedEventArgs<D>::Handled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IBackRequestedEventArgs)->put_Handled(value));
+}
 
 template <typename D> bool impl_ICoreWindowEventArgs<D>::Handled() const
 {
@@ -3144,6 +3252,40 @@ template <typename D> hstring impl_ICoreWindow3<D>::GetCurrentKeyEventDeviceId()
     return value;
 }
 
+template <typename D> event_token impl_ICoreWindow4<D>::ResizeStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token pCookie {};
+    check_hresult(WINRT_SHIM(ICoreWindow4)->add_ResizeStarted(get_abi(handler), &pCookie));
+    return pCookie;
+}
+
+template <typename D> event_revoker<ICoreWindow4> impl_ICoreWindow4<D>::ResizeStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, ICoreWindow4>(this, &ABI::Windows::UI::Core::ICoreWindow4::remove_ResizeStarted, ResizeStarted(handler));
+}
+
+template <typename D> void impl_ICoreWindow4<D>::ResizeStarted(event_token cookie) const
+{
+    check_hresult(WINRT_SHIM(ICoreWindow4)->remove_ResizeStarted(cookie));
+}
+
+template <typename D> event_token impl_ICoreWindow4<D>::ResizeCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token pCookie {};
+    check_hresult(WINRT_SHIM(ICoreWindow4)->add_ResizeCompleted(get_abi(handler), &pCookie));
+    return pCookie;
+}
+
+template <typename D> event_revoker<ICoreWindow4> impl_ICoreWindow4<D>::ResizeCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, ICoreWindow4>(this, &ABI::Windows::UI::Core::ICoreWindow4::remove_ResizeCompleted, ResizeCompleted(handler));
+}
+
+template <typename D> void impl_ICoreWindow4<D>::ResizeCompleted(event_token cookie) const
+{
+    check_hresult(WINRT_SHIM(ICoreWindow4)->remove_ResizeCompleted(cookie));
+}
+
 template <typename D> Windows::UI::Core::CoreWindow impl_ICoreWindowStatic<D>::GetForCurrentThread() const
 {
     Windows::UI::Core::CoreWindow ppWindow { nullptr };
@@ -3706,54 +3848,6 @@ template <typename D> void impl_ICorePointerRedirector<D>::PointerRoutedReleased
     check_hresult(WINRT_SHIM(ICorePointerRedirector)->remove_PointerRoutedReleased(cookie));
 }
 
-template <typename D> event_token impl_ISystemNavigationManager<D>::BackRequested(const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(ISystemNavigationManager)->add_BackRequested(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<ISystemNavigationManager> impl_ISystemNavigationManager<D>::BackRequested(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, ISystemNavigationManager>(this, &ABI::Windows::UI::Core::ISystemNavigationManager::remove_BackRequested, BackRequested(handler));
-}
-
-template <typename D> void impl_ISystemNavigationManager<D>::BackRequested(event_token token) const
-{
-    check_hresult(WINRT_SHIM(ISystemNavigationManager)->remove_BackRequested(token));
-}
-
-template <typename D> Windows::UI::Core::AppViewBackButtonVisibility impl_ISystemNavigationManager2<D>::AppViewBackButtonVisibility() const
-{
-    Windows::UI::Core::AppViewBackButtonVisibility value {};
-    check_hresult(WINRT_SHIM(ISystemNavigationManager2)->get_AppViewBackButtonVisibility(&value));
-    return value;
-}
-
-template <typename D> void impl_ISystemNavigationManager2<D>::AppViewBackButtonVisibility(Windows::UI::Core::AppViewBackButtonVisibility value) const
-{
-    check_hresult(WINRT_SHIM(ISystemNavigationManager2)->put_AppViewBackButtonVisibility(value));
-}
-
-template <typename D> Windows::UI::Core::SystemNavigationManager impl_ISystemNavigationManagerStatics<D>::GetForCurrentView() const
-{
-    Windows::UI::Core::SystemNavigationManager loader { nullptr };
-    check_hresult(WINRT_SHIM(ISystemNavigationManagerStatics)->abi_GetForCurrentView(put_abi(loader)));
-    return loader;
-}
-
-template <typename D> bool impl_IBackRequestedEventArgs<D>::Handled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IBackRequestedEventArgs)->get_Handled(&value));
-    return value;
-}
-
-template <typename D> void impl_IBackRequestedEventArgs<D>::Handled(bool value) const
-{
-    check_hresult(WINRT_SHIM(IBackRequestedEventArgs)->put_Handled(value));
-}
-
 inline CoreCursor::CoreCursor(Windows::UI::Core::CoreCursorType type, uint32_t id) :
     CoreCursor(get_activation_factory<CoreCursor, ICoreCursorFactory>().CreateCursor(type, id))
 {}
@@ -3979,6 +4073,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Core::ICoreWindow3>
 {
     size_t operator()(const winrt::Windows::UI::Core::ICoreWindow3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Core::ICoreWindow4>
+{
+    size_t operator()(const winrt::Windows::UI::Core::ICoreWindow4 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

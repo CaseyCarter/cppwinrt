@@ -9,16 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
-#endif
-
-#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
-#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
-template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
-#endif
-
 #ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
 #define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
 template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
@@ -34,10 +24,50 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("eccb574a-c684-5572-a679-6b0842cfb57f")) __declspec(novtable) IAsyncOperationWithProgress<uint32_t, uint32_t> : impl_IAsyncOperationWithProgress<uint32_t, uint32_t> {};
 #endif
 
+#ifndef WINRT_GENERIC_5541d8a7_497c_5aa4_86fc_7713adbf2a2c
+#define WINRT_GENERIC_5541d8a7_497c_5aa4_86fc_7713adbf2a2c
+template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __declspec(novtable) IReference<Windows::Foundation::DateTime> : impl_IReference<Windows::Foundation::DateTime> {};
+#endif
+
 
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
+#define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
+template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __declspec(novtable) IReference<Windows::Foundation::TimeSpan> : impl_IReference<Windows::Foundation::TimeSpan> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_bbc11401_89d0_5305_a3b3_36c887714b9b
+#define WINRT_GENERIC_bbc11401_89d0_5305_a3b3_36c887714b9b
+template <> struct __declspec(uuid("bbc11401-89d0-5305-a3b3-36c887714b9b")) __declspec(novtable) IIterable<Windows::UI::Input::Inking::InkStroke> : impl_IIterable<Windows::UI::Input::Inking::InkStroke> {};
+#endif
+
+#ifndef WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+#define WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+template <> struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad")) __declspec(novtable) IVectorView<Windows::Foundation::Point> : impl_IVectorView<Windows::Foundation::Point> {};
+#endif
 
 #ifndef WINRT_GENERIC_6744f458_b242_5767_a643_996e01dff0e4
 #define WINRT_GENERIC_6744f458_b242_5767_a643_996e01dff0e4
@@ -119,11 +149,6 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("ecfc4f0b-112c-5cd3-acf0-d746d6bdfeb5")) __declspec(novtable) IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> : impl_IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> {};
 #endif
 
-#ifndef WINRT_GENERIC_bbc11401_89d0_5305_a3b3_36c887714b9b
-#define WINRT_GENERIC_bbc11401_89d0_5305_a3b3_36c887714b9b
-template <> struct __declspec(uuid("bbc11401-89d0-5305-a3b3-36c887714b9b")) __declspec(novtable) IIterable<Windows::UI::Input::Inking::InkStroke> : impl_IIterable<Windows::UI::Input::Inking::InkStroke> {};
-#endif
-
 #ifndef WINRT_GENERIC_8eadfa4f_27ef_5a5d_b0b8_7fd5c0ce6b39
 #define WINRT_GENERIC_8eadfa4f_27ef_5a5d_b0b8_7fd5c0ce6b39
 template <> struct __declspec(uuid("8eadfa4f-27ef-5a5d-b0b8-7fd5c0ce6b39")) __declspec(novtable) IVectorView<Windows::UI::Input::Inking::InkRecognizer> : impl_IVectorView<Windows::UI::Input::Inking::InkRecognizer> {};
@@ -169,6 +194,11 @@ template <> struct __declspec(uuid("2640111c-bc3f-564b-b931-b7a378933f58")) __de
 template <> struct __declspec(uuid("5608d5a9-e7e4-5a0b-941f-b7fed76b35bf")) __declspec(novtable) IIterator<Windows::UI::Input::Inking::InkStroke> : impl_IIterator<Windows::UI::Input::Inking::InkStroke> {};
 #endif
 
+#ifndef WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
+#define WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
+template <> struct __declspec(uuid("c602b59e-0a8e-5e99-b478-2b564585278d")) __declspec(novtable) IIterator<Windows::Foundation::Point> : impl_IIterator<Windows::Foundation::Point> {};
+#endif
+
 #ifndef WINRT_GENERIC_47415452_db79_567e_84d5_e9912330f944
 #define WINRT_GENERIC_47415452_db79_567e_84d5_e9912330f944
 template <> struct __declspec(uuid("47415452-db79-567e-84d5-e9912330f944")) __declspec(novtable) IIterator<Windows::UI::Input::Inking::InkPoint> : impl_IIterator<Windows::UI::Input::Inking::InkPoint> {};
@@ -187,16 +217,6 @@ template <> struct __declspec(uuid("d7d8c317-6f3f-5192-9210-65a263baf8d1")) __de
 #ifndef WINRT_GENERIC_27000f47_2885_5da9_8923_16a3a58b7a55
 #define WINRT_GENERIC_27000f47_2885_5da9_8923_16a3a58b7a55
 template <> struct __declspec(uuid("27000f47-2885-5da9-8923-16a3a58b7a55")) __declspec(novtable) IIterable<Windows::UI::Input::Inking::InkStrokeRenderingSegment> : impl_IIterable<Windows::UI::Input::Inking::InkStrokeRenderingSegment> {};
-#endif
-
-#ifndef WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
-#define WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
-template <> struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad")) __declspec(novtable) IVectorView<Windows::Foundation::Point> : impl_IVectorView<Windows::Foundation::Point> {};
-#endif
-
-#ifndef WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
-#define WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
-template <> struct __declspec(uuid("c602b59e-0a8e-5e99-b478-2b564585278d")) __declspec(novtable) IIterator<Windows::Foundation::Point> : impl_IIterator<Windows::Foundation::Point> {};
 #endif
 
 
@@ -290,6 +310,13 @@ struct IInkDrawingAttributes3 :
     IInkDrawingAttributes3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IInkDrawingAttributes4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkDrawingAttributes4>
+{
+    IInkDrawingAttributes4(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IInkDrawingAttributesPencilProperties :
     Windows::Foundation::IInspectable,
     impl::consume<IInkDrawingAttributesPencilProperties>
@@ -328,11 +355,25 @@ struct IInkPoint :
     IInkPoint(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IInkPoint2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkPoint2>
+{
+    IInkPoint2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IInkPointFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IInkPointFactory>
 {
     IInkPointFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkPointFactory2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkPointFactory2>
+{
+    IInkPointFactory2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkPresenter :
@@ -342,12 +383,42 @@ struct IInkPresenter :
     IInkPresenter(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IInkPresenter2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkPresenter2>,
+    impl::require<IInkPresenter2, Windows::UI::Input::Inking::IInkPresenter>
+{
+    IInkPresenter2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkPresenterProtractor :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkPresenterProtractor>,
+    impl::require<IInkPresenterProtractor, Windows::UI::Input::Inking::IInkPresenterStencil>
+{
+    IInkPresenterProtractor(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkPresenterProtractorFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkPresenterProtractorFactory>
+{
+    IInkPresenterProtractorFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IInkPresenterRuler :
     Windows::Foundation::IInspectable,
     impl::consume<IInkPresenterRuler>,
     impl::require<IInkPresenterRuler, Windows::UI::Input::Inking::IInkPresenterStencil>
 {
     IInkPresenterRuler(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkPresenterRuler2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkPresenterRuler2>
+{
+    IInkPresenterRuler2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkPresenterRulerFactory :
@@ -399,6 +470,13 @@ struct IInkStroke2 :
     IInkStroke2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IInkStroke3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkStroke3>
+{
+    IInkStroke3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IInkStrokeBuilder :
     Windows::Foundation::IInspectable,
     impl::consume<IInkStrokeBuilder>
@@ -413,6 +491,13 @@ struct IInkStrokeBuilder2 :
     IInkStrokeBuilder2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IInkStrokeBuilder3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkStrokeBuilder3>
+{
+    IInkStrokeBuilder3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IInkStrokeContainer :
     Windows::Foundation::IInspectable,
     impl::consume<IInkStrokeContainer>
@@ -425,6 +510,13 @@ struct IInkStrokeContainer2 :
     impl::consume<IInkStrokeContainer2>
 {
     IInkStrokeContainer2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkStrokeContainer3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkStrokeContainer3>
+{
+    IInkStrokeContainer3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkStrokeInput :

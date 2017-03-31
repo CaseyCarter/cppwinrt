@@ -24,6 +24,13 @@ struct GameBar
     static bool IsInputRedirected();
 };
 
+struct WINRT_EBO GameChatOverlay :
+    Windows::Gaming::UI::IGameChatOverlay
+{
+    GameChatOverlay(std::nullptr_t) noexcept {}
+    static Windows::Gaming::UI::GameChatOverlay GetDefault();
+};
+
 }
 
 }

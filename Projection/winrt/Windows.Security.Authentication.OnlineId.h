@@ -8,6 +8,7 @@ WINRT_WARNING_PUSH
 
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.System.3.h"
 #include "internal/Windows.Security.Authentication.OnlineId.3.h"
 #include "Windows.Foundation.Collections.h"
 
@@ -232,6 +233,183 @@ struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdServiceT
         catch (...)
         {
             *onlineIdServiceTicketRequest = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser> : produce_base<D, Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser>
+{
+    HRESULT __stdcall abi_GetTicketAsync(impl::abi_arg_in<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicketRequest> request, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().GetTicketAsync(*reinterpret_cast<const Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest *>(&request)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_ApplicationId(GUID value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ApplicationId(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ApplicationId(GUID * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ApplicationId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_User(impl::abi_arg_out<Windows::System::IUser> user) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *user = detach_abi(this->shim().User());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *user = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorStatics> : produce_base<D, Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorStatics>
+{
+    HRESULT __stdcall get_Default(impl::abi_arg_out<Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Default());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetForUser(impl::abi_arg_in<Windows::System::IUser> user, impl::abi_arg_out<Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity> : produce_base<D, Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity>
+{
+    HRESULT __stdcall get_Ticket(impl::abi_arg_out<Windows::Security::Authentication::OnlineId::IOnlineIdServiceTicket> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Ticket());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Id());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult> : produce_base<D, Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult>
+{
+    HRESULT __stdcall get_Identity(impl::abi_arg_out<Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Identity());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Status(Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketStatus * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Status());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ExtendedError(HRESULT * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ExtendedError());
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -515,6 +693,81 @@ template <typename D> hstring impl_IOnlineIdAuthenticator<D>::AuthenticatedSafeC
     return value;
 }
 
+template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket impl_IOnlineIdSystemIdentity<D>::Ticket() const
+{
+    Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket value { nullptr };
+    check_hresult(WINRT_SHIM(IOnlineIdSystemIdentity)->get_Ticket(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IOnlineIdSystemIdentity<D>::Id() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IOnlineIdSystemIdentity)->get_Id(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdSystemIdentity impl_IOnlineIdSystemTicketResult<D>::Identity() const
+{
+    Windows::Security::Authentication::OnlineId::OnlineIdSystemIdentity value { nullptr };
+    check_hresult(WINRT_SHIM(IOnlineIdSystemTicketResult)->get_Identity(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketStatus impl_IOnlineIdSystemTicketResult<D>::Status() const
+{
+    Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketStatus value {};
+    check_hresult(WINRT_SHIM(IOnlineIdSystemTicketResult)->get_Status(&value));
+    return value;
+}
+
+template <typename D> HRESULT impl_IOnlineIdSystemTicketResult<D>::ExtendedError() const
+{
+    HRESULT value {};
+    check_hresult(WINRT_SHIM(IOnlineIdSystemTicketResult)->get_ExtendedError(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult> impl_IOnlineIdSystemAuthenticatorForUser<D>::GetTicketAsync(const Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest & request) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult> operation;
+    check_hresult(WINRT_SHIM(IOnlineIdSystemAuthenticatorForUser)->abi_GetTicketAsync(get_abi(request), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> void impl_IOnlineIdSystemAuthenticatorForUser<D>::ApplicationId(GUID value) const
+{
+    check_hresult(WINRT_SHIM(IOnlineIdSystemAuthenticatorForUser)->put_ApplicationId(value));
+}
+
+template <typename D> GUID impl_IOnlineIdSystemAuthenticatorForUser<D>::ApplicationId() const
+{
+    GUID value {};
+    check_hresult(WINRT_SHIM(IOnlineIdSystemAuthenticatorForUser)->get_ApplicationId(&value));
+    return value;
+}
+
+template <typename D> Windows::System::User impl_IOnlineIdSystemAuthenticatorForUser<D>::User() const
+{
+    Windows::System::User user { nullptr };
+    check_hresult(WINRT_SHIM(IOnlineIdSystemAuthenticatorForUser)->get_User(put_abi(user)));
+    return user;
+}
+
+template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdSystemAuthenticatorForUser impl_IOnlineIdSystemAuthenticatorStatics<D>::Default() const
+{
+    Windows::Security::Authentication::OnlineId::OnlineIdSystemAuthenticatorForUser value { nullptr };
+    check_hresult(WINRT_SHIM(IOnlineIdSystemAuthenticatorStatics)->get_Default(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdSystemAuthenticatorForUser impl_IOnlineIdSystemAuthenticatorStatics<D>::GetForUser(const Windows::System::User & user) const
+{
+    Windows::Security::Authentication::OnlineId::OnlineIdSystemAuthenticatorForUser value { nullptr };
+    check_hresult(WINRT_SHIM(IOnlineIdSystemAuthenticatorStatics)->abi_GetForUser(get_abi(user), put_abi(value)));
+    return value;
+}
+
 inline OnlineIdAuthenticator::OnlineIdAuthenticator() :
     OnlineIdAuthenticator(activate_instance<OnlineIdAuthenticator>())
 {}
@@ -526,6 +779,16 @@ inline OnlineIdServiceTicketRequest::OnlineIdServiceTicketRequest(hstring_view s
 inline OnlineIdServiceTicketRequest::OnlineIdServiceTicketRequest(hstring_view service) :
     OnlineIdServiceTicketRequest(get_activation_factory<OnlineIdServiceTicketRequest, IOnlineIdServiceTicketRequestFactory>().CreateOnlineIdServiceTicketRequestAdvanced(service))
 {}
+
+inline Windows::Security::Authentication::OnlineId::OnlineIdSystemAuthenticatorForUser OnlineIdSystemAuthenticator::Default()
+{
+    return get_activation_factory<OnlineIdSystemAuthenticator, IOnlineIdSystemAuthenticatorStatics>().Default();
+}
+
+inline Windows::Security::Authentication::OnlineId::OnlineIdSystemAuthenticatorForUser OnlineIdSystemAuthenticator::GetForUser(const Windows::System::User & user)
+{
+    return get_activation_factory<OnlineIdSystemAuthenticator, IOnlineIdSystemAuthenticatorStatics>().GetForUser(user);
+}
 
 }
 
@@ -568,6 +831,42 @@ struct std::hash<winrt::Windows::Security::Authentication::OnlineId::IOnlineIdSe
 };
 
 template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorStatics>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::IOnlineIdSystemAuthenticatorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::IOnlineIdSystemIdentity & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::IOnlineIdSystemTicketResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Security::Authentication::OnlineId::IUserIdentity>
 {
     size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::IUserIdentity & value) const noexcept
@@ -598,6 +897,33 @@ template<>
 struct std::hash<winrt::Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest>
 {
     size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::OnlineIdSystemAuthenticatorForUser>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::OnlineIdSystemAuthenticatorForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::OnlineIdSystemIdentity>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::OnlineIdSystemIdentity & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

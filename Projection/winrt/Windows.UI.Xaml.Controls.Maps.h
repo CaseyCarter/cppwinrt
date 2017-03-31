@@ -385,6 +385,207 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangingEve
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapBillboard> : produce_base<D, Windows::UI::Xaml::Controls::Maps::IMapBillboard>
+{
+    HRESULT __stdcall get_Location(impl::abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Location());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Location(impl::abi_arg_in<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Location(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_NormalizedAnchorPoint(impl::abi_arg_out<Windows::Foundation::Point> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().NormalizedAnchorPoint());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_NormalizedAnchorPoint(impl::abi_arg_in<Windows::Foundation::Point> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().NormalizedAnchorPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Image(impl::abi_arg_out<Windows::Storage::Streams::IRandomAccessStreamReference> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Image());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Image(impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStreamReference> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Image(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CollisionBehaviorDesired(Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CollisionBehaviorDesired());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_CollisionBehaviorDesired(Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CollisionBehaviorDesired(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ReferenceCamera(impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapCamera> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ReferenceCamera());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapBillboardFactory> : produce_base<D, Windows::UI::Xaml::Controls::Maps::IMapBillboardFactory>
+{
+    HRESULT __stdcall abi_CreateInstanceFromCamera(impl::abi_arg_in<Windows::UI::Xaml::Controls::Maps::IMapCamera> camera, impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapBillboard> instance) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *instance = detach_abi(this->shim().CreateInstanceFromCamera(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapCamera *>(&camera)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapBillboardStatics> : produce_base<D, Windows::UI::Xaml::Controls::Maps::IMapBillboardStatics>
+{
+    HRESULT __stdcall get_LocationProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().LocationProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_NormalizedAnchorPointProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().NormalizedAnchorPointProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CollisionBehaviorDesiredProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CollisionBehaviorDesiredProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCamera> : produce_base<D, Windows::UI::Xaml::Controls::Maps::IMapCamera>
 {
     HRESULT __stdcall get_Location(impl::abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
@@ -588,6 +789,54 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapCameraFactory> : produc
         catch (...)
         {
             *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapContextRequestedEventArgs> : produce_base<D, Windows::UI::Xaml::Controls::Maps::IMapContextRequestedEventArgs>
+{
+    HRESULT __stdcall get_Position(impl::abi_arg_out<Windows::Foundation::Point> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Position());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Location(impl::abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Location());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_MapElements(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MapElements());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
             return impl::to_hresult();
         }
     }
@@ -2247,6 +2496,211 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl4> : produce_bas
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl5> : produce_base<D, Windows::UI::Xaml::Controls::Maps::IMapControl5>
+{
+    HRESULT __stdcall get_MapProjection(Windows::UI::Xaml::Controls::Maps::MapProjection * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MapProjection());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_MapProjection(Windows::UI::Xaml::Controls::Maps::MapProjection value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().MapProjection(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_StyleSheet(impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().StyleSheet());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_StyleSheet(impl::abi_arg_in<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StyleSheet(*reinterpret_cast<const Windows::UI::Xaml::Controls::Maps::MapStyleSheet *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ViewPadding(impl::abi_arg_out<Windows::UI::Xaml::Thickness> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ViewPadding());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_ViewPadding(impl::abi_arg_in<Windows::UI::Xaml::Thickness> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ViewPadding(*reinterpret_cast<const Windows::UI::Xaml::Thickness *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_MapContextRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().MapContextRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_MapContextRequested(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().MapContextRequested(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_FindMapElementsAtOffsetWithRadius(impl::abi_arg_in<Windows::Foundation::Point> offset, double radius, impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement>> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().FindMapElementsAtOffset(*reinterpret_cast<const Windows::Foundation::Point *>(&offset), radius));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetLocationFromOffsetWithReferenceSystem(impl::abi_arg_in<Windows::Foundation::Point> offset, Windows::Devices::Geolocation::AltitudeReferenceSystem desiredReferenceSystem, impl::abi_arg_out<Windows::Devices::Geolocation::IGeopoint> location) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().GetLocationFromOffset(*reinterpret_cast<const Windows::Foundation::Point *>(&offset), desiredReferenceSystem, *location);
+            return S_OK;
+        }
+        catch (...)
+        {
+            *location = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StartContinuousPan(double horizontalPixelsPerSecond, double verticalPixelsPerSecond) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StartContinuousPan(horizontalPixelsPerSecond, verticalPixelsPerSecond);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StopContinuousPan() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StopContinuousPan();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryPanAsync(double horizontalPixels, double verticalPixels, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().TryPanAsync(horizontalPixels, verticalPixels));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryPanToAsync(impl::abi_arg_in<Windows::Devices::Geolocation::IGeopoint> location, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().TryPanToAsync(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&location)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics> : produce_base<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics>
 {
     HRESULT __stdcall get_CenterProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
@@ -2770,6 +3224,55 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics4> : prod
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().TransitFeaturesEnabledProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics5> : produce_base<D, Windows::UI::Xaml::Controls::Maps::IMapControlStatics5>
+{
+    HRESULT __stdcall get_MapProjectionProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MapProjectionProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_StyleSheetProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().StyleSheetProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ViewPaddingProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ViewPaddingProperty());
             return S_OK;
         }
         catch (...)
@@ -4174,6 +4677,149 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapSceneStatics> : produce
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> : produce_base<D, Windows::UI::Xaml::Controls::Maps::IMapStyleSheet>
+{};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapStyleSheetStatics> : produce_base<D, Windows::UI::Xaml::Controls::Maps::IMapStyleSheetStatics>
+{
+    HRESULT __stdcall abi_Aerial(impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().Aerial());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_AerialWithOverlay(impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().AerialWithOverlay());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RoadLight(impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().RoadLight());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RoadDark(impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().RoadDark());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RoadHighContrastLight(impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().RoadHighContrastLight());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RoadHighContrastDark(impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().RoadHighContrastDark());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Combine(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Controls::Maps::MapStyleSheet>> styleSheets, impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().Combine(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> *>(&styleSheets)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ParseFromJson(impl::abi_arg_in<hstring> styleAsJson, impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().ParseFromJson(*reinterpret_cast<const hstring *>(&styleAsJson)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryParseFromJson(impl::abi_arg_in<hstring> styleAsJson, impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet> styleSheet, bool * returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().TryParseFromJson(*reinterpret_cast<const hstring *>(&styleAsJson), *styleSheet));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *styleSheet = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs> : produce_base<D, Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs>
 {
     HRESULT __stdcall get_Camera(impl::abi_arg_out<Windows::UI::Xaml::Controls::Maps::IMapCamera> value) noexcept override
@@ -5346,6 +5992,27 @@ template <typename D> Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason i
     return value;
 }
 
+template <typename D> Windows::Foundation::Point impl_IMapContextRequestedEventArgs<D>::Position() const
+{
+    Windows::Foundation::Point value {};
+    check_hresult(WINRT_SHIM(IMapContextRequestedEventArgs)->get_Position(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapContextRequestedEventArgs<D>::Location() const
+{
+    Windows::Devices::Geolocation::Geopoint value { nullptr };
+    check_hresult(WINRT_SHIM(IMapContextRequestedEventArgs)->get_Location(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> impl_IMapContextRequestedEventArgs<D>::MapElements() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> value;
+    check_hresult(WINRT_SHIM(IMapContextRequestedEventArgs)->get_MapElements(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Foundation::Point impl_IMapElementClickEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
@@ -5891,6 +6558,69 @@ template <typename D> Windows::UI::Xaml::Controls::Maps::MapScene impl_IMapScene
     return returnValue;
 }
 
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapStyleSheet impl_IMapStyleSheetStatics<D>::Aerial() const
+{
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IMapStyleSheetStatics)->abi_Aerial(put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapStyleSheet impl_IMapStyleSheetStatics<D>::AerialWithOverlay() const
+{
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IMapStyleSheetStatics)->abi_AerialWithOverlay(put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapStyleSheet impl_IMapStyleSheetStatics<D>::RoadLight() const
+{
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IMapStyleSheetStatics)->abi_RoadLight(put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapStyleSheet impl_IMapStyleSheetStatics<D>::RoadDark() const
+{
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IMapStyleSheetStatics)->abi_RoadDark(put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapStyleSheet impl_IMapStyleSheetStatics<D>::RoadHighContrastLight() const
+{
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IMapStyleSheetStatics)->abi_RoadHighContrastLight(put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapStyleSheet impl_IMapStyleSheetStatics<D>::RoadHighContrastDark() const
+{
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IMapStyleSheetStatics)->abi_RoadHighContrastDark(put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapStyleSheet impl_IMapStyleSheetStatics<D>::Combine(iterable<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> styleSheets) const
+{
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IMapStyleSheetStatics)->abi_Combine(get_abi(styleSheets), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapStyleSheet impl_IMapStyleSheetStatics<D>::ParseFromJson(hstring_view styleAsJson) const
+{
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IMapStyleSheetStatics)->abi_ParseFromJson(get_abi(styleAsJson), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> bool impl_IMapStyleSheetStatics<D>::TryParseFromJson(hstring_view styleAsJson, Windows::UI::Xaml::Controls::Maps::MapStyleSheet & styleSheet) const
+{
+    bool returnValue {};
+    check_hresult(WINRT_SHIM(IMapStyleSheetStatics)->abi_TryParseFromJson(get_abi(styleAsJson), put_abi(styleSheet), &returnValue));
+    return returnValue;
+}
+
 template <typename D> Windows::UI::Xaml::Controls::Maps::MapTileDataSource impl_IMapTileDataSourceFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::Maps::MapTileDataSource instance { nullptr };
@@ -6289,6 +7019,89 @@ template <typename D> Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource 
 {
     Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource instance { nullptr };
     check_hresult(WINRT_SHIM(ILocalMapTileDataSourceFactory)->abi_CreateInstanceWithUriFormatString(get_abi(uriFormatString), get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
+template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapBillboard<D>::Location() const
+{
+    Windows::Devices::Geolocation::Geopoint value { nullptr };
+    check_hresult(WINRT_SHIM(IMapBillboard)->get_Location(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMapBillboard<D>::Location(const Windows::Devices::Geolocation::Geopoint & value) const
+{
+    check_hresult(WINRT_SHIM(IMapBillboard)->put_Location(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::Point impl_IMapBillboard<D>::NormalizedAnchorPoint() const
+{
+    Windows::Foundation::Point value {};
+    check_hresult(WINRT_SHIM(IMapBillboard)->get_NormalizedAnchorPoint(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMapBillboard<D>::NormalizedAnchorPoint(const Windows::Foundation::Point & value) const
+{
+    check_hresult(WINRT_SHIM(IMapBillboard)->put_NormalizedAnchorPoint(get_abi(value)));
+}
+
+template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IMapBillboard<D>::Image() const
+{
+    Windows::Storage::Streams::IRandomAccessStreamReference value;
+    check_hresult(WINRT_SHIM(IMapBillboard)->get_Image(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMapBillboard<D>::Image(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
+{
+    check_hresult(WINRT_SHIM(IMapBillboard)->put_Image(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior impl_IMapBillboard<D>::CollisionBehaviorDesired() const
+{
+    Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior value {};
+    check_hresult(WINRT_SHIM(IMapBillboard)->get_CollisionBehaviorDesired(&value));
+    return value;
+}
+
+template <typename D> void impl_IMapBillboard<D>::CollisionBehaviorDesired(Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior value) const
+{
+    check_hresult(WINRT_SHIM(IMapBillboard)->put_CollisionBehaviorDesired(value));
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapCamera impl_IMapBillboard<D>::ReferenceCamera() const
+{
+    Windows::UI::Xaml::Controls::Maps::MapCamera value { nullptr };
+    check_hresult(WINRT_SHIM(IMapBillboard)->get_ReferenceCamera(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapBillboardStatics<D>::LocationProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IMapBillboardStatics)->get_LocationProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapBillboardStatics<D>::NormalizedAnchorPointProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IMapBillboardStatics)->get_NormalizedAnchorPointProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapBillboardStatics<D>::CollisionBehaviorDesiredProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IMapBillboardStatics)->get_CollisionBehaviorDesiredProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapBillboard impl_IMapBillboardFactory<D>::CreateInstanceFromCamera(const Windows::UI::Xaml::Controls::Maps::MapCamera & camera) const
+{
+    Windows::UI::Xaml::Controls::Maps::MapBillboard instance { nullptr };
+    check_hresult(WINRT_SHIM(IMapBillboardFactory)->abi_CreateInstanceFromCamera(get_abi(camera), put_abi(instance)));
     return instance;
 }
 
@@ -7651,6 +8464,116 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStat
     return value;
 }
 
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapProjection impl_IMapControl5<D>::MapProjection() const
+{
+    Windows::UI::Xaml::Controls::Maps::MapProjection value {};
+    check_hresult(WINRT_SHIM(IMapControl5)->get_MapProjection(&value));
+    return value;
+}
+
+template <typename D> void impl_IMapControl5<D>::MapProjection(Windows::UI::Xaml::Controls::Maps::MapProjection value) const
+{
+    check_hresult(WINRT_SHIM(IMapControl5)->put_MapProjection(value));
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Maps::MapStyleSheet impl_IMapControl5<D>::StyleSheet() const
+{
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet value { nullptr };
+    check_hresult(WINRT_SHIM(IMapControl5)->get_StyleSheet(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMapControl5<D>::StyleSheet(const Windows::UI::Xaml::Controls::Maps::MapStyleSheet & value) const
+{
+    check_hresult(WINRT_SHIM(IMapControl5)->put_StyleSheet(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Thickness impl_IMapControl5<D>::ViewPadding() const
+{
+    Windows::UI::Xaml::Thickness value {};
+    check_hresult(WINRT_SHIM(IMapControl5)->get_ViewPadding(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMapControl5<D>::ViewPadding(const Windows::UI::Xaml::Thickness & value) const
+{
+    check_hresult(WINRT_SHIM(IMapControl5)->put_ViewPadding(get_abi(value)));
+}
+
+template <typename D> event_token impl_IMapControl5<D>::MapContextRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMapControl5)->add_MapContextRequested(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMapControl5> impl_IMapControl5<D>::MapContextRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, IMapControl5>(this, &ABI::Windows::UI::Xaml::Controls::Maps::IMapControl5::remove_MapContextRequested, MapContextRequested(value));
+}
+
+template <typename D> void impl_IMapControl5<D>::MapContextRequested(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMapControl5)->remove_MapContextRequested(token));
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> impl_IMapControl5<D>::FindMapElementsAtOffset(const Windows::Foundation::Point & offset, double radius) const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> returnValue;
+    check_hresult(WINRT_SHIM(IMapControl5)->abi_FindMapElementsAtOffsetWithRadius(get_abi(offset), radius, put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> void impl_IMapControl5<D>::GetLocationFromOffset(const Windows::Foundation::Point & offset, Windows::Devices::Geolocation::AltitudeReferenceSystem desiredReferenceSystem, Windows::Devices::Geolocation::Geopoint & location) const
+{
+    check_hresult(WINRT_SHIM(IMapControl5)->abi_GetLocationFromOffsetWithReferenceSystem(get_abi(offset), desiredReferenceSystem, put_abi(location)));
+}
+
+template <typename D> void impl_IMapControl5<D>::StartContinuousPan(double horizontalPixelsPerSecond, double verticalPixelsPerSecond) const
+{
+    check_hresult(WINRT_SHIM(IMapControl5)->abi_StartContinuousPan(horizontalPixelsPerSecond, verticalPixelsPerSecond));
+}
+
+template <typename D> void impl_IMapControl5<D>::StopContinuousPan() const
+{
+    check_hresult(WINRT_SHIM(IMapControl5)->abi_StopContinuousPan());
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl5<D>::TryPanAsync(double horizontalPixels, double verticalPixels) const
+{
+    Windows::Foundation::IAsyncOperation<bool> returnValue;
+    check_hresult(WINRT_SHIM(IMapControl5)->abi_TryPanAsync(horizontalPixels, verticalPixels, put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IMapControl5<D>::TryPanToAsync(const Windows::Devices::Geolocation::Geopoint & location) const
+{
+    Windows::Foundation::IAsyncOperation<bool> returnValue;
+    check_hresult(WINRT_SHIM(IMapControl5)->abi_TryPanToAsync(get_abi(location), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics5<D>::MapProjectionProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IMapControlStatics5)->get_MapProjectionProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics5<D>::StyleSheetProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IMapControlStatics5)->get_StyleSheetProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMapControlStatics5<D>::ViewPaddingProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IMapControlStatics5)->get_ViewPaddingProperty(put_abi(value)));
+    return value;
+}
+
 inline CustomMapTileDataSource::CustomMapTileDataSource()
 {
     Windows::Foundation::IInspectable outer, inner;
@@ -7689,6 +8612,25 @@ inline MapActualCameraChangingEventArgs::MapActualCameraChangingEventArgs() :
     MapActualCameraChangingEventArgs(activate_instance<MapActualCameraChangingEventArgs>())
 {}
 
+inline MapBillboard::MapBillboard(const Windows::UI::Xaml::Controls::Maps::MapCamera & camera) :
+    MapBillboard(get_activation_factory<MapBillboard, IMapBillboardFactory>().CreateInstanceFromCamera(camera))
+{}
+
+inline Windows::UI::Xaml::DependencyProperty MapBillboard::LocationProperty()
+{
+    return get_activation_factory<MapBillboard, IMapBillboardStatics>().LocationProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty MapBillboard::NormalizedAnchorPointProperty()
+{
+    return get_activation_factory<MapBillboard, IMapBillboardStatics>().NormalizedAnchorPointProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty MapBillboard::CollisionBehaviorDesiredProperty()
+{
+    return get_activation_factory<MapBillboard, IMapBillboardStatics>().CollisionBehaviorDesiredProperty();
+}
+
 inline MapCamera::MapCamera(const Windows::Devices::Geolocation::Geopoint & location) :
     MapCamera(get_activation_factory<MapCamera, IMapCameraFactory>().CreateInstanceWithLocation(location))
 {}
@@ -7703,6 +8645,10 @@ inline MapCamera::MapCamera(const Windows::Devices::Geolocation::Geopoint & loca
 
 inline MapCamera::MapCamera(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees, double pitchInDegrees, double rollInDegrees, double fieldOfViewInDegrees) :
     MapCamera(get_activation_factory<MapCamera, IMapCameraFactory>().CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(location, headingInDegrees, pitchInDegrees, rollInDegrees, fieldOfViewInDegrees))
+{}
+
+inline MapContextRequestedEventArgs::MapContextRequestedEventArgs() :
+    MapContextRequestedEventArgs(activate_instance<MapContextRequestedEventArgs>())
 {}
 
 inline MapControl::MapControl() :
@@ -7884,6 +8830,21 @@ inline Windows::UI::Xaml::DependencyProperty MapControl::TransitFeaturesEnabledP
     return get_activation_factory<MapControl, IMapControlStatics4>().TransitFeaturesEnabledProperty();
 }
 
+inline Windows::UI::Xaml::DependencyProperty MapControl::MapProjectionProperty()
+{
+    return get_activation_factory<MapControl, IMapControlStatics5>().MapProjectionProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty MapControl::StyleSheetProperty()
+{
+    return get_activation_factory<MapControl, IMapControlStatics5>().StyleSheetProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty MapControl::ViewPaddingProperty()
+{
+    return get_activation_factory<MapControl, IMapControlStatics5>().ViewPaddingProperty();
+}
+
 inline MapCustomExperience::MapCustomExperience()
 {
     Windows::Foundation::IInspectable outer, inner;
@@ -8060,6 +9021,51 @@ inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocations
 inline Windows::UI::Xaml::Controls::Maps::MapScene MapScene::CreateFromLocations(iterable<Windows::Devices::Geolocation::Geopoint> locations, double headingInDegrees, double pitchInDegrees)
 {
     return get_activation_factory<MapScene, IMapSceneStatics>().CreateFromLocations(locations, headingInDegrees, pitchInDegrees);
+}
+
+inline Windows::UI::Xaml::Controls::Maps::MapStyleSheet MapStyleSheet::Aerial()
+{
+    return get_activation_factory<MapStyleSheet, IMapStyleSheetStatics>().Aerial();
+}
+
+inline Windows::UI::Xaml::Controls::Maps::MapStyleSheet MapStyleSheet::AerialWithOverlay()
+{
+    return get_activation_factory<MapStyleSheet, IMapStyleSheetStatics>().AerialWithOverlay();
+}
+
+inline Windows::UI::Xaml::Controls::Maps::MapStyleSheet MapStyleSheet::RoadLight()
+{
+    return get_activation_factory<MapStyleSheet, IMapStyleSheetStatics>().RoadLight();
+}
+
+inline Windows::UI::Xaml::Controls::Maps::MapStyleSheet MapStyleSheet::RoadDark()
+{
+    return get_activation_factory<MapStyleSheet, IMapStyleSheetStatics>().RoadDark();
+}
+
+inline Windows::UI::Xaml::Controls::Maps::MapStyleSheet MapStyleSheet::RoadHighContrastLight()
+{
+    return get_activation_factory<MapStyleSheet, IMapStyleSheetStatics>().RoadHighContrastLight();
+}
+
+inline Windows::UI::Xaml::Controls::Maps::MapStyleSheet MapStyleSheet::RoadHighContrastDark()
+{
+    return get_activation_factory<MapStyleSheet, IMapStyleSheetStatics>().RoadHighContrastDark();
+}
+
+inline Windows::UI::Xaml::Controls::Maps::MapStyleSheet MapStyleSheet::Combine(iterable<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> styleSheets)
+{
+    return get_activation_factory<MapStyleSheet, IMapStyleSheetStatics>().Combine(styleSheets);
+}
+
+inline Windows::UI::Xaml::Controls::Maps::MapStyleSheet MapStyleSheet::ParseFromJson(hstring_view styleAsJson)
+{
+    return get_activation_factory<MapStyleSheet, IMapStyleSheetStatics>().ParseFromJson(styleAsJson);
+}
+
+inline bool MapStyleSheet::TryParseFromJson(hstring_view styleAsJson, Windows::UI::Xaml::Controls::Maps::MapStyleSheet & styleSheet)
+{
+    return get_activation_factory<MapStyleSheet, IMapStyleSheetStatics>().TryParseFromJson(styleAsJson, styleSheet);
 }
 
 inline MapTargetCameraChangedEventArgs::MapTargetCameraChangedEventArgs() :
@@ -8294,6 +9300,33 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapActualCameraChang
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapBillboard>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapBillboard & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapBillboardFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapBillboardFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapBillboardStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapBillboardStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapCamera>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapCamera & value) const noexcept
@@ -8306,6 +9339,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapCameraFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapCameraFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapContextRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapContextRequestedEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -8348,6 +9390,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControl4>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControl5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapControl5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics & value) const noexcept
@@ -8369,6 +9420,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics4>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapControlStatics5 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -8627,6 +9687,24 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapSceneStatics>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapStyleSheetStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapStyleSheetStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs & value) const noexcept
@@ -8825,9 +9903,27 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapActualCameraChangi
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapBillboard>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapBillboard & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapCamera>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapCamera & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -8963,6 +10059,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapScene>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapScene & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Maps::MapStyleSheet>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Maps::MapStyleSheet & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

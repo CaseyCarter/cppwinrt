@@ -24,15 +24,19 @@ namespace ABI::Windows::Gaming::Input::Custom {
 
 struct ICustomGameControllerFactory;
 struct IGameControllerFactoryManagerStatics;
+struct IGameControllerFactoryManagerStatics2;
 struct IGameControllerInputSink;
 struct IGameControllerProvider;
 struct IGipFirmwareUpdateResult;
 struct IGipGameControllerInputSink;
 struct IGipGameControllerProvider;
+struct IHidGameControllerInputSink;
+struct IHidGameControllerProvider;
 struct IXusbGameControllerInputSink;
 struct IXusbGameControllerProvider;
 struct GipFirmwareUpdateResult;
 struct GipGameControllerProvider;
+struct HidGameControllerProvider;
 struct XusbGameControllerProvider;
 
 }
@@ -41,16 +45,20 @@ namespace Windows::Gaming::Input::Custom {
 
 struct ICustomGameControllerFactory;
 struct IGameControllerFactoryManagerStatics;
+struct IGameControllerFactoryManagerStatics2;
 struct IGameControllerInputSink;
 struct IGameControllerProvider;
 struct IGipFirmwareUpdateResult;
 struct IGipGameControllerInputSink;
 struct IGipGameControllerProvider;
+struct IHidGameControllerInputSink;
+struct IHidGameControllerProvider;
 struct IXusbGameControllerInputSink;
 struct IXusbGameControllerProvider;
 struct GameControllerFactoryManager;
 struct GipFirmwareUpdateResult;
 struct GipGameControllerProvider;
+struct HidGameControllerProvider;
 struct XusbGameControllerProvider;
 
 }
@@ -59,11 +67,14 @@ namespace Windows::Gaming::Input::Custom {
 
 template <typename T> struct impl_ICustomGameControllerFactory;
 template <typename T> struct impl_IGameControllerFactoryManagerStatics;
+template <typename T> struct impl_IGameControllerFactoryManagerStatics2;
 template <typename T> struct impl_IGameControllerInputSink;
 template <typename T> struct impl_IGameControllerProvider;
 template <typename T> struct impl_IGipFirmwareUpdateResult;
 template <typename T> struct impl_IGipGameControllerInputSink;
 template <typename T> struct impl_IGipGameControllerProvider;
+template <typename T> struct impl_IHidGameControllerInputSink;
+template <typename T> struct impl_IHidGameControllerProvider;
 template <typename T> struct impl_IXusbGameControllerInputSink;
 template <typename T> struct impl_IXusbGameControllerProvider;
 

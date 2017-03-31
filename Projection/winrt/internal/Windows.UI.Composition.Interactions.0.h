@@ -8,9 +8,12 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::UI::Composition::Interactions {
 
+struct ICompositionConditionalValue;
+struct ICompositionConditionalValueStatics;
 struct ICompositionInteractionSource;
 struct ICompositionInteractionSourceCollection;
 struct IInteractionTracker;
+struct IInteractionTracker2;
 struct IInteractionTrackerCustomAnimationStateEnteredArgs;
 struct IInteractionTrackerIdleStateEnteredArgs;
 struct IInteractionTrackerInertiaModifier;
@@ -26,7 +29,10 @@ struct IInteractionTrackerRequestIgnoredArgs;
 struct IInteractionTrackerStatics;
 struct IInteractionTrackerValuesChangedArgs;
 struct IVisualInteractionSource;
+struct IVisualInteractionSource2;
+struct IVisualInteractionSourceObjectFactory;
 struct IVisualInteractionSourceStatics;
+struct CompositionConditionalValue;
 struct CompositionInteractionSourceCollection;
 struct InteractionTracker;
 struct InteractionTrackerCustomAnimationStateEnteredArgs;
@@ -44,9 +50,12 @@ struct VisualInteractionSource;
 
 namespace Windows::UI::Composition::Interactions {
 
+struct ICompositionConditionalValue;
+struct ICompositionConditionalValueStatics;
 struct ICompositionInteractionSource;
 struct ICompositionInteractionSourceCollection;
 struct IInteractionTracker;
+struct IInteractionTracker2;
 struct IInteractionTrackerCustomAnimationStateEnteredArgs;
 struct IInteractionTrackerIdleStateEnteredArgs;
 struct IInteractionTrackerInertiaModifier;
@@ -62,7 +71,10 @@ struct IInteractionTrackerRequestIgnoredArgs;
 struct IInteractionTrackerStatics;
 struct IInteractionTrackerValuesChangedArgs;
 struct IVisualInteractionSource;
+struct IVisualInteractionSource2;
+struct IVisualInteractionSourceObjectFactory;
 struct IVisualInteractionSourceStatics;
+struct CompositionConditionalValue;
 struct CompositionInteractionSourceCollection;
 struct InteractionTracker;
 struct InteractionTrackerCustomAnimationStateEnteredArgs;
@@ -80,9 +92,12 @@ struct VisualInteractionSource;
 
 namespace Windows::UI::Composition::Interactions {
 
+template <typename T> struct impl_ICompositionConditionalValue;
+template <typename T> struct impl_ICompositionConditionalValueStatics;
 template <typename T> struct impl_ICompositionInteractionSource;
 template <typename T> struct impl_ICompositionInteractionSourceCollection;
 template <typename T> struct impl_IInteractionTracker;
+template <typename T> struct impl_IInteractionTracker2;
 template <typename T> struct impl_IInteractionTrackerCustomAnimationStateEnteredArgs;
 template <typename T> struct impl_IInteractionTrackerIdleStateEnteredArgs;
 template <typename T> struct impl_IInteractionTrackerInertiaModifier;
@@ -98,6 +113,8 @@ template <typename T> struct impl_IInteractionTrackerRequestIgnoredArgs;
 template <typename T> struct impl_IInteractionTrackerStatics;
 template <typename T> struct impl_IInteractionTrackerValuesChangedArgs;
 template <typename T> struct impl_IVisualInteractionSource;
+template <typename T> struct impl_IVisualInteractionSource2;
+template <typename T> struct impl_IVisualInteractionSourceObjectFactory;
 template <typename T> struct impl_IVisualInteractionSourceStatics;
 
 }

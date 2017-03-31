@@ -9,6 +9,15 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::Devices::Bluetooth {
 
+struct WINRT_EBO BluetoothAdapter :
+    Windows::Devices::Bluetooth::IBluetoothAdapter
+{
+    BluetoothAdapter(std::nullptr_t) noexcept {}
+    static hstring GetDeviceSelector();
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> FromIdAsync(hstring_view deviceId);
+    static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> GetDefaultAsync();
+};
+
 struct WINRT_EBO BluetoothClassOfDevice :
     Windows::Devices::Bluetooth::IBluetoothClassOfDevice
 {
@@ -31,6 +40,12 @@ struct WINRT_EBO BluetoothDevice :
     static hstring GetDeviceSelectorFromDeviceName(hstring_view deviceName);
     static hstring GetDeviceSelectorFromBluetoothAddress(uint64_t bluetoothAddress);
     static hstring GetDeviceSelectorFromClassOfDevice(const Windows::Devices::Bluetooth::BluetoothClassOfDevice & classOfDevice);
+};
+
+struct WINRT_EBO BluetoothDeviceId :
+    Windows::Devices::Bluetooth::IBluetoothDeviceId
+{
+    BluetoothDeviceId(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO BluetoothLEAppearance :
@@ -103,7 +118,7 @@ struct BluetoothLEAppearanceSubcategories
 
 struct WINRT_EBO BluetoothLEDevice :
     Windows::Devices::Bluetooth::IBluetoothLEDevice,
-    impl::require<BluetoothLEDevice, Windows::Foundation::IClosable, Windows::Devices::Bluetooth::IBluetoothLEDevice2>
+    impl::require<BluetoothLEDevice, Windows::Foundation::IClosable, Windows::Devices::Bluetooth::IBluetoothLEDevice2, Windows::Devices::Bluetooth::IBluetoothLEDevice3>
 {
     BluetoothLEDevice(std::nullptr_t) noexcept {}
     static Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromIdAsync(hstring_view deviceId);
@@ -123,6 +138,13 @@ struct WINRT_EBO BluetoothSignalStrengthFilter :
 {
     BluetoothSignalStrengthFilter(std::nullptr_t) noexcept {}
     BluetoothSignalStrengthFilter();
+};
+
+struct BluetoothUuidHelper
+{
+    BluetoothUuidHelper() = delete;
+    static GUID FromShortId(uint32_t shortId);
+    static Windows::Foundation::IReference<uint32_t> TryGetShortId(GUID uuid);
 };
 
 }

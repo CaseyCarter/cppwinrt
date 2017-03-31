@@ -110,6 +110,25 @@ struct produce<D, Windows::Gaming::Input::Custom::IGameControllerFactoryManagerS
 };
 
 template <typename D>
+struct produce<D, Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics2> : produce_base<D, Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics2>
+{
+    HRESULT __stdcall abi_TryGetFactoryControllerFromGameController(impl::abi_arg_in<Windows::Gaming::Input::Custom::ICustomGameControllerFactory> factory, impl::abi_arg_in<Windows::Gaming::Input::IGameController> gameController, impl::abi_arg_out<Windows::Gaming::Input::IGameController> factoryController) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *factoryController = detach_abi(this->shim().TryGetFactoryControllerFromGameController(*reinterpret_cast<const Windows::Gaming::Input::Custom::ICustomGameControllerFactory *>(&factory), *reinterpret_cast<const Windows::Gaming::Input::IGameController *>(&gameController)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *factoryController = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Gaming::Input::Custom::IGameControllerInputSink> : produce_base<D, Windows::Gaming::Input::Custom::IGameControllerInputSink>
 {
     HRESULT __stdcall abi_OnInputResumed(uint64_t timestamp) noexcept override
@@ -341,6 +360,98 @@ struct produce<D, Windows::Gaming::Input::Custom::IGipGameControllerProvider> : 
 };
 
 template <typename D>
+struct produce<D, Windows::Gaming::Input::Custom::IHidGameControllerInputSink> : produce_base<D, Windows::Gaming::Input::Custom::IHidGameControllerInputSink>
+{
+    HRESULT __stdcall abi_OnInputReportReceived(uint64_t timestamp, uint8_t reportId, uint32_t __reportBufferSize, impl::abi_arg_in<uint8_t> * reportBuffer) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().OnInputReportReceived(timestamp, reportId, array_view<const uint8_t>(reportBuffer, reportBuffer + __reportBufferSize));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Gaming::Input::Custom::IHidGameControllerProvider> : produce_base<D, Windows::Gaming::Input::Custom::IHidGameControllerProvider>
+{
+    HRESULT __stdcall get_UsageId(uint16_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().UsageId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_UsagePage(uint16_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().UsagePage());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetFeatureReport(uint8_t reportId, uint32_t __reportBufferSize, impl::abi_arg_out<uint8_t> reportBuffer) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().GetFeatureReport(reportId, *reportBuffer);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SendFeatureReport(uint8_t reportId, uint32_t __reportBufferSize, impl::abi_arg_in<uint8_t> * reportBuffer) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SendFeatureReport(reportId, array_view<const uint8_t>(reportBuffer, reportBuffer + __reportBufferSize));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SendOutputReport(uint8_t reportId, uint32_t __reportBufferSize, impl::abi_arg_in<uint8_t> * reportBuffer) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SendOutputReport(reportId, array_view<const uint8_t>(reportBuffer, reportBuffer + __reportBufferSize));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Gaming::Input::Custom::IXusbGameControllerInputSink> : produce_base<D, Windows::Gaming::Input::Custom::IXusbGameControllerInputSink>
 {
     HRESULT __stdcall abi_OnInputReceived(uint64_t timestamp, uint8_t reportId, uint32_t __inputBufferSize, impl::abi_arg_in<uint8_t> * inputBuffer) noexcept override
@@ -398,6 +509,11 @@ template <typename D> void impl_IGipGameControllerInputSink<D>::OnKeyReceived(ui
 template <typename D> void impl_IGipGameControllerInputSink<D>::OnMessageReceived(uint64_t timestamp, Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint8_t sequenceId, array_view<const uint8_t> messageBuffer) const
 {
     check_hresult(WINRT_SHIM(IGipGameControllerInputSink)->abi_OnMessageReceived(timestamp, messageClass, messageId, sequenceId, messageBuffer.size(), get_abi(messageBuffer)));
+}
+
+template <typename D> void impl_IHidGameControllerInputSink<D>::OnInputReportReceived(uint64_t timestamp, uint8_t reportId, array_view<const uint8_t> reportBuffer) const
+{
+    check_hresult(WINRT_SHIM(IHidGameControllerInputSink)->abi_OnInputReportReceived(timestamp, reportId, reportBuffer.size(), get_abi(reportBuffer)));
 }
 
 template <typename D> void impl_IXusbGameControllerInputSink<D>::OnInputReceived(uint64_t timestamp, uint8_t reportId, array_view<const uint8_t> inputBuffer) const
@@ -478,6 +594,35 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return result;
 }
 
+template <typename D> uint16_t impl_IHidGameControllerProvider<D>::UsageId() const
+{
+    uint16_t value {};
+    check_hresult(WINRT_SHIM(IHidGameControllerProvider)->get_UsageId(&value));
+    return value;
+}
+
+template <typename D> uint16_t impl_IHidGameControllerProvider<D>::UsagePage() const
+{
+    uint16_t value {};
+    check_hresult(WINRT_SHIM(IHidGameControllerProvider)->get_UsagePage(&value));
+    return value;
+}
+
+template <typename D> void impl_IHidGameControllerProvider<D>::GetFeatureReport(uint8_t reportId, array_view<uint8_t> reportBuffer) const
+{
+    check_hresult(WINRT_SHIM(IHidGameControllerProvider)->abi_GetFeatureReport(reportId, reportBuffer.size(), get_abi(reportBuffer)));
+}
+
+template <typename D> void impl_IHidGameControllerProvider<D>::SendFeatureReport(uint8_t reportId, array_view<const uint8_t> reportBuffer) const
+{
+    check_hresult(WINRT_SHIM(IHidGameControllerProvider)->abi_SendFeatureReport(reportId, reportBuffer.size(), get_abi(reportBuffer)));
+}
+
+template <typename D> void impl_IHidGameControllerProvider<D>::SendOutputReport(uint8_t reportId, array_view<const uint8_t> reportBuffer) const
+{
+    check_hresult(WINRT_SHIM(IHidGameControllerProvider)->abi_SendOutputReport(reportId, reportBuffer.size(), get_abi(reportBuffer)));
+}
+
 template <typename D> void impl_IXusbGameControllerProvider<D>::SetVibration(double lowFrequencyMotorSpeed, double highFrequencyMotorSpeed) const
 {
     check_hresult(WINRT_SHIM(IXusbGameControllerProvider)->abi_SetVibration(lowFrequencyMotorSpeed, highFrequencyMotorSpeed));
@@ -515,6 +660,13 @@ template <typename D> void impl_IGameControllerFactoryManagerStatics<D>::Registe
     check_hresult(WINRT_SHIM(IGameControllerFactoryManagerStatics)->abi_RegisterCustomFactoryForXusbType(get_abi(factory), xusbType, xusbSubtype));
 }
 
+template <typename D> Windows::Gaming::Input::IGameController impl_IGameControllerFactoryManagerStatics2<D>::TryGetFactoryControllerFromGameController(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, const Windows::Gaming::Input::IGameController & gameController) const
+{
+    Windows::Gaming::Input::IGameController factoryController;
+    check_hresult(WINRT_SHIM(IGameControllerFactoryManagerStatics2)->abi_TryGetFactoryControllerFromGameController(get_abi(factory), get_abi(gameController), put_abi(factoryController)));
+    return factoryController;
+}
+
 inline void GameControllerFactoryManager::RegisterCustomFactoryForGipInterface(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, GUID interfaceId)
 {
     get_activation_factory<GameControllerFactoryManager, IGameControllerFactoryManagerStatics>().RegisterCustomFactoryForGipInterface(factory, interfaceId);
@@ -528,6 +680,11 @@ inline void GameControllerFactoryManager::RegisterCustomFactoryForHardwareId(con
 inline void GameControllerFactoryManager::RegisterCustomFactoryForXusbType(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, Windows::Gaming::Input::Custom::XusbDeviceType xusbType, Windows::Gaming::Input::Custom::XusbDeviceSubtype xusbSubtype)
 {
     get_activation_factory<GameControllerFactoryManager, IGameControllerFactoryManagerStatics>().RegisterCustomFactoryForXusbType(factory, xusbType, xusbSubtype);
+}
+
+inline Windows::Gaming::Input::IGameController GameControllerFactoryManager::TryGetFactoryControllerFromGameController(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, const Windows::Gaming::Input::IGameController & gameController)
+{
+    return get_activation_factory<GameControllerFactoryManager, IGameControllerFactoryManagerStatics2>().TryGetFactoryControllerFromGameController(factory, gameController);
 }
 
 }
@@ -547,6 +704,15 @@ template<>
 struct std::hash<winrt::Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics>
 {
     size_t operator()(const winrt::Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -598,6 +764,24 @@ struct std::hash<winrt::Windows::Gaming::Input::Custom::IGipGameControllerProvid
 };
 
 template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::IHidGameControllerInputSink>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::IHidGameControllerInputSink & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::IHidGameControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::IHidGameControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Gaming::Input::Custom::IXusbGameControllerInputSink>
 {
     size_t operator()(const winrt::Windows::Gaming::Input::Custom::IXusbGameControllerInputSink & value) const noexcept
@@ -628,6 +812,15 @@ template<>
 struct std::hash<winrt::Windows::Gaming::Input::Custom::GipGameControllerProvider>
 {
     size_t operator()(const winrt::Windows::Gaming::Input::Custom::GipGameControllerProvider & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Gaming::Input::Custom::HidGameControllerProvider>
+{
+    size_t operator()(const winrt::Windows::Gaming::Input::Custom::HidGameControllerProvider & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

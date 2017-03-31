@@ -1346,6 +1346,142 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Hum
     return hidDevice;
 }
 
+template <typename D> uint16_t impl_IHidDevice<D>::VendorId() const
+{
+    uint16_t value {};
+    check_hresult(WINRT_SHIM(IHidDevice)->get_VendorId(&value));
+    return value;
+}
+
+template <typename D> uint16_t impl_IHidDevice<D>::ProductId() const
+{
+    uint16_t value {};
+    check_hresult(WINRT_SHIM(IHidDevice)->get_ProductId(&value));
+    return value;
+}
+
+template <typename D> uint16_t impl_IHidDevice<D>::Version() const
+{
+    uint16_t value {};
+    check_hresult(WINRT_SHIM(IHidDevice)->get_Version(&value));
+    return value;
+}
+
+template <typename D> uint16_t impl_IHidDevice<D>::UsagePage() const
+{
+    uint16_t value {};
+    check_hresult(WINRT_SHIM(IHidDevice)->get_UsagePage(&value));
+    return value;
+}
+
+template <typename D> uint16_t impl_IHidDevice<D>::UsageId() const
+{
+    uint16_t value {};
+    check_hresult(WINRT_SHIM(IHidDevice)->get_UsageId(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> impl_IHidDevice<D>::GetInputReportAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> value;
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetInputReportAsync(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> impl_IHidDevice<D>::GetInputReportAsync(uint16_t reportId) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> value;
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetInputReportByIdAsync(reportId, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> impl_IHidDevice<D>::GetFeatureReportAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> value;
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetFeatureReportAsync(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> impl_IHidDevice<D>::GetFeatureReportAsync(uint16_t reportId) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> value;
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetFeatureReportByIdAsync(reportId, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::HumanInterfaceDevice::HidOutputReport impl_IHidDevice<D>::CreateOutputReport() const
+{
+    Windows::Devices::HumanInterfaceDevice::HidOutputReport outputReport { nullptr };
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateOutputReport(put_abi(outputReport)));
+    return outputReport;
+}
+
+template <typename D> Windows::Devices::HumanInterfaceDevice::HidOutputReport impl_IHidDevice<D>::CreateOutputReport(uint16_t reportId) const
+{
+    Windows::Devices::HumanInterfaceDevice::HidOutputReport outputReport { nullptr };
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateOutputReportById(reportId, put_abi(outputReport)));
+    return outputReport;
+}
+
+template <typename D> Windows::Devices::HumanInterfaceDevice::HidFeatureReport impl_IHidDevice<D>::CreateFeatureReport() const
+{
+    Windows::Devices::HumanInterfaceDevice::HidFeatureReport featureReport { nullptr };
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateFeatureReport(put_abi(featureReport)));
+    return featureReport;
+}
+
+template <typename D> Windows::Devices::HumanInterfaceDevice::HidFeatureReport impl_IHidDevice<D>::CreateFeatureReport(uint16_t reportId) const
+{
+    Windows::Devices::HumanInterfaceDevice::HidFeatureReport featureReport { nullptr };
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateFeatureReportById(reportId, put_abi(featureReport)));
+    return featureReport;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IHidDevice<D>::SendOutputReportAsync(const Windows::Devices::HumanInterfaceDevice::HidOutputReport & outputReport) const
+{
+    Windows::Foundation::IAsyncOperation<uint32_t> operation;
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_SendOutputReportAsync(get_abi(outputReport), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IHidDevice<D>::SendFeatureReportAsync(const Windows::Devices::HumanInterfaceDevice::HidFeatureReport & featureReport) const
+{
+    Windows::Foundation::IAsyncOperation<uint32_t> operation;
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_SendFeatureReportAsync(get_abi(featureReport), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription> impl_IHidDevice<D>::GetBooleanControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId) const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription> value;
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetBooleanControlDescriptions(reportType, usagePage, usageId, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription> impl_IHidDevice<D>::GetNumericControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId) const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription> value;
+    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetNumericControlDescriptions(reportType, usagePage, usageId, put_abi(value)));
+    return value;
+}
+
+template <typename D> event_token impl_IHidDevice<D>::InputReportReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> & reportHandler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IHidDevice)->add_InputReportReceived(get_abi(reportHandler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IHidDevice> impl_IHidDevice<D>::InputReportReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> & reportHandler) const
+{
+    return impl::make_event_revoker<D, IHidDevice>(this, &ABI::Windows::Devices::HumanInterfaceDevice::IHidDevice::remove_InputReportReceived, InputReportReceived(reportHandler));
+}
+
+template <typename D> void impl_IHidDevice<D>::InputReportReceived(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IHidDevice)->remove_InputReportReceived(token));
+}
+
 template <typename D> uint32_t impl_IHidBooleanControlDescription<D>::Id() const
 {
     uint32_t value {};
@@ -1789,142 +1925,6 @@ template <typename D> Windows::Devices::HumanInterfaceDevice::HidNumericControlD
     Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription value { nullptr };
     check_hresult(WINRT_SHIM(IHidNumericControl)->get_ControlDescription(put_abi(value)));
     return value;
-}
-
-template <typename D> uint16_t impl_IHidDevice<D>::VendorId() const
-{
-    uint16_t value {};
-    check_hresult(WINRT_SHIM(IHidDevice)->get_VendorId(&value));
-    return value;
-}
-
-template <typename D> uint16_t impl_IHidDevice<D>::ProductId() const
-{
-    uint16_t value {};
-    check_hresult(WINRT_SHIM(IHidDevice)->get_ProductId(&value));
-    return value;
-}
-
-template <typename D> uint16_t impl_IHidDevice<D>::Version() const
-{
-    uint16_t value {};
-    check_hresult(WINRT_SHIM(IHidDevice)->get_Version(&value));
-    return value;
-}
-
-template <typename D> uint16_t impl_IHidDevice<D>::UsagePage() const
-{
-    uint16_t value {};
-    check_hresult(WINRT_SHIM(IHidDevice)->get_UsagePage(&value));
-    return value;
-}
-
-template <typename D> uint16_t impl_IHidDevice<D>::UsageId() const
-{
-    uint16_t value {};
-    check_hresult(WINRT_SHIM(IHidDevice)->get_UsageId(&value));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> impl_IHidDevice<D>::GetInputReportAsync() const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> value;
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetInputReportAsync(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> impl_IHidDevice<D>::GetInputReportAsync(uint16_t reportId) const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> value;
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetInputReportByIdAsync(reportId, put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> impl_IHidDevice<D>::GetFeatureReportAsync() const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> value;
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetFeatureReportAsync(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> impl_IHidDevice<D>::GetFeatureReportAsync(uint16_t reportId) const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> value;
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetFeatureReportByIdAsync(reportId, put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Devices::HumanInterfaceDevice::HidOutputReport impl_IHidDevice<D>::CreateOutputReport() const
-{
-    Windows::Devices::HumanInterfaceDevice::HidOutputReport outputReport { nullptr };
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateOutputReport(put_abi(outputReport)));
-    return outputReport;
-}
-
-template <typename D> Windows::Devices::HumanInterfaceDevice::HidOutputReport impl_IHidDevice<D>::CreateOutputReport(uint16_t reportId) const
-{
-    Windows::Devices::HumanInterfaceDevice::HidOutputReport outputReport { nullptr };
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateOutputReportById(reportId, put_abi(outputReport)));
-    return outputReport;
-}
-
-template <typename D> Windows::Devices::HumanInterfaceDevice::HidFeatureReport impl_IHidDevice<D>::CreateFeatureReport() const
-{
-    Windows::Devices::HumanInterfaceDevice::HidFeatureReport featureReport { nullptr };
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateFeatureReport(put_abi(featureReport)));
-    return featureReport;
-}
-
-template <typename D> Windows::Devices::HumanInterfaceDevice::HidFeatureReport impl_IHidDevice<D>::CreateFeatureReport(uint16_t reportId) const
-{
-    Windows::Devices::HumanInterfaceDevice::HidFeatureReport featureReport { nullptr };
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_CreateFeatureReportById(reportId, put_abi(featureReport)));
-    return featureReport;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IHidDevice<D>::SendOutputReportAsync(const Windows::Devices::HumanInterfaceDevice::HidOutputReport & outputReport) const
-{
-    Windows::Foundation::IAsyncOperation<uint32_t> operation;
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_SendOutputReportAsync(get_abi(outputReport), put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IHidDevice<D>::SendFeatureReportAsync(const Windows::Devices::HumanInterfaceDevice::HidFeatureReport & featureReport) const
-{
-    Windows::Foundation::IAsyncOperation<uint32_t> operation;
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_SendFeatureReportAsync(get_abi(featureReport), put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription> impl_IHidDevice<D>::GetBooleanControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId) const
-{
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription> value;
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetBooleanControlDescriptions(reportType, usagePage, usageId, put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription> impl_IHidDevice<D>::GetNumericControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId) const
-{
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription> value;
-    check_hresult(WINRT_SHIM(IHidDevice)->abi_GetNumericControlDescriptions(reportType, usagePage, usageId, put_abi(value)));
-    return value;
-}
-
-template <typename D> event_token impl_IHidDevice<D>::InputReportReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> & reportHandler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IHidDevice)->add_InputReportReceived(get_abi(reportHandler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IHidDevice> impl_IHidDevice<D>::InputReportReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> & reportHandler) const
-{
-    return impl::make_event_revoker<D, IHidDevice>(this, &ABI::Windows::Devices::HumanInterfaceDevice::IHidDevice::remove_InputReportReceived, InputReportReceived(reportHandler));
-}
-
-template <typename D> void impl_IHidDevice<D>::InputReportReceived(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IHidDevice)->remove_InputReportReceived(token));
 }
 
 inline hstring HidDevice::GetDeviceSelector(uint16_t usagePage, uint16_t usageId)

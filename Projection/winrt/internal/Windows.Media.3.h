@@ -35,7 +35,8 @@ struct WINRT_EBO ImageDisplayProperties :
 };
 
 struct WINRT_EBO MediaExtensionManager :
-    Windows::Media::IMediaExtensionManager
+    Windows::Media::IMediaExtensionManager,
+    impl::require<MediaExtensionManager, Windows::Media::IMediaExtensionManager2>
 {
     MediaExtensionManager(std::nullptr_t) noexcept {}
     MediaExtensionManager();
@@ -54,10 +55,17 @@ struct WINRT_EBO MediaProcessingTriggerDetails :
 };
 
 struct WINRT_EBO MediaTimelineController :
-    Windows::Media::IMediaTimelineController
+    Windows::Media::IMediaTimelineController,
+    impl::require<MediaTimelineController, Windows::Media::IMediaTimelineController2>
 {
     MediaTimelineController(std::nullptr_t) noexcept {}
     MediaTimelineController();
+};
+
+struct WINRT_EBO MediaTimelineControllerFailedEventArgs :
+    Windows::Media::IMediaTimelineControllerFailedEventArgs
+{
+    MediaTimelineControllerFailedEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO MusicDisplayProperties :

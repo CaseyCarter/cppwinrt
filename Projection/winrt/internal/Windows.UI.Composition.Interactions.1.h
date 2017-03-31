@@ -14,6 +14,19 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::UI::Composition::Interactions {
 
+struct __declspec(uuid("43250538-eb73-4561-a71d-1a43eaeb7a9b")) __declspec(novtable) ICompositionConditionalValue : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Condition(Windows::UI::Composition::IExpressionAnimation ** value) = 0;
+    virtual HRESULT __stdcall put_Condition(Windows::UI::Composition::IExpressionAnimation * value) = 0;
+    virtual HRESULT __stdcall get_Value(Windows::UI::Composition::IExpressionAnimation ** value) = 0;
+    virtual HRESULT __stdcall put_Value(Windows::UI::Composition::IExpressionAnimation * value) = 0;
+};
+
+struct __declspec(uuid("090c4b72-8467-4d0a-9065-ac46b80a5522")) __declspec(novtable) ICompositionConditionalValueStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_Create(Windows::UI::Composition::ICompositor * compositor, Windows::UI::Composition::Interactions::ICompositionConditionalValue ** result) = 0;
+};
+
 struct __declspec(uuid("043b2431-06e3-495a-ba54-409f0017fac0")) __declspec(novtable) ICompositionInteractionSource : Windows::Foundation::IInspectable
 {
 };
@@ -61,6 +74,12 @@ struct __declspec(uuid("2a8e8cb1-1000-4416-8363-cc27fb877308")) __declspec(novta
     virtual HRESULT __stdcall abi_TryUpdateScale(float value, Windows::Foundation::Numerics::float3 centerPoint, int32_t * requestId) = 0;
     virtual HRESULT __stdcall abi_TryUpdateScaleWithAnimation(Windows::UI::Composition::ICompositionAnimation * animation, Windows::Foundation::Numerics::float3 centerPoint, int32_t * requestId) = 0;
     virtual HRESULT __stdcall abi_TryUpdateScaleWithAdditionalVelocity(float velocityInPercentPerSecond, Windows::Foundation::Numerics::float3 centerPoint, int32_t * requestId) = 0;
+};
+
+struct __declspec(uuid("25769a3e-ce6d-448c-8386-92620d240756")) __declspec(novtable) IInteractionTracker2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_ConfigureCenterPointXInertiaModifiers(Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> * conditionalValues) = 0;
+    virtual HRESULT __stdcall abi_ConfigureCenterPointYInertiaModifiers(Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> * conditionalValues) = 0;
 };
 
 struct __declspec(uuid("8d1c8cf1-d7b0-434c-a5d2-2d7611864834")) __declspec(novtable) IInteractionTrackerCustomAnimationStateEnteredArgs : Windows::Foundation::IInspectable
@@ -175,6 +194,25 @@ struct __declspec(uuid("ca0e8a86-d8d6-4111-b088-70347bd2b0ed")) __declspec(novta
     virtual HRESULT __stdcall abi_TryRedirectForManipulation(Windows::UI::Input::IPointerPoint * pointerPoint) = 0;
 };
 
+struct __declspec(uuid("aa914893-a73c-414d-80d0-249bad2fbd93")) __declspec(novtable) IVisualInteractionSource2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_DeltaPosition(Windows::Foundation::Numerics::float3 * value) = 0;
+    virtual HRESULT __stdcall get_DeltaScale(float * value) = 0;
+    virtual HRESULT __stdcall get_Position(Windows::Foundation::Numerics::float3 * value) = 0;
+    virtual HRESULT __stdcall get_PositionVelocity(Windows::Foundation::Numerics::float3 * value) = 0;
+    virtual HRESULT __stdcall get_Scale(float * value) = 0;
+    virtual HRESULT __stdcall get_ScaleVelocity(float * value) = 0;
+    virtual HRESULT __stdcall abi_ConfigureCenterPointXModifiers(Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> * conditionalValues) = 0;
+    virtual HRESULT __stdcall abi_ConfigureCenterPointYModifiers(Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> * conditionalValues) = 0;
+    virtual HRESULT __stdcall abi_ConfigureDeltaPositionXModifiers(Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> * conditionalValues) = 0;
+    virtual HRESULT __stdcall abi_ConfigureDeltaPositionYModifiers(Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> * conditionalValues) = 0;
+    virtual HRESULT __stdcall abi_ConfigureDeltaScaleModifiers(Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> * conditionalValues) = 0;
+};
+
+struct __declspec(uuid("b2ca917c-e98a-41f2-b3c9-891c9266c8f6")) __declspec(novtable) IVisualInteractionSourceObjectFactory : Windows::Foundation::IInspectable
+{
+};
+
 struct __declspec(uuid("369965e1-8645-4f75-ba00-6479cd10c8e6")) __declspec(novtable) IVisualInteractionSourceStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::UI::Composition::IVisual * source, Windows::UI::Composition::Interactions::IVisualInteractionSource ** result) = 0;
@@ -184,6 +222,7 @@ struct __declspec(uuid("369965e1-8645-4f75-ba00-6479cd10c8e6")) __declspec(novta
 
 namespace ABI {
 
+template <> struct traits<Windows::UI::Composition::Interactions::CompositionConditionalValue> { using default_interface = Windows::UI::Composition::Interactions::ICompositionConditionalValue; };
 template <> struct traits<Windows::UI::Composition::Interactions::CompositionInteractionSourceCollection> { using default_interface = Windows::UI::Composition::Interactions::ICompositionInteractionSourceCollection; };
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTracker> { using default_interface = Windows::UI::Composition::Interactions::IInteractionTracker; };
 template <> struct traits<Windows::UI::Composition::Interactions::InteractionTrackerCustomAnimationStateEnteredArgs> { using default_interface = Windows::UI::Composition::Interactions::IInteractionTrackerCustomAnimationStateEnteredArgs; };
@@ -200,6 +239,21 @@ template <> struct traits<Windows::UI::Composition::Interactions::VisualInteract
 }
 
 namespace Windows::UI::Composition::Interactions {
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionConditionalValue
+{
+    Windows::UI::Composition::ExpressionAnimation Condition() const;
+    void Condition(const Windows::UI::Composition::ExpressionAnimation & value) const;
+    Windows::UI::Composition::ExpressionAnimation Value() const;
+    void Value(const Windows::UI::Composition::ExpressionAnimation & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionConditionalValueStatics
+{
+    Windows::UI::Composition::Interactions::CompositionConditionalValue Create(const Windows::UI::Composition::Compositor & compositor) const;
+};
 
 template <typename D>
 struct WINRT_EBO impl_ICompositionInteractionSource
@@ -251,6 +305,13 @@ struct WINRT_EBO impl_IInteractionTracker
     int32_t TryUpdateScale(float value, const Windows::Foundation::Numerics::float3 & centerPoint) const;
     int32_t TryUpdateScaleWithAnimation(const Windows::UI::Composition::CompositionAnimation & animation, const Windows::Foundation::Numerics::float3 & centerPoint) const;
     int32_t TryUpdateScaleWithAdditionalVelocity(float velocityInPercentPerSecond, const Windows::Foundation::Numerics::float3 & centerPoint) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTracker2
+{
+    void ConfigureCenterPointXInertiaModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const;
+    void ConfigureCenterPointYInertiaModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const;
 };
 
 template <typename D>
@@ -381,6 +442,27 @@ struct WINRT_EBO impl_IVisualInteractionSource
 };
 
 template <typename D>
+struct WINRT_EBO impl_IVisualInteractionSource2
+{
+    Windows::Foundation::Numerics::float3 DeltaPosition() const;
+    float DeltaScale() const;
+    Windows::Foundation::Numerics::float3 Position() const;
+    Windows::Foundation::Numerics::float3 PositionVelocity() const;
+    float Scale() const;
+    float ScaleVelocity() const;
+    void ConfigureCenterPointXModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const;
+    void ConfigureCenterPointYModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const;
+    void ConfigureDeltaPositionXModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const;
+    void ConfigureDeltaPositionYModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const;
+    void ConfigureDeltaScaleModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualInteractionSourceObjectFactory
+{
+};
+
+template <typename D>
 struct WINRT_EBO impl_IVisualInteractionSourceStatics
 {
     Windows::UI::Composition::Interactions::VisualInteractionSource Create(const Windows::UI::Composition::Visual & source) const;
@@ -389,6 +471,18 @@ struct WINRT_EBO impl_IVisualInteractionSourceStatics
 }
 
 namespace impl {
+
+template <> struct traits<Windows::UI::Composition::Interactions::ICompositionConditionalValue>
+{
+    using abi = ABI::Windows::UI::Composition::Interactions::ICompositionConditionalValue;
+    template <typename D> using consume = Windows::UI::Composition::Interactions::impl_ICompositionConditionalValue<D>;
+};
+
+template <> struct traits<Windows::UI::Composition::Interactions::ICompositionConditionalValueStatics>
+{
+    using abi = ABI::Windows::UI::Composition::Interactions::ICompositionConditionalValueStatics;
+    template <typename D> using consume = Windows::UI::Composition::Interactions::impl_ICompositionConditionalValueStatics<D>;
+};
 
 template <> struct traits<Windows::UI::Composition::Interactions::ICompositionInteractionSource>
 {
@@ -406,6 +500,12 @@ template <> struct traits<Windows::UI::Composition::Interactions::IInteractionTr
 {
     using abi = ABI::Windows::UI::Composition::Interactions::IInteractionTracker;
     template <typename D> using consume = Windows::UI::Composition::Interactions::impl_IInteractionTracker<D>;
+};
+
+template <> struct traits<Windows::UI::Composition::Interactions::IInteractionTracker2>
+{
+    using abi = ABI::Windows::UI::Composition::Interactions::IInteractionTracker2;
+    template <typename D> using consume = Windows::UI::Composition::Interactions::impl_IInteractionTracker2<D>;
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::IInteractionTrackerCustomAnimationStateEnteredArgs>
@@ -498,10 +598,28 @@ template <> struct traits<Windows::UI::Composition::Interactions::IVisualInterac
     template <typename D> using consume = Windows::UI::Composition::Interactions::impl_IVisualInteractionSource<D>;
 };
 
+template <> struct traits<Windows::UI::Composition::Interactions::IVisualInteractionSource2>
+{
+    using abi = ABI::Windows::UI::Composition::Interactions::IVisualInteractionSource2;
+    template <typename D> using consume = Windows::UI::Composition::Interactions::impl_IVisualInteractionSource2<D>;
+};
+
+template <> struct traits<Windows::UI::Composition::Interactions::IVisualInteractionSourceObjectFactory>
+{
+    using abi = ABI::Windows::UI::Composition::Interactions::IVisualInteractionSourceObjectFactory;
+    template <typename D> using consume = Windows::UI::Composition::Interactions::impl_IVisualInteractionSourceObjectFactory<D>;
+};
+
 template <> struct traits<Windows::UI::Composition::Interactions::IVisualInteractionSourceStatics>
 {
     using abi = ABI::Windows::UI::Composition::Interactions::IVisualInteractionSourceStatics;
     template <typename D> using consume = Windows::UI::Composition::Interactions::impl_IVisualInteractionSourceStatics<D>;
+};
+
+template <> struct traits<Windows::UI::Composition::Interactions::CompositionConditionalValue>
+{
+    using abi = ABI::Windows::UI::Composition::Interactions::CompositionConditionalValue;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Interactions.CompositionConditionalValue"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Interactions::CompositionInteractionSourceCollection>

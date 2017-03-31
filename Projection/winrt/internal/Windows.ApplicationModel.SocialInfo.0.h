@@ -53,26 +53,26 @@ template <typename T> struct impl_ISocialUserInfo;
 
 namespace Windows::ApplicationModel::SocialInfo {
 
-enum class SocialFeedItemStyle
+enum class [[deprecated("SocialFeedItemStyle is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialFeedItemStyle
 {
     Default = 0,
     Photo = 1,
 };
 
-enum class SocialFeedKind
+enum class [[deprecated("SocialFeedKind is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialFeedKind
 {
     HomeFeed = 0,
     ContactFeed = 1,
     Dashboard = 2,
 };
 
-enum class SocialFeedUpdateMode
+enum class [[deprecated("SocialFeedUpdateMode is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialFeedUpdateMode
 {
     Append = 0,
     Replace = 1,
 };
 
-enum class SocialItemBadgeStyle
+enum class [[deprecated("SocialItemBadgeStyle is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialItemBadgeStyle
 {
     Hidden = 0,
     Visible = 1,

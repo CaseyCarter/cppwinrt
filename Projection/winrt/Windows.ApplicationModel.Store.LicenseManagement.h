@@ -51,6 +51,25 @@ struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseM
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics2> : produce_base<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics2>
+{
+    HRESULT __stdcall abi_RefreshLicensesAsync(Windows::ApplicationModel::Store::LicenseManagement::LicenseRefreshOption refreshOption, impl::abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *action = detach_abi(this->shim().RefreshLicensesAsync(refreshOption));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *action = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo> : produce_base<D, Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo>
 {
     HRESULT __stdcall get_SatisfiedByDevice(bool * value) noexcept override
@@ -266,6 +285,13 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationM
     return operation;
 }
 
+template <typename D> Windows::Foundation::IAsyncAction impl_ILicenseManagerStatics2<D>::RefreshLicensesAsync(Windows::ApplicationModel::Store::LicenseManagement::LicenseRefreshOption refreshOption) const
+{
+    Windows::Foundation::IAsyncAction action;
+    check_hresult(WINRT_SHIM(ILicenseManagerStatics2)->abi_RefreshLicensesAsync(refreshOption, put_abi(action)));
+    return action;
+}
+
 inline Windows::Foundation::IAsyncAction LicenseManager::AddLicenseAsync(const Windows::Storage::Streams::IBuffer & license)
 {
     return get_activation_factory<LicenseManager, ILicenseManagerStatics>().AddLicenseAsync(license);
@@ -276,6 +302,11 @@ inline Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Li
     return get_activation_factory<LicenseManager, ILicenseManagerStatics>().GetSatisfactionInfosAsync(contentIds, keyIds);
 }
 
+inline Windows::Foundation::IAsyncAction LicenseManager::RefreshLicensesAsync(Windows::ApplicationModel::Store::LicenseManagement::LicenseRefreshOption refreshOption)
+{
+    return get_activation_factory<LicenseManager, ILicenseManagerStatics2>().RefreshLicensesAsync(refreshOption);
+}
+
 }
 
 }
@@ -284,6 +315,15 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

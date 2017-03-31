@@ -11,6 +11,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation {
 
+#ifndef WINRT_GENERIC_513ef3af_e784_5325_a91e_97c2b8111cf3
+#define WINRT_GENERIC_513ef3af_e784_5325_a91e_97c2b8111cf3
+template <> struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3")) __declspec(novtable) IReference<uint32_t> : impl_IReference<uint32_t> {};
+#endif
+
 #ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 #define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __declspec(novtable) IReference<Windows::Foundation::TimeSpan> : impl_IReference<Windows::Foundation::TimeSpan> {};
@@ -60,6 +65,11 @@ template <> struct __declspec(uuid("7c70f38d-2aa1-5522-a6d6-34b52b988ae7")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_2628205b_a57a_5179_92e6_9b6e13cb8d0d
+#define WINRT_GENERIC_2628205b_a57a_5179_92e6_9b6e13cb8d0d
+template <> struct __declspec(uuid("2628205b-a57a-5179-92e6-9b6e13cb8d0d")) __declspec(novtable) IVectorView<Windows::Media::MediaTimeRange> : impl_IVectorView<Windows::Media::MediaTimeRange> {};
+#endif
 
 #ifndef WINRT_GENERIC_c296f3f9_1268_59a2_b7c3_2f588ed4a017
 #define WINRT_GENERIC_c296f3f9_1268_59a2_b7c3_2f588ed4a017
@@ -276,6 +286,21 @@ template <> struct __declspec(uuid("234aa17c-f68f-59b3-a20f-a77be1ad387e")) __de
 template <> struct __declspec(uuid("28607d6b-daa4-5eef-9f81-cc08a8297182")) __declspec(novtable) IIterator<Windows::Media::Playback::PlaybackMediaMarker> : impl_IIterator<Windows::Media::Playback::PlaybackMediaMarker> {};
 #endif
 
+#ifndef WINRT_GENERIC_799f240c_8c08_51f5_adde_6d69b647de79
+#define WINRT_GENERIC_799f240c_8c08_51f5_adde_6d69b647de79
+template <> struct __declspec(uuid("799f240c-8c08-51f5-adde-6d69b647de79")) __declspec(novtable) IVector<Windows::Media::MediaTimeRange> : impl_IVector<Windows::Media::MediaTimeRange> {};
+#endif
+
+#ifndef WINRT_GENERIC_29b8d190_5e46_5873_afc0_8f2f40fbe8fd
+#define WINRT_GENERIC_29b8d190_5e46_5873_afc0_8f2f40fbe8fd
+template <> struct __declspec(uuid("29b8d190-5e46-5873-afc0-8f2f40fbe8fd")) __declspec(novtable) IIterator<Windows::Media::MediaTimeRange> : impl_IIterator<Windows::Media::MediaTimeRange> {};
+#endif
+
+#ifndef WINRT_GENERIC_268204e2_9d52_5e7b_a54b_869c63defc8e
+#define WINRT_GENERIC_268204e2_9d52_5e7b_a54b_869c63defc8e
+template <> struct __declspec(uuid("268204e2-9d52-5e7b-a54b-869c63defc8e")) __declspec(novtable) IIterable<Windows::Media::MediaTimeRange> : impl_IIterable<Windows::Media::MediaTimeRange> {};
+#endif
+
 #ifndef WINRT_GENERIC_9954ccf0_5f93_5443_a369_c6071b14344e
 #define WINRT_GENERIC_9954ccf0_5f93_5443_a369_c6071b14344e
 template <> struct __declspec(uuid("9954ccf0-5f93-5443-a369-c6071b14344e")) __declspec(novtable) IVector<Windows::Media::Playback::MediaBreak> : impl_IVector<Windows::Media::Playback::MediaBreak> {};
@@ -347,12 +372,21 @@ struct IBackgroundMediaPlayerStatics :
 {
     IBackgroundMediaPlayerStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]] IBackgroundMediaPlayerStatics;
 
 struct ICurrentMediaPlaybackItemChangedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<ICurrentMediaPlaybackItemChangedEventArgs>
 {
     ICurrentMediaPlaybackItemChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICurrentMediaPlaybackItemChangedEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICurrentMediaPlaybackItemChangedEventArgs2>,
+    impl::require<ICurrentMediaPlaybackItemChangedEventArgs2, Windows::Media::Playback::ICurrentMediaPlaybackItemChangedEventArgs>
+{
+    ICurrentMediaPlaybackItemChangedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaBreak :
@@ -526,6 +560,14 @@ struct IMediaPlaybackItem2 :
     IMediaPlaybackItem2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMediaPlaybackItem3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaPlaybackItem3>,
+    impl::require<IMediaPlaybackItem3, Windows::Media::Playback::IMediaPlaybackItem, Windows::Media::Playback::IMediaPlaybackItem2, Windows::Media::Playback::IMediaPlaybackSource>
+{
+    IMediaPlaybackItem3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMediaPlaybackItemError :
     Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackItemError>
@@ -585,6 +627,14 @@ struct IMediaPlaybackList2 :
     IMediaPlaybackList2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMediaPlaybackList3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaPlaybackList3>,
+    impl::require<IMediaPlaybackList3, Windows::Media::Playback::IMediaPlaybackList, Windows::Media::Playback::IMediaPlaybackList2, Windows::Media::Playback::IMediaPlaybackSource>
+{
+    IMediaPlaybackList3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMediaPlaybackSession :
     Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackSession>
@@ -592,11 +642,25 @@ struct IMediaPlaybackSession :
     IMediaPlaybackSession(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMediaPlaybackSession2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaPlaybackSession2>
+{
+    IMediaPlaybackSession2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMediaPlaybackSource :
     Windows::Foundation::IInspectable,
     impl::consume<IMediaPlaybackSource>
 {
     IMediaPlaybackSource(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMediaPlaybackSphericalVideoProjection :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaPlaybackSphericalVideoProjection>
+{
+    IMediaPlaybackSphericalVideoProjection(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlaybackTimedMetadataTrackList :
@@ -632,6 +696,13 @@ struct IMediaPlayer4 :
     impl::consume<IMediaPlayer4>
 {
     IMediaPlayer4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMediaPlayer5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaPlayer5>
+{
+    IMediaPlayer5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaPlayerDataReceivedEventArgs :

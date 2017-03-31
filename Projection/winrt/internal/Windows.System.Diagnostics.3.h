@@ -53,6 +53,37 @@ struct WINRT_EBO ProcessMemoryUsageReport :
     ProcessMemoryUsageReport(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO SystemCpuUsage :
+    Windows::System::Diagnostics::ISystemCpuUsage
+{
+    SystemCpuUsage(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO SystemCpuUsageReport :
+    Windows::System::Diagnostics::ISystemCpuUsageReport
+{
+    SystemCpuUsageReport(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO SystemDiagnosticInfo :
+    Windows::System::Diagnostics::ISystemDiagnosticInfo
+{
+    SystemDiagnosticInfo(std::nullptr_t) noexcept {}
+    static Windows::System::Diagnostics::SystemDiagnosticInfo GetForCurrentSystem();
+};
+
+struct WINRT_EBO SystemMemoryUsage :
+    Windows::System::Diagnostics::ISystemMemoryUsage
+{
+    SystemMemoryUsage(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO SystemMemoryUsageReport :
+    Windows::System::Diagnostics::ISystemMemoryUsageReport
+{
+    SystemMemoryUsageReport(std::nullptr_t) noexcept {}
+};
+
 }
 
 }

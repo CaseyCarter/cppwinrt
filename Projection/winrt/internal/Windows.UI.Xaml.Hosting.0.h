@@ -10,6 +10,7 @@ namespace ABI::Windows::UI::Xaml::Hosting {
 
 struct IElementCompositionPreview;
 struct IElementCompositionPreviewStatics;
+struct IElementCompositionPreviewStatics2;
 struct ElementCompositionPreview;
 
 }
@@ -18,6 +19,7 @@ namespace Windows::UI::Xaml::Hosting {
 
 struct IElementCompositionPreview;
 struct IElementCompositionPreviewStatics;
+struct IElementCompositionPreviewStatics2;
 struct ElementCompositionPreview;
 
 }
@@ -26,6 +28,7 @@ namespace Windows::UI::Xaml::Hosting {
 
 template <typename T> struct impl_IElementCompositionPreview;
 template <typename T> struct impl_IElementCompositionPreviewStatics;
+template <typename T> struct impl_IElementCompositionPreviewStatics2;
 
 }
 

@@ -14,30 +14,10 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a")) __declspec(novtable) IAsyncOperation<bool> : impl_IAsyncOperation<bool> {};
 #endif
 
-#ifndef WINRT_GENERIC_5541d8a7_497c_5aa4_86fc_7713adbf2a2c
-#define WINRT_GENERIC_5541d8a7_497c_5aa4_86fc_7713adbf2a2c
-template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __declspec(novtable) IReference<Windows::Foundation::DateTime> : impl_IReference<Windows::Foundation::DateTime> {};
-#endif
-
-#ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
-#define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
-template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __declspec(novtable) IReference<Windows::Foundation::TimeSpan> : impl_IReference<Windows::Foundation::TimeSpan> {};
-#endif
-
 
 }
 
 namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
-#endif
-
-#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
-#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
-template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
-#endif
 
 #ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
 #define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
@@ -48,6 +28,51 @@ template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __de
 }
 
 namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_5541d8a7_497c_5aa4_86fc_7713adbf2a2c
+#define WINRT_GENERIC_5541d8a7_497c_5aa4_86fc_7713adbf2a2c
+template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __declspec(novtable) IReference<Windows::Foundation::DateTime> : impl_IReference<Windows::Foundation::DateTime> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_963f7013_77c2_51c5_8038_b5bcef633edb
+#define WINRT_GENERIC_963f7013_77c2_51c5_8038_b5bcef633edb
+template <> struct __declspec(uuid("963f7013-77c2-51c5-8038-b5bcef633edb")) __declspec(novtable) IVectorView<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVectorView<Windows::Security::Cryptography::Certificates::Certificate> {};
+#endif
+
+#ifndef WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
+#define WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
+template <> struct __declspec(uuid("36282c0f-2f1f-57f4-b2b1-867af90c3d13")) __declspec(novtable) IVector<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVector<Windows::Security::Cryptography::Certificates::Certificate> {};
+#endif
+
+#ifndef WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
+#define WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
+template <> struct __declspec(uuid("0c7d1423-e8fd-5a91-b55c-8bfbe7ac2d40")) __declspec(novtable) IIterable<Windows::Security::Cryptography::Certificates::Certificate> : impl_IIterable<Windows::Security::Cryptography::Certificates::Certificate> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
+#define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
+template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __declspec(novtable) IReference<Windows::Foundation::TimeSpan> : impl_IReference<Windows::Foundation::TimeSpan> {};
+#endif
 
 #ifndef WINRT_GENERIC_7c9df991_5d99_55b4_b439_064edd097ac4
 #define WINRT_GENERIC_7c9df991_5d99_55b4_b439_064edd097ac4
@@ -159,11 +184,6 @@ template <> struct __declspec(uuid("9307eb24-38f6-525e-ba0d-3b4e863fe0f8")) __de
 template <> struct __declspec(uuid("a5665ff7-b44e-57e3-bd7a-ef191aa5519c")) __declspec(novtable) IVectorView<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> : impl_IVectorView<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> {};
 #endif
 
-#ifndef WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
-#define WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
-template <> struct __declspec(uuid("0c7d1423-e8fd-5a91-b55c-8bfbe7ac2d40")) __declspec(novtable) IIterable<Windows::Security::Cryptography::Certificates::Certificate> : impl_IIterable<Windows::Security::Cryptography::Certificates::Certificate> {};
-#endif
-
 
 }
 
@@ -183,21 +203,6 @@ template <> struct __declspec(uuid("6d5a0e81-6949-50f9-bffb-92be1216724d")) __de
 #define WINRT_GENERIC_6860f87f_0297_5adf_aa16_9f1f08e2d950
 template <> struct __declspec(uuid("6860f87f-0297-5adf-aa16-9f1f08e2d950")) __declspec(novtable) IAsyncOperation<winrt::Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus> : impl_IAsyncOperation<winrt::Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus> {};
 #endif
-
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_963f7013_77c2_51c5_8038_b5bcef633edb
-#define WINRT_GENERIC_963f7013_77c2_51c5_8038_b5bcef633edb
-template <> struct __declspec(uuid("963f7013-77c2-51c5-8038-b5bcef633edb")) __declspec(novtable) IVectorView<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVectorView<Windows::Security::Cryptography::Certificates::Certificate> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_5cbe61bb_d615_5b82_bb11_412e32664c07
 #define WINRT_GENERIC_5cbe61bb_d615_5b82_bb11_412e32664c07
@@ -284,11 +289,6 @@ template <> struct __declspec(uuid("cae3c1c4-c689-5787-976f-1a158ffdd16b")) __de
 template <> struct __declspec(uuid("7e326530-7449-51a7-b1bc-c43533a78e06")) __declspec(novtable) IIterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> : impl_IIterable<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> {};
 #endif
 
-#ifndef WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
-#define WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
-template <> struct __declspec(uuid("36282c0f-2f1f-57f4-b2b1-867af90c3d13")) __declspec(novtable) IVector<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVector<Windows::Security::Cryptography::Certificates::Certificate> {};
-#endif
-
 
 }
 
@@ -307,6 +307,11 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_676fc159_f15c_58bd_91a7_28f7e795c756
+#define WINRT_GENERIC_676fc159_f15c_58bd_91a7_28f7e795c756
+template <> struct __declspec(uuid("676fc159-f15c-58bd-91a7-28f7e795c756")) __declspec(novtable) IIterator<Windows::Security::Cryptography::Certificates::Certificate> : impl_IIterator<Windows::Security::Cryptography::Certificates::Certificate> {};
 #endif
 
 
@@ -422,11 +427,6 @@ template <> struct __declspec(uuid("da4181c7-ab26-5a16-ae74-21c07a4ff902")) __de
 #ifndef WINRT_GENERIC_1cfe3d41_16a5_5026_a6fe_2cb0a303a605
 #define WINRT_GENERIC_1cfe3d41_16a5_5026_a6fe_2cb0a303a605
 template <> struct __declspec(uuid("1cfe3d41-16a5-5026-a6fe-2cb0a303a605")) __declspec(novtable) IIterator<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> : impl_IIterator<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus> {};
-#endif
-
-#ifndef WINRT_GENERIC_676fc159_f15c_58bd_91a7_28f7e795c756
-#define WINRT_GENERIC_676fc159_f15c_58bd_91a7_28f7e795c756
-template <> struct __declspec(uuid("676fc159-f15c-58bd-91a7-28f7e795c756")) __declspec(novtable) IIterator<Windows::Security::Cryptography::Certificates::Certificate> : impl_IIterator<Windows::Security::Cryptography::Certificates::Certificate> {};
 #endif
 
 
@@ -935,6 +935,13 @@ struct IEmailMessage3 :
     impl::consume<IEmailMessage3>
 {
     IEmailMessage3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IEmailMessage4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IEmailMessage4>
+{
+    IEmailMessage4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IEmailMessageBatch :

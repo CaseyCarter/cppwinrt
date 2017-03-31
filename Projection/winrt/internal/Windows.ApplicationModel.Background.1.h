@@ -21,6 +21,7 @@
 #include "Windows.UI.Notifications.0.h"
 #include "Windows.Foundation.1.h"
 #include "Windows.Foundation.Collections.1.h"
+#include "Windows.ApplicationModel.Activation.1.h"
 #include "Windows.Storage.1.h"
 #include "Windows.Devices.Sensors.1.h"
 
@@ -113,6 +114,12 @@ struct __declspec(uuid("28c74f4a-8ba9-4c09-a24f-19683e2c924c")) __declspec(novta
     virtual HRESULT __stdcall get_IsNetworkRequested(bool * value) = 0;
 };
 
+struct __declspec(uuid("4755e522-cba2-4e35-bd16-a6da7f1c19aa")) __declspec(novtable) IBackgroundTaskBuilder4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TaskGroup(Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup ** value) = 0;
+    virtual HRESULT __stdcall put_TaskGroup(Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup * value) = 0;
+};
+
 struct __declspec(uuid("565d25cf-f209-48f4-9967-2b184f7bfbf0")) __declspec(novtable) IBackgroundTaskCompletedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_InstanceId(GUID * value) = 0;
@@ -169,9 +176,35 @@ struct __declspec(uuid("6138c703-bb86-4112-afc3-7f939b166e3b")) __declspec(novta
     virtual HRESULT __stdcall get_Trigger(Windows::ApplicationModel::Background::IBackgroundTrigger ** value) = 0;
 };
 
+struct __declspec(uuid("fe338195-9423-4d8b-830d-b1dd2c7badd5")) __declspec(novtable) IBackgroundTaskRegistration3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TaskGroup(Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup ** value) = 0;
+};
+
+struct __declspec(uuid("2ab1919a-871b-4167-8a76-055cd67b5b23")) __declspec(novtable) IBackgroundTaskRegistrationGroup : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Id(hstring * value) = 0;
+    virtual HRESULT __stdcall get_Name(hstring * value) = 0;
+    virtual HRESULT __stdcall add_BackgroundActivated(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_BackgroundActivated(event_token token) = 0;
+    virtual HRESULT __stdcall get_AllTasks(Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> ** value) = 0;
+};
+
+struct __declspec(uuid("83d92b69-44cf-4631-9740-03c7d8741bc5")) __declspec(novtable) IBackgroundTaskRegistrationGroupFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_Create(hstring id, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup ** group) = 0;
+    virtual HRESULT __stdcall abi_CreateWithName(hstring id, hstring name, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup ** group) = 0;
+};
+
 struct __declspec(uuid("4c542f69-b000-42ba-a093-6a563c65e3f8")) __declspec(novtable) IBackgroundTaskRegistrationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_AllTasks(Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> ** tasks) = 0;
+};
+
+struct __declspec(uuid("174b671e-b20d-4fa9-ad9a-e93ad6c71e01")) __declspec(novtable) IBackgroundTaskRegistrationStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AllTaskGroups(Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> ** value) = 0;
+    virtual HRESULT __stdcall abi_GetTaskGroup(hstring groupId, Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup ** value) = 0;
 };
 
 struct __declspec(uuid("84b3a058-6027-4b87-9790-bdf3f757dbd7")) __declspec(novtable) IBackgroundTrigger : Windows::Foundation::IInspectable
@@ -282,9 +315,38 @@ struct __declspec(uuid("e25f8fc8-0696-474f-a732-f292b0cebc5d")) __declspec(novta
     virtual HRESULT __stdcall get_Characteristic(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic ** value) = 0;
 };
 
+struct __declspec(uuid("9322a2c4-ae0e-42f2-b28c-f51372e69245")) __declspec(novtable) IGattCharacteristicNotificationTrigger2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_EventTriggeringMode(winrt::Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode * value) = 0;
+};
+
 struct __declspec(uuid("57ba1995-b143-4575-9f6b-fd59d93ace1a")) __declspec(novtable) IGattCharacteristicNotificationTriggerFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic * characteristic, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger ** gattCharacteristicNotificationTrigger) = 0;
+};
+
+struct __declspec(uuid("5998e91f-8a53-4e9f-a32c-23cd33664cee")) __declspec(novtable) IGattCharacteristicNotificationTriggerFactory2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateWithEventTriggeringMode(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic * characteristic, winrt::Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger ** result) = 0;
+};
+
+struct __declspec(uuid("ddc6a3e9-1557-4bd8-8542-468aa0c696f6")) __declspec(novtable) IGattServiceProviderTrigger : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TriggerId(hstring * value) = 0;
+    virtual HRESULT __stdcall get_Service(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalService ** value) = 0;
+    virtual HRESULT __stdcall put_AdvertisingParameters(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisingParameters * value) = 0;
+    virtual HRESULT __stdcall get_AdvertisingParameters(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattServiceProviderAdvertisingParameters ** value) = 0;
+};
+
+struct __declspec(uuid("3c4691b1-b198-4e84-bad4-cf4ad299ed3a")) __declspec(novtable) IGattServiceProviderTriggerResult : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Trigger(Windows::ApplicationModel::Background::IGattServiceProviderTrigger ** value) = 0;
+    virtual HRESULT __stdcall get_Error(winrt::Windows::Devices::Bluetooth::BluetoothError * value) = 0;
+};
+
+struct __declspec(uuid("b413a36a-e294-4591-a5a6-64891a828153")) __declspec(novtable) IGattServiceProviderTriggerStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateAsync(hstring triggerId, GUID serviceUuid, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> ** operation) = 0;
 };
 
 struct __declspec(uuid("47666a1c-6877-481e-8026-ff7e14a811a0")) __declspec(novtable) ILocationTrigger : Windows::Foundation::IInspectable
@@ -442,6 +504,7 @@ template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskC
 template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskDeferral> { using default_interface = Windows::ApplicationModel::Background::IBackgroundTaskDeferral; };
 template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskProgressEventArgs> { using default_interface = Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskRegistration> { using default_interface = Windows::ApplicationModel::Background::IBackgroundTaskRegistration; };
+template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> { using default_interface = Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup; };
 template <> struct traits<Windows::ApplicationModel::Background::BluetoothLEAdvertisementPublisherTrigger> { using default_interface = Windows::ApplicationModel::Background::IBluetoothLEAdvertisementPublisherTrigger; };
 template <> struct traits<Windows::ApplicationModel::Background::BluetoothLEAdvertisementWatcherTrigger> { using default_interface = Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger; };
 template <> struct traits<Windows::ApplicationModel::Background::CachedFileUpdaterTrigger> { using default_interface = Windows::ApplicationModel::Background::ICachedFileUpdaterTrigger; };
@@ -457,6 +520,8 @@ template <> struct traits<Windows::ApplicationModel::Background::DeviceUseTrigge
 template <> struct traits<Windows::ApplicationModel::Background::DeviceWatcherTrigger> { using default_interface = Windows::ApplicationModel::Background::IDeviceWatcherTrigger; };
 template <> struct traits<Windows::ApplicationModel::Background::EmailStoreNotificationTrigger> { using default_interface = Windows::ApplicationModel::Background::IEmailStoreNotificationTrigger; };
 template <> struct traits<Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger> { using default_interface = Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger; };
+template <> struct traits<Windows::ApplicationModel::Background::GattServiceProviderTrigger> { using default_interface = Windows::ApplicationModel::Background::IGattServiceProviderTrigger; };
+template <> struct traits<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> { using default_interface = Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult; };
 template <> struct traits<Windows::ApplicationModel::Background::LocationTrigger> { using default_interface = Windows::ApplicationModel::Background::ILocationTrigger; };
 template <> struct traits<Windows::ApplicationModel::Background::MaintenanceTrigger> { using default_interface = Windows::ApplicationModel::Background::IMaintenanceTrigger; };
 template <> struct traits<Windows::ApplicationModel::Background::MediaProcessingTrigger> { using default_interface = Windows::ApplicationModel::Background::IMediaProcessingTrigger; };
@@ -567,6 +632,13 @@ struct WINRT_EBO impl_IBackgroundTaskBuilder3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskBuilder4
+{
+    Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup TaskGroup() const;
+    void TaskGroup(const Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup & value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IBackgroundTaskCompletedEventArgs
 {
     GUID InstanceId() const;
@@ -637,9 +709,41 @@ struct WINRT_EBO impl_IBackgroundTaskRegistration2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskRegistration3
+{
+    Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup TaskGroup() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskRegistrationGroup
+{
+    hstring Id() const;
+    hstring Name() const;
+    event_token BackgroundActivated(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> & handler) const;
+    using BackgroundActivated_revoker = event_revoker<IBackgroundTaskRegistrationGroup>;
+    BackgroundActivated_revoker BackgroundActivated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> & handler) const;
+    void BackgroundActivated(event_token token) const;
+    Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> AllTasks() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskRegistrationGroupFactory
+{
+    Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup Create(hstring_view id) const;
+    Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup CreateWithName(hstring_view id, hstring_view name) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IBackgroundTaskRegistrationStatics
 {
     Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> AllTasks() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskRegistrationStatics2
+{
+    Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> AllTaskGroups() const;
+    Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup GetTaskGroup(hstring_view groupId) const;
 };
 
 template <typename D>
@@ -771,9 +875,43 @@ struct WINRT_EBO impl_IGattCharacteristicNotificationTrigger
 };
 
 template <typename D>
+struct WINRT_EBO impl_IGattCharacteristicNotificationTrigger2
+{
+    Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode EventTriggeringMode() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IGattCharacteristicNotificationTriggerFactory
 {
     Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger Create(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattCharacteristicNotificationTriggerFactory2
+{
+    Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger Create(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic, Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattServiceProviderTrigger
+{
+    hstring TriggerId() const;
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalService Service() const;
+    void AdvertisingParameters(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters & value) const;
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisingParameters AdvertisingParameters() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattServiceProviderTriggerResult
+{
+    Windows::ApplicationModel::Background::GattServiceProviderTrigger Trigger() const;
+    Windows::Devices::Bluetooth::BluetoothError Error() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattServiceProviderTriggerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> CreateAsync(hstring_view triggerId, GUID serviceUuid) const;
 };
 
 template <typename D>
@@ -1030,6 +1168,12 @@ template <> struct traits<Windows::ApplicationModel::Background::IBackgroundTask
     template <typename D> using consume = Windows::ApplicationModel::Background::impl_IBackgroundTaskBuilder3<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::Background::IBackgroundTaskBuilder4>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::IBackgroundTaskBuilder4;
+    template <typename D> using consume = Windows::ApplicationModel::Background::impl_IBackgroundTaskBuilder4<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs;
@@ -1078,10 +1222,34 @@ template <> struct traits<Windows::ApplicationModel::Background::IBackgroundTask
     template <typename D> using consume = Windows::ApplicationModel::Background::impl_IBackgroundTaskRegistration2<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::Background::IBackgroundTaskRegistration3>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistration3;
+    template <typename D> using consume = Windows::ApplicationModel::Background::impl_IBackgroundTaskRegistration3<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup;
+    template <typename D> using consume = Windows::ApplicationModel::Background::impl_IBackgroundTaskRegistrationGroup<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroupFactory;
+    template <typename D> using consume = Windows::ApplicationModel::Background::impl_IBackgroundTaskRegistrationGroupFactory<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics>
 {
     using abi = ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics;
     template <typename D> using consume = Windows::ApplicationModel::Background::impl_IBackgroundTaskRegistrationStatics<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationStatics2;
+    template <typename D> using consume = Windows::ApplicationModel::Background::impl_IBackgroundTaskRegistrationStatics2<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::IBackgroundTrigger>
@@ -1204,10 +1372,40 @@ template <> struct traits<Windows::ApplicationModel::Background::IGattCharacteri
     template <typename D> using consume = Windows::ApplicationModel::Background::impl_IGattCharacteristicNotificationTrigger<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2;
+    template <typename D> using consume = Windows::ApplicationModel::Background::impl_IGattCharacteristicNotificationTrigger2<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory>
 {
     using abi = ABI::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory;
     template <typename D> using consume = Windows::ApplicationModel::Background::impl_IGattCharacteristicNotificationTriggerFactory<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::IGattCharacteristicNotificationTriggerFactory2;
+    template <typename D> using consume = Windows::ApplicationModel::Background::impl_IGattCharacteristicNotificationTriggerFactory2<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Background::IGattServiceProviderTrigger>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::IGattServiceProviderTrigger;
+    template <typename D> using consume = Windows::ApplicationModel::Background::impl_IGattServiceProviderTrigger<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult;
+    template <typename D> using consume = Windows::ApplicationModel::Background::impl_IGattServiceProviderTriggerResult<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::IGattServiceProviderTriggerStatics;
+    template <typename D> using consume = Windows::ApplicationModel::Background::impl_IGattServiceProviderTriggerStatics<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::ILocationTrigger>
@@ -1431,6 +1629,12 @@ template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskR
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.BackgroundTaskRegistration"; }
 };
 
+template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.BackgroundTaskRegistrationGroup"; }
+};
+
 template <> struct traits<Windows::ApplicationModel::Background::BackgroundWorkCost>
 {
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.BackgroundWorkCost"; }
@@ -1524,6 +1728,18 @@ template <> struct traits<Windows::ApplicationModel::Background::GattCharacteris
 {
     using abi = ABI::Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::Background::GattServiceProviderTrigger>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::GattServiceProviderTrigger;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.GattServiceProviderTrigger"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult>
+{
+    using abi = ABI::Windows::ApplicationModel::Background::GattServiceProviderTriggerResult;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.GattServiceProviderTriggerResult"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::LocationTrigger>

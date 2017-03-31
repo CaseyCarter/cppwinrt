@@ -113,9 +113,12 @@ struct WINRT_EBO CommonNavigationTransitionInfo :
 };
 
 struct WINRT_EBO ConnectedAnimation :
-    Windows::UI::Xaml::Media::Animation::IConnectedAnimation
+    Windows::UI::Xaml::Media::Animation::IConnectedAnimation,
+    impl::require<ConnectedAnimation, Windows::UI::Xaml::Media::Animation::IConnectedAnimation2>
 {
     ConnectedAnimation(std::nullptr_t) noexcept {}
+    using impl_IConnectedAnimation::TryStart;
+    using impl_IConnectedAnimation2::TryStart;
 };
 
 struct WINRT_EBO ConnectedAnimationService :

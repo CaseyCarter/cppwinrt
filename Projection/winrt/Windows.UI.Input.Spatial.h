@@ -6,9 +6,10 @@
 #include "base.h"
 WINRT_WARNING_PUSH
 
-#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Perception.Spatial.3.h"
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Perception.3.h"
+#include "internal/Windows.Devices.Haptics.3.h"
 #include "internal/Windows.Perception.People.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.UI.Input.Spatial.3.h"
@@ -578,6 +579,197 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteraction> : produce_ba
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionController> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionController>
+{
+    HRESULT __stdcall get_HasTouchpad(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().HasTouchpad());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_HasThumbstick(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().HasThumbstick());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimpleHapticsController(impl::abi_arg_out<Windows::Devices::Haptics::ISimpleHapticsController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimpleHapticsController());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VendorId(uint16_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VendorId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ProductId(uint16_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ProductId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Version(uint16_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Version());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionControllerProperties> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionControllerProperties>
+{
+    HRESULT __stdcall get_IsTouchpadTouched(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsTouchpadTouched());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsTouchpadPressed(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsTouchpadPressed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsThumbstickPressed(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsThumbstickPressed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ThumbstickX(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ThumbstickX());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ThumbstickY(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ThumbstickY());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_TouchpadX(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TouchpadX());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_TouchpadY(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TouchpadY());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs>
 {
     HRESULT __stdcall get_InteractionSourceKind(Windows::UI::Input::Spatial::SpatialInteractionSourceKind * value) noexcept override
@@ -615,6 +807,25 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventA
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().Interaction());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs2>
+{
+    HRESULT __stdcall get_InteractionSource(impl::abi_arg_out<Windows::UI::Input::Spatial::ISpatialInteractionSource> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().InteractionSource());
             return S_OK;
         }
         catch (...)
@@ -864,6 +1075,82 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSource> : prod
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSource2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSource2>
+{
+    HRESULT __stdcall get_IsPointingSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsPointingSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsMenuSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsMenuSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsGraspSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsGraspSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Controller(impl::abi_arg_out<Windows::UI::Input::Spatial::ISpatialInteractionController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Controller());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryGetStateAtTimestamp(impl::abi_arg_in<Windows::Perception::IPerceptionTimestamp> timestamp, impl::abi_arg_out<Windows::UI::Input::Spatial::ISpatialInteractionSourceState> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TryGetStateAtTimestamp(*reinterpret_cast<const Windows::Perception::PerceptionTimestamp *>(&timestamp)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs>
 {
     HRESULT __stdcall get_State(impl::abi_arg_out<Windows::UI::Input::Spatial::ISpatialInteractionSourceState> value) noexcept override
@@ -877,6 +1164,24 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArg
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs2>
+{
+    HRESULT __stdcall get_PressKind(Windows::UI::Input::Spatial::SpatialInteractionPressKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().PressKind());
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -1051,6 +1356,81 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState> :
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().TryGetPointerPose(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialInteractionSourceState2>
+{
+    HRESULT __stdcall get_IsSelectPressed(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsSelectPressed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsMenuPressed(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsMenuPressed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsGrasped(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsGrasped());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SelectPressedValue(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SelectPressedValue());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ControllerProperties(impl::abi_arg_out<Windows::UI::Input::Spatial::ISpatialInteractionControllerProperties> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ControllerProperties());
             return S_OK;
         }
         catch (...)
@@ -1354,6 +1734,52 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialNavigationUpdatedEventArg
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerInteractionSourcePose> : produce_base<D, Windows::UI::Input::Spatial::ISpatialPointerInteractionSourcePose>
+{
+    HRESULT __stdcall get_Position(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Position());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ForwardDirection(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ForwardDirection());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_UpDirection(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().UpDirection());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPose> : produce_base<D, Windows::UI::Input::Spatial::ISpatialPointerPose>
 {
     HRESULT __stdcall get_Timestamp(impl::abi_arg_out<Windows::Perception::IPerceptionTimestamp> value) noexcept override
@@ -1377,6 +1803,25 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPose> : produce_ba
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().Head());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::Spatial::ISpatialPointerPose2> : produce_base<D, Windows::UI::Input::Spatial::ISpatialPointerPose2>
+{
+    HRESULT __stdcall abi_TryGetInteractionSourcePose(impl::abi_arg_in<Windows::UI::Input::Spatial::ISpatialInteractionSource> source, impl::abi_arg_out<Windows::UI::Input::Spatial::ISpatialPointerInteractionSourcePose> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TryGetInteractionSourcePose(*reinterpret_cast<const Windows::UI::Input::Spatial::SpatialInteractionSource *>(&source)));
             return S_OK;
         }
         catch (...)
@@ -1521,118 +1966,6 @@ struct produce<D, Windows::UI::Input::Spatial::ISpatialTappedEventArgs> : produc
 }
 
 namespace Windows::UI::Input::Spatial {
-
-template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> impl_ISpatialInteractionSourceLocation<D>::Position() const
-{
-    Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> value;
-    check_hresult(WINRT_SHIM(ISpatialInteractionSourceLocation)->get_Position(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> impl_ISpatialInteractionSourceLocation<D>::Velocity() const
-{
-    Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> value;
-    check_hresult(WINRT_SHIM(ISpatialInteractionSourceLocation)->get_Velocity(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::quaternion> impl_ISpatialInteractionSourceLocation2<D>::Orientation() const
-{
-    Windows::Foundation::IReference<Windows::Foundation::Numerics::quaternion> value;
-    check_hresult(WINRT_SHIM(ISpatialInteractionSourceLocation2)->get_Orientation(put_abi(value)));
-    return value;
-}
-
-template <typename D> uint32_t impl_ISpatialInteractionSource<D>::Id() const
-{
-    uint32_t value {};
-    check_hresult(WINRT_SHIM(ISpatialInteractionSource)->get_Id(&value));
-    return value;
-}
-
-template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialInteractionSource<D>::Kind() const
-{
-    Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(WINRT_SHIM(ISpatialInteractionSource)->get_Kind(&value));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> impl_ISpatialInteractionSourceProperties<D>::TryGetSourceLossMitigationDirection(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
-{
-    Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> value;
-    check_hresult(WINRT_SHIM(ISpatialInteractionSourceProperties)->abi_TryGetSourceLossMitigationDirection(get_abi(coordinateSystem), put_abi(value)));
-    return value;
-}
-
-template <typename D> double impl_ISpatialInteractionSourceProperties<D>::SourceLossRisk() const
-{
-    double value {};
-    check_hresult(WINRT_SHIM(ISpatialInteractionSourceProperties)->get_SourceLossRisk(&value));
-    return value;
-}
-
-template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceLocation impl_ISpatialInteractionSourceProperties<D>::TryGetLocation(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
-{
-    Windows::UI::Input::Spatial::SpatialInteractionSourceLocation value { nullptr };
-    check_hresult(WINRT_SHIM(ISpatialInteractionSourceProperties)->abi_TryGetLocation(get_abi(coordinateSystem), put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Perception::PerceptionTimestamp impl_ISpatialPointerPose<D>::Timestamp() const
-{
-    Windows::Perception::PerceptionTimestamp value { nullptr };
-    check_hresult(WINRT_SHIM(ISpatialPointerPose)->get_Timestamp(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Perception::People::HeadPose impl_ISpatialPointerPose<D>::Head() const
-{
-    Windows::Perception::People::HeadPose value { nullptr };
-    check_hresult(WINRT_SHIM(ISpatialPointerPose)->get_Head(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialPointerPoseStatics<D>::TryGetAtTimestamp(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::PerceptionTimestamp & timestamp) const
-{
-    Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
-    check_hresult(WINRT_SHIM(ISpatialPointerPoseStatics)->abi_TryGetAtTimestamp(get_abi(coordinateSystem), get_abi(timestamp), put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSource impl_ISpatialInteractionSourceState<D>::Source() const
-{
-    Windows::UI::Input::Spatial::SpatialInteractionSource value { nullptr };
-    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState)->get_Source(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceProperties impl_ISpatialInteractionSourceState<D>::Properties() const
-{
-    Windows::UI::Input::Spatial::SpatialInteractionSourceProperties value { nullptr };
-    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState)->get_Properties(put_abi(value)));
-    return value;
-}
-
-template <typename D> bool impl_ISpatialInteractionSourceState<D>::IsPressed() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState)->get_IsPressed(&value));
-    return value;
-}
-
-template <typename D> Windows::Perception::PerceptionTimestamp impl_ISpatialInteractionSourceState<D>::Timestamp() const
-{
-    Windows::Perception::PerceptionTimestamp value { nullptr };
-    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState)->get_Timestamp(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialInteractionSourceState<D>::TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
-{
-    Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
-    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState)->abi_TryGetPointerPose(get_abi(coordinateSystem), put_abi(value)));
-    return value;
-}
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialRecognitionStartedEventArgs<D>::InteractionSourceKind() const
 {
@@ -1834,13 +2167,6 @@ template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind 
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
     check_hresult(WINRT_SHIM(ISpatialNavigationCanceledEventArgs)->get_InteractionSourceKind(&value));
-    return value;
-}
-
-template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceState impl_ISpatialInteraction<D>::SourceState() const
-{
-    Windows::UI::Input::Spatial::SpatialInteractionSourceState value { nullptr };
-    check_hresult(WINRT_SHIM(ISpatialInteraction)->get_SourceState(put_abi(value)));
     return value;
 }
 
@@ -2113,6 +2439,314 @@ template <typename D> Windows::UI::Input::Spatial::SpatialGestureRecognizer impl
     return value;
 }
 
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> impl_ISpatialInteractionSourceLocation<D>::Position() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> value;
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceLocation)->get_Position(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> impl_ISpatialInteractionSourceLocation<D>::Velocity() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> value;
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceLocation)->get_Velocity(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::quaternion> impl_ISpatialInteractionSourceLocation2<D>::Orientation() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::Numerics::quaternion> value;
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceLocation2)->get_Orientation(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Numerics::float3 impl_ISpatialPointerInteractionSourcePose<D>::Position() const
+{
+    Windows::Foundation::Numerics::float3 value {};
+    check_hresult(WINRT_SHIM(ISpatialPointerInteractionSourcePose)->get_Position(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Numerics::float3 impl_ISpatialPointerInteractionSourcePose<D>::ForwardDirection() const
+{
+    Windows::Foundation::Numerics::float3 value {};
+    check_hresult(WINRT_SHIM(ISpatialPointerInteractionSourcePose)->get_ForwardDirection(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Numerics::float3 impl_ISpatialPointerInteractionSourcePose<D>::UpDirection() const
+{
+    Windows::Foundation::Numerics::float3 value {};
+    check_hresult(WINRT_SHIM(ISpatialPointerInteractionSourcePose)->get_UpDirection(put_abi(value)));
+    return value;
+}
+
+template <typename D> uint32_t impl_ISpatialInteractionSource<D>::Id() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSource)->get_Id(&value));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialInteractionSource<D>::Kind() const
+{
+    Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSource)->get_Kind(&value));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionSource2<D>::IsPointingSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSource2)->get_IsPointingSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionSource2<D>::IsMenuSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSource2)->get_IsMenuSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionSource2<D>::IsGraspSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSource2)->get_IsGraspSupported(&value));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialInteractionController impl_ISpatialInteractionSource2<D>::Controller() const
+{
+    Windows::UI::Input::Spatial::SpatialInteractionController value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialInteractionSource2)->get_Controller(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceState impl_ISpatialInteractionSource2<D>::TryGetStateAtTimestamp(const Windows::Perception::PerceptionTimestamp & timestamp) const
+{
+    Windows::UI::Input::Spatial::SpatialInteractionSourceState value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialInteractionSource2)->abi_TryGetStateAtTimestamp(get_abi(timestamp), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> impl_ISpatialInteractionSourceProperties<D>::TryGetSourceLossMitigationDirection(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
+{
+    Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> value;
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceProperties)->abi_TryGetSourceLossMitigationDirection(get_abi(coordinateSystem), put_abi(value)));
+    return value;
+}
+
+template <typename D> double impl_ISpatialInteractionSourceProperties<D>::SourceLossRisk() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceProperties)->get_SourceLossRisk(&value));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceLocation impl_ISpatialInteractionSourceProperties<D>::TryGetLocation(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
+{
+    Windows::UI::Input::Spatial::SpatialInteractionSourceLocation value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceProperties)->abi_TryGetLocation(get_abi(coordinateSystem), put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionController<D>::HasTouchpad() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionController)->get_HasTouchpad(&value));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionController<D>::HasThumbstick() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionController)->get_HasThumbstick(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::Haptics::SimpleHapticsController impl_ISpatialInteractionController<D>::SimpleHapticsController() const
+{
+    Windows::Devices::Haptics::SimpleHapticsController value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialInteractionController)->get_SimpleHapticsController(put_abi(value)));
+    return value;
+}
+
+template <typename D> uint16_t impl_ISpatialInteractionController<D>::VendorId() const
+{
+    uint16_t value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionController)->get_VendorId(&value));
+    return value;
+}
+
+template <typename D> uint16_t impl_ISpatialInteractionController<D>::ProductId() const
+{
+    uint16_t value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionController)->get_ProductId(&value));
+    return value;
+}
+
+template <typename D> uint16_t impl_ISpatialInteractionController<D>::Version() const
+{
+    uint16_t value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionController)->get_Version(&value));
+    return value;
+}
+
+template <typename D> Windows::Perception::PerceptionTimestamp impl_ISpatialPointerPose<D>::Timestamp() const
+{
+    Windows::Perception::PerceptionTimestamp value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialPointerPose)->get_Timestamp(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Perception::People::HeadPose impl_ISpatialPointerPose<D>::Head() const
+{
+    Windows::Perception::People::HeadPose value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialPointerPose)->get_Head(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialPointerInteractionSourcePose impl_ISpatialPointerPose2<D>::TryGetInteractionSourcePose(const Windows::UI::Input::Spatial::SpatialInteractionSource & source) const
+{
+    Windows::UI::Input::Spatial::SpatialPointerInteractionSourcePose value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialPointerPose2)->abi_TryGetInteractionSourcePose(get_abi(source), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialPointerPoseStatics<D>::TryGetAtTimestamp(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::PerceptionTimestamp & timestamp) const
+{
+    Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialPointerPoseStatics)->abi_TryGetAtTimestamp(get_abi(coordinateSystem), get_abi(timestamp), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSource impl_ISpatialInteractionSourceState<D>::Source() const
+{
+    Windows::UI::Input::Spatial::SpatialInteractionSource value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState)->get_Source(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceProperties impl_ISpatialInteractionSourceState<D>::Properties() const
+{
+    Windows::UI::Input::Spatial::SpatialInteractionSourceProperties value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState)->get_Properties(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionSourceState<D>::IsPressed() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState)->get_IsPressed(&value));
+    return value;
+}
+
+template <typename D> Windows::Perception::PerceptionTimestamp impl_ISpatialInteractionSourceState<D>::Timestamp() const
+{
+    Windows::Perception::PerceptionTimestamp value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState)->get_Timestamp(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialInteractionSourceState<D>::TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
+{
+    Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState)->abi_TryGetPointerPose(get_abi(coordinateSystem), put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionSourceState2<D>::IsSelectPressed() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState2)->get_IsSelectPressed(&value));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionSourceState2<D>::IsMenuPressed() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState2)->get_IsMenuPressed(&value));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionSourceState2<D>::IsGrasped() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState2)->get_IsGrasped(&value));
+    return value;
+}
+
+template <typename D> double impl_ISpatialInteractionSourceState2<D>::SelectPressedValue() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState2)->get_SelectPressedValue(&value));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialInteractionControllerProperties impl_ISpatialInteractionSourceState2<D>::ControllerProperties() const
+{
+    Windows::UI::Input::Spatial::SpatialInteractionControllerProperties value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceState2)->get_ControllerProperties(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionControllerProperties<D>::IsTouchpadTouched() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionControllerProperties)->get_IsTouchpadTouched(&value));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionControllerProperties<D>::IsTouchpadPressed() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionControllerProperties)->get_IsTouchpadPressed(&value));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialInteractionControllerProperties<D>::IsThumbstickPressed() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionControllerProperties)->get_IsThumbstickPressed(&value));
+    return value;
+}
+
+template <typename D> double impl_ISpatialInteractionControllerProperties<D>::ThumbstickX() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionControllerProperties)->get_ThumbstickX(&value));
+    return value;
+}
+
+template <typename D> double impl_ISpatialInteractionControllerProperties<D>::ThumbstickY() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionControllerProperties)->get_ThumbstickY(&value));
+    return value;
+}
+
+template <typename D> double impl_ISpatialInteractionControllerProperties<D>::TouchpadX() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionControllerProperties)->get_TouchpadX(&value));
+    return value;
+}
+
+template <typename D> double impl_ISpatialInteractionControllerProperties<D>::TouchpadY() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionControllerProperties)->get_TouchpadY(&value));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceState impl_ISpatialInteraction<D>::SourceState() const
+{
+    Windows::UI::Input::Spatial::SpatialInteractionSourceState value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialInteraction)->get_SourceState(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialInteractionDetectedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
@@ -2134,10 +2768,24 @@ template <typename D> Windows::UI::Input::Spatial::SpatialInteraction impl_ISpat
     return value;
 }
 
+template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSource impl_ISpatialInteractionDetectedEventArgs2<D>::InteractionSource() const
+{
+    Windows::UI::Input::Spatial::SpatialInteractionSource value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialInteractionDetectedEventArgs2)->get_InteractionSource(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceState impl_ISpatialInteractionSourceEventArgs<D>::State() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceState value { nullptr };
     check_hresult(WINRT_SHIM(ISpatialInteractionSourceEventArgs)->get_State(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Spatial::SpatialInteractionPressKind impl_ISpatialInteractionSourceEventArgs2<D>::PressKind() const
+{
+    Windows::UI::Input::Spatial::SpatialInteractionPressKind value {};
+    check_hresult(WINRT_SHIM(ISpatialInteractionSourceEventArgs2)->get_PressKind(&value));
     return value;
 }
 
@@ -2330,9 +2978,36 @@ struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteraction>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionController>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionControllerProperties>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionControllerProperties & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -2366,9 +3041,27 @@ struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSource>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSource2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionSource2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -2405,6 +3098,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceState>
 {
     size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceState & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceState2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialInteractionSourceState2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -2492,9 +3194,27 @@ struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialNavigationUpdatedEv
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialPointerInteractionSourcePose>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialPointerInteractionSourcePose & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialPointerPose>
 {
     size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialPointerPose & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::ISpatialPointerPose2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::ISpatialPointerPose2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -2576,6 +3296,24 @@ template<>
 struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialInteraction>
 {
     size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialInteraction & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialInteractionController>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialInteractionController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialInteractionControllerProperties>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialInteractionControllerProperties & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -2720,6 +3458,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Spatial::SpatialPointerInteractionSourcePose>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Spatial::SpatialPointerInteractionSourcePose & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

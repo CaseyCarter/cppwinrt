@@ -12,9 +12,9 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
 #endif
 
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
@@ -22,9 +22,9 @@ template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __de
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
 #endif
 
-#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
 #endif
 
 #ifndef WINRT_GENERIC_a8d8a409_9130_5e14_8426_0782aaf01608
@@ -168,6 +168,13 @@ struct IAutomationPeer5 :
     IAutomationPeer5(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IAutomationPeer6 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAutomationPeer6>
+{
+    IAutomationPeer6(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IAutomationPeerAnnotation :
     Windows::Foundation::IInspectable,
     impl::consume<IAutomationPeerAnnotation>
@@ -229,6 +236,13 @@ struct IAutomationPeerOverrides5 :
     impl::consume<IAutomationPeerOverrides5>
 {
     IAutomationPeerOverrides5(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IAutomationPeerOverrides6 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAutomationPeerOverrides6>
+{
+    IAutomationPeerOverrides6(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationPeerProtected :

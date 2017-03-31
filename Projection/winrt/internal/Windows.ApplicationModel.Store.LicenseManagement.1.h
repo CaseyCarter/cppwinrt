@@ -20,6 +20,11 @@ struct __declspec(uuid("b5ac3ae0-da47-4f20-9a23-09182c9476ff")) __declspec(novta
     virtual HRESULT __stdcall abi_GetSatisfactionInfosAsync(Windows::Foundation::Collections::IIterable<hstring> * contentIds, Windows::Foundation::Collections::IIterable<hstring> * keyIds, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> ** operation) = 0;
 };
 
+struct __declspec(uuid("ab2ec47b-1f79-4480-b87e-2c499e601ba3")) __declspec(novtable) ILicenseManagerStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_RefreshLicensesAsync(winrt::Windows::ApplicationModel::Store::LicenseManagement::LicenseRefreshOption refreshOption, Windows::Foundation::IAsyncAction ** action) = 0;
+};
+
 struct __declspec(uuid("3ccbb08f-db31-48d5-8384-fa17c81474e2")) __declspec(novtable) ILicenseSatisfactionInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SatisfiedByDevice(bool * value) = 0;
@@ -56,6 +61,12 @@ struct WINRT_EBO impl_ILicenseManagerStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_ILicenseManagerStatics2
+{
+    Windows::Foundation::IAsyncAction RefreshLicensesAsync(Windows::ApplicationModel::Store::LicenseManagement::LicenseRefreshOption refreshOption) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ILicenseSatisfactionInfo
 {
     bool SatisfiedByDevice() const;
@@ -82,6 +93,12 @@ template <> struct traits<Windows::ApplicationModel::Store::LicenseManagement::I
 {
     using abi = ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics;
     template <typename D> using consume = Windows::ApplicationModel::Store::LicenseManagement::impl_ILicenseManagerStatics<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics2>
+{
+    using abi = ABI::Windows::ApplicationModel::Store::LicenseManagement::ILicenseManagerStatics2;
+    template <typename D> using consume = Windows::ApplicationModel::Store::LicenseManagement::impl_ILicenseManagerStatics2<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::LicenseManagement::ILicenseSatisfactionInfo>

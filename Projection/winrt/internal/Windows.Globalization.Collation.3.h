@@ -20,6 +20,7 @@ struct WINRT_EBO CharacterGroupings :
 {
     CharacterGroupings(std::nullptr_t) noexcept {}
     CharacterGroupings();
+    CharacterGroupings(hstring_view language);
 };
 
 }

@@ -10,6 +10,7 @@
 #include "Windows.Security.Authentication.Web.Core.0.h"
 #include "Windows.Security.Credentials.0.h"
 #include "Windows.Storage.Streams.0.h"
+#include "Windows.System.0.h"
 #include "Windows.Security.Credentials.1.h"
 #include "Windows.Foundation.Collections.1.h"
 #include "Windows.Security.Cryptography.Core.1.h"
@@ -51,6 +52,14 @@ struct __declspec(uuid("b2e8e1a6-d49a-4032-84bf-1a2847747bf1")) __declspec(novta
 struct __declspec(uuid("68a7a829-2d5f-4653-8bb0-bd2fa6bd2d87")) __declspec(novtable) IWebAccountManagerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_PullCookiesAsync(hstring uriString, hstring callerPFN, Windows::Foundation::IAsyncAction ** asyncInfo) = 0;
+};
+
+struct __declspec(uuid("dd4523a6-8a4f-4aa2-b15e-03f550af1359")) __declspec(novtable) IWebAccountManagerStatics3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_FindAllProviderWebAccountsForUserAsync(Windows::System::IUser * user, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_AddWebAccountForUserAsync(Windows::System::IUser * user, hstring webAccountId, hstring webAccountUserName, Windows::Foundation::Collections::IMapView<hstring, hstring> * props, Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> ** operation) = 0;
+    virtual HRESULT __stdcall abi_AddWebAccountWithScopeForUserAsync(Windows::System::IUser * user, hstring webAccountId, hstring webAccountUserName, Windows::Foundation::Collections::IMapView<hstring, hstring> * props, winrt::Windows::Security::Authentication::Web::Provider::WebAccountScope scope, Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> ** operation) = 0;
+    virtual HRESULT __stdcall abi_AddWebAccountWithScopeAndMapForUserAsync(Windows::System::IUser * user, hstring webAccountId, hstring webAccountUserName, Windows::Foundation::Collections::IMapView<hstring, hstring> * props, winrt::Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring perUserWebAccountId, Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> ** operation) = 0;
 };
 
 struct __declspec(uuid("e8fa446f-3a1b-48a4-8e90-1e59ca6f54db")) __declspec(novtable) IWebAccountMapManagerStatics : Windows::Foundation::IInspectable
@@ -113,6 +122,11 @@ struct __declspec(uuid("e0b545f8-3b0f-44da-924c-7b18baaa62a9")) __declspec(novta
 struct __declspec(uuid("408f284b-1328-42db-89a4-0bce7a717d8e")) __declspec(novtable) IWebAccountProviderTokenObjects : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Operation(Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation ** value) = 0;
+};
+
+struct __declspec(uuid("1020b893-5ca5-4fff-95fb-b820273fc395")) __declspec(novtable) IWebAccountProviderTokenObjects2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
 };
 
 struct __declspec(uuid("95c613be-2034-4c38-9434-d26c14b2b4b2")) __declspec(novtable) IWebAccountProviderTokenOperation : Windows::Foundation::IInspectable
@@ -216,6 +230,15 @@ struct WINRT_EBO impl_IWebAccountManagerStatics2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IWebAccountManagerStatics3
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> FindAllProviderWebAccountsForUserAsync(const Windows::System::User & user) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_view perUserWebAccountId) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IWebAccountMapManagerStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_view perUserWebAccountId) const;
@@ -285,6 +308,12 @@ template <typename D>
 struct WINRT_EBO impl_IWebAccountProviderTokenObjects
 {
     Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation Operation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderTokenObjects2
+{
+    Windows::System::User User() const;
 };
 
 template <typename D>
@@ -366,6 +395,12 @@ template <> struct traits<Windows::Security::Authentication::Web::Provider::IWeb
     template <typename D> using consume = Windows::Security::Authentication::Web::Provider::impl_IWebAccountManagerStatics2<D>;
 };
 
+template <> struct traits<Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics3>
+{
+    using abi = ABI::Windows::Security::Authentication::Web::Provider::IWebAccountManagerStatics3;
+    template <typename D> using consume = Windows::Security::Authentication::Web::Provider::impl_IWebAccountManagerStatics3<D>;
+};
+
 template <> struct traits<Windows::Security::Authentication::Web::Provider::IWebAccountMapManagerStatics>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::IWebAccountMapManagerStatics;
@@ -424,6 +459,12 @@ template <> struct traits<Windows::Security::Authentication::Web::Provider::IWeb
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects;
     template <typename D> using consume = Windows::Security::Authentication::Web::Provider::impl_IWebAccountProviderTokenObjects<D>;
+};
+
+template <> struct traits<Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects2>
+{
+    using abi = ABI::Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects2;
+    template <typename D> using consume = Windows::Security::Authentication::Web::Provider::impl_IWebAccountProviderTokenObjects2<D>;
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenOperation>

@@ -861,6 +861,24 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer5> : prod
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer6> : produce_base<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeer6>
+{
+    HRESULT __stdcall abi_GetCulture(int32_t * returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().GetCulture());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation> : produce_base<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation>
 {
     HRESULT __stdcall get_Type(Windows::UI::Xaml::Automation::AnnotationType * value) noexcept override
@@ -1663,6 +1681,24 @@ struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides
         catch (...)
         {
             *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides6> : produce_base<D, Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides6>
+{
+    HRESULT __stdcall abi_GetCultureCore(int32_t * returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().GetCultureCore());
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -3571,13 +3607,6 @@ template <typename D> Windows::UI::Xaml::Automation::Peers::RangeBaseAutomationP
     return instance;
 }
 
-template <typename D> Windows::UI::Xaml::Automation::Peers::RichEditBoxAutomationPeer impl_IRichEditBoxAutomationPeerFactory<D>::CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::RichEditBox & owner, const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
-{
-    Windows::UI::Xaml::Automation::Peers::RichEditBoxAutomationPeer instance { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxAutomationPeerFactory)->abi_CreateInstanceWithOwner(get_abi(owner), get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
-}
-
 template <typename D> Windows::UI::Xaml::Automation::Peers::RichTextBlockAutomationPeer impl_IRichTextBlockAutomationPeerFactory<D>::CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::RichTextBlock & owner, const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Automation::Peers::RichTextBlockAutomationPeer instance { nullptr };
@@ -3834,6 +3863,13 @@ template <typename D> Windows::UI::Xaml::Automation::Peers::MenuFlyoutItemAutoma
 {
     Windows::UI::Xaml::Automation::Peers::MenuFlyoutItemAutomationPeer instance { nullptr };
     check_hresult(WINRT_SHIM(IMenuFlyoutItemAutomationPeerFactory)->abi_CreateInstanceWithOwner(get_abi(owner), get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
+template <typename D> Windows::UI::Xaml::Automation::Peers::RichEditBoxAutomationPeer impl_IRichEditBoxAutomationPeerFactory<D>::CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::RichEditBox & owner, const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
+{
+    Windows::UI::Xaml::Automation::Peers::RichEditBoxAutomationPeer instance { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxAutomationPeerFactory)->abi_CreateInstanceWithOwner(get_abi(owner), get_abi(outer), put_abi(inner), put_abi(instance)));
     return instance;
 }
 
@@ -4606,6 +4642,20 @@ template <typename D> Windows::Foundation::Collections::IIterable<Windows::UI::X
     return returnValue;
 }
 
+template <typename D> int32_t impl_IAutomationPeer6<D>::GetCulture() const
+{
+    int32_t returnValue {};
+    check_hresult(WINRT_SHIM(IAutomationPeer6)->abi_GetCulture(&returnValue));
+    return returnValue;
+}
+
+template <typename D> int32_t impl_IAutomationPeerOverrides6<D>::GetCultureCore() const
+{
+    int32_t returnValue {};
+    check_hresult(WINRT_SHIM(IAutomationPeerOverrides6)->abi_GetCultureCore(&returnValue));
+    return returnValue;
+}
+
 template <typename D> Windows::UI::Xaml::Automation::AnnotationType impl_IAutomationPeerAnnotation<D>::Type() const
 {
     Windows::UI::Xaml::Automation::AnnotationType value {};
@@ -5265,6 +5315,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer5>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer6>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeer6 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation & value) const noexcept
@@ -5340,6 +5399,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides6>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides6 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

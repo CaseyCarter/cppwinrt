@@ -4,6 +4,8 @@
 #pragma once
 
 #include "Windows.UI.Xaml.Media.1.h"
+#include "Windows.Foundation.1.h"
+#include "Windows.UI.Composition.1.h"
 #include "Windows.UI.Xaml.1.h"
 #include "Windows.UI.Xaml.2.h"
 
@@ -20,6 +22,11 @@ template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+#define WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+template <> struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad")) __declspec(novtable) IVectorView<Windows::Foundation::Point> : impl_IVectorView<Windows::Foundation::Point> {};
+#endif
 
 #ifndef WINRT_GENERIC_c192280d_3a09_5423_9dc5_67b83ebde41d
 #define WINRT_GENERIC_c192280d_3a09_5423_9dc5_67b83ebde41d
@@ -106,6 +113,21 @@ template <> struct __declspec(uuid("33422da4-24f3-5b52-9e8d-11dd71f08bb1")) __de
 template <> struct __declspec(uuid("9105bb93-ac26-5bae-8c1e-df8ecf00dee6")) __declspec(novtable) IIterable<Windows::UI::Xaml::Media::GradientStop> : impl_IIterable<Windows::UI::Xaml::Media::GradientStop> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_0aa0c46e_1db6_5850_ae17_ec310ea3fd2d
+#define WINRT_GENERIC_0aa0c46e_1db6_5850_ae17_ec310ea3fd2d
+template <> struct __declspec(uuid("0aa0c46e-1db6-5850-ae17-ec310ea3fd2d")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
 #ifndef WINRT_GENERIC_de29d405_26dd_5e72_8bcb_495199d4e5b5
 #define WINRT_GENERIC_de29d405_26dd_5e72_8bcb_495199d4e5b5
 template <> struct __declspec(uuid("de29d405-26dd-5e72-8bcb-495199d4e5b5")) __declspec(novtable) IVector<Windows::UI::Xaml::Media::PathFigure> : impl_IVector<Windows::UI::Xaml::Media::PathFigure> {};
@@ -126,9 +148,9 @@ template <> struct __declspec(uuid("11fdd506-b21d-564d-b6a8-ff991057b8f3")) __de
 template <> struct __declspec(uuid("37e2cb21-b9c9-5006-bed7-4c328981b551")) __declspec(novtable) IIterable<Windows::UI::Xaml::Media::PathSegment> : impl_IIterable<Windows::UI::Xaml::Media::PathSegment> {};
 #endif
 
-#ifndef WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
-#define WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
-template <> struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad")) __declspec(novtable) IVectorView<Windows::Foundation::Point> : impl_IVectorView<Windows::Foundation::Point> {};
+#ifndef WINRT_GENERIC_af7586a8_6b21_5f61_bff1_1b682293ad96
+#define WINRT_GENERIC_af7586a8_6b21_5f61_bff1_1b682293ad96
+template <> struct __declspec(uuid("af7586a8-6b21-5f61-bff1-1b682293ad96")) __declspec(novtable) IVectorView<double> : impl_IVectorView<double> {};
 #endif
 
 #ifndef WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
@@ -174,11 +196,6 @@ template <> struct __declspec(uuid("2c463363-ef52-5dd5-ba90-415d8933bec9")) __de
 #ifndef WINRT_GENERIC_638a2cf4_f474_5318_9055_141cb909ac4b
 #define WINRT_GENERIC_638a2cf4_f474_5318_9055_141cb909ac4b
 template <> struct __declspec(uuid("638a2cf4-f474-5318-9055-141cb909ac4b")) __declspec(novtable) IIterator<double> : impl_IIterator<double> {};
-#endif
-
-#ifndef WINRT_GENERIC_af7586a8_6b21_5f61_bff1_1b682293ad96
-#define WINRT_GENERIC_af7586a8_6b21_5f61_bff1_1b682293ad96
-template <> struct __declspec(uuid("af7586a8-6b21-5f61-bff1-1b682293ad96")) __declspec(novtable) IVectorView<double> : impl_IVectorView<double> {};
 #endif
 
 #ifndef WINRT_GENERIC_63e1e513_fca3_51c0_8c2b_09db5f8f4c40
@@ -565,6 +582,27 @@ struct ILinearGradientBrushStatics :
     ILinearGradientBrushStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ILoadedImageSourceLoadCompletedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<ILoadedImageSourceLoadCompletedEventArgs>
+{
+    ILoadedImageSourceLoadCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ILoadedImageSurface :
+    Windows::Foundation::IInspectable,
+    impl::consume<ILoadedImageSurface>
+{
+    ILoadedImageSurface(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ILoadedImageSurfaceStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<ILoadedImageSurfaceStatics>
+{
+    ILoadedImageSurfaceStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMatrix3DProjection :
     Windows::Foundation::IInspectable,
     impl::consume<IMatrix3DProjection>
@@ -948,6 +986,76 @@ struct IVisualTreeHelperStatics2 :
     impl::consume<IVisualTreeHelperStatics2>
 {
     IVisualTreeHelperStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IXamlCompositionBrushBase :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlCompositionBrushBase>
+{
+    IXamlCompositionBrushBase(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IXamlCompositionBrushBaseFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlCompositionBrushBaseFactory>
+{
+    IXamlCompositionBrushBaseFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IXamlCompositionBrushBaseOverrides :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlCompositionBrushBaseOverrides>
+{
+    IXamlCompositionBrushBaseOverrides(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IXamlCompositionBrushBaseProtected :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlCompositionBrushBaseProtected>
+{
+    IXamlCompositionBrushBaseProtected(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IXamlCompositionBrushBaseStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlCompositionBrushBaseStatics>
+{
+    IXamlCompositionBrushBaseStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IXamlLight :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlLight>
+{
+    IXamlLight(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IXamlLightFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlLightFactory>
+{
+    IXamlLightFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IXamlLightOverrides :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlLightOverrides>
+{
+    IXamlLightOverrides(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IXamlLightProtected :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlLightProtected>
+{
+    IXamlLightProtected(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IXamlLightStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlLightStatics>
+{
+    IXamlLightStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

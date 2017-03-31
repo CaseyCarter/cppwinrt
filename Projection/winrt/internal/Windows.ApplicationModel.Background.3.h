@@ -107,7 +107,7 @@ struct BackgroundExecutionManager
 
 struct WINRT_EBO BackgroundTaskBuilder :
     Windows::ApplicationModel::Background::IBackgroundTaskBuilder,
-    impl::require<BackgroundTaskBuilder, Windows::ApplicationModel::Background::IBackgroundTaskBuilder2, Windows::ApplicationModel::Background::IBackgroundTaskBuilder3>
+    impl::require<BackgroundTaskBuilder, Windows::ApplicationModel::Background::IBackgroundTaskBuilder2, Windows::ApplicationModel::Background::IBackgroundTaskBuilder3, Windows::ApplicationModel::Background::IBackgroundTaskBuilder4>
 {
     BackgroundTaskBuilder(std::nullptr_t) noexcept {}
     BackgroundTaskBuilder();
@@ -133,10 +133,20 @@ struct WINRT_EBO BackgroundTaskProgressEventArgs :
 
 struct WINRT_EBO BackgroundTaskRegistration :
     Windows::ApplicationModel::Background::IBackgroundTaskRegistration,
-    impl::require<BackgroundTaskRegistration, Windows::ApplicationModel::Background::IBackgroundTaskRegistration2>
+    impl::require<BackgroundTaskRegistration, Windows::ApplicationModel::Background::IBackgroundTaskRegistration2, Windows::ApplicationModel::Background::IBackgroundTaskRegistration3>
 {
     BackgroundTaskRegistration(std::nullptr_t) noexcept {}
     static Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> AllTasks();
+    static Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> AllTaskGroups();
+    static Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup GetTaskGroup(hstring_view groupId);
+};
+
+struct WINRT_EBO BackgroundTaskRegistrationGroup :
+    Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup
+{
+    BackgroundTaskRegistrationGroup(std::nullptr_t) noexcept {}
+    BackgroundTaskRegistrationGroup(hstring_view id);
+    BackgroundTaskRegistrationGroup(hstring_view id, hstring_view name);
 };
 
 struct BackgroundWorkCost
@@ -243,10 +253,26 @@ struct WINRT_EBO EmailStoreNotificationTrigger :
 };
 
 struct WINRT_EBO GattCharacteristicNotificationTrigger :
-    Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger
+    Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger,
+    impl::require<GattCharacteristicNotificationTrigger, Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger2>
 {
     GattCharacteristicNotificationTrigger(std::nullptr_t) noexcept {}
     GattCharacteristicNotificationTrigger(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic);
+    GattCharacteristicNotificationTrigger(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic, Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode eventTriggeringMode);
+};
+
+struct WINRT_EBO GattServiceProviderTrigger :
+    Windows::ApplicationModel::Background::IGattServiceProviderTrigger,
+    impl::require<GattServiceProviderTrigger, Windows::ApplicationModel::Background::IBackgroundTrigger>
+{
+    GattServiceProviderTrigger(std::nullptr_t) noexcept {}
+    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> CreateAsync(hstring_view triggerId, GUID serviceUuid);
+};
+
+struct WINRT_EBO GattServiceProviderTriggerResult :
+    Windows::ApplicationModel::Background::IGattServiceProviderTriggerResult
+{
+    GattServiceProviderTriggerResult(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO LocationTrigger :

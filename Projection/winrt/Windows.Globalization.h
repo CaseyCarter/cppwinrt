@@ -4170,6 +4170,25 @@ struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics> : produce
 };
 
 template <typename D>
+struct produce<D, Windows::Globalization::ICurrencyIdentifiersStatics2> : produce_base<D, Windows::Globalization::ICurrencyIdentifiersStatics2>
+{
+    HRESULT __stdcall get_BYN(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().BYN());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Globalization::IGeographicRegion> : produce_base<D, Windows::Globalization::IGeographicRegion>
 {
     HRESULT __stdcall get_Code(impl::abi_arg_out<hstring> value) noexcept override
@@ -6817,6 +6836,13 @@ template <typename D> hstring impl_ICurrencyIdentifiersStatics<D>::ZWL() const
     return value;
 }
 
+template <typename D> hstring impl_ICurrencyIdentifiersStatics2<D>::BYN() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICurrencyIdentifiersStatics2)->get_BYN(put_abi(value)));
+    return value;
+}
+
 template <typename D> hstring impl_IGeographicRegion<D>::Code() const
 {
     hstring value;
@@ -7672,16 +7698,16 @@ inline Calendar::Calendar() :
     Calendar(activate_instance<Calendar>())
 {}
 
-inline Calendar::Calendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId) :
-    Calendar(get_activation_factory<Calendar, ICalendarFactory2>().CreateCalendarWithTimeZone(languages, calendar, clock, timeZoneId))
-{}
-
 inline Calendar::Calendar(iterable<hstring> languages) :
     Calendar(get_activation_factory<Calendar, ICalendarFactory>().CreateCalendarDefaultCalendarAndClock(languages))
 {}
 
 inline Calendar::Calendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock) :
     Calendar(get_activation_factory<Calendar, ICalendarFactory>().CreateCalendar(languages, calendar, clock))
+{}
+
+inline Calendar::Calendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId) :
+    Calendar(get_activation_factory<Calendar, ICalendarFactory2>().CreateCalendarWithTimeZone(languages, calendar, clock, timeZoneId))
 {}
 
 inline hstring CalendarIdentifiers::Gregorian()
@@ -8554,6 +8580,11 @@ inline hstring CurrencyIdentifiers::ZWL()
     return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics>().ZWL();
 }
 
+inline hstring CurrencyIdentifiers::BYN()
+{
+    return get_activation_factory<CurrencyIdentifiers, ICurrencyIdentifiersStatics2>().BYN();
+}
+
 inline GeographicRegion::GeographicRegion() :
     GeographicRegion(activate_instance<GeographicRegion>())
 {}
@@ -8906,6 +8937,15 @@ template<>
 struct std::hash<winrt::Windows::Globalization::ICurrencyIdentifiersStatics>
 {
     size_t operator()(const winrt::Windows::Globalization::ICurrencyIdentifiersStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Globalization::ICurrencyIdentifiersStatics2>
+{
+    size_t operator()(const winrt::Windows::Globalization::ICurrencyIdentifiersStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

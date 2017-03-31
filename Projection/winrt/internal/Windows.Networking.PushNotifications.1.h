@@ -6,9 +6,11 @@
 #include "../base.h"
 #include "Windows.Networking.PushNotifications.0.h"
 #include "Windows.Foundation.0.h"
+#include "Windows.Storage.Streams.0.h"
 #include "Windows.System.0.h"
 #include "Windows.UI.Notifications.0.h"
 #include "Windows.Foundation.1.h"
+#include "Windows.Foundation.Collections.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -31,6 +33,12 @@ struct __declspec(uuid("a4c45704-1182-42c7-8890-f563c4890dc4")) __declspec(novta
     virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
 };
 
+struct __declspec(uuid("c38b066a-7cc1-4dac-87fd-be6e920414a4")) __declspec(novtable) IPushNotificationChannelManagerForUser2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(Windows::Storage::Streams::IBuffer * appServerKey, hstring channelId, Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> ** operation) = 0;
+    virtual HRESULT __stdcall abi_CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsyncWithId(Windows::Storage::Streams::IBuffer * appServerKey, hstring channelId, hstring appId, Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> ** operation) = 0;
+};
+
 struct __declspec(uuid("8baf9b65-77a1-4588-bd19-861529a9dcf0")) __declspec(novtable) IPushNotificationChannelManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreatePushNotificationChannelForApplicationAsync(Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> ** operation) = 0;
@@ -41,6 +49,11 @@ struct __declspec(uuid("8baf9b65-77a1-4588-bd19-861529a9dcf0")) __declspec(novta
 struct __declspec(uuid("b444a65d-a7e9-4b28-950e-f375a907f9df")) __declspec(novtable) IPushNotificationChannelManagerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetForUser(Windows::System::IUser * user, Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser ** result) = 0;
+};
+
+struct __declspec(uuid("4701fefe-0ede-4a3f-ae78-bfa471496925")) __declspec(novtable) IPushNotificationChannelManagerStatics3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDefault(Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser ** value) = 0;
 };
 
 struct __declspec(uuid("d1065e0c-36cd-484c-b935-0a99b753cf00")) __declspec(novtable) IPushNotificationReceivedEventArgs : Windows::Foundation::IInspectable
@@ -57,6 +70,12 @@ struct __declspec(uuid("d1065e0c-36cd-484c-b935-0a99b753cf00")) __declspec(novta
 struct __declspec(uuid("1a227281-3b79-42ac-9963-22ab00d4f0b7")) __declspec(novtable) IRawNotification : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Content(hstring * value) = 0;
+};
+
+struct __declspec(uuid("e6d0cf19-0c6f-4cdd-9424-eec5be014d26")) __declspec(novtable) IRawNotification2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Headers(Windows::Foundation::Collections::IMapView<hstring, hstring> ** value) = 0;
+    virtual HRESULT __stdcall get_ChannelId(hstring * value) = 0;
 };
 
 }
@@ -94,6 +113,13 @@ struct WINRT_EBO impl_IPushNotificationChannelManagerForUser
 };
 
 template <typename D>
+struct WINRT_EBO impl_IPushNotificationChannelManagerForUser2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(const Windows::Storage::Streams::IBuffer & appServerKey, hstring_view channelId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(const Windows::Storage::Streams::IBuffer & appServerKey, hstring_view channelId, hstring_view appId) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IPushNotificationChannelManagerStatics
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForApplicationAsync() const;
@@ -105,6 +131,12 @@ template <typename D>
 struct WINRT_EBO impl_IPushNotificationChannelManagerStatics2
 {
     Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser GetForUser(const Windows::System::User & user) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPushNotificationChannelManagerStatics3
+{
+    Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser GetDefault() const;
 };
 
 template <typename D>
@@ -125,6 +157,13 @@ struct WINRT_EBO impl_IRawNotification
     hstring Content() const;
 };
 
+template <typename D>
+struct WINRT_EBO impl_IRawNotification2
+{
+    Windows::Foundation::Collections::IMapView<hstring, hstring> Headers() const;
+    hstring ChannelId() const;
+};
+
 }
 
 namespace impl {
@@ -141,6 +180,12 @@ template <> struct traits<Windows::Networking::PushNotifications::IPushNotificat
     template <typename D> using consume = Windows::Networking::PushNotifications::impl_IPushNotificationChannelManagerForUser<D>;
 };
 
+template <> struct traits<Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser2>
+{
+    using abi = ABI::Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser2;
+    template <typename D> using consume = Windows::Networking::PushNotifications::impl_IPushNotificationChannelManagerForUser2<D>;
+};
+
 template <> struct traits<Windows::Networking::PushNotifications::IPushNotificationChannelManagerStatics>
 {
     using abi = ABI::Windows::Networking::PushNotifications::IPushNotificationChannelManagerStatics;
@@ -153,6 +198,12 @@ template <> struct traits<Windows::Networking::PushNotifications::IPushNotificat
     template <typename D> using consume = Windows::Networking::PushNotifications::impl_IPushNotificationChannelManagerStatics2<D>;
 };
 
+template <> struct traits<Windows::Networking::PushNotifications::IPushNotificationChannelManagerStatics3>
+{
+    using abi = ABI::Windows::Networking::PushNotifications::IPushNotificationChannelManagerStatics3;
+    template <typename D> using consume = Windows::Networking::PushNotifications::impl_IPushNotificationChannelManagerStatics3<D>;
+};
+
 template <> struct traits<Windows::Networking::PushNotifications::IPushNotificationReceivedEventArgs>
 {
     using abi = ABI::Windows::Networking::PushNotifications::IPushNotificationReceivedEventArgs;
@@ -163,6 +214,12 @@ template <> struct traits<Windows::Networking::PushNotifications::IRawNotificati
 {
     using abi = ABI::Windows::Networking::PushNotifications::IRawNotification;
     template <typename D> using consume = Windows::Networking::PushNotifications::impl_IRawNotification<D>;
+};
+
+template <> struct traits<Windows::Networking::PushNotifications::IRawNotification2>
+{
+    using abi = ABI::Windows::Networking::PushNotifications::IRawNotification2;
+    template <typename D> using consume = Windows::Networking::PushNotifications::impl_IRawNotification2<D>;
 };
 
 template <> struct traits<Windows::Networking::PushNotifications::PushNotificationChannel>

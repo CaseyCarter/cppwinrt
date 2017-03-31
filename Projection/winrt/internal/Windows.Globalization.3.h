@@ -24,9 +24,9 @@ struct WINRT_EBO Calendar :
 {
     Calendar(std::nullptr_t) noexcept {}
     Calendar();
-    Calendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId);
     Calendar(iterable<hstring> languages);
     Calendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock);
+    Calendar(iterable<hstring> languages, hstring_view calendar, hstring_view clock, hstring_view timeZoneId);
 };
 
 struct CalendarIdentifiers
@@ -216,6 +216,7 @@ struct CurrencyIdentifiers
     static hstring ZAR();
     static hstring ZMW();
     static hstring ZWL();
+    static hstring BYN();
 };
 
 struct WINRT_EBO GeographicRegion :

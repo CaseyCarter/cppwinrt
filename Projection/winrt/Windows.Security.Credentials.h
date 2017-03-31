@@ -6,11 +6,11 @@
 #include "base.h"
 WINRT_WARNING_PUSH
 
-#include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Foundation.3.h"
-#include "internal/Windows.System.3.h"
 #include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.Security.Cryptography.Core.3.h"
+#include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.System.3.h"
 #include "internal/Windows.Security.Credentials.3.h"
 #include "Windows.Foundation.Collections.h"
 
@@ -792,118 +792,6 @@ struct produce<D, Windows::Security::Credentials::IWebAccountProviderFactory> : 
 
 namespace Windows::Security::Credentials {
 
-template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountFactory<D>::CreateWebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_view userName, Windows::Security::Credentials::WebAccountState state) const
-{
-    Windows::Security::Credentials::WebAccount instance { nullptr };
-    check_hresult(WINRT_SHIM(IWebAccountFactory)->abi_CreateWebAccount(get_abi(webAccountProvider), get_abi(userName), state, put_abi(instance)));
-    return instance;
-}
-
-template <typename D> Windows::Security::Credentials::WebAccountProvider impl_IWebAccount<D>::WebAccountProvider() const
-{
-    Windows::Security::Credentials::WebAccountProvider value { nullptr };
-    check_hresult(WINRT_SHIM(IWebAccount)->get_WebAccountProvider(put_abi(value)));
-    return value;
-}
-
-template <typename D> hstring impl_IWebAccount<D>::UserName() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IWebAccount)->get_UserName(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Security::Credentials::WebAccountState impl_IWebAccount<D>::State() const
-{
-    Windows::Security::Credentials::WebAccountState value {};
-    check_hresult(WINRT_SHIM(IWebAccount)->get_State(&value));
-    return value;
-}
-
-template <typename D> hstring impl_IWebAccount2<D>::Id() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IWebAccount2)->get_Id(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::Collections::IMapView<hstring, hstring> impl_IWebAccount2<D>::Properties() const
-{
-    Windows::Foundation::Collections::IMapView<hstring, hstring> value;
-    check_hresult(WINRT_SHIM(IWebAccount2)->get_Properties(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> impl_IWebAccount2<D>::GetPictureAsync(Windows::Security::Credentials::WebAccountPictureSize desizedSize) const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> asyncInfo;
-    check_hresult(WINRT_SHIM(IWebAccount2)->abi_GetPictureAsync(desizedSize, put_abi(asyncInfo)));
-    return asyncInfo;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccount2<D>::SignOutAsync() const
-{
-    Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(WINRT_SHIM(IWebAccount2)->abi_SignOutAsync(put_abi(asyncInfo)));
-    return asyncInfo;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccount2<D>::SignOutAsync(hstring_view clientId) const
-{
-    Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(WINRT_SHIM(IWebAccount2)->abi_SignOutWithClientIdAsync(get_abi(clientId), put_abi(asyncInfo)));
-    return asyncInfo;
-}
-
-template <typename D> Windows::Security::Credentials::WebAccountProvider impl_IWebAccountProviderFactory<D>::CreateWebAccountProvider(hstring_view id, hstring_view displayName, const Windows::Foundation::Uri & iconUri) const
-{
-    Windows::Security::Credentials::WebAccountProvider instance { nullptr };
-    check_hresult(WINRT_SHIM(IWebAccountProviderFactory)->abi_CreateWebAccountProvider(get_abi(id), get_abi(displayName), get_abi(iconUri), put_abi(instance)));
-    return instance;
-}
-
-template <typename D> hstring impl_IWebAccountProvider<D>::Id() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IWebAccountProvider)->get_Id(put_abi(value)));
-    return value;
-}
-
-template <typename D> hstring impl_IWebAccountProvider<D>::DisplayName() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IWebAccountProvider)->get_DisplayName(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::Uri impl_IWebAccountProvider<D>::IconUri() const
-{
-    Windows::Foundation::Uri value { nullptr };
-    check_hresult(WINRT_SHIM(IWebAccountProvider)->get_IconUri(put_abi(value)));
-    return value;
-}
-
-template <typename D> hstring impl_IWebAccountProvider2<D>::DisplayPurpose() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IWebAccountProvider2)->get_DisplayPurpose(put_abi(value)));
-    return value;
-}
-
-template <typename D> hstring impl_IWebAccountProvider2<D>::Authority() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IWebAccountProvider2)->get_Authority(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::System::User impl_IWebAccountProvider3<D>::User() const
-{
-    Windows::System::User user { nullptr };
-    check_hresult(WINRT_SHIM(IWebAccountProvider3)->get_User(put_abi(user)));
-    return user;
-}
-
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IKeyCredentialManagerStatics<D>::IsSupportedAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> value;
@@ -1021,6 +909,118 @@ template <typename D> Windows::Security::Credentials::KeyCredentialAttestationSt
     Windows::Security::Credentials::KeyCredentialAttestationStatus value {};
     check_hresult(WINRT_SHIM(IKeyCredentialAttestationResult)->get_Status(&value));
     return value;
+}
+
+template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountFactory<D>::CreateWebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_view userName, Windows::Security::Credentials::WebAccountState state) const
+{
+    Windows::Security::Credentials::WebAccount instance { nullptr };
+    check_hresult(WINRT_SHIM(IWebAccountFactory)->abi_CreateWebAccount(get_abi(webAccountProvider), get_abi(userName), state, put_abi(instance)));
+    return instance;
+}
+
+template <typename D> Windows::Security::Credentials::WebAccountProvider impl_IWebAccount<D>::WebAccountProvider() const
+{
+    Windows::Security::Credentials::WebAccountProvider value { nullptr };
+    check_hresult(WINRT_SHIM(IWebAccount)->get_WebAccountProvider(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IWebAccount<D>::UserName() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IWebAccount)->get_UserName(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Security::Credentials::WebAccountState impl_IWebAccount<D>::State() const
+{
+    Windows::Security::Credentials::WebAccountState value {};
+    check_hresult(WINRT_SHIM(IWebAccount)->get_State(&value));
+    return value;
+}
+
+template <typename D> hstring impl_IWebAccount2<D>::Id() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IWebAccount2)->get_Id(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IMapView<hstring, hstring> impl_IWebAccount2<D>::Properties() const
+{
+    Windows::Foundation::Collections::IMapView<hstring, hstring> value;
+    check_hresult(WINRT_SHIM(IWebAccount2)->get_Properties(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> impl_IWebAccount2<D>::GetPictureAsync(Windows::Security::Credentials::WebAccountPictureSize desizedSize) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> asyncInfo;
+    check_hresult(WINRT_SHIM(IWebAccount2)->abi_GetPictureAsync(desizedSize, put_abi(asyncInfo)));
+    return asyncInfo;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccount2<D>::SignOutAsync() const
+{
+    Windows::Foundation::IAsyncAction asyncInfo;
+    check_hresult(WINRT_SHIM(IWebAccount2)->abi_SignOutAsync(put_abi(asyncInfo)));
+    return asyncInfo;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccount2<D>::SignOutAsync(hstring_view clientId) const
+{
+    Windows::Foundation::IAsyncAction asyncInfo;
+    check_hresult(WINRT_SHIM(IWebAccount2)->abi_SignOutWithClientIdAsync(get_abi(clientId), put_abi(asyncInfo)));
+    return asyncInfo;
+}
+
+template <typename D> Windows::Security::Credentials::WebAccountProvider impl_IWebAccountProviderFactory<D>::CreateWebAccountProvider(hstring_view id, hstring_view displayName, const Windows::Foundation::Uri & iconUri) const
+{
+    Windows::Security::Credentials::WebAccountProvider instance { nullptr };
+    check_hresult(WINRT_SHIM(IWebAccountProviderFactory)->abi_CreateWebAccountProvider(get_abi(id), get_abi(displayName), get_abi(iconUri), put_abi(instance)));
+    return instance;
+}
+
+template <typename D> hstring impl_IWebAccountProvider<D>::Id() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IWebAccountProvider)->get_Id(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IWebAccountProvider<D>::DisplayName() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IWebAccountProvider)->get_DisplayName(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Uri impl_IWebAccountProvider<D>::IconUri() const
+{
+    Windows::Foundation::Uri value { nullptr };
+    check_hresult(WINRT_SHIM(IWebAccountProvider)->get_IconUri(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IWebAccountProvider2<D>::DisplayPurpose() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IWebAccountProvider2)->get_DisplayPurpose(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IWebAccountProvider2<D>::Authority() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IWebAccountProvider2)->get_Authority(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::System::User impl_IWebAccountProvider3<D>::User() const
+{
+    Windows::System::User user { nullptr };
+    check_hresult(WINRT_SHIM(IWebAccountProvider3)->get_User(put_abi(user)));
+    return user;
 }
 
 template <typename D> hstring impl_IPasswordCredential<D>::Resource() const

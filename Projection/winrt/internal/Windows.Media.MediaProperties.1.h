@@ -26,6 +26,11 @@ struct __declspec(uuid("62bc7a16-005c-4b3b-8a0b-0a090e9687f3")) __declspec(novta
     virtual HRESULT __stdcall get_BitsPerSample(uint32_t * value) = 0;
 };
 
+struct __declspec(uuid("c45d54da-80bd-4c23-80d5-72d4a181e894")) __declspec(novtable) IAudioEncodingProperties2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsSpatial(bool * value) = 0;
+};
+
 struct __declspec(uuid("0cad332c-ebe9-4527-b36d-e42a13cf38db")) __declspec(novtable) IAudioEncodingPropertiesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, Windows::Media::MediaProperties::IAudioEncodingProperties ** value) = 0;
@@ -33,6 +38,12 @@ struct __declspec(uuid("0cad332c-ebe9-4527-b36d-e42a13cf38db")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateMp3(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, Windows::Media::MediaProperties::IAudioEncodingProperties ** value) = 0;
     virtual HRESULT __stdcall abi_CreatePcm(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample, Windows::Media::MediaProperties::IAudioEncodingProperties ** value) = 0;
     virtual HRESULT __stdcall abi_CreateWma(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, Windows::Media::MediaProperties::IAudioEncodingProperties ** value) = 0;
+};
+
+struct __declspec(uuid("7489316f-77a0-433d-8ed5-4040280e8665")) __declspec(novtable) IAudioEncodingPropertiesStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateAlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample, Windows::Media::MediaProperties::IAudioEncodingProperties ** value) = 0;
+    virtual HRESULT __stdcall abi_CreateFlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample, Windows::Media::MediaProperties::IAudioEncodingProperties ** value) = 0;
 };
 
 struct __declspec(uuid("98f10d79-13ea-49ff-be70-2673db69702c")) __declspec(novtable) IAudioEncodingPropertiesWithFormatUserData : Windows::Foundation::IInspectable
@@ -107,6 +118,13 @@ struct __declspec(uuid("ce8de74f-6af4-4288-8fe2-79adf1f79a43")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateAvi(winrt::Windows::Media::MediaProperties::VideoEncodingQuality quality, Windows::Media::MediaProperties::IMediaEncodingProfile ** value) = 0;
 };
 
+struct __declspec(uuid("90dac5aa-cf76-4294-a9ed-1a1420f51f6b")) __declspec(novtable) IMediaEncodingProfileStatics3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateAlac(winrt::Windows::Media::MediaProperties::AudioEncodingQuality quality, Windows::Media::MediaProperties::IMediaEncodingProfile ** value) = 0;
+    virtual HRESULT __stdcall abi_CreateFlac(winrt::Windows::Media::MediaProperties::AudioEncodingQuality quality, Windows::Media::MediaProperties::IMediaEncodingProfile ** value) = 0;
+    virtual HRESULT __stdcall abi_CreateHevc(winrt::Windows::Media::MediaProperties::VideoEncodingQuality quality, Windows::Media::MediaProperties::IMediaEncodingProfile ** value) = 0;
+};
+
 struct __declspec(uuid("b4002af6-acd4-4e5a-a24b-5d7498a8b8c4")) __declspec(novtable) IMediaEncodingProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMap<GUID, Windows::Foundation::IInspectable> ** value) = 0;
@@ -159,6 +177,20 @@ struct __declspec(uuid("37b6580e-a171-4464-ba5a-53189e48c1c8")) __declspec(novta
     virtual HRESULT __stdcall get_Yv12(hstring * value) = 0;
 };
 
+struct __declspec(uuid("4b7cd23d-42ff-4d33-8531-0626bee4b52d")) __declspec(novtable) IMediaEncodingSubtypesStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Vp9(hstring * value) = 0;
+    virtual HRESULT __stdcall get_L8(hstring * value) = 0;
+    virtual HRESULT __stdcall get_L16(hstring * value) = 0;
+    virtual HRESULT __stdcall get_D16(hstring * value) = 0;
+};
+
+struct __declspec(uuid("ba2414e4-883d-464e-a44f-097da08ef7ff")) __declspec(novtable) IMediaEncodingSubtypesStatics3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Alac(hstring * value) = 0;
+    virtual HRESULT __stdcall get_Flac(hstring * value) = 0;
+};
+
 struct __declspec(uuid("d2d0fee5-8929-401d-ac78-7d357e378163")) __declspec(novtable) IMediaRatio : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Numerator(uint32_t value) = 0;
@@ -201,11 +233,21 @@ struct __declspec(uuid("386bcdc4-873a-479f-b3eb-56c1fcbec6d7")) __declspec(novta
     virtual HRESULT __stdcall get_StereoscopicVideoPackingMode(winrt::Windows::Media::MediaProperties::StereoscopicVideoPackingMode * value) = 0;
 };
 
+struct __declspec(uuid("724ef014-c10c-40f2-9d72-3ee13b45fa8e")) __declspec(novtable) IVideoEncodingProperties4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SphericalVideoFrameFormat(winrt::Windows::Media::MediaProperties::SphericalVideoFrameFormat * value) = 0;
+};
+
 struct __declspec(uuid("3ce14d44-1dc5-43db-9f38-ebebf90152cb")) __declspec(novtable) IVideoEncodingPropertiesStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateH264(Windows::Media::MediaProperties::IVideoEncodingProperties ** value) = 0;
     virtual HRESULT __stdcall abi_CreateMpeg2(Windows::Media::MediaProperties::IVideoEncodingProperties ** value) = 0;
     virtual HRESULT __stdcall abi_CreateUncompressed(hstring subtype, uint32_t width, uint32_t height, Windows::Media::MediaProperties::IVideoEncodingProperties ** value) = 0;
+};
+
+struct __declspec(uuid("cf1ebd5d-49fe-4d00-b59a-cfa4dfc51944")) __declspec(novtable) IVideoEncodingPropertiesStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateHevc(Windows::Media::MediaProperties::IVideoEncodingProperties ** value) = 0;
 };
 
 }
@@ -238,6 +280,12 @@ struct WINRT_EBO impl_IAudioEncodingProperties
 };
 
 template <typename D>
+struct WINRT_EBO impl_IAudioEncodingProperties2
+{
+    bool IsSpatial() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IAudioEncodingPropertiesStatics
 {
     Windows::Media::MediaProperties::AudioEncodingProperties CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
@@ -245,6 +293,13 @@ struct WINRT_EBO impl_IAudioEncodingPropertiesStatics
     Windows::Media::MediaProperties::AudioEncodingProperties CreateMp3(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
     Windows::Media::MediaProperties::AudioEncodingProperties CreatePcm(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const;
     Windows::Media::MediaProperties::AudioEncodingProperties CreateWma(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioEncodingPropertiesStatics2
+{
+    Windows::Media::MediaProperties::AudioEncodingProperties CreateAlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const;
+    Windows::Media::MediaProperties::AudioEncodingProperties CreateFlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const;
 };
 
 template <typename D>
@@ -329,6 +384,14 @@ struct WINRT_EBO impl_IMediaEncodingProfileStatics2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMediaEncodingProfileStatics3
+{
+    Windows::Media::MediaProperties::MediaEncodingProfile CreateAlac(Windows::Media::MediaProperties::AudioEncodingQuality quality) const;
+    Windows::Media::MediaProperties::MediaEncodingProfile CreateFlac(Windows::Media::MediaProperties::AudioEncodingQuality quality) const;
+    Windows::Media::MediaProperties::MediaEncodingProfile CreateHevc(Windows::Media::MediaProperties::VideoEncodingQuality quality) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMediaEncodingProperties
 {
     Windows::Media::MediaProperties::MediaPropertySet Properties() const;
@@ -383,6 +446,22 @@ struct WINRT_EBO impl_IMediaEncodingSubtypesStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMediaEncodingSubtypesStatics2
+{
+    hstring Vp9() const;
+    hstring L8() const;
+    hstring L16() const;
+    hstring D16() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaEncodingSubtypesStatics3
+{
+    hstring Alac() const;
+    hstring Flac() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMediaRatio
 {
     void Numerator(uint32_t value) const;
@@ -430,11 +509,23 @@ struct WINRT_EBO impl_IVideoEncodingProperties3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IVideoEncodingProperties4
+{
+    Windows::Media::MediaProperties::SphericalVideoFrameFormat SphericalVideoFrameFormat() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IVideoEncodingPropertiesStatics
 {
     Windows::Media::MediaProperties::VideoEncodingProperties CreateH264() const;
     Windows::Media::MediaProperties::VideoEncodingProperties CreateMpeg2() const;
     Windows::Media::MediaProperties::VideoEncodingProperties CreateUncompressed(hstring_view subtype, uint32_t width, uint32_t height) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVideoEncodingPropertiesStatics2
+{
+    Windows::Media::MediaProperties::VideoEncodingProperties CreateHevc() const;
 };
 
 }
@@ -447,10 +538,22 @@ template <> struct traits<Windows::Media::MediaProperties::IAudioEncodingPropert
     template <typename D> using consume = Windows::Media::MediaProperties::impl_IAudioEncodingProperties<D>;
 };
 
+template <> struct traits<Windows::Media::MediaProperties::IAudioEncodingProperties2>
+{
+    using abi = ABI::Windows::Media::MediaProperties::IAudioEncodingProperties2;
+    template <typename D> using consume = Windows::Media::MediaProperties::impl_IAudioEncodingProperties2<D>;
+};
+
 template <> struct traits<Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>
 {
     using abi = ABI::Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics;
     template <typename D> using consume = Windows::Media::MediaProperties::impl_IAudioEncodingPropertiesStatics<D>;
+};
+
+template <> struct traits<Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2>
+{
+    using abi = ABI::Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2;
+    template <typename D> using consume = Windows::Media::MediaProperties::impl_IAudioEncodingPropertiesStatics2<D>;
 };
 
 template <> struct traits<Windows::Media::MediaProperties::IAudioEncodingPropertiesWithFormatUserData>
@@ -507,6 +610,12 @@ template <> struct traits<Windows::Media::MediaProperties::IMediaEncodingProfile
     template <typename D> using consume = Windows::Media::MediaProperties::impl_IMediaEncodingProfileStatics2<D>;
 };
 
+template <> struct traits<Windows::Media::MediaProperties::IMediaEncodingProfileStatics3>
+{
+    using abi = ABI::Windows::Media::MediaProperties::IMediaEncodingProfileStatics3;
+    template <typename D> using consume = Windows::Media::MediaProperties::impl_IMediaEncodingProfileStatics3<D>;
+};
+
 template <> struct traits<Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
     using abi = ABI::Windows::Media::MediaProperties::IMediaEncodingProperties;
@@ -517,6 +626,18 @@ template <> struct traits<Windows::Media::MediaProperties::IMediaEncodingSubtype
 {
     using abi = ABI::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics;
     template <typename D> using consume = Windows::Media::MediaProperties::impl_IMediaEncodingSubtypesStatics<D>;
+};
+
+template <> struct traits<Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>
+{
+    using abi = ABI::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2;
+    template <typename D> using consume = Windows::Media::MediaProperties::impl_IMediaEncodingSubtypesStatics2<D>;
+};
+
+template <> struct traits<Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3>
+{
+    using abi = ABI::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3;
+    template <typename D> using consume = Windows::Media::MediaProperties::impl_IMediaEncodingSubtypesStatics3<D>;
 };
 
 template <> struct traits<Windows::Media::MediaProperties::IMediaRatio>
@@ -549,10 +670,22 @@ template <> struct traits<Windows::Media::MediaProperties::IVideoEncodingPropert
     template <typename D> using consume = Windows::Media::MediaProperties::impl_IVideoEncodingProperties3<D>;
 };
 
+template <> struct traits<Windows::Media::MediaProperties::IVideoEncodingProperties4>
+{
+    using abi = ABI::Windows::Media::MediaProperties::IVideoEncodingProperties4;
+    template <typename D> using consume = Windows::Media::MediaProperties::impl_IVideoEncodingProperties4<D>;
+};
+
 template <> struct traits<Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>
 {
     using abi = ABI::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics;
     template <typename D> using consume = Windows::Media::MediaProperties::impl_IVideoEncodingPropertiesStatics<D>;
+};
+
+template <> struct traits<Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2>
+{
+    using abi = ABI::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2;
+    template <typename D> using consume = Windows::Media::MediaProperties::impl_IVideoEncodingPropertiesStatics2<D>;
 };
 
 template <> struct traits<Windows::Media::MediaProperties::AudioEncodingProperties>

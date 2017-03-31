@@ -287,6 +287,23 @@ struct WINRT_EBO LinearGradientBrush :
     static Windows::UI::Xaml::DependencyProperty EndPointProperty();
 };
 
+struct WINRT_EBO LoadedImageSourceLoadCompletedEventArgs :
+    Windows::UI::Xaml::Media::ILoadedImageSourceLoadCompletedEventArgs
+{
+    LoadedImageSourceLoadCompletedEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO LoadedImageSurface :
+    Windows::UI::Xaml::Media::ILoadedImageSurface,
+    impl::require<LoadedImageSurface, Windows::Foundation::IClosable, Windows::UI::Composition::ICompositionSurface>
+{
+    LoadedImageSurface(std::nullptr_t) noexcept {}
+    static Windows::UI::Xaml::Media::LoadedImageSurface StartLoadFromUri(const Windows::Foundation::Uri & uri, const Windows::Foundation::Size & desiredMaxSize);
+    static Windows::UI::Xaml::Media::LoadedImageSurface StartLoadFromUri(const Windows::Foundation::Uri & uri);
+    static Windows::UI::Xaml::Media::LoadedImageSurface StartLoadFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Foundation::Size & desiredMaxSize);
+    static Windows::UI::Xaml::Media::LoadedImageSurface StartLoadFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream);
+};
+
 struct WINRT_EBO Matrix3DProjection :
     Windows::UI::Xaml::Media::IMatrix3DProjection,
     impl::bases<Matrix3DProjection, Windows::UI::Xaml::DependencyObject, Windows::UI::Xaml::Media::Projection>,
@@ -617,6 +634,28 @@ struct WINRT_EBO VisualTreeHelper :
     static Windows::UI::Xaml::DependencyObject GetParent(const Windows::UI::Xaml::DependencyObject & reference);
     static void DisconnectChildrenRecursive(const Windows::UI::Xaml::UIElement & element);
     static Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> GetOpenPopups(const Windows::UI::Xaml::Window & window);
+};
+
+struct WINRT_EBO XamlCompositionBrushBase :
+    Windows::UI::Xaml::Media::IXamlCompositionBrushBase,
+    impl::bases<XamlCompositionBrushBase, Windows::UI::Xaml::DependencyObject, Windows::UI::Xaml::Media::Brush>,
+    impl::require<XamlCompositionBrushBase, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides>
+{
+    XamlCompositionBrushBase(std::nullptr_t) noexcept {}
+    static Windows::UI::Xaml::DependencyProperty FallbackColorProperty();
+};
+
+struct WINRT_EBO XamlLight :
+    Windows::UI::Xaml::Media::IXamlLight,
+    impl::bases<XamlLight, Windows::UI::Xaml::DependencyObject>,
+    impl::require<XamlLight, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IXamlLightOverrides>
+{
+    XamlLight(std::nullptr_t) noexcept {}
+    XamlLight();
+    static void AddTargetElement(hstring_view lightId, const Windows::UI::Xaml::UIElement & element);
+    static void RemoveTargetElement(hstring_view lightId, const Windows::UI::Xaml::UIElement & element);
+    static void AddTargetBrush(hstring_view lightId, const Windows::UI::Xaml::Media::Brush & brush);
+    static void RemoveTargetBrush(hstring_view lightId, const Windows::UI::Xaml::Media::Brush & brush);
 };
 
 }

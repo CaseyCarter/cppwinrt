@@ -8,6 +8,7 @@ WINRT_WARNING_PUSH
 
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Graphics.Display.3.h"
+#include "Windows.Graphics.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -33,6 +34,255 @@ inline void DisplayPropertiesEventHandler::operator()(const Windows::Foundation:
 }
 
 namespace impl {
+
+template <typename D>
+struct produce<D, Windows::Graphics::Display::IBrightnessOverride> : produce_base<D, Windows::Graphics::Display::IBrightnessOverride>
+{
+    HRESULT __stdcall get_IsSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsOverrideActive(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsOverrideActive());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_BrightnessLevel(double * level) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *level = detach_abi(this->shim().BrightnessLevel());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetBrightnessLevel(double brightnessLevel, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SetBrightnessLevel(brightnessLevel, options);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetBrightnessScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SetBrightnessScenario(scenario, options);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetLevelForScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, double * brightnessLevel) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *brightnessLevel = detach_abi(this->shim().GetLevelForScenario(scenario));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StartOverride() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StartOverride();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StopOverride() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StopOverride();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_IsSupportedChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().IsSupportedChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_IsSupportedChanged(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsSupportedChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_IsOverrideActiveChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().IsOverrideActiveChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_IsOverrideActiveChanged(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsOverrideActiveChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_BrightnessLevelChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().BrightnessLevelChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_BrightnessLevelChanged(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().BrightnessLevelChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Graphics::Display::IBrightnessOverrideStatics> : produce_base<D, Windows::Graphics::Display::IBrightnessOverrideStatics>
+{
+    HRESULT __stdcall abi_GetDefaultForSystem(impl::abi_arg_out<Windows::Graphics::Display::IBrightnessOverride> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetDefaultForSystem());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetForCurrentView(impl::abi_arg_out<Windows::Graphics::Display::IBrightnessOverride> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetForCurrentView());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SaveForSystemAsync(impl::abi_arg_in<Windows::Graphics::Display::IBrightnessOverride> value, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().SaveForSystemAsync(*reinterpret_cast<const Windows::Graphics::Display::BrightnessOverride *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
 
 template <typename D>
 struct produce<D, Windows::Graphics::Display::IDisplayInformation> : produce_base<D, Windows::Graphics::Display::IDisplayInformation>
@@ -995,6 +1245,141 @@ template <typename D> void impl_IDisplayPropertiesStatics<D>::DisplayContentsInv
     check_hresult(WINRT_SHIM(IDisplayPropertiesStatics)->remove_DisplayContentsInvalidated(token));
 }
 
+template <typename D> Windows::Graphics::Display::BrightnessOverride impl_IBrightnessOverrideStatics<D>::GetDefaultForSystem() const
+{
+    Windows::Graphics::Display::BrightnessOverride value { nullptr };
+    check_hresult(WINRT_SHIM(IBrightnessOverrideStatics)->abi_GetDefaultForSystem(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Graphics::Display::BrightnessOverride impl_IBrightnessOverrideStatics<D>::GetForCurrentView() const
+{
+    Windows::Graphics::Display::BrightnessOverride value { nullptr };
+    check_hresult(WINRT_SHIM(IBrightnessOverrideStatics)->abi_GetForCurrentView(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IBrightnessOverrideStatics<D>::SaveForSystemAsync(const Windows::Graphics::Display::BrightnessOverride & value) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(IBrightnessOverrideStatics)->abi_SaveForSystemAsync(get_abi(value), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> bool impl_IBrightnessOverride<D>::IsSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->get_IsSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_IBrightnessOverride<D>::IsOverrideActive() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->get_IsOverrideActive(&value));
+    return value;
+}
+
+template <typename D> double impl_IBrightnessOverride<D>::BrightnessLevel() const
+{
+    double level {};
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->get_BrightnessLevel(&level));
+    return level;
+}
+
+template <typename D> void impl_IBrightnessOverride<D>::SetBrightnessLevel(double brightnessLevel, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) const
+{
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->abi_SetBrightnessLevel(brightnessLevel, options));
+}
+
+template <typename D> void impl_IBrightnessOverride<D>::SetBrightnessScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) const
+{
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->abi_SetBrightnessScenario(scenario, options));
+}
+
+template <typename D> double impl_IBrightnessOverride<D>::GetLevelForScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario) const
+{
+    double brightnessLevel {};
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->abi_GetLevelForScenario(scenario, &brightnessLevel));
+    return brightnessLevel;
+}
+
+template <typename D> void impl_IBrightnessOverride<D>::StartOverride() const
+{
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->abi_StartOverride());
+}
+
+template <typename D> void impl_IBrightnessOverride<D>::StopOverride() const
+{
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->abi_StopOverride());
+}
+
+template <typename D> event_token impl_IBrightnessOverride<D>::IsSupportedChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->add_IsSupportedChanged(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IBrightnessOverride> impl_IBrightnessOverride<D>::IsSupportedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, IBrightnessOverride>(this, &ABI::Windows::Graphics::Display::IBrightnessOverride::remove_IsSupportedChanged, IsSupportedChanged(handler));
+}
+
+template <typename D> void impl_IBrightnessOverride<D>::IsSupportedChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->remove_IsSupportedChanged(token));
+}
+
+template <typename D> event_token impl_IBrightnessOverride<D>::IsOverrideActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->add_IsOverrideActiveChanged(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IBrightnessOverride> impl_IBrightnessOverride<D>::IsOverrideActiveChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, IBrightnessOverride>(this, &ABI::Windows::Graphics::Display::IBrightnessOverride::remove_IsOverrideActiveChanged, IsOverrideActiveChanged(handler));
+}
+
+template <typename D> void impl_IBrightnessOverride<D>::IsOverrideActiveChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->remove_IsOverrideActiveChanged(token));
+}
+
+template <typename D> event_token impl_IBrightnessOverride<D>::BrightnessLevelChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->add_BrightnessLevelChanged(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IBrightnessOverride> impl_IBrightnessOverride<D>::BrightnessLevelChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, IBrightnessOverride>(this, &ABI::Windows::Graphics::Display::IBrightnessOverride::remove_BrightnessLevelChanged, BrightnessLevelChanged(handler));
+}
+
+template <typename D> void impl_IBrightnessOverride<D>::BrightnessLevelChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IBrightnessOverride)->remove_BrightnessLevelChanged(token));
+}
+
+inline Windows::Graphics::Display::BrightnessOverride BrightnessOverride::GetDefaultForSystem()
+{
+    return get_activation_factory<BrightnessOverride, IBrightnessOverrideStatics>().GetDefaultForSystem();
+}
+
+inline Windows::Graphics::Display::BrightnessOverride BrightnessOverride::GetForCurrentView()
+{
+    return get_activation_factory<BrightnessOverride, IBrightnessOverrideStatics>().GetForCurrentView();
+}
+
+inline Windows::Foundation::IAsyncOperation<bool> BrightnessOverride::SaveForSystemAsync(const Windows::Graphics::Display::BrightnessOverride & value)
+{
+    return get_activation_factory<BrightnessOverride, IBrightnessOverrideStatics>().SaveForSystemAsync(value);
+}
+
 inline Windows::Graphics::Display::DisplayInformation DisplayInformation::GetForCurrentView()
 {
     return get_activation_factory<DisplayInformation, IDisplayInformationStatics>().GetForCurrentView();
@@ -1151,6 +1536,24 @@ inline void DisplayProperties::DisplayContentsInvalidated(event_token token)
 }
 
 template<>
+struct std::hash<winrt::Windows::Graphics::Display::IBrightnessOverride>
+{
+    size_t operator()(const winrt::Windows::Graphics::Display::IBrightnessOverride & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Display::IBrightnessOverrideStatics>
+{
+    size_t operator()(const winrt::Windows::Graphics::Display::IBrightnessOverrideStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Graphics::Display::IDisplayInformation>
 {
     size_t operator()(const winrt::Windows::Graphics::Display::IDisplayInformation & value) const noexcept
@@ -1199,6 +1602,15 @@ template<>
 struct std::hash<winrt::Windows::Graphics::Display::IDisplayPropertiesStatics>
 {
     size_t operator()(const winrt::Windows::Graphics::Display::IDisplayPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Display::BrightnessOverride>
+{
+    size_t operator()(const winrt::Windows::Graphics::Display::BrightnessOverride & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

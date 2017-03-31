@@ -167,6 +167,13 @@ struct ICoreApplicationView3 :
     ICoreApplicationView3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ICoreApplicationView5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICoreApplicationView5>
+{
+    ICoreApplicationView5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ICoreApplicationViewTitleBar :
     Windows::Foundation::IInspectable,
     impl::consume<ICoreApplicationViewTitleBar>

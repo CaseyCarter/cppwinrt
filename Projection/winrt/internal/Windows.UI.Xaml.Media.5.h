@@ -106,6 +106,34 @@ protected:
     }
 };
 
+template <typename D, typename ... Interfaces> struct XamlCompositionBrushBaseT :
+    overrides<D, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverridesT<D>, Interfaces ...>,
+    impl::require<D, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IBrush, Windows::UI::Xaml::Media::IXamlCompositionBrushBase, Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
+{
+    using composable = XamlCompositionBrushBase;
+
+protected:
+
+    XamlCompositionBrushBaseT()
+    {
+        get_activation_factory<XamlCompositionBrushBase, IXamlCompositionBrushBaseFactory>().CreateInstance(*this, this->m_inner);
+    }
+};
+
+template <typename D, typename ... Interfaces> struct XamlLightT :
+    overrides<D, Windows::UI::Xaml::Media::IXamlLightOverridesT<D>, Interfaces ...>,
+    impl::require<D, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IXamlLight, Windows::UI::Xaml::Media::IXamlLightProtected>
+{
+    using composable = XamlLight;
+
+protected:
+
+    XamlLightT()
+    {
+        get_activation_factory<XamlLight, IXamlLightFactory>().CreateInstance(*this, this->m_inner);
+    }
+};
+
 }
 
 }

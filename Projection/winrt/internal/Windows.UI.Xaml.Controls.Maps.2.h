@@ -68,6 +68,11 @@ template <> struct __declspec(uuid("771b857e-ab5c-5db8-a021-397c92cdc44c")) __de
 template <> struct __declspec(uuid("f66c6bd3-55b4-5bbb-b82a-6d9ce383091a")) __declspec(novtable) IIterable<Windows::UI::Xaml::DependencyObject> : impl_IIterable<Windows::UI::Xaml::DependencyObject> {};
 #endif
 
+#ifndef WINRT_GENERIC_cec120d8_ea73_5aa3_914a_37dd2554f686
+#define WINRT_GENERIC_cec120d8_ea73_5aa3_914a_37dd2554f686
+template <> struct __declspec(uuid("cec120d8-ea73-5aa3-914a-37dd2554f686")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> : impl_IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> {};
+#endif
+
 #ifndef WINRT_GENERIC_02773f2d_bb17_56fd_96cc_89f1c47f9e11
 #define WINRT_GENERIC_02773f2d_bb17_56fd_96cc_89f1c47f9e11
 template <> struct __declspec(uuid("02773f2d-bb17-56fd-96cc-89f1c47f9e11")) __declspec(novtable) IVector<Windows::UI::Xaml::Controls::Maps::MapElement> : impl_IVector<Windows::UI::Xaml::Controls::Maps::MapElement> {};
@@ -82,6 +87,21 @@ namespace ABI::Windows::Foundation {
 #define WINRT_GENERIC_766ed4a8_e810_5f78_bc96_9aff9f58cfca
 template <> struct __declspec(uuid("766ed4a8-e810-5f78-bc96-9aff9f58cfca")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapScene, Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapScene, Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs> {};
 #endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_05483d88_841c_5a0e_b9c7_5d828d9f2aff
+#define WINRT_GENERIC_05483d88_841c_5a0e_b9c7_5d828d9f2aff
+template <> struct __declspec(uuid("05483d88-841c-5a0e-b9c7-5d828d9f2aff")) __declspec(novtable) IIterable<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> : impl_IIterable<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_6ad8ea47_6670_51d8_a1db_33fe75491f0c
 #define WINRT_GENERIC_6ad8ea47_6670_51d8_a1db_33fe75491f0c
@@ -138,21 +158,6 @@ template <> struct __declspec(uuid("f250dd93-e636-51ef-bc93-ee78d431a6bd")) __de
 template <> struct __declspec(uuid("b92f6816-4d0a-52c2-9868-94b5c942007e")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapInputEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapInputEventArgs> {};
 #endif
 
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_cec120d8_ea73_5aa3_914a_37dd2554f686
-#define WINRT_GENERIC_cec120d8_ea73_5aa3_914a_37dd2554f686
-template <> struct __declspec(uuid("cec120d8-ea73-5aa3-914a-37dd2554f686")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> : impl_IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation {
-
 #ifndef WINRT_GENERIC_a19f7ba8_d8cd_5df2_ab44_fefd26644484
 #define WINRT_GENERIC_a19f7ba8_d8cd_5df2_ab44_fefd26644484
 template <> struct __declspec(uuid("a19f7ba8-d8cd-5df2-ab44-fefd26644484")) __declspec(novtable) IReference<Windows::UI::Xaml::Thickness> : impl_IReference<Windows::UI::Xaml::Thickness> {};
@@ -198,6 +203,11 @@ template <> struct __declspec(uuid("272cf26f-18da-599e-896f-3bfbf6fb1326")) __de
 template <> struct __declspec(uuid("efc52f2d-ad6b-59af-a0f0-2253d434414f")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapRightTappedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapRightTappedEventArgs> {};
 #endif
 
+#ifndef WINRT_GENERIC_e5239641_ba1f_5d89_aae1_c7b499a47b0c
+#define WINRT_GENERIC_e5239641_ba1f_5d89_aae1_c7b499a47b0c
+template <> struct __declspec(uuid("e5239641-ba1f-5d89-aae1-c7b499a47b0c")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs> {};
+#endif
+
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
 #define WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
 template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __declspec(novtable) AsyncOperationCompletedHandler<bool> : impl_AsyncOperationCompletedHandler<bool> {};
@@ -241,6 +251,21 @@ template <> struct __declspec(uuid("f916b428-3b74-5ad4-9d97-1b0a387aecb5")) __de
 #ifndef WINRT_GENERIC_81d25c25_a4b3_5d0d_92ab_26360c2a7fac
 #define WINRT_GENERIC_81d25c25_a4b3_5d0d_92ab_26360c2a7fac
 template <> struct __declspec(uuid("81d25c25-a4b3-5d0d-92ab-26360c2a7fac")) __declspec(novtable) IIterable<Windows::UI::Xaml::Controls::Maps::MapElement> : impl_IIterable<Windows::UI::Xaml::Controls::Maps::MapElement> {};
+#endif
+
+#ifndef WINRT_GENERIC_abe8deb7_03ad_5227_ad49_924772c89a1e
+#define WINRT_GENERIC_abe8deb7_03ad_5227_ad49_924772c89a1e
+template <> struct __declspec(uuid("abe8deb7-03ad-5227-ad49-924772c89a1e")) __declspec(novtable) IVector<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> : impl_IVector<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> {};
+#endif
+
+#ifndef WINRT_GENERIC_9bf4ca85_6ca6_5bc2_aeaa_c4ced4c861d2
+#define WINRT_GENERIC_9bf4ca85_6ca6_5bc2_aeaa_c4ced4c861d2
+template <> struct __declspec(uuid("9bf4ca85-6ca6-5bc2-aeaa-c4ced4c861d2")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> : impl_IVectorView<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> {};
+#endif
+
+#ifndef WINRT_GENERIC_e6c727e5_6a18_5333_aa6a_266e8c8bdd51
+#define WINRT_GENERIC_e6c727e5_6a18_5333_aa6a_266e8c8bdd51
+template <> struct __declspec(uuid("e6c727e5-6a18-5333-aa6a-266e8c8bdd51")) __declspec(novtable) IIterator<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> : impl_IIterator<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> {};
 #endif
 
 
@@ -388,6 +413,27 @@ struct IMapActualCameraChangingEventArgs2 :
     IMapActualCameraChangingEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMapBillboard :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapBillboard>
+{
+    IMapBillboard(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMapBillboardFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapBillboardFactory>
+{
+    IMapBillboardFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMapBillboardStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapBillboardStatics>
+{
+    IMapBillboardStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMapCamera :
     Windows::Foundation::IInspectable,
     impl::consume<IMapCamera>
@@ -400,6 +446,13 @@ struct IMapCameraFactory :
     impl::consume<IMapCameraFactory>
 {
     IMapCameraFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMapContextRequestedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapContextRequestedEventArgs>
+{
+    IMapContextRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapControl :
@@ -430,6 +483,13 @@ struct IMapControl4 :
     IMapControl4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMapControl5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapControl5>
+{
+    IMapControl5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMapControlStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IMapControlStatics>
@@ -449,6 +509,13 @@ struct IMapControlStatics4 :
     impl::consume<IMapControlStatics4>
 {
     IMapControlStatics4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMapControlStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapControlStatics5>
+{
+    IMapControlStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapCustomExperience :
@@ -645,6 +712,20 @@ struct IMapSceneStatics :
     impl::consume<IMapSceneStatics>
 {
     IMapSceneStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMapStyleSheet :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapStyleSheet>
+{
+    IMapStyleSheet(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMapStyleSheetStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapStyleSheetStatics>
+{
+    IMapStyleSheetStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapTargetCameraChangedEventArgs :

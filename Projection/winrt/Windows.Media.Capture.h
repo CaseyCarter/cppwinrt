@@ -2025,6 +2025,86 @@ struct produce<D, Windows::Media::Capture::IMediaCapture5> : produce_base<D, Win
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Capture::IMediaCapture6> : produce_base<D, Windows::Media::Capture::IMediaCapture6>
+{
+    HRESULT __stdcall add_CaptureDeviceExclusiveControlStatusChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().CaptureDeviceExclusiveControlStatusChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_CaptureDeviceExclusiveControlStatusChanged(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CaptureDeviceExclusiveControlStatusChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateMultiSourceFrameReaderAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Media::Capture::Frames::MediaFrameSource>> inputSources, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CreateMultiSourceFrameReaderAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Media::Capture::Frames::MediaFrameSource> *>(&inputSources)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Capture::IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs> : produce_base<D, Windows::Media::Capture::IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs>
+{
+    HRESULT __stdcall get_DeviceId(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeviceId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Status(Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatus * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Status());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Capture::IMediaCaptureFailedEventArgs> : produce_base<D, Windows::Media::Capture::IMediaCaptureFailedEventArgs>
 {
     HRESULT __stdcall get_Message(impl::abi_arg_out<hstring> value) noexcept override
@@ -2515,6 +2595,38 @@ struct produce<D, Windows::Media::Capture::IMediaCaptureInitializationSettings5>
         {
             typename D::abi_guard guard(this->shim());
             this->shim().MemoryPreference(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Capture::IMediaCaptureInitializationSettings6> : produce_base<D, Windows::Media::Capture::IMediaCaptureInitializationSettings6>
+{
+    HRESULT __stdcall get_AlwaysPlaySystemShutterSound(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AlwaysPlaySystemShutterSound());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_AlwaysPlaySystemShutterSound(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AlwaysPlaySystemShutterSound(value);
             return S_OK;
         }
         catch (...)
@@ -3671,6 +3783,18 @@ template <typename D> void impl_IMediaCaptureInitializationSettings5<D>::MemoryP
     check_hresult(WINRT_SHIM(IMediaCaptureInitializationSettings5)->put_MemoryPreference(value));
 }
 
+template <typename D> bool impl_IMediaCaptureInitializationSettings6<D>::AlwaysPlaySystemShutterSound() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IMediaCaptureInitializationSettings6)->get_AlwaysPlaySystemShutterSound(&value));
+    return value;
+}
+
+template <typename D> void impl_IMediaCaptureInitializationSettings6<D>::AlwaysPlaySystemShutterSound(bool value) const
+{
+    check_hresult(WINRT_SHIM(IMediaCaptureInitializationSettings6)->put_AlwaysPlaySystemShutterSound(value));
+}
+
 template <typename D> bool impl_IMediaCaptureStatics<D>::IsVideoProfileSupported(hstring_view videoDeviceId) const
 {
     bool value {};
@@ -4112,6 +4236,30 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Captu
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> value;
     check_hresult(WINRT_SHIM(IMediaCapture5)->abi_CreateFrameReaderWithSubtypeAndSizeAsync(get_abi(inputSource), get_abi(outputSubtype), get_abi(outputSize), put_abi(value)));
+    return value;
+}
+
+template <typename D> event_token impl_IMediaCapture6<D>::CaptureDeviceExclusiveControlStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMediaCapture6)->add_CaptureDeviceExclusiveControlStatusChanged(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMediaCapture6> impl_IMediaCapture6<D>::CaptureDeviceExclusiveControlStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IMediaCapture6>(this, &ABI::Windows::Media::Capture::IMediaCapture6::remove_CaptureDeviceExclusiveControlStatusChanged, CaptureDeviceExclusiveControlStatusChanged(handler));
+}
+
+template <typename D> void impl_IMediaCapture6<D>::CaptureDeviceExclusiveControlStatusChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMediaCapture6)->remove_CaptureDeviceExclusiveControlStatusChanged(token));
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader> impl_IMediaCapture6<D>::CreateMultiSourceFrameReaderAsync(iterable<Windows::Media::Capture::Frames::MediaFrameSource> inputSources) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader> value;
+    check_hresult(WINRT_SHIM(IMediaCapture6)->abi_CreateMultiSourceFrameReaderAsync(get_abi(inputSources), put_abi(value)));
     return value;
 }
 
@@ -4649,6 +4797,20 @@ template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties i
     return value;
 }
 
+template <typename D> hstring impl_IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs<D>::DeviceId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs)->get_DeviceId(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatus impl_IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs<D>::Status() const
+{
+    Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatus value {};
+    check_hresult(WINRT_SHIM(IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs)->get_Status(&value));
+    return value;
+}
+
 inline Windows::Media::Capture::AppCapture AppCapture::GetForCurrentView()
 {
     return get_activation_factory<AppCapture, IAppCaptureStatics>().GetForCurrentView();
@@ -4898,6 +5060,24 @@ struct std::hash<winrt::Windows::Media::Capture::IMediaCapture5>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCapture6>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCapture6 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureFailedEventArgs>
 {
     size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureFailedEventArgs & value) const noexcept
@@ -4955,6 +5135,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings5>
 {
     size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings6>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::IMediaCaptureInitializationSettings6 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -5180,6 +5369,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Capture::MediaCapture>
 {
     size_t operator()(const winrt::Windows::Media::Capture::MediaCapture & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

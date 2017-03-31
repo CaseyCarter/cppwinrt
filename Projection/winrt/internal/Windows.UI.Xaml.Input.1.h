@@ -56,6 +56,12 @@ struct __declspec(uuid("4ca0efe6-d9c8-4ebc-b4c7-30d1838a81f1")) __declspec(novta
     virtual HRESULT __stdcall abi_ExitDisplayMode() = 0;
 };
 
+struct __declspec(uuid("962bb594-2ab3-47c5-954b-7092f355f797")) __declspec(novtable) IAccessKeyManagerStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AreKeyTipsEnabled(bool * value) = 0;
+    virtual HRESULT __stdcall put_AreKeyTipsEnabled(bool value) = 0;
+};
+
 struct __declspec(uuid("e5af3542-ca67-4081-995b-709dd13792df")) __declspec(novtable) ICommand : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_CanExecuteChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * value, event_token * token) = 0;
@@ -79,6 +85,18 @@ struct __declspec(uuid("af404424-26df-44f4-8714-9359249b62d3")) __declspec(novta
     virtual HRESULT __stdcall abi_GetPosition(Windows::UI::Xaml::IUIElement * relativeTo, Windows::Foundation::Point * returnValue) = 0;
 };
 
+struct __declspec(uuid("d88ae22b-46c2-41fc-897e-b5961977b89d")) __declspec(novtable) IFindNextElementOptions : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SearchRoot(Windows::UI::Xaml::IDependencyObject ** value) = 0;
+    virtual HRESULT __stdcall put_SearchRoot(Windows::UI::Xaml::IDependencyObject * value) = 0;
+    virtual HRESULT __stdcall get_ExclusionRect(Windows::Foundation::Rect * value) = 0;
+    virtual HRESULT __stdcall put_ExclusionRect(Windows::Foundation::Rect value) = 0;
+    virtual HRESULT __stdcall get_HintRect(Windows::Foundation::Rect * value) = 0;
+    virtual HRESULT __stdcall put_HintRect(Windows::Foundation::Rect value) = 0;
+    virtual HRESULT __stdcall get_XYFocusNavigationStrategyOverride(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategyOverride * value) = 0;
+    virtual HRESULT __stdcall put_XYFocusNavigationStrategyOverride(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategyOverride value) = 0;
+};
+
 struct __declspec(uuid("c843f50b-3b83-4da1-9d6f-557c1169f341")) __declspec(novtable) IFocusManager : Windows::Foundation::IInspectable
 {
 };
@@ -97,6 +115,29 @@ struct __declspec(uuid("60805ebf-b149-417d-83f1-baeb560e2a47")) __declspec(novta
 {
     virtual HRESULT __stdcall abi_FindNextFocusableElement(winrt::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, Windows::UI::Xaml::IUIElement ** result) = 0;
     virtual HRESULT __stdcall abi_FindNextFocusableElementWithHint(winrt::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, Windows::Foundation::Rect hintRect, Windows::UI::Xaml::IUIElement ** result) = 0;
+};
+
+struct __declspec(uuid("29276e9c-1c6c-414a-ba1c-96efd5962bcd")) __declspec(novtable) IFocusManagerStatics4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_TryMoveFocusWithOptions(winrt::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, Windows::UI::Xaml::Input::IFindNextElementOptions * focusNavigationOptions, bool * returnValue) = 0;
+    virtual HRESULT __stdcall abi_FindNextElement(winrt::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_FindFirstFocusableElement(Windows::UI::Xaml::IDependencyObject * searchScope, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_FindLastFocusableElement(Windows::UI::Xaml::IDependencyObject * searchScope, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_FindNextElementWithOptions(winrt::Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, Windows::UI::Xaml::Input::IFindNextElementOptions * focusNavigationOptions, Windows::UI::Xaml::IDependencyObject ** returnValue) = 0;
+};
+
+struct __declspec(uuid("fa05b9ce-c67c-4be8-8fd4-c44d67877e0d")) __declspec(novtable) IGettingFocusEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_OldFocusedElement(Windows::UI::Xaml::IDependencyObject ** value) = 0;
+    virtual HRESULT __stdcall get_NewFocusedElement(Windows::UI::Xaml::IDependencyObject ** value) = 0;
+    virtual HRESULT __stdcall put_NewFocusedElement(Windows::UI::Xaml::IDependencyObject * value) = 0;
+    virtual HRESULT __stdcall get_FocusState(winrt::Windows::UI::Xaml::FocusState * value) = 0;
+    virtual HRESULT __stdcall get_Direction(winrt::Windows::UI::Xaml::Input::FocusNavigationDirection * value) = 0;
+    virtual HRESULT __stdcall get_Handled(bool * value) = 0;
+    virtual HRESULT __stdcall put_Handled(bool value) = 0;
+    virtual HRESULT __stdcall get_InputDevice(winrt::Windows::UI::Xaml::Input::FocusInputDeviceKind * value) = 0;
+    virtual HRESULT __stdcall get_Cancel(bool * value) = 0;
+    virtual HRESULT __stdcall put_Cancel(bool value) = 0;
 };
 
 struct __declspec(uuid("c246ff23-d80d-44de-8db9-0d815e269ac0")) __declspec(novtable) IHoldingRoutedEventArgs : Windows::Foundation::IInspectable
@@ -164,6 +205,20 @@ struct __declspec(uuid("1b02d57a-9634-4f14-91b2-133e42fdb3cd")) __declspec(novta
 struct __declspec(uuid("2779f5b4-ca41-411b-a8ef-f4fc78e78057")) __declspec(novtable) IKeyRoutedEventArgs3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
+};
+
+struct __declspec(uuid("f9f683c7-d789-472b-aa93-6d4105e6dabe")) __declspec(novtable) ILosingFocusEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_OldFocusedElement(Windows::UI::Xaml::IDependencyObject ** value) = 0;
+    virtual HRESULT __stdcall get_NewFocusedElement(Windows::UI::Xaml::IDependencyObject ** value) = 0;
+    virtual HRESULT __stdcall put_NewFocusedElement(Windows::UI::Xaml::IDependencyObject * value) = 0;
+    virtual HRESULT __stdcall get_FocusState(winrt::Windows::UI::Xaml::FocusState * value) = 0;
+    virtual HRESULT __stdcall get_Direction(winrt::Windows::UI::Xaml::Input::FocusNavigationDirection * value) = 0;
+    virtual HRESULT __stdcall get_Handled(bool * value) = 0;
+    virtual HRESULT __stdcall put_Handled(bool value) = 0;
+    virtual HRESULT __stdcall get_InputDevice(winrt::Windows::UI::Xaml::Input::FocusInputDeviceKind * value) = 0;
+    virtual HRESULT __stdcall get_Cancel(bool * value) = 0;
+    virtual HRESULT __stdcall put_Cancel(bool value) = 0;
 };
 
 struct __declspec(uuid("b5ad9b23-2f41-498e-8319-015ee8a75346")) __declspec(novtable) IManipulationCompletedRoutedEventArgs : Windows::Foundation::IInspectable
@@ -248,6 +303,14 @@ struct __declspec(uuid("18d636b7-53a4-4c15-a498-f3a9ca212a42")) __declspec(novta
     virtual HRESULT __stdcall put_Pivot(Windows::UI::Xaml::Input::IManipulationPivot * value) = 0;
     virtual HRESULT __stdcall get_Handled(bool * value) = 0;
     virtual HRESULT __stdcall put_Handled(bool value) = 0;
+};
+
+struct __declspec(uuid("ec3601a7-1007-48f9-b6b3-ed0bea53937d")) __declspec(novtable) INoFocusCandidateFoundEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Direction(winrt::Windows::UI::Xaml::Input::FocusNavigationDirection * value) = 0;
+    virtual HRESULT __stdcall get_Handled(bool * value) = 0;
+    virtual HRESULT __stdcall put_Handled(bool value) = 0;
+    virtual HRESULT __stdcall get_InputDevice(winrt::Windows::UI::Xaml::Input::FocusInputDeviceKind * value) = 0;
 };
 
 struct __declspec(uuid("5ee8f39f-747d-4171-90e6-cd37a9dffb11")) __declspec(novtable) IPointer : Windows::Foundation::IInspectable
@@ -339,7 +402,9 @@ template <> struct traits<Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> {
 template <> struct traits<Windows::UI::Xaml::Input::AccessKeyManager> { using default_interface = Windows::UI::Xaml::Input::IAccessKeyManager; };
 template <> struct traits<Windows::UI::Xaml::Input::ContextRequestedEventArgs> { using default_interface = Windows::UI::Xaml::Input::IContextRequestedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs> { using default_interface = Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs; };
+template <> struct traits<Windows::UI::Xaml::Input::FindNextElementOptions> { using default_interface = Windows::UI::Xaml::Input::IFindNextElementOptions; };
 template <> struct traits<Windows::UI::Xaml::Input::FocusManager> { using default_interface = Windows::UI::Xaml::Input::IFocusManager; };
+template <> struct traits<Windows::UI::Xaml::Input::GettingFocusEventArgs> { using default_interface = Windows::UI::Xaml::Input::IGettingFocusEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Input::HoldingRoutedEventArgs> { using default_interface = Windows::UI::Xaml::Input::IHoldingRoutedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Input::InertiaExpansionBehavior> { using default_interface = Windows::UI::Xaml::Input::IInertiaExpansionBehavior; };
 template <> struct traits<Windows::UI::Xaml::Input::InertiaRotationBehavior> { using default_interface = Windows::UI::Xaml::Input::IInertiaRotationBehavior; };
@@ -347,12 +412,14 @@ template <> struct traits<Windows::UI::Xaml::Input::InertiaTranslationBehavior> 
 template <> struct traits<Windows::UI::Xaml::Input::InputScope> { using default_interface = Windows::UI::Xaml::Input::IInputScope; };
 template <> struct traits<Windows::UI::Xaml::Input::InputScopeName> { using default_interface = Windows::UI::Xaml::Input::IInputScopeName; };
 template <> struct traits<Windows::UI::Xaml::Input::KeyRoutedEventArgs> { using default_interface = Windows::UI::Xaml::Input::IKeyRoutedEventArgs; };
+template <> struct traits<Windows::UI::Xaml::Input::LosingFocusEventArgs> { using default_interface = Windows::UI::Xaml::Input::ILosingFocusEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs> { using default_interface = Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs> { using default_interface = Windows::UI::Xaml::Input::IManipulationDeltaRoutedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs> { using default_interface = Windows::UI::Xaml::Input::IManipulationInertiaStartingRoutedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationPivot> { using default_interface = Windows::UI::Xaml::Input::IManipulationPivot; };
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs> { using default_interface = Windows::UI::Xaml::Input::IManipulationStartedRoutedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs> { using default_interface = Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs; };
+template <> struct traits<Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> { using default_interface = Windows::UI::Xaml::Input::INoFocusCandidateFoundEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Input::Pointer> { using default_interface = Windows::UI::Xaml::Input::IPointer; };
 template <> struct traits<Windows::UI::Xaml::Input::PointerRoutedEventArgs> { using default_interface = Windows::UI::Xaml::Input::IPointerRoutedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Input::RightTappedRoutedEventArgs> { using default_interface = Windows::UI::Xaml::Input::IRightTappedRoutedEventArgs; };
@@ -397,6 +464,13 @@ struct WINRT_EBO impl_IAccessKeyManagerStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_IAccessKeyManagerStatics2
+{
+    bool AreKeyTipsEnabled() const;
+    void AreKeyTipsEnabled(bool value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ICommand
 {
     event_token CanExecuteChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & value) const;
@@ -425,6 +499,19 @@ struct WINRT_EBO impl_IDoubleTappedRoutedEventArgs
 };
 
 template <typename D>
+struct WINRT_EBO impl_IFindNextElementOptions
+{
+    Windows::UI::Xaml::DependencyObject SearchRoot() const;
+    void SearchRoot(const Windows::UI::Xaml::DependencyObject & value) const;
+    Windows::Foundation::Rect ExclusionRect() const;
+    void ExclusionRect(const Windows::Foundation::Rect & value) const;
+    Windows::Foundation::Rect HintRect() const;
+    void HintRect(const Windows::Foundation::Rect & value) const;
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategyOverride XYFocusNavigationStrategyOverride() const;
+    void XYFocusNavigationStrategyOverride(Windows::UI::Xaml::Input::XYFocusNavigationStrategyOverride value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IFocusManager
 {
 };
@@ -446,6 +533,31 @@ struct WINRT_EBO impl_IFocusManagerStatics3
 {
     Windows::UI::Xaml::UIElement FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const;
     Windows::UI::Xaml::UIElement FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::Foundation::Rect & hintRect) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFocusManagerStatics4
+{
+    bool TryMoveFocus(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::UI::Xaml::Input::FindNextElementOptions & focusNavigationOptions) const;
+    Windows::UI::Xaml::DependencyObject FindNextElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const;
+    Windows::UI::Xaml::DependencyObject FindFirstFocusableElement(const Windows::UI::Xaml::DependencyObject & searchScope) const;
+    Windows::UI::Xaml::DependencyObject FindLastFocusableElement(const Windows::UI::Xaml::DependencyObject & searchScope) const;
+    Windows::UI::Xaml::DependencyObject FindNextElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::UI::Xaml::Input::FindNextElementOptions & focusNavigationOptions) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGettingFocusEventArgs
+{
+    Windows::UI::Xaml::DependencyObject OldFocusedElement() const;
+    Windows::UI::Xaml::DependencyObject NewFocusedElement() const;
+    void NewFocusedElement(const Windows::UI::Xaml::DependencyObject & value) const;
+    Windows::UI::Xaml::FocusState FocusState() const;
+    Windows::UI::Xaml::Input::FocusNavigationDirection Direction() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::UI::Xaml::Input::FocusInputDeviceKind InputDevice() const;
+    bool Cancel() const;
+    void Cancel(bool value) const;
 };
 
 template <typename D>
@@ -523,6 +635,21 @@ template <typename D>
 struct WINRT_EBO impl_IKeyRoutedEventArgs3
 {
     hstring DeviceId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILosingFocusEventArgs
+{
+    Windows::UI::Xaml::DependencyObject OldFocusedElement() const;
+    Windows::UI::Xaml::DependencyObject NewFocusedElement() const;
+    void NewFocusedElement(const Windows::UI::Xaml::DependencyObject & value) const;
+    Windows::UI::Xaml::FocusState FocusState() const;
+    Windows::UI::Xaml::Input::FocusNavigationDirection Direction() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::UI::Xaml::Input::FocusInputDeviceKind InputDevice() const;
+    bool Cancel() const;
+    void Cancel(bool value) const;
 };
 
 template <typename D>
@@ -618,6 +745,15 @@ struct WINRT_EBO impl_IManipulationStartingRoutedEventArgs
 };
 
 template <typename D>
+struct WINRT_EBO impl_INoFocusCandidateFoundEventArgs
+{
+    Windows::UI::Xaml::Input::FocusNavigationDirection Direction() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::UI::Xaml::Input::FocusInputDeviceKind InputDevice() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IPointer
 {
     uint32_t PointerId() const;
@@ -699,6 +835,12 @@ template <> struct traits<Windows::UI::Xaml::Input::IAccessKeyManagerStatics>
     template <typename D> using consume = Windows::UI::Xaml::Input::impl_IAccessKeyManagerStatics<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Input::IAccessKeyManagerStatics2>
+{
+    using abi = ABI::Windows::UI::Xaml::Input::IAccessKeyManagerStatics2;
+    template <typename D> using consume = Windows::UI::Xaml::Input::impl_IAccessKeyManagerStatics2<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Input::ICommand>
 {
     using abi = ABI::Windows::UI::Xaml::Input::ICommand;
@@ -715,6 +857,12 @@ template <> struct traits<Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs
 {
     using abi = ABI::Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs;
     template <typename D> using consume = Windows::UI::Xaml::Input::impl_IDoubleTappedRoutedEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Input::IFindNextElementOptions>
+{
+    using abi = ABI::Windows::UI::Xaml::Input::IFindNextElementOptions;
+    template <typename D> using consume = Windows::UI::Xaml::Input::impl_IFindNextElementOptions<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::IFocusManager>
@@ -739,6 +887,18 @@ template <> struct traits<Windows::UI::Xaml::Input::IFocusManagerStatics3>
 {
     using abi = ABI::Windows::UI::Xaml::Input::IFocusManagerStatics3;
     template <typename D> using consume = Windows::UI::Xaml::Input::impl_IFocusManagerStatics3<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Input::IFocusManagerStatics4>
+{
+    using abi = ABI::Windows::UI::Xaml::Input::IFocusManagerStatics4;
+    template <typename D> using consume = Windows::UI::Xaml::Input::impl_IFocusManagerStatics4<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Input::IGettingFocusEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Input::IGettingFocusEventArgs;
+    template <typename D> using consume = Windows::UI::Xaml::Input::impl_IGettingFocusEventArgs<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::IHoldingRoutedEventArgs>
@@ -801,6 +961,12 @@ template <> struct traits<Windows::UI::Xaml::Input::IKeyRoutedEventArgs3>
     template <typename D> using consume = Windows::UI::Xaml::Input::impl_IKeyRoutedEventArgs3<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Input::ILosingFocusEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Input::ILosingFocusEventArgs;
+    template <typename D> using consume = Windows::UI::Xaml::Input::impl_ILosingFocusEventArgs<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs;
@@ -847,6 +1013,12 @@ template <> struct traits<Windows::UI::Xaml::Input::IManipulationStartingRoutedE
 {
     using abi = ABI::Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs;
     template <typename D> using consume = Windows::UI::Xaml::Input::impl_IManipulationStartingRoutedEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Input::INoFocusCandidateFoundEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Input::INoFocusCandidateFoundEventArgs;
+    template <typename D> using consume = Windows::UI::Xaml::Input::impl_INoFocusCandidateFoundEventArgs<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::IPointer>
@@ -954,10 +1126,22 @@ template <> struct traits<Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs>
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.DoubleTappedRoutedEventArgs"; }
 };
 
+template <> struct traits<Windows::UI::Xaml::Input::FindNextElementOptions>
+{
+    using abi = ABI::Windows::UI::Xaml::Input::FindNextElementOptions;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.FindNextElementOptions"; }
+};
+
 template <> struct traits<Windows::UI::Xaml::Input::FocusManager>
 {
     using abi = ABI::Windows::UI::Xaml::Input::FocusManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.FocusManager"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Input::GettingFocusEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Input::GettingFocusEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.GettingFocusEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::HoldingRoutedEventArgs>
@@ -1002,6 +1186,12 @@ template <> struct traits<Windows::UI::Xaml::Input::KeyRoutedEventArgs>
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.KeyRoutedEventArgs"; }
 };
 
+template <> struct traits<Windows::UI::Xaml::Input::LosingFocusEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Input::LosingFocusEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.LosingFocusEventArgs"; }
+};
+
 template <> struct traits<Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs;
@@ -1036,6 +1226,12 @@ template <> struct traits<Windows::UI::Xaml::Input::ManipulationStartingRoutedEv
 {
     using abi = ABI::Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Input.NoFocusCandidateFoundEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Input::Pointer>

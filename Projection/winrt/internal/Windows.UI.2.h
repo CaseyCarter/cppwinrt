@@ -23,6 +23,13 @@ struct IColorHelperStatics :
     IColorHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IColorHelperStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IColorHelperStatics2>
+{
+    IColorHelperStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IColors :
     Windows::Foundation::IInspectable,
     impl::consume<IColors>

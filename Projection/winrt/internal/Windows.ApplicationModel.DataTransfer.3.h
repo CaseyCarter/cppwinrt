@@ -27,6 +27,24 @@ template <typename H> struct impl_DataProviderHandler : implements<impl_DataProv
     }
 };
 
+template <typename H> struct impl_ShareProviderHandler : implements<impl_ShareProviderHandler<H>, abi<ShareProviderHandler>>, H
+{
+    impl_ShareProviderHandler(H && handler) : H(std::forward<H>(handler)) {}
+
+    HRESULT __stdcall abi_Invoke(impl::abi_arg_in<Windows::ApplicationModel::DataTransfer::IShareProviderOperation> operation) noexcept override
+    {
+        try
+        {
+            (*this)(*reinterpret_cast<const Windows::ApplicationModel::DataTransfer::ShareProviderOperation *>(&operation));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
 }
 
 namespace Windows::ApplicationModel::DataTransfer {
@@ -46,7 +64,7 @@ struct Clipboard
 
 struct WINRT_EBO DataPackage :
     Windows::ApplicationModel::DataTransfer::IDataPackage,
-    impl::require<DataPackage, Windows::ApplicationModel::DataTransfer::IDataPackage2>
+    impl::require<DataPackage, Windows::ApplicationModel::DataTransfer::IDataPackage2, Windows::ApplicationModel::DataTransfer::IDataPackage3>
 {
     DataPackage(std::nullptr_t) noexcept {}
     DataPackage();
@@ -104,7 +122,8 @@ struct WINRT_EBO DataRequestedEventArgs :
 };
 
 struct WINRT_EBO DataTransferManager :
-    Windows::ApplicationModel::DataTransfer::IDataTransferManager
+    Windows::ApplicationModel::DataTransfer::IDataTransferManager,
+    impl::require<DataTransferManager, Windows::ApplicationModel::DataTransfer::IDataTransferManager2>
 {
     DataTransferManager(std::nullptr_t) noexcept {}
     static void ShowShareUI();
@@ -124,6 +143,37 @@ struct WINRT_EBO OperationCompletedEventArgs :
     impl::require<OperationCompletedEventArgs, Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs2>
 {
     OperationCompletedEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ShareCompletedEventArgs :
+    Windows::ApplicationModel::DataTransfer::IShareCompletedEventArgs
+{
+    ShareCompletedEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ShareProvider :
+    Windows::ApplicationModel::DataTransfer::IShareProvider
+{
+    ShareProvider(std::nullptr_t) noexcept {}
+    ShareProvider(hstring_view title, const Windows::Storage::Streams::RandomAccessStreamReference & displayIcon, const Windows::UI::Color & backgroundColor, const Windows::ApplicationModel::DataTransfer::ShareProviderHandler & handler);
+};
+
+struct WINRT_EBO ShareProviderOperation :
+    Windows::ApplicationModel::DataTransfer::IShareProviderOperation
+{
+    ShareProviderOperation(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ShareProvidersRequestedEventArgs :
+    Windows::ApplicationModel::DataTransfer::IShareProvidersRequestedEventArgs
+{
+    ShareProvidersRequestedEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ShareTargetInfo :
+    Windows::ApplicationModel::DataTransfer::IShareTargetInfo
+{
+    ShareTargetInfo(std::nullptr_t) noexcept {}
 };
 
 struct SharedStorageAccessManager

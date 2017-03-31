@@ -85,6 +85,7 @@ struct ISocialDashboardItemUpdater :
 {
     ISocialDashboardItemUpdater(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("ISocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialDashboardItemUpdater;
 
 struct ISocialFeedUpdater :
     Windows::Foundation::IInspectable,
@@ -92,6 +93,7 @@ struct ISocialFeedUpdater :
 {
     ISocialFeedUpdater(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("ISocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialFeedUpdater;
 
 struct ISocialInfoProviderManagerStatics :
     Windows::Foundation::IInspectable,
@@ -99,6 +101,7 @@ struct ISocialInfoProviderManagerStatics :
 {
     ISocialInfoProviderManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialInfoProviderManagerStatics;
 
 }
 

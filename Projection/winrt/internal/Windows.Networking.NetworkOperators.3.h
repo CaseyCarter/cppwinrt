@@ -66,7 +66,7 @@ struct KnownUSimFilePaths
 
 struct WINRT_EBO MobileBroadbandAccount :
     Windows::Networking::NetworkOperators::IMobileBroadbandAccount,
-    impl::require<MobileBroadbandAccount, Windows::Networking::NetworkOperators::IMobileBroadbandAccount2>
+    impl::require<MobileBroadbandAccount, Windows::Networking::NetworkOperators::IMobileBroadbandAccount2, Windows::Networking::NetworkOperators::IMobileBroadbandAccount3>
 {
     MobileBroadbandAccount(std::nullptr_t) noexcept {}
     static Windows::Foundation::Collections::IVectorView<hstring> AvailableNetworkAccountIds();
@@ -94,7 +94,7 @@ struct WINRT_EBO MobileBroadbandAccountWatcher :
 
 struct WINRT_EBO MobileBroadbandDeviceInformation :
     Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation,
-    impl::require<MobileBroadbandDeviceInformation, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2>
+    impl::require<MobileBroadbandDeviceInformation, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3>
 {
     MobileBroadbandDeviceInformation(std::nullptr_t) noexcept {}
 };

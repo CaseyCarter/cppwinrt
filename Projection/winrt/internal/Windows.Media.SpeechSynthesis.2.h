@@ -5,6 +5,7 @@
 
 #include "Windows.Media.SpeechSynthesis.1.h"
 #include "Windows.Foundation.1.h"
+#include "Windows.Media.Core.1.h"
 #include "Windows.Storage.Streams.1.h"
 
 WINRT_EXPORT namespace winrt {
@@ -101,6 +102,20 @@ struct ISpeechSynthesizer :
     impl::consume<ISpeechSynthesizer>
 {
     ISpeechSynthesizer(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpeechSynthesizer2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpeechSynthesizer2>
+{
+    ISpeechSynthesizer2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpeechSynthesizerOptions :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpeechSynthesizerOptions>
+{
+    ISpeechSynthesizerOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVoiceInformation :

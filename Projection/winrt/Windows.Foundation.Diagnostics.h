@@ -3969,16 +3969,16 @@ inline LoggingActivity::LoggingActivity(hstring_view activityName, const Windows
     LoggingActivity(get_activation_factory<LoggingActivity, ILoggingActivityFactory>().CreateLoggingActivityWithLevel(activityName, loggingChannel, level))
 {}
 
+inline LoggingChannel::LoggingChannel(hstring_view name) :
+    LoggingChannel(get_activation_factory<LoggingChannel, ILoggingChannelFactory>().Create(name))
+{}
+
 inline LoggingChannel::LoggingChannel(hstring_view name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options) :
     LoggingChannel(get_activation_factory<LoggingChannel, ILoggingChannelFactory2>().CreateWithOptions(name, options))
 {}
 
 inline LoggingChannel::LoggingChannel(hstring_view name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options, GUID id) :
     LoggingChannel(get_activation_factory<LoggingChannel, ILoggingChannelFactory2>().CreateWithOptionsAndId(name, options, id))
-{}
-
-inline LoggingChannel::LoggingChannel(hstring_view name) :
-    LoggingChannel(get_activation_factory<LoggingChannel, ILoggingChannelFactory>().Create(name))
 {}
 
 inline LoggingChannelOptions::LoggingChannelOptions() :

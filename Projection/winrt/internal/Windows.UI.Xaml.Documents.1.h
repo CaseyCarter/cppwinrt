@@ -8,8 +8,10 @@
 #include "Windows.Foundation.0.h"
 #include "Windows.UI.Text.0.h"
 #include "Windows.UI.Xaml.0.h"
+#include "Windows.UI.Xaml.Input.0.h"
 #include "Windows.UI.Xaml.Media.0.h"
 #include "Windows.Foundation.Collections.1.h"
+#include "Windows.UI.Xaml.Input.1.h"
 #include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
@@ -119,6 +121,24 @@ struct __declspec(uuid("c3f157d9-e5d3-4fb7-8702-4f6d85dd9e0a")) __declspec(novta
     virtual HRESULT __stdcall put_ElementSoundMode(winrt::Windows::UI::Xaml::ElementSoundMode value) = 0;
 };
 
+struct __declspec(uuid("f7d02959-82fb-400a-a407-5a4ee677988a")) __declspec(novtable) IHyperlink4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_FocusState(winrt::Windows::UI::Xaml::FocusState * value) = 0;
+    virtual HRESULT __stdcall get_XYFocusUpNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) = 0;
+    virtual HRESULT __stdcall put_XYFocusUpNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) = 0;
+    virtual HRESULT __stdcall get_XYFocusDownNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) = 0;
+    virtual HRESULT __stdcall put_XYFocusDownNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) = 0;
+    virtual HRESULT __stdcall get_XYFocusLeftNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) = 0;
+    virtual HRESULT __stdcall put_XYFocusLeftNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) = 0;
+    virtual HRESULT __stdcall get_XYFocusRightNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) = 0;
+    virtual HRESULT __stdcall put_XYFocusRightNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) = 0;
+    virtual HRESULT __stdcall add_GotFocus(Windows::UI::Xaml::RoutedEventHandler * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_GotFocus(event_token token) = 0;
+    virtual HRESULT __stdcall add_LostFocus(Windows::UI::Xaml::RoutedEventHandler * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_LostFocus(event_token token) = 0;
+    virtual HRESULT __stdcall abi_Focus(winrt::Windows::UI::Xaml::FocusState value, bool * returnValue) = 0;
+};
+
 struct __declspec(uuid("c755916b-7bdc-4be7-b373-9240a503d870")) __declspec(novtable) IHyperlinkClickEventArgs : Windows::Foundation::IInspectable
 {
 };
@@ -140,6 +160,15 @@ struct __declspec(uuid("3e15dea0-205e-4947-99a5-74e757e8e1b4")) __declspec(novta
     virtual HRESULT __stdcall get_XYFocusUpProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_XYFocusDownProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ElementSoundModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("0476b378-8faa-4e24-b3b6-e9de4d3c708c")) __declspec(novtable) IHyperlinkStatics4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_FocusStateProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_XYFocusUpNavigationStrategyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_XYFocusDownNavigationStrategyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_XYFocusLeftNavigationStrategyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_XYFocusRightNavigationStrategyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("0c92712d-1bc9-4931-8cb1-1aeadf1cc685")) __declspec(novtable) IInline : Windows::Foundation::IInspectable
@@ -243,6 +272,28 @@ struct __declspec(uuid("d1db340f-1bc4-4ca8-bcf7-770bff9b27ab")) __declspec(novta
     virtual HRESULT __stdcall put_ExitDisplayModeOnAccessKeyInvoked(bool value) = 0;
 };
 
+struct __declspec(uuid("b196e222-ca0e-48a9-83bc-36ce50566ac7")) __declspec(novtable) ITextElement4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TextDecorations(winrt::Windows::UI::Text::TextDecorations * value) = 0;
+    virtual HRESULT __stdcall put_TextDecorations(winrt::Windows::UI::Text::TextDecorations value) = 0;
+    virtual HRESULT __stdcall get_IsAccessKeyScope(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsAccessKeyScope(bool value) = 0;
+    virtual HRESULT __stdcall get_AccessKeyScopeOwner(Windows::UI::Xaml::IDependencyObject ** value) = 0;
+    virtual HRESULT __stdcall put_AccessKeyScopeOwner(Windows::UI::Xaml::IDependencyObject * value) = 0;
+    virtual HRESULT __stdcall get_KeyTipPlacementMode(winrt::Windows::UI::Xaml::Input::KeyTipPlacementMode * value) = 0;
+    virtual HRESULT __stdcall put_KeyTipPlacementMode(winrt::Windows::UI::Xaml::Input::KeyTipPlacementMode value) = 0;
+    virtual HRESULT __stdcall get_KeyTipHorizontalOffset(double * value) = 0;
+    virtual HRESULT __stdcall put_KeyTipHorizontalOffset(double value) = 0;
+    virtual HRESULT __stdcall get_KeyTipVerticalOffset(double * value) = 0;
+    virtual HRESULT __stdcall put_KeyTipVerticalOffset(double value) = 0;
+    virtual HRESULT __stdcall add_AccessKeyDisplayRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_AccessKeyDisplayRequested(event_token token) = 0;
+    virtual HRESULT __stdcall add_AccessKeyDisplayDismissed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_AccessKeyDisplayDismissed(event_token token) = 0;
+    virtual HRESULT __stdcall add_AccessKeyInvoked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_AccessKeyInvoked(event_token token) = 0;
+};
+
 struct __declspec(uuid("35007285-cf47-4bfe-b1bc-39c93af4ae80")) __declspec(novtable) ITextElementFactory : Windows::Foundation::IInspectable
 {
 };
@@ -274,6 +325,16 @@ struct __declspec(uuid("cfefcfaf-0fa1-45ec-9a4e-9b33664dc8b1")) __declspec(novta
     virtual HRESULT __stdcall get_AllowFocusOnInteractionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_AccessKeyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ExitDisplayModeOnAccessKeyInvokedProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("fd8f641e-6b12-40d5-b6ef-d1bd12ac9066")) __declspec(novtable) ITextElementStatics4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TextDecorationsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_IsAccessKeyScopeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_AccessKeyScopeOwnerProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_KeyTipPlacementModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_KeyTipHorizontalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_KeyTipVerticalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("ac687aa1-6a41-43ff-851e-45348aa2cf7b")) __declspec(novtable) ITextPointer : Windows::Foundation::IInspectable
@@ -571,6 +632,29 @@ struct WINRT_EBO impl_IHyperlink3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IHyperlink4
+{
+    Windows::UI::Xaml::FocusState FocusState() const;
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy XYFocusUpNavigationStrategy() const;
+    void XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const;
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy XYFocusDownNavigationStrategy() const;
+    void XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const;
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy XYFocusLeftNavigationStrategy() const;
+    void XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const;
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy XYFocusRightNavigationStrategy() const;
+    void XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const;
+    event_token GotFocus(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using GotFocus_revoker = event_revoker<IHyperlink4>;
+    GotFocus_revoker GotFocus(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void GotFocus(event_token token) const;
+    event_token LostFocus(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using LostFocus_revoker = event_revoker<IHyperlink4>;
+    LostFocus_revoker LostFocus(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void LostFocus(event_token token) const;
+    bool Focus(Windows::UI::Xaml::FocusState value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IHyperlinkClickEventArgs
 {
 };
@@ -595,6 +679,16 @@ struct WINRT_EBO impl_IHyperlinkStatics3
     Windows::UI::Xaml::DependencyProperty XYFocusUpProperty() const;
     Windows::UI::Xaml::DependencyProperty XYFocusDownProperty() const;
     Windows::UI::Xaml::DependencyProperty ElementSoundModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHyperlinkStatics4
+{
+    Windows::UI::Xaml::DependencyProperty FocusStateProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusUpNavigationStrategyProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusDownNavigationStrategyProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusLeftNavigationStrategyProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusRightNavigationStrategyProperty() const;
 };
 
 template <typename D>
@@ -713,6 +807,35 @@ struct WINRT_EBO impl_ITextElement3
 };
 
 template <typename D>
+struct WINRT_EBO impl_ITextElement4
+{
+    Windows::UI::Text::TextDecorations TextDecorations() const;
+    void TextDecorations(Windows::UI::Text::TextDecorations value) const;
+    bool IsAccessKeyScope() const;
+    void IsAccessKeyScope(bool value) const;
+    Windows::UI::Xaml::DependencyObject AccessKeyScopeOwner() const;
+    void AccessKeyScopeOwner(const Windows::UI::Xaml::DependencyObject & value) const;
+    Windows::UI::Xaml::Input::KeyTipPlacementMode KeyTipPlacementMode() const;
+    void KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode value) const;
+    double KeyTipHorizontalOffset() const;
+    void KeyTipHorizontalOffset(double value) const;
+    double KeyTipVerticalOffset() const;
+    void KeyTipVerticalOffset(double value) const;
+    event_token AccessKeyDisplayRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> & value) const;
+    using AccessKeyDisplayRequested_revoker = event_revoker<ITextElement4>;
+    AccessKeyDisplayRequested_revoker AccessKeyDisplayRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> & value) const;
+    void AccessKeyDisplayRequested(event_token token) const;
+    event_token AccessKeyDisplayDismissed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> & value) const;
+    using AccessKeyDisplayDismissed_revoker = event_revoker<ITextElement4>;
+    AccessKeyDisplayDismissed_revoker AccessKeyDisplayDismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> & value) const;
+    void AccessKeyDisplayDismissed(event_token token) const;
+    event_token AccessKeyInvoked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> & value) const;
+    using AccessKeyInvoked_revoker = event_revoker<ITextElement4>;
+    AccessKeyInvoked_revoker AccessKeyInvoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> & value) const;
+    void AccessKeyInvoked(event_token token) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ITextElementFactory
 {
 };
@@ -748,6 +871,17 @@ struct WINRT_EBO impl_ITextElementStatics3
     Windows::UI::Xaml::DependencyProperty AllowFocusOnInteractionProperty() const;
     Windows::UI::Xaml::DependencyProperty AccessKeyProperty() const;
     Windows::UI::Xaml::DependencyProperty ExitDisplayModeOnAccessKeyInvokedProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextElementStatics4
+{
+    Windows::UI::Xaml::DependencyProperty TextDecorationsProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsAccessKeyScopeProperty() const;
+    Windows::UI::Xaml::DependencyProperty AccessKeyScopeOwnerProperty() const;
+    Windows::UI::Xaml::DependencyProperty KeyTipPlacementModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty KeyTipHorizontalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty KeyTipVerticalOffsetProperty() const;
 };
 
 template <typename D>
@@ -975,6 +1109,12 @@ template <> struct traits<Windows::UI::Xaml::Documents::IHyperlink3>
     template <typename D> using consume = Windows::UI::Xaml::Documents::impl_IHyperlink3<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Documents::IHyperlink4>
+{
+    using abi = ABI::Windows::UI::Xaml::Documents::IHyperlink4;
+    template <typename D> using consume = Windows::UI::Xaml::Documents::impl_IHyperlink4<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs;
@@ -997,6 +1137,12 @@ template <> struct traits<Windows::UI::Xaml::Documents::IHyperlinkStatics3>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::IHyperlinkStatics3;
     template <typename D> using consume = Windows::UI::Xaml::Documents::impl_IHyperlinkStatics3<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Documents::IHyperlinkStatics4>
+{
+    using abi = ABI::Windows::UI::Xaml::Documents::IHyperlinkStatics4;
+    template <typename D> using consume = Windows::UI::Xaml::Documents::impl_IHyperlinkStatics4<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::IInline>
@@ -1083,6 +1229,12 @@ template <> struct traits<Windows::UI::Xaml::Documents::ITextElement3>
     template <typename D> using consume = Windows::UI::Xaml::Documents::impl_ITextElement3<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Documents::ITextElement4>
+{
+    using abi = ABI::Windows::UI::Xaml::Documents::ITextElement4;
+    template <typename D> using consume = Windows::UI::Xaml::Documents::impl_ITextElement4<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Documents::ITextElementFactory>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::ITextElementFactory;
@@ -1111,6 +1263,12 @@ template <> struct traits<Windows::UI::Xaml::Documents::ITextElementStatics3>
 {
     using abi = ABI::Windows::UI::Xaml::Documents::ITextElementStatics3;
     template <typename D> using consume = Windows::UI::Xaml::Documents::impl_ITextElementStatics3<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Documents::ITextElementStatics4>
+{
+    using abi = ABI::Windows::UI::Xaml::Documents::ITextElementStatics4;
+    template <typename D> using consume = Windows::UI::Xaml::Documents::impl_ITextElementStatics4<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Documents::ITextPointer>

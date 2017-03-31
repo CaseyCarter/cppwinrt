@@ -1390,6 +1390,66 @@ struct produce<D, Windows::UI::Text::ITextDocument> : produce_base<D, Windows::U
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Text::ITextDocument2> : produce_base<D, Windows::UI::Text::ITextDocument2>
+{
+    HRESULT __stdcall get_AlignmentIncludesTrailingWhitespace(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AlignmentIncludesTrailingWhitespace());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_AlignmentIncludesTrailingWhitespace(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AlignmentIncludesTrailingWhitespace(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IgnoreTrailingCharacterSpacing(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IgnoreTrailingCharacterSpacing());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IgnoreTrailingCharacterSpacing(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IgnoreTrailingCharacterSpacing(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Text::ITextParagraphFormat> : produce_base<D, Windows::UI::Text::ITextParagraphFormat>
 {
     HRESULT __stdcall get_Alignment(Windows::UI::Text::ParagraphAlignment * value) noexcept override
@@ -4138,6 +4198,30 @@ template <typename D> void impl_ITextParagraphFormat<D>::SetLineSpacing(Windows:
     check_hresult(WINRT_SHIM(ITextParagraphFormat)->abi_SetLineSpacing(rule, spacing));
 }
 
+template <typename D> bool impl_ITextDocument2<D>::AlignmentIncludesTrailingWhitespace() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ITextDocument2)->get_AlignmentIncludesTrailingWhitespace(&value));
+    return value;
+}
+
+template <typename D> void impl_ITextDocument2<D>::AlignmentIncludesTrailingWhitespace(bool value) const
+{
+    check_hresult(WINRT_SHIM(ITextDocument2)->put_AlignmentIncludesTrailingWhitespace(value));
+}
+
+template <typename D> bool impl_ITextDocument2<D>::IgnoreTrailingCharacterSpacing() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ITextDocument2)->get_IgnoreTrailingCharacterSpacing(&value));
+    return value;
+}
+
+template <typename D> void impl_ITextDocument2<D>::IgnoreTrailingCharacterSpacing(bool value) const
+{
+    check_hresult(WINRT_SHIM(ITextDocument2)->put_IgnoreTrailingCharacterSpacing(value));
+}
+
 template <typename D> Windows::UI::Text::FontWeight impl_IFontWeightsStatics<D>::Black() const
 {
     Windows::UI::Text::FontWeight value {};
@@ -4360,6 +4444,15 @@ struct std::hash<winrt::Windows::UI::Text::ITextDocument>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Text::ITextDocument2>
+{
+    size_t operator()(const winrt::Windows::UI::Text::ITextDocument2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Text::ITextParagraphFormat>
 {
     size_t operator()(const winrt::Windows::UI::Text::ITextParagraphFormat & value) const noexcept
@@ -4390,6 +4483,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Text::FontWeights>
 {
     size_t operator()(const winrt::Windows::UI::Text::FontWeights & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Text::RichEditTextDocument>
+{
+    size_t operator()(const winrt::Windows::UI::Text::RichEditTextDocument & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

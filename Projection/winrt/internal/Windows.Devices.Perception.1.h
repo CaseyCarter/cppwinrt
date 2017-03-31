@@ -442,489 +442,489 @@ namespace Windows::Devices::Perception {
 template <typename D>
 struct WINRT_EBO impl_IKnownCameraIntrinsicsPropertiesStatics
 {
-    hstring FocalLength() const;
-    hstring PrincipalPoint() const;
-    hstring RadialDistortion() const;
-    hstring TangentialDistortion() const;
+    [[deprecated("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring FocalLength() const;
+    [[deprecated("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring PrincipalPoint() const;
+    [[deprecated("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring RadialDistortion() const;
+    [[deprecated("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring TangentialDistortion() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IKnownPerceptionColorFrameSourcePropertiesStatics
 {
-    hstring Exposure() const;
-    hstring AutoExposureEnabled() const;
-    hstring ExposureCompensation() const;
+    [[deprecated("KnownPerceptionColorFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring Exposure() const;
+    [[deprecated("KnownPerceptionColorFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring AutoExposureEnabled() const;
+    [[deprecated("KnownPerceptionColorFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring ExposureCompensation() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IKnownPerceptionDepthFrameSourcePropertiesStatics
 {
-    hstring MinDepth() const;
-    hstring MaxDepth() const;
+    [[deprecated("KnownPerceptionDepthFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")]] hstring MinDepth() const;
+    [[deprecated("KnownPerceptionDepthFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")]] hstring MaxDepth() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IKnownPerceptionFrameSourcePropertiesStatics
 {
-    hstring Id() const;
-    hstring PhysicalDeviceIds() const;
-    hstring FrameKind() const;
-    hstring DeviceModelVersion() const;
-    hstring EnclosureLocation() const;
+    [[deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")]] hstring Id() const;
+    [[deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")]] hstring PhysicalDeviceIds() const;
+    [[deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")]] hstring FrameKind() const;
+    [[deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")]] hstring DeviceModelVersion() const;
+    [[deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")]] hstring EnclosureLocation() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IKnownPerceptionFrameSourcePropertiesStatics2
 {
-    hstring DeviceId() const;
+    [[deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring DeviceId() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics
 {
-    hstring Exposure() const;
-    hstring AutoExposureEnabled() const;
-    hstring ExposureCompensation() const;
-    hstring ActiveIlluminationEnabled() const;
-    hstring AmbientSubtractionEnabled() const;
-    hstring StructureLightPatternEnabled() const;
-    hstring InterleavedIlluminationEnabled() const;
+    [[deprecated("KnownPerceptionInfraredFrameSourceProperties.Exposure may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.ExposureControl instead.")]] hstring Exposure() const;
+    [[deprecated("KnownPerceptionInfraredFrameSourceProperties.AutoExposureEnabled may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.ExposureControl.Auto instead.")]] hstring AutoExposureEnabled() const;
+    [[deprecated("KnownPerceptionInfraredFrameSourceProperties.ExposureCompensation may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.ExposureCompensationControl instead.")]] hstring ExposureCompensation() const;
+    [[deprecated("KnownPerceptionInfraredFrameSourceProperties.ActiveIlluminationEnabled may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring ActiveIlluminationEnabled() const;
+    [[deprecated("KnownPerceptionInfraredFrameSourceProperties.AmbientSubtractionEnabled may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring AmbientSubtractionEnabled() const;
+    [[deprecated("KnownPerceptionInfraredFrameSourceProperties.StructureLightPatternEnabled may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring StructureLightPatternEnabled() const;
+    [[deprecated("KnownPerceptionInfraredFrameSourceProperties.InterleavedIlluminationEnabled may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring InterleavedIlluminationEnabled() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IKnownPerceptionVideoFrameSourcePropertiesStatics
 {
-    hstring VideoProfile() const;
-    hstring SupportedVideoProfiles() const;
-    hstring AvailableVideoProfiles() const;
-    hstring IsMirrored() const;
-    hstring CameraIntrinsics() const;
+    [[deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring VideoProfile() const;
+    [[deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring SupportedVideoProfiles() const;
+    [[deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring AvailableVideoProfiles() const;
+    [[deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring IsMirrored() const;
+    [[deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring CameraIntrinsics() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IKnownPerceptionVideoProfilePropertiesStatics
 {
-    hstring BitmapPixelFormat() const;
-    hstring BitmapAlphaMode() const;
-    hstring Width() const;
-    hstring Height() const;
-    hstring FrameDuration() const;
+    [[deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring BitmapPixelFormat() const;
+    [[deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring BitmapAlphaMode() const;
+    [[deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring Width() const;
+    [[deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring Height() const;
+    [[deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring FrameDuration() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionColorFrame
 {
-    Windows::Media::VideoFrame VideoFrame() const;
+    [[deprecated("PerceptionColorFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.VideoMediaFrame instead.")]] Windows::Media::VideoFrame VideoFrame() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionColorFrameArrivedEventArgs
 {
-    Windows::Foundation::TimeSpan RelativeTime() const;
-    Windows::Devices::Perception::PerceptionColorFrame TryOpenFrame() const;
+    [[deprecated("PerceptionColorFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] Windows::Foundation::TimeSpan RelativeTime() const;
+    [[deprecated("PerceptionColorFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] Windows::Devices::Perception::PerceptionColorFrame TryOpenFrame() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionColorFrameReader
 {
-    event_token FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> & handler) const;
+    [[deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] event_token FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> & handler) const;
     using FrameArrived_revoker = event_revoker<IPerceptionColorFrameReader>;
-    FrameArrived_revoker FrameArrived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> & handler) const;
-    void FrameArrived(event_token token) const;
-    Windows::Devices::Perception::PerceptionColorFrameSource Source() const;
-    bool IsPaused() const;
-    void IsPaused(bool value) const;
-    Windows::Devices::Perception::PerceptionColorFrame TryReadLatestFrame() const;
+    [[deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] FrameArrived_revoker FrameArrived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> & handler) const;
+    [[deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] void FrameArrived(event_token token) const;
+    [[deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] Windows::Devices::Perception::PerceptionColorFrameSource Source() const;
+    [[deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] bool IsPaused() const;
+    [[deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] void IsPaused(bool value) const;
+    [[deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] Windows::Devices::Perception::PerceptionColorFrame TryReadLatestFrame() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionColorFrameSource
 {
-    event_token AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using AvailableChanged_revoker = event_revoker<IPerceptionColorFrameSource>;
-    AvailableChanged_revoker AvailableChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void AvailableChanged(event_token token) const;
-    event_token ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] AvailableChanged_revoker AvailableChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void AvailableChanged(event_token token) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using ActiveChanged_revoker = event_revoker<IPerceptionColorFrameSource>;
-    ActiveChanged_revoker ActiveChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void ActiveChanged(event_token token) const;
-    event_token PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] ActiveChanged_revoker ActiveChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void ActiveChanged(event_token token) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
     using PropertiesChanged_revoker = event_revoker<IPerceptionColorFrameSource>;
-    PropertiesChanged_revoker PropertiesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
-    void PropertiesChanged(event_token token) const;
-    event_token VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] PropertiesChanged_revoker PropertiesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void PropertiesChanged(event_token token) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using VideoProfileChanged_revoker = event_revoker<IPerceptionColorFrameSource>;
-    VideoProfileChanged_revoker VideoProfileChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void VideoProfileChanged(event_token token) const;
-    event_token CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] VideoProfileChanged_revoker VideoProfileChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void VideoProfileChanged(event_token token) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using CameraIntrinsicsChanged_revoker = event_revoker<IPerceptionColorFrameSource>;
-    CameraIntrinsicsChanged_revoker CameraIntrinsicsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void CameraIntrinsicsChanged(event_token token) const;
-    hstring Id() const;
-    hstring DisplayName() const;
-    hstring DeviceKind() const;
-    bool Available() const;
-    bool Active() const;
-    bool IsControlled() const;
-    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> Properties() const;
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> SupportedVideoProfiles() const;
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> AvailableVideoProfiles() const;
-    Windows::Devices::Perception::PerceptionVideoProfile VideoProfile() const;
-    Windows::Media::Devices::Core::CameraIntrinsics CameraIntrinsics() const;
-    Windows::Devices::Perception::PerceptionControlSession AcquireControlSession() const;
-    bool CanControlIndependentlyFrom(hstring_view targetId) const;
-    bool IsCorrelatedWith(hstring_view targetId) const;
-    bool TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetSourceId, const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const;
-    Windows::Devices::Perception::PerceptionColorFrameReader OpenReader() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] CameraIntrinsicsChanged_revoker CameraIntrinsicsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void CameraIntrinsicsChanged(event_token token) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring Id() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring DisplayName() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring DeviceKind() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool Available() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool Active() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool IsControlled() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> Properties() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> SupportedVideoProfiles() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> AvailableVideoProfiles() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Devices::Perception::PerceptionVideoProfile VideoProfile() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Media::Devices::Core::CameraIntrinsics CameraIntrinsics() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Devices::Perception::PerceptionControlSession AcquireControlSession() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool CanControlIndependentlyFrom(hstring_view targetId) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool IsCorrelatedWith(hstring_view targetId) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetSourceId, const Windows::Devices::Perception::PerceptionDepthFrameSource & correlatedDepthFrameSource) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Devices::Perception::PerceptionColorFrameReader OpenReader() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionColorFrameSource2
 {
-    hstring DeviceId() const;
+    [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring DeviceId() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionColorFrameSourceAddedEventArgs
 {
-    Windows::Devices::Perception::PerceptionColorFrameSource FrameSource() const;
+    [[deprecated("PerceptionColorFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Devices::Perception::PerceptionColorFrameSource FrameSource() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionColorFrameSourceRemovedEventArgs
 {
-    Windows::Devices::Perception::PerceptionColorFrameSource FrameSource() const;
+    [[deprecated("PerceptionColorFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Devices::Perception::PerceptionColorFrameSource FrameSource() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionColorFrameSourceStatics
 {
-    Windows::Devices::Perception::PerceptionColorFrameSourceWatcher CreateWatcher() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionColorFrameSource>> FindAllAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> FromIdAsync(hstring_view id) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> RequestAccessAsync() const;
+    [[deprecated("PerceptionColorFrameSource.CreateWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.CreateWatcher instead.")]] Windows::Devices::Perception::PerceptionColorFrameSourceWatcher CreateWatcher() const;
+    [[deprecated("PerceptionColorFrameSource.FindAllAsync may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.FindAllAsync instead.")]] Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionColorFrameSource>> FindAllAsync() const;
+    [[deprecated("PerceptionColorFrameSource.FromIdAsync may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.FromIdAsync instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> FromIdAsync(hstring_view id) const;
+    [[deprecated("PerceptionColorFrameSource.RequestAccessAsync may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> RequestAccessAsync() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionColorFrameSourceWatcher
 {
-    event_token SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs> & handler) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs> & handler) const;
     using SourceAdded_revoker = event_revoker<IPerceptionColorFrameSourceWatcher>;
-    SourceAdded_revoker SourceAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs> & handler) const;
-    void SourceAdded(event_token token) const;
-    event_token SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs> & handler) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] SourceAdded_revoker SourceAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs> & handler) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void SourceAdded(event_token token) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs> & handler) const;
     using SourceRemoved_revoker = event_revoker<IPerceptionColorFrameSourceWatcher>;
-    SourceRemoved_revoker SourceRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs> & handler) const;
-    void SourceRemoved(event_token token) const;
-    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] SourceRemoved_revoker SourceRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs> & handler) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void SourceRemoved(event_token token) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
     using Stopped_revoker = event_revoker<IPerceptionColorFrameSourceWatcher>;
-    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
-    void Stopped(event_token token) const;
-    event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void Stopped(event_token token) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
     using EnumerationCompleted_revoker = event_revoker<IPerceptionColorFrameSourceWatcher>;
-    EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
-    void EnumerationCompleted(event_token token) const;
-    Windows::Devices::Enumeration::DeviceWatcherStatus Status() const;
-    void Start() const;
-    void Stop() const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void EnumerationCompleted(event_token token) const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] Windows::Devices::Enumeration::DeviceWatcherStatus Status() const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void Start() const;
+    [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void Stop() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionControlSession
 {
-    event_token ControlLost(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] event_token ControlLost(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> & handler) const;
     using ControlLost_revoker = event_revoker<IPerceptionControlSession>;
-    ControlLost_revoker ControlLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> & handler) const;
-    void ControlLost(event_token token) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetPropertyAsync(hstring_view name, const Windows::Foundation::IInspectable & value) const;
+    [[deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] ControlLost_revoker ControlLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] void ControlLost(event_token token) const;
+    [[deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetPropertyAsync(hstring_view name, const Windows::Foundation::IInspectable & value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthCorrelatedCameraIntrinsics
 {
-    Windows::Foundation::Numerics::float3 UnprojectPixelAtCorrelatedDepth(const Windows::Foundation::Point & pixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const;
-    void UnprojectPixelsAtCorrelatedDepth(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const;
-    Windows::Foundation::IAsyncAction UnprojectRegionPixelsAtCorrelatedDepthAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const;
-    Windows::Foundation::IAsyncAction UnprojectAllPixelsAtCorrelatedDepthAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const;
+    [[deprecated("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] Windows::Foundation::Numerics::float3 UnprojectPixelAtCorrelatedDepth(const Windows::Foundation::Point & pixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const;
+    [[deprecated("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] void UnprojectPixelsAtCorrelatedDepth(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const;
+    [[deprecated("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] Windows::Foundation::IAsyncAction UnprojectRegionPixelsAtCorrelatedDepthAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const;
+    [[deprecated("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] Windows::Foundation::IAsyncAction UnprojectAllPixelsAtCorrelatedDepthAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Numerics::float3> results) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthCorrelatedCoordinateMapper
 {
-    Windows::Foundation::Point MapPixelToTarget(const Windows::Foundation::Point & sourcePixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const;
-    void MapPixelsToTarget(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> results) const;
-    Windows::Foundation::IAsyncAction MapRegionOfPixelsToTargetAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const;
-    Windows::Foundation::IAsyncAction MapAllPixelsToTargetAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const;
+    [[deprecated("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] Windows::Foundation::Point MapPixelToTarget(const Windows::Foundation::Point & sourcePixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const;
+    [[deprecated("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] void MapPixelsToTarget(array_view<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> results) const;
+    [[deprecated("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] Windows::Foundation::IAsyncAction MapRegionOfPixelsToTargetAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const;
+    [[deprecated("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] Windows::Foundation::IAsyncAction MapAllPixelsToTargetAsync(const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_view<Windows::Foundation::Point> targetCoordinates) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthFrame
 {
-    Windows::Media::VideoFrame VideoFrame() const;
+    [[deprecated("PerceptionDepthFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")]] Windows::Media::VideoFrame VideoFrame() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthFrameArrivedEventArgs
 {
-    Windows::Foundation::TimeSpan RelativeTime() const;
-    Windows::Devices::Perception::PerceptionDepthFrame TryOpenFrame() const;
+    [[deprecated("PerceptionDepthFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] Windows::Foundation::TimeSpan RelativeTime() const;
+    [[deprecated("PerceptionDepthFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] Windows::Devices::Perception::PerceptionDepthFrame TryOpenFrame() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthFrameReader
 {
-    event_token FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs> & handler) const;
+    [[deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] event_token FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs> & handler) const;
     using FrameArrived_revoker = event_revoker<IPerceptionDepthFrameReader>;
-    FrameArrived_revoker FrameArrived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs> & handler) const;
-    void FrameArrived(event_token token) const;
-    Windows::Devices::Perception::PerceptionDepthFrameSource Source() const;
-    bool IsPaused() const;
-    void IsPaused(bool value) const;
-    Windows::Devices::Perception::PerceptionDepthFrame TryReadLatestFrame() const;
+    [[deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] FrameArrived_revoker FrameArrived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs> & handler) const;
+    [[deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] void FrameArrived(event_token token) const;
+    [[deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] Windows::Devices::Perception::PerceptionDepthFrameSource Source() const;
+    [[deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] bool IsPaused() const;
+    [[deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] void IsPaused(bool value) const;
+    [[deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] Windows::Devices::Perception::PerceptionDepthFrame TryReadLatestFrame() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthFrameSource
 {
-    event_token AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using AvailableChanged_revoker = event_revoker<IPerceptionDepthFrameSource>;
-    AvailableChanged_revoker AvailableChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void AvailableChanged(event_token token) const;
-    event_token ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] AvailableChanged_revoker AvailableChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void AvailableChanged(event_token token) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using ActiveChanged_revoker = event_revoker<IPerceptionDepthFrameSource>;
-    ActiveChanged_revoker ActiveChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void ActiveChanged(event_token token) const;
-    event_token PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] ActiveChanged_revoker ActiveChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void ActiveChanged(event_token token) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
     using PropertiesChanged_revoker = event_revoker<IPerceptionDepthFrameSource>;
-    PropertiesChanged_revoker PropertiesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
-    void PropertiesChanged(event_token token) const;
-    event_token VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] PropertiesChanged_revoker PropertiesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void PropertiesChanged(event_token token) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using VideoProfileChanged_revoker = event_revoker<IPerceptionDepthFrameSource>;
-    VideoProfileChanged_revoker VideoProfileChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void VideoProfileChanged(event_token token) const;
-    event_token CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] VideoProfileChanged_revoker VideoProfileChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void VideoProfileChanged(event_token token) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using CameraIntrinsicsChanged_revoker = event_revoker<IPerceptionDepthFrameSource>;
-    CameraIntrinsicsChanged_revoker CameraIntrinsicsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void CameraIntrinsicsChanged(event_token token) const;
-    hstring Id() const;
-    hstring DisplayName() const;
-    hstring DeviceKind() const;
-    bool Available() const;
-    bool Active() const;
-    bool IsControlled() const;
-    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> Properties() const;
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> SupportedVideoProfiles() const;
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> AvailableVideoProfiles() const;
-    Windows::Devices::Perception::PerceptionVideoProfile VideoProfile() const;
-    Windows::Media::Devices::Core::CameraIntrinsics CameraIntrinsics() const;
-    Windows::Devices::Perception::PerceptionControlSession AcquireControlSession() const;
-    bool CanControlIndependentlyFrom(hstring_view targetId) const;
-    bool IsCorrelatedWith(hstring_view targetId) const;
-    bool TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & target) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const;
-    Windows::Devices::Perception::PerceptionDepthFrameReader OpenReader() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] CameraIntrinsicsChanged_revoker CameraIntrinsicsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void CameraIntrinsicsChanged(event_token token) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring Id() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring DisplayName() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring DeviceKind() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool Available() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool Active() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool IsControlled() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> Properties() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> SupportedVideoProfiles() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> AvailableVideoProfiles() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Devices::Perception::PerceptionVideoProfile VideoProfile() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Media::Devices::Core::CameraIntrinsics CameraIntrinsics() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Devices::Perception::PerceptionControlSession AcquireControlSession() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool CanControlIndependentlyFrom(hstring_view targetId) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool IsCorrelatedWith(hstring_view targetId) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & target) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Devices::Perception::PerceptionDepthFrameReader OpenReader() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthFrameSource2
 {
-    hstring DeviceId() const;
+    [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring DeviceId() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthFrameSourceAddedEventArgs
 {
-    Windows::Devices::Perception::PerceptionDepthFrameSource FrameSource() const;
+    [[deprecated("PerceptionDepthFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Devices::Perception::PerceptionDepthFrameSource FrameSource() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthFrameSourceRemovedEventArgs
 {
-    Windows::Devices::Perception::PerceptionDepthFrameSource FrameSource() const;
+    [[deprecated("PerceptionDepthFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Devices::Perception::PerceptionDepthFrameSource FrameSource() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthFrameSourceStatics
 {
-    Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher CreateWatcher() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionDepthFrameSource>> FindAllAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> FromIdAsync(hstring_view id) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> RequestAccessAsync() const;
+    [[deprecated("PerceptionDepthFrameSource.CreateWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.CreateWatcher instead.")]] Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher CreateWatcher() const;
+    [[deprecated("PerceptionDepthFrameSource.FindAllAsync may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.FindAllAsync instead.")]] Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionDepthFrameSource>> FindAllAsync() const;
+    [[deprecated("PerceptionDepthFrameSource.FromIdAsync may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.FromIdAsync instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> FromIdAsync(hstring_view id) const;
+    [[deprecated("PerceptionDepthFrameSource.RequestAccessAsync may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> RequestAccessAsync() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionDepthFrameSourceWatcher
 {
-    event_token SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs> & handler) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs> & handler) const;
     using SourceAdded_revoker = event_revoker<IPerceptionDepthFrameSourceWatcher>;
-    SourceAdded_revoker SourceAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs> & handler) const;
-    void SourceAdded(event_token token) const;
-    event_token SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs> & handler) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] SourceAdded_revoker SourceAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs> & handler) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void SourceAdded(event_token token) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs> & handler) const;
     using SourceRemoved_revoker = event_revoker<IPerceptionDepthFrameSourceWatcher>;
-    SourceRemoved_revoker SourceRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs> & handler) const;
-    void SourceRemoved(event_token token) const;
-    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] SourceRemoved_revoker SourceRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs> & handler) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void SourceRemoved(event_token token) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
     using Stopped_revoker = event_revoker<IPerceptionDepthFrameSourceWatcher>;
-    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
-    void Stopped(event_token token) const;
-    event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void Stopped(event_token token) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
     using EnumerationCompleted_revoker = event_revoker<IPerceptionDepthFrameSourceWatcher>;
-    EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
-    void EnumerationCompleted(event_token token) const;
-    Windows::Devices::Enumeration::DeviceWatcherStatus Status() const;
-    void Start() const;
-    void Stop() const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void EnumerationCompleted(event_token token) const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] Windows::Devices::Enumeration::DeviceWatcherStatus Status() const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void Start() const;
+    [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void Stop() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionFrameSourcePropertiesChangedEventArgs
 {
-    Windows::Foundation::Collections::CollectionChange CollectionChange() const;
-    hstring Key() const;
+    [[deprecated("PerceptionFrameSourcePropertiesChangedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Foundation::Collections::CollectionChange CollectionChange() const;
+    [[deprecated("PerceptionFrameSourcePropertiesChangedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] hstring Key() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionFrameSourcePropertyChangeResult
 {
-    Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus Status() const;
-    Windows::Foundation::IInspectable NewValue() const;
+    [[deprecated("PerceptionFrameSourcePropertyChangeResult may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus Status() const;
+    [[deprecated("PerceptionFrameSourcePropertyChangeResult may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Foundation::IInspectable NewValue() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionInfraredFrame
 {
-    Windows::Media::VideoFrame VideoFrame() const;
+    [[deprecated("PerceptionInfraredFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.InfraredMediaFrame instead.")]] Windows::Media::VideoFrame VideoFrame() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionInfraredFrameArrivedEventArgs
 {
-    Windows::Foundation::TimeSpan RelativeTime() const;
-    Windows::Devices::Perception::PerceptionInfraredFrame TryOpenFrame() const;
+    [[deprecated("PerceptionInfraredFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] Windows::Foundation::TimeSpan RelativeTime() const;
+    [[deprecated("PerceptionInfraredFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] Windows::Devices::Perception::PerceptionInfraredFrame TryOpenFrame() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionInfraredFrameReader
 {
-    event_token FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> & handler) const;
+    [[deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] event_token FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> & handler) const;
     using FrameArrived_revoker = event_revoker<IPerceptionInfraredFrameReader>;
-    FrameArrived_revoker FrameArrived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> & handler) const;
-    void FrameArrived(event_token token) const;
-    Windows::Devices::Perception::PerceptionInfraredFrameSource Source() const;
-    bool IsPaused() const;
-    void IsPaused(bool value) const;
-    Windows::Devices::Perception::PerceptionInfraredFrame TryReadLatestFrame() const;
+    [[deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] FrameArrived_revoker FrameArrived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> & handler) const;
+    [[deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] void FrameArrived(event_token token) const;
+    [[deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] Windows::Devices::Perception::PerceptionInfraredFrameSource Source() const;
+    [[deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] bool IsPaused() const;
+    [[deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] void IsPaused(bool value) const;
+    [[deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] Windows::Devices::Perception::PerceptionInfraredFrame TryReadLatestFrame() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionInfraredFrameSource
 {
-    event_token AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using AvailableChanged_revoker = event_revoker<IPerceptionInfraredFrameSource>;
-    AvailableChanged_revoker AvailableChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void AvailableChanged(event_token token) const;
-    event_token ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] AvailableChanged_revoker AvailableChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void AvailableChanged(event_token token) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token ActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using ActiveChanged_revoker = event_revoker<IPerceptionInfraredFrameSource>;
-    ActiveChanged_revoker ActiveChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void ActiveChanged(event_token token) const;
-    event_token PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] ActiveChanged_revoker ActiveChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void ActiveChanged(event_token token) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token PropertiesChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
     using PropertiesChanged_revoker = event_revoker<IPerceptionInfraredFrameSource>;
-    PropertiesChanged_revoker PropertiesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
-    void PropertiesChanged(event_token token) const;
-    event_token VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] PropertiesChanged_revoker PropertiesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void PropertiesChanged(event_token token) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token VideoProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using VideoProfileChanged_revoker = event_revoker<IPerceptionInfraredFrameSource>;
-    VideoProfileChanged_revoker VideoProfileChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void VideoProfileChanged(event_token token) const;
-    event_token CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] VideoProfileChanged_revoker VideoProfileChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void VideoProfileChanged(event_token token) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] event_token CameraIntrinsicsChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
     using CameraIntrinsicsChanged_revoker = event_revoker<IPerceptionInfraredFrameSource>;
-    CameraIntrinsicsChanged_revoker CameraIntrinsicsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
-    void CameraIntrinsicsChanged(event_token token) const;
-    hstring Id() const;
-    hstring DisplayName() const;
-    hstring DeviceKind() const;
-    bool Available() const;
-    bool Active() const;
-    bool IsControlled() const;
-    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> Properties() const;
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> SupportedVideoProfiles() const;
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> AvailableVideoProfiles() const;
-    Windows::Devices::Perception::PerceptionVideoProfile VideoProfile() const;
-    Windows::Media::Devices::Core::CameraIntrinsics CameraIntrinsics() const;
-    Windows::Devices::Perception::PerceptionControlSession AcquireControlSession() const;
-    bool CanControlIndependentlyFrom(hstring_view targetId) const;
-    bool IsCorrelatedWith(hstring_view targetId) const;
-    bool TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & target) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const;
-    Windows::Devices::Perception::PerceptionInfraredFrameReader OpenReader() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] CameraIntrinsicsChanged_revoker CameraIntrinsicsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] void CameraIntrinsicsChanged(event_token token) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring Id() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring DisplayName() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring DeviceKind() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool Available() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool Active() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool IsControlled() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::IInspectable> Properties() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> SupportedVideoProfiles() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionVideoProfile> AvailableVideoProfiles() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Devices::Perception::PerceptionVideoProfile VideoProfile() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Media::Devices::Core::CameraIntrinsics CameraIntrinsics() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Devices::Perception::PerceptionControlSession AcquireControlSession() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool CanControlIndependentlyFrom(hstring_view targetId) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool IsCorrelatedWith(hstring_view targetId) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] bool TryGetTransformTo(hstring_view targetId, Windows::Foundation::Numerics::float4x4 & result) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics> TryGetDepthCorrelatedCameraIntrinsicsAsync(const Windows::Devices::Perception::PerceptionDepthFrameSource & target) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> TryGetDepthCorrelatedCoordinateMapperAsync(hstring_view targetId, const Windows::Devices::Perception::PerceptionDepthFrameSource & depthFrameSourceToMapWith) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> TrySetVideoProfileAsync(const Windows::Devices::Perception::PerceptionControlSession & controlSession, const Windows::Devices::Perception::PerceptionVideoProfile & profile) const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] Windows::Devices::Perception::PerceptionInfraredFrameReader OpenReader() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionInfraredFrameSource2
 {
-    hstring DeviceId() const;
+    [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] hstring DeviceId() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionInfraredFrameSourceAddedEventArgs
 {
-    Windows::Devices::Perception::PerceptionInfraredFrameSource FrameSource() const;
+    [[deprecated("PerceptionInfraredFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Devices::Perception::PerceptionInfraredFrameSource FrameSource() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionInfraredFrameSourceRemovedEventArgs
 {
-    Windows::Devices::Perception::PerceptionInfraredFrameSource FrameSource() const;
+    [[deprecated("PerceptionInfraredFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Devices::Perception::PerceptionInfraredFrameSource FrameSource() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionInfraredFrameSourceStatics
 {
-    Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher CreateWatcher() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionInfraredFrameSource>> FindAllAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> FromIdAsync(hstring_view id) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> RequestAccessAsync() const;
+    [[deprecated("PerceptionInfraredFrameSource.CreateWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.CreateWatcher instead.")]] Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher CreateWatcher() const;
+    [[deprecated("PerceptionInfraredFrameSource.FindAllAsync may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.FindAllAsync instead.")]] Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionInfraredFrameSource>> FindAllAsync() const;
+    [[deprecated("PerceptionInfraredFrameSource.FromIdAsync may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation.FromIdAsync instead.")]] Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> FromIdAsync(hstring_view id) const;
+    [[deprecated("PerceptionInfraredFrameSource.RequestAccessAsync may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Perception::PerceptionFrameSourceAccessStatus> RequestAccessAsync() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionInfraredFrameSourceWatcher
 {
-    event_token SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs> & handler) const;
     using SourceAdded_revoker = event_revoker<IPerceptionInfraredFrameSourceWatcher>;
-    SourceAdded_revoker SourceAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs> & handler) const;
-    void SourceAdded(event_token token) const;
-    event_token SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] SourceAdded_revoker SourceAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void SourceAdded(event_token token) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token SourceRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs> & handler) const;
     using SourceRemoved_revoker = event_revoker<IPerceptionInfraredFrameSourceWatcher>;
-    SourceRemoved_revoker SourceRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs> & handler) const;
-    void SourceRemoved(event_token token) const;
-    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] SourceRemoved_revoker SourceRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void SourceRemoved(event_token token) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
     using Stopped_revoker = event_revoker<IPerceptionInfraredFrameSourceWatcher>;
-    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
-    void Stopped(event_token token) const;
-    event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void Stopped(event_token token) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
     using EnumerationCompleted_revoker = event_revoker<IPerceptionInfraredFrameSourceWatcher>;
-    EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
-    void EnumerationCompleted(event_token token) const;
-    Windows::Devices::Enumeration::DeviceWatcherStatus Status() const;
-    void Start() const;
-    void Stop() const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void EnumerationCompleted(event_token token) const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] Windows::Devices::Enumeration::DeviceWatcherStatus Status() const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void Start() const;
+    [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] void Stop() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IPerceptionVideoProfile
 {
-    Windows::Graphics::Imaging::BitmapPixelFormat BitmapPixelFormat() const;
-    Windows::Graphics::Imaging::BitmapAlphaMode BitmapAlphaMode() const;
-    int32_t Width() const;
-    int32_t Height() const;
-    Windows::Foundation::TimeSpan FrameDuration() const;
-    bool IsEqual(const Windows::Devices::Perception::PerceptionVideoProfile & other) const;
+    [[deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")]] Windows::Graphics::Imaging::BitmapPixelFormat BitmapPixelFormat() const;
+    [[deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")]] Windows::Graphics::Imaging::BitmapAlphaMode BitmapAlphaMode() const;
+    [[deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")]] int32_t Width() const;
+    [[deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")]] int32_t Height() const;
+    [[deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")]] Windows::Foundation::TimeSpan FrameDuration() const;
+    [[deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")]] bool IsEqual(const Windows::Devices::Perception::PerceptionVideoProfile & other) const;
 };
 
 }

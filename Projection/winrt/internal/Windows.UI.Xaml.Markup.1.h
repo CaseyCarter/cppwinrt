@@ -109,6 +109,15 @@ struct __declspec(uuid("f65cfb71-c80c-4ffa-86ee-558754ee336d")) __declspec(novta
     virtual HRESULT __stdcall abi_SetPropertyFromObject(Windows::Foundation::IInspectable * dependencyObject, Windows::UI::Xaml::IDependencyProperty * propertyToSet, Windows::Foundation::IInspectable * value) = 0;
 };
 
+struct __declspec(uuid("d0e6673c-5342-44ef-85a7-ed327a739d9a")) __declspec(novtable) IXamlMarkupHelper : Windows::Foundation::IInspectable
+{
+};
+
+struct __declspec(uuid("c9bc3725-f34f-445c-81a2-6b72a5e8f072")) __declspec(novtable) IXamlMarkupHelperStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_UnloadObject(Windows::UI::Xaml::IDependencyObject * element) = 0;
+};
+
 struct __declspec(uuid("c541f58c-43a9-4216-b718-e0b11b14e93e")) __declspec(novtable) IXamlMember : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsAttachable(bool * value) = 0;
@@ -166,6 +175,7 @@ namespace ABI {
 
 template <> struct traits<Windows::UI::Xaml::Markup::XamlBinaryWriter> { using default_interface = Windows::UI::Xaml::Markup::IXamlBinaryWriter; };
 template <> struct traits<Windows::UI::Xaml::Markup::XamlBindingHelper> { using default_interface = Windows::UI::Xaml::Markup::IXamlBindingHelper; };
+template <> struct traits<Windows::UI::Xaml::Markup::XamlMarkupHelper> { using default_interface = Windows::UI::Xaml::Markup::IXamlMarkupHelper; };
 template <> struct traits<Windows::UI::Xaml::Markup::XamlReader> { using default_interface = Windows::UI::Xaml::Markup::IXamlReader; };
 
 }
@@ -233,6 +243,17 @@ struct WINRT_EBO impl_IXamlBindingHelperStatics
     void SetPropertyFromByte(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint8_t value) const;
     void SetPropertyFromUri(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Uri & value) const;
     void SetPropertyFromObject(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlMarkupHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlMarkupHelperStatics
+{
+    void UnloadObject(const Windows::UI::Xaml::DependencyObject & element) const;
 };
 
 template <typename D>
@@ -337,6 +358,18 @@ template <> struct traits<Windows::UI::Xaml::Markup::IXamlBindingHelperStatics>
     template <typename D> using consume = Windows::UI::Xaml::Markup::impl_IXamlBindingHelperStatics<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Markup::IXamlMarkupHelper>
+{
+    using abi = ABI::Windows::UI::Xaml::Markup::IXamlMarkupHelper;
+    template <typename D> using consume = Windows::UI::Xaml::Markup::impl_IXamlMarkupHelper<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Markup::IXamlMarkupHelperStatics>
+{
+    using abi = ABI::Windows::UI::Xaml::Markup::IXamlMarkupHelperStatics;
+    template <typename D> using consume = Windows::UI::Xaml::Markup::impl_IXamlMarkupHelperStatics<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Markup::IXamlMember>
 {
     using abi = ABI::Windows::UI::Xaml::Markup::IXamlMember;
@@ -377,6 +410,12 @@ template <> struct traits<Windows::UI::Xaml::Markup::XamlBindingHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Markup::XamlBindingHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Markup.XamlBindingHelper"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Markup::XamlMarkupHelper>
+{
+    using abi = ABI::Windows::UI::Xaml::Markup::XamlMarkupHelper;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Markup.XamlMarkupHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Markup::XamlReader>

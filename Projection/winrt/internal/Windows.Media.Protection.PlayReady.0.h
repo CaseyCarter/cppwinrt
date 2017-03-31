@@ -41,11 +41,14 @@ struct IPlayReadyDomainLeaveServiceRequest;
 struct IPlayReadyITADataGenerator;
 struct IPlayReadyIndividualizationServiceRequest;
 struct IPlayReadyLicense;
+struct IPlayReadyLicense2;
 struct IPlayReadyLicenseAcquisitionServiceRequest;
 struct IPlayReadyLicenseAcquisitionServiceRequest2;
+struct IPlayReadyLicenseAcquisitionServiceRequest3;
 struct IPlayReadyLicenseIterableFactory;
 struct IPlayReadyLicenseManagement;
 struct IPlayReadyLicenseSession;
+struct IPlayReadyLicenseSession2;
 struct IPlayReadyLicenseSessionFactory;
 struct IPlayReadyMeteringReportServiceRequest;
 struct IPlayReadyRevocationServiceRequest;
@@ -122,11 +125,14 @@ struct IPlayReadyDomainLeaveServiceRequest;
 struct IPlayReadyITADataGenerator;
 struct IPlayReadyIndividualizationServiceRequest;
 struct IPlayReadyLicense;
+struct IPlayReadyLicense2;
 struct IPlayReadyLicenseAcquisitionServiceRequest;
 struct IPlayReadyLicenseAcquisitionServiceRequest2;
+struct IPlayReadyLicenseAcquisitionServiceRequest3;
 struct IPlayReadyLicenseIterableFactory;
 struct IPlayReadyLicenseManagement;
 struct IPlayReadyLicenseSession;
+struct IPlayReadyLicenseSession2;
 struct IPlayReadyLicenseSessionFactory;
 struct IPlayReadyMeteringReportServiceRequest;
 struct IPlayReadyRevocationServiceRequest;
@@ -206,11 +212,14 @@ template <typename T> struct impl_IPlayReadyDomainLeaveServiceRequest;
 template <typename T> struct impl_IPlayReadyITADataGenerator;
 template <typename T> struct impl_IPlayReadyIndividualizationServiceRequest;
 template <typename T> struct impl_IPlayReadyLicense;
+template <typename T> struct impl_IPlayReadyLicense2;
 template <typename T> struct impl_IPlayReadyLicenseAcquisitionServiceRequest;
 template <typename T> struct impl_IPlayReadyLicenseAcquisitionServiceRequest2;
+template <typename T> struct impl_IPlayReadyLicenseAcquisitionServiceRequest3;
 template <typename T> struct impl_IPlayReadyLicenseIterableFactory;
 template <typename T> struct impl_IPlayReadyLicenseManagement;
 template <typename T> struct impl_IPlayReadyLicenseSession;
+template <typename T> struct impl_IPlayReadyLicenseSession2;
 template <typename T> struct impl_IPlayReadyLicenseSessionFactory;
 template <typename T> struct impl_IPlayReadyMeteringReportServiceRequest;
 template <typename T> struct impl_IPlayReadyRevocationServiceRequest;
@@ -228,7 +237,7 @@ template <typename T> struct impl_IPlayReadyStatics4;
 
 namespace Windows::Media::Protection::PlayReady {
 
-enum class NDCertificateFeature
+enum class [[deprecated("NDCertificateFeature is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDCertificateFeature
 {
     Transmitter = 1,
     Receiver = 2,
@@ -239,7 +248,7 @@ enum class NDCertificateFeature
     PlayReady3Features = 13,
 };
 
-enum class NDCertificatePlatformID
+enum class [[deprecated("NDCertificatePlatformID is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDCertificatePlatformID
 {
     Windows = 0,
     OSX = 1,
@@ -255,7 +264,7 @@ enum class NDCertificatePlatformID
     WindowsPhone81OnX86 = 13,
 };
 
-enum class NDCertificateType
+enum class [[deprecated("NDCertificateType is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDCertificateType
 {
     Unknown = 0,
     PC = 1,
@@ -272,34 +281,34 @@ enum class NDCertificateType
     LicenseSigner = 12,
 };
 
-enum class NDClosedCaptionFormat
+enum class [[deprecated("NDClosedCaptionFormat is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDClosedCaptionFormat
 {
     ATSC = 0,
     SCTE20 = 1,
     Unknown = 2,
 };
 
-enum class NDContentIDType
+enum class [[deprecated("NDContentIDType is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDContentIDType
 {
     KeyID = 1,
     PlayReadyObject = 2,
     Custom = 3,
 };
 
-enum class NDMediaStreamType
+enum class [[deprecated("NDMediaStreamType is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDMediaStreamType
 {
     Audio = 1,
     Video = 2,
 };
 
-enum class NDProximityDetectionType
+enum class [[deprecated("NDProximityDetectionType is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDProximityDetectionType
 {
     UDP = 1,
     TCP = 2,
     TransportAgnostic = 4,
 };
 
-enum class NDStartAsyncOptions
+enum class [[deprecated("NDStartAsyncOptions is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDStartAsyncOptions
 {
     MutualAuthentication = 1,
     WaitForLicenseDescriptor = 2,

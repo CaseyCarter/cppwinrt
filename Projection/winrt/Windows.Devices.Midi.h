@@ -1188,27 +1188,6 @@ template <typename D> hstring impl_IMidiOutPortStatics<D>::GetDeviceSelector() c
     return value;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> impl_IMidiSynthesizerStatics<D>::CreateAsync() const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> value;
-    check_hresult(WINRT_SHIM(IMidiSynthesizerStatics)->abi_CreateAsync(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> impl_IMidiSynthesizerStatics<D>::CreateAsync(const Windows::Devices::Enumeration::DeviceInformation & audioDevice) const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> value;
-    check_hresult(WINRT_SHIM(IMidiSynthesizerStatics)->abi_CreateFromAudioDeviceAsync(get_abi(audioDevice), put_abi(value)));
-    return value;
-}
-
-template <typename D> bool impl_IMidiSynthesizerStatics<D>::IsSynthesizer(const Windows::Devices::Enumeration::DeviceInformation & midiDevice) const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IMidiSynthesizerStatics)->abi_IsSynthesizer(get_abi(midiDevice), &value));
-    return value;
-}
-
 template <typename D> void impl_IMidiOutPort<D>::SendMessage(const Windows::Devices::Midi::IMidiMessage & midiMessage) const
 {
     check_hresult(WINRT_SHIM(IMidiOutPort)->abi_SendMessage(get_abi(midiMessage)));
@@ -1247,6 +1226,27 @@ template <typename D> hstring impl_IMidiInPort<D>::DeviceId() const
 {
     hstring value;
     check_hresult(WINRT_SHIM(IMidiInPort)->get_DeviceId(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> impl_IMidiSynthesizerStatics<D>::CreateAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> value;
+    check_hresult(WINRT_SHIM(IMidiSynthesizerStatics)->abi_CreateAsync(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> impl_IMidiSynthesizerStatics<D>::CreateAsync(const Windows::Devices::Enumeration::DeviceInformation & audioDevice) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> value;
+    check_hresult(WINRT_SHIM(IMidiSynthesizerStatics)->abi_CreateFromAudioDeviceAsync(get_abi(audioDevice), put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IMidiSynthesizerStatics<D>::IsSynthesizer(const Windows::Devices::Enumeration::DeviceInformation & midiDevice) const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IMidiSynthesizerStatics)->abi_IsSynthesizer(get_abi(midiDevice), &value));
     return value;
 }
 
