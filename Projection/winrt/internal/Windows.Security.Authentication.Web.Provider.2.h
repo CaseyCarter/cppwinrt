@@ -29,6 +29,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("3bee8834-b9a7-5a80-a746-5ef097227878")) __declspec(novtable) IAsyncOperation<Windows::Storage::Streams::IBuffer> : impl_IAsyncOperation<Windows::Storage::Streams::IBuffer> {};
 #endif
 
+#ifndef WINRT_GENERIC_81ca789b_98df_5c6a_9531_966238e3e7ae
+#define WINRT_GENERIC_81ca789b_98df_5c6a_9531_966238e3e7ae
+template <> struct __declspec(uuid("81ca789b-98df-5c6a-9531-966238e3e7ae")) __declspec(novtable) IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> : impl_IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> {};
+#endif
+
 
 }
 
@@ -63,21 +68,6 @@ template <> struct __declspec(uuid("cb15d439-a910-542a-89ed-7cfe67848a83")) __de
 #define WINRT_GENERIC_e0798d3d_2b4a_589a_ab12_02dccc158afc
 template <> struct __declspec(uuid("e0798d3d-2b4a-589a-ab12-02dccc158afc")) __declspec(novtable) IVectorView<Windows::Security::Credentials::WebAccount> : impl_IVectorView<Windows::Security::Credentials::WebAccount> {};
 #endif
-
-
-}
-
-namespace ABI::Windows::Foundation {
-
-#ifndef WINRT_GENERIC_81ca789b_98df_5c6a_9531_966238e3e7ae
-#define WINRT_GENERIC_81ca789b_98df_5c6a_9531_966238e3e7ae
-template <> struct __declspec(uuid("81ca789b-98df-5c6a-9531-966238e3e7ae")) __declspec(novtable) IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> : impl_IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_0064c4f6_3fca_5823_9d92_86c40b28adbc
 #define WINRT_GENERIC_0064c4f6_3fca_5823_9d92_86c40b28adbc
@@ -114,6 +104,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("51c3d2fd-b8a1-5620-b746-7ee6d533aca3")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Storage::Streams::IBuffer> : impl_AsyncOperationCompletedHandler<Windows::Storage::Streams::IBuffer> {};
 #endif
 
+#ifndef WINRT_GENERIC_04ca4378_f594_5de6_a555_304f62cb4faf
+#define WINRT_GENERIC_04ca4378_f594_5de6_a555_304f62cb4faf
+template <> struct __declspec(uuid("04ca4378-f594-5de6-a555-304f62cb4faf")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Security::Cryptography::Core::CryptographicKey> : impl_AsyncOperationCompletedHandler<Windows::Security::Cryptography::Core::CryptographicKey> {};
+#endif
+
 #ifndef WINRT_GENERIC_4bd6f1e5_ca89_5240_8f3d_7f1b54ae90a7
 #define WINRT_GENERIC_4bd6f1e5_ca89_5240_8f3d_7f1b54ae90a7
 template <> struct __declspec(uuid("4bd6f1e5-ca89-5240-8f3d-7f1b54ae90a7")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Security::Credentials::WebAccount> : impl_AsyncOperationCompletedHandler<Windows::Security::Credentials::WebAccount> {};
@@ -133,21 +128,6 @@ template <> struct __declspec(uuid("fe11c488-371a-5330-b7fa-282326fdfbda")) __de
 #define WINRT_GENERIC_bfb82cca_aebc_567c_95d9_eba25c365faa
 template <> struct __declspec(uuid("bfb82cca-aebc-567c-95d9-eba25c365faa")) __declspec(novtable) IIterator<Windows::Security::Credentials::WebAccount> : impl_IIterator<Windows::Security::Credentials::WebAccount> {};
 #endif
-
-
-}
-
-namespace ABI::Windows::Foundation {
-
-#ifndef WINRT_GENERIC_04ca4378_f594_5de6_a555_304f62cb4faf
-#define WINRT_GENERIC_04ca4378_f594_5de6_a555_304f62cb4faf
-template <> struct __declspec(uuid("04ca4378-f594-5de6-a555-304f62cb4faf")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Security::Cryptography::Core::CryptographicKey> : impl_AsyncOperationCompletedHandler<Windows::Security::Cryptography::Core::CryptographicKey> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_626bc177_8403_5030_a88c_7485cc89d730
 #define WINRT_GENERIC_626bc177_8403_5030_a88c_7485cc89d730
@@ -262,6 +242,13 @@ struct IWebAccountManagerStatics2 :
     IWebAccountManagerStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IWebAccountManagerStatics3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IWebAccountManagerStatics3>
+{
+    IWebAccountManagerStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IWebAccountMapManagerStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IWebAccountMapManagerStatics>
@@ -336,6 +323,14 @@ struct IWebAccountProviderTokenObjects :
     impl::consume<IWebAccountProviderTokenObjects>
 {
     IWebAccountProviderTokenObjects(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IWebAccountProviderTokenObjects2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IWebAccountProviderTokenObjects2>,
+    impl::require<IWebAccountProviderTokenObjects2, Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects>
+{
+    IWebAccountProviderTokenObjects2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWebAccountProviderTokenOperation :

@@ -148,6 +148,7 @@ template <> struct traits<Windows::UI::WebUI::WebUIAppointmentsProviderShowAppoi
 template <> struct traits<Windows::UI::WebUI::WebUIAppointmentsProviderShowTimeFrameActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderShowTimeFrameActivatedEventArgs; };
 template <> struct traits<Windows::UI::WebUI::WebUIBackgroundTaskInstanceRuntimeClass> { using default_interface = Windows::UI::WebUI::IWebUIBackgroundTaskInstance; };
 template <> struct traits<Windows::UI::WebUI::WebUICachedFileUpdaterActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs; };
+template <> struct traits<Windows::UI::WebUI::WebUIContactPanelActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs; };
 template <> struct traits<Windows::UI::WebUI::WebUIDeviceActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IDeviceActivatedEventArgs; };
 template <> struct traits<Windows::UI::WebUI::WebUIDevicePairingActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IDevicePairingActivatedEventArgs; };
 template <> struct traits<Windows::UI::WebUI::WebUIDialReceiverActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IDialReceiverActivatedEventArgs; };
@@ -159,9 +160,11 @@ template <> struct traits<Windows::UI::WebUI::WebUIFileSavePickerContinuationEve
 template <> struct traits<Windows::UI::WebUI::WebUIFolderPickerContinuationEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IFolderPickerContinuationEventArgs; };
 template <> struct traits<Windows::UI::WebUI::WebUILaunchActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs; };
 template <> struct traits<Windows::UI::WebUI::WebUILockScreenActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::ILockScreenActivatedEventArgs; };
+template <> struct traits<Windows::UI::WebUI::WebUILockScreenComponentActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IActivatedEventArgs; };
 template <> struct traits<Windows::UI::WebUI::WebUINavigatedDeferral> { using default_interface = Windows::UI::WebUI::IWebUINavigatedDeferral; };
 template <> struct traits<Windows::UI::WebUI::WebUINavigatedEventArgs> { using default_interface = Windows::UI::WebUI::IWebUINavigatedEventArgs; };
 template <> struct traits<Windows::UI::WebUI::WebUINavigatedOperation> { using default_interface = Windows::UI::WebUI::IWebUINavigatedOperation; };
+template <> struct traits<Windows::UI::WebUI::WebUIPrintWorkflowForegroundTaskActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IActivatedEventArgs; };
 template <> struct traits<Windows::UI::WebUI::WebUIProtocolActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IProtocolActivatedEventArgs; };
 template <> struct traits<Windows::UI::WebUI::WebUIProtocolForResultsActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IProtocolForResultsActivatedEventArgs; };
 template <> struct traits<Windows::UI::WebUI::WebUIRestrictedLaunchActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IRestrictedLaunchActivatedEventArgs; };
@@ -483,6 +486,12 @@ template <> struct traits<Windows::UI::WebUI::WebUICachedFileUpdaterActivatedEve
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUICachedFileUpdaterActivatedEventArgs"; }
 };
 
+template <> struct traits<Windows::UI::WebUI::WebUIContactPanelActivatedEventArgs>
+{
+    using abi = ABI::Windows::UI::WebUI::WebUIContactPanelActivatedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIContactPanelActivatedEventArgs"; }
+};
+
 template <> struct traits<Windows::UI::WebUI::WebUIDeviceActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIDeviceActivatedEventArgs;
@@ -549,6 +558,12 @@ template <> struct traits<Windows::UI::WebUI::WebUILockScreenActivatedEventArgs>
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUILockScreenActivatedEventArgs"; }
 };
 
+template <> struct traits<Windows::UI::WebUI::WebUILockScreenComponentActivatedEventArgs>
+{
+    using abi = ABI::Windows::UI::WebUI::WebUILockScreenComponentActivatedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUILockScreenComponentActivatedEventArgs"; }
+};
+
 template <> struct traits<Windows::UI::WebUI::WebUINavigatedDeferral>
 {
     using abi = ABI::Windows::UI::WebUI::WebUINavigatedDeferral;
@@ -565,6 +580,12 @@ template <> struct traits<Windows::UI::WebUI::WebUINavigatedOperation>
 {
     using abi = ABI::Windows::UI::WebUI::WebUINavigatedOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUINavigatedOperation"; }
+};
+
+template <> struct traits<Windows::UI::WebUI::WebUIPrintWorkflowForegroundTaskActivatedEventArgs>
+{
+    using abi = ABI::Windows::UI::WebUI::WebUIPrintWorkflowForegroundTaskActivatedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIPrintWorkflowForegroundTaskActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIProtocolActivatedEventArgs>

@@ -257,6 +257,38 @@ struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes3> : produce_
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributes4> : produce_base<D, Windows::UI::Input::Inking::IInkDrawingAttributes4>
+{
+    HRESULT __stdcall get_IgnoreTilt(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IgnoreTilt());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IgnoreTilt(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IgnoreTilt(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties> : produce_base<D, Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties>
 {
     HRESULT __stdcall get_Opacity(double * value) noexcept override
@@ -504,6 +536,52 @@ struct produce<D, Windows::UI::Input::Inking::IInkPoint> : produce_base<D, Windo
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Input::Inking::IInkPoint2> : produce_base<D, Windows::UI::Input::Inking::IInkPoint2>
+{
+    HRESULT __stdcall get_TiltX(float * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TiltX());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_TiltY(float * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TiltY());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Timestamp(uint64_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Timestamp());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Input::Inking::IInkPointFactory> : produce_base<D, Windows::UI::Input::Inking::IInkPointFactory>
 {
     HRESULT __stdcall abi_CreateInkPoint(impl::abi_arg_in<Windows::Foundation::Point> position, float pressure, impl::abi_arg_out<Windows::UI::Input::Inking::IInkPoint> result) noexcept override
@@ -512,6 +590,25 @@ struct produce<D, Windows::UI::Input::Inking::IInkPointFactory> : produce_base<D
         {
             typename D::abi_guard guard(this->shim());
             *result = detach_abi(this->shim().CreateInkPoint(*reinterpret_cast<const Windows::Foundation::Point *>(&position), pressure));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::Inking::IInkPointFactory2> : produce_base<D, Windows::UI::Input::Inking::IInkPointFactory2>
+{
+    HRESULT __stdcall abi_CreateInkPointWithTiltAndTimestamp(impl::abi_arg_in<Windows::Foundation::Point> position, float pressure, float tiltX, float tiltY, uint64_t timestamp, impl::abi_arg_out<Windows::UI::Input::Inking::IInkPoint> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateInkPointWithTiltAndTimestamp(*reinterpret_cast<const Windows::Foundation::Point *>(&position), pressure, tiltX, tiltY, timestamp));
             return S_OK;
         }
         catch (...)
@@ -771,6 +868,257 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenter> : produce_base<D, W
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Input::Inking::IInkPresenter2> : produce_base<D, Windows::UI::Input::Inking::IInkPresenter2>
+{
+    HRESULT __stdcall get_HighContrastAdjustment(Windows::UI::Input::Inking::InkHighContrastAdjustment * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().HighContrastAdjustment());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_HighContrastAdjustment(Windows::UI::Input::Inking::InkHighContrastAdjustment value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().HighContrastAdjustment(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::Inking::IInkPresenterProtractor> : produce_base<D, Windows::UI::Input::Inking::IInkPresenterProtractor>
+{
+    HRESULT __stdcall get_AreTickMarksVisible(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AreTickMarksVisible());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_AreTickMarksVisible(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AreTickMarksVisible(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AreRaysVisible(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AreRaysVisible());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_AreRaysVisible(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AreRaysVisible(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsCenterMarkerVisible(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsCenterMarkerVisible());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsCenterMarkerVisible(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsCenterMarkerVisible(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsAngleReadoutVisible(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsAngleReadoutVisible());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsAngleReadoutVisible(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsAngleReadoutVisible(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsResizable(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsResizable());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsResizable(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsResizable(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Radius(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Radius());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Radius(double value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Radius(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AccentColor(impl::abi_arg_out<Windows::UI::Color> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AccentColor());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_AccentColor(impl::abi_arg_in<Windows::UI::Color> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AccentColor(*reinterpret_cast<const Windows::UI::Color *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::Inking::IInkPresenterProtractorFactory> : produce_base<D, Windows::UI::Input::Inking::IInkPresenterProtractorFactory>
+{
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::UI::Input::Inking::IInkPresenter> inkPresenter, impl::abi_arg_out<Windows::UI::Input::Inking::IInkPresenterProtractor> inkPresenterProtractor) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *inkPresenterProtractor = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::UI::Input::Inking::InkPresenter *>(&inkPresenter)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *inkPresenterProtractor = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Input::Inking::IInkPresenterRuler> : produce_base<D, Windows::UI::Input::Inking::IInkPresenterRuler>
 {
     HRESULT __stdcall get_Length(double * value) noexcept override
@@ -821,6 +1169,66 @@ struct produce<D, Windows::UI::Input::Inking::IInkPresenterRuler> : produce_base
         {
             typename D::abi_guard guard(this->shim());
             this->shim().Width(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::Inking::IInkPresenterRuler2> : produce_base<D, Windows::UI::Input::Inking::IInkPresenterRuler2>
+{
+    HRESULT __stdcall get_AreTickMarksVisible(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AreTickMarksVisible());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_AreTickMarksVisible(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AreTickMarksVisible(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsCompassVisible(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsCompassVisible());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsCompassVisible(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsCompassVisible(value);
             return S_OK;
         }
         catch (...)
@@ -1261,6 +1669,82 @@ struct produce<D, Windows::UI::Input::Inking::IInkStroke2> : produce_base<D, Win
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Input::Inking::IInkStroke3> : produce_base<D, Windows::UI::Input::Inking::IInkStroke3>
+{
+    HRESULT __stdcall get_Id(uint32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Id());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_StrokeStartedTime(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().StrokeStartedTime());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_StrokeStartedTime(impl::abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::DateTime>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StrokeStartedTime(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_StrokeDuration(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().StrokeDuration());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_StrokeDuration(impl::abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StrokeDuration(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Input::Inking::IInkStrokeBuilder> : produce_base<D, Windows::UI::Input::Inking::IInkStrokeBuilder>
 {
     HRESULT __stdcall abi_BeginStroke(impl::abi_arg_in<Windows::UI::Input::IPointerPoint> pointerPoint) noexcept override
@@ -1346,6 +1830,25 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeBuilder2> : produce_base
         {
             typename D::abi_guard guard(this->shim());
             *result = detach_abi(this->shim().CreateStrokeFromInkPoints(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> *>(&inkPoints), *reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&transform)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::Inking::IInkStrokeBuilder3> : produce_base<D, Windows::UI::Input::Inking::IInkStrokeBuilder3>
+{
+    HRESULT __stdcall abi_CreateStrokeFromInkPoints(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint>> inkPoints, impl::abi_arg_in<Windows::Foundation::Numerics::float3x2> transform, impl::abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::DateTime>> strokeStartedTime, impl::abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> strokeDuration, impl::abi_arg_out<Windows::UI::Input::Inking::IInkStroke> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateStrokeFromInkPoints(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> *>(&inkPoints), *reinterpret_cast<const Windows::Foundation::Numerics::float3x2 *>(&transform), *reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::DateTime> *>(&strokeStartedTime), *reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&strokeDuration)));
             return S_OK;
         }
         catch (...)
@@ -1587,6 +2090,40 @@ struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer2> : produce_ba
         }
         catch (...)
         {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::Inking::IInkStrokeContainer3> : produce_base<D, Windows::UI::Input::Inking::IInkStrokeContainer3>
+{
+    HRESULT __stdcall abi_SaveWithFormatAsync(impl::abi_arg_in<Windows::Storage::Streams::IOutputStream> outputStream, Windows::UI::Input::Inking::InkPersistenceFormat inkPersistenceFormat, impl::abi_arg_out<Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t>> outputStreamOperation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *outputStreamOperation = detach_abi(this->shim().SaveAsync(*reinterpret_cast<const Windows::Storage::Streams::IOutputStream *>(&outputStream), inkPersistenceFormat));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *outputStreamOperation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetStrokeById(uint32_t id, impl::abi_arg_out<Windows::UI::Input::Inking::IInkStroke> stroke) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *stroke = detach_abi(this->shim().GetStrokeById(id));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *stroke = nullptr;
             return impl::to_hresult();
         }
     }
@@ -2244,6 +2781,18 @@ template <typename D> void impl_IInkPresenter<D>::StrokesErased(event_token cook
     check_hresult(WINRT_SHIM(IInkPresenter)->remove_StrokesErased(cookie));
 }
 
+template <typename D> Windows::UI::Input::Inking::InkHighContrastAdjustment impl_IInkPresenter2<D>::HighContrastAdjustment() const
+{
+    Windows::UI::Input::Inking::InkHighContrastAdjustment value {};
+    check_hresult(WINRT_SHIM(IInkPresenter2)->get_HighContrastAdjustment(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkPresenter2<D>::HighContrastAdjustment(Windows::UI::Input::Inking::InkHighContrastAdjustment value) const
+{
+    check_hresult(WINRT_SHIM(IInkPresenter2)->put_HighContrastAdjustment(value));
+}
+
 template <typename D> Windows::UI::Input::Inking::InkInputProcessingMode impl_IInkInputProcessingConfiguration<D>::Mode() const
 {
     Windows::UI::Input::Inking::InkInputProcessingMode value {};
@@ -2560,11 +3109,126 @@ template <typename D> void impl_IInkPresenterRuler<D>::Width(double value) const
     check_hresult(WINRT_SHIM(IInkPresenterRuler)->put_Width(value));
 }
 
+template <typename D> bool impl_IInkPresenterRuler2<D>::AreTickMarksVisible() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkPresenterRuler2)->get_AreTickMarksVisible(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkPresenterRuler2<D>::AreTickMarksVisible(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkPresenterRuler2)->put_AreTickMarksVisible(value));
+}
+
+template <typename D> bool impl_IInkPresenterRuler2<D>::IsCompassVisible() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkPresenterRuler2)->get_IsCompassVisible(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkPresenterRuler2<D>::IsCompassVisible(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkPresenterRuler2)->put_IsCompassVisible(value));
+}
+
+template <typename D> bool impl_IInkPresenterProtractor<D>::AreTickMarksVisible() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->get_AreTickMarksVisible(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkPresenterProtractor<D>::AreTickMarksVisible(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->put_AreTickMarksVisible(value));
+}
+
+template <typename D> bool impl_IInkPresenterProtractor<D>::AreRaysVisible() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->get_AreRaysVisible(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkPresenterProtractor<D>::AreRaysVisible(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->put_AreRaysVisible(value));
+}
+
+template <typename D> bool impl_IInkPresenterProtractor<D>::IsCenterMarkerVisible() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->get_IsCenterMarkerVisible(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkPresenterProtractor<D>::IsCenterMarkerVisible(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->put_IsCenterMarkerVisible(value));
+}
+
+template <typename D> bool impl_IInkPresenterProtractor<D>::IsAngleReadoutVisible() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->get_IsAngleReadoutVisible(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkPresenterProtractor<D>::IsAngleReadoutVisible(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->put_IsAngleReadoutVisible(value));
+}
+
+template <typename D> bool impl_IInkPresenterProtractor<D>::IsResizable() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->get_IsResizable(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkPresenterProtractor<D>::IsResizable(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->put_IsResizable(value));
+}
+
+template <typename D> double impl_IInkPresenterProtractor<D>::Radius() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->get_Radius(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkPresenterProtractor<D>::Radius(double value) const
+{
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->put_Radius(value));
+}
+
+template <typename D> Windows::UI::Color impl_IInkPresenterProtractor<D>::AccentColor() const
+{
+    Windows::UI::Color value {};
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->get_AccentColor(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IInkPresenterProtractor<D>::AccentColor(const Windows::UI::Color & value) const
+{
+    check_hresult(WINRT_SHIM(IInkPresenterProtractor)->put_AccentColor(get_abi(value)));
+}
+
 template <typename D> Windows::UI::Input::Inking::InkPresenterRuler impl_IInkPresenterRulerFactory<D>::Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const
 {
     Windows::UI::Input::Inking::InkPresenterRuler inkPresenterRuler { nullptr };
     check_hresult(WINRT_SHIM(IInkPresenterRulerFactory)->abi_Create(get_abi(inkPresenter), put_abi(inkPresenterRuler)));
     return inkPresenterRuler;
+}
+
+template <typename D> Windows::UI::Input::Inking::InkPresenterProtractor impl_IInkPresenterProtractorFactory<D>::Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const
+{
+    Windows::UI::Input::Inking::InkPresenterProtractor inkPresenterProtractor { nullptr };
+    check_hresult(WINRT_SHIM(IInkPresenterProtractorFactory)->abi_Create(get_abi(inkPresenter), put_abi(inkPresenterProtractor)));
+    return inkPresenterProtractor;
 }
 
 template <typename D> Windows::Foundation::Point impl_IInkPoint<D>::Position() const
@@ -2581,10 +3245,38 @@ template <typename D> float impl_IInkPoint<D>::Pressure() const
     return value;
 }
 
+template <typename D> float impl_IInkPoint2<D>::TiltX() const
+{
+    float value {};
+    check_hresult(WINRT_SHIM(IInkPoint2)->get_TiltX(&value));
+    return value;
+}
+
+template <typename D> float impl_IInkPoint2<D>::TiltY() const
+{
+    float value {};
+    check_hresult(WINRT_SHIM(IInkPoint2)->get_TiltY(&value));
+    return value;
+}
+
+template <typename D> uint64_t impl_IInkPoint2<D>::Timestamp() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IInkPoint2)->get_Timestamp(&value));
+    return value;
+}
+
 template <typename D> Windows::UI::Input::Inking::InkPoint impl_IInkPointFactory<D>::CreateInkPoint(const Windows::Foundation::Point & position, float pressure) const
 {
     Windows::UI::Input::Inking::InkPoint result { nullptr };
     check_hresult(WINRT_SHIM(IInkPointFactory)->abi_CreateInkPoint(get_abi(position), pressure, put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Input::Inking::InkPoint impl_IInkPointFactory2<D>::CreateInkPointWithTiltAndTimestamp(const Windows::Foundation::Point & position, float pressure, float tiltX, float tiltY, uint64_t timestamp) const
+{
+    Windows::UI::Input::Inking::InkPoint result { nullptr };
+    check_hresult(WINRT_SHIM(IInkPointFactory2)->abi_CreateInkPointWithTiltAndTimestamp(get_abi(position), pressure, tiltX, tiltY, timestamp, put_abi(result)));
     return result;
 }
 
@@ -2696,6 +3388,18 @@ template <typename D> Windows::UI::Input::Inking::InkDrawingAttributesPencilProp
     Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties value { nullptr };
     check_hresult(WINRT_SHIM(IInkDrawingAttributes3)->get_PencilProperties(put_abi(value)));
     return value;
+}
+
+template <typename D> bool impl_IInkDrawingAttributes4<D>::IgnoreTilt() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkDrawingAttributes4)->get_IgnoreTilt(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkDrawingAttributes4<D>::IgnoreTilt(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkDrawingAttributes4)->put_IgnoreTilt(value));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkDrawingAttributes impl_IInkDrawingAttributesStatics<D>::CreateForPencil() const
@@ -2825,6 +3529,37 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI:
     return inkPoints;
 }
 
+template <typename D> uint32_t impl_IInkStroke3<D>::Id() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(IInkStroke3)->get_Id(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IInkStroke3<D>::StrokeStartedTime() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
+    check_hresult(WINRT_SHIM(IInkStroke3)->get_StrokeStartedTime(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IInkStroke3<D>::StrokeStartedTime(const optional<Windows::Foundation::DateTime> & value) const
+{
+    check_hresult(WINRT_SHIM(IInkStroke3)->put_StrokeStartedTime(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IInkStroke3<D>::StrokeDuration() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
+    check_hresult(WINRT_SHIM(IInkStroke3)->get_StrokeDuration(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IInkStroke3<D>::StrokeDuration(const optional<Windows::Foundation::TimeSpan> & value) const
+{
+    check_hresult(WINRT_SHIM(IInkStroke3)->put_StrokeDuration(get_abi(value)));
+}
+
 template <typename D> void impl_IInkStrokeBuilder<D>::BeginStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const
 {
     check_hresult(WINRT_SHIM(IInkStrokeBuilder)->abi_BeginStroke(get_abi(pointerPoint)));
@@ -2860,6 +3595,13 @@ template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStrokeBuild
 {
     Windows::UI::Input::Inking::InkStroke result { nullptr };
     check_hresult(WINRT_SHIM(IInkStrokeBuilder2)->abi_CreateStrokeFromInkPoints(get_abi(inkPoints), get_abi(transform), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStrokeBuilder3<D>::CreateStrokeFromInkPoints(iterable<Windows::UI::Input::Inking::InkPoint> inkPoints, const Windows::Foundation::Numerics::float3x2 & transform, const optional<Windows::Foundation::DateTime> & strokeStartedTime, const optional<Windows::Foundation::TimeSpan> & strokeDuration) const
+{
+    Windows::UI::Input::Inking::InkStroke result { nullptr };
+    check_hresult(WINRT_SHIM(IInkStrokeBuilder3)->abi_CreateStrokeFromInkPoints(get_abi(inkPoints), get_abi(transform), get_abi(strokeStartedTime), get_abi(strokeDuration), put_abi(result)));
     return result;
 }
 
@@ -2986,6 +3728,20 @@ template <typename D> void impl_IInkStrokeContainer2<D>::Clear() const
     check_hresult(WINRT_SHIM(IInkStrokeContainer2)->abi_Clear());
 }
 
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> impl_IInkStrokeContainer3<D>::SaveAsync(const Windows::Storage::Streams::IOutputStream & outputStream, Windows::UI::Input::Inking::InkPersistenceFormat inkPersistenceFormat) const
+{
+    Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> outputStreamOperation;
+    check_hresult(WINRT_SHIM(IInkStrokeContainer3)->abi_SaveWithFormatAsync(get_abi(outputStream), inkPersistenceFormat, put_abi(outputStreamOperation)));
+    return outputStreamOperation;
+}
+
+template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStrokeContainer3<D>::GetStrokeById(uint32_t id) const
+{
+    Windows::UI::Input::Inking::InkStroke stroke { nullptr };
+    check_hresult(WINRT_SHIM(IInkStrokeContainer3)->abi_GetStrokeById(id, put_abi(stroke)));
+    return stroke;
+}
+
 template <typename D> hstring impl_IInkRecognizer<D>::Name() const
 {
     hstring value;
@@ -3068,8 +3824,16 @@ inline InkManager::InkManager() :
     InkManager(activate_instance<InkManager>())
 {}
 
+inline InkPoint::InkPoint(const Windows::Foundation::Point & position, float pressure, float tiltX, float tiltY, uint64_t timestamp) :
+    InkPoint(get_activation_factory<InkPoint, IInkPointFactory2>().CreateInkPointWithTiltAndTimestamp(position, pressure, tiltX, tiltY, timestamp))
+{}
+
 inline InkPoint::InkPoint(const Windows::Foundation::Point & position, float pressure) :
     InkPoint(get_activation_factory<InkPoint, IInkPointFactory>().CreateInkPoint(position, pressure))
+{}
+
+inline InkPresenterProtractor::InkPresenterProtractor(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) :
+    InkPresenterProtractor(get_activation_factory<InkPresenterProtractor, IInkPresenterProtractorFactory>().Create(inkPresenter))
 {}
 
 inline InkPresenterRuler::InkPresenterRuler(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) :
@@ -3114,6 +3878,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Input::Inking::IInkDrawingAttributes3>
 {
     size_t operator()(const winrt::Windows::UI::Input::Inking::IInkDrawingAttributes3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkDrawingAttributes4>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkDrawingAttributes4 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3165,9 +3938,27 @@ struct std::hash<winrt::Windows::UI::Input::Inking::IInkPoint>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPoint2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPoint2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::Inking::IInkPointFactory>
 {
     size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPointFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPointFactory2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPointFactory2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3183,9 +3974,45 @@ struct std::hash<winrt::Windows::UI::Input::Inking::IInkPresenter>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPresenter2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPresenter2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPresenterProtractor>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPresenterProtractor & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPresenterProtractorFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPresenterProtractorFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::Inking::IInkPresenterRuler>
 {
     size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPresenterRuler & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkPresenterRuler2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkPresenterRuler2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3255,6 +4082,15 @@ struct std::hash<winrt::Windows::UI::Input::Inking::IInkStroke2>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStroke3>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStroke3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeBuilder>
 {
     size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokeBuilder & value) const noexcept
@@ -3273,6 +4109,15 @@ struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeBuilder2>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeBuilder3>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokeBuilder3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeContainer>
 {
     size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokeContainer & value) const noexcept
@@ -3285,6 +4130,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeContainer2>
 {
     size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokeContainer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::IInkStrokeContainer3>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::IInkStrokeContainer3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3393,6 +4247,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Input::Inking::InkPresenter>
 {
     size_t operator()(const winrt::Windows::UI::Input::Inking::InkPresenter & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::Inking::InkPresenterProtractor>
+{
+    size_t operator()(const winrt::Windows::UI::Input::Inking::InkPresenterProtractor & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

@@ -917,6 +917,35 @@ public:
     }
 };
 
+template <typename D, typename A = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides6>
+class IAutomationPeerOverrides6T : public A
+{
+    D & shim() noexcept { return *static_cast<D *>(this); }
+
+public:
+
+    using IAutomationPeerOverrides6 = winrt::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides6;
+
+    int32_t GetCultureCore()
+    {
+        return shim().as<IAutomationPeerOverrides6>().GetCultureCore();
+    }
+
+    HRESULT __stdcall abi_GetCultureCore(int32_t * returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().GetCultureCore());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
 template <typename D, typename A = ABI::Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeerOverrides2>
 class IItemsControlAutomationPeerOverrides2T : public A
 {

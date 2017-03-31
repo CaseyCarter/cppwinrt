@@ -10,10 +10,12 @@ namespace ABI::Windows::System::Profile {
 
 struct IAnalyticsInfoStatics;
 struct IAnalyticsVersionInfo;
+struct IEducationSettingsStatics;
 struct IHardwareIdentificationStatics;
 struct IHardwareToken;
 struct IPlatformDiagnosticsAndUsageDataSettingsStatics;
 struct ISharedModeSettingsStatics;
+struct ISharedModeSettingsStatics2;
 struct ISystemIdentificationInfo;
 struct ISystemIdentificationStatics;
 struct AnalyticsVersionInfo;
@@ -26,14 +28,17 @@ namespace Windows::System::Profile {
 
 struct IAnalyticsInfoStatics;
 struct IAnalyticsVersionInfo;
+struct IEducationSettingsStatics;
 struct IHardwareIdentificationStatics;
 struct IHardwareToken;
 struct IPlatformDiagnosticsAndUsageDataSettingsStatics;
 struct ISharedModeSettingsStatics;
+struct ISharedModeSettingsStatics2;
 struct ISystemIdentificationInfo;
 struct ISystemIdentificationStatics;
 struct AnalyticsInfo;
 struct AnalyticsVersionInfo;
+struct EducationSettings;
 struct HardwareIdentification;
 struct HardwareToken;
 struct PlatformDiagnosticsAndUsageDataSettings;
@@ -47,10 +52,12 @@ namespace Windows::System::Profile {
 
 template <typename T> struct impl_IAnalyticsInfoStatics;
 template <typename T> struct impl_IAnalyticsVersionInfo;
+template <typename T> struct impl_IEducationSettingsStatics;
 template <typename T> struct impl_IHardwareIdentificationStatics;
 template <typename T> struct impl_IHardwareToken;
 template <typename T> struct impl_IPlatformDiagnosticsAndUsageDataSettingsStatics;
 template <typename T> struct impl_ISharedModeSettingsStatics;
+template <typename T> struct impl_ISharedModeSettingsStatics2;
 template <typename T> struct impl_ISystemIdentificationInfo;
 template <typename T> struct impl_ISystemIdentificationStatics;
 

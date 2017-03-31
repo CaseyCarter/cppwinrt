@@ -451,6 +451,85 @@ struct produce<D, Windows::ApplicationModel::IPackage4> : produce_base<D, Window
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::IPackage5> : produce_base<D, Windows::ApplicationModel::IPackage5>
+{
+    HRESULT __stdcall abi_GetContentGroupsAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().GetContentGroupsAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetContentGroupAsync(impl::abi_arg_in<hstring> name, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::PackageContentGroup>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().GetContentGroupAsync(*reinterpret_cast<const hstring *>(&name)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StageContentGroupsAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> names, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().StageContentGroupsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&names)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StageContentGroupsWithPriorityAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> names, bool moveToHeadOfQueue, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().StageContentGroupsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&names), moveToHeadOfQueue));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetInUseAsync(bool inUse, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().SetInUseAsync(inUse));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, Windows::ApplicationModel::IPackageCatalog>
 {
     HRESULT __stdcall add_PackageStaging(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs>> handler, event_token * token) noexcept override
@@ -595,6 +674,86 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalog> : produce_base<D, 
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::IPackageCatalog2> : produce_base<D, Windows::ApplicationModel::IPackageCatalog2>
+{
+    HRESULT __stdcall add_PackageContentGroupStaging(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageContentGroupStagingEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().PackageContentGroupStaging(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageContentGroupStagingEventArgs> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_PackageContentGroupStaging(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().PackageContentGroupStaging(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_AddOptionalPackageAsync(impl::abi_arg_in<hstring> optionalPackageFamilyName, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().AddOptionalPackageAsync(*reinterpret_cast<const hstring *>(&optionalPackageFamilyName)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::IPackageCatalogAddOptionalPackageResult> : produce_base<D, Windows::ApplicationModel::IPackageCatalogAddOptionalPackageResult>
+{
+    HRESULT __stdcall get_Package(impl::abi_arg_out<Windows::ApplicationModel::IPackage> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Package());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ExtendedError(HRESULT * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ExtendedError());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::IPackageCatalogStatics> : produce_base<D, Windows::ApplicationModel::IPackageCatalogStatics>
 {
     HRESULT __stdcall abi_OpenForCurrentPackage(impl::abi_arg_out<Windows::ApplicationModel::IPackageCatalog> value) noexcept override
@@ -618,6 +777,191 @@ struct produce<D, Windows::ApplicationModel::IPackageCatalogStatics> : produce_b
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().OpenForCurrentUser());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::IPackageContentGroup> : produce_base<D, Windows::ApplicationModel::IPackageContentGroup>
+{
+    HRESULT __stdcall get_Package(impl::abi_arg_out<Windows::ApplicationModel::IPackage> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Package());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Name());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_State(Windows::ApplicationModel::PackageContentGroupState * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().State());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsRequired(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsRequired());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::IPackageContentGroupStagingEventArgs> : produce_base<D, Windows::ApplicationModel::IPackageContentGroupStagingEventArgs>
+{
+    HRESULT __stdcall get_ActivityId(GUID * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ActivityId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Package(impl::abi_arg_out<Windows::ApplicationModel::IPackage> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Package());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Progress(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Progress());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsComplete(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsComplete());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ErrorCode(HRESULT * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ErrorCode());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ContentGroupName(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ContentGroupName());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsContentGroupRequired(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsContentGroupRequired());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::IPackageContentGroupStatics> : produce_base<D, Windows::ApplicationModel::IPackageContentGroupStatics>
+{
+    HRESULT __stdcall get_RequiredGroupName(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().RequiredGroupName());
             return S_OK;
         }
         catch (...)
@@ -1126,6 +1470,24 @@ struct produce<D, Windows::ApplicationModel::IPackageStatus> : produce_base<D, W
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::IPackageStatus2> : produce_base<D, Windows::ApplicationModel::IPackageStatus2>
+{
+    HRESULT __stdcall get_IsPartiallyStaged(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsPartiallyStaged());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::IPackageStatusChangedEventArgs> : produce_base<D, Windows::ApplicationModel::IPackageStatusChangedEventArgs>
 {
     HRESULT __stdcall get_Package(impl::abi_arg_out<Windows::ApplicationModel::IPackage> value) noexcept override
@@ -1479,46 +1841,6 @@ template <typename D> hstring impl_IAppInfo<D>::PackageFamilyName() const
     return value;
 }
 
-template <typename D> void impl_ISuspendingDeferral<D>::Complete() const
-{
-    check_hresult(WINRT_SHIM(ISuspendingDeferral)->abi_Complete());
-}
-
-template <typename D> Windows::ApplicationModel::SuspendingDeferral impl_ISuspendingOperation<D>::GetDeferral() const
-{
-    Windows::ApplicationModel::SuspendingDeferral deferral { nullptr };
-    check_hresult(WINRT_SHIM(ISuspendingOperation)->abi_GetDeferral(put_abi(deferral)));
-    return deferral;
-}
-
-template <typename D> Windows::Foundation::DateTime impl_ISuspendingOperation<D>::Deadline() const
-{
-    Windows::Foundation::DateTime value {};
-    check_hresult(WINRT_SHIM(ISuspendingOperation)->get_Deadline(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::ApplicationModel::SuspendingOperation impl_ISuspendingEventArgs<D>::SuspendingOperation() const
-{
-    Windows::ApplicationModel::SuspendingOperation value { nullptr };
-    check_hresult(WINRT_SHIM(ISuspendingEventArgs)->get_SuspendingOperation(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::Deferral impl_ILeavingBackgroundEventArgs<D>::GetDeferral() const
-{
-    Windows::Foundation::Deferral value { nullptr };
-    check_hresult(WINRT_SHIM(ILeavingBackgroundEventArgs)->abi_GetDeferral(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::Deferral impl_IEnteredBackgroundEventArgs<D>::GetDeferral() const
-{
-    Windows::Foundation::Deferral value { nullptr };
-    check_hresult(WINRT_SHIM(IEnteredBackgroundEventArgs)->abi_GetDeferral(put_abi(value)));
-    return value;
-}
-
 template <typename D> hstring impl_IPackageIdWithMetadata<D>::ProductId() const
 {
     hstring value;
@@ -1633,6 +1955,13 @@ template <typename D> bool impl_IPackageStatus<D>::DeploymentInProgress() const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IPackageStatus)->get_DeploymentInProgress(&value));
+    return value;
+}
+
+template <typename D> bool impl_IPackageStatus2<D>::IsPartiallyStaged() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IPackageStatus2)->get_IsPartiallyStaged(&value));
     return value;
 }
 
@@ -1811,6 +2140,41 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IPackage4<
     return operation;
 }
 
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> impl_IPackage5<D>::GetContentGroupsAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> operation;
+    check_hresult(WINRT_SHIM(IPackage5)->abi_GetContentGroupsAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::PackageContentGroup> impl_IPackage5<D>::GetContentGroupAsync(hstring_view name) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::PackageContentGroup> operation;
+    check_hresult(WINRT_SHIM(IPackage5)->abi_GetContentGroupAsync(get_abi(name), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> impl_IPackage5<D>::StageContentGroupsAsync(iterable<hstring> names) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> operation;
+    check_hresult(WINRT_SHIM(IPackage5)->abi_StageContentGroupsAsync(get_abi(names), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> impl_IPackage5<D>::StageContentGroupsAsync(iterable<hstring> names, bool moveToHeadOfQueue) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> operation;
+    check_hresult(WINRT_SHIM(IPackage5)->abi_StageContentGroupsWithPriorityAsync(get_abi(names), moveToHeadOfQueue, put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IPackage5<D>::SetInUseAsync(bool inUse) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(IPackage5)->abi_SetInUseAsync(inUse, put_abi(operation)));
+    return operation;
+}
+
 template <typename D> Windows::ApplicationModel::Package impl_IPackageStatics<D>::Current() const
 {
     Windows::ApplicationModel::Package value { nullptr };
@@ -1972,6 +2336,55 @@ template <typename D> Windows::ApplicationModel::Package impl_IPackageStatusChan
     return value;
 }
 
+template <typename D> GUID impl_IPackageContentGroupStagingEventArgs<D>::ActivityId() const
+{
+    GUID value {};
+    check_hresult(WINRT_SHIM(IPackageContentGroupStagingEventArgs)->get_ActivityId(&value));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::Package impl_IPackageContentGroupStagingEventArgs<D>::Package() const
+{
+    Windows::ApplicationModel::Package value { nullptr };
+    check_hresult(WINRT_SHIM(IPackageContentGroupStagingEventArgs)->get_Package(put_abi(value)));
+    return value;
+}
+
+template <typename D> double impl_IPackageContentGroupStagingEventArgs<D>::Progress() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IPackageContentGroupStagingEventArgs)->get_Progress(&value));
+    return value;
+}
+
+template <typename D> bool impl_IPackageContentGroupStagingEventArgs<D>::IsComplete() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IPackageContentGroupStagingEventArgs)->get_IsComplete(&value));
+    return value;
+}
+
+template <typename D> HRESULT impl_IPackageContentGroupStagingEventArgs<D>::ErrorCode() const
+{
+    HRESULT value {};
+    check_hresult(WINRT_SHIM(IPackageContentGroupStagingEventArgs)->get_ErrorCode(&value));
+    return value;
+}
+
+template <typename D> hstring impl_IPackageContentGroupStagingEventArgs<D>::ContentGroupName() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IPackageContentGroupStagingEventArgs)->get_ContentGroupName(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IPackageContentGroupStagingEventArgs<D>::IsContentGroupRequired() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IPackageContentGroupStagingEventArgs)->get_IsContentGroupRequired(&value));
+    return value;
+}
+
 template <typename D> event_token impl_IPackageCatalog<D>::PackageStaging(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> & handler) const
 {
     event_token token {};
@@ -2057,6 +2470,44 @@ template <typename D> void impl_IPackageCatalog<D>::PackageStatusChanged(event_t
     check_hresult(WINRT_SHIM(IPackageCatalog)->remove_PackageStatusChanged(token));
 }
 
+template <typename D> Windows::ApplicationModel::Package impl_IPackageCatalogAddOptionalPackageResult<D>::Package() const
+{
+    Windows::ApplicationModel::Package value { nullptr };
+    check_hresult(WINRT_SHIM(IPackageCatalogAddOptionalPackageResult)->get_Package(put_abi(value)));
+    return value;
+}
+
+template <typename D> HRESULT impl_IPackageCatalogAddOptionalPackageResult<D>::ExtendedError() const
+{
+    HRESULT value {};
+    check_hresult(WINRT_SHIM(IPackageCatalogAddOptionalPackageResult)->get_ExtendedError(&value));
+    return value;
+}
+
+template <typename D> event_token impl_IPackageCatalog2<D>::PackageContentGroupStaging(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageContentGroupStagingEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IPackageCatalog2)->add_PackageContentGroupStaging(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IPackageCatalog2> impl_IPackageCatalog2<D>::PackageContentGroupStaging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageContentGroupStagingEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IPackageCatalog2>(this, &ABI::Windows::ApplicationModel::IPackageCatalog2::remove_PackageContentGroupStaging, PackageContentGroupStaging(handler));
+}
+
+template <typename D> void impl_IPackageCatalog2<D>::PackageContentGroupStaging(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IPackageCatalog2)->remove_PackageContentGroupStaging(token));
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult> impl_IPackageCatalog2<D>::AddOptionalPackageAsync(hstring_view optionalPackageFamilyName) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult> operation;
+    check_hresult(WINRT_SHIM(IPackageCatalog2)->abi_AddOptionalPackageAsync(get_abi(optionalPackageFamilyName), put_abi(operation)));
+    return operation;
+}
+
 template <typename D> Windows::ApplicationModel::PackageCatalog impl_IPackageCatalogStatics<D>::OpenForCurrentPackage() const
 {
     Windows::ApplicationModel::PackageCatalog value { nullptr };
@@ -2071,10 +2522,85 @@ template <typename D> Windows::ApplicationModel::PackageCatalog impl_IPackageCat
     return value;
 }
 
+template <typename D> Windows::ApplicationModel::Package impl_IPackageContentGroup<D>::Package() const
+{
+    Windows::ApplicationModel::Package value { nullptr };
+    check_hresult(WINRT_SHIM(IPackageContentGroup)->get_Package(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IPackageContentGroup<D>::Name() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IPackageContentGroup)->get_Name(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::PackageContentGroupState impl_IPackageContentGroup<D>::State() const
+{
+    Windows::ApplicationModel::PackageContentGroupState value {};
+    check_hresult(WINRT_SHIM(IPackageContentGroup)->get_State(&value));
+    return value;
+}
+
+template <typename D> bool impl_IPackageContentGroup<D>::IsRequired() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IPackageContentGroup)->get_IsRequired(&value));
+    return value;
+}
+
+template <typename D> hstring impl_IPackageContentGroupStatics<D>::RequiredGroupName() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IPackageContentGroupStatics)->get_RequiredGroupName(put_abi(value)));
+    return value;
+}
+
 template <typename D> bool impl_IDesignModeStatics<D>::DesignModeEnabled() const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IDesignModeStatics)->get_DesignModeEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_ISuspendingDeferral<D>::Complete() const
+{
+    check_hresult(WINRT_SHIM(ISuspendingDeferral)->abi_Complete());
+}
+
+template <typename D> Windows::ApplicationModel::SuspendingDeferral impl_ISuspendingOperation<D>::GetDeferral() const
+{
+    Windows::ApplicationModel::SuspendingDeferral deferral { nullptr };
+    check_hresult(WINRT_SHIM(ISuspendingOperation)->abi_GetDeferral(put_abi(deferral)));
+    return deferral;
+}
+
+template <typename D> Windows::Foundation::DateTime impl_ISuspendingOperation<D>::Deadline() const
+{
+    Windows::Foundation::DateTime value {};
+    check_hresult(WINRT_SHIM(ISuspendingOperation)->get_Deadline(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::SuspendingOperation impl_ISuspendingEventArgs<D>::SuspendingOperation() const
+{
+    Windows::ApplicationModel::SuspendingOperation value { nullptr };
+    check_hresult(WINRT_SHIM(ISuspendingEventArgs)->get_SuspendingOperation(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Deferral impl_ILeavingBackgroundEventArgs<D>::GetDeferral() const
+{
+    Windows::Foundation::Deferral value { nullptr };
+    check_hresult(WINRT_SHIM(ILeavingBackgroundEventArgs)->abi_GetDeferral(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Deferral impl_IEnteredBackgroundEventArgs<D>::GetDeferral() const
+{
+    Windows::Foundation::Deferral value { nullptr };
+    check_hresult(WINRT_SHIM(IEnteredBackgroundEventArgs)->abi_GetDeferral(put_abi(value)));
     return value;
 }
 
@@ -2096,6 +2622,11 @@ inline Windows::ApplicationModel::PackageCatalog PackageCatalog::OpenForCurrentP
 inline Windows::ApplicationModel::PackageCatalog PackageCatalog::OpenForCurrentUser()
 {
     return get_activation_factory<PackageCatalog, IPackageCatalogStatics>().OpenForCurrentUser();
+}
+
+inline hstring PackageContentGroup::RequiredGroupName()
+{
+    return get_activation_factory<PackageContentGroup, IPackageContentGroupStatics>().RequiredGroupName();
 }
 
 }
@@ -2184,6 +2715,15 @@ struct std::hash<winrt::Windows::ApplicationModel::IPackage4>
 };
 
 template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackage5>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackage5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::ApplicationModel::IPackageCatalog>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::IPackageCatalog & value) const noexcept
@@ -2193,9 +2733,54 @@ struct std::hash<winrt::Windows::ApplicationModel::IPackageCatalog>
 };
 
 template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageCatalog2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageCatalog2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageCatalogAddOptionalPackageResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageCatalogAddOptionalPackageResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::ApplicationModel::IPackageCatalogStatics>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::IPackageCatalogStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageContentGroup>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageContentGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageContentGroupStagingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageContentGroupStagingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageContentGroupStatics>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageContentGroupStatics & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -2250,6 +2835,15 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::IPackageStatus>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::IPackageStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::IPackageStatus2>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::IPackageStatus2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -2367,6 +2961,33 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::PackageCatalog>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::PackageCatalog & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::PackageContentGroup>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::PackageContentGroup & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::PackageContentGroupStagingEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::PackageContentGroupStagingEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

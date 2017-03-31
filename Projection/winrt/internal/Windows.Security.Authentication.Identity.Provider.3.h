@@ -41,7 +41,8 @@ struct WINRT_EBO SecondaryAuthenticationFactorAuthenticationStageInfo :
 };
 
 struct WINRT_EBO SecondaryAuthenticationFactorInfo :
-    Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo
+    Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo,
+    impl::require<SecondaryAuthenticationFactorInfo, Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo2>
 {
     SecondaryAuthenticationFactorInfo(std::nullptr_t) noexcept {}
 };
@@ -50,6 +51,10 @@ struct WINRT_EBO SecondaryAuthenticationFactorRegistration :
     Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorRegistration
 {
     SecondaryAuthenticationFactorRegistration(std::nullptr_t) noexcept {}
+    static Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> RegisterDevicePresenceMonitoringAsync(hstring_view deviceId, hstring_view deviceInstancePath, Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode);
+    static Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> RegisterDevicePresenceMonitoringAsync(hstring_view deviceId, hstring_view deviceInstancePath, Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, hstring_view deviceFriendlyName, hstring_view deviceModelNumber, const Windows::Storage::Streams::IBuffer & deviceConfigurationData);
+    static Windows::Foundation::IAsyncAction UnregisterDevicePresenceMonitoringAsync(hstring_view deviceId);
+    static bool IsDevicePresenceMonitoringSupported();
     static Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationResult> RequestStartRegisteringDeviceAsync(hstring_view deviceId, Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDeviceCapabilities capabilities, hstring_view deviceFriendlyName, hstring_view deviceModelNumber, const Windows::Storage::Streams::IBuffer & deviceKey, const Windows::Storage::Streams::IBuffer & mutualAuthenticationKey);
     static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo>> FindAllRegisteredDeviceInfoAsync(Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDeviceFindScope queryType);
     static Windows::Foundation::IAsyncAction UnregisterDeviceAsync(hstring_view deviceId);

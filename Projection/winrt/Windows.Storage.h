@@ -3994,6 +3994,20 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::ISt
     return operation;
 }
 
+template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_IStorageStreamTransaction<D>::Stream() const
+{
+    Windows::Storage::Streams::IRandomAccessStream value;
+    check_hresult(WINRT_SHIM(IStorageStreamTransaction)->get_Stream(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_IStorageStreamTransaction<D>::CommitAsync() const
+{
+    Windows::Foundation::IAsyncAction operation;
+    check_hresult(WINRT_SHIM(IStorageStreamTransaction)->abi_CommitAsync(put_abi(operation)));
+    return operation;
+}
+
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> impl_IStorageFile2<D>::OpenAsync(Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> operation;
@@ -4522,20 +4536,6 @@ template <typename D> Windows::Storage::SystemImageProperties impl_ISystemProper
     Windows::Storage::SystemImageProperties value { nullptr };
     check_hresult(WINRT_SHIM(ISystemProperties)->get_Image(put_abi(value)));
     return value;
-}
-
-template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_IStorageStreamTransaction<D>::Stream() const
-{
-    Windows::Storage::Streams::IRandomAccessStream value;
-    check_hresult(WINRT_SHIM(IStorageStreamTransaction)->get_Stream(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncAction impl_IStorageStreamTransaction<D>::CommitAsync() const
-{
-    Windows::Foundation::IAsyncAction operation;
-    check_hresult(WINRT_SHIM(IStorageStreamTransaction)->abi_CommitAsync(put_abi(operation)));
-    return operation;
 }
 
 template <typename D> Windows::Storage::ApplicationData impl_IApplicationDataStatics<D>::Current() const

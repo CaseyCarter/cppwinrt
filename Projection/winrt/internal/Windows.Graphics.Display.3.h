@@ -31,6 +31,15 @@ template <typename H> struct impl_DisplayPropertiesEventHandler : implements<imp
 
 namespace Windows::Graphics::Display {
 
+struct WINRT_EBO BrightnessOverride :
+    Windows::Graphics::Display::IBrightnessOverride
+{
+    BrightnessOverride(std::nullptr_t) noexcept {}
+    static Windows::Graphics::Display::BrightnessOverride GetDefaultForSystem();
+    static Windows::Graphics::Display::BrightnessOverride GetForCurrentView();
+    static Windows::Foundation::IAsyncOperation<bool> SaveForSystemAsync(const Windows::Graphics::Display::BrightnessOverride & value);
+};
+
 struct WINRT_EBO DisplayInformation :
     Windows::Graphics::Display::IDisplayInformation,
     impl::require<DisplayInformation, Windows::Graphics::Display::IDisplayInformation2, Windows::Graphics::Display::IDisplayInformation3, Windows::Graphics::Display::IDisplayInformation4>

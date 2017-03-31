@@ -44,6 +44,11 @@ template <> struct __declspec(uuid("abf1c837-dacd-5446-a032-3ee902880244")) __de
 template <> struct __declspec(uuid("83b51cbf-35e0-59ad-ab3e-ffb3f03704f9")) __declspec(novtable) IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> : impl_IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> {};
 #endif
 
+#ifndef WINRT_GENERIC_4c24d7ee_4b92_5cea_a4f4_7a5d6e919062
+#define WINRT_GENERIC_4c24d7ee_4b92_5cea_a4f4_7a5d6e919062
+template <> struct __declspec(uuid("4c24d7ee-4b92-5cea-a4f4-7a5d6e919062")) __declspec(novtable) IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> : impl_IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> {};
+#endif
+
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
 #define WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
 template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __declspec(novtable) AsyncOperationCompletedHandler<bool> : impl_AsyncOperationCompletedHandler<bool> {};
@@ -79,6 +84,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("a85c1ceb-0e8c-5422-b2ef-ad48ed338706")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> {};
 #endif
 
+#ifndef WINRT_GENERIC_62559e90_1c0a_5708_9230_03a658652db3
+#define WINRT_GENERIC_62559e90_1c0a_5708_9230_03a658652db3
+template <> struct __declspec(uuid("62559e90-1c0a-5708-9230-03a658652db3")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> {};
+#endif
+
 #ifndef WINRT_GENERIC_9267e107_2ac6_5e0d_86e9_3154f616c68b
 #define WINRT_GENERIC_9267e107_2ac6_5e0d_86e9_3154f616c68b
 template <> struct __declspec(uuid("9267e107-2ac6-5e0d-86e9-3154f616c68b")) __declspec(novtable) IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> : impl_IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> {};
@@ -108,6 +118,13 @@ struct IAppInstallItem2 :
     IAppInstallItem2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IAppInstallItem3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAppInstallItem3>
+{
+    IAppInstallItem3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IAppInstallManager :
     Windows::Foundation::IInspectable,
     impl::consume<IAppInstallManager>
@@ -129,6 +146,20 @@ struct IAppInstallManager3 :
     IAppInstallManager3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IAppInstallManager4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAppInstallManager4>
+{
+    IAppInstallManager4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IAppInstallManager5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAppInstallManager5>
+{
+    IAppInstallManager5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IAppInstallManagerItemEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IAppInstallManagerItemEventArgs>
@@ -148,6 +179,13 @@ struct IAppInstallStatus2 :
     impl::consume<IAppInstallStatus2>
 {
     IAppInstallStatus2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IGetEntitlementResult :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGetEntitlementResult>
+{
+    IGetEntitlementResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

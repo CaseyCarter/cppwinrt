@@ -45,6 +45,27 @@ FOR /D %%D IN (%EXTDIR%\*) DO (
   CALL :ProcessExtensionFolder "%%D" %%~nxD %1
 )
 
+ECHO.
+ECHO Combining response files and removing duplicate entries
+type nul>complete_unsorted.tmp
+for %%I in (*.rsp) DO (
+    for /F "tokens=*" %%J in (%%I) do (
+        set test=%%J
+        set test=!test:"=""!
+        find "!test!" complete_unsorted.tmp 1>nul
+
+        if !errorlevel! NEQ 0 (
+            echo %%J >> complete_unsorted.tmp
+        )
+    )
+)
+
+sort complete_unsorted.tmp > complete.tmp
+erase /q complete_unsorted.tmp
+if exist "UWPPlusAllExtensions.%1.rsp" erase UWPPlusAllExtensions.%1.rsp
+if exist "UWP.%1.rsp" erase UWP.%1.rsp
+rename complete.tmp UWPPlusAllExtensions.%1.rsp
+rename UAP.rsp UWP.%1.rsp
 goto :eof
 
 :ProcessExtensionFolder

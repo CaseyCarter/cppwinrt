@@ -31,6 +31,18 @@ struct __declspec(uuid("dd0947af-1a6d-46b0-95bc-f3f9d6beb9fb")) __declspec(novta
     virtual HRESULT __stdcall abi_GetForUser(Windows::System::IUser * user, Windows::System::UserProfile::IAdvertisingManagerForUser ** value) = 0;
 };
 
+struct __declspec(uuid("e5e9eccd-2711-44e0-973c-491d78048d24")) __declspec(novtable) IDiagnosticsSettings : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_CanUseDiagnosticsToTailorExperiences(bool * value) = 0;
+    virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
+};
+
+struct __declspec(uuid("72d2e80f-5390-4793-990b-3ccc7d6ac9c8")) __declspec(novtable) IDiagnosticsSettingsStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDefault(Windows::System::UserProfile::IDiagnosticsSettings ** value) = 0;
+    virtual HRESULT __stdcall abi_GetForUser(Windows::System::IUser * user, Windows::System::UserProfile::IDiagnosticsSettings ** value) = 0;
+};
+
 struct __declspec(uuid("3e945153-3a5e-452e-a601-f5baad2a4870")) __declspec(novtable) IFirstSignInSettings : Windows::Foundation::IInspectable
 {
 };
@@ -67,6 +79,7 @@ struct __declspec(uuid("91acb841-5037-454b-9883-bb772d08dd16")) __declspec(novta
 namespace ABI {
 
 template <> struct traits<Windows::System::UserProfile::AdvertisingManagerForUser> { using default_interface = Windows::System::UserProfile::IAdvertisingManagerForUser; };
+template <> struct traits<Windows::System::UserProfile::DiagnosticsSettings> { using default_interface = Windows::System::UserProfile::IDiagnosticsSettings; };
 template <> struct traits<Windows::System::UserProfile::FirstSignInSettings> { using default_interface = Windows::System::UserProfile::IFirstSignInSettings; };
 template <> struct traits<Windows::System::UserProfile::UserProfilePersonalizationSettings> { using default_interface = Windows::System::UserProfile::IUserProfilePersonalizationSettings; };
 
@@ -91,6 +104,20 @@ template <typename D>
 struct WINRT_EBO impl_IAdvertisingManagerStatics2
 {
     Windows::System::UserProfile::AdvertisingManagerForUser GetForUser(const Windows::System::User & user) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDiagnosticsSettings
+{
+    bool CanUseDiagnosticsToTailorExperiences() const;
+    Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDiagnosticsSettingsStatics
+{
+    Windows::System::UserProfile::DiagnosticsSettings GetDefault() const;
+    Windows::System::UserProfile::DiagnosticsSettings GetForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
@@ -151,6 +178,18 @@ template <> struct traits<Windows::System::UserProfile::IAdvertisingManagerStati
     template <typename D> using consume = Windows::System::UserProfile::impl_IAdvertisingManagerStatics2<D>;
 };
 
+template <> struct traits<Windows::System::UserProfile::IDiagnosticsSettings>
+{
+    using abi = ABI::Windows::System::UserProfile::IDiagnosticsSettings;
+    template <typename D> using consume = Windows::System::UserProfile::impl_IDiagnosticsSettings<D>;
+};
+
+template <> struct traits<Windows::System::UserProfile::IDiagnosticsSettingsStatics>
+{
+    using abi = ABI::Windows::System::UserProfile::IDiagnosticsSettingsStatics;
+    template <typename D> using consume = Windows::System::UserProfile::impl_IDiagnosticsSettingsStatics<D>;
+};
+
 template <> struct traits<Windows::System::UserProfile::IFirstSignInSettings>
 {
     using abi = ABI::Windows::System::UserProfile::IFirstSignInSettings;
@@ -190,6 +229,12 @@ template <> struct traits<Windows::System::UserProfile::AdvertisingManagerForUse
 {
     using abi = ABI::Windows::System::UserProfile::AdvertisingManagerForUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.UserProfile.AdvertisingManagerForUser"; }
+};
+
+template <> struct traits<Windows::System::UserProfile::DiagnosticsSettings>
+{
+    using abi = ABI::Windows::System::UserProfile::DiagnosticsSettings;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.System.UserProfile.DiagnosticsSettings"; }
 };
 
 template <> struct traits<Windows::System::UserProfile::FirstSignInSettings>

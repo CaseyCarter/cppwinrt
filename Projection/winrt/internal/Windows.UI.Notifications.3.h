@@ -99,6 +99,15 @@ struct WINRT_EBO NotificationBinding :
     NotificationBinding(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO NotificationData :
+    Windows::UI::Notifications::INotificationData
+{
+    NotificationData(std::nullptr_t) noexcept {}
+    NotificationData();
+    NotificationData(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> initialValues, uint32_t sequenceNumber);
+    NotificationData(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> initialValues);
+};
+
 struct WINRT_EBO NotificationVisual :
     Windows::UI::Notifications::INotificationVisual
 {
@@ -185,6 +194,19 @@ struct WINRT_EBO ToastActivatedEventArgs :
     ToastActivatedEventArgs(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO ToastCollection :
+    Windows::UI::Notifications::IToastCollection
+{
+    ToastCollection(std::nullptr_t) noexcept {}
+    ToastCollection(hstring_view collectionId, hstring_view displayName, hstring_view launchArgs, const Windows::Foundation::Uri & iconUri);
+};
+
+struct WINRT_EBO ToastCollectionManager :
+    Windows::UI::Notifications::IToastCollectionManager
+{
+    ToastCollectionManager(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO ToastDismissedEventArgs :
     Windows::UI::Notifications::IToastDismissedEventArgs
 {
@@ -199,7 +221,7 @@ struct WINRT_EBO ToastFailedEventArgs :
 
 struct WINRT_EBO ToastNotification :
     Windows::UI::Notifications::IToastNotification,
-    impl::require<ToastNotification, Windows::UI::Notifications::IToastNotification2, Windows::UI::Notifications::IToastNotification3>
+    impl::require<ToastNotification, Windows::UI::Notifications::IToastNotification2, Windows::UI::Notifications::IToastNotification3, Windows::UI::Notifications::IToastNotification4>
 {
     ToastNotification(std::nullptr_t) noexcept {}
     ToastNotification(const Windows::Data::Xml::Dom::XmlDocument & content);
@@ -219,7 +241,8 @@ struct WINRT_EBO ToastNotificationHistory :
 };
 
 struct WINRT_EBO ToastNotificationHistoryChangedTriggerDetail :
-    Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail
+    Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail,
+    impl::require<ToastNotificationHistoryChangedTriggerDetail, Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail2>
 {
     ToastNotificationHistoryChangedTriggerDetail(std::nullptr_t) noexcept {}
 };
@@ -233,16 +256,19 @@ struct ToastNotificationManager
     static Windows::UI::Notifications::ToastNotificationHistory History();
     static Windows::UI::Notifications::ToastNotificationManagerForUser GetForUser(const Windows::System::User & user);
     static void ConfigureNotificationMirroring(Windows::UI::Notifications::NotificationMirroring value);
+    static Windows::UI::Notifications::ToastNotificationManagerForUser GetDefault();
 };
 
 struct WINRT_EBO ToastNotificationManagerForUser :
-    Windows::UI::Notifications::IToastNotificationManagerForUser
+    Windows::UI::Notifications::IToastNotificationManagerForUser,
+    impl::require<ToastNotificationManagerForUser, Windows::UI::Notifications::IToastNotificationManagerForUser2>
 {
     ToastNotificationManagerForUser(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO ToastNotifier :
-    Windows::UI::Notifications::IToastNotifier
+    Windows::UI::Notifications::IToastNotifier,
+    impl::require<ToastNotifier, Windows::UI::Notifications::IToastNotifier2>
 {
     ToastNotifier(std::nullptr_t) noexcept {}
 };

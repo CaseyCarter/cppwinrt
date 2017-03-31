@@ -29,6 +29,11 @@ template <> struct __declspec(uuid("63c2e57e-3b00-5752-8fa7-cb9cbe8fe088")) __de
 
 namespace ABI::Windows::Foundation {
 
+#ifndef WINRT_GENERIC_7f37ecea_e3e8_53fc_b0e5_7aa471970edd
+#define WINRT_GENERIC_7f37ecea_e3e8_53fc_b0e5_7aa471970edd
+template <> struct __declspec(uuid("7f37ecea-e3e8-53fc-b0e5-7aa471970edd")) __declspec(novtable) IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> : impl_IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> {};
+#endif
+
 #ifndef WINRT_GENERIC_18b0a73c_db59_5279_a76d_02416b2d90b6
 #define WINRT_GENERIC_18b0a73c_db59_5279_a76d_02416b2d90b6
 template <> struct __declspec(uuid("18b0a73c-db59-5279-a76d-02416b2d90b6")) __declspec(novtable) IAsyncOperation<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationResult> : impl_IAsyncOperation<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationResult> {};
@@ -78,6 +83,11 @@ template <> struct __declspec(uuid("43b7bbe4-f096-53dd-8c16-1faa4b468c86")) __de
 }
 
 namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_2294a212_9061_5e99_a226_a44ac8f8f4dd
+#define WINRT_GENERIC_2294a212_9061_5e99_a226_a44ac8f8f4dd
+template <> struct __declspec(uuid("2294a212-9061-5e99-a226-a44ac8f8f4dd")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> : impl_AsyncOperationCompletedHandler<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> {};
+#endif
 
 #ifndef WINRT_GENERIC_2547373d_9684_5e5b_a9b8_a6f90ce632ad
 #define WINRT_GENERIC_2547373d_9684_5e5b_a9b8_a6f90ce632ad
@@ -144,11 +154,26 @@ struct ISecondaryAuthenticationFactorAuthenticationStatics :
     ISecondaryAuthenticationFactorAuthenticationStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics>
+{
+    ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ISecondaryAuthenticationFactorInfo :
     Windows::Foundation::IInspectable,
     impl::consume<ISecondaryAuthenticationFactorInfo>
 {
     ISecondaryAuthenticationFactorInfo(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISecondaryAuthenticationFactorInfo2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISecondaryAuthenticationFactorInfo2>,
+    impl::require<ISecondaryAuthenticationFactorInfo2, Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo>
+{
+    ISecondaryAuthenticationFactorInfo2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISecondaryAuthenticationFactorRegistration :

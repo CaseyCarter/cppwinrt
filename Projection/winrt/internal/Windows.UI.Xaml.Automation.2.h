@@ -153,6 +153,13 @@ struct IAutomationElementIdentifiersStatics5 :
     IAutomationElementIdentifiersStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IAutomationElementIdentifiersStatics6 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAutomationElementIdentifiersStatics6>
+{
+    IAutomationElementIdentifiersStatics6(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IAutomationProperties :
     Windows::Foundation::IInspectable,
     impl::consume<IAutomationProperties>
@@ -193,6 +200,13 @@ struct IAutomationPropertiesStatics5 :
     impl::consume<IAutomationPropertiesStatics5>
 {
     IAutomationPropertiesStatics5(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IAutomationPropertiesStatics6 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAutomationPropertiesStatics6>
+{
+    IAutomationPropertiesStatics6(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAutomationProperty :

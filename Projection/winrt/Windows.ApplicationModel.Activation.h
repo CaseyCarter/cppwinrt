@@ -6,6 +6,8 @@
 #include "base.h"
 WINRT_WARNING_PUSH
 
+#include "internal/Windows.ApplicationModel.Background.3.h"
+#include "internal/Windows.ApplicationModel.Contacts.3.h"
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.ApplicationModel.Appointments.AppointmentsProvider.3.h"
 #include "internal/Windows.ApplicationModel.UserDataAccounts.Provider.3.h"
@@ -20,7 +22,6 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Storage.3.h"
 #include "internal/Windows.Security.Authentication.Web.3.h"
 #include "internal/Windows.Security.Authentication.Web.Provider.3.h"
-#include "internal/Windows.ApplicationModel.Background.3.h"
 #include "internal/Windows.Devices.Enumeration.3.h"
 #include "internal/Windows.Media.SpeechRecognition.3.h"
 #include "internal/Windows.ApplicationModel.Activation.3.h"
@@ -299,6 +300,40 @@ struct produce<D, Windows::ApplicationModel::Activation::ICachedFileUpdaterActiv
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().CachedFileUpdaterUI());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs> : produce_base<D, Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs>
+{
+    HRESULT __stdcall get_ContactPanel(impl::abi_arg_out<Windows::ApplicationModel::Contacts::IContactPanel> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ContactPanel());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Contact(impl::abi_arg_out<Windows::ApplicationModel::Contacts::IContact> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Contact());
             return S_OK;
         }
         catch (...)
@@ -1090,6 +1125,27 @@ struct produce<D, Windows::ApplicationModel::Activation::IWebAuthenticationBroke
 
 namespace Windows::ApplicationModel::Activation {
 
+template <typename D> Windows::ApplicationModel::Background::IBackgroundTaskInstance impl_IBackgroundActivatedEventArgs<D>::TaskInstance() const
+{
+    Windows::ApplicationModel::Background::IBackgroundTaskInstance value;
+    check_hresult(WINRT_SHIM(IBackgroundActivatedEventArgs)->get_TaskInstance(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::Contacts::ContactPanel impl_IContactPanelActivatedEventArgs<D>::ContactPanel() const
+{
+    Windows::ApplicationModel::Contacts::ContactPanel value { nullptr };
+    check_hresult(WINRT_SHIM(IContactPanelActivatedEventArgs)->get_ContactPanel(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::Contacts::Contact impl_IContactPanelActivatedEventArgs<D>::Contact() const
+{
+    Windows::ApplicationModel::Contacts::Contact value { nullptr };
+    check_hresult(WINRT_SHIM(IContactPanelActivatedEventArgs)->get_Contact(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Foundation::Rect impl_ISplashScreen<D>::ImageLocation() const
 {
     Windows::Foundation::Rect value {};
@@ -1485,13 +1541,6 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI:
     return value;
 }
 
-template <typename D> Windows::ApplicationModel::Background::IBackgroundTaskInstance impl_IBackgroundActivatedEventArgs<D>::TaskInstance() const
-{
-    Windows::ApplicationModel::Background::IBackgroundTaskInstance value;
-    check_hresult(WINRT_SHIM(IBackgroundActivatedEventArgs)->get_TaskInstance(put_abi(value)));
-    return value;
-}
-
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IDevicePairingActivatedEventArgs<D>::DeviceInformation() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
@@ -1604,6 +1653,15 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -1979,6 +2037,15 @@ struct std::hash<winrt::Windows::ApplicationModel::Activation::CachedFileUpdater
 };
 
 template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::ContactPanelActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::ContactPanelActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::ApplicationModel::Activation::DeviceActivatedEventArgs>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Activation::DeviceActivatedEventArgs & value) const noexcept
@@ -2072,6 +2139,15 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::Activation::LockScreenActivatedEventArgs>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Activation::LockScreenActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Activation::LockScreenComponentActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Activation::LockScreenComponentActivatedEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

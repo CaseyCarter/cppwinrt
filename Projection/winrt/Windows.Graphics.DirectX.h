@@ -7,6 +7,7 @@
 WINRT_WARNING_PUSH
 
 #include "internal/Windows.Graphics.DirectX.3.h"
+#include "Windows.Graphics.h"
 
 WINRT_EXPORT namespace winrt {
 

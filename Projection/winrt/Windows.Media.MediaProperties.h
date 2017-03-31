@@ -135,6 +135,24 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties> : p
 };
 
 template <typename D>
+struct produce<D, Windows::Media::MediaProperties::IAudioEncodingProperties2> : produce_base<D, Windows::Media::MediaProperties::IAudioEncodingProperties2>
+{
+    HRESULT __stdcall get_IsSpatial(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsSpatial());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics> : produce_base<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>
 {
     HRESULT __stdcall abi_CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate, impl::abi_arg_out<Windows::Media::MediaProperties::IAudioEncodingProperties> value) noexcept override
@@ -203,6 +221,40 @@ struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStati
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().CreateWma(sampleRate, channelCount, bitrate));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2> : produce_base<D, Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2>
+{
+    HRESULT __stdcall abi_CreateAlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample, impl::abi_arg_out<Windows::Media::MediaProperties::IAudioEncodingProperties> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CreateAlac(sampleRate, channelCount, bitsPerSample));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateFlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample, impl::abi_arg_out<Windows::Media::MediaProperties::IAudioEncodingProperties> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CreateFlac(sampleRate, channelCount, bitsPerSample));
             return S_OK;
         }
         catch (...)
@@ -762,6 +814,55 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics2
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().CreateAvi(quality));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics3> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingProfileStatics3>
+{
+    HRESULT __stdcall abi_CreateAlac(Windows::Media::MediaProperties::AudioEncodingQuality quality, impl::abi_arg_out<Windows::Media::MediaProperties::IMediaEncodingProfile> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CreateAlac(quality));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateFlac(Windows::Media::MediaProperties::AudioEncodingQuality quality, impl::abi_arg_out<Windows::Media::MediaProperties::IMediaEncodingProfile> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CreateFlac(quality));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateHevc(Windows::Media::MediaProperties::VideoEncodingQuality quality, impl::abi_arg_out<Windows::Media::MediaProperties::IMediaEncodingProfile> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CreateHevc(quality));
             return S_OK;
         }
         catch (...)
@@ -1440,6 +1541,104 @@ struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics
 };
 
 template <typename D>
+struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>
+{
+    HRESULT __stdcall get_Vp9(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Vp9());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_L8(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().L8());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_L16(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().L16());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_D16(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().D16());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3> : produce_base<D, Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3>
+{
+    HRESULT __stdcall get_Alac(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Alac());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Flac(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Flac());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IMediaRatio> : produce_base<D, Windows::Media::MediaProperties::IMediaRatio>
 {
     HRESULT __stdcall put_Numerator(uint32_t value) noexcept override
@@ -1772,6 +1971,24 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties3> : 
 };
 
 template <typename D>
+struct produce<D, Windows::Media::MediaProperties::IVideoEncodingProperties4> : produce_base<D, Windows::Media::MediaProperties::IVideoEncodingProperties4>
+{
+    HRESULT __stdcall get_SphericalVideoFrameFormat(Windows::Media::MediaProperties::SphericalVideoFrameFormat * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SphericalVideoFrameFormat());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics> : produce_base<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>
 {
     HRESULT __stdcall abi_CreateH264(impl::abi_arg_out<Windows::Media::MediaProperties::IVideoEncodingProperties> value) noexcept override
@@ -1810,6 +2027,25 @@ struct produce<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStati
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().CreateUncompressed(*reinterpret_cast<const hstring *>(&subtype), width, height));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2> : produce_base<D, Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2>
+{
+    HRESULT __stdcall abi_CreateHevc(impl::abi_arg_out<Windows::Media::MediaProperties::IVideoEncodingProperties> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CreateHevc());
             return S_OK;
         }
         catch (...)
@@ -1932,6 +2168,13 @@ template <typename D> void impl_IAudioEncodingPropertiesWithFormatUserData<D>::G
     check_hresult(WINRT_SHIM(IAudioEncodingPropertiesWithFormatUserData)->abi_GetFormatUserData(impl::put_size_abi(value), put_abi(value)));
 }
 
+template <typename D> bool impl_IAudioEncodingProperties2<D>::IsSpatial() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IAudioEncodingProperties2)->get_IsSpatial(&value));
+    return value;
+}
+
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioEncodingPropertiesStatics<D>::CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
@@ -1964,6 +2207,20 @@ template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties i
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
     check_hresult(WINRT_SHIM(IAudioEncodingPropertiesStatics)->abi_CreateWma(sampleRate, channelCount, bitrate, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioEncodingPropertiesStatics2<D>::CreateAlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const
+{
+    Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
+    check_hresult(WINRT_SHIM(IAudioEncodingPropertiesStatics2)->abi_CreateAlac(sampleRate, channelCount, bitsPerSample, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioEncodingPropertiesStatics2<D>::CreateFlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample) const
+{
+    Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
+    check_hresult(WINRT_SHIM(IAudioEncodingPropertiesStatics2)->abi_CreateFlac(sampleRate, channelCount, bitsPerSample, put_abi(value)));
     return value;
 }
 
@@ -2297,6 +2554,48 @@ template <typename D> hstring impl_IMediaEncodingSubtypesStatics<D>::Yv12() cons
     return value;
 }
 
+template <typename D> hstring impl_IMediaEncodingSubtypesStatics2<D>::Vp9() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics2)->get_Vp9(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IMediaEncodingSubtypesStatics2<D>::L8() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics2)->get_L8(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IMediaEncodingSubtypesStatics2<D>::L16() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics2)->get_L16(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IMediaEncodingSubtypesStatics2<D>::D16() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics2)->get_D16(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IMediaEncodingSubtypesStatics3<D>::Alac() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics3)->get_Alac(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IMediaEncodingSubtypesStatics3<D>::Flac() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMediaEncodingSubtypesStatics3)->get_Flac(put_abi(value)));
+    return value;
+}
+
 template <typename D> int32_t impl_IH264ProfileIdsStatics<D>::ConstrainedBaseline() const
 {
     int32_t value {};
@@ -2431,6 +2730,13 @@ template <typename D> Windows::Media::MediaProperties::StereoscopicVideoPackingM
     return value;
 }
 
+template <typename D> Windows::Media::MediaProperties::SphericalVideoFrameFormat impl_IVideoEncodingProperties4<D>::SphericalVideoFrameFormat() const
+{
+    Windows::Media::MediaProperties::SphericalVideoFrameFormat value {};
+    check_hresult(WINRT_SHIM(IVideoEncodingProperties4)->get_SphericalVideoFrameFormat(&value));
+    return value;
+}
+
 template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties impl_IVideoEncodingPropertiesStatics<D>::CreateH264() const
 {
     Windows::Media::MediaProperties::VideoEncodingProperties value { nullptr };
@@ -2449,6 +2755,13 @@ template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties i
 {
     Windows::Media::MediaProperties::VideoEncodingProperties value { nullptr };
     check_hresult(WINRT_SHIM(IVideoEncodingPropertiesStatics)->abi_CreateUncompressed(get_abi(subtype), width, height, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties impl_IVideoEncodingPropertiesStatics2<D>::CreateHevc() const
+{
+    Windows::Media::MediaProperties::VideoEncodingProperties value { nullptr };
+    check_hresult(WINRT_SHIM(IVideoEncodingPropertiesStatics2)->abi_CreateHevc(put_abi(value)));
     return value;
 }
 
@@ -2574,6 +2887,27 @@ template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl
     return value;
 }
 
+template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IMediaEncodingProfileStatics3<D>::CreateAlac(Windows::Media::MediaProperties::AudioEncodingQuality quality) const
+{
+    Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics3)->abi_CreateAlac(quality, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IMediaEncodingProfileStatics3<D>::CreateFlac(Windows::Media::MediaProperties::AudioEncodingQuality quality) const
+{
+    Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics3)->abi_CreateFlac(quality, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::MediaProperties::MediaEncodingProfile impl_IMediaEncodingProfileStatics3<D>::CreateHevc(Windows::Media::MediaProperties::VideoEncodingQuality quality) const
+{
+    Windows::Media::MediaProperties::MediaEncodingProfile value { nullptr };
+    check_hresult(WINRT_SHIM(IMediaEncodingProfileStatics3)->abi_CreateHevc(quality, put_abi(value)));
+    return value;
+}
+
 template <typename D> void impl_IMediaEncodingProfile<D>::Audio(const Windows::Media::MediaProperties::AudioEncodingProperties & value) const
 {
     check_hresult(WINRT_SHIM(IMediaEncodingProfile)->put_Audio(get_abi(value)));
@@ -2637,6 +2971,16 @@ inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingPro
 inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateWma(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate)
 {
     return get_activation_factory<AudioEncodingProperties, IAudioEncodingPropertiesStatics>().CreateWma(sampleRate, channelCount, bitrate);
+}
+
+inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateAlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample)
+{
+    return get_activation_factory<AudioEncodingProperties, IAudioEncodingPropertiesStatics2>().CreateAlac(sampleRate, channelCount, bitsPerSample);
+}
+
+inline Windows::Media::MediaProperties::AudioEncodingProperties AudioEncodingProperties::CreateFlac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitsPerSample)
+{
+    return get_activation_factory<AudioEncodingProperties, IAudioEncodingPropertiesStatics2>().CreateFlac(sampleRate, channelCount, bitsPerSample);
 }
 
 inline ContainerEncodingProperties::ContainerEncodingProperties() :
@@ -2769,6 +3113,21 @@ inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfil
 inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateAvi(Windows::Media::MediaProperties::VideoEncodingQuality quality)
 {
     return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics2>().CreateAvi(quality);
+}
+
+inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateAlac(Windows::Media::MediaProperties::AudioEncodingQuality quality)
+{
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics3>().CreateAlac(quality);
+}
+
+inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateFlac(Windows::Media::MediaProperties::AudioEncodingQuality quality)
+{
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics3>().CreateFlac(quality);
+}
+
+inline Windows::Media::MediaProperties::MediaEncodingProfile MediaEncodingProfile::CreateHevc(Windows::Media::MediaProperties::VideoEncodingQuality quality)
+{
+    return get_activation_factory<MediaEncodingProfile, IMediaEncodingProfileStatics3>().CreateHevc(quality);
 }
 
 inline hstring MediaEncodingSubtypes::Aac()
@@ -2971,6 +3330,36 @@ inline hstring MediaEncodingSubtypes::Yv12()
     return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics>().Yv12();
 }
 
+inline hstring MediaEncodingSubtypes::Vp9()
+{
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics2>().Vp9();
+}
+
+inline hstring MediaEncodingSubtypes::L8()
+{
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics2>().L8();
+}
+
+inline hstring MediaEncodingSubtypes::L16()
+{
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics2>().L16();
+}
+
+inline hstring MediaEncodingSubtypes::D16()
+{
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics2>().D16();
+}
+
+inline hstring MediaEncodingSubtypes::Alac()
+{
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics3>().Alac();
+}
+
+inline hstring MediaEncodingSubtypes::Flac()
+{
+    return get_activation_factory<MediaEncodingSubtypes, IMediaEncodingSubtypesStatics3>().Flac();
+}
+
 inline MediaPropertySet::MediaPropertySet() :
     MediaPropertySet(activate_instance<MediaPropertySet>())
 {}
@@ -3019,6 +3408,11 @@ inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingPro
     return get_activation_factory<VideoEncodingProperties, IVideoEncodingPropertiesStatics>().CreateUncompressed(subtype, width, height);
 }
 
+inline Windows::Media::MediaProperties::VideoEncodingProperties VideoEncodingProperties::CreateHevc()
+{
+    return get_activation_factory<VideoEncodingProperties, IVideoEncodingPropertiesStatics2>().CreateHevc();
+}
+
 }
 
 }
@@ -3033,9 +3427,27 @@ struct std::hash<winrt::Windows::Media::MediaProperties::IAudioEncodingPropertie
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IAudioEncodingProperties2>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IAudioEncodingProperties2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics>
 {
     size_t operator()(const winrt::Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IAudioEncodingPropertiesStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3123,6 +3535,15 @@ struct std::hash<winrt::Windows::Media::MediaProperties::IMediaEncodingProfileSt
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IMediaEncodingProfileStatics3>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IMediaEncodingProfileStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::MediaProperties::IMediaEncodingProperties>
 {
     size_t operator()(const winrt::Windows::Media::MediaProperties::IMediaEncodingProperties & value) const noexcept
@@ -3135,6 +3556,24 @@ template<>
 struct std::hash<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics>
 {
     size_t operator()(const winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IMediaEncodingSubtypesStatics3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3186,9 +3625,27 @@ struct std::hash<winrt::Windows::Media::MediaProperties::IVideoEncodingPropertie
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IVideoEncodingProperties4>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IVideoEncodingProperties4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics>
 {
     size_t operator()(const winrt::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2>
+{
+    size_t operator()(const winrt::Windows::Media::MediaProperties::IVideoEncodingPropertiesStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

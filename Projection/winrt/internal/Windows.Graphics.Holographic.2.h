@@ -9,6 +9,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation {
 
+#ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
+#define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
+template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::Foundation::IInspectable> : impl_EventHandler<Windows::Foundation::IInspectable> {};
+#endif
+
 #ifndef WINRT_GENERIC_71d80b7c_1d27_5102_83d1_4f0efc7c9d6f
 #define WINRT_GENERIC_71d80b7c_1d27_5102_83d1_4f0efc7c9d6f
 template <> struct __declspec(uuid("71d80b7c-1d27-5102-83d1-4f0efc7c9d6f")) __declspec(novtable) TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> : impl_TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> {};
@@ -86,6 +91,14 @@ struct IHolographicCamera :
     IHolographicCamera(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IHolographicCamera2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IHolographicCamera2>,
+    impl::require<IHolographicCamera2, Windows::Graphics::Holographic::IHolographicCamera>
+{
+    IHolographicCamera2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IHolographicCameraPose :
     Windows::Foundation::IInspectable,
     impl::consume<IHolographicCameraPose>
@@ -98,6 +111,35 @@ struct IHolographicCameraRenderingParameters :
     impl::consume<IHolographicCameraRenderingParameters>
 {
     IHolographicCameraRenderingParameters(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IHolographicCameraRenderingParameters2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IHolographicCameraRenderingParameters2>,
+    impl::require<IHolographicCameraRenderingParameters2, Windows::Graphics::Holographic::IHolographicCameraRenderingParameters>
+{
+    IHolographicCameraRenderingParameters2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IHolographicCameraViewportParameters :
+    Windows::Foundation::IInspectable,
+    impl::consume<IHolographicCameraViewportParameters>
+{
+    IHolographicCameraViewportParameters(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IHolographicDisplay :
+    Windows::Foundation::IInspectable,
+    impl::consume<IHolographicDisplay>
+{
+    IHolographicDisplay(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IHolographicDisplayStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IHolographicDisplayStatics>
+{
+    IHolographicDisplayStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHolographicFrame :
@@ -140,6 +182,13 @@ struct IHolographicSpaceStatics :
     impl::consume<IHolographicSpaceStatics>
 {
     IHolographicSpaceStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IHolographicSpaceStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IHolographicSpaceStatics2>
+{
+    IHolographicSpaceStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

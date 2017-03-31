@@ -2283,6 +2283,55 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Usb
     return operation;
 }
 
+template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IUsbDevice<D>::SendControlOutTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket, const Windows::Storage::Streams::IBuffer & buffer) const
+{
+    Windows::Foundation::IAsyncOperation<uint32_t> operation;
+    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlOutTransferAsync(get_abi(setupPacket), get_abi(buffer), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IUsbDevice<D>::SendControlOutTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket) const
+{
+    Windows::Foundation::IAsyncOperation<uint32_t> operation;
+    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlOutTransferAsyncNoBuffer(get_abi(setupPacket), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IUsbDevice<D>::SendControlInTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket, const Windows::Storage::Streams::IBuffer & buffer) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
+    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlInTransferAsync(get_abi(setupPacket), get_abi(buffer), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IUsbDevice<D>::SendControlInTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
+    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlInTransferAsyncNoBuffer(get_abi(setupPacket), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Devices::Usb::UsbInterface impl_IUsbDevice<D>::DefaultInterface() const
+{
+    Windows::Devices::Usb::UsbInterface value { nullptr };
+    check_hresult(WINRT_SHIM(IUsbDevice)->get_DefaultInterface(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Usb::UsbDeviceDescriptor impl_IUsbDevice<D>::DeviceDescriptor() const
+{
+    Windows::Devices::Usb::UsbDeviceDescriptor value { nullptr };
+    check_hresult(WINRT_SHIM(IUsbDevice)->get_DeviceDescriptor(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Usb::UsbConfiguration impl_IUsbDevice<D>::Configuration() const
+{
+    Windows::Devices::Usb::UsbConfiguration value { nullptr };
+    check_hresult(WINRT_SHIM(IUsbDevice)->get_Configuration(put_abi(value)));
+    return value;
+}
+
 template <typename D> uint32_t impl_IUsbDeviceDescriptor<D>::BcdUsb() const
 {
     uint32_t value {};
@@ -2868,55 +2917,6 @@ template <typename D> Windows::Devices::Usb::UsbInterruptOutPipe impl_IUsbInterr
 {
     Windows::Devices::Usb::UsbInterruptOutPipe value { nullptr };
     check_hresult(WINRT_SHIM(IUsbInterruptOutEndpointDescriptor)->get_Pipe(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IUsbDevice<D>::SendControlOutTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket, const Windows::Storage::Streams::IBuffer & buffer) const
-{
-    Windows::Foundation::IAsyncOperation<uint32_t> operation;
-    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlOutTransferAsync(get_abi(setupPacket), get_abi(buffer), put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IUsbDevice<D>::SendControlOutTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket) const
-{
-    Windows::Foundation::IAsyncOperation<uint32_t> operation;
-    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlOutTransferAsyncNoBuffer(get_abi(setupPacket), put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IUsbDevice<D>::SendControlInTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket, const Windows::Storage::Streams::IBuffer & buffer) const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlInTransferAsync(get_abi(setupPacket), get_abi(buffer), put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IUsbDevice<D>::SendControlInTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket) const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(WINRT_SHIM(IUsbDevice)->abi_SendControlInTransferAsyncNoBuffer(get_abi(setupPacket), put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Devices::Usb::UsbInterface impl_IUsbDevice<D>::DefaultInterface() const
-{
-    Windows::Devices::Usb::UsbInterface value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDevice)->get_DefaultInterface(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Devices::Usb::UsbDeviceDescriptor impl_IUsbDevice<D>::DeviceDescriptor() const
-{
-    Windows::Devices::Usb::UsbDeviceDescriptor value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDevice)->get_DeviceDescriptor(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Devices::Usb::UsbConfiguration impl_IUsbDevice<D>::Configuration() const
-{
-    Windows::Devices::Usb::UsbConfiguration value { nullptr };
-    check_hresult(WINRT_SHIM(IUsbDevice)->get_Configuration(put_abi(value)));
     return value;
 }
 

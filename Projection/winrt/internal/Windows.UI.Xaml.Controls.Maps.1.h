@@ -98,6 +98,31 @@ struct __declspec(uuid("f2867897-40ac-4e8a-a927-510f3846a47e")) __declspec(novta
     virtual HRESULT __stdcall get_ChangeReason(winrt::Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason * value) = 0;
 };
 
+struct __declspec(uuid("1694259d-0ae2-4f42-a02e-292ca835d39d")) __declspec(novtable) IMapBillboard : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Location(Windows::Devices::Geolocation::IGeopoint ** value) = 0;
+    virtual HRESULT __stdcall put_Location(Windows::Devices::Geolocation::IGeopoint * value) = 0;
+    virtual HRESULT __stdcall get_NormalizedAnchorPoint(Windows::Foundation::Point * value) = 0;
+    virtual HRESULT __stdcall put_NormalizedAnchorPoint(Windows::Foundation::Point value) = 0;
+    virtual HRESULT __stdcall get_Image(Windows::Storage::Streams::IRandomAccessStreamReference ** value) = 0;
+    virtual HRESULT __stdcall put_Image(Windows::Storage::Streams::IRandomAccessStreamReference * value) = 0;
+    virtual HRESULT __stdcall get_CollisionBehaviorDesired(winrt::Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior * value) = 0;
+    virtual HRESULT __stdcall put_CollisionBehaviorDesired(winrt::Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior value) = 0;
+    virtual HRESULT __stdcall get_ReferenceCamera(Windows::UI::Xaml::Controls::Maps::IMapCamera ** value) = 0;
+};
+
+struct __declspec(uuid("be45a4c5-8f09-4b86-ae28-783740eb8b31")) __declspec(novtable) IMapBillboardFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateInstanceFromCamera(Windows::UI::Xaml::Controls::Maps::IMapCamera * camera, Windows::UI::Xaml::Controls::Maps::IMapBillboard ** instance) = 0;
+};
+
+struct __declspec(uuid("fdf839fe-e1f7-4fb0-8887-7da68c647333")) __declspec(novtable) IMapBillboardStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_LocationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_NormalizedAnchorPointProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_CollisionBehaviorDesiredProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
 struct __declspec(uuid("53a6b623-c0f8-4d8b-ad1e-a59598ea840b")) __declspec(novtable) IMapCamera : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Location(Windows::Devices::Geolocation::IGeopoint ** value) = 0;
@@ -118,6 +143,13 @@ struct __declspec(uuid("ea3b0f16-83af-4ace-8e71-10ad9f1e9e7f")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateInstanceWithLocationAndHeading(Windows::Devices::Geolocation::IGeopoint * location, double headingInDegrees, Windows::UI::Xaml::Controls::Maps::IMapCamera ** instance) = 0;
     virtual HRESULT __stdcall abi_CreateInstanceWithLocationHeadingAndPitch(Windows::Devices::Geolocation::IGeopoint * location, double headingInDegrees, double pitchInDegrees, Windows::UI::Xaml::Controls::Maps::IMapCamera ** instance) = 0;
     virtual HRESULT __stdcall abi_CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(Windows::Devices::Geolocation::IGeopoint * location, double headingInDegrees, double pitchInDegrees, double rollInDegrees, double fieldOfViewInDegrees, Windows::UI::Xaml::Controls::Maps::IMapCamera ** instance) = 0;
+};
+
+struct __declspec(uuid("fdd1b423-c961-4df2-bb57-82ee0f0bb591")) __declspec(novtable) IMapContextRequestedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Position(Windows::Foundation::Point * value) = 0;
+    virtual HRESULT __stdcall get_Location(Windows::Devices::Geolocation::IGeopoint ** value) = 0;
+    virtual HRESULT __stdcall get_MapElements(Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> ** value) = 0;
 };
 
 struct __declspec(uuid("42d0b851-5256-4747-9e6c-0d11e966141e")) __declspec(novtable) IMapControl : Windows::Foundation::IInspectable
@@ -251,6 +283,24 @@ struct __declspec(uuid("068f132a-1817-466d-b7ce-419b3f8e248b")) __declspec(novta
     virtual HRESULT __stdcall abi_GetVisibleRegion(winrt::Windows::UI::Xaml::Controls::Maps::MapVisibleRegionKind region, Windows::Devices::Geolocation::IGeopath ** returnValue) = 0;
 };
 
+struct __declspec(uuid("dd9b0ffd-7823-46a2-82c9-65ddac4f365f")) __declspec(novtable) IMapControl5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_MapProjection(winrt::Windows::UI::Xaml::Controls::Maps::MapProjection * value) = 0;
+    virtual HRESULT __stdcall put_MapProjection(winrt::Windows::UI::Xaml::Controls::Maps::MapProjection value) = 0;
+    virtual HRESULT __stdcall get_StyleSheet(Windows::UI::Xaml::Controls::Maps::IMapStyleSheet ** value) = 0;
+    virtual HRESULT __stdcall put_StyleSheet(Windows::UI::Xaml::Controls::Maps::IMapStyleSheet * value) = 0;
+    virtual HRESULT __stdcall get_ViewPadding(Windows::UI::Xaml::Thickness * value) = 0;
+    virtual HRESULT __stdcall put_ViewPadding(Windows::UI::Xaml::Thickness value) = 0;
+    virtual HRESULT __stdcall add_MapContextRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_MapContextRequested(event_token token) = 0;
+    virtual HRESULT __stdcall abi_FindMapElementsAtOffsetWithRadius(Windows::Foundation::Point offset, double radius, Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_GetLocationFromOffsetWithReferenceSystem(Windows::Foundation::Point offset, winrt::Windows::Devices::Geolocation::AltitudeReferenceSystem desiredReferenceSystem, Windows::Devices::Geolocation::IGeopoint ** location) = 0;
+    virtual HRESULT __stdcall abi_StartContinuousPan(double horizontalPixelsPerSecond, double verticalPixelsPerSecond) = 0;
+    virtual HRESULT __stdcall abi_StopContinuousPan() = 0;
+    virtual HRESULT __stdcall abi_TryPanAsync(double horizontalPixels, double verticalPixels, Windows::Foundation::IAsyncOperation<bool> ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_TryPanToAsync(Windows::Devices::Geolocation::IGeopoint * location, Windows::Foundation::IAsyncOperation<bool> ** returnValue) = 0;
+};
+
 struct __declspec(uuid("c2c61795-2147-4f0a-942a-5493a85de807")) __declspec(novtable) IMapControlStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CenterProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -296,6 +346,13 @@ struct __declspec(uuid("fe785d97-5d13-4fa1-bf1d-84061768c183")) __declspec(novta
 {
     virtual HRESULT __stdcall get_BusinessLandmarksEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TransitFeaturesEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("09626f00-b7dd-4189-a7f7-830c412deea3")) __declspec(novtable) IMapControlStatics5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_MapProjectionProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_StyleSheetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_ViewPaddingProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("64592866-14a3-4e5f-8883-8e9c500eeede")) __declspec(novtable) IMapCustomExperience : Windows::Foundation::IInspectable
@@ -498,6 +555,23 @@ struct __declspec(uuid("03e4ad6c-86ec-44d9-9597-fb75b7deba0a")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateFromLocationsWithHeadingAndPitch(Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> * locations, double headingInDegrees, double pitchInDegrees, Windows::UI::Xaml::Controls::Maps::IMapScene ** returnValue) = 0;
 };
 
+struct __declspec(uuid("ae54b2bf-8991-42ed-8d58-20473deede1d")) __declspec(novtable) IMapStyleSheet : Windows::Foundation::IInspectable
+{
+};
+
+struct __declspec(uuid("abbd00ad-0a1c-4335-82f4-61d936aa197d")) __declspec(novtable) IMapStyleSheetStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_Aerial(Windows::UI::Xaml::Controls::Maps::IMapStyleSheet ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_AerialWithOverlay(Windows::UI::Xaml::Controls::Maps::IMapStyleSheet ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_RoadLight(Windows::UI::Xaml::Controls::Maps::IMapStyleSheet ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_RoadDark(Windows::UI::Xaml::Controls::Maps::IMapStyleSheet ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_RoadHighContrastLight(Windows::UI::Xaml::Controls::Maps::IMapStyleSheet ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_RoadHighContrastDark(Windows::UI::Xaml::Controls::Maps::IMapStyleSheet ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_Combine(Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> * styleSheets, Windows::UI::Xaml::Controls::Maps::IMapStyleSheet ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_ParseFromJson(hstring styleAsJson, Windows::UI::Xaml::Controls::Maps::IMapStyleSheet ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_TryParseFromJson(hstring styleAsJson, Windows::UI::Xaml::Controls::Maps::IMapStyleSheet ** styleSheet, bool * returnValue) = 0;
+};
+
 struct __declspec(uuid("dbf00472-e953-4fa8-97d0-ea86359057cf")) __declspec(novtable) IMapTargetCameraChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Camera(Windows::UI::Xaml::Controls::Maps::IMapCamera ** value) = 0;
@@ -649,7 +723,9 @@ template <> struct traits<Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSour
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource> { using default_interface = Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource; };
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapActualCameraChangedEventArgs> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapActualCameraChangingEventArgs> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangingEventArgs; };
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapBillboard> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapBillboard; };
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapCamera> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapCamera; };
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapContextRequestedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapControl> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapControl; };
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapCustomExperience> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapCustomExperience; };
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapCustomExperienceChangedEventArgs> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapCustomExperienceChangedEventArgs; };
@@ -665,6 +741,7 @@ template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapPolyline> { usin
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapRightTappedEventArgs> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapRightTappedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapRouteView> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapRouteView; };
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapScene> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapScene; };
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapStyleSheet; };
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequest> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequest; };
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestDeferral> { using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestDeferral; };
@@ -760,6 +837,34 @@ struct WINRT_EBO impl_IMapActualCameraChangingEventArgs2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMapBillboard
+{
+    Windows::Devices::Geolocation::Geopoint Location() const;
+    void Location(const Windows::Devices::Geolocation::Geopoint & value) const;
+    Windows::Foundation::Point NormalizedAnchorPoint() const;
+    void NormalizedAnchorPoint(const Windows::Foundation::Point & value) const;
+    Windows::Storage::Streams::IRandomAccessStreamReference Image() const;
+    void Image(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
+    Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior CollisionBehaviorDesired() const;
+    void CollisionBehaviorDesired(Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior value) const;
+    Windows::UI::Xaml::Controls::Maps::MapCamera ReferenceCamera() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapBillboardFactory
+{
+    Windows::UI::Xaml::Controls::Maps::MapBillboard CreateInstanceFromCamera(const Windows::UI::Xaml::Controls::Maps::MapCamera & camera) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapBillboardStatics
+{
+    Windows::UI::Xaml::DependencyProperty LocationProperty() const;
+    Windows::UI::Xaml::DependencyProperty NormalizedAnchorPointProperty() const;
+    Windows::UI::Xaml::DependencyProperty CollisionBehaviorDesiredProperty() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMapCamera
 {
     Windows::Devices::Geolocation::Geopoint Location() const;
@@ -781,6 +886,14 @@ struct WINRT_EBO impl_IMapCameraFactory
     Windows::UI::Xaml::Controls::Maps::MapCamera CreateInstanceWithLocationAndHeading(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees) const;
     Windows::UI::Xaml::Controls::Maps::MapCamera CreateInstanceWithLocationHeadingAndPitch(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees, double pitchInDegrees) const;
     Windows::UI::Xaml::Controls::Maps::MapCamera CreateInstanceWithLocationHeadingPitchRollAndFieldOfView(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees, double pitchInDegrees, double rollInDegrees, double fieldOfViewInDegrees) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapContextRequestedEventArgs
+{
+    Windows::Foundation::Point Position() const;
+    Windows::Devices::Geolocation::Geopoint Location() const;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> MapElements() const;
 };
 
 template <typename D>
@@ -953,6 +1066,27 @@ struct WINRT_EBO impl_IMapControl4
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMapControl5
+{
+    Windows::UI::Xaml::Controls::Maps::MapProjection MapProjection() const;
+    void MapProjection(Windows::UI::Xaml::Controls::Maps::MapProjection value) const;
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet StyleSheet() const;
+    void StyleSheet(const Windows::UI::Xaml::Controls::Maps::MapStyleSheet & value) const;
+    Windows::UI::Xaml::Thickness ViewPadding() const;
+    void ViewPadding(const Windows::UI::Xaml::Thickness & value) const;
+    event_token MapContextRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs> & value) const;
+    using MapContextRequested_revoker = event_revoker<IMapControl5>;
+    MapContextRequested_revoker MapContextRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs> & value) const;
+    void MapContextRequested(event_token token) const;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Maps::MapElement> FindMapElementsAtOffset(const Windows::Foundation::Point & offset, double radius) const;
+    void GetLocationFromOffset(const Windows::Foundation::Point & offset, Windows::Devices::Geolocation::AltitudeReferenceSystem desiredReferenceSystem, Windows::Devices::Geolocation::Geopoint & location) const;
+    void StartContinuousPan(double horizontalPixelsPerSecond, double verticalPixelsPerSecond) const;
+    void StopContinuousPan() const;
+    Windows::Foundation::IAsyncOperation<bool> TryPanAsync(double horizontalPixels, double verticalPixels) const;
+    Windows::Foundation::IAsyncOperation<bool> TryPanToAsync(const Windows::Devices::Geolocation::Geopoint & location) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMapControlStatics
 {
     Windows::UI::Xaml::DependencyProperty CenterProperty() const;
@@ -1000,6 +1134,14 @@ struct WINRT_EBO impl_IMapControlStatics4
 {
     Windows::UI::Xaml::DependencyProperty BusinessLandmarksEnabledProperty() const;
     Windows::UI::Xaml::DependencyProperty TransitFeaturesEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapControlStatics5
+{
+    Windows::UI::Xaml::DependencyProperty MapProjectionProperty() const;
+    Windows::UI::Xaml::DependencyProperty StyleSheetProperty() const;
+    Windows::UI::Xaml::DependencyProperty ViewPaddingProperty() const;
 };
 
 template <typename D>
@@ -1233,6 +1375,25 @@ struct WINRT_EBO impl_IMapSceneStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMapStyleSheet
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapStyleSheetStatics
+{
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet Aerial() const;
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet AerialWithOverlay() const;
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet RoadLight() const;
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet RoadDark() const;
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet RoadHighContrastLight() const;
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet RoadHighContrastDark() const;
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet Combine(iterable<Windows::UI::Xaml::Controls::Maps::MapStyleSheet> styleSheets) const;
+    Windows::UI::Xaml::Controls::Maps::MapStyleSheet ParseFromJson(hstring_view styleAsJson) const;
+    bool TryParseFromJson(hstring_view styleAsJson, Windows::UI::Xaml::Controls::Maps::MapStyleSheet & styleSheet) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMapTargetCameraChangedEventArgs
 {
     Windows::UI::Xaml::Controls::Maps::MapCamera Camera() const;
@@ -1455,6 +1616,24 @@ template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapActualCameraCha
     template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapActualCameraChangingEventArgs2<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapBillboard>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapBillboard;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapBillboard<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapBillboardFactory>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapBillboardFactory;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapBillboardFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapBillboardStatics>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapBillboardStatics;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapBillboardStatics<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapCamera>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapCamera;
@@ -1465,6 +1644,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapCameraFactory>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapCameraFactory;
     template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapCameraFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapContextRequestedEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapContextRequestedEventArgs;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapContextRequestedEventArgs<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapControl>
@@ -1491,6 +1676,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapControl4>
     template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapControl4<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapControl5>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapControl5;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapControl5<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapControlStatics>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapControlStatics;
@@ -1507,6 +1698,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapControlStatics4
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapControlStatics4;
     template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapControlStatics4<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapControlStatics5>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapControlStatics5;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapControlStatics5<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapCustomExperience>
@@ -1677,6 +1874,18 @@ template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapSceneStatics>
     template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapSceneStatics<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapStyleSheet>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheet;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapStyleSheet<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapStyleSheetStatics>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapStyleSheetStatics;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::Maps::impl_IMapStyleSheetStatics<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs;
@@ -1809,10 +2018,22 @@ template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapActualCameraChan
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs"; }
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapBillboard>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapBillboard;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapBillboard"; }
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapCamera>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapCamera;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapCamera"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapContextRequestedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapContextRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapControl>
@@ -1903,6 +2124,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapScene>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapScene;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapScene"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapStyleSheet>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapStyleSheet;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapStyleSheet"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs>

@@ -1360,6 +1360,15 @@ struct std::hash<winrt::Windows::UI::WebUI::WebUICachedFileUpdaterActivatedEvent
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIContactPanelActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIContactPanelActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::WebUI::WebUIDeviceActivatedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::WebUI::WebUIDeviceActivatedEventArgs & value) const noexcept
@@ -1459,6 +1468,15 @@ struct std::hash<winrt::Windows::UI::WebUI::WebUILockScreenActivatedEventArgs>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUILockScreenComponentActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUILockScreenComponentActivatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::WebUI::WebUINavigatedDeferral>
 {
     size_t operator()(const winrt::Windows::UI::WebUI::WebUINavigatedDeferral & value) const noexcept
@@ -1480,6 +1498,15 @@ template<>
 struct std::hash<winrt::Windows::UI::WebUI::WebUINavigatedOperation>
 {
     size_t operator()(const winrt::Windows::UI::WebUI::WebUINavigatedOperation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::WebUI::WebUIPrintWorkflowForegroundTaskActivatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::WebUI::WebUIPrintWorkflowForegroundTaskActivatedEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

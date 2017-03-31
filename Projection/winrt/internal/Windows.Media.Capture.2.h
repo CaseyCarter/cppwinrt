@@ -16,6 +16,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3")) __declspec(novtable) IReference<uint32_t> : impl_IReference<uint32_t> {};
 #endif
 
+#ifndef WINRT_GENERIC_3c00fd60_2950_5939_a21a_2d12c5a01b8a
+#define WINRT_GENERIC_3c00fd60_2950_5939_a21a_2d12c5a01b8a
+template <> struct __declspec(uuid("3c00fd60-2950-5939-a21a-2d12c5a01b8a")) __declspec(novtable) IReference<bool> : impl_IReference<bool> {};
+#endif
+
 #ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 #define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __declspec(novtable) IReference<Windows::Foundation::TimeSpan> : impl_IReference<Windows::Foundation::TimeSpan> {};
@@ -39,11 +44,6 @@ template <> struct __declspec(uuid("5e52f8ce-aced-5a42-95b4-f674dd84885e")) __de
 #ifndef WINRT_GENERIC_f5cb24b5_ff00_58df_b460_17bbf2cd64d3
 #define WINRT_GENERIC_f5cb24b5_ff00_58df_b460_17bbf2cd64d3
 template <> struct __declspec(uuid("f5cb24b5-ff00-58df-b460-17bbf2cd64d3")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::Foundation::IInspectable> {};
-#endif
-
-#ifndef WINRT_GENERIC_3c00fd60_2950_5939_a21a_2d12c5a01b8a
-#define WINRT_GENERIC_3c00fd60_2950_5939_a21a_2d12c5a01b8a
-template <> struct __declspec(uuid("3c00fd60-2950-5939-a21a-2d12c5a01b8a")) __declspec(novtable) IReference<bool> : impl_IReference<bool> {};
 #endif
 
 
@@ -145,6 +145,31 @@ namespace ABI::Windows::Foundation {
 #define WINRT_GENERIC_a10cb14d_7935_5c87_9026_8abe792a3be5
 template <> struct __declspec(uuid("a10cb14d-7935-5c87-9026-8abe792a3be5")) __declspec(novtable) IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> : impl_IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> {};
 #endif
+
+#ifndef WINRT_GENERIC_5c91f8ba_b379_53ff_a288_24e7883bf592
+#define WINRT_GENERIC_5c91f8ba_b379_53ff_a288_24e7883bf592
+template <> struct __declspec(uuid("5c91f8ba-b379-53ff-a288-24e7883bf592")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs> : impl_TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_53d56be8_f110_5226_9ce1_a8c26a572576
+#define WINRT_GENERIC_53d56be8_f110_5226_9ce1_a8c26a572576
+template <> struct __declspec(uuid("53d56be8-f110-5226-9ce1-a8c26a572576")) __declspec(novtable) IAsyncOperation<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader> : impl_IAsyncOperation<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_0d447be3_8c91_581d_8071_17984b8b5994
+#define WINRT_GENERIC_0d447be3_8c91_581d_8071_17984b8b5994
+template <> struct __declspec(uuid("0d447be3-8c91-581d-8071-17984b8b5994")) __declspec(novtable) IIterable<Windows::Media::Capture::Frames::MediaFrameSource> : impl_IIterable<Windows::Media::Capture::Frames::MediaFrameSource> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_af5235b1_4778_55e1_b49f_608048ea9bd9
 #define WINRT_GENERIC_af5235b1_4778_55e1_b49f_608048ea9bd9
@@ -310,6 +335,36 @@ namespace ABI::Windows::Foundation {
 #define WINRT_GENERIC_a6214dad_b917_5c89_a068_e32c9a7037d3
 template <> struct __declspec(uuid("a6214dad-b917-5c89-a068-e32c9a7037d3")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Media::Capture::Frames::MediaFrameReader> : impl_AsyncOperationCompletedHandler<Windows::Media::Capture::Frames::MediaFrameReader> {};
 #endif
+
+#ifndef WINRT_GENERIC_69993778_a48c_50cc_a6f0_5368f58a297a
+#define WINRT_GENERIC_69993778_a48c_50cc_a6f0_5368f58a297a
+template <> struct __declspec(uuid("69993778-a48c-50cc-a6f0-5368f58a297a")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader> : impl_AsyncOperationCompletedHandler<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_c2ebcc97_d1f8_5bf2_bffd_ac43d71528ab
+#define WINRT_GENERIC_c2ebcc97_d1f8_5bf2_bffd_ac43d71528ab
+template <> struct __declspec(uuid("c2ebcc97-d1f8-5bf2-bffd-ac43d71528ab")) __declspec(novtable) IVector<Windows::Media::Capture::Frames::MediaFrameSource> : impl_IVector<Windows::Media::Capture::Frames::MediaFrameSource> {};
+#endif
+
+#ifndef WINRT_GENERIC_4d031014_6df9_59ab_bc9c_b2a5fc8b7f1c
+#define WINRT_GENERIC_4d031014_6df9_59ab_bc9c_b2a5fc8b7f1c
+template <> struct __declspec(uuid("4d031014-6df9-59ab-bc9c-b2a5fc8b7f1c")) __declspec(novtable) IVectorView<Windows::Media::Capture::Frames::MediaFrameSource> : impl_IVectorView<Windows::Media::Capture::Frames::MediaFrameSource> {};
+#endif
+
+#ifndef WINRT_GENERIC_d05e53cd_bbec_5fb7_8e4e_de86115b5e88
+#define WINRT_GENERIC_d05e53cd_bbec_5fb7_8e4e_de86115b5e88
+template <> struct __declspec(uuid("d05e53cd-bbec-5fb7-8e4e-de86115b5e88")) __declspec(novtable) IIterator<Windows::Media::Capture::Frames::MediaFrameSource> : impl_IIterator<Windows::Media::Capture::Frames::MediaFrameSource> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_fdb0aa78_04e1_56b3_b6fc_f4de79cd41a0
 #define WINRT_GENERIC_fdb0aa78_04e1_56b3_b6fc_f4de79cd41a0
@@ -521,6 +576,20 @@ struct IMediaCapture5 :
     IMediaCapture5(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMediaCapture6 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaCapture6>
+{
+    IMediaCapture6(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs>
+{
+    IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMediaCaptureFailedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IMediaCaptureFailedEventArgs>
@@ -568,6 +637,13 @@ struct IMediaCaptureInitializationSettings5 :
     impl::consume<IMediaCaptureInitializationSettings5>
 {
     IMediaCaptureInitializationSettings5(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMediaCaptureInitializationSettings6 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaCaptureInitializationSettings6>
+{
+    IMediaCaptureInitializationSettings6(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaCapturePauseResult :

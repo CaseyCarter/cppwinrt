@@ -107,6 +107,11 @@ struct __declspec(uuid("986a8206-de59-42f9-a1e7-62b8af9e756d")) __declspec(novta
     virtual HRESULT __stdcall get_FlowsFromProperty(Windows::UI::Xaml::Automation::IAutomationProperty ** value) = 0;
 };
 
+struct __declspec(uuid("de52b00d-8328-4eae-8035-f8db99c8bac4")) __declspec(novtable) IAutomationElementIdentifiersStatics6 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_CultureProperty(Windows::UI::Xaml::Automation::IAutomationProperty ** value) = 0;
+};
+
 struct __declspec(uuid("68d7232c-e622-48e9-af0b-1ffa33cc5cba")) __declspec(novtable) IAutomationProperties : Windows::Foundation::IInspectable
 {
 };
@@ -199,6 +204,13 @@ struct __declspec(uuid("0be35b26-c8f9-41a2-b4db-e6a7a32b0c34")) __declspec(novta
     virtual HRESULT __stdcall abi_GetFlowsTo(Windows::UI::Xaml::IDependencyObject * element, Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> ** value) = 0;
     virtual HRESULT __stdcall get_FlowsFromProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall abi_GetFlowsFrom(Windows::UI::Xaml::IDependencyObject * element, Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> ** value) = 0;
+};
+
+struct __declspec(uuid("c61e030f-eb49-4e5d-b012-4c1c96c3901b")) __declspec(novtable) IAutomationPropertiesStatics6 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_CultureProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall abi_GetCulture(Windows::UI::Xaml::IDependencyObject * element, int32_t * value) = 0;
+    virtual HRESULT __stdcall abi_SetCulture(Windows::UI::Xaml::IDependencyObject * element, int32_t value) = 0;
 };
 
 struct __declspec(uuid("b627195b-3227-4e16-9534-ddece30ddb46")) __declspec(novtable) IAutomationProperty : Windows::Foundation::IInspectable
@@ -568,6 +580,12 @@ struct WINRT_EBO impl_IAutomationElementIdentifiersStatics5
 };
 
 template <typename D>
+struct WINRT_EBO impl_IAutomationElementIdentifiersStatics6
+{
+    Windows::UI::Xaml::Automation::AutomationProperty CultureProperty() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IAutomationProperties
 {
 };
@@ -665,6 +683,14 @@ struct WINRT_EBO impl_IAutomationPropertiesStatics5
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> GetFlowsTo(const Windows::UI::Xaml::DependencyObject & element) const;
     Windows::UI::Xaml::DependencyProperty FlowsFromProperty() const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> GetFlowsFrom(const Windows::UI::Xaml::DependencyObject & element) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationPropertiesStatics6
+{
+    Windows::UI::Xaml::DependencyProperty CultureProperty() const;
+    int32_t GetCulture(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetCulture(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const;
 };
 
 template <typename D>
@@ -1006,6 +1032,12 @@ template <> struct traits<Windows::UI::Xaml::Automation::IAutomationElementIdent
     template <typename D> using consume = Windows::UI::Xaml::Automation::impl_IAutomationElementIdentifiersStatics5<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6>
+{
+    using abi = ABI::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6;
+    template <typename D> using consume = Windows::UI::Xaml::Automation::impl_IAutomationElementIdentifiersStatics6<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Automation::IAutomationProperties>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::IAutomationProperties;
@@ -1040,6 +1072,12 @@ template <> struct traits<Windows::UI::Xaml::Automation::IAutomationPropertiesSt
 {
     using abi = ABI::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5;
     template <typename D> using consume = Windows::UI::Xaml::Automation::impl_IAutomationPropertiesStatics5<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6>
+{
+    using abi = ABI::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6;
+    template <typename D> using consume = Windows::UI::Xaml::Automation::impl_IAutomationPropertiesStatics6<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::IAutomationProperty>

@@ -22,6 +22,11 @@ struct __declspec(uuid("b8d20a75-d4cf-4055-80e5-ce169c226496")) __declspec(novta
     virtual HRESULT __stdcall abi_Lookup(hstring text, hstring * result) = 0;
 };
 
+struct __declspec(uuid("99ea9fd9-886d-4401-9f98-69c82d4c2f78")) __declspec(novtable) ICharacterGroupingsFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_Create(hstring language, Windows::Globalization::Collation::ICharacterGroupings ** result) = 0;
+};
+
 }
 
 namespace ABI {
@@ -46,6 +51,12 @@ struct WINRT_EBO impl_ICharacterGroupings
     hstring Lookup(hstring_view text) const;
 };
 
+template <typename D>
+struct WINRT_EBO impl_ICharacterGroupingsFactory
+{
+    Windows::Globalization::Collation::CharacterGroupings Create(hstring_view language) const;
+};
+
 }
 
 namespace impl {
@@ -60,6 +71,12 @@ template <> struct traits<Windows::Globalization::Collation::ICharacterGroupings
 {
     using abi = ABI::Windows::Globalization::Collation::ICharacterGroupings;
     template <typename D> using consume = Windows::Globalization::Collation::impl_ICharacterGroupings<D>;
+};
+
+template <> struct traits<Windows::Globalization::Collation::ICharacterGroupingsFactory>
+{
+    using abi = ABI::Windows::Globalization::Collation::ICharacterGroupingsFactory;
+    template <typename D> using consume = Windows::Globalization::Collation::impl_ICharacterGroupingsFactory<D>;
 };
 
 template <> struct traits<Windows::Globalization::Collation::CharacterGrouping>

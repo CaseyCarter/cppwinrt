@@ -77,11 +77,25 @@ struct IAudioEncodingProperties :
     IAudioEncodingProperties(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IAudioEncodingProperties2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAudioEncodingProperties2>
+{
+    IAudioEncodingProperties2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IAudioEncodingPropertiesStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IAudioEncodingPropertiesStatics>
 {
     IAudioEncodingPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IAudioEncodingPropertiesStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAudioEncodingPropertiesStatics2>
+{
+    IAudioEncodingPropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IAudioEncodingPropertiesWithFormatUserData :
@@ -149,6 +163,13 @@ struct IMediaEncodingProfileStatics2 :
     IMediaEncodingProfileStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMediaEncodingProfileStatics3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaEncodingProfileStatics3>
+{
+    IMediaEncodingProfileStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMediaEncodingProperties :
     Windows::Foundation::IInspectable,
     impl::consume<IMediaEncodingProperties>
@@ -161,6 +182,20 @@ struct IMediaEncodingSubtypesStatics :
     impl::consume<IMediaEncodingSubtypesStatics>
 {
     IMediaEncodingSubtypesStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMediaEncodingSubtypesStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaEncodingSubtypesStatics2>
+{
+    IMediaEncodingSubtypesStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMediaEncodingSubtypesStatics3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaEncodingSubtypesStatics3>
+{
+    IMediaEncodingSubtypesStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMediaRatio :
@@ -199,11 +234,25 @@ struct IVideoEncodingProperties3 :
     IVideoEncodingProperties3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IVideoEncodingProperties4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IVideoEncodingProperties4>
+{
+    IVideoEncodingProperties4(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IVideoEncodingPropertiesStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IVideoEncodingPropertiesStatics>
 {
     IVideoEncodingPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IVideoEncodingPropertiesStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IVideoEncodingPropertiesStatics2>
+{
+    IVideoEncodingPropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

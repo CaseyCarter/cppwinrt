@@ -80,6 +80,11 @@ struct __declspec(uuid("5d115f6f-da49-41e8-8c8c-f0cb62a9c4fc")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * value) = 0;
 };
 
+struct __declspec(uuid("b8652473-a36f-4007-b1d0-279ebe92a656")) __declspec(novtable) IBarcodeScannerStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(winrt::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, hstring * value) = 0;
+};
+
 struct __declspec(uuid("355d8586-9c43-462b-a91a-816dc97f452c")) __declspec(novtable) IBarcodeScannerStatusUpdatedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::PointOfService::BarcodeScannerStatus * value) = 0;
@@ -184,6 +189,28 @@ struct __declspec(uuid("ca8549bb-06d2-43f4-a44b-c620679fd8d0")) __declspec(novta
     virtual HRESULT __stdcall abi_GetName(uint32_t scanDataType, hstring * value) = 0;
 };
 
+struct __declspec(uuid("8b7518f4-99d0-40bf-9424-b91d6dd4c6e0")) __declspec(novtable) IBarcodeSymbologiesStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Gs1DWCode(uint32_t * value) = 0;
+};
+
+struct __declspec(uuid("66413a78-ab7a-4ada-8ece-936014b2ead7")) __declspec(novtable) IBarcodeSymbologyAttributes : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsCheckDigitValidationEnabled(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsCheckDigitValidationEnabled(bool value) = 0;
+    virtual HRESULT __stdcall get_IsCheckDigitValidationSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsCheckDigitTransmissionEnabled(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsCheckDigitTransmissionEnabled(bool value) = 0;
+    virtual HRESULT __stdcall get_IsCheckDigitTransmissionSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_DecodeLength1(uint32_t * value) = 0;
+    virtual HRESULT __stdcall put_DecodeLength1(uint32_t value) = 0;
+    virtual HRESULT __stdcall get_DecodeLength2(uint32_t * value) = 0;
+    virtual HRESULT __stdcall put_DecodeLength2(uint32_t value) = 0;
+    virtual HRESULT __stdcall get_DecodeLengthKind(winrt::Windows::Devices::PointOfService::BarcodeSymbologyDecodeLengthKind * value) = 0;
+    virtual HRESULT __stdcall put_DecodeLengthKind(winrt::Windows::Devices::PointOfService::BarcodeSymbologyDecodeLengthKind value) = 0;
+    virtual HRESULT __stdcall get_IsDecodeLengthSupported(bool * value) = 0;
+};
+
 struct __declspec(uuid("9f88f5c8-de54-4aee-a890-920bcbfe30fc")) __declspec(novtable) ICashDrawer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
@@ -243,6 +270,11 @@ struct __declspec(uuid("dfa0955a-d437-4fff-b547-dda969a4f883")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * value) = 0;
 };
 
+struct __declspec(uuid("3e818121-8c42-40e8-9c0e-40297048104c")) __declspec(novtable) ICashDrawerStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(winrt::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, hstring * value) = 0;
+};
+
 struct __declspec(uuid("6bbd78bf-dca1-4e06-99eb-5af6a5aec108")) __declspec(novtable) ICashDrawerStatus : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StatusKind(winrt::Windows::Devices::PointOfService::CashDrawerStatusKind * value) = 0;
@@ -289,6 +321,12 @@ struct __declspec(uuid("f61aad0c-8551-42b4-998c-970c20210a22")) __declspec(novta
     virtual HRESULT __stdcall abi_StopSoftwareTriggerAsync(Windows::Foundation::IAsyncAction ** result) = 0;
 };
 
+struct __declspec(uuid("e3b59e8c-2d8b-4f70-8af3-3448bedd5fe2")) __declspec(novtable) IClaimedBarcodeScanner2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetSymbologyAttributesAsync(uint32_t barcodeSymbology, Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeSymbologyAttributes> ** result) = 0;
+    virtual HRESULT __stdcall abi_SetSymbologyAttributesAsync(uint32_t barcodeSymbology, Windows::Devices::PointOfService::IBarcodeSymbologyAttributes * attributes, Windows::Foundation::IAsyncOperation<bool> ** result) = 0;
+};
+
 struct __declspec(uuid("ca3f99af-abb8-42c1-8a84-5c66512f5a75")) __declspec(novtable) IClaimedCashDrawer : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
@@ -308,6 +346,28 @@ struct __declspec(uuid("ca3f99af-abb8-42c1-8a84-5c66512f5a75")) __declspec(novta
 struct __declspec(uuid("67ea0630-517d-487f-9fdf-d2e0a0a264a5")) __declspec(novtable) IClaimedJournalPrinter : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateJob(Windows::Devices::PointOfService::IPosPrinterJob ** value) = 0;
+};
+
+struct __declspec(uuid("120ac970-9a75-4acf-aae7-09972bcf8794")) __declspec(novtable) IClaimedLineDisplay : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
+    virtual HRESULT __stdcall get_Capabilities(Windows::Devices::PointOfService::ILineDisplayCapabilities ** value) = 0;
+    virtual HRESULT __stdcall get_PhysicalDeviceName(hstring * value) = 0;
+    virtual HRESULT __stdcall get_PhysicalDeviceDescription(hstring * value) = 0;
+    virtual HRESULT __stdcall get_DeviceControlDescription(hstring * value) = 0;
+    virtual HRESULT __stdcall get_DeviceControlVersion(hstring * value) = 0;
+    virtual HRESULT __stdcall get_DeviceServiceVersion(hstring * value) = 0;
+    virtual HRESULT __stdcall get_DefaultWindow(Windows::Devices::PointOfService::ILineDisplayWindow ** value) = 0;
+    virtual HRESULT __stdcall abi_RetainDevice() = 0;
+    virtual HRESULT __stdcall add_ReleaseDeviceRequested(Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedLineDisplay, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_ReleaseDeviceRequested(event_token token) = 0;
+};
+
+struct __declspec(uuid("78ca98fb-8b6b-4973-86f0-3e570c351825")) __declspec(novtable) IClaimedLineDisplayStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * result) = 0;
+    virtual HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(winrt::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, hstring * value) = 0;
 };
 
 struct __declspec(uuid("475ca8f3-9417-48bc-b9d7-4163a7844c02")) __declspec(novtable) IClaimedMagneticStripeReader : Windows::Foundation::IInspectable
@@ -454,6 +514,61 @@ struct __declspec(uuid("3b5ccc43-e047-4463-bb58-17b5ba1d8056")) __declspec(novta
 {
 };
 
+struct __declspec(uuid("24f5df4e-3c99-44e2-b73f-e51be3637a8c")) __declspec(novtable) ILineDisplay : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
+    virtual HRESULT __stdcall get_Capabilities(Windows::Devices::PointOfService::ILineDisplayCapabilities ** value) = 0;
+    virtual HRESULT __stdcall get_PhysicalDeviceName(hstring * value) = 0;
+    virtual HRESULT __stdcall get_PhysicalDeviceDescription(hstring * value) = 0;
+    virtual HRESULT __stdcall get_DeviceControlDescription(hstring * value) = 0;
+    virtual HRESULT __stdcall get_DeviceControlVersion(hstring * value) = 0;
+    virtual HRESULT __stdcall get_DeviceServiceVersion(hstring * value) = 0;
+    virtual HRESULT __stdcall abi_ClaimAsync(Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> ** result) = 0;
+};
+
+struct __declspec(uuid("5a15b5d1-8dc5-4b9c-9172-303e47b70c55")) __declspec(novtable) ILineDisplayCapabilities : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsStatisticsReportingSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsStatisticsUpdatingSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_PowerReportingType(winrt::Windows::Devices::PointOfService::UnifiedPosPowerReportingType * value) = 0;
+    virtual HRESULT __stdcall get_CanChangeScreenSize(bool * value) = 0;
+    virtual HRESULT __stdcall get_CanDisplayBitmaps(bool * value) = 0;
+    virtual HRESULT __stdcall get_CanReadCharacterAtCursor(bool * value) = 0;
+    virtual HRESULT __stdcall get_CanMapCharacterSets(bool * value) = 0;
+    virtual HRESULT __stdcall get_CanDisplayCustomGlyphs(bool * value) = 0;
+    virtual HRESULT __stdcall get_CanReverse(winrt::Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity * value) = 0;
+    virtual HRESULT __stdcall get_CanBlink(winrt::Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity * value) = 0;
+    virtual HRESULT __stdcall get_CanChangeBlinkRate(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsBrightnessSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsCursorSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsHorizontalMarqueeSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsVerticalMarqueeSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsInterCharacterWaitSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_SupportedDescriptors(uint32_t * value) = 0;
+    virtual HRESULT __stdcall get_SupportedWindows(uint32_t * value) = 0;
+};
+
+struct __declspec(uuid("022dc0b6-11b0-4690-9547-0b39c5af2114")) __declspec(novtable) ILineDisplayStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetDefaultAsync(Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> ** result) = 0;
+    virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * result) = 0;
+    virtual HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(winrt::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, hstring * value) = 0;
+};
+
+struct __declspec(uuid("d21feef4-2364-4be5-bee1-851680af4964")) __declspec(novtable) ILineDisplayWindow : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SizeInCharacters(Windows::Foundation::Size * value) = 0;
+    virtual HRESULT __stdcall get_InterCharacterWaitInterval(Windows::Foundation::TimeSpan * value) = 0;
+    virtual HRESULT __stdcall put_InterCharacterWaitInterval(Windows::Foundation::TimeSpan value) = 0;
+    virtual HRESULT __stdcall abi_TryRefreshAsync(Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_TryDisplayTextAsync(hstring text, winrt::Windows::Devices::PointOfService::LineDisplayTextAttribute displayAttribute, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_TryDisplayTextAtPositionAsync(hstring text, winrt::Windows::Devices::PointOfService::LineDisplayTextAttribute displayAttribute, Windows::Foundation::Point startPosition, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_TryDisplayTextNormalAsync(hstring text, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_TryScrollTextAsync(winrt::Windows::Devices::PointOfService::LineDisplayScrollDirection direction, uint32_t numberOfColumnsOrRows, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_TryClearTextAsync(Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+};
+
 struct __declspec(uuid("1a92b015-47c3-468a-9333-0c6517574883")) __declspec(novtable) IMagneticStripeReader : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
@@ -564,6 +679,11 @@ struct __declspec(uuid("c45fab4a-efd7-4760-a5ce-15b0e47e94eb")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * value) = 0;
 };
 
+struct __declspec(uuid("8cadc362-d667-48fa-86bc-f5ae1189262b")) __declspec(novtable) IMagneticStripeReaderStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(winrt::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, hstring * value) = 0;
+};
+
 struct __declspec(uuid("09cc6bb0-3262-401d-9e8a-e80d6358906b")) __declspec(novtable) IMagneticStripeReaderStatusUpdatedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Devices::PointOfService::MagneticStripeReaderStatus * value) = 0;
@@ -636,6 +756,11 @@ struct __declspec(uuid("8ce0d4ea-132f-4cdf-a64a-2d0d7c96a85b")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * value) = 0;
 };
 
+struct __declspec(uuid("eecd2c1c-b0d0-42e7-b137-b89b16244d41")) __declspec(novtable) IPosPrinterStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDeviceSelectorWithConnectionTypes(winrt::Windows::Devices::PointOfService::PosConnectionTypes connectionTypes, hstring * value) = 0;
+};
+
 struct __declspec(uuid("d1f0c730-da40-4328-bf76-5156fa33b747")) __declspec(novtable) IPosPrinterStatus : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_StatusKind(winrt::Windows::Devices::PointOfService::PosPrinterStatusKind * value) = 0;
@@ -705,6 +830,7 @@ template <> struct traits<Windows::Devices::PointOfService::BarcodeScannerErrorO
 template <> struct traits<Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs> { using default_interface = Windows::Devices::PointOfService::IBarcodeScannerImagePreviewReceivedEventArgs; };
 template <> struct traits<Windows::Devices::PointOfService::BarcodeScannerReport> { using default_interface = Windows::Devices::PointOfService::IBarcodeScannerReport; };
 template <> struct traits<Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs> { using default_interface = Windows::Devices::PointOfService::IBarcodeScannerStatusUpdatedEventArgs; };
+template <> struct traits<Windows::Devices::PointOfService::BarcodeSymbologyAttributes> { using default_interface = Windows::Devices::PointOfService::IBarcodeSymbologyAttributes; };
 template <> struct traits<Windows::Devices::PointOfService::CashDrawer> { using default_interface = Windows::Devices::PointOfService::ICashDrawer; };
 template <> struct traits<Windows::Devices::PointOfService::CashDrawerCapabilities> { using default_interface = Windows::Devices::PointOfService::ICashDrawerCapabilities; };
 template <> struct traits<Windows::Devices::PointOfService::CashDrawerCloseAlarm> { using default_interface = Windows::Devices::PointOfService::ICashDrawerCloseAlarm; };
@@ -716,12 +842,16 @@ template <> struct traits<Windows::Devices::PointOfService::CashDrawerStatusUpda
 template <> struct traits<Windows::Devices::PointOfService::ClaimedBarcodeScanner> { using default_interface = Windows::Devices::PointOfService::IClaimedBarcodeScanner; };
 template <> struct traits<Windows::Devices::PointOfService::ClaimedCashDrawer> { using default_interface = Windows::Devices::PointOfService::IClaimedCashDrawer; };
 template <> struct traits<Windows::Devices::PointOfService::ClaimedJournalPrinter> { using default_interface = Windows::Devices::PointOfService::IClaimedJournalPrinter; };
+template <> struct traits<Windows::Devices::PointOfService::ClaimedLineDisplay> { using default_interface = Windows::Devices::PointOfService::IClaimedLineDisplay; };
 template <> struct traits<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> { using default_interface = Windows::Devices::PointOfService::IClaimedMagneticStripeReader; };
 template <> struct traits<Windows::Devices::PointOfService::ClaimedPosPrinter> { using default_interface = Windows::Devices::PointOfService::IClaimedPosPrinter; };
 template <> struct traits<Windows::Devices::PointOfService::ClaimedReceiptPrinter> { using default_interface = Windows::Devices::PointOfService::IClaimedReceiptPrinter; };
 template <> struct traits<Windows::Devices::PointOfService::ClaimedSlipPrinter> { using default_interface = Windows::Devices::PointOfService::IClaimedSlipPrinter; };
 template <> struct traits<Windows::Devices::PointOfService::JournalPrintJob> { using default_interface = Windows::Devices::PointOfService::IPosPrinterJob; };
 template <> struct traits<Windows::Devices::PointOfService::JournalPrinterCapabilities> { using default_interface = Windows::Devices::PointOfService::IJournalPrinterCapabilities; };
+template <> struct traits<Windows::Devices::PointOfService::LineDisplay> { using default_interface = Windows::Devices::PointOfService::ILineDisplay; };
+template <> struct traits<Windows::Devices::PointOfService::LineDisplayCapabilities> { using default_interface = Windows::Devices::PointOfService::ILineDisplayCapabilities; };
+template <> struct traits<Windows::Devices::PointOfService::LineDisplayWindow> { using default_interface = Windows::Devices::PointOfService::ILineDisplayWindow; };
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReader> { using default_interface = Windows::Devices::PointOfService::IMagneticStripeReader; };
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs> { using default_interface = Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCardDataReceivedEventArgs; };
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> { using default_interface = Windows::Devices::PointOfService::IMagneticStripeReaderBankCardDataReceivedEventArgs; };
@@ -819,6 +949,12 @@ struct WINRT_EBO impl_IBarcodeScannerStatics
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> GetDefaultAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelector() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBarcodeScannerStatics2
+{
+    hstring GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const;
 };
 
 template <typename D>
@@ -928,6 +1064,30 @@ struct WINRT_EBO impl_IBarcodeSymbologiesStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_IBarcodeSymbologiesStatics2
+{
+    uint32_t Gs1DWCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBarcodeSymbologyAttributes
+{
+    bool IsCheckDigitValidationEnabled() const;
+    void IsCheckDigitValidationEnabled(bool value) const;
+    bool IsCheckDigitValidationSupported() const;
+    bool IsCheckDigitTransmissionEnabled() const;
+    void IsCheckDigitTransmissionEnabled(bool value) const;
+    bool IsCheckDigitTransmissionSupported() const;
+    uint32_t DecodeLength1() const;
+    void DecodeLength1(uint32_t value) const;
+    uint32_t DecodeLength2() const;
+    void DecodeLength2(uint32_t value) const;
+    Windows::Devices::PointOfService::BarcodeSymbologyDecodeLengthKind DecodeLengthKind() const;
+    void DecodeLengthKind(Windows::Devices::PointOfService::BarcodeSymbologyDecodeLengthKind value) const;
+    bool IsDecodeLengthSupported() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ICashDrawer
 {
     hstring DeviceId() const;
@@ -1001,6 +1161,12 @@ struct WINRT_EBO impl_ICashDrawerStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_ICashDrawerStatics2
+{
+    hstring GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ICashDrawerStatus
 {
     Windows::Devices::PointOfService::CashDrawerStatusKind StatusKind() const;
@@ -1063,6 +1229,13 @@ struct WINRT_EBO impl_IClaimedBarcodeScanner1
 };
 
 template <typename D>
+struct WINRT_EBO impl_IClaimedBarcodeScanner2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeSymbologyAttributes> GetSymbologyAttributesAsync(uint32_t barcodeSymbology) const;
+    Windows::Foundation::IAsyncOperation<bool> SetSymbologyAttributesAsync(uint32_t barcodeSymbology, const Windows::Devices::PointOfService::BarcodeSymbologyAttributes & attributes) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IClaimedCashDrawer
 {
     hstring DeviceId() const;
@@ -1085,6 +1258,32 @@ template <typename D>
 struct WINRT_EBO impl_IClaimedJournalPrinter
 {
     Windows::Devices::PointOfService::JournalPrintJob CreateJob() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IClaimedLineDisplay
+{
+    hstring DeviceId() const;
+    Windows::Devices::PointOfService::LineDisplayCapabilities Capabilities() const;
+    hstring PhysicalDeviceName() const;
+    hstring PhysicalDeviceDescription() const;
+    hstring DeviceControlDescription() const;
+    hstring DeviceControlVersion() const;
+    hstring DeviceServiceVersion() const;
+    Windows::Devices::PointOfService::LineDisplayWindow DefaultWindow() const;
+    void RetainDevice() const;
+    event_token ReleaseDeviceRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedLineDisplay, Windows::Foundation::IInspectable> & handler) const;
+    using ReleaseDeviceRequested_revoker = event_revoker<IClaimedLineDisplay>;
+    ReleaseDeviceRequested_revoker ReleaseDeviceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::ClaimedLineDisplay, Windows::Foundation::IInspectable> & handler) const;
+    void ReleaseDeviceRequested(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IClaimedLineDisplayStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> FromIdAsync(hstring_view deviceId) const;
+    hstring GetDeviceSelector() const;
+    hstring GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const;
 };
 
 template <typename D>
@@ -1252,6 +1451,65 @@ struct WINRT_EBO impl_IJournalPrinterCapabilities
 };
 
 template <typename D>
+struct WINRT_EBO impl_ILineDisplay
+{
+    hstring DeviceId() const;
+    Windows::Devices::PointOfService::LineDisplayCapabilities Capabilities() const;
+    hstring PhysicalDeviceName() const;
+    hstring PhysicalDeviceDescription() const;
+    hstring DeviceControlDescription() const;
+    hstring DeviceControlVersion() const;
+    hstring DeviceServiceVersion() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> ClaimAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILineDisplayCapabilities
+{
+    bool IsStatisticsReportingSupported() const;
+    bool IsStatisticsUpdatingSupported() const;
+    Windows::Devices::PointOfService::UnifiedPosPowerReportingType PowerReportingType() const;
+    bool CanChangeScreenSize() const;
+    bool CanDisplayBitmaps() const;
+    bool CanReadCharacterAtCursor() const;
+    bool CanMapCharacterSets() const;
+    bool CanDisplayCustomGlyphs() const;
+    Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity CanReverse() const;
+    Windows::Devices::PointOfService::LineDisplayTextAttributeGranularity CanBlink() const;
+    bool CanChangeBlinkRate() const;
+    bool IsBrightnessSupported() const;
+    bool IsCursorSupported() const;
+    bool IsHorizontalMarqueeSupported() const;
+    bool IsVerticalMarqueeSupported() const;
+    bool IsInterCharacterWaitSupported() const;
+    uint32_t SupportedDescriptors() const;
+    uint32_t SupportedWindows() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILineDisplayStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> FromIdAsync(hstring_view deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> GetDefaultAsync() const;
+    hstring GetDeviceSelector() const;
+    hstring GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILineDisplayWindow
+{
+    Windows::Foundation::Size SizeInCharacters() const;
+    Windows::Foundation::TimeSpan InterCharacterWaitInterval() const;
+    void InterCharacterWaitInterval(const Windows::Foundation::TimeSpan & value) const;
+    Windows::Foundation::IAsyncOperation<bool> TryRefreshAsync() const;
+    Windows::Foundation::IAsyncOperation<bool> TryDisplayTextAsync(hstring_view text, Windows::Devices::PointOfService::LineDisplayTextAttribute displayAttribute) const;
+    Windows::Foundation::IAsyncOperation<bool> TryDisplayTextAsync(hstring_view text, Windows::Devices::PointOfService::LineDisplayTextAttribute displayAttribute, const Windows::Foundation::Point & startPosition) const;
+    Windows::Foundation::IAsyncOperation<bool> TryDisplayTextAsync(hstring_view text) const;
+    Windows::Foundation::IAsyncOperation<bool> TryScrollTextAsync(Windows::Devices::PointOfService::LineDisplayScrollDirection direction, uint32_t numberOfColumnsOrRows) const;
+    Windows::Foundation::IAsyncOperation<bool> TryClearTextAsync() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMagneticStripeReader
 {
     hstring DeviceId() const;
@@ -1373,6 +1631,12 @@ struct WINRT_EBO impl_IMagneticStripeReaderStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMagneticStripeReaderStatics2
+{
+    hstring GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMagneticStripeReaderStatusUpdatedEventArgs
 {
     Windows::Devices::PointOfService::MagneticStripeReaderStatus Status() const;
@@ -1453,6 +1717,12 @@ struct WINRT_EBO impl_IPosPrinterStatics
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> GetDefaultAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> FromIdAsync(hstring_view deviceId) const;
     hstring GetDeviceSelector() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPosPrinterStatics2
+{
+    hstring GetDeviceSelector(Windows::Devices::PointOfService::PosConnectionTypes connectionTypes) const;
 };
 
 template <typename D>
@@ -1578,6 +1848,12 @@ template <> struct traits<Windows::Devices::PointOfService::IBarcodeScannerStati
     template <typename D> using consume = Windows::Devices::PointOfService::impl_IBarcodeScannerStatics<D>;
 };
 
+template <> struct traits<Windows::Devices::PointOfService::IBarcodeScannerStatics2>
+{
+    using abi = ABI::Windows::Devices::PointOfService::IBarcodeScannerStatics2;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_IBarcodeScannerStatics2<D>;
+};
+
 template <> struct traits<Windows::Devices::PointOfService::IBarcodeScannerStatusUpdatedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::IBarcodeScannerStatusUpdatedEventArgs;
@@ -1588,6 +1864,18 @@ template <> struct traits<Windows::Devices::PointOfService::IBarcodeSymbologiesS
 {
     using abi = ABI::Windows::Devices::PointOfService::IBarcodeSymbologiesStatics;
     template <typename D> using consume = Windows::Devices::PointOfService::impl_IBarcodeSymbologiesStatics<D>;
+};
+
+template <> struct traits<Windows::Devices::PointOfService::IBarcodeSymbologiesStatics2>
+{
+    using abi = ABI::Windows::Devices::PointOfService::IBarcodeSymbologiesStatics2;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_IBarcodeSymbologiesStatics2<D>;
+};
+
+template <> struct traits<Windows::Devices::PointOfService::IBarcodeSymbologyAttributes>
+{
+    using abi = ABI::Windows::Devices::PointOfService::IBarcodeSymbologyAttributes;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_IBarcodeSymbologyAttributes<D>;
 };
 
 template <> struct traits<Windows::Devices::PointOfService::ICashDrawer>
@@ -1626,6 +1914,12 @@ template <> struct traits<Windows::Devices::PointOfService::ICashDrawerStatics>
     template <typename D> using consume = Windows::Devices::PointOfService::impl_ICashDrawerStatics<D>;
 };
 
+template <> struct traits<Windows::Devices::PointOfService::ICashDrawerStatics2>
+{
+    using abi = ABI::Windows::Devices::PointOfService::ICashDrawerStatics2;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_ICashDrawerStatics2<D>;
+};
+
 template <> struct traits<Windows::Devices::PointOfService::ICashDrawerStatus>
 {
     using abi = ABI::Windows::Devices::PointOfService::ICashDrawerStatus;
@@ -1650,6 +1944,12 @@ template <> struct traits<Windows::Devices::PointOfService::IClaimedBarcodeScann
     template <typename D> using consume = Windows::Devices::PointOfService::impl_IClaimedBarcodeScanner1<D>;
 };
 
+template <> struct traits<Windows::Devices::PointOfService::IClaimedBarcodeScanner2>
+{
+    using abi = ABI::Windows::Devices::PointOfService::IClaimedBarcodeScanner2;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_IClaimedBarcodeScanner2<D>;
+};
+
 template <> struct traits<Windows::Devices::PointOfService::IClaimedCashDrawer>
 {
     using abi = ABI::Windows::Devices::PointOfService::IClaimedCashDrawer;
@@ -1660,6 +1960,18 @@ template <> struct traits<Windows::Devices::PointOfService::IClaimedJournalPrint
 {
     using abi = ABI::Windows::Devices::PointOfService::IClaimedJournalPrinter;
     template <typename D> using consume = Windows::Devices::PointOfService::impl_IClaimedJournalPrinter<D>;
+};
+
+template <> struct traits<Windows::Devices::PointOfService::IClaimedLineDisplay>
+{
+    using abi = ABI::Windows::Devices::PointOfService::IClaimedLineDisplay;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_IClaimedLineDisplay<D>;
+};
+
+template <> struct traits<Windows::Devices::PointOfService::IClaimedLineDisplayStatics>
+{
+    using abi = ABI::Windows::Devices::PointOfService::IClaimedLineDisplayStatics;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_IClaimedLineDisplayStatics<D>;
 };
 
 template <> struct traits<Windows::Devices::PointOfService::IClaimedMagneticStripeReader>
@@ -1708,6 +2020,30 @@ template <> struct traits<Windows::Devices::PointOfService::IJournalPrinterCapab
 {
     using abi = ABI::Windows::Devices::PointOfService::IJournalPrinterCapabilities;
     template <typename D> using consume = Windows::Devices::PointOfService::impl_IJournalPrinterCapabilities<D>;
+};
+
+template <> struct traits<Windows::Devices::PointOfService::ILineDisplay>
+{
+    using abi = ABI::Windows::Devices::PointOfService::ILineDisplay;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_ILineDisplay<D>;
+};
+
+template <> struct traits<Windows::Devices::PointOfService::ILineDisplayCapabilities>
+{
+    using abi = ABI::Windows::Devices::PointOfService::ILineDisplayCapabilities;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_ILineDisplayCapabilities<D>;
+};
+
+template <> struct traits<Windows::Devices::PointOfService::ILineDisplayStatics>
+{
+    using abi = ABI::Windows::Devices::PointOfService::ILineDisplayStatics;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_ILineDisplayStatics<D>;
+};
+
+template <> struct traits<Windows::Devices::PointOfService::ILineDisplayWindow>
+{
+    using abi = ABI::Windows::Devices::PointOfService::ILineDisplayWindow;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_ILineDisplayWindow<D>;
 };
 
 template <> struct traits<Windows::Devices::PointOfService::IMagneticStripeReader>
@@ -1764,6 +2100,12 @@ template <> struct traits<Windows::Devices::PointOfService::IMagneticStripeReade
     template <typename D> using consume = Windows::Devices::PointOfService::impl_IMagneticStripeReaderStatics<D>;
 };
 
+template <> struct traits<Windows::Devices::PointOfService::IMagneticStripeReaderStatics2>
+{
+    using abi = ABI::Windows::Devices::PointOfService::IMagneticStripeReaderStatics2;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_IMagneticStripeReaderStatics2<D>;
+};
+
 template <> struct traits<Windows::Devices::PointOfService::IMagneticStripeReaderStatusUpdatedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::IMagneticStripeReaderStatusUpdatedEventArgs;
@@ -1816,6 +2158,12 @@ template <> struct traits<Windows::Devices::PointOfService::IPosPrinterStatics>
 {
     using abi = ABI::Windows::Devices::PointOfService::IPosPrinterStatics;
     template <typename D> using consume = Windows::Devices::PointOfService::impl_IPosPrinterStatics<D>;
+};
+
+template <> struct traits<Windows::Devices::PointOfService::IPosPrinterStatics2>
+{
+    using abi = ABI::Windows::Devices::PointOfService::IPosPrinterStatics2;
+    template <typename D> using consume = Windows::Devices::PointOfService::impl_IPosPrinterStatics2<D>;
 };
 
 template <> struct traits<Windows::Devices::PointOfService::IPosPrinterStatus>
@@ -1907,6 +2255,12 @@ template <> struct traits<Windows::Devices::PointOfService::BarcodeSymbologies>
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.BarcodeSymbologies"; }
 };
 
+template <> struct traits<Windows::Devices::PointOfService::BarcodeSymbologyAttributes>
+{
+    using abi = ABI::Windows::Devices::PointOfService::BarcodeSymbologyAttributes;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.BarcodeSymbologyAttributes"; }
+};
+
 template <> struct traits<Windows::Devices::PointOfService::CashDrawer>
 {
     using abi = ABI::Windows::Devices::PointOfService::CashDrawer;
@@ -1973,6 +2327,12 @@ template <> struct traits<Windows::Devices::PointOfService::ClaimedJournalPrinte
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.ClaimedJournalPrinter"; }
 };
 
+template <> struct traits<Windows::Devices::PointOfService::ClaimedLineDisplay>
+{
+    using abi = ABI::Windows::Devices::PointOfService::ClaimedLineDisplay;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.ClaimedLineDisplay"; }
+};
+
 template <> struct traits<Windows::Devices::PointOfService::ClaimedMagneticStripeReader>
 {
     using abi = ABI::Windows::Devices::PointOfService::ClaimedMagneticStripeReader;
@@ -2007,6 +2367,24 @@ template <> struct traits<Windows::Devices::PointOfService::JournalPrinterCapabi
 {
     using abi = ABI::Windows::Devices::PointOfService::JournalPrinterCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.JournalPrinterCapabilities"; }
+};
+
+template <> struct traits<Windows::Devices::PointOfService::LineDisplay>
+{
+    using abi = ABI::Windows::Devices::PointOfService::LineDisplay;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.LineDisplay"; }
+};
+
+template <> struct traits<Windows::Devices::PointOfService::LineDisplayCapabilities>
+{
+    using abi = ABI::Windows::Devices::PointOfService::LineDisplayCapabilities;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.LineDisplayCapabilities"; }
+};
+
+template <> struct traits<Windows::Devices::PointOfService::LineDisplayWindow>
+{
+    using abi = ABI::Windows::Devices::PointOfService::LineDisplayWindow;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.LineDisplayWindow"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReader>

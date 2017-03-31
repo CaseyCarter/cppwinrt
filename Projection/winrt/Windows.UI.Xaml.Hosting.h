@@ -83,6 +83,67 @@ struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
     }
 };
 
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics2> : produce_base<D, Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics2>
+{
+    HRESULT __stdcall abi_SetImplicitShowAnimation(impl::abi_arg_in<Windows::UI::Xaml::IUIElement> element, impl::abi_arg_in<Windows::UI::Composition::ICompositionAnimationBase> animation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SetImplicitShowAnimation(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), *reinterpret_cast<const Windows::UI::Composition::ICompositionAnimationBase *>(&animation));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetImplicitHideAnimation(impl::abi_arg_in<Windows::UI::Xaml::IUIElement> element, impl::abi_arg_in<Windows::UI::Composition::ICompositionAnimationBase> animation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SetImplicitHideAnimation(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), *reinterpret_cast<const Windows::UI::Composition::ICompositionAnimationBase *>(&animation));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetIsTranslationEnabled(impl::abi_arg_in<Windows::UI::Xaml::IUIElement> element, bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SetIsTranslationEnabled(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&element), value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetPointerPositionPropertySet(impl::abi_arg_in<Windows::UI::Xaml::IUIElement> targetElement, impl::abi_arg_out<Windows::UI::Composition::ICompositionPropertySet> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetPointerPositionPropertySet(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&targetElement)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
 }
 
 namespace Windows::UI::Xaml::Hosting {
@@ -113,6 +174,28 @@ template <typename D> Windows::UI::Composition::CompositionPropertySet impl_IEle
     return result;
 }
 
+template <typename D> void impl_IElementCompositionPreviewStatics2<D>::SetImplicitShowAnimation(const Windows::UI::Xaml::UIElement & element, const Windows::UI::Composition::ICompositionAnimationBase & animation) const
+{
+    check_hresult(WINRT_SHIM(IElementCompositionPreviewStatics2)->abi_SetImplicitShowAnimation(get_abi(element), get_abi(animation)));
+}
+
+template <typename D> void impl_IElementCompositionPreviewStatics2<D>::SetImplicitHideAnimation(const Windows::UI::Xaml::UIElement & element, const Windows::UI::Composition::ICompositionAnimationBase & animation) const
+{
+    check_hresult(WINRT_SHIM(IElementCompositionPreviewStatics2)->abi_SetImplicitHideAnimation(get_abi(element), get_abi(animation)));
+}
+
+template <typename D> void impl_IElementCompositionPreviewStatics2<D>::SetIsTranslationEnabled(const Windows::UI::Xaml::UIElement & element, bool value) const
+{
+    check_hresult(WINRT_SHIM(IElementCompositionPreviewStatics2)->abi_SetIsTranslationEnabled(get_abi(element), value));
+}
+
+template <typename D> Windows::UI::Composition::CompositionPropertySet impl_IElementCompositionPreviewStatics2<D>::GetPointerPositionPropertySet(const Windows::UI::Xaml::UIElement & targetElement) const
+{
+    Windows::UI::Composition::CompositionPropertySet result { nullptr };
+    check_hresult(WINRT_SHIM(IElementCompositionPreviewStatics2)->abi_GetPointerPositionPropertySet(get_abi(targetElement), put_abi(result)));
+    return result;
+}
+
 inline Windows::UI::Composition::Visual ElementCompositionPreview::GetElementVisual(const Windows::UI::Xaml::UIElement & element)
 {
     return get_activation_factory<ElementCompositionPreview, IElementCompositionPreviewStatics>().GetElementVisual(element);
@@ -133,6 +216,26 @@ inline Windows::UI::Composition::CompositionPropertySet ElementCompositionPrevie
     return get_activation_factory<ElementCompositionPreview, IElementCompositionPreviewStatics>().GetScrollViewerManipulationPropertySet(scrollViewer);
 }
 
+inline void ElementCompositionPreview::SetImplicitShowAnimation(const Windows::UI::Xaml::UIElement & element, const Windows::UI::Composition::ICompositionAnimationBase & animation)
+{
+    get_activation_factory<ElementCompositionPreview, IElementCompositionPreviewStatics2>().SetImplicitShowAnimation(element, animation);
+}
+
+inline void ElementCompositionPreview::SetImplicitHideAnimation(const Windows::UI::Xaml::UIElement & element, const Windows::UI::Composition::ICompositionAnimationBase & animation)
+{
+    get_activation_factory<ElementCompositionPreview, IElementCompositionPreviewStatics2>().SetImplicitHideAnimation(element, animation);
+}
+
+inline void ElementCompositionPreview::SetIsTranslationEnabled(const Windows::UI::Xaml::UIElement & element, bool value)
+{
+    get_activation_factory<ElementCompositionPreview, IElementCompositionPreviewStatics2>().SetIsTranslationEnabled(element, value);
+}
+
+inline Windows::UI::Composition::CompositionPropertySet ElementCompositionPreview::GetPointerPositionPropertySet(const Windows::UI::Xaml::UIElement & targetElement)
+{
+    return get_activation_factory<ElementCompositionPreview, IElementCompositionPreviewStatics2>().GetPointerPositionPropertySet(targetElement);
+}
+
 }
 
 }
@@ -150,6 +253,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Hosting::IElementCompositionPreviewStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

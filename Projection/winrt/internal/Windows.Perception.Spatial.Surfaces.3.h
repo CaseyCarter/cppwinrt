@@ -43,6 +43,7 @@ struct WINRT_EBO SpatialSurfaceObserver :
     SpatialSurfaceObserver(std::nullptr_t) noexcept {}
     SpatialSurfaceObserver();
     static Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> RequestAccessAsync();
+    static bool IsSupported();
 };
 
 }

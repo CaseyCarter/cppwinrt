@@ -29,6 +29,8 @@ struct IXamlBinaryWriter;
 struct IXamlBinaryWriterStatics;
 struct IXamlBindingHelper;
 struct IXamlBindingHelperStatics;
+struct IXamlMarkupHelper;
+struct IXamlMarkupHelperStatics;
 struct IXamlMember;
 struct IXamlMetadataProvider;
 struct IXamlReader;
@@ -36,6 +38,7 @@ struct IXamlReaderStatics;
 struct IXamlType;
 struct XamlBinaryWriter;
 struct XamlBindingHelper;
+struct XamlMarkupHelper;
 struct XamlReader;
 
 }
@@ -49,6 +52,8 @@ struct IXamlBinaryWriter;
 struct IXamlBinaryWriterStatics;
 struct IXamlBindingHelper;
 struct IXamlBindingHelperStatics;
+struct IXamlMarkupHelper;
+struct IXamlMarkupHelperStatics;
 struct IXamlMember;
 struct IXamlMetadataProvider;
 struct IXamlReader;
@@ -56,6 +61,7 @@ struct IXamlReaderStatics;
 struct IXamlType;
 struct XamlBinaryWriter;
 struct XamlBindingHelper;
+struct XamlMarkupHelper;
 struct XamlReader;
 
 }
@@ -69,6 +75,8 @@ template <typename T> struct impl_IXamlBinaryWriter;
 template <typename T> struct impl_IXamlBinaryWriterStatics;
 template <typename T> struct impl_IXamlBindingHelper;
 template <typename T> struct impl_IXamlBindingHelperStatics;
+template <typename T> struct impl_IXamlMarkupHelper;
+template <typename T> struct impl_IXamlMarkupHelperStatics;
 template <typename T> struct impl_IXamlMember;
 template <typename T> struct impl_IXamlMetadataProvider;
 template <typename T> struct impl_IXamlReader;

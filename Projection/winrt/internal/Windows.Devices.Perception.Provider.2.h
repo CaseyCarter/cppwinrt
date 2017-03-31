@@ -10,9 +10,9 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
 #endif
 
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
@@ -20,9 +20,9 @@ template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __de
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
 #endif
 
-#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
 #endif
 
 #ifndef WINRT_GENERIC_ca6bf87e_1745_5cd0_aee2_59736f5a206d
@@ -55,7 +55,7 @@ template <> struct __declspec(uuid("c4db1093-d705-5503-8bce-68535cd42ffa")) __de
 
 namespace Windows::Devices::Perception::Provider {
 
-struct PerceptionStartFaceAuthenticationHandler : Windows::Foundation::IUnknown
+struct [[deprecated("PerceptionStartFaceAuthenticationHandler may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] PerceptionStartFaceAuthenticationHandler : Windows::Foundation::IUnknown
 {
     PerceptionStartFaceAuthenticationHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> PerceptionStartFaceAuthenticationHandler(L lambda);
@@ -64,7 +64,7 @@ struct PerceptionStartFaceAuthenticationHandler : Windows::Foundation::IUnknown
     bool operator()(const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup & sender) const;
 };
 
-struct PerceptionStopFaceAuthenticationHandler : Windows::Foundation::IUnknown
+struct [[deprecated("PerceptionStopFaceAuthenticationHandler may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] PerceptionStopFaceAuthenticationHandler : Windows::Foundation::IUnknown
 {
     PerceptionStopFaceAuthenticationHandler(std::nullptr_t = nullptr) noexcept {}
     template <typename L> PerceptionStopFaceAuthenticationHandler(L lambda);
@@ -79,6 +79,7 @@ struct IKnownPerceptionFrameKindStatics :
 {
     IKnownPerceptionFrameKindStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("KnownPerceptionFrameKind may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IKnownPerceptionFrameKindStatics;
 
 struct IPerceptionControlGroup :
     Windows::Foundation::IInspectable,
@@ -86,6 +87,7 @@ struct IPerceptionControlGroup :
 {
     IPerceptionControlGroup(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionControlGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionControlGroup;
 
 struct IPerceptionControlGroupFactory :
     Windows::Foundation::IInspectable,
@@ -93,6 +95,7 @@ struct IPerceptionControlGroupFactory :
 {
     IPerceptionControlGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionControlGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionControlGroupFactory;
 
 struct IPerceptionCorrelation :
     Windows::Foundation::IInspectable,
@@ -100,6 +103,7 @@ struct IPerceptionCorrelation :
 {
     IPerceptionCorrelation(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionCorrelation;
 
 struct IPerceptionCorrelationFactory :
     Windows::Foundation::IInspectable,
@@ -107,6 +111,7 @@ struct IPerceptionCorrelationFactory :
 {
     IPerceptionCorrelationFactory(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionCorrelation may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionCorrelationFactory;
 
 struct IPerceptionCorrelationGroup :
     Windows::Foundation::IInspectable,
@@ -114,6 +119,7 @@ struct IPerceptionCorrelationGroup :
 {
     IPerceptionCorrelationGroup(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionCorrelationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionCorrelationGroup;
 
 struct IPerceptionCorrelationGroupFactory :
     Windows::Foundation::IInspectable,
@@ -121,6 +127,7 @@ struct IPerceptionCorrelationGroupFactory :
 {
     IPerceptionCorrelationGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionCorrelationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionCorrelationGroupFactory;
 
 struct IPerceptionFaceAuthenticationGroup :
     Windows::Foundation::IInspectable,
@@ -128,6 +135,7 @@ struct IPerceptionFaceAuthenticationGroup :
 {
     IPerceptionFaceAuthenticationGroup(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionFaceAuthenticationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFaceAuthenticationGroup;
 
 struct IPerceptionFaceAuthenticationGroupFactory :
     Windows::Foundation::IInspectable,
@@ -135,6 +143,7 @@ struct IPerceptionFaceAuthenticationGroupFactory :
 {
     IPerceptionFaceAuthenticationGroupFactory(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionFaceAuthenticationGroup may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFaceAuthenticationGroupFactory;
 
 struct IPerceptionFrame :
     Windows::Foundation::IInspectable,
@@ -142,6 +151,7 @@ struct IPerceptionFrame :
 {
     IPerceptionFrame(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionFrame may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFrame;
 
 struct IPerceptionFrameProvider :
     Windows::Foundation::IInspectable,
@@ -150,6 +160,7 @@ struct IPerceptionFrameProvider :
 {
     IPerceptionFrameProvider(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("IPerceptionFrameProvider may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFrameProvider;
 
 struct IPerceptionFrameProviderInfo :
     Windows::Foundation::IInspectable,
@@ -157,6 +168,7 @@ struct IPerceptionFrameProviderInfo :
 {
     IPerceptionFrameProviderInfo(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionFrameProviderInfo may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFrameProviderInfo;
 
 struct IPerceptionFrameProviderManager :
     Windows::Foundation::IInspectable,
@@ -165,6 +177,7 @@ struct IPerceptionFrameProviderManager :
 {
     IPerceptionFrameProviderManager(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("IPerceptionFrameProviderManager may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFrameProviderManager;
 
 struct IPerceptionFrameProviderManagerServiceStatics :
     Windows::Foundation::IInspectable,
@@ -172,6 +185,7 @@ struct IPerceptionFrameProviderManagerServiceStatics :
 {
     IPerceptionFrameProviderManagerServiceStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionFrameProviderManagerService may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionFrameProviderManagerServiceStatics;
 
 struct IPerceptionPropertyChangeRequest :
     Windows::Foundation::IInspectable,
@@ -179,6 +193,7 @@ struct IPerceptionPropertyChangeRequest :
 {
     IPerceptionPropertyChangeRequest(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionPropertyChangeRequest may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionPropertyChangeRequest;
 
 struct IPerceptionVideoFrameAllocator :
     Windows::Foundation::IInspectable,
@@ -187,6 +202,7 @@ struct IPerceptionVideoFrameAllocator :
 {
     IPerceptionVideoFrameAllocator(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionVideoFrameAllocator;
 
 struct IPerceptionVideoFrameAllocatorFactory :
     Windows::Foundation::IInspectable,
@@ -194,6 +210,7 @@ struct IPerceptionVideoFrameAllocatorFactory :
 {
     IPerceptionVideoFrameAllocatorFactory(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionVideoFrameAllocator may be unavailable after Windows Creator Update. Please refer to AVStream on MSDN.")]] IPerceptionVideoFrameAllocatorFactory;
 
 }
 

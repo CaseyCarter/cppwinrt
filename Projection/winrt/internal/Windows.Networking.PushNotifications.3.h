@@ -22,10 +22,12 @@ struct PushNotificationChannelManager
     static Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForApplicationAsync(hstring_view applicationId);
     static Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForSecondaryTileAsync(hstring_view tileId);
     static Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser GetForUser(const Windows::System::User & user);
+    static Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser GetDefault();
 };
 
 struct WINRT_EBO PushNotificationChannelManagerForUser :
-    Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser
+    Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser,
+    impl::require<PushNotificationChannelManagerForUser, Windows::Networking::PushNotifications::IPushNotificationChannelManagerForUser2>
 {
     PushNotificationChannelManagerForUser(std::nullptr_t) noexcept {}
 };
@@ -37,7 +39,8 @@ struct WINRT_EBO PushNotificationReceivedEventArgs :
 };
 
 struct WINRT_EBO RawNotification :
-    Windows::Networking::PushNotifications::IRawNotification
+    Windows::Networking::PushNotifications::IRawNotification,
+    impl::require<RawNotification, Windows::Networking::PushNotifications::IRawNotification2>
 {
     RawNotification(std::nullptr_t) noexcept {}
 };

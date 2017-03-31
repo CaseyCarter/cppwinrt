@@ -9,6 +9,7 @@
 #include "Windows.Media.Capture.0.h"
 #include "Windows.Media.Devices.Core.0.h"
 #include "Windows.Media.MediaProperties.0.h"
+#include "Windows.Storage.Streams.0.h"
 #include "Windows.Foundation.1.h"
 #include "Windows.Foundation.Collections.1.h"
 #include "Windows.Media.MediaProperties.1.h"
@@ -71,12 +72,50 @@ struct __declspec(uuid("ea9fbfaf-d371-41c3-9a17-824a87ebdfd2")) __declspec(novta
     virtual HRESULT __stdcall get_AdvancedPhotoControl(Windows::Media::Devices::IAdvancedPhotoControl ** value) = 0;
 };
 
+struct __declspec(uuid("33512b17-b9cb-4a23-b875-f9eaab535492")) __declspec(novtable) IAdvancedVideoCaptureDeviceController5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Id(hstring * value) = 0;
+    virtual HRESULT __stdcall abi_GetDevicePropertyById(hstring propertyId, Windows::Foundation::IReference<uint32_t> * maxPropertyValueSize, Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult ** value) = 0;
+    virtual HRESULT __stdcall abi_SetDevicePropertyById(hstring propertyId, Windows::Foundation::IInspectable * propertyValue, winrt::Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus * value) = 0;
+    virtual HRESULT __stdcall abi_GetDevicePropertyByExtendedId(uint32_t __extendedPropertyIdSize, uint8_t * extendedPropertyId, Windows::Foundation::IReference<uint32_t> * maxPropertyValueSize, Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult ** value) = 0;
+    virtual HRESULT __stdcall abi_SetDevicePropertyByExtendedId(uint32_t __extendedPropertyIdSize, uint8_t * extendedPropertyId, uint32_t __propertyValueSize, uint8_t * propertyValue, winrt::Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus * value) = 0;
+};
+
 struct __declspec(uuid("edd4a388-79c7-4f7c-90e8-ef934b21580a")) __declspec(novtable) IAudioDeviceController : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Muted(bool value) = 0;
     virtual HRESULT __stdcall get_Muted(bool * value) = 0;
     virtual HRESULT __stdcall put_VolumePercent(float value) = 0;
     virtual HRESULT __stdcall get_VolumePercent(float * value) = 0;
+};
+
+struct __declspec(uuid("86cfac36-47c1-4b33-9852-8773ec4be123")) __declspec(novtable) IAudioDeviceModule : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ClassId(hstring * value) = 0;
+    virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
+    virtual HRESULT __stdcall get_InstanceId(uint32_t * value) = 0;
+    virtual HRESULT __stdcall get_MajorVersion(uint32_t * value) = 0;
+    virtual HRESULT __stdcall get_MinorVersion(uint32_t * value) = 0;
+    virtual HRESULT __stdcall abi_SendCommandAsync(Windows::Storage::Streams::IBuffer * Command, Windows::Foundation::IAsyncOperation<Windows::Media::Devices::ModuleCommandResult> ** operation) = 0;
+};
+
+struct __declspec(uuid("e3e3ccaf-224c-48be-956b-9a13134e96e8")) __declspec(novtable) IAudioDeviceModuleNotificationEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Module(Windows::Media::Devices::IAudioDeviceModule ** value) = 0;
+    virtual HRESULT __stdcall get_NotificationData(Windows::Storage::Streams::IBuffer ** value) = 0;
+};
+
+struct __declspec(uuid("6aa40c4d-960a-4d1c-b318-0022604547ed")) __declspec(novtable) IAudioDeviceModulesManager : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall add_ModuleNotificationReceived(Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_ModuleNotificationReceived(event_token token) = 0;
+    virtual HRESULT __stdcall abi_FindAllById(hstring moduleId, Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule> ** modules) = 0;
+    virtual HRESULT __stdcall abi_FindAll(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule> ** modules) = 0;
+};
+
+struct __declspec(uuid("8db03670-e64d-4773-96c0-bc7ebf0e063f")) __declspec(novtable) IAudioDeviceModulesManagerFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_Create(hstring deviceId, Windows::Media::Devices::IAudioDeviceModulesManager ** result) = 0;
 };
 
 struct __declspec(uuid("110f882f-1c05-4657-a18e-47c9b69f07ab")) __declspec(novtable) IDefaultAudioDeviceChangedEventArgs : Windows::Foundation::IInspectable
@@ -280,6 +319,12 @@ struct __declspec(uuid("aa2d9a40-909f-4bba-bf8b-0c0d296f14f0")) __declspec(novta
     virtual HRESULT __stdcall remove_DefaultAudioRenderDeviceChanged(event_token cookie) = 0;
 };
 
+struct __declspec(uuid("520d1eb4-1374-4c7d-b1e4-39dcdf3eae4e")) __declspec(novtable) IModuleCommandResult : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Status(winrt::Windows::Media::Devices::SendCommandStatus * value) = 0;
+    virtual HRESULT __stdcall get_Result(Windows::Storage::Streams::IBuffer ** value) = 0;
+};
+
 struct __declspec(uuid("bfad9c1d-00bc-423b-8eb2-a0178ca94247")) __declspec(novtable) IOpticalImageStabilizationControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
@@ -364,6 +409,12 @@ struct __declspec(uuid("99555575-2e2e-40b8-b6c7-f82d10013210")) __declspec(novta
     virtual HRESULT __stdcall abi_TryGetPowerlineFrequency(winrt::Windows::Media::Capture::PowerlineFrequency * value, bool * succeeded) = 0;
 };
 
+struct __declspec(uuid("c5d88395-6ed5-4790-8b5d-0ef13935d0f8")) __declspec(novtable) IVideoDeviceControllerGetDevicePropertyResult : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Status(winrt::Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyStatus * value) = 0;
+    virtual HRESULT __stdcall get_Value(Windows::Foundation::IInspectable ** value) = 0;
+};
+
 struct __declspec(uuid("781f047e-7162-49c8-a8f9-9481c565363e")) __declspec(novtable) IWhiteBalanceControl : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Supported(bool * value) = 0;
@@ -408,6 +459,9 @@ namespace ABI {
 template <> struct traits<Windows::Media::Devices::AdvancedPhotoCaptureSettings> { using default_interface = Windows::Media::Devices::IAdvancedPhotoCaptureSettings; };
 template <> struct traits<Windows::Media::Devices::AdvancedPhotoControl> { using default_interface = Windows::Media::Devices::IAdvancedPhotoControl; };
 template <> struct traits<Windows::Media::Devices::AudioDeviceController> { using default_interface = Windows::Media::Devices::IAudioDeviceController; };
+template <> struct traits<Windows::Media::Devices::AudioDeviceModule> { using default_interface = Windows::Media::Devices::IAudioDeviceModule; };
+template <> struct traits<Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> { using default_interface = Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs; };
+template <> struct traits<Windows::Media::Devices::AudioDeviceModulesManager> { using default_interface = Windows::Media::Devices::IAudioDeviceModulesManager; };
 template <> struct traits<Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> { using default_interface = Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs; };
 template <> struct traits<Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> { using default_interface = Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs; };
 template <> struct traits<Windows::Media::Devices::ExposureCompensationControl> { using default_interface = Windows::Media::Devices::IExposureCompensationControl; };
@@ -422,6 +476,7 @@ template <> struct traits<Windows::Media::Devices::LowLagPhotoControl> { using d
 template <> struct traits<Windows::Media::Devices::LowLagPhotoSequenceControl> { using default_interface = Windows::Media::Devices::ILowLagPhotoSequenceControl; };
 template <> struct traits<Windows::Media::Devices::MediaDeviceControl> { using default_interface = Windows::Media::Devices::IMediaDeviceControl; };
 template <> struct traits<Windows::Media::Devices::MediaDeviceControlCapabilities> { using default_interface = Windows::Media::Devices::IMediaDeviceControlCapabilities; };
+template <> struct traits<Windows::Media::Devices::ModuleCommandResult> { using default_interface = Windows::Media::Devices::IModuleCommandResult; };
 template <> struct traits<Windows::Media::Devices::OpticalImageStabilizationControl> { using default_interface = Windows::Media::Devices::IOpticalImageStabilizationControl; };
 template <> struct traits<Windows::Media::Devices::PhotoConfirmationControl> { using default_interface = Windows::Media::Devices::IPhotoConfirmationControl; };
 template <> struct traits<Windows::Media::Devices::RegionOfInterest> { using default_interface = Windows::Media::Devices::IRegionOfInterest; };
@@ -429,6 +484,7 @@ template <> struct traits<Windows::Media::Devices::RegionsOfInterestControl> { u
 template <> struct traits<Windows::Media::Devices::SceneModeControl> { using default_interface = Windows::Media::Devices::ISceneModeControl; };
 template <> struct traits<Windows::Media::Devices::TorchControl> { using default_interface = Windows::Media::Devices::ITorchControl; };
 template <> struct traits<Windows::Media::Devices::VideoDeviceController> { using default_interface = Windows::Media::Devices::IVideoDeviceController; };
+template <> struct traits<Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult> { using default_interface = Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult; };
 template <> struct traits<Windows::Media::Devices::WhiteBalanceControl> { using default_interface = Windows::Media::Devices::IWhiteBalanceControl; };
 template <> struct traits<Windows::Media::Devices::ZoomControl> { using default_interface = Windows::Media::Devices::IZoomControl; };
 template <> struct traits<Windows::Media::Devices::ZoomSettings> { using default_interface = Windows::Media::Devices::IZoomSettings; };
@@ -498,12 +554,57 @@ struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController4
 };
 
 template <typename D>
+struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController5
+{
+    hstring Id() const;
+    Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult GetDevicePropertyById(hstring_view propertyId, const optional<uint32_t> & maxPropertyValueSize) const;
+    Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus SetDevicePropertyById(hstring_view propertyId, const Windows::Foundation::IInspectable & propertyValue) const;
+    Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult GetDevicePropertyByExtendedId(array_view<const uint8_t> extendedPropertyId, const optional<uint32_t> & maxPropertyValueSize) const;
+    Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus SetDevicePropertyByExtendedId(array_view<const uint8_t> extendedPropertyId, array_view<const uint8_t> propertyValue) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IAudioDeviceController
 {
     void Muted(bool value) const;
     bool Muted() const;
     void VolumePercent(float value) const;
     float VolumePercent() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioDeviceModule
+{
+    hstring ClassId() const;
+    hstring DisplayName() const;
+    uint32_t InstanceId() const;
+    uint32_t MajorVersion() const;
+    uint32_t MinorVersion() const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Devices::ModuleCommandResult> SendCommandAsync(const Windows::Storage::Streams::IBuffer & Command) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioDeviceModuleNotificationEventArgs
+{
+    Windows::Media::Devices::AudioDeviceModule Module() const;
+    Windows::Storage::Streams::IBuffer NotificationData() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioDeviceModulesManager
+{
+    event_token ModuleNotificationReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> & handler) const;
+    using ModuleNotificationReceived_revoker = event_revoker<IAudioDeviceModulesManager>;
+    ModuleNotificationReceived_revoker ModuleNotificationReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> & handler) const;
+    void ModuleNotificationReceived(event_token token) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule> FindAllById(hstring_view moduleId) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule> FindAll() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioDeviceModulesManagerFactory
+{
+    Windows::Media::Devices::AudioDeviceModulesManager Create(hstring_view deviceId) const;
 };
 
 template <typename D>
@@ -730,6 +831,13 @@ struct WINRT_EBO impl_IMediaDeviceStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_IModuleCommandResult
+{
+    Windows::Media::Devices::SendCommandStatus Status() const;
+    Windows::Storage::Streams::IBuffer Result() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IOpticalImageStabilizationControl
 {
     bool Supported() const;
@@ -822,6 +930,13 @@ struct WINRT_EBO impl_IVideoDeviceController
 };
 
 template <typename D>
+struct WINRT_EBO impl_IVideoDeviceControllerGetDevicePropertyResult
+{
+    Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyStatus Status() const;
+    Windows::Foundation::IInspectable Value() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IWhiteBalanceControl
 {
     bool Supported() const;
@@ -902,10 +1017,40 @@ template <> struct traits<Windows::Media::Devices::IAdvancedVideoCaptureDeviceCo
     template <typename D> using consume = Windows::Media::Devices::impl_IAdvancedVideoCaptureDeviceController4<D>;
 };
 
+template <> struct traits<Windows::Media::Devices::IAdvancedVideoCaptureDeviceController5>
+{
+    using abi = ABI::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController5;
+    template <typename D> using consume = Windows::Media::Devices::impl_IAdvancedVideoCaptureDeviceController5<D>;
+};
+
 template <> struct traits<Windows::Media::Devices::IAudioDeviceController>
 {
     using abi = ABI::Windows::Media::Devices::IAudioDeviceController;
     template <typename D> using consume = Windows::Media::Devices::impl_IAudioDeviceController<D>;
+};
+
+template <> struct traits<Windows::Media::Devices::IAudioDeviceModule>
+{
+    using abi = ABI::Windows::Media::Devices::IAudioDeviceModule;
+    template <typename D> using consume = Windows::Media::Devices::impl_IAudioDeviceModule<D>;
+};
+
+template <> struct traits<Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs>
+{
+    using abi = ABI::Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs;
+    template <typename D> using consume = Windows::Media::Devices::impl_IAudioDeviceModuleNotificationEventArgs<D>;
+};
+
+template <> struct traits<Windows::Media::Devices::IAudioDeviceModulesManager>
+{
+    using abi = ABI::Windows::Media::Devices::IAudioDeviceModulesManager;
+    template <typename D> using consume = Windows::Media::Devices::impl_IAudioDeviceModulesManager<D>;
+};
+
+template <> struct traits<Windows::Media::Devices::IAudioDeviceModulesManagerFactory>
+{
+    using abi = ABI::Windows::Media::Devices::IAudioDeviceModulesManagerFactory;
+    template <typename D> using consume = Windows::Media::Devices::impl_IAudioDeviceModulesManagerFactory<D>;
 };
 
 template <> struct traits<Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs>
@@ -1016,6 +1161,12 @@ template <> struct traits<Windows::Media::Devices::IMediaDeviceStatics>
     template <typename D> using consume = Windows::Media::Devices::impl_IMediaDeviceStatics<D>;
 };
 
+template <> struct traits<Windows::Media::Devices::IModuleCommandResult>
+{
+    using abi = ABI::Windows::Media::Devices::IModuleCommandResult;
+    template <typename D> using consume = Windows::Media::Devices::impl_IModuleCommandResult<D>;
+};
+
 template <> struct traits<Windows::Media::Devices::IOpticalImageStabilizationControl>
 {
     using abi = ABI::Windows::Media::Devices::IOpticalImageStabilizationControl;
@@ -1064,6 +1215,12 @@ template <> struct traits<Windows::Media::Devices::IVideoDeviceController>
     template <typename D> using consume = Windows::Media::Devices::impl_IVideoDeviceController<D>;
 };
 
+template <> struct traits<Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult>
+{
+    using abi = ABI::Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult;
+    template <typename D> using consume = Windows::Media::Devices::impl_IVideoDeviceControllerGetDevicePropertyResult<D>;
+};
+
 template <> struct traits<Windows::Media::Devices::IWhiteBalanceControl>
 {
     using abi = ABI::Windows::Media::Devices::IWhiteBalanceControl;
@@ -1104,6 +1261,24 @@ template <> struct traits<Windows::Media::Devices::AudioDeviceController>
 {
     using abi = ABI::Windows::Media::Devices::AudioDeviceController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.AudioDeviceController"; }
+};
+
+template <> struct traits<Windows::Media::Devices::AudioDeviceModule>
+{
+    using abi = ABI::Windows::Media::Devices::AudioDeviceModule;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.AudioDeviceModule"; }
+};
+
+template <> struct traits<Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs>
+{
+    using abi = ABI::Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.AudioDeviceModuleNotificationEventArgs"; }
+};
+
+template <> struct traits<Windows::Media::Devices::AudioDeviceModulesManager>
+{
+    using abi = ABI::Windows::Media::Devices::AudioDeviceModulesManager;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.AudioDeviceModulesManager"; }
 };
 
 template <> struct traits<Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs>
@@ -1195,6 +1370,12 @@ template <> struct traits<Windows::Media::Devices::MediaDeviceControlCapabilitie
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.MediaDeviceControlCapabilities"; }
 };
 
+template <> struct traits<Windows::Media::Devices::ModuleCommandResult>
+{
+    using abi = ABI::Windows::Media::Devices::ModuleCommandResult;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.ModuleCommandResult"; }
+};
+
 template <> struct traits<Windows::Media::Devices::OpticalImageStabilizationControl>
 {
     using abi = ABI::Windows::Media::Devices::OpticalImageStabilizationControl;
@@ -1235,6 +1416,12 @@ template <> struct traits<Windows::Media::Devices::VideoDeviceController>
 {
     using abi = ABI::Windows::Media::Devices::VideoDeviceController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.VideoDeviceController"; }
+};
+
+template <> struct traits<Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult>
+{
+    using abi = ABI::Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.VideoDeviceControllerGetDevicePropertyResult"; }
 };
 
 template <> struct traits<Windows::Media::Devices::WhiteBalanceControl>

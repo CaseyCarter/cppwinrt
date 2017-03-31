@@ -25,16 +25,6 @@ template <> struct __declspec(uuid("c4a57c5e-32b0-55b3-ad13-ce1c23041ed6")) __de
 template <> struct __declspec(uuid("ef60385f-be78-584b-aaef-7829ada2b0de")) __declspec(novtable) IAsyncOperation<uint32_t> : impl_IAsyncOperation<uint32_t> {};
 #endif
 
-#ifndef WINRT_GENERIC_8f1db6e3_6556_5516_825c_1021ee27cd0c
-#define WINRT_GENERIC_8f1db6e3_6556_5516_825c_1021ee27cd0c
-template <> struct __declspec(uuid("8f1db6e3-6556-5516-825c-1021ee27cd0c")) __declspec(novtable) IAsyncOperationWithProgress<uint64_t, uint64_t> : impl_IAsyncOperationWithProgress<uint64_t, uint64_t> {};
-#endif
-
-#ifndef WINRT_GENERIC_a8fe0732_556d_5841_b7ee_b3450fb52666
-#define WINRT_GENERIC_a8fe0732_556d_5841_b7ee_b3450fb52666
-template <> struct __declspec(uuid("a8fe0732-556d-5841-b7ee-b3450fb52666")) __declspec(novtable) IAsyncOperation<Windows::Storage::Streams::IInputStream> : impl_IAsyncOperation<Windows::Storage::Streams::IInputStream> {};
-#endif
-
 #ifndef WINRT_GENERIC_d26b2819_897f_5c7d_84d6_56d796561431
 #define WINRT_GENERIC_d26b2819_897f_5c7d_84d6_56d796561431
 template <> struct __declspec(uuid("d26b2819-897f-5c7d-84d6-56d796561431")) __declspec(novtable) IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint32_t> : impl_IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint32_t> {};
@@ -43,6 +33,16 @@ template <> struct __declspec(uuid("d26b2819-897f-5c7d-84d6-56d796561431")) __de
 #ifndef WINRT_GENERIC_eccb574a_c684_5572_a679_6b0842cfb57f
 #define WINRT_GENERIC_eccb574a_c684_5572_a679_6b0842cfb57f
 template <> struct __declspec(uuid("eccb574a-c684-5572-a679-6b0842cfb57f")) __declspec(novtable) IAsyncOperationWithProgress<uint32_t, uint32_t> : impl_IAsyncOperationWithProgress<uint32_t, uint32_t> {};
+#endif
+
+#ifndef WINRT_GENERIC_8f1db6e3_6556_5516_825c_1021ee27cd0c
+#define WINRT_GENERIC_8f1db6e3_6556_5516_825c_1021ee27cd0c
+template <> struct __declspec(uuid("8f1db6e3-6556-5516-825c-1021ee27cd0c")) __declspec(novtable) IAsyncOperationWithProgress<uint64_t, uint64_t> : impl_IAsyncOperationWithProgress<uint64_t, uint64_t> {};
+#endif
+
+#ifndef WINRT_GENERIC_a8fe0732_556d_5841_b7ee_b3450fb52666
+#define WINRT_GENERIC_a8fe0732_556d_5841_b7ee_b3450fb52666
+template <> struct __declspec(uuid("a8fe0732-556d-5841-b7ee-b3450fb52666")) __declspec(novtable) IAsyncOperation<Windows::Storage::Streams::IInputStream> : impl_IAsyncOperation<Windows::Storage::Streams::IInputStream> {};
 #endif
 
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
@@ -58,21 +58,6 @@ template <> struct __declspec(uuid("3dddecf4-1d39-58e8-83b1-dbed541c7f35")) __de
 #ifndef WINRT_GENERIC_9343b6e7_e3d2_5e4a_ab2d_2bce4919a6a4
 #define WINRT_GENERIC_9343b6e7_e3d2_5e4a_ab2d_2bce4919a6a4
 template <> struct __declspec(uuid("9343b6e7-e3d2-5e4a-ab2d-2bce4919a6a4")) __declspec(novtable) AsyncOperationCompletedHandler<uint32_t> : impl_AsyncOperationCompletedHandler<uint32_t> {};
-#endif
-
-#ifndef WINRT_GENERIC_ffb2b65d_4120_5d13_826d_107851e6bb1c
-#define WINRT_GENERIC_ffb2b65d_4120_5d13_826d_107851e6bb1c
-template <> struct __declspec(uuid("ffb2b65d-4120-5d13-826d-107851e6bb1c")) __declspec(novtable) AsyncOperationProgressHandler<uint64_t, uint64_t> : impl_AsyncOperationProgressHandler<uint64_t, uint64_t> {};
-#endif
-
-#ifndef WINRT_GENERIC_d2024e41_5500_5b5a_ba46_cb7009596a2f
-#define WINRT_GENERIC_d2024e41_5500_5b5a_ba46_cb7009596a2f
-template <> struct __declspec(uuid("d2024e41-5500-5b5a-ba46-cb7009596a2f")) __declspec(novtable) AsyncOperationWithProgressCompletedHandler<uint64_t, uint64_t> : impl_AsyncOperationWithProgressCompletedHandler<uint64_t, uint64_t> {};
-#endif
-
-#ifndef WINRT_GENERIC_d0bd0125_9049_57a3_bd66_e2525d98c814
-#define WINRT_GENERIC_d0bd0125_9049_57a3_bd66_e2525d98c814
-template <> struct __declspec(uuid("d0bd0125-9049-57a3-bd66-e2525d98c814")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Storage::Streams::IInputStream> : impl_AsyncOperationCompletedHandler<Windows::Storage::Streams::IInputStream> {};
 #endif
 
 #ifndef WINRT_GENERIC_bf666554_7605_5d9a_b14e_18d8c8472afe
@@ -93,6 +78,21 @@ template <> struct __declspec(uuid("ea0fe405-d432-5ac7-9ef8-5a65e1f97d7e")) __de
 #ifndef WINRT_GENERIC_1e466dc5_840f_54f9_b877_5e3a9f4b6c74
 #define WINRT_GENERIC_1e466dc5_840f_54f9_b877_5e3a9f4b6c74
 template <> struct __declspec(uuid("1e466dc5-840f-54f9-b877-5e3a9f4b6c74")) __declspec(novtable) AsyncOperationWithProgressCompletedHandler<uint32_t, uint32_t> : impl_AsyncOperationWithProgressCompletedHandler<uint32_t, uint32_t> {};
+#endif
+
+#ifndef WINRT_GENERIC_ffb2b65d_4120_5d13_826d_107851e6bb1c
+#define WINRT_GENERIC_ffb2b65d_4120_5d13_826d_107851e6bb1c
+template <> struct __declspec(uuid("ffb2b65d-4120-5d13-826d-107851e6bb1c")) __declspec(novtable) AsyncOperationProgressHandler<uint64_t, uint64_t> : impl_AsyncOperationProgressHandler<uint64_t, uint64_t> {};
+#endif
+
+#ifndef WINRT_GENERIC_d2024e41_5500_5b5a_ba46_cb7009596a2f
+#define WINRT_GENERIC_d2024e41_5500_5b5a_ba46_cb7009596a2f
+template <> struct __declspec(uuid("d2024e41-5500-5b5a-ba46-cb7009596a2f")) __declspec(novtable) AsyncOperationWithProgressCompletedHandler<uint64_t, uint64_t> : impl_AsyncOperationWithProgressCompletedHandler<uint64_t, uint64_t> {};
+#endif
+
+#ifndef WINRT_GENERIC_d0bd0125_9049_57a3_bd66_e2525d98c814
+#define WINRT_GENERIC_d0bd0125_9049_57a3_bd66_e2525d98c814
+template <> struct __declspec(uuid("d0bd0125-9049-57a3-bd66-e2525d98c814")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Storage::Streams::IInputStream> : impl_AsyncOperationCompletedHandler<Windows::Storage::Streams::IInputStream> {};
 #endif
 
 

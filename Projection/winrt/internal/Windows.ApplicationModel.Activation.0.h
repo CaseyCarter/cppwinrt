@@ -19,6 +19,7 @@ struct IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs;
 struct IAppointmentsProviderShowTimeFrameActivatedEventArgs;
 struct IBackgroundActivatedEventArgs;
 struct ICachedFileUpdaterActivatedEventArgs;
+struct IContactPanelActivatedEventArgs;
 struct IContinuationActivatedEventArgs;
 struct IDeviceActivatedEventArgs;
 struct IDevicePairingActivatedEventArgs;
@@ -60,6 +61,7 @@ struct AppointmentsProviderShowAppointmentDetailsActivatedEventArgs;
 struct AppointmentsProviderShowTimeFrameActivatedEventArgs;
 struct BackgroundActivatedEventArgs;
 struct CachedFileUpdaterActivatedEventArgs;
+struct ContactPanelActivatedEventArgs;
 struct DeviceActivatedEventArgs;
 struct DevicePairingActivatedEventArgs;
 struct DialReceiverActivatedEventArgs;
@@ -71,6 +73,7 @@ struct FileSavePickerContinuationEventArgs;
 struct FolderPickerContinuationEventArgs;
 struct LaunchActivatedEventArgs;
 struct LockScreenActivatedEventArgs;
+struct LockScreenComponentActivatedEventArgs;
 struct PickerReturnedActivatedEventArgs;
 struct ProtocolActivatedEventArgs;
 struct ProtocolForResultsActivatedEventArgs;
@@ -100,6 +103,7 @@ struct IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs;
 struct IAppointmentsProviderShowTimeFrameActivatedEventArgs;
 struct IBackgroundActivatedEventArgs;
 struct ICachedFileUpdaterActivatedEventArgs;
+struct IContactPanelActivatedEventArgs;
 struct IContinuationActivatedEventArgs;
 struct IDeviceActivatedEventArgs;
 struct IDevicePairingActivatedEventArgs;
@@ -141,6 +145,7 @@ struct AppointmentsProviderShowAppointmentDetailsActivatedEventArgs;
 struct AppointmentsProviderShowTimeFrameActivatedEventArgs;
 struct BackgroundActivatedEventArgs;
 struct CachedFileUpdaterActivatedEventArgs;
+struct ContactPanelActivatedEventArgs;
 struct DeviceActivatedEventArgs;
 struct DevicePairingActivatedEventArgs;
 struct DialReceiverActivatedEventArgs;
@@ -152,6 +157,7 @@ struct FileSavePickerContinuationEventArgs;
 struct FolderPickerContinuationEventArgs;
 struct LaunchActivatedEventArgs;
 struct LockScreenActivatedEventArgs;
+struct LockScreenComponentActivatedEventArgs;
 struct PickerReturnedActivatedEventArgs;
 struct ProtocolActivatedEventArgs;
 struct ProtocolForResultsActivatedEventArgs;
@@ -181,6 +187,7 @@ template <typename T> struct impl_IAppointmentsProviderShowAppointmentDetailsAct
 template <typename T> struct impl_IAppointmentsProviderShowTimeFrameActivatedEventArgs;
 template <typename T> struct impl_IBackgroundActivatedEventArgs;
 template <typename T> struct impl_ICachedFileUpdaterActivatedEventArgs;
+template <typename T> struct impl_IContactPanelActivatedEventArgs;
 template <typename T> struct impl_IContinuationActivatedEventArgs;
 template <typename T> struct impl_IDeviceActivatedEventArgs;
 template <typename T> struct impl_IDevicePairingActivatedEventArgs;
@@ -255,6 +262,8 @@ enum class ActivationKind
     DevicePairing = 1013,
     UserDataAccountsProvider = 1014,
     FilePickerExperience = 1015,
+    LockScreenComponent = 1016,
+    ContactPanel = 1017,
 };
 
 enum class ApplicationExecutionState

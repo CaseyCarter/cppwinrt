@@ -10,6 +10,11 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation {
 
+#ifndef WINRT_GENERIC_513ef3af_e784_5325_a91e_97c2b8111cf3
+#define WINRT_GENERIC_513ef3af_e784_5325_a91e_97c2b8111cf3
+template <> struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3")) __declspec(novtable) IReference<uint32_t> : impl_IReference<uint32_t> {};
+#endif
+
 #ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 #define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __declspec(novtable) IReference<Windows::Foundation::TimeSpan> : impl_IReference<Windows::Foundation::TimeSpan> {};
@@ -83,6 +88,16 @@ template <> struct __declspec(uuid("d3dd49cb-8d25-591a-80f7-8363d5c03ec9")) __de
 #ifndef WINRT_GENERIC_db8e251a_adc6_5753_8784_c44b4d7c5b07
 #define WINRT_GENERIC_db8e251a_adc6_5753_8784_c44b4d7c5b07
 template <> struct __declspec(uuid("db8e251a-adc6-5753-8784-c44b4d7c5b07")) __declspec(novtable) IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameReaderStartStatus> : impl_IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameReaderStartStatus> {};
+#endif
+
+#ifndef WINRT_GENERIC_82b1ad4d_9887_56f4_9a9e_3ab18b02198c
+#define WINRT_GENERIC_82b1ad4d_9887_56f4_9a9e_3ab18b02198c
+template <> struct __declspec(uuid("82b1ad4d-9887-56f4-9a9e-3ab18b02198c")) __declspec(novtable) TypedEventHandler<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader, Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs> : impl_TypedEventHandler<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader, Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_a242b952_76aa_54e5_a13b_a8707c1098e1
+#define WINRT_GENERIC_a242b952_76aa_54e5_a13b_a8707c1098e1
+template <> struct __declspec(uuid("a242b952-76aa-54e5-a13b-a8707c1098e1")) __declspec(novtable) IAsyncOperation<winrt::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> : impl_IAsyncOperation<winrt::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> {};
 #endif
 
 #ifndef WINRT_GENERIC_80003979_4986_52a7_b227_ae6be4d2b5cd
@@ -170,6 +185,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("9f49b2e5-2f68-5c58-8d8b-12176ff6ea50")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::Media::Capture::Frames::MediaFrameReaderStartStatus> : impl_AsyncOperationCompletedHandler<winrt::Windows::Media::Capture::Frames::MediaFrameReaderStartStatus> {};
 #endif
 
+#ifndef WINRT_GENERIC_18eef24a_3332_5fee_a0f0_72ceed330645
+#define WINRT_GENERIC_18eef24a_3332_5fee_a0f0_72ceed330645
+template <> struct __declspec(uuid("18eef24a-3332-5fee-a0f0-72ceed330645")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> : impl_AsyncOperationCompletedHandler<winrt::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> {};
+#endif
+
 #ifndef WINRT_GENERIC_d0577f0d_ce46_5c47_8f7c_4ae5626cc76d
 #define WINRT_GENERIC_d0577f0d_ce46_5c47_8f7c_4ae5626cc76d
 template <> struct __declspec(uuid("d0577f0d-ce46-5c47-8f7c-4ae5626cc76d")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> : impl_AsyncOperationCompletedHandler<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> {};
@@ -239,6 +259,13 @@ struct IDepthMediaFrame :
     IDepthMediaFrame(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IDepthMediaFrame2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IDepthMediaFrame2>
+{
+    IDepthMediaFrame2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IDepthMediaFrameFormat :
     Windows::Foundation::IInspectable,
     impl::consume<IDepthMediaFrameFormat>
@@ -297,6 +324,13 @@ struct IMediaFrameSourceController :
     IMediaFrameSourceController(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMediaFrameSourceController2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaFrameSourceController2>
+{
+    IMediaFrameSourceController2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMediaFrameSourceGetPropertyResult :
     Windows::Foundation::IInspectable,
     impl::consume<IMediaFrameSourceGetPropertyResult>
@@ -323,6 +357,29 @@ struct IMediaFrameSourceInfo :
     impl::consume<IMediaFrameSourceInfo>
 {
     IMediaFrameSourceInfo(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMultiSourceMediaFrameArrivedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMultiSourceMediaFrameArrivedEventArgs>
+{
+    IMultiSourceMediaFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMultiSourceMediaFrameReader :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMultiSourceMediaFrameReader>,
+    impl::require<IMultiSourceMediaFrameReader, Windows::Foundation::IClosable>
+{
+    IMultiSourceMediaFrameReader(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMultiSourceMediaFrameReference :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMultiSourceMediaFrameReference>,
+    impl::require<IMultiSourceMediaFrameReference, Windows::Foundation::IClosable>
+{
+    IMultiSourceMediaFrameReference(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVideoMediaFrame :

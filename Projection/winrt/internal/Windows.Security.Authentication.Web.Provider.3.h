@@ -31,6 +31,10 @@ struct WebAccountManager
     static Windows::Foundation::IAsyncAction SetWebAccountPictureAsync(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Storage::Streams::IRandomAccessStream & webAccountPicture);
     static Windows::Foundation::IAsyncAction ClearWebAccountPictureAsync(const Windows::Security::Credentials::WebAccount & webAccount);
     static Windows::Foundation::IAsyncAction PullCookiesAsync(hstring_view uriString, hstring_view callerPFN);
+    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> FindAllProviderWebAccountsForUserAsync(const Windows::System::User & user);
+    static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props);
+    static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope);
+    static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountForUserAsync(const Windows::System::User & user, hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_view perUserWebAccountId);
     static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_view webAccountId, hstring_view webAccountUserName, map_view<hstring, hstring> props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_view perUserWebAccountId);
     static Windows::Foundation::IAsyncAction SetPerAppToPerUserAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount, hstring_view perUserWebAccountId);
     static Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> GetPerUserFromPerAppAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount);
@@ -88,7 +92,8 @@ struct WINRT_EBO WebAccountProviderSignOutAccountOperation :
 };
 
 struct WINRT_EBO WebAccountProviderTriggerDetails :
-    Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects
+    Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects,
+    impl::require<WebAccountProviderTriggerDetails, Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects2>
 {
     WebAccountProviderTriggerDetails(std::nullptr_t) noexcept {}
 };

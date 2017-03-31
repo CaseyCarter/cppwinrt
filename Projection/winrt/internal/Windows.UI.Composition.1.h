@@ -6,6 +6,7 @@
 #include "../base.h"
 #include "Windows.UI.Composition.0.h"
 #include "Windows.Foundation.0.h"
+#include "Windows.Graphics.0.h"
 #include "Windows.Graphics.DirectX.0.h"
 #include "Windows.Graphics.Effects.0.h"
 #include "Windows.UI.0.h"
@@ -85,6 +86,19 @@ struct __declspec(uuid("da53fb4c-4650-47c4-ad76-765379607ed6")) __declspec(novta
 {
 };
 
+struct __declspec(uuid("8253353e-b517-48bc-b1e8-4b3561a2e181")) __declspec(novtable) ICompositionCapabilities : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_AreEffectsSupported(bool * value) = 0;
+    virtual HRESULT __stdcall abi_AreEffectsFast(bool * value) = 0;
+    virtual HRESULT __stdcall add_Changed(Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_Changed(event_token token) = 0;
+};
+
+struct __declspec(uuid("f7b7a86e-6416-49e5-8ddf-afe949e20562")) __declspec(novtable) ICompositionCapabilitiesStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetForCurrentView(Windows::UI::Composition::ICompositionCapabilities ** current) = 0;
+};
+
 struct __declspec(uuid("1ccd2a52-cfc7-4ace-9983-146bb8eb6a3c")) __declspec(novtable) ICompositionClip : Windows::Foundation::IInspectable
 {
 };
@@ -132,6 +146,20 @@ struct __declspec(uuid("a166c300-fad0-4d11-9e67-e433162ff49e")) __declspec(novta
     virtual HRESULT __stdcall get_Size(Windows::Foundation::Size * value) = 0;
 };
 
+struct __declspec(uuid("fad0e88b-e354-44e8-8e3d-c4880d5a213f")) __declspec(novtable) ICompositionDrawingSurface2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SizeInt32(Windows::Graphics::SizeInt32 * value) = 0;
+    virtual HRESULT __stdcall abi_Resize(Windows::Graphics::SizeInt32 sizePixels) = 0;
+    virtual HRESULT __stdcall abi_Scroll(Windows::Graphics::PointInt32 offset) = 0;
+    virtual HRESULT __stdcall abi_ScrollRect(Windows::Graphics::PointInt32 offset, Windows::Graphics::RectInt32 scrollRect) = 0;
+    virtual HRESULT __stdcall abi_ScrollWithClip(Windows::Graphics::PointInt32 offset, Windows::Graphics::RectInt32 clipRect) = 0;
+    virtual HRESULT __stdcall abi_ScrollRectWithClip(Windows::Graphics::PointInt32 offset, Windows::Graphics::RectInt32 clipRect, Windows::Graphics::RectInt32 scrollRect) = 0;
+};
+
+struct __declspec(uuid("9497b00a-312d-46b9-9db3-412fd79464c8")) __declspec(novtable) ICompositionDrawingSurfaceFactory : Windows::Foundation::IInspectable
+{
+};
+
 struct __declspec(uuid("5145e356-bf79-4ea8-8cc2-6b5b472e6c9a")) __declspec(novtable) ICompositionEasingFunction : Windows::Foundation::IInspectable
 {
 };
@@ -168,6 +196,12 @@ struct __declspec(uuid("fb22c6e1-80a2-4667-9936-dbeaf6eefe95")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateDrawingSurface(Windows::Foundation::Size sizePixels, winrt::Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, winrt::Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, Windows::UI::Composition::ICompositionDrawingSurface ** result) = 0;
     virtual HRESULT __stdcall add_RenderingDeviceReplaced(Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_RenderingDeviceReplaced(event_token token) = 0;
+};
+
+struct __declspec(uuid("0fb8bdf6-c0f0-4bcc-9fb8-084982490d7d")) __declspec(novtable) ICompositionGraphicsDevice2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateDrawingSurface2(Windows::Graphics::SizeInt32 sizePixels, winrt::Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, winrt::Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, Windows::UI::Composition::ICompositionDrawingSurface ** result) = 0;
+    virtual HRESULT __stdcall abi_CreateVirtualDrawingSurface(Windows::Graphics::SizeInt32 sizePixels, winrt::Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, winrt::Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, Windows::UI::Composition::ICompositionVirtualDrawingSurface ** result) = 0;
 };
 
 struct __declspec(uuid("41a6d7c2-2e5d-4bc1-b09e-8f0a03e3d8d3")) __declspec(novtable) ICompositionLight : Windows::Foundation::IInspectable
@@ -325,6 +359,15 @@ struct __declspec(uuid("a1bea8ba-d726-4663-8129-6b5e7927ffa6")) __declspec(novta
     virtual HRESULT __stdcall put_Root(Windows::UI::Composition::IVisual * value) = 0;
 };
 
+struct __declspec(uuid("a9c384db-8740-4f94-8b9d-b68521e7863d")) __declspec(novtable) ICompositionVirtualDrawingSurface : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_Trim(uint32_t __rectsSize, Windows::Graphics::RectInt32 * rects) = 0;
+};
+
+struct __declspec(uuid("6766106c-d56b-4a49-b1df-5076a0620768")) __declspec(novtable) ICompositionVirtualDrawingSurfaceFactory : Windows::Foundation::IInspectable
+{
+};
+
 struct __declspec(uuid("b403ca50-7f8c-4e83-985f-cc45060036d8")) __declspec(novtable) ICompositor : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateColorKeyFrameAnimation(Windows::UI::Composition::IColorKeyFrameAnimation ** result) = 0;
@@ -368,6 +411,11 @@ struct __declspec(uuid("735081dc-5e24-45da-a38f-e32cc349a9a0")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateSpotLight(Windows::UI::Composition::ISpotLight ** result) = 0;
     virtual HRESULT __stdcall abi_CreateStepEasingFunction(Windows::UI::Composition::IStepEasingFunction ** result) = 0;
     virtual HRESULT __stdcall abi_CreateStepEasingFunctionWithStepCount(int32_t stepCount, Windows::UI::Composition::IStepEasingFunction ** result) = 0;
+};
+
+struct __declspec(uuid("c9dd8ef0-6eb1-4e3c-a658-675d9c64d4ab")) __declspec(novtable) ICompositor3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateHostBackdropBrush(Windows::UI::Composition::ICompositionBackdropBrush ** result) = 0;
 };
 
 struct __declspec(uuid("02f6bc74-ed20-4773-afe6-d49b4a93db32")) __declspec(novtable) IContainerVisual : Windows::Foundation::IInspectable
@@ -452,6 +500,12 @@ struct __declspec(uuid("f4b488bb-2940-4ec0-a41a-eb6d801a2f18")) __declspec(novta
 {
     virtual HRESULT __stdcall get_Direction(winrt::Windows::UI::Composition::AnimationDirection * value) = 0;
     virtual HRESULT __stdcall put_Direction(winrt::Windows::UI::Composition::AnimationDirection value) = 0;
+};
+
+struct __declspec(uuid("845bf0b4-d8de-462f-8753-c80d43c6ff5a")) __declspec(novtable) IKeyFrameAnimation3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_DelayBehavior(winrt::Windows::UI::Composition::AnimationDelayBehavior * value) = 0;
+    virtual HRESULT __stdcall put_DelayBehavior(winrt::Windows::UI::Composition::AnimationDelayBehavior value) = 0;
 };
 
 struct __declspec(uuid("bf0803f8-712a-4fc1-8c87-970859ed8d2e")) __declspec(novtable) IKeyFrameAnimationFactory : Windows::Foundation::IInspectable
@@ -610,6 +664,16 @@ struct __declspec(uuid("117e202d-a859-4c89-873b-c2aa566788e3")) __declspec(novta
     virtual HRESULT __stdcall put_TransformMatrix(Windows::Foundation::Numerics::float4x4 value) = 0;
 };
 
+struct __declspec(uuid("3052b611-56c3-4c3e-8bf3-f6e1ad473f06")) __declspec(novtable) IVisual2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ParentForTransform(Windows::UI::Composition::IVisual ** value) = 0;
+    virtual HRESULT __stdcall put_ParentForTransform(Windows::UI::Composition::IVisual * value) = 0;
+    virtual HRESULT __stdcall get_RelativeOffsetAdjustment(Windows::Foundation::Numerics::float3 * value) = 0;
+    virtual HRESULT __stdcall put_RelativeOffsetAdjustment(Windows::Foundation::Numerics::float3 value) = 0;
+    virtual HRESULT __stdcall get_RelativeSizeAdjustment(Windows::Foundation::Numerics::float2 * value) = 0;
+    virtual HRESULT __stdcall put_RelativeSizeAdjustment(Windows::Foundation::Numerics::float2 value) = 0;
+};
+
 struct __declspec(uuid("8b745505-fd3e-4a98-84a8-e949468c6bcb")) __declspec(novtable) IVisualCollection : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Count(int32_t * value) = 0;
@@ -644,6 +708,7 @@ template <> struct traits<Windows::UI::Composition::CompositionAnimationGroup> {
 template <> struct traits<Windows::UI::Composition::CompositionBackdropBrush> { using default_interface = Windows::UI::Composition::ICompositionBackdropBrush; };
 template <> struct traits<Windows::UI::Composition::CompositionBatchCompletedEventArgs> { using default_interface = Windows::UI::Composition::ICompositionBatchCompletedEventArgs; };
 template <> struct traits<Windows::UI::Composition::CompositionBrush> { using default_interface = Windows::UI::Composition::ICompositionBrush; };
+template <> struct traits<Windows::UI::Composition::CompositionCapabilities> { using default_interface = Windows::UI::Composition::ICompositionCapabilities; };
 template <> struct traits<Windows::UI::Composition::CompositionClip> { using default_interface = Windows::UI::Composition::ICompositionClip; };
 template <> struct traits<Windows::UI::Composition::CompositionColorBrush> { using default_interface = Windows::UI::Composition::ICompositionColorBrush; };
 template <> struct traits<Windows::UI::Composition::CompositionCommitBatch> { using default_interface = Windows::UI::Composition::ICompositionCommitBatch; };
@@ -662,6 +727,7 @@ template <> struct traits<Windows::UI::Composition::CompositionScopedBatch> { us
 template <> struct traits<Windows::UI::Composition::CompositionShadow> { using default_interface = Windows::UI::Composition::ICompositionShadow; };
 template <> struct traits<Windows::UI::Composition::CompositionSurfaceBrush> { using default_interface = Windows::UI::Composition::ICompositionSurfaceBrush; };
 template <> struct traits<Windows::UI::Composition::CompositionTarget> { using default_interface = Windows::UI::Composition::ICompositionTarget; };
+template <> struct traits<Windows::UI::Composition::CompositionVirtualDrawingSurface> { using default_interface = Windows::UI::Composition::ICompositionVirtualDrawingSurface; };
 template <> struct traits<Windows::UI::Composition::Compositor> { using default_interface = Windows::UI::Composition::ICompositor; };
 template <> struct traits<Windows::UI::Composition::ContainerVisual> { using default_interface = Windows::UI::Composition::IContainerVisual; };
 template <> struct traits<Windows::UI::Composition::CubicBezierEasingFunction> { using default_interface = Windows::UI::Composition::ICubicBezierEasingFunction; };
@@ -771,6 +837,23 @@ struct WINRT_EBO impl_ICompositionBrushFactory
 };
 
 template <typename D>
+struct WINRT_EBO impl_ICompositionCapabilities
+{
+    bool AreEffectsSupported() const;
+    bool AreEffectsFast() const;
+    event_token Changed(const Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> & handler) const;
+    using Changed_revoker = event_revoker<ICompositionCapabilities>;
+    Changed_revoker Changed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> & handler) const;
+    void Changed(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionCapabilitiesStatics
+{
+    Windows::UI::Composition::CompositionCapabilities GetForCurrentView() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ICompositionClip
 {
 };
@@ -826,6 +909,22 @@ struct WINRT_EBO impl_ICompositionDrawingSurface
 };
 
 template <typename D>
+struct WINRT_EBO impl_ICompositionDrawingSurface2
+{
+    Windows::Graphics::SizeInt32 SizeInt32() const;
+    void Resize(const Windows::Graphics::SizeInt32 & sizePixels) const;
+    void Scroll(const Windows::Graphics::PointInt32 & offset) const;
+    void Scroll(const Windows::Graphics::PointInt32 & offset, const Windows::Graphics::RectInt32 & scrollRect) const;
+    void ScrollWithClip(const Windows::Graphics::PointInt32 & offset, const Windows::Graphics::RectInt32 & clipRect) const;
+    void ScrollWithClip(const Windows::Graphics::PointInt32 & offset, const Windows::Graphics::RectInt32 & clipRect, const Windows::Graphics::RectInt32 & scrollRect) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionDrawingSurfaceFactory
+{
+};
+
+template <typename D>
 struct WINRT_EBO impl_ICompositionEasingFunction
 {
 };
@@ -870,6 +969,13 @@ struct WINRT_EBO impl_ICompositionGraphicsDevice
     using RenderingDeviceReplaced_revoker = event_revoker<ICompositionGraphicsDevice>;
     RenderingDeviceReplaced_revoker RenderingDeviceReplaced(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> & handler) const;
     void RenderingDeviceReplaced(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionGraphicsDevice2
+{
+    Windows::UI::Composition::CompositionDrawingSurface CreateDrawingSurface2(const Windows::Graphics::SizeInt32 & sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode) const;
+    Windows::UI::Composition::CompositionVirtualDrawingSurface CreateVirtualDrawingSurface(const Windows::Graphics::SizeInt32 & sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode) const;
 };
 
 template <typename D>
@@ -1046,6 +1152,17 @@ struct WINRT_EBO impl_ICompositionTarget
 };
 
 template <typename D>
+struct WINRT_EBO impl_ICompositionVirtualDrawingSurface
+{
+    void Trim(array_view<const Windows::Graphics::RectInt32> rects) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionVirtualDrawingSurfaceFactory
+{
+};
+
+template <typename D>
 struct WINRT_EBO impl_ICompositor
 {
     Windows::UI::Composition::ColorKeyFrameAnimation CreateColorKeyFrameAnimation() const;
@@ -1090,6 +1207,12 @@ struct WINRT_EBO impl_ICompositor2
     Windows::UI::Composition::SpotLight CreateSpotLight() const;
     Windows::UI::Composition::StepEasingFunction CreateStepEasingFunction() const;
     Windows::UI::Composition::StepEasingFunction CreateStepEasingFunction(int32_t stepCount) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositor3
+{
+    Windows::UI::Composition::CompositionBackdropBrush CreateHostBackdropBrush() const;
 };
 
 template <typename D>
@@ -1184,6 +1307,13 @@ struct WINRT_EBO impl_IKeyFrameAnimation2
 {
     Windows::UI::Composition::AnimationDirection Direction() const;
     void Direction(Windows::UI::Composition::AnimationDirection value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyFrameAnimation3
+{
+    Windows::UI::Composition::AnimationDelayBehavior DelayBehavior() const;
+    void DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior value) const;
 };
 
 template <typename D>
@@ -1358,6 +1488,17 @@ struct WINRT_EBO impl_IVisual
 };
 
 template <typename D>
+struct WINRT_EBO impl_IVisual2
+{
+    Windows::UI::Composition::Visual ParentForTransform() const;
+    void ParentForTransform(const Windows::UI::Composition::Visual & value) const;
+    Windows::Foundation::Numerics::float3 RelativeOffsetAdjustment() const;
+    void RelativeOffsetAdjustment(const Windows::Foundation::Numerics::float3 & value) const;
+    Windows::Foundation::Numerics::float2 RelativeSizeAdjustment() const;
+    void RelativeSizeAdjustment(const Windows::Foundation::Numerics::float2 & value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IVisualCollection
 {
     int32_t Count() const;
@@ -1453,6 +1594,18 @@ template <> struct traits<Windows::UI::Composition::ICompositionBrushFactory>
     template <typename D> using consume = Windows::UI::Composition::impl_ICompositionBrushFactory<D>;
 };
 
+template <> struct traits<Windows::UI::Composition::ICompositionCapabilities>
+{
+    using abi = ABI::Windows::UI::Composition::ICompositionCapabilities;
+    template <typename D> using consume = Windows::UI::Composition::impl_ICompositionCapabilities<D>;
+};
+
+template <> struct traits<Windows::UI::Composition::ICompositionCapabilitiesStatics>
+{
+    using abi = ABI::Windows::UI::Composition::ICompositionCapabilitiesStatics;
+    template <typename D> using consume = Windows::UI::Composition::impl_ICompositionCapabilitiesStatics<D>;
+};
+
 template <> struct traits<Windows::UI::Composition::ICompositionClip>
 {
     using abi = ABI::Windows::UI::Composition::ICompositionClip;
@@ -1487,6 +1640,18 @@ template <> struct traits<Windows::UI::Composition::ICompositionDrawingSurface>
 {
     using abi = ABI::Windows::UI::Composition::ICompositionDrawingSurface;
     template <typename D> using consume = Windows::UI::Composition::impl_ICompositionDrawingSurface<D>;
+};
+
+template <> struct traits<Windows::UI::Composition::ICompositionDrawingSurface2>
+{
+    using abi = ABI::Windows::UI::Composition::ICompositionDrawingSurface2;
+    template <typename D> using consume = Windows::UI::Composition::impl_ICompositionDrawingSurface2<D>;
+};
+
+template <> struct traits<Windows::UI::Composition::ICompositionDrawingSurfaceFactory>
+{
+    using abi = ABI::Windows::UI::Composition::ICompositionDrawingSurfaceFactory;
+    template <typename D> using consume = Windows::UI::Composition::impl_ICompositionDrawingSurfaceFactory<D>;
 };
 
 template <> struct traits<Windows::UI::Composition::ICompositionEasingFunction>
@@ -1529,6 +1694,12 @@ template <> struct traits<Windows::UI::Composition::ICompositionGraphicsDevice>
 {
     using abi = ABI::Windows::UI::Composition::ICompositionGraphicsDevice;
     template <typename D> using consume = Windows::UI::Composition::impl_ICompositionGraphicsDevice<D>;
+};
+
+template <> struct traits<Windows::UI::Composition::ICompositionGraphicsDevice2>
+{
+    using abi = ABI::Windows::UI::Composition::ICompositionGraphicsDevice2;
+    template <typename D> using consume = Windows::UI::Composition::impl_ICompositionGraphicsDevice2<D>;
 };
 
 template <> struct traits<Windows::UI::Composition::ICompositionLight>
@@ -1627,6 +1798,18 @@ template <> struct traits<Windows::UI::Composition::ICompositionTarget>
     template <typename D> using consume = Windows::UI::Composition::impl_ICompositionTarget<D>;
 };
 
+template <> struct traits<Windows::UI::Composition::ICompositionVirtualDrawingSurface>
+{
+    using abi = ABI::Windows::UI::Composition::ICompositionVirtualDrawingSurface;
+    template <typename D> using consume = Windows::UI::Composition::impl_ICompositionVirtualDrawingSurface<D>;
+};
+
+template <> struct traits<Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFactory>
+{
+    using abi = ABI::Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFactory;
+    template <typename D> using consume = Windows::UI::Composition::impl_ICompositionVirtualDrawingSurfaceFactory<D>;
+};
+
 template <> struct traits<Windows::UI::Composition::ICompositor>
 {
     using abi = ABI::Windows::UI::Composition::ICompositor;
@@ -1637,6 +1820,12 @@ template <> struct traits<Windows::UI::Composition::ICompositor2>
 {
     using abi = ABI::Windows::UI::Composition::ICompositor2;
     template <typename D> using consume = Windows::UI::Composition::impl_ICompositor2<D>;
+};
+
+template <> struct traits<Windows::UI::Composition::ICompositor3>
+{
+    using abi = ABI::Windows::UI::Composition::ICompositor3;
+    template <typename D> using consume = Windows::UI::Composition::impl_ICompositor3<D>;
 };
 
 template <> struct traits<Windows::UI::Composition::IContainerVisual>
@@ -1697,6 +1886,12 @@ template <> struct traits<Windows::UI::Composition::IKeyFrameAnimation2>
 {
     using abi = ABI::Windows::UI::Composition::IKeyFrameAnimation2;
     template <typename D> using consume = Windows::UI::Composition::impl_IKeyFrameAnimation2<D>;
+};
+
+template <> struct traits<Windows::UI::Composition::IKeyFrameAnimation3>
+{
+    using abi = ABI::Windows::UI::Composition::IKeyFrameAnimation3;
+    template <typename D> using consume = Windows::UI::Composition::impl_IKeyFrameAnimation3<D>;
 };
 
 template <> struct traits<Windows::UI::Composition::IKeyFrameAnimationFactory>
@@ -1789,6 +1984,12 @@ template <> struct traits<Windows::UI::Composition::IVisual>
     template <typename D> using consume = Windows::UI::Composition::impl_IVisual<D>;
 };
 
+template <> struct traits<Windows::UI::Composition::IVisual2>
+{
+    using abi = ABI::Windows::UI::Composition::IVisual2;
+    template <typename D> using consume = Windows::UI::Composition::impl_IVisual2<D>;
+};
+
 template <> struct traits<Windows::UI::Composition::IVisualCollection>
 {
     using abi = ABI::Windows::UI::Composition::IVisualCollection;
@@ -1847,6 +2048,12 @@ template <> struct traits<Windows::UI::Composition::CompositionBrush>
 {
     using abi = ABI::Windows::UI::Composition::CompositionBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionBrush"; }
+};
+
+template <> struct traits<Windows::UI::Composition::CompositionCapabilities>
+{
+    using abi = ABI::Windows::UI::Composition::CompositionCapabilities;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionCapabilities"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionClip>
@@ -1955,6 +2162,12 @@ template <> struct traits<Windows::UI::Composition::CompositionTarget>
 {
     using abi = ABI::Windows::UI::Composition::CompositionTarget;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionTarget"; }
+};
+
+template <> struct traits<Windows::UI::Composition::CompositionVirtualDrawingSurface>
+{
+    using abi = ABI::Windows::UI::Composition::CompositionVirtualDrawingSurface;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionVirtualDrawingSurface"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Compositor>

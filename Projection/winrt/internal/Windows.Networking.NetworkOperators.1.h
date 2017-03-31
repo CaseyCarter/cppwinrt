@@ -116,6 +116,11 @@ struct __declspec(uuid("38f52f1c-1136-4257-959f-b658a352b6d4")) __declspec(novta
     virtual HRESULT __stdcall abi_GetConnectionProfiles(Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile> ** value) = 0;
 };
 
+struct __declspec(uuid("092a1e21-9379-4b9b-ad31-d5fee2f748c6")) __declspec(novtable) IMobileBroadbandAccount3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AccountExperienceUrl(Windows::Foundation::IUriRuntimeClass ** value) = 0;
+};
+
 struct __declspec(uuid("3853c880-77de-4c04-bead-a123b08c9f59")) __declspec(novtable) IMobileBroadbandAccountEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_NetworkAccountId(hstring * value) = 0;
@@ -174,6 +179,13 @@ struct __declspec(uuid("2e467af1-f932-4737-a722-03ba72370cb8")) __declspec(novta
     virtual HRESULT __stdcall get_PinManager(Windows::Networking::NetworkOperators::IMobileBroadbandPinManager ** value) = 0;
     virtual HRESULT __stdcall get_Revision(hstring * value) = 0;
     virtual HRESULT __stdcall get_SerialNumber(hstring * value) = 0;
+};
+
+struct __declspec(uuid("e08bb4bd-5d30-4b5a-92cc-d54df881d49e")) __declspec(novtable) IMobileBroadbandDeviceInformation3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SimSpn(hstring * value) = 0;
+    virtual HRESULT __stdcall get_SimPnn(hstring * value) = 0;
+    virtual HRESULT __stdcall get_SimGid1(hstring * value) = 0;
 };
 
 struct __declspec(uuid("22be1a52-bd80-40ac-8e1f-2e07836a3dbd")) __declspec(novtable) IMobileBroadbandDeviceService : Windows::Foundation::IInspectable
@@ -623,6 +635,12 @@ struct WINRT_EBO impl_IMobileBroadbandAccount2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMobileBroadbandAccount3
+{
+    Windows::Foundation::Uri AccountExperienceUrl() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMobileBroadbandAccountEventArgs
 {
     hstring NetworkAccountId() const;
@@ -696,6 +714,14 @@ struct WINRT_EBO impl_IMobileBroadbandDeviceInformation2
     Windows::Networking::NetworkOperators::MobileBroadbandPinManager PinManager() const;
     hstring Revision() const;
     hstring SerialNumber() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMobileBroadbandDeviceInformation3
+{
+    hstring SimSpn() const;
+    hstring SimPnn() const;
+    hstring SimGid1() const;
 };
 
 template <typename D>
@@ -1116,6 +1142,12 @@ template <> struct traits<Windows::Networking::NetworkOperators::IMobileBroadban
     template <typename D> using consume = Windows::Networking::NetworkOperators::impl_IMobileBroadbandAccount2<D>;
 };
 
+template <> struct traits<Windows::Networking::NetworkOperators::IMobileBroadbandAccount3>
+{
+    using abi = ABI::Windows::Networking::NetworkOperators::IMobileBroadbandAccount3;
+    template <typename D> using consume = Windows::Networking::NetworkOperators::impl_IMobileBroadbandAccount3<D>;
+};
+
 template <> struct traits<Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs>
 {
     using abi = ABI::Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs;
@@ -1150,6 +1182,12 @@ template <> struct traits<Windows::Networking::NetworkOperators::IMobileBroadban
 {
     using abi = ABI::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2;
     template <typename D> using consume = Windows::Networking::NetworkOperators::impl_IMobileBroadbandDeviceInformation2<D>;
+};
+
+template <> struct traits<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3>
+{
+    using abi = ABI::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3;
+    template <typename D> using consume = Windows::Networking::NetworkOperators::impl_IMobileBroadbandDeviceInformation3<D>;
 };
 
 template <> struct traits<Windows::Networking::NetworkOperators::IMobileBroadbandDeviceService>

@@ -7,6 +7,7 @@
 WINRT_WARNING_PUSH
 
 #include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Media.Capture.3.h"
 #include "internal/Windows.Media.MediaProperties.3.h"
@@ -483,6 +484,83 @@ struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController5> : produce_base<D, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController5>
+{
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Id());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDevicePropertyById(impl::abi_arg_in<hstring> propertyId, impl::abi_arg_in<Windows::Foundation::IReference<uint32_t>> maxPropertyValueSize, impl::abi_arg_out<Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetDevicePropertyById(*reinterpret_cast<const hstring *>(&propertyId), *reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&maxPropertyValueSize)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetDevicePropertyById(impl::abi_arg_in<hstring> propertyId, impl::abi_arg_in<Windows::Foundation::IInspectable> propertyValue, Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SetDevicePropertyById(*reinterpret_cast<const hstring *>(&propertyId), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&propertyValue)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDevicePropertyByExtendedId(uint32_t __extendedPropertyIdSize, impl::abi_arg_in<uint8_t> * extendedPropertyId, impl::abi_arg_in<Windows::Foundation::IReference<uint32_t>> maxPropertyValueSize, impl::abi_arg_out<Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetDevicePropertyByExtendedId(array_view<const uint8_t>(extendedPropertyId, extendedPropertyId + __extendedPropertyIdSize), *reinterpret_cast<const Windows::Foundation::IReference<uint32_t> *>(&maxPropertyValueSize)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetDevicePropertyByExtendedId(uint32_t __extendedPropertyIdSize, impl::abi_arg_in<uint8_t> * extendedPropertyId, uint32_t __propertyValueSize, impl::abi_arg_in<uint8_t> * propertyValue, Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SetDevicePropertyByExtendedId(array_view<const uint8_t>(extendedPropertyId, extendedPropertyId + __extendedPropertyIdSize), array_view<const uint8_t>(propertyValue, propertyValue + __propertyValueSize)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Devices::IAudioDeviceController> : produce_base<D, Windows::Media::Devices::IAudioDeviceController>
 {
     HRESULT __stdcall put_Muted(bool value) noexcept override
@@ -537,6 +615,212 @@ struct produce<D, Windows::Media::Devices::IAudioDeviceController> : produce_bas
         }
         catch (...)
         {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Devices::IAudioDeviceModule> : produce_base<D, Windows::Media::Devices::IAudioDeviceModule>
+{
+    HRESULT __stdcall get_ClassId(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ClassId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DisplayName(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DisplayName());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_InstanceId(uint32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().InstanceId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_MajorVersion(uint32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MajorVersion());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_MinorVersion(uint32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MinorVersion());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SendCommandAsync(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> Command, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Media::Devices::ModuleCommandResult>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().SendCommandAsync(*reinterpret_cast<const Windows::Storage::Streams::IBuffer *>(&Command)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs> : produce_base<D, Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs>
+{
+    HRESULT __stdcall get_Module(impl::abi_arg_out<Windows::Media::Devices::IAudioDeviceModule> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Module());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_NotificationData(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().NotificationData());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Devices::IAudioDeviceModulesManager> : produce_base<D, Windows::Media::Devices::IAudioDeviceModulesManager>
+{
+    HRESULT __stdcall add_ModuleNotificationReceived(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().ModuleNotificationReceived(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_ModuleNotificationReceived(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ModuleNotificationReceived(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_FindAllById(impl::abi_arg_in<hstring> moduleId, impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule>> modules) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *modules = detach_abi(this->shim().FindAllById(*reinterpret_cast<const hstring *>(&moduleId)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *modules = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_FindAll(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule>> modules) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *modules = detach_abi(this->shim().FindAll());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *modules = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Devices::IAudioDeviceModulesManagerFactory> : produce_base<D, Windows::Media::Devices::IAudioDeviceModulesManagerFactory>
+{
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Media::Devices::IAudioDeviceModulesManager> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const hstring *>(&deviceId)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
             return impl::to_hresult();
         }
     }
@@ -2455,6 +2739,39 @@ struct produce<D, Windows::Media::Devices::IMediaDeviceStatics> : produce_base<D
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Devices::IModuleCommandResult> : produce_base<D, Windows::Media::Devices::IModuleCommandResult>
+{
+    HRESULT __stdcall get_Status(Windows::Media::Devices::SendCommandStatus * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Status());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Result(impl::abi_arg_out<Windows::Storage::Streams::IBuffer> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Result());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Devices::IOpticalImageStabilizationControl> : produce_base<D, Windows::Media::Devices::IOpticalImageStabilizationControl>
 {
     HRESULT __stdcall get_Supported(bool * value) noexcept override
@@ -3232,6 +3549,39 @@ struct produce<D, Windows::Media::Devices::IVideoDeviceController> : produce_bas
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult> : produce_base<D, Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult>
+{
+    HRESULT __stdcall get_Status(Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyStatus * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Status());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Value());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Devices::IWhiteBalanceControl> : produce_base<D, Windows::Media::Devices::IWhiteBalanceControl>
 {
     HRESULT __stdcall get_Supported(bool * value) noexcept override
@@ -3629,6 +3979,114 @@ template <typename D> event_revoker<IMediaDeviceStatics> impl_IMediaDeviceStatic
 template <typename D> void impl_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(event_token cookie) const
 {
     check_hresult(WINRT_SHIM(IMediaDeviceStatics)->remove_DefaultAudioRenderDeviceChanged(cookie));
+}
+
+template <typename D> Windows::Media::Devices::SendCommandStatus impl_IModuleCommandResult<D>::Status() const
+{
+    Windows::Media::Devices::SendCommandStatus value {};
+    check_hresult(WINRT_SHIM(IModuleCommandResult)->get_Status(&value));
+    return value;
+}
+
+template <typename D> Windows::Storage::Streams::IBuffer impl_IModuleCommandResult<D>::Result() const
+{
+    Windows::Storage::Streams::IBuffer value;
+    check_hresult(WINRT_SHIM(IModuleCommandResult)->get_Result(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IAudioDeviceModule<D>::ClassId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IAudioDeviceModule)->get_ClassId(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IAudioDeviceModule<D>::DisplayName() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IAudioDeviceModule)->get_DisplayName(put_abi(value)));
+    return value;
+}
+
+template <typename D> uint32_t impl_IAudioDeviceModule<D>::InstanceId() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(IAudioDeviceModule)->get_InstanceId(&value));
+    return value;
+}
+
+template <typename D> uint32_t impl_IAudioDeviceModule<D>::MajorVersion() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(IAudioDeviceModule)->get_MajorVersion(&value));
+    return value;
+}
+
+template <typename D> uint32_t impl_IAudioDeviceModule<D>::MinorVersion() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(IAudioDeviceModule)->get_MinorVersion(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Devices::ModuleCommandResult> impl_IAudioDeviceModule<D>::SendCommandAsync(const Windows::Storage::Streams::IBuffer & Command) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::Devices::ModuleCommandResult> operation;
+    check_hresult(WINRT_SHIM(IAudioDeviceModule)->abi_SendCommandAsync(get_abi(Command), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> event_token impl_IAudioDeviceModulesManager<D>::ModuleNotificationReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IAudioDeviceModulesManager)->add_ModuleNotificationReceived(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IAudioDeviceModulesManager> impl_IAudioDeviceModulesManager<D>::ModuleNotificationReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IAudioDeviceModulesManager>(this, &ABI::Windows::Media::Devices::IAudioDeviceModulesManager::remove_ModuleNotificationReceived, ModuleNotificationReceived(handler));
+}
+
+template <typename D> void impl_IAudioDeviceModulesManager<D>::ModuleNotificationReceived(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IAudioDeviceModulesManager)->remove_ModuleNotificationReceived(token));
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule> impl_IAudioDeviceModulesManager<D>::FindAllById(hstring_view moduleId) const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule> modules;
+    check_hresult(WINRT_SHIM(IAudioDeviceModulesManager)->abi_FindAllById(get_abi(moduleId), put_abi(modules)));
+    return modules;
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule> impl_IAudioDeviceModulesManager<D>::FindAll() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::AudioDeviceModule> modules;
+    check_hresult(WINRT_SHIM(IAudioDeviceModulesManager)->abi_FindAll(put_abi(modules)));
+    return modules;
+}
+
+template <typename D> Windows::Media::Devices::AudioDeviceModulesManager impl_IAudioDeviceModulesManagerFactory<D>::Create(hstring_view deviceId) const
+{
+    Windows::Media::Devices::AudioDeviceModulesManager result { nullptr };
+    check_hresult(WINRT_SHIM(IAudioDeviceModulesManagerFactory)->abi_Create(get_abi(deviceId), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Media::Devices::AudioDeviceModule impl_IAudioDeviceModuleNotificationEventArgs<D>::Module() const
+{
+    Windows::Media::Devices::AudioDeviceModule value { nullptr };
+    check_hresult(WINRT_SHIM(IAudioDeviceModuleNotificationEventArgs)->get_Module(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Storage::Streams::IBuffer impl_IAudioDeviceModuleNotificationEventArgs<D>::NotificationData() const
+{
+    Windows::Storage::Streams::IBuffer value;
+    check_hresult(WINRT_SHIM(IAudioDeviceModuleNotificationEventArgs)->get_NotificationData(put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::CaptureSceneMode> impl_ISceneModeControl<D>::SupportedModes() const
@@ -4837,6 +5295,55 @@ template <typename D> Windows::Media::Devices::AdvancedPhotoControl impl_IAdvanc
     return value;
 }
 
+template <typename D> Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyStatus impl_IVideoDeviceControllerGetDevicePropertyResult<D>::Status() const
+{
+    Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyStatus value {};
+    check_hresult(WINRT_SHIM(IVideoDeviceControllerGetDevicePropertyResult)->get_Status(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IInspectable impl_IVideoDeviceControllerGetDevicePropertyResult<D>::Value() const
+{
+    Windows::Foundation::IInspectable value;
+    check_hresult(WINRT_SHIM(IVideoDeviceControllerGetDevicePropertyResult)->get_Value(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IAdvancedVideoCaptureDeviceController5<D>::Id() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IAdvancedVideoCaptureDeviceController5)->get_Id(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult impl_IAdvancedVideoCaptureDeviceController5<D>::GetDevicePropertyById(hstring_view propertyId, const optional<uint32_t> & maxPropertyValueSize) const
+{
+    Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult value { nullptr };
+    check_hresult(WINRT_SHIM(IAdvancedVideoCaptureDeviceController5)->abi_GetDevicePropertyById(get_abi(propertyId), get_abi(maxPropertyValueSize), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus impl_IAdvancedVideoCaptureDeviceController5<D>::SetDevicePropertyById(hstring_view propertyId, const Windows::Foundation::IInspectable & propertyValue) const
+{
+    Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus value {};
+    check_hresult(WINRT_SHIM(IAdvancedVideoCaptureDeviceController5)->abi_SetDevicePropertyById(get_abi(propertyId), get_abi(propertyValue), &value));
+    return value;
+}
+
+template <typename D> Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult impl_IAdvancedVideoCaptureDeviceController5<D>::GetDevicePropertyByExtendedId(array_view<const uint8_t> extendedPropertyId, const optional<uint32_t> & maxPropertyValueSize) const
+{
+    Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult value { nullptr };
+    check_hresult(WINRT_SHIM(IAdvancedVideoCaptureDeviceController5)->abi_GetDevicePropertyByExtendedId(extendedPropertyId.size(), get_abi(extendedPropertyId), get_abi(maxPropertyValueSize), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus impl_IAdvancedVideoCaptureDeviceController5<D>::SetDevicePropertyByExtendedId(array_view<const uint8_t> extendedPropertyId, array_view<const uint8_t> propertyValue) const
+{
+    Windows::Media::Devices::VideoDeviceControllerSetDevicePropertyStatus value {};
+    check_hresult(WINRT_SHIM(IAdvancedVideoCaptureDeviceController5)->abi_SetDevicePropertyByExtendedId(extendedPropertyId.size(), get_abi(extendedPropertyId), propertyValue.size(), get_abi(propertyValue), &value));
+    return value;
+}
+
 template <typename D> Windows::Media::Devices::MediaDeviceControlCapabilities impl_IMediaDeviceControl<D>::Capabilities() const
 {
     Windows::Media::Devices::MediaDeviceControlCapabilities value { nullptr };
@@ -5120,6 +5627,10 @@ inline AdvancedPhotoCaptureSettings::AdvancedPhotoCaptureSettings() :
     AdvancedPhotoCaptureSettings(activate_instance<AdvancedPhotoCaptureSettings>())
 {}
 
+inline AudioDeviceModulesManager::AudioDeviceModulesManager(hstring_view deviceId) :
+    AudioDeviceModulesManager(get_activation_factory<AudioDeviceModulesManager, IAudioDeviceModulesManagerFactory>().Create(deviceId))
+{}
+
 inline FocusSettings::FocusSettings() :
     FocusSettings(activate_instance<FocusSettings>())
 {}
@@ -5248,9 +5759,54 @@ struct std::hash<winrt::Windows::Media::Devices::IAdvancedVideoCaptureDeviceCont
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController5>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAdvancedVideoCaptureDeviceController5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Devices::IAudioDeviceController>
 {
     size_t operator()(const winrt::Windows::Media::Devices::IAudioDeviceController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IAudioDeviceModule>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAudioDeviceModule & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IAudioDeviceModulesManager>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAudioDeviceModulesManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::IAudioDeviceModulesManagerFactory>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IAudioDeviceModulesManagerFactory & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -5419,6 +5975,15 @@ struct std::hash<winrt::Windows::Media::Devices::IMediaDeviceStatics>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Devices::IModuleCommandResult>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IModuleCommandResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Devices::IOpticalImageStabilizationControl>
 {
     size_t operator()(const winrt::Windows::Media::Devices::IOpticalImageStabilizationControl & value) const noexcept
@@ -5491,6 +6056,15 @@ struct std::hash<winrt::Windows::Media::Devices::IVideoDeviceController>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Devices::IWhiteBalanceControl>
 {
     size_t operator()(const winrt::Windows::Media::Devices::IWhiteBalanceControl & value) const noexcept
@@ -5548,6 +6122,33 @@ template<>
 struct std::hash<winrt::Windows::Media::Devices::AudioDeviceController>
 {
     size_t operator()(const winrt::Windows::Media::Devices::AudioDeviceController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::AudioDeviceModule>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::AudioDeviceModule & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::AudioDeviceModulesManager>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::AudioDeviceModulesManager & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -5680,6 +6281,15 @@ struct std::hash<winrt::Windows::Media::Devices::MediaDeviceControlCapabilities>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Devices::ModuleCommandResult>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::ModuleCommandResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Devices::OpticalImageStabilizationControl>
 {
     size_t operator()(const winrt::Windows::Media::Devices::OpticalImageStabilizationControl & value) const noexcept
@@ -5737,6 +6347,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Devices::VideoDeviceController>
 {
     size_t operator()(const winrt::Windows::Media::Devices::VideoDeviceController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult>
+{
+    size_t operator()(const winrt::Windows::Media::Devices::VideoDeviceControllerGetDevicePropertyResult & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

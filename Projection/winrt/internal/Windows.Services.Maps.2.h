@@ -24,6 +24,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("58d33d10-e2ef-59f1-b85e-a8819ff0d926")) __declspec(novtable) IVectorView<Windows::Services::Maps::MapLocation> : impl_IVectorView<Windows::Services::Maps::MapLocation> {};
 #endif
 
+#ifndef WINRT_GENERIC_44c11b20_c16d_56e1_a0a3_6eb44f2492ea
+#define WINRT_GENERIC_44c11b20_c16d_56e1_a0a3_6eb44f2492ea
+template <> struct __declspec(uuid("44c11b20-c16d-56e1-a0a3-6eb44f2492ea")) __declspec(novtable) IVectorView<Windows::Services::Maps::ManeuverWarning> : impl_IVectorView<Windows::Services::Maps::ManeuverWarning> {};
+#endif
+
 #ifndef WINRT_GENERIC_a3f56695_468f_55ef_b184_c98b4cc7e484
 #define WINRT_GENERIC_a3f56695_468f_55ef_b184_c98b4cc7e484
 template <> struct __declspec(uuid("a3f56695-468f-55ef-b184-c98b4cc7e484")) __declspec(novtable) IVectorView<Windows::Services::Maps::MapRouteManeuver> : impl_IVectorView<Windows::Services::Maps::MapRouteManeuver> {};
@@ -64,6 +69,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("e7617fc9-2cc7-5bd1-bc5a-f47260834ed8")) __declspec(novtable) IIterable<Windows::Devices::Geolocation::Geopoint> : impl_IIterable<Windows::Devices::Geolocation::Geopoint> {};
 #endif
 
+#ifndef WINRT_GENERIC_d0545dba_9b05_5e37_bfc0_3da2b51d135b
+#define WINRT_GENERIC_d0545dba_9b05_5e37_bfc0_3da2b51d135b
+template <> struct __declspec(uuid("d0545dba-9b05-5e37-bfc0-3da2b51d135b")) __declspec(novtable) IIterable<Windows::Services::Maps::EnhancedWaypoint> : impl_IIterable<Windows::Services::Maps::EnhancedWaypoint> {};
+#endif
+
 #ifndef WINRT_GENERIC_a8b77ef5_e194_5b6b_876a_2dd6f47da7e3
 #define WINRT_GENERIC_a8b77ef5_e194_5b6b_876a_2dd6f47da7e3
 template <> struct __declspec(uuid("a8b77ef5-e194-5b6b-876a-2dd6f47da7e3")) __declspec(novtable) IVector<Windows::Services::Maps::MapLocation> : impl_IVector<Windows::Services::Maps::MapLocation> {};
@@ -77,6 +87,21 @@ template <> struct __declspec(uuid("2a704d9a-3997-5f1e-8641-883eba408726")) __de
 #ifndef WINRT_GENERIC_77da6151_0763_508a_9041_3310baace575
 #define WINRT_GENERIC_77da6151_0763_508a_9041_3310baace575
 template <> struct __declspec(uuid("77da6151-0763-508a-9041-3310baace575")) __declspec(novtable) IIterable<Windows::Services::Maps::MapLocation> : impl_IIterable<Windows::Services::Maps::MapLocation> {};
+#endif
+
+#ifndef WINRT_GENERIC_eec46234_581a_5a86_a655_af4d3baab5a2
+#define WINRT_GENERIC_eec46234_581a_5a86_a655_af4d3baab5a2
+template <> struct __declspec(uuid("eec46234-581a-5a86-a655-af4d3baab5a2")) __declspec(novtable) IVector<Windows::Services::Maps::ManeuverWarning> : impl_IVector<Windows::Services::Maps::ManeuverWarning> {};
+#endif
+
+#ifndef WINRT_GENERIC_df74a2a3_1eeb_5ac2_bc5f_9f2daffce017
+#define WINRT_GENERIC_df74a2a3_1eeb_5ac2_bc5f_9f2daffce017
+template <> struct __declspec(uuid("df74a2a3-1eeb-5ac2-bc5f-9f2daffce017")) __declspec(novtable) IIterator<Windows::Services::Maps::ManeuverWarning> : impl_IIterator<Windows::Services::Maps::ManeuverWarning> {};
+#endif
+
+#ifndef WINRT_GENERIC_ce0a7c13_d3c4_55af_a90f_c53f7bd93373
+#define WINRT_GENERIC_ce0a7c13_d3c4_55af_a90f_c53f7bd93373
+template <> struct __declspec(uuid("ce0a7c13-d3c4-55af-a90f-c53f7bd93373")) __declspec(novtable) IIterable<Windows::Services::Maps::ManeuverWarning> : impl_IIterable<Windows::Services::Maps::ManeuverWarning> {};
 #endif
 
 #ifndef WINRT_GENERIC_ac11f763_bda9_5e83_8f08_f1b684be5c48
@@ -159,10 +184,46 @@ template <> struct __declspec(uuid("cf6bdbc6-e87d-5cd2-88fa-9dab16dfee80")) __de
 template <> struct __declspec(uuid("88225b39-8be9-5c03-9714-8f1642d8a43f")) __declspec(novtable) IIterator<Windows::Devices::Geolocation::Geopoint> : impl_IIterator<Windows::Devices::Geolocation::Geopoint> {};
 #endif
 
+#ifndef WINRT_GENERIC_119d17b1_c87a_5214_8090_27cec0a59131
+#define WINRT_GENERIC_119d17b1_c87a_5214_8090_27cec0a59131
+template <> struct __declspec(uuid("119d17b1-c87a-5214-8090-27cec0a59131")) __declspec(novtable) IVector<Windows::Services::Maps::EnhancedWaypoint> : impl_IVector<Windows::Services::Maps::EnhancedWaypoint> {};
+#endif
+
+#ifndef WINRT_GENERIC_8b4eed66_bcb7_5903_9b34_2f15d87b8b37
+#define WINRT_GENERIC_8b4eed66_bcb7_5903_9b34_2f15d87b8b37
+template <> struct __declspec(uuid("8b4eed66-bcb7-5903-9b34-2f15d87b8b37")) __declspec(novtable) IVectorView<Windows::Services::Maps::EnhancedWaypoint> : impl_IVectorView<Windows::Services::Maps::EnhancedWaypoint> {};
+#endif
+
+#ifndef WINRT_GENERIC_164a4c21_d0a0_5d68_80e2_44889dcea6d5
+#define WINRT_GENERIC_164a4c21_d0a0_5d68_80e2_44889dcea6d5
+template <> struct __declspec(uuid("164a4c21-d0a0-5d68-80e2-44889dcea6d5")) __declspec(novtable) IIterator<Windows::Services::Maps::EnhancedWaypoint> : impl_IIterator<Windows::Services::Maps::EnhancedWaypoint> {};
+#endif
+
 
 }
 
 namespace Windows::Services::Maps {
+
+struct IEnhancedWaypoint :
+    Windows::Foundation::IInspectable,
+    impl::consume<IEnhancedWaypoint>
+{
+    IEnhancedWaypoint(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IEnhancedWaypointFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IEnhancedWaypointFactory>
+{
+    IEnhancedWaypointFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IManeuverWarning :
+    Windows::Foundation::IInspectable,
+    impl::consume<IManeuverWarning>
+{
+    IManeuverWarning(std::nullptr_t = nullptr) noexcept {}
+};
 
 struct IMapAddress :
     Windows::Foundation::IInspectable,
@@ -227,6 +288,13 @@ struct IMapRoute2 :
     IMapRoute2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMapRoute3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapRoute3>
+{
+    IMapRoute3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMapRouteDrivingOptions :
     Windows::Foundation::IInspectable,
     impl::consume<IMapRouteDrivingOptions>
@@ -262,11 +330,25 @@ struct IMapRouteFinderStatics2 :
     IMapRouteFinderStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMapRouteFinderStatics3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapRouteFinderStatics3>
+{
+    IMapRouteFinderStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMapRouteLeg :
     Windows::Foundation::IInspectable,
     impl::consume<IMapRouteLeg>
 {
     IMapRouteLeg(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMapRouteLeg2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapRouteLeg2>
+{
+    IMapRouteLeg2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapRouteManeuver :
@@ -281,6 +363,13 @@ struct IMapRouteManeuver2 :
     impl::consume<IMapRouteManeuver2>
 {
     IMapRouteManeuver2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMapRouteManeuver3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapRouteManeuver3>
+{
+    IMapRouteManeuver3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMapServiceStatics :
@@ -302,6 +391,13 @@ struct IMapServiceStatics3 :
     impl::consume<IMapServiceStatics3>
 {
     IMapServiceStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMapServiceStatics4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMapServiceStatics4>
+{
+    IMapServiceStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

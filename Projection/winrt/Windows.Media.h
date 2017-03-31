@@ -7,11 +7,12 @@
 WINRT_WARNING_PUSH
 
 #include "internal/Windows.Foundation.Collections.3.h"
-#include "internal/Windows.Graphics.Imaging.3.h"
 #include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Graphics.Imaging.3.h"
 #include "internal/Windows.Graphics.DirectX.Direct3D11.3.h"
 #include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.Storage.3.h"
+#include "internal/Windows.ApplicationModel.AppService.3.h"
 #include "internal/Windows.Media.3.h"
 #include "Windows.Foundation.h"
 
@@ -364,6 +365,24 @@ struct produce<D, Windows::Media::IMediaExtensionManager> : produce_base<D, Wind
         {
             typename D::abi_guard guard(this->shim());
             this->shim().RegisterVideoEncoder(*reinterpret_cast<const hstring *>(&activatableClassId), inputSubtype, outputSubtype, *reinterpret_cast<const Windows::Foundation::Collections::IPropertySet *>(&configuration));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::IMediaExtensionManager2> : produce_base<D, Windows::Media::IMediaExtensionManager2>
+{
+    HRESULT __stdcall abi_RegisterMediaExtensionForAppService(impl::abi_arg_in<Windows::Media::IMediaExtension> extension, impl::abi_arg_in<Windows::ApplicationModel::AppService::IAppServiceConnection> connection) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().RegisterMediaExtensionForAppService(*reinterpret_cast<const Windows::Media::IMediaExtension *>(&extension), *reinterpret_cast<const Windows::ApplicationModel::AppService::AppServiceConnection *>(&connection));
             return S_OK;
         }
         catch (...)
@@ -804,6 +823,141 @@ struct produce<D, Windows::Media::IMediaTimelineController> : produce_base<D, Wi
         {
             typename D::abi_guard guard(this->shim());
             this->shim().StateChanged(eventCookie);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::IMediaTimelineController2> : produce_base<D, Windows::Media::IMediaTimelineController2>
+{
+    HRESULT __stdcall get_Duration(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Duration());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Duration(impl::abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Duration(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsLoopingEnabled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsLoopingEnabled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsLoopingEnabled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsLoopingEnabled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_Failed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs>> eventHandler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().Failed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> *>(&eventHandler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_Failed(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Failed(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_Ended(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable>> eventHandler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().Ended(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> *>(&eventHandler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_Ended(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Ended(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::IMediaTimelineControllerFailedEventArgs> : produce_base<D, Windows::Media::IMediaTimelineControllerFailedEventArgs>
+{
+    HRESULT __stdcall get_ExtendedError(HRESULT * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ExtendedError());
             return S_OK;
         }
         catch (...)
@@ -2276,27 +2430,6 @@ template <typename D> Windows::Foundation::Collections::ValueSet impl_IMediaProc
     return value;
 }
 
-template <typename D> Windows::Media::VideoFrame impl_IVideoFrameFactory<D>::Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) const
-{
-    Windows::Media::VideoFrame value { nullptr };
-    check_hresult(WINRT_SHIM(IVideoFrameFactory)->abi_Create(format, width, height, put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Media::VideoFrame impl_IVideoFrameFactory<D>::CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
-{
-    Windows::Media::VideoFrame value { nullptr };
-    check_hresult(WINRT_SHIM(IVideoFrameFactory)->abi_CreateWithAlpha(format, width, height, alpha, put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Media::AudioFrame impl_IAudioFrameFactory<D>::Create(uint32_t capacity) const
-{
-    Windows::Media::AudioFrame value { nullptr };
-    check_hresult(WINRT_SHIM(IAudioFrameFactory)->abi_Create(capacity, put_abi(value)));
-    return value;
-}
-
 template <typename D> hstring impl_IMediaFrame<D>::Type() const
 {
     hstring value;
@@ -2387,10 +2520,31 @@ template <typename D> Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface i
     return value;
 }
 
+template <typename D> Windows::Media::VideoFrame impl_IVideoFrameFactory<D>::Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) const
+{
+    Windows::Media::VideoFrame value { nullptr };
+    check_hresult(WINRT_SHIM(IVideoFrameFactory)->abi_Create(format, width, height, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::VideoFrame impl_IVideoFrameFactory<D>::CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
+{
+    Windows::Media::VideoFrame value { nullptr };
+    check_hresult(WINRT_SHIM(IVideoFrameFactory)->abi_CreateWithAlpha(format, width, height, alpha, put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Media::AudioBuffer impl_IAudioFrame<D>::LockBuffer(Windows::Media::AudioBufferAccessMode mode) const
 {
     Windows::Media::AudioBuffer value { nullptr };
     check_hresult(WINRT_SHIM(IAudioFrame)->abi_LockBuffer(mode, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::AudioFrame impl_IAudioFrameFactory<D>::Create(uint32_t capacity) const
+{
+    Windows::Media::AudioFrame value { nullptr };
+    check_hresult(WINRT_SHIM(IAudioFrameFactory)->abi_Create(capacity, put_abi(value)));
     return value;
 }
 
@@ -3066,78 +3220,6 @@ template <typename D> Windows::Media::SystemMediaTransportControls impl_ISystemM
     return mediaControl;
 }
 
-template <typename D> void impl_IMediaExtension<D>::SetProperties(const Windows::Foundation::Collections::IPropertySet & configuration) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtension)->abi_SetProperties(get_abi(configuration)));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterSchemeHandler(hstring_view activatableClassId, hstring_view scheme) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterSchemeHandler(get_abi(activatableClassId), get_abi(scheme)));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterSchemeHandler(hstring_view activatableClassId, hstring_view scheme, const Windows::Foundation::Collections::IPropertySet & configuration) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterSchemeHandlerWithSettings(get_abi(activatableClassId), get_abi(scheme), get_abi(configuration)));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterByteStreamHandler(hstring_view activatableClassId, hstring_view fileExtension, hstring_view mimeType) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterByteStreamHandler(get_abi(activatableClassId), get_abi(fileExtension), get_abi(mimeType)));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterByteStreamHandler(hstring_view activatableClassId, hstring_view fileExtension, hstring_view mimeType, const Windows::Foundation::Collections::IPropertySet & configuration) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterByteStreamHandlerWithSettings(get_abi(activatableClassId), get_abi(fileExtension), get_abi(mimeType), get_abi(configuration)));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioDecoder(get_abi(activatableClassId), inputSubtype, outputSubtype));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioDecoderWithSettings(get_abi(activatableClassId), inputSubtype, outputSubtype, get_abi(configuration)));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioEncoder(get_abi(activatableClassId), inputSubtype, outputSubtype));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioEncoderWithSettings(get_abi(activatableClassId), inputSubtype, outputSubtype, get_abi(configuration)));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoDecoder(get_abi(activatableClassId), inputSubtype, outputSubtype));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoDecoderWithSettings(get_abi(activatableClassId), inputSubtype, outputSubtype, get_abi(configuration)));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoEncoder(get_abi(activatableClassId), inputSubtype, outputSubtype));
-}
-
-template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
-{
-    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoEncoderWithSettings(get_abi(activatableClassId), inputSubtype, outputSubtype, get_abi(configuration)));
-}
-
-template <typename D> hstring impl_IVideoEffectsStatics<D>::VideoStabilization() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IVideoEffectsStatics)->get_VideoStabilization(put_abi(value)));
-    return value;
-}
-
 template <typename D> void impl_IMediaTimelineController<D>::Start() const
 {
     check_hresult(WINRT_SHIM(IMediaTimelineController)->abi_Start());
@@ -3216,6 +3298,148 @@ template <typename D> event_revoker<IMediaTimelineController> impl_IMediaTimelin
 template <typename D> void impl_IMediaTimelineController<D>::StateChanged(event_token eventCookie) const
 {
     check_hresult(WINRT_SHIM(IMediaTimelineController)->remove_StateChanged(eventCookie));
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMediaTimelineController2<D>::Duration() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
+    check_hresult(WINRT_SHIM(IMediaTimelineController2)->get_Duration(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMediaTimelineController2<D>::Duration(const optional<Windows::Foundation::TimeSpan> & value) const
+{
+    check_hresult(WINRT_SHIM(IMediaTimelineController2)->put_Duration(get_abi(value)));
+}
+
+template <typename D> bool impl_IMediaTimelineController2<D>::IsLoopingEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IMediaTimelineController2)->get_IsLoopingEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IMediaTimelineController2<D>::IsLoopingEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IMediaTimelineController2)->put_IsLoopingEnabled(value));
+}
+
+template <typename D> event_token impl_IMediaTimelineController2<D>::Failed(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> & eventHandler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMediaTimelineController2)->add_Failed(get_abi(eventHandler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMediaTimelineController2> impl_IMediaTimelineController2<D>::Failed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> & eventHandler) const
+{
+    return impl::make_event_revoker<D, IMediaTimelineController2>(this, &ABI::Windows::Media::IMediaTimelineController2::remove_Failed, Failed(eventHandler));
+}
+
+template <typename D> void impl_IMediaTimelineController2<D>::Failed(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMediaTimelineController2)->remove_Failed(token));
+}
+
+template <typename D> event_token impl_IMediaTimelineController2<D>::Ended(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & eventHandler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMediaTimelineController2)->add_Ended(get_abi(eventHandler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMediaTimelineController2> impl_IMediaTimelineController2<D>::Ended(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & eventHandler) const
+{
+    return impl::make_event_revoker<D, IMediaTimelineController2>(this, &ABI::Windows::Media::IMediaTimelineController2::remove_Ended, Ended(eventHandler));
+}
+
+template <typename D> void impl_IMediaTimelineController2<D>::Ended(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMediaTimelineController2)->remove_Ended(token));
+}
+
+template <typename D> HRESULT impl_IMediaTimelineControllerFailedEventArgs<D>::ExtendedError() const
+{
+    HRESULT value {};
+    check_hresult(WINRT_SHIM(IMediaTimelineControllerFailedEventArgs)->get_ExtendedError(&value));
+    return value;
+}
+
+template <typename D> void impl_IMediaExtension<D>::SetProperties(const Windows::Foundation::Collections::IPropertySet & configuration) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtension)->abi_SetProperties(get_abi(configuration)));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterSchemeHandler(hstring_view activatableClassId, hstring_view scheme) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterSchemeHandler(get_abi(activatableClassId), get_abi(scheme)));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterSchemeHandler(hstring_view activatableClassId, hstring_view scheme, const Windows::Foundation::Collections::IPropertySet & configuration) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterSchemeHandlerWithSettings(get_abi(activatableClassId), get_abi(scheme), get_abi(configuration)));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterByteStreamHandler(hstring_view activatableClassId, hstring_view fileExtension, hstring_view mimeType) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterByteStreamHandler(get_abi(activatableClassId), get_abi(fileExtension), get_abi(mimeType)));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterByteStreamHandler(hstring_view activatableClassId, hstring_view fileExtension, hstring_view mimeType, const Windows::Foundation::Collections::IPropertySet & configuration) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterByteStreamHandlerWithSettings(get_abi(activatableClassId), get_abi(fileExtension), get_abi(mimeType), get_abi(configuration)));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioDecoder(get_abi(activatableClassId), inputSubtype, outputSubtype));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioDecoderWithSettings(get_abi(activatableClassId), inputSubtype, outputSubtype, get_abi(configuration)));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioEncoder(get_abi(activatableClassId), inputSubtype, outputSubtype));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterAudioEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterAudioEncoderWithSettings(get_abi(activatableClassId), inputSubtype, outputSubtype, get_abi(configuration)));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoDecoder(get_abi(activatableClassId), inputSubtype, outputSubtype));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoDecoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoDecoderWithSettings(get_abi(activatableClassId), inputSubtype, outputSubtype, get_abi(configuration)));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoEncoder(get_abi(activatableClassId), inputSubtype, outputSubtype));
+}
+
+template <typename D> void impl_IMediaExtensionManager<D>::RegisterVideoEncoder(hstring_view activatableClassId, GUID inputSubtype, GUID outputSubtype, const Windows::Foundation::Collections::IPropertySet & configuration) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager)->abi_RegisterVideoEncoderWithSettings(get_abi(activatableClassId), inputSubtype, outputSubtype, get_abi(configuration)));
+}
+
+template <typename D> void impl_IMediaExtensionManager2<D>::RegisterMediaExtensionForAppService(const Windows::Media::IMediaExtension & extension, const Windows::ApplicationModel::AppService::AppServiceConnection & connection) const
+{
+    check_hresult(WINRT_SHIM(IMediaExtensionManager2)->abi_RegisterMediaExtensionForAppService(get_abi(extension), get_abi(connection)));
+}
+
+template <typename D> hstring impl_IVideoEffectsStatics<D>::VideoStabilization() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IVideoEffectsStatics)->get_VideoStabilization(put_abi(value)));
+    return value;
 }
 
 inline AudioFrame::AudioFrame(uint32_t capacity) :
@@ -3325,6 +3549,15 @@ struct std::hash<winrt::Windows::Media::IMediaExtensionManager>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::IMediaExtensionManager2>
+{
+    size_t operator()(const winrt::Windows::Media::IMediaExtensionManager2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::IMediaFrame>
 {
     size_t operator()(const winrt::Windows::Media::IMediaFrame & value) const noexcept
@@ -3373,6 +3606,24 @@ template<>
 struct std::hash<winrt::Windows::Media::IMediaTimelineController>
 {
     size_t operator()(const winrt::Windows::Media::IMediaTimelineController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMediaTimelineController2>
+{
+    size_t operator()(const winrt::Windows::Media::IMediaTimelineController2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::IMediaTimelineControllerFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::IMediaTimelineControllerFailedEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3598,6 +3849,15 @@ template<>
 struct std::hash<winrt::Windows::Media::MediaTimelineController>
 {
     size_t operator()(const winrt::Windows::Media::MediaTimelineController & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::MediaTimelineControllerFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Media::MediaTimelineControllerFailedEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

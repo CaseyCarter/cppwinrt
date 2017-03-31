@@ -32,7 +32,8 @@ struct WINRT_EBO ContactAddress :
 };
 
 struct WINRT_EBO ContactAnnotation :
-    Windows::ApplicationModel::Contacts::IContactAnnotation
+    Windows::ApplicationModel::Contacts::IContactAnnotation,
+    impl::require<ContactAnnotation, Windows::ApplicationModel::Contacts::IContactAnnotation2>
 {
     ContactAnnotation(std::nullptr_t) noexcept {}
     ContactAnnotation();
@@ -45,7 +46,8 @@ struct WINRT_EBO ContactAnnotationList :
 };
 
 struct WINRT_EBO ContactAnnotationStore :
-    Windows::ApplicationModel::Contacts::IContactAnnotationStore
+    Windows::ApplicationModel::Contacts::IContactAnnotationStore,
+    impl::require<ContactAnnotationStore, Windows::ApplicationModel::Contacts::IContactAnnotationStore2>
 {
     ContactAnnotationStore(std::nullptr_t) noexcept {}
 };
@@ -136,6 +138,12 @@ struct WINRT_EBO ContactFieldFactory :
 {
     ContactFieldFactory(std::nullptr_t) noexcept {}
     ContactFieldFactory();
+};
+
+struct WINRT_EBO ContactGroup :
+    Windows::ApplicationModel::Contacts::IContactGroup
+{
+    ContactGroup(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO ContactInformation :
@@ -229,10 +237,14 @@ struct ContactManager
     static Windows::ApplicationModel::Contacts::ContactNameOrder SystemSortOrder();
     static void SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value);
     static Windows::ApplicationModel::Contacts::ContactManagerForUser GetForUser(const Windows::System::User & user);
+    static Windows::Foundation::IAsyncOperation<bool> IsShowFullContactCardSupportedAsync();
+    static bool IncludeMiddleNameInSystemDisplayAndSort();
+    static void IncludeMiddleNameInSystemDisplayAndSort(bool value);
 };
 
 struct WINRT_EBO ContactManagerForUser :
-    Windows::ApplicationModel::Contacts::IContactManagerForUser
+    Windows::ApplicationModel::Contacts::IContactManagerForUser,
+    impl::require<ContactManagerForUser, Windows::ApplicationModel::Contacts::IContactManagerForUser2>
 {
     ContactManagerForUser(std::nullptr_t) noexcept {}
 };
@@ -241,6 +253,24 @@ struct WINRT_EBO ContactMatchReason :
     Windows::ApplicationModel::Contacts::IContactMatchReason
 {
     ContactMatchReason(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ContactPanel :
+    Windows::ApplicationModel::Contacts::IContactPanel
+{
+    ContactPanel(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ContactPanelClosingEventArgs :
+    Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs
+{
+    ContactPanelClosingEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO ContactPanelLaunchFullAppRequestedEventArgs :
+    Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs
+{
+    ContactPanelLaunchFullAppRequestedEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO ContactPhone :
@@ -252,10 +282,12 @@ struct WINRT_EBO ContactPhone :
 
 struct WINRT_EBO ContactPicker :
     Windows::ApplicationModel::Contacts::IContactPicker,
-    impl::require<ContactPicker, Windows::ApplicationModel::Contacts::IContactPicker2>
+    impl::require<ContactPicker, Windows::ApplicationModel::Contacts::IContactPicker2, Windows::ApplicationModel::Contacts::IContactPicker3>
 {
     ContactPicker(std::nullptr_t) noexcept {}
     ContactPicker();
+    static Windows::ApplicationModel::Contacts::ContactPicker CreateForUser(const Windows::System::User & user);
+    static Windows::Foundation::IAsyncOperation<bool> IsSupportedAsync();
 };
 
 struct WINRT_EBO ContactQueryOptions :
@@ -324,6 +356,21 @@ struct [[deprecated("KnownContactField  may be altered or unavailable for releas
     [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] static hstring InstantMessage();
     [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] static Windows::ApplicationModel::Contacts::ContactFieldType ConvertNameToType(hstring_view name);
     [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] static hstring ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type);
+};
+
+struct WINRT_EBO PinnedContactIdsQueryResult :
+    Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult
+{
+    PinnedContactIdsQueryResult(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO PinnedContactManager :
+    Windows::ApplicationModel::Contacts::IPinnedContactManager
+{
+    PinnedContactManager(std::nullptr_t) noexcept {}
+    static Windows::ApplicationModel::Contacts::PinnedContactManager GetDefault();
+    static Windows::ApplicationModel::Contacts::PinnedContactManager GetForUser(const Windows::System::User & user);
+    static bool IsSupported();
 };
 
 }

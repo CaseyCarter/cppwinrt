@@ -52,6 +52,13 @@ struct __declspec(uuid("e4e98445-9bed-4980-9ba0-e87680d1cb74")) __declspec(novta
     virtual HRESULT __stdcall abi_SetFarPlaneDistance(double value) = 0;
 };
 
+struct __declspec(uuid("b55b9f1a-ba8c-4f84-ad79-2e7e1e2450f3")) __declspec(novtable) IHolographicCamera2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_LeftViewportParameters(Windows::Graphics::Holographic::IHolographicCameraViewportParameters ** result) = 0;
+    virtual HRESULT __stdcall get_RightViewportParameters(Windows::Graphics::Holographic::IHolographicCameraViewportParameters ** result) = 0;
+    virtual HRESULT __stdcall get_Display(Windows::Graphics::Holographic::IHolographicDisplay ** result) = 0;
+};
+
 struct __declspec(uuid("0d7d7e30-12de-45bd-912b-c7f6561599d1")) __declspec(novtable) IHolographicCameraPose : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_HolographicCamera(Windows::Graphics::Holographic::IHolographicCamera ** value) = 0;
@@ -71,6 +78,34 @@ struct __declspec(uuid("8eac2ed1-5bf4-4e16-8236-ae0800c11d0d")) __declspec(novta
     virtual HRESULT __stdcall abi_SetFocusPointWithNormalLinearVelocity(Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::Foundation::Numerics::float3 position, Windows::Foundation::Numerics::float3 normal, Windows::Foundation::Numerics::float3 linearVelocity) = 0;
     virtual HRESULT __stdcall get_Direct3D11Device(Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice ** value) = 0;
     virtual HRESULT __stdcall get_Direct3D11BackBuffer(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface ** value) = 0;
+};
+
+struct __declspec(uuid("261270e3-b696-4634-94d6-be0681643599")) __declspec(novtable) IHolographicCameraRenderingParameters2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ReprojectionMode(winrt::Windows::Graphics::Holographic::HolographicReprojectionMode * value) = 0;
+    virtual HRESULT __stdcall put_ReprojectionMode(winrt::Windows::Graphics::Holographic::HolographicReprojectionMode value) = 0;
+    virtual HRESULT __stdcall abi_CommitDirect3D11DepthBuffer(Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface * value) = 0;
+};
+
+struct __declspec(uuid("80cdf3f7-842a-41e1-93ed-5692ab1fbb10")) __declspec(novtable) IHolographicCameraViewportParameters : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_HiddenAreaMesh(uint32_t * __valueSize, Windows::Foundation::Numerics::float2 ** value) = 0;
+    virtual HRESULT __stdcall get_VisibleAreaMesh(uint32_t * __valueSize, Windows::Foundation::Numerics::float2 ** value) = 0;
+};
+
+struct __declspec(uuid("9acea414-1d9f-4090-a388-90c06f6eae9c")) __declspec(novtable) IHolographicDisplay : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
+    virtual HRESULT __stdcall get_MaxViewportSize(Windows::Foundation::Size * value) = 0;
+    virtual HRESULT __stdcall get_IsStereo(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsOpaque(bool * value) = 0;
+    virtual HRESULT __stdcall get_AdapterId(Windows::Graphics::Holographic::HolographicAdapterId * value) = 0;
+    virtual HRESULT __stdcall get_SpatialLocator(Windows::Perception::Spatial::ISpatialLocator ** value) = 0;
+};
+
+struct __declspec(uuid("cb374983-e7b0-4841-8355-3ae5b536e9a4")) __declspec(novtable) IHolographicDisplayStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDefault(Windows::Graphics::Holographic::IHolographicDisplay ** result) = 0;
 };
 
 struct __declspec(uuid("c6988eb6-a8b9-3054-a6eb-d624b6536375")) __declspec(novtable) IHolographicFrame : Windows::Foundation::IInspectable
@@ -119,6 +154,14 @@ struct __declspec(uuid("364e6064-c8f2-3ba1-8391-66b8489e67fd")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateForCoreWindow(Windows::UI::Core::ICoreWindow * window, Windows::Graphics::Holographic::IHolographicSpace ** value) = 0;
 };
 
+struct __declspec(uuid("0e777088-75fc-48af-8758-0652f6f07c59")) __declspec(novtable) IHolographicSpaceStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsAvailable(bool * value) = 0;
+    virtual HRESULT __stdcall add_IsAvailableChanged(Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_IsAvailableChanged(event_token token) = 0;
+};
+
 }
 
 namespace ABI {
@@ -126,6 +169,8 @@ namespace ABI {
 template <> struct traits<Windows::Graphics::Holographic::HolographicCamera> { using default_interface = Windows::Graphics::Holographic::IHolographicCamera; };
 template <> struct traits<Windows::Graphics::Holographic::HolographicCameraPose> { using default_interface = Windows::Graphics::Holographic::IHolographicCameraPose; };
 template <> struct traits<Windows::Graphics::Holographic::HolographicCameraRenderingParameters> { using default_interface = Windows::Graphics::Holographic::IHolographicCameraRenderingParameters; };
+template <> struct traits<Windows::Graphics::Holographic::HolographicCameraViewportParameters> { using default_interface = Windows::Graphics::Holographic::IHolographicCameraViewportParameters; };
+template <> struct traits<Windows::Graphics::Holographic::HolographicDisplay> { using default_interface = Windows::Graphics::Holographic::IHolographicDisplay; };
 template <> struct traits<Windows::Graphics::Holographic::HolographicFrame> { using default_interface = Windows::Graphics::Holographic::IHolographicFrame; };
 template <> struct traits<Windows::Graphics::Holographic::HolographicFramePrediction> { using default_interface = Windows::Graphics::Holographic::IHolographicFramePrediction; };
 template <> struct traits<Windows::Graphics::Holographic::HolographicSpace> { using default_interface = Windows::Graphics::Holographic::IHolographicSpace; };
@@ -149,6 +194,14 @@ struct WINRT_EBO impl_IHolographicCamera
 };
 
 template <typename D>
+struct WINRT_EBO impl_IHolographicCamera2
+{
+    Windows::Graphics::Holographic::HolographicCameraViewportParameters LeftViewportParameters() const;
+    Windows::Graphics::Holographic::HolographicCameraViewportParameters RightViewportParameters() const;
+    Windows::Graphics::Holographic::HolographicDisplay Display() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IHolographicCameraPose
 {
     Windows::Graphics::Holographic::HolographicCamera HolographicCamera() const;
@@ -169,6 +222,38 @@ struct WINRT_EBO impl_IHolographicCameraRenderingParameters
     void SetFocusPoint(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::float3 & normal, const Windows::Foundation::Numerics::float3 & linearVelocity) const;
     Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice Direct3D11Device() const;
     Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface Direct3D11BackBuffer() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicCameraRenderingParameters2
+{
+    Windows::Graphics::Holographic::HolographicReprojectionMode ReprojectionMode() const;
+    void ReprojectionMode(Windows::Graphics::Holographic::HolographicReprojectionMode value) const;
+    void CommitDirect3D11DepthBuffer(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicCameraViewportParameters
+{
+    com_array<Windows::Foundation::Numerics::float2> HiddenAreaMesh() const;
+    com_array<Windows::Foundation::Numerics::float2> VisibleAreaMesh() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicDisplay
+{
+    hstring DisplayName() const;
+    Windows::Foundation::Size MaxViewportSize() const;
+    bool IsStereo() const;
+    bool IsOpaque() const;
+    Windows::Graphics::Holographic::HolographicAdapterId AdapterId() const;
+    Windows::Perception::Spatial::SpatialLocator SpatialLocator() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicDisplayStatics
+{
+    Windows::Graphics::Holographic::HolographicDisplay GetDefault() const;
 };
 
 template <typename D>
@@ -227,6 +312,17 @@ struct WINRT_EBO impl_IHolographicSpaceStatics
     Windows::Graphics::Holographic::HolographicSpace CreateForCoreWindow(const Windows::UI::Core::CoreWindow & window) const;
 };
 
+template <typename D>
+struct WINRT_EBO impl_IHolographicSpaceStatics2
+{
+    bool IsSupported() const;
+    bool IsAvailable() const;
+    event_token IsAvailableChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const;
+    using IsAvailableChanged_revoker = event_revoker<IHolographicSpaceStatics2>;
+    IsAvailableChanged_revoker IsAvailableChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const;
+    void IsAvailableChanged(event_token token) const;
+};
+
 }
 
 namespace impl {
@@ -235,6 +331,12 @@ template <> struct traits<Windows::Graphics::Holographic::IHolographicCamera>
 {
     using abi = ABI::Windows::Graphics::Holographic::IHolographicCamera;
     template <typename D> using consume = Windows::Graphics::Holographic::impl_IHolographicCamera<D>;
+};
+
+template <> struct traits<Windows::Graphics::Holographic::IHolographicCamera2>
+{
+    using abi = ABI::Windows::Graphics::Holographic::IHolographicCamera2;
+    template <typename D> using consume = Windows::Graphics::Holographic::impl_IHolographicCamera2<D>;
 };
 
 template <> struct traits<Windows::Graphics::Holographic::IHolographicCameraPose>
@@ -247,6 +349,30 @@ template <> struct traits<Windows::Graphics::Holographic::IHolographicCameraRend
 {
     using abi = ABI::Windows::Graphics::Holographic::IHolographicCameraRenderingParameters;
     template <typename D> using consume = Windows::Graphics::Holographic::impl_IHolographicCameraRenderingParameters<D>;
+};
+
+template <> struct traits<Windows::Graphics::Holographic::IHolographicCameraRenderingParameters2>
+{
+    using abi = ABI::Windows::Graphics::Holographic::IHolographicCameraRenderingParameters2;
+    template <typename D> using consume = Windows::Graphics::Holographic::impl_IHolographicCameraRenderingParameters2<D>;
+};
+
+template <> struct traits<Windows::Graphics::Holographic::IHolographicCameraViewportParameters>
+{
+    using abi = ABI::Windows::Graphics::Holographic::IHolographicCameraViewportParameters;
+    template <typename D> using consume = Windows::Graphics::Holographic::impl_IHolographicCameraViewportParameters<D>;
+};
+
+template <> struct traits<Windows::Graphics::Holographic::IHolographicDisplay>
+{
+    using abi = ABI::Windows::Graphics::Holographic::IHolographicDisplay;
+    template <typename D> using consume = Windows::Graphics::Holographic::impl_IHolographicDisplay<D>;
+};
+
+template <> struct traits<Windows::Graphics::Holographic::IHolographicDisplayStatics>
+{
+    using abi = ABI::Windows::Graphics::Holographic::IHolographicDisplayStatics;
+    template <typename D> using consume = Windows::Graphics::Holographic::impl_IHolographicDisplayStatics<D>;
 };
 
 template <> struct traits<Windows::Graphics::Holographic::IHolographicFrame>
@@ -285,6 +411,12 @@ template <> struct traits<Windows::Graphics::Holographic::IHolographicSpaceStati
     template <typename D> using consume = Windows::Graphics::Holographic::impl_IHolographicSpaceStatics<D>;
 };
 
+template <> struct traits<Windows::Graphics::Holographic::IHolographicSpaceStatics2>
+{
+    using abi = ABI::Windows::Graphics::Holographic::IHolographicSpaceStatics2;
+    template <typename D> using consume = Windows::Graphics::Holographic::impl_IHolographicSpaceStatics2<D>;
+};
+
 template <> struct traits<Windows::Graphics::Holographic::HolographicCamera>
 {
     using abi = ABI::Windows::Graphics::Holographic::HolographicCamera;
@@ -301,6 +433,18 @@ template <> struct traits<Windows::Graphics::Holographic::HolographicCameraRende
 {
     using abi = ABI::Windows::Graphics::Holographic::HolographicCameraRenderingParameters;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Holographic.HolographicCameraRenderingParameters"; }
+};
+
+template <> struct traits<Windows::Graphics::Holographic::HolographicCameraViewportParameters>
+{
+    using abi = ABI::Windows::Graphics::Holographic::HolographicCameraViewportParameters;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Holographic.HolographicCameraViewportParameters"; }
+};
+
+template <> struct traits<Windows::Graphics::Holographic::HolographicDisplay>
+{
+    using abi = ABI::Windows::Graphics::Holographic::HolographicDisplay;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Holographic.HolographicDisplay"; }
 };
 
 template <> struct traits<Windows::Graphics::Holographic::HolographicFrame>

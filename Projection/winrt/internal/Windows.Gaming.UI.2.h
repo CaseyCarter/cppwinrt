@@ -26,6 +26,20 @@ struct IGameBarStatics :
     IGameBarStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IGameChatOverlay :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGameChatOverlay>
+{
+    IGameChatOverlay(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IGameChatOverlayStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGameChatOverlayStatics>
+{
+    IGameChatOverlayStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 }
 
 }

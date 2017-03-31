@@ -6,6 +6,7 @@
 #include "../base.h"
 #include "Windows.ApplicationModel.UserDataAccounts.0.h"
 #include "Windows.Foundation.0.h"
+#include "Windows.Foundation.Collections.0.h"
 #include "Windows.Storage.Streams.0.h"
 #include "Windows.System.0.h"
 #include "Windows.ApplicationModel.Appointments.1.h"
@@ -13,6 +14,7 @@
 #include "Windows.ApplicationModel.Email.1.h"
 #include "Windows.ApplicationModel.Contacts.1.h"
 #include "Windows.Foundation.Collections.1.h"
+#include "Windows.ApplicationModel.UserDataTasks.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -49,6 +51,18 @@ struct __declspec(uuid("01533845-6c43-4286-9d69-3e1709a1f266")) __declspec(novta
     virtual HRESULT __stdcall put_DisplayName(hstring value) = 0;
 };
 
+struct __declspec(uuid("c4315210-eae5-4f0a-a8b2-1cca115e008f")) __declspec(novtable) IUserDataAccount4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_CanShowCreateContactGroup(bool * value) = 0;
+    virtual HRESULT __stdcall put_CanShowCreateContactGroup(bool value) = 0;
+    virtual HRESULT __stdcall get_ProviderProperties(Windows::Foundation::Collections::IPropertySet ** value) = 0;
+    virtual HRESULT __stdcall abi_FindUserDataTaskListsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataTasks::UserDataTaskList>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_FindContactGroupsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactGroup>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_TryShowCreateContactGroupAsync(Windows::Foundation::IAsyncOperation<hstring> ** operation) = 0;
+    virtual HRESULT __stdcall put_IsProtectedUnderLock(bool value) = 0;
+    virtual HRESULT __stdcall put_Icon(Windows::Storage::Streams::IRandomAccessStreamReference * value) = 0;
+};
+
 struct __declspec(uuid("56a6e8db-db8f-41ab-a65f-8c5971aac982")) __declspec(novtable) IUserDataAccountManagerForUser : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_RequestStoreAsync(winrt::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> ** result) = 0;
@@ -80,6 +94,11 @@ struct __declspec(uuid("b1e0aef7-9560-4631-8af0-061d30161469")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateAccountWithPackageRelativeAppIdAsync(hstring userDisplayName, hstring packageRelativeAppId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> ** result) = 0;
     virtual HRESULT __stdcall add_StoreChanged(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore, Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_StoreChanged(event_token token) = 0;
+};
+
+struct __declspec(uuid("8142c094-f3c9-478b-b117-6585bebb6789")) __declspec(novtable) IUserDataAccountStore3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(hstring userDisplayName, hstring packageRelativeAppId, hstring enterpriseId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> ** result) = 0;
 };
 
 struct __declspec(uuid("84e3e2e5-8820-4512-b1f6-2e035be1072c")) __declspec(novtable) IUserDataAccountStoreChangedEventArgs : Windows::Foundation::IInspectable
@@ -135,6 +154,19 @@ struct WINRT_EBO impl_IUserDataAccount3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IUserDataAccount4
+{
+    bool CanShowCreateContactGroup() const;
+    void CanShowCreateContactGroup(bool value) const;
+    Windows::Foundation::Collections::IPropertySet ProviderProperties() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataTasks::UserDataTaskList>> FindUserDataTaskListsAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactGroup>> FindContactGroupsAsync() const;
+    Windows::Foundation::IAsyncOperation<hstring> TryShowCreateContactGroupAsync() const;
+    void IsProtectedUnderLock(bool value) const;
+    void Icon(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IUserDataAccountManagerForUser
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType) const;
@@ -175,6 +207,12 @@ struct WINRT_EBO impl_IUserDataAccountStore2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IUserDataAccountStore3
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> CreateAccountAsync(hstring_view userDisplayName, hstring_view packageRelativeAppId, hstring_view enterpriseId) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IUserDataAccountStoreChangedEventArgs
 {
     Windows::Foundation::Deferral GetDeferral() const;
@@ -200,6 +238,12 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::IUserData
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::IUserDataAccount3;
     template <typename D> using consume = Windows::ApplicationModel::UserDataAccounts::impl_IUserDataAccount3<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::UserDataAccounts::IUserDataAccount4>
+{
+    using abi = ABI::Windows::ApplicationModel::UserDataAccounts::IUserDataAccount4;
+    template <typename D> using consume = Windows::ApplicationModel::UserDataAccounts::impl_IUserDataAccount4<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser>
@@ -230,6 +274,12 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::IUserData
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore2;
     template <typename D> using consume = Windows::ApplicationModel::UserDataAccounts::impl_IUserDataAccountStore2<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore3>
+{
+    using abi = ABI::Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore3;
+    template <typename D> using consume = Windows::ApplicationModel::UserDataAccounts::impl_IUserDataAccountStore3<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs>

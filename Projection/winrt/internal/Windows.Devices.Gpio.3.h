@@ -9,6 +9,21 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::Devices::Gpio {
 
+struct WINRT_EBO GpioChangeCounter :
+    Windows::Devices::Gpio::IGpioChangeCounter
+{
+    GpioChangeCounter(std::nullptr_t) noexcept {}
+    GpioChangeCounter(const Windows::Devices::Gpio::GpioPin & pin);
+};
+
+struct WINRT_EBO GpioChangeReader :
+    Windows::Devices::Gpio::IGpioChangeReader
+{
+    GpioChangeReader(std::nullptr_t) noexcept {}
+    GpioChangeReader(const Windows::Devices::Gpio::GpioPin & pin);
+    GpioChangeReader(const Windows::Devices::Gpio::GpioPin & pin, int32_t minCapacity);
+};
+
 struct WINRT_EBO GpioController :
     Windows::Devices::Gpio::IGpioController
 {

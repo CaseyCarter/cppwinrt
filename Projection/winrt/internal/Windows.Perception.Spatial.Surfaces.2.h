@@ -193,6 +193,14 @@ struct ISpatialSurfaceObserverStatics :
     ISpatialSurfaceObserverStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ISpatialSurfaceObserverStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialSurfaceObserverStatics2>,
+    impl::require<ISpatialSurfaceObserverStatics2, Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics>
+{
+    ISpatialSurfaceObserverStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 }
 
 }

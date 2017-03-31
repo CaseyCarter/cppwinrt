@@ -617,20 +617,6 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Ser
     return result;
 }
 
-template <typename D> Windows::Devices::SerialCommunication::SerialError impl_IErrorReceivedEventArgs<D>::Error() const
-{
-    Windows::Devices::SerialCommunication::SerialError value {};
-    check_hresult(WINRT_SHIM(IErrorReceivedEventArgs)->get_Error(&value));
-    return value;
-}
-
-template <typename D> Windows::Devices::SerialCommunication::SerialPinChange impl_IPinChangedEventArgs<D>::PinChange() const
-{
-    Windows::Devices::SerialCommunication::SerialPinChange value {};
-    check_hresult(WINRT_SHIM(IPinChangedEventArgs)->get_PinChange(&value));
-    return value;
-}
-
 template <typename D> uint32_t impl_ISerialDevice<D>::BaudRate() const
 {
     uint32_t value {};
@@ -846,6 +832,20 @@ template <typename D> event_revoker<ISerialDevice> impl_ISerialDevice<D>::PinCha
 template <typename D> void impl_ISerialDevice<D>::PinChanged(event_token token) const
 {
     check_hresult(WINRT_SHIM(ISerialDevice)->remove_PinChanged(token));
+}
+
+template <typename D> Windows::Devices::SerialCommunication::SerialError impl_IErrorReceivedEventArgs<D>::Error() const
+{
+    Windows::Devices::SerialCommunication::SerialError value {};
+    check_hresult(WINRT_SHIM(IErrorReceivedEventArgs)->get_Error(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::SerialCommunication::SerialPinChange impl_IPinChangedEventArgs<D>::PinChange() const
+{
+    Windows::Devices::SerialCommunication::SerialPinChange value {};
+    check_hresult(WINRT_SHIM(IPinChangedEventArgs)->get_PinChange(&value));
+    return value;
 }
 
 inline hstring SerialDevice::GetDeviceSelector()

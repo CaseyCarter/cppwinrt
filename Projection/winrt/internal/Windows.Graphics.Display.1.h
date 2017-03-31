@@ -18,6 +18,31 @@ struct __declspec(uuid("dbdd8b01-f1a1-46d1-9ee3-543bcc995980")) __declspec(novta
     virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender) = 0;
 };
 
+struct __declspec(uuid("96c9621a-c143-4392-bedd-4a7e9574c8fd")) __declspec(novtable) IBrightnessOverride : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsSupported(bool * value) = 0;
+    virtual HRESULT __stdcall get_IsOverrideActive(bool * value) = 0;
+    virtual HRESULT __stdcall get_BrightnessLevel(double * level) = 0;
+    virtual HRESULT __stdcall abi_SetBrightnessLevel(double brightnessLevel, winrt::Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) = 0;
+    virtual HRESULT __stdcall abi_SetBrightnessScenario(winrt::Windows::Graphics::Display::DisplayBrightnessScenario scenario, winrt::Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) = 0;
+    virtual HRESULT __stdcall abi_GetLevelForScenario(winrt::Windows::Graphics::Display::DisplayBrightnessScenario scenario, double * brightnessLevel) = 0;
+    virtual HRESULT __stdcall abi_StartOverride() = 0;
+    virtual HRESULT __stdcall abi_StopOverride() = 0;
+    virtual HRESULT __stdcall add_IsSupportedChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_IsSupportedChanged(event_token token) = 0;
+    virtual HRESULT __stdcall add_IsOverrideActiveChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_IsOverrideActiveChanged(event_token token) = 0;
+    virtual HRESULT __stdcall add_BrightnessLevelChanged(Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_BrightnessLevelChanged(event_token token) = 0;
+};
+
+struct __declspec(uuid("03a7b9ed-e1f1-4a68-a11f-946ad8ce5393")) __declspec(novtable) IBrightnessOverrideStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDefaultForSystem(Windows::Graphics::Display::IBrightnessOverride ** value) = 0;
+    virtual HRESULT __stdcall abi_GetForCurrentView(Windows::Graphics::Display::IBrightnessOverride ** value) = 0;
+    virtual HRESULT __stdcall abi_SaveForSystemAsync(Windows::Graphics::Display::IBrightnessOverride * value, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+};
+
 struct __declspec(uuid("bed112ae-adc3-4dc9-ae65-851f4d7d4799")) __declspec(novtable) IDisplayInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CurrentOrientation(winrt::Windows::Graphics::Display::DisplayOrientations * value) = 0;
@@ -89,11 +114,45 @@ struct __declspec(uuid("6937ed8d-30ea-4ded-8271-4553ff02f68a")) __declspec(novta
 
 namespace ABI {
 
+template <> struct traits<Windows::Graphics::Display::BrightnessOverride> { using default_interface = Windows::Graphics::Display::IBrightnessOverride; };
 template <> struct traits<Windows::Graphics::Display::DisplayInformation> { using default_interface = Windows::Graphics::Display::IDisplayInformation; };
 
 }
 
 namespace Windows::Graphics::Display {
+
+template <typename D>
+struct WINRT_EBO impl_IBrightnessOverride
+{
+    bool IsSupported() const;
+    bool IsOverrideActive() const;
+    double BrightnessLevel() const;
+    void SetBrightnessLevel(double brightnessLevel, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) const;
+    void SetBrightnessScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario, Windows::Graphics::Display::DisplayBrightnessOverrideOptions options) const;
+    double GetLevelForScenario(Windows::Graphics::Display::DisplayBrightnessScenario scenario) const;
+    void StartOverride() const;
+    void StopOverride() const;
+    event_token IsSupportedChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const;
+    using IsSupportedChanged_revoker = event_revoker<IBrightnessOverride>;
+    IsSupportedChanged_revoker IsSupportedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const;
+    void IsSupportedChanged(event_token token) const;
+    event_token IsOverrideActiveChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const;
+    using IsOverrideActiveChanged_revoker = event_revoker<IBrightnessOverride>;
+    IsOverrideActiveChanged_revoker IsOverrideActiveChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const;
+    void IsOverrideActiveChanged(event_token token) const;
+    event_token BrightnessLevelChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const;
+    using BrightnessLevelChanged_revoker = event_revoker<IBrightnessOverride>;
+    BrightnessLevelChanged_revoker BrightnessLevelChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::BrightnessOverride, Windows::Foundation::IInspectable> & handler) const;
+    void BrightnessLevelChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBrightnessOverrideStatics
+{
+    Windows::Graphics::Display::BrightnessOverride GetDefaultForSystem() const;
+    Windows::Graphics::Display::BrightnessOverride GetForCurrentView() const;
+    Windows::Foundation::IAsyncOperation<bool> SaveForSystemAsync(const Windows::Graphics::Display::BrightnessOverride & value) const;
+};
 
 template <typename D>
 struct WINRT_EBO impl_IDisplayInformation
@@ -197,6 +256,18 @@ template <> struct traits<Windows::Graphics::Display::DisplayPropertiesEventHand
     using abi = ABI::Windows::Graphics::Display::DisplayPropertiesEventHandler;
 };
 
+template <> struct traits<Windows::Graphics::Display::IBrightnessOverride>
+{
+    using abi = ABI::Windows::Graphics::Display::IBrightnessOverride;
+    template <typename D> using consume = Windows::Graphics::Display::impl_IBrightnessOverride<D>;
+};
+
+template <> struct traits<Windows::Graphics::Display::IBrightnessOverrideStatics>
+{
+    using abi = ABI::Windows::Graphics::Display::IBrightnessOverrideStatics;
+    template <typename D> using consume = Windows::Graphics::Display::impl_IBrightnessOverrideStatics<D>;
+};
+
 template <> struct traits<Windows::Graphics::Display::IDisplayInformation>
 {
     using abi = ABI::Windows::Graphics::Display::IDisplayInformation;
@@ -231,6 +302,12 @@ template <> struct traits<Windows::Graphics::Display::IDisplayPropertiesStatics>
 {
     using abi = ABI::Windows::Graphics::Display::IDisplayPropertiesStatics;
     template <typename D> using consume = Windows::Graphics::Display::impl_IDisplayPropertiesStatics<D>;
+};
+
+template <> struct traits<Windows::Graphics::Display::BrightnessOverride>
+{
+    using abi = ABI::Windows::Graphics::Display::BrightnessOverride;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Display.BrightnessOverride"; }
 };
 
 template <> struct traits<Windows::Graphics::Display::DisplayInformation>

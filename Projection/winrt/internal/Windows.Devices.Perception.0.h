@@ -207,7 +207,7 @@ template <typename T> struct impl_IPerceptionVideoProfile;
 
 namespace Windows::Devices::Perception {
 
-enum class PerceptionFrameSourceAccessStatus
+enum class [[deprecated("PerceptionFrameSourceAccessStatus may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] PerceptionFrameSourceAccessStatus
 {
     Unspecified = 0,
     Allowed = 1,
@@ -215,7 +215,7 @@ enum class PerceptionFrameSourceAccessStatus
     DeniedBySystem = 3,
 };
 
-enum class PerceptionFrameSourcePropertyChangeStatus
+enum class [[deprecated("PerceptionFrameSourcePropertyChangeStatus may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] PerceptionFrameSourcePropertyChangeStatus
 {
     Unknown = 0,
     Accepted = 1,

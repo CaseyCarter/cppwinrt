@@ -9,9 +9,9 @@
 #include "Windows.Foundation.Collections.0.h"
 #include "Windows.System.0.h"
 #include "Windows.UI.Input.0.h"
+#include "Windows.Foundation.1.h"
 #include "Windows.UI.Input.1.h"
 #include "Windows.Foundation.Collections.1.h"
-#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -273,6 +273,14 @@ struct __declspec(uuid("32c20dd8-faef-4375-a2ab-32640e4815c7")) __declspec(novta
     virtual HRESULT __stdcall add_ClosestInteractiveBoundsRequested(Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> * handler, event_token * pCookie) = 0;
     virtual HRESULT __stdcall remove_ClosestInteractiveBoundsRequested(event_token cookie) = 0;
     virtual HRESULT __stdcall abi_GetCurrentKeyEventDeviceId(hstring * value) = 0;
+};
+
+struct __declspec(uuid("35caf0d0-47f0-436c-af97-0dd88f6f5f02")) __declspec(novtable) ICoreWindow4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall add_ResizeStarted(Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> * handler, event_token * pCookie) = 0;
+    virtual HRESULT __stdcall remove_ResizeStarted(event_token cookie) = 0;
+    virtual HRESULT __stdcall add_ResizeCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> * handler, event_token * pCookie) = 0;
+    virtual HRESULT __stdcall remove_ResizeCompleted(event_token cookie) = 0;
 };
 
 struct __declspec(uuid("272b1ef3-c633-4da5-a26c-c6d0f56b29da")) __declspec(novtable) ICoreWindowEventArgs : Windows::Foundation::IInspectable
@@ -737,6 +745,19 @@ struct WINRT_EBO impl_ICoreWindow3
 };
 
 template <typename D>
+struct WINRT_EBO impl_ICoreWindow4
+{
+    event_token ResizeStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> & handler) const;
+    using ResizeStarted_revoker = event_revoker<ICoreWindow4>;
+    ResizeStarted_revoker ResizeStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> & handler) const;
+    void ResizeStarted(event_token cookie) const;
+    event_token ResizeCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> & handler) const;
+    using ResizeCompleted_revoker = event_revoker<ICoreWindow4>;
+    ResizeCompleted_revoker ResizeCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> & handler) const;
+    void ResizeCompleted(event_token cookie) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ICoreWindowEventArgs
 {
     bool Handled() const;
@@ -1003,6 +1024,12 @@ template <> struct traits<Windows::UI::Core::ICoreWindow3>
 {
     using abi = ABI::Windows::UI::Core::ICoreWindow3;
     template <typename D> using consume = Windows::UI::Core::impl_ICoreWindow3<D>;
+};
+
+template <> struct traits<Windows::UI::Core::ICoreWindow4>
+{
+    using abi = ABI::Windows::UI::Core::ICoreWindow4;
+    template <typename D> using consume = Windows::UI::Core::impl_ICoreWindow4<D>;
 };
 
 template <> struct traits<Windows::UI::Core::ICoreWindowEventArgs>

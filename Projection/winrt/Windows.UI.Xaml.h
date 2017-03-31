@@ -25,6 +25,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.UI.Xaml.Media.Animation.3.h"
 #include "internal/Windows.UI.Xaml.Data.3.h"
 #include "internal/Windows.ApplicationModel.Activation.3.h"
+#include "internal/Windows.UI.Composition.3.h"
 #include "internal/Windows.UI.Xaml.3.h"
 #include "Windows.UI.h"
 #include "Windows.ApplicationModel.Core.h"
@@ -770,6 +771,38 @@ struct produce<D, Windows::UI::Xaml::IApplication2> : produce_base<D, Windows::U
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::IApplication3> : produce_base<D, Windows::UI::Xaml::IApplication3>
+{
+    HRESULT __stdcall get_HighContrastAdjustment(Windows::UI::Xaml::ApplicationHighContrastAdjustment * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().HighContrastAdjustment());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_HighContrastAdjustment(Windows::UI::Xaml::ApplicationHighContrastAdjustment value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().HighContrastAdjustment(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::IApplicationFactory> : produce_base<D, Windows::UI::Xaml::IApplicationFactory>
 {
     HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::IApplication> instance) noexcept override
@@ -1016,6 +1049,67 @@ struct produce<D, Windows::UI::Xaml::IBindingFailedEventArgs> : produce_base<D, 
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::IBringIntoViewOptions> : produce_base<D, Windows::UI::Xaml::IBringIntoViewOptions>
+{
+    HRESULT __stdcall get_AnimationDesired(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AnimationDesired());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_AnimationDesired(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AnimationDesired(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_TargetRect(impl::abi_arg_out<Windows::Foundation::IReference<Windows::Foundation::Rect>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TargetRect());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_TargetRect(impl::abi_arg_in<Windows::Foundation::IReference<Windows::Foundation::Rect>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().TargetRect(*reinterpret_cast<const Windows::Foundation::IReference<Windows::Foundation::Rect> *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -4215,6 +4309,24 @@ struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics4> : produce_base<D
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::IFrameworkElementStatics5> : produce_base<D, Windows::UI::Xaml::IFrameworkElementStatics5>
+{
+    HRESULT __stdcall abi_DeferTree(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> element) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().DeferTree(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::IFrameworkTemplate> : produce_base<D, Windows::UI::Xaml::IFrameworkTemplate>
 {};
 
@@ -7315,6 +7427,417 @@ struct produce<D, Windows::UI::Xaml::IUIElement4> : produce_base<D, Windows::UI:
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::IUIElement5> : produce_base<D, Windows::UI::Xaml::IUIElement5>
+{
+    HRESULT __stdcall get_Lights(impl::abi_arg_out<Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::XamlLight>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Lights());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipPlacementMode());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().KeyTipPlacementMode(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipHorizontalOffset(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipHorizontalOffset());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_KeyTipHorizontalOffset(double value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().KeyTipHorizontalOffset(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipVerticalOffset(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipVerticalOffset());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_KeyTipVerticalOffset(double value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().KeyTipVerticalOffset(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusKeyboardNavigation(Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusKeyboardNavigation());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_XYFocusKeyboardNavigation(Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().XYFocusKeyboardNavigation(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusUpNavigationStrategy());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().XYFocusUpNavigationStrategy(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusDownNavigationStrategy());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().XYFocusDownNavigationStrategy(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusLeftNavigationStrategy());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().XYFocusLeftNavigationStrategy(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusRightNavigationStrategy());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().XYFocusRightNavigationStrategy(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_HighContrastAdjustment(Windows::UI::Xaml::ElementHighContrastAdjustment * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().HighContrastAdjustment());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_HighContrastAdjustment(Windows::UI::Xaml::ElementHighContrastAdjustment value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().HighContrastAdjustment(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_TabFocusNavigation(Windows::UI::Xaml::Input::KeyboardNavigationMode * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TabFocusNavigation());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_TabFocusNavigation(Windows::UI::Xaml::Input::KeyboardNavigationMode value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().TabFocusNavigation(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_GettingFocus(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().GettingFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_GettingFocus(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().GettingFocus(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_LosingFocus(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().LosingFocus(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_LosingFocus(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().LosingFocus(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_NoFocusCandidateFound(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().NoFocusCandidateFound(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_NoFocusCandidateFound(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().NoFocusCandidateFound(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StartBringIntoView() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StartBringIntoView();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_StartBringIntoViewWithOptions(impl::abi_arg_in<Windows::UI::Xaml::IBringIntoViewOptions> options) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StartBringIntoView(*reinterpret_cast<const Windows::UI::Xaml::BringIntoViewOptions *>(&options));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::IUIElementFactory> : produce_base<D, Windows::UI::Xaml::IUIElementFactory>
 {};
 
@@ -8106,6 +8629,224 @@ struct produce<D, Windows::UI::Xaml::IUIElementStatics4> : produce_base<D, Windo
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().AccessKeyProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::IUIElementStatics5> : produce_base<D, Windows::UI::Xaml::IUIElementStatics5>
+{
+    HRESULT __stdcall get_LightsProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().LightsProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipPlacementModeProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipPlacementModeProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipHorizontalOffsetProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipHorizontalOffsetProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipVerticalOffsetProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipVerticalOffsetProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusKeyboardNavigationProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusKeyboardNavigationProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusUpNavigationStrategyProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusUpNavigationStrategyProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusDownNavigationStrategyProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusDownNavigationStrategyProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusLeftNavigationStrategyProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusLeftNavigationStrategyProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusRightNavigationStrategyProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusRightNavigationStrategyProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_HighContrastAdjustmentProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().HighContrastAdjustmentProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_TabFocusNavigationProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TabFocusNavigationProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::IUIElementStatics6> : produce_base<D, Windows::UI::Xaml::IUIElementStatics6>
+{
+    HRESULT __stdcall get_GettingFocusEvent(impl::abi_arg_out<Windows::UI::Xaml::IRoutedEvent> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GettingFocusEvent());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_LosingFocusEvent(impl::abi_arg_out<Windows::UI::Xaml::IRoutedEvent> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().LosingFocusEvent());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_NoFocusCandidateFoundEvent(impl::abi_arg_out<Windows::UI::Xaml::IRoutedEvent> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().NoFocusCandidateFoundEvent());
             return S_OK;
         }
         catch (...)
@@ -9039,6 +9780,25 @@ struct produce<D, Windows::UI::Xaml::IWindow2> : produce_base<D, Windows::UI::Xa
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::IWindow3> : produce_base<D, Windows::UI::Xaml::IWindow3>
+{
+    HRESULT __stdcall get_Compositor(impl::abi_arg_out<Windows::UI::Composition::ICompositor> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Compositor());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::IWindowCreatedEventArgs> : produce_base<D, Windows::UI::Xaml::IWindowCreatedEventArgs>
 {
     HRESULT __stdcall get_Window(impl::abi_arg_out<Windows::UI::Xaml::IWindow> value) noexcept override
@@ -9267,6 +10027,30 @@ template <typename D> Windows::UI::Xaml::Thickness impl_IThicknessHelperStatics<
     Windows::UI::Xaml::Thickness returnValue {};
     check_hresult(WINRT_SHIM(IThicknessHelperStatics)->abi_FromUniformLength(uniformLength, put_abi(returnValue)));
     return returnValue;
+}
+
+template <typename D> bool impl_IBringIntoViewOptions<D>::AnimationDesired() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBringIntoViewOptions)->get_AnimationDesired(&value));
+    return value;
+}
+
+template <typename D> void impl_IBringIntoViewOptions<D>::AnimationDesired(bool value) const
+{
+    check_hresult(WINRT_SHIM(IBringIntoViewOptions)->put_AnimationDesired(value));
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::Rect> impl_IBringIntoViewOptions<D>::TargetRect() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::Rect> value;
+    check_hresult(WINRT_SHIM(IBringIntoViewOptions)->get_TargetRect(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IBringIntoViewOptions<D>::TargetRect(const optional<Windows::Foundation::Rect> & value) const
+{
+    check_hresult(WINRT_SHIM(IBringIntoViewOptions)->put_TargetRect(get_abi(value)));
 }
 
 template <typename D> Windows::Foundation::IInspectable impl_IDataContextChangedEventArgs<D>::NewValue() const
@@ -9523,35 +10307,6 @@ template <typename D> void impl_IDragUIOverride<D>::SetContentFromSoftwareBitmap
     check_hresult(WINRT_SHIM(IDragUIOverride)->abi_SetContentFromSoftwareBitmapWithAnchorPoint(get_abi(softwareBitmap), get_abi(anchorPoint)));
 }
 
-template <typename D> double impl_IElementSoundPlayerStatics<D>::Volume() const
-{
-    double value {};
-    check_hresult(WINRT_SHIM(IElementSoundPlayerStatics)->get_Volume(&value));
-    return value;
-}
-
-template <typename D> void impl_IElementSoundPlayerStatics<D>::Volume(double value) const
-{
-    check_hresult(WINRT_SHIM(IElementSoundPlayerStatics)->put_Volume(value));
-}
-
-template <typename D> Windows::UI::Xaml::ElementSoundPlayerState impl_IElementSoundPlayerStatics<D>::State() const
-{
-    Windows::UI::Xaml::ElementSoundPlayerState value {};
-    check_hresult(WINRT_SHIM(IElementSoundPlayerStatics)->get_State(&value));
-    return value;
-}
-
-template <typename D> void impl_IElementSoundPlayerStatics<D>::State(Windows::UI::Xaml::ElementSoundPlayerState value) const
-{
-    check_hresult(WINRT_SHIM(IElementSoundPlayerStatics)->put_State(value));
-}
-
-template <typename D> void impl_IElementSoundPlayerStatics<D>::Play(Windows::UI::Xaml::ElementSoundKind sound) const
-{
-    check_hresult(WINRT_SHIM(IElementSoundPlayerStatics)->abi_Play(sound));
-}
-
 template <typename D> Windows::Foundation::IInspectable impl_IPropertyMetadata<D>::DefaultValue() const
 {
     Windows::Foundation::IInspectable value;
@@ -9720,143 +10475,6 @@ template <typename D> Windows::UI::Xaml::Controls::Control impl_IVisualStateChan
 template <typename D> void impl_IVisualStateChangedEventArgs<D>::Control(const Windows::UI::Xaml::Controls::Control & value) const
 {
     check_hresult(WINRT_SHIM(IVisualStateChangedEventArgs)->put_Control(get_abi(value)));
-}
-
-template <typename D> Windows::Foundation::Rect impl_IWindow<D>::Bounds() const
-{
-    Windows::Foundation::Rect value {};
-    check_hresult(WINRT_SHIM(IWindow)->get_Bounds(put_abi(value)));
-    return value;
-}
-
-template <typename D> bool impl_IWindow<D>::Visible() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IWindow)->get_Visible(&value));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::UIElement impl_IWindow<D>::Content() const
-{
-    Windows::UI::Xaml::UIElement value { nullptr };
-    check_hresult(WINRT_SHIM(IWindow)->get_Content(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IWindow<D>::Content(const Windows::UI::Xaml::UIElement & value) const
-{
-    check_hresult(WINRT_SHIM(IWindow)->put_Content(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Core::CoreWindow impl_IWindow<D>::CoreWindow() const
-{
-    Windows::UI::Core::CoreWindow value { nullptr };
-    check_hresult(WINRT_SHIM(IWindow)->get_CoreWindow(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Core::CoreDispatcher impl_IWindow<D>::Dispatcher() const
-{
-    Windows::UI::Core::CoreDispatcher value { nullptr };
-    check_hresult(WINRT_SHIM(IWindow)->get_Dispatcher(put_abi(value)));
-    return value;
-}
-
-template <typename D> event_token impl_IWindow<D>::Activated(const Windows::UI::Xaml::WindowActivatedEventHandler & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IWindow)->add_Activated(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IWindow> impl_IWindow<D>::Activated(auto_revoke_t, const Windows::UI::Xaml::WindowActivatedEventHandler & value) const
-{
-    return impl::make_event_revoker<D, IWindow>(this, &ABI::Windows::UI::Xaml::IWindow::remove_Activated, Activated(value));
-}
-
-template <typename D> void impl_IWindow<D>::Activated(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IWindow)->remove_Activated(token));
-}
-
-template <typename D> event_token impl_IWindow<D>::Closed(const Windows::UI::Xaml::WindowClosedEventHandler & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IWindow)->add_Closed(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IWindow> impl_IWindow<D>::Closed(auto_revoke_t, const Windows::UI::Xaml::WindowClosedEventHandler & value) const
-{
-    return impl::make_event_revoker<D, IWindow>(this, &ABI::Windows::UI::Xaml::IWindow::remove_Closed, Closed(value));
-}
-
-template <typename D> void impl_IWindow<D>::Closed(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IWindow)->remove_Closed(token));
-}
-
-template <typename D> event_token impl_IWindow<D>::SizeChanged(const Windows::UI::Xaml::WindowSizeChangedEventHandler & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IWindow)->add_SizeChanged(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IWindow> impl_IWindow<D>::SizeChanged(auto_revoke_t, const Windows::UI::Xaml::WindowSizeChangedEventHandler & value) const
-{
-    return impl::make_event_revoker<D, IWindow>(this, &ABI::Windows::UI::Xaml::IWindow::remove_SizeChanged, SizeChanged(value));
-}
-
-template <typename D> void impl_IWindow<D>::SizeChanged(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IWindow)->remove_SizeChanged(token));
-}
-
-template <typename D> event_token impl_IWindow<D>::VisibilityChanged(const Windows::UI::Xaml::WindowVisibilityChangedEventHandler & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IWindow)->add_VisibilityChanged(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IWindow> impl_IWindow<D>::VisibilityChanged(auto_revoke_t, const Windows::UI::Xaml::WindowVisibilityChangedEventHandler & value) const
-{
-    return impl::make_event_revoker<D, IWindow>(this, &ABI::Windows::UI::Xaml::IWindow::remove_VisibilityChanged, VisibilityChanged(value));
-}
-
-template <typename D> void impl_IWindow<D>::VisibilityChanged(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IWindow)->remove_VisibilityChanged(token));
-}
-
-template <typename D> void impl_IWindow<D>::Activate() const
-{
-    check_hresult(WINRT_SHIM(IWindow)->abi_Activate());
-}
-
-template <typename D> void impl_IWindow<D>::Close() const
-{
-    check_hresult(WINRT_SHIM(IWindow)->abi_Close());
-}
-
-template <typename D> Windows::UI::Xaml::Window impl_IWindowStatics<D>::Current() const
-{
-    Windows::UI::Xaml::Window value { nullptr };
-    check_hresult(WINRT_SHIM(IWindowStatics)->get_Current(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IWindow2<D>::SetTitleBar(const Windows::UI::Xaml::UIElement & value) const
-{
-    check_hresult(WINRT_SHIM(IWindow2)->abi_SetTitleBar(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Xaml::Window impl_IWindowCreatedEventArgs<D>::Window() const
-{
-    Windows::UI::Xaml::Window value { nullptr };
-    check_hresult(WINRT_SHIM(IWindowCreatedEventArgs)->get_Window(put_abi(value)));
-    return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObjectCollection impl_IDependencyObjectCollectionFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
@@ -11435,6 +12053,292 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStati
     return value;
 }
 
+template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::XamlLight> impl_IUIElement5<D>::Lights() const
+{
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::XamlLight> value;
+    check_hresult(WINRT_SHIM(IUIElement5)->get_Lights(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Input::KeyTipPlacementMode impl_IUIElement5<D>::KeyTipPlacementMode() const
+{
+    Windows::UI::Xaml::Input::KeyTipPlacementMode value {};
+    check_hresult(WINRT_SHIM(IUIElement5)->get_KeyTipPlacementMode(&value));
+    return value;
+}
+
+template <typename D> void impl_IUIElement5<D>::KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode value) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->put_KeyTipPlacementMode(value));
+}
+
+template <typename D> double impl_IUIElement5<D>::KeyTipHorizontalOffset() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IUIElement5)->get_KeyTipHorizontalOffset(&value));
+    return value;
+}
+
+template <typename D> void impl_IUIElement5<D>::KeyTipHorizontalOffset(double value) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->put_KeyTipHorizontalOffset(value));
+}
+
+template <typename D> double impl_IUIElement5<D>::KeyTipVerticalOffset() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IUIElement5)->get_KeyTipVerticalOffset(&value));
+    return value;
+}
+
+template <typename D> void impl_IUIElement5<D>::KeyTipVerticalOffset(double value) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->put_KeyTipVerticalOffset(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode impl_IUIElement5<D>::XYFocusKeyboardNavigation() const
+{
+    Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode value {};
+    check_hresult(WINRT_SHIM(IUIElement5)->get_XYFocusKeyboardNavigation(&value));
+    return value;
+}
+
+template <typename D> void impl_IUIElement5<D>::XYFocusKeyboardNavigation(Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode value) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->put_XYFocusKeyboardNavigation(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::XYFocusNavigationStrategy impl_IUIElement5<D>::XYFocusUpNavigationStrategy() const
+{
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy value {};
+    check_hresult(WINRT_SHIM(IUIElement5)->get_XYFocusUpNavigationStrategy(&value));
+    return value;
+}
+
+template <typename D> void impl_IUIElement5<D>::XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->put_XYFocusUpNavigationStrategy(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::XYFocusNavigationStrategy impl_IUIElement5<D>::XYFocusDownNavigationStrategy() const
+{
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy value {};
+    check_hresult(WINRT_SHIM(IUIElement5)->get_XYFocusDownNavigationStrategy(&value));
+    return value;
+}
+
+template <typename D> void impl_IUIElement5<D>::XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->put_XYFocusDownNavigationStrategy(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::XYFocusNavigationStrategy impl_IUIElement5<D>::XYFocusLeftNavigationStrategy() const
+{
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy value {};
+    check_hresult(WINRT_SHIM(IUIElement5)->get_XYFocusLeftNavigationStrategy(&value));
+    return value;
+}
+
+template <typename D> void impl_IUIElement5<D>::XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->put_XYFocusLeftNavigationStrategy(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::XYFocusNavigationStrategy impl_IUIElement5<D>::XYFocusRightNavigationStrategy() const
+{
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy value {};
+    check_hresult(WINRT_SHIM(IUIElement5)->get_XYFocusRightNavigationStrategy(&value));
+    return value;
+}
+
+template <typename D> void impl_IUIElement5<D>::XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->put_XYFocusRightNavigationStrategy(value));
+}
+
+template <typename D> Windows::UI::Xaml::ElementHighContrastAdjustment impl_IUIElement5<D>::HighContrastAdjustment() const
+{
+    Windows::UI::Xaml::ElementHighContrastAdjustment value {};
+    check_hresult(WINRT_SHIM(IUIElement5)->get_HighContrastAdjustment(&value));
+    return value;
+}
+
+template <typename D> void impl_IUIElement5<D>::HighContrastAdjustment(Windows::UI::Xaml::ElementHighContrastAdjustment value) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->put_HighContrastAdjustment(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::KeyboardNavigationMode impl_IUIElement5<D>::TabFocusNavigation() const
+{
+    Windows::UI::Xaml::Input::KeyboardNavigationMode value {};
+    check_hresult(WINRT_SHIM(IUIElement5)->get_TabFocusNavigation(&value));
+    return value;
+}
+
+template <typename D> void impl_IUIElement5<D>::TabFocusNavigation(Windows::UI::Xaml::Input::KeyboardNavigationMode value) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->put_TabFocusNavigation(value));
+}
+
+template <typename D> event_token impl_IUIElement5<D>::GettingFocus(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IUIElement5)->add_GettingFocus(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IUIElement5> impl_IUIElement5<D>::GettingFocus(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, IUIElement5>(this, &ABI::Windows::UI::Xaml::IUIElement5::remove_GettingFocus, GettingFocus(value));
+}
+
+template <typename D> void impl_IUIElement5<D>::GettingFocus(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->remove_GettingFocus(token));
+}
+
+template <typename D> event_token impl_IUIElement5<D>::LosingFocus(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IUIElement5)->add_LosingFocus(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IUIElement5> impl_IUIElement5<D>::LosingFocus(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, IUIElement5>(this, &ABI::Windows::UI::Xaml::IUIElement5::remove_LosingFocus, LosingFocus(value));
+}
+
+template <typename D> void impl_IUIElement5<D>::LosingFocus(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->remove_LosingFocus(token));
+}
+
+template <typename D> event_token impl_IUIElement5<D>::NoFocusCandidateFound(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IUIElement5)->add_NoFocusCandidateFound(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IUIElement5> impl_IUIElement5<D>::NoFocusCandidateFound(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, IUIElement5>(this, &ABI::Windows::UI::Xaml::IUIElement5::remove_NoFocusCandidateFound, NoFocusCandidateFound(value));
+}
+
+template <typename D> void impl_IUIElement5<D>::NoFocusCandidateFound(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->remove_NoFocusCandidateFound(token));
+}
+
+template <typename D> void impl_IUIElement5<D>::StartBringIntoView() const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->abi_StartBringIntoView());
+}
+
+template <typename D> void impl_IUIElement5<D>::StartBringIntoView(const Windows::UI::Xaml::BringIntoViewOptions & options) const
+{
+    check_hresult(WINRT_SHIM(IUIElement5)->abi_StartBringIntoViewWithOptions(get_abi(options)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics5<D>::LightsProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics5)->get_LightsProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics5<D>::KeyTipPlacementModeProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics5)->get_KeyTipPlacementModeProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics5<D>::KeyTipHorizontalOffsetProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics5)->get_KeyTipHorizontalOffsetProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics5<D>::KeyTipVerticalOffsetProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics5)->get_KeyTipVerticalOffsetProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics5<D>::XYFocusKeyboardNavigationProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics5)->get_XYFocusKeyboardNavigationProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics5<D>::XYFocusUpNavigationStrategyProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics5)->get_XYFocusUpNavigationStrategyProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics5<D>::XYFocusDownNavigationStrategyProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics5)->get_XYFocusDownNavigationStrategyProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics5<D>::XYFocusLeftNavigationStrategyProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics5)->get_XYFocusLeftNavigationStrategyProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics5<D>::XYFocusRightNavigationStrategyProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics5)->get_XYFocusRightNavigationStrategyProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics5<D>::HighContrastAdjustmentProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics5)->get_HighContrastAdjustmentProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics5<D>::TabFocusNavigationProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics5)->get_TabFocusNavigationProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics6<D>::GettingFocusEvent() const
+{
+    Windows::UI::Xaml::RoutedEvent value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics6)->get_GettingFocusEvent(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics6<D>::LosingFocusEvent() const
+{
+    Windows::UI::Xaml::RoutedEvent value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics6)->get_LosingFocusEvent(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics6<D>::NoFocusCandidateFoundEvent() const
+{
+    Windows::UI::Xaml::RoutedEvent value { nullptr };
+    check_hresult(WINRT_SHIM(IUIElementStatics6)->get_NoFocusCandidateFoundEvent(put_abi(value)));
+    return value;
+}
+
 template <typename D> hstring impl_IVisualState<D>::Name() const
 {
     hstring value;
@@ -11528,63 +12432,6 @@ template <typename D> event_revoker<IVisualStateGroup> impl_IVisualStateGroup<D>
 template <typename D> void impl_IVisualStateGroup<D>::CurrentStateChanging(event_token token) const
 {
     check_hresult(WINRT_SHIM(IVisualStateGroup)->remove_CurrentStateChanging(token));
-}
-
-template <typename D> bool impl_IVisualStateManagerOverrides<D>::GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_view stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions) const
-{
-    bool returnValue {};
-    check_hresult(WINRT_SHIM(IVisualStateManagerOverrides)->abi_GoToStateCore(get_abi(control), get_abi(templateRoot), get_abi(stateName), get_abi(group), get_abi(state), useTransitions, &returnValue));
-    return returnValue;
-}
-
-template <typename D> void impl_IVisualStateManagerProtected<D>::RaiseCurrentStateChanging(const Windows::UI::Xaml::VisualStateGroup & stateGroup, const Windows::UI::Xaml::VisualState & oldState, const Windows::UI::Xaml::VisualState & newState, const Windows::UI::Xaml::Controls::Control & control) const
-{
-    check_hresult(WINRT_SHIM(IVisualStateManagerProtected)->abi_RaiseCurrentStateChanging(get_abi(stateGroup), get_abi(oldState), get_abi(newState), get_abi(control)));
-}
-
-template <typename D> void impl_IVisualStateManagerProtected<D>::RaiseCurrentStateChanged(const Windows::UI::Xaml::VisualStateGroup & stateGroup, const Windows::UI::Xaml::VisualState & oldState, const Windows::UI::Xaml::VisualState & newState, const Windows::UI::Xaml::Controls::Control & control) const
-{
-    check_hresult(WINRT_SHIM(IVisualStateManagerProtected)->abi_RaiseCurrentStateChanged(get_abi(stateGroup), get_abi(oldState), get_abi(newState), get_abi(control)));
-}
-
-template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualStateGroup> impl_IVisualStateManagerStatics<D>::GetVisualStateGroups(const Windows::UI::Xaml::FrameworkElement & obj) const
-{
-    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualStateGroup> value;
-    check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->abi_GetVisualStateGroups(get_abi(obj), put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IVisualStateManagerStatics<D>::CustomVisualStateManagerProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->get_CustomVisualStateManagerProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::VisualStateManager impl_IVisualStateManagerStatics<D>::GetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj) const
-{
-    Windows::UI::Xaml::VisualStateManager value { nullptr };
-    check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->abi_GetCustomVisualStateManager(get_abi(obj), put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IVisualStateManagerStatics<D>::SetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj, const Windows::UI::Xaml::VisualStateManager & value) const
-{
-    check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->abi_SetCustomVisualStateManager(get_abi(obj), get_abi(value)));
-}
-
-template <typename D> bool impl_IVisualStateManagerStatics<D>::GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_view stateName, bool useTransitions) const
-{
-    bool returnValue {};
-    check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->abi_GoToState(get_abi(control), get_abi(stateName), useTransitions, &returnValue));
-    return returnValue;
-}
-
-template <typename D> Windows::UI::Xaml::VisualStateManager impl_IVisualStateManagerFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
-{
-    Windows::UI::Xaml::VisualStateManager instance { nullptr };
-    check_hresult(WINRT_SHIM(IVisualStateManagerFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Duration impl_IVisualTransition<D>::GeneratedDuration() const
@@ -12370,6 +13217,11 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkEleme
     return value;
 }
 
+template <typename D> void impl_IFrameworkElementStatics5<D>::DeferTree(const Windows::UI::Xaml::DependencyObject & element) const
+{
+    check_hresult(WINRT_SHIM(IFrameworkElementStatics5)->abi_DeferTree(get_abi(element)));
+}
+
 template <typename D> hstring impl_IMediaFailedRoutedEventArgs<D>::ErrorTrace() const
 {
     hstring value;
@@ -12570,6 +13422,35 @@ template <typename D> bool impl_IDebugSettings3<D>::IsTextPerformanceVisualizati
 template <typename D> void impl_IDebugSettings3<D>::IsTextPerformanceVisualizationEnabled(bool value) const
 {
     check_hresult(WINRT_SHIM(IDebugSettings3)->put_IsTextPerformanceVisualizationEnabled(value));
+}
+
+template <typename D> double impl_IElementSoundPlayerStatics<D>::Volume() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IElementSoundPlayerStatics)->get_Volume(&value));
+    return value;
+}
+
+template <typename D> void impl_IElementSoundPlayerStatics<D>::Volume(double value) const
+{
+    check_hresult(WINRT_SHIM(IElementSoundPlayerStatics)->put_Volume(value));
+}
+
+template <typename D> Windows::UI::Xaml::ElementSoundPlayerState impl_IElementSoundPlayerStatics<D>::State() const
+{
+    Windows::UI::Xaml::ElementSoundPlayerState value {};
+    check_hresult(WINRT_SHIM(IElementSoundPlayerStatics)->get_State(&value));
+    return value;
+}
+
+template <typename D> void impl_IElementSoundPlayerStatics<D>::State(Windows::UI::Xaml::ElementSoundPlayerState value) const
+{
+    check_hresult(WINRT_SHIM(IElementSoundPlayerStatics)->put_State(value));
+}
+
+template <typename D> void impl_IElementSoundPlayerStatics<D>::Play(Windows::UI::Xaml::ElementSoundKind sound) const
+{
+    check_hresult(WINRT_SHIM(IElementSoundPlayerStatics)->abi_Play(sound));
 }
 
 template <typename D> Windows::UI::Xaml::ResourceDictionary impl_IApplication<D>::Resources() const
@@ -12796,6 +13677,18 @@ template <typename D> void impl_IApplicationOverrides2<D>::OnBackgroundActivated
     check_hresult(WINRT_SHIM(IApplicationOverrides2)->abi_OnBackgroundActivated(get_abi(args)));
 }
 
+template <typename D> Windows::UI::Xaml::ApplicationHighContrastAdjustment impl_IApplication3<D>::HighContrastAdjustment() const
+{
+    Windows::UI::Xaml::ApplicationHighContrastAdjustment value {};
+    check_hresult(WINRT_SHIM(IApplication3)->get_HighContrastAdjustment(&value));
+    return value;
+}
+
+template <typename D> void impl_IApplication3<D>::HighContrastAdjustment(Windows::UI::Xaml::ApplicationHighContrastAdjustment value) const
+{
+    check_hresult(WINRT_SHIM(IApplication3)->put_HighContrastAdjustment(value));
+}
+
 template <typename D> Windows::Foundation::Point impl_IPointHelperStatics<D>::FromCoordinates(float x, float y) const
 {
     Windows::Foundation::Point returnValue {};
@@ -12929,6 +13822,207 @@ template <typename D> bool impl_ISizeHelperStatics<D>::Equals(const Windows::Fou
     return returnValue;
 }
 
+template <typename D> Windows::Foundation::Rect impl_IWindow<D>::Bounds() const
+{
+    Windows::Foundation::Rect value {};
+    check_hresult(WINRT_SHIM(IWindow)->get_Bounds(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IWindow<D>::Visible() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IWindow)->get_Visible(&value));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::UIElement impl_IWindow<D>::Content() const
+{
+    Windows::UI::Xaml::UIElement value { nullptr };
+    check_hresult(WINRT_SHIM(IWindow)->get_Content(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IWindow<D>::Content(const Windows::UI::Xaml::UIElement & value) const
+{
+    check_hresult(WINRT_SHIM(IWindow)->put_Content(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Core::CoreWindow impl_IWindow<D>::CoreWindow() const
+{
+    Windows::UI::Core::CoreWindow value { nullptr };
+    check_hresult(WINRT_SHIM(IWindow)->get_CoreWindow(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Core::CoreDispatcher impl_IWindow<D>::Dispatcher() const
+{
+    Windows::UI::Core::CoreDispatcher value { nullptr };
+    check_hresult(WINRT_SHIM(IWindow)->get_Dispatcher(put_abi(value)));
+    return value;
+}
+
+template <typename D> event_token impl_IWindow<D>::Activated(const Windows::UI::Xaml::WindowActivatedEventHandler & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IWindow)->add_Activated(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IWindow> impl_IWindow<D>::Activated(auto_revoke_t, const Windows::UI::Xaml::WindowActivatedEventHandler & value) const
+{
+    return impl::make_event_revoker<D, IWindow>(this, &ABI::Windows::UI::Xaml::IWindow::remove_Activated, Activated(value));
+}
+
+template <typename D> void impl_IWindow<D>::Activated(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IWindow)->remove_Activated(token));
+}
+
+template <typename D> event_token impl_IWindow<D>::Closed(const Windows::UI::Xaml::WindowClosedEventHandler & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IWindow)->add_Closed(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IWindow> impl_IWindow<D>::Closed(auto_revoke_t, const Windows::UI::Xaml::WindowClosedEventHandler & value) const
+{
+    return impl::make_event_revoker<D, IWindow>(this, &ABI::Windows::UI::Xaml::IWindow::remove_Closed, Closed(value));
+}
+
+template <typename D> void impl_IWindow<D>::Closed(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IWindow)->remove_Closed(token));
+}
+
+template <typename D> event_token impl_IWindow<D>::SizeChanged(const Windows::UI::Xaml::WindowSizeChangedEventHandler & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IWindow)->add_SizeChanged(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IWindow> impl_IWindow<D>::SizeChanged(auto_revoke_t, const Windows::UI::Xaml::WindowSizeChangedEventHandler & value) const
+{
+    return impl::make_event_revoker<D, IWindow>(this, &ABI::Windows::UI::Xaml::IWindow::remove_SizeChanged, SizeChanged(value));
+}
+
+template <typename D> void impl_IWindow<D>::SizeChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IWindow)->remove_SizeChanged(token));
+}
+
+template <typename D> event_token impl_IWindow<D>::VisibilityChanged(const Windows::UI::Xaml::WindowVisibilityChangedEventHandler & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IWindow)->add_VisibilityChanged(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IWindow> impl_IWindow<D>::VisibilityChanged(auto_revoke_t, const Windows::UI::Xaml::WindowVisibilityChangedEventHandler & value) const
+{
+    return impl::make_event_revoker<D, IWindow>(this, &ABI::Windows::UI::Xaml::IWindow::remove_VisibilityChanged, VisibilityChanged(value));
+}
+
+template <typename D> void impl_IWindow<D>::VisibilityChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IWindow)->remove_VisibilityChanged(token));
+}
+
+template <typename D> void impl_IWindow<D>::Activate() const
+{
+    check_hresult(WINRT_SHIM(IWindow)->abi_Activate());
+}
+
+template <typename D> void impl_IWindow<D>::Close() const
+{
+    check_hresult(WINRT_SHIM(IWindow)->abi_Close());
+}
+
+template <typename D> Windows::UI::Xaml::Window impl_IWindowStatics<D>::Current() const
+{
+    Windows::UI::Xaml::Window value { nullptr };
+    check_hresult(WINRT_SHIM(IWindowStatics)->get_Current(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IWindow2<D>::SetTitleBar(const Windows::UI::Xaml::UIElement & value) const
+{
+    check_hresult(WINRT_SHIM(IWindow2)->abi_SetTitleBar(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Composition::Compositor impl_IWindow3<D>::Compositor() const
+{
+    Windows::UI::Composition::Compositor value { nullptr };
+    check_hresult(WINRT_SHIM(IWindow3)->get_Compositor(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Window impl_IWindowCreatedEventArgs<D>::Window() const
+{
+    Windows::UI::Xaml::Window value { nullptr };
+    check_hresult(WINRT_SHIM(IWindowCreatedEventArgs)->get_Window(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IVisualStateManagerOverrides<D>::GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_view stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions) const
+{
+    bool returnValue {};
+    check_hresult(WINRT_SHIM(IVisualStateManagerOverrides)->abi_GoToStateCore(get_abi(control), get_abi(templateRoot), get_abi(stateName), get_abi(group), get_abi(state), useTransitions, &returnValue));
+    return returnValue;
+}
+
+template <typename D> void impl_IVisualStateManagerProtected<D>::RaiseCurrentStateChanging(const Windows::UI::Xaml::VisualStateGroup & stateGroup, const Windows::UI::Xaml::VisualState & oldState, const Windows::UI::Xaml::VisualState & newState, const Windows::UI::Xaml::Controls::Control & control) const
+{
+    check_hresult(WINRT_SHIM(IVisualStateManagerProtected)->abi_RaiseCurrentStateChanging(get_abi(stateGroup), get_abi(oldState), get_abi(newState), get_abi(control)));
+}
+
+template <typename D> void impl_IVisualStateManagerProtected<D>::RaiseCurrentStateChanged(const Windows::UI::Xaml::VisualStateGroup & stateGroup, const Windows::UI::Xaml::VisualState & oldState, const Windows::UI::Xaml::VisualState & newState, const Windows::UI::Xaml::Controls::Control & control) const
+{
+    check_hresult(WINRT_SHIM(IVisualStateManagerProtected)->abi_RaiseCurrentStateChanged(get_abi(stateGroup), get_abi(oldState), get_abi(newState), get_abi(control)));
+}
+
+template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualStateGroup> impl_IVisualStateManagerStatics<D>::GetVisualStateGroups(const Windows::UI::Xaml::FrameworkElement & obj) const
+{
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualStateGroup> value;
+    check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->abi_GetVisualStateGroups(get_abi(obj), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IVisualStateManagerStatics<D>::CustomVisualStateManagerProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->get_CustomVisualStateManagerProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::VisualStateManager impl_IVisualStateManagerStatics<D>::GetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj) const
+{
+    Windows::UI::Xaml::VisualStateManager value { nullptr };
+    check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->abi_GetCustomVisualStateManager(get_abi(obj), put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IVisualStateManagerStatics<D>::SetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj, const Windows::UI::Xaml::VisualStateManager & value) const
+{
+    check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->abi_SetCustomVisualStateManager(get_abi(obj), get_abi(value)));
+}
+
+template <typename D> bool impl_IVisualStateManagerStatics<D>::GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_view stateName, bool useTransitions) const
+{
+    bool returnValue {};
+    check_hresult(WINRT_SHIM(IVisualStateManagerStatics)->abi_GoToState(get_abi(control), get_abi(stateName), useTransitions, &returnValue));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::VisualStateManager impl_IVisualStateManagerFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
+{
+    Windows::UI::Xaml::VisualStateManager instance { nullptr };
+    check_hresult(WINRT_SHIM(IVisualStateManagerFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
 inline AdaptiveTrigger::AdaptiveTrigger()
 {
     Windows::Foundation::IInspectable outer, inner;
@@ -12970,6 +14064,10 @@ inline void Application::LoadComponent(const Windows::Foundation::IInspectable &
 {
     get_activation_factory<Application, IApplicationStatics>().LoadComponent(component, resourceLocator, componentResourceLocation);
 }
+
+inline BringIntoViewOptions::BringIntoViewOptions() :
+    BringIntoViewOptions(activate_instance<BringIntoViewOptions>())
+{}
 
 inline Windows::UI::Xaml::CornerRadius CornerRadiusHelper::FromRadii(double topLeft, double topRight, double bottomRight, double bottomLeft)
 {
@@ -13233,6 +14331,11 @@ inline Windows::UI::Xaml::DependencyProperty FrameworkElement::FocusVisualPrimar
 inline Windows::UI::Xaml::DependencyProperty FrameworkElement::AllowFocusWhenDisabledProperty()
 {
     return get_activation_factory<FrameworkElement, IFrameworkElementStatics4>().AllowFocusWhenDisabledProperty();
+}
+
+inline void FrameworkElement::DeferTree(const Windows::UI::Xaml::DependencyObject & element)
+{
+    get_activation_factory<FrameworkElement, IFrameworkElementStatics5>().DeferTree(element);
 }
 
 inline FrameworkView::FrameworkView() :
@@ -13717,6 +14820,76 @@ inline Windows::UI::Xaml::DependencyProperty UIElement::AccessKeyProperty()
     return get_activation_factory<UIElement, IUIElementStatics4>().AccessKeyProperty();
 }
 
+inline Windows::UI::Xaml::DependencyProperty UIElement::LightsProperty()
+{
+    return get_activation_factory<UIElement, IUIElementStatics5>().LightsProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty UIElement::KeyTipPlacementModeProperty()
+{
+    return get_activation_factory<UIElement, IUIElementStatics5>().KeyTipPlacementModeProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty UIElement::KeyTipHorizontalOffsetProperty()
+{
+    return get_activation_factory<UIElement, IUIElementStatics5>().KeyTipHorizontalOffsetProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty UIElement::KeyTipVerticalOffsetProperty()
+{
+    return get_activation_factory<UIElement, IUIElementStatics5>().KeyTipVerticalOffsetProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty UIElement::XYFocusKeyboardNavigationProperty()
+{
+    return get_activation_factory<UIElement, IUIElementStatics5>().XYFocusKeyboardNavigationProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty UIElement::XYFocusUpNavigationStrategyProperty()
+{
+    return get_activation_factory<UIElement, IUIElementStatics5>().XYFocusUpNavigationStrategyProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty UIElement::XYFocusDownNavigationStrategyProperty()
+{
+    return get_activation_factory<UIElement, IUIElementStatics5>().XYFocusDownNavigationStrategyProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty UIElement::XYFocusLeftNavigationStrategyProperty()
+{
+    return get_activation_factory<UIElement, IUIElementStatics5>().XYFocusLeftNavigationStrategyProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty UIElement::XYFocusRightNavigationStrategyProperty()
+{
+    return get_activation_factory<UIElement, IUIElementStatics5>().XYFocusRightNavigationStrategyProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty UIElement::HighContrastAdjustmentProperty()
+{
+    return get_activation_factory<UIElement, IUIElementStatics5>().HighContrastAdjustmentProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty UIElement::TabFocusNavigationProperty()
+{
+    return get_activation_factory<UIElement, IUIElementStatics5>().TabFocusNavigationProperty();
+}
+
+inline Windows::UI::Xaml::RoutedEvent UIElement::GettingFocusEvent()
+{
+    return get_activation_factory<UIElement, IUIElementStatics6>().GettingFocusEvent();
+}
+
+inline Windows::UI::Xaml::RoutedEvent UIElement::LosingFocusEvent()
+{
+    return get_activation_factory<UIElement, IUIElementStatics6>().LosingFocusEvent();
+}
+
+inline Windows::UI::Xaml::RoutedEvent UIElement::NoFocusCandidateFoundEvent()
+{
+    return get_activation_factory<UIElement, IUIElementStatics6>().NoFocusCandidateFoundEvent();
+}
+
 inline VisualState::VisualState() :
     VisualState(activate_instance<VisualState>())
 {}
@@ -13821,6 +14994,15 @@ struct std::hash<winrt::Windows::UI::Xaml::IApplication2>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::IApplication3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::IApplication3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::IApplicationFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::IApplicationFactory & value) const noexcept
@@ -13869,6 +15051,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::IBindingFailedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::IBindingFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::IBringIntoViewOptions>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::IBringIntoViewOptions & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -14292,6 +15483,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::IFrameworkElementStatics4>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::IFrameworkElementStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::IFrameworkElementStatics5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::IFrameworkElementStatics5 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -14739,6 +15939,15 @@ struct std::hash<winrt::Windows::UI::Xaml::IUIElement4>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::IUIElement5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::IUIElement5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::IUIElementFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::IUIElementFactory & value) const noexcept
@@ -14787,6 +15996,24 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::IUIElementStatics4>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::IUIElementStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::IUIElementStatics5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::IUIElementStatics5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::IUIElementStatics6>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::IUIElementStatics6 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -14919,6 +16146,15 @@ struct std::hash<winrt::Windows::UI::Xaml::IWindow2>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::IWindow3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::IWindow3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::IWindowCreatedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::IWindowCreatedEventArgs & value) const noexcept
@@ -14967,6 +16203,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::BindingFailedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::BindingFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::BringIntoViewOptions>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::BringIntoViewOptions & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

@@ -10,6 +10,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.UI.Xaml.Media.3.h"
 #include "internal/Windows.UI.Text.3.h"
+#include "internal/Windows.UI.Xaml.Input.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.UI.Xaml.Documents.3.h"
 #include "Windows.UI.Xaml.h"
@@ -917,6 +918,206 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlink3> : produce_base<D, W
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Documents::IHyperlink4> : produce_base<D, Windows::UI::Xaml::Documents::IHyperlink4>
+{
+    HRESULT __stdcall get_FocusState(Windows::UI::Xaml::FocusState * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().FocusState());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusUpNavigationStrategy());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().XYFocusUpNavigationStrategy(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusDownNavigationStrategy());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().XYFocusDownNavigationStrategy(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusLeftNavigationStrategy());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().XYFocusLeftNavigationStrategy(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusRightNavigationStrategy());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().XYFocusRightNavigationStrategy(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_GotFocus(impl::abi_arg_in<Windows::UI::Xaml::RoutedEventHandler> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().GotFocus(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_GotFocus(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().GotFocus(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_LostFocus(impl::abi_arg_in<Windows::UI::Xaml::RoutedEventHandler> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().LostFocus(*reinterpret_cast<const Windows::UI::Xaml::RoutedEventHandler *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_LostFocus(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().LostFocus(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Focus(Windows::UI::Xaml::FocusState value, bool * returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().Focus(value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs> : produce_base<D, Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs>
 {};
 
@@ -1027,6 +1228,85 @@ struct produce<D, Windows::UI::Xaml::Documents::IHyperlinkStatics3> : produce_ba
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().ElementSoundModeProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Documents::IHyperlinkStatics4> : produce_base<D, Windows::UI::Xaml::Documents::IHyperlinkStatics4>
+{
+    HRESULT __stdcall get_FocusStateProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().FocusStateProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusUpNavigationStrategyProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusUpNavigationStrategyProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusDownNavigationStrategyProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusDownNavigationStrategyProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusLeftNavigationStrategyProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusLeftNavigationStrategyProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusRightNavigationStrategyProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusRightNavigationStrategyProperty());
             return S_OK;
         }
         catch (...)
@@ -1744,6 +2024,263 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElement3> : produce_base<D,
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Documents::ITextElement4> : produce_base<D, Windows::UI::Xaml::Documents::ITextElement4>
+{
+    HRESULT __stdcall get_TextDecorations(Windows::UI::Text::TextDecorations * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TextDecorations());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_TextDecorations(Windows::UI::Text::TextDecorations value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().TextDecorations(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsAccessKeyScope(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsAccessKeyScope());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsAccessKeyScope(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsAccessKeyScope(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AccessKeyScopeOwner(impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AccessKeyScopeOwner());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_AccessKeyScopeOwner(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AccessKeyScopeOwner(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipPlacementMode());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().KeyTipPlacementMode(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipHorizontalOffset(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipHorizontalOffset());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_KeyTipHorizontalOffset(double value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().KeyTipHorizontalOffset(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipVerticalOffset(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipVerticalOffset());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_KeyTipVerticalOffset(double value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().KeyTipVerticalOffset(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_AccessKeyDisplayRequested(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().AccessKeyDisplayRequested(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_AccessKeyDisplayRequested(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AccessKeyDisplayRequested(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_AccessKeyDisplayDismissed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().AccessKeyDisplayDismissed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_AccessKeyDisplayDismissed(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AccessKeyDisplayDismissed(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_AccessKeyInvoked(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().AccessKeyInvoked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_AccessKeyInvoked(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AccessKeyInvoked(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Documents::ITextElementFactory> : produce_base<D, Windows::UI::Xaml::Documents::ITextElementFactory>
 {};
 
@@ -1947,6 +2484,100 @@ struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics3> : produce_
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().ExitDisplayModeOnAccessKeyInvokedProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Documents::ITextElementStatics4> : produce_base<D, Windows::UI::Xaml::Documents::ITextElementStatics4>
+{
+    HRESULT __stdcall get_TextDecorationsProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TextDecorationsProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsAccessKeyScopeProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsAccessKeyScopeProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AccessKeyScopeOwnerProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AccessKeyScopeOwnerProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipPlacementModeProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipPlacementModeProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipHorizontalOffsetProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipHorizontalOffsetProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_KeyTipVerticalOffsetProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KeyTipVerticalOffsetProperty());
             return S_OK;
         }
         catch (...)
@@ -5047,6 +5678,171 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementSta
     return value;
 }
 
+template <typename D> Windows::UI::Text::TextDecorations impl_ITextElement4<D>::TextDecorations() const
+{
+    Windows::UI::Text::TextDecorations value {};
+    check_hresult(WINRT_SHIM(ITextElement4)->get_TextDecorations(&value));
+    return value;
+}
+
+template <typename D> void impl_ITextElement4<D>::TextDecorations(Windows::UI::Text::TextDecorations value) const
+{
+    check_hresult(WINRT_SHIM(ITextElement4)->put_TextDecorations(value));
+}
+
+template <typename D> bool impl_ITextElement4<D>::IsAccessKeyScope() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ITextElement4)->get_IsAccessKeyScope(&value));
+    return value;
+}
+
+template <typename D> void impl_ITextElement4<D>::IsAccessKeyScope(bool value) const
+{
+    check_hresult(WINRT_SHIM(ITextElement4)->put_IsAccessKeyScope(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyObject impl_ITextElement4<D>::AccessKeyScopeOwner() const
+{
+    Windows::UI::Xaml::DependencyObject value { nullptr };
+    check_hresult(WINRT_SHIM(ITextElement4)->get_AccessKeyScopeOwner(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITextElement4<D>::AccessKeyScopeOwner(const Windows::UI::Xaml::DependencyObject & value) const
+{
+    check_hresult(WINRT_SHIM(ITextElement4)->put_AccessKeyScopeOwner(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Input::KeyTipPlacementMode impl_ITextElement4<D>::KeyTipPlacementMode() const
+{
+    Windows::UI::Xaml::Input::KeyTipPlacementMode value {};
+    check_hresult(WINRT_SHIM(ITextElement4)->get_KeyTipPlacementMode(&value));
+    return value;
+}
+
+template <typename D> void impl_ITextElement4<D>::KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode value) const
+{
+    check_hresult(WINRT_SHIM(ITextElement4)->put_KeyTipPlacementMode(value));
+}
+
+template <typename D> double impl_ITextElement4<D>::KeyTipHorizontalOffset() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(ITextElement4)->get_KeyTipHorizontalOffset(&value));
+    return value;
+}
+
+template <typename D> void impl_ITextElement4<D>::KeyTipHorizontalOffset(double value) const
+{
+    check_hresult(WINRT_SHIM(ITextElement4)->put_KeyTipHorizontalOffset(value));
+}
+
+template <typename D> double impl_ITextElement4<D>::KeyTipVerticalOffset() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(ITextElement4)->get_KeyTipVerticalOffset(&value));
+    return value;
+}
+
+template <typename D> void impl_ITextElement4<D>::KeyTipVerticalOffset(double value) const
+{
+    check_hresult(WINRT_SHIM(ITextElement4)->put_KeyTipVerticalOffset(value));
+}
+
+template <typename D> event_token impl_ITextElement4<D>::AccessKeyDisplayRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ITextElement4)->add_AccessKeyDisplayRequested(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ITextElement4> impl_ITextElement4<D>::AccessKeyDisplayRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, ITextElement4>(this, &ABI::Windows::UI::Xaml::Documents::ITextElement4::remove_AccessKeyDisplayRequested, AccessKeyDisplayRequested(value));
+}
+
+template <typename D> void impl_ITextElement4<D>::AccessKeyDisplayRequested(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ITextElement4)->remove_AccessKeyDisplayRequested(token));
+}
+
+template <typename D> event_token impl_ITextElement4<D>::AccessKeyDisplayDismissed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ITextElement4)->add_AccessKeyDisplayDismissed(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ITextElement4> impl_ITextElement4<D>::AccessKeyDisplayDismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, ITextElement4>(this, &ABI::Windows::UI::Xaml::Documents::ITextElement4::remove_AccessKeyDisplayDismissed, AccessKeyDisplayDismissed(value));
+}
+
+template <typename D> void impl_ITextElement4<D>::AccessKeyDisplayDismissed(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ITextElement4)->remove_AccessKeyDisplayDismissed(token));
+}
+
+template <typename D> event_token impl_ITextElement4<D>::AccessKeyInvoked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ITextElement4)->add_AccessKeyInvoked(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ITextElement4> impl_ITextElement4<D>::AccessKeyInvoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, ITextElement4>(this, &ABI::Windows::UI::Xaml::Documents::ITextElement4::remove_AccessKeyInvoked, AccessKeyInvoked(value));
+}
+
+template <typename D> void impl_ITextElement4<D>::AccessKeyInvoked(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ITextElement4)->remove_AccessKeyInvoked(token));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics4<D>::TextDecorationsProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ITextElementStatics4)->get_TextDecorationsProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics4<D>::IsAccessKeyScopeProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ITextElementStatics4)->get_IsAccessKeyScopeProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics4<D>::AccessKeyScopeOwnerProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ITextElementStatics4)->get_AccessKeyScopeOwnerProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics4<D>::KeyTipPlacementModeProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ITextElementStatics4)->get_KeyTipPlacementModeProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics4<D>::KeyTipHorizontalOffsetProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ITextElementStatics4)->get_KeyTipHorizontalOffsetProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics4<D>::KeyTipVerticalOffsetProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ITextElementStatics4)->get_KeyTipVerticalOffsetProperty(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Xaml::TextAlignment impl_IBlock<D>::TextAlignment() const
 {
     Windows::UI::Xaml::TextAlignment value {};
@@ -5565,6 +6361,137 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStati
     return value;
 }
 
+template <typename D> Windows::UI::Xaml::FocusState impl_IHyperlink4<D>::FocusState() const
+{
+    Windows::UI::Xaml::FocusState value {};
+    check_hresult(WINRT_SHIM(IHyperlink4)->get_FocusState(&value));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Input::XYFocusNavigationStrategy impl_IHyperlink4<D>::XYFocusUpNavigationStrategy() const
+{
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy value {};
+    check_hresult(WINRT_SHIM(IHyperlink4)->get_XYFocusUpNavigationStrategy(&value));
+    return value;
+}
+
+template <typename D> void impl_IHyperlink4<D>::XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const
+{
+    check_hresult(WINRT_SHIM(IHyperlink4)->put_XYFocusUpNavigationStrategy(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::XYFocusNavigationStrategy impl_IHyperlink4<D>::XYFocusDownNavigationStrategy() const
+{
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy value {};
+    check_hresult(WINRT_SHIM(IHyperlink4)->get_XYFocusDownNavigationStrategy(&value));
+    return value;
+}
+
+template <typename D> void impl_IHyperlink4<D>::XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const
+{
+    check_hresult(WINRT_SHIM(IHyperlink4)->put_XYFocusDownNavigationStrategy(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::XYFocusNavigationStrategy impl_IHyperlink4<D>::XYFocusLeftNavigationStrategy() const
+{
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy value {};
+    check_hresult(WINRT_SHIM(IHyperlink4)->get_XYFocusLeftNavigationStrategy(&value));
+    return value;
+}
+
+template <typename D> void impl_IHyperlink4<D>::XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const
+{
+    check_hresult(WINRT_SHIM(IHyperlink4)->put_XYFocusLeftNavigationStrategy(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::XYFocusNavigationStrategy impl_IHyperlink4<D>::XYFocusRightNavigationStrategy() const
+{
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy value {};
+    check_hresult(WINRT_SHIM(IHyperlink4)->get_XYFocusRightNavigationStrategy(&value));
+    return value;
+}
+
+template <typename D> void impl_IHyperlink4<D>::XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const
+{
+    check_hresult(WINRT_SHIM(IHyperlink4)->put_XYFocusRightNavigationStrategy(value));
+}
+
+template <typename D> event_token impl_IHyperlink4<D>::GotFocus(const Windows::UI::Xaml::RoutedEventHandler & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IHyperlink4)->add_GotFocus(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IHyperlink4> impl_IHyperlink4<D>::GotFocus(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const
+{
+    return impl::make_event_revoker<D, IHyperlink4>(this, &ABI::Windows::UI::Xaml::Documents::IHyperlink4::remove_GotFocus, GotFocus(value));
+}
+
+template <typename D> void impl_IHyperlink4<D>::GotFocus(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IHyperlink4)->remove_GotFocus(token));
+}
+
+template <typename D> event_token impl_IHyperlink4<D>::LostFocus(const Windows::UI::Xaml::RoutedEventHandler & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IHyperlink4)->add_LostFocus(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IHyperlink4> impl_IHyperlink4<D>::LostFocus(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const
+{
+    return impl::make_event_revoker<D, IHyperlink4>(this, &ABI::Windows::UI::Xaml::Documents::IHyperlink4::remove_LostFocus, LostFocus(value));
+}
+
+template <typename D> void impl_IHyperlink4<D>::LostFocus(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IHyperlink4)->remove_LostFocus(token));
+}
+
+template <typename D> bool impl_IHyperlink4<D>::Focus(Windows::UI::Xaml::FocusState value) const
+{
+    bool returnValue {};
+    check_hresult(WINRT_SHIM(IHyperlink4)->abi_Focus(value, &returnValue));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics4<D>::FocusStateProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IHyperlinkStatics4)->get_FocusStateProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics4<D>::XYFocusUpNavigationStrategyProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IHyperlinkStatics4)->get_XYFocusUpNavigationStrategyProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics4<D>::XYFocusDownNavigationStrategyProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IHyperlinkStatics4)->get_XYFocusDownNavigationStrategyProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics4<D>::XYFocusLeftNavigationStrategyProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IHyperlinkStatics4)->get_XYFocusLeftNavigationStrategyProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics4<D>::XYFocusRightNavigationStrategyProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IHyperlinkStatics4)->get_XYFocusRightNavigationStrategyProperty(put_abi(value)));
+    return value;
+}
+
 inline Windows::UI::Xaml::DependencyProperty Block::TextAlignmentProperty()
 {
     return get_activation_factory<Block, IBlockStatics>().TextAlignmentProperty();
@@ -5682,6 +6609,31 @@ inline Windows::UI::Xaml::DependencyProperty Hyperlink::ElementSoundModeProperty
     return get_activation_factory<Hyperlink, IHyperlinkStatics3>().ElementSoundModeProperty();
 }
 
+inline Windows::UI::Xaml::DependencyProperty Hyperlink::FocusStateProperty()
+{
+    return get_activation_factory<Hyperlink, IHyperlinkStatics4>().FocusStateProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty Hyperlink::XYFocusUpNavigationStrategyProperty()
+{
+    return get_activation_factory<Hyperlink, IHyperlinkStatics4>().XYFocusUpNavigationStrategyProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty Hyperlink::XYFocusDownNavigationStrategyProperty()
+{
+    return get_activation_factory<Hyperlink, IHyperlinkStatics4>().XYFocusDownNavigationStrategyProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty Hyperlink::XYFocusLeftNavigationStrategyProperty()
+{
+    return get_activation_factory<Hyperlink, IHyperlinkStatics4>().XYFocusLeftNavigationStrategyProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty Hyperlink::XYFocusRightNavigationStrategyProperty()
+{
+    return get_activation_factory<Hyperlink, IHyperlinkStatics4>().XYFocusRightNavigationStrategyProperty();
+}
+
 inline InlineUIContainer::InlineUIContainer() :
     InlineUIContainer(activate_instance<InlineUIContainer>())
 {}
@@ -5776,6 +6728,36 @@ inline Windows::UI::Xaml::DependencyProperty TextElement::AccessKeyProperty()
 inline Windows::UI::Xaml::DependencyProperty TextElement::ExitDisplayModeOnAccessKeyInvokedProperty()
 {
     return get_activation_factory<TextElement, ITextElementStatics3>().ExitDisplayModeOnAccessKeyInvokedProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty TextElement::TextDecorationsProperty()
+{
+    return get_activation_factory<TextElement, ITextElementStatics4>().TextDecorationsProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty TextElement::IsAccessKeyScopeProperty()
+{
+    return get_activation_factory<TextElement, ITextElementStatics4>().IsAccessKeyScopeProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty TextElement::AccessKeyScopeOwnerProperty()
+{
+    return get_activation_factory<TextElement, ITextElementStatics4>().AccessKeyScopeOwnerProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty TextElement::KeyTipPlacementModeProperty()
+{
+    return get_activation_factory<TextElement, ITextElementStatics4>().KeyTipPlacementModeProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty TextElement::KeyTipHorizontalOffsetProperty()
+{
+    return get_activation_factory<TextElement, ITextElementStatics4>().KeyTipHorizontalOffsetProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty TextElement::KeyTipVerticalOffsetProperty()
+{
+    return get_activation_factory<TextElement, ITextElementStatics4>().KeyTipVerticalOffsetProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty Typography::AnnotationAlternatesProperty()
@@ -6531,6 +7513,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlink3>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlink4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IHyperlink4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Documents::IHyperlinkClickEventArgs & value) const noexcept
@@ -6561,6 +7552,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlinkStatics3>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Documents::IHyperlinkStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::IHyperlinkStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::IHyperlinkStatics4 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -6693,6 +7693,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElement3>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElement4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElement4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElementFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElementFactory & value) const noexcept
@@ -6732,6 +7741,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElementStatics3>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElementStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Documents::ITextElementStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Documents::ITextElementStatics4 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

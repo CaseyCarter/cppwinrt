@@ -37,6 +37,12 @@ struct __declspec(uuid("47135e4f-8549-45c0-925b-80d35efdb10a")) __declspec(novta
     virtual HRESULT __stdcall abi_TryCreateCoordinateMapper(Windows::Media::Devices::Core::ICameraIntrinsics * cameraIntrinsics, Windows::Perception::Spatial::ISpatialCoordinateSystem * coordinateSystem, Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMapper ** value) = 0;
 };
 
+struct __declspec(uuid("6cca473d-c4a4-4176-b0cd-33eae3b35aa3")) __declspec(novtable) IDepthMediaFrame2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_MaxReliableDepth(uint32_t * value) = 0;
+    virtual HRESULT __stdcall get_MinReliableDepth(uint32_t * value) = 0;
+};
+
 struct __declspec(uuid("c312cf40-d729-453e-8780-2e04f140d28e")) __declspec(novtable) IDepthMediaFrameFormat : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_VideoFormat(Windows::Media::Capture::Frames::IVideoMediaFrameFormat ** value) = 0;
@@ -103,6 +109,12 @@ struct __declspec(uuid("6d076635-316d-4b8f-b7b6-eeb04a8c6525")) __declspec(novta
     virtual HRESULT __stdcall get_VideoDeviceController(Windows::Media::Devices::IVideoDeviceController ** value) = 0;
 };
 
+struct __declspec(uuid("efc49fd4-fcf2-4a03-b4e4-ac9628739bee")) __declspec(novtable) IMediaFrameSourceController2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetPropertyByExtendedIdAsync(uint32_t __extendedPropertyIdSize, uint8_t * extendedPropertyId, Windows::Foundation::IReference<uint32_t> * maxPropertyValueSize, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> ** operation) = 0;
+    virtual HRESULT __stdcall abi_SetPropertyByExtendedIdAsync(uint32_t __extendedPropertyIdSize, uint8_t * extendedPropertyId, uint32_t __propertyValueSize, uint8_t * propertyValue, Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> ** operation) = 0;
+};
+
 struct __declspec(uuid("088616c2-3a64-4bd5-bd2b-e7c898d2f37a")) __declspec(novtable) IMediaFrameSourceGetPropertyResult : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Status(winrt::Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyStatus * value) = 0;
@@ -132,6 +144,24 @@ struct __declspec(uuid("87bdc9cd-4601-408f-91cf-038318cd0af3")) __declspec(novta
     virtual HRESULT __stdcall get_DeviceInformation(Windows::Devices::Enumeration::IDeviceInformation ** value) = 0;
     virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable> ** value) = 0;
     virtual HRESULT __stdcall get_CoordinateSystem(Windows::Perception::Spatial::ISpatialCoordinateSystem ** value) = 0;
+};
+
+struct __declspec(uuid("63115e01-cf51-48fd-aab0-6d693eb48127")) __declspec(novtable) IMultiSourceMediaFrameArrivedEventArgs : Windows::Foundation::IInspectable
+{
+};
+
+struct __declspec(uuid("8d144402-f763-488d-98f2-b437bcf075e7")) __declspec(novtable) IMultiSourceMediaFrameReader : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall add_FrameArrived(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader, Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_FrameArrived(event_token token) = 0;
+    virtual HRESULT __stdcall abi_TryAcquireLatestFrame(Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference ** value) = 0;
+    virtual HRESULT __stdcall abi_StartAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> ** operation) = 0;
+    virtual HRESULT __stdcall abi_StopAsync(Windows::Foundation::IAsyncAction ** action) = 0;
+};
+
+struct __declspec(uuid("21964b1a-7fe2-44d6-92e5-298e6d2810e9")) __declspec(novtable) IMultiSourceMediaFrameReference : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_TryGetFrameReferenceBySourceId(hstring sourceId, Windows::Media::Capture::Frames::IMediaFrameReference ** value) = 0;
 };
 
 struct __declspec(uuid("00dd4ccb-32bd-4fe1-a013-7cc13cf5dbcf")) __declspec(novtable) IVideoMediaFrame : Windows::Foundation::IInspectable
@@ -171,6 +201,9 @@ template <> struct traits<Windows::Media::Capture::Frames::MediaFrameSourceContr
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> { using default_interface = Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyResult; };
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameSourceGroup> { using default_interface = Windows::Media::Capture::Frames::IMediaFrameSourceGroup; };
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameSourceInfo> { using default_interface = Windows::Media::Capture::Frames::IMediaFrameSourceInfo; };
+template <> struct traits<Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs> { using default_interface = Windows::Media::Capture::Frames::IMultiSourceMediaFrameArrivedEventArgs; };
+template <> struct traits<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader> { using default_interface = Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader; };
+template <> struct traits<Windows::Media::Capture::Frames::MultiSourceMediaFrameReference> { using default_interface = Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference; };
 template <> struct traits<Windows::Media::Capture::Frames::VideoMediaFrame> { using default_interface = Windows::Media::Capture::Frames::IVideoMediaFrame; };
 template <> struct traits<Windows::Media::Capture::Frames::VideoMediaFrameFormat> { using default_interface = Windows::Media::Capture::Frames::IVideoMediaFrameFormat; };
 
@@ -192,6 +225,13 @@ struct WINRT_EBO impl_IDepthMediaFrame
     Windows::Media::Capture::Frames::VideoMediaFrame VideoMediaFrame() const;
     Windows::Media::Capture::Frames::DepthMediaFrameFormat DepthFormat() const;
     Windows::Media::Devices::Core::DepthCorrelatedCoordinateMapper TryCreateCoordinateMapper(const Windows::Media::Devices::Core::CameraIntrinsics & cameraIntrinsics, const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDepthMediaFrame2
+{
+    uint32_t MaxReliableDepth() const;
+    uint32_t MinReliableDepth() const;
 };
 
 template <typename D>
@@ -273,6 +313,13 @@ struct WINRT_EBO impl_IMediaFrameSourceController
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMediaFrameSourceController2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> GetPropertyByExtendedIdAsync(array_view<const uint8_t> extendedPropertyId, const optional<uint32_t> & maxPropertyValueSize) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> SetPropertyByExtendedIdAsync(array_view<const uint8_t> extendedPropertyId, array_view<const uint8_t> propertyValue) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMediaFrameSourceGetPropertyResult
 {
     Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyStatus Status() const;
@@ -305,6 +352,29 @@ struct WINRT_EBO impl_IMediaFrameSourceInfo
     Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
     Windows::Foundation::Collections::IMapView<GUID, Windows::Foundation::IInspectable> Properties() const;
     Windows::Perception::Spatial::SpatialCoordinateSystem CoordinateSystem() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMultiSourceMediaFrameArrivedEventArgs
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMultiSourceMediaFrameReader
+{
+    event_token FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader, Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs> & handler) const;
+    using FrameArrived_revoker = event_revoker<IMultiSourceMediaFrameReader>;
+    FrameArrived_revoker FrameArrived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader, Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs> & handler) const;
+    void FrameArrived(event_token token) const;
+    Windows::Media::Capture::Frames::MultiSourceMediaFrameReference TryAcquireLatestFrame() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus> StartAsync() const;
+    Windows::Foundation::IAsyncAction StopAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMultiSourceMediaFrameReference
+{
+    Windows::Media::Capture::Frames::MediaFrameReference TryGetFrameReferenceBySourceId(hstring_view sourceId) const;
 };
 
 template <typename D>
@@ -343,6 +413,12 @@ template <> struct traits<Windows::Media::Capture::Frames::IDepthMediaFrame>
 {
     using abi = ABI::Windows::Media::Capture::Frames::IDepthMediaFrame;
     template <typename D> using consume = Windows::Media::Capture::Frames::impl_IDepthMediaFrame<D>;
+};
+
+template <> struct traits<Windows::Media::Capture::Frames::IDepthMediaFrame2>
+{
+    using abi = ABI::Windows::Media::Capture::Frames::IDepthMediaFrame2;
+    template <typename D> using consume = Windows::Media::Capture::Frames::impl_IDepthMediaFrame2<D>;
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::IDepthMediaFrameFormat>
@@ -393,6 +469,12 @@ template <> struct traits<Windows::Media::Capture::Frames::IMediaFrameSourceCont
     template <typename D> using consume = Windows::Media::Capture::Frames::impl_IMediaFrameSourceController<D>;
 };
 
+template <> struct traits<Windows::Media::Capture::Frames::IMediaFrameSourceController2>
+{
+    using abi = ABI::Windows::Media::Capture::Frames::IMediaFrameSourceController2;
+    template <typename D> using consume = Windows::Media::Capture::Frames::impl_IMediaFrameSourceController2<D>;
+};
+
 template <> struct traits<Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyResult>
 {
     using abi = ABI::Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyResult;
@@ -415,6 +497,24 @@ template <> struct traits<Windows::Media::Capture::Frames::IMediaFrameSourceInfo
 {
     using abi = ABI::Windows::Media::Capture::Frames::IMediaFrameSourceInfo;
     template <typename D> using consume = Windows::Media::Capture::Frames::impl_IMediaFrameSourceInfo<D>;
+};
+
+template <> struct traits<Windows::Media::Capture::Frames::IMultiSourceMediaFrameArrivedEventArgs>
+{
+    using abi = ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameArrivedEventArgs;
+    template <typename D> using consume = Windows::Media::Capture::Frames::impl_IMultiSourceMediaFrameArrivedEventArgs<D>;
+};
+
+template <> struct traits<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader>
+{
+    using abi = ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader;
+    template <typename D> using consume = Windows::Media::Capture::Frames::impl_IMultiSourceMediaFrameReader<D>;
+};
+
+template <> struct traits<Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference>
+{
+    using abi = ABI::Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference;
+    template <typename D> using consume = Windows::Media::Capture::Frames::impl_IMultiSourceMediaFrameReference<D>;
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::IVideoMediaFrame>
@@ -505,6 +605,24 @@ template <> struct traits<Windows::Media::Capture::Frames::MediaFrameSourceInfo>
 {
     using abi = ABI::Windows::Media::Capture::Frames::MediaFrameSourceInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MediaFrameSourceInfo"; }
+};
+
+template <> struct traits<Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs>
+{
+    using abi = ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MultiSourceMediaFrameArrivedEventArgs"; }
+};
+
+template <> struct traits<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader>
+{
+    using abi = ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MultiSourceMediaFrameReader"; }
+};
+
+template <> struct traits<Windows::Media::Capture::Frames::MultiSourceMediaFrameReference>
+{
+    using abi = ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReference;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MultiSourceMediaFrameReference"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::VideoMediaFrame>

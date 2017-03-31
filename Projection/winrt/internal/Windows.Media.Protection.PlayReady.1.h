@@ -10,8 +10,8 @@
 #include "Windows.Media.Core.0.h"
 #include "Windows.Media.Protection.0.h"
 #include "Windows.Storage.0.h"
-#include "Windows.Foundation.1.h"
 #include "Windows.Foundation.Collections.1.h"
+#include "Windows.Foundation.1.h"
 #include "Windows.Media.Core.1.h"
 
 WINRT_EXPORT namespace winrt {
@@ -267,6 +267,14 @@ struct __declspec(uuid("ee474c4e-fa3c-414d-a9f2-3ffc1ef832d4")) __declspec(novta
     virtual HRESULT __stdcall abi_GetKIDAtChainDepth(uint32_t chainDepth, GUID * kid) = 0;
 };
 
+struct __declspec(uuid("30f4e7a7-d8e3-48a0-bcda-ff9f40530436")) __declspec(novtable) IPlayReadyLicense2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SecureStopId(GUID * value) = 0;
+    virtual HRESULT __stdcall get_SecurityLevel(uint32_t * value) = 0;
+    virtual HRESULT __stdcall get_InMemoryOnly(bool * value) = 0;
+    virtual HRESULT __stdcall get_ExpiresInRealTime(bool * value) = 0;
+};
+
 struct __declspec(uuid("5d85ff45-3e9f-4f48-93e1-9530c8d58c3e")) __declspec(novtable) IPlayReadyLicenseAcquisitionServiceRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_ContentHeader(Windows::Media::Protection::PlayReady::IPlayReadyContentHeader ** value) = 0;
@@ -278,6 +286,11 @@ struct __declspec(uuid("5d85ff45-3e9f-4f48-93e1-9530c8d58c3e")) __declspec(novta
 struct __declspec(uuid("b7fa5eb5-fe0c-b225-bc60-5a9edd32ceb5")) __declspec(novtable) IPlayReadyLicenseAcquisitionServiceRequest2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_SessionId(GUID * value) = 0;
+};
+
+struct __declspec(uuid("394e5f4d-7f75-430d-b2e7-7f75f34b2d75")) __declspec(novtable) IPlayReadyLicenseAcquisitionServiceRequest3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateLicenseIterable(Windows::Media::Protection::PlayReady::IPlayReadyContentHeader * contentHeader, bool fullyEvaluated, Windows::Foundation::Collections::IIterable<Windows::Media::Protection::PlayReady::IPlayReadyLicense> ** result) = 0;
 };
 
 struct __declspec(uuid("d4179f08-0837-4978-8e68-be4293c8d7a6")) __declspec(novtable) IPlayReadyLicenseIterableFactory : Windows::Foundation::IInspectable
@@ -294,6 +307,11 @@ struct __declspec(uuid("a1723a39-87fa-4fdd-abbb-a9720e845259")) __declspec(novta
 {
     virtual HRESULT __stdcall abi_CreateLAServiceRequest(Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest ** serviceRequest) = 0;
     virtual HRESULT __stdcall abi_ConfigureMediaProtectionManager(Windows::Media::Protection::IMediaProtectionManager * mpm) = 0;
+};
+
+struct __declspec(uuid("4909be3a-3aed-4656-8ad7-ee0fd7799510")) __declspec(novtable) IPlayReadyLicenseSession2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateLicenseIterable(Windows::Media::Protection::PlayReady::IPlayReadyContentHeader * contentHeader, bool fullyEvaluated, Windows::Foundation::Collections::IIterable<Windows::Media::Protection::PlayReady::IPlayReadyLicense> ** licenseIterable) = 0;
 };
 
 struct __declspec(uuid("62492699-6527-429e-98be-48d798ac2739")) __declspec(novtable) IPlayReadyLicenseSessionFactory : Windows::Foundation::IInspectable
@@ -418,192 +436,192 @@ namespace Windows::Media::Protection::PlayReady {
 template <typename D>
 struct WINRT_EBO impl_INDClient
 {
-    event_token RegistrationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> & handler) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] event_token RegistrationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> & handler) const;
     using RegistrationCompleted_revoker = event_revoker<INDClient>;
-    RegistrationCompleted_revoker RegistrationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> & handler) const;
-    void RegistrationCompleted(event_token token) const;
-    event_token ProximityDetectionCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> & handler) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] RegistrationCompleted_revoker RegistrationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> & handler) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] void RegistrationCompleted(event_token token) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] event_token ProximityDetectionCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> & handler) const;
     using ProximityDetectionCompleted_revoker = event_revoker<INDClient>;
-    ProximityDetectionCompleted_revoker ProximityDetectionCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> & handler) const;
-    void ProximityDetectionCompleted(event_token token) const;
-    event_token LicenseFetchCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> & handler) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] ProximityDetectionCompleted_revoker ProximityDetectionCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDProximityDetectionCompletedEventArgs> & handler) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] void ProximityDetectionCompleted(event_token token) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] event_token LicenseFetchCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> & handler) const;
     using LicenseFetchCompleted_revoker = event_revoker<INDClient>;
-    LicenseFetchCompleted_revoker LicenseFetchCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> & handler) const;
-    void LicenseFetchCompleted(event_token token) const;
-    event_token ReRegistrationNeeded(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] LicenseFetchCompleted_revoker LicenseFetchCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDLicenseFetchCompletedEventArgs> & handler) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] void LicenseFetchCompleted(event_token token) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] event_token ReRegistrationNeeded(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> & handler) const;
     using ReRegistrationNeeded_revoker = event_revoker<INDClient>;
-    ReRegistrationNeeded_revoker ReRegistrationNeeded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> & handler) const;
-    void ReRegistrationNeeded(event_token token) const;
-    event_token ClosedCaptionDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> & handler) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] ReRegistrationNeeded_revoker ReRegistrationNeeded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Foundation::IInspectable> & handler) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] void ReRegistrationNeeded(event_token token) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] event_token ClosedCaptionDataReceived(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> & handler) const;
     using ClosedCaptionDataReceived_revoker = event_revoker<INDClient>;
-    ClosedCaptionDataReceived_revoker ClosedCaptionDataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> & handler) const;
-    void ClosedCaptionDataReceived(event_token token) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDStartResult> StartAsync(const Windows::Foundation::Uri & contentUrl, uint32_t startAsyncOptions, const Windows::Media::Protection::PlayReady::INDCustomData & registrationCustomData, const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDLicenseFetchResult> LicenseFetchAsync(const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
-    Windows::Foundation::IAsyncAction ReRegistrationAsync(const Windows::Media::Protection::PlayReady::INDCustomData & registrationCustomData) const;
-    void Close() const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] ClosedCaptionDataReceived_revoker ClosedCaptionDataReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDClosedCaptionDataReceivedEventArgs> & handler) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] void ClosedCaptionDataReceived(event_token token) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDStartResult> StartAsync(const Windows::Foundation::Uri & contentUrl, uint32_t startAsyncOptions, const Windows::Media::Protection::PlayReady::INDCustomData & registrationCustomData, const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDLicenseFetchResult> LicenseFetchAsync(const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncAction ReRegistrationAsync(const Windows::Media::Protection::PlayReady::INDCustomData & registrationCustomData) const;
+    [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Close() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDClientFactory
 {
-    Windows::Media::Protection::PlayReady::NDClient CreateInstance(const Windows::Media::Protection::PlayReady::INDDownloadEngine & downloadEngine, const Windows::Media::Protection::PlayReady::INDStreamParser & streamParser, const Windows::Media::Protection::PlayReady::INDMessenger & pMessenger) const;
+    [[deprecated("INDClientFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::NDClient CreateInstance(const Windows::Media::Protection::PlayReady::INDDownloadEngine & downloadEngine, const Windows::Media::Protection::PlayReady::INDStreamParser & streamParser, const Windows::Media::Protection::PlayReady::INDMessenger & pMessenger) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDClosedCaptionDataReceivedEventArgs
 {
-    Windows::Media::Protection::PlayReady::NDClosedCaptionFormat ClosedCaptionDataFormat() const;
-    int64_t PresentationTimestamp() const;
-    com_array<uint8_t> ClosedCaptionData() const;
+    [[deprecated("INDClosedCaptionDataReceivedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::NDClosedCaptionFormat ClosedCaptionDataFormat() const;
+    [[deprecated("INDClosedCaptionDataReceivedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] int64_t PresentationTimestamp() const;
+    [[deprecated("INDClosedCaptionDataReceivedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] com_array<uint8_t> ClosedCaptionData() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDCustomData
 {
-    com_array<uint8_t> CustomDataTypeID() const;
-    com_array<uint8_t> CustomData() const;
+    [[deprecated("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")]] com_array<uint8_t> CustomDataTypeID() const;
+    [[deprecated("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")]] com_array<uint8_t> CustomData() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDCustomDataFactory
 {
-    Windows::Media::Protection::PlayReady::NDCustomData CreateInstance(array_view<const uint8_t> customDataTypeIDBytes, array_view<const uint8_t> customDataBytes) const;
+    [[deprecated("INDCustomDataFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::NDCustomData CreateInstance(array_view<const uint8_t> customDataTypeIDBytes, array_view<const uint8_t> customDataBytes) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDDownloadEngine
 {
-    void Open(const Windows::Foundation::Uri & uri, array_view<const uint8_t> sessionIDBytes) const;
-    void Pause() const;
-    void Resume() const;
-    void Close() const;
-    void Seek(const Windows::Foundation::TimeSpan & startPosition) const;
-    bool CanSeek() const;
-    uint32_t BufferFullMinThresholdInSamples() const;
-    uint32_t BufferFullMaxThresholdInSamples() const;
-    Windows::Media::Protection::PlayReady::NDDownloadEngineNotifier Notifier() const;
+    [[deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Open(const Windows::Foundation::Uri & uri, array_view<const uint8_t> sessionIDBytes) const;
+    [[deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Pause() const;
+    [[deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Resume() const;
+    [[deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Close() const;
+    [[deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")]] void Seek(const Windows::Foundation::TimeSpan & startPosition) const;
+    [[deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")]] bool CanSeek() const;
+    [[deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")]] uint32_t BufferFullMinThresholdInSamples() const;
+    [[deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")]] uint32_t BufferFullMaxThresholdInSamples() const;
+    [[deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::NDDownloadEngineNotifier Notifier() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDDownloadEngineNotifier
 {
-    void OnStreamOpened() const;
-    void OnPlayReadyObjectReceived(array_view<const uint8_t> dataBytes) const;
-    void OnContentIDReceived(const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
-    void OnDataReceived(array_view<const uint8_t> dataBytes, uint32_t bytesReceived) const;
-    void OnEndOfStream() const;
-    void OnNetworkError() const;
+    [[deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] void OnStreamOpened() const;
+    [[deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] void OnPlayReadyObjectReceived(array_view<const uint8_t> dataBytes) const;
+    [[deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] void OnContentIDReceived(const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
+    [[deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] void OnDataReceived(array_view<const uint8_t> dataBytes, uint32_t bytesReceived) const;
+    [[deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] void OnEndOfStream() const;
+    [[deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] void OnNetworkError() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDLicenseFetchCompletedEventArgs
 {
-    Windows::Media::Protection::PlayReady::INDCustomData ResponseCustomData() const;
+    [[deprecated("INDLicenseFetchCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::INDCustomData ResponseCustomData() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDLicenseFetchDescriptor
 {
-    Windows::Media::Protection::PlayReady::NDContentIDType ContentIDType() const;
-    com_array<uint8_t> ContentID() const;
-    Windows::Media::Protection::PlayReady::INDCustomData LicenseFetchChallengeCustomData() const;
-    void LicenseFetchChallengeCustomData(const Windows::Media::Protection::PlayReady::INDCustomData & licenseFetchChallengeCustomData) const;
+    [[deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::NDContentIDType ContentIDType() const;
+    [[deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")]] com_array<uint8_t> ContentID() const;
+    [[deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::INDCustomData LicenseFetchChallengeCustomData() const;
+    [[deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")]] void LicenseFetchChallengeCustomData(const Windows::Media::Protection::PlayReady::INDCustomData & licenseFetchChallengeCustomData) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDLicenseFetchDescriptorFactory
 {
-    Windows::Media::Protection::PlayReady::NDLicenseFetchDescriptor CreateInstance(Windows::Media::Protection::PlayReady::NDContentIDType contentIDType, array_view<const uint8_t> contentIDBytes, const Windows::Media::Protection::PlayReady::INDCustomData & licenseFetchChallengeCustomData) const;
+    [[deprecated("INDLicenseFetchDescriptorFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::NDLicenseFetchDescriptor CreateInstance(Windows::Media::Protection::PlayReady::NDContentIDType contentIDType, array_view<const uint8_t> contentIDBytes, const Windows::Media::Protection::PlayReady::INDCustomData & licenseFetchChallengeCustomData) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDLicenseFetchResult
 {
-    Windows::Media::Protection::PlayReady::INDCustomData ResponseCustomData() const;
+    [[deprecated("INDLicenseFetchResult is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::INDCustomData ResponseCustomData() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDMessenger
 {
-    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendRegistrationRequestAsync(array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> challengeDataBytes) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendProximityDetectionStartAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, array_view<const uint8_t> transmitterChannelBytes, array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> challengeDataBytes) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendProximityDetectionResponseAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, array_view<const uint8_t> transmitterChannelBytes, array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> responseDataBytes) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendLicenseFetchRequestAsync(array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> challengeDataBytes) const;
+    [[deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendRegistrationRequestAsync(array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> challengeDataBytes) const;
+    [[deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendProximityDetectionStartAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, array_view<const uint8_t> transmitterChannelBytes, array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> challengeDataBytes) const;
+    [[deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendProximityDetectionResponseAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, array_view<const uint8_t> transmitterChannelBytes, array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> responseDataBytes) const;
+    [[deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendLicenseFetchRequestAsync(array_view<const uint8_t> sessionIDBytes, array_view<const uint8_t> challengeDataBytes) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDProximityDetectionCompletedEventArgs
 {
-    uint32_t ProximityDetectionRetryCount() const;
+    [[deprecated("INDProximityDetectionCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] uint32_t ProximityDetectionRetryCount() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDRegistrationCompletedEventArgs
 {
-    Windows::Media::Protection::PlayReady::INDCustomData ResponseCustomData() const;
-    Windows::Media::Protection::PlayReady::INDTransmitterProperties TransmitterProperties() const;
-    bool TransmitterCertificateAccepted() const;
-    void TransmitterCertificateAccepted(bool accept) const;
+    [[deprecated("INDRegistrationCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::INDCustomData ResponseCustomData() const;
+    [[deprecated("INDRegistrationCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::INDTransmitterProperties TransmitterProperties() const;
+    [[deprecated("INDRegistrationCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] bool TransmitterCertificateAccepted() const;
+    [[deprecated("INDRegistrationCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] void TransmitterCertificateAccepted(bool accept) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDSendResult
 {
-    com_array<uint8_t> Response() const;
+    [[deprecated("INDSendResult is deprecated and might not work on all platforms. For more info, see MSDN.")]] com_array<uint8_t> Response() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDStartResult
 {
-    Windows::Media::Core::MediaStreamSource MediaStreamSource() const;
+    [[deprecated("INDStartResult is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Core::MediaStreamSource MediaStreamSource() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDStorageFileHelper
 {
-    Windows::Foundation::Collections::IVector<hstring> GetFileURLs(const Windows::Storage::IStorageFile & file) const;
+    [[deprecated("INDStorageFileHelper is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::Collections::IVector<hstring> GetFileURLs(const Windows::Storage::IStorageFile & file) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDStreamParser
 {
-    void ParseData(array_view<const uint8_t> dataBytes) const;
-    uint32_t GetStreamInformation(const Windows::Media::Core::IMediaStreamDescriptor & descriptor, Windows::Media::Protection::PlayReady::NDMediaStreamType & streamType) const;
-    void BeginOfStream() const;
-    void EndOfStream() const;
-    Windows::Media::Protection::PlayReady::NDStreamParserNotifier Notifier() const;
+    [[deprecated("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")]] void ParseData(array_view<const uint8_t> dataBytes) const;
+    [[deprecated("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")]] uint32_t GetStreamInformation(const Windows::Media::Core::IMediaStreamDescriptor & descriptor, Windows::Media::Protection::PlayReady::NDMediaStreamType & streamType) const;
+    [[deprecated("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")]] void BeginOfStream() const;
+    [[deprecated("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")]] void EndOfStream() const;
+    [[deprecated("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::NDStreamParserNotifier Notifier() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDStreamParserNotifier
 {
-    void OnContentIDReceived(const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
-    void OnMediaStreamDescriptorCreated(const Windows::Foundation::Collections::IVector<Windows::Media::Core::AudioStreamDescriptor> & audioStreamDescriptors, const Windows::Foundation::Collections::IVector<Windows::Media::Core::VideoStreamDescriptor> & videoStreamDescriptors) const;
-    void OnSampleParsed(uint32_t streamID, Windows::Media::Protection::PlayReady::NDMediaStreamType streamType, const Windows::Media::Core::MediaStreamSample & streamSample, int64_t pts, Windows::Media::Protection::PlayReady::NDClosedCaptionFormat ccFormat, array_view<const uint8_t> ccDataBytes) const;
-    void OnBeginSetupDecryptor(const Windows::Media::Core::IMediaStreamDescriptor & descriptor, GUID keyID, array_view<const uint8_t> proBytes) const;
+    [[deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] void OnContentIDReceived(const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
+    [[deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] void OnMediaStreamDescriptorCreated(const Windows::Foundation::Collections::IVector<Windows::Media::Core::AudioStreamDescriptor> & audioStreamDescriptors, const Windows::Foundation::Collections::IVector<Windows::Media::Core::VideoStreamDescriptor> & videoStreamDescriptors) const;
+    [[deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] void OnSampleParsed(uint32_t streamID, Windows::Media::Protection::PlayReady::NDMediaStreamType streamType, const Windows::Media::Core::MediaStreamSample & streamSample, int64_t pts, Windows::Media::Protection::PlayReady::NDClosedCaptionFormat ccFormat, array_view<const uint8_t> ccDataBytes) const;
+    [[deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] void OnBeginSetupDecryptor(const Windows::Media::Core::IMediaStreamDescriptor & descriptor, GUID keyID, array_view<const uint8_t> proBytes) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDTCPMessengerFactory
 {
-    Windows::Media::Protection::PlayReady::NDTCPMessenger CreateInstance(hstring_view remoteHostName, uint32_t remoteHostPort) const;
+    [[deprecated("INDTCPMessengerFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::NDTCPMessenger CreateInstance(hstring_view remoteHostName, uint32_t remoteHostPort) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_INDTransmitterProperties
 {
-    Windows::Media::Protection::PlayReady::NDCertificateType CertificateType() const;
-    Windows::Media::Protection::PlayReady::NDCertificatePlatformID PlatformIdentifier() const;
-    com_array<Windows::Media::Protection::PlayReady::NDCertificateFeature> SupportedFeatures() const;
-    uint32_t SecurityLevel() const;
-    uint32_t SecurityVersion() const;
-    Windows::Foundation::DateTime ExpirationDate() const;
-    com_array<uint8_t> ClientID() const;
-    com_array<uint8_t> ModelDigest() const;
-    hstring ModelManufacturerName() const;
-    hstring ModelName() const;
-    hstring ModelNumber() const;
+    [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::NDCertificateType CertificateType() const;
+    [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Media::Protection::PlayReady::NDCertificatePlatformID PlatformIdentifier() const;
+    [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] com_array<Windows::Media::Protection::PlayReady::NDCertificateFeature> SupportedFeatures() const;
+    [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] uint32_t SecurityLevel() const;
+    [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] uint32_t SecurityVersion() const;
+    [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] Windows::Foundation::DateTime ExpirationDate() const;
+    [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] com_array<uint8_t> ClientID() const;
+    [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] com_array<uint8_t> ModelDigest() const;
+    [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] hstring ModelManufacturerName() const;
+    [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] hstring ModelName() const;
+    [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] hstring ModelNumber() const;
 };
 
 template <typename D>
@@ -708,6 +726,15 @@ struct WINRT_EBO impl_IPlayReadyLicense
 };
 
 template <typename D>
+struct WINRT_EBO impl_IPlayReadyLicense2
+{
+    GUID SecureStopId() const;
+    uint32_t SecurityLevel() const;
+    bool InMemoryOnly() const;
+    bool ExpiresInRealTime() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IPlayReadyLicenseAcquisitionServiceRequest
 {
     Windows::Media::Protection::PlayReady::PlayReadyContentHeader ContentHeader() const;
@@ -720,6 +747,12 @@ template <typename D>
 struct WINRT_EBO impl_IPlayReadyLicenseAcquisitionServiceRequest2
 {
     GUID SessionId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayReadyLicenseAcquisitionServiceRequest3
+{
+    Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable CreateLicenseIterable(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader, bool fullyEvaluated) const;
 };
 
 template <typename D>
@@ -739,6 +772,12 @@ struct WINRT_EBO impl_IPlayReadyLicenseSession
 {
     Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest CreateLAServiceRequest() const;
     void ConfigureMediaProtectionManager(const Windows::Media::Protection::MediaProtectionManager & mpm) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayReadyLicenseSession2
+{
+    Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable CreateLicenseIterable(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader, bool fullyEvaluated) const;
 };
 
 template <typename D>
@@ -1039,6 +1078,12 @@ template <> struct traits<Windows::Media::Protection::PlayReady::IPlayReadyLicen
     template <typename D> using consume = Windows::Media::Protection::PlayReady::impl_IPlayReadyLicense<D>;
 };
 
+template <> struct traits<Windows::Media::Protection::PlayReady::IPlayReadyLicense2>
+{
+    using abi = ABI::Windows::Media::Protection::PlayReady::IPlayReadyLicense2;
+    template <typename D> using consume = Windows::Media::Protection::PlayReady::impl_IPlayReadyLicense2<D>;
+};
+
 template <> struct traits<Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest;
@@ -1049,6 +1094,12 @@ template <> struct traits<Windows::Media::Protection::PlayReady::IPlayReadyLicen
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest2;
     template <typename D> using consume = Windows::Media::Protection::PlayReady::impl_IPlayReadyLicenseAcquisitionServiceRequest2<D>;
+};
+
+template <> struct traits<Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest3>
+{
+    using abi = ABI::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest3;
+    template <typename D> using consume = Windows::Media::Protection::PlayReady::impl_IPlayReadyLicenseAcquisitionServiceRequest3<D>;
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::IPlayReadyLicenseIterableFactory>
@@ -1067,6 +1118,12 @@ template <> struct traits<Windows::Media::Protection::PlayReady::IPlayReadyLicen
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession;
     template <typename D> using consume = Windows::Media::Protection::PlayReady::impl_IPlayReadyLicenseSession<D>;
+};
+
+template <> struct traits<Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession2>
+{
+    using abi = ABI::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession2;
+    template <typename D> using consume = Windows::Media::Protection::PlayReady::impl_IPlayReadyLicenseSession2<D>;
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::IPlayReadyLicenseSessionFactory>

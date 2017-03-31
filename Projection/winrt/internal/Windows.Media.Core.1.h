@@ -7,6 +7,7 @@
 #include "Windows.Media.Core.0.h"
 #include "Windows.Foundation.0.h"
 #include "Windows.Foundation.Collections.0.h"
+#include "Windows.Graphics.Imaging.0.h"
 #include "Windows.Media.0.h"
 #include "Windows.Media.Capture.0.h"
 #include "Windows.Media.Devices.0.h"
@@ -27,12 +28,6 @@
 WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media::Core {
-
-struct MseTimeRange
-{
-    Windows::Foundation::TimeSpan Start;
-    Windows::Foundation::TimeSpan End;
-};
 
 struct TimedTextPadding
 {
@@ -63,15 +58,21 @@ struct TimedTextPoint
     winrt::Windows::Media::Core::TimedTextUnit Unit;
 };
 
+struct MseTimeRange
+{
+    Windows::Foundation::TimeSpan Start;
+    Windows::Foundation::TimeSpan End;
+};
+
 }
 
 namespace Windows::Media::Core {
 
-using MseTimeRange = ABI::Windows::Media::Core::MseTimeRange;
 using TimedTextPadding = ABI::Windows::Media::Core::TimedTextPadding;
 using TimedTextSize = ABI::Windows::Media::Core::TimedTextSize;
 using TimedTextDouble = ABI::Windows::Media::Core::TimedTextDouble;
 using TimedTextPoint = ABI::Windows::Media::Core::TimedTextPoint;
+using MseTimeRange = ABI::Windows::Media::Core::MseTimeRange;
 
 }
 
@@ -118,10 +119,90 @@ struct __declspec(uuid("178beff7-cc39-44a6-b951-4a5653f073fa")) __declspec(novta
     virtual HRESULT __stdcall get_MediaSourceStatus(winrt::Windows::Media::Core::MediaSourceStatus * value) = 0;
 };
 
+struct __declspec(uuid("72a98001-d38a-4c0a-8fa6-75cddaf4664c")) __declspec(novtable) IChapterCue : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall put_Title(hstring value) = 0;
+    virtual HRESULT __stdcall get_Title(hstring * value) = 0;
+};
+
+struct __declspec(uuid("51e89f85-ea97-499c-86ac-4ce5e73f3a42")) __declspec(novtable) ICodecInfo : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Kind(winrt::Windows::Media::Core::CodecKind * value) = 0;
+    virtual HRESULT __stdcall get_Category(winrt::Windows::Media::Core::CodecCategory * value) = 0;
+    virtual HRESULT __stdcall get_Subtypes(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
+    virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
+    virtual HRESULT __stdcall get_IsTrusted(bool * value) = 0;
+};
+
+struct __declspec(uuid("222a953a-af61-4e04-808a-a4634e2f3ac4")) __declspec(novtable) ICodecQuery : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_FindAllAsync(winrt::Windows::Media::Core::CodecKind kind, winrt::Windows::Media::Core::CodecCategory category, hstring subType, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Core::CodecInfo>> ** value) = 0;
+};
+
+struct __declspec(uuid("a66ac4f2-888b-4224-8cf6-2a8d4eb02382")) __declspec(novtable) ICodecSubtypesStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_VideoFormatDV25(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatDV50(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatDvc(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatDvh1(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatDvhD(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatDvsd(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatDvsl(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatH263(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatH264(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatH265(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatH264ES(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatHevc(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatHevcES(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatM4S2(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatMjpg(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatMP43(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatMP4S(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatMP4V(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatMpeg2(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatVP80(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatVP90(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatMpg1(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatMss1(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatMss2(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatWmv1(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatWmv2(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatWmv3(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormatWvc1(hstring * value) = 0;
+    virtual HRESULT __stdcall get_VideoFormat420O(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatAac(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatAdts(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatAlac(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatAmrNB(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatAmrWB(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatAmrWP(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatDolbyAC3(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatDolbyAC3Spdif(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatDolbyDDPlus(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatDrm(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatDts(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatFlac(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatFloat(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatMP3(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatMPeg(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatMsp1(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatOpus(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatPcm(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatWmaSpdif(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatWMAudioLossless(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatWMAudioV8(hstring * value) = 0;
+    virtual HRESULT __stdcall get_AudioFormatWMAudioV9(hstring * value) = 0;
+};
+
 struct __declspec(uuid("7c7f676d-1fbc-4e2d-9a87-ee38bd1dc637")) __declspec(novtable) IDataCue : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_Data(Windows::Storage::Streams::IBuffer * value) = 0;
     virtual HRESULT __stdcall get_Data(Windows::Storage::Streams::IBuffer ** value) = 0;
+};
+
+struct __declspec(uuid("bc561b15-95f2-49e8-96f1-8dd5dac68d93")) __declspec(novtable) IDataCue2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IPropertySet ** value) = 0;
 };
 
 struct __declspec(uuid("19918426-c65b-46ba-85f8-13880576c90a")) __declspec(novtable) IFaceDetectedEventArgs : Windows::Foundation::IInspectable
@@ -164,6 +245,16 @@ struct __declspec(uuid("0f57806b-253b-4119-bb40-3a90e51384f7")) __declspec(novta
     virtual HRESULT __stdcall get_FrameControllers(Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::Core::FrameController> ** value) = 0;
 };
 
+struct __declspec(uuid("52828282-367b-440b-9116-3c84570dd270")) __declspec(novtable) IImageCue : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Position(Windows::Media::Core::TimedTextPoint * value) = 0;
+    virtual HRESULT __stdcall put_Position(Windows::Media::Core::TimedTextPoint value) = 0;
+    virtual HRESULT __stdcall get_Extent(Windows::Media::Core::TimedTextSize * value) = 0;
+    virtual HRESULT __stdcall put_Extent(Windows::Media::Core::TimedTextSize value) = 0;
+    virtual HRESULT __stdcall put_SoftwareBitmap(Windows::Graphics::Imaging::ISoftwareBitmap * value) = 0;
+    virtual HRESULT __stdcall get_SoftwareBitmap(Windows::Graphics::Imaging::ISoftwareBitmap ** value) = 0;
+};
+
 struct __declspec(uuid("2b7e40aa-de07-424f-83f1-f1de46c4fa2e")) __declspec(novtable) IMediaBinder : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_Binding(Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBinder, Windows::Media::Core::MediaBindingEventArgs> * handler, event_token * token) = 0;
@@ -182,6 +273,12 @@ struct __declspec(uuid("b61cb25a-1b6d-4630-a86d-2f0837f712e5")) __declspec(novta
     virtual HRESULT __stdcall abi_SetUri(Windows::Foundation::IUriRuntimeClass * uri) = 0;
     virtual HRESULT __stdcall abi_SetStream(Windows::Storage::Streams::IRandomAccessStream * stream, hstring contentType) = 0;
     virtual HRESULT __stdcall abi_SetStreamReference(Windows::Storage::Streams::IRandomAccessStreamReference * stream, hstring contentType) = 0;
+};
+
+struct __declspec(uuid("0464cceb-bb5a-482f-b8ba-f0284c696567")) __declspec(novtable) IMediaBindingEventArgs2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_SetAdaptiveMediaSource(Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource * mediaSource) = 0;
+    virtual HRESULT __stdcall abi_SetStorageFile(Windows::Storage::IStorageFile * file) = 0;
 };
 
 struct __declspec(uuid("c7d15e5d-59dc-431f-a0ee-27744323b36d")) __declspec(novtable) IMediaCue : Windows::Foundation::IInspectable
@@ -220,6 +317,15 @@ struct __declspec(uuid("b59f0d9b-4b6e-41ed-bbb4-7c7509a994ad")) __declspec(novta
     virtual HRESULT __stdcall remove_StateChanged(event_token token) = 0;
     virtual HRESULT __stdcall get_State(winrt::Windows::Media::Core::MediaSourceState * value) = 0;
     virtual HRESULT __stdcall abi_Reset() = 0;
+};
+
+struct __declspec(uuid("bdafad57-8eff-4c63-85a6-84de0ae3e4f2")) __declspec(novtable) IMediaSource4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AdaptiveMediaSource(Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource ** value) = 0;
+    virtual HRESULT __stdcall get_MediaStreamSource(Windows::Media::Core::IMediaStreamSource ** value) = 0;
+    virtual HRESULT __stdcall get_MseStreamSource(Windows::Media::Core::IMseStreamSource ** value) = 0;
+    virtual HRESULT __stdcall get_Uri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
+    virtual HRESULT __stdcall abi_OpenAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
 };
 
 struct __declspec(uuid("5c0a8965-37c5-4e9d-8d21-1cdee90cecc6")) __declspec(novtable) IMediaSourceError : Windows::Foundation::IInspectable
@@ -332,6 +438,12 @@ struct __declspec(uuid("ec55d0ad-2e6a-4f74-adbb-b562d1533849")) __declspec(novta
 {
     virtual HRESULT __stdcall add_SampleRendered(Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSampleRenderedEventArgs> * handler, event_token * token) = 0;
     virtual HRESULT __stdcall remove_SampleRendered(event_token token) = 0;
+};
+
+struct __declspec(uuid("6a2a2746-3ddd-4ddf-a121-94045ecf9440")) __declspec(novtable) IMediaStreamSource3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall put_MaxSupportedPlaybackRate(Windows::Foundation::IReference<double> * value) = 0;
+    virtual HRESULT __stdcall get_MaxSupportedPlaybackRate(Windows::Foundation::IReference<double> ** value) = 0;
 };
 
 struct __declspec(uuid("cd8c7eb2-4816-4e24-88f0-491ef7386406")) __declspec(novtable) IMediaStreamSourceClosedEventArgs : Windows::Foundation::IInspectable
@@ -506,6 +618,16 @@ struct __declspec(uuid("77206f1f-c34f-494f-8077-2bad9ff4ecf1")) __declspec(novta
     virtual HRESULT __stdcall get_SelectedIndex(int32_t * value) = 0;
 };
 
+struct __declspec(uuid("aee254dc-1725-4bad-8043-a98499b017a2")) __declspec(novtable) ISpeechCue : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Text(hstring * value) = 0;
+    virtual HRESULT __stdcall put_Text(hstring value) = 0;
+    virtual HRESULT __stdcall get_StartPositionInInput(Windows::Foundation::IReference<int32_t> ** value) = 0;
+    virtual HRESULT __stdcall put_StartPositionInInput(Windows::Foundation::IReference<int32_t> * value) = 0;
+    virtual HRESULT __stdcall get_EndPositionInInput(Windows::Foundation::IReference<int32_t> ** value) = 0;
+    virtual HRESULT __stdcall put_EndPositionInInput(Windows::Foundation::IReference<int32_t> * value) = 0;
+};
+
 struct __declspec(uuid("9e6aed9e-f67a-49a9-b330-cf03b0e9cf07")) __declspec(novtable) ITimedMetadataTrack : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_CueEntered(Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::MediaCueEventArgs> * handler, event_token * token) = 0;
@@ -542,6 +664,11 @@ struct __declspec(uuid("8dd57611-97b3-4e1f-852c-0f482c81ad26")) __declspec(novta
 struct __declspec(uuid("a57fc9d1-6789-4d4d-b07f-84b4f31acb70")) __declspec(novtable) ITimedMetadataTrackFailedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Error(Windows::Media::Core::ITimedMetadataTrackError ** value) = 0;
+};
+
+struct __declspec(uuid("3b7f2024-f74e-4ade-93c5-219da05b6856")) __declspec(novtable) ITimedMetadataTrackProvider : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TimedMetadataTracks(Windows::Foundation::Collections::IVectorView<Windows::Media::Core::TimedMetadataTrack> ** value) = 0;
 };
 
 struct __declspec(uuid("51c79e51-3b86-494d-b359-bb2ea7aca9a9")) __declspec(novtable) ITimedTextCue : Windows::Foundation::IInspectable
@@ -608,6 +735,14 @@ struct __declspec(uuid("7e311853-9aba-4ac4-bb98-2fb176c3bfdd")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateFromUriWithLanguage(Windows::Foundation::IUriRuntimeClass * uri, hstring defaultLanguage, Windows::Media::Core::ITimedTextSource ** value) = 0;
 };
 
+struct __declspec(uuid("b66b7602-923e-43fa-9633-587075812db5")) __declspec(novtable) ITimedTextSourceStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateFromStreamWithIndex(Windows::Storage::Streams::IRandomAccessStream * stream, Windows::Storage::Streams::IRandomAccessStream * indexStream, Windows::Media::Core::ITimedTextSource ** result) = 0;
+    virtual HRESULT __stdcall abi_CreateFromUriWithIndex(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::IUriRuntimeClass * indexUri, Windows::Media::Core::ITimedTextSource ** result) = 0;
+    virtual HRESULT __stdcall abi_CreateFromStreamWithIndexAndLanguage(Windows::Storage::Streams::IRandomAccessStream * stream, Windows::Storage::Streams::IRandomAccessStream * indexStream, hstring defaultLanguage, Windows::Media::Core::ITimedTextSource ** result) = 0;
+    virtual HRESULT __stdcall abi_CreateFromUriWithIndexAndLanguage(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::IUriRuntimeClass * indexUri, hstring defaultLanguage, Windows::Media::Core::ITimedTextSource ** result) = 0;
+};
+
 struct __declspec(uuid("1bb2384d-a825-40c2-a7f5-281eaedf3b55")) __declspec(novtable) ITimedTextStyle : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Name(hstring * value) = 0;
@@ -634,6 +769,18 @@ struct __declspec(uuid("1bb2384d-a825-40c2-a7f5-281eaedf3b55")) __declspec(novta
     virtual HRESULT __stdcall put_OutlineThickness(Windows::Media::Core::TimedTextDouble value) = 0;
     virtual HRESULT __stdcall get_OutlineRadius(Windows::Media::Core::TimedTextDouble * value) = 0;
     virtual HRESULT __stdcall put_OutlineRadius(Windows::Media::Core::TimedTextDouble value) = 0;
+};
+
+struct __declspec(uuid("655f492d-6111-4787-89cc-686fece57e14")) __declspec(novtable) ITimedTextStyle2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_FontStyle(winrt::Windows::Media::Core::TimedTextFontStyle * value) = 0;
+    virtual HRESULT __stdcall put_FontStyle(winrt::Windows::Media::Core::TimedTextFontStyle value) = 0;
+    virtual HRESULT __stdcall get_IsUnderlineEnabled(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsUnderlineEnabled(bool value) = 0;
+    virtual HRESULT __stdcall get_IsLineThroughEnabled(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsLineThroughEnabled(bool value) = 0;
+    virtual HRESULT __stdcall get_IsOverlineEnabled(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsOverlineEnabled(bool value) = 0;
 };
 
 struct __declspec(uuid("d713502f-3261-4722-a0c2-b937b2390f14")) __declspec(novtable) ITimedTextSubformat : Windows::Foundation::IInspectable
@@ -699,6 +846,9 @@ template <> struct traits<Windows::Media::Core::AudioStreamDescriptor> { using d
 template <> struct traits<Windows::Media::Core::AudioTrack> { using default_interface = Windows::Media::Core::IMediaTrack; };
 template <> struct traits<Windows::Media::Core::AudioTrackOpenFailedEventArgs> { using default_interface = Windows::Media::Core::IAudioTrackOpenFailedEventArgs; };
 template <> struct traits<Windows::Media::Core::AudioTrackSupportInfo> { using default_interface = Windows::Media::Core::IAudioTrackSupportInfo; };
+template <> struct traits<Windows::Media::Core::ChapterCue> { using default_interface = Windows::Media::Core::IChapterCue; };
+template <> struct traits<Windows::Media::Core::CodecInfo> { using default_interface = Windows::Media::Core::ICodecInfo; };
+template <> struct traits<Windows::Media::Core::CodecQuery> { using default_interface = Windows::Media::Core::ICodecQuery; };
 template <> struct traits<Windows::Media::Core::DataCue> { using default_interface = Windows::Media::Core::IDataCue; };
 template <> struct traits<Windows::Media::Core::FaceDetectedEventArgs> { using default_interface = Windows::Media::Core::IFaceDetectedEventArgs; };
 template <> struct traits<Windows::Media::Core::FaceDetectionEffect> { using default_interface = Windows::Media::Core::IFaceDetectionEffect; };
@@ -706,6 +856,7 @@ template <> struct traits<Windows::Media::Core::FaceDetectionEffectDefinition> {
 template <> struct traits<Windows::Media::Core::FaceDetectionEffectFrame> { using default_interface = Windows::Media::Core::IFaceDetectionEffectFrame; };
 template <> struct traits<Windows::Media::Core::HighDynamicRangeControl> { using default_interface = Windows::Media::Core::IHighDynamicRangeControl; };
 template <> struct traits<Windows::Media::Core::HighDynamicRangeOutput> { using default_interface = Windows::Media::Core::IHighDynamicRangeOutput; };
+template <> struct traits<Windows::Media::Core::ImageCue> { using default_interface = Windows::Media::Core::IImageCue; };
 template <> struct traits<Windows::Media::Core::MediaBinder> { using default_interface = Windows::Media::Core::IMediaBinder; };
 template <> struct traits<Windows::Media::Core::MediaBindingEventArgs> { using default_interface = Windows::Media::Core::IMediaBindingEventArgs; };
 template <> struct traits<Windows::Media::Core::MediaCueEventArgs> { using default_interface = Windows::Media::Core::IMediaCueEventArgs; };
@@ -736,6 +887,7 @@ template <> struct traits<Windows::Media::Core::SceneAnalysisEffect> { using def
 template <> struct traits<Windows::Media::Core::SceneAnalysisEffectDefinition> { using default_interface = Windows::Media::Effects::IVideoEffectDefinition; };
 template <> struct traits<Windows::Media::Core::SceneAnalysisEffectFrame> { using default_interface = Windows::Media::Core::ISceneAnalysisEffectFrame; };
 template <> struct traits<Windows::Media::Core::SceneAnalyzedEventArgs> { using default_interface = Windows::Media::Core::ISceneAnalyzedEventArgs; };
+template <> struct traits<Windows::Media::Core::SpeechCue> { using default_interface = Windows::Media::Core::ISpeechCue; };
 template <> struct traits<Windows::Media::Core::TimedMetadataTrack> { using default_interface = Windows::Media::Core::ITimedMetadataTrack; };
 template <> struct traits<Windows::Media::Core::TimedMetadataTrackError> { using default_interface = Windows::Media::Core::ITimedMetadataTrackError; };
 template <> struct traits<Windows::Media::Core::TimedMetadataTrackFailedEventArgs> { using default_interface = Windows::Media::Core::ITimedMetadataTrackFailedEventArgs; };
@@ -808,10 +960,95 @@ struct WINRT_EBO impl_IAudioTrackSupportInfo
 };
 
 template <typename D>
+struct WINRT_EBO impl_IChapterCue
+{
+    void Title(hstring_view value) const;
+    hstring Title() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICodecInfo
+{
+    Windows::Media::Core::CodecKind Kind() const;
+    Windows::Media::Core::CodecCategory Category() const;
+    Windows::Foundation::Collections::IVectorView<hstring> Subtypes() const;
+    hstring DisplayName() const;
+    bool IsTrusted() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICodecQuery
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Core::CodecInfo>> FindAllAsync(Windows::Media::Core::CodecKind kind, Windows::Media::Core::CodecCategory category, hstring_view subType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICodecSubtypesStatics
+{
+    hstring VideoFormatDV25() const;
+    hstring VideoFormatDV50() const;
+    hstring VideoFormatDvc() const;
+    hstring VideoFormatDvh1() const;
+    hstring VideoFormatDvhD() const;
+    hstring VideoFormatDvsd() const;
+    hstring VideoFormatDvsl() const;
+    hstring VideoFormatH263() const;
+    hstring VideoFormatH264() const;
+    hstring VideoFormatH265() const;
+    hstring VideoFormatH264ES() const;
+    hstring VideoFormatHevc() const;
+    hstring VideoFormatHevcES() const;
+    hstring VideoFormatM4S2() const;
+    hstring VideoFormatMjpg() const;
+    hstring VideoFormatMP43() const;
+    hstring VideoFormatMP4S() const;
+    hstring VideoFormatMP4V() const;
+    hstring VideoFormatMpeg2() const;
+    hstring VideoFormatVP80() const;
+    hstring VideoFormatVP90() const;
+    hstring VideoFormatMpg1() const;
+    hstring VideoFormatMss1() const;
+    hstring VideoFormatMss2() const;
+    hstring VideoFormatWmv1() const;
+    hstring VideoFormatWmv2() const;
+    hstring VideoFormatWmv3() const;
+    hstring VideoFormatWvc1() const;
+    hstring VideoFormat420O() const;
+    hstring AudioFormatAac() const;
+    hstring AudioFormatAdts() const;
+    hstring AudioFormatAlac() const;
+    hstring AudioFormatAmrNB() const;
+    hstring AudioFormatAmrWB() const;
+    hstring AudioFormatAmrWP() const;
+    hstring AudioFormatDolbyAC3() const;
+    hstring AudioFormatDolbyAC3Spdif() const;
+    hstring AudioFormatDolbyDDPlus() const;
+    hstring AudioFormatDrm() const;
+    hstring AudioFormatDts() const;
+    hstring AudioFormatFlac() const;
+    hstring AudioFormatFloat() const;
+    hstring AudioFormatMP3() const;
+    hstring AudioFormatMPeg() const;
+    hstring AudioFormatMsp1() const;
+    hstring AudioFormatOpus() const;
+    hstring AudioFormatPcm() const;
+    hstring AudioFormatWmaSpdif() const;
+    hstring AudioFormatWMAudioLossless() const;
+    hstring AudioFormatWMAudioV8() const;
+    hstring AudioFormatWMAudioV9() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IDataCue
 {
     void Data(const Windows::Storage::Streams::IBuffer & value) const;
     Windows::Storage::Streams::IBuffer Data() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataCue2
+{
+    Windows::Foundation::Collections::PropertySet Properties() const;
 };
 
 template <typename D>
@@ -863,6 +1100,17 @@ struct WINRT_EBO impl_IHighDynamicRangeOutput
 };
 
 template <typename D>
+struct WINRT_EBO impl_IImageCue
+{
+    Windows::Media::Core::TimedTextPoint Position() const;
+    void Position(const Windows::Media::Core::TimedTextPoint & value) const;
+    Windows::Media::Core::TimedTextSize Extent() const;
+    void Extent(const Windows::Media::Core::TimedTextSize & value) const;
+    void SoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & value) const;
+    Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMediaBinder
 {
     event_token Binding(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBinder, Windows::Media::Core::MediaBindingEventArgs> & handler) const;
@@ -886,6 +1134,13 @@ struct WINRT_EBO impl_IMediaBindingEventArgs
     void SetUri(const Windows::Foundation::Uri & uri) const;
     void SetStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_view contentType) const;
     void SetStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_view contentType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaBindingEventArgs2
+{
+    void SetAdaptiveMediaSource(const Windows::Media::Streaming::Adaptive::AdaptiveMediaSource & mediaSource) const;
+    void SetStorageFile(const Windows::Storage::IStorageFile & file) const;
 };
 
 template <typename D>
@@ -933,6 +1188,16 @@ struct WINRT_EBO impl_IMediaSource3
     void StateChanged(event_token token) const;
     Windows::Media::Core::MediaSourceState State() const;
     void Reset() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaSource4
+{
+    Windows::Media::Streaming::Adaptive::AdaptiveMediaSource AdaptiveMediaSource() const;
+    Windows::Media::Core::MediaStreamSource MediaStreamSource() const;
+    Windows::Media::Core::MseStreamSource MseStreamSource() const;
+    Windows::Foundation::Uri Uri() const;
+    Windows::Foundation::IAsyncAction OpenAsync() const;
 };
 
 template <typename D>
@@ -1070,6 +1335,13 @@ struct WINRT_EBO impl_IMediaStreamSource2
     using SampleRendered_revoker = event_revoker<IMediaStreamSource2>;
     SampleRendered_revoker SampleRendered(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSampleRenderedEventArgs> & handler) const;
     void SampleRendered(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaStreamSource3
+{
+    void MaxSupportedPlaybackRate(const optional<double> & value) const;
+    Windows::Foundation::IReference<double> MaxSupportedPlaybackRate() const;
 };
 
 template <typename D>
@@ -1291,6 +1563,17 @@ struct WINRT_EBO impl_ISingleSelectMediaTrackList
 };
 
 template <typename D>
+struct WINRT_EBO impl_ISpeechCue
+{
+    hstring Text() const;
+    void Text(hstring_view value) const;
+    Windows::Foundation::IReference<int32_t> StartPositionInInput() const;
+    void StartPositionInInput(const optional<int32_t> & value) const;
+    Windows::Foundation::IReference<int32_t> EndPositionInInput() const;
+    void EndPositionInInput(const optional<int32_t> & value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ITimedMetadataTrack
 {
     event_token CueEntered(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::MediaCueEventArgs> & handler) const;
@@ -1337,6 +1620,12 @@ template <typename D>
 struct WINRT_EBO impl_ITimedMetadataTrackFailedEventArgs
 {
     Windows::Media::Core::TimedMetadataTrackError Error() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimedMetadataTrackProvider
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Core::TimedMetadataTrack> TimedMetadataTracks() const;
 };
 
 template <typename D>
@@ -1412,6 +1701,15 @@ struct WINRT_EBO impl_ITimedTextSourceStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_ITimedTextSourceStatics2
+{
+    Windows::Media::Core::TimedTextSource CreateFromStreamWithIndex(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Storage::Streams::IRandomAccessStream & indexStream) const;
+    Windows::Media::Core::TimedTextSource CreateFromUriWithIndex(const Windows::Foundation::Uri & uri, const Windows::Foundation::Uri & indexUri) const;
+    Windows::Media::Core::TimedTextSource CreateFromStreamWithIndex(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Storage::Streams::IRandomAccessStream & indexStream, hstring_view defaultLanguage) const;
+    Windows::Media::Core::TimedTextSource CreateFromUriWithIndex(const Windows::Foundation::Uri & uri, const Windows::Foundation::Uri & indexUri, hstring_view defaultLanguage) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ITimedTextStyle
 {
     hstring Name() const;
@@ -1438,6 +1736,19 @@ struct WINRT_EBO impl_ITimedTextStyle
     void OutlineThickness(const Windows::Media::Core::TimedTextDouble & value) const;
     Windows::Media::Core::TimedTextDouble OutlineRadius() const;
     void OutlineRadius(const Windows::Media::Core::TimedTextDouble & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimedTextStyle2
+{
+    Windows::Media::Core::TimedTextFontStyle FontStyle() const;
+    void FontStyle(Windows::Media::Core::TimedTextFontStyle value) const;
+    bool IsUnderlineEnabled() const;
+    void IsUnderlineEnabled(bool value) const;
+    bool IsLineThroughEnabled() const;
+    void IsLineThroughEnabled(bool value) const;
+    bool IsOverlineEnabled() const;
+    void IsOverlineEnabled(bool value) const;
 };
 
 template <typename D>
@@ -1547,10 +1858,40 @@ template <> struct traits<Windows::Media::Core::IAudioTrackSupportInfo>
     template <typename D> using consume = Windows::Media::Core::impl_IAudioTrackSupportInfo<D>;
 };
 
+template <> struct traits<Windows::Media::Core::IChapterCue>
+{
+    using abi = ABI::Windows::Media::Core::IChapterCue;
+    template <typename D> using consume = Windows::Media::Core::impl_IChapterCue<D>;
+};
+
+template <> struct traits<Windows::Media::Core::ICodecInfo>
+{
+    using abi = ABI::Windows::Media::Core::ICodecInfo;
+    template <typename D> using consume = Windows::Media::Core::impl_ICodecInfo<D>;
+};
+
+template <> struct traits<Windows::Media::Core::ICodecQuery>
+{
+    using abi = ABI::Windows::Media::Core::ICodecQuery;
+    template <typename D> using consume = Windows::Media::Core::impl_ICodecQuery<D>;
+};
+
+template <> struct traits<Windows::Media::Core::ICodecSubtypesStatics>
+{
+    using abi = ABI::Windows::Media::Core::ICodecSubtypesStatics;
+    template <typename D> using consume = Windows::Media::Core::impl_ICodecSubtypesStatics<D>;
+};
+
 template <> struct traits<Windows::Media::Core::IDataCue>
 {
     using abi = ABI::Windows::Media::Core::IDataCue;
     template <typename D> using consume = Windows::Media::Core::impl_IDataCue<D>;
+};
+
+template <> struct traits<Windows::Media::Core::IDataCue2>
+{
+    using abi = ABI::Windows::Media::Core::IDataCue2;
+    template <typename D> using consume = Windows::Media::Core::impl_IDataCue2<D>;
 };
 
 template <> struct traits<Windows::Media::Core::IFaceDetectedEventArgs>
@@ -1589,6 +1930,12 @@ template <> struct traits<Windows::Media::Core::IHighDynamicRangeOutput>
     template <typename D> using consume = Windows::Media::Core::impl_IHighDynamicRangeOutput<D>;
 };
 
+template <> struct traits<Windows::Media::Core::IImageCue>
+{
+    using abi = ABI::Windows::Media::Core::IImageCue;
+    template <typename D> using consume = Windows::Media::Core::impl_IImageCue<D>;
+};
+
 template <> struct traits<Windows::Media::Core::IMediaBinder>
 {
     using abi = ABI::Windows::Media::Core::IMediaBinder;
@@ -1599,6 +1946,12 @@ template <> struct traits<Windows::Media::Core::IMediaBindingEventArgs>
 {
     using abi = ABI::Windows::Media::Core::IMediaBindingEventArgs;
     template <typename D> using consume = Windows::Media::Core::impl_IMediaBindingEventArgs<D>;
+};
+
+template <> struct traits<Windows::Media::Core::IMediaBindingEventArgs2>
+{
+    using abi = ABI::Windows::Media::Core::IMediaBindingEventArgs2;
+    template <typename D> using consume = Windows::Media::Core::impl_IMediaBindingEventArgs2<D>;
 };
 
 template <> struct traits<Windows::Media::Core::IMediaCue>
@@ -1629,6 +1982,12 @@ template <> struct traits<Windows::Media::Core::IMediaSource3>
 {
     using abi = ABI::Windows::Media::Core::IMediaSource3;
     template <typename D> using consume = Windows::Media::Core::impl_IMediaSource3<D>;
+};
+
+template <> struct traits<Windows::Media::Core::IMediaSource4>
+{
+    using abi = ABI::Windows::Media::Core::IMediaSource4;
+    template <typename D> using consume = Windows::Media::Core::impl_IMediaSource4<D>;
 };
 
 template <> struct traits<Windows::Media::Core::IMediaSourceError>
@@ -1695,6 +2054,12 @@ template <> struct traits<Windows::Media::Core::IMediaStreamSource2>
 {
     using abi = ABI::Windows::Media::Core::IMediaStreamSource2;
     template <typename D> using consume = Windows::Media::Core::impl_IMediaStreamSource2<D>;
+};
+
+template <> struct traits<Windows::Media::Core::IMediaStreamSource3>
+{
+    using abi = ABI::Windows::Media::Core::IMediaStreamSource3;
+    template <typename D> using consume = Windows::Media::Core::impl_IMediaStreamSource3<D>;
 };
 
 template <> struct traits<Windows::Media::Core::IMediaStreamSourceClosedEventArgs>
@@ -1829,6 +2194,12 @@ template <> struct traits<Windows::Media::Core::ISingleSelectMediaTrackList>
     template <typename D> using consume = Windows::Media::Core::impl_ISingleSelectMediaTrackList<D>;
 };
 
+template <> struct traits<Windows::Media::Core::ISpeechCue>
+{
+    using abi = ABI::Windows::Media::Core::ISpeechCue;
+    template <typename D> using consume = Windows::Media::Core::impl_ISpeechCue<D>;
+};
+
 template <> struct traits<Windows::Media::Core::ITimedMetadataTrack>
 {
     using abi = ABI::Windows::Media::Core::ITimedMetadataTrack;
@@ -1857,6 +2228,12 @@ template <> struct traits<Windows::Media::Core::ITimedMetadataTrackFailedEventAr
 {
     using abi = ABI::Windows::Media::Core::ITimedMetadataTrackFailedEventArgs;
     template <typename D> using consume = Windows::Media::Core::impl_ITimedMetadataTrackFailedEventArgs<D>;
+};
+
+template <> struct traits<Windows::Media::Core::ITimedMetadataTrackProvider>
+{
+    using abi = ABI::Windows::Media::Core::ITimedMetadataTrackProvider;
+    template <typename D> using consume = Windows::Media::Core::impl_ITimedMetadataTrackProvider<D>;
 };
 
 template <> struct traits<Windows::Media::Core::ITimedTextCue>
@@ -1895,10 +2272,22 @@ template <> struct traits<Windows::Media::Core::ITimedTextSourceStatics>
     template <typename D> using consume = Windows::Media::Core::impl_ITimedTextSourceStatics<D>;
 };
 
+template <> struct traits<Windows::Media::Core::ITimedTextSourceStatics2>
+{
+    using abi = ABI::Windows::Media::Core::ITimedTextSourceStatics2;
+    template <typename D> using consume = Windows::Media::Core::impl_ITimedTextSourceStatics2<D>;
+};
+
 template <> struct traits<Windows::Media::Core::ITimedTextStyle>
 {
     using abi = ABI::Windows::Media::Core::ITimedTextStyle;
     template <typename D> using consume = Windows::Media::Core::impl_ITimedTextStyle<D>;
+};
+
+template <> struct traits<Windows::Media::Core::ITimedTextStyle2>
+{
+    using abi = ABI::Windows::Media::Core::ITimedTextStyle2;
+    template <typename D> using consume = Windows::Media::Core::impl_ITimedTextStyle2<D>;
 };
 
 template <> struct traits<Windows::Media::Core::ITimedTextSubformat>
@@ -1973,6 +2362,29 @@ template <> struct traits<Windows::Media::Core::AudioTrackSupportInfo>
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.AudioTrackSupportInfo"; }
 };
 
+template <> struct traits<Windows::Media::Core::ChapterCue>
+{
+    using abi = ABI::Windows::Media::Core::ChapterCue;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.ChapterCue"; }
+};
+
+template <> struct traits<Windows::Media::Core::CodecInfo>
+{
+    using abi = ABI::Windows::Media::Core::CodecInfo;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.CodecInfo"; }
+};
+
+template <> struct traits<Windows::Media::Core::CodecQuery>
+{
+    using abi = ABI::Windows::Media::Core::CodecQuery;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.CodecQuery"; }
+};
+
+template <> struct traits<Windows::Media::Core::CodecSubtypes>
+{
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.CodecSubtypes"; }
+};
+
 template <> struct traits<Windows::Media::Core::DataCue>
 {
     using abi = ABI::Windows::Media::Core::DataCue;
@@ -2013,6 +2425,12 @@ template <> struct traits<Windows::Media::Core::HighDynamicRangeOutput>
 {
     using abi = ABI::Windows::Media::Core::HighDynamicRangeOutput;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.HighDynamicRangeOutput"; }
+};
+
+template <> struct traits<Windows::Media::Core::ImageCue>
+{
+    using abi = ABI::Windows::Media::Core::ImageCue;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.ImageCue"; }
 };
 
 template <> struct traits<Windows::Media::Core::MediaBinder>
@@ -2193,6 +2611,12 @@ template <> struct traits<Windows::Media::Core::SceneAnalyzedEventArgs>
 {
     using abi = ABI::Windows::Media::Core::SceneAnalyzedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.SceneAnalyzedEventArgs"; }
+};
+
+template <> struct traits<Windows::Media::Core::SpeechCue>
+{
+    using abi = ABI::Windows::Media::Core::SpeechCue;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Core.SpeechCue"; }
 };
 
 template <> struct traits<Windows::Media::Core::TimedMetadataTrack>

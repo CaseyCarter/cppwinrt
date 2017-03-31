@@ -21,6 +21,26 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a")) __declspec(novtable) IAsyncOperation<bool> : impl_IAsyncOperation<bool> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_b0d63b78_78ad_5e31_b6d8_e32a0e16c447
+#define WINRT_GENERIC_b0d63b78_78ad_5e31_b6d8_e32a0e16c447
+template <> struct __declspec(uuid("b0d63b78-78ad-5e31-b6d8-e32a0e16c447")) __declspec(novtable) IIterable<Windows::Foundation::Uri> : impl_IIterable<Windows::Foundation::Uri> {};
+#endif
+
+#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_3e1fe603_f897_5263_b328_0806426b8a79
 #define WINRT_GENERIC_3e1fe603_f897_5263_b328_0806426b8a79
 template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __declspec(novtable) IAsyncOperation<hstring> : impl_IAsyncOperation<hstring> {};
@@ -31,49 +51,24 @@ template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __de
 template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __declspec(novtable) IReference<Windows::Foundation::DateTime> : impl_IReference<Windows::Foundation::DateTime> {};
 #endif
 
-#ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
-#define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
-template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __declspec(novtable) IReference<Windows::Foundation::TimeSpan> : impl_IReference<Windows::Foundation::TimeSpan> {};
-#endif
-
 
 }
 
 namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
-#endif
 
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
 #endif
 
-
-}
-
-namespace ABI::Windows::Foundation {
-
-#ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
-#define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
-template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::Foundation::IInspectable> : impl_EventHandler<Windows::Foundation::IInspectable> {};
+#ifndef WINRT_GENERIC_4b8385bd_a2cd_5ff1_bf74_7ea580423e50
+#define WINRT_GENERIC_4b8385bd_a2cd_5ff1_bf74_7ea580423e50
+template <> struct __declspec(uuid("4b8385bd-a2cd-5ff1-bf74-7ea580423e50")) __declspec(novtable) IVectorView<Windows::Foundation::Uri> : impl_IVectorView<Windows::Foundation::Uri> {};
 #endif
 
-#ifndef WINRT_GENERIC_548cefbd_bc8a_5fa0_8df2_957440fc8bf4
-#define WINRT_GENERIC_548cefbd_bc8a_5fa0_8df2_957440fc8bf4
-template <> struct __declspec(uuid("548cefbd-bc8a-5fa0-8df2-957440fc8bf4")) __declspec(novtable) IReference<int32_t> : impl_IReference<int32_t> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
 #endif
 
 
@@ -86,6 +81,21 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("abf53c57-ee50-5342-b52a-26e3b8cc024f")) __declspec(novtable) IAsyncOperation<Windows::Foundation::IInspectable> : impl_IAsyncOperation<Windows::Foundation::IInspectable> {};
 #endif
 
+#ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
+#define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
+template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __declspec(novtable) IReference<Windows::Foundation::TimeSpan> : impl_IReference<Windows::Foundation::TimeSpan> {};
+#endif
+
+#ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
+#define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
+template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::Foundation::IInspectable> : impl_EventHandler<Windows::Foundation::IInspectable> {};
+#endif
+
+#ifndef WINRT_GENERIC_548cefbd_bc8a_5fa0_8df2_957440fc8bf4
+#define WINRT_GENERIC_548cefbd_bc8a_5fa0_8df2_957440fc8bf4
+template <> struct __declspec(uuid("548cefbd-bc8a-5fa0-8df2-957440fc8bf4")) __declspec(novtable) IReference<int32_t> : impl_IReference<int32_t> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f2d6c29_5473_5f3e_92e7_96572bb990e2
 #define WINRT_GENERIC_2f2d6c29_5473_5f3e_92e7_96572bb990e2
 template <> struct __declspec(uuid("2f2d6c29-5473-5f3e-92e7-96572bb990e2")) __declspec(novtable) IReference<double> : impl_IReference<double> {};
@@ -95,11 +105,6 @@ template <> struct __declspec(uuid("2f2d6c29-5473-5f3e-92e7-96572bb990e2")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_b0d63b78_78ad_5e31_b6d8_e32a0e16c447
-#define WINRT_GENERIC_b0d63b78_78ad_5e31_b6d8_e32a0e16c447
-template <> struct __declspec(uuid("b0d63b78-78ad-5e31-b6d8-e32a0e16c447")) __declspec(novtable) IIterable<Windows::Foundation::Uri> : impl_IIterable<Windows::Foundation::Uri> {};
-#endif
 
 #ifndef WINRT_GENERIC_a6487363_b074_5c60_ab16_866dce4ee54d
 #define WINRT_GENERIC_a6487363_b074_5c60_ab16_866dce4ee54d
@@ -124,11 +129,6 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_0d82bd8d_fe62_5d67_a7b9_7886dd75bc4e
 #define WINRT_GENERIC_0d82bd8d_fe62_5d67_a7b9_7886dd75bc4e
 template <> struct __declspec(uuid("0d82bd8d-fe62-5d67-a7b9-7886dd75bc4e")) __declspec(novtable) IVector<Windows::Foundation::Uri> : impl_IVector<Windows::Foundation::Uri> {};
-#endif
-
-#ifndef WINRT_GENERIC_4b8385bd_a2cd_5ff1_bf74_7ea580423e50
-#define WINRT_GENERIC_4b8385bd_a2cd_5ff1_bf74_7ea580423e50
-template <> struct __declspec(uuid("4b8385bd-a2cd-5ff1-bf74-7ea580423e50")) __declspec(novtable) IVectorView<Windows::Foundation::Uri> : impl_IVectorView<Windows::Foundation::Uri> {};
 #endif
 
 #ifndef WINRT_GENERIC_42e26ae1_d357_57e8_bb48_f75c9ff69d91
@@ -204,31 +204,6 @@ namespace ABI::Windows::Foundation {
 #ifndef WINRT_GENERIC_c2925ff8_71f0_59d3_ba13_862b226eeba2
 #define WINRT_GENERIC_c2925ff8_71f0_59d3_ba13_862b226eeba2
 template <> struct __declspec(uuid("c2925ff8-71f0-59d3-ba13-862b226eeba2")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::MediaTransportControls, Windows::UI::Xaml::Media::MediaTransportControlsThumbnailRequestedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::MediaTransportControls, Windows::UI::Xaml::Media::MediaTransportControlsThumbnailRequestedEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_297dde84_d0c7_5d21_b1ed_f96c4ea4772f
-#define WINRT_GENERIC_297dde84_d0c7_5d21_b1ed_f96c4ea4772f
-template <> struct __declspec(uuid("297dde84-d0c7-5d21-b1ed-f96c4ea4772f")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_c080b01b_eec0_542c_b1f1_d00e207ee1e0
-#define WINRT_GENERIC_c080b01b_eec0_542c_b1f1_d00e207ee1e0
-template <> struct __declspec(uuid("c080b01b-eec0-542c-b1f1-d00e207ee1e0")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_e6750b95_305f_52fd_bb80_cfcf72bc5421
-#define WINRT_GENERIC_e6750b95_305f_52fd_bb80_cfcf72bc5421
-template <> struct __declspec(uuid("e6750b95-305f-52fd-bb80-cfcf72bc5421")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_b0b3c248_7604_5108_aec9_6f3aecca2737
-#define WINRT_GENERIC_b0b3c248_7604_5108_aec9_6f3aecca2737
-template <> struct __declspec(uuid("b0b3c248-7604-5108-aec9-6f3aecca2737")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_fad2ffb9_d2d9_563c_88ca_1323b133fbf3
-#define WINRT_GENERIC_fad2ffb9_d2d9_563c_88ca_1323b133fbf3
-template <> struct __declspec(uuid("fad2ffb9-d2d9-563c-88ca-1323b133fbf3")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_98fee2a4_211d_5a3d_a832_c5ddeb8444a9
@@ -461,6 +436,31 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("18a84f8e-c1ec-5b25-ac98-818267e6f9a4")) __declspec(novtable) EventHandler<Windows::UI::Xaml::Controls::DatePickerValueChangedEventArgs> : impl_EventHandler<Windows::UI::Xaml::Controls::DatePickerValueChangedEventArgs> {};
 #endif
 
+#ifndef WINRT_GENERIC_297dde84_d0c7_5d21_b1ed_f96c4ea4772f
+#define WINRT_GENERIC_297dde84_d0c7_5d21_b1ed_f96c4ea4772f
+template <> struct __declspec(uuid("297dde84-d0c7-5d21-b1ed-f96c4ea4772f")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_c080b01b_eec0_542c_b1f1_d00e207ee1e0
+#define WINRT_GENERIC_c080b01b_eec0_542c_b1f1_d00e207ee1e0
+template <> struct __declspec(uuid("c080b01b-eec0-542c-b1f1-d00e207ee1e0")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_e6750b95_305f_52fd_bb80_cfcf72bc5421
+#define WINRT_GENERIC_e6750b95_305f_52fd_bb80_cfcf72bc5421
+template <> struct __declspec(uuid("e6750b95-305f-52fd-bb80-cfcf72bc5421")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_b0b3c248_7604_5108_aec9_6f3aecca2737
+#define WINRT_GENERIC_b0b3c248_7604_5108_aec9_6f3aecca2737
+template <> struct __declspec(uuid("b0b3c248-7604-5108-aec9-6f3aecca2737")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_fad2ffb9_d2d9_563c_88ca_1323b133fbf3
+#define WINRT_GENERIC_fad2ffb9_d2d9_563c_88ca_1323b133fbf3
+template <> struct __declspec(uuid("fad2ffb9-d2d9-563c-88ca-1323b133fbf3")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs> {};
+#endif
+
 #ifndef WINRT_GENERIC_b15ccc28_40f3_52da_9011_87621e9c60ea
 #define WINRT_GENERIC_b15ccc28_40f3_52da_9011_87621e9c60ea
 template <> struct __declspec(uuid("b15ccc28-40f3-52da-9011-87621e9c60ea")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::Controls::SearchBoxQueryChangedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::Controls::SearchBoxQueryChangedEventArgs> {};
@@ -631,6 +631,16 @@ template <> struct __declspec(uuid("38b4535c-2785-5122-96fe-d44f795b9cb2")) __de
 template <> struct __declspec(uuid("eea8b7be-9cba-5129-9b75-4930dc0c2705")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> {};
 #endif
 
+#ifndef WINRT_GENERIC_80a45bd6_7b40_5410_9c65_a8e05fee5e0f
+#define WINRT_GENERIC_80a45bd6_7b40_5410_9c65_a8e05fee5e0f
+template <> struct __declspec(uuid("80a45bd6-7b40-5410-9c65-a8e05fee5e0f")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_127a421c_ae3f_53df_b9ad_176847f32cde
+#define WINRT_GENERIC_127a421c_ae3f_53df_b9ad_176847f32cde
+template <> struct __declspec(uuid("127a421c-ae3f-53df-b9ad-176847f32cde")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> {};
+#endif
+
 #ifndef WINRT_GENERIC_4d9c196f_cdd3_54d8_98d9_4f29abbade76
 #define WINRT_GENERIC_4d9c196f_cdd3_54d8_98d9_4f29abbade76
 template <> struct __declspec(uuid("4d9c196f-cdd3-54d8-98d9-4f29abbade76")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Controls::DatePickerFlyout, Windows::UI::Xaml::Controls::DatePickedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Controls::DatePickerFlyout, Windows::UI::Xaml::Controls::DatePickedEventArgs> {};
@@ -661,15 +671,15 @@ template <> struct __declspec(uuid("6b0c4ca2-7feb-5e4e-bf5c-de9f3ac4221c")) __de
 template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __declspec(novtable) AsyncOperationCompletedHandler<bool> : impl_AsyncOperationCompletedHandler<bool> {};
 #endif
 
-#ifndef WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
-#define WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
-template <> struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41")) __declspec(novtable) AsyncOperationCompletedHandler<hstring> : impl_AsyncOperationCompletedHandler<hstring> {};
-#endif
-
 
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_1c157d0f_5efe_5cec_bbd6_0c6ce9af07a5
+#define WINRT_GENERIC_1c157d0f_5efe_5cec_bbd6_0c6ce9af07a5
+template <> struct __declspec(uuid("1c157d0f-5efe-5cec-bbd6-0c6ce9af07a5")) __declspec(novtable) IIterator<Windows::Foundation::Uri> : impl_IIterator<Windows::Foundation::Uri> {};
+#endif
 
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
@@ -681,6 +691,11 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 
 namespace ABI::Windows::Foundation {
 
+#ifndef WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
+#define WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
+template <> struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41")) __declspec(novtable) AsyncOperationCompletedHandler<hstring> : impl_AsyncOperationCompletedHandler<hstring> {};
+#endif
+
 #ifndef WINRT_GENERIC_3f08262e_a2e1_5134_9297_e9211f481a2d
 #define WINRT_GENERIC_3f08262e_a2e1_5134_9297_e9211f481a2d
 template <> struct __declspec(uuid("3f08262e-a2e1-5134-9297-e9211f481a2d")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Foundation::IInspectable> : impl_AsyncOperationCompletedHandler<Windows::Foundation::IInspectable> {};
@@ -690,11 +705,6 @@ template <> struct __declspec(uuid("3f08262e-a2e1-5134-9297-e9211f481a2d")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_1c157d0f_5efe_5cec_bbd6_0c6ce9af07a5
-#define WINRT_GENERIC_1c157d0f_5efe_5cec_bbd6_0c6ce9af07a5
-template <> struct __declspec(uuid("1c157d0f-5efe-5cec-bbd6-0c6ce9af07a5")) __declspec(novtable) IIterator<Windows::Foundation::Uri> : impl_IIterator<Windows::Foundation::Uri> {};
-#endif
 
 #ifndef WINRT_GENERIC_44a94f2d_04f8_5091_b336_be7892dd10be
 #define WINRT_GENERIC_44a94f2d_04f8_5091_b336_be7892dd10be
@@ -1392,6 +1402,13 @@ struct IBitmapIcon :
     IBitmapIcon(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IBitmapIcon2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBitmapIcon2>
+{
+    IBitmapIcon2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IBitmapIconFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IBitmapIconFactory>
@@ -1404,6 +1421,13 @@ struct IBitmapIconStatics :
     impl::consume<IBitmapIconStatics>
 {
     IBitmapIconStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBitmapIconStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBitmapIconStatics2>
+{
+    IBitmapIconStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBorder :
@@ -1658,6 +1682,13 @@ struct IComboBox3 :
     IComboBox3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IComboBox4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IComboBox4>
+{
+    IComboBox4(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IComboBoxFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IComboBoxFactory>
@@ -1705,6 +1736,13 @@ struct IComboBoxStatics3 :
     impl::consume<IComboBoxStatics3>
 {
     IComboBoxStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IComboBoxStatics4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IComboBoxStatics4>
+{
+    IComboBoxStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICommandBar :
@@ -1833,6 +1871,13 @@ struct IContentDialog :
     IContentDialog(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IContentDialog2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IContentDialog2>
+{
+    IContentDialog2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IContentDialogButtonClickDeferral :
     Windows::Foundation::IInspectable,
     impl::consume<IContentDialogButtonClickDeferral>
@@ -1887,6 +1932,13 @@ struct IContentDialogStatics :
     impl::consume<IContentDialogStatics>
 {
     IContentDialogStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IContentDialogStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IContentDialogStatics2>
+{
+    IContentDialogStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContentPresenter :
@@ -1994,6 +2046,13 @@ struct IControl4 :
     IControl4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IControl5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IControl5>
+{
+    IControl5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IControlFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IControlFactory>
@@ -2041,6 +2100,13 @@ struct IControlStatics4 :
     impl::consume<IControlStatics4>
 {
     IControlStatics4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IControlStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IControlStatics5>
+{
+    IControlStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IControlTemplate :
@@ -2295,6 +2361,13 @@ struct IFocusEngagedEventArgs :
     IFocusEngagedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IFocusEngagedEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IFocusEngagedEventArgs2>
+{
+    IFocusEngagedEventArgs2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IFontIcon :
     Windows::Foundation::IInspectable,
     impl::consume<IFontIcon>
@@ -2363,6 +2436,13 @@ struct IFrame3 :
     impl::consume<IFrame3>
 {
     IFrame3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IFrame4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IFrame4>
+{
+    IFrame4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameFactory :
@@ -2659,6 +2739,13 @@ struct IInkToolbar :
     IInkToolbar(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IInkToolbar2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbar2>
+{
+    IInkToolbar2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IInkToolbarBallpointPenButton :
     Windows::Foundation::IInspectable,
     impl::consume<IInkToolbarBallpointPenButton>
@@ -2757,6 +2844,13 @@ struct IInkToolbarEraserButton :
     IInkToolbarEraserButton(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IInkToolbarEraserButton2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarEraserButton2>
+{
+    IInkToolbarEraserButton2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IInkToolbarEraserButtonFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IInkToolbarEraserButtonFactory>
@@ -2764,11 +2858,39 @@ struct IInkToolbarEraserButtonFactory :
     IInkToolbarEraserButtonFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IInkToolbarEraserButtonStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarEraserButtonStatics2>
+{
+    IInkToolbarEraserButtonStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IInkToolbarFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IInkToolbarFactory>
 {
     IInkToolbarFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkToolbarFlyoutItem :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarFlyoutItem>
+{
+    IInkToolbarFlyoutItem(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkToolbarFlyoutItemFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarFlyoutItemFactory>
+{
+    IInkToolbarFlyoutItemFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkToolbarFlyoutItemStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarFlyoutItemStatics>
+{
+    IInkToolbarFlyoutItemStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkToolbarHighlighterButton :
@@ -2783,6 +2905,34 @@ struct IInkToolbarHighlighterButtonFactory :
     impl::consume<IInkToolbarHighlighterButtonFactory>
 {
     IInkToolbarHighlighterButtonFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkToolbarIsStencilButtonCheckedChangedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarIsStencilButtonCheckedChangedEventArgs>
+{
+    IInkToolbarIsStencilButtonCheckedChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkToolbarMenuButton :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarMenuButton>
+{
+    IInkToolbarMenuButton(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkToolbarMenuButtonFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarMenuButtonFactory>
+{
+    IInkToolbarMenuButtonFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkToolbarMenuButtonStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarMenuButtonStatics>
+{
+    IInkToolbarMenuButtonStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkToolbarPenButton :
@@ -2847,6 +2997,7 @@ struct IInkToolbarRulerButton :
 {
     IInkToolbarRulerButton(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("InkToolbarRulerButton is deprecated starting from Windows 10 Creators Update. Please use InkToolbarStencilButton going forward. For more info, see MSDN.")]] IInkToolbarRulerButton;
 
 struct IInkToolbarRulerButtonFactory :
     Windows::Foundation::IInspectable,
@@ -2854,6 +3005,7 @@ struct IInkToolbarRulerButtonFactory :
 {
     IInkToolbarRulerButtonFactory(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("InkToolbarRulerButton is deprecated starting from Windows 10 Creators Update. Please use InkToolbarStencilButton going forward. For more info, see MSDN.")]] IInkToolbarRulerButtonFactory;
 
 struct IInkToolbarRulerButtonStatics :
     Windows::Foundation::IInspectable,
@@ -2861,12 +3013,41 @@ struct IInkToolbarRulerButtonStatics :
 {
     IInkToolbarRulerButtonStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("InkToolbarRulerButton is deprecated starting from Windows 10 Creators Update. Please use InkToolbarStencilButton going forward. For more info, see MSDN.")]] IInkToolbarRulerButtonStatics;
 
 struct IInkToolbarStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IInkToolbarStatics>
 {
     IInkToolbarStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkToolbarStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarStatics2>
+{
+    IInkToolbarStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkToolbarStencilButton :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarStencilButton>
+{
+    IInkToolbarStencilButton(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkToolbarStencilButtonFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarStencilButtonFactory>
+{
+    IInkToolbarStencilButtonFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInkToolbarStencilButtonStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInkToolbarStencilButtonStatics>
+{
+    IInkToolbarStencilButtonStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInkToolbarToggleButton :
@@ -3184,6 +3365,13 @@ struct IListViewBase5 :
     IListViewBase5(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IListViewBase6 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IListViewBase6>
+{
+    IListViewBase6(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IListViewBaseFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IListViewBaseFactory>
@@ -3443,6 +3631,13 @@ struct IMenuFlyoutItem :
     IMenuFlyoutItem(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMenuFlyoutItem2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMenuFlyoutItem2>
+{
+    IMenuFlyoutItem2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMenuFlyoutItemBase :
     Windows::Foundation::IInspectable,
     impl::consume<IMenuFlyoutItemBase>
@@ -3469,6 +3664,13 @@ struct IMenuFlyoutItemStatics :
     impl::consume<IMenuFlyoutItemStatics>
 {
     IMenuFlyoutItemStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMenuFlyoutItemStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMenuFlyoutItemStatics2>
+{
+    IMenuFlyoutItemStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMenuFlyoutPresenter :
@@ -3520,11 +3722,25 @@ struct IMenuFlyoutSubItem :
     IMenuFlyoutSubItem(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMenuFlyoutSubItem2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMenuFlyoutSubItem2>
+{
+    IMenuFlyoutSubItem2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMenuFlyoutSubItemStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IMenuFlyoutSubItemStatics>
 {
     IMenuFlyoutSubItemStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMenuFlyoutSubItemStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMenuFlyoutSubItemStatics2>
+{
+    IMenuFlyoutSubItemStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct INavigate :
@@ -3870,6 +4086,13 @@ struct IRichEditBox4 :
     IRichEditBox4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IRichEditBox5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRichEditBox5>
+{
+    IRichEditBox5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IRichEditBoxFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IRichEditBoxFactory>
@@ -3905,11 +4128,25 @@ struct IRichEditBoxStatics4 :
     IRichEditBoxStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IRichEditBoxStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRichEditBoxStatics5>
+{
+    IRichEditBoxStatics5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IRichEditBoxTextChangingEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IRichEditBoxTextChangingEventArgs>
 {
     IRichEditBoxTextChangingEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IRichEditBoxTextChangingEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRichEditBoxTextChangingEventArgs2>
+{
+    IRichEditBoxTextChangingEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRichTextBlock :
@@ -3931,6 +4168,13 @@ struct IRichTextBlock3 :
     impl::consume<IRichTextBlock3>
 {
     IRichTextBlock3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IRichTextBlock4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRichTextBlock4>
+{
+    IRichTextBlock4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRichTextBlockOverflow :
@@ -3980,6 +4224,13 @@ struct IRichTextBlockStatics3 :
     impl::consume<IRichTextBlockStatics3>
 {
     IRichTextBlockStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IRichTextBlockStatics4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRichTextBlockStatics4>
+{
+    IRichTextBlockStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRowDefinition :
@@ -4416,6 +4667,13 @@ struct ITextBlock4 :
     ITextBlock4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ITextBlock5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ITextBlock5>
+{
+    ITextBlock5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ITextBlockStatics :
     Windows::Foundation::IInspectable,
     impl::consume<ITextBlockStatics>
@@ -4435,6 +4693,13 @@ struct ITextBlockStatics3 :
     impl::consume<ITextBlockStatics3>
 {
     ITextBlockStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ITextBlockStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ITextBlockStatics5>
+{
+    ITextBlockStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextBox :
@@ -4465,6 +4730,13 @@ struct ITextBox4 :
     ITextBox4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ITextBox5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ITextBox5>
+{
+    ITextBox5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ITextBoxFactory :
     Windows::Foundation::IInspectable,
     impl::consume<ITextBoxFactory>
@@ -4493,11 +4765,25 @@ struct ITextBoxStatics3 :
     ITextBoxStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ITextBoxStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ITextBoxStatics5>
+{
+    ITextBoxStatics5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ITextBoxTextChangingEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<ITextBoxTextChangingEventArgs>
 {
     ITextBoxTextChangingEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ITextBoxTextChangingEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ITextBoxTextChangingEventArgs2>
+{
+    ITextBoxTextChangingEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextChangedEventArgs :

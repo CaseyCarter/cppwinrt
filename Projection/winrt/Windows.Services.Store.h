@@ -8,6 +8,7 @@ WINRT_WARNING_PUSH
 
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Foundation.3.h"
+#include "internal/Windows.Web.Http.3.h"
 #include "internal/Windows.System.3.h"
 #include "internal/Windows.ApplicationModel.3.h"
 #include "internal/Windows.Services.Store.3.h"
@@ -763,6 +764,25 @@ struct produce<D, Windows::Services::Store::IStoreContext> : produce_base<D, Win
         {
             typename D::abi_guard guard(this->shim());
             *operation = detach_abi(this->shim().RequestDownloadAndInstallStorePackagesAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&storeIds)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Services::Store::IStoreContext2> : produce_base<D, Windows::Services::Store::IStoreContext2>
+{
+    HRESULT __stdcall abi_FindStoreProductForPackageAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<hstring>> productKinds, impl::abi_arg_in<Windows::ApplicationModel::IPackage> package, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductResult>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().FindStoreProductForPackageAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<hstring> *>(&productKinds), *reinterpret_cast<const Windows::ApplicationModel::Package *>(&package)));
             return S_OK;
         }
         catch (...)
@@ -1760,6 +1780,24 @@ struct produce<D, Windows::Services::Store::IStoreSendRequestResult> : produce_b
 };
 
 template <typename D>
+struct produce<D, Windows::Services::Store::IStoreSendRequestResult2> : produce_base<D, Windows::Services::Store::IStoreSendRequestResult2>
+{
+    HRESULT __stdcall get_HttpStatusCode(Windows::Web::Http::HttpStatusCode * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().HttpStatusCode());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Services::Store::IStoreSku> : produce_base<D, Windows::Services::Store::IStoreSku>
 {
     HRESULT __stdcall get_StoreId(impl::abi_arg_out<hstring> value) noexcept override
@@ -2470,6 +2508,13 @@ template <typename D> HRESULT impl_IStoreSendRequestResult<D>::ExtendedError() c
     return value;
 }
 
+template <typename D> Windows::Web::Http::HttpStatusCode impl_IStoreSendRequestResult2<D>::HttpStatusCode() const
+{
+    Windows::Web::Http::HttpStatusCode value {};
+    check_hresult(WINRT_SHIM(IStoreSendRequestResult2)->get_HttpStatusCode(&value));
+    return value;
+}
+
 template <typename D> hstring impl_IStoreProduct<D>::StoreId() const
 {
     hstring value;
@@ -3138,6 +3183,13 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::
     return operation;
 }
 
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductResult> impl_IStoreContext2<D>::FindStoreProductForPackageAsync(iterable<hstring> productKinds, const Windows::ApplicationModel::Package & package) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductResult> operation;
+    check_hresult(WINRT_SHIM(IStoreContext2)->abi_FindStoreProductForPackageAsync(get_abi(productKinds), get_abi(package), put_abi(operation)));
+    return operation;
+}
+
 template <typename D> Windows::ApplicationModel::Package impl_IStorePackageUpdate<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
@@ -3298,6 +3350,15 @@ struct std::hash<winrt::Windows::Services::Store::IStoreContext>
 };
 
 template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreContext2>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreContext2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Services::Store::IStoreContextStatics>
 {
     size_t operator()(const winrt::Windows::Services::Store::IStoreContextStatics & value) const noexcept
@@ -3436,6 +3497,15 @@ template<>
 struct std::hash<winrt::Windows::Services::Store::IStoreSendRequestResult>
 {
     size_t operator()(const winrt::Windows::Services::Store::IStoreSendRequestResult & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Store::IStoreSendRequestResult2>
+{
+    size_t operator()(const winrt::Windows::Services::Store::IStoreSendRequestResult2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

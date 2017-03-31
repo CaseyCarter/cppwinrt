@@ -34,6 +34,31 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("78c880f6-a7dc-5172-89da-7749fc82aa82")) __declspec(novtable) IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> : impl_IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> {};
 #endif
 
+#ifndef WINRT_GENERIC_f6a9dc12_01f7_54f0_a257_c404815b9c1c
+#define WINRT_GENERIC_f6a9dc12_01f7_54f0_a257_c404815b9c1c
+template <> struct __declspec(uuid("f6a9dc12-01f7-54f0-a257-c404815b9c1c")) __declspec(novtable) IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> : impl_IMapView<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_d4f89768_688f_59ec_bf24_c2af6a310fa4
+#define WINRT_GENERIC_d4f89768_688f_59ec_bf24_c2af6a310fa4
+template <> struct __declspec(uuid("d4f89768-688f-59ec-bf24-c2af6a310fa4")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> : impl_TypedEventHandler<Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup, Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_2c08602f_40b1_5e97_ae21_5c04d7fb829c
+#define WINRT_GENERIC_2c08602f_40b1_5e97_ae21_5c04d7fb829c
+template <> struct __declspec(uuid("2c08602f-40b1-5e97-ae21-5c04d7fb829c")) __declspec(novtable) IMapView<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> : impl_IMapView<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> {};
+#endif
+
 #ifndef WINRT_GENERIC_851e3cfd_306b_5c8e_ae3c_a8d83c623604
 #define WINRT_GENERIC_851e3cfd_306b_5c8e_ae3c_a8d83c623604
 template <> struct __declspec(uuid("851e3cfd-306b-5c8e-ae3c-a8d83c623604")) __declspec(novtable) IIterable<Windows::Storage::StorageLibrary> : impl_IIterable<Windows::Storage::StorageLibrary> {};
@@ -52,6 +77,11 @@ template <> struct __declspec(uuid("b5136c46-2f2e-511d-9e8e-5ef4decb1da7")) __de
 #ifndef WINRT_GENERIC_9d01424d_5653_59f8_ba6b_d0c077346d2d
 #define WINRT_GENERIC_9d01424d_5653_59f8_ba6b_d0c077346d2d
 template <> struct __declspec(uuid("9d01424d-5653-59f8-ba6b-d0c077346d2d")) __declspec(novtable) IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> : impl_IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> {};
+#endif
+
+#ifndef WINRT_GENERIC_f402ec9f_84b2_57c3_9543_01fbda05219b
+#define WINRT_GENERIC_f402ec9f_84b2_57c3_9543_01fbda05219b
+template <> struct __declspec(uuid("f402ec9f-84b2-57c3-9543-01fbda05219b")) __declspec(novtable) IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> : impl_IAsyncOperation<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> {};
 #endif
 
 
@@ -104,6 +134,26 @@ template <> struct __declspec(uuid("5a1f6d75-8678-547c-8fd7-fbceb6ebf968")) __de
 template <> struct __declspec(uuid("6fe872bd-1090-50ef-aa1a-82b7f9bce2b8")) __declspec(novtable) IMap<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> : impl_IMap<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> {};
 #endif
 
+#ifndef WINRT_GENERIC_67a07f76_20b0_573b_9d74_ed0fc4f653c7
+#define WINRT_GENERIC_67a07f76_20b0_573b_9d74_ed0fc4f653c7
+template <> struct __declspec(uuid("67a07f76-20b0-573b-9d74-ed0fc4f653c7")) __declspec(novtable) IKeyValuePair<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> : impl_IKeyValuePair<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> {};
+#endif
+
+#ifndef WINRT_GENERIC_f451776c_7fde_5cd0_a068_68884c99d37c
+#define WINRT_GENERIC_f451776c_7fde_5cd0_a068_68884c99d37c
+template <> struct __declspec(uuid("f451776c-7fde-5cd0-a068-68884c99d37c")) __declspec(novtable) IMap<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> : impl_IMap<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup> {};
+#endif
+
+#ifndef WINRT_GENERIC_9bcb843b_221b_5fbe_9b20_7028bc4e8653
+#define WINRT_GENERIC_9bcb843b_221b_5fbe_9b20_7028bc4e8653
+template <> struct __declspec(uuid("9bcb843b-221b-5fbe-9b20-7028bc4e8653")) __declspec(novtable) IKeyValuePair<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> : impl_IKeyValuePair<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> {};
+#endif
+
+#ifndef WINRT_GENERIC_aaca6f20_2990_5c73_8c6a_ce9224bb0170
+#define WINRT_GENERIC_aaca6f20_2990_5c73_8c6a_ce9224bb0170
+template <> struct __declspec(uuid("aaca6f20-2990-5c73-8c6a-ce9224bb0170")) __declspec(novtable) IMap<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> : impl_IMap<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration> {};
+#endif
+
 #ifndef WINRT_GENERIC_753d0623_9a04_54a0_b3e2_8f5c15313194
 #define WINRT_GENERIC_753d0623_9a04_54a0_b3e2_8f5c15313194
 template <> struct __declspec(uuid("753d0623-9a04-54a0-b3e2-8f5c15313194")) __declspec(novtable) IVector<Windows::Storage::StorageLibrary> : impl_IVector<Windows::Storage::StorageLibrary> {};
@@ -134,6 +184,11 @@ template <> struct __declspec(uuid("d5aa9506-1464-57d4-859d-7ee9b26cb1f9")) __de
 template <> struct __declspec(uuid("3fd5a57e-47e4-5921-b148-5cb586166ca8")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> {};
 #endif
 
+#ifndef WINRT_GENERIC_39d8105f_a505_5f88_91a9_b0fc6d628699
+#define WINRT_GENERIC_39d8105f_a505_5f88_91a9_b0fc6d628699
+template <> struct __declspec(uuid("39d8105f-a505-5f88-91a9-b0fc6d628699")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> : impl_AsyncOperationCompletedHandler<Windows::ApplicationModel::Background::GattServiceProviderTriggerResult> {};
+#endif
+
 
 }
 
@@ -157,6 +212,26 @@ template <> struct __declspec(uuid("2001aea5-1a86-517e-8be5-11d7fb5935b2")) __de
 #ifndef WINRT_GENERIC_80fb0327_5a00_55cc_85db_a852719981b9
 #define WINRT_GENERIC_80fb0327_5a00_55cc_85db_a852719981b9
 template <> struct __declspec(uuid("80fb0327-5a00-55cc-85db-a852719981b9")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>> {};
+#endif
+
+#ifndef WINRT_GENERIC_4c21744b_b583_559d_89f7_d4138cffffbc
+#define WINRT_GENERIC_4c21744b_b583_559d_89f7_d4138cffffbc
+template <> struct __declspec(uuid("4c21744b-b583-559d-89f7-d4138cffffbc")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>> {};
+#endif
+
+#ifndef WINRT_GENERIC_04428524_7d54_59b4_bf17_ac57c4ce6b40
+#define WINRT_GENERIC_04428524_7d54_59b4_bf17_ac57c4ce6b40
+template <> struct __declspec(uuid("04428524-7d54-59b4-bf17-ac57c4ce6b40")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::ApplicationModel::Background::BackgroundTaskRegistrationGroup>> {};
+#endif
+
+#ifndef WINRT_GENERIC_8445d2ae_dd03_5b98_95e4_82b43a3f0d64
+#define WINRT_GENERIC_8445d2ae_dd03_5b98_95e4_82b43a3f0d64
+template <> struct __declspec(uuid("8445d2ae-dd03-5b98-95e4-82b43a3f0d64")) __declspec(novtable) IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration>> : impl_IIterator<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration>> {};
+#endif
+
+#ifndef WINRT_GENERIC_62ae0fda_b238_554f_a275_1dc16d6ca03a
+#define WINRT_GENERIC_62ae0fda_b238_554f_a275_1dc16d6ca03a
+template <> struct __declspec(uuid("62ae0fda-b238-554f-a275-1dc16d6ca03a")) __declspec(novtable) IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration>> : impl_IIterable<Windows::Foundation::Collections::IKeyValuePair<GUID, Windows::ApplicationModel::Background::BackgroundTaskRegistration>> {};
 #endif
 
 
@@ -273,6 +348,14 @@ struct IBackgroundTaskBuilder3 :
     IBackgroundTaskBuilder3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IBackgroundTaskBuilder4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBackgroundTaskBuilder4>,
+    impl::require<IBackgroundTaskBuilder4, Windows::ApplicationModel::Background::IBackgroundTaskBuilder>
+{
+    IBackgroundTaskBuilder4(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IBackgroundTaskCompletedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskCompletedEventArgs>
@@ -332,11 +415,40 @@ struct IBackgroundTaskRegistration2 :
     IBackgroundTaskRegistration2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IBackgroundTaskRegistration3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBackgroundTaskRegistration3>,
+    impl::require<IBackgroundTaskRegistration3, Windows::ApplicationModel::Background::IBackgroundTaskRegistration>
+{
+    IBackgroundTaskRegistration3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBackgroundTaskRegistrationGroup :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBackgroundTaskRegistrationGroup>
+{
+    IBackgroundTaskRegistrationGroup(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBackgroundTaskRegistrationGroupFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBackgroundTaskRegistrationGroupFactory>
+{
+    IBackgroundTaskRegistrationGroupFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IBackgroundTaskRegistrationStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IBackgroundTaskRegistrationStatics>
 {
     IBackgroundTaskRegistrationStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBackgroundTaskRegistrationStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBackgroundTaskRegistrationStatics2>
+{
+    IBackgroundTaskRegistrationStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBackgroundTrigger :
@@ -493,11 +605,46 @@ struct IGattCharacteristicNotificationTrigger :
     IGattCharacteristicNotificationTrigger(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IGattCharacteristicNotificationTrigger2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGattCharacteristicNotificationTrigger2>
+{
+    IGattCharacteristicNotificationTrigger2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IGattCharacteristicNotificationTriggerFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IGattCharacteristicNotificationTriggerFactory>
 {
     IGattCharacteristicNotificationTriggerFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IGattCharacteristicNotificationTriggerFactory2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGattCharacteristicNotificationTriggerFactory2>
+{
+    IGattCharacteristicNotificationTriggerFactory2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IGattServiceProviderTrigger :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGattServiceProviderTrigger>
+{
+    IGattServiceProviderTrigger(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IGattServiceProviderTriggerResult :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGattServiceProviderTriggerResult>
+{
+    IGattServiceProviderTriggerResult(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IGattServiceProviderTriggerStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGattServiceProviderTriggerStatics>
+{
+    IGattServiceProviderTriggerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ILocationTrigger :

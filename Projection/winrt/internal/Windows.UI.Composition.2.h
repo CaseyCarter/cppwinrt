@@ -11,9 +11,9 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
 #endif
 
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
@@ -21,9 +21,9 @@ template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __de
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
 #endif
 
-#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
 #endif
 
 #ifndef WINRT_GENERIC_0cb59942_c6f3_585f_9a92_b47e8dd38ebf
@@ -35,6 +35,11 @@ template <> struct __declspec(uuid("0cb59942-c6f3-585f-9a92-b47e8dd38ebf")) __de
 }
 
 namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_6e8cc6f4_6cf5_5994_9447_726171236ea8
+#define WINRT_GENERIC_6e8cc6f4_6cf5_5994_9447_726171236ea8
+template <> struct __declspec(uuid("6e8cc6f4-6cf5-5994-9447-726171236ea8")) __declspec(novtable) TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> {};
+#endif
 
 #ifndef WINRT_GENERIC_9df03456_3383_508b_9c75_ee840a7e1a39
 #define WINRT_GENERIC_9df03456_3383_508b_9c75_ee840a7e1a39
@@ -199,6 +204,20 @@ struct ICompositionBrushFactory :
     ICompositionBrushFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ICompositionCapabilities :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICompositionCapabilities>
+{
+    ICompositionCapabilities(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICompositionCapabilitiesStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICompositionCapabilitiesStatics>
+{
+    ICompositionCapabilitiesStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ICompositionClip :
     Windows::Foundation::IInspectable,
     impl::consume<ICompositionClip>
@@ -239,6 +258,20 @@ struct ICompositionDrawingSurface :
     impl::consume<ICompositionDrawingSurface>
 {
     ICompositionDrawingSurface(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICompositionDrawingSurface2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICompositionDrawingSurface2>
+{
+    ICompositionDrawingSurface2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICompositionDrawingSurfaceFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICompositionDrawingSurfaceFactory>
+{
+    ICompositionDrawingSurfaceFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionEasingFunction :
@@ -289,6 +322,13 @@ struct ICompositionGraphicsDevice :
     impl::consume<ICompositionGraphicsDevice>
 {
     ICompositionGraphicsDevice(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICompositionGraphicsDevice2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICompositionGraphicsDevice2>
+{
+    ICompositionGraphicsDevice2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICompositionLight :
@@ -403,6 +443,20 @@ struct ICompositionTarget :
     ICompositionTarget(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ICompositionVirtualDrawingSurface :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICompositionVirtualDrawingSurface>
+{
+    ICompositionVirtualDrawingSurface(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICompositionVirtualDrawingSurfaceFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICompositionVirtualDrawingSurfaceFactory>
+{
+    ICompositionVirtualDrawingSurfaceFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ICompositor :
     Windows::Foundation::IInspectable,
     impl::consume<ICompositor>
@@ -415,6 +469,13 @@ struct ICompositor2 :
     impl::consume<ICompositor2>
 {
     ICompositor2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICompositor3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICompositor3>
+{
+    ICompositor3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IContainerVisual :
@@ -486,6 +547,13 @@ struct IKeyFrameAnimation2 :
     impl::consume<IKeyFrameAnimation2>
 {
     IKeyFrameAnimation2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IKeyFrameAnimation3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IKeyFrameAnimation3>
+{
+    IKeyFrameAnimation3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IKeyFrameAnimationFactory :
@@ -591,6 +659,13 @@ struct IVisual :
     impl::consume<IVisual>
 {
     IVisual(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IVisual2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IVisual2>
+{
+    IVisual2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualCollection :

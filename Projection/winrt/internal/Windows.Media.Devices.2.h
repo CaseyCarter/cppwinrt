@@ -24,10 +24,25 @@ template <> struct __declspec(uuid("97d07327-2c78-57bc-98e6-a24cd024cf5b")) __de
 template <> struct __declspec(uuid("fd732aca-dafc-5b7d-bf72-b560b78d260c")) __declspec(novtable) TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> : impl_TypedEventHandler<Windows::Foundation::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> {};
 #endif
 
+#ifndef WINRT_GENERIC_2e1f3d72_a58d_5b0a_b42d_3660c04cfeeb
+#define WINRT_GENERIC_2e1f3d72_a58d_5b0a_b42d_3660c04cfeeb
+template <> struct __declspec(uuid("2e1f3d72-a58d-5b0a-b42d-3660c04cfeeb")) __declspec(novtable) IAsyncOperation<Windows::Media::Devices::ModuleCommandResult> : impl_IAsyncOperation<Windows::Media::Devices::ModuleCommandResult> {};
+#endif
+
+#ifndef WINRT_GENERIC_b2f6b1fd_7092_5724_b2ce_91b1176e80e1
+#define WINRT_GENERIC_b2f6b1fd_7092_5724_b2ce_91b1176e80e1
+template <> struct __declspec(uuid("b2f6b1fd-7092-5724-b2ce-91b1176e80e1")) __declspec(novtable) TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> : impl_TypedEventHandler<Windows::Media::Devices::AudioDeviceModulesManager, Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs> {};
+#endif
+
 
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_b9f55617_48ec_5ad7_95ca_33395284f28b
+#define WINRT_GENERIC_b9f55617_48ec_5ad7_95ca_33395284f28b
+template <> struct __declspec(uuid("b9f55617-48ec-5ad7-95ca-33395284f28b")) __declspec(novtable) IVectorView<Windows::Media::Devices::AudioDeviceModule> : impl_IVectorView<Windows::Media::Devices::AudioDeviceModule> {};
+#endif
 
 #ifndef WINRT_GENERIC_9b915d69_e718_5b48_bb94_54bdf3737ea5
 #define WINRT_GENERIC_9b915d69_e718_5b48_bb94_54bdf3737ea5
@@ -102,6 +117,36 @@ template <> struct __declspec(uuid("8c2658d8-acaa-5a80-b259-1ba0697c6138")) __de
 #ifndef WINRT_GENERIC_0f6c3b8b_5818_5cbf_bf26_6616bfc308c4
 #define WINRT_GENERIC_0f6c3b8b_5818_5cbf_bf26_6616bfc308c4
 template <> struct __declspec(uuid("0f6c3b8b-5818-5cbf-bf26-6616bfc308c4")) __declspec(novtable) IVectorView<Windows::Media::MediaProperties::IMediaEncodingProperties> : impl_IVectorView<Windows::Media::MediaProperties::IMediaEncodingProperties> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_cb786404_f2e8_5e0b_bf12_39e31483cfae
+#define WINRT_GENERIC_cb786404_f2e8_5e0b_bf12_39e31483cfae
+template <> struct __declspec(uuid("cb786404-f2e8-5e0b-bf12-39e31483cfae")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Media::Devices::ModuleCommandResult> : impl_AsyncOperationCompletedHandler<Windows::Media::Devices::ModuleCommandResult> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_325cb078_f603_522b_8afe_04b0bfcfa0e9
+#define WINRT_GENERIC_325cb078_f603_522b_8afe_04b0bfcfa0e9
+template <> struct __declspec(uuid("325cb078-f603-522b-8afe-04b0bfcfa0e9")) __declspec(novtable) IVector<Windows::Media::Devices::AudioDeviceModule> : impl_IVector<Windows::Media::Devices::AudioDeviceModule> {};
+#endif
+
+#ifndef WINRT_GENERIC_b4cbbfb7_9851_56c9_839d_a10a8b1bb234
+#define WINRT_GENERIC_b4cbbfb7_9851_56c9_839d_a10a8b1bb234
+template <> struct __declspec(uuid("b4cbbfb7-9851-56c9-839d-a10a8b1bb234")) __declspec(novtable) IIterator<Windows::Media::Devices::AudioDeviceModule> : impl_IIterator<Windows::Media::Devices::AudioDeviceModule> {};
+#endif
+
+#ifndef WINRT_GENERIC_7eeb51c3_d70e_548a_85c2_3cf71b4a124c
+#define WINRT_GENERIC_7eeb51c3_d70e_548a_85c2_3cf71b4a124c
+template <> struct __declspec(uuid("7eeb51c3-d70e-548a-85c2-3cf71b4a124c")) __declspec(novtable) IIterable<Windows::Media::Devices::AudioDeviceModule> : impl_IIterable<Windows::Media::Devices::AudioDeviceModule> {};
 #endif
 
 #ifndef WINRT_GENERIC_88a2f63c_712f_5c53_bfb6_647078adc0a4
@@ -331,12 +376,47 @@ struct IAdvancedVideoCaptureDeviceController4 :
     IAdvancedVideoCaptureDeviceController4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IAdvancedVideoCaptureDeviceController5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAdvancedVideoCaptureDeviceController5>
+{
+    IAdvancedVideoCaptureDeviceController5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IAudioDeviceController :
     Windows::Foundation::IInspectable,
     impl::consume<IAudioDeviceController>,
     impl::require<IAudioDeviceController, Windows::Media::Devices::IMediaDeviceController>
 {
     IAudioDeviceController(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IAudioDeviceModule :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAudioDeviceModule>
+{
+    IAudioDeviceModule(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IAudioDeviceModuleNotificationEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAudioDeviceModuleNotificationEventArgs>
+{
+    IAudioDeviceModuleNotificationEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IAudioDeviceModulesManager :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAudioDeviceModulesManager>
+{
+    IAudioDeviceModulesManager(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IAudioDeviceModulesManagerFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAudioDeviceModulesManagerFactory>
+{
+    IAudioDeviceModulesManagerFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDefaultAudioDeviceChangedEventArgs :
@@ -465,6 +545,13 @@ struct IMediaDeviceStatics :
     IMediaDeviceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IModuleCommandResult :
+    Windows::Foundation::IInspectable,
+    impl::consume<IModuleCommandResult>
+{
+    IModuleCommandResult(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IOpticalImageStabilizationControl :
     Windows::Foundation::IInspectable,
     impl::consume<IOpticalImageStabilizationControl>
@@ -520,6 +607,13 @@ struct IVideoDeviceController :
     impl::require<IVideoDeviceController, Windows::Media::Devices::IMediaDeviceController>
 {
     IVideoDeviceController(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IVideoDeviceControllerGetDevicePropertyResult :
+    Windows::Foundation::IInspectable,
+    impl::consume<IVideoDeviceControllerGetDevicePropertyResult>
+{
+    IVideoDeviceControllerGetDevicePropertyResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWhiteBalanceControl :

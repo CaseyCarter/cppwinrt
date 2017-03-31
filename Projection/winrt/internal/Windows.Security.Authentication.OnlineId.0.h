@@ -12,10 +12,17 @@ struct IOnlineIdAuthenticator;
 struct IOnlineIdServiceTicket;
 struct IOnlineIdServiceTicketRequest;
 struct IOnlineIdServiceTicketRequestFactory;
+struct IOnlineIdSystemAuthenticatorForUser;
+struct IOnlineIdSystemAuthenticatorStatics;
+struct IOnlineIdSystemIdentity;
+struct IOnlineIdSystemTicketResult;
 struct IUserIdentity;
 struct OnlineIdAuthenticator;
 struct OnlineIdServiceTicket;
 struct OnlineIdServiceTicketRequest;
+struct OnlineIdSystemAuthenticatorForUser;
+struct OnlineIdSystemIdentity;
+struct OnlineIdSystemTicketResult;
 struct SignOutUserOperation;
 struct UserAuthenticationOperation;
 struct UserIdentity;
@@ -28,10 +35,18 @@ struct IOnlineIdAuthenticator;
 struct IOnlineIdServiceTicket;
 struct IOnlineIdServiceTicketRequest;
 struct IOnlineIdServiceTicketRequestFactory;
+struct IOnlineIdSystemAuthenticatorForUser;
+struct IOnlineIdSystemAuthenticatorStatics;
+struct IOnlineIdSystemIdentity;
+struct IOnlineIdSystemTicketResult;
 struct IUserIdentity;
 struct OnlineIdAuthenticator;
 struct OnlineIdServiceTicket;
 struct OnlineIdServiceTicketRequest;
+struct OnlineIdSystemAuthenticator;
+struct OnlineIdSystemAuthenticatorForUser;
+struct OnlineIdSystemIdentity;
+struct OnlineIdSystemTicketResult;
 struct SignOutUserOperation;
 struct UserAuthenticationOperation;
 struct UserIdentity;
@@ -44,6 +59,10 @@ template <typename T> struct impl_IOnlineIdAuthenticator;
 template <typename T> struct impl_IOnlineIdServiceTicket;
 template <typename T> struct impl_IOnlineIdServiceTicketRequest;
 template <typename T> struct impl_IOnlineIdServiceTicketRequestFactory;
+template <typename T> struct impl_IOnlineIdSystemAuthenticatorForUser;
+template <typename T> struct impl_IOnlineIdSystemAuthenticatorStatics;
+template <typename T> struct impl_IOnlineIdSystemIdentity;
+template <typename T> struct impl_IOnlineIdSystemTicketResult;
 template <typename T> struct impl_IUserIdentity;
 
 }
@@ -55,6 +74,13 @@ enum class CredentialPromptType
     PromptIfNeeded = 0,
     RetypeCredentials = 1,
     DoNotPrompt = 2,
+};
+
+enum class OnlineIdSystemTicketStatus
+{
+    Success = 0,
+    Error = 1,
+    ServiceConnectionError = 2,
 };
 
 }

@@ -15,7 +15,7 @@ struct __declspec(uuid("1300593b-e2e3-40a4-b7d9-48dff0377a52")) __declspec(novta
 {
     virtual HRESULT __stdcall get_PinCount(int32_t * value) = 0;
     virtual HRESULT __stdcall get_ActualFrequency(double * value) = 0;
-    virtual HRESULT __stdcall abi_SetDesiredFrequency(double frequency, double * value) = 0;
+    virtual HRESULT __stdcall abi_SetDesiredFrequency(double frequency, double * result) = 0;
     virtual HRESULT __stdcall get_MaxFrequency(double * value) = 0;
     virtual HRESULT __stdcall get_MinFrequency(double * value) = 0;
     virtual HRESULT __stdcall abi_AcquirePin(int32_t pin) = 0;

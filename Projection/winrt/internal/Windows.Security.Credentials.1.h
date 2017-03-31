@@ -10,9 +10,9 @@
 #include "Windows.Security.Cryptography.Core.0.h"
 #include "Windows.Storage.Streams.0.h"
 #include "Windows.System.0.h"
+#include "Windows.Foundation.1.h"
 #include "Windows.Foundation.Collections.1.h"
 #include "Windows.Storage.Streams.1.h"
-#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 

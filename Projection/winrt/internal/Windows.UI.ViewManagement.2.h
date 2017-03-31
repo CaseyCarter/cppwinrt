@@ -94,11 +94,25 @@ struct IApplicationView3 :
     IApplicationView3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IApplicationView4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IApplicationView4>
+{
+    IApplicationView4(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IApplicationViewConsolidatedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IApplicationViewConsolidatedEventArgs>
 {
     IApplicationViewConsolidatedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IApplicationViewConsolidatedEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IApplicationViewConsolidatedEventArgs2>
+{
+    IApplicationViewConsolidatedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationViewFullscreenStatics :
@@ -164,6 +178,13 @@ struct IApplicationViewSwitcherStatics2 :
     impl::consume<IApplicationViewSwitcherStatics2>
 {
     IApplicationViewSwitcherStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IApplicationViewSwitcherStatics3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IApplicationViewSwitcherStatics3>
+{
+    IApplicationViewSwitcherStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IApplicationViewTitleBar :
@@ -257,6 +278,13 @@ struct IUISettings3 :
     IUISettings3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IUISettings4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IUISettings4>
+{
+    IUISettings4(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IUIViewSettings :
     Windows::Foundation::IInspectable,
     impl::consume<IUIViewSettings>
@@ -269,6 +297,20 @@ struct IUIViewSettingsStatics :
     impl::consume<IUIViewSettingsStatics>
 {
     IUIViewSettingsStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IViewModePreferences :
+    Windows::Foundation::IInspectable,
+    impl::consume<IViewModePreferences>
+{
+    IViewModePreferences(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IViewModePreferencesStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IViewModePreferencesStatics>
+{
+    IViewModePreferencesStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

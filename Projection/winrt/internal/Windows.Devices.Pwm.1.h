@@ -17,7 +17,7 @@ struct __declspec(uuid("c45f5c85-d2e8-42cf-9bd6-cf5ed029e6a7")) __declspec(novta
 {
     virtual HRESULT __stdcall get_PinCount(int32_t * value) = 0;
     virtual HRESULT __stdcall get_ActualFrequency(double * value) = 0;
-    virtual HRESULT __stdcall abi_SetDesiredFrequency(double desiredFrequency, double * value) = 0;
+    virtual HRESULT __stdcall abi_SetDesiredFrequency(double desiredFrequency, double * result) = 0;
     virtual HRESULT __stdcall get_MinFrequency(double * value) = 0;
     virtual HRESULT __stdcall get_MaxFrequency(double * value) = 0;
     virtual HRESULT __stdcall abi_OpenPin(int32_t pinNumber, Windows::Devices::Pwm::IPwmPin ** pin) = 0;
@@ -31,6 +31,13 @@ struct __declspec(uuid("4263bda1-8946-4404-bd48-81dd124af4d9")) __declspec(novta
 struct __declspec(uuid("44fc5b1f-f119-4bdd-97ad-f76ef986736d")) __declspec(novtable) IPwmControllerStatics2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetDefaultAsync(Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> ** operation) = 0;
+};
+
+struct __declspec(uuid("b2581871-0229-4344-ae3f-9b7cd0e66b94")) __declspec(novtable) IPwmControllerStatics3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDeviceSelector(hstring * result) = 0;
+    virtual HRESULT __stdcall abi_GetDeviceSelectorFromFriendlyName(hstring friendlyName, hstring * result) = 0;
+    virtual HRESULT __stdcall abi_FromIdAsync(hstring deviceId, Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> ** operation) = 0;
 };
 
 struct __declspec(uuid("22972dc8-c6cf-4821-b7f9-c6454fb6af79")) __declspec(novtable) IPwmPin : Windows::Foundation::IInspectable
@@ -80,6 +87,14 @@ struct WINRT_EBO impl_IPwmControllerStatics2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IPwmControllerStatics3
+{
+    hstring GetDeviceSelector() const;
+    hstring GetDeviceSelector(hstring_view friendlyName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> FromIdAsync(hstring_view deviceId) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IPwmPin
 {
     Windows::Devices::Pwm::PwmController Controller() const;
@@ -112,6 +127,12 @@ template <> struct traits<Windows::Devices::Pwm::IPwmControllerStatics2>
 {
     using abi = ABI::Windows::Devices::Pwm::IPwmControllerStatics2;
     template <typename D> using consume = Windows::Devices::Pwm::impl_IPwmControllerStatics2<D>;
+};
+
+template <> struct traits<Windows::Devices::Pwm::IPwmControllerStatics3>
+{
+    using abi = ABI::Windows::Devices::Pwm::IPwmControllerStatics3;
+    template <typename D> using consume = Windows::Devices::Pwm::impl_IPwmControllerStatics3<D>;
 };
 
 template <> struct traits<Windows::Devices::Pwm::IPwmPin>

@@ -144,6 +144,14 @@ struct __declspec(uuid("beee4ddb-90b2-408c-a2f6-0a0ac31e33e4")) __declspec(novta
     virtual HRESULT __stdcall abi_Undo() = 0;
 };
 
+struct __declspec(uuid("f2311112-8c89-49c9-9118-f057cbb814ee")) __declspec(novtable) ITextDocument2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AlignmentIncludesTrailingWhitespace(bool * value) = 0;
+    virtual HRESULT __stdcall put_AlignmentIncludesTrailingWhitespace(bool value) = 0;
+    virtual HRESULT __stdcall get_IgnoreTrailingCharacterSpacing(bool * value) = 0;
+    virtual HRESULT __stdcall put_IgnoreTrailingCharacterSpacing(bool value) = 0;
+};
+
 struct __declspec(uuid("2cf8cfa6-4676-498a-93f5-bbdbfc0bd883")) __declspec(novtable) ITextParagraphFormat : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Alignment(winrt::Windows::UI::Text::ParagraphAlignment * value) = 0;
@@ -271,6 +279,7 @@ struct __declspec(uuid("a6d36724-f28f-430a-b2cf-c343671ec0e9")) __declspec(novta
 namespace ABI {
 
 template <> struct traits<Windows::UI::Text::FontWeights> { using default_interface = Windows::UI::Text::IFontWeights; };
+template <> struct traits<Windows::UI::Text::RichEditTextDocument> { using default_interface = Windows::UI::Text::ITextDocument; };
 
 }
 
@@ -395,6 +404,15 @@ struct WINRT_EBO impl_ITextDocument
     void SetDefaultParagraphFormat(const Windows::UI::Text::ITextParagraphFormat & value) const;
     void SetText(Windows::UI::Text::TextSetOptions options, hstring_view value) const;
     void Undo() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextDocument2
+{
+    bool AlignmentIncludesTrailingWhitespace() const;
+    void AlignmentIncludesTrailingWhitespace(bool value) const;
+    bool IgnoreTrailingCharacterSpacing() const;
+    void IgnoreTrailingCharacterSpacing(bool value) const;
 };
 
 template <typename D>
@@ -556,6 +574,12 @@ template <> struct traits<Windows::UI::Text::ITextDocument>
     template <typename D> using consume = Windows::UI::Text::impl_ITextDocument<D>;
 };
 
+template <> struct traits<Windows::UI::Text::ITextDocument2>
+{
+    using abi = ABI::Windows::UI::Text::ITextDocument2;
+    template <typename D> using consume = Windows::UI::Text::impl_ITextDocument2<D>;
+};
+
 template <> struct traits<Windows::UI::Text::ITextParagraphFormat>
 {
     using abi = ABI::Windows::UI::Text::ITextParagraphFormat;
@@ -578,6 +602,12 @@ template <> struct traits<Windows::UI::Text::FontWeights>
 {
     using abi = ABI::Windows::UI::Text::FontWeights;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.FontWeights"; }
+};
+
+template <> struct traits<Windows::UI::Text::RichEditTextDocument>
+{
+    using abi = ABI::Windows::UI::Text::RichEditTextDocument;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.RichEditTextDocument"; }
 };
 
 template <> struct traits<Windows::UI::Text::TextConstants>

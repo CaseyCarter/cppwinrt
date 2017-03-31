@@ -5,6 +5,7 @@
 
 #include "../base.h"
 #include "Windows.Media.0.h"
+#include "Windows.ApplicationModel.AppService.0.h"
 #include "Windows.Foundation.0.h"
 #include "Windows.Foundation.Collections.0.h"
 #include "Windows.Graphics.DirectX.Direct3D11.0.h"
@@ -15,6 +16,22 @@
 #include "Windows.Foundation.Collections.1.h"
 
 WINRT_EXPORT namespace winrt {
+
+namespace ABI::Windows::Media {
+
+struct MediaTimeRange
+{
+    Windows::Foundation::TimeSpan Start;
+    Windows::Foundation::TimeSpan End;
+};
+
+}
+
+namespace Windows::Media {
+
+using MediaTimeRange = ABI::Windows::Media::MediaTimeRange;
+
+}
 
 namespace ABI::Windows::Media {
 
@@ -69,6 +86,11 @@ struct __declspec(uuid("4a25eaf5-242d-4dfb-97f4-69b7c42576ff")) __declspec(novta
     virtual HRESULT __stdcall abi_RegisterVideoEncoderWithSettings(hstring activatableClassId, GUID inputSubtype, GUID outputSubtype, Windows::Foundation::Collections::IPropertySet * configuration) = 0;
 };
 
+struct __declspec(uuid("5bcebf47-4043-4fed-acaf-54ec29dfb1f7")) __declspec(novtable) IMediaExtensionManager2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_RegisterMediaExtensionForAppService(Windows::Media::IMediaExtension * extension, Windows::ApplicationModel::AppService::IAppServiceConnection * connection) = 0;
+};
+
 struct __declspec(uuid("bfb52f8c-5943-47d8-8e10-05308aa5fbd0")) __declspec(novtable) IMediaFrame : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(hstring * value) = 0;
@@ -120,6 +142,23 @@ struct __declspec(uuid("8ed361f3-0b78-4360-bf71-0c841999ea1b")) __declspec(novta
     virtual HRESULT __stdcall remove_PositionChanged(event_token eventCookie) = 0;
     virtual HRESULT __stdcall add_StateChanged(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> * stateChangedEventHandler, event_token * eventCookie) = 0;
     virtual HRESULT __stdcall remove_StateChanged(event_token eventCookie) = 0;
+};
+
+struct __declspec(uuid("ef74ea38-9e72-4df9-8355-6e90c81bbadd")) __declspec(novtable) IMediaTimelineController2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Duration(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> ** value) = 0;
+    virtual HRESULT __stdcall put_Duration(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> * value) = 0;
+    virtual HRESULT __stdcall get_IsLoopingEnabled(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsLoopingEnabled(bool value) = 0;
+    virtual HRESULT __stdcall add_Failed(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> * eventHandler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_Failed(event_token token) = 0;
+    virtual HRESULT __stdcall add_Ended(Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> * eventHandler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_Ended(event_token token) = 0;
+};
+
+struct __declspec(uuid("8821f81d-3e77-43fb-be26-4fc87a044834")) __declspec(novtable) IMediaTimelineControllerFailedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ExtendedError(HRESULT * value) = 0;
 };
 
 struct __declspec(uuid("6bbf0c59-d0a0-4d26-92a0-f978e1d18e7b")) __declspec(novtable) IMusicDisplayProperties : Windows::Foundation::IInspectable
@@ -302,6 +341,7 @@ template <> struct traits<Windows::Media::ImageDisplayProperties> { using defaul
 template <> struct traits<Windows::Media::MediaExtensionManager> { using default_interface = Windows::Media::IMediaExtensionManager; };
 template <> struct traits<Windows::Media::MediaProcessingTriggerDetails> { using default_interface = Windows::Media::IMediaProcessingTriggerDetails; };
 template <> struct traits<Windows::Media::MediaTimelineController> { using default_interface = Windows::Media::IMediaTimelineController; };
+template <> struct traits<Windows::Media::MediaTimelineControllerFailedEventArgs> { using default_interface = Windows::Media::IMediaTimelineControllerFailedEventArgs; };
 template <> struct traits<Windows::Media::MusicDisplayProperties> { using default_interface = Windows::Media::IMusicDisplayProperties; };
 template <> struct traits<Windows::Media::PlaybackPositionChangeRequestedEventArgs> { using default_interface = Windows::Media::IPlaybackPositionChangeRequestedEventArgs; };
 template <> struct traits<Windows::Media::PlaybackRateChangeRequestedEventArgs> { using default_interface = Windows::Media::IPlaybackRateChangeRequestedEventArgs; };
@@ -377,6 +417,12 @@ struct WINRT_EBO impl_IMediaExtensionManager
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMediaExtensionManager2
+{
+    void RegisterMediaExtensionForAppService(const Windows::Media::IMediaExtension & extension, const Windows::ApplicationModel::AppService::AppServiceConnection & connection) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMediaFrame
 {
     hstring Type() const;
@@ -437,6 +483,29 @@ struct WINRT_EBO impl_IMediaTimelineController
     using StateChanged_revoker = event_revoker<IMediaTimelineController>;
     StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & stateChangedEventHandler) const;
     void StateChanged(event_token eventCookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaTimelineController2
+{
+    Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Duration() const;
+    void Duration(const optional<Windows::Foundation::TimeSpan> & value) const;
+    bool IsLoopingEnabled() const;
+    void IsLoopingEnabled(bool value) const;
+    event_token Failed(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> & eventHandler) const;
+    using Failed_revoker = event_revoker<IMediaTimelineController2>;
+    Failed_revoker Failed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> & eventHandler) const;
+    void Failed(event_token token) const;
+    event_token Ended(const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & eventHandler) const;
+    using Ended_revoker = event_revoker<IMediaTimelineController2>;
+    Ended_revoker Ended(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> & eventHandler) const;
+    void Ended(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaTimelineControllerFailedEventArgs
+{
+    HRESULT ExtendedError() const;
 };
 
 template <typename D>
@@ -684,6 +753,12 @@ template <> struct traits<Windows::Media::IMediaExtensionManager>
     template <typename D> using consume = Windows::Media::impl_IMediaExtensionManager<D>;
 };
 
+template <> struct traits<Windows::Media::IMediaExtensionManager2>
+{
+    using abi = ABI::Windows::Media::IMediaExtensionManager2;
+    template <typename D> using consume = Windows::Media::impl_IMediaExtensionManager2<D>;
+};
+
 template <> struct traits<Windows::Media::IMediaFrame>
 {
     using abi = ABI::Windows::Media::IMediaFrame;
@@ -718,6 +793,18 @@ template <> struct traits<Windows::Media::IMediaTimelineController>
 {
     using abi = ABI::Windows::Media::IMediaTimelineController;
     template <typename D> using consume = Windows::Media::impl_IMediaTimelineController<D>;
+};
+
+template <> struct traits<Windows::Media::IMediaTimelineController2>
+{
+    using abi = ABI::Windows::Media::IMediaTimelineController2;
+    template <typename D> using consume = Windows::Media::impl_IMediaTimelineController2<D>;
+};
+
+template <> struct traits<Windows::Media::IMediaTimelineControllerFailedEventArgs>
+{
+    using abi = ABI::Windows::Media::IMediaTimelineControllerFailedEventArgs;
+    template <typename D> using consume = Windows::Media::impl_IMediaTimelineControllerFailedEventArgs<D>;
 };
 
 template <> struct traits<Windows::Media::IMusicDisplayProperties>
@@ -873,6 +960,12 @@ template <> struct traits<Windows::Media::MediaTimelineController>
 {
     using abi = ABI::Windows::Media::MediaTimelineController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaTimelineController"; }
+};
+
+template <> struct traits<Windows::Media::MediaTimelineControllerFailedEventArgs>
+{
+    using abi = ABI::Windows::Media::MediaTimelineControllerFailedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaTimelineControllerFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::MusicDisplayProperties>

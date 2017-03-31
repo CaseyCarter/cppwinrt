@@ -50,12 +50,27 @@ struct __declspec(uuid("3f582656-28f8-4e0f-ae8c-5898b9ae2469")) __declspec(novta
     virtual HRESULT __stdcall abi_GetAuthenticationStageInfoAsync(Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageInfo> ** result) = 0;
 };
 
+struct __declspec(uuid("90499a19-7ef2-4523-951c-a417a24acf93")) __declspec(novtable) ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_RegisterDevicePresenceMonitoringAsync(hstring deviceId, hstring deviceInstancePath, winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> ** operation) = 0;
+    virtual HRESULT __stdcall abi_RegisterDevicePresenceMonitoringWithNewDeviceAsync(hstring deviceId, hstring deviceInstancePath, winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, hstring deviceFriendlyName, hstring deviceModelNumber, Windows::Storage::Streams::IBuffer * deviceConfigurationData, Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> ** operation) = 0;
+    virtual HRESULT __stdcall abi_UnregisterDevicePresenceMonitoringAsync(hstring deviceId, Windows::Foundation::IAsyncAction ** result) = 0;
+    virtual HRESULT __stdcall abi_IsDevicePresenceMonitoringSupported(bool * value) = 0;
+};
+
 struct __declspec(uuid("1e2ba861-8533-4fce-839b-ecb72410ac14")) __declspec(novtable) ISecondaryAuthenticationFactorInfo : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DeviceId(hstring * deviceId) = 0;
     virtual HRESULT __stdcall get_DeviceFriendlyName(hstring * value) = 0;
     virtual HRESULT __stdcall get_DeviceModelNumber(hstring * value) = 0;
     virtual HRESULT __stdcall get_DeviceConfigurationData(Windows::Storage::Streams::IBuffer ** value) = 0;
+};
+
+struct __declspec(uuid("14d981a3-fc26-4ff7-abc3-48e82a512a0a")) __declspec(novtable) ISecondaryAuthenticationFactorInfo2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_PresenceMonitoringMode(winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode * value) = 0;
+    virtual HRESULT __stdcall abi_UpdateDevicePresenceAsync(winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresence presenceState, Windows::Foundation::IAsyncAction ** result) = 0;
+    virtual HRESULT __stdcall get_IsAuthenticationSupported(bool * value) = 0;
 };
 
 struct __declspec(uuid("9f4cbbb4-8cba-48b0-840d-dbb22a54c678")) __declspec(novtable) ISecondaryAuthenticationFactorRegistration : Windows::Foundation::IInspectable
@@ -139,12 +154,29 @@ struct WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> RegisterDevicePresenceMonitoringAsync(hstring_view deviceId, hstring_view deviceInstancePath, Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatus> RegisterDevicePresenceMonitoringAsync(hstring_view deviceId, hstring_view deviceInstancePath, Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode monitoringMode, hstring_view deviceFriendlyName, hstring_view deviceModelNumber, const Windows::Storage::Streams::IBuffer & deviceConfigurationData) const;
+    Windows::Foundation::IAsyncAction UnregisterDevicePresenceMonitoringAsync(hstring_view deviceId) const;
+    bool IsDevicePresenceMonitoringSupported() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ISecondaryAuthenticationFactorInfo
 {
     hstring DeviceId() const;
     hstring DeviceFriendlyName() const;
     hstring DeviceModelNumber() const;
     Windows::Storage::Streams::IBuffer DeviceConfigurationData() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorInfo2
+{
+    Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresenceMonitoringMode PresenceMonitoringMode() const;
+    Windows::Foundation::IAsyncAction UpdateDevicePresenceAsync(Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDevicePresence presenceState) const;
+    bool IsAuthenticationSupported() const;
 };
 
 template <typename D>
@@ -204,10 +236,22 @@ template <> struct traits<Windows::Security::Authentication::Identity::Provider:
     template <typename D> using consume = Windows::Security::Authentication::Identity::Provider::impl_ISecondaryAuthenticationFactorAuthenticationStatics<D>;
 };
 
+template <> struct traits<Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics>
+{
+    using abi = ABI::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics;
+    template <typename D> using consume = Windows::Security::Authentication::Identity::Provider::impl_ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics<D>;
+};
+
 template <> struct traits<Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo;
     template <typename D> using consume = Windows::Security::Authentication::Identity::Provider::impl_ISecondaryAuthenticationFactorInfo<D>;
+};
+
+template <> struct traits<Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo2>
+{
+    using abi = ABI::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo2;
+    template <typename D> using consume = Windows::Security::Authentication::Identity::Provider::impl_ISecondaryAuthenticationFactorInfo2<D>;
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorRegistration>

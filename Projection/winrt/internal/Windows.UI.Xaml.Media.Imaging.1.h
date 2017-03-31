@@ -136,6 +136,43 @@ struct __declspec(uuid("3ab2212a-ef65-4a5f-bfac-73993e8c12c9")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque, Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource ** instance) = 0;
 };
 
+struct __declspec(uuid("03e1cec3-0ca8-4a4e-8d7c-c808a0838586")) __declspec(novtable) ISvgImageSource : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_UriSource(Windows::Foundation::IUriRuntimeClass ** value) = 0;
+    virtual HRESULT __stdcall put_UriSource(Windows::Foundation::IUriRuntimeClass * value) = 0;
+    virtual HRESULT __stdcall get_RasterizePixelWidth(double * value) = 0;
+    virtual HRESULT __stdcall put_RasterizePixelWidth(double value) = 0;
+    virtual HRESULT __stdcall get_RasterizePixelHeight(double * value) = 0;
+    virtual HRESULT __stdcall put_RasterizePixelHeight(double value) = 0;
+    virtual HRESULT __stdcall add_Opened(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_Opened(event_token token) = 0;
+    virtual HRESULT __stdcall add_OpenFailed(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_OpenFailed(event_token token) = 0;
+    virtual HRESULT __stdcall abi_SetSourceAsync(Windows::Storage::Streams::IRandomAccessStream * streamSource, Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus> ** returnValue) = 0;
+};
+
+struct __declspec(uuid("c794e9e7-cf23-4d72-bf1a-dfaa16d8ea52")) __declspec(novtable) ISvgImageSourceFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::Imaging::ISvgImageSource ** instance) = 0;
+    virtual HRESULT __stdcall abi_CreateInstanceWithUriSource(Windows::Foundation::IUriRuntimeClass * uriSource, Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::Imaging::ISvgImageSource ** instance) = 0;
+};
+
+struct __declspec(uuid("68bb3170-3ccc-4035-ac01-9834543d744e")) __declspec(novtable) ISvgImageSourceFailedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Status(winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus * value) = 0;
+};
+
+struct __declspec(uuid("85ef4c16-748e-4008-95c7-6a23dd7316db")) __declspec(novtable) ISvgImageSourceOpenedEventArgs : Windows::Foundation::IInspectable
+{
+};
+
+struct __declspec(uuid("9c6638ce-bed1-4aab-acbb-d3e2185d315a")) __declspec(novtable) ISvgImageSourceStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_UriSourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_RasterizePixelWidthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_RasterizePixelHeightProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
 struct __declspec(uuid("4a711fea-bfac-11e0-a06a-9de44724019b")) __declspec(novtable) IVirtualSurfaceImageSource : Windows::Foundation::IInspectable
 {
 };
@@ -181,6 +218,9 @@ template <> struct traits<Windows::UI::Xaml::Media::Imaging::DownloadProgressEve
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::RenderTargetBitmap> { using default_interface = Windows::UI::Xaml::Media::Imaging::IRenderTargetBitmap; };
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::SoftwareBitmapSource> { using default_interface = Windows::UI::Xaml::Media::Imaging::ISoftwareBitmapSource; };
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::SurfaceImageSource> { using default_interface = Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource; };
+template <> struct traits<Windows::UI::Xaml::Media::Imaging::SvgImageSource> { using default_interface = Windows::UI::Xaml::Media::Imaging::ISvgImageSource; };
+template <> struct traits<Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs> { using default_interface = Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs; };
+template <> struct traits<Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs> { using default_interface = Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource> { using default_interface = Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource; };
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::WriteableBitmap> { using default_interface = Windows::UI::Xaml::Media::Imaging::IWriteableBitmap; };
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask> { using default_interface = Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask; };
@@ -323,6 +363,52 @@ struct WINRT_EBO impl_ISurfaceImageSourceFactory
 {
     Windows::UI::Xaml::Media::Imaging::SurfaceImageSource CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
     Windows::UI::Xaml::Media::Imaging::SurfaceImageSource CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque, const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISvgImageSource
+{
+    Windows::Foundation::Uri UriSource() const;
+    void UriSource(const Windows::Foundation::Uri & value) const;
+    double RasterizePixelWidth() const;
+    void RasterizePixelWidth(double value) const;
+    double RasterizePixelHeight() const;
+    void RasterizePixelHeight(double value) const;
+    event_token Opened(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs> & value) const;
+    using Opened_revoker = event_revoker<ISvgImageSource>;
+    Opened_revoker Opened(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs> & value) const;
+    void Opened(event_token token) const;
+    event_token OpenFailed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs> & value) const;
+    using OpenFailed_revoker = event_revoker<ISvgImageSource>;
+    OpenFailed_revoker OpenFailed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs> & value) const;
+    void OpenFailed(event_token token) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus> SetSourceAsync(const Windows::Storage::Streams::IRandomAccessStream & streamSource) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISvgImageSourceFactory
+{
+    Windows::UI::Xaml::Media::Imaging::SvgImageSource CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::Imaging::SvgImageSource CreateInstanceWithUriSource(const Windows::Foundation::Uri & uriSource, const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISvgImageSourceFailedEventArgs
+{
+    Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISvgImageSourceOpenedEventArgs
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISvgImageSourceStatics
+{
+    Windows::UI::Xaml::DependencyProperty UriSourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty RasterizePixelWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty RasterizePixelHeightProperty() const;
 };
 
 template <typename D>
@@ -472,6 +558,36 @@ template <> struct traits<Windows::UI::Xaml::Media::Imaging::ISurfaceImageSource
     template <typename D> using consume = Windows::UI::Xaml::Media::Imaging::impl_ISurfaceImageSourceFactory<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Media::Imaging::ISvgImageSource>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource;
+    template <typename D> using consume = Windows::UI::Xaml::Media::Imaging::impl_ISvgImageSource<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory;
+    template <typename D> using consume = Windows::UI::Xaml::Media::Imaging::impl_ISvgImageSourceFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs;
+    template <typename D> using consume = Windows::UI::Xaml::Media::Imaging::impl_ISvgImageSourceFailedEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs;
+    template <typename D> using consume = Windows::UI::Xaml::Media::Imaging::impl_ISvgImageSourceOpenedEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::Imaging::ISvgImageSourceStatics>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceStatics;
+    template <typename D> using consume = Windows::UI::Xaml::Media::Imaging::impl_ISvgImageSourceStatics<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource;
@@ -548,6 +664,24 @@ template <> struct traits<Windows::UI::Xaml::Media::Imaging::SurfaceImageSource>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Imaging::SurfaceImageSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.SurfaceImageSource"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::Imaging::SvgImageSource>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSource;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.SvgImageSource"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.SvgImageSourceFailedEventArgs"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Imaging.SvgImageSourceOpenedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource>

@@ -518,6 +518,13 @@ struct __declspec(uuid("a1ea675c-e598-4d29-a018-fc7b7eece0a1")) __declspec(novta
     virtual HRESULT __stdcall put_SmimeKind(winrt::Windows::ApplicationModel::Email::EmailMessageSmimeKind value) = 0;
 };
 
+struct __declspec(uuid("317cf181-3e7f-4a05-8394-3e10336dd435")) __declspec(novtable) IEmailMessage4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ReplyTo(Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient> ** value) = 0;
+    virtual HRESULT __stdcall get_SentRepresenting(Windows::ApplicationModel::Email::IEmailRecipient ** value) = 0;
+    virtual HRESULT __stdcall put_SentRepresenting(Windows::ApplicationModel::Email::IEmailRecipient * value) = 0;
+};
+
 struct __declspec(uuid("605cd08f-25d9-4f1b-9e51-0514c0149653")) __declspec(novtable) IEmailMessageBatch : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Messages(Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage> ** value) = 0;
@@ -1192,6 +1199,14 @@ struct WINRT_EBO impl_IEmailMessage3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IEmailMessage4
+{
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient> ReplyTo() const;
+    Windows::ApplicationModel::Email::EmailRecipient SentRepresenting() const;
+    void SentRepresenting(const Windows::ApplicationModel::Email::EmailRecipient & value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IEmailMessageBatch
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage> Messages() const;
@@ -1546,6 +1561,12 @@ template <> struct traits<Windows::ApplicationModel::Email::IEmailMessage3>
 {
     using abi = ABI::Windows::ApplicationModel::Email::IEmailMessage3;
     template <typename D> using consume = Windows::ApplicationModel::Email::impl_IEmailMessage3<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Email::IEmailMessage4>
+{
+    using abi = ABI::Windows::ApplicationModel::Email::IEmailMessage4;
+    template <typename D> using consume = Windows::ApplicationModel::Email::impl_IEmailMessage4<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Email::IEmailMessageBatch>

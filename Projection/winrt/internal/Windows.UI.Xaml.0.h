@@ -39,12 +39,14 @@ struct IAdaptiveTriggerFactory;
 struct IAdaptiveTriggerStatics;
 struct IApplication;
 struct IApplication2;
+struct IApplication3;
 struct IApplicationFactory;
 struct IApplicationInitializationCallbackParams;
 struct IApplicationOverrides;
 struct IApplicationOverrides2;
 struct IApplicationStatics;
 struct IBindingFailedEventArgs;
+struct IBringIntoViewOptions;
 struct ICornerRadiusHelper;
 struct ICornerRadiusHelperStatics;
 struct IDataContextChangedEventArgs;
@@ -92,6 +94,7 @@ struct IFrameworkElementOverrides2;
 struct IFrameworkElementStatics;
 struct IFrameworkElementStatics2;
 struct IFrameworkElementStatics4;
+struct IFrameworkElementStatics5;
 struct IFrameworkTemplate;
 struct IFrameworkTemplateFactory;
 struct IFrameworkView;
@@ -141,12 +144,15 @@ struct IUIElement;
 struct IUIElement2;
 struct IUIElement3;
 struct IUIElement4;
+struct IUIElement5;
 struct IUIElementFactory;
 struct IUIElementOverrides;
 struct IUIElementStatics;
 struct IUIElementStatics2;
 struct IUIElementStatics3;
 struct IUIElementStatics4;
+struct IUIElementStatics5;
+struct IUIElementStatics6;
 struct IUnhandledExceptionEventArgs;
 struct IVisualState;
 struct IVisualState2;
@@ -161,6 +167,7 @@ struct IVisualTransition;
 struct IVisualTransitionFactory;
 struct IWindow;
 struct IWindow2;
+struct IWindow3;
 struct IWindowCreatedEventArgs;
 struct IWindowStatics;
 struct LeavingBackgroundEventHandler;
@@ -178,6 +185,7 @@ struct AdaptiveTrigger;
 struct Application;
 struct ApplicationInitializationCallbackParams;
 struct BindingFailedEventArgs;
+struct BringIntoViewOptions;
 struct CornerRadiusHelper;
 struct DataContextChangedEventArgs;
 struct DataTemplate;
@@ -263,12 +271,14 @@ struct IAdaptiveTriggerFactory;
 struct IAdaptiveTriggerStatics;
 struct IApplication;
 struct IApplication2;
+struct IApplication3;
 struct IApplicationFactory;
 struct IApplicationInitializationCallbackParams;
 struct IApplicationOverrides;
 struct IApplicationOverrides2;
 struct IApplicationStatics;
 struct IBindingFailedEventArgs;
+struct IBringIntoViewOptions;
 struct ICornerRadiusHelper;
 struct ICornerRadiusHelperStatics;
 struct IDataContextChangedEventArgs;
@@ -316,6 +326,7 @@ struct IFrameworkElementOverrides2;
 struct IFrameworkElementStatics;
 struct IFrameworkElementStatics2;
 struct IFrameworkElementStatics4;
+struct IFrameworkElementStatics5;
 struct IFrameworkTemplate;
 struct IFrameworkTemplateFactory;
 struct IFrameworkView;
@@ -365,12 +376,15 @@ struct IUIElement;
 struct IUIElement2;
 struct IUIElement3;
 struct IUIElement4;
+struct IUIElement5;
 struct IUIElementFactory;
 struct IUIElementOverrides;
 struct IUIElementStatics;
 struct IUIElementStatics2;
 struct IUIElementStatics3;
 struct IUIElementStatics4;
+struct IUIElementStatics5;
+struct IUIElementStatics6;
 struct IUnhandledExceptionEventArgs;
 struct IVisualState;
 struct IVisualState2;
@@ -385,12 +399,14 @@ struct IVisualTransition;
 struct IVisualTransitionFactory;
 struct IWindow;
 struct IWindow2;
+struct IWindow3;
 struct IWindowCreatedEventArgs;
 struct IWindowStatics;
 struct AdaptiveTrigger;
 struct Application;
 struct ApplicationInitializationCallbackParams;
 struct BindingFailedEventArgs;
+struct BringIntoViewOptions;
 struct CornerRadiusHelper;
 struct DataContextChangedEventArgs;
 struct DataTemplate;
@@ -457,12 +473,14 @@ template <typename T> struct impl_IAdaptiveTriggerFactory;
 template <typename T> struct impl_IAdaptiveTriggerStatics;
 template <typename T> struct impl_IApplication;
 template <typename T> struct impl_IApplication2;
+template <typename T> struct impl_IApplication3;
 template <typename T> struct impl_IApplicationFactory;
 template <typename T> struct impl_IApplicationInitializationCallbackParams;
 template <typename T> struct impl_IApplicationOverrides;
 template <typename T> struct impl_IApplicationOverrides2;
 template <typename T> struct impl_IApplicationStatics;
 template <typename T> struct impl_IBindingFailedEventArgs;
+template <typename T> struct impl_IBringIntoViewOptions;
 template <typename T> struct impl_ICornerRadiusHelper;
 template <typename T> struct impl_ICornerRadiusHelperStatics;
 template <typename T> struct impl_IDataContextChangedEventArgs;
@@ -510,6 +528,7 @@ template <typename T> struct impl_IFrameworkElementOverrides2;
 template <typename T> struct impl_IFrameworkElementStatics;
 template <typename T> struct impl_IFrameworkElementStatics2;
 template <typename T> struct impl_IFrameworkElementStatics4;
+template <typename T> struct impl_IFrameworkElementStatics5;
 template <typename T> struct impl_IFrameworkTemplate;
 template <typename T> struct impl_IFrameworkTemplateFactory;
 template <typename T> struct impl_IFrameworkView;
@@ -559,12 +578,15 @@ template <typename T> struct impl_IUIElement;
 template <typename T> struct impl_IUIElement2;
 template <typename T> struct impl_IUIElement3;
 template <typename T> struct impl_IUIElement4;
+template <typename T> struct impl_IUIElement5;
 template <typename T> struct impl_IUIElementFactory;
 template <typename T> struct impl_IUIElementOverrides;
 template <typename T> struct impl_IUIElementStatics;
 template <typename T> struct impl_IUIElementStatics2;
 template <typename T> struct impl_IUIElementStatics3;
 template <typename T> struct impl_IUIElementStatics4;
+template <typename T> struct impl_IUIElementStatics5;
+template <typename T> struct impl_IUIElementStatics6;
 template <typename T> struct impl_IUnhandledExceptionEventArgs;
 template <typename T> struct impl_IVisualState;
 template <typename T> struct impl_IVisualState2;
@@ -579,6 +601,7 @@ template <typename T> struct impl_IVisualTransition;
 template <typename T> struct impl_IVisualTransitionFactory;
 template <typename T> struct impl_IWindow;
 template <typename T> struct impl_IWindow2;
+template <typename T> struct impl_IWindow3;
 template <typename T> struct impl_IWindowCreatedEventArgs;
 template <typename T> struct impl_IWindowStatics;
 template <typename T> struct impl_ApplicationInitializationCallback;
@@ -604,6 +627,14 @@ template <typename T> struct impl_WindowVisibilityChangedEventHandler;
 }
 
 namespace Windows::UI::Xaml {
+
+enum class ApplicationHighContrastAdjustment : unsigned
+{
+    None = 0x0,
+    Auto = 0xFFFFFFFF,
+};
+
+DEFINE_ENUM_FLAG_OPERATORS(ApplicationHighContrastAdjustment)
 
 enum class ApplicationRequiresPointerMode
 {
@@ -667,6 +698,15 @@ enum class DurationType
     TimeSpan = 1,
     Forever = 2,
 };
+
+enum class ElementHighContrastAdjustment : unsigned
+{
+    None = 0x0,
+    Application = 0x80000000,
+    Auto = 0xFFFFFFFF,
+};
+
+DEFINE_ENUM_FLAG_OPERATORS(ElementHighContrastAdjustment)
 
 enum class ElementSoundKind
 {

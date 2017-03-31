@@ -48,6 +48,14 @@ struct WINRT_EBO SecondaryTileVisualElements :
     SecondaryTileVisualElements(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO StartScreenManager :
+    Windows::UI::StartScreen::IStartScreenManager
+{
+    StartScreenManager(std::nullptr_t) noexcept {}
+    static Windows::UI::StartScreen::StartScreenManager GetDefault();
+    static Windows::UI::StartScreen::StartScreenManager GetForUser(const Windows::System::User & user);
+};
+
 struct WINRT_EBO VisualElementsRequest :
     Windows::UI::StartScreen::IVisualElementsRequest
 {

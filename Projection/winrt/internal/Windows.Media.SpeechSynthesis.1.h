@@ -6,6 +6,7 @@
 #include "../base.h"
 #include "Windows.Media.SpeechSynthesis.0.h"
 #include "Windows.Foundation.0.h"
+#include "Windows.Media.Core.0.h"
 #include "Windows.Storage.Streams.0.h"
 #include "Windows.Foundation.Collections.1.h"
 #include "Windows.Media.1.h"
@@ -34,6 +35,19 @@ struct __declspec(uuid("ce9f7c76-97f4-4ced-ad68-d51c458e45c6")) __declspec(novta
     virtual HRESULT __stdcall get_Voice(Windows::Media::SpeechSynthesis::IVoiceInformation ** value) = 0;
 };
 
+struct __declspec(uuid("a7c5ecb2-4339-4d6a-bbf8-c7a4f1544c2e")) __declspec(novtable) ISpeechSynthesizer2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Options(Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions ** value) = 0;
+};
+
+struct __declspec(uuid("a0e23871-cc3d-43c9-91b1-ee185324d83d")) __declspec(novtable) ISpeechSynthesizerOptions : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IncludeWordBoundaryMetadata(bool * value) = 0;
+    virtual HRESULT __stdcall put_IncludeWordBoundaryMetadata(bool value) = 0;
+    virtual HRESULT __stdcall get_IncludeSentenceBoundaryMetadata(bool * value) = 0;
+    virtual HRESULT __stdcall put_IncludeSentenceBoundaryMetadata(bool value) = 0;
+};
+
 struct __declspec(uuid("b127d6a4-1291-4604-aa9c-83134083352c")) __declspec(novtable) IVoiceInformation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
@@ -49,6 +63,7 @@ namespace ABI {
 
 template <> struct traits<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> { using default_interface = Windows::Media::SpeechSynthesis::ISpeechSynthesisStream; };
 template <> struct traits<Windows::Media::SpeechSynthesis::SpeechSynthesizer> { using default_interface = Windows::Media::SpeechSynthesis::ISpeechSynthesizer; };
+template <> struct traits<Windows::Media::SpeechSynthesis::SpeechSynthesizerOptions> { using default_interface = Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions; };
 template <> struct traits<Windows::Media::SpeechSynthesis::VoiceInformation> { using default_interface = Windows::Media::SpeechSynthesis::IVoiceInformation; };
 
 }
@@ -75,6 +90,21 @@ struct WINRT_EBO impl_ISpeechSynthesizer
     Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> SynthesizeSsmlToStreamAsync(hstring_view Ssml) const;
     void Voice(const Windows::Media::SpeechSynthesis::VoiceInformation & value) const;
     Windows::Media::SpeechSynthesis::VoiceInformation Voice() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechSynthesizer2
+{
+    Windows::Media::SpeechSynthesis::SpeechSynthesizerOptions Options() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechSynthesizerOptions
+{
+    bool IncludeWordBoundaryMetadata() const;
+    void IncludeWordBoundaryMetadata(bool value) const;
+    bool IncludeSentenceBoundaryMetadata() const;
+    void IncludeSentenceBoundaryMetadata(bool value) const;
 };
 
 template <typename D>
@@ -109,6 +139,18 @@ template <> struct traits<Windows::Media::SpeechSynthesis::ISpeechSynthesizer>
     template <typename D> using consume = Windows::Media::SpeechSynthesis::impl_ISpeechSynthesizer<D>;
 };
 
+template <> struct traits<Windows::Media::SpeechSynthesis::ISpeechSynthesizer2>
+{
+    using abi = ABI::Windows::Media::SpeechSynthesis::ISpeechSynthesizer2;
+    template <typename D> using consume = Windows::Media::SpeechSynthesis::impl_ISpeechSynthesizer2<D>;
+};
+
+template <> struct traits<Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions>
+{
+    using abi = ABI::Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions;
+    template <typename D> using consume = Windows::Media::SpeechSynthesis::impl_ISpeechSynthesizerOptions<D>;
+};
+
 template <> struct traits<Windows::Media::SpeechSynthesis::IVoiceInformation>
 {
     using abi = ABI::Windows::Media::SpeechSynthesis::IVoiceInformation;
@@ -125,6 +167,12 @@ template <> struct traits<Windows::Media::SpeechSynthesis::SpeechSynthesizer>
 {
     using abi = ABI::Windows::Media::SpeechSynthesis::SpeechSynthesizer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechSynthesis.SpeechSynthesizer"; }
+};
+
+template <> struct traits<Windows::Media::SpeechSynthesis::SpeechSynthesizerOptions>
+{
+    using abi = ABI::Windows::Media::SpeechSynthesis::SpeechSynthesizerOptions;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechSynthesis.SpeechSynthesizerOptions"; }
 };
 
 template <> struct traits<Windows::Media::SpeechSynthesis::VoiceInformation>

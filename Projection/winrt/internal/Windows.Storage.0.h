@@ -282,6 +282,8 @@ enum class KnownFolderId
     SavedPictures = 11,
     Screenshots = 12,
     VideosLibrary = 13,
+    AllAppMods = 14,
+    CurrentAppMods = 15,
 };
 
 enum class KnownLibraryId
@@ -332,6 +334,7 @@ enum class StorageOpenOptions : unsigned
 {
     None = 0x0,
     AllowOnlyReaders = 0x1,
+    AllowReadersAndWriters = 0x2,
 };
 
 DEFINE_ENUM_FLAG_OPERATORS(StorageOpenOptions)

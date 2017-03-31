@@ -41,6 +41,25 @@ protected:
     }
 };
 
+template <typename D, typename ... Interfaces> struct SvgImageSourceT :
+    overrides<D, Windows::Foundation::IInspectable, Interfaces ...>,
+    impl::require<D, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::Media::IImageSource, Windows::UI::Xaml::Media::Imaging::ISvgImageSource>
+{
+    using composable = SvgImageSource;
+
+protected:
+
+    SvgImageSourceT()
+    {
+        get_activation_factory<SvgImageSource, ISvgImageSourceFactory>().CreateInstance(*this, this->m_inner);
+    }
+
+    SvgImageSourceT(const Windows::Foundation::Uri & uriSource)
+    {
+        get_activation_factory<SvgImageSource, ISvgImageSourceFactory>().CreateInstanceWithUriSource(uriSource, *this, this->m_inner);
+    }
+};
+
 template <typename D, typename ... Interfaces> struct XamlRenderingBackgroundTaskT :
     overrides<D, Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTaskOverridesT<D>, Interfaces ...>,
     impl::require<D, Windows::UI::Xaml::Media::Imaging::IXamlRenderingBackgroundTask>

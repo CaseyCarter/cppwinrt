@@ -14,6 +14,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3")) __declspec(novtable) IReference<uint32_t> : impl_IReference<uint32_t> {};
 #endif
 
+#ifndef WINRT_GENERIC_65178d50_e6a2_5d16_b244_65e9725e5a0c
+#define WINRT_GENERIC_65178d50_e6a2_5d16_b244_65e9725e5a0c
+template <> struct __declspec(uuid("65178d50-e6a2-5d16-b244-65e9725e5a0c")) __declspec(novtable) IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> : impl_IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> {};
+#endif
+
 
 }
 
@@ -59,9 +64,14 @@ template <> struct __declspec(uuid("98a8577a-b128-5400-8d3d-58654eaaf957")) __de
 
 namespace ABI::Windows::Foundation {
 
-#ifndef WINRT_GENERIC_65178d50_e6a2_5d16_b244_65e9725e5a0c
-#define WINRT_GENERIC_65178d50_e6a2_5d16_b244_65e9725e5a0c
-template <> struct __declspec(uuid("65178d50-e6a2-5d16-b244-65e9725e5a0c")) __declspec(novtable) IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> : impl_IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> {};
+#ifndef WINRT_GENERIC_0a815852_7c44_5674_b3d2_fa2e4c1e46c9
+#define WINRT_GENERIC_0a815852_7c44_5674_b3d2_fa2e4c1e46c9
+template <> struct __declspec(uuid("0a815852-7c44-5674-b3d2-fa2e4c1e46c9")) __declspec(novtable) IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> : impl_IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> {};
+#endif
+
+#ifndef WINRT_GENERIC_60847289_ea0b_5df6_89df_f2c62cba9693
+#define WINRT_GENERIC_60847289_ea0b_5df6_89df_f2c62cba9693
+template <> struct __declspec(uuid("60847289-ea0b-5df6-89df-f2c62cba9693")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Storage::Streams::IRandomAccessStreamReference> : impl_AsyncOperationCompletedHandler<Windows::Storage::Streams::IRandomAccessStreamReference> {};
 #endif
 
 
@@ -129,9 +139,9 @@ template <> struct __declspec(uuid("d0455b2d-d8aa-557e-89a3-63c33e8cee99")) __de
 
 namespace ABI::Windows::Foundation {
 
-#ifndef WINRT_GENERIC_60847289_ea0b_5df6_89df_f2c62cba9693
-#define WINRT_GENERIC_60847289_ea0b_5df6_89df_f2c62cba9693
-template <> struct __declspec(uuid("60847289-ea0b-5df6-89df-f2c62cba9693")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Storage::Streams::IRandomAccessStreamReference> : impl_AsyncOperationCompletedHandler<Windows::Storage::Streams::IRandomAccessStreamReference> {};
+#ifndef WINRT_GENERIC_deb54b22_70f2_55ab_97c0_6cbdc5ddb6f0
+#define WINRT_GENERIC_deb54b22_70f2_55ab_97c0_6cbdc5ddb6f0
+template <> struct __declspec(uuid("deb54b22-70f2-55ab-97c0-6cbdc5ddb6f0")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> : impl_AsyncOperationCompletedHandler<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> {};
 #endif
 
 #ifndef WINRT_GENERIC_49c36a66_3908_51b3_8402_eb8e94c68864
@@ -180,6 +190,13 @@ struct IStoreConfigurationStatics3 :
     IStoreConfigurationStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IStoreConfigurationStatics4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IStoreConfigurationStatics4>
+{
+    IStoreConfigurationStatics4(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IStoreHardwareManufacturerInfo :
     Windows::Foundation::IInspectable,
     impl::consume<IStoreHardwareManufacturerInfo>
@@ -213,6 +230,13 @@ struct IStorePreviewSkuInfo :
     impl::consume<IStorePreviewSkuInfo>
 {
     IStorePreviewSkuInfo(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IWebAuthenticationCoreManagerHelper :
+    Windows::Foundation::IInspectable,
+    impl::consume<IWebAuthenticationCoreManagerHelper>
+{
+    IWebAuthenticationCoreManagerHelper(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

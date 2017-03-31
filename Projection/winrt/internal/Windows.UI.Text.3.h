@@ -26,6 +26,13 @@ struct WINRT_EBO FontWeights :
     static Windows::UI::Text::FontWeight Thin();
 };
 
+struct WINRT_EBO RichEditTextDocument :
+    Windows::UI::Text::ITextDocument,
+    impl::require<RichEditTextDocument, Windows::UI::Text::ITextDocument2>
+{
+    RichEditTextDocument(std::nullptr_t) noexcept {}
+};
+
 struct TextConstants
 {
     TextConstants() = delete;

@@ -35,6 +35,25 @@ struct produce<D, Windows::UI::IColorHelperStatics> : produce_base<D, Windows::U
 };
 
 template <typename D>
+struct produce<D, Windows::UI::IColorHelperStatics2> : produce_base<D, Windows::UI::IColorHelperStatics2>
+{
+    HRESULT __stdcall abi_ToDisplayName(impl::abi_arg_in<Windows::UI::Color> color, impl::abi_arg_out<hstring> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().ToDisplayName(*reinterpret_cast<const Windows::UI::Color *>(&color)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::IColors> : produce_base<D, Windows::UI::IColors>
 {};
 
@@ -2027,6 +2046,13 @@ template <typename D> Windows::UI::Color impl_IColorHelperStatics<D>::FromArgb(u
     return returnValue;
 }
 
+template <typename D> hstring impl_IColorHelperStatics2<D>::ToDisplayName(const Windows::UI::Color & color) const
+{
+    hstring returnValue;
+    check_hresult(WINRT_SHIM(IColorHelperStatics2)->abi_ToDisplayName(get_abi(color), put_abi(returnValue)));
+    return returnValue;
+}
+
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::AliceBlue() const
 {
     Windows::UI::Color value {};
@@ -3019,6 +3045,11 @@ inline Windows::UI::Color ColorHelper::FromArgb(uint8_t a, uint8_t r, uint8_t g,
     return get_activation_factory<ColorHelper, IColorHelperStatics>().FromArgb(a, r, g, b);
 }
 
+inline hstring ColorHelper::ToDisplayName(const Windows::UI::Color & color)
+{
+    return get_activation_factory<ColorHelper, IColorHelperStatics2>().ToDisplayName(color);
+}
+
 inline Windows::UI::Color Colors::AliceBlue()
 {
     return get_activation_factory<Colors, IColorsStatics>().AliceBlue();
@@ -3741,6 +3772,15 @@ template<>
 struct std::hash<winrt::Windows::UI::IColorHelperStatics>
 {
     size_t operator()(const winrt::Windows::UI::IColorHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::IColorHelperStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::IColorHelperStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

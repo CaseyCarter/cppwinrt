@@ -15,6 +15,7 @@ struct WINRT_EBO NDClient :
     NDClient(std::nullptr_t) noexcept {}
     NDClient(const Windows::Media::Protection::PlayReady::INDDownloadEngine & downloadEngine, const Windows::Media::Protection::PlayReady::INDStreamParser & streamParser, const Windows::Media::Protection::PlayReady::INDMessenger & pMessenger);
 };
+struct [[deprecated("NDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDClient;
 
 struct WINRT_EBO NDCustomData :
     Windows::Media::Protection::PlayReady::INDCustomData
@@ -22,6 +23,7 @@ struct WINRT_EBO NDCustomData :
     NDCustomData(std::nullptr_t) noexcept {}
     NDCustomData(array_view<const uint8_t> customDataTypeIDBytes, array_view<const uint8_t> customDataBytes);
 };
+struct [[deprecated("NDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDCustomData;
 
 struct WINRT_EBO NDDownloadEngineNotifier :
     Windows::Media::Protection::PlayReady::INDDownloadEngineNotifier
@@ -29,6 +31,7 @@ struct WINRT_EBO NDDownloadEngineNotifier :
     NDDownloadEngineNotifier(std::nullptr_t) noexcept {}
     NDDownloadEngineNotifier();
 };
+struct [[deprecated("NDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDDownloadEngineNotifier;
 
 struct WINRT_EBO NDLicenseFetchDescriptor :
     Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor
@@ -36,6 +39,7 @@ struct WINRT_EBO NDLicenseFetchDescriptor :
     NDLicenseFetchDescriptor(std::nullptr_t) noexcept {}
     NDLicenseFetchDescriptor(Windows::Media::Protection::PlayReady::NDContentIDType contentIDType, array_view<const uint8_t> contentIDBytes, const Windows::Media::Protection::PlayReady::INDCustomData & licenseFetchChallengeCustomData);
 };
+struct [[deprecated("NDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDLicenseFetchDescriptor;
 
 struct WINRT_EBO NDStorageFileHelper :
     Windows::Media::Protection::PlayReady::INDStorageFileHelper
@@ -43,6 +47,7 @@ struct WINRT_EBO NDStorageFileHelper :
     NDStorageFileHelper(std::nullptr_t) noexcept {}
     NDStorageFileHelper();
 };
+struct [[deprecated("NDStorageFileHelper is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDStorageFileHelper;
 
 struct WINRT_EBO NDStreamParserNotifier :
     Windows::Media::Protection::PlayReady::INDStreamParserNotifier
@@ -50,6 +55,7 @@ struct WINRT_EBO NDStreamParserNotifier :
     NDStreamParserNotifier(std::nullptr_t) noexcept {}
     NDStreamParserNotifier();
 };
+struct [[deprecated("NDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDStreamParserNotifier;
 
 struct WINRT_EBO NDTCPMessenger :
     Windows::Media::Protection::PlayReady::INDMessenger
@@ -57,16 +63,17 @@ struct WINRT_EBO NDTCPMessenger :
     NDTCPMessenger(std::nullptr_t) noexcept {}
     NDTCPMessenger(hstring_view remoteHostName, uint32_t remoteHostPort);
 };
+struct [[deprecated("NDTCPMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")]] NDTCPMessenger;
 
 struct WINRT_EBO PlayReadyContentHeader :
     Windows::Media::Protection::PlayReady::IPlayReadyContentHeader,
     impl::require<PlayReadyContentHeader, Windows::Media::Protection::PlayReady::IPlayReadyContentHeader2>
 {
     PlayReadyContentHeader(std::nullptr_t) noexcept {}
+    PlayReadyContentHeader(uint32_t dwFlags, array_view<const GUID> contentKeyIds, array_view<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId);
     PlayReadyContentHeader(array_view<const uint8_t> headerBytes, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId);
     PlayReadyContentHeader(GUID contentKeyId, hstring_view contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId);
     PlayReadyContentHeader(array_view<const uint8_t> headerBytes);
-    PlayReadyContentHeader(uint32_t dwFlags, array_view<const GUID> contentKeyIds, array_view<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId);
 };
 
 struct PlayReadyContentResolver
@@ -123,14 +130,15 @@ struct WINRT_EBO PlayReadyIndividualizationServiceRequest :
 };
 
 struct WINRT_EBO PlayReadyLicense :
-    Windows::Media::Protection::PlayReady::IPlayReadyLicense
+    Windows::Media::Protection::PlayReady::IPlayReadyLicense,
+    impl::require<PlayReadyLicense, Windows::Media::Protection::PlayReady::IPlayReadyLicense2>
 {
     PlayReadyLicense(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO PlayReadyLicenseAcquisitionServiceRequest :
     Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest,
-    impl::require<PlayReadyLicenseAcquisitionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest2>
+    impl::require<PlayReadyLicenseAcquisitionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest2, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest3>
 {
     PlayReadyLicenseAcquisitionServiceRequest(std::nullptr_t) noexcept {}
     PlayReadyLicenseAcquisitionServiceRequest();
@@ -157,7 +165,8 @@ struct PlayReadyLicenseManagement
 };
 
 struct WINRT_EBO PlayReadyLicenseSession :
-    Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession
+    Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession,
+    impl::require<PlayReadyLicenseSession, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession2>
 {
     PlayReadyLicenseSession(std::nullptr_t) noexcept {}
     PlayReadyLicenseSession(const Windows::Foundation::Collections::IPropertySet & configuration);

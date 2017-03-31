@@ -832,6 +832,273 @@ struct produce<D, Windows::UI::Xaml::Media::Imaging::ISurfaceImageSourceFactory>
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::Imaging::ISvgImageSource> : produce_base<D, Windows::UI::Xaml::Media::Imaging::ISvgImageSource>
+{
+    HRESULT __stdcall get_UriSource(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().UriSource());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_UriSource(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().UriSource(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_RasterizePixelWidth(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().RasterizePixelWidth());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_RasterizePixelWidth(double value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().RasterizePixelWidth(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_RasterizePixelHeight(double * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().RasterizePixelHeight());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_RasterizePixelHeight(double value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().RasterizePixelHeight(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_Opened(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().Opened(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_Opened(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Opened(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_OpenFailed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().OpenFailed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_OpenFailed(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().OpenFailed(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetSourceAsync(impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> streamSource, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus>> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().SetSourceAsync(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&streamSource)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory> : produce_base<D, Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory>
+{
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Imaging::ISvgImageSource> instance) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *inner = nullptr;
+            *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateInstanceWithUriSource(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> uriSource, impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Media::Imaging::ISvgImageSource> instance) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *instance = detach_abi(this->shim().CreateInstanceWithUriSource(*reinterpret_cast<const Windows::Foundation::Uri *>(&uriSource), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *inner = nullptr;
+            *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs> : produce_base<D, Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs>
+{
+    HRESULT __stdcall get_Status(Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Status());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs> : produce_base<D, Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs>
+{};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::Imaging::ISvgImageSourceStatics> : produce_base<D, Windows::UI::Xaml::Media::Imaging::ISvgImageSourceStatics>
+{
+    HRESULT __stdcall get_UriSourceProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().UriSourceProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_RasterizePixelWidthProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().RasterizePixelWidthProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_RasterizePixelHeightProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().RasterizePixelHeightProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource> : produce_base<D, Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource>
 {};
 
@@ -1332,6 +1599,13 @@ template <typename D> Windows::UI::Xaml::Media::Imaging::WriteableBitmap impl_IW
     return instance;
 }
 
+template <typename D> Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus impl_ISvgImageSourceFailedEventArgs<D>::Status() const
+{
+    Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus value {};
+    check_hresult(WINRT_SHIM(ISvgImageSourceFailedEventArgs)->get_Status(&value));
+    return value;
+}
+
 template <typename D> void impl_IXamlRenderingBackgroundTaskOverrides<D>::OnRun(const Windows::ApplicationModel::Background::IBackgroundTaskInstance & taskInstance) const
 {
     check_hresult(WINRT_SHIM(IXamlRenderingBackgroundTaskOverrides)->abi_OnRun(get_abi(taskInstance)));
@@ -1349,6 +1623,118 @@ template <typename D> Windows::Foundation::IAsyncAction impl_ISoftwareBitmapSour
     Windows::Foundation::IAsyncAction returnValue;
     check_hresult(WINRT_SHIM(ISoftwareBitmapSource)->abi_SetBitmapAsync(get_abi(softwareBitmap), put_abi(returnValue)));
     return returnValue;
+}
+
+template <typename D> Windows::Foundation::Uri impl_ISvgImageSource<D>::UriSource() const
+{
+    Windows::Foundation::Uri value { nullptr };
+    check_hresult(WINRT_SHIM(ISvgImageSource)->get_UriSource(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ISvgImageSource<D>::UriSource(const Windows::Foundation::Uri & value) const
+{
+    check_hresult(WINRT_SHIM(ISvgImageSource)->put_UriSource(get_abi(value)));
+}
+
+template <typename D> double impl_ISvgImageSource<D>::RasterizePixelWidth() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(ISvgImageSource)->get_RasterizePixelWidth(&value));
+    return value;
+}
+
+template <typename D> void impl_ISvgImageSource<D>::RasterizePixelWidth(double value) const
+{
+    check_hresult(WINRT_SHIM(ISvgImageSource)->put_RasterizePixelWidth(value));
+}
+
+template <typename D> double impl_ISvgImageSource<D>::RasterizePixelHeight() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(ISvgImageSource)->get_RasterizePixelHeight(&value));
+    return value;
+}
+
+template <typename D> void impl_ISvgImageSource<D>::RasterizePixelHeight(double value) const
+{
+    check_hresult(WINRT_SHIM(ISvgImageSource)->put_RasterizePixelHeight(value));
+}
+
+template <typename D> event_token impl_ISvgImageSource<D>::Opened(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ISvgImageSource)->add_Opened(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ISvgImageSource> impl_ISvgImageSource<D>::Opened(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, ISvgImageSource>(this, &ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource::remove_Opened, Opened(value));
+}
+
+template <typename D> void impl_ISvgImageSource<D>::Opened(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ISvgImageSource)->remove_Opened(token));
+}
+
+template <typename D> event_token impl_ISvgImageSource<D>::OpenFailed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ISvgImageSource)->add_OpenFailed(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ISvgImageSource> impl_ISvgImageSource<D>::OpenFailed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Imaging::SvgImageSource, Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, ISvgImageSource>(this, &ABI::Windows::UI::Xaml::Media::Imaging::ISvgImageSource::remove_OpenFailed, OpenFailed(value));
+}
+
+template <typename D> void impl_ISvgImageSource<D>::OpenFailed(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ISvgImageSource)->remove_OpenFailed(token));
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus> impl_ISvgImageSource<D>::SetSourceAsync(const Windows::Storage::Streams::IRandomAccessStream & streamSource) const
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSourceLoadStatus> returnValue;
+    check_hresult(WINRT_SHIM(ISvgImageSource)->abi_SetSourceAsync(get_abi(streamSource), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISvgImageSourceStatics<D>::UriSourceProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ISvgImageSourceStatics)->get_UriSourceProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISvgImageSourceStatics<D>::RasterizePixelWidthProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ISvgImageSourceStatics)->get_RasterizePixelWidthProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISvgImageSourceStatics<D>::RasterizePixelHeightProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ISvgImageSourceStatics)->get_RasterizePixelHeightProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Imaging::SvgImageSource impl_ISvgImageSourceFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
+{
+    Windows::UI::Xaml::Media::Imaging::SvgImageSource instance { nullptr };
+    check_hresult(WINRT_SHIM(ISvgImageSourceFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Imaging::SvgImageSource impl_ISvgImageSourceFactory<D>::CreateInstanceWithUriSource(const Windows::Foundation::Uri & uriSource, const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
+{
+    Windows::UI::Xaml::Media::Imaging::SvgImageSource instance { nullptr };
+    check_hresult(WINRT_SHIM(ISvgImageSourceFactory)->abi_CreateInstanceWithUriSource(get_abi(uriSource), get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
 }
 
 inline BitmapImage::BitmapImage() :
@@ -1437,6 +1823,33 @@ inline SurfaceImageSource::SurfaceImageSource(int32_t pixelWidth, int32_t pixelH
 {
     Windows::Foundation::IInspectable outer, inner;
     impl_move(get_activation_factory<SurfaceImageSource, ISurfaceImageSourceFactory>().CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, outer, inner));
+}
+
+inline SvgImageSource::SvgImageSource()
+{
+    Windows::Foundation::IInspectable outer, inner;
+    impl_move(get_activation_factory<SvgImageSource, ISvgImageSourceFactory>().CreateInstance(outer, inner));
+}
+
+inline SvgImageSource::SvgImageSource(const Windows::Foundation::Uri & uriSource)
+{
+    Windows::Foundation::IInspectable outer, inner;
+    impl_move(get_activation_factory<SvgImageSource, ISvgImageSourceFactory>().CreateInstanceWithUriSource(uriSource, outer, inner));
+}
+
+inline Windows::UI::Xaml::DependencyProperty SvgImageSource::UriSourceProperty()
+{
+    return get_activation_factory<SvgImageSource, ISvgImageSourceStatics>().UriSourceProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty SvgImageSource::RasterizePixelWidthProperty()
+{
+    return get_activation_factory<SvgImageSource, ISvgImageSourceStatics>().RasterizePixelWidthProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty SvgImageSource::RasterizePixelHeightProperty()
+{
+    return get_activation_factory<SvgImageSource, ISvgImageSourceStatics>().RasterizePixelHeightProperty();
 }
 
 inline VirtualSurfaceImageSource::VirtualSurfaceImageSource(int32_t pixelWidth, int32_t pixelHeight) :
@@ -1600,6 +2013,51 @@ struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::ISurfaceImageSourceFa
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::ISvgImageSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::ISvgImageSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceOpenedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::ISvgImageSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::IVirtualSurfaceImageSource & value) const noexcept
@@ -1711,6 +2169,33 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::SurfaceImageSource>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::SurfaceImageSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSource>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSource & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSourceFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Imaging::SvgImageSourceOpenedEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

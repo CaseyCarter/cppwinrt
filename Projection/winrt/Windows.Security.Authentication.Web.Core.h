@@ -436,6 +436,39 @@ struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest
 };
 
 template <typename D>
+struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest3> : produce_base<D, Windows::Security::Authentication::Web::Core::IWebTokenRequest3>
+{
+    HRESULT __stdcall get_CorrelationId(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CorrelationId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_CorrelationId(impl::abi_arg_in<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CorrelationId(*reinterpret_cast<const hstring *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Security::Authentication::Web::Core::IWebTokenRequestFactory> : produce_base<D, Windows::Security::Authentication::Web::Core::IWebTokenRequestFactory>
 {
     HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Security::Credentials::IWebAccountProvider> provider, impl::abi_arg_in<hstring> scope, impl::abi_arg_in<hstring> clientId, impl::abi_arg_out<Windows::Security::Authentication::Web::Core::IWebTokenRequest> webTokenRequest) noexcept override
@@ -721,11 +754,16 @@ template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> i
     return requestProperties;
 }
 
-template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountEventArgs<D>::Account() const
+template <typename D> hstring impl_IWebTokenRequest3<D>::CorrelationId() const
 {
-    Windows::Security::Credentials::WebAccount value { nullptr };
-    check_hresult(WINRT_SHIM(IWebAccountEventArgs)->get_Account(put_abi(value)));
+    hstring value;
+    check_hresult(WINRT_SHIM(IWebTokenRequest3)->get_CorrelationId(put_abi(value)));
     return value;
+}
+
+template <typename D> void impl_IWebTokenRequest3<D>::CorrelationId(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(IWebTokenRequest3)->put_CorrelationId(get_abi(value)));
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebTokenRequestFactory<D>::Create(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope, hstring_view clientId) const
@@ -754,6 +792,13 @@ template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequ
     Windows::Security::Authentication::Web::Core::WebTokenRequest webTokenRequest { nullptr };
     check_hresult(WINRT_SHIM(IWebTokenRequestFactory)->abi_CreateWithScope(get_abi(provider), get_abi(scope), put_abi(webTokenRequest)));
     return webTokenRequest;
+}
+
+template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountEventArgs<D>::Account() const
+{
+    Windows::Security::Credentials::WebAccount value { nullptr };
+    check_hresult(WINRT_SHIM(IWebAccountEventArgs)->get_Account(put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> impl_IWebAuthenticationCoreManagerStatics<D>::GetTokenSilentlyAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request) const
@@ -1136,6 +1181,15 @@ template<>
 struct std::hash<winrt::Windows::Security::Authentication::Web::Core::IWebTokenRequest2>
 {
     size_t operator()(const winrt::Windows::Security::Authentication::Web::Core::IWebTokenRequest2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Security::Authentication::Web::Core::IWebTokenRequest3>
+{
+    size_t operator()(const winrt::Windows::Security::Authentication::Web::Core::IWebTokenRequest3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

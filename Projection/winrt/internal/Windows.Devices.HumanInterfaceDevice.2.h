@@ -20,26 +20,6 @@ template <> struct __declspec(uuid("ef60385f-be78-584b-aaef-7829ada2b0de")) __de
 template <> struct __declspec(uuid("a76a4fbf-5177-5256-84a8-b31a8dcf1048")) __declspec(novtable) IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> : impl_IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> {};
 #endif
 
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_96f1faac_348f_5b8f_a71d_2d650e0b11f2
-#define WINRT_GENERIC_96f1faac_348f_5b8f_a71d_2d650e0b11f2
-template <> struct __declspec(uuid("96f1faac-348f-5b8f-a71d-2d650e0b11f2")) __declspec(novtable) IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection> : impl_IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection> {};
-#endif
-
-#ifndef WINRT_GENERIC_0e417dac_591a_5de0_afd6_0b2c04c304e7
-#define WINRT_GENERIC_0e417dac_591a_5de0_afd6_0b2c04c304e7
-template <> struct __declspec(uuid("0e417dac-591a-5de0-afd6-0b2c04c304e7")) __declspec(novtable) IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> : impl_IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation {
-
 #ifndef WINRT_GENERIC_b3e28917_cd48_57b3_a0b1_321432e85bd6
 #define WINRT_GENERIC_b3e28917_cd48_57b3_a0b1_321432e85bd6
 template <> struct __declspec(uuid("b3e28917-cd48-57b3-a0b1-321432e85bd6")) __declspec(novtable) IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> : impl_IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> {};
@@ -75,6 +55,26 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("31e757c8-8f6a-540b-938b-aba79b6f03ec")) __declspec(novtable) TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_96f1faac_348f_5b8f_a71d_2d650e0b11f2
+#define WINRT_GENERIC_96f1faac_348f_5b8f_a71d_2d650e0b11f2
+template <> struct __declspec(uuid("96f1faac-348f-5b8f-a71d-2d650e0b11f2")) __declspec(novtable) IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection> : impl_IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection> {};
+#endif
+
+#ifndef WINRT_GENERIC_0e417dac_591a_5de0_afd6_0b2c04c304e7
+#define WINRT_GENERIC_0e417dac_591a_5de0_afd6_0b2c04c304e7
+template <> struct __declspec(uuid("0e417dac-591a-5de0-afd6-0b2c04c304e7")) __declspec(novtable) IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> : impl_IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_9343b6e7_e3d2_5e4a_ab2d_2bce4919a6a4
 #define WINRT_GENERIC_9343b6e7_e3d2_5e4a_ab2d_2bce4919a6a4
 template <> struct __declspec(uuid("9343b6e7-e3d2-5e4a-ab2d-2bce4919a6a4")) __declspec(novtable) AsyncOperationCompletedHandler<uint32_t> : impl_AsyncOperationCompletedHandler<uint32_t> {};
@@ -84,46 +84,6 @@ template <> struct __declspec(uuid("9343b6e7-e3d2-5e4a-ab2d-2bce4919a6a4")) __de
 #define WINRT_GENERIC_b0e8e149_0cb6_55a7_bcc1_d996324d65c4
 template <> struct __declspec(uuid("b0e8e149-0cb6-55a7-bcc1-d996324d65c4")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::HumanInterfaceDevice::HidDevice> : impl_AsyncOperationCompletedHandler<Windows::Devices::HumanInterfaceDevice::HidDevice> {};
 #endif
-
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_70248d3d_b372_5ebb_a1e3_a6e1189ae09f
-#define WINRT_GENERIC_70248d3d_b372_5ebb_a1e3_a6e1189ae09f
-template <> struct __declspec(uuid("70248d3d-b372-5ebb-a1e3-a6e1189ae09f")) __declspec(novtable) IVector<Windows::Devices::HumanInterfaceDevice::HidCollection> : impl_IVector<Windows::Devices::HumanInterfaceDevice::HidCollection> {};
-#endif
-
-#ifndef WINRT_GENERIC_cefcee70_c7ff_57c1_a675_a0df8976a988
-#define WINRT_GENERIC_cefcee70_c7ff_57c1_a675_a0df8976a988
-template <> struct __declspec(uuid("cefcee70-c7ff-57c1-a675-a0df8976a988")) __declspec(novtable) IIterator<Windows::Devices::HumanInterfaceDevice::HidCollection> : impl_IIterator<Windows::Devices::HumanInterfaceDevice::HidCollection> {};
-#endif
-
-#ifndef WINRT_GENERIC_bbeada0f_708f_5b5e_a017_5c64ffb96b69
-#define WINRT_GENERIC_bbeada0f_708f_5b5e_a017_5c64ffb96b69
-template <> struct __declspec(uuid("bbeada0f-708f-5b5e-a017-5c64ffb96b69")) __declspec(novtable) IIterable<Windows::Devices::HumanInterfaceDevice::HidCollection> : impl_IIterable<Windows::Devices::HumanInterfaceDevice::HidCollection> {};
-#endif
-
-#ifndef WINRT_GENERIC_4a0dd12f_e219_5e70_9d81_150dd2710b20
-#define WINRT_GENERIC_4a0dd12f_e219_5e70_9d81_150dd2710b20
-template <> struct __declspec(uuid("4a0dd12f-e219-5e70-9d81-150dd2710b20")) __declspec(novtable) IVector<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> : impl_IVector<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> {};
-#endif
-
-#ifndef WINRT_GENERIC_5cde3c23_d054_53d6_abf1_41e73379b472
-#define WINRT_GENERIC_5cde3c23_d054_53d6_abf1_41e73379b472
-template <> struct __declspec(uuid("5cde3c23-d054-53d6-abf1-41e73379b472")) __declspec(novtable) IIterator<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> : impl_IIterator<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> {};
-#endif
-
-#ifndef WINRT_GENERIC_1111e585_5ab0_5d2b_8aed_b6d6186d1c3f
-#define WINRT_GENERIC_1111e585_5ab0_5d2b_8aed_b6d6186d1c3f
-template <> struct __declspec(uuid("1111e585-5ab0-5d2b-8aed-b6d6186d1c3f")) __declspec(novtable) IIterable<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> : impl_IIterable<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_01c83770_03ab_5576_98b4_8d75ce1a9885
 #define WINRT_GENERIC_01c83770_03ab_5576_98b4_8d75ce1a9885
@@ -168,6 +128,36 @@ template <> struct __declspec(uuid("52b9c36e-7d95-5d1c-acab-23c19ea76f01")) __de
 #ifndef WINRT_GENERIC_868f060d_e0d4_571b_b2f7_431d6984a513
 #define WINRT_GENERIC_868f060d_e0d4_571b_b2f7_431d6984a513
 template <> struct __declspec(uuid("868f060d-e0d4-571b-b2f7-431d6984a513")) __declspec(novtable) IIterable<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription> : impl_IIterable<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription> {};
+#endif
+
+#ifndef WINRT_GENERIC_70248d3d_b372_5ebb_a1e3_a6e1189ae09f
+#define WINRT_GENERIC_70248d3d_b372_5ebb_a1e3_a6e1189ae09f
+template <> struct __declspec(uuid("70248d3d-b372-5ebb-a1e3-a6e1189ae09f")) __declspec(novtable) IVector<Windows::Devices::HumanInterfaceDevice::HidCollection> : impl_IVector<Windows::Devices::HumanInterfaceDevice::HidCollection> {};
+#endif
+
+#ifndef WINRT_GENERIC_cefcee70_c7ff_57c1_a675_a0df8976a988
+#define WINRT_GENERIC_cefcee70_c7ff_57c1_a675_a0df8976a988
+template <> struct __declspec(uuid("cefcee70-c7ff-57c1-a675-a0df8976a988")) __declspec(novtable) IIterator<Windows::Devices::HumanInterfaceDevice::HidCollection> : impl_IIterator<Windows::Devices::HumanInterfaceDevice::HidCollection> {};
+#endif
+
+#ifndef WINRT_GENERIC_bbeada0f_708f_5b5e_a017_5c64ffb96b69
+#define WINRT_GENERIC_bbeada0f_708f_5b5e_a017_5c64ffb96b69
+template <> struct __declspec(uuid("bbeada0f-708f-5b5e-a017-5c64ffb96b69")) __declspec(novtable) IIterable<Windows::Devices::HumanInterfaceDevice::HidCollection> : impl_IIterable<Windows::Devices::HumanInterfaceDevice::HidCollection> {};
+#endif
+
+#ifndef WINRT_GENERIC_4a0dd12f_e219_5e70_9d81_150dd2710b20
+#define WINRT_GENERIC_4a0dd12f_e219_5e70_9d81_150dd2710b20
+template <> struct __declspec(uuid("4a0dd12f-e219-5e70-9d81-150dd2710b20")) __declspec(novtable) IVector<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> : impl_IVector<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> {};
+#endif
+
+#ifndef WINRT_GENERIC_5cde3c23_d054_53d6_abf1_41e73379b472
+#define WINRT_GENERIC_5cde3c23_d054_53d6_abf1_41e73379b472
+template <> struct __declspec(uuid("5cde3c23-d054-53d6-abf1-41e73379b472")) __declspec(novtable) IIterator<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> : impl_IIterator<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> {};
+#endif
+
+#ifndef WINRT_GENERIC_1111e585_5ab0_5d2b_8aed_b6d6186d1c3f
+#define WINRT_GENERIC_1111e585_5ab0_5d2b_8aed_b6d6186d1c3f
+template <> struct __declspec(uuid("1111e585-5ab0-5d2b-8aed-b6d6186d1c3f")) __declspec(novtable) IIterable<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> : impl_IIterable<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> {};
 #endif
 
 

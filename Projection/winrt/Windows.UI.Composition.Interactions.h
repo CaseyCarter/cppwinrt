@@ -20,6 +20,87 @@ WINRT_EXPORT namespace winrt {
 namespace impl {
 
 template <typename D>
+struct produce<D, Windows::UI::Composition::Interactions::ICompositionConditionalValue> : produce_base<D, Windows::UI::Composition::Interactions::ICompositionConditionalValue>
+{
+    HRESULT __stdcall get_Condition(impl::abi_arg_out<Windows::UI::Composition::IExpressionAnimation> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Condition());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Condition(impl::abi_arg_in<Windows::UI::Composition::IExpressionAnimation> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Condition(*reinterpret_cast<const Windows::UI::Composition::ExpressionAnimation *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Value(impl::abi_arg_out<Windows::UI::Composition::IExpressionAnimation> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Value());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Value(impl::abi_arg_in<Windows::UI::Composition::IExpressionAnimation> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Value(*reinterpret_cast<const Windows::UI::Composition::ExpressionAnimation *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::Interactions::ICompositionConditionalValueStatics> : produce_base<D, Windows::UI::Composition::Interactions::ICompositionConditionalValueStatics>
+{
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::UI::Composition::ICompositor> compositor, impl::abi_arg_out<Windows::UI::Composition::Interactions::ICompositionConditionalValue> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::UI::Composition::Compositor *>(&compositor)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Composition::Interactions::ICompositionInteractionSource> : produce_base<D, Windows::UI::Composition::Interactions::ICompositionInteractionSource>
 {};
 
@@ -544,6 +625,38 @@ struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker> :
         {
             typename D::abi_guard guard(this->shim());
             *requestId = detach_abi(this->shim().TryUpdateScaleWithAdditionalVelocity(velocityInPercentPerSecond, *reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&centerPoint)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::Interactions::IInteractionTracker2> : produce_base<D, Windows::UI::Composition::Interactions::IInteractionTracker2>
+{
+    HRESULT __stdcall abi_ConfigureCenterPointXInertiaModifiers(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue>> conditionalValues) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ConfigureCenterPointXInertiaModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> *>(&conditionalValues));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ConfigureCenterPointYInertiaModifiers(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue>> conditionalValues) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ConfigureCenterPointYInertiaModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> *>(&conditionalValues));
             return S_OK;
         }
         catch (...)
@@ -1353,6 +1466,168 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSource2> : produce_base<D, Windows::UI::Composition::Interactions::IVisualInteractionSource2>
+{
+    HRESULT __stdcall get_DeltaPosition(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeltaPosition());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DeltaScale(float * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DeltaScale());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Position(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Position());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_PositionVelocity(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().PositionVelocity());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Scale(float * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Scale());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ScaleVelocity(float * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ScaleVelocity());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ConfigureCenterPointXModifiers(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue>> conditionalValues) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ConfigureCenterPointXModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> *>(&conditionalValues));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ConfigureCenterPointYModifiers(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue>> conditionalValues) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ConfigureCenterPointYModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> *>(&conditionalValues));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ConfigureDeltaPositionXModifiers(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue>> conditionalValues) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ConfigureDeltaPositionXModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> *>(&conditionalValues));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ConfigureDeltaPositionYModifiers(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue>> conditionalValues) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ConfigureDeltaPositionYModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> *>(&conditionalValues));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ConfigureDeltaScaleModifiers(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue>> conditionalValues) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ConfigureDeltaScaleModifiers(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> *>(&conditionalValues));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSourceObjectFactory> : produce_base<D, Windows::UI::Composition::Interactions::IVisualInteractionSourceObjectFactory>
+{};
+
+template <typename D>
 struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSourceStatics> : produce_base<D, Windows::UI::Composition::Interactions::IVisualInteractionSourceStatics>
 {
     HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::UI::Composition::IVisual> source, impl::abi_arg_out<Windows::UI::Composition::Interactions::IVisualInteractionSource> result) noexcept override
@@ -1374,6 +1649,37 @@ struct produce<D, Windows::UI::Composition::Interactions::IVisualInteractionSour
 }
 
 namespace Windows::UI::Composition::Interactions {
+
+template <typename D> Windows::UI::Composition::Interactions::CompositionConditionalValue impl_ICompositionConditionalValueStatics<D>::Create(const Windows::UI::Composition::Compositor & compositor) const
+{
+    Windows::UI::Composition::Interactions::CompositionConditionalValue result { nullptr };
+    check_hresult(WINRT_SHIM(ICompositionConditionalValueStatics)->abi_Create(get_abi(compositor), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Composition::ExpressionAnimation impl_ICompositionConditionalValue<D>::Condition() const
+{
+    Windows::UI::Composition::ExpressionAnimation value { nullptr };
+    check_hresult(WINRT_SHIM(ICompositionConditionalValue)->get_Condition(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ICompositionConditionalValue<D>::Condition(const Windows::UI::Composition::ExpressionAnimation & value) const
+{
+    check_hresult(WINRT_SHIM(ICompositionConditionalValue)->put_Condition(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Composition::ExpressionAnimation impl_ICompositionConditionalValue<D>::Value() const
+{
+    Windows::UI::Composition::ExpressionAnimation value { nullptr };
+    check_hresult(WINRT_SHIM(ICompositionConditionalValue)->get_Value(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ICompositionConditionalValue<D>::Value(const Windows::UI::Composition::ExpressionAnimation & value) const
+{
+    check_hresult(WINRT_SHIM(ICompositionConditionalValue)->put_Value(get_abi(value)));
+}
 
 template <typename D> int32_t impl_ICompositionInteractionSourceCollection<D>::Count() const
 {
@@ -1648,6 +1954,16 @@ template <typename D> int32_t impl_IInteractionTracker<D>::TryUpdateScaleWithAdd
     int32_t requestId {};
     check_hresult(WINRT_SHIM(IInteractionTracker)->abi_TryUpdateScaleWithAdditionalVelocity(velocityInPercentPerSecond, get_abi(centerPoint), &requestId));
     return requestId;
+}
+
+template <typename D> void impl_IInteractionTracker2<D>::ConfigureCenterPointXInertiaModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const
+{
+    check_hresult(WINRT_SHIM(IInteractionTracker2)->abi_ConfigureCenterPointXInertiaModifiers(get_abi(conditionalValues)));
+}
+
+template <typename D> void impl_IInteractionTracker2<D>::ConfigureCenterPointYInertiaModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const
+{
+    check_hresult(WINRT_SHIM(IInteractionTracker2)->abi_ConfigureCenterPointYInertiaModifiers(get_abi(conditionalValues)));
 }
 
 template <typename D> int32_t impl_IInteractionTrackerCustomAnimationStateEnteredArgs<D>::RequestId() const
@@ -1937,6 +2253,78 @@ template <typename D> void impl_IVisualInteractionSource<D>::TryRedirectForManip
     check_hresult(WINRT_SHIM(IVisualInteractionSource)->abi_TryRedirectForManipulation(get_abi(pointerPoint)));
 }
 
+template <typename D> Windows::Foundation::Numerics::float3 impl_IVisualInteractionSource2<D>::DeltaPosition() const
+{
+    Windows::Foundation::Numerics::float3 value {};
+    check_hresult(WINRT_SHIM(IVisualInteractionSource2)->get_DeltaPosition(put_abi(value)));
+    return value;
+}
+
+template <typename D> float impl_IVisualInteractionSource2<D>::DeltaScale() const
+{
+    float value {};
+    check_hresult(WINRT_SHIM(IVisualInteractionSource2)->get_DeltaScale(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Numerics::float3 impl_IVisualInteractionSource2<D>::Position() const
+{
+    Windows::Foundation::Numerics::float3 value {};
+    check_hresult(WINRT_SHIM(IVisualInteractionSource2)->get_Position(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Numerics::float3 impl_IVisualInteractionSource2<D>::PositionVelocity() const
+{
+    Windows::Foundation::Numerics::float3 value {};
+    check_hresult(WINRT_SHIM(IVisualInteractionSource2)->get_PositionVelocity(put_abi(value)));
+    return value;
+}
+
+template <typename D> float impl_IVisualInteractionSource2<D>::Scale() const
+{
+    float value {};
+    check_hresult(WINRT_SHIM(IVisualInteractionSource2)->get_Scale(&value));
+    return value;
+}
+
+template <typename D> float impl_IVisualInteractionSource2<D>::ScaleVelocity() const
+{
+    float value {};
+    check_hresult(WINRT_SHIM(IVisualInteractionSource2)->get_ScaleVelocity(&value));
+    return value;
+}
+
+template <typename D> void impl_IVisualInteractionSource2<D>::ConfigureCenterPointXModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const
+{
+    check_hresult(WINRT_SHIM(IVisualInteractionSource2)->abi_ConfigureCenterPointXModifiers(get_abi(conditionalValues)));
+}
+
+template <typename D> void impl_IVisualInteractionSource2<D>::ConfigureCenterPointYModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const
+{
+    check_hresult(WINRT_SHIM(IVisualInteractionSource2)->abi_ConfigureCenterPointYModifiers(get_abi(conditionalValues)));
+}
+
+template <typename D> void impl_IVisualInteractionSource2<D>::ConfigureDeltaPositionXModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const
+{
+    check_hresult(WINRT_SHIM(IVisualInteractionSource2)->abi_ConfigureDeltaPositionXModifiers(get_abi(conditionalValues)));
+}
+
+template <typename D> void impl_IVisualInteractionSource2<D>::ConfigureDeltaPositionYModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const
+{
+    check_hresult(WINRT_SHIM(IVisualInteractionSource2)->abi_ConfigureDeltaPositionYModifiers(get_abi(conditionalValues)));
+}
+
+template <typename D> void impl_IVisualInteractionSource2<D>::ConfigureDeltaScaleModifiers(iterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> conditionalValues) const
+{
+    check_hresult(WINRT_SHIM(IVisualInteractionSource2)->abi_ConfigureDeltaScaleModifiers(get_abi(conditionalValues)));
+}
+
+inline Windows::UI::Composition::Interactions::CompositionConditionalValue CompositionConditionalValue::Create(const Windows::UI::Composition::Compositor & compositor)
+{
+    return get_activation_factory<CompositionConditionalValue, ICompositionConditionalValueStatics>().Create(compositor);
+}
+
 inline Windows::UI::Composition::Interactions::InteractionTracker InteractionTracker::Create(const Windows::UI::Composition::Compositor & compositor)
 {
     return get_activation_factory<InteractionTracker, IInteractionTrackerStatics>().Create(compositor);
@@ -1967,6 +2355,24 @@ inline Windows::UI::Composition::Interactions::VisualInteractionSource VisualInt
 }
 
 template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::ICompositionConditionalValue>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::ICompositionConditionalValue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::ICompositionConditionalValueStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::ICompositionConditionalValueStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Composition::Interactions::ICompositionInteractionSource>
 {
     size_t operator()(const winrt::Windows::UI::Composition::Interactions::ICompositionInteractionSource & value) const noexcept
@@ -1988,6 +2394,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTracker>
 {
     size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTracker & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IInteractionTracker2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IInteractionTracker2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -2129,9 +2544,36 @@ struct std::hash<winrt::Windows::UI::Composition::Interactions::IVisualInteracti
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IVisualInteractionSource2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IVisualInteractionSource2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::IVisualInteractionSourceObjectFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::IVisualInteractionSourceObjectFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Composition::Interactions::IVisualInteractionSourceStatics>
 {
     size_t operator()(const winrt::Windows::UI::Composition::Interactions::IVisualInteractionSourceStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::Interactions::CompositionConditionalValue>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::Interactions::CompositionConditionalValue & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

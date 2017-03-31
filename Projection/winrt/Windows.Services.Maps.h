@@ -16,6 +16,90 @@ WINRT_EXPORT namespace winrt {
 namespace impl {
 
 template <typename D>
+struct produce<D, Windows::Services::Maps::IEnhancedWaypoint> : produce_base<D, Windows::Services::Maps::IEnhancedWaypoint>
+{
+    HRESULT __stdcall get_Point(impl::abi_arg_out<Windows::Devices::Geolocation::IGeopoint> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Point());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Kind(Windows::Services::Maps::WaypointKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Kind());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Services::Maps::IEnhancedWaypointFactory> : produce_base<D, Windows::Services::Maps::IEnhancedWaypointFactory>
+{
+    HRESULT __stdcall abi_Create(impl::abi_arg_in<Windows::Devices::Geolocation::IGeopoint> point, Windows::Services::Maps::WaypointKind kind, impl::abi_arg_out<Windows::Services::Maps::IEnhancedWaypoint> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Create(*reinterpret_cast<const Windows::Devices::Geolocation::Geopoint *>(&point), kind));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Services::Maps::IManeuverWarning> : produce_base<D, Windows::Services::Maps::IManeuverWarning>
+{
+    HRESULT __stdcall get_Kind(Windows::Services::Maps::ManeuverWarningKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Kind());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Severity(Windows::Services::Maps::ManeuverWarningSeverity * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Severity());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Services::Maps::IMapAddress> : produce_base<D, Windows::Services::Maps::IMapAddress>
 {
     HRESULT __stdcall get_BuildingName(impl::abi_arg_out<hstring> value) noexcept override
@@ -584,6 +668,38 @@ struct produce<D, Windows::Services::Maps::IMapRoute2> : produce_base<D, Windows
 };
 
 template <typename D>
+struct produce<D, Windows::Services::Maps::IMapRoute3> : produce_base<D, Windows::Services::Maps::IMapRoute3>
+{
+    HRESULT __stdcall get_DurationWithoutTraffic(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DurationWithoutTraffic());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_TrafficCongestion(Windows::Services::Maps::TrafficCongestion * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TrafficCongestion());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteDrivingOptions> : produce_base<D, Windows::Services::Maps::IMapRouteDrivingOptions>
 {
     HRESULT __stdcall get_MaxAlternateRouteCount(uint32_t * value) noexcept override
@@ -926,6 +1042,40 @@ struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics2> : produce_ba
 };
 
 template <typename D>
+struct produce<D, Windows::Services::Maps::IMapRouteFinderStatics3> : produce_base<D, Windows::Services::Maps::IMapRouteFinderStatics3>
+{
+    HRESULT __stdcall abi_GetDrivingRouteFromEnhancedWaypointsAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Services::Maps::EnhancedWaypoint>> waypoints, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetDrivingRouteFromEnhancedWaypointsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Services::Maps::EnhancedWaypoint> *>(&waypoints)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync(impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::Services::Maps::EnhancedWaypoint>> waypoints, impl::abi_arg_in<Windows::Services::Maps::IMapRouteDrivingOptions> options, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult>> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetDrivingRouteFromEnhancedWaypointsAsync(*reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::Services::Maps::EnhancedWaypoint> *>(&waypoints), *reinterpret_cast<const Windows::Services::Maps::MapRouteDrivingOptions *>(&options)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Services::Maps::IMapRouteLeg> : produce_base<D, Windows::Services::Maps::IMapRouteLeg>
 {
     HRESULT __stdcall get_BoundingBox(impl::abi_arg_out<Windows::Devices::Geolocation::IGeoboundingBox> value) noexcept override
@@ -997,6 +1147,38 @@ struct produce<D, Windows::Services::Maps::IMapRouteLeg> : produce_base<D, Windo
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Services::Maps::IMapRouteLeg2> : produce_base<D, Windows::Services::Maps::IMapRouteLeg2>
+{
+    HRESULT __stdcall get_DurationWithoutTraffic(impl::abi_arg_out<Windows::Foundation::TimeSpan> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DurationWithoutTraffic());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_TrafficCongestion(Windows::Services::Maps::TrafficCongestion * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TrafficCongestion());
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -1141,6 +1323,25 @@ struct produce<D, Windows::Services::Maps::IMapRouteManeuver2> : produce_base<D,
 };
 
 template <typename D>
+struct produce<D, Windows::Services::Maps::IMapRouteManeuver3> : produce_base<D, Windows::Services::Maps::IMapRouteManeuver3>
+{
+    HRESULT __stdcall get_Warnings(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::ManeuverWarning>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Warnings());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Services::Maps::IMapServiceStatics> : produce_base<D, Windows::Services::Maps::IMapServiceStatics>
 {
     HRESULT __stdcall put_ServiceToken(impl::abi_arg_in<hstring> value) noexcept override
@@ -1206,6 +1407,38 @@ struct produce<D, Windows::Services::Maps::IMapServiceStatics3> : produce_base<D
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Services::Maps::IMapServiceStatics4> : produce_base<D, Windows::Services::Maps::IMapServiceStatics4>
+{
+    HRESULT __stdcall put_DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().DataUsagePreference(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DataUsagePreference());
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -1480,6 +1713,27 @@ template <typename D> hstring impl_IMapRouteManeuver2<D>::StreetName() const
     return value;
 }
 
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::ManeuverWarning> impl_IMapRouteManeuver3<D>::Warnings() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::ManeuverWarning> value;
+    check_hresult(WINRT_SHIM(IMapRouteManeuver3)->get_Warnings(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Services::Maps::ManeuverWarningKind impl_IManeuverWarning<D>::Kind() const
+{
+    Windows::Services::Maps::ManeuverWarningKind value {};
+    check_hresult(WINRT_SHIM(IManeuverWarning)->get_Kind(&value));
+    return value;
+}
+
+template <typename D> Windows::Services::Maps::ManeuverWarningSeverity impl_IManeuverWarning<D>::Severity() const
+{
+    Windows::Services::Maps::ManeuverWarningSeverity value {};
+    check_hresult(WINRT_SHIM(IManeuverWarning)->get_Severity(&value));
+    return value;
+}
+
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IMapRouteLeg<D>::BoundingBox() const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
@@ -1512,6 +1766,20 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Ser
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRouteManeuver> value;
     check_hresult(WINRT_SHIM(IMapRouteLeg)->get_Maneuvers(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::TimeSpan impl_IMapRouteLeg2<D>::DurationWithoutTraffic() const
+{
+    Windows::Foundation::TimeSpan value {};
+    check_hresult(WINRT_SHIM(IMapRouteLeg2)->get_DurationWithoutTraffic(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Services::Maps::TrafficCongestion impl_IMapRouteLeg2<D>::TrafficCongestion() const
+{
+    Windows::Services::Maps::TrafficCongestion value {};
+    check_hresult(WINRT_SHIM(IMapRouteLeg2)->get_TrafficCongestion(&value));
     return value;
 }
 
@@ -1571,6 +1839,20 @@ template <typename D> bool impl_IMapRoute2<D>::HasBlockedRoads() const
     return value;
 }
 
+template <typename D> Windows::Foundation::TimeSpan impl_IMapRoute3<D>::DurationWithoutTraffic() const
+{
+    Windows::Foundation::TimeSpan value {};
+    check_hresult(WINRT_SHIM(IMapRoute3)->get_DurationWithoutTraffic(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Services::Maps::TrafficCongestion impl_IMapRoute3<D>::TrafficCongestion() const
+{
+    Windows::Services::Maps::TrafficCongestion value {};
+    check_hresult(WINRT_SHIM(IMapRoute3)->get_TrafficCongestion(&value));
+    return value;
+}
+
 template <typename D> Windows::Services::Maps::MapRoute impl_IMapRouteFinderResult<D>::Route() const
 {
     Windows::Services::Maps::MapRoute value { nullptr };
@@ -1589,6 +1871,27 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Ser
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRoute> value;
     check_hresult(WINRT_SHIM(IMapRouteFinderResult2)->get_AlternateRoutes(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Geolocation::Geopoint impl_IEnhancedWaypoint<D>::Point() const
+{
+    Windows::Devices::Geolocation::Geopoint value { nullptr };
+    check_hresult(WINRT_SHIM(IEnhancedWaypoint)->get_Point(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Services::Maps::WaypointKind impl_IEnhancedWaypoint<D>::Kind() const
+{
+    Windows::Services::Maps::WaypointKind value {};
+    check_hresult(WINRT_SHIM(IEnhancedWaypoint)->get_Kind(&value));
+    return value;
+}
+
+template <typename D> Windows::Services::Maps::EnhancedWaypoint impl_IEnhancedWaypointFactory<D>::Create(const Windows::Devices::Geolocation::Geopoint & point, Windows::Services::Maps::WaypointKind kind) const
+{
+    Windows::Services::Maps::EnhancedWaypoint value { nullptr };
+    check_hresult(WINRT_SHIM(IEnhancedWaypointFactory)->abi_Create(get_abi(point), kind, put_abi(value)));
     return value;
 }
 
@@ -1697,6 +2000,20 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Ma
     return result;
 }
 
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics3<D>::GetDrivingRouteFromEnhancedWaypointsAsync(iterable<Windows::Services::Maps::EnhancedWaypoint> waypoints) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
+    check_hresult(WINRT_SHIM(IMapRouteFinderStatics3)->abi_GetDrivingRouteFromEnhancedWaypointsAsync(get_abi(waypoints), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics3<D>::GetDrivingRouteFromEnhancedWaypointsAsync(iterable<Windows::Services::Maps::EnhancedWaypoint> waypoints, const Windows::Services::Maps::MapRouteDrivingOptions & options) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
+    check_hresult(WINRT_SHIM(IMapRouteFinderStatics3)->abi_GetDrivingRouteFromEnhancedWaypointsWithOptionsAsync(get_abi(waypoints), get_abi(options), put_abi(result)));
+    return result;
+}
+
 template <typename D> void impl_IMapServiceStatics<D>::ServiceToken(hstring_view value) const
 {
     check_hresult(WINRT_SHIM(IMapServiceStatics)->put_ServiceToken(get_abi(value)));
@@ -1732,6 +2049,22 @@ template <typename D> hstring impl_IMapServiceStatics3<D>::DataAttributions() co
     check_hresult(WINRT_SHIM(IMapServiceStatics3)->get_DataAttributions(put_abi(value)));
     return value;
 }
+
+template <typename D> void impl_IMapServiceStatics4<D>::DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference value) const
+{
+    check_hresult(WINRT_SHIM(IMapServiceStatics4)->put_DataUsagePreference(value));
+}
+
+template <typename D> Windows::Services::Maps::MapServiceDataUsagePreference impl_IMapServiceStatics4<D>::DataUsagePreference() const
+{
+    Windows::Services::Maps::MapServiceDataUsagePreference value {};
+    check_hresult(WINRT_SHIM(IMapServiceStatics4)->get_DataUsagePreference(&value));
+    return value;
+}
+
+inline EnhancedWaypoint::EnhancedWaypoint(const Windows::Devices::Geolocation::Geopoint & point, Windows::Services::Maps::WaypointKind kind) :
+    EnhancedWaypoint(get_activation_factory<EnhancedWaypoint, IEnhancedWaypointFactory>().Create(point, kind))
+{}
 
 inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> MapLocationFinder::FindLocationsAtAsync(const Windows::Devices::Geolocation::Geopoint & queryPoint)
 {
@@ -1822,6 +2155,16 @@ inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFin
     return get_activation_factory<MapRouteFinder, IMapRouteFinderStatics2>().GetDrivingRouteAsync(startPoint, endPoint, options);
 }
 
+inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromEnhancedWaypointsAsync(iterable<Windows::Services::Maps::EnhancedWaypoint> waypoints)
+{
+    return get_activation_factory<MapRouteFinder, IMapRouteFinderStatics3>().GetDrivingRouteFromEnhancedWaypointsAsync(waypoints);
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> MapRouteFinder::GetDrivingRouteFromEnhancedWaypointsAsync(iterable<Windows::Services::Maps::EnhancedWaypoint> waypoints, const Windows::Services::Maps::MapRouteDrivingOptions & options)
+{
+    return get_activation_factory<MapRouteFinder, IMapRouteFinderStatics3>().GetDrivingRouteFromEnhancedWaypointsAsync(waypoints, options);
+}
+
 inline void MapService::ServiceToken(hstring_view value)
 {
     get_activation_factory<MapService, IMapServiceStatics>().ServiceToken(value);
@@ -1842,9 +2185,46 @@ inline hstring MapService::DataAttributions()
     return get_activation_factory<MapService, IMapServiceStatics3>().DataAttributions();
 }
 
+inline void MapService::DataUsagePreference(Windows::Services::Maps::MapServiceDataUsagePreference value)
+{
+    get_activation_factory<MapService, IMapServiceStatics4>().DataUsagePreference(value);
+}
+
+inline Windows::Services::Maps::MapServiceDataUsagePreference MapService::DataUsagePreference()
+{
+    return get_activation_factory<MapService, IMapServiceStatics4>().DataUsagePreference();
 }
 
 }
+
+}
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IEnhancedWaypoint>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IEnhancedWaypoint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IEnhancedWaypointFactory>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IEnhancedWaypointFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IManeuverWarning>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IManeuverWarning & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
 
 template<>
 struct std::hash<winrt::Windows::Services::Maps::IMapAddress>
@@ -1928,6 +2308,15 @@ struct std::hash<winrt::Windows::Services::Maps::IMapRoute2>
 };
 
 template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRoute3>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRoute3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Services::Maps::IMapRouteDrivingOptions>
 {
     size_t operator()(const winrt::Windows::Services::Maps::IMapRouteDrivingOptions & value) const noexcept
@@ -1973,9 +2362,27 @@ struct std::hash<winrt::Windows::Services::Maps::IMapRouteFinderStatics2>
 };
 
 template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRouteFinderStatics3>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRouteFinderStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Services::Maps::IMapRouteLeg>
 {
     size_t operator()(const winrt::Windows::Services::Maps::IMapRouteLeg & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRouteLeg2>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRouteLeg2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -1994,6 +2401,15 @@ template<>
 struct std::hash<winrt::Windows::Services::Maps::IMapRouteManeuver2>
 {
     size_t operator()(const winrt::Windows::Services::Maps::IMapRouteManeuver2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapRouteManeuver3>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapRouteManeuver3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -2021,6 +2437,33 @@ template<>
 struct std::hash<winrt::Windows::Services::Maps::IMapServiceStatics3>
 {
     size_t operator()(const winrt::Windows::Services::Maps::IMapServiceStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::IMapServiceStatics4>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::IMapServiceStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::EnhancedWaypoint>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::EnhancedWaypoint & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Services::Maps::ManeuverWarning>
+{
+    size_t operator()(const winrt::Windows::Services::Maps::ManeuverWarning & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

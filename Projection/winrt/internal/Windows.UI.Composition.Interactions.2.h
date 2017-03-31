@@ -17,11 +17,6 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("719cc2ba-3e76-5def-9f1a-38d85a145ea8")) __declspec(novtable) IReference<float> : impl_IReference<float> {};
 #endif
 
-#ifndef WINRT_GENERIC_1ee770ff_c954_59ca_a754_6199a9be282c
-#define WINRT_GENERIC_1ee770ff_c954_59ca_a754_6199a9be282c
-template <> struct __declspec(uuid("1ee770ff-c954-59ca-a754-6199a9be282c")) __declspec(novtable) IReference<Windows::Foundation::Numerics::float3> : impl_IReference<Windows::Foundation::Numerics::float3> {};
-#endif
-
 
 }
 
@@ -32,9 +27,29 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("17c50e21-cb70-5a2b-b797-a8dc01a99113")) __declspec(novtable) IIterable<Windows::UI::Composition::Interactions::ICompositionInteractionSource> : impl_IIterable<Windows::UI::Composition::Interactions::ICompositionInteractionSource> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_1ee770ff_c954_59ca_a754_6199a9be282c
+#define WINRT_GENERIC_1ee770ff_c954_59ca_a754_6199a9be282c
+template <> struct __declspec(uuid("1ee770ff-c954-59ca-a754-6199a9be282c")) __declspec(novtable) IReference<Windows::Foundation::Numerics::float3> : impl_IReference<Windows::Foundation::Numerics::float3> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
 #ifndef WINRT_GENERIC_9a245c40_aae6_59fb_87f5_4bb05599f0b1
 #define WINRT_GENERIC_9a245c40_aae6_59fb_87f5_4bb05599f0b1
 template <> struct __declspec(uuid("9a245c40-aae6-59fb-87f5-4bb05599f0b1")) __declspec(novtable) IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> : impl_IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> {};
+#endif
+
+#ifndef WINRT_GENERIC_b268447b_f519_5ce5_89cd_b7e1bc5652ee
+#define WINRT_GENERIC_b268447b_f519_5ce5_89cd_b7e1bc5652ee
+template <> struct __declspec(uuid("b268447b-f519-5ce5-89cd-b7e1bc5652ee")) __declspec(novtable) IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> : impl_IIterable<Windows::UI::Composition::Interactions::CompositionConditionalValue> {};
 #endif
 
 #ifndef WINRT_GENERIC_99acf1e7_8cae_514e_8b8f_68448de96a97
@@ -67,10 +82,39 @@ template <> struct __declspec(uuid("0a23d57a-af70-5fce-95a9-6667035932a6")) __de
 template <> struct __declspec(uuid("46617d87-2cd2-5e31-9a30-ea86f8aa7ca1")) __declspec(novtable) IIterator<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> : impl_IIterator<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> {};
 #endif
 
+#ifndef WINRT_GENERIC_e1e2fde3_ecad_5d26_a0dc_6f7e6bd9493c
+#define WINRT_GENERIC_e1e2fde3_ecad_5d26_a0dc_6f7e6bd9493c
+template <> struct __declspec(uuid("e1e2fde3-ecad-5d26-a0dc-6f7e6bd9493c")) __declspec(novtable) IVector<Windows::UI::Composition::Interactions::CompositionConditionalValue> : impl_IVector<Windows::UI::Composition::Interactions::CompositionConditionalValue> {};
+#endif
+
+#ifndef WINRT_GENERIC_ded20b78_0bed_5f4c_9df5_982dadf8f8bb
+#define WINRT_GENERIC_ded20b78_0bed_5f4c_9df5_982dadf8f8bb
+template <> struct __declspec(uuid("ded20b78-0bed-5f4c-9df5-982dadf8f8bb")) __declspec(novtable) IVectorView<Windows::UI::Composition::Interactions::CompositionConditionalValue> : impl_IVectorView<Windows::UI::Composition::Interactions::CompositionConditionalValue> {};
+#endif
+
+#ifndef WINRT_GENERIC_8a75b02d_3991_55a6_bfe2_82cb7dd65b98
+#define WINRT_GENERIC_8a75b02d_3991_55a6_bfe2_82cb7dd65b98
+template <> struct __declspec(uuid("8a75b02d-3991-55a6-bfe2-82cb7dd65b98")) __declspec(novtable) IIterator<Windows::UI::Composition::Interactions::CompositionConditionalValue> : impl_IIterator<Windows::UI::Composition::Interactions::CompositionConditionalValue> {};
+#endif
+
 
 }
 
 namespace Windows::UI::Composition::Interactions {
+
+struct ICompositionConditionalValue :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICompositionConditionalValue>
+{
+    ICompositionConditionalValue(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICompositionConditionalValueStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICompositionConditionalValueStatics>
+{
+    ICompositionConditionalValueStatics(std::nullptr_t = nullptr) noexcept {}
+};
 
 struct ICompositionInteractionSource :
     Windows::Foundation::IInspectable,
@@ -92,6 +136,13 @@ struct IInteractionTracker :
     impl::consume<IInteractionTracker>
 {
     IInteractionTracker(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IInteractionTracker2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IInteractionTracker2>
+{
+    IInteractionTracker2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInteractionTrackerCustomAnimationStateEnteredArgs :
@@ -197,6 +248,20 @@ struct IVisualInteractionSource :
     impl::consume<IVisualInteractionSource>
 {
     IVisualInteractionSource(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IVisualInteractionSource2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IVisualInteractionSource2>
+{
+    IVisualInteractionSource2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IVisualInteractionSourceObjectFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IVisualInteractionSourceObjectFactory>
+{
+    IVisualInteractionSourceObjectFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IVisualInteractionSourceStatics :

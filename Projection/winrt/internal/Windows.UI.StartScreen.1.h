@@ -5,7 +5,9 @@
 
 #include "../base.h"
 #include "Windows.UI.StartScreen.0.h"
+#include "Windows.ApplicationModel.Core.0.h"
 #include "Windows.Foundation.0.h"
+#include "Windows.System.0.h"
 #include "Windows.UI.0.h"
 #include "Windows.UI.Popups.0.h"
 #include "Windows.Foundation.Collections.1.h"
@@ -154,6 +156,20 @@ struct __declspec(uuid("56b55ad6-d15c-40f4-81e7-57ffd8f8a4e9")) __declspec(novta
     virtual HRESULT __stdcall get_Square44x44Logo(Windows::Foundation::IUriRuntimeClass ** value) = 0;
 };
 
+struct __declspec(uuid("4a1dcbcb-26e9-4eb4-8933-859eb6ecdb29")) __declspec(novtable) IStartScreenManager : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
+    virtual HRESULT __stdcall abi_SupportsAppListEntry(Windows::ApplicationModel::Core::IAppListEntry * appListEntry, bool * result) = 0;
+    virtual HRESULT __stdcall abi_ContainsAppListEntryAsync(Windows::ApplicationModel::Core::IAppListEntry * appListEntry, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_RequestAddAppListEntryAsync(Windows::ApplicationModel::Core::IAppListEntry * appListEntry, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+};
+
+struct __declspec(uuid("7865ef0f-b585-464e-8993-34e8f8738d48")) __declspec(novtable) IStartScreenManagerStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDefault(Windows::UI::StartScreen::IStartScreenManager ** value) = 0;
+    virtual HRESULT __stdcall abi_GetForUser(Windows::System::IUser * user, Windows::UI::StartScreen::IStartScreenManager ** result) = 0;
+};
+
 struct __declspec(uuid("c138333a-9308-4072-88cc-d068db347c68")) __declspec(novtable) IVisualElementsRequest : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_VisualElements(Windows::UI::StartScreen::ISecondaryTileVisualElements ** value) = 0;
@@ -180,6 +196,7 @@ template <> struct traits<Windows::UI::StartScreen::JumpList> { using default_in
 template <> struct traits<Windows::UI::StartScreen::JumpListItem> { using default_interface = Windows::UI::StartScreen::IJumpListItem; };
 template <> struct traits<Windows::UI::StartScreen::SecondaryTile> { using default_interface = Windows::UI::StartScreen::ISecondaryTile; };
 template <> struct traits<Windows::UI::StartScreen::SecondaryTileVisualElements> { using default_interface = Windows::UI::StartScreen::ISecondaryTileVisualElements; };
+template <> struct traits<Windows::UI::StartScreen::StartScreenManager> { using default_interface = Windows::UI::StartScreen::IStartScreenManager; };
 template <> struct traits<Windows::UI::StartScreen::VisualElementsRequest> { using default_interface = Windows::UI::StartScreen::IVisualElementsRequest; };
 template <> struct traits<Windows::UI::StartScreen::VisualElementsRequestDeferral> { using default_interface = Windows::UI::StartScreen::IVisualElementsRequestDeferral; };
 template <> struct traits<Windows::UI::StartScreen::VisualElementsRequestedEventArgs> { using default_interface = Windows::UI::StartScreen::IVisualElementsRequestedEventArgs; };
@@ -342,6 +359,22 @@ struct WINRT_EBO impl_ISecondaryTileVisualElements3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IStartScreenManager
+{
+    Windows::System::User User() const;
+    bool SupportsAppListEntry(const Windows::ApplicationModel::Core::AppListEntry & appListEntry) const;
+    Windows::Foundation::IAsyncOperation<bool> ContainsAppListEntryAsync(const Windows::ApplicationModel::Core::AppListEntry & appListEntry) const;
+    Windows::Foundation::IAsyncOperation<bool> RequestAddAppListEntryAsync(const Windows::ApplicationModel::Core::AppListEntry & appListEntry) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStartScreenManagerStatics
+{
+    Windows::UI::StartScreen::StartScreenManager GetDefault() const;
+    Windows::UI::StartScreen::StartScreenManager GetForUser(const Windows::System::User & user) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IVisualElementsRequest
 {
     Windows::UI::StartScreen::SecondaryTileVisualElements VisualElements() const;
@@ -438,6 +471,18 @@ template <> struct traits<Windows::UI::StartScreen::ISecondaryTileVisualElements
     template <typename D> using consume = Windows::UI::StartScreen::impl_ISecondaryTileVisualElements3<D>;
 };
 
+template <> struct traits<Windows::UI::StartScreen::IStartScreenManager>
+{
+    using abi = ABI::Windows::UI::StartScreen::IStartScreenManager;
+    template <typename D> using consume = Windows::UI::StartScreen::impl_IStartScreenManager<D>;
+};
+
+template <> struct traits<Windows::UI::StartScreen::IStartScreenManagerStatics>
+{
+    using abi = ABI::Windows::UI::StartScreen::IStartScreenManagerStatics;
+    template <typename D> using consume = Windows::UI::StartScreen::impl_IStartScreenManagerStatics<D>;
+};
+
 template <> struct traits<Windows::UI::StartScreen::IVisualElementsRequest>
 {
     using abi = ABI::Windows::UI::StartScreen::IVisualElementsRequest;
@@ -478,6 +523,12 @@ template <> struct traits<Windows::UI::StartScreen::SecondaryTileVisualElements>
 {
     using abi = ABI::Windows::UI::StartScreen::SecondaryTileVisualElements;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.StartScreen.SecondaryTileVisualElements"; }
+};
+
+template <> struct traits<Windows::UI::StartScreen::StartScreenManager>
+{
+    using abi = ABI::Windows::UI::StartScreen::StartScreenManager;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.StartScreen.StartScreenManager"; }
 };
 
 template <> struct traits<Windows::UI::StartScreen::VisualElementsRequest>

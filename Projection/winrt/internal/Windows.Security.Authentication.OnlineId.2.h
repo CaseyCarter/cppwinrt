@@ -29,6 +29,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("b8cc25e1-409f-57f4-bbe4-3b95b74b86c8")) __declspec(novtable) IAsyncOperation<Windows::Security::Authentication::OnlineId::UserIdentity> : impl_IAsyncOperation<Windows::Security::Authentication::OnlineId::UserIdentity> {};
 #endif
 
+#ifndef WINRT_GENERIC_162f5870_5a4a_503c_987f_a05a1312d8e4
+#define WINRT_GENERIC_162f5870_5a4a_503c_987f_a05a1312d8e4
+template <> struct __declspec(uuid("162f5870-5a4a-503c-987f-a05a1312d8e4")) __declspec(novtable) IAsyncOperation<Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult> : impl_IAsyncOperation<Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult> {};
+#endif
+
 
 }
 
@@ -74,6 +79,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("cded76fd-7841-52a0-a771-76cd751d13cd")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Security::Authentication::OnlineId::UserIdentity> : impl_AsyncOperationCompletedHandler<Windows::Security::Authentication::OnlineId::UserIdentity> {};
 #endif
 
+#ifndef WINRT_GENERIC_05f9f2ec_5950_56f8_b7f8_22e20b984679
+#define WINRT_GENERIC_05f9f2ec_5950_56f8_b7f8_22e20b984679
+template <> struct __declspec(uuid("05f9f2ec-5950-56f8-b7f8-22e20b984679")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult> : impl_AsyncOperationCompletedHandler<Windows::Security::Authentication::OnlineId::OnlineIdSystemTicketResult> {};
+#endif
+
 
 }
 
@@ -105,6 +115,34 @@ struct IOnlineIdServiceTicketRequestFactory :
     impl::consume<IOnlineIdServiceTicketRequestFactory>
 {
     IOnlineIdServiceTicketRequestFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IOnlineIdSystemAuthenticatorForUser :
+    Windows::Foundation::IInspectable,
+    impl::consume<IOnlineIdSystemAuthenticatorForUser>
+{
+    IOnlineIdSystemAuthenticatorForUser(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IOnlineIdSystemAuthenticatorStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IOnlineIdSystemAuthenticatorStatics>
+{
+    IOnlineIdSystemAuthenticatorStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IOnlineIdSystemIdentity :
+    Windows::Foundation::IInspectable,
+    impl::consume<IOnlineIdSystemIdentity>
+{
+    IOnlineIdSystemIdentity(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IOnlineIdSystemTicketResult :
+    Windows::Foundation::IInspectable,
+    impl::consume<IOnlineIdSystemTicketResult>
+{
+    IOnlineIdSystemTicketResult(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserIdentity :

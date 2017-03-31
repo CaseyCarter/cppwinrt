@@ -7,6 +7,16 @@
 
 WINRT_EXPORT namespace winrt {
 
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_eac62c40_8dbc_5854_8ba0_b7b9940e7389
+#define WINRT_GENERIC_eac62c40_8dbc_5854_8ba0_b7b9940e7389
+template <> struct __declspec(uuid("eac62c40-8dbc-5854-8ba0-b7b9940e7389")) __declspec(novtable) IAsyncOperation<Windows::Devices::Radios::Radio> : impl_IAsyncOperation<Windows::Devices::Radios::Radio> {};
+#endif
+
+
+}
+
 namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_65066c36_090b_5466_b8e5_e7565dc34175
@@ -19,11 +29,6 @@ template <> struct __declspec(uuid("65066c36-090b-5466-b8e5-e7565dc34175")) __de
 
 namespace ABI::Windows::Foundation {
 
-#ifndef WINRT_GENERIC_eac62c40_8dbc_5854_8ba0_b7b9940e7389
-#define WINRT_GENERIC_eac62c40_8dbc_5854_8ba0_b7b9940e7389
-template <> struct __declspec(uuid("eac62c40-8dbc-5854-8ba0-b7b9940e7389")) __declspec(novtable) IAsyncOperation<Windows::Devices::Radios::Radio> : impl_IAsyncOperation<Windows::Devices::Radios::Radio> {};
-#endif
-
 #ifndef WINRT_GENERIC_21fb30ef_072f_502c_9898_d0c3b2cd9ac5
 #define WINRT_GENERIC_21fb30ef_072f_502c_9898_d0c3b2cd9ac5
 template <> struct __declspec(uuid("21fb30ef-072f-502c-9898-d0c3b2cd9ac5")) __declspec(novtable) IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> : impl_IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> {};
@@ -32,6 +37,11 @@ template <> struct __declspec(uuid("21fb30ef-072f-502c-9898-d0c3b2cd9ac5")) __de
 #ifndef WINRT_GENERIC_fc6aa329_b586_5ebb_9e85_3f6b84ebdf18
 #define WINRT_GENERIC_fc6aa329_b586_5ebb_9e85_3f6b84ebdf18
 template <> struct __declspec(uuid("fc6aa329-b586-5ebb-9e85-3f6b84ebdf18")) __declspec(novtable) TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Radios::Radio, Windows::Foundation::IInspectable> {};
+#endif
+
+#ifndef WINRT_GENERIC_8a5c7e3a_80e2_585b_8630_7a8e777f0354
+#define WINRT_GENERIC_8a5c7e3a_80e2_585b_8630_7a8e777f0354
+template <> struct __declspec(uuid("8a5c7e3a-80e2-585b-8630-7a8e777f0354")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Radios::Radio> : impl_AsyncOperationCompletedHandler<Windows::Devices::Radios::Radio> {};
 #endif
 
 
@@ -58,11 +68,6 @@ template <> struct __declspec(uuid("e82500af-1f53-504e-b8be-dac4fbb69084")) __de
 }
 
 namespace ABI::Windows::Foundation {
-
-#ifndef WINRT_GENERIC_8a5c7e3a_80e2_585b_8630_7a8e777f0354
-#define WINRT_GENERIC_8a5c7e3a_80e2_585b_8630_7a8e777f0354
-template <> struct __declspec(uuid("8a5c7e3a-80e2-585b-8630-7a8e777f0354")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Radios::Radio> : impl_AsyncOperationCompletedHandler<Windows::Devices::Radios::Radio> {};
-#endif
 
 #ifndef WINRT_GENERIC_bd248e73_f05f_574c_ae3d_9b95c4bf282a
 #define WINRT_GENERIC_bd248e73_f05f_574c_ae3d_9b95c4bf282a

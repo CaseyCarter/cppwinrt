@@ -10,6 +10,8 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.UI.3.h"
 #include "internal/Windows.UI.Popups.3.h"
+#include "internal/Windows.System.3.h"
+#include "internal/Windows.ApplicationModel.Core.3.h"
 #include "internal/Windows.UI.StartScreen.3.h"
 #include "Windows.UI.h"
 
@@ -1383,6 +1385,103 @@ struct produce<D, Windows::UI::StartScreen::ISecondaryTileVisualElements3> : pro
 };
 
 template <typename D>
+struct produce<D, Windows::UI::StartScreen::IStartScreenManager> : produce_base<D, Windows::UI::StartScreen::IStartScreenManager>
+{
+    HRESULT __stdcall get_User(impl::abi_arg_out<Windows::System::IUser> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().User());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SupportsAppListEntry(impl::abi_arg_in<Windows::ApplicationModel::Core::IAppListEntry> appListEntry, bool * result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().SupportsAppListEntry(*reinterpret_cast<const Windows::ApplicationModel::Core::AppListEntry *>(&appListEntry)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ContainsAppListEntryAsync(impl::abi_arg_in<Windows::ApplicationModel::Core::IAppListEntry> appListEntry, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().ContainsAppListEntryAsync(*reinterpret_cast<const Windows::ApplicationModel::Core::AppListEntry *>(&appListEntry)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RequestAddAppListEntryAsync(impl::abi_arg_in<Windows::ApplicationModel::Core::IAppListEntry> appListEntry, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().RequestAddAppListEntryAsync(*reinterpret_cast<const Windows::ApplicationModel::Core::AppListEntry *>(&appListEntry)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::StartScreen::IStartScreenManagerStatics> : produce_base<D, Windows::UI::StartScreen::IStartScreenManagerStatics>
+{
+    HRESULT __stdcall abi_GetDefault(impl::abi_arg_out<Windows::UI::StartScreen::IStartScreenManager> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetDefault());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetForUser(impl::abi_arg_in<Windows::System::IUser> user, impl::abi_arg_out<Windows::UI::StartScreen::IStartScreenManager> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::StartScreen::IVisualElementsRequest> : produce_base<D, Windows::UI::StartScreen::IVisualElementsRequest>
 {
     HRESULT __stdcall get_VisualElements(impl::abi_arg_out<Windows::UI::StartScreen::ISecondaryTileVisualElements> value) noexcept override
@@ -2104,6 +2203,48 @@ template <typename D> void impl_IVisualElementsRequestDeferral<D>::Complete() co
     check_hresult(WINRT_SHIM(IVisualElementsRequestDeferral)->abi_Complete());
 }
 
+template <typename D> Windows::System::User impl_IStartScreenManager<D>::User() const
+{
+    Windows::System::User value { nullptr };
+    check_hresult(WINRT_SHIM(IStartScreenManager)->get_User(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IStartScreenManager<D>::SupportsAppListEntry(const Windows::ApplicationModel::Core::AppListEntry & appListEntry) const
+{
+    bool result {};
+    check_hresult(WINRT_SHIM(IStartScreenManager)->abi_SupportsAppListEntry(get_abi(appListEntry), &result));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IStartScreenManager<D>::ContainsAppListEntryAsync(const Windows::ApplicationModel::Core::AppListEntry & appListEntry) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(IStartScreenManager)->abi_ContainsAppListEntryAsync(get_abi(appListEntry), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IStartScreenManager<D>::RequestAddAppListEntryAsync(const Windows::ApplicationModel::Core::AppListEntry & appListEntry) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(IStartScreenManager)->abi_RequestAddAppListEntryAsync(get_abi(appListEntry), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::UI::StartScreen::StartScreenManager impl_IStartScreenManagerStatics<D>::GetDefault() const
+{
+    Windows::UI::StartScreen::StartScreenManager value { nullptr };
+    check_hresult(WINRT_SHIM(IStartScreenManagerStatics)->abi_GetDefault(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::StartScreen::StartScreenManager impl_IStartScreenManagerStatics<D>::GetForUser(const Windows::System::User & user) const
+{
+    Windows::UI::StartScreen::StartScreenManager result { nullptr };
+    check_hresult(WINRT_SHIM(IStartScreenManagerStatics)->abi_GetForUser(get_abi(user), put_abi(result)));
+    return result;
+}
+
 inline Windows::Foundation::IAsyncOperation<Windows::UI::StartScreen::JumpList> JumpList::LoadCurrentAsync()
 {
     return get_activation_factory<JumpList, IJumpListStatics>().LoadCurrentAsync();
@@ -2162,6 +2303,16 @@ inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IV
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> SecondaryTile::FindAllForPackageAsync()
 {
     return get_activation_factory<SecondaryTile, ISecondaryTileStatics>().FindAllForPackageAsync();
+}
+
+inline Windows::UI::StartScreen::StartScreenManager StartScreenManager::GetDefault()
+{
+    return get_activation_factory<StartScreenManager, IStartScreenManagerStatics>().GetDefault();
+}
+
+inline Windows::UI::StartScreen::StartScreenManager StartScreenManager::GetForUser(const Windows::System::User & user)
+{
+    return get_activation_factory<StartScreenManager, IStartScreenManagerStatics>().GetForUser(user);
 }
 
 }
@@ -2277,6 +2428,24 @@ struct std::hash<winrt::Windows::UI::StartScreen::ISecondaryTileVisualElements3>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::StartScreen::IStartScreenManager>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::IStartScreenManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::IStartScreenManagerStatics>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::IStartScreenManagerStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::StartScreen::IVisualElementsRequest>
 {
     size_t operator()(const winrt::Windows::UI::StartScreen::IVisualElementsRequest & value) const noexcept
@@ -2334,6 +2503,15 @@ template<>
 struct std::hash<winrt::Windows::UI::StartScreen::SecondaryTileVisualElements>
 {
     size_t operator()(const winrt::Windows::UI::StartScreen::SecondaryTileVisualElements & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::StartScreen::StartScreenManager>
+{
+    size_t operator()(const winrt::Windows::UI::StartScreen::StartScreenManager & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

@@ -8,6 +8,18 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Media {
 
+struct MediaTimeRange;
+
+}
+
+namespace Windows::Media {
+
+using MediaTimeRange = ABI::Windows::Media::MediaTimeRange;
+
+}
+
+namespace ABI::Windows::Media {
+
 struct IAudioBuffer;
 struct IAudioFrame;
 struct IAudioFrameFactory;
@@ -15,12 +27,15 @@ struct IAutoRepeatModeChangeRequestedEventArgs;
 struct IImageDisplayProperties;
 struct IMediaExtension;
 struct IMediaExtensionManager;
+struct IMediaExtensionManager2;
 struct IMediaFrame;
 struct IMediaMarker;
 struct IMediaMarkerTypesStatics;
 struct IMediaMarkers;
 struct IMediaProcessingTriggerDetails;
 struct IMediaTimelineController;
+struct IMediaTimelineController2;
+struct IMediaTimelineControllerFailedEventArgs;
 struct IMusicDisplayProperties;
 struct IMusicDisplayProperties2;
 struct IMusicDisplayProperties3;
@@ -46,6 +61,7 @@ struct ImageDisplayProperties;
 struct MediaExtensionManager;
 struct MediaProcessingTriggerDetails;
 struct MediaTimelineController;
+struct MediaTimelineControllerFailedEventArgs;
 struct MusicDisplayProperties;
 struct PlaybackPositionChangeRequestedEventArgs;
 struct PlaybackRateChangeRequestedEventArgs;
@@ -69,12 +85,15 @@ struct IAutoRepeatModeChangeRequestedEventArgs;
 struct IImageDisplayProperties;
 struct IMediaExtension;
 struct IMediaExtensionManager;
+struct IMediaExtensionManager2;
 struct IMediaFrame;
 struct IMediaMarker;
 struct IMediaMarkerTypesStatics;
 struct IMediaMarkers;
 struct IMediaProcessingTriggerDetails;
 struct IMediaTimelineController;
+struct IMediaTimelineController2;
+struct IMediaTimelineControllerFailedEventArgs;
 struct IMusicDisplayProperties;
 struct IMusicDisplayProperties2;
 struct IMusicDisplayProperties3;
@@ -101,6 +120,7 @@ struct MediaExtensionManager;
 struct MediaMarkerTypes;
 struct MediaProcessingTriggerDetails;
 struct MediaTimelineController;
+struct MediaTimelineControllerFailedEventArgs;
 struct MusicDisplayProperties;
 struct PlaybackPositionChangeRequestedEventArgs;
 struct PlaybackRateChangeRequestedEventArgs;
@@ -125,12 +145,15 @@ template <typename T> struct impl_IAutoRepeatModeChangeRequestedEventArgs;
 template <typename T> struct impl_IImageDisplayProperties;
 template <typename T> struct impl_IMediaExtension;
 template <typename T> struct impl_IMediaExtensionManager;
+template <typename T> struct impl_IMediaExtensionManager2;
 template <typename T> struct impl_IMediaFrame;
 template <typename T> struct impl_IMediaMarker;
 template <typename T> struct impl_IMediaMarkerTypesStatics;
 template <typename T> struct impl_IMediaMarkers;
 template <typename T> struct impl_IMediaProcessingTriggerDetails;
 template <typename T> struct impl_IMediaTimelineController;
+template <typename T> struct impl_IMediaTimelineController2;
+template <typename T> struct impl_IMediaTimelineControllerFailedEventArgs;
 template <typename T> struct impl_IMusicDisplayProperties;
 template <typename T> struct impl_IMusicDisplayProperties2;
 template <typename T> struct impl_IMusicDisplayProperties3;
@@ -195,6 +218,8 @@ enum class MediaTimelineControllerState
 {
     Paused = 0,
     Running = 1,
+    Stalled = 2,
+    Error = 3,
 };
 
 enum class SoundLevel

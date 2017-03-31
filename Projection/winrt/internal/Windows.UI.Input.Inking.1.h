@@ -46,6 +46,12 @@ struct __declspec(uuid("72020002-7d5b-4690-8af4-e664cbe2b74f")) __declspec(novta
     virtual HRESULT __stdcall get_PencilProperties(Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties ** value) = 0;
 };
 
+struct __declspec(uuid("ef65dc25-9f19-456d-91a3-bc3a3d91c5fb")) __declspec(novtable) IInkDrawingAttributes4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IgnoreTilt(bool * value) = 0;
+    virtual HRESULT __stdcall put_IgnoreTilt(bool value) = 0;
+};
+
 struct __declspec(uuid("4f2534cb-2d86-41bb-b0e8-e4c2a0253c52")) __declspec(novtable) IInkDrawingAttributesPencilProperties : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Opacity(double * value) = 0;
@@ -82,9 +88,21 @@ struct __declspec(uuid("9f87272b-858c-46a5-9b41-d195970459fd")) __declspec(novta
     virtual HRESULT __stdcall get_Pressure(float * value) = 0;
 };
 
+struct __declspec(uuid("fba9c3f7-ae56-4d5c-bd2f-0ac45f5e4af9")) __declspec(novtable) IInkPoint2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TiltX(float * value) = 0;
+    virtual HRESULT __stdcall get_TiltY(float * value) = 0;
+    virtual HRESULT __stdcall get_Timestamp(uint64_t * value) = 0;
+};
+
 struct __declspec(uuid("29e5d51c-c98f-405d-9f3b-e53e31068d4d")) __declspec(novtable) IInkPointFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInkPoint(Windows::Foundation::Point position, float pressure, Windows::UI::Input::Inking::IInkPoint ** result) = 0;
+};
+
+struct __declspec(uuid("e0145e85-daff-45f2-ad69-050d8256a209")) __declspec(novtable) IInkPointFactory2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateInkPointWithTiltAndTimestamp(Windows::Foundation::Point position, float pressure, float tiltX, float tiltY, uint64_t timestamp, Windows::UI::Input::Inking::IInkPoint ** result) = 0;
 };
 
 struct __declspec(uuid("a69b70e2-887b-458f-b173-4fe4438930a3")) __declspec(novtable) IInkPresenter : Windows::Foundation::IInspectable
@@ -108,12 +126,49 @@ struct __declspec(uuid("a69b70e2-887b-458f-b173-4fe4438930a3")) __declspec(novta
     virtual HRESULT __stdcall remove_StrokesErased(event_token cookie) = 0;
 };
 
+struct __declspec(uuid("cf53e612-9a34-11e6-9f33-a24fc0d9649c")) __declspec(novtable) IInkPresenter2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_HighContrastAdjustment(winrt::Windows::UI::Input::Inking::InkHighContrastAdjustment * value) = 0;
+    virtual HRESULT __stdcall put_HighContrastAdjustment(winrt::Windows::UI::Input::Inking::InkHighContrastAdjustment value) = 0;
+};
+
+struct __declspec(uuid("7de3f2aa-ef6c-4e91-a73b-5b70d56fbd17")) __declspec(novtable) IInkPresenterProtractor : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AreTickMarksVisible(bool * value) = 0;
+    virtual HRESULT __stdcall put_AreTickMarksVisible(bool value) = 0;
+    virtual HRESULT __stdcall get_AreRaysVisible(bool * value) = 0;
+    virtual HRESULT __stdcall put_AreRaysVisible(bool value) = 0;
+    virtual HRESULT __stdcall get_IsCenterMarkerVisible(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsCenterMarkerVisible(bool value) = 0;
+    virtual HRESULT __stdcall get_IsAngleReadoutVisible(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsAngleReadoutVisible(bool value) = 0;
+    virtual HRESULT __stdcall get_IsResizable(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsResizable(bool value) = 0;
+    virtual HRESULT __stdcall get_Radius(double * value) = 0;
+    virtual HRESULT __stdcall put_Radius(double value) = 0;
+    virtual HRESULT __stdcall get_AccentColor(Windows::UI::Color * value) = 0;
+    virtual HRESULT __stdcall put_AccentColor(Windows::UI::Color value) = 0;
+};
+
+struct __declspec(uuid("320103c9-68fa-47e9-8127-8370711fc46c")) __declspec(novtable) IInkPresenterProtractorFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_Create(Windows::UI::Input::Inking::IInkPresenter * inkPresenter, Windows::UI::Input::Inking::IInkPresenterProtractor ** inkPresenterProtractor) = 0;
+};
+
 struct __declspec(uuid("6cda7d5a-dec7-4dd7-877a-2133f183d48a")) __declspec(novtable) IInkPresenterRuler : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Length(double * value) = 0;
     virtual HRESULT __stdcall put_Length(double value) = 0;
     virtual HRESULT __stdcall get_Width(double * value) = 0;
     virtual HRESULT __stdcall put_Width(double value) = 0;
+};
+
+struct __declspec(uuid("45130dc1-bc61-44d4-a423-54712ae671c4")) __declspec(novtable) IInkPresenterRuler2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AreTickMarksVisible(bool * value) = 0;
+    virtual HRESULT __stdcall put_AreTickMarksVisible(bool value) = 0;
+    virtual HRESULT __stdcall get_IsCompassVisible(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsCompassVisible(bool value) = 0;
 };
 
 struct __declspec(uuid("34361beb-9001-4a4b-a690-69dbaf63e501")) __declspec(novtable) IInkPresenterRulerFactory : Windows::Foundation::IInspectable
@@ -172,6 +227,15 @@ struct __declspec(uuid("5db9e4f4-bafa-4de1-89d3-201b1ed7d89b")) __declspec(novta
     virtual HRESULT __stdcall abi_GetInkPoints(Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkPoint> ** inkPoints) = 0;
 };
 
+struct __declspec(uuid("4a807374-9499-411d-a1c4-68855d03d65f")) __declspec(novtable) IInkStroke3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Id(uint32_t * value) = 0;
+    virtual HRESULT __stdcall get_StrokeStartedTime(Windows::Foundation::IReference<Windows::Foundation::DateTime> ** value) = 0;
+    virtual HRESULT __stdcall put_StrokeStartedTime(Windows::Foundation::IReference<Windows::Foundation::DateTime> * value) = 0;
+    virtual HRESULT __stdcall get_StrokeDuration(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> ** value) = 0;
+    virtual HRESULT __stdcall put_StrokeDuration(Windows::Foundation::IReference<Windows::Foundation::TimeSpan> * value) = 0;
+};
+
 struct __declspec(uuid("82bbd1dc-1c63-41dc-9e07-4b4a70ced801")) __declspec(novtable) IInkStrokeBuilder : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_BeginStroke(Windows::UI::Input::IPointerPoint * pointerPoint) = 0;
@@ -184,6 +248,11 @@ struct __declspec(uuid("82bbd1dc-1c63-41dc-9e07-4b4a70ced801")) __declspec(novta
 struct __declspec(uuid("bd82bc27-731f-4cbc-bbbf-6d468044f1e5")) __declspec(novtable) IInkStrokeBuilder2 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateStrokeFromInkPoints(Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> * inkPoints, Windows::Foundation::Numerics::float3x2 transform, Windows::UI::Input::Inking::IInkStroke ** result) = 0;
+};
+
+struct __declspec(uuid("b2c71fcd-5472-46b1-a81d-c37a3d169441")) __declspec(novtable) IInkStrokeBuilder3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateStrokeFromInkPoints(Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> * inkPoints, Windows::Foundation::Numerics::float3x2 transform, Windows::Foundation::IReference<Windows::Foundation::DateTime> * strokeStartedTime, Windows::Foundation::IReference<Windows::Foundation::TimeSpan> * strokeDuration, Windows::UI::Input::Inking::IInkStroke ** result) = 0;
 };
 
 struct __declspec(uuid("22accbc6-faa9-4f14-b68c-f6cee670ae16")) __declspec(novtable) IInkStrokeContainer : Windows::Foundation::IInspectable
@@ -208,6 +277,12 @@ struct __declspec(uuid("8901d364-da36-4bcf-9e5c-d195825995b4")) __declspec(novta
 {
     virtual HRESULT __stdcall abi_AddStrokes(Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke> * strokes) = 0;
     virtual HRESULT __stdcall abi_Clear() = 0;
+};
+
+struct __declspec(uuid("3d07bea5-baea-4c82-a719-7b83da1067d2")) __declspec(novtable) IInkStrokeContainer3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_SaveWithFormatAsync(Windows::Storage::Streams::IOutputStream * outputStream, winrt::Windows::UI::Input::Inking::InkPersistenceFormat inkPersistenceFormat, Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> ** outputStreamOperation) = 0;
+    virtual HRESULT __stdcall abi_GetStrokeById(uint32_t id, Windows::UI::Input::Inking::IInkStroke ** stroke) = 0;
 };
 
 struct __declspec(uuid("cf2ffe7b-5e10-43c6-a080-88f26e1dc67d")) __declspec(novtable) IInkStrokeInput : Windows::Foundation::IInspectable
@@ -279,6 +354,7 @@ template <> struct traits<Windows::UI::Input::Inking::InkInputProcessingConfigur
 template <> struct traits<Windows::UI::Input::Inking::InkManager> { using default_interface = Windows::UI::Input::Inking::IInkManager; };
 template <> struct traits<Windows::UI::Input::Inking::InkPoint> { using default_interface = Windows::UI::Input::Inking::IInkPoint; };
 template <> struct traits<Windows::UI::Input::Inking::InkPresenter> { using default_interface = Windows::UI::Input::Inking::IInkPresenter; };
+template <> struct traits<Windows::UI::Input::Inking::InkPresenterProtractor> { using default_interface = Windows::UI::Input::Inking::IInkPresenterProtractor; };
 template <> struct traits<Windows::UI::Input::Inking::InkPresenterRuler> { using default_interface = Windows::UI::Input::Inking::IInkPresenterRuler; };
 template <> struct traits<Windows::UI::Input::Inking::InkRecognitionResult> { using default_interface = Windows::UI::Input::Inking::IInkRecognitionResult; };
 template <> struct traits<Windows::UI::Input::Inking::InkRecognizer> { using default_interface = Windows::UI::Input::Inking::IInkRecognizer; };
@@ -329,6 +405,13 @@ struct WINRT_EBO impl_IInkDrawingAttributes3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IInkDrawingAttributes4
+{
+    bool IgnoreTilt() const;
+    void IgnoreTilt(bool value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IInkDrawingAttributesPencilProperties
 {
     double Opacity() const;
@@ -370,9 +453,23 @@ struct WINRT_EBO impl_IInkPoint
 };
 
 template <typename D>
+struct WINRT_EBO impl_IInkPoint2
+{
+    float TiltX() const;
+    float TiltY() const;
+    uint64_t Timestamp() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IInkPointFactory
 {
     Windows::UI::Input::Inking::InkPoint CreateInkPoint(const Windows::Foundation::Point & position, float pressure) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkPointFactory2
+{
+    Windows::UI::Input::Inking::InkPoint CreateInkPointWithTiltAndTimestamp(const Windows::Foundation::Point & position, float pressure, float tiltX, float tiltY, uint64_t timestamp) const;
 };
 
 template <typename D>
@@ -402,12 +499,53 @@ struct WINRT_EBO impl_IInkPresenter
 };
 
 template <typename D>
+struct WINRT_EBO impl_IInkPresenter2
+{
+    Windows::UI::Input::Inking::InkHighContrastAdjustment HighContrastAdjustment() const;
+    void HighContrastAdjustment(Windows::UI::Input::Inking::InkHighContrastAdjustment value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkPresenterProtractor
+{
+    bool AreTickMarksVisible() const;
+    void AreTickMarksVisible(bool value) const;
+    bool AreRaysVisible() const;
+    void AreRaysVisible(bool value) const;
+    bool IsCenterMarkerVisible() const;
+    void IsCenterMarkerVisible(bool value) const;
+    bool IsAngleReadoutVisible() const;
+    void IsAngleReadoutVisible(bool value) const;
+    bool IsResizable() const;
+    void IsResizable(bool value) const;
+    double Radius() const;
+    void Radius(double value) const;
+    Windows::UI::Color AccentColor() const;
+    void AccentColor(const Windows::UI::Color & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkPresenterProtractorFactory
+{
+    Windows::UI::Input::Inking::InkPresenterProtractor Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IInkPresenterRuler
 {
     double Length() const;
     void Length(double value) const;
     double Width() const;
     void Width(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkPresenterRuler2
+{
+    bool AreTickMarksVisible() const;
+    void AreTickMarksVisible(bool value) const;
+    bool IsCompassVisible() const;
+    void IsCompassVisible(bool value) const;
 };
 
 template <typename D>
@@ -474,6 +612,16 @@ struct WINRT_EBO impl_IInkStroke2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IInkStroke3
+{
+    uint32_t Id() const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> StrokeStartedTime() const;
+    void StrokeStartedTime(const optional<Windows::Foundation::DateTime> & value) const;
+    Windows::Foundation::IReference<Windows::Foundation::TimeSpan> StrokeDuration() const;
+    void StrokeDuration(const optional<Windows::Foundation::TimeSpan> & value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IInkStrokeBuilder
 {
     void BeginStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const;
@@ -487,6 +635,12 @@ template <typename D>
 struct WINRT_EBO impl_IInkStrokeBuilder2
 {
     Windows::UI::Input::Inking::InkStroke CreateStrokeFromInkPoints(iterable<Windows::UI::Input::Inking::InkPoint> inkPoints, const Windows::Foundation::Numerics::float3x2 & transform) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStrokeBuilder3
+{
+    Windows::UI::Input::Inking::InkStroke CreateStrokeFromInkPoints(iterable<Windows::UI::Input::Inking::InkPoint> inkPoints, const Windows::Foundation::Numerics::float3x2 & transform, const optional<Windows::Foundation::DateTime> & strokeStartedTime, const optional<Windows::Foundation::TimeSpan> & strokeDuration) const;
 };
 
 template <typename D>
@@ -513,6 +667,13 @@ struct WINRT_EBO impl_IInkStrokeContainer2
 {
     void AddStrokes(iterable<Windows::UI::Input::Inking::InkStroke> strokes) const;
     void Clear() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStrokeContainer3
+{
+    Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> SaveAsync(const Windows::Storage::Streams::IOutputStream & outputStream, Windows::UI::Input::Inking::InkPersistenceFormat inkPersistenceFormat) const;
+    Windows::UI::Input::Inking::InkStroke GetStrokeById(uint32_t id) const;
 };
 
 template <typename D>
@@ -624,6 +785,12 @@ template <> struct traits<Windows::UI::Input::Inking::IInkDrawingAttributes3>
     template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkDrawingAttributes3<D>;
 };
 
+template <> struct traits<Windows::UI::Input::Inking::IInkDrawingAttributes4>
+{
+    using abi = ABI::Windows::UI::Input::Inking::IInkDrawingAttributes4;
+    template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkDrawingAttributes4<D>;
+};
+
 template <> struct traits<Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties>
 {
     using abi = ABI::Windows::UI::Input::Inking::IInkDrawingAttributesPencilProperties;
@@ -654,10 +821,22 @@ template <> struct traits<Windows::UI::Input::Inking::IInkPoint>
     template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkPoint<D>;
 };
 
+template <> struct traits<Windows::UI::Input::Inking::IInkPoint2>
+{
+    using abi = ABI::Windows::UI::Input::Inking::IInkPoint2;
+    template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkPoint2<D>;
+};
+
 template <> struct traits<Windows::UI::Input::Inking::IInkPointFactory>
 {
     using abi = ABI::Windows::UI::Input::Inking::IInkPointFactory;
     template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkPointFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Input::Inking::IInkPointFactory2>
+{
+    using abi = ABI::Windows::UI::Input::Inking::IInkPointFactory2;
+    template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkPointFactory2<D>;
 };
 
 template <> struct traits<Windows::UI::Input::Inking::IInkPresenter>
@@ -666,10 +845,34 @@ template <> struct traits<Windows::UI::Input::Inking::IInkPresenter>
     template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkPresenter<D>;
 };
 
+template <> struct traits<Windows::UI::Input::Inking::IInkPresenter2>
+{
+    using abi = ABI::Windows::UI::Input::Inking::IInkPresenter2;
+    template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkPresenter2<D>;
+};
+
+template <> struct traits<Windows::UI::Input::Inking::IInkPresenterProtractor>
+{
+    using abi = ABI::Windows::UI::Input::Inking::IInkPresenterProtractor;
+    template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkPresenterProtractor<D>;
+};
+
+template <> struct traits<Windows::UI::Input::Inking::IInkPresenterProtractorFactory>
+{
+    using abi = ABI::Windows::UI::Input::Inking::IInkPresenterProtractorFactory;
+    template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkPresenterProtractorFactory<D>;
+};
+
 template <> struct traits<Windows::UI::Input::Inking::IInkPresenterRuler>
 {
     using abi = ABI::Windows::UI::Input::Inking::IInkPresenterRuler;
     template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkPresenterRuler<D>;
+};
+
+template <> struct traits<Windows::UI::Input::Inking::IInkPresenterRuler2>
+{
+    using abi = ABI::Windows::UI::Input::Inking::IInkPresenterRuler2;
+    template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkPresenterRuler2<D>;
 };
 
 template <> struct traits<Windows::UI::Input::Inking::IInkPresenterRulerFactory>
@@ -714,6 +917,12 @@ template <> struct traits<Windows::UI::Input::Inking::IInkStroke2>
     template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkStroke2<D>;
 };
 
+template <> struct traits<Windows::UI::Input::Inking::IInkStroke3>
+{
+    using abi = ABI::Windows::UI::Input::Inking::IInkStroke3;
+    template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkStroke3<D>;
+};
+
 template <> struct traits<Windows::UI::Input::Inking::IInkStrokeBuilder>
 {
     using abi = ABI::Windows::UI::Input::Inking::IInkStrokeBuilder;
@@ -726,6 +935,12 @@ template <> struct traits<Windows::UI::Input::Inking::IInkStrokeBuilder2>
     template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkStrokeBuilder2<D>;
 };
 
+template <> struct traits<Windows::UI::Input::Inking::IInkStrokeBuilder3>
+{
+    using abi = ABI::Windows::UI::Input::Inking::IInkStrokeBuilder3;
+    template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkStrokeBuilder3<D>;
+};
+
 template <> struct traits<Windows::UI::Input::Inking::IInkStrokeContainer>
 {
     using abi = ABI::Windows::UI::Input::Inking::IInkStrokeContainer;
@@ -736,6 +951,12 @@ template <> struct traits<Windows::UI::Input::Inking::IInkStrokeContainer2>
 {
     using abi = ABI::Windows::UI::Input::Inking::IInkStrokeContainer2;
     template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkStrokeContainer2<D>;
+};
+
+template <> struct traits<Windows::UI::Input::Inking::IInkStrokeContainer3>
+{
+    using abi = ABI::Windows::UI::Input::Inking::IInkStrokeContainer3;
+    template <typename D> using consume = Windows::UI::Input::Inking::impl_IInkStrokeContainer3<D>;
 };
 
 template <> struct traits<Windows::UI::Input::Inking::IInkStrokeInput>
@@ -808,6 +1029,12 @@ template <> struct traits<Windows::UI::Input::Inking::InkPresenter>
 {
     using abi = ABI::Windows::UI::Input::Inking::InkPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkPresenter"; }
+};
+
+template <> struct traits<Windows::UI::Input::Inking::InkPresenterProtractor>
+{
+    using abi = ABI::Windows::UI::Input::Inking::InkPresenterProtractor;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Inking.InkPresenterProtractor"; }
 };
 
 template <> struct traits<Windows::UI::Input::Inking::InkPresenterRuler>

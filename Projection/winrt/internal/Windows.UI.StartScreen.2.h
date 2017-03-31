@@ -235,6 +235,20 @@ struct ISecondaryTileVisualElements3 :
     ISecondaryTileVisualElements3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IStartScreenManager :
+    Windows::Foundation::IInspectable,
+    impl::consume<IStartScreenManager>
+{
+    IStartScreenManager(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IStartScreenManagerStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IStartScreenManagerStatics>
+{
+    IStartScreenManagerStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IVisualElementsRequest :
     Windows::Foundation::IInspectable,
     impl::consume<IVisualElementsRequest>

@@ -11,8 +11,9 @@
 #include "Windows.Devices.Bluetooth.Rfcomm.0.h"
 #include "Windows.Networking.Sockets.0.h"
 #include "Windows.Storage.Streams.0.h"
-#include "Windows.Devices.Bluetooth.Advertisement.1.h"
+#include "Windows.Devices.Bluetooth.GenericAttributeProfile.1.h"
 #include "Windows.Foundation.Collections.1.h"
+#include "Windows.Devices.Bluetooth.Advertisement.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -35,6 +36,30 @@ struct __declspec(uuid("9ba03b18-0fec-436a-93b1-f46c697532a2")) __declspec(novta
 {
     virtual HRESULT __stdcall get_Characteristic(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattCharacteristic ** value) = 0;
     virtual HRESULT __stdcall get_Value(Windows::Storage::Streams::IBuffer ** value) = 0;
+};
+
+struct __declspec(uuid("727a50dc-949d-454a-b192-983467e3d50f")) __declspec(novtable) IGattCharacteristicNotificationTriggerDetails2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Error(winrt::Windows::Devices::Bluetooth::BluetoothError * value) = 0;
+    virtual HRESULT __stdcall get_EventTriggeringMode(winrt::Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode * value) = 0;
+    virtual HRESULT __stdcall get_ValueChangedEvents(Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> ** value) = 0;
+};
+
+struct __declspec(uuid("7fa1b9b9-2f13-40b5-9582-8eb78e98ef13")) __declspec(novtable) IGattServiceProviderConnection : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TriggerId(hstring * value) = 0;
+    virtual HRESULT __stdcall get_Service(Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalService ** value) = 0;
+    virtual HRESULT __stdcall abi_Start() = 0;
+};
+
+struct __declspec(uuid("3d509f4b-0b0e-4466-b8cd-6ebdda1fa17d")) __declspec(novtable) IGattServiceProviderConnectionStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AllServices(Windows::Foundation::Collections::IMapView<hstring, Windows::Devices::Bluetooth::Background::GattServiceProviderConnection> ** value) = 0;
+};
+
+struct __declspec(uuid("ae8c0625-05ff-4afb-b16a-de95f3cf0158")) __declspec(novtable) IGattServiceProviderTriggerDetails : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Connection(Windows::Devices::Bluetooth::Background::IGattServiceProviderConnection ** value) = 0;
 };
 
 struct __declspec(uuid("f922734d-2e3c-4efc-ab59-fc5cf96f97e3")) __declspec(novtable) IRfcommConnectionTriggerDetails : Windows::Foundation::IInspectable
@@ -67,6 +92,8 @@ namespace ABI {
 template <> struct traits<Windows::Devices::Bluetooth::Background::BluetoothLEAdvertisementPublisherTriggerDetails> { using default_interface = Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertisementPublisherTriggerDetails; };
 template <> struct traits<Windows::Devices::Bluetooth::Background::BluetoothLEAdvertisementWatcherTriggerDetails> { using default_interface = Windows::Devices::Bluetooth::Background::IBluetoothLEAdvertisementWatcherTriggerDetails; };
 template <> struct traits<Windows::Devices::Bluetooth::Background::GattCharacteristicNotificationTriggerDetails> { using default_interface = Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails; };
+template <> struct traits<Windows::Devices::Bluetooth::Background::GattServiceProviderConnection> { using default_interface = Windows::Devices::Bluetooth::Background::IGattServiceProviderConnection; };
+template <> struct traits<Windows::Devices::Bluetooth::Background::GattServiceProviderTriggerDetails> { using default_interface = Windows::Devices::Bluetooth::Background::IGattServiceProviderTriggerDetails; };
 template <> struct traits<Windows::Devices::Bluetooth::Background::RfcommConnectionTriggerDetails> { using default_interface = Windows::Devices::Bluetooth::Background::IRfcommConnectionTriggerDetails; };
 template <> struct traits<Windows::Devices::Bluetooth::Background::RfcommInboundConnectionInformation> { using default_interface = Windows::Devices::Bluetooth::Background::IRfcommInboundConnectionInformation; };
 template <> struct traits<Windows::Devices::Bluetooth::Background::RfcommOutboundConnectionInformation> { using default_interface = Windows::Devices::Bluetooth::Background::IRfcommOutboundConnectionInformation; };
@@ -95,6 +122,34 @@ struct WINRT_EBO impl_IGattCharacteristicNotificationTriggerDetails
 {
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic Characteristic() const;
     Windows::Storage::Streams::IBuffer Value() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattCharacteristicNotificationTriggerDetails2
+{
+    Windows::Devices::Bluetooth::BluetoothError Error() const;
+    Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode EventTriggeringMode() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> ValueChangedEvents() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattServiceProviderConnection
+{
+    hstring TriggerId() const;
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalService Service() const;
+    void Start() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattServiceProviderConnectionStatics
+{
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Devices::Bluetooth::Background::GattServiceProviderConnection> AllServices() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattServiceProviderTriggerDetails
+{
+    Windows::Devices::Bluetooth::Background::GattServiceProviderConnection Connection() const;
 };
 
 template <typename D>
@@ -145,6 +200,30 @@ template <> struct traits<Windows::Devices::Bluetooth::Background::IGattCharacte
     template <typename D> using consume = Windows::Devices::Bluetooth::Background::impl_IGattCharacteristicNotificationTriggerDetails<D>;
 };
 
+template <> struct traits<Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails2>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails2;
+    template <typename D> using consume = Windows::Devices::Bluetooth::Background::impl_IGattCharacteristicNotificationTriggerDetails2<D>;
+};
+
+template <> struct traits<Windows::Devices::Bluetooth::Background::IGattServiceProviderConnection>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::Background::IGattServiceProviderConnection;
+    template <typename D> using consume = Windows::Devices::Bluetooth::Background::impl_IGattServiceProviderConnection<D>;
+};
+
+template <> struct traits<Windows::Devices::Bluetooth::Background::IGattServiceProviderConnectionStatics>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::Background::IGattServiceProviderConnectionStatics;
+    template <typename D> using consume = Windows::Devices::Bluetooth::Background::impl_IGattServiceProviderConnectionStatics<D>;
+};
+
+template <> struct traits<Windows::Devices::Bluetooth::Background::IGattServiceProviderTriggerDetails>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::Background::IGattServiceProviderTriggerDetails;
+    template <typename D> using consume = Windows::Devices::Bluetooth::Background::impl_IGattServiceProviderTriggerDetails<D>;
+};
+
 template <> struct traits<Windows::Devices::Bluetooth::Background::IRfcommConnectionTriggerDetails>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Background::IRfcommConnectionTriggerDetails;
@@ -179,6 +258,18 @@ template <> struct traits<Windows::Devices::Bluetooth::Background::GattCharacter
 {
     using abi = ABI::Windows::Devices::Bluetooth::Background::GattCharacteristicNotificationTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Background.GattCharacteristicNotificationTriggerDetails"; }
+};
+
+template <> struct traits<Windows::Devices::Bluetooth::Background::GattServiceProviderConnection>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::Background::GattServiceProviderConnection;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Background.GattServiceProviderConnection"; }
+};
+
+template <> struct traits<Windows::Devices::Bluetooth::Background::GattServiceProviderTriggerDetails>
+{
+    using abi = ABI::Windows::Devices::Bluetooth::Background::GattServiceProviderTriggerDetails;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Background.GattServiceProviderTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Background::RfcommConnectionTriggerDetails>

@@ -327,6 +327,11 @@ struct __declspec(uuid("9f1d091b-d586-4913-9b6a-a9bd2dc12874")) __declspec(novta
     virtual HRESULT __stdcall get_ZWL(hstring * value) = 0;
 };
 
+struct __declspec(uuid("1814797f-c3b2-4c33-9591-980011950d37")) __declspec(novtable) ICurrencyIdentifiersStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_BYN(hstring * value) = 0;
+};
+
 struct __declspec(uuid("01e9a621-4a64-4ed9-954f-9edeb07bd903")) __declspec(novtable) IGeographicRegion : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Code(hstring * value) = 0;
@@ -778,6 +783,12 @@ struct WINRT_EBO impl_ICurrencyIdentifiersStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_ICurrencyIdentifiersStatics2
+{
+    hstring BYN() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IGeographicRegion
 {
     hstring Code() const;
@@ -958,6 +969,12 @@ template <> struct traits<Windows::Globalization::ICurrencyIdentifiersStatics>
 {
     using abi = ABI::Windows::Globalization::ICurrencyIdentifiersStatics;
     template <typename D> using consume = Windows::Globalization::impl_ICurrencyIdentifiersStatics<D>;
+};
+
+template <> struct traits<Windows::Globalization::ICurrencyIdentifiersStatics2>
+{
+    using abi = ABI::Windows::Globalization::ICurrencyIdentifiersStatics2;
+    template <typename D> using consume = Windows::Globalization::impl_ICurrencyIdentifiersStatics2<D>;
 };
 
 template <> struct traits<Windows::Globalization::IGeographicRegion>
