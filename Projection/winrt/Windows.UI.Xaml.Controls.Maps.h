@@ -2631,7 +2631,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapControl5> : produce_bas
         try
         {
             typename D::abi_guard guard(this->shim());
-            this->shim().GetLocationFromOffset(*reinterpret_cast<const Windows::Foundation::Point *>(&offset), desiredReferenceSystem, *location);
+            this->shim().GetLocationFromOffset(*reinterpret_cast<const Windows::Foundation::Point *>(&offset), desiredReferenceSystem, *reinterpret_cast<Windows::Devices::Geolocation::Geopoint *>(location));
             return S_OK;
         }
         catch (...)
@@ -4808,7 +4808,7 @@ struct produce<D, Windows::UI::Xaml::Controls::Maps::IMapStyleSheetStatics> : pr
         try
         {
             typename D::abi_guard guard(this->shim());
-            *returnValue = detach_abi(this->shim().TryParseFromJson(*reinterpret_cast<const hstring *>(&styleAsJson), *styleSheet));
+            *returnValue = detach_abi(this->shim().TryParseFromJson(*reinterpret_cast<const hstring *>(&styleAsJson), *reinterpret_cast<Windows::UI::Xaml::Controls::Maps::MapStyleSheet *>(styleSheet)));
             return S_OK;
         }
         catch (...)
