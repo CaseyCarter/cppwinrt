@@ -16,7 +16,8 @@ struct WINRT_EBO BufferMediaFrame :
 };
 
 struct WINRT_EBO DepthMediaFrame :
-    Windows::Media::Capture::Frames::IDepthMediaFrame
+    Windows::Media::Capture::Frames::IDepthMediaFrame,
+    impl::require<DepthMediaFrame, Windows::Media::Capture::Frames::IDepthMediaFrame2>
 {
     DepthMediaFrame(std::nullptr_t) noexcept {}
 };
@@ -64,7 +65,8 @@ struct WINRT_EBO MediaFrameSource :
 };
 
 struct WINRT_EBO MediaFrameSourceController :
-    Windows::Media::Capture::Frames::IMediaFrameSourceController
+    Windows::Media::Capture::Frames::IMediaFrameSourceController,
+    impl::require<MediaFrameSourceController, Windows::Media::Capture::Frames::IMediaFrameSourceController2>
 {
     MediaFrameSourceController(std::nullptr_t) noexcept {}
 };
@@ -88,6 +90,24 @@ struct WINRT_EBO MediaFrameSourceInfo :
     Windows::Media::Capture::Frames::IMediaFrameSourceInfo
 {
     MediaFrameSourceInfo(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO MultiSourceMediaFrameArrivedEventArgs :
+    Windows::Media::Capture::Frames::IMultiSourceMediaFrameArrivedEventArgs
+{
+    MultiSourceMediaFrameArrivedEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO MultiSourceMediaFrameReader :
+    Windows::Media::Capture::Frames::IMultiSourceMediaFrameReader
+{
+    MultiSourceMediaFrameReader(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO MultiSourceMediaFrameReference :
+    Windows::Media::Capture::Frames::IMultiSourceMediaFrameReference
+{
+    MultiSourceMediaFrameReference(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO VideoMediaFrame :

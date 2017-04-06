@@ -5,6 +5,7 @@
 
 #include "../base.h"
 #include "Windows.System.0.h"
+#include "Windows.ApplicationModel.0.h"
 #include "Windows.Foundation.0.h"
 #include "Windows.Foundation.Collections.0.h"
 #include "Windows.Storage.0.h"
@@ -21,6 +22,16 @@
 WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::System {
+
+struct __declspec(uuid("e348a69a-8889-4ca3-be07-d5ffff5f0804")) __declspec(novtable) IAppDiagnosticInfo : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AppInfo(Windows::ApplicationModel::IAppInfo ** value) = 0;
+};
+
+struct __declspec(uuid("ce6925bf-10ca-40c8-a9ca-c5c96501866e")) __declspec(novtable) IAppDiagnosticInfoStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_RequestInfoAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::System::AppDiagnosticInfo>> ** operation) = 0;
+};
 
 struct __declspec(uuid("6d65339b-4d6f-45bc-9c5e-e49b3ff2758d")) __declspec(novtable) IAppMemoryReport : Windows::Foundation::IInspectable
 {
@@ -89,6 +100,12 @@ struct __declspec(uuid("f0770655-4b63-4e3a-9107-4e687841923a")) __declspec(novta
 {
     virtual HRESULT __stdcall get_IgnoreAppUriHandlers(bool * value) = 0;
     virtual HRESULT __stdcall put_IgnoreAppUriHandlers(bool value) = 0;
+};
+
+struct __declspec(uuid("ef6fd10e-e6fb-4814-a44e-57e8b9d9a01b")) __declspec(novtable) ILauncherOptions4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_LimitPickerToCurrentAppAndAppUriHandlers(bool * value) = 0;
+    virtual HRESULT __stdcall put_LimitPickerToCurrentAppAndAppUriHandlers(bool value) = 0;
 };
 
 struct __declspec(uuid("277151c3-9e3e-42f6-91a4-5dfdeb232451")) __declspec(novtable) ILauncherStatics : Windows::Foundation::IInspectable
@@ -286,6 +303,7 @@ struct __declspec(uuid("155eb23b-242a-45e0-a2e9-3171fc6a7fbb")) __declspec(novta
 
 namespace ABI {
 
+template <> struct traits<Windows::System::AppDiagnosticInfo> { using default_interface = Windows::System::IAppDiagnosticInfo; };
 template <> struct traits<Windows::System::AppMemoryReport> { using default_interface = Windows::System::IAppMemoryReport; };
 template <> struct traits<Windows::System::AppMemoryUsageLimitChangingEventArgs> { using default_interface = Windows::System::IAppMemoryUsageLimitChangingEventArgs; };
 template <> struct traits<Windows::System::FolderLauncherOptions> { using default_interface = Windows::System::IFolderLauncherOptions; };
@@ -306,6 +324,18 @@ template <> struct traits<Windows::System::UserWatcher> { using default_interfac
 }
 
 namespace Windows::System {
+
+template <typename D>
+struct WINRT_EBO impl_IAppDiagnosticInfo
+{
+    Windows::ApplicationModel::AppInfo AppInfo() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppDiagnosticInfoStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::System::AppDiagnosticInfo>> RequestInfoAsync() const;
+};
 
 template <typename D>
 struct WINRT_EBO impl_IAppMemoryReport
@@ -382,6 +412,13 @@ struct WINRT_EBO impl_ILauncherOptions3
 {
     bool IgnoreAppUriHandlers() const;
     void IgnoreAppUriHandlers(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILauncherOptions4
+{
+    bool LimitPickerToCurrentAppAndAppUriHandlers() const;
+    void LimitPickerToCurrentAppAndAppUriHandlers(bool value) const;
 };
 
 template <typename D>
@@ -624,6 +661,18 @@ struct WINRT_EBO impl_IUserWatcher
 
 namespace impl {
 
+template <> struct traits<Windows::System::IAppDiagnosticInfo>
+{
+    using abi = ABI::Windows::System::IAppDiagnosticInfo;
+    template <typename D> using consume = Windows::System::impl_IAppDiagnosticInfo<D>;
+};
+
+template <> struct traits<Windows::System::IAppDiagnosticInfoStatics>
+{
+    using abi = ABI::Windows::System::IAppDiagnosticInfoStatics;
+    template <typename D> using consume = Windows::System::impl_IAppDiagnosticInfoStatics<D>;
+};
+
 template <> struct traits<Windows::System::IAppMemoryReport>
 {
     using abi = ABI::Windows::System::IAppMemoryReport;
@@ -670,6 +719,12 @@ template <> struct traits<Windows::System::ILauncherOptions3>
 {
     using abi = ABI::Windows::System::ILauncherOptions3;
     template <typename D> using consume = Windows::System::impl_ILauncherOptions3<D>;
+};
+
+template <> struct traits<Windows::System::ILauncherOptions4>
+{
+    using abi = ABI::Windows::System::ILauncherOptions4;
+    template <typename D> using consume = Windows::System::impl_ILauncherOptions4<D>;
 };
 
 template <> struct traits<Windows::System::ILauncherStatics>
@@ -808,6 +863,12 @@ template <> struct traits<Windows::System::IUserWatcher>
 {
     using abi = ABI::Windows::System::IUserWatcher;
     template <typename D> using consume = Windows::System::impl_IUserWatcher<D>;
+};
+
+template <> struct traits<Windows::System::AppDiagnosticInfo>
+{
+    using abi = ABI::Windows::System::AppDiagnosticInfo;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.System.AppDiagnosticInfo"; }
 };
 
 template <> struct traits<Windows::System::AppMemoryReport>

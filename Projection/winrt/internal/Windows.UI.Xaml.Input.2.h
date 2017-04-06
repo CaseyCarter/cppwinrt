@@ -215,6 +215,13 @@ struct IAccessKeyManagerStatics :
     IAccessKeyManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IAccessKeyManagerStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IAccessKeyManagerStatics2>
+{
+    IAccessKeyManagerStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ICommand :
     Windows::Foundation::IInspectable,
     impl::consume<ICommand>
@@ -234,6 +241,13 @@ struct IDoubleTappedRoutedEventArgs :
     impl::consume<IDoubleTappedRoutedEventArgs>
 {
     IDoubleTappedRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IFindNextElementOptions :
+    Windows::Foundation::IInspectable,
+    impl::consume<IFindNextElementOptions>
+{
+    IFindNextElementOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFocusManager :
@@ -262,6 +276,20 @@ struct IFocusManagerStatics3 :
     impl::consume<IFocusManagerStatics3>
 {
     IFocusManagerStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IFocusManagerStatics4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IFocusManagerStatics4>
+{
+    IFocusManagerStatics4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IGettingFocusEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGettingFocusEventArgs>
+{
+    IGettingFocusEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IHoldingRoutedEventArgs :
@@ -334,6 +362,13 @@ struct IKeyRoutedEventArgs3 :
     IKeyRoutedEventArgs3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ILosingFocusEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<ILosingFocusEventArgs>
+{
+    ILosingFocusEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IManipulationCompletedRoutedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IManipulationCompletedRoutedEventArgs>
@@ -388,6 +423,13 @@ struct IManipulationStartingRoutedEventArgs :
     impl::consume<IManipulationStartingRoutedEventArgs>
 {
     IManipulationStartingRoutedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct INoFocusCandidateFoundEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<INoFocusCandidateFoundEventArgs>
+{
+    INoFocusCandidateFoundEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPointer :

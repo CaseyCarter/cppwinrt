@@ -253,13 +253,6 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Lig
     return operation;
 }
 
-template <typename D> bool impl_ILampAvailabilityChangedEventArgs<D>::IsAvailable() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(ILampAvailabilityChangedEventArgs)->get_IsAvailable(&value));
-    return value;
-}
-
 template <typename D> hstring impl_ILamp<D>::DeviceId() const
 {
     hstring value;
@@ -325,6 +318,13 @@ template <typename D> event_revoker<ILamp> impl_ILamp<D>::AvailabilityChanged(au
 template <typename D> void impl_ILamp<D>::AvailabilityChanged(event_token token) const
 {
     check_hresult(WINRT_SHIM(ILamp)->remove_AvailabilityChanged(token));
+}
+
+template <typename D> bool impl_ILampAvailabilityChangedEventArgs<D>::IsAvailable() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILampAvailabilityChangedEventArgs)->get_IsAvailable(&value));
+    return value;
 }
 
 inline hstring Lamp::GetDeviceSelector()

@@ -793,6 +793,25 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersSt
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6> : produce_base<D, Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6>
+{
+    HRESULT __stdcall get_CultureProperty(impl::abi_arg_out<Windows::UI::Xaml::Automation::IAutomationProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CultureProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Automation::IAutomationProperties> : produce_base<D, Windows::UI::Xaml::Automation::IAutomationProperties>
 {};
 
@@ -1832,6 +1851,53 @@ struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5> 
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6> : produce_base<D, Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6>
+{
+    HRESULT __stdcall get_CultureProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CultureProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetCulture(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, int32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetCulture(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetCulture(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, int32_t value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SetCulture(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -3251,6 +3317,13 @@ template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAu
     return value;
 }
 
+template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IAutomationElementIdentifiersStatics6<D>::CultureProperty() const
+{
+    Windows::UI::Xaml::Automation::AutomationProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IAutomationElementIdentifiersStatics6)->get_CultureProperty(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics<D>::AcceleratorKeyProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
@@ -3699,6 +3772,25 @@ template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xam
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> value;
     check_hresult(WINRT_SHIM(IAutomationPropertiesStatics5)->abi_GetFlowsFrom(get_abi(element), put_abi(value)));
     return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAutomationPropertiesStatics6<D>::CultureProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics6)->get_CultureProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> int32_t impl_IAutomationPropertiesStatics6<D>::GetCulture(const Windows::UI::Xaml::DependencyObject & element) const
+{
+    int32_t value {};
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics6)->abi_GetCulture(get_abi(element), &value));
+    return value;
+}
+
+template <typename D> void impl_IAutomationPropertiesStatics6<D>::SetCulture(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const
+{
+    check_hresult(WINRT_SHIM(IAutomationPropertiesStatics6)->abi_SetCulture(get_abi(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::Automation::AutomationProperty impl_IDockPatternIdentifiersStatics<D>::DockPositionProperty() const
@@ -4428,6 +4520,11 @@ inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdenti
     return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics5>().FlowsFromProperty();
 }
 
+inline Windows::UI::Xaml::Automation::AutomationProperty AutomationElementIdentifiers::CultureProperty()
+{
+    return get_activation_factory<AutomationElementIdentifiers, IAutomationElementIdentifiersStatics6>().CultureProperty();
+}
+
 inline Windows::UI::Xaml::DependencyProperty AutomationProperties::AcceleratorKeyProperty()
 {
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics>().AcceleratorKeyProperty();
@@ -4776,6 +4873,21 @@ inline Windows::UI::Xaml::DependencyProperty AutomationProperties::FlowsFromProp
 inline Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> AutomationProperties::GetFlowsFrom(const Windows::UI::Xaml::DependencyObject & element)
 {
     return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics5>().GetFlowsFrom(element);
+}
+
+inline Windows::UI::Xaml::DependencyProperty AutomationProperties::CultureProperty()
+{
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics6>().CultureProperty();
+}
+
+inline int32_t AutomationProperties::GetCulture(const Windows::UI::Xaml::DependencyObject & element)
+{
+    return get_activation_factory<AutomationProperties, IAutomationPropertiesStatics6>().GetCulture(element);
+}
+
+inline void AutomationProperties::SetCulture(const Windows::UI::Xaml::DependencyObject & element, int32_t value)
+{
+    get_activation_factory<AutomationProperties, IAutomationPropertiesStatics6>().SetCulture(element, value);
 }
 
 inline Windows::UI::Xaml::Automation::AutomationProperty DockPatternIdentifiers::DockPositionProperty()
@@ -5202,6 +5314,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentif
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationElementIdentifiersStatics6 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationProperties>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationProperties & value) const noexcept
@@ -5250,6 +5371,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Automation::IAutomationPropertiesStatics6 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

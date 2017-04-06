@@ -7,6 +7,7 @@
 WINRT_WARNING_PUSH
 
 #include "internal/Windows.Management.Workplace.3.h"
+#include "Windows.Management.h"
 
 WINRT_EXPORT namespace winrt {
 

@@ -37,6 +37,16 @@ template <> struct __declspec(uuid("2f2d6c29-5473-5f3e-92e7-96572bb990e2")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_42e26ae1_d357_57e8_bb48_f75c9ff69d91
+#define WINRT_GENERIC_42e26ae1_d357_57e8_bb48_f75c9ff69d91
+template <> struct __declspec(uuid("42e26ae1-d357-57e8-bb48-f75c9ff69d91")) __declspec(novtable) IIterable<Windows::UI::Xaml::UIElement> : impl_IIterable<Windows::UI::Xaml::UIElement> {};
+#endif
+
+#ifndef WINRT_GENERIC_b4c1e3ac_8768_5b9d_a661_f63330b8507b
+#define WINRT_GENERIC_b4c1e3ac_8768_5b9d_a661_f63330b8507b
+template <> struct __declspec(uuid("b4c1e3ac-8768-5b9d-a661-f63330b8507b")) __declspec(novtable) IVector<Windows::UI::Xaml::UIElement> : impl_IVector<Windows::UI::Xaml::UIElement> {};
+#endif
+
 #ifndef WINRT_GENERIC_e798571f_7e3e_5e1a_aa55_cbc93b83f821
 #define WINRT_GENERIC_e798571f_7e3e_5e1a_aa55_cbc93b83f821
 template <> struct __declspec(uuid("e798571f-7e3e-5e1a-aa55-cbc93b83f821")) __declspec(novtable) IVector<Windows::UI::Xaml::Media::Animation::Transition> : impl_IVector<Windows::UI::Xaml::Media::Animation::Transition> {};
@@ -45,16 +55,6 @@ template <> struct __declspec(uuid("e798571f-7e3e-5e1a-aa55-cbc93b83f821")) __de
 #ifndef WINRT_GENERIC_feb51398_4fdb_5112_8a9b_6a8786ca01ce
 #define WINRT_GENERIC_feb51398_4fdb_5112_8a9b_6a8786ca01ce
 template <> struct __declspec(uuid("feb51398-4fdb-5112-8a9b-6a8786ca01ce")) __declspec(novtable) IIterable<Windows::UI::Xaml::Media::Animation::Transition> : impl_IIterable<Windows::UI::Xaml::Media::Animation::Transition> {};
-#endif
-
-#ifndef WINRT_GENERIC_92d24fb8_af54_5180_9888_5756566a13ff
-#define WINRT_GENERIC_92d24fb8_af54_5180_9888_5756566a13ff
-template <> struct __declspec(uuid("92d24fb8-af54-5180-9888-5756566a13ff")) __declspec(novtable) IVector<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> : impl_IVector<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> {};
-#endif
-
-#ifndef WINRT_GENERIC_1859dd08_582d_51dc_82a1_466111caf944
-#define WINRT_GENERIC_1859dd08_582d_51dc_82a1_466111caf944
-template <> struct __declspec(uuid("1859dd08-582d-51dc-82a1-466111caf944")) __declspec(novtable) IIterable<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> : impl_IIterable<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> {};
 #endif
 
 #ifndef WINRT_GENERIC_d7cbde22_86bf_572f_8473_079d15076c3e
@@ -77,16 +77,6 @@ template <> struct __declspec(uuid("5f733d3f-72a6-5303-9727-2b03eae7dd4c")) __de
 template <> struct __declspec(uuid("9084a8e1-8f4d-5de3-b1c6-e5f05724caed")) __declspec(novtable) IIterable<Windows::UI::Xaml::Media::Animation::ObjectKeyFrame> : impl_IIterable<Windows::UI::Xaml::Media::Animation::ObjectKeyFrame> {};
 #endif
 
-#ifndef WINRT_GENERIC_b17e26de_9cd7_5456_bee0_49882a87f945
-#define WINRT_GENERIC_b17e26de_9cd7_5456_bee0_49882a87f945
-template <> struct __declspec(uuid("b17e26de-9cd7-5456-bee0-49882a87f945")) __declspec(novtable) IVector<Windows::UI::Xaml::Media::Animation::PointKeyFrame> : impl_IVector<Windows::UI::Xaml::Media::Animation::PointKeyFrame> {};
-#endif
-
-#ifndef WINRT_GENERIC_b8de4dc9_8c69_55f3_af58_040f1319649c
-#define WINRT_GENERIC_b8de4dc9_8c69_55f3_af58_040f1319649c
-template <> struct __declspec(uuid("b8de4dc9-8c69-55f3-af58-040f1319649c")) __declspec(novtable) IIterable<Windows::UI::Xaml::Media::Animation::PointKeyFrame> : impl_IIterable<Windows::UI::Xaml::Media::Animation::PointKeyFrame> {};
-#endif
-
 #ifndef WINRT_GENERIC_2005c7f9_c7d7_521b_a81c_2c9dad77a9e8
 #define WINRT_GENERIC_2005c7f9_c7d7_521b_a81c_2c9dad77a9e8
 template <> struct __declspec(uuid("2005c7f9-c7d7-521b-a81c-2c9dad77a9e8")) __declspec(novtable) IVector<Windows::UI::Xaml::Media::Animation::Timeline> : impl_IVector<Windows::UI::Xaml::Media::Animation::Timeline> {};
@@ -107,6 +97,26 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("84f14c22-a00a-5272-8d3d-82112e66df00")) __declspec(novtable) IReference<Windows::Foundation::Point> : impl_IReference<Windows::Foundation::Point> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_92d24fb8_af54_5180_9888_5756566a13ff
+#define WINRT_GENERIC_92d24fb8_af54_5180_9888_5756566a13ff
+template <> struct __declspec(uuid("92d24fb8-af54-5180-9888-5756566a13ff")) __declspec(novtable) IVector<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> : impl_IVector<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> {};
+#endif
+
+#ifndef WINRT_GENERIC_1859dd08_582d_51dc_82a1_466111caf944
+#define WINRT_GENERIC_1859dd08_582d_51dc_82a1_466111caf944
+template <> struct __declspec(uuid("1859dd08-582d-51dc-82a1-466111caf944")) __declspec(novtable) IIterable<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> : impl_IIterable<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_44caa9ea_7598_517a_b78e_abd20d93d587
 #define WINRT_GENERIC_44caa9ea_7598_517a_b78e_abd20d93d587
 template <> struct __declspec(uuid("44caa9ea-7598-517a-b78e-abd20d93d587")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> {};
@@ -117,6 +127,26 @@ template <> struct __declspec(uuid("44caa9ea-7598-517a-b78e-abd20d93d587")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_b17e26de_9cd7_5456_bee0_49882a87f945
+#define WINRT_GENERIC_b17e26de_9cd7_5456_bee0_49882a87f945
+template <> struct __declspec(uuid("b17e26de-9cd7-5456-bee0-49882a87f945")) __declspec(novtable) IVector<Windows::UI::Xaml::Media::Animation::PointKeyFrame> : impl_IVector<Windows::UI::Xaml::Media::Animation::PointKeyFrame> {};
+#endif
+
+#ifndef WINRT_GENERIC_b8de4dc9_8c69_55f3_af58_040f1319649c
+#define WINRT_GENERIC_b8de4dc9_8c69_55f3_af58_040f1319649c
+template <> struct __declspec(uuid("b8de4dc9-8c69-55f3-af58-040f1319649c")) __declspec(novtable) IIterable<Windows::UI::Xaml::Media::Animation::PointKeyFrame> : impl_IIterable<Windows::UI::Xaml::Media::Animation::PointKeyFrame> {};
+#endif
+
+#ifndef WINRT_GENERIC_f3864c10_14a4_5516_b1d9_63b6579429b1
+#define WINRT_GENERIC_f3864c10_14a4_5516_b1d9_63b6579429b1
+template <> struct __declspec(uuid("f3864c10-14a4-5516-b1d9-63b6579429b1")) __declspec(novtable) IVectorView<Windows::UI::Xaml::UIElement> : impl_IVectorView<Windows::UI::Xaml::UIElement> {};
+#endif
+
+#ifndef WINRT_GENERIC_1d1f9d60_d53b_57f7_b144_8f7c487846e8
+#define WINRT_GENERIC_1d1f9d60_d53b_57f7_b144_8f7c487846e8
+template <> struct __declspec(uuid("1d1f9d60-d53b-57f7-b144-8f7c487846e8")) __declspec(novtable) IIterator<Windows::UI::Xaml::UIElement> : impl_IIterator<Windows::UI::Xaml::UIElement> {};
+#endif
+
 #ifndef WINRT_GENERIC_0f149913_d622_5dde_b6e3_7835c2ab54b7
 #define WINRT_GENERIC_0f149913_d622_5dde_b6e3_7835c2ab54b7
 template <> struct __declspec(uuid("0f149913-d622-5dde-b6e3-7835c2ab54b7")) __declspec(novtable) IIterator<Windows::UI::Xaml::Media::Animation::Transition> : impl_IIterator<Windows::UI::Xaml::Media::Animation::Transition> {};
@@ -125,16 +155,6 @@ template <> struct __declspec(uuid("0f149913-d622-5dde-b6e3-7835c2ab54b7")) __de
 #ifndef WINRT_GENERIC_43b475a1_3811_5992_be44_ab41a825d355
 #define WINRT_GENERIC_43b475a1_3811_5992_be44_ab41a825d355
 template <> struct __declspec(uuid("43b475a1-3811-5992-be44-ab41a825d355")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Media::Animation::Transition> : impl_IVectorView<Windows::UI::Xaml::Media::Animation::Transition> {};
-#endif
-
-#ifndef WINRT_GENERIC_36a6440d_aa86_5bce_8df2_5de99206f151
-#define WINRT_GENERIC_36a6440d_aa86_5bce_8df2_5de99206f151
-template <> struct __declspec(uuid("36a6440d-aa86-5bce-8df2-5de99206f151")) __declspec(novtable) IIterator<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> : impl_IIterator<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> {};
-#endif
-
-#ifndef WINRT_GENERIC_8d66a3ca_480c_5a76_98a2_9036c03ed7bd
-#define WINRT_GENERIC_8d66a3ca_480c_5a76_98a2_9036c03ed7bd
-template <> struct __declspec(uuid("8d66a3ca-480c-5a76-98a2-9036c03ed7bd")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> : impl_IVectorView<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> {};
 #endif
 
 #ifndef WINRT_GENERIC_ca007bbd_84a1_512f_977f_9bd728e1e73f
@@ -157,16 +177,6 @@ template <> struct __declspec(uuid("69c69834-8951-54a7-a2ca-922bacf9fc70")) __de
 template <> struct __declspec(uuid("19130523-0862-5631-bc2e-097614b38b6d")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Media::Animation::ObjectKeyFrame> : impl_IVectorView<Windows::UI::Xaml::Media::Animation::ObjectKeyFrame> {};
 #endif
 
-#ifndef WINRT_GENERIC_e55a65ad_e742_5f78_876b_64d1681fc9e2
-#define WINRT_GENERIC_e55a65ad_e742_5f78_876b_64d1681fc9e2
-template <> struct __declspec(uuid("e55a65ad-e742-5f78-876b-64d1681fc9e2")) __declspec(novtable) IIterator<Windows::UI::Xaml::Media::Animation::PointKeyFrame> : impl_IIterator<Windows::UI::Xaml::Media::Animation::PointKeyFrame> {};
-#endif
-
-#ifndef WINRT_GENERIC_b366e321_df42_500b_8ada_99854f6406ff
-#define WINRT_GENERIC_b366e321_df42_500b_8ada_99854f6406ff
-template <> struct __declspec(uuid("b366e321-df42-500b-8ada-99854f6406ff")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Media::Animation::PointKeyFrame> : impl_IVectorView<Windows::UI::Xaml::Media::Animation::PointKeyFrame> {};
-#endif
-
 #ifndef WINRT_GENERIC_b0c22c25_ae1a_5326_bf81_394246cc3076
 #define WINRT_GENERIC_b0c22c25_ae1a_5326_bf81_394246cc3076
 template <> struct __declspec(uuid("b0c22c25-ae1a-5326-bf81-394246cc3076")) __declspec(novtable) IIterator<Windows::UI::Xaml::Media::Animation::Timeline> : impl_IIterator<Windows::UI::Xaml::Media::Animation::Timeline> {};
@@ -175,6 +185,26 @@ template <> struct __declspec(uuid("b0c22c25-ae1a-5326-bf81-394246cc3076")) __de
 #ifndef WINRT_GENERIC_541af22b_280b_5276_bfcb_3e60a157d62c
 #define WINRT_GENERIC_541af22b_280b_5276_bfcb_3e60a157d62c
 template <> struct __declspec(uuid("541af22b-280b-5276-bfcb-3e60a157d62c")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Media::Animation::Timeline> : impl_IVectorView<Windows::UI::Xaml::Media::Animation::Timeline> {};
+#endif
+
+#ifndef WINRT_GENERIC_36a6440d_aa86_5bce_8df2_5de99206f151
+#define WINRT_GENERIC_36a6440d_aa86_5bce_8df2_5de99206f151
+template <> struct __declspec(uuid("36a6440d-aa86-5bce-8df2-5de99206f151")) __declspec(novtable) IIterator<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> : impl_IIterator<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> {};
+#endif
+
+#ifndef WINRT_GENERIC_8d66a3ca_480c_5a76_98a2_9036c03ed7bd
+#define WINRT_GENERIC_8d66a3ca_480c_5a76_98a2_9036c03ed7bd
+template <> struct __declspec(uuid("8d66a3ca-480c-5a76-98a2-9036c03ed7bd")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> : impl_IVectorView<Windows::UI::Xaml::Media::Animation::ColorKeyFrame> {};
+#endif
+
+#ifndef WINRT_GENERIC_e55a65ad_e742_5f78_876b_64d1681fc9e2
+#define WINRT_GENERIC_e55a65ad_e742_5f78_876b_64d1681fc9e2
+template <> struct __declspec(uuid("e55a65ad-e742-5f78-876b-64d1681fc9e2")) __declspec(novtable) IIterator<Windows::UI::Xaml::Media::Animation::PointKeyFrame> : impl_IIterator<Windows::UI::Xaml::Media::Animation::PointKeyFrame> {};
+#endif
+
+#ifndef WINRT_GENERIC_b366e321_df42_500b_8ada_99854f6406ff
+#define WINRT_GENERIC_b366e321_df42_500b_8ada_99854f6406ff
+template <> struct __declspec(uuid("b366e321-df42-500b-8ada-99854f6406ff")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Media::Animation::PointKeyFrame> : impl_IVectorView<Windows::UI::Xaml::Media::Animation::PointKeyFrame> {};
 #endif
 
 
@@ -306,6 +336,13 @@ struct IConnectedAnimation :
     impl::consume<IConnectedAnimation>
 {
     IConnectedAnimation(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IConnectedAnimation2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IConnectedAnimation2>
+{
+    IConnectedAnimation2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IConnectedAnimationService :

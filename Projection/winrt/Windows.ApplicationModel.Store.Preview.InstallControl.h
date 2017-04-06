@@ -239,6 +239,39 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3>
+{
+    HRESULT __stdcall get_Children(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Children());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ItemOperationsMightAffectOtherItems(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ItemOperationsMightAffectOtherItems());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager>
 {
     HRESULT __stdcall get_AppInstallItems(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> value) noexcept override
@@ -762,6 +795,74 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4>
+{
+    HRESULT __stdcall abi_GetFreeUserEntitlementAsync(impl::abi_arg_in<hstring> storeId, impl::abi_arg_in<hstring> campaignId, impl::abi_arg_in<hstring> correlationVector, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult>> ppAsyncOperation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *ppAsyncOperation = detach_abi(this->shim().GetFreeUserEntitlementAsync(*reinterpret_cast<const hstring *>(&storeId), *reinterpret_cast<const hstring *>(&campaignId), *reinterpret_cast<const hstring *>(&correlationVector)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *ppAsyncOperation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetFreeUserEntitlementForUserAsync(impl::abi_arg_in<Windows::System::IUser> user, impl::abi_arg_in<hstring> storeId, impl::abi_arg_in<hstring> campaignId, impl::abi_arg_in<hstring> correlationVector, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult>> ppAsyncOperation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *ppAsyncOperation = detach_abi(this->shim().GetFreeUserEntitlementForUserAsync(*reinterpret_cast<const Windows::System::User *>(&user), *reinterpret_cast<const hstring *>(&storeId), *reinterpret_cast<const hstring *>(&campaignId), *reinterpret_cast<const hstring *>(&correlationVector)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *ppAsyncOperation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetFreeDeviceEntitlementAsync(impl::abi_arg_in<hstring> storeId, impl::abi_arg_in<hstring> campaignId, impl::abi_arg_in<hstring> correlationVector, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult>> ppAsyncOperation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *ppAsyncOperation = detach_abi(this->shim().GetFreeDeviceEntitlementAsync(*reinterpret_cast<const hstring *>(&storeId), *reinterpret_cast<const hstring *>(&campaignId), *reinterpret_cast<const hstring *>(&correlationVector)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *ppAsyncOperation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5>
+{
+    HRESULT __stdcall get_AppInstallItemsWithGroupSupport(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AppInstallItemsWithGroupSupport());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs>
 {
     HRESULT __stdcall get_Item(impl::abi_arg_out<Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem> value) noexcept override
@@ -878,6 +979,24 @@ struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IAp
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().ReadyForLaunch());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::ApplicationModel::Store::Preview::InstallControl::IGetEntitlementResult> : produce_base<D, Windows::ApplicationModel::Store::Preview::InstallControl::IGetEntitlementResult>
+{
+    HRESULT __stdcall get_Status(Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Status());
             return S_OK;
         }
         catch (...)
@@ -1037,6 +1156,27 @@ template <typename D> void impl_IAppInstallItem2<D>::Pause(hstring_view correlat
 template <typename D> void impl_IAppInstallItem2<D>::Restart(hstring_view correlationVector) const
 {
     check_hresult(WINRT_SHIM(IAppInstallItem2)->abi_RestartWithTelemetry(get_abi(correlationVector)));
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallItem3<D>::Children() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> value;
+    check_hresult(WINRT_SHIM(IAppInstallItem3)->get_Children(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IAppInstallItem3<D>::ItemOperationsMightAffectOtherItems() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IAppInstallItem3)->get_ItemOperationsMightAffectOtherItems(&value));
+    return value;
+}
+
+template <typename D> Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus impl_IGetEntitlementResult<D>::Status() const
+{
+    Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementStatus value {};
+    check_hresult(WINRT_SHIM(IGetEntitlementResult)->get_Status(&value));
+    return value;
 }
 
 template <typename D> Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem impl_IAppInstallManagerItemEventArgs<D>::Item() const
@@ -1279,6 +1419,34 @@ template <typename D> void impl_IAppInstallManager3<D>::MoveToFrontOfDownloadQue
     check_hresult(WINRT_SHIM(IAppInstallManager3)->abi_MoveToFrontOfDownloadQueue(get_abi(productId), get_abi(correlationVector)));
 }
 
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> impl_IAppInstallManager4<D>::GetFreeUserEntitlementAsync(hstring_view storeId, hstring_view campaignId, hstring_view correlationVector) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> ppAsyncOperation;
+    check_hresult(WINRT_SHIM(IAppInstallManager4)->abi_GetFreeUserEntitlementAsync(get_abi(storeId), get_abi(campaignId), get_abi(correlationVector), put_abi(ppAsyncOperation)));
+    return ppAsyncOperation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> impl_IAppInstallManager4<D>::GetFreeUserEntitlementForUserAsync(const Windows::System::User & user, hstring_view storeId, hstring_view campaignId, hstring_view correlationVector) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> ppAsyncOperation;
+    check_hresult(WINRT_SHIM(IAppInstallManager4)->abi_GetFreeUserEntitlementForUserAsync(get_abi(user), get_abi(storeId), get_abi(campaignId), get_abi(correlationVector), put_abi(ppAsyncOperation)));
+    return ppAsyncOperation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> impl_IAppInstallManager4<D>::GetFreeDeviceEntitlementAsync(hstring_view storeId, hstring_view campaignId, hstring_view correlationVector) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult> ppAsyncOperation;
+    check_hresult(WINRT_SHIM(IAppInstallManager4)->abi_GetFreeDeviceEntitlementAsync(get_abi(storeId), get_abi(campaignId), get_abi(correlationVector), put_abi(ppAsyncOperation)));
+    return ppAsyncOperation;
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> impl_IAppInstallManager5<D>::AppInstallItemsWithGroupSupport() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> value;
+    check_hresult(WINRT_SHIM(IAppInstallManager5)->get_AppInstallItemsWithGroupSupport(put_abi(value)));
+    return value;
+}
+
 inline AppInstallManager::AppInstallManager() :
     AppInstallManager(activate_instance<AppInstallManager>())
 {}
@@ -1300,6 +1468,15 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallItem3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -1333,6 +1510,24 @@ struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallContro
 };
 
 template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManager5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallManagerItemEventArgs & value) const noexcept
@@ -1354,6 +1549,15 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus2>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IAppInstallStatus2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IGetEntitlementResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::IGetEntitlementResult & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -1390,6 +1594,15 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallStatus>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallStatus & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Store::Preview::InstallControl::GetEntitlementResult & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

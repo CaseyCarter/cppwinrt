@@ -115,6 +115,21 @@ template <> struct __declspec(uuid("d09d9fcc-edb8-56c0-856d-70e477a9ddf3")) __de
 template <> struct __declspec(uuid("4ec5f3fd-b217-5452-a2bd-9725ce9f6675")) __declspec(novtable) TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> : impl_TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerControlAcquiredEventArgs> {};
 #endif
 
+#ifndef WINRT_GENERIC_660bee4a_4fed_5a62_aa5d_8113b477bc69
+#define WINRT_GENERIC_660bee4a_4fed_5a62_aa5d_8113b477bc69
+template <> struct __declspec(uuid("660bee4a-4fed-5a62-aa5d-8113b477bc69")) __declspec(novtable) TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> : impl_TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_4c44f2ff_3a4a_51ba_a01f_9f2002471f59
+#define WINRT_GENERIC_4c44f2ff_3a4a_51ba_a01f_9f2002471f59
+template <> struct __declspec(uuid("4c44f2ff-3a4a-51ba-a01f-9f2002471f59")) __declspec(novtable) TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> : impl_TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_c22ff62c_c642_5d50_9340_fe163122720c
+#define WINRT_GENERIC_c22ff62c_c642_5d50_9340_fe163122720c
+template <> struct __declspec(uuid("c22ff62c-c642-5d50-9340-fe163122720c")) __declspec(novtable) TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> : impl_TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> {};
+#endif
+
 
 }
 
@@ -349,6 +364,13 @@ struct IRadialController :
     IRadialController(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IRadialController2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialController2>
+{
+    IRadialController2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IRadialControllerButtonClickedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerButtonClickedEventArgs>
@@ -356,11 +378,46 @@ struct IRadialControllerButtonClickedEventArgs :
     IRadialControllerButtonClickedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IRadialControllerButtonClickedEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialControllerButtonClickedEventArgs2>
+{
+    IRadialControllerButtonClickedEventArgs2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IRadialControllerButtonHoldingEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialControllerButtonHoldingEventArgs>
+{
+    IRadialControllerButtonHoldingEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IRadialControllerButtonPressedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialControllerButtonPressedEventArgs>
+{
+    IRadialControllerButtonPressedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IRadialControllerButtonReleasedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialControllerButtonReleasedEventArgs>
+{
+    IRadialControllerButtonReleasedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IRadialControllerConfiguration :
     Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerConfiguration>
 {
     IRadialControllerConfiguration(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IRadialControllerConfiguration2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialControllerConfiguration2>
+{
+    IRadialControllerConfiguration2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerConfigurationStatics :
@@ -375,6 +432,13 @@ struct IRadialControllerControlAcquiredEventArgs :
     impl::consume<IRadialControllerControlAcquiredEventArgs>
 {
     IRadialControllerControlAcquiredEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IRadialControllerControlAcquiredEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialControllerControlAcquiredEventArgs2>
+{
+    IRadialControllerControlAcquiredEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerMenu :
@@ -398,11 +462,25 @@ struct IRadialControllerMenuItemStatics :
     IRadialControllerMenuItemStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IRadialControllerMenuItemStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialControllerMenuItemStatics2>
+{
+    IRadialControllerMenuItemStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IRadialControllerRotationChangedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerRotationChangedEventArgs>
 {
     IRadialControllerRotationChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IRadialControllerRotationChangedEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialControllerRotationChangedEventArgs2>
+{
+    IRadialControllerRotationChangedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerScreenContact :
@@ -419,11 +497,32 @@ struct IRadialControllerScreenContactContinuedEventArgs :
     IRadialControllerScreenContactContinuedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IRadialControllerScreenContactContinuedEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialControllerScreenContactContinuedEventArgs2>
+{
+    IRadialControllerScreenContactContinuedEventArgs2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IRadialControllerScreenContactEndedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialControllerScreenContactEndedEventArgs>
+{
+    IRadialControllerScreenContactEndedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IRadialControllerScreenContactStartedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IRadialControllerScreenContactStartedEventArgs>
 {
     IRadialControllerScreenContactStartedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IRadialControllerScreenContactStartedEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IRadialControllerScreenContactStartedEventArgs2>
+{
+    IRadialControllerScreenContactStartedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IRadialControllerStatics :

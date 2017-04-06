@@ -5,6 +5,7 @@
 
 #include "../base.h"
 #include "Windows.UI.Input.0.h"
+#include "Windows.Devices.Haptics.0.h"
 #include "Windows.Devices.Input.0.h"
 #include "Windows.Foundation.0.h"
 #include "Windows.Storage.Streams.0.h"
@@ -310,9 +311,42 @@ struct __declspec(uuid("3055d1c8-df51-43d4-b23b-0e1037467a09")) __declspec(novta
     virtual HRESULT __stdcall remove_ControlAcquired(event_token cookie) = 0;
 };
 
+struct __declspec(uuid("3d577eff-4cee-11e6-b535-001bdc06ab3b")) __declspec(novtable) IRadialController2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall add_ButtonPressed(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_ButtonPressed(event_token token) = 0;
+    virtual HRESULT __stdcall add_ButtonHolding(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_ButtonHolding(event_token token) = 0;
+    virtual HRESULT __stdcall add_ButtonReleased(Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_ButtonReleased(event_token token) = 0;
+};
+
 struct __declspec(uuid("206aa438-e651-11e5-bf62-2c27d7404e85")) __declspec(novtable) IRadialControllerButtonClickedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Contact(Windows::UI::Input::IRadialControllerScreenContact ** value) = 0;
+};
+
+struct __declspec(uuid("3d577ef3-3cee-11e6-b535-001bdc06ab3b")) __declspec(novtable) IRadialControllerButtonClickedEventArgs2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SimpleHapticsController(Windows::Devices::Haptics::ISimpleHapticsController ** value) = 0;
+};
+
+struct __declspec(uuid("3d577eee-3cee-11e6-b535-001bdc06ab3b")) __declspec(novtable) IRadialControllerButtonHoldingEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Contact(Windows::UI::Input::IRadialControllerScreenContact ** value) = 0;
+    virtual HRESULT __stdcall get_SimpleHapticsController(Windows::Devices::Haptics::ISimpleHapticsController ** value) = 0;
+};
+
+struct __declspec(uuid("3d577eed-4cee-11e6-b535-001bdc06ab3b")) __declspec(novtable) IRadialControllerButtonPressedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Contact(Windows::UI::Input::IRadialControllerScreenContact ** value) = 0;
+    virtual HRESULT __stdcall get_SimpleHapticsController(Windows::Devices::Haptics::ISimpleHapticsController ** value) = 0;
+};
+
+struct __declspec(uuid("3d577eef-3cee-11e6-b535-001bdc06ab3b")) __declspec(novtable) IRadialControllerButtonReleasedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Contact(Windows::UI::Input::IRadialControllerScreenContact ** value) = 0;
+    virtual HRESULT __stdcall get_SimpleHapticsController(Windows::Devices::Haptics::ISimpleHapticsController ** value) = 0;
 };
 
 struct __declspec(uuid("a6b79ecb-6a52-4430-910c-56370a9d6b42")) __declspec(novtable) IRadialControllerConfiguration : Windows::Foundation::IInspectable
@@ -320,6 +354,14 @@ struct __declspec(uuid("a6b79ecb-6a52-4430-910c-56370a9d6b42")) __declspec(novta
     virtual HRESULT __stdcall abi_SetDefaultMenuItems(Windows::Foundation::Collections::IIterable<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> * buttons) = 0;
     virtual HRESULT __stdcall abi_ResetToDefaultMenuItems() = 0;
     virtual HRESULT __stdcall abi_TrySelectDefaultMenuItem(winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind type, bool * result) = 0;
+};
+
+struct __declspec(uuid("3d577ef7-3cee-11e6-b535-001bdc06ab3b")) __declspec(novtable) IRadialControllerConfiguration2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall put_ActiveControllerWhenMenuIsSuppressed(Windows::UI::Input::IRadialController * value) = 0;
+    virtual HRESULT __stdcall get_ActiveControllerWhenMenuIsSuppressed(Windows::UI::Input::IRadialController ** value) = 0;
+    virtual HRESULT __stdcall put_IsMenuSuppressed(bool value) = 0;
+    virtual HRESULT __stdcall get_IsMenuSuppressed(bool * value) = 0;
 };
 
 struct __declspec(uuid("79b6b0e5-069a-4486-a99d-8db772b9642f")) __declspec(novtable) IRadialControllerConfigurationStatics : Windows::Foundation::IInspectable
@@ -330,6 +372,12 @@ struct __declspec(uuid("79b6b0e5-069a-4486-a99d-8db772b9642f")) __declspec(novta
 struct __declspec(uuid("206aa439-e651-11e5-bf62-2c27d7404e85")) __declspec(novtable) IRadialControllerControlAcquiredEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Contact(Windows::UI::Input::IRadialControllerScreenContact ** value) = 0;
+};
+
+struct __declspec(uuid("3d577ef4-3cee-11e6-b535-001bdc06ab3b")) __declspec(novtable) IRadialControllerControlAcquiredEventArgs2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsButtonPressed(bool * value) = 0;
+    virtual HRESULT __stdcall get_SimpleHapticsController(Windows::Devices::Haptics::ISimpleHapticsController ** value) = 0;
 };
 
 struct __declspec(uuid("8506b35d-f640-4412-aba0-bad077e5ea8a")) __declspec(novtable) IRadialControllerMenu : Windows::Foundation::IInspectable
@@ -357,10 +405,22 @@ struct __declspec(uuid("249e0887-d842-4524-9df8-e0d647edc887")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateFromKnownIcon(hstring displayText, winrt::Windows::UI::Input::RadialControllerMenuKnownIcon value, Windows::UI::Input::IRadialControllerMenuItem ** result) = 0;
 };
 
+struct __declspec(uuid("0cbb70be-7e3e-48bd-be04-2c7fcaa9c1ff")) __declspec(novtable) IRadialControllerMenuItemStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateFromFontGlyph(hstring displayText, hstring glyph, hstring fontFamily, Windows::UI::Input::IRadialControllerMenuItem ** result) = 0;
+    virtual HRESULT __stdcall abi_CreateFromFontGlyphWithUri(hstring displayText, hstring glyph, hstring fontFamily, Windows::Foundation::IUriRuntimeClass * fontUri, Windows::UI::Input::IRadialControllerMenuItem ** result) = 0;
+};
+
 struct __declspec(uuid("206aa435-e651-11e5-bf62-2c27d7404e85")) __declspec(novtable) IRadialControllerRotationChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_RotationDeltaInDegrees(double * value) = 0;
     virtual HRESULT __stdcall get_Contact(Windows::UI::Input::IRadialControllerScreenContact ** value) = 0;
+};
+
+struct __declspec(uuid("3d577eec-4cee-11e6-b535-001bdc06ab3b")) __declspec(novtable) IRadialControllerRotationChangedEventArgs2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsButtonPressed(bool * value) = 0;
+    virtual HRESULT __stdcall get_SimpleHapticsController(Windows::Devices::Haptics::ISimpleHapticsController ** value) = 0;
 };
 
 struct __declspec(uuid("206aa434-e651-11e5-bf62-2c27d7404e85")) __declspec(novtable) IRadialControllerScreenContact : Windows::Foundation::IInspectable
@@ -374,9 +434,27 @@ struct __declspec(uuid("206aa437-e651-11e5-bf62-2c27d7404e85")) __declspec(novta
     virtual HRESULT __stdcall get_Contact(Windows::UI::Input::IRadialControllerScreenContact ** value) = 0;
 };
 
+struct __declspec(uuid("3d577ef1-3cee-11e6-b535-001bdc06ab3b")) __declspec(novtable) IRadialControllerScreenContactContinuedEventArgs2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsButtonPressed(bool * value) = 0;
+    virtual HRESULT __stdcall get_SimpleHapticsController(Windows::Devices::Haptics::ISimpleHapticsController ** value) = 0;
+};
+
+struct __declspec(uuid("3d577ef2-3cee-11e6-b535-001bdc06ab3b")) __declspec(novtable) IRadialControllerScreenContactEndedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsButtonPressed(bool * value) = 0;
+    virtual HRESULT __stdcall get_SimpleHapticsController(Windows::Devices::Haptics::ISimpleHapticsController ** value) = 0;
+};
+
 struct __declspec(uuid("206aa436-e651-11e5-bf62-2c27d7404e85")) __declspec(novtable) IRadialControllerScreenContactStartedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Contact(Windows::UI::Input::IRadialControllerScreenContact ** value) = 0;
+};
+
+struct __declspec(uuid("3d577ef0-3cee-11e6-b535-001bdc06ab3b")) __declspec(novtable) IRadialControllerScreenContactStartedEventArgs2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsButtonPressed(bool * value) = 0;
+    virtual HRESULT __stdcall get_SimpleHapticsController(Windows::Devices::Haptics::ISimpleHapticsController ** value) = 0;
 };
 
 struct __declspec(uuid("faded0b7-b84c-4894-87aa-8f25aa5f288b")) __declspec(novtable) IRadialControllerStatics : Windows::Foundation::IInspectable
@@ -419,6 +497,9 @@ template <> struct traits<Windows::UI::Input::PointerPointProperties> { using de
 template <> struct traits<Windows::UI::Input::PointerVisualizationSettings> { using default_interface = Windows::UI::Input::IPointerVisualizationSettings; };
 template <> struct traits<Windows::UI::Input::RadialController> { using default_interface = Windows::UI::Input::IRadialController; };
 template <> struct traits<Windows::UI::Input::RadialControllerButtonClickedEventArgs> { using default_interface = Windows::UI::Input::IRadialControllerButtonClickedEventArgs; };
+template <> struct traits<Windows::UI::Input::RadialControllerButtonHoldingEventArgs> { using default_interface = Windows::UI::Input::IRadialControllerButtonHoldingEventArgs; };
+template <> struct traits<Windows::UI::Input::RadialControllerButtonPressedEventArgs> { using default_interface = Windows::UI::Input::IRadialControllerButtonPressedEventArgs; };
+template <> struct traits<Windows::UI::Input::RadialControllerButtonReleasedEventArgs> { using default_interface = Windows::UI::Input::IRadialControllerButtonReleasedEventArgs; };
 template <> struct traits<Windows::UI::Input::RadialControllerConfiguration> { using default_interface = Windows::UI::Input::IRadialControllerConfiguration; };
 template <> struct traits<Windows::UI::Input::RadialControllerControlAcquiredEventArgs> { using default_interface = Windows::UI::Input::IRadialControllerControlAcquiredEventArgs; };
 template <> struct traits<Windows::UI::Input::RadialControllerMenu> { using default_interface = Windows::UI::Input::IRadialControllerMenu; };
@@ -426,6 +507,7 @@ template <> struct traits<Windows::UI::Input::RadialControllerMenuItem> { using 
 template <> struct traits<Windows::UI::Input::RadialControllerRotationChangedEventArgs> { using default_interface = Windows::UI::Input::IRadialControllerRotationChangedEventArgs; };
 template <> struct traits<Windows::UI::Input::RadialControllerScreenContact> { using default_interface = Windows::UI::Input::IRadialControllerScreenContact; };
 template <> struct traits<Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs> { using default_interface = Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs; };
+template <> struct traits<Windows::UI::Input::RadialControllerScreenContactEndedEventArgs> { using default_interface = Windows::UI::Input::IRadialControllerScreenContactEndedEventArgs; };
 template <> struct traits<Windows::UI::Input::RadialControllerScreenContactStartedEventArgs> { using default_interface = Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs; };
 template <> struct traits<Windows::UI::Input::RightTappedEventArgs> { using default_interface = Windows::UI::Input::IRightTappedEventArgs; };
 template <> struct traits<Windows::UI::Input::TappedEventArgs> { using default_interface = Windows::UI::Input::ITappedEventArgs; };
@@ -758,9 +840,53 @@ struct WINRT_EBO impl_IRadialController
 };
 
 template <typename D>
+struct WINRT_EBO impl_IRadialController2
+{
+    event_token ButtonPressed(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> & handler) const;
+    using ButtonPressed_revoker = event_revoker<IRadialController2>;
+    ButtonPressed_revoker ButtonPressed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> & handler) const;
+    void ButtonPressed(event_token token) const;
+    event_token ButtonHolding(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> & handler) const;
+    using ButtonHolding_revoker = event_revoker<IRadialController2>;
+    ButtonHolding_revoker ButtonHolding(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> & handler) const;
+    void ButtonHolding(event_token token) const;
+    event_token ButtonReleased(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> & handler) const;
+    using ButtonReleased_revoker = event_revoker<IRadialController2>;
+    ButtonReleased_revoker ButtonReleased(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> & handler) const;
+    void ButtonReleased(event_token token) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IRadialControllerButtonClickedEventArgs
 {
     Windows::UI::Input::RadialControllerScreenContact Contact() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadialControllerButtonClickedEventArgs2
+{
+    Windows::Devices::Haptics::SimpleHapticsController SimpleHapticsController() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadialControllerButtonHoldingEventArgs
+{
+    Windows::UI::Input::RadialControllerScreenContact Contact() const;
+    Windows::Devices::Haptics::SimpleHapticsController SimpleHapticsController() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadialControllerButtonPressedEventArgs
+{
+    Windows::UI::Input::RadialControllerScreenContact Contact() const;
+    Windows::Devices::Haptics::SimpleHapticsController SimpleHapticsController() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadialControllerButtonReleasedEventArgs
+{
+    Windows::UI::Input::RadialControllerScreenContact Contact() const;
+    Windows::Devices::Haptics::SimpleHapticsController SimpleHapticsController() const;
 };
 
 template <typename D>
@@ -769,6 +895,15 @@ struct WINRT_EBO impl_IRadialControllerConfiguration
     void SetDefaultMenuItems(iterable<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> buttons) const;
     void ResetToDefaultMenuItems() const;
     bool TrySelectDefaultMenuItem(Windows::UI::Input::RadialControllerSystemMenuItemKind type) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadialControllerConfiguration2
+{
+    void ActiveControllerWhenMenuIsSuppressed(const Windows::UI::Input::RadialController & value) const;
+    Windows::UI::Input::RadialController ActiveControllerWhenMenuIsSuppressed() const;
+    void IsMenuSuppressed(bool value) const;
+    bool IsMenuSuppressed() const;
 };
 
 template <typename D>
@@ -781,6 +916,13 @@ template <typename D>
 struct WINRT_EBO impl_IRadialControllerControlAcquiredEventArgs
 {
     Windows::UI::Input::RadialControllerScreenContact Contact() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadialControllerControlAcquiredEventArgs2
+{
+    bool IsButtonPressed() const;
+    Windows::Devices::Haptics::SimpleHapticsController SimpleHapticsController() const;
 };
 
 template <typename D>
@@ -814,10 +956,24 @@ struct WINRT_EBO impl_IRadialControllerMenuItemStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_IRadialControllerMenuItemStatics2
+{
+    Windows::UI::Input::RadialControllerMenuItem CreateFromFontGlyph(hstring_view displayText, hstring_view glyph, hstring_view fontFamily) const;
+    Windows::UI::Input::RadialControllerMenuItem CreateFromFontGlyph(hstring_view displayText, hstring_view glyph, hstring_view fontFamily, const Windows::Foundation::Uri & fontUri) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IRadialControllerRotationChangedEventArgs
 {
     double RotationDeltaInDegrees() const;
     Windows::UI::Input::RadialControllerScreenContact Contact() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadialControllerRotationChangedEventArgs2
+{
+    bool IsButtonPressed() const;
+    Windows::Devices::Haptics::SimpleHapticsController SimpleHapticsController() const;
 };
 
 template <typename D>
@@ -834,9 +990,30 @@ struct WINRT_EBO impl_IRadialControllerScreenContactContinuedEventArgs
 };
 
 template <typename D>
+struct WINRT_EBO impl_IRadialControllerScreenContactContinuedEventArgs2
+{
+    bool IsButtonPressed() const;
+    Windows::Devices::Haptics::SimpleHapticsController SimpleHapticsController() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadialControllerScreenContactEndedEventArgs
+{
+    bool IsButtonPressed() const;
+    Windows::Devices::Haptics::SimpleHapticsController SimpleHapticsController() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IRadialControllerScreenContactStartedEventArgs
 {
     Windows::UI::Input::RadialControllerScreenContact Contact() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadialControllerScreenContactStartedEventArgs2
+{
+    bool IsButtonPressed() const;
+    Windows::Devices::Haptics::SimpleHapticsController SimpleHapticsController() const;
 };
 
 template <typename D>
@@ -997,16 +1174,52 @@ template <> struct traits<Windows::UI::Input::IRadialController>
     template <typename D> using consume = Windows::UI::Input::impl_IRadialController<D>;
 };
 
+template <> struct traits<Windows::UI::Input::IRadialController2>
+{
+    using abi = ABI::Windows::UI::Input::IRadialController2;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialController2<D>;
+};
+
 template <> struct traits<Windows::UI::Input::IRadialControllerButtonClickedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::IRadialControllerButtonClickedEventArgs;
     template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerButtonClickedEventArgs<D>;
 };
 
+template <> struct traits<Windows::UI::Input::IRadialControllerButtonClickedEventArgs2>
+{
+    using abi = ABI::Windows::UI::Input::IRadialControllerButtonClickedEventArgs2;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerButtonClickedEventArgs2<D>;
+};
+
+template <> struct traits<Windows::UI::Input::IRadialControllerButtonHoldingEventArgs>
+{
+    using abi = ABI::Windows::UI::Input::IRadialControllerButtonHoldingEventArgs;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerButtonHoldingEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Input::IRadialControllerButtonPressedEventArgs>
+{
+    using abi = ABI::Windows::UI::Input::IRadialControllerButtonPressedEventArgs;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerButtonPressedEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Input::IRadialControllerButtonReleasedEventArgs>
+{
+    using abi = ABI::Windows::UI::Input::IRadialControllerButtonReleasedEventArgs;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerButtonReleasedEventArgs<D>;
+};
+
 template <> struct traits<Windows::UI::Input::IRadialControllerConfiguration>
 {
     using abi = ABI::Windows::UI::Input::IRadialControllerConfiguration;
     template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerConfiguration<D>;
+};
+
+template <> struct traits<Windows::UI::Input::IRadialControllerConfiguration2>
+{
+    using abi = ABI::Windows::UI::Input::IRadialControllerConfiguration2;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerConfiguration2<D>;
 };
 
 template <> struct traits<Windows::UI::Input::IRadialControllerConfigurationStatics>
@@ -1019,6 +1232,12 @@ template <> struct traits<Windows::UI::Input::IRadialControllerControlAcquiredEv
 {
     using abi = ABI::Windows::UI::Input::IRadialControllerControlAcquiredEventArgs;
     template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerControlAcquiredEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Input::IRadialControllerControlAcquiredEventArgs2>
+{
+    using abi = ABI::Windows::UI::Input::IRadialControllerControlAcquiredEventArgs2;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerControlAcquiredEventArgs2<D>;
 };
 
 template <> struct traits<Windows::UI::Input::IRadialControllerMenu>
@@ -1039,10 +1258,22 @@ template <> struct traits<Windows::UI::Input::IRadialControllerMenuItemStatics>
     template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerMenuItemStatics<D>;
 };
 
+template <> struct traits<Windows::UI::Input::IRadialControllerMenuItemStatics2>
+{
+    using abi = ABI::Windows::UI::Input::IRadialControllerMenuItemStatics2;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerMenuItemStatics2<D>;
+};
+
 template <> struct traits<Windows::UI::Input::IRadialControllerRotationChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::IRadialControllerRotationChangedEventArgs;
     template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerRotationChangedEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Input::IRadialControllerRotationChangedEventArgs2>
+{
+    using abi = ABI::Windows::UI::Input::IRadialControllerRotationChangedEventArgs2;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerRotationChangedEventArgs2<D>;
 };
 
 template <> struct traits<Windows::UI::Input::IRadialControllerScreenContact>
@@ -1057,10 +1288,28 @@ template <> struct traits<Windows::UI::Input::IRadialControllerScreenContactCont
     template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerScreenContactContinuedEventArgs<D>;
 };
 
+template <> struct traits<Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs2>
+{
+    using abi = ABI::Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs2;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerScreenContactContinuedEventArgs2<D>;
+};
+
+template <> struct traits<Windows::UI::Input::IRadialControllerScreenContactEndedEventArgs>
+{
+    using abi = ABI::Windows::UI::Input::IRadialControllerScreenContactEndedEventArgs;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerScreenContactEndedEventArgs<D>;
+};
+
 template <> struct traits<Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs;
     template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerScreenContactStartedEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs2>
+{
+    using abi = ABI::Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs2;
+    template <typename D> using consume = Windows::UI::Input::impl_IRadialControllerScreenContactStartedEventArgs2<D>;
 };
 
 template <> struct traits<Windows::UI::Input::IRadialControllerStatics>
@@ -1183,6 +1432,24 @@ template <> struct traits<Windows::UI::Input::RadialControllerButtonClickedEvent
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerButtonClickedEventArgs"; }
 };
 
+template <> struct traits<Windows::UI::Input::RadialControllerButtonHoldingEventArgs>
+{
+    using abi = ABI::Windows::UI::Input::RadialControllerButtonHoldingEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerButtonHoldingEventArgs"; }
+};
+
+template <> struct traits<Windows::UI::Input::RadialControllerButtonPressedEventArgs>
+{
+    using abi = ABI::Windows::UI::Input::RadialControllerButtonPressedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerButtonPressedEventArgs"; }
+};
+
+template <> struct traits<Windows::UI::Input::RadialControllerButtonReleasedEventArgs>
+{
+    using abi = ABI::Windows::UI::Input::RadialControllerButtonReleasedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerButtonReleasedEventArgs"; }
+};
+
 template <> struct traits<Windows::UI::Input::RadialControllerConfiguration>
 {
     using abi = ABI::Windows::UI::Input::RadialControllerConfiguration;
@@ -1223,6 +1490,12 @@ template <> struct traits<Windows::UI::Input::RadialControllerScreenContactConti
 {
     using abi = ABI::Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs"; }
+};
+
+template <> struct traits<Windows::UI::Input::RadialControllerScreenContactEndedEventArgs>
+{
+    using abi = ABI::Windows::UI::Input::RadialControllerScreenContactEndedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.RadialControllerScreenContactEndedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::RadialControllerScreenContactStartedEventArgs>

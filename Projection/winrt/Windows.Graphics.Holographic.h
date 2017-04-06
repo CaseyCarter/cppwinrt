@@ -13,6 +13,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Perception.3.h"
 #include "internal/Windows.Graphics.Holographic.3.h"
+#include "Windows.Graphics.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -115,6 +116,55 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCamera> : produce_
         }
         catch (...)
         {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Graphics::Holographic::IHolographicCamera2> : produce_base<D, Windows::Graphics::Holographic::IHolographicCamera2>
+{
+    HRESULT __stdcall get_LeftViewportParameters(impl::abi_arg_out<Windows::Graphics::Holographic::IHolographicCameraViewportParameters> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().LeftViewportParameters());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_RightViewportParameters(impl::abi_arg_out<Windows::Graphics::Holographic::IHolographicCameraViewportParameters> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().RightViewportParameters());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Display(impl::abi_arg_out<Windows::Graphics::Holographic::IHolographicDisplay> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().Display());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
             return impl::to_hresult();
         }
     }
@@ -311,6 +361,197 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicCameraRenderingPar
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Graphics::Holographic::IHolographicCameraRenderingParameters2> : produce_base<D, Windows::Graphics::Holographic::IHolographicCameraRenderingParameters2>
+{
+    HRESULT __stdcall get_ReprojectionMode(Windows::Graphics::Holographic::HolographicReprojectionMode * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ReprojectionMode());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_ReprojectionMode(Windows::Graphics::Holographic::HolographicReprojectionMode value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ReprojectionMode(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CommitDirect3D11DepthBuffer(impl::abi_arg_in<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CommitDirect3D11DepthBuffer(*reinterpret_cast<const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Graphics::Holographic::IHolographicCameraViewportParameters> : produce_base<D, Windows::Graphics::Holographic::IHolographicCameraViewportParameters>
+{
+    HRESULT __stdcall get_HiddenAreaMesh(uint32_t * __valueSize, impl::abi_arg_out<Windows::Foundation::Numerics::float2> * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().HiddenAreaMesh());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *__valueSize = 0;
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VisibleAreaMesh(uint32_t * __valueSize, impl::abi_arg_out<Windows::Foundation::Numerics::float2> * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().VisibleAreaMesh());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *__valueSize = 0;
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Graphics::Holographic::IHolographicDisplay> : produce_base<D, Windows::Graphics::Holographic::IHolographicDisplay>
+{
+    HRESULT __stdcall get_DisplayName(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DisplayName());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_MaxViewportSize(impl::abi_arg_out<Windows::Foundation::Size> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MaxViewportSize());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsStereo(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsStereo());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsOpaque(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsOpaque());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AdapterId(impl::abi_arg_out<Windows::Graphics::Holographic::HolographicAdapterId> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AdapterId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SpatialLocator(impl::abi_arg_out<Windows::Perception::Spatial::ISpatialLocator> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SpatialLocator());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Graphics::Holographic::IHolographicDisplayStatics> : produce_base<D, Windows::Graphics::Holographic::IHolographicDisplayStatics>
+{
+    HRESULT __stdcall abi_GetDefault(impl::abi_arg_out<Windows::Graphics::Holographic::IHolographicDisplay> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetDefault());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
             return impl::to_hresult();
         }
     }
@@ -659,6 +900,66 @@ struct produce<D, Windows::Graphics::Holographic::IHolographicSpaceStatics> : pr
     }
 };
 
+template <typename D>
+struct produce<D, Windows::Graphics::Holographic::IHolographicSpaceStatics2> : produce_base<D, Windows::Graphics::Holographic::IHolographicSpaceStatics2>
+{
+    HRESULT __stdcall get_IsSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsAvailable(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsAvailable());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_IsAvailableChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().IsAvailableChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_IsAvailableChanged(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsAvailableChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
 }
 
 namespace Windows::Graphics::Holographic {
@@ -785,6 +1086,37 @@ template <typename D> Windows::Graphics::Holographic::HolographicSpace impl_IHol
     Windows::Graphics::Holographic::HolographicSpace value { nullptr };
     check_hresult(WINRT_SHIM(IHolographicSpaceStatics)->abi_CreateForCoreWindow(get_abi(window), put_abi(value)));
     return value;
+}
+
+template <typename D> bool impl_IHolographicSpaceStatics2<D>::IsSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IHolographicSpaceStatics2)->get_IsSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_IHolographicSpaceStatics2<D>::IsAvailable() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IHolographicSpaceStatics2)->get_IsAvailable(&value));
+    return value;
+}
+
+template <typename D> event_token impl_IHolographicSpaceStatics2<D>::IsAvailableChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IHolographicSpaceStatics2)->add_IsAvailableChanged(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IHolographicSpaceStatics2> impl_IHolographicSpaceStatics2<D>::IsAvailableChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, IHolographicSpaceStatics2>(this, &ABI::Windows::Graphics::Holographic::IHolographicSpaceStatics2::remove_IsAvailableChanged, IsAvailableChanged(handler));
+}
+
+template <typename D> void impl_IHolographicSpaceStatics2<D>::IsAvailableChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IHolographicSpaceStatics2)->remove_IsAvailableChanged(token));
 }
 
 template <typename D> Windows::Graphics::Holographic::HolographicCamera impl_IHolographicCameraPose<D>::HolographicCamera() const
@@ -945,9 +1277,141 @@ template <typename D> void impl_IHolographicFrame<D>::WaitForFrameToFinish() con
     check_hresult(WINRT_SHIM(IHolographicFrame)->abi_WaitForFrameToFinish());
 }
 
+template <typename D> Windows::Graphics::Holographic::HolographicReprojectionMode impl_IHolographicCameraRenderingParameters2<D>::ReprojectionMode() const
+{
+    Windows::Graphics::Holographic::HolographicReprojectionMode value {};
+    check_hresult(WINRT_SHIM(IHolographicCameraRenderingParameters2)->get_ReprojectionMode(&value));
+    return value;
+}
+
+template <typename D> void impl_IHolographicCameraRenderingParameters2<D>::ReprojectionMode(Windows::Graphics::Holographic::HolographicReprojectionMode value) const
+{
+    check_hresult(WINRT_SHIM(IHolographicCameraRenderingParameters2)->put_ReprojectionMode(value));
+}
+
+template <typename D> void impl_IHolographicCameraRenderingParameters2<D>::CommitDirect3D11DepthBuffer(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & value) const
+{
+    check_hresult(WINRT_SHIM(IHolographicCameraRenderingParameters2)->abi_CommitDirect3D11DepthBuffer(get_abi(value)));
+}
+
+template <typename D> com_array<Windows::Foundation::Numerics::float2> impl_IHolographicCameraViewportParameters<D>::HiddenAreaMesh() const
+{
+    com_array<Windows::Foundation::Numerics::float2> value {};
+    check_hresult(WINRT_SHIM(IHolographicCameraViewportParameters)->get_HiddenAreaMesh(impl::put_size_abi(value), put_abi(value)));
+    return value;
+}
+
+template <typename D> com_array<Windows::Foundation::Numerics::float2> impl_IHolographicCameraViewportParameters<D>::VisibleAreaMesh() const
+{
+    com_array<Windows::Foundation::Numerics::float2> value {};
+    check_hresult(WINRT_SHIM(IHolographicCameraViewportParameters)->get_VisibleAreaMesh(impl::put_size_abi(value), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Graphics::Holographic::HolographicCameraViewportParameters impl_IHolographicCamera2<D>::LeftViewportParameters() const
+{
+    Windows::Graphics::Holographic::HolographicCameraViewportParameters result { nullptr };
+    check_hresult(WINRT_SHIM(IHolographicCamera2)->get_LeftViewportParameters(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Graphics::Holographic::HolographicCameraViewportParameters impl_IHolographicCamera2<D>::RightViewportParameters() const
+{
+    Windows::Graphics::Holographic::HolographicCameraViewportParameters result { nullptr };
+    check_hresult(WINRT_SHIM(IHolographicCamera2)->get_RightViewportParameters(put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Graphics::Holographic::HolographicDisplay impl_IHolographicCamera2<D>::Display() const
+{
+    Windows::Graphics::Holographic::HolographicDisplay result { nullptr };
+    check_hresult(WINRT_SHIM(IHolographicCamera2)->get_Display(put_abi(result)));
+    return result;
+}
+
+template <typename D> hstring impl_IHolographicDisplay<D>::DisplayName() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IHolographicDisplay)->get_DisplayName(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Size impl_IHolographicDisplay<D>::MaxViewportSize() const
+{
+    Windows::Foundation::Size value {};
+    check_hresult(WINRT_SHIM(IHolographicDisplay)->get_MaxViewportSize(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IHolographicDisplay<D>::IsStereo() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IHolographicDisplay)->get_IsStereo(&value));
+    return value;
+}
+
+template <typename D> bool impl_IHolographicDisplay<D>::IsOpaque() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IHolographicDisplay)->get_IsOpaque(&value));
+    return value;
+}
+
+template <typename D> Windows::Graphics::Holographic::HolographicAdapterId impl_IHolographicDisplay<D>::AdapterId() const
+{
+    Windows::Graphics::Holographic::HolographicAdapterId value {};
+    check_hresult(WINRT_SHIM(IHolographicDisplay)->get_AdapterId(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialLocator impl_IHolographicDisplay<D>::SpatialLocator() const
+{
+    Windows::Perception::Spatial::SpatialLocator value { nullptr };
+    check_hresult(WINRT_SHIM(IHolographicDisplay)->get_SpatialLocator(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Graphics::Holographic::HolographicDisplay impl_IHolographicDisplayStatics<D>::GetDefault() const
+{
+    Windows::Graphics::Holographic::HolographicDisplay result { nullptr };
+    check_hresult(WINRT_SHIM(IHolographicDisplayStatics)->abi_GetDefault(put_abi(result)));
+    return result;
+}
+
+inline Windows::Graphics::Holographic::HolographicDisplay HolographicDisplay::GetDefault()
+{
+    return get_activation_factory<HolographicDisplay, IHolographicDisplayStatics>().GetDefault();
+}
+
 inline Windows::Graphics::Holographic::HolographicSpace HolographicSpace::CreateForCoreWindow(const Windows::UI::Core::CoreWindow & window)
 {
     return get_activation_factory<HolographicSpace, IHolographicSpaceStatics>().CreateForCoreWindow(window);
+}
+
+inline bool HolographicSpace::IsSupported()
+{
+    return get_activation_factory<HolographicSpace, IHolographicSpaceStatics2>().IsSupported();
+}
+
+inline bool HolographicSpace::IsAvailable()
+{
+    return get_activation_factory<HolographicSpace, IHolographicSpaceStatics2>().IsAvailable();
+}
+
+inline event_token HolographicSpace::IsAvailableChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
+{
+    return get_activation_factory<HolographicSpace, IHolographicSpaceStatics2>().IsAvailableChanged(handler);
+}
+
+inline factory_event_revoker<IHolographicSpaceStatics2> HolographicSpace::IsAvailableChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
+{
+    auto factory = get_activation_factory<HolographicSpace, IHolographicSpaceStatics2>();
+    return { factory, &ABI::Windows::Graphics::Holographic::IHolographicSpaceStatics2::remove_IsAvailableChanged, factory.IsAvailableChanged(handler) };
+}
+
+inline void HolographicSpace::IsAvailableChanged(event_token token)
+{
+    get_activation_factory<HolographicSpace, IHolographicSpaceStatics2>().IsAvailableChanged(token);
 }
 
 }
@@ -958,6 +1422,15 @@ template<>
 struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicCamera>
 {
     size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicCamera & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicCamera2>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicCamera2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -976,6 +1449,42 @@ template<>
 struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicCameraRenderingParameters>
 {
     size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicCameraRenderingParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicCameraRenderingParameters2>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicCameraRenderingParameters2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicCameraViewportParameters>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicCameraViewportParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicDisplay>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicDisplay & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicDisplayStatics>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicDisplayStatics & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -1036,6 +1545,15 @@ struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicSpaceStatics
 };
 
 template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::IHolographicSpaceStatics2>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::IHolographicSpaceStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Graphics::Holographic::HolographicCamera>
 {
     size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicCamera & value) const noexcept
@@ -1057,6 +1575,24 @@ template<>
 struct std::hash<winrt::Windows::Graphics::Holographic::HolographicCameraRenderingParameters>
 {
     size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicCameraRenderingParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::HolographicCameraViewportParameters>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicCameraViewportParameters & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Graphics::Holographic::HolographicDisplay>
+{
+    size_t operator()(const winrt::Windows::Graphics::Holographic::HolographicDisplay & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

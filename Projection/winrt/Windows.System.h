@@ -8,6 +8,7 @@ WINRT_WARNING_PUSH
 
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.ApplicationModel.3.h"
 #include "internal/Windows.UI.Popups.3.h"
 #include "internal/Windows.Storage.Search.3.h"
 #include "internal/Windows.UI.ViewManagement.3.h"
@@ -18,6 +19,44 @@ WINRT_WARNING_PUSH
 WINRT_EXPORT namespace winrt {
 
 namespace impl {
+
+template <typename D>
+struct produce<D, Windows::System::IAppDiagnosticInfo> : produce_base<D, Windows::System::IAppDiagnosticInfo>
+{
+    HRESULT __stdcall get_AppInfo(impl::abi_arg_out<Windows::ApplicationModel::IAppInfo> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AppInfo());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::System::IAppDiagnosticInfoStatics> : produce_base<D, Windows::System::IAppDiagnosticInfoStatics>
+{
+    HRESULT __stdcall abi_RequestInfoAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::System::AppDiagnosticInfo>>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().RequestInfoAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
 
 template <typename D>
 struct produce<D, Windows::System::IAppMemoryReport> : produce_base<D, Windows::System::IAppMemoryReport>
@@ -578,6 +617,38 @@ struct produce<D, Windows::System::ILauncherOptions3> : produce_base<D, Windows:
         {
             typename D::abi_guard guard(this->shim());
             this->shim().IgnoreAppUriHandlers(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::System::ILauncherOptions4> : produce_base<D, Windows::System::ILauncherOptions4>
+{
+    HRESULT __stdcall get_LimitPickerToCurrentAppAndAppUriHandlers(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().LimitPickerToCurrentAppAndAppUriHandlers());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_LimitPickerToCurrentAppAndAppUriHandlers(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().LimitPickerToCurrentAppAndAppUriHandlers(value);
             return S_OK;
         }
         catch (...)
@@ -2120,160 +2191,6 @@ struct produce<D, Windows::System::IUserWatcher> : produce_base<D, Windows::Syst
 
 namespace Windows::System {
 
-template <typename D> uint64_t impl_IAppMemoryReport<D>::PrivateCommitUsage() const
-{
-    uint64_t value {};
-    check_hresult(WINRT_SHIM(IAppMemoryReport)->get_PrivateCommitUsage(&value));
-    return value;
-}
-
-template <typename D> uint64_t impl_IAppMemoryReport<D>::PeakPrivateCommitUsage() const
-{
-    uint64_t value {};
-    check_hresult(WINRT_SHIM(IAppMemoryReport)->get_PeakPrivateCommitUsage(&value));
-    return value;
-}
-
-template <typename D> uint64_t impl_IAppMemoryReport<D>::TotalCommitUsage() const
-{
-    uint64_t value {};
-    check_hresult(WINRT_SHIM(IAppMemoryReport)->get_TotalCommitUsage(&value));
-    return value;
-}
-
-template <typename D> uint64_t impl_IAppMemoryReport<D>::TotalCommitLimit() const
-{
-    uint64_t value {};
-    check_hresult(WINRT_SHIM(IAppMemoryReport)->get_TotalCommitLimit(&value));
-    return value;
-}
-
-template <typename D> uint64_t impl_IProcessMemoryReport<D>::PrivateWorkingSetUsage() const
-{
-    uint64_t value {};
-    check_hresult(WINRT_SHIM(IProcessMemoryReport)->get_PrivateWorkingSetUsage(&value));
-    return value;
-}
-
-template <typename D> uint64_t impl_IProcessMemoryReport<D>::TotalWorkingSetUsage() const
-{
-    uint64_t value {};
-    check_hresult(WINRT_SHIM(IProcessMemoryReport)->get_TotalWorkingSetUsage(&value));
-    return value;
-}
-
-template <typename D> uint64_t impl_IAppMemoryUsageLimitChangingEventArgs<D>::OldLimit() const
-{
-    uint64_t value {};
-    check_hresult(WINRT_SHIM(IAppMemoryUsageLimitChangingEventArgs)->get_OldLimit(&value));
-    return value;
-}
-
-template <typename D> uint64_t impl_IAppMemoryUsageLimitChangingEventArgs<D>::NewLimit() const
-{
-    uint64_t value {};
-    check_hresult(WINRT_SHIM(IAppMemoryUsageLimitChangingEventArgs)->get_NewLimit(&value));
-    return value;
-}
-
-template <typename D> uint64_t impl_IMemoryManagerStatics<D>::AppMemoryUsage() const
-{
-    uint64_t value {};
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->get_AppMemoryUsage(&value));
-    return value;
-}
-
-template <typename D> uint64_t impl_IMemoryManagerStatics<D>::AppMemoryUsageLimit() const
-{
-    uint64_t value {};
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->get_AppMemoryUsageLimit(&value));
-    return value;
-}
-
-template <typename D> Windows::System::AppMemoryUsageLevel impl_IMemoryManagerStatics<D>::AppMemoryUsageLevel() const
-{
-    Windows::System::AppMemoryUsageLevel value {};
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->get_AppMemoryUsageLevel(&value));
-    return value;
-}
-
-template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->add_AppMemoryUsageIncreased(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
-{
-    return impl::make_event_revoker<D, IMemoryManagerStatics>(this, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageIncreased, AppMemoryUsageIncreased(handler));
-}
-
-template <typename D> void impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->remove_AppMemoryUsageIncreased(token));
-}
-
-template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->add_AppMemoryUsageDecreased(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
-{
-    return impl::make_event_revoker<D, IMemoryManagerStatics>(this, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageDecreased, AppMemoryUsageDecreased(handler));
-}
-
-template <typename D> void impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->remove_AppMemoryUsageDecreased(token));
-}
-
-template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageLimitChanging(const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->add_AppMemoryUsageLimitChanging(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerStatics<D>::AppMemoryUsageLimitChanging(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, IMemoryManagerStatics>(this, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageLimitChanging, AppMemoryUsageLimitChanging(handler));
-}
-
-template <typename D> void impl_IMemoryManagerStatics<D>::AppMemoryUsageLimitChanging(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->remove_AppMemoryUsageLimitChanging(token));
-}
-
-template <typename D> Windows::System::AppMemoryReport impl_IMemoryManagerStatics2<D>::GetAppMemoryReport() const
-{
-    Windows::System::AppMemoryReport memoryReport { nullptr };
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics2)->abi_GetAppMemoryReport(put_abi(memoryReport)));
-    return memoryReport;
-}
-
-template <typename D> Windows::System::ProcessMemoryReport impl_IMemoryManagerStatics2<D>::GetProcessMemoryReport() const
-{
-    Windows::System::ProcessMemoryReport memoryReport { nullptr };
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics2)->abi_GetProcessMemoryReport(put_abi(memoryReport)));
-    return memoryReport;
-}
-
-template <typename D> bool impl_IMemoryManagerStatics3<D>::TrySetAppMemoryUsageLimit(uint64_t value) const
-{
-    bool result {};
-    check_hresult(WINRT_SHIM(IMemoryManagerStatics3)->abi_TrySetAppMemoryUsageLimit(value, &result));
-    return result;
-}
-
-template <typename D> void impl_IProtocolForResultsOperation<D>::ReportCompleted(const Windows::Foundation::Collections::ValueSet & data) const
-{
-    check_hresult(WINRT_SHIM(IProtocolForResultsOperation)->abi_ReportCompleted(get_abi(data)));
-}
-
 template <typename D> hstring impl_IUser<D>::NonRoamableId() const
 {
     hstring value;
@@ -2673,6 +2590,174 @@ template <typename D> void impl_IUserDeviceAssociationStatics<D>::UserDeviceAsso
     check_hresult(WINRT_SHIM(IUserDeviceAssociationStatics)->remove_UserDeviceAssociationChanged(token));
 }
 
+template <typename D> uint64_t impl_IAppMemoryReport<D>::PrivateCommitUsage() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IAppMemoryReport)->get_PrivateCommitUsage(&value));
+    return value;
+}
+
+template <typename D> uint64_t impl_IAppMemoryReport<D>::PeakPrivateCommitUsage() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IAppMemoryReport)->get_PeakPrivateCommitUsage(&value));
+    return value;
+}
+
+template <typename D> uint64_t impl_IAppMemoryReport<D>::TotalCommitUsage() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IAppMemoryReport)->get_TotalCommitUsage(&value));
+    return value;
+}
+
+template <typename D> uint64_t impl_IAppMemoryReport<D>::TotalCommitLimit() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IAppMemoryReport)->get_TotalCommitLimit(&value));
+    return value;
+}
+
+template <typename D> uint64_t impl_IProcessMemoryReport<D>::PrivateWorkingSetUsage() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IProcessMemoryReport)->get_PrivateWorkingSetUsage(&value));
+    return value;
+}
+
+template <typename D> uint64_t impl_IProcessMemoryReport<D>::TotalWorkingSetUsage() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IProcessMemoryReport)->get_TotalWorkingSetUsage(&value));
+    return value;
+}
+
+template <typename D> uint64_t impl_IAppMemoryUsageLimitChangingEventArgs<D>::OldLimit() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IAppMemoryUsageLimitChangingEventArgs)->get_OldLimit(&value));
+    return value;
+}
+
+template <typename D> uint64_t impl_IAppMemoryUsageLimitChangingEventArgs<D>::NewLimit() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IAppMemoryUsageLimitChangingEventArgs)->get_NewLimit(&value));
+    return value;
+}
+
+template <typename D> uint64_t impl_IMemoryManagerStatics<D>::AppMemoryUsage() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->get_AppMemoryUsage(&value));
+    return value;
+}
+
+template <typename D> uint64_t impl_IMemoryManagerStatics<D>::AppMemoryUsageLimit() const
+{
+    uint64_t value {};
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->get_AppMemoryUsageLimit(&value));
+    return value;
+}
+
+template <typename D> Windows::System::AppMemoryUsageLevel impl_IMemoryManagerStatics<D>::AppMemoryUsageLevel() const
+{
+    Windows::System::AppMemoryUsageLevel value {};
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->get_AppMemoryUsageLevel(&value));
+    return value;
+}
+
+template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->add_AppMemoryUsageIncreased(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, IMemoryManagerStatics>(this, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageIncreased, AppMemoryUsageIncreased(handler));
+}
+
+template <typename D> void impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->remove_AppMemoryUsageIncreased(token));
+}
+
+template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->add_AppMemoryUsageDecreased(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, IMemoryManagerStatics>(this, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageDecreased, AppMemoryUsageDecreased(handler));
+}
+
+template <typename D> void impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->remove_AppMemoryUsageDecreased(token));
+}
+
+template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageLimitChanging(const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->add_AppMemoryUsageLimitChanging(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerStatics<D>::AppMemoryUsageLimitChanging(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IMemoryManagerStatics>(this, &ABI::Windows::System::IMemoryManagerStatics::remove_AppMemoryUsageLimitChanging, AppMemoryUsageLimitChanging(handler));
+}
+
+template <typename D> void impl_IMemoryManagerStatics<D>::AppMemoryUsageLimitChanging(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics)->remove_AppMemoryUsageLimitChanging(token));
+}
+
+template <typename D> Windows::System::AppMemoryReport impl_IMemoryManagerStatics2<D>::GetAppMemoryReport() const
+{
+    Windows::System::AppMemoryReport memoryReport { nullptr };
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics2)->abi_GetAppMemoryReport(put_abi(memoryReport)));
+    return memoryReport;
+}
+
+template <typename D> Windows::System::ProcessMemoryReport impl_IMemoryManagerStatics2<D>::GetProcessMemoryReport() const
+{
+    Windows::System::ProcessMemoryReport memoryReport { nullptr };
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics2)->abi_GetProcessMemoryReport(put_abi(memoryReport)));
+    return memoryReport;
+}
+
+template <typename D> bool impl_IMemoryManagerStatics3<D>::TrySetAppMemoryUsageLimit(uint64_t value) const
+{
+    bool result {};
+    check_hresult(WINRT_SHIM(IMemoryManagerStatics3)->abi_TrySetAppMemoryUsageLimit(value, &result));
+    return result;
+}
+
+template <typename D> void impl_IProtocolForResultsOperation<D>::ReportCompleted(const Windows::Foundation::Collections::ValueSet & data) const
+{
+    check_hresult(WINRT_SHIM(IProtocolForResultsOperation)->abi_ReportCompleted(get_abi(data)));
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::System::AppDiagnosticInfo>> impl_IAppDiagnosticInfoStatics<D>::RequestInfoAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::System::AppDiagnosticInfo>> operation;
+    check_hresult(WINRT_SHIM(IAppDiagnosticInfoStatics)->abi_RequestInfoAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::ApplicationModel::AppInfo impl_IAppDiagnosticInfo<D>::AppInfo() const
+{
+    Windows::ApplicationModel::AppInfo value { nullptr };
+    check_hresult(WINRT_SHIM(IAppDiagnosticInfo)->get_AppInfo(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::System::LaunchUriStatus impl_ILaunchUriResult<D>::Status() const
 {
     Windows::System::LaunchUriStatus value {};
@@ -2836,6 +2921,18 @@ template <typename D> bool impl_ILauncherOptions3<D>::IgnoreAppUriHandlers() con
 template <typename D> void impl_ILauncherOptions3<D>::IgnoreAppUriHandlers(bool value) const
 {
     check_hresult(WINRT_SHIM(ILauncherOptions3)->put_IgnoreAppUriHandlers(value));
+}
+
+template <typename D> bool impl_ILauncherOptions4<D>::LimitPickerToCurrentAppAndAppUriHandlers() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILauncherOptions4)->get_LimitPickerToCurrentAppAndAppUriHandlers(&value));
+    return value;
+}
+
+template <typename D> void impl_ILauncherOptions4<D>::LimitPickerToCurrentAppAndAppUriHandlers(bool value) const
+{
+    check_hresult(WINRT_SHIM(ILauncherOptions4)->put_LimitPickerToCurrentAppAndAppUriHandlers(value));
 }
 
 template <typename D> Windows::UI::ViewManagement::ViewSizePreference impl_ILauncherViewOptions<D>::DesiredRemainingView() const
@@ -3063,6 +3160,11 @@ template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Syste
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> operation;
     check_hresult(WINRT_SHIM(IRemoteLauncherStatics)->abi_LaunchUriWithDataAsync(get_abi(remoteSystemConnectionRequest), get_abi(uri), get_abi(options), get_abi(inputData), put_abi(operation)));
     return operation;
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::System::AppDiagnosticInfo>> AppDiagnosticInfo::RequestInfoAsync()
+{
+    return get_activation_factory<AppDiagnosticInfo, IAppDiagnosticInfoStatics>().RequestInfoAsync();
 }
 
 inline FolderLauncherOptions::FolderLauncherOptions() :
@@ -3395,6 +3497,24 @@ inline bool UserPicker::IsSupported()
 }
 
 template<>
+struct std::hash<winrt::Windows::System::IAppDiagnosticInfo>
+{
+    size_t operator()(const winrt::Windows::System::IAppDiagnosticInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::IAppDiagnosticInfoStatics>
+{
+    size_t operator()(const winrt::Windows::System::IAppDiagnosticInfoStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::System::IAppMemoryReport>
 {
     size_t operator()(const winrt::Windows::System::IAppMemoryReport & value) const noexcept
@@ -3461,6 +3581,15 @@ template<>
 struct std::hash<winrt::Windows::System::ILauncherOptions3>
 {
     size_t operator()(const winrt::Windows::System::ILauncherOptions3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::ILauncherOptions4>
+{
+    size_t operator()(const winrt::Windows::System::ILauncherOptions4 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3668,6 +3797,15 @@ template<>
 struct std::hash<winrt::Windows::System::IUserWatcher>
 {
     size_t operator()(const winrt::Windows::System::IUserWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::AppDiagnosticInfo>
+{
+    size_t operator()(const winrt::Windows::System::AppDiagnosticInfo & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

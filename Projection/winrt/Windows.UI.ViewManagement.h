@@ -534,6 +534,83 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationView3> : produce_base
 };
 
 template <typename D>
+struct produce<D, Windows::UI::ViewManagement::IApplicationView4> : produce_base<D, Windows::UI::ViewManagement::IApplicationView4>
+{
+    HRESULT __stdcall get_ViewMode(Windows::UI::ViewManagement::ApplicationViewMode * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ViewMode());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_IsViewModeSupported(Windows::UI::ViewManagement::ApplicationViewMode viewMode, bool * isViewModeSupported) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *isViewModeSupported = detach_abi(this->shim().IsViewModeSupported(viewMode));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryEnterViewModeAsync(Windows::UI::ViewManagement::ApplicationViewMode viewMode, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryEnterViewModeAsync(viewMode));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryEnterViewModeWithPreferencesAsync(Windows::UI::ViewManagement::ApplicationViewMode viewMode, impl::abi_arg_in<Windows::UI::ViewManagement::IViewModePreferences> viewModePreferences, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryEnterViewModeAsync(viewMode, *reinterpret_cast<const Windows::UI::ViewManagement::ViewModePreferences *>(&viewModePreferences)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryConsolidateAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryConsolidateAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs>
 {
     HRESULT __stdcall get_IsUserInitiated(bool * value) noexcept override
@@ -542,6 +619,24 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewConsolidatedEvent
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().IsUserInitiated());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs2> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs2>
+{
+    HRESULT __stdcall get_IsAppInitiated(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsAppInitiated());
             return S_OK;
         }
         catch (...)
@@ -898,6 +993,40 @@ struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2>
         }
         catch (...)
         {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3> : produce_base<D, Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3>
+{
+    HRESULT __stdcall abi_TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryShowAsViewModeAsync(viewId, viewMode));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryShowAsViewModeWithPreferencesAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode, impl::abi_arg_in<Windows::UI::ViewManagement::IViewModePreferences> viewModePreferences, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().TryShowAsViewModeAsync(viewId, viewMode, *reinterpret_cast<const Windows::UI::ViewManagement::ViewModePreferences *>(&viewModePreferences)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
             return impl::to_hresult();
         }
     }
@@ -1943,6 +2072,52 @@ struct produce<D, Windows::UI::ViewManagement::IUISettings3> : produce_base<D, W
 };
 
 template <typename D>
+struct produce<D, Windows::UI::ViewManagement::IUISettings4> : produce_base<D, Windows::UI::ViewManagement::IUISettings4>
+{
+    HRESULT __stdcall get_AdvancedEffectsEnabled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AdvancedEffectsEnabled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_AdvancedEffectsEnabledChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *cookie = detach_abi(this->shim().AdvancedEffectsEnabledChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_AdvancedEffectsEnabledChanged(event_token cookie) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AdvancedEffectsEnabledChanged(cookie);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::ViewManagement::IUIViewSettings> : produce_base<D, Windows::UI::ViewManagement::IUIViewSettings>
 {
     HRESULT __stdcall get_UserInteractionMode(Windows::UI::ViewManagement::UserInteractionMode * value) noexcept override
@@ -1979,9 +2154,119 @@ struct produce<D, Windows::UI::ViewManagement::IUIViewSettingsStatics> : produce
     }
 };
 
+template <typename D>
+struct produce<D, Windows::UI::ViewManagement::IViewModePreferences> : produce_base<D, Windows::UI::ViewManagement::IViewModePreferences>
+{
+    HRESULT __stdcall get_ViewSizePreference(Windows::UI::ViewManagement::ViewSizePreference * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ViewSizePreference());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_ViewSizePreference(Windows::UI::ViewManagement::ViewSizePreference value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ViewSizePreference(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CustomSize(impl::abi_arg_out<Windows::Foundation::Size> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CustomSize());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_CustomSize(impl::abi_arg_in<Windows::Foundation::Size> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CustomSize(*reinterpret_cast<const Windows::Foundation::Size *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::ViewManagement::IViewModePreferencesStatics> : produce_base<D, Windows::UI::ViewManagement::IViewModePreferencesStatics>
+{
+    HRESULT __stdcall abi_CreateDefault(Windows::UI::ViewManagement::ApplicationViewMode mode, impl::abi_arg_out<Windows::UI::ViewManagement::IViewModePreferences> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateDefault(mode));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
 }
 
 namespace Windows::UI::ViewManagement {
+
+template <typename D> Windows::UI::ViewManagement::ViewSizePreference impl_IViewModePreferences<D>::ViewSizePreference() const
+{
+    Windows::UI::ViewManagement::ViewSizePreference value {};
+    check_hresult(WINRT_SHIM(IViewModePreferences)->get_ViewSizePreference(&value));
+    return value;
+}
+
+template <typename D> void impl_IViewModePreferences<D>::ViewSizePreference(Windows::UI::ViewManagement::ViewSizePreference value) const
+{
+    check_hresult(WINRT_SHIM(IViewModePreferences)->put_ViewSizePreference(value));
+}
+
+template <typename D> Windows::Foundation::Size impl_IViewModePreferences<D>::CustomSize() const
+{
+    Windows::Foundation::Size value {};
+    check_hresult(WINRT_SHIM(IViewModePreferences)->get_CustomSize(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IViewModePreferences<D>::CustomSize(const Windows::Foundation::Size & value) const
+{
+    check_hresult(WINRT_SHIM(IViewModePreferences)->put_CustomSize(get_abi(value)));
+}
+
+template <typename D> Windows::UI::ViewManagement::ViewModePreferences impl_IViewModePreferencesStatics<D>::CreateDefault(Windows::UI::ViewManagement::ApplicationViewMode mode) const
+{
+    Windows::UI::ViewManagement::ViewModePreferences result { nullptr };
+    check_hresult(WINRT_SHIM(IViewModePreferencesStatics)->abi_CreateDefault(mode, put_abi(result)));
+    return result;
+}
 
 template <typename D> void impl_IApplicationViewSwitcherStatics<D>::DisableShowingMainViewOnActivation() const
 {
@@ -2040,6 +2325,20 @@ template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IApplicati
 template <typename D> void impl_IApplicationViewSwitcherStatics2<D>::DisableSystemViewActivationPolicy() const
 {
     check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics2)->abi_DisableSystemViewActivationPolicy());
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IApplicationViewSwitcherStatics3<D>::TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics3)->abi_TryShowAsViewModeAsync(viewId, viewMode, put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IApplicationViewSwitcherStatics3<D>::TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode, const Windows::UI::ViewManagement::ViewModePreferences & viewModePreferences) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(IApplicationViewSwitcherStatics3)->abi_TryShowAsViewModeWithPreferencesAsync(viewId, viewMode, get_abi(viewModePreferences), put_abi(operation)));
+    return operation;
 }
 
 template <typename D> int32_t impl_IApplicationViewInteropStatics<D>::GetApplicationViewIdForWindow(const Windows::UI::Core::ICoreWindow & window) const
@@ -2445,10 +2744,52 @@ template <typename D> bool impl_IApplicationViewFullscreenStatics<D>::TryUnsnapT
     return success;
 }
 
+template <typename D> Windows::UI::ViewManagement::ApplicationViewMode impl_IApplicationView4<D>::ViewMode() const
+{
+    Windows::UI::ViewManagement::ApplicationViewMode value {};
+    check_hresult(WINRT_SHIM(IApplicationView4)->get_ViewMode(&value));
+    return value;
+}
+
+template <typename D> bool impl_IApplicationView4<D>::IsViewModeSupported(Windows::UI::ViewManagement::ApplicationViewMode viewMode) const
+{
+    bool isViewModeSupported {};
+    check_hresult(WINRT_SHIM(IApplicationView4)->abi_IsViewModeSupported(viewMode, &isViewModeSupported));
+    return isViewModeSupported;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IApplicationView4<D>::TryEnterViewModeAsync(Windows::UI::ViewManagement::ApplicationViewMode viewMode) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(IApplicationView4)->abi_TryEnterViewModeAsync(viewMode, put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IApplicationView4<D>::TryEnterViewModeAsync(Windows::UI::ViewManagement::ApplicationViewMode viewMode, const Windows::UI::ViewManagement::ViewModePreferences & viewModePreferences) const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(IApplicationView4)->abi_TryEnterViewModeWithPreferencesAsync(viewMode, get_abi(viewModePreferences), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IApplicationView4<D>::TryConsolidateAsync() const
+{
+    Windows::Foundation::IAsyncOperation<bool> operation;
+    check_hresult(WINRT_SHIM(IApplicationView4)->abi_TryConsolidateAsync(put_abi(operation)));
+    return operation;
+}
+
 template <typename D> bool impl_IApplicationViewConsolidatedEventArgs<D>::IsUserInitiated() const
 {
     bool value {};
     check_hresult(WINRT_SHIM(IApplicationViewConsolidatedEventArgs)->get_IsUserInitiated(&value));
+    return value;
+}
+
+template <typename D> bool impl_IApplicationViewConsolidatedEventArgs2<D>::IsAppInitiated() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IApplicationViewConsolidatedEventArgs2)->get_IsAppInitiated(&value));
     return value;
 }
 
@@ -2842,6 +3183,30 @@ template <typename D> void impl_IUISettings3<D>::ColorValuesChanged(event_token 
     check_hresult(WINRT_SHIM(IUISettings3)->remove_ColorValuesChanged(cookie));
 }
 
+template <typename D> bool impl_IUISettings4<D>::AdvancedEffectsEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IUISettings4)->get_AdvancedEffectsEnabled(&value));
+    return value;
+}
+
+template <typename D> event_token impl_IUISettings4<D>::AdvancedEffectsEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token cookie {};
+    check_hresult(WINRT_SHIM(IUISettings4)->add_AdvancedEffectsEnabledChanged(get_abi(handler), &cookie));
+    return cookie;
+}
+
+template <typename D> event_revoker<IUISettings4> impl_IUISettings4<D>::AdvancedEffectsEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, IUISettings4>(this, &ABI::Windows::UI::ViewManagement::IUISettings4::remove_AdvancedEffectsEnabledChanged, AdvancedEffectsEnabledChanged(handler));
+}
+
+template <typename D> void impl_IUISettings4<D>::AdvancedEffectsEnabledChanged(event_token cookie) const
+{
+    check_hresult(WINRT_SHIM(IUISettings4)->remove_AdvancedEffectsEnabledChanged(cookie));
+}
+
 template <typename D> bool impl_IApplicationViewScalingStatics<D>::DisableLayoutScaling() const
 {
     bool value {};
@@ -2970,6 +3335,16 @@ inline void ApplicationViewSwitcher::DisableSystemViewActivationPolicy()
     get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics2>().DisableSystemViewActivationPolicy();
 }
 
+inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode)
+{
+    return get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics3>().TryShowAsViewModeAsync(viewId, viewMode);
+}
+
+inline Windows::Foundation::IAsyncOperation<bool> ApplicationViewSwitcher::TryShowAsViewModeAsync(int32_t viewId, Windows::UI::ViewManagement::ApplicationViewMode viewMode, const Windows::UI::ViewManagement::ViewModePreferences & viewModePreferences)
+{
+    return get_activation_factory<ApplicationViewSwitcher, IApplicationViewSwitcherStatics3>().TryShowAsViewModeAsync(viewId, viewMode, viewModePreferences);
+}
+
 inline ApplicationViewTransferContext::ApplicationViewTransferContext() :
     ApplicationViewTransferContext(activate_instance<ApplicationViewTransferContext>())
 {}
@@ -3049,6 +3424,11 @@ inline Windows::UI::ViewManagement::UIViewSettings UIViewSettings::GetForCurrent
     return get_activation_factory<UIViewSettings, IUIViewSettingsStatics>().GetForCurrentView();
 }
 
+inline Windows::UI::ViewManagement::ViewModePreferences ViewModePreferences::CreateDefault(Windows::UI::ViewManagement::ApplicationViewMode mode)
+{
+    return get_activation_factory<ViewModePreferences, IViewModePreferencesStatics>().CreateDefault(mode);
+}
+
 }
 
 }
@@ -3099,9 +3479,27 @@ struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationView3>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationView4>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationView4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3183,6 +3581,15 @@ template<>
 struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2>
 {
     size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewSwitcherStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IApplicationViewSwitcherStatics3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3306,6 +3713,15 @@ struct std::hash<winrt::Windows::UI::ViewManagement::IUISettings3>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IUISettings4>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IUISettings4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::ViewManagement::IUIViewSettings>
 {
     size_t operator()(const winrt::Windows::UI::ViewManagement::IUIViewSettings & value) const noexcept
@@ -3318,6 +3734,24 @@ template<>
 struct std::hash<winrt::Windows::UI::ViewManagement::IUIViewSettingsStatics>
 {
     size_t operator()(const winrt::Windows::UI::ViewManagement::IUIViewSettingsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IViewModePreferences>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IViewModePreferences & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::IViewModePreferencesStatics>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::IViewModePreferencesStatics & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3417,6 +3851,15 @@ template<>
 struct std::hash<winrt::Windows::UI::ViewManagement::UIViewSettings>
 {
     size_t operator()(const winrt::Windows::UI::ViewManagement::UIViewSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::ViewManagement::ViewModePreferences>
+{
+    size_t operator()(const winrt::Windows::UI::ViewManagement::ViewModePreferences & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

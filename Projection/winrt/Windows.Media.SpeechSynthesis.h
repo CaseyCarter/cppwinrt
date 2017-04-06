@@ -11,6 +11,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Media.SpeechSynthesis.3.h"
 #include "Windows.Media.h"
 #include "Windows.Foundation.h"
+#include "Windows.Media.Core.h"
 #include "Windows.Storage.Streams.h"
 
 WINRT_EXPORT namespace winrt {
@@ -128,6 +129,85 @@ struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizer> : produce
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizer2> : produce_base<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizer2>
+{
+    HRESULT __stdcall get_Options(impl::abi_arg_out<Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Options());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions> : produce_base<D, Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions>
+{
+    HRESULT __stdcall get_IncludeWordBoundaryMetadata(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IncludeWordBoundaryMetadata());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IncludeWordBoundaryMetadata(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IncludeWordBoundaryMetadata(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IncludeSentenceBoundaryMetadata(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IncludeSentenceBoundaryMetadata());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IncludeSentenceBoundaryMetadata(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IncludeSentenceBoundaryMetadata(value);
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -297,6 +377,37 @@ template <typename D> Windows::Media::SpeechSynthesis::VoiceInformation impl_ISp
     return value;
 }
 
+template <typename D> Windows::Media::SpeechSynthesis::SpeechSynthesizerOptions impl_ISpeechSynthesizer2<D>::Options() const
+{
+    Windows::Media::SpeechSynthesis::SpeechSynthesizerOptions value { nullptr };
+    check_hresult(WINRT_SHIM(ISpeechSynthesizer2)->get_Options(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_ISpeechSynthesizerOptions<D>::IncludeWordBoundaryMetadata() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpeechSynthesizerOptions)->get_IncludeWordBoundaryMetadata(&value));
+    return value;
+}
+
+template <typename D> void impl_ISpeechSynthesizerOptions<D>::IncludeWordBoundaryMetadata(bool value) const
+{
+    check_hresult(WINRT_SHIM(ISpeechSynthesizerOptions)->put_IncludeWordBoundaryMetadata(value));
+}
+
+template <typename D> bool impl_ISpeechSynthesizerOptions<D>::IncludeSentenceBoundaryMetadata() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpeechSynthesizerOptions)->get_IncludeSentenceBoundaryMetadata(&value));
+    return value;
+}
+
+template <typename D> void impl_ISpeechSynthesizerOptions<D>::IncludeSentenceBoundaryMetadata(bool value) const
+{
+    check_hresult(WINRT_SHIM(ISpeechSynthesizerOptions)->put_IncludeSentenceBoundaryMetadata(value));
+}
+
 inline SpeechSynthesizer::SpeechSynthesizer() :
     SpeechSynthesizer(activate_instance<SpeechSynthesizer>())
 {}
@@ -343,6 +454,24 @@ struct std::hash<winrt::Windows::Media::SpeechSynthesis::ISpeechSynthesizer>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::SpeechSynthesis::ISpeechSynthesizer2>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechSynthesis::ISpeechSynthesizer2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechSynthesis::ISpeechSynthesizerOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::SpeechSynthesis::IVoiceInformation>
 {
     size_t operator()(const winrt::Windows::Media::SpeechSynthesis::IVoiceInformation & value) const noexcept
@@ -364,6 +493,15 @@ template<>
 struct std::hash<winrt::Windows::Media::SpeechSynthesis::SpeechSynthesizer>
 {
     size_t operator()(const winrt::Windows::Media::SpeechSynthesis::SpeechSynthesizer & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::SpeechSynthesis::SpeechSynthesizerOptions>
+{
+    size_t operator()(const winrt::Windows::Media::SpeechSynthesis::SpeechSynthesizerOptions & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

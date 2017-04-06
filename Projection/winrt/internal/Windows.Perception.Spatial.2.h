@@ -14,6 +14,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a")) __declspec(novtable) IAsyncOperation<bool> : impl_IAsyncOperation<bool> {};
 #endif
 
+#ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
+#define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
+template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __declspec(novtable) EventHandler<Windows::Foundation::IInspectable> : impl_EventHandler<Windows::Foundation::IInspectable> {};
+#endif
+
 #ifndef WINRT_GENERIC_2f2d6c29_5473_5f3e_92e7_96572bb990e2
 #define WINRT_GENERIC_2f2d6c29_5473_5f3e_92e7_96572bb990e2
 template <> struct __declspec(uuid("2f2d6c29-5473-5f3e-92e7-96572bb990e2")) __declspec(novtable) IReference<double> : impl_IReference<double> {};
@@ -79,6 +84,31 @@ template <> struct __declspec(uuid("dbb08ab5-6b40-55fb-83d3-50d5373a3b20")) __de
 template <> struct __declspec(uuid("34bf236c-e5d6-501f-8693-bc1d8d431d7e")) __declspec(novtable) TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> : impl_TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> {};
 #endif
 
+#ifndef WINRT_GENERIC_b4d8b1bf_1d66_5458_a5df_3f4f6c366c58
+#define WINRT_GENERIC_b4d8b1bf_1d66_5458_a5df_3f4f6c366c58
+template <> struct __declspec(uuid("b4d8b1bf-1d66-5458-a5df-3f4f6c366c58")) __declspec(novtable) IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference> : impl_IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference> {};
+#endif
+
+#ifndef WINRT_GENERIC_f8edae01_6a30_52cc_b543_8abdb26529b4
+#define WINRT_GENERIC_f8edae01_6a30_52cc_b543_8abdb26529b4
+template <> struct __declspec(uuid("f8edae01-6a30-52cc-b543-8abdb26529b4")) __declspec(novtable) TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> : impl_TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_a15fd0c0_8a0a_5a7d_897a_f206cc509190
+#define WINRT_GENERIC_a15fd0c0_8a0a_5a7d_897a_f206cc509190
+template <> struct __declspec(uuid("a15fd0c0-8a0a-5a7d-897a-f206cc509190")) __declspec(novtable) TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> : impl_TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_36f982ad_eaa2_5263_861e_2acf030c9e17
+#define WINRT_GENERIC_36f982ad_eaa2_5263_861e_2acf030c9e17
+template <> struct __declspec(uuid("36f982ad-eaa2-5263-861e-2acf030c9e17")) __declspec(novtable) TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> : impl_TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_50171823_30a9_5938_9f3b_358d86169f2e
+#define WINRT_GENERIC_50171823_30a9_5938_9f3b_358d86169f2e
+template <> struct __declspec(uuid("50171823-30a9-5938-9f3b-358d86169f2e")) __declspec(novtable) TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> {};
+#endif
+
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
 #define WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
 template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __declspec(novtable) AsyncOperationCompletedHandler<bool> : impl_AsyncOperationCompletedHandler<bool> {};
@@ -107,6 +137,11 @@ template <> struct __declspec(uuid("84c21a3a-037a-503f-8006-ab577b7f6f66")) __de
 #ifndef WINRT_GENERIC_6ced54c8_7689_525a_80e1_956a9d85cd83
 #define WINRT_GENERIC_6ced54c8_7689_525a_80e1_956a9d85cd83
 template <> struct __declspec(uuid("6ced54c8-7689-525a-80e1-956a9d85cd83")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> : impl_AsyncOperationCompletedHandler<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> {};
+#endif
+
+#ifndef WINRT_GENERIC_fbb7e9fb_e49a_54e1_8c83_d1a87e4d2304
+#define WINRT_GENERIC_fbb7e9fb_e49a_54e1_8c83_d1a87e4d2304
+template <> struct __declspec(uuid("fbb7e9fb-e49a-54e1-8c83-d1a87e4d2304")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Perception::Spatial::SpatialStageFrameOfReference> : impl_AsyncOperationCompletedHandler<Windows::Perception::Spatial::SpatialStageFrameOfReference> {};
 #endif
 
 #ifndef WINRT_GENERIC_bbe07728_da33_52c5_aae0_a5e74cdf0471
@@ -192,6 +227,7 @@ struct ISpatialAnchorTransferManagerStatics :
 {
     ISpatialAnchorTransferManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]] ISpatialAnchorTransferManagerStatics;
 
 struct ISpatialBoundingVolume :
     Windows::Foundation::IInspectable,
@@ -212,6 +248,62 @@ struct ISpatialCoordinateSystem :
     impl::consume<ISpatialCoordinateSystem>
 {
     ISpatialCoordinateSystem(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialEntity :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialEntity>
+{
+    ISpatialEntity(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialEntityAddedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialEntityAddedEventArgs>
+{
+    ISpatialEntityAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialEntityFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialEntityFactory>
+{
+    ISpatialEntityFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialEntityRemovedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialEntityRemovedEventArgs>
+{
+    ISpatialEntityRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialEntityStore :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialEntityStore>
+{
+    ISpatialEntityStore(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialEntityStoreStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialEntityStoreStatics>
+{
+    ISpatialEntityStoreStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialEntityUpdatedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialEntityUpdatedEventArgs>
+{
+    ISpatialEntityUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialEntityWatcher :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialEntityWatcher>
+{
+    ISpatialEntityWatcher(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialLocation :
@@ -247,6 +339,20 @@ struct ISpatialLocatorStatics :
     impl::consume<ISpatialLocatorStatics>
 {
     ISpatialLocatorStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialStageFrameOfReference :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialStageFrameOfReference>
+{
+    ISpatialStageFrameOfReference(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialStageFrameOfReferenceStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialStageFrameOfReferenceStatics>
+{
+    ISpatialStageFrameOfReferenceStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialStationaryFrameOfReference :

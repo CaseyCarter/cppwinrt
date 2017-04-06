@@ -8,8 +8,8 @@
 #include "Windows.Foundation.0.h"
 #include "Windows.Networking.0.h"
 #include "Windows.Storage.Streams.0.h"
-#include "Windows.Foundation.1.h"
 #include "Windows.Foundation.Collections.1.h"
+#include "Windows.Foundation.1.h"
 #include "Windows.Storage.Streams.1.h"
 
 WINRT_EXPORT namespace winrt {
@@ -75,6 +75,17 @@ struct __declspec(uuid("dc5b1c33-6429-4014-999c-5d9735802d1d")) __declspec(novta
 struct __declspec(uuid("fdec82be-617c-425a-b72d-398b26ac7264")) __declspec(novtable) ICertificateEnrollmentManagerStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ImportPfxDataToKspWithParametersAsync(hstring pfxData, hstring password, Windows::Security::Cryptography::Certificates::IPfxImportParameters * pfxImportParameters, Windows::Foundation::IAsyncAction ** value) = 0;
+};
+
+struct __declspec(uuid("84cf0656-a9e6-454d-8e45-2ea7c4bcd53b")) __declspec(novtable) ICertificateExtension : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ObjectId(hstring * value) = 0;
+    virtual HRESULT __stdcall put_ObjectId(hstring value) = 0;
+    virtual HRESULT __stdcall get_IsCritical(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsCritical(bool value) = 0;
+    virtual HRESULT __stdcall abi_EncodeValue(hstring value) = 0;
+    virtual HRESULT __stdcall get_Value(uint32_t * __valueSize, uint8_t ** value) = 0;
+    virtual HRESULT __stdcall put_Value(uint32_t __valueSize, uint8_t * value) = 0;
 };
 
 struct __declspec(uuid("17b4221c-4baf-44a2-9608-04fb62b16942")) __declspec(novtable) ICertificateFactory : Windows::Foundation::IInspectable
@@ -169,6 +180,13 @@ struct __declspec(uuid("e687f616-734d-46b1-9d4c-6edfdbfc845b")) __declspec(novta
     virtual HRESULT __stdcall put_ContainerName(hstring value) = 0;
     virtual HRESULT __stdcall get_UseExistingKey(bool * value) = 0;
     virtual HRESULT __stdcall put_UseExistingKey(bool value) = 0;
+};
+
+struct __declspec(uuid("4e429ad2-1c61-4fea-b8fe-135fb19cdce4")) __declspec(novtable) ICertificateRequestProperties4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SuppressedDefaults(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
+    virtual HRESULT __stdcall get_SubjectAlternativeName(Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo ** value) = 0;
+    virtual HRESULT __stdcall get_Extensions(Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::CertificateExtension> ** value) = 0;
 };
 
 struct __declspec(uuid("b0bff720-344e-4331-af14-a7f7a7ebc93a")) __declspec(novtable) ICertificateStore : Windows::Foundation::IInspectable
@@ -347,6 +365,17 @@ struct __declspec(uuid("582859f1-569d-4c20-be7b-4e1c9a0bc52b")) __declspec(novta
     virtual HRESULT __stdcall get_PrincipalName(Windows::Foundation::Collections::IVectorView<hstring> ** value) = 0;
 };
 
+struct __declspec(uuid("437a78c6-1c51-41ea-b34a-3d654398a370")) __declspec(novtable) ISubjectAlternativeNameInfo2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_EmailNames(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
+    virtual HRESULT __stdcall get_IPAddresses(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
+    virtual HRESULT __stdcall get_Urls(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
+    virtual HRESULT __stdcall get_DnsNames(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
+    virtual HRESULT __stdcall get_DistinguishedNames(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
+    virtual HRESULT __stdcall get_PrincipalNames(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
+    virtual HRESULT __stdcall get_Extension(Windows::Security::Cryptography::Certificates::ICertificateExtension ** value) = 0;
+};
+
 struct __declspec(uuid("96313718-22e1-4819-b20b-ab46a6eca06e")) __declspec(novtable) IUserCertificateEnrollmentManager : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateRequestAsync(Windows::Security::Cryptography::Certificates::ICertificateRequestProperties * request, Windows::Foundation::IAsyncOperation<hstring> ** value) = 0;
@@ -373,6 +402,7 @@ namespace ABI {
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::Certificate> { using default_interface = Windows::Security::Cryptography::Certificates::ICertificate; };
 template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateChain> { using default_interface = Windows::Security::Cryptography::Certificates::ICertificateChain; };
+template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateExtension> { using default_interface = Windows::Security::Cryptography::Certificates::ICertificateExtension; };
 template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateKeyUsages> { using default_interface = Windows::Security::Cryptography::Certificates::ICertificateKeyUsages; };
 template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateQuery> { using default_interface = Windows::Security::Cryptography::Certificates::ICertificateQuery; };
 template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateRequestProperties> { using default_interface = Windows::Security::Cryptography::Certificates::ICertificateRequestProperties; };
@@ -458,6 +488,18 @@ template <typename D>
 struct WINRT_EBO impl_ICertificateEnrollmentManagerStatics3
 {
     Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_view pfxData, hstring_view password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateExtension
+{
+    hstring ObjectId() const;
+    void ObjectId(hstring_view value) const;
+    bool IsCritical() const;
+    void IsCritical(bool value) const;
+    void EncodeValue(hstring_view value) const;
+    com_array<uint8_t> Value() const;
+    void Value(array_view<const uint8_t> value) const;
 };
 
 template <typename D>
@@ -559,6 +601,14 @@ struct WINRT_EBO impl_ICertificateRequestProperties3
     void ContainerName(hstring_view value) const;
     bool UseExistingKey() const;
     void UseExistingKey(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateRequestProperties4
+{
+    Windows::Foundation::Collections::IVector<hstring> SuppressedDefaults() const;
+    Windows::Security::Cryptography::Certificates::SubjectAlternativeNameInfo SubjectAlternativeName() const;
+    Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::CertificateExtension> Extensions() const;
 };
 
 template <typename D>
@@ -761,6 +811,18 @@ struct WINRT_EBO impl_ISubjectAlternativeNameInfo
 };
 
 template <typename D>
+struct WINRT_EBO impl_ISubjectAlternativeNameInfo2
+{
+    Windows::Foundation::Collections::IVector<hstring> EmailNames() const;
+    Windows::Foundation::Collections::IVector<hstring> IPAddresses() const;
+    Windows::Foundation::Collections::IVector<hstring> Urls() const;
+    Windows::Foundation::Collections::IVector<hstring> DnsNames() const;
+    Windows::Foundation::Collections::IVector<hstring> DistinguishedNames() const;
+    Windows::Foundation::Collections::IVector<hstring> PrincipalNames() const;
+    Windows::Security::Cryptography::Certificates::CertificateExtension Extension() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IUserCertificateEnrollmentManager
 {
     Windows::Foundation::IAsyncOperation<hstring> CreateRequestAsync(const Windows::Security::Cryptography::Certificates::CertificateRequestProperties & request) const;
@@ -829,6 +891,12 @@ template <> struct traits<Windows::Security::Cryptography::Certificates::ICertif
     template <typename D> using consume = Windows::Security::Cryptography::Certificates::impl_ICertificateEnrollmentManagerStatics3<D>;
 };
 
+template <> struct traits<Windows::Security::Cryptography::Certificates::ICertificateExtension>
+{
+    using abi = ABI::Windows::Security::Cryptography::Certificates::ICertificateExtension;
+    template <typename D> using consume = Windows::Security::Cryptography::Certificates::impl_ICertificateExtension<D>;
+};
+
 template <> struct traits<Windows::Security::Cryptography::Certificates::ICertificateFactory>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::ICertificateFactory;
@@ -869,6 +937,12 @@ template <> struct traits<Windows::Security::Cryptography::Certificates::ICertif
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::ICertificateRequestProperties3;
     template <typename D> using consume = Windows::Security::Cryptography::Certificates::impl_ICertificateRequestProperties3<D>;
+};
+
+template <> struct traits<Windows::Security::Cryptography::Certificates::ICertificateRequestProperties4>
+{
+    using abi = ABI::Windows::Security::Cryptography::Certificates::ICertificateRequestProperties4;
+    template <typename D> using consume = Windows::Security::Cryptography::Certificates::impl_ICertificateRequestProperties4<D>;
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::ICertificateStore>
@@ -1009,6 +1083,12 @@ template <> struct traits<Windows::Security::Cryptography::Certificates::ISubjec
     template <typename D> using consume = Windows::Security::Cryptography::Certificates::impl_ISubjectAlternativeNameInfo<D>;
 };
 
+template <> struct traits<Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo2>
+{
+    using abi = ABI::Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo2;
+    template <typename D> using consume = Windows::Security::Cryptography::Certificates::impl_ISubjectAlternativeNameInfo2<D>;
+};
+
 template <> struct traits<Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager>
 {
     using abi = ABI::Windows::Security::Cryptography::Certificates::IUserCertificateEnrollmentManager;
@@ -1042,6 +1122,12 @@ template <> struct traits<Windows::Security::Cryptography::Certificates::Certifi
 template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateEnrollmentManager>
 {
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.CertificateEnrollmentManager"; }
+};
+
+template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateExtension>
+{
+    using abi = ABI::Windows::Security::Cryptography::Certificates::CertificateExtension;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.Certificates.CertificateExtension"; }
 };
 
 template <> struct traits<Windows::Security::Cryptography::Certificates::CertificateKeyUsages>

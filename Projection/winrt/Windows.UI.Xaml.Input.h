@@ -7,8 +7,8 @@
 WINRT_WARNING_PUSH
 
 #include "internal/Windows.Foundation.3.h"
-#include "internal/Windows.UI.Xaml.3.h"
 #include "internal/Windows.Devices.Input.3.h"
+#include "internal/Windows.UI.Xaml.3.h"
 #include "internal/Windows.UI.Input.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.System.3.h"
@@ -332,6 +332,38 @@ struct produce<D, Windows::UI::Xaml::Input::IAccessKeyManagerStatics> : produce_
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Input::IAccessKeyManagerStatics2> : produce_base<D, Windows::UI::Xaml::Input::IAccessKeyManagerStatics2>
+{
+    HRESULT __stdcall get_AreKeyTipsEnabled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AreKeyTipsEnabled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_AreKeyTipsEnabled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().AreKeyTipsEnabled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Input::ICommand> : produce_base<D, Windows::UI::Xaml::Input::ICommand>
 {
     HRESULT __stdcall add_CanExecuteChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
@@ -498,6 +530,123 @@ struct produce<D, Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs> : prod
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Input::IFindNextElementOptions> : produce_base<D, Windows::UI::Xaml::Input::IFindNextElementOptions>
+{
+    HRESULT __stdcall get_SearchRoot(impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SearchRoot());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_SearchRoot(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SearchRoot(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ExclusionRect(impl::abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ExclusionRect());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_ExclusionRect(impl::abi_arg_in<Windows::Foundation::Rect> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ExclusionRect(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_HintRect(impl::abi_arg_out<Windows::Foundation::Rect> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().HintRect());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_HintRect(impl::abi_arg_in<Windows::Foundation::Rect> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().HintRect(*reinterpret_cast<const Windows::Foundation::Rect *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_XYFocusNavigationStrategyOverride(Windows::UI::Xaml::Input::XYFocusNavigationStrategyOverride * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().XYFocusNavigationStrategyOverride());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_XYFocusNavigationStrategyOverride(Windows::UI::Xaml::Input::XYFocusNavigationStrategyOverride value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().XYFocusNavigationStrategyOverride(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Input::IFocusManager> : produce_base<D, Windows::UI::Xaml::Input::IFocusManager>
 {};
 
@@ -567,6 +716,230 @@ struct produce<D, Windows::UI::Xaml::Input::IFocusManagerStatics3> : produce_bas
         catch (...)
         {
             *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Input::IFocusManagerStatics4> : produce_base<D, Windows::UI::Xaml::Input::IFocusManagerStatics4>
+{
+    HRESULT __stdcall abi_TryMoveFocusWithOptions(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, impl::abi_arg_in<Windows::UI::Xaml::Input::IFindNextElementOptions> focusNavigationOptions, bool * returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().TryMoveFocus(focusNavigationDirection, *reinterpret_cast<const Windows::UI::Xaml::Input::FindNextElementOptions *>(&focusNavigationOptions)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_FindNextElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().FindNextElement(focusNavigationDirection));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_FindFirstFocusableElement(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> searchScope, impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().FindFirstFocusableElement(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&searchScope)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_FindLastFocusableElement(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> searchScope, impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().FindLastFocusableElement(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&searchScope)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_FindNextElementWithOptions(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, impl::abi_arg_in<Windows::UI::Xaml::Input::IFindNextElementOptions> focusNavigationOptions, impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().FindNextElement(focusNavigationDirection, *reinterpret_cast<const Windows::UI::Xaml::Input::FindNextElementOptions *>(&focusNavigationOptions)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Input::IGettingFocusEventArgs> : produce_base<D, Windows::UI::Xaml::Input::IGettingFocusEventArgs>
+{
+    HRESULT __stdcall get_OldFocusedElement(impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().OldFocusedElement());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_NewFocusedElement(impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().NewFocusedElement());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_NewFocusedElement(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().NewFocusedElement(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_FocusState(Windows::UI::Xaml::FocusState * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().FocusState());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Direction(Windows::UI::Xaml::Input::FocusNavigationDirection * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Direction());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Handled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Handled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Handled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Handled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_InputDevice(Windows::UI::Xaml::Input::FocusInputDeviceKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().InputDevice());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Cancel(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Cancel());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Cancel(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Cancel(value);
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -988,6 +1361,152 @@ struct produce<D, Windows::UI::Xaml::Input::IKeyRoutedEventArgs3> : produce_base
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Input::ILosingFocusEventArgs> : produce_base<D, Windows::UI::Xaml::Input::ILosingFocusEventArgs>
+{
+    HRESULT __stdcall get_OldFocusedElement(impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().OldFocusedElement());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_NewFocusedElement(impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().NewFocusedElement());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_NewFocusedElement(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().NewFocusedElement(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_FocusState(Windows::UI::Xaml::FocusState * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().FocusState());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Direction(Windows::UI::Xaml::Input::FocusNavigationDirection * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Direction());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Handled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Handled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Handled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Handled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_InputDevice(Windows::UI::Xaml::Input::FocusInputDeviceKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().InputDevice());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Cancel(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Cancel());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Cancel(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Cancel(value);
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -1766,6 +2285,66 @@ struct produce<D, Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Input::INoFocusCandidateFoundEventArgs> : produce_base<D, Windows::UI::Xaml::Input::INoFocusCandidateFoundEventArgs>
+{
+    HRESULT __stdcall get_Direction(Windows::UI::Xaml::Input::FocusNavigationDirection * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Direction());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Handled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Handled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Handled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Handled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_InputDevice(Windows::UI::Xaml::Input::FocusInputDeviceKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().InputDevice());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Input::IPointer> : produce_base<D, Windows::UI::Xaml::Input::IPointer>
 {
     HRESULT __stdcall get_PointerId(uint32_t * value) noexcept override
@@ -2117,32 +2696,16 @@ template <typename D> void impl_IAccessKeyManagerStatics<D>::ExitDisplayMode() c
     check_hresult(WINRT_SHIM(IAccessKeyManagerStatics)->abi_ExitDisplayMode());
 }
 
-template <typename D> Windows::Foundation::IInspectable impl_IFocusManagerStatics<D>::GetFocusedElement() const
+template <typename D> bool impl_IAccessKeyManagerStatics2<D>::AreKeyTipsEnabled() const
 {
-    Windows::Foundation::IInspectable returnValue;
-    check_hresult(WINRT_SHIM(IFocusManagerStatics)->abi_GetFocusedElement(put_abi(returnValue)));
-    return returnValue;
+    bool value {};
+    check_hresult(WINRT_SHIM(IAccessKeyManagerStatics2)->get_AreKeyTipsEnabled(&value));
+    return value;
 }
 
-template <typename D> bool impl_IFocusManagerStatics2<D>::TryMoveFocus(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const
+template <typename D> void impl_IAccessKeyManagerStatics2<D>::AreKeyTipsEnabled(bool value) const
 {
-    bool returnValue {};
-    check_hresult(WINRT_SHIM(IFocusManagerStatics2)->abi_TryMoveFocus(focusNavigationDirection, &returnValue));
-    return returnValue;
-}
-
-template <typename D> Windows::UI::Xaml::UIElement impl_IFocusManagerStatics3<D>::FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const
-{
-    Windows::UI::Xaml::UIElement result { nullptr };
-    check_hresult(WINRT_SHIM(IFocusManagerStatics3)->abi_FindNextFocusableElement(focusNavigationDirection, put_abi(result)));
-    return result;
-}
-
-template <typename D> Windows::UI::Xaml::UIElement impl_IFocusManagerStatics3<D>::FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::Foundation::Rect & hintRect) const
-{
-    Windows::UI::Xaml::UIElement result { nullptr };
-    check_hresult(WINRT_SHIM(IFocusManagerStatics3)->abi_FindNextFocusableElementWithHint(focusNavigationDirection, get_abi(hintRect), put_abi(result)));
-    return result;
+    check_hresult(WINRT_SHIM(IAccessKeyManagerStatics2)->put_AreKeyTipsEnabled(value));
 }
 
 template <typename D> double impl_IInertiaExpansionBehavior<D>::DesiredDeceleration() const
@@ -2321,6 +2884,70 @@ template <typename D> Windows::Foundation::Point impl_IDoubleTappedRoutedEventAr
     return returnValue;
 }
 
+template <typename D> Windows::UI::Xaml::DependencyObject impl_IGettingFocusEventArgs<D>::OldFocusedElement() const
+{
+    Windows::UI::Xaml::DependencyObject value { nullptr };
+    check_hresult(WINRT_SHIM(IGettingFocusEventArgs)->get_OldFocusedElement(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyObject impl_IGettingFocusEventArgs<D>::NewFocusedElement() const
+{
+    Windows::UI::Xaml::DependencyObject value { nullptr };
+    check_hresult(WINRT_SHIM(IGettingFocusEventArgs)->get_NewFocusedElement(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IGettingFocusEventArgs<D>::NewFocusedElement(const Windows::UI::Xaml::DependencyObject & value) const
+{
+    check_hresult(WINRT_SHIM(IGettingFocusEventArgs)->put_NewFocusedElement(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::FocusState impl_IGettingFocusEventArgs<D>::FocusState() const
+{
+    Windows::UI::Xaml::FocusState value {};
+    check_hresult(WINRT_SHIM(IGettingFocusEventArgs)->get_FocusState(&value));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Input::FocusNavigationDirection impl_IGettingFocusEventArgs<D>::Direction() const
+{
+    Windows::UI::Xaml::Input::FocusNavigationDirection value {};
+    check_hresult(WINRT_SHIM(IGettingFocusEventArgs)->get_Direction(&value));
+    return value;
+}
+
+template <typename D> bool impl_IGettingFocusEventArgs<D>::Handled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IGettingFocusEventArgs)->get_Handled(&value));
+    return value;
+}
+
+template <typename D> void impl_IGettingFocusEventArgs<D>::Handled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IGettingFocusEventArgs)->put_Handled(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::FocusInputDeviceKind impl_IGettingFocusEventArgs<D>::InputDevice() const
+{
+    Windows::UI::Xaml::Input::FocusInputDeviceKind value {};
+    check_hresult(WINRT_SHIM(IGettingFocusEventArgs)->get_InputDevice(&value));
+    return value;
+}
+
+template <typename D> bool impl_IGettingFocusEventArgs<D>::Cancel() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IGettingFocusEventArgs)->get_Cancel(&value));
+    return value;
+}
+
+template <typename D> void impl_IGettingFocusEventArgs<D>::Cancel(bool value) const
+{
+    check_hresult(WINRT_SHIM(IGettingFocusEventArgs)->put_Cancel(value));
+}
+
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IHoldingRoutedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
@@ -2418,6 +3045,70 @@ template <typename D> hstring impl_IKeyRoutedEventArgs3<D>::DeviceId() const
     hstring value;
     check_hresult(WINRT_SHIM(IKeyRoutedEventArgs3)->get_DeviceId(put_abi(value)));
     return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyObject impl_ILosingFocusEventArgs<D>::OldFocusedElement() const
+{
+    Windows::UI::Xaml::DependencyObject value { nullptr };
+    check_hresult(WINRT_SHIM(ILosingFocusEventArgs)->get_OldFocusedElement(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyObject impl_ILosingFocusEventArgs<D>::NewFocusedElement() const
+{
+    Windows::UI::Xaml::DependencyObject value { nullptr };
+    check_hresult(WINRT_SHIM(ILosingFocusEventArgs)->get_NewFocusedElement(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ILosingFocusEventArgs<D>::NewFocusedElement(const Windows::UI::Xaml::DependencyObject & value) const
+{
+    check_hresult(WINRT_SHIM(ILosingFocusEventArgs)->put_NewFocusedElement(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::FocusState impl_ILosingFocusEventArgs<D>::FocusState() const
+{
+    Windows::UI::Xaml::FocusState value {};
+    check_hresult(WINRT_SHIM(ILosingFocusEventArgs)->get_FocusState(&value));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Input::FocusNavigationDirection impl_ILosingFocusEventArgs<D>::Direction() const
+{
+    Windows::UI::Xaml::Input::FocusNavigationDirection value {};
+    check_hresult(WINRT_SHIM(ILosingFocusEventArgs)->get_Direction(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILosingFocusEventArgs<D>::Handled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILosingFocusEventArgs)->get_Handled(&value));
+    return value;
+}
+
+template <typename D> void impl_ILosingFocusEventArgs<D>::Handled(bool value) const
+{
+    check_hresult(WINRT_SHIM(ILosingFocusEventArgs)->put_Handled(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::FocusInputDeviceKind impl_ILosingFocusEventArgs<D>::InputDevice() const
+{
+    Windows::UI::Xaml::Input::FocusInputDeviceKind value {};
+    check_hresult(WINRT_SHIM(ILosingFocusEventArgs)->get_InputDevice(&value));
+    return value;
+}
+
+template <typename D> bool impl_ILosingFocusEventArgs<D>::Cancel() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ILosingFocusEventArgs)->get_Cancel(&value));
+    return value;
+}
+
+template <typename D> void impl_ILosingFocusEventArgs<D>::Cancel(bool value) const
+{
+    check_hresult(WINRT_SHIM(ILosingFocusEventArgs)->put_Cancel(value));
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IManipulationCompletedRoutedEventArgs<D>::Container() const
@@ -2723,6 +3414,32 @@ template <typename D> void impl_IManipulationStartingRoutedEventArgs<D>::Handled
     check_hresult(WINRT_SHIM(IManipulationStartingRoutedEventArgs)->put_Handled(value));
 }
 
+template <typename D> Windows::UI::Xaml::Input::FocusNavigationDirection impl_INoFocusCandidateFoundEventArgs<D>::Direction() const
+{
+    Windows::UI::Xaml::Input::FocusNavigationDirection value {};
+    check_hresult(WINRT_SHIM(INoFocusCandidateFoundEventArgs)->get_Direction(&value));
+    return value;
+}
+
+template <typename D> bool impl_INoFocusCandidateFoundEventArgs<D>::Handled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(INoFocusCandidateFoundEventArgs)->get_Handled(&value));
+    return value;
+}
+
+template <typename D> void impl_INoFocusCandidateFoundEventArgs<D>::Handled(bool value) const
+{
+    check_hresult(WINRT_SHIM(INoFocusCandidateFoundEventArgs)->put_Handled(value));
+}
+
+template <typename D> Windows::UI::Xaml::Input::FocusInputDeviceKind impl_INoFocusCandidateFoundEventArgs<D>::InputDevice() const
+{
+    Windows::UI::Xaml::Input::FocusInputDeviceKind value {};
+    check_hresult(WINRT_SHIM(INoFocusCandidateFoundEventArgs)->get_InputDevice(&value));
+    return value;
+}
+
 template <typename D> Windows::UI::Xaml::Input::Pointer impl_IPointerRoutedEventArgs<D>::Pointer() const
 {
     Windows::UI::Xaml::Input::Pointer value { nullptr };
@@ -2815,6 +3532,117 @@ template <typename D> Windows::Foundation::Point impl_ITappedRoutedEventArgs<D>:
     return returnValue;
 }
 
+template <typename D> Windows::UI::Xaml::DependencyObject impl_IFindNextElementOptions<D>::SearchRoot() const
+{
+    Windows::UI::Xaml::DependencyObject value { nullptr };
+    check_hresult(WINRT_SHIM(IFindNextElementOptions)->get_SearchRoot(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IFindNextElementOptions<D>::SearchRoot(const Windows::UI::Xaml::DependencyObject & value) const
+{
+    check_hresult(WINRT_SHIM(IFindNextElementOptions)->put_SearchRoot(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::Rect impl_IFindNextElementOptions<D>::ExclusionRect() const
+{
+    Windows::Foundation::Rect value {};
+    check_hresult(WINRT_SHIM(IFindNextElementOptions)->get_ExclusionRect(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IFindNextElementOptions<D>::ExclusionRect(const Windows::Foundation::Rect & value) const
+{
+    check_hresult(WINRT_SHIM(IFindNextElementOptions)->put_ExclusionRect(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::Rect impl_IFindNextElementOptions<D>::HintRect() const
+{
+    Windows::Foundation::Rect value {};
+    check_hresult(WINRT_SHIM(IFindNextElementOptions)->get_HintRect(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IFindNextElementOptions<D>::HintRect(const Windows::Foundation::Rect & value) const
+{
+    check_hresult(WINRT_SHIM(IFindNextElementOptions)->put_HintRect(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Input::XYFocusNavigationStrategyOverride impl_IFindNextElementOptions<D>::XYFocusNavigationStrategyOverride() const
+{
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategyOverride value {};
+    check_hresult(WINRT_SHIM(IFindNextElementOptions)->get_XYFocusNavigationStrategyOverride(&value));
+    return value;
+}
+
+template <typename D> void impl_IFindNextElementOptions<D>::XYFocusNavigationStrategyOverride(Windows::UI::Xaml::Input::XYFocusNavigationStrategyOverride value) const
+{
+    check_hresult(WINRT_SHIM(IFindNextElementOptions)->put_XYFocusNavigationStrategyOverride(value));
+}
+
+template <typename D> Windows::Foundation::IInspectable impl_IFocusManagerStatics<D>::GetFocusedElement() const
+{
+    Windows::Foundation::IInspectable returnValue;
+    check_hresult(WINRT_SHIM(IFocusManagerStatics)->abi_GetFocusedElement(put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> bool impl_IFocusManagerStatics2<D>::TryMoveFocus(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const
+{
+    bool returnValue {};
+    check_hresult(WINRT_SHIM(IFocusManagerStatics2)->abi_TryMoveFocus(focusNavigationDirection, &returnValue));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::UIElement impl_IFocusManagerStatics3<D>::FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const
+{
+    Windows::UI::Xaml::UIElement result { nullptr };
+    check_hresult(WINRT_SHIM(IFocusManagerStatics3)->abi_FindNextFocusableElement(focusNavigationDirection, put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Xaml::UIElement impl_IFocusManagerStatics3<D>::FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::Foundation::Rect & hintRect) const
+{
+    Windows::UI::Xaml::UIElement result { nullptr };
+    check_hresult(WINRT_SHIM(IFocusManagerStatics3)->abi_FindNextFocusableElementWithHint(focusNavigationDirection, get_abi(hintRect), put_abi(result)));
+    return result;
+}
+
+template <typename D> bool impl_IFocusManagerStatics4<D>::TryMoveFocus(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::UI::Xaml::Input::FindNextElementOptions & focusNavigationOptions) const
+{
+    bool returnValue {};
+    check_hresult(WINRT_SHIM(IFocusManagerStatics4)->abi_TryMoveFocusWithOptions(focusNavigationDirection, get_abi(focusNavigationOptions), &returnValue));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyObject impl_IFocusManagerStatics4<D>::FindNextElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const
+{
+    Windows::UI::Xaml::DependencyObject returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IFocusManagerStatics4)->abi_FindNextElement(focusNavigationDirection, put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyObject impl_IFocusManagerStatics4<D>::FindFirstFocusableElement(const Windows::UI::Xaml::DependencyObject & searchScope) const
+{
+    Windows::UI::Xaml::DependencyObject returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IFocusManagerStatics4)->abi_FindFirstFocusableElement(get_abi(searchScope), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyObject impl_IFocusManagerStatics4<D>::FindLastFocusableElement(const Windows::UI::Xaml::DependencyObject & searchScope) const
+{
+    Windows::UI::Xaml::DependencyObject returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IFocusManagerStatics4)->abi_FindLastFocusableElement(get_abi(searchScope), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyObject impl_IFocusManagerStatics4<D>::FindNextElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::UI::Xaml::Input::FindNextElementOptions & focusNavigationOptions) const
+{
+    Windows::UI::Xaml::DependencyObject returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IFocusManagerStatics4)->abi_FindNextElementWithOptions(focusNavigationDirection, get_abi(focusNavigationOptions), put_abi(returnValue)));
+    return returnValue;
+}
+
 inline AccessKeyDisplayDismissedEventArgs::AccessKeyDisplayDismissedEventArgs() :
     AccessKeyDisplayDismissedEventArgs(activate_instance<AccessKeyDisplayDismissedEventArgs>())
 {}
@@ -2853,12 +3681,26 @@ inline void AccessKeyManager::ExitDisplayMode()
     get_activation_factory<AccessKeyManager, IAccessKeyManagerStatics>().ExitDisplayMode();
 }
 
+inline bool AccessKeyManager::AreKeyTipsEnabled()
+{
+    return get_activation_factory<AccessKeyManager, IAccessKeyManagerStatics2>().AreKeyTipsEnabled();
+}
+
+inline void AccessKeyManager::AreKeyTipsEnabled(bool value)
+{
+    get_activation_factory<AccessKeyManager, IAccessKeyManagerStatics2>().AreKeyTipsEnabled(value);
+}
+
 inline ContextRequestedEventArgs::ContextRequestedEventArgs() :
     ContextRequestedEventArgs(activate_instance<ContextRequestedEventArgs>())
 {}
 
 inline DoubleTappedRoutedEventArgs::DoubleTappedRoutedEventArgs() :
     DoubleTappedRoutedEventArgs(activate_instance<DoubleTappedRoutedEventArgs>())
+{}
+
+inline FindNextElementOptions::FindNextElementOptions() :
+    FindNextElementOptions(activate_instance<FindNextElementOptions>())
 {}
 
 inline Windows::Foundation::IInspectable FocusManager::GetFocusedElement()
@@ -2879,6 +3721,31 @@ inline Windows::UI::Xaml::UIElement FocusManager::FindNextFocusableElement(Windo
 inline Windows::UI::Xaml::UIElement FocusManager::FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::Foundation::Rect & hintRect)
 {
     return get_activation_factory<FocusManager, IFocusManagerStatics3>().FindNextFocusableElement(focusNavigationDirection, hintRect);
+}
+
+inline bool FocusManager::TryMoveFocus(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::UI::Xaml::Input::FindNextElementOptions & focusNavigationOptions)
+{
+    return get_activation_factory<FocusManager, IFocusManagerStatics4>().TryMoveFocus(focusNavigationDirection, focusNavigationOptions);
+}
+
+inline Windows::UI::Xaml::DependencyObject FocusManager::FindNextElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection)
+{
+    return get_activation_factory<FocusManager, IFocusManagerStatics4>().FindNextElement(focusNavigationDirection);
+}
+
+inline Windows::UI::Xaml::DependencyObject FocusManager::FindFirstFocusableElement(const Windows::UI::Xaml::DependencyObject & searchScope)
+{
+    return get_activation_factory<FocusManager, IFocusManagerStatics4>().FindFirstFocusableElement(searchScope);
+}
+
+inline Windows::UI::Xaml::DependencyObject FocusManager::FindLastFocusableElement(const Windows::UI::Xaml::DependencyObject & searchScope)
+{
+    return get_activation_factory<FocusManager, IFocusManagerStatics4>().FindLastFocusableElement(searchScope);
+}
+
+inline Windows::UI::Xaml::DependencyObject FocusManager::FindNextElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::UI::Xaml::Input::FindNextElementOptions & focusNavigationOptions)
+{
+    return get_activation_factory<FocusManager, IFocusManagerStatics4>().FindNextElement(focusNavigationDirection, focusNavigationOptions);
 }
 
 inline HoldingRoutedEventArgs::HoldingRoutedEventArgs() :
@@ -2985,6 +3852,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Input::IAccessKeyManagerStatics>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IAccessKeyManagerStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IAccessKeyManagerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Input::ICommand>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Input::ICommand & value) const noexcept
@@ -3006,6 +3882,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Input::IDoubleTappedRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IFindNextElementOptions>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IFindNextElementOptions & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3042,6 +3927,24 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Input::IFocusManagerStatics3>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Input::IFocusManagerStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IFocusManagerStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IFocusManagerStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::IGettingFocusEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::IGettingFocusEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3138,6 +4041,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Input::IKeyRoutedEventArgs3>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::ILosingFocusEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::ILosingFocusEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs & value) const noexcept
@@ -3204,6 +4116,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Input::IManipulationStartingRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::INoFocusCandidateFoundEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::INoFocusCandidateFoundEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3300,9 +4221,27 @@ struct std::hash<winrt::Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::FindNextElementOptions>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::FindNextElementOptions & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Input::FocusManager>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Input::FocusManager & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::GettingFocusEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::GettingFocusEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -3372,6 +4311,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::LosingFocusEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::LosingFocusEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs & value) const noexcept
@@ -3420,6 +4368,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

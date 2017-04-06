@@ -78,6 +78,11 @@ struct __declspec(uuid("165951ed-2108-4168-9175-87e027bc9285")) __declspec(novta
     virtual HRESULT __stdcall abi_RequestAccessAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> ** result) = 0;
 };
 
+struct __declspec(uuid("0f534261-c55d-4e6b-a895-a19de69a42e3")) __declspec(novtable) ISpatialSurfaceObserverStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_IsSupported(bool * value) = 0;
+};
+
 }
 
 namespace ABI {
@@ -161,6 +166,12 @@ struct WINRT_EBO impl_ISpatialSurfaceObserverStatics
     Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> RequestAccessAsync() const;
 };
 
+template <typename D>
+struct WINRT_EBO impl_ISpatialSurfaceObserverStatics2
+{
+    bool IsSupported() const;
+};
+
 }
 
 namespace impl {
@@ -205,6 +216,12 @@ template <> struct traits<Windows::Perception::Spatial::Surfaces::ISpatialSurfac
 {
     using abi = ABI::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics;
     template <typename D> using consume = Windows::Perception::Spatial::Surfaces::impl_ISpatialSurfaceObserverStatics<D>;
+};
+
+template <> struct traits<Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2>
+{
+    using abi = ABI::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2;
+    template <typename D> using consume = Windows::Perception::Spatial::Surfaces::impl_ISpatialSurfaceObserverStatics2<D>;
 };
 
 template <> struct traits<Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo>

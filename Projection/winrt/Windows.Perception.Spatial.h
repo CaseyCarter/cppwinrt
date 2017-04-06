@@ -10,6 +10,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.Perception.3.h"
+#include "internal/Windows.System.RemoteSystems.3.h"
 #include "internal/Windows.Perception.Spatial.3.h"
 #include "Windows.Perception.h"
 
@@ -375,6 +376,386 @@ struct produce<D, Windows::Perception::Spatial::ISpatialCoordinateSystem> : prod
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialEntity> : produce_base<D, Windows::Perception::Spatial::ISpatialEntity>
+{
+    HRESULT __stdcall get_Id(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Id());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Anchor(impl::abi_arg_out<Windows::Perception::Spatial::ISpatialAnchor> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Anchor());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IPropertySet> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Properties());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialEntityAddedEventArgs> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityAddedEventArgs>
+{
+    HRESULT __stdcall get_Entity(impl::abi_arg_out<Windows::Perception::Spatial::ISpatialEntity> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Entity());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialEntityFactory> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityFactory>
+{
+    HRESULT __stdcall abi_CreateWithSpatialAnchor(impl::abi_arg_in<Windows::Perception::Spatial::ISpatialAnchor> spatialAnchor, impl::abi_arg_out<Windows::Perception::Spatial::ISpatialEntity> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CreateWithSpatialAnchor(*reinterpret_cast<const Windows::Perception::Spatial::SpatialAnchor *>(&spatialAnchor)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateWithSpatialAnchorAndProperties(impl::abi_arg_in<Windows::Perception::Spatial::ISpatialAnchor> spatialAnchor, impl::abi_arg_in<Windows::Foundation::Collections::IPropertySet> propertySet, impl::abi_arg_out<Windows::Perception::Spatial::ISpatialEntity> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CreateWithSpatialAnchorAndProperties(*reinterpret_cast<const Windows::Perception::Spatial::SpatialAnchor *>(&spatialAnchor), *reinterpret_cast<const Windows::Foundation::Collections::ValueSet *>(&propertySet)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs>
+{
+    HRESULT __stdcall get_Entity(impl::abi_arg_out<Windows::Perception::Spatial::ISpatialEntity> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Entity());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialEntityStore> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityStore>
+{
+    HRESULT __stdcall abi_SaveAsync(impl::abi_arg_in<Windows::Perception::Spatial::ISpatialEntity> entity, impl::abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *action = detach_abi(this->shim().SaveAsync(*reinterpret_cast<const Windows::Perception::Spatial::SpatialEntity *>(&entity)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *action = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RemoveAsync(impl::abi_arg_in<Windows::Perception::Spatial::ISpatialEntity> entity, impl::abi_arg_out<Windows::Foundation::IAsyncAction> action) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *action = detach_abi(this->shim().RemoveAsync(*reinterpret_cast<const Windows::Perception::Spatial::SpatialEntity *>(&entity)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *action = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateEntityWatcher(impl::abi_arg_out<Windows::Perception::Spatial::ISpatialEntityWatcher> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CreateEntityWatcher());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialEntityStoreStatics> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityStoreStatics>
+{
+    HRESULT __stdcall get_IsSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryGetForRemoteSystemSession(impl::abi_arg_in<Windows::System::RemoteSystems::IRemoteSystemSession> session, impl::abi_arg_out<Windows::Perception::Spatial::ISpatialEntityStore> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TryGet(*reinterpret_cast<const Windows::System::RemoteSystems::RemoteSystemSession *>(&session)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs>
+{
+    HRESULT __stdcall get_Entity(impl::abi_arg_out<Windows::Perception::Spatial::ISpatialEntity> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Entity());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialEntityWatcher> : produce_base<D, Windows::Perception::Spatial::ISpatialEntityWatcher>
+{
+    HRESULT __stdcall get_Status(Windows::Perception::Spatial::SpatialEntityWatcherStatus * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Status());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_Added(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().Added(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_Added(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Added(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_Updated(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().Updated(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_Updated(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Updated(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_Removed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().Removed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_Removed(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Removed(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_EnumerationCompleted(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().EnumerationCompleted(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_EnumerationCompleted(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().EnumerationCompleted(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Start() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Start();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Stop() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Stop();
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -833,6 +1214,146 @@ struct produce<D, Windows::Perception::Spatial::ISpatialLocatorStatics> : produc
 };
 
 template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialStageFrameOfReference> : produce_base<D, Windows::Perception::Spatial::ISpatialStageFrameOfReference>
+{
+    HRESULT __stdcall get_CoordinateSystem(impl::abi_arg_out<Windows::Perception::Spatial::ISpatialCoordinateSystem> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CoordinateSystem());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_MovementRange(Windows::Perception::Spatial::SpatialMovementRange * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MovementRange());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_LookDirectionRange(Windows::Perception::Spatial::SpatialLookDirectionRange * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().LookDirectionRange());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetCoordinateSystemAtCurrentLocation(impl::abi_arg_in<Windows::Perception::Spatial::ISpatialLocator> locator, impl::abi_arg_out<Windows::Perception::Spatial::ISpatialCoordinateSystem> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetCoordinateSystemAtCurrentLocation(*reinterpret_cast<const Windows::Perception::Spatial::SpatialLocator *>(&locator)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryGetMovementBounds(impl::abi_arg_in<Windows::Perception::Spatial::ISpatialCoordinateSystem> coordinateSystem, uint32_t * __valueSize, impl::abi_arg_out<Windows::Foundation::Numerics::float3> * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            std::tie(*__valueSize, *value) = detach_abi(this->shim().TryGetMovementBounds(*reinterpret_cast<const Windows::Perception::Spatial::SpatialCoordinateSystem *>(&coordinateSystem)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *__valueSize = 0;
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics> : produce_base<D, Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>
+{
+    HRESULT __stdcall get_Current(impl::abi_arg_out<Windows::Perception::Spatial::ISpatialStageFrameOfReference> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Current());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_CurrentChanged(impl::abi_arg_in<Windows::Foundation::EventHandler<Windows::Foundation::IInspectable>> handler, event_token * cookie) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *cookie = detach_abi(this->shim().CurrentChanged(*reinterpret_cast<const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_CurrentChanged(event_token cookie) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CurrentChanged(cookie);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_RequestNewStageAsync(impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference>> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().RequestNewStageAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Perception::Spatial::ISpatialStationaryFrameOfReference> : produce_base<D, Windows::Perception::Spatial::ISpatialStationaryFrameOfReference>
 {
     HRESULT __stdcall get_CoordinateSystem(impl::abi_arg_out<Windows::Perception::Spatial::ISpatialCoordinateSystem> value) noexcept override
@@ -1223,6 +1744,248 @@ template <typename D> Windows::Perception::Spatial::SpatialBoundingVolume impl_I
     return value;
 }
 
+template <typename D> Windows::Perception::Spatial::SpatialCoordinateSystem impl_ISpatialStageFrameOfReference<D>::CoordinateSystem() const
+{
+    Windows::Perception::Spatial::SpatialCoordinateSystem value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialStageFrameOfReference)->get_CoordinateSystem(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialMovementRange impl_ISpatialStageFrameOfReference<D>::MovementRange() const
+{
+    Windows::Perception::Spatial::SpatialMovementRange value {};
+    check_hresult(WINRT_SHIM(ISpatialStageFrameOfReference)->get_MovementRange(&value));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialLookDirectionRange impl_ISpatialStageFrameOfReference<D>::LookDirectionRange() const
+{
+    Windows::Perception::Spatial::SpatialLookDirectionRange value {};
+    check_hresult(WINRT_SHIM(ISpatialStageFrameOfReference)->get_LookDirectionRange(&value));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialCoordinateSystem impl_ISpatialStageFrameOfReference<D>::GetCoordinateSystemAtCurrentLocation(const Windows::Perception::Spatial::SpatialLocator & locator) const
+{
+    Windows::Perception::Spatial::SpatialCoordinateSystem result { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialStageFrameOfReference)->abi_GetCoordinateSystemAtCurrentLocation(get_abi(locator), put_abi(result)));
+    return result;
+}
+
+template <typename D> com_array<Windows::Foundation::Numerics::float3> impl_ISpatialStageFrameOfReference<D>::TryGetMovementBounds(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
+{
+    com_array<Windows::Foundation::Numerics::float3> value {};
+    check_hresult(WINRT_SHIM(ISpatialStageFrameOfReference)->abi_TryGetMovementBounds(get_abi(coordinateSystem), impl::put_size_abi(value), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialStageFrameOfReference impl_ISpatialStageFrameOfReferenceStatics<D>::Current() const
+{
+    Windows::Perception::Spatial::SpatialStageFrameOfReference value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialStageFrameOfReferenceStatics)->get_Current(put_abi(value)));
+    return value;
+}
+
+template <typename D> event_token impl_ISpatialStageFrameOfReferenceStatics<D>::CurrentChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
+{
+    event_token cookie {};
+    check_hresult(WINRT_SHIM(ISpatialStageFrameOfReferenceStatics)->add_CurrentChanged(get_abi(handler), &cookie));
+    return cookie;
+}
+
+template <typename D> event_revoker<ISpatialStageFrameOfReferenceStatics> impl_ISpatialStageFrameOfReferenceStatics<D>::CurrentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, ISpatialStageFrameOfReferenceStatics>(this, &ABI::Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics::remove_CurrentChanged, CurrentChanged(handler));
+}
+
+template <typename D> void impl_ISpatialStageFrameOfReferenceStatics<D>::CurrentChanged(event_token cookie) const
+{
+    check_hresult(WINRT_SHIM(ISpatialStageFrameOfReferenceStatics)->remove_CurrentChanged(cookie));
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference> impl_ISpatialStageFrameOfReferenceStatics<D>::RequestNewStageAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference> result;
+    check_hresult(WINRT_SHIM(ISpatialStageFrameOfReferenceStatics)->abi_RequestNewStageAsync(put_abi(result)));
+    return result;
+}
+
+template <typename D> hstring impl_ISpatialEntity<D>::Id() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ISpatialEntity)->get_Id(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialAnchor impl_ISpatialEntity<D>::Anchor() const
+{
+    Windows::Perception::Spatial::SpatialAnchor value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialEntity)->get_Anchor(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::ValueSet impl_ISpatialEntity<D>::Properties() const
+{
+    Windows::Foundation::Collections::ValueSet value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialEntity)->get_Properties(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialEntity impl_ISpatialEntityFactory<D>::CreateWithSpatialAnchor(const Windows::Perception::Spatial::SpatialAnchor & spatialAnchor) const
+{
+    Windows::Perception::Spatial::SpatialEntity value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialEntityFactory)->abi_CreateWithSpatialAnchor(get_abi(spatialAnchor), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialEntity impl_ISpatialEntityFactory<D>::CreateWithSpatialAnchorAndProperties(const Windows::Perception::Spatial::SpatialAnchor & spatialAnchor, const Windows::Foundation::Collections::ValueSet & propertySet) const
+{
+    Windows::Perception::Spatial::SpatialEntity value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialEntityFactory)->abi_CreateWithSpatialAnchorAndProperties(get_abi(spatialAnchor), get_abi(propertySet), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialEntity impl_ISpatialEntityAddedEventArgs<D>::Entity() const
+{
+    Windows::Perception::Spatial::SpatialEntity value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialEntityAddedEventArgs)->get_Entity(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialEntity impl_ISpatialEntityUpdatedEventArgs<D>::Entity() const
+{
+    Windows::Perception::Spatial::SpatialEntity value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialEntityUpdatedEventArgs)->get_Entity(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialEntity impl_ISpatialEntityRemovedEventArgs<D>::Entity() const
+{
+    Windows::Perception::Spatial::SpatialEntity value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialEntityRemovedEventArgs)->get_Entity(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialEntityWatcherStatus impl_ISpatialEntityWatcher<D>::Status() const
+{
+    Windows::Perception::Spatial::SpatialEntityWatcherStatus value {};
+    check_hresult(WINRT_SHIM(ISpatialEntityWatcher)->get_Status(&value));
+    return value;
+}
+
+template <typename D> event_token impl_ISpatialEntityWatcher<D>::Added(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ISpatialEntityWatcher)->add_Added(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ISpatialEntityWatcher> impl_ISpatialEntityWatcher<D>::Added(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityAddedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, ISpatialEntityWatcher>(this, &ABI::Windows::Perception::Spatial::ISpatialEntityWatcher::remove_Added, Added(handler));
+}
+
+template <typename D> void impl_ISpatialEntityWatcher<D>::Added(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ISpatialEntityWatcher)->remove_Added(token));
+}
+
+template <typename D> event_token impl_ISpatialEntityWatcher<D>::Updated(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ISpatialEntityWatcher)->add_Updated(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ISpatialEntityWatcher> impl_ISpatialEntityWatcher<D>::Updated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, ISpatialEntityWatcher>(this, &ABI::Windows::Perception::Spatial::ISpatialEntityWatcher::remove_Updated, Updated(handler));
+}
+
+template <typename D> void impl_ISpatialEntityWatcher<D>::Updated(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ISpatialEntityWatcher)->remove_Updated(token));
+}
+
+template <typename D> event_token impl_ISpatialEntityWatcher<D>::Removed(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ISpatialEntityWatcher)->add_Removed(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ISpatialEntityWatcher> impl_ISpatialEntityWatcher<D>::Removed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Perception::Spatial::SpatialEntityRemovedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, ISpatialEntityWatcher>(this, &ABI::Windows::Perception::Spatial::ISpatialEntityWatcher::remove_Removed, Removed(handler));
+}
+
+template <typename D> void impl_ISpatialEntityWatcher<D>::Removed(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ISpatialEntityWatcher)->remove_Removed(token));
+}
+
+template <typename D> event_token impl_ISpatialEntityWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ISpatialEntityWatcher)->add_EnumerationCompleted(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ISpatialEntityWatcher> impl_ISpatialEntityWatcher<D>::EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialEntityWatcher, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, ISpatialEntityWatcher>(this, &ABI::Windows::Perception::Spatial::ISpatialEntityWatcher::remove_EnumerationCompleted, EnumerationCompleted(handler));
+}
+
+template <typename D> void impl_ISpatialEntityWatcher<D>::EnumerationCompleted(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ISpatialEntityWatcher)->remove_EnumerationCompleted(token));
+}
+
+template <typename D> void impl_ISpatialEntityWatcher<D>::Start() const
+{
+    check_hresult(WINRT_SHIM(ISpatialEntityWatcher)->abi_Start());
+}
+
+template <typename D> void impl_ISpatialEntityWatcher<D>::Stop() const
+{
+    check_hresult(WINRT_SHIM(ISpatialEntityWatcher)->abi_Stop());
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_ISpatialEntityStore<D>::SaveAsync(const Windows::Perception::Spatial::SpatialEntity & entity) const
+{
+    Windows::Foundation::IAsyncAction action;
+    check_hresult(WINRT_SHIM(ISpatialEntityStore)->abi_SaveAsync(get_abi(entity), put_abi(action)));
+    return action;
+}
+
+template <typename D> Windows::Foundation::IAsyncAction impl_ISpatialEntityStore<D>::RemoveAsync(const Windows::Perception::Spatial::SpatialEntity & entity) const
+{
+    Windows::Foundation::IAsyncAction action;
+    check_hresult(WINRT_SHIM(ISpatialEntityStore)->abi_RemoveAsync(get_abi(entity), put_abi(action)));
+    return action;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialEntityWatcher impl_ISpatialEntityStore<D>::CreateEntityWatcher() const
+{
+    Windows::Perception::Spatial::SpatialEntityWatcher value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialEntityStore)->abi_CreateEntityWatcher(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_ISpatialEntityStoreStatics<D>::IsSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ISpatialEntityStoreStatics)->get_IsSupported(&value));
+    return value;
+}
+
+template <typename D> Windows::Perception::Spatial::SpatialEntityStore impl_ISpatialEntityStoreStatics<D>::TryGet(const Windows::System::RemoteSystems::RemoteSystemSession & session) const
+{
+    Windows::Perception::Spatial::SpatialEntityStore value { nullptr };
+    check_hresult(WINRT_SHIM(ISpatialEntityStoreStatics)->abi_TryGetForRemoteSystemSession(get_abi(session), put_abi(value)));
+    return value;
+}
+
 inline Windows::Perception::Spatial::SpatialAnchor SpatialAnchor::TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem)
 {
     return get_activation_factory<SpatialAnchor, ISpatialAnchorStatics>().TryCreateRelativeTo(coordinateSystem);
@@ -1278,9 +2041,53 @@ inline Windows::Perception::Spatial::SpatialBoundingVolume SpatialBoundingVolume
     return get_activation_factory<SpatialBoundingVolume, ISpatialBoundingVolumeStatics>().FromFrustum(coordinateSystem, frustum);
 }
 
+inline SpatialEntity::SpatialEntity(const Windows::Perception::Spatial::SpatialAnchor & spatialAnchor) :
+    SpatialEntity(get_activation_factory<SpatialEntity, ISpatialEntityFactory>().CreateWithSpatialAnchor(spatialAnchor))
+{}
+
+inline SpatialEntity::SpatialEntity(const Windows::Perception::Spatial::SpatialAnchor & spatialAnchor, const Windows::Foundation::Collections::ValueSet & propertySet) :
+    SpatialEntity(get_activation_factory<SpatialEntity, ISpatialEntityFactory>().CreateWithSpatialAnchorAndProperties(spatialAnchor, propertySet))
+{}
+
+inline bool SpatialEntityStore::IsSupported()
+{
+    return get_activation_factory<SpatialEntityStore, ISpatialEntityStoreStatics>().IsSupported();
+}
+
+inline Windows::Perception::Spatial::SpatialEntityStore SpatialEntityStore::TryGet(const Windows::System::RemoteSystems::RemoteSystemSession & session)
+{
+    return get_activation_factory<SpatialEntityStore, ISpatialEntityStoreStatics>().TryGet(session);
+}
+
 inline Windows::Perception::Spatial::SpatialLocator SpatialLocator::GetDefault()
 {
     return get_activation_factory<SpatialLocator, ISpatialLocatorStatics>().GetDefault();
+}
+
+inline Windows::Perception::Spatial::SpatialStageFrameOfReference SpatialStageFrameOfReference::Current()
+{
+    return get_activation_factory<SpatialStageFrameOfReference, ISpatialStageFrameOfReferenceStatics>().Current();
+}
+
+inline event_token SpatialStageFrameOfReference::CurrentChanged(const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
+{
+    return get_activation_factory<SpatialStageFrameOfReference, ISpatialStageFrameOfReferenceStatics>().CurrentChanged(handler);
+}
+
+inline factory_event_revoker<ISpatialStageFrameOfReferenceStatics> SpatialStageFrameOfReference::CurrentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & handler)
+{
+    auto factory = get_activation_factory<SpatialStageFrameOfReference, ISpatialStageFrameOfReferenceStatics>();
+    return { factory, &ABI::Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics::remove_CurrentChanged, factory.CurrentChanged(handler) };
+}
+
+inline void SpatialStageFrameOfReference::CurrentChanged(event_token cookie)
+{
+    get_activation_factory<SpatialStageFrameOfReference, ISpatialStageFrameOfReferenceStatics>().CurrentChanged(cookie);
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialStageFrameOfReference> SpatialStageFrameOfReference::RequestNewStageAsync()
+{
+    return get_activation_factory<SpatialStageFrameOfReference, ISpatialStageFrameOfReferenceStatics>().RequestNewStageAsync();
 }
 
 }
@@ -1378,6 +2185,78 @@ struct std::hash<winrt::Windows::Perception::Spatial::ISpatialCoordinateSystem>
 };
 
 template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialEntity>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialEntity & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialEntityAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialEntityAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialEntityFactory>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialEntityFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialEntityRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialEntityStore>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialEntityStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialEntityStoreStatics>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialEntityStoreStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialEntityUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialEntityWatcher>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialEntityWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Perception::Spatial::ISpatialLocation>
 {
     size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialLocation & value) const noexcept
@@ -1417,6 +2296,24 @@ template<>
 struct std::hash<winrt::Windows::Perception::Spatial::ISpatialLocatorStatics>
 {
     size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialLocatorStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialStageFrameOfReference>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialStageFrameOfReference & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::ISpatialStageFrameOfReferenceStatics & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -1477,6 +2374,60 @@ struct std::hash<winrt::Windows::Perception::Spatial::SpatialCoordinateSystem>
 };
 
 template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialEntity>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialEntity & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialEntityAddedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialEntityAddedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialEntityRemovedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialEntityRemovedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialEntityStore>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialEntityStore & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialEntityWatcher>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialEntityWatcher & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Perception::Spatial::SpatialLocation>
 {
     size_t operator()(const winrt::Windows::Perception::Spatial::SpatialLocation & value) const noexcept
@@ -1507,6 +2458,15 @@ template<>
 struct std::hash<winrt::Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs>
 {
     size_t operator()(const winrt::Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Perception::Spatial::SpatialStageFrameOfReference>
+{
+    size_t operator()(const winrt::Windows::Perception::Spatial::SpatialStageFrameOfReference & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

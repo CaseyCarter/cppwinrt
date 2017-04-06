@@ -9,6 +9,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.UI.3.h"
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Graphics.DirectX.3.h"
+#include "internal/Windows.Graphics.3.h"
 #include "internal/Windows.UI.Core.3.h"
 #include "internal/Windows.Graphics.Effects.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
@@ -404,6 +405,85 @@ struct produce<D, Windows::UI::Composition::ICompositionBrushFactory> : produce_
 {};
 
 template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositionCapabilities> : produce_base<D, Windows::UI::Composition::ICompositionCapabilities>
+{
+    HRESULT __stdcall abi_AreEffectsSupported(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AreEffectsSupported());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_AreEffectsFast(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AreEffectsFast());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_Changed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().Changed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_Changed(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Changed(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositionCapabilitiesStatics> : produce_base<D, Windows::UI::Composition::ICompositionCapabilitiesStatics>
+{
+    HRESULT __stdcall abi_GetForCurrentView(impl::abi_arg_out<Windows::UI::Composition::ICompositionCapabilities> current) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *current = detach_abi(this->shim().GetForCurrentView());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *current = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionClip> : produce_base<D, Windows::UI::Composition::ICompositionClip>
 {};
 
@@ -750,6 +830,98 @@ struct produce<D, Windows::UI::Composition::ICompositionDrawingSurface> : produc
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositionDrawingSurface2> : produce_base<D, Windows::UI::Composition::ICompositionDrawingSurface2>
+{
+    HRESULT __stdcall get_SizeInt32(impl::abi_arg_out<Windows::Graphics::SizeInt32> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SizeInt32());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Resize(impl::abi_arg_in<Windows::Graphics::SizeInt32> sizePixels) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Resize(*reinterpret_cast<const Windows::Graphics::SizeInt32 *>(&sizePixels));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Scroll(impl::abi_arg_in<Windows::Graphics::PointInt32> offset) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Scroll(*reinterpret_cast<const Windows::Graphics::PointInt32 *>(&offset));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ScrollRect(impl::abi_arg_in<Windows::Graphics::PointInt32> offset, impl::abi_arg_in<Windows::Graphics::RectInt32> scrollRect) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Scroll(*reinterpret_cast<const Windows::Graphics::PointInt32 *>(&offset), *reinterpret_cast<const Windows::Graphics::RectInt32 *>(&scrollRect));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ScrollWithClip(impl::abi_arg_in<Windows::Graphics::PointInt32> offset, impl::abi_arg_in<Windows::Graphics::RectInt32> clipRect) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ScrollWithClip(*reinterpret_cast<const Windows::Graphics::PointInt32 *>(&offset), *reinterpret_cast<const Windows::Graphics::RectInt32 *>(&clipRect));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_ScrollRectWithClip(impl::abi_arg_in<Windows::Graphics::PointInt32> offset, impl::abi_arg_in<Windows::Graphics::RectInt32> clipRect, impl::abi_arg_in<Windows::Graphics::RectInt32> scrollRect) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ScrollWithClip(*reinterpret_cast<const Windows::Graphics::PointInt32 *>(&offset), *reinterpret_cast<const Windows::Graphics::RectInt32 *>(&clipRect), *reinterpret_cast<const Windows::Graphics::RectInt32 *>(&scrollRect));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositionDrawingSurfaceFactory> : produce_base<D, Windows::UI::Composition::ICompositionDrawingSurfaceFactory>
+{};
+
+template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositionEasingFunction> : produce_base<D, Windows::UI::Composition::ICompositionEasingFunction>
 {};
 
@@ -917,6 +1089,40 @@ struct produce<D, Windows::UI::Composition::ICompositionGraphicsDevice> : produc
         }
         catch (...)
         {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositionGraphicsDevice2> : produce_base<D, Windows::UI::Composition::ICompositionGraphicsDevice2>
+{
+    HRESULT __stdcall abi_CreateDrawingSurface2(impl::abi_arg_in<Windows::Graphics::SizeInt32> sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, impl::abi_arg_out<Windows::UI::Composition::ICompositionDrawingSurface> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateDrawingSurface2(*reinterpret_cast<const Windows::Graphics::SizeInt32 *>(&sizePixels), pixelFormat, alphaMode));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateVirtualDrawingSurface(impl::abi_arg_in<Windows::Graphics::SizeInt32> sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode, impl::abi_arg_out<Windows::UI::Composition::ICompositionVirtualDrawingSurface> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateVirtualDrawingSurface(*reinterpret_cast<const Windows::Graphics::SizeInt32 *>(&sizePixels), pixelFormat, alphaMode));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
             return impl::to_hresult();
         }
     }
@@ -2272,6 +2478,28 @@ struct produce<D, Windows::UI::Composition::ICompositionTarget> : produce_base<D
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositionVirtualDrawingSurface> : produce_base<D, Windows::UI::Composition::ICompositionVirtualDrawingSurface>
+{
+    HRESULT __stdcall abi_Trim(uint32_t __rectsSize, impl::abi_arg_in<Windows::Graphics::RectInt32> * rects) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Trim(*reinterpret_cast<const Windows::Graphics::RectInt32 *>(&rects));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFactory> : produce_base<D, Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFactory>
+{};
+
+template <typename D>
 struct produce<D, Windows::UI::Composition::ICompositor> : produce_base<D, Windows::UI::Composition::ICompositor>
 {
     HRESULT __stdcall abi_CreateColorKeyFrameAnimation(impl::abi_arg_out<Windows::UI::Composition::IColorKeyFrameAnimation> result) noexcept override
@@ -2824,6 +3052,25 @@ struct produce<D, Windows::UI::Composition::ICompositor2> : produce_base<D, Wind
         {
             typename D::abi_guard guard(this->shim());
             *result = detach_abi(this->shim().CreateStepEasingFunction(stepCount));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::ICompositor3> : produce_base<D, Windows::UI::Composition::ICompositor3>
+{
+    HRESULT __stdcall abi_CreateHostBackdropBrush(impl::abi_arg_out<Windows::UI::Composition::ICompositionBackdropBrush> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateHostBackdropBrush());
             return S_OK;
         }
         catch (...)
@@ -3485,6 +3732,38 @@ struct produce<D, Windows::UI::Composition::IKeyFrameAnimation2> : produce_base<
         {
             typename D::abi_guard guard(this->shim());
             this->shim().Direction(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Composition::IKeyFrameAnimation3> : produce_base<D, Windows::UI::Composition::IKeyFrameAnimation3>
+{
+    HRESULT __stdcall get_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DelayBehavior());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().DelayBehavior(value);
             return S_OK;
         }
         catch (...)
@@ -4907,6 +5186,95 @@ struct produce<D, Windows::UI::Composition::IVisual> : produce_base<D, Windows::
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Composition::IVisual2> : produce_base<D, Windows::UI::Composition::IVisual2>
+{
+    HRESULT __stdcall get_ParentForTransform(impl::abi_arg_out<Windows::UI::Composition::IVisual> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ParentForTransform());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_ParentForTransform(impl::abi_arg_in<Windows::UI::Composition::IVisual> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ParentForTransform(*reinterpret_cast<const Windows::UI::Composition::Visual *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_RelativeOffsetAdjustment(impl::abi_arg_out<Windows::Foundation::Numerics::float3> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().RelativeOffsetAdjustment());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_RelativeOffsetAdjustment(impl::abi_arg_in<Windows::Foundation::Numerics::float3> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().RelativeOffsetAdjustment(*reinterpret_cast<const Windows::Foundation::Numerics::float3 *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_RelativeSizeAdjustment(impl::abi_arg_out<Windows::Foundation::Numerics::float2> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().RelativeSizeAdjustment());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_RelativeSizeAdjustment(impl::abi_arg_in<Windows::Foundation::Numerics::float2> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().RelativeSizeAdjustment(*reinterpret_cast<const Windows::Foundation::Numerics::float2 *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Composition::IVisualCollection> : produce_base<D, Windows::UI::Composition::IVisualCollection>
 {
     HRESULT __stdcall get_Count(int32_t * value) noexcept override
@@ -5204,6 +5572,44 @@ template <typename D> void impl_ICompositionAnimationGroup<D>::RemoveAll() const
     check_hresult(WINRT_SHIM(ICompositionAnimationGroup)->abi_RemoveAll());
 }
 
+template <typename D> bool impl_ICompositionCapabilities<D>::AreEffectsSupported() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ICompositionCapabilities)->abi_AreEffectsSupported(&value));
+    return value;
+}
+
+template <typename D> bool impl_ICompositionCapabilities<D>::AreEffectsFast() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ICompositionCapabilities)->abi_AreEffectsFast(&value));
+    return value;
+}
+
+template <typename D> event_token impl_ICompositionCapabilities<D>::Changed(const Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(ICompositionCapabilities)->add_Changed(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<ICompositionCapabilities> impl_ICompositionCapabilities<D>::Changed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionCapabilities, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, ICompositionCapabilities>(this, &ABI::Windows::UI::Composition::ICompositionCapabilities::remove_Changed, Changed(handler));
+}
+
+template <typename D> void impl_ICompositionCapabilities<D>::Changed(event_token token) const
+{
+    check_hresult(WINRT_SHIM(ICompositionCapabilities)->remove_Changed(token));
+}
+
+template <typename D> Windows::UI::Composition::CompositionCapabilities impl_ICompositionCapabilitiesStatics<D>::GetForCurrentView() const
+{
+    Windows::UI::Composition::CompositionCapabilities current { nullptr };
+    check_hresult(WINRT_SHIM(ICompositionCapabilitiesStatics)->abi_GetForCurrentView(put_abi(current)));
+    return current;
+}
+
 template <typename D> Windows::Foundation::Numerics::float2 impl_ICompositionClip2<D>::AnchorPoint() const
 {
     Windows::Foundation::Numerics::float2 value {};
@@ -5352,6 +5758,38 @@ template <typename D> Windows::Foundation::Size impl_ICompositionDrawingSurface<
     return value;
 }
 
+template <typename D> Windows::Graphics::SizeInt32 impl_ICompositionDrawingSurface2<D>::SizeInt32() const
+{
+    Windows::Graphics::SizeInt32 value {};
+    check_hresult(WINRT_SHIM(ICompositionDrawingSurface2)->get_SizeInt32(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ICompositionDrawingSurface2<D>::Resize(const Windows::Graphics::SizeInt32 & sizePixels) const
+{
+    check_hresult(WINRT_SHIM(ICompositionDrawingSurface2)->abi_Resize(get_abi(sizePixels)));
+}
+
+template <typename D> void impl_ICompositionDrawingSurface2<D>::Scroll(const Windows::Graphics::PointInt32 & offset) const
+{
+    check_hresult(WINRT_SHIM(ICompositionDrawingSurface2)->abi_Scroll(get_abi(offset)));
+}
+
+template <typename D> void impl_ICompositionDrawingSurface2<D>::Scroll(const Windows::Graphics::PointInt32 & offset, const Windows::Graphics::RectInt32 & scrollRect) const
+{
+    check_hresult(WINRT_SHIM(ICompositionDrawingSurface2)->abi_ScrollRect(get_abi(offset), get_abi(scrollRect)));
+}
+
+template <typename D> void impl_ICompositionDrawingSurface2<D>::ScrollWithClip(const Windows::Graphics::PointInt32 & offset, const Windows::Graphics::RectInt32 & clipRect) const
+{
+    check_hresult(WINRT_SHIM(ICompositionDrawingSurface2)->abi_ScrollWithClip(get_abi(offset), get_abi(clipRect)));
+}
+
+template <typename D> void impl_ICompositionDrawingSurface2<D>::ScrollWithClip(const Windows::Graphics::PointInt32 & offset, const Windows::Graphics::RectInt32 & clipRect, const Windows::Graphics::RectInt32 & scrollRect) const
+{
+    check_hresult(WINRT_SHIM(ICompositionDrawingSurface2)->abi_ScrollRectWithClip(get_abi(offset), get_abi(clipRect), get_abi(scrollRect)));
+}
+
 template <typename D> Windows::UI::Composition::CompositionBrush impl_ICompositionEffectBrush<D>::GetSourceParameter(hstring_view name) const
 {
     Windows::UI::Composition::CompositionBrush result { nullptr };
@@ -5421,6 +5859,20 @@ template <typename D> event_revoker<ICompositionGraphicsDevice> impl_ICompositio
 template <typename D> void impl_ICompositionGraphicsDevice<D>::RenderingDeviceReplaced(event_token token) const
 {
     check_hresult(WINRT_SHIM(ICompositionGraphicsDevice)->remove_RenderingDeviceReplaced(token));
+}
+
+template <typename D> Windows::UI::Composition::CompositionDrawingSurface impl_ICompositionGraphicsDevice2<D>::CreateDrawingSurface2(const Windows::Graphics::SizeInt32 & sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode) const
+{
+    Windows::UI::Composition::CompositionDrawingSurface result { nullptr };
+    check_hresult(WINRT_SHIM(ICompositionGraphicsDevice2)->abi_CreateDrawingSurface2(get_abi(sizePixels), pixelFormat, alphaMode, put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Composition::CompositionVirtualDrawingSurface impl_ICompositionGraphicsDevice2<D>::CreateVirtualDrawingSurface(const Windows::Graphics::SizeInt32 & sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode) const
+{
+    Windows::UI::Composition::CompositionVirtualDrawingSurface result { nullptr };
+    check_hresult(WINRT_SHIM(ICompositionGraphicsDevice2)->abi_CreateVirtualDrawingSurface(get_abi(sizePixels), pixelFormat, alphaMode, put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::UI::Composition::VisualUnorderedCollection impl_ICompositionLight<D>::Targets() const
@@ -5969,6 +6421,11 @@ template <typename D> void impl_ICompositionTarget<D>::Root(const Windows::UI::C
     check_hresult(WINRT_SHIM(ICompositionTarget)->put_Root(get_abi(value)));
 }
 
+template <typename D> void impl_ICompositionVirtualDrawingSurface<D>::Trim(array_view<const Windows::Graphics::RectInt32> rects) const
+{
+    check_hresult(WINRT_SHIM(ICompositionVirtualDrawingSurface)->abi_Trim(rects.size(), get_abi(rects)));
+}
+
 template <typename D> Windows::UI::Composition::ColorKeyFrameAnimation impl_ICompositor<D>::CreateColorKeyFrameAnimation() const
 {
     Windows::UI::Composition::ColorKeyFrameAnimation result { nullptr };
@@ -6225,6 +6682,13 @@ template <typename D> Windows::UI::Composition::StepEasingFunction impl_IComposi
 {
     Windows::UI::Composition::StepEasingFunction result { nullptr };
     check_hresult(WINRT_SHIM(ICompositor2)->abi_CreateStepEasingFunctionWithStepCount(stepCount, put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Composition::CompositionBackdropBrush impl_ICompositor3<D>::CreateHostBackdropBrush() const
+{
+    Windows::UI::Composition::CompositionBackdropBrush result { nullptr };
+    check_hresult(WINRT_SHIM(ICompositor3)->abi_CreateHostBackdropBrush(put_abi(result)));
     return result;
 }
 
@@ -6492,6 +6956,18 @@ template <typename D> Windows::UI::Composition::AnimationDirection impl_IKeyFram
 template <typename D> void impl_IKeyFrameAnimation2<D>::Direction(Windows::UI::Composition::AnimationDirection value) const
 {
     check_hresult(WINRT_SHIM(IKeyFrameAnimation2)->put_Direction(value));
+}
+
+template <typename D> Windows::UI::Composition::AnimationDelayBehavior impl_IKeyFrameAnimation3<D>::DelayBehavior() const
+{
+    Windows::UI::Composition::AnimationDelayBehavior value {};
+    check_hresult(WINRT_SHIM(IKeyFrameAnimation3)->get_DelayBehavior(&value));
+    return value;
+}
+
+template <typename D> void impl_IKeyFrameAnimation3<D>::DelayBehavior(Windows::UI::Composition::AnimationDelayBehavior value) const
+{
+    check_hresult(WINRT_SHIM(IKeyFrameAnimation3)->put_DelayBehavior(value));
 }
 
 template <typename D> Windows::UI::Composition::CompositionEffectBrush impl_ILayerVisual<D>::Effect() const
@@ -7062,6 +7538,42 @@ template <typename D> void impl_IVisual<D>::TransformMatrix(const Windows::Found
     check_hresult(WINRT_SHIM(IVisual)->put_TransformMatrix(get_abi(value)));
 }
 
+template <typename D> Windows::UI::Composition::Visual impl_IVisual2<D>::ParentForTransform() const
+{
+    Windows::UI::Composition::Visual value { nullptr };
+    check_hresult(WINRT_SHIM(IVisual2)->get_ParentForTransform(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IVisual2<D>::ParentForTransform(const Windows::UI::Composition::Visual & value) const
+{
+    check_hresult(WINRT_SHIM(IVisual2)->put_ParentForTransform(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::Numerics::float3 impl_IVisual2<D>::RelativeOffsetAdjustment() const
+{
+    Windows::Foundation::Numerics::float3 value {};
+    check_hresult(WINRT_SHIM(IVisual2)->get_RelativeOffsetAdjustment(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IVisual2<D>::RelativeOffsetAdjustment(const Windows::Foundation::Numerics::float3 & value) const
+{
+    check_hresult(WINRT_SHIM(IVisual2)->put_RelativeOffsetAdjustment(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::Numerics::float2 impl_IVisual2<D>::RelativeSizeAdjustment() const
+{
+    Windows::Foundation::Numerics::float2 value {};
+    check_hresult(WINRT_SHIM(IVisual2)->get_RelativeSizeAdjustment(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IVisual2<D>::RelativeSizeAdjustment(const Windows::Foundation::Numerics::float2 & value) const
+{
+    check_hresult(WINRT_SHIM(IVisual2)->put_RelativeSizeAdjustment(get_abi(value)));
+}
+
 template <typename D> int32_t impl_IVisualCollection<D>::Count() const
 {
     int32_t value {};
@@ -7119,6 +7631,11 @@ template <typename D> void impl_IVisualUnorderedCollection<D>::Remove(const Wind
 template <typename D> void impl_IVisualUnorderedCollection<D>::RemoveAll() const
 {
     check_hresult(WINRT_SHIM(IVisualUnorderedCollection)->abi_RemoveAll());
+}
+
+inline Windows::UI::Composition::CompositionCapabilities CompositionCapabilities::GetForCurrentView()
+{
+    return get_activation_factory<CompositionCapabilities, ICompositionCapabilitiesStatics>().GetForCurrentView();
 }
 
 inline CompositionEffectSourceParameter::CompositionEffectSourceParameter(hstring_view name) :
@@ -7233,6 +7750,24 @@ struct std::hash<winrt::Windows::UI::Composition::ICompositionBrushFactory>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionCapabilities>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionCapabilities & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionCapabilitiesStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionCapabilitiesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Composition::ICompositionClip>
 {
     size_t operator()(const winrt::Windows::UI::Composition::ICompositionClip & value) const noexcept
@@ -7281,6 +7816,24 @@ template<>
 struct std::hash<winrt::Windows::UI::Composition::ICompositionDrawingSurface>
 {
     size_t operator()(const winrt::Windows::UI::Composition::ICompositionDrawingSurface & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionDrawingSurface2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionDrawingSurface2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionDrawingSurfaceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionDrawingSurfaceFactory & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7344,6 +7897,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Composition::ICompositionGraphicsDevice>
 {
     size_t operator()(const winrt::Windows::UI::Composition::ICompositionGraphicsDevice & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionGraphicsDevice2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionGraphicsDevice2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7494,6 +8056,24 @@ struct std::hash<winrt::Windows::UI::Composition::ICompositionTarget>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionVirtualDrawingSurface>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionVirtualDrawingSurface & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositionVirtualDrawingSurfaceFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Composition::ICompositor>
 {
     size_t operator()(const winrt::Windows::UI::Composition::ICompositor & value) const noexcept
@@ -7506,6 +8086,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Composition::ICompositor2>
 {
     size_t operator()(const winrt::Windows::UI::Composition::ICompositor2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::ICompositor3>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::ICompositor3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7596,6 +8185,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Composition::IKeyFrameAnimation2>
 {
     size_t operator()(const winrt::Windows::UI::Composition::IKeyFrameAnimation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::IKeyFrameAnimation3>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IKeyFrameAnimation3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7737,6 +8335,15 @@ struct std::hash<winrt::Windows::UI::Composition::IVisual>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Composition::IVisual2>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::IVisual2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Composition::IVisualCollection>
 {
     size_t operator()(const winrt::Windows::UI::Composition::IVisualCollection & value) const noexcept
@@ -7821,6 +8428,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Composition::CompositionBrush>
 {
     size_t operator()(const winrt::Windows::UI::Composition::CompositionBrush & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionCapabilities>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionCapabilities & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7983,6 +8599,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Composition::CompositionTarget>
 {
     size_t operator()(const winrt::Windows::UI::Composition::CompositionTarget & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Composition::CompositionVirtualDrawingSurface>
+{
+    size_t operator()(const winrt::Windows::UI::Composition::CompositionVirtualDrawingSurface & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

@@ -8,6 +8,16 @@
 
 WINRT_EXPORT namespace winrt {
 
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#endif
+
+
+}
+
 namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_5541d8a7_497c_5aa4_86fc_7713adbf2a2c
@@ -20,19 +30,14 @@ template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
-#endif
-
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
 #endif
 
-#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
 #endif
 
 #ifndef WINRT_GENERIC_9f28f6b7_b5ea_5073_ba3d_8cb2f07291a1
@@ -221,6 +226,7 @@ struct INDClient :
 {
     INDClient(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDClient is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDClient;
 
 struct INDClientFactory :
     Windows::Foundation::IInspectable,
@@ -228,6 +234,7 @@ struct INDClientFactory :
 {
     INDClientFactory(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDClientFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDClientFactory;
 
 struct INDClosedCaptionDataReceivedEventArgs :
     Windows::Foundation::IInspectable,
@@ -235,6 +242,7 @@ struct INDClosedCaptionDataReceivedEventArgs :
 {
     INDClosedCaptionDataReceivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDClosedCaptionDataReceivedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDClosedCaptionDataReceivedEventArgs;
 
 struct INDCustomData :
     Windows::Foundation::IInspectable,
@@ -242,6 +250,7 @@ struct INDCustomData :
 {
     INDCustomData(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDCustomData is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDCustomData;
 
 struct INDCustomDataFactory :
     Windows::Foundation::IInspectable,
@@ -249,6 +258,7 @@ struct INDCustomDataFactory :
 {
     INDCustomDataFactory(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDCustomDataFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDCustomDataFactory;
 
 struct INDDownloadEngine :
     Windows::Foundation::IInspectable,
@@ -256,6 +266,7 @@ struct INDDownloadEngine :
 {
     INDDownloadEngine(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDDownloadEngine is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDDownloadEngine;
 
 struct INDDownloadEngineNotifier :
     Windows::Foundation::IInspectable,
@@ -263,6 +274,7 @@ struct INDDownloadEngineNotifier :
 {
     INDDownloadEngineNotifier(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDDownloadEngineNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDDownloadEngineNotifier;
 
 struct INDLicenseFetchCompletedEventArgs :
     Windows::Foundation::IInspectable,
@@ -270,6 +282,7 @@ struct INDLicenseFetchCompletedEventArgs :
 {
     INDLicenseFetchCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDLicenseFetchCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDLicenseFetchCompletedEventArgs;
 
 struct INDLicenseFetchDescriptor :
     Windows::Foundation::IInspectable,
@@ -277,6 +290,7 @@ struct INDLicenseFetchDescriptor :
 {
     INDLicenseFetchDescriptor(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDLicenseFetchDescriptor is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDLicenseFetchDescriptor;
 
 struct INDLicenseFetchDescriptorFactory :
     Windows::Foundation::IInspectable,
@@ -284,6 +298,7 @@ struct INDLicenseFetchDescriptorFactory :
 {
     INDLicenseFetchDescriptorFactory(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDLicenseFetchDescriptorFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDLicenseFetchDescriptorFactory;
 
 struct INDLicenseFetchResult :
     Windows::Foundation::IInspectable,
@@ -291,6 +306,7 @@ struct INDLicenseFetchResult :
 {
     INDLicenseFetchResult(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDLicenseFetchResult is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDLicenseFetchResult;
 
 struct INDMessenger :
     Windows::Foundation::IInspectable,
@@ -298,6 +314,7 @@ struct INDMessenger :
 {
     INDMessenger(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDMessenger is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDMessenger;
 
 struct INDProximityDetectionCompletedEventArgs :
     Windows::Foundation::IInspectable,
@@ -305,6 +322,7 @@ struct INDProximityDetectionCompletedEventArgs :
 {
     INDProximityDetectionCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDProximityDetectionCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDProximityDetectionCompletedEventArgs;
 
 struct INDRegistrationCompletedEventArgs :
     Windows::Foundation::IInspectable,
@@ -312,6 +330,7 @@ struct INDRegistrationCompletedEventArgs :
 {
     INDRegistrationCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDRegistrationCompletedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDRegistrationCompletedEventArgs;
 
 struct INDSendResult :
     Windows::Foundation::IInspectable,
@@ -319,6 +338,7 @@ struct INDSendResult :
 {
     INDSendResult(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDSendResult is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDSendResult;
 
 struct INDStartResult :
     Windows::Foundation::IInspectable,
@@ -326,6 +346,7 @@ struct INDStartResult :
 {
     INDStartResult(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDStartResult is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDStartResult;
 
 struct INDStorageFileHelper :
     Windows::Foundation::IInspectable,
@@ -333,6 +354,7 @@ struct INDStorageFileHelper :
 {
     INDStorageFileHelper(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDStorageFileHelper is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDStorageFileHelper;
 
 struct INDStreamParser :
     Windows::Foundation::IInspectable,
@@ -340,6 +362,7 @@ struct INDStreamParser :
 {
     INDStreamParser(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDStreamParser is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDStreamParser;
 
 struct INDStreamParserNotifier :
     Windows::Foundation::IInspectable,
@@ -347,6 +370,7 @@ struct INDStreamParserNotifier :
 {
     INDStreamParserNotifier(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDStreamParserNotifier is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDStreamParserNotifier;
 
 struct INDTCPMessengerFactory :
     Windows::Foundation::IInspectable,
@@ -354,6 +378,7 @@ struct INDTCPMessengerFactory :
 {
     INDTCPMessengerFactory(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDTCPMessengerFactory is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDTCPMessengerFactory;
 
 struct INDTransmitterProperties :
     Windows::Foundation::IInspectable,
@@ -361,6 +386,7 @@ struct INDTransmitterProperties :
 {
     INDTransmitterProperties(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("INDTransmitterProperties is deprecated and might not work on all platforms. For more info, see MSDN.")]] INDTransmitterProperties;
 
 struct IPlayReadyContentHeader :
     Windows::Foundation::IInspectable,
@@ -450,6 +476,14 @@ struct IPlayReadyLicense :
     IPlayReadyLicense(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IPlayReadyLicense2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IPlayReadyLicense2>,
+    impl::require<IPlayReadyLicense2, Windows::Media::Protection::PlayReady::IPlayReadyLicense>
+{
+    IPlayReadyLicense2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IPlayReadyLicenseAcquisitionServiceRequest :
     Windows::Foundation::IInspectable,
     impl::consume<IPlayReadyLicenseAcquisitionServiceRequest>,
@@ -464,6 +498,14 @@ struct IPlayReadyLicenseAcquisitionServiceRequest2 :
     impl::require<IPlayReadyLicenseAcquisitionServiceRequest2, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
 {
     IPlayReadyLicenseAcquisitionServiceRequest2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IPlayReadyLicenseAcquisitionServiceRequest3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IPlayReadyLicenseAcquisitionServiceRequest3>,
+    impl::require<IPlayReadyLicenseAcquisitionServiceRequest3, Windows::Media::Protection::IMediaProtectionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest2, Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest>
+{
+    IPlayReadyLicenseAcquisitionServiceRequest3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyLicenseIterableFactory :
@@ -485,6 +527,14 @@ struct IPlayReadyLicenseSession :
     impl::consume<IPlayReadyLicenseSession>
 {
     IPlayReadyLicenseSession(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IPlayReadyLicenseSession2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IPlayReadyLicenseSession2>,
+    impl::require<IPlayReadyLicenseSession2, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession>
+{
+    IPlayReadyLicenseSession2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPlayReadyLicenseSessionFactory :

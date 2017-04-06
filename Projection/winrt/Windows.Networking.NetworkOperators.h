@@ -7,9 +7,9 @@
 WINRT_WARNING_PUSH
 
 #include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Devices.Sms.3.h"
 #include "internal/Windows.Networking.Connectivity.3.h"
-#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.Data.Xml.Dom.3.h"
 #include "internal/Windows.Networking.NetworkOperators.3.h"
@@ -613,6 +613,25 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount
 };
 
 template <typename D>
+struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount3> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccount3>
+{
+    HRESULT __stdcall get_AccountExperienceUrl(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AccountExperienceUrl());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs>
 {
     HRESULT __stdcall get_NetworkAccountId(impl::abi_arg_out<hstring> value) noexcept override
@@ -1146,6 +1165,55 @@ struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceI
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().SerialNumber());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3> : produce_base<D, Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3>
+{
+    HRESULT __stdcall get_SimSpn(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimSpn());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimPnn(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimPnn());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimGid1(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimGid1());
             return S_OK;
         }
         catch (...)
@@ -3297,6 +3365,13 @@ template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Net
     return value;
 }
 
+template <typename D> Windows::Foundation::Uri impl_IMobileBroadbandAccount3<D>::AccountExperienceUrl() const
+{
+    Windows::Foundation::Uri value { nullptr };
+    check_hresult(WINRT_SHIM(IMobileBroadbandAccount3)->get_AccountExperienceUrl(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Networking::NetworkOperators::NetworkDeviceStatus impl_IMobileBroadbandDeviceInformation<D>::NetworkDeviceStatus() const
 {
     Windows::Networking::NetworkOperators::NetworkDeviceStatus value {};
@@ -3413,6 +3488,27 @@ template <typename D> hstring impl_IMobileBroadbandDeviceInformation2<D>::Serial
 {
     hstring value;
     check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation2)->get_SerialNumber(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IMobileBroadbandDeviceInformation3<D>::SimSpn() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation3)->get_SimSpn(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IMobileBroadbandDeviceInformation3<D>::SimPnn() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation3)->get_SimPnn(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IMobileBroadbandDeviceInformation3<D>::SimGid1() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMobileBroadbandDeviceInformation3)->get_SimGid1(put_abi(value)));
     return value;
 }
 
@@ -4918,6 +5014,15 @@ struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandA
 };
 
 template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccount3>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccount3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs>
 {
     size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandAccountEventArgs & value) const noexcept
@@ -4966,6 +5071,15 @@ template<>
 struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2>
 {
     size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3>
+{
+    size_t operator()(const winrt::Windows::Networking::NetworkOperators::IMobileBroadbandDeviceInformation3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

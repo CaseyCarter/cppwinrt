@@ -49,6 +49,13 @@ struct ICharacterGroupings :
     ICharacterGroupings(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ICharacterGroupingsFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICharacterGroupingsFactory>
+{
+    ICharacterGroupingsFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
 }
 
 }

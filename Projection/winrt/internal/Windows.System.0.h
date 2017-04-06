@@ -8,6 +8,8 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::System {
 
+struct IAppDiagnosticInfo;
+struct IAppDiagnosticInfoStatics;
 struct IAppMemoryReport;
 struct IAppMemoryUsageLimitChangingEventArgs;
 struct IFolderLauncherOptions;
@@ -16,6 +18,7 @@ struct ILaunchUriResult;
 struct ILauncherOptions;
 struct ILauncherOptions2;
 struct ILauncherOptions3;
+struct ILauncherOptions4;
 struct ILauncherStatics;
 struct ILauncherStatics2;
 struct ILauncherStatics3;
@@ -39,6 +42,7 @@ struct IUserPicker;
 struct IUserPickerStatics;
 struct IUserStatics;
 struct IUserWatcher;
+struct AppDiagnosticInfo;
 struct AppMemoryReport;
 struct AppMemoryUsageLimitChangingEventArgs;
 struct FolderLauncherOptions;
@@ -60,6 +64,8 @@ struct UserWatcher;
 
 namespace Windows::System {
 
+struct IAppDiagnosticInfo;
+struct IAppDiagnosticInfoStatics;
 struct IAppMemoryReport;
 struct IAppMemoryUsageLimitChangingEventArgs;
 struct IFolderLauncherOptions;
@@ -68,6 +74,7 @@ struct ILaunchUriResult;
 struct ILauncherOptions;
 struct ILauncherOptions2;
 struct ILauncherOptions3;
+struct ILauncherOptions4;
 struct ILauncherStatics;
 struct ILauncherStatics2;
 struct ILauncherStatics3;
@@ -91,6 +98,7 @@ struct IUserPicker;
 struct IUserPickerStatics;
 struct IUserStatics;
 struct IUserWatcher;
+struct AppDiagnosticInfo;
 struct AppMemoryReport;
 struct AppMemoryUsageLimitChangingEventArgs;
 struct FolderLauncherOptions;
@@ -117,6 +125,8 @@ struct UserWatcher;
 
 namespace Windows::System {
 
+template <typename T> struct impl_IAppDiagnosticInfo;
+template <typename T> struct impl_IAppDiagnosticInfoStatics;
 template <typename T> struct impl_IAppMemoryReport;
 template <typename T> struct impl_IAppMemoryUsageLimitChangingEventArgs;
 template <typename T> struct impl_IFolderLauncherOptions;
@@ -125,6 +135,7 @@ template <typename T> struct impl_ILaunchUriResult;
 template <typename T> struct impl_ILauncherOptions;
 template <typename T> struct impl_ILauncherOptions2;
 template <typename T> struct impl_ILauncherOptions3;
+template <typename T> struct impl_ILauncherOptions4;
 template <typename T> struct impl_ILauncherStatics;
 template <typename T> struct impl_ILauncherStatics2;
 template <typename T> struct impl_ILauncherStatics3;

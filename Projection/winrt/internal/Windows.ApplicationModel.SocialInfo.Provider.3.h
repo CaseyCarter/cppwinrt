@@ -14,22 +14,24 @@ struct WINRT_EBO SocialDashboardItemUpdater :
 {
     SocialDashboardItemUpdater(std::nullptr_t) noexcept {}
 };
+struct [[deprecated("SocialDashboardItemUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialDashboardItemUpdater;
 
 struct WINRT_EBO SocialFeedUpdater :
     Windows::ApplicationModel::SocialInfo::Provider::ISocialFeedUpdater
 {
     SocialFeedUpdater(std::nullptr_t) noexcept {}
 };
+struct [[deprecated("SocialFeedUpdater is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialFeedUpdater;
 
-struct SocialInfoProviderManager
+struct [[deprecated("SocialInfoProviderManager is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialInfoProviderManager
 {
     SocialInfoProviderManager() = delete;
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_view ownerRemoteId);
-    static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> CreateDashboardItemUpdaterAsync(hstring_view ownerRemoteId);
-    static void UpdateBadgeCountValue(hstring_view itemRemoteId, int32_t newCount);
-    static void ReportNewContentAvailable(hstring_view contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind);
-    static Windows::Foundation::IAsyncOperation<bool> ProvisionAsync();
-    static Windows::Foundation::IAsyncAction DeprovisionAsync();
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_view ownerRemoteId);
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] static Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> CreateDashboardItemUpdaterAsync(hstring_view ownerRemoteId);
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] static void UpdateBadgeCountValue(hstring_view itemRemoteId, int32_t newCount);
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] static void ReportNewContentAvailable(hstring_view contactRemoteId, Windows::ApplicationModel::SocialInfo::SocialFeedKind kind);
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] static Windows::Foundation::IAsyncOperation<bool> ProvisionAsync();
+    [[deprecated("ISocialInfoProviderManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]] static Windows::Foundation::IAsyncAction DeprovisionAsync();
 };
 
 }

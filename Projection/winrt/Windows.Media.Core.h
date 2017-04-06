@@ -6,17 +6,18 @@
 #include "base.h"
 WINRT_WARNING_PUSH
 
-#include "internal/Windows.Media.MediaProperties.3.h"
 #include "internal/Windows.Foundation.3.h"
-#include "internal/Windows.Media.Protection.3.h"
-#include "internal/Windows.Storage.FileProperties.3.h"
 #include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Graphics.Imaging.3.h"
+#include "internal/Windows.UI.3.h"
+#include "internal/Windows.Media.MediaProperties.3.h"
+#include "internal/Windows.Media.Protection.3.h"
+#include "internal/Windows.Storage.FileProperties.3.h"
 #include "internal/Windows.Media.Capture.3.h"
 #include "internal/Windows.Media.Devices.3.h"
 #include "internal/Windows.Media.Streaming.Adaptive.3.h"
 #include "internal/Windows.Storage.3.h"
-#include "internal/Windows.UI.3.h"
 #include "internal/Windows.Media.Playback.3.h"
 #include "internal/Windows.Media.Core.3.h"
 #include "Windows.Media.h"
@@ -300,6 +301,903 @@ struct produce<D, Windows::Media::Core::IAudioTrackSupportInfo> : produce_base<D
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Core::IChapterCue> : produce_base<D, Windows::Media::Core::IChapterCue>
+{
+    HRESULT __stdcall put_Title(impl::abi_arg_in<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Title(*reinterpret_cast<const hstring *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Title(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Title());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Core::ICodecInfo> : produce_base<D, Windows::Media::Core::ICodecInfo>
+{
+    HRESULT __stdcall get_Kind(Windows::Media::Core::CodecKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Kind());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Category(Windows::Media::Core::CodecCategory * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Category());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Subtypes(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<hstring>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Subtypes());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DisplayName(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DisplayName());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsTrusted(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsTrusted());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Core::ICodecQuery> : produce_base<D, Windows::Media::Core::ICodecQuery>
+{
+    HRESULT __stdcall abi_FindAllAsync(Windows::Media::Core::CodecKind kind, Windows::Media::Core::CodecCategory category, impl::abi_arg_in<hstring> subType, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Core::CodecInfo>>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().FindAllAsync(kind, category, *reinterpret_cast<const hstring *>(&subType)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Core::ICodecSubtypesStatics> : produce_base<D, Windows::Media::Core::ICodecSubtypesStatics>
+{
+    HRESULT __stdcall get_VideoFormatDV25(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatDV25());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatDV50(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatDV50());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatDvc(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatDvc());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatDvh1(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatDvh1());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatDvhD(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatDvhD());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatDvsd(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatDvsd());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatDvsl(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatDvsl());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatH263(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatH263());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatH264(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatH264());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatH265(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatH265());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatH264ES(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatH264ES());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatHevc(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatHevc());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatHevcES(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatHevcES());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatM4S2(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatM4S2());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatMjpg(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatMjpg());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatMP43(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatMP43());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatMP4S(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatMP4S());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatMP4V(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatMP4V());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatMpeg2(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatMpeg2());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatVP80(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatVP80());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatVP90(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatVP90());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatMpg1(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatMpg1());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatMss1(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatMss1());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatMss2(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatMss2());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatWmv1(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatWmv1());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatWmv2(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatWmv2());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatWmv3(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatWmv3());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormatWvc1(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormatWvc1());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_VideoFormat420O(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().VideoFormat420O());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatAac(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatAac());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatAdts(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatAdts());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatAlac(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatAlac());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatAmrNB(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatAmrNB());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatAmrWB(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatAmrWB());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatAmrWP(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatAmrWP());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatDolbyAC3(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatDolbyAC3());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatDolbyAC3Spdif(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatDolbyAC3Spdif());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatDolbyDDPlus(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatDolbyDDPlus());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatDrm(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatDrm());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatDts(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatDts());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatFlac(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatFlac());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatFloat(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatFloat());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatMP3(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatMP3());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatMPeg(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatMPeg());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatMsp1(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatMsp1());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatOpus(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatOpus());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatPcm(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatPcm());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatWmaSpdif(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatWmaSpdif());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatWMAudioLossless(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatWMAudioLossless());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatWMAudioV8(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatWMAudioV8());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_AudioFormatWMAudioV9(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AudioFormatWMAudioV9());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Core::IDataCue> : produce_base<D, Windows::Media::Core::IDataCue>
 {
     HRESULT __stdcall put_Data(impl::abi_arg_in<Windows::Storage::Streams::IBuffer> value) noexcept override
@@ -322,6 +1220,25 @@ struct produce<D, Windows::Media::Core::IDataCue> : produce_base<D, Windows::Med
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().Data());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Core::IDataCue2> : produce_base<D, Windows::Media::Core::IDataCue2>
+{
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IPropertySet> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Properties());
             return S_OK;
         }
         catch (...)
@@ -584,6 +1501,95 @@ struct produce<D, Windows::Media::Core::IHighDynamicRangeOutput> : produce_base<
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Core::IImageCue> : produce_base<D, Windows::Media::Core::IImageCue>
+{
+    HRESULT __stdcall get_Position(impl::abi_arg_out<Windows::Media::Core::TimedTextPoint> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Position());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Position(impl::abi_arg_in<Windows::Media::Core::TimedTextPoint> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Position(*reinterpret_cast<const Windows::Media::Core::TimedTextPoint *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Extent(impl::abi_arg_out<Windows::Media::Core::TimedTextSize> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Extent());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Extent(impl::abi_arg_in<Windows::Media::Core::TimedTextSize> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Extent(*reinterpret_cast<const Windows::Media::Core::TimedTextSize *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_SoftwareBitmap(impl::abi_arg_in<Windows::Graphics::Imaging::ISoftwareBitmap> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SoftwareBitmap(*reinterpret_cast<const Windows::Graphics::Imaging::SoftwareBitmap *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SoftwareBitmap(impl::abi_arg_out<Windows::Graphics::Imaging::ISoftwareBitmap> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SoftwareBitmap());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Core::IMediaBinder> : produce_base<D, Windows::Media::Core::IMediaBinder>
 {
     HRESULT __stdcall add_Binding(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBinder, Windows::Media::Core::MediaBindingEventArgs>> handler, event_token * token) noexcept override
@@ -754,6 +1760,38 @@ struct produce<D, Windows::Media::Core::IMediaBindingEventArgs> : produce_base<D
         {
             typename D::abi_guard guard(this->shim());
             this->shim().SetStreamReference(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStreamReference *>(&stream), *reinterpret_cast<const hstring *>(&contentType));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Core::IMediaBindingEventArgs2> : produce_base<D, Windows::Media::Core::IMediaBindingEventArgs2>
+{
+    HRESULT __stdcall abi_SetAdaptiveMediaSource(impl::abi_arg_in<Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> mediaSource) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SetAdaptiveMediaSource(*reinterpret_cast<const Windows::Media::Streaming::Adaptive::AdaptiveMediaSource *>(&mediaSource));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetStorageFile(impl::abi_arg_in<Windows::Storage::IStorageFile> file) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SetStorageFile(*reinterpret_cast<const Windows::Storage::IStorageFile *>(&file));
             return S_OK;
         }
         catch (...)
@@ -1036,6 +2074,85 @@ struct produce<D, Windows::Media::Core::IMediaSource3> : produce_base<D, Windows
         }
         catch (...)
         {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Core::IMediaSource4> : produce_base<D, Windows::Media::Core::IMediaSource4>
+{
+    HRESULT __stdcall get_AdaptiveMediaSource(impl::abi_arg_out<Windows::Media::Streaming::Adaptive::IAdaptiveMediaSource> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AdaptiveMediaSource());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_MediaStreamSource(impl::abi_arg_out<Windows::Media::Core::IMediaStreamSource> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MediaStreamSource());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_MseStreamSource(impl::abi_arg_out<Windows::Media::Core::IMseStreamSource> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MseStreamSource());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Uri(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Uri());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_OpenAsync(impl::abi_arg_out<Windows::Foundation::IAsyncAction> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().OpenAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
             return impl::to_hresult();
         }
     }
@@ -2059,6 +3176,39 @@ struct produce<D, Windows::Media::Core::IMediaStreamSource2> : produce_base<D, W
         }
         catch (...)
         {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Core::IMediaStreamSource3> : produce_base<D, Windows::Media::Core::IMediaStreamSource3>
+{
+    HRESULT __stdcall put_MaxSupportedPlaybackRate(impl::abi_arg_in<Windows::Foundation::IReference<double>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().MaxSupportedPlaybackRate(*reinterpret_cast<const Windows::Foundation::IReference<double> *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_MaxSupportedPlaybackRate(impl::abi_arg_out<Windows::Foundation::IReference<double>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MaxSupportedPlaybackRate());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
             return impl::to_hresult();
         }
     }
@@ -3357,6 +4507,97 @@ struct produce<D, Windows::Media::Core::ISingleSelectMediaTrackList> : produce_b
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Core::ISpeechCue> : produce_base<D, Windows::Media::Core::ISpeechCue>
+{
+    HRESULT __stdcall get_Text(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Text());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Text(impl::abi_arg_in<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Text(*reinterpret_cast<const hstring *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_StartPositionInInput(impl::abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().StartPositionInInput());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_StartPositionInInput(impl::abi_arg_in<Windows::Foundation::IReference<int32_t>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StartPositionInInput(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_EndPositionInInput(impl::abi_arg_out<Windows::Foundation::IReference<int32_t>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().EndPositionInInput());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_EndPositionInInput(impl::abi_arg_in<Windows::Foundation::IReference<int32_t>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().EndPositionInInput(*reinterpret_cast<const Windows::Foundation::IReference<int32_t> *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Core::ITimedMetadataTrack> : produce_base<D, Windows::Media::Core::ITimedMetadataTrack>
 {
     HRESULT __stdcall add_CueEntered(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::MediaCueEventArgs>> handler, event_token * token) noexcept override
@@ -3625,6 +4866,25 @@ struct produce<D, Windows::Media::Core::ITimedMetadataTrackFailedEventArgs> : pr
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().Error());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Core::ITimedMetadataTrackProvider> : produce_base<D, Windows::Media::Core::ITimedMetadataTrackProvider>
+{
+    HRESULT __stdcall get_TimedMetadataTracks(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Media::Core::TimedMetadataTrack>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TimedMetadataTracks());
             return S_OK;
         }
         catch (...)
@@ -4232,6 +5492,70 @@ struct produce<D, Windows::Media::Core::ITimedTextSourceStatics> : produce_base<
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Core::ITimedTextSourceStatics2> : produce_base<D, Windows::Media::Core::ITimedTextSourceStatics2>
+{
+    HRESULT __stdcall abi_CreateFromStreamWithIndex(impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> stream, impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> indexStream, impl::abi_arg_out<Windows::Media::Core::ITimedTextSource> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateFromStreamWithIndex(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&indexStream)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateFromUriWithIndex(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> uri, impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> indexUri, impl::abi_arg_out<Windows::Media::Core::ITimedTextSource> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateFromUriWithIndex(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Foundation::Uri *>(&indexUri)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateFromStreamWithIndexAndLanguage(impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> stream, impl::abi_arg_in<Windows::Storage::Streams::IRandomAccessStream> indexStream, impl::abi_arg_in<hstring> defaultLanguage, impl::abi_arg_out<Windows::Media::Core::ITimedTextSource> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateFromStreamWithIndex(*reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&stream), *reinterpret_cast<const Windows::Storage::Streams::IRandomAccessStream *>(&indexStream), *reinterpret_cast<const hstring *>(&defaultLanguage)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateFromUriWithIndexAndLanguage(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> uri, impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> indexUri, impl::abi_arg_in<hstring> defaultLanguage, impl::abi_arg_out<Windows::Media::Core::ITimedTextSource> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateFromUriWithIndex(*reinterpret_cast<const Windows::Foundation::Uri *>(&uri), *reinterpret_cast<const Windows::Foundation::Uri *>(&indexUri), *reinterpret_cast<const hstring *>(&defaultLanguage)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windows::Media::Core::ITimedTextStyle>
 {
     HRESULT __stdcall get_Name(impl::abi_arg_out<hstring> value) noexcept override
@@ -4564,6 +5888,122 @@ struct produce<D, Windows::Media::Core::ITimedTextStyle> : produce_base<D, Windo
         {
             typename D::abi_guard guard(this->shim());
             this->shim().OutlineRadius(*reinterpret_cast<const Windows::Media::Core::TimedTextDouble *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Core::ITimedTextStyle2> : produce_base<D, Windows::Media::Core::ITimedTextStyle2>
+{
+    HRESULT __stdcall get_FontStyle(Windows::Media::Core::TimedTextFontStyle * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().FontStyle());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_FontStyle(Windows::Media::Core::TimedTextFontStyle value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().FontStyle(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsUnderlineEnabled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsUnderlineEnabled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsUnderlineEnabled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsUnderlineEnabled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsLineThroughEnabled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsLineThroughEnabled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsLineThroughEnabled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsLineThroughEnabled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsOverlineEnabled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsOverlineEnabled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsOverlineEnabled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsOverlineEnabled(value);
             return S_OK;
         }
         catch (...)
@@ -4939,6 +6379,567 @@ struct produce<D, Windows::Media::Core::IVideoTrackSupportInfo> : produce_base<D
 
 namespace Windows::Media::Core {
 
+template <typename D> void impl_IMediaCue<D>::StartTime(const Windows::Foundation::TimeSpan & value) const
+{
+    check_hresult(WINRT_SHIM(IMediaCue)->put_StartTime(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::TimeSpan impl_IMediaCue<D>::StartTime() const
+{
+    Windows::Foundation::TimeSpan value {};
+    check_hresult(WINRT_SHIM(IMediaCue)->get_StartTime(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMediaCue<D>::Duration(const Windows::Foundation::TimeSpan & value) const
+{
+    check_hresult(WINRT_SHIM(IMediaCue)->put_Duration(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::TimeSpan impl_IMediaCue<D>::Duration() const
+{
+    Windows::Foundation::TimeSpan value {};
+    check_hresult(WINRT_SHIM(IMediaCue)->get_Duration(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMediaCue<D>::Id(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(IMediaCue)->put_Id(get_abi(value)));
+}
+
+template <typename D> hstring impl_IMediaCue<D>::Id() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IMediaCue)->get_Id(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IDataCue<D>::Data(const Windows::Storage::Streams::IBuffer & value) const
+{
+    check_hresult(WINRT_SHIM(IDataCue)->put_Data(get_abi(value)));
+}
+
+template <typename D> Windows::Storage::Streams::IBuffer impl_IDataCue<D>::Data() const
+{
+    Windows::Storage::Streams::IBuffer value;
+    check_hresult(WINRT_SHIM(IDataCue)->get_Data(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::PropertySet impl_IDataCue2<D>::Properties() const
+{
+    Windows::Foundation::Collections::PropertySet value { nullptr };
+    check_hresult(WINRT_SHIM(IDataCue2)->get_Properties(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IChapterCue<D>::Title(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(IChapterCue)->put_Title(get_abi(value)));
+}
+
+template <typename D> hstring impl_IChapterCue<D>::Title() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IChapterCue)->get_Title(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Media::Core::TimedTextPoint impl_IImageCue<D>::Position() const
+{
+    Windows::Media::Core::TimedTextPoint value {};
+    check_hresult(WINRT_SHIM(IImageCue)->get_Position(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IImageCue<D>::Position(const Windows::Media::Core::TimedTextPoint & value) const
+{
+    check_hresult(WINRT_SHIM(IImageCue)->put_Position(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextSize impl_IImageCue<D>::Extent() const
+{
+    Windows::Media::Core::TimedTextSize value {};
+    check_hresult(WINRT_SHIM(IImageCue)->get_Extent(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IImageCue<D>::Extent(const Windows::Media::Core::TimedTextSize & value) const
+{
+    check_hresult(WINRT_SHIM(IImageCue)->put_Extent(get_abi(value)));
+}
+
+template <typename D> void impl_IImageCue<D>::SoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & value) const
+{
+    check_hresult(WINRT_SHIM(IImageCue)->put_SoftwareBitmap(get_abi(value)));
+}
+
+template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_IImageCue<D>::SoftwareBitmap() const
+{
+    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
+    check_hresult(WINRT_SHIM(IImageCue)->get_SoftwareBitmap(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ISpeechCue<D>::Text() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ISpeechCue)->get_Text(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ISpeechCue<D>::Text(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(ISpeechCue)->put_Text(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::IReference<int32_t> impl_ISpeechCue<D>::StartPositionInInput() const
+{
+    Windows::Foundation::IReference<int32_t> value;
+    check_hresult(WINRT_SHIM(ISpeechCue)->get_StartPositionInInput(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ISpeechCue<D>::StartPositionInInput(const optional<int32_t> & value) const
+{
+    check_hresult(WINRT_SHIM(ISpeechCue)->put_StartPositionInInput(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::IReference<int32_t> impl_ISpeechCue<D>::EndPositionInInput() const
+{
+    Windows::Foundation::IReference<int32_t> value;
+    check_hresult(WINRT_SHIM(ISpeechCue)->get_EndPositionInInput(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ISpeechCue<D>::EndPositionInInput(const optional<int32_t> & value) const
+{
+    check_hresult(WINRT_SHIM(ISpeechCue)->put_EndPositionInInput(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextRegion impl_ITimedTextCue<D>::CueRegion() const
+{
+    Windows::Media::Core::TimedTextRegion value { nullptr };
+    check_hresult(WINRT_SHIM(ITimedTextCue)->get_CueRegion(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextCue<D>::CueRegion(const Windows::Media::Core::TimedTextRegion & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextCue)->put_CueRegion(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextStyle impl_ITimedTextCue<D>::CueStyle() const
+{
+    Windows::Media::Core::TimedTextStyle value { nullptr };
+    check_hresult(WINRT_SHIM(ITimedTextCue)->get_CueStyle(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextCue<D>::CueStyle(const Windows::Media::Core::TimedTextStyle & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextCue)->put_CueStyle(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextLine> impl_ITimedTextCue<D>::Lines() const
+{
+    Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextLine> value;
+    check_hresult(WINRT_SHIM(ITimedTextCue)->get_Lines(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ITimedTextRegion<D>::Name() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_Name(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::Name(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_Name(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextPoint impl_ITimedTextRegion<D>::Position() const
+{
+    Windows::Media::Core::TimedTextPoint value {};
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_Position(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::Position(const Windows::Media::Core::TimedTextPoint & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_Position(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextSize impl_ITimedTextRegion<D>::Extent() const
+{
+    Windows::Media::Core::TimedTextSize value {};
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_Extent(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::Extent(const Windows::Media::Core::TimedTextSize & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_Extent(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Color impl_ITimedTextRegion<D>::Background() const
+{
+    Windows::UI::Color value {};
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_Background(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::Background(const Windows::UI::Color & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_Background(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextWritingMode impl_ITimedTextRegion<D>::WritingMode() const
+{
+    Windows::Media::Core::TimedTextWritingMode value {};
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_WritingMode(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::WritingMode(Windows::Media::Core::TimedTextWritingMode value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_WritingMode(value));
+}
+
+template <typename D> Windows::Media::Core::TimedTextDisplayAlignment impl_ITimedTextRegion<D>::DisplayAlignment() const
+{
+    Windows::Media::Core::TimedTextDisplayAlignment value {};
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_DisplayAlignment(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::DisplayAlignment(Windows::Media::Core::TimedTextDisplayAlignment value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_DisplayAlignment(value));
+}
+
+template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextRegion<D>::LineHeight() const
+{
+    Windows::Media::Core::TimedTextDouble value {};
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_LineHeight(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::LineHeight(const Windows::Media::Core::TimedTextDouble & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_LineHeight(get_abi(value)));
+}
+
+template <typename D> bool impl_ITimedTextRegion<D>::IsOverflowClipped() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_IsOverflowClipped(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::IsOverflowClipped(bool value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_IsOverflowClipped(value));
+}
+
+template <typename D> Windows::Media::Core::TimedTextPadding impl_ITimedTextRegion<D>::Padding() const
+{
+    Windows::Media::Core::TimedTextPadding value {};
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_Padding(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::Padding(const Windows::Media::Core::TimedTextPadding & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_Padding(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextWrapping impl_ITimedTextRegion<D>::TextWrapping() const
+{
+    Windows::Media::Core::TimedTextWrapping value {};
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_TextWrapping(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::TextWrapping(Windows::Media::Core::TimedTextWrapping value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_TextWrapping(value));
+}
+
+template <typename D> int32_t impl_ITimedTextRegion<D>::ZIndex() const
+{
+    int32_t value {};
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_ZIndex(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::ZIndex(int32_t value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_ZIndex(value));
+}
+
+template <typename D> Windows::Media::Core::TimedTextScrollMode impl_ITimedTextRegion<D>::ScrollMode() const
+{
+    Windows::Media::Core::TimedTextScrollMode value {};
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_ScrollMode(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextRegion<D>::ScrollMode(Windows::Media::Core::TimedTextScrollMode value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_ScrollMode(value));
+}
+
+template <typename D> hstring impl_ITimedTextStyle<D>::Name() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_Name(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::Name(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_Name(get_abi(value)));
+}
+
+template <typename D> hstring impl_ITimedTextStyle<D>::FontFamily() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_FontFamily(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::FontFamily(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_FontFamily(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextStyle<D>::FontSize() const
+{
+    Windows::Media::Core::TimedTextDouble value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_FontSize(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::FontSize(const Windows::Media::Core::TimedTextDouble & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_FontSize(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextWeight impl_ITimedTextStyle<D>::FontWeight() const
+{
+    Windows::Media::Core::TimedTextWeight value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_FontWeight(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::FontWeight(Windows::Media::Core::TimedTextWeight value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_FontWeight(value));
+}
+
+template <typename D> Windows::UI::Color impl_ITimedTextStyle<D>::Foreground() const
+{
+    Windows::UI::Color value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_Foreground(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::Foreground(const Windows::UI::Color & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_Foreground(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Color impl_ITimedTextStyle<D>::Background() const
+{
+    Windows::UI::Color value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_Background(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::Background(const Windows::UI::Color & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_Background(get_abi(value)));
+}
+
+template <typename D> bool impl_ITimedTextStyle<D>::IsBackgroundAlwaysShown() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_IsBackgroundAlwaysShown(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::IsBackgroundAlwaysShown(bool value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_IsBackgroundAlwaysShown(value));
+}
+
+template <typename D> Windows::Media::Core::TimedTextFlowDirection impl_ITimedTextStyle<D>::FlowDirection() const
+{
+    Windows::Media::Core::TimedTextFlowDirection value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_FlowDirection(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::FlowDirection(Windows::Media::Core::TimedTextFlowDirection value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_FlowDirection(value));
+}
+
+template <typename D> Windows::Media::Core::TimedTextLineAlignment impl_ITimedTextStyle<D>::LineAlignment() const
+{
+    Windows::Media::Core::TimedTextLineAlignment value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_LineAlignment(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::LineAlignment(Windows::Media::Core::TimedTextLineAlignment value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_LineAlignment(value));
+}
+
+template <typename D> Windows::UI::Color impl_ITimedTextStyle<D>::OutlineColor() const
+{
+    Windows::UI::Color value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_OutlineColor(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::OutlineColor(const Windows::UI::Color & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_OutlineColor(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextStyle<D>::OutlineThickness() const
+{
+    Windows::Media::Core::TimedTextDouble value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_OutlineThickness(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::OutlineThickness(const Windows::Media::Core::TimedTextDouble & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_OutlineThickness(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextStyle<D>::OutlineRadius() const
+{
+    Windows::Media::Core::TimedTextDouble value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_OutlineRadius(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle<D>::OutlineRadius(const Windows::Media::Core::TimedTextDouble & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_OutlineRadius(get_abi(value)));
+}
+
+template <typename D> Windows::Media::Core::TimedTextFontStyle impl_ITimedTextStyle2<D>::FontStyle() const
+{
+    Windows::Media::Core::TimedTextFontStyle value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle2)->get_FontStyle(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle2<D>::FontStyle(Windows::Media::Core::TimedTextFontStyle value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle2)->put_FontStyle(value));
+}
+
+template <typename D> bool impl_ITimedTextStyle2<D>::IsUnderlineEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle2)->get_IsUnderlineEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle2<D>::IsUnderlineEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle2)->put_IsUnderlineEnabled(value));
+}
+
+template <typename D> bool impl_ITimedTextStyle2<D>::IsLineThroughEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle2)->get_IsLineThroughEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle2<D>::IsLineThroughEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle2)->put_IsLineThroughEnabled(value));
+}
+
+template <typename D> bool impl_ITimedTextStyle2<D>::IsOverlineEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ITimedTextStyle2)->get_IsOverlineEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextStyle2<D>::IsOverlineEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextStyle2)->put_IsOverlineEnabled(value));
+}
+
+template <typename D> int32_t impl_ITimedTextSubformat<D>::StartIndex() const
+{
+    int32_t value {};
+    check_hresult(WINRT_SHIM(ITimedTextSubformat)->get_StartIndex(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextSubformat<D>::StartIndex(int32_t value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextSubformat)->put_StartIndex(value));
+}
+
+template <typename D> int32_t impl_ITimedTextSubformat<D>::Length() const
+{
+    int32_t value {};
+    check_hresult(WINRT_SHIM(ITimedTextSubformat)->get_Length(&value));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextSubformat<D>::Length(int32_t value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextSubformat)->put_Length(value));
+}
+
+template <typename D> Windows::Media::Core::TimedTextStyle impl_ITimedTextSubformat<D>::SubformatStyle() const
+{
+    Windows::Media::Core::TimedTextStyle value { nullptr };
+    check_hresult(WINRT_SHIM(ITimedTextSubformat)->get_SubformatStyle(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextSubformat<D>::SubformatStyle(const Windows::Media::Core::TimedTextStyle & value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextSubformat)->put_SubformatStyle(get_abi(value)));
+}
+
+template <typename D> hstring impl_ITimedTextLine<D>::Text() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ITimedTextLine)->get_Text(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITimedTextLine<D>::Text(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(ITimedTextLine)->put_Text(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextSubformat> impl_ITimedTextLine<D>::Subformats() const
+{
+    Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextSubformat> value;
+    check_hresult(WINRT_SHIM(ITimedTextLine)->get_Subformats(put_abi(value)));
+    return value;
+}
+
 template <typename D> bool impl_IMediaStreamDescriptor<D>::IsSelected() const
 {
     bool selected {};
@@ -5216,6 +7217,18 @@ template <typename D> event_revoker<IMediaStreamSource2> impl_IMediaStreamSource
 template <typename D> void impl_IMediaStreamSource2<D>::SampleRendered(event_token token) const
 {
     check_hresult(WINRT_SHIM(IMediaStreamSource2)->remove_SampleRendered(token));
+}
+
+template <typename D> void impl_IMediaStreamSource3<D>::MaxSupportedPlaybackRate(const optional<double> & value) const
+{
+    check_hresult(WINRT_SHIM(IMediaStreamSource3)->put_MaxSupportedPlaybackRate(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::IReference<double> impl_IMediaStreamSource3<D>::MaxSupportedPlaybackRate() const
+{
+    Windows::Foundation::IReference<double> value;
+    check_hresult(WINRT_SHIM(IMediaStreamSource3)->get_MaxSupportedPlaybackRate(put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSource impl_IMediaStreamSourceFactory<D>::CreateFromDescriptor(const Windows::Media::Core::IMediaStreamDescriptor & descriptor) const
@@ -6196,6 +8209,16 @@ template <typename D> void impl_IMediaBindingEventArgs<D>::SetStreamReference(co
     check_hresult(WINRT_SHIM(IMediaBindingEventArgs)->abi_SetStreamReference(get_abi(stream), get_abi(contentType)));
 }
 
+template <typename D> void impl_IMediaBindingEventArgs2<D>::SetAdaptiveMediaSource(const Windows::Media::Streaming::Adaptive::AdaptiveMediaSource & mediaSource) const
+{
+    check_hresult(WINRT_SHIM(IMediaBindingEventArgs2)->abi_SetAdaptiveMediaSource(get_abi(mediaSource)));
+}
+
+template <typename D> void impl_IMediaBindingEventArgs2<D>::SetStorageFile(const Windows::Storage::IStorageFile & file) const
+{
+    check_hresult(WINRT_SHIM(IMediaBindingEventArgs2)->abi_SetStorageFile(get_abi(file)));
+}
+
 template <typename D> event_token impl_IMediaSource2<D>::OpenOperationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs> & handler) const
 {
     event_token token {};
@@ -6277,414 +8300,39 @@ template <typename D> void impl_IMediaSource3<D>::Reset() const
     check_hresult(WINRT_SHIM(IMediaSource3)->abi_Reset());
 }
 
-template <typename D> void impl_IMediaCue<D>::StartTime(const Windows::Foundation::TimeSpan & value) const
+template <typename D> Windows::Media::Streaming::Adaptive::AdaptiveMediaSource impl_IMediaSource4<D>::AdaptiveMediaSource() const
 {
-    check_hresult(WINRT_SHIM(IMediaCue)->put_StartTime(get_abi(value)));
-}
-
-template <typename D> Windows::Foundation::TimeSpan impl_IMediaCue<D>::StartTime() const
-{
-    Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IMediaCue)->get_StartTime(put_abi(value)));
+    Windows::Media::Streaming::Adaptive::AdaptiveMediaSource value { nullptr };
+    check_hresult(WINRT_SHIM(IMediaSource4)->get_AdaptiveMediaSource(put_abi(value)));
     return value;
 }
 
-template <typename D> void impl_IMediaCue<D>::Duration(const Windows::Foundation::TimeSpan & value) const
+template <typename D> Windows::Media::Core::MediaStreamSource impl_IMediaSource4<D>::MediaStreamSource() const
 {
-    check_hresult(WINRT_SHIM(IMediaCue)->put_Duration(get_abi(value)));
-}
-
-template <typename D> Windows::Foundation::TimeSpan impl_IMediaCue<D>::Duration() const
-{
-    Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IMediaCue)->get_Duration(put_abi(value)));
+    Windows::Media::Core::MediaStreamSource value { nullptr };
+    check_hresult(WINRT_SHIM(IMediaSource4)->get_MediaStreamSource(put_abi(value)));
     return value;
 }
 
-template <typename D> void impl_IMediaCue<D>::Id(hstring_view value) const
+template <typename D> Windows::Media::Core::MseStreamSource impl_IMediaSource4<D>::MseStreamSource() const
 {
-    check_hresult(WINRT_SHIM(IMediaCue)->put_Id(get_abi(value)));
-}
-
-template <typename D> hstring impl_IMediaCue<D>::Id() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IMediaCue)->get_Id(put_abi(value)));
+    Windows::Media::Core::MseStreamSource value { nullptr };
+    check_hresult(WINRT_SHIM(IMediaSource4)->get_MseStreamSource(put_abi(value)));
     return value;
 }
 
-template <typename D> Windows::Media::Core::TimedTextRegion impl_ITimedTextCue<D>::CueRegion() const
+template <typename D> Windows::Foundation::Uri impl_IMediaSource4<D>::Uri() const
 {
-    Windows::Media::Core::TimedTextRegion value { nullptr };
-    check_hresult(WINRT_SHIM(ITimedTextCue)->get_CueRegion(put_abi(value)));
+    Windows::Foundation::Uri value { nullptr };
+    check_hresult(WINRT_SHIM(IMediaSource4)->get_Uri(put_abi(value)));
     return value;
 }
 
-template <typename D> void impl_ITimedTextCue<D>::CueRegion(const Windows::Media::Core::TimedTextRegion & value) const
+template <typename D> Windows::Foundation::IAsyncAction impl_IMediaSource4<D>::OpenAsync() const
 {
-    check_hresult(WINRT_SHIM(ITimedTextCue)->put_CueRegion(get_abi(value)));
-}
-
-template <typename D> Windows::Media::Core::TimedTextStyle impl_ITimedTextCue<D>::CueStyle() const
-{
-    Windows::Media::Core::TimedTextStyle value { nullptr };
-    check_hresult(WINRT_SHIM(ITimedTextCue)->get_CueStyle(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextCue<D>::CueStyle(const Windows::Media::Core::TimedTextStyle & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextCue)->put_CueStyle(get_abi(value)));
-}
-
-template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextLine> impl_ITimedTextCue<D>::Lines() const
-{
-    Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextLine> value;
-    check_hresult(WINRT_SHIM(ITimedTextCue)->get_Lines(put_abi(value)));
-    return value;
-}
-
-template <typename D> hstring impl_ITimedTextRegion<D>::Name() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_Name(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::Name(hstring_view value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_Name(get_abi(value)));
-}
-
-template <typename D> Windows::Media::Core::TimedTextPoint impl_ITimedTextRegion<D>::Position() const
-{
-    Windows::Media::Core::TimedTextPoint value {};
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_Position(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::Position(const Windows::Media::Core::TimedTextPoint & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_Position(get_abi(value)));
-}
-
-template <typename D> Windows::Media::Core::TimedTextSize impl_ITimedTextRegion<D>::Extent() const
-{
-    Windows::Media::Core::TimedTextSize value {};
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_Extent(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::Extent(const Windows::Media::Core::TimedTextSize & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_Extent(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Color impl_ITimedTextRegion<D>::Background() const
-{
-    Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_Background(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::Background(const Windows::UI::Color & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_Background(get_abi(value)));
-}
-
-template <typename D> Windows::Media::Core::TimedTextWritingMode impl_ITimedTextRegion<D>::WritingMode() const
-{
-    Windows::Media::Core::TimedTextWritingMode value {};
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_WritingMode(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::WritingMode(Windows::Media::Core::TimedTextWritingMode value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_WritingMode(value));
-}
-
-template <typename D> Windows::Media::Core::TimedTextDisplayAlignment impl_ITimedTextRegion<D>::DisplayAlignment() const
-{
-    Windows::Media::Core::TimedTextDisplayAlignment value {};
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_DisplayAlignment(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::DisplayAlignment(Windows::Media::Core::TimedTextDisplayAlignment value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_DisplayAlignment(value));
-}
-
-template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextRegion<D>::LineHeight() const
-{
-    Windows::Media::Core::TimedTextDouble value {};
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_LineHeight(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::LineHeight(const Windows::Media::Core::TimedTextDouble & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_LineHeight(get_abi(value)));
-}
-
-template <typename D> bool impl_ITimedTextRegion<D>::IsOverflowClipped() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_IsOverflowClipped(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::IsOverflowClipped(bool value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_IsOverflowClipped(value));
-}
-
-template <typename D> Windows::Media::Core::TimedTextPadding impl_ITimedTextRegion<D>::Padding() const
-{
-    Windows::Media::Core::TimedTextPadding value {};
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_Padding(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::Padding(const Windows::Media::Core::TimedTextPadding & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_Padding(get_abi(value)));
-}
-
-template <typename D> Windows::Media::Core::TimedTextWrapping impl_ITimedTextRegion<D>::TextWrapping() const
-{
-    Windows::Media::Core::TimedTextWrapping value {};
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_TextWrapping(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::TextWrapping(Windows::Media::Core::TimedTextWrapping value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_TextWrapping(value));
-}
-
-template <typename D> int32_t impl_ITimedTextRegion<D>::ZIndex() const
-{
-    int32_t value {};
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_ZIndex(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::ZIndex(int32_t value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_ZIndex(value));
-}
-
-template <typename D> Windows::Media::Core::TimedTextScrollMode impl_ITimedTextRegion<D>::ScrollMode() const
-{
-    Windows::Media::Core::TimedTextScrollMode value {};
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->get_ScrollMode(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextRegion<D>::ScrollMode(Windows::Media::Core::TimedTextScrollMode value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextRegion)->put_ScrollMode(value));
-}
-
-template <typename D> hstring impl_ITimedTextStyle<D>::Name() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_Name(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::Name(hstring_view value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_Name(get_abi(value)));
-}
-
-template <typename D> hstring impl_ITimedTextStyle<D>::FontFamily() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_FontFamily(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::FontFamily(hstring_view value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_FontFamily(get_abi(value)));
-}
-
-template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextStyle<D>::FontSize() const
-{
-    Windows::Media::Core::TimedTextDouble value {};
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_FontSize(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::FontSize(const Windows::Media::Core::TimedTextDouble & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_FontSize(get_abi(value)));
-}
-
-template <typename D> Windows::Media::Core::TimedTextWeight impl_ITimedTextStyle<D>::FontWeight() const
-{
-    Windows::Media::Core::TimedTextWeight value {};
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_FontWeight(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::FontWeight(Windows::Media::Core::TimedTextWeight value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_FontWeight(value));
-}
-
-template <typename D> Windows::UI::Color impl_ITimedTextStyle<D>::Foreground() const
-{
-    Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_Foreground(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::Foreground(const Windows::UI::Color & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_Foreground(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Color impl_ITimedTextStyle<D>::Background() const
-{
-    Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_Background(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::Background(const Windows::UI::Color & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_Background(get_abi(value)));
-}
-
-template <typename D> bool impl_ITimedTextStyle<D>::IsBackgroundAlwaysShown() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_IsBackgroundAlwaysShown(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::IsBackgroundAlwaysShown(bool value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_IsBackgroundAlwaysShown(value));
-}
-
-template <typename D> Windows::Media::Core::TimedTextFlowDirection impl_ITimedTextStyle<D>::FlowDirection() const
-{
-    Windows::Media::Core::TimedTextFlowDirection value {};
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_FlowDirection(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::FlowDirection(Windows::Media::Core::TimedTextFlowDirection value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_FlowDirection(value));
-}
-
-template <typename D> Windows::Media::Core::TimedTextLineAlignment impl_ITimedTextStyle<D>::LineAlignment() const
-{
-    Windows::Media::Core::TimedTextLineAlignment value {};
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_LineAlignment(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::LineAlignment(Windows::Media::Core::TimedTextLineAlignment value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_LineAlignment(value));
-}
-
-template <typename D> Windows::UI::Color impl_ITimedTextStyle<D>::OutlineColor() const
-{
-    Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_OutlineColor(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::OutlineColor(const Windows::UI::Color & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_OutlineColor(get_abi(value)));
-}
-
-template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextStyle<D>::OutlineThickness() const
-{
-    Windows::Media::Core::TimedTextDouble value {};
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_OutlineThickness(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::OutlineThickness(const Windows::Media::Core::TimedTextDouble & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_OutlineThickness(get_abi(value)));
-}
-
-template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextStyle<D>::OutlineRadius() const
-{
-    Windows::Media::Core::TimedTextDouble value {};
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->get_OutlineRadius(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextStyle<D>::OutlineRadius(const Windows::Media::Core::TimedTextDouble & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextStyle)->put_OutlineRadius(get_abi(value)));
-}
-
-template <typename D> int32_t impl_ITimedTextSubformat<D>::StartIndex() const
-{
-    int32_t value {};
-    check_hresult(WINRT_SHIM(ITimedTextSubformat)->get_StartIndex(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextSubformat<D>::StartIndex(int32_t value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextSubformat)->put_StartIndex(value));
-}
-
-template <typename D> int32_t impl_ITimedTextSubformat<D>::Length() const
-{
-    int32_t value {};
-    check_hresult(WINRT_SHIM(ITimedTextSubformat)->get_Length(&value));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextSubformat<D>::Length(int32_t value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextSubformat)->put_Length(value));
-}
-
-template <typename D> Windows::Media::Core::TimedTextStyle impl_ITimedTextSubformat<D>::SubformatStyle() const
-{
-    Windows::Media::Core::TimedTextStyle value { nullptr };
-    check_hresult(WINRT_SHIM(ITimedTextSubformat)->get_SubformatStyle(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextSubformat<D>::SubformatStyle(const Windows::Media::Core::TimedTextStyle & value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextSubformat)->put_SubformatStyle(get_abi(value)));
-}
-
-template <typename D> hstring impl_ITimedTextLine<D>::Text() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(ITimedTextLine)->get_Text(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ITimedTextLine<D>::Text(hstring_view value) const
-{
-    check_hresult(WINRT_SHIM(ITimedTextLine)->put_Text(get_abi(value)));
-}
-
-template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextSubformat> impl_ITimedTextLine<D>::Subformats() const
-{
-    Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextSubformat> value;
-    check_hresult(WINRT_SHIM(ITimedTextLine)->get_Subformats(put_abi(value)));
-    return value;
+    Windows::Foundation::IAsyncAction operation;
+    check_hresult(WINRT_SHIM(IMediaSource4)->abi_OpenAsync(put_abi(operation)));
+    return operation;
 }
 
 template <typename D> event_token impl_ISingleSelectMediaTrackList<D>::SelectedIndexChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::Foundation::IInspectable> & handler) const
@@ -6777,22 +8425,17 @@ template <typename D> Windows::Media::Core::TimedMetadataTrackError impl_ITimedM
     return value;
 }
 
-template <typename D> void impl_IDataCue<D>::Data(const Windows::Storage::Streams::IBuffer & value) const
-{
-    check_hresult(WINRT_SHIM(IDataCue)->put_Data(get_abi(value)));
-}
-
-template <typename D> Windows::Storage::Streams::IBuffer impl_IDataCue<D>::Data() const
-{
-    Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IDataCue)->get_Data(put_abi(value)));
-    return value;
-}
-
 template <typename D> Windows::Media::Core::TimedMetadataTrack impl_ITimedMetadataTrackFactory<D>::Create(hstring_view id, hstring_view language, Windows::Media::Core::TimedMetadataKind kind) const
 {
     Windows::Media::Core::TimedMetadataTrack value { nullptr };
     check_hresult(WINRT_SHIM(ITimedMetadataTrackFactory)->abi_Create(get_abi(id), get_abi(language), kind, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Core::TimedMetadataTrack> impl_ITimedMetadataTrackProvider<D>::TimedMetadataTracks() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Core::TimedMetadataTrack> value;
+    check_hresult(WINRT_SHIM(ITimedMetadataTrackProvider)->get_TimedMetadataTracks(put_abi(value)));
     return value;
 }
 
@@ -6942,6 +8585,34 @@ template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourc
     Windows::Media::Core::TimedTextSource value { nullptr };
     check_hresult(WINRT_SHIM(ITimedTextSourceStatics)->abi_CreateFromUriWithLanguage(get_abi(uri), get_abi(defaultLanguage), put_abi(value)));
     return value;
+}
+
+template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics2<D>::CreateFromStreamWithIndex(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Storage::Streams::IRandomAccessStream & indexStream) const
+{
+    Windows::Media::Core::TimedTextSource result { nullptr };
+    check_hresult(WINRT_SHIM(ITimedTextSourceStatics2)->abi_CreateFromStreamWithIndex(get_abi(stream), get_abi(indexStream), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics2<D>::CreateFromUriWithIndex(const Windows::Foundation::Uri & uri, const Windows::Foundation::Uri & indexUri) const
+{
+    Windows::Media::Core::TimedTextSource result { nullptr };
+    check_hresult(WINRT_SHIM(ITimedTextSourceStatics2)->abi_CreateFromUriWithIndex(get_abi(uri), get_abi(indexUri), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics2<D>::CreateFromStreamWithIndex(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Storage::Streams::IRandomAccessStream & indexStream, hstring_view defaultLanguage) const
+{
+    Windows::Media::Core::TimedTextSource result { nullptr };
+    check_hresult(WINRT_SHIM(ITimedTextSourceStatics2)->abi_CreateFromStreamWithIndexAndLanguage(get_abi(stream), get_abi(indexStream), get_abi(defaultLanguage), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics2<D>::CreateFromUriWithIndex(const Windows::Foundation::Uri & uri, const Windows::Foundation::Uri & indexUri, hstring_view defaultLanguage) const
+{
+    Windows::Media::Core::TimedTextSource result { nullptr };
+    check_hresult(WINRT_SHIM(ITimedTextSourceStatics2)->abi_CreateFromUriWithIndexAndLanguage(get_abi(uri), get_abi(indexUri), get_abi(defaultLanguage), put_abi(result)));
+    return result;
 }
 
 template <typename D> Windows::Media::Core::MediaDecoderStatus impl_IVideoTrackSupportInfo<D>::DecoderStatus() const
@@ -7104,9 +8775,671 @@ template <typename D> hstring impl_ITimedMetadataTrack2<D>::Name() const
     return value;
 }
 
+template <typename D> Windows::Media::Core::CodecKind impl_ICodecInfo<D>::Kind() const
+{
+    Windows::Media::Core::CodecKind value {};
+    check_hresult(WINRT_SHIM(ICodecInfo)->get_Kind(&value));
+    return value;
+}
+
+template <typename D> Windows::Media::Core::CodecCategory impl_ICodecInfo<D>::Category() const
+{
+    Windows::Media::Core::CodecCategory value {};
+    check_hresult(WINRT_SHIM(ICodecInfo)->get_Category(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ICodecInfo<D>::Subtypes() const
+{
+    Windows::Foundation::Collections::IVectorView<hstring> value;
+    check_hresult(WINRT_SHIM(ICodecInfo)->get_Subtypes(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecInfo<D>::DisplayName() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecInfo)->get_DisplayName(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_ICodecInfo<D>::IsTrusted() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ICodecInfo)->get_IsTrusted(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Core::CodecInfo>> impl_ICodecQuery<D>::FindAllAsync(Windows::Media::Core::CodecKind kind, Windows::Media::Core::CodecCategory category, hstring_view subType) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Core::CodecInfo>> value;
+    check_hresult(WINRT_SHIM(ICodecQuery)->abi_FindAllAsync(kind, category, get_abi(subType), put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatDV25() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatDV25(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatDV50() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatDV50(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatDvc() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatDvc(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatDvh1() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatDvh1(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatDvhD() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatDvhD(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatDvsd() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatDvsd(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatDvsl() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatDvsl(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatH263() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatH263(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatH264() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatH264(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatH265() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatH265(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatH264ES() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatH264ES(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatHevc() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatHevc(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatHevcES() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatHevcES(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatM4S2() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatM4S2(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatMjpg() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatMjpg(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatMP43() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatMP43(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatMP4S() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatMP4S(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatMP4V() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatMP4V(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatMpeg2() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatMpeg2(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatVP80() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatVP80(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatVP90() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatVP90(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatMpg1() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatMpg1(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatMss1() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatMss1(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatMss2() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatMss2(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatWmv1() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatWmv1(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatWmv2() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatWmv2(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatWmv3() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatWmv3(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormatWvc1() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormatWvc1(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::VideoFormat420O() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_VideoFormat420O(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatAac() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatAac(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatAdts() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatAdts(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatAlac() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatAlac(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatAmrNB() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatAmrNB(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatAmrWB() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatAmrWB(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatAmrWP() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatAmrWP(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatDolbyAC3() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatDolbyAC3(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatDolbyAC3Spdif() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatDolbyAC3Spdif(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatDolbyDDPlus() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatDolbyDDPlus(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatDrm() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatDrm(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatDts() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatDts(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatFlac() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatFlac(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatFloat() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatFloat(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatMP3() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatMP3(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatMPeg() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatMPeg(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatMsp1() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatMsp1(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatOpus() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatOpus(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatPcm() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatPcm(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatWmaSpdif() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatWmaSpdif(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatWMAudioLossless() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatWMAudioLossless(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatWMAudioV8() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatWMAudioV8(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_ICodecSubtypesStatics<D>::AudioFormatWMAudioV9() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(ICodecSubtypesStatics)->get_AudioFormatWMAudioV9(put_abi(value)));
+    return value;
+}
+
 inline AudioStreamDescriptor::AudioStreamDescriptor(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) :
     AudioStreamDescriptor(get_activation_factory<AudioStreamDescriptor, IAudioStreamDescriptorFactory>().Create(encodingProperties))
 {}
+
+inline ChapterCue::ChapterCue() :
+    ChapterCue(activate_instance<ChapterCue>())
+{}
+
+inline CodecQuery::CodecQuery() :
+    CodecQuery(activate_instance<CodecQuery>())
+{}
+
+inline hstring CodecSubtypes::VideoFormatDV25()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatDV25();
+}
+
+inline hstring CodecSubtypes::VideoFormatDV50()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatDV50();
+}
+
+inline hstring CodecSubtypes::VideoFormatDvc()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatDvc();
+}
+
+inline hstring CodecSubtypes::VideoFormatDvh1()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatDvh1();
+}
+
+inline hstring CodecSubtypes::VideoFormatDvhD()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatDvhD();
+}
+
+inline hstring CodecSubtypes::VideoFormatDvsd()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatDvsd();
+}
+
+inline hstring CodecSubtypes::VideoFormatDvsl()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatDvsl();
+}
+
+inline hstring CodecSubtypes::VideoFormatH263()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatH263();
+}
+
+inline hstring CodecSubtypes::VideoFormatH264()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatH264();
+}
+
+inline hstring CodecSubtypes::VideoFormatH265()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatH265();
+}
+
+inline hstring CodecSubtypes::VideoFormatH264ES()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatH264ES();
+}
+
+inline hstring CodecSubtypes::VideoFormatHevc()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatHevc();
+}
+
+inline hstring CodecSubtypes::VideoFormatHevcES()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatHevcES();
+}
+
+inline hstring CodecSubtypes::VideoFormatM4S2()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatM4S2();
+}
+
+inline hstring CodecSubtypes::VideoFormatMjpg()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatMjpg();
+}
+
+inline hstring CodecSubtypes::VideoFormatMP43()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatMP43();
+}
+
+inline hstring CodecSubtypes::VideoFormatMP4S()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatMP4S();
+}
+
+inline hstring CodecSubtypes::VideoFormatMP4V()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatMP4V();
+}
+
+inline hstring CodecSubtypes::VideoFormatMpeg2()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatMpeg2();
+}
+
+inline hstring CodecSubtypes::VideoFormatVP80()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatVP80();
+}
+
+inline hstring CodecSubtypes::VideoFormatVP90()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatVP90();
+}
+
+inline hstring CodecSubtypes::VideoFormatMpg1()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatMpg1();
+}
+
+inline hstring CodecSubtypes::VideoFormatMss1()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatMss1();
+}
+
+inline hstring CodecSubtypes::VideoFormatMss2()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatMss2();
+}
+
+inline hstring CodecSubtypes::VideoFormatWmv1()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatWmv1();
+}
+
+inline hstring CodecSubtypes::VideoFormatWmv2()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatWmv2();
+}
+
+inline hstring CodecSubtypes::VideoFormatWmv3()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatWmv3();
+}
+
+inline hstring CodecSubtypes::VideoFormatWvc1()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormatWvc1();
+}
+
+inline hstring CodecSubtypes::VideoFormat420O()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().VideoFormat420O();
+}
+
+inline hstring CodecSubtypes::AudioFormatAac()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatAac();
+}
+
+inline hstring CodecSubtypes::AudioFormatAdts()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatAdts();
+}
+
+inline hstring CodecSubtypes::AudioFormatAlac()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatAlac();
+}
+
+inline hstring CodecSubtypes::AudioFormatAmrNB()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatAmrNB();
+}
+
+inline hstring CodecSubtypes::AudioFormatAmrWB()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatAmrWB();
+}
+
+inline hstring CodecSubtypes::AudioFormatAmrWP()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatAmrWP();
+}
+
+inline hstring CodecSubtypes::AudioFormatDolbyAC3()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatDolbyAC3();
+}
+
+inline hstring CodecSubtypes::AudioFormatDolbyAC3Spdif()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatDolbyAC3Spdif();
+}
+
+inline hstring CodecSubtypes::AudioFormatDolbyDDPlus()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatDolbyDDPlus();
+}
+
+inline hstring CodecSubtypes::AudioFormatDrm()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatDrm();
+}
+
+inline hstring CodecSubtypes::AudioFormatDts()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatDts();
+}
+
+inline hstring CodecSubtypes::AudioFormatFlac()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatFlac();
+}
+
+inline hstring CodecSubtypes::AudioFormatFloat()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatFloat();
+}
+
+inline hstring CodecSubtypes::AudioFormatMP3()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatMP3();
+}
+
+inline hstring CodecSubtypes::AudioFormatMPeg()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatMPeg();
+}
+
+inline hstring CodecSubtypes::AudioFormatMsp1()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatMsp1();
+}
+
+inline hstring CodecSubtypes::AudioFormatOpus()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatOpus();
+}
+
+inline hstring CodecSubtypes::AudioFormatPcm()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatPcm();
+}
+
+inline hstring CodecSubtypes::AudioFormatWmaSpdif()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatWmaSpdif();
+}
+
+inline hstring CodecSubtypes::AudioFormatWMAudioLossless()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatWMAudioLossless();
+}
+
+inline hstring CodecSubtypes::AudioFormatWMAudioV8()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatWMAudioV8();
+}
+
+inline hstring CodecSubtypes::AudioFormatWMAudioV9()
+{
+    return get_activation_factory<CodecSubtypes, ICodecSubtypesStatics>().AudioFormatWMAudioV9();
+}
 
 inline DataCue::DataCue() :
     DataCue(activate_instance<DataCue>())
@@ -7114,6 +9447,10 @@ inline DataCue::DataCue() :
 
 inline FaceDetectionEffectDefinition::FaceDetectionEffectDefinition() :
     FaceDetectionEffectDefinition(activate_instance<FaceDetectionEffectDefinition>())
+{}
+
+inline ImageCue::ImageCue() :
+    ImageCue(activate_instance<ImageCue>())
 {}
 
 inline MediaBinder::MediaBinder() :
@@ -7196,6 +9533,10 @@ inline SceneAnalysisEffectDefinition::SceneAnalysisEffectDefinition() :
     SceneAnalysisEffectDefinition(activate_instance<SceneAnalysisEffectDefinition>())
 {}
 
+inline SpeechCue::SpeechCue() :
+    SpeechCue(activate_instance<SpeechCue>())
+{}
+
 inline TimedMetadataTrack::TimedMetadataTrack(hstring_view id, hstring_view language, Windows::Media::Core::TimedMetadataKind kind) :
     TimedMetadataTrack(get_activation_factory<TimedMetadataTrack, ITimedMetadataTrackFactory>().Create(id, language, kind))
 {}
@@ -7230,6 +9571,26 @@ inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromStream(c
 inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromUri(const Windows::Foundation::Uri & uri, hstring_view defaultLanguage)
 {
     return get_activation_factory<TimedTextSource, ITimedTextSourceStatics>().CreateFromUri(uri, defaultLanguage);
+}
+
+inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromStreamWithIndex(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Storage::Streams::IRandomAccessStream & indexStream)
+{
+    return get_activation_factory<TimedTextSource, ITimedTextSourceStatics2>().CreateFromStreamWithIndex(stream, indexStream);
+}
+
+inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromUriWithIndex(const Windows::Foundation::Uri & uri, const Windows::Foundation::Uri & indexUri)
+{
+    return get_activation_factory<TimedTextSource, ITimedTextSourceStatics2>().CreateFromUriWithIndex(uri, indexUri);
+}
+
+inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromStreamWithIndex(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Storage::Streams::IRandomAccessStream & indexStream, hstring_view defaultLanguage)
+{
+    return get_activation_factory<TimedTextSource, ITimedTextSourceStatics2>().CreateFromStreamWithIndex(stream, indexStream, defaultLanguage);
+}
+
+inline Windows::Media::Core::TimedTextSource TimedTextSource::CreateFromUriWithIndex(const Windows::Foundation::Uri & uri, const Windows::Foundation::Uri & indexUri, hstring_view defaultLanguage)
+{
+    return get_activation_factory<TimedTextSource, ITimedTextSourceStatics2>().CreateFromUriWithIndex(uri, indexUri, defaultLanguage);
 }
 
 inline TimedTextStyle::TimedTextStyle() :
@@ -7307,9 +9668,54 @@ struct std::hash<winrt::Windows::Media::Core::IAudioTrackSupportInfo>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Core::IChapterCue>
+{
+    size_t operator()(const winrt::Windows::Media::Core::IChapterCue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::ICodecInfo>
+{
+    size_t operator()(const winrt::Windows::Media::Core::ICodecInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::ICodecQuery>
+{
+    size_t operator()(const winrt::Windows::Media::Core::ICodecQuery & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::ICodecSubtypesStatics>
+{
+    size_t operator()(const winrt::Windows::Media::Core::ICodecSubtypesStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Core::IDataCue>
 {
     size_t operator()(const winrt::Windows::Media::Core::IDataCue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::IDataCue2>
+{
+    size_t operator()(const winrt::Windows::Media::Core::IDataCue2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7370,6 +9776,15 @@ struct std::hash<winrt::Windows::Media::Core::IHighDynamicRangeOutput>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Core::IImageCue>
+{
+    size_t operator()(const winrt::Windows::Media::Core::IImageCue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Core::IMediaBinder>
 {
     size_t operator()(const winrt::Windows::Media::Core::IMediaBinder & value) const noexcept
@@ -7382,6 +9797,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Core::IMediaBindingEventArgs>
 {
     size_t operator()(const winrt::Windows::Media::Core::IMediaBindingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::IMediaBindingEventArgs2>
+{
+    size_t operator()(const winrt::Windows::Media::Core::IMediaBindingEventArgs2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7427,6 +9851,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Core::IMediaSource3>
 {
     size_t operator()(const winrt::Windows::Media::Core::IMediaSource3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::IMediaSource4>
+{
+    size_t operator()(const winrt::Windows::Media::Core::IMediaSource4 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7526,6 +9959,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Core::IMediaStreamSource2>
 {
     size_t operator()(const winrt::Windows::Media::Core::IMediaStreamSource2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::IMediaStreamSource3>
+{
+    size_t operator()(const winrt::Windows::Media::Core::IMediaStreamSource3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7730,6 +10172,15 @@ struct std::hash<winrt::Windows::Media::Core::ISingleSelectMediaTrackList>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Core::ISpeechCue>
+{
+    size_t operator()(const winrt::Windows::Media::Core::ISpeechCue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Core::ITimedMetadataTrack>
 {
     size_t operator()(const winrt::Windows::Media::Core::ITimedMetadataTrack & value) const noexcept
@@ -7769,6 +10220,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Core::ITimedMetadataTrackFailedEventArgs>
 {
     size_t operator()(const winrt::Windows::Media::Core::ITimedMetadataTrackFailedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::ITimedMetadataTrackProvider>
+{
+    size_t operator()(const winrt::Windows::Media::Core::ITimedMetadataTrackProvider & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7829,9 +10289,27 @@ struct std::hash<winrt::Windows::Media::Core::ITimedTextSourceStatics>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Core::ITimedTextSourceStatics2>
+{
+    size_t operator()(const winrt::Windows::Media::Core::ITimedTextSourceStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Core::ITimedTextStyle>
 {
     size_t operator()(const winrt::Windows::Media::Core::ITimedTextStyle & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::ITimedTextStyle2>
+{
+    size_t operator()(const winrt::Windows::Media::Core::ITimedTextStyle2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -7946,6 +10424,33 @@ struct std::hash<winrt::Windows::Media::Core::AudioTrackSupportInfo>
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Core::ChapterCue>
+{
+    size_t operator()(const winrt::Windows::Media::Core::ChapterCue & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::CodecInfo>
+{
+    size_t operator()(const winrt::Windows::Media::Core::CodecInfo & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::CodecQuery>
+{
+    size_t operator()(const winrt::Windows::Media::Core::CodecQuery & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Core::DataCue>
 {
     size_t operator()(const winrt::Windows::Media::Core::DataCue & value) const noexcept
@@ -8003,6 +10508,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Core::HighDynamicRangeOutput>
 {
     size_t operator()(const winrt::Windows::Media::Core::HighDynamicRangeOutput & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::ImageCue>
+{
+    size_t operator()(const winrt::Windows::Media::Core::ImageCue & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -8273,6 +10787,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Core::SceneAnalyzedEventArgs>
 {
     size_t operator()(const winrt::Windows::Media::Core::SceneAnalyzedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Core::SpeechCue>
+{
+    size_t operator()(const winrt::Windows::Media::Core::SpeechCue & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

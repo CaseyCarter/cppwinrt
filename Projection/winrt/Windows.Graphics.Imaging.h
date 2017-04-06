@@ -11,6 +11,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.Graphics.DirectX.Direct3D11.3.h"
 #include "internal/Windows.Graphics.Imaging.3.h"
+#include "Windows.Graphics.h"
 #include "Windows.Foundation.h"
 #include "Windows.Foundation.Collections.h"
 #include "Windows.Storage.Streams.h"
@@ -2107,69 +2108,6 @@ template <typename D> void impl_IBitmapEncoderWithSoftwareBitmap<D>::SetSoftware
     check_hresult(WINRT_SHIM(IBitmapEncoderWithSoftwareBitmap)->abi_SetSoftwareBitmap(get_abi(bitmap)));
 }
 
-template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapFactory<D>::Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) const
-{
-    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(WINRT_SHIM(ISoftwareBitmapFactory)->abi_Create(format, width, height, put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapFactory<D>::CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
-{
-    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(WINRT_SHIM(ISoftwareBitmapFactory)->abi_CreateWithAlpha(format, width, height, alpha, put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::Copy(const Windows::Graphics::Imaging::SoftwareBitmap & source) const
-{
-    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_Copy(get_abi(source), put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::Convert(const Windows::Graphics::Imaging::SoftwareBitmap & source, Windows::Graphics::Imaging::BitmapPixelFormat format) const
-{
-    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_Convert(get_abi(source), format, put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::Convert(const Windows::Graphics::Imaging::SoftwareBitmap & source, Windows::Graphics::Imaging::BitmapPixelFormat format, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
-{
-    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_ConvertWithAlpha(get_abi(source), format, alpha, put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::CreateCopyFromBuffer(const Windows::Storage::Streams::IBuffer & source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) const
-{
-    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_CreateCopyFromBuffer(get_abi(source), format, width, height, put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::CreateCopyFromBuffer(const Windows::Storage::Streams::IBuffer & source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
-{
-    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_CreateCopyWithAlphaFromBuffer(get_abi(source), format, width, height, alpha, put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> impl_ISoftwareBitmapStatics<D>::CreateCopyFromSurfaceAsync(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surface) const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> value;
-    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_CreateCopyFromSurfaceAsync(get_abi(surface), put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> impl_ISoftwareBitmapStatics<D>::CreateCopyFromSurfaceAsync(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surface, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> value;
-    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_CreateCopyWithAlphaFromSurfaceAsync(get_abi(surface), alpha, put_abi(value)));
-    return value;
-}
-
 template <typename D> Windows::Graphics::Imaging::BitmapPixelFormat impl_ISoftwareBitmap<D>::BitmapPixelFormat() const
 {
     Windows::Graphics::Imaging::BitmapPixelFormat value {};
@@ -2255,6 +2193,69 @@ template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareB
 {
     Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
     check_hresult(WINRT_SHIM(ISoftwareBitmap)->abi_GetReadOnlyView(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapFactory<D>::Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) const
+{
+    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
+    check_hresult(WINRT_SHIM(ISoftwareBitmapFactory)->abi_Create(format, width, height, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapFactory<D>::CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
+{
+    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
+    check_hresult(WINRT_SHIM(ISoftwareBitmapFactory)->abi_CreateWithAlpha(format, width, height, alpha, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::Copy(const Windows::Graphics::Imaging::SoftwareBitmap & source) const
+{
+    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
+    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_Copy(get_abi(source), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::Convert(const Windows::Graphics::Imaging::SoftwareBitmap & source, Windows::Graphics::Imaging::BitmapPixelFormat format) const
+{
+    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
+    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_Convert(get_abi(source), format, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::Convert(const Windows::Graphics::Imaging::SoftwareBitmap & source, Windows::Graphics::Imaging::BitmapPixelFormat format, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
+{
+    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
+    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_ConvertWithAlpha(get_abi(source), format, alpha, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::CreateCopyFromBuffer(const Windows::Storage::Streams::IBuffer & source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) const
+{
+    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
+    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_CreateCopyFromBuffer(get_abi(source), format, width, height, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::CreateCopyFromBuffer(const Windows::Storage::Streams::IBuffer & source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
+{
+    Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
+    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_CreateCopyWithAlphaFromBuffer(get_abi(source), format, width, height, alpha, put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> impl_ISoftwareBitmapStatics<D>::CreateCopyFromSurfaceAsync(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surface) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> value;
+    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_CreateCopyFromSurfaceAsync(get_abi(surface), put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> impl_ISoftwareBitmapStatics<D>::CreateCopyFromSurfaceAsync(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surface, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> value;
+    check_hresult(WINRT_SHIM(ISoftwareBitmapStatics)->abi_CreateCopyWithAlphaFromSurfaceAsync(get_abi(surface), alpha, put_abi(value)));
     return value;
 }
 

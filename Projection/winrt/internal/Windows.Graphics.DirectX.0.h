@@ -6,7 +6,7 @@
 
 WINRT_EXPORT namespace winrt {
 
-namespace Windows::Globalization::PhoneNumberFormatting {
+namespace Windows::Graphics {
 
 
 }

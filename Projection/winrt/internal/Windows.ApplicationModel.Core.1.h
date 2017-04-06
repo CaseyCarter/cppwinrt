@@ -89,6 +89,11 @@ struct __declspec(uuid("07ebe1b3-a4cf-4550-ab70-b07e85330bc8")) __declspec(novta
     virtual HRESULT __stdcall remove_HostedViewClosing(event_token token) = 0;
 };
 
+struct __declspec(uuid("2bc095a8-8ef0-446d-9e60-3a3e0428c671")) __declspec(novtable) ICoreApplicationView5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Properties(Windows::Foundation::Collections::IPropertySet ** value) = 0;
+};
+
 struct __declspec(uuid("006d35e3-e1f1-431b-9508-29b96926ac53")) __declspec(novtable) ICoreApplicationViewTitleBar : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall put_ExtendViewIntoTitleBar(bool value) = 0;
@@ -264,6 +269,12 @@ struct WINRT_EBO impl_ICoreApplicationView3
 };
 
 template <typename D>
+struct WINRT_EBO impl_ICoreApplicationView5
+{
+    Windows::Foundation::Collections::IPropertySet Properties() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ICoreApplicationViewTitleBar
 {
     void ExtendViewIntoTitleBar(bool value) const;
@@ -393,6 +404,12 @@ template <> struct traits<Windows::ApplicationModel::Core::ICoreApplicationView3
 {
     using abi = ABI::Windows::ApplicationModel::Core::ICoreApplicationView3;
     template <typename D> using consume = Windows::ApplicationModel::Core::impl_ICoreApplicationView3<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Core::ICoreApplicationView5>
+{
+    using abi = ABI::Windows::ApplicationModel::Core::ICoreApplicationView5;
+    template <typename D> using consume = Windows::ApplicationModel::Core::impl_ICoreApplicationView5<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>

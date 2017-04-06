@@ -242,6 +242,8 @@ struct WINRT_EBO AccessKeyManager :
     static IsDisplayModeEnabledChanged_revoker IsDisplayModeEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IInspectable, Windows::Foundation::IInspectable> & value);
     static void IsDisplayModeEnabledChanged(event_token token);
     static void ExitDisplayMode();
+    static bool AreKeyTipsEnabled();
+    static void AreKeyTipsEnabled(bool value);
 };
 
 struct WINRT_EBO ContextRequestedEventArgs :
@@ -262,6 +264,13 @@ struct WINRT_EBO DoubleTappedRoutedEventArgs :
     DoubleTappedRoutedEventArgs();
 };
 
+struct WINRT_EBO FindNextElementOptions :
+    Windows::UI::Xaml::Input::IFindNextElementOptions
+{
+    FindNextElementOptions(std::nullptr_t) noexcept {}
+    FindNextElementOptions();
+};
+
 struct WINRT_EBO FocusManager :
     Windows::UI::Xaml::Input::IFocusManager
 {
@@ -270,6 +279,19 @@ struct WINRT_EBO FocusManager :
     static bool TryMoveFocus(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection);
     static Windows::UI::Xaml::UIElement FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection);
     static Windows::UI::Xaml::UIElement FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::Foundation::Rect & hintRect);
+    static bool TryMoveFocus(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::UI::Xaml::Input::FindNextElementOptions & focusNavigationOptions);
+    static Windows::UI::Xaml::DependencyObject FindNextElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection);
+    static Windows::UI::Xaml::DependencyObject FindFirstFocusableElement(const Windows::UI::Xaml::DependencyObject & searchScope);
+    static Windows::UI::Xaml::DependencyObject FindLastFocusableElement(const Windows::UI::Xaml::DependencyObject & searchScope);
+    static Windows::UI::Xaml::DependencyObject FindNextElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::UI::Xaml::Input::FindNextElementOptions & focusNavigationOptions);
+};
+
+struct WINRT_EBO GettingFocusEventArgs :
+    Windows::UI::Xaml::Input::IGettingFocusEventArgs,
+    impl::bases<GettingFocusEventArgs, Windows::UI::Xaml::RoutedEventArgs>,
+    impl::require<GettingFocusEventArgs, Windows::UI::Xaml::IRoutedEventArgs>
+{
+    GettingFocusEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO HoldingRoutedEventArgs :
@@ -326,6 +348,14 @@ struct WINRT_EBO KeyRoutedEventArgs :
     KeyRoutedEventArgs(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO LosingFocusEventArgs :
+    Windows::UI::Xaml::Input::ILosingFocusEventArgs,
+    impl::bases<LosingFocusEventArgs, Windows::UI::Xaml::RoutedEventArgs>,
+    impl::require<LosingFocusEventArgs, Windows::UI::Xaml::IRoutedEventArgs>
+{
+    LosingFocusEventArgs(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO ManipulationCompletedRoutedEventArgs :
     Windows::UI::Xaml::Input::IManipulationCompletedRoutedEventArgs,
     impl::bases<ManipulationCompletedRoutedEventArgs, Windows::UI::Xaml::RoutedEventArgs>,
@@ -377,6 +407,14 @@ struct WINRT_EBO ManipulationStartingRoutedEventArgs :
 {
     ManipulationStartingRoutedEventArgs(std::nullptr_t) noexcept {}
     ManipulationStartingRoutedEventArgs();
+};
+
+struct WINRT_EBO NoFocusCandidateFoundEventArgs :
+    Windows::UI::Xaml::Input::INoFocusCandidateFoundEventArgs,
+    impl::bases<NoFocusCandidateFoundEventArgs, Windows::UI::Xaml::RoutedEventArgs>,
+    impl::require<NoFocusCandidateFoundEventArgs, Windows::UI::Xaml::IRoutedEventArgs>
+{
+    NoFocusCandidateFoundEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO Pointer :

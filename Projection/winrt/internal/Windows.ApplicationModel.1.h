@@ -98,6 +98,15 @@ struct __declspec(uuid("65aed1ae-b95b-450c-882b-6255187f397e")) __declspec(novta
     virtual HRESULT __stdcall abi_VerifyContentIntegrityAsync(Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
 };
 
+struct __declspec(uuid("0e842dd4-d9ac-45ed-9a1e-74ce056b2635")) __declspec(novtable) IPackage5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetContentGroupsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetContentGroupAsync(hstring name, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::PackageContentGroup> ** operation) = 0;
+    virtual HRESULT __stdcall abi_StageContentGroupsAsync(Windows::Foundation::Collections::IIterable<hstring> * names, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_StageContentGroupsWithPriorityAsync(Windows::Foundation::Collections::IIterable<hstring> * names, bool moveToHeadOfQueue, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_SetInUseAsync(bool inUse, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+};
+
 struct __declspec(uuid("230a3751-9de3-4445-be74-91fb325abefe")) __declspec(novtable) IPackageCatalog : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall add_PackageStaging(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> * handler, event_token * token) = 0;
@@ -112,10 +121,47 @@ struct __declspec(uuid("230a3751-9de3-4445-be74-91fb325abefe")) __declspec(novta
     virtual HRESULT __stdcall remove_PackageStatusChanged(event_token token) = 0;
 };
 
+struct __declspec(uuid("96a60c36-8ff7-4344-b6bf-ee64c2207ed2")) __declspec(novtable) IPackageCatalog2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall add_PackageContentGroupStaging(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageContentGroupStagingEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_PackageContentGroupStaging(event_token token) = 0;
+    virtual HRESULT __stdcall abi_AddOptionalPackageAsync(hstring optionalPackageFamilyName, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult> ** operation) = 0;
+};
+
+struct __declspec(uuid("3bf10cd4-b4df-47b3-a963-e2fa832f7dd3")) __declspec(novtable) IPackageCatalogAddOptionalPackageResult : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
+    virtual HRESULT __stdcall get_ExtendedError(HRESULT * value) = 0;
+};
+
 struct __declspec(uuid("a18c9696-e65b-4634-ba21-5e63eb7244a7")) __declspec(novtable) IPackageCatalogStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_OpenForCurrentPackage(Windows::ApplicationModel::IPackageCatalog ** value) = 0;
     virtual HRESULT __stdcall abi_OpenForCurrentUser(Windows::ApplicationModel::IPackageCatalog ** value) = 0;
+};
+
+struct __declspec(uuid("8f62695d-120a-4798-b5e1-5800dda8f2e1")) __declspec(novtable) IPackageContentGroup : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
+    virtual HRESULT __stdcall get_Name(hstring * value) = 0;
+    virtual HRESULT __stdcall get_State(winrt::Windows::ApplicationModel::PackageContentGroupState * value) = 0;
+    virtual HRESULT __stdcall get_IsRequired(bool * value) = 0;
+};
+
+struct __declspec(uuid("3d7bc27e-6f27-446c-986e-d4733d4d9113")) __declspec(novtable) IPackageContentGroupStagingEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ActivityId(GUID * value) = 0;
+    virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
+    virtual HRESULT __stdcall get_Progress(double * value) = 0;
+    virtual HRESULT __stdcall get_IsComplete(bool * value) = 0;
+    virtual HRESULT __stdcall get_ErrorCode(HRESULT * value) = 0;
+    virtual HRESULT __stdcall get_ContentGroupName(hstring * value) = 0;
+    virtual HRESULT __stdcall get_IsContentGroupRequired(bool * value) = 0;
+};
+
+struct __declspec(uuid("70ee7619-5f12-4b92-b9ea-6ccada13bc75")) __declspec(novtable) IPackageContentGroupStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_RequiredGroupName(hstring * value) = 0;
 };
 
 struct __declspec(uuid("1adb665e-37c7-4790-9980-dd7ae74e8bb2")) __declspec(novtable) IPackageId : Windows::Foundation::IInspectable
@@ -175,6 +221,11 @@ struct __declspec(uuid("5fe74f71-a365-4c09-a02d-046d525ea1da")) __declspec(novta
     virtual HRESULT __stdcall get_DeploymentInProgress(bool * value) = 0;
 };
 
+struct __declspec(uuid("f428fa93-7c56-4862-acfa-abaedcc0694d")) __declspec(novtable) IPackageStatus2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsPartiallyStaged(bool * value) = 0;
+};
+
 struct __declspec(uuid("437d714d-bd80-4a70-bc50-f6e796509575")) __declspec(novtable) IPackageStatusChangedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Package(Windows::ApplicationModel::IPackage ** value) = 0;
@@ -232,6 +283,9 @@ template <> struct traits<Windows::ApplicationModel::EnteredBackgroundEventArgs>
 template <> struct traits<Windows::ApplicationModel::LeavingBackgroundEventArgs> { using default_interface = Windows::ApplicationModel::ILeavingBackgroundEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Package> { using default_interface = Windows::ApplicationModel::IPackage; };
 template <> struct traits<Windows::ApplicationModel::PackageCatalog> { using default_interface = Windows::ApplicationModel::IPackageCatalog; };
+template <> struct traits<Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult> { using default_interface = Windows::ApplicationModel::IPackageCatalogAddOptionalPackageResult; };
+template <> struct traits<Windows::ApplicationModel::PackageContentGroup> { using default_interface = Windows::ApplicationModel::IPackageContentGroup; };
+template <> struct traits<Windows::ApplicationModel::PackageContentGroupStagingEventArgs> { using default_interface = Windows::ApplicationModel::IPackageContentGroupStagingEventArgs; };
 template <> struct traits<Windows::ApplicationModel::PackageId> { using default_interface = Windows::ApplicationModel::IPackageId; };
 template <> struct traits<Windows::ApplicationModel::PackageInstallingEventArgs> { using default_interface = Windows::ApplicationModel::IPackageInstallingEventArgs; };
 template <> struct traits<Windows::ApplicationModel::PackageStagingEventArgs> { using default_interface = Windows::ApplicationModel::IPackageStagingEventArgs; };
@@ -320,6 +374,16 @@ struct WINRT_EBO impl_IPackage4
 };
 
 template <typename D>
+struct WINRT_EBO impl_IPackage5
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> GetContentGroupsAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::PackageContentGroup> GetContentGroupAsync(hstring_view name) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> StageContentGroupsAsync(iterable<hstring> names) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::PackageContentGroup>> StageContentGroupsAsync(iterable<hstring> names, bool moveToHeadOfQueue) const;
+    Windows::Foundation::IAsyncOperation<bool> SetInUseAsync(bool inUse) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IPackageCatalog
 {
     event_token PackageStaging(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> & handler) const;
@@ -345,10 +409,54 @@ struct WINRT_EBO impl_IPackageCatalog
 };
 
 template <typename D>
+struct WINRT_EBO impl_IPackageCatalog2
+{
+    event_token PackageContentGroupStaging(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageContentGroupStagingEventArgs> & handler) const;
+    using PackageContentGroupStaging_revoker = event_revoker<IPackageCatalog2>;
+    PackageContentGroupStaging_revoker PackageContentGroupStaging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageContentGroupStagingEventArgs> & handler) const;
+    void PackageContentGroupStaging(event_token token) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult> AddOptionalPackageAsync(hstring_view optionalPackageFamilyName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageCatalogAddOptionalPackageResult
+{
+    Windows::ApplicationModel::Package Package() const;
+    HRESULT ExtendedError() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IPackageCatalogStatics
 {
     Windows::ApplicationModel::PackageCatalog OpenForCurrentPackage() const;
     Windows::ApplicationModel::PackageCatalog OpenForCurrentUser() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageContentGroup
+{
+    Windows::ApplicationModel::Package Package() const;
+    hstring Name() const;
+    Windows::ApplicationModel::PackageContentGroupState State() const;
+    bool IsRequired() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageContentGroupStagingEventArgs
+{
+    GUID ActivityId() const;
+    Windows::ApplicationModel::Package Package() const;
+    double Progress() const;
+    bool IsComplete() const;
+    HRESULT ErrorCode() const;
+    hstring ContentGroupName() const;
+    bool IsContentGroupRequired() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageContentGroupStatics
+{
+    hstring RequiredGroupName() const;
 };
 
 template <typename D>
@@ -412,6 +520,12 @@ struct WINRT_EBO impl_IPackageStatus
     bool DependencyIssue() const;
     bool Servicing() const;
     bool DeploymentInProgress() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageStatus2
+{
+    bool IsPartiallyStaged() const;
 };
 
 template <typename D>
@@ -526,16 +640,52 @@ template <> struct traits<Windows::ApplicationModel::IPackage4>
     template <typename D> using consume = Windows::ApplicationModel::impl_IPackage4<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::IPackage5>
+{
+    using abi = ABI::Windows::ApplicationModel::IPackage5;
+    template <typename D> using consume = Windows::ApplicationModel::impl_IPackage5<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::IPackageCatalog>
 {
     using abi = ABI::Windows::ApplicationModel::IPackageCatalog;
     template <typename D> using consume = Windows::ApplicationModel::impl_IPackageCatalog<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::IPackageCatalog2>
+{
+    using abi = ABI::Windows::ApplicationModel::IPackageCatalog2;
+    template <typename D> using consume = Windows::ApplicationModel::impl_IPackageCatalog2<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::IPackageCatalogAddOptionalPackageResult>
+{
+    using abi = ABI::Windows::ApplicationModel::IPackageCatalogAddOptionalPackageResult;
+    template <typename D> using consume = Windows::ApplicationModel::impl_IPackageCatalogAddOptionalPackageResult<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::IPackageCatalogStatics>
 {
     using abi = ABI::Windows::ApplicationModel::IPackageCatalogStatics;
     template <typename D> using consume = Windows::ApplicationModel::impl_IPackageCatalogStatics<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::IPackageContentGroup>
+{
+    using abi = ABI::Windows::ApplicationModel::IPackageContentGroup;
+    template <typename D> using consume = Windows::ApplicationModel::impl_IPackageContentGroup<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::IPackageContentGroupStagingEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::IPackageContentGroupStagingEventArgs;
+    template <typename D> using consume = Windows::ApplicationModel::impl_IPackageContentGroupStagingEventArgs<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::IPackageContentGroupStatics>
+{
+    using abi = ABI::Windows::ApplicationModel::IPackageContentGroupStatics;
+    template <typename D> using consume = Windows::ApplicationModel::impl_IPackageContentGroupStatics<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::IPackageId>
@@ -572,6 +722,12 @@ template <> struct traits<Windows::ApplicationModel::IPackageStatus>
 {
     using abi = ABI::Windows::ApplicationModel::IPackageStatus;
     template <typename D> using consume = Windows::ApplicationModel::impl_IPackageStatus<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::IPackageStatus2>
+{
+    using abi = ABI::Windows::ApplicationModel::IPackageStatus2;
+    template <typename D> using consume = Windows::ApplicationModel::impl_IPackageStatus2<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::IPackageStatusChangedEventArgs>
@@ -655,6 +811,24 @@ template <> struct traits<Windows::ApplicationModel::PackageCatalog>
 {
     using abi = ABI::Windows::ApplicationModel::PackageCatalog;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageCatalog"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult>
+{
+    using abi = ABI::Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageCatalogAddOptionalPackageResult"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::PackageContentGroup>
+{
+    using abi = ABI::Windows::ApplicationModel::PackageContentGroup;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageContentGroup"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::PackageContentGroupStagingEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::PackageContentGroupStagingEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.PackageContentGroupStagingEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::PackageId>

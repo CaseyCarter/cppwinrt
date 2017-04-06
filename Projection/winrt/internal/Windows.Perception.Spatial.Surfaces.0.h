@@ -15,6 +15,7 @@ struct ISpatialSurfaceMeshOptions;
 struct ISpatialSurfaceMeshOptionsStatics;
 struct ISpatialSurfaceObserver;
 struct ISpatialSurfaceObserverStatics;
+struct ISpatialSurfaceObserverStatics2;
 struct SpatialSurfaceInfo;
 struct SpatialSurfaceMesh;
 struct SpatialSurfaceMeshBuffer;
@@ -32,6 +33,7 @@ struct ISpatialSurfaceMeshOptions;
 struct ISpatialSurfaceMeshOptionsStatics;
 struct ISpatialSurfaceObserver;
 struct ISpatialSurfaceObserverStatics;
+struct ISpatialSurfaceObserverStatics2;
 struct SpatialSurfaceInfo;
 struct SpatialSurfaceMesh;
 struct SpatialSurfaceMeshBuffer;
@@ -49,6 +51,7 @@ template <typename T> struct impl_ISpatialSurfaceMeshOptions;
 template <typename T> struct impl_ISpatialSurfaceMeshOptionsStatics;
 template <typename T> struct impl_ISpatialSurfaceObserver;
 template <typename T> struct impl_ISpatialSurfaceObserverStatics;
+template <typename T> struct impl_ISpatialSurfaceObserverStatics2;
 
 }
 

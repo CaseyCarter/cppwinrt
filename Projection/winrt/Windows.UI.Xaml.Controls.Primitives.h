@@ -1794,6 +1794,39 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2> : produ
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase3> : produce_base<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBase3>
+{
+    HRESULT __stdcall get_OverlayInputPassThroughElement(impl::abi_arg_out<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().OverlayInputPassThroughElement());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_OverlayInputPassThroughElement(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().OverlayInputPassThroughElement(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseClosingEventArgs> : produce_base<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseClosingEventArgs>
 {
     HRESULT __stdcall get_Cancel(bool * value) noexcept override
@@ -1995,6 +2028,25 @@ struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics2> 
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().ElementSoundModeProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics3> : produce_base<D, Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics3>
+{
+    HRESULT __stdcall get_OverlayInputPassThroughElementProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().OverlayInputPassThroughElementProperty());
             return S_OK;
         }
         catch (...)
@@ -10940,6 +10992,25 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFlyoutBaseStat
     return value;
 }
 
+template <typename D> Windows::UI::Xaml::DependencyObject impl_IFlyoutBase3<D>::OverlayInputPassThroughElement() const
+{
+    Windows::UI::Xaml::DependencyObject value { nullptr };
+    check_hresult(WINRT_SHIM(IFlyoutBase3)->get_OverlayInputPassThroughElement(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IFlyoutBase3<D>::OverlayInputPassThroughElement(const Windows::UI::Xaml::DependencyObject & value) const
+{
+    check_hresult(WINRT_SHIM(IFlyoutBase3)->put_OverlayInputPassThroughElement(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFlyoutBaseStatics3<D>::OverlayInputPassThroughElementProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IFlyoutBaseStatics3)->get_OverlayInputPassThroughElementProperty(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Xaml::Media::Brush impl_IJumpListItemBackgroundConverter<D>::Enabled() const
 {
     Windows::UI::Xaml::Media::Brush value { nullptr };
@@ -11307,6 +11378,11 @@ inline Windows::UI::Xaml::DependencyProperty FlyoutBase::AllowFocusWhenDisabledP
 inline Windows::UI::Xaml::DependencyProperty FlyoutBase::ElementSoundModeProperty()
 {
     return get_activation_factory<FlyoutBase, IFlyoutBaseStatics2>().ElementSoundModeProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty FlyoutBase::OverlayInputPassThroughElementProperty()
+{
+    return get_activation_factory<FlyoutBase, IFlyoutBaseStatics3>().OverlayInputPassThroughElementProperty();
 }
 
 inline Windows::UI::Xaml::Controls::Primitives::GeneratorPosition GeneratorPositionHelper::FromIndexAndOffset(int32_t index, int32_t offset)
@@ -12042,6 +12118,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::Primitives::IFlyoutBase2>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Primitives::IFlyoutBase3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Primitives::IFlyoutBase3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseClosingEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseClosingEventArgs & value) const noexcept
@@ -12081,6 +12166,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics2>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics3>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseStatics3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

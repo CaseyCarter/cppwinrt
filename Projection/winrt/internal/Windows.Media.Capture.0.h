@@ -43,6 +43,8 @@ struct IMediaCapture2;
 struct IMediaCapture3;
 struct IMediaCapture4;
 struct IMediaCapture5;
+struct IMediaCapture6;
+struct IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs;
 struct IMediaCaptureFailedEventArgs;
 struct IMediaCaptureFocusChangedEventArgs;
 struct IMediaCaptureInitializationSettings;
@@ -50,6 +52,7 @@ struct IMediaCaptureInitializationSettings2;
 struct IMediaCaptureInitializationSettings3;
 struct IMediaCaptureInitializationSettings4;
 struct IMediaCaptureInitializationSettings5;
+struct IMediaCaptureInitializationSettings6;
 struct IMediaCapturePauseResult;
 struct IMediaCaptureSettings;
 struct IMediaCaptureSettings2;
@@ -77,6 +80,7 @@ struct LowLagMediaRecording;
 struct LowLagPhotoCapture;
 struct LowLagPhotoSequenceCapture;
 struct MediaCapture;
+struct MediaCaptureDeviceExclusiveControlStatusChangedEventArgs;
 struct MediaCaptureFailedEventArgs;
 struct MediaCaptureFocusChangedEventArgs;
 struct MediaCaptureInitializationSettings;
@@ -119,6 +123,8 @@ struct IMediaCapture2;
 struct IMediaCapture3;
 struct IMediaCapture4;
 struct IMediaCapture5;
+struct IMediaCapture6;
+struct IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs;
 struct IMediaCaptureFailedEventArgs;
 struct IMediaCaptureFocusChangedEventArgs;
 struct IMediaCaptureInitializationSettings;
@@ -126,6 +132,7 @@ struct IMediaCaptureInitializationSettings2;
 struct IMediaCaptureInitializationSettings3;
 struct IMediaCaptureInitializationSettings4;
 struct IMediaCaptureInitializationSettings5;
+struct IMediaCaptureInitializationSettings6;
 struct IMediaCapturePauseResult;
 struct IMediaCaptureSettings;
 struct IMediaCaptureSettings2;
@@ -151,6 +158,7 @@ struct LowLagMediaRecording;
 struct LowLagPhotoCapture;
 struct LowLagPhotoSequenceCapture;
 struct MediaCapture;
+struct MediaCaptureDeviceExclusiveControlStatusChangedEventArgs;
 struct MediaCaptureFailedEventArgs;
 struct MediaCaptureFocusChangedEventArgs;
 struct MediaCaptureInitializationSettings;
@@ -191,6 +199,8 @@ template <typename T> struct impl_IMediaCapture2;
 template <typename T> struct impl_IMediaCapture3;
 template <typename T> struct impl_IMediaCapture4;
 template <typename T> struct impl_IMediaCapture5;
+template <typename T> struct impl_IMediaCapture6;
+template <typename T> struct impl_IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs;
 template <typename T> struct impl_IMediaCaptureFailedEventArgs;
 template <typename T> struct impl_IMediaCaptureFocusChangedEventArgs;
 template <typename T> struct impl_IMediaCaptureInitializationSettings;
@@ -198,6 +208,7 @@ template <typename T> struct impl_IMediaCaptureInitializationSettings2;
 template <typename T> struct impl_IMediaCaptureInitializationSettings3;
 template <typename T> struct impl_IMediaCaptureInitializationSettings4;
 template <typename T> struct impl_IMediaCaptureInitializationSettings5;
+template <typename T> struct impl_IMediaCaptureInitializationSettings6;
 template <typename T> struct impl_IMediaCapturePauseResult;
 template <typename T> struct impl_IMediaCaptureSettings;
 template <typename T> struct impl_IMediaCaptureSettings2;
@@ -262,6 +273,12 @@ enum class KnownVideoProfile
     BalancedVideoAndPhoto = 2,
     VideoConferencing = 3,
     PhotoSequence = 4,
+};
+
+enum class MediaCaptureDeviceExclusiveControlStatus
+{
+    ExclusiveControlAvailable = 0,
+    SharedReadOnlyAvailable = 1,
 };
 
 enum class MediaCaptureMemoryPreference

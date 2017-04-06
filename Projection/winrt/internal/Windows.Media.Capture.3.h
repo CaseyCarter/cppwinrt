@@ -129,7 +129,7 @@ struct WINRT_EBO LowLagPhotoSequenceCapture :
 
 struct WINRT_EBO MediaCapture :
     Windows::Media::Capture::IMediaCapture,
-    impl::require<MediaCapture, Windows::Foundation::IClosable, Windows::Media::Capture::IMediaCapture2, Windows::Media::Capture::IMediaCapture3, Windows::Media::Capture::IMediaCapture4, Windows::Media::Capture::IMediaCapture5, Windows::Media::Capture::IMediaCaptureVideoPreview>
+    impl::require<MediaCapture, Windows::Foundation::IClosable, Windows::Media::Capture::IMediaCapture2, Windows::Media::Capture::IMediaCapture3, Windows::Media::Capture::IMediaCapture4, Windows::Media::Capture::IMediaCapture5, Windows::Media::Capture::IMediaCapture6, Windows::Media::Capture::IMediaCaptureVideoPreview>
 {
     MediaCapture(std::nullptr_t) noexcept {}
     MediaCapture();
@@ -137,6 +137,12 @@ struct WINRT_EBO MediaCapture :
     static Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindAllVideoProfiles(hstring_view videoDeviceId);
     static Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindConcurrentProfiles(hstring_view videoDeviceId);
     static Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindKnownVideoProfiles(hstring_view videoDeviceId, Windows::Media::Capture::KnownVideoProfile name);
+};
+
+struct WINRT_EBO MediaCaptureDeviceExclusiveControlStatusChangedEventArgs :
+    Windows::Media::Capture::IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs
+{
+    MediaCaptureDeviceExclusiveControlStatusChangedEventArgs(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO MediaCaptureFailedEventArgs :
@@ -153,7 +159,7 @@ struct WINRT_EBO MediaCaptureFocusChangedEventArgs :
 
 struct WINRT_EBO MediaCaptureInitializationSettings :
     Windows::Media::Capture::IMediaCaptureInitializationSettings,
-    impl::require<MediaCaptureInitializationSettings, Windows::Media::Capture::IMediaCaptureInitializationSettings2, Windows::Media::Capture::IMediaCaptureInitializationSettings3, Windows::Media::Capture::IMediaCaptureInitializationSettings4, Windows::Media::Capture::IMediaCaptureInitializationSettings5>
+    impl::require<MediaCaptureInitializationSettings, Windows::Media::Capture::IMediaCaptureInitializationSettings2, Windows::Media::Capture::IMediaCaptureInitializationSettings3, Windows::Media::Capture::IMediaCaptureInitializationSettings4, Windows::Media::Capture::IMediaCaptureInitializationSettings5, Windows::Media::Capture::IMediaCaptureInitializationSettings6>
 {
     MediaCaptureInitializationSettings(std::nullptr_t) noexcept {}
     MediaCaptureInitializationSettings();

@@ -6,10 +6,10 @@
 #include "base.h"
 WINRT_WARNING_PUSH
 
-#include "internal/Windows.System.RemoteSystems.3.h"
 #include "internal/Windows.Foundation.3.h"
-#include "internal/Windows.System.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.System.RemoteSystems.3.h"
+#include "internal/Windows.System.3.h"
 #include "internal/Windows.ApplicationModel.AppService.3.h"
 #include "Windows.ApplicationModel.h"
 #include "Windows.Foundation.h"
@@ -467,6 +467,78 @@ template <typename D> Windows::ApplicationModel::AppService::AppServiceDeferral 
     return value;
 }
 
+template <typename D> hstring impl_IAppServiceConnection<D>::AppServiceName() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IAppServiceConnection)->get_AppServiceName(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IAppServiceConnection<D>::AppServiceName(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(IAppServiceConnection)->put_AppServiceName(get_abi(value)));
+}
+
+template <typename D> hstring impl_IAppServiceConnection<D>::PackageFamilyName() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IAppServiceConnection)->get_PackageFamilyName(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IAppServiceConnection<D>::PackageFamilyName(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(IAppServiceConnection)->put_PackageFamilyName(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> impl_IAppServiceConnection<D>::OpenAsync() const
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> operation;
+    check_hresult(WINRT_SHIM(IAppServiceConnection)->abi_OpenAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponse> impl_IAppServiceConnection<D>::SendMessageAsync(const Windows::Foundation::Collections::ValueSet & message) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponse> operation;
+    check_hresult(WINRT_SHIM(IAppServiceConnection)->abi_SendMessageAsync(get_abi(message), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> event_token impl_IAppServiceConnection<D>::RequestReceived(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IAppServiceConnection)->add_RequestReceived(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IAppServiceConnection> impl_IAppServiceConnection<D>::RequestReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IAppServiceConnection>(this, &ABI::Windows::ApplicationModel::AppService::IAppServiceConnection::remove_RequestReceived, RequestReceived(handler));
+}
+
+template <typename D> void impl_IAppServiceConnection<D>::RequestReceived(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IAppServiceConnection)->remove_RequestReceived(token));
+}
+
+template <typename D> event_token impl_IAppServiceConnection<D>::ServiceClosed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IAppServiceConnection)->add_ServiceClosed(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IAppServiceConnection> impl_IAppServiceConnection<D>::ServiceClosed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IAppServiceConnection>(this, &ABI::Windows::ApplicationModel::AppService::IAppServiceConnection::remove_ServiceClosed, ServiceClosed(handler));
+}
+
+template <typename D> void impl_IAppServiceConnection<D>::ServiceClosed(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IAppServiceConnection)->remove_ServiceClosed(token));
+}
+
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> impl_IAppServiceConnection2<D>::OpenRemoteAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> operation;
@@ -547,78 +619,6 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> operation;
     check_hresult(WINRT_SHIM(IAppServiceCatalogStatics)->abi_FindAppServiceProvidersAsync(get_abi(appServiceName), put_abi(operation)));
     return operation;
-}
-
-template <typename D> hstring impl_IAppServiceConnection<D>::AppServiceName() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IAppServiceConnection)->get_AppServiceName(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IAppServiceConnection<D>::AppServiceName(hstring_view value) const
-{
-    check_hresult(WINRT_SHIM(IAppServiceConnection)->put_AppServiceName(get_abi(value)));
-}
-
-template <typename D> hstring impl_IAppServiceConnection<D>::PackageFamilyName() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IAppServiceConnection)->get_PackageFamilyName(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IAppServiceConnection<D>::PackageFamilyName(hstring_view value) const
-{
-    check_hresult(WINRT_SHIM(IAppServiceConnection)->put_PackageFamilyName(get_abi(value)));
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> impl_IAppServiceConnection<D>::OpenAsync() const
-{
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> operation;
-    check_hresult(WINRT_SHIM(IAppServiceConnection)->abi_OpenAsync(put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponse> impl_IAppServiceConnection<D>::SendMessageAsync(const Windows::Foundation::Collections::ValueSet & message) const
-{
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponse> operation;
-    check_hresult(WINRT_SHIM(IAppServiceConnection)->abi_SendMessageAsync(get_abi(message), put_abi(operation)));
-    return operation;
-}
-
-template <typename D> event_token impl_IAppServiceConnection<D>::RequestReceived(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IAppServiceConnection)->add_RequestReceived(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IAppServiceConnection> impl_IAppServiceConnection<D>::RequestReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, IAppServiceConnection>(this, &ABI::Windows::ApplicationModel::AppService::IAppServiceConnection::remove_RequestReceived, RequestReceived(handler));
-}
-
-template <typename D> void impl_IAppServiceConnection<D>::RequestReceived(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IAppServiceConnection)->remove_RequestReceived(token));
-}
-
-template <typename D> event_token impl_IAppServiceConnection<D>::ServiceClosed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IAppServiceConnection)->add_ServiceClosed(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IAppServiceConnection> impl_IAppServiceConnection<D>::ServiceClosed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> & handler) const
-{
-    return impl::make_event_revoker<D, IAppServiceConnection>(this, &ABI::Windows::ApplicationModel::AppService::IAppServiceConnection::remove_ServiceClosed, ServiceClosed(handler));
-}
-
-template <typename D> void impl_IAppServiceConnection<D>::ServiceClosed(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IAppServiceConnection)->remove_ServiceClosed(token));
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> AppServiceCatalog::FindAppServiceProvidersAsync(hstring_view appServiceName)

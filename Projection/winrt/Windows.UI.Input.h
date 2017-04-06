@@ -9,6 +9,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Devices.Input.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Devices.Haptics.3.h"
 #include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.UI.Input.3.h"
 #include "Windows.UI.h"
@@ -2513,6 +2514,94 @@ struct produce<D, Windows::UI::Input::IRadialController> : produce_base<D, Windo
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Input::IRadialController2> : produce_base<D, Windows::UI::Input::IRadialController2>
+{
+    HRESULT __stdcall add_ButtonPressed(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().ButtonPressed(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_ButtonPressed(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ButtonPressed(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_ButtonHolding(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().ButtonHolding(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_ButtonHolding(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ButtonHolding(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_ButtonReleased(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs>> handler, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().ButtonReleased(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> *>(&handler)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_ButtonReleased(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ButtonReleased(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerButtonClickedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerButtonClickedEventArgs>
 {
     HRESULT __stdcall get_Contact(impl::abi_arg_out<Windows::UI::Input::IRadialControllerScreenContact> value) noexcept override
@@ -2521,6 +2610,127 @@ struct produce<D, Windows::UI::Input::IRadialControllerButtonClickedEventArgs> :
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().Contact());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::IRadialControllerButtonClickedEventArgs2> : produce_base<D, Windows::UI::Input::IRadialControllerButtonClickedEventArgs2>
+{
+    HRESULT __stdcall get_SimpleHapticsController(impl::abi_arg_out<Windows::Devices::Haptics::ISimpleHapticsController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimpleHapticsController());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::IRadialControllerButtonHoldingEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerButtonHoldingEventArgs>
+{
+    HRESULT __stdcall get_Contact(impl::abi_arg_out<Windows::UI::Input::IRadialControllerScreenContact> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Contact());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimpleHapticsController(impl::abi_arg_out<Windows::Devices::Haptics::ISimpleHapticsController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimpleHapticsController());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::IRadialControllerButtonPressedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerButtonPressedEventArgs>
+{
+    HRESULT __stdcall get_Contact(impl::abi_arg_out<Windows::UI::Input::IRadialControllerScreenContact> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Contact());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimpleHapticsController(impl::abi_arg_out<Windows::Devices::Haptics::ISimpleHapticsController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimpleHapticsController());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::IRadialControllerButtonReleasedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerButtonReleasedEventArgs>
+{
+    HRESULT __stdcall get_Contact(impl::abi_arg_out<Windows::UI::Input::IRadialControllerScreenContact> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Contact());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimpleHapticsController(impl::abi_arg_out<Windows::Devices::Haptics::ISimpleHapticsController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimpleHapticsController());
             return S_OK;
         }
         catch (...)
@@ -2578,6 +2788,67 @@ struct produce<D, Windows::UI::Input::IRadialControllerConfiguration> : produce_
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Input::IRadialControllerConfiguration2> : produce_base<D, Windows::UI::Input::IRadialControllerConfiguration2>
+{
+    HRESULT __stdcall put_ActiveControllerWhenMenuIsSuppressed(impl::abi_arg_in<Windows::UI::Input::IRadialController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ActiveControllerWhenMenuIsSuppressed(*reinterpret_cast<const Windows::UI::Input::RadialController *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ActiveControllerWhenMenuIsSuppressed(impl::abi_arg_out<Windows::UI::Input::IRadialController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ActiveControllerWhenMenuIsSuppressed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsMenuSuppressed(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsMenuSuppressed(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsMenuSuppressed(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsMenuSuppressed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerConfigurationStatics> : produce_base<D, Windows::UI::Input::IRadialControllerConfigurationStatics>
 {
     HRESULT __stdcall abi_GetForCurrentView(impl::abi_arg_out<Windows::UI::Input::IRadialControllerConfiguration> configuration) noexcept override
@@ -2605,6 +2876,39 @@ struct produce<D, Windows::UI::Input::IRadialControllerControlAcquiredEventArgs>
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().Contact());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::IRadialControllerControlAcquiredEventArgs2> : produce_base<D, Windows::UI::Input::IRadialControllerControlAcquiredEventArgs2>
+{
+    HRESULT __stdcall get_IsButtonPressed(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsButtonPressed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimpleHapticsController(impl::abi_arg_out<Windows::Devices::Haptics::ISimpleHapticsController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimpleHapticsController());
             return S_OK;
         }
         catch (...)
@@ -2816,6 +3120,40 @@ struct produce<D, Windows::UI::Input::IRadialControllerMenuItemStatics> : produc
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Input::IRadialControllerMenuItemStatics2> : produce_base<D, Windows::UI::Input::IRadialControllerMenuItemStatics2>
+{
+    HRESULT __stdcall abi_CreateFromFontGlyph(impl::abi_arg_in<hstring> displayText, impl::abi_arg_in<hstring> glyph, impl::abi_arg_in<hstring> fontFamily, impl::abi_arg_out<Windows::UI::Input::IRadialControllerMenuItem> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateFromFontGlyph(*reinterpret_cast<const hstring *>(&displayText), *reinterpret_cast<const hstring *>(&glyph), *reinterpret_cast<const hstring *>(&fontFamily)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_CreateFromFontGlyphWithUri(impl::abi_arg_in<hstring> displayText, impl::abi_arg_in<hstring> glyph, impl::abi_arg_in<hstring> fontFamily, impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> fontUri, impl::abi_arg_out<Windows::UI::Input::IRadialControllerMenuItem> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateFromFontGlyph(*reinterpret_cast<const hstring *>(&displayText), *reinterpret_cast<const hstring *>(&glyph), *reinterpret_cast<const hstring *>(&fontFamily), *reinterpret_cast<const Windows::Foundation::Uri *>(&fontUri)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs>
 {
     HRESULT __stdcall get_RotationDeltaInDegrees(double * value) noexcept override
@@ -2838,6 +3176,39 @@ struct produce<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs>
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().Contact());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs2> : produce_base<D, Windows::UI::Input::IRadialControllerRotationChangedEventArgs2>
+{
+    HRESULT __stdcall get_IsButtonPressed(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsButtonPressed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimpleHapticsController(impl::abi_arg_out<Windows::Devices::Haptics::ISimpleHapticsController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimpleHapticsController());
             return S_OK;
         }
         catch (...)
@@ -2900,6 +3271,72 @@ struct produce<D, Windows::UI::Input::IRadialControllerScreenContactContinuedEve
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs2> : produce_base<D, Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs2>
+{
+    HRESULT __stdcall get_IsButtonPressed(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsButtonPressed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimpleHapticsController(impl::abi_arg_out<Windows::Devices::Haptics::ISimpleHapticsController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimpleHapticsController());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::IRadialControllerScreenContactEndedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerScreenContactEndedEventArgs>
+{
+    HRESULT __stdcall get_IsButtonPressed(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsButtonPressed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimpleHapticsController(impl::abi_arg_out<Windows::Devices::Haptics::ISimpleHapticsController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimpleHapticsController());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs> : produce_base<D, Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs>
 {
     HRESULT __stdcall get_Contact(impl::abi_arg_out<Windows::UI::Input::IRadialControllerScreenContact> value) noexcept override
@@ -2908,6 +3345,39 @@ struct produce<D, Windows::UI::Input::IRadialControllerScreenContactStartedEvent
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().Contact());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs2> : produce_base<D, Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs2>
+{
+    HRESULT __stdcall get_IsButtonPressed(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsButtonPressed());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SimpleHapticsController(impl::abi_arg_out<Windows::Devices::Haptics::ISimpleHapticsController> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SimpleHapticsController());
             return S_OK;
         }
         catch (...)
@@ -4146,10 +4616,80 @@ template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRa
     return value;
 }
 
+template <typename D> bool impl_IRadialControllerRotationChangedEventArgs2<D>::IsButtonPressed() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRadialControllerRotationChangedEventArgs2)->get_IsButtonPressed(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::Haptics::SimpleHapticsController impl_IRadialControllerRotationChangedEventArgs2<D>::SimpleHapticsController() const
+{
+    Windows::Devices::Haptics::SimpleHapticsController value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerRotationChangedEventArgs2)->get_SimpleHapticsController(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRadialControllerButtonPressedEventArgs<D>::Contact() const
+{
+    Windows::UI::Input::RadialControllerScreenContact value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerButtonPressedEventArgs)->get_Contact(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Haptics::SimpleHapticsController impl_IRadialControllerButtonPressedEventArgs<D>::SimpleHapticsController() const
+{
+    Windows::Devices::Haptics::SimpleHapticsController value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerButtonPressedEventArgs)->get_SimpleHapticsController(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRadialControllerButtonHoldingEventArgs<D>::Contact() const
+{
+    Windows::UI::Input::RadialControllerScreenContact value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerButtonHoldingEventArgs)->get_Contact(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Haptics::SimpleHapticsController impl_IRadialControllerButtonHoldingEventArgs<D>::SimpleHapticsController() const
+{
+    Windows::Devices::Haptics::SimpleHapticsController value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerButtonHoldingEventArgs)->get_SimpleHapticsController(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRadialControllerButtonReleasedEventArgs<D>::Contact() const
+{
+    Windows::UI::Input::RadialControllerScreenContact value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerButtonReleasedEventArgs)->get_Contact(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Haptics::SimpleHapticsController impl_IRadialControllerButtonReleasedEventArgs<D>::SimpleHapticsController() const
+{
+    Windows::Devices::Haptics::SimpleHapticsController value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerButtonReleasedEventArgs)->get_SimpleHapticsController(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRadialControllerScreenContactStartedEventArgs<D>::Contact() const
 {
     Windows::UI::Input::RadialControllerScreenContact value { nullptr };
     check_hresult(WINRT_SHIM(IRadialControllerScreenContactStartedEventArgs)->get_Contact(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IRadialControllerScreenContactStartedEventArgs2<D>::IsButtonPressed() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRadialControllerScreenContactStartedEventArgs2)->get_IsButtonPressed(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::Haptics::SimpleHapticsController impl_IRadialControllerScreenContactStartedEventArgs2<D>::SimpleHapticsController() const
+{
+    Windows::Devices::Haptics::SimpleHapticsController value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerScreenContactStartedEventArgs2)->get_SimpleHapticsController(put_abi(value)));
     return value;
 }
 
@@ -4160,6 +4700,34 @@ template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRa
     return value;
 }
 
+template <typename D> bool impl_IRadialControllerScreenContactContinuedEventArgs2<D>::IsButtonPressed() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRadialControllerScreenContactContinuedEventArgs2)->get_IsButtonPressed(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::Haptics::SimpleHapticsController impl_IRadialControllerScreenContactContinuedEventArgs2<D>::SimpleHapticsController() const
+{
+    Windows::Devices::Haptics::SimpleHapticsController value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerScreenContactContinuedEventArgs2)->get_SimpleHapticsController(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IRadialControllerScreenContactEndedEventArgs<D>::IsButtonPressed() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRadialControllerScreenContactEndedEventArgs)->get_IsButtonPressed(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::Haptics::SimpleHapticsController impl_IRadialControllerScreenContactEndedEventArgs<D>::SimpleHapticsController() const
+{
+    Windows::Devices::Haptics::SimpleHapticsController value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerScreenContactEndedEventArgs)->get_SimpleHapticsController(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRadialControllerButtonClickedEventArgs<D>::Contact() const
 {
     Windows::UI::Input::RadialControllerScreenContact value { nullptr };
@@ -4167,10 +4735,31 @@ template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRa
     return value;
 }
 
+template <typename D> Windows::Devices::Haptics::SimpleHapticsController impl_IRadialControllerButtonClickedEventArgs2<D>::SimpleHapticsController() const
+{
+    Windows::Devices::Haptics::SimpleHapticsController value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerButtonClickedEventArgs2)->get_SimpleHapticsController(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Input::RadialControllerScreenContact impl_IRadialControllerControlAcquiredEventArgs<D>::Contact() const
 {
     Windows::UI::Input::RadialControllerScreenContact value { nullptr };
     check_hresult(WINRT_SHIM(IRadialControllerControlAcquiredEventArgs)->get_Contact(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IRadialControllerControlAcquiredEventArgs2<D>::IsButtonPressed() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRadialControllerControlAcquiredEventArgs2)->get_IsButtonPressed(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::Haptics::SimpleHapticsController impl_IRadialControllerControlAcquiredEventArgs2<D>::SimpleHapticsController() const
+{
+    Windows::Devices::Haptics::SimpleHapticsController value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerControlAcquiredEventArgs2)->get_SimpleHapticsController(put_abi(value)));
     return value;
 }
 
@@ -4324,6 +4913,57 @@ template <typename D> void impl_IRadialController<D>::ControlAcquired(event_toke
     check_hresult(WINRT_SHIM(IRadialController)->remove_ControlAcquired(cookie));
 }
 
+template <typename D> event_token impl_IRadialController2<D>::ButtonPressed(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRadialController2)->add_ButtonPressed(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRadialController2> impl_IRadialController2<D>::ButtonPressed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonPressedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IRadialController2>(this, &ABI::Windows::UI::Input::IRadialController2::remove_ButtonPressed, ButtonPressed(handler));
+}
+
+template <typename D> void impl_IRadialController2<D>::ButtonPressed(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRadialController2)->remove_ButtonPressed(token));
+}
+
+template <typename D> event_token impl_IRadialController2<D>::ButtonHolding(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRadialController2)->add_ButtonHolding(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRadialController2> impl_IRadialController2<D>::ButtonHolding(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonHoldingEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IRadialController2>(this, &ABI::Windows::UI::Input::IRadialController2::remove_ButtonHolding, ButtonHolding(handler));
+}
+
+template <typename D> void impl_IRadialController2<D>::ButtonHolding(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRadialController2)->remove_ButtonHolding(token));
+}
+
+template <typename D> event_token impl_IRadialController2<D>::ButtonReleased(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRadialController2)->add_ButtonReleased(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRadialController2> impl_IRadialController2<D>::ButtonReleased(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::RadialController, Windows::UI::Input::RadialControllerButtonReleasedEventArgs> & handler) const
+{
+    return impl::make_event_revoker<D, IRadialController2>(this, &ABI::Windows::UI::Input::IRadialController2::remove_ButtonReleased, ButtonReleased(handler));
+}
+
+template <typename D> void impl_IRadialController2<D>::ButtonReleased(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRadialController2)->remove_ButtonReleased(token));
+}
+
 template <typename D> bool impl_IRadialControllerStatics<D>::IsSupported() const
 {
     bool result {};
@@ -4390,6 +5030,20 @@ template <typename D> Windows::UI::Input::RadialControllerMenuItem impl_IRadialC
     return result;
 }
 
+template <typename D> Windows::UI::Input::RadialControllerMenuItem impl_IRadialControllerMenuItemStatics2<D>::CreateFromFontGlyph(hstring_view displayText, hstring_view glyph, hstring_view fontFamily) const
+{
+    Windows::UI::Input::RadialControllerMenuItem result { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerMenuItemStatics2)->abi_CreateFromFontGlyph(get_abi(displayText), get_abi(glyph), get_abi(fontFamily), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::UI::Input::RadialControllerMenuItem impl_IRadialControllerMenuItemStatics2<D>::CreateFromFontGlyph(hstring_view displayText, hstring_view glyph, hstring_view fontFamily, const Windows::Foundation::Uri & fontUri) const
+{
+    Windows::UI::Input::RadialControllerMenuItem result { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerMenuItemStatics2)->abi_CreateFromFontGlyphWithUri(get_abi(displayText), get_abi(glyph), get_abi(fontFamily), get_abi(fontUri), put_abi(result)));
+    return result;
+}
+
 template <typename D> hstring impl_IRadialControllerMenuItem<D>::DisplayText() const
 {
     hstring value;
@@ -4448,6 +5102,30 @@ template <typename D> Windows::UI::Input::RadialControllerConfiguration impl_IRa
     Windows::UI::Input::RadialControllerConfiguration configuration { nullptr };
     check_hresult(WINRT_SHIM(IRadialControllerConfigurationStatics)->abi_GetForCurrentView(put_abi(configuration)));
     return configuration;
+}
+
+template <typename D> void impl_IRadialControllerConfiguration2<D>::ActiveControllerWhenMenuIsSuppressed(const Windows::UI::Input::RadialController & value) const
+{
+    check_hresult(WINRT_SHIM(IRadialControllerConfiguration2)->put_ActiveControllerWhenMenuIsSuppressed(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Input::RadialController impl_IRadialControllerConfiguration2<D>::ActiveControllerWhenMenuIsSuppressed() const
+{
+    Windows::UI::Input::RadialController value { nullptr };
+    check_hresult(WINRT_SHIM(IRadialControllerConfiguration2)->get_ActiveControllerWhenMenuIsSuppressed(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IRadialControllerConfiguration2<D>::IsMenuSuppressed(bool value) const
+{
+    check_hresult(WINRT_SHIM(IRadialControllerConfiguration2)->put_IsMenuSuppressed(value));
+}
+
+template <typename D> bool impl_IRadialControllerConfiguration2<D>::IsMenuSuppressed() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRadialControllerConfiguration2)->get_IsMenuSuppressed(&value));
+    return value;
 }
 
 inline Windows::UI::Input::EdgeGesture EdgeGesture::GetForCurrentView()
@@ -4512,6 +5190,16 @@ inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::Cr
 inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromKnownIcon(hstring_view displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value)
 {
     return get_activation_factory<RadialControllerMenuItem, IRadialControllerMenuItemStatics>().CreateFromKnownIcon(displayText, value);
+}
+
+inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromFontGlyph(hstring_view displayText, hstring_view glyph, hstring_view fontFamily)
+{
+    return get_activation_factory<RadialControllerMenuItem, IRadialControllerMenuItemStatics2>().CreateFromFontGlyph(displayText, glyph, fontFamily);
+}
+
+inline Windows::UI::Input::RadialControllerMenuItem RadialControllerMenuItem::CreateFromFontGlyph(hstring_view displayText, hstring_view glyph, hstring_view fontFamily, const Windows::Foundation::Uri & fontUri)
+{
+    return get_activation_factory<RadialControllerMenuItem, IRadialControllerMenuItemStatics2>().CreateFromFontGlyph(displayText, glyph, fontFamily, fontUri);
 }
 
 }
@@ -4717,6 +5405,15 @@ struct std::hash<winrt::Windows::UI::Input::IRadialController>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialController2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialController2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::IRadialControllerButtonClickedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Input::IRadialControllerButtonClickedEventArgs & value) const noexcept
@@ -4726,9 +5423,54 @@ struct std::hash<winrt::Windows::UI::Input::IRadialControllerButtonClickedEventA
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerButtonClickedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerButtonClickedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerButtonHoldingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerButtonHoldingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerButtonPressedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerButtonPressedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerButtonReleasedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerButtonReleasedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::IRadialControllerConfiguration>
 {
     size_t operator()(const winrt::Windows::UI::Input::IRadialControllerConfiguration & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerConfiguration2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerConfiguration2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -4747,6 +5489,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Input::IRadialControllerControlAcquiredEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Input::IRadialControllerControlAcquiredEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerControlAcquiredEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerControlAcquiredEventArgs2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -4780,9 +5531,27 @@ struct std::hash<winrt::Windows::UI::Input::IRadialControllerMenuItemStatics>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerMenuItemStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerMenuItemStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::IRadialControllerRotationChangedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Input::IRadialControllerRotationChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerRotationChangedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerRotationChangedEventArgs2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -4807,9 +5576,36 @@ struct std::hash<winrt::Windows::UI::Input::IRadialControllerScreenContactContin
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerScreenContactContinuedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerScreenContactEndedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerScreenContactEndedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Input::IRadialControllerScreenContactStartedEventArgs2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -4996,6 +5792,33 @@ struct std::hash<winrt::Windows::UI::Input::RadialControllerButtonClickedEventAr
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerButtonHoldingEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerButtonHoldingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerButtonPressedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerButtonPressedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerButtonReleasedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerButtonReleasedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Input::RadialControllerConfiguration>
 {
     size_t operator()(const winrt::Windows::UI::Input::RadialControllerConfiguration & value) const noexcept
@@ -5053,6 +5876,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Input::RadialControllerScreenContactEndedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Input::RadialControllerScreenContactEndedEventArgs & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

@@ -36,6 +36,21 @@ template <> struct __declspec(uuid("e1d2b910-18c2-5906-8f8a-d62a63f93f18")) __de
 
 namespace ABI::Windows::Foundation {
 
+#ifndef WINRT_GENERIC_39ad7708_254e_560a_9e2e_73b1db31f935
+#define WINRT_GENERIC_39ad7708_254e_560a_9e2e_73b1db31f935
+template <> struct __declspec(uuid("39ad7708-254e-560a-9e2e-73b1db31f935")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_a8c9544b_7078_5316_beb6_d9ec916ab88a
+#define WINRT_GENERIC_a8c9544b_7078_5316_beb6_d9ec916ab88a
+template <> struct __declspec(uuid("a8c9544b-7078-5316-beb6-d9ec916ab88a")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_a72c6b01_2e3c_57b5_9ec4_948f6c6d930a
+#define WINRT_GENERIC_a72c6b01_2e3c_57b5_9ec4_948f6c6d930a
+template <> struct __declspec(uuid("a72c6b01-2e3c-57b5-9ec4-948f6c6d930a")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Documents::TextElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> {};
+#endif
+
 #ifndef WINRT_GENERIC_5fead0d2_e657_5aef_a91b_7f52ead17fe3
 #define WINRT_GENERIC_5fead0d2_e657_5aef_a91b_7f52ead17fe3
 template <> struct __declspec(uuid("5fead0d2-e657-5aef-a91b-7f52ead17fe3")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::Documents::Hyperlink, Windows::UI::Xaml::Documents::HyperlinkClickEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::Documents::Hyperlink, Windows::UI::Xaml::Documents::HyperlinkClickEventArgs> {};
@@ -148,6 +163,13 @@ struct IHyperlink3 :
     IHyperlink3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IHyperlink4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IHyperlink4>
+{
+    IHyperlink4(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IHyperlinkClickEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IHyperlinkClickEventArgs>
@@ -174,6 +196,13 @@ struct IHyperlinkStatics3 :
     impl::consume<IHyperlinkStatics3>
 {
     IHyperlinkStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IHyperlinkStatics4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IHyperlinkStatics4>
+{
+    IHyperlinkStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IInline :
@@ -274,6 +303,13 @@ struct ITextElement3 :
     ITextElement3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ITextElement4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ITextElement4>
+{
+    ITextElement4(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ITextElementFactory :
     Windows::Foundation::IInspectable,
     impl::consume<ITextElementFactory>
@@ -307,6 +343,13 @@ struct ITextElementStatics3 :
     impl::consume<ITextElementStatics3>
 {
     ITextElementStatics3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ITextElementStatics4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ITextElementStatics4>
+{
+    ITextElementStatics4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ITextPointer :

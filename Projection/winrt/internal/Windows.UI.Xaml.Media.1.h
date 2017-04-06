@@ -9,6 +9,7 @@
 #include "Windows.Media.Playback.0.h"
 #include "Windows.Storage.Streams.0.h"
 #include "Windows.UI.0.h"
+#include "Windows.UI.Composition.0.h"
 #include "Windows.UI.Xaml.0.h"
 #include "Windows.UI.Xaml.Media.Media3D.0.h"
 #include "Windows.UI.Xaml.1.h"
@@ -350,6 +351,28 @@ struct __declspec(uuid("7af6e504-2dc3-40e3-be0b-b314c13cb991")) __declspec(novta
 {
     virtual HRESULT __stdcall get_StartPointProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_EndPointProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("1ac60b1e-7837-4489-b3e5-d0d5ad0a56c4")) __declspec(novtable) ILoadedImageSourceLoadCompletedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Status(winrt::Windows::UI::Xaml::Media::LoadedImageSourceLoadStatus * value) = 0;
+};
+
+struct __declspec(uuid("050c8313-6737-45ba-8531-33094febef55")) __declspec(novtable) ILoadedImageSurface : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_DecodedPhysicalSize(Windows::Foundation::Size * value) = 0;
+    virtual HRESULT __stdcall get_DecodedSize(Windows::Foundation::Size * value) = 0;
+    virtual HRESULT __stdcall get_NaturalSize(Windows::Foundation::Size * value) = 0;
+    virtual HRESULT __stdcall add_LoadCompleted(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_LoadCompleted(event_token token) = 0;
+};
+
+struct __declspec(uuid("22b8edf6-84ad-40ab-937d-4871613e765d")) __declspec(novtable) ILoadedImageSurfaceStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_StartLoadFromUriWithSize(Windows::Foundation::IUriRuntimeClass * uri, Windows::Foundation::Size desiredMaxSize, Windows::UI::Xaml::Media::ILoadedImageSurface ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_StartLoadFromUri(Windows::Foundation::IUriRuntimeClass * uri, Windows::UI::Xaml::Media::ILoadedImageSurface ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_StartLoadFromStreamWithSize(Windows::Storage::Streams::IRandomAccessStream * stream, Windows::Foundation::Size desiredMaxSize, Windows::UI::Xaml::Media::ILoadedImageSurface ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_StartLoadFromStream(Windows::Storage::Streams::IRandomAccessStream * stream, Windows::UI::Xaml::Media::ILoadedImageSurface ** returnValue) = 0;
 };
 
 struct __declspec(uuid("6f03e149-bfc9-4c01-b578-50338cec97fc")) __declspec(novtable) IMatrix3DProjection : Windows::Foundation::IInspectable
@@ -739,6 +762,64 @@ struct __declspec(uuid("07bcd176-869f-44a7-8797-2103a4c3e47a")) __declspec(novta
     virtual HRESULT __stdcall abi_GetOpenPopups(Windows::UI::Xaml::IWindow * window, Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> ** popups) = 0;
 };
 
+struct __declspec(uuid("03e432d9-b35c-4a79-811c-c5652004da0e")) __declspec(novtable) IXamlCompositionBrushBase : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_FallbackColor(Windows::UI::Color * value) = 0;
+    virtual HRESULT __stdcall put_FallbackColor(Windows::UI::Color value) = 0;
+};
+
+struct __declspec(uuid("394f0823-2451-4ed8-bd24-488149b3428d")) __declspec(novtable) IXamlCompositionBrushBaseFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::IXamlCompositionBrushBase ** instance) = 0;
+};
+
+struct __declspec(uuid("d19127f1-38b4-4ea1-8f33-849629a4c9c1")) __declspec(novtable) IXamlCompositionBrushBaseOverrides : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_OnConnected() = 0;
+    virtual HRESULT __stdcall abi_OnDisconnected() = 0;
+};
+
+struct __declspec(uuid("1513f3d8-0457-4e1c-ad77-11c1d9879743")) __declspec(novtable) IXamlCompositionBrushBaseProtected : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_CompositionBrush(Windows::UI::Composition::ICompositionBrush ** value) = 0;
+    virtual HRESULT __stdcall put_CompositionBrush(Windows::UI::Composition::ICompositionBrush * value) = 0;
+};
+
+struct __declspec(uuid("4fd49b06-061a-441f-b97a-adfbd41ae681")) __declspec(novtable) IXamlCompositionBrushBaseStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_FallbackColorProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("0cc3fc1f-b327-4a18-9648-7c84db26ce22")) __declspec(novtable) IXamlLight : Windows::Foundation::IInspectable
+{
+};
+
+struct __declspec(uuid("87ded768-3055-43b8-8ef6-798dc4c2329a")) __declspec(novtable) IXamlLightFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Media::IXamlLight ** instance) = 0;
+};
+
+struct __declspec(uuid("7c6296c7-0173-48e1-b73d-7fa216a9ac28")) __declspec(novtable) IXamlLightOverrides : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetId(hstring * returnValue) = 0;
+    virtual HRESULT __stdcall abi_OnConnected(Windows::UI::Xaml::IUIElement * newElement) = 0;
+    virtual HRESULT __stdcall abi_OnDisconnected(Windows::UI::Xaml::IUIElement * oldElement) = 0;
+};
+
+struct __declspec(uuid("5ecf220b-1252-43d0-9729-6ea692046838")) __declspec(novtable) IXamlLightProtected : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_CompositionLight(Windows::UI::Composition::ICompositionLight ** value) = 0;
+    virtual HRESULT __stdcall put_CompositionLight(Windows::UI::Composition::ICompositionLight * value) = 0;
+};
+
+struct __declspec(uuid("b5ea9d69-b508-4e9c-bd27-6b044b5f78a0")) __declspec(novtable) IXamlLightStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_AddTargetElement(hstring lightId, Windows::UI::Xaml::IUIElement * element) = 0;
+    virtual HRESULT __stdcall abi_RemoveTargetElement(hstring lightId, Windows::UI::Xaml::IUIElement * element) = 0;
+    virtual HRESULT __stdcall abi_AddTargetBrush(hstring lightId, Windows::UI::Xaml::Media::IBrush * brush) = 0;
+    virtual HRESULT __stdcall abi_RemoveTargetBrush(hstring lightId, Windows::UI::Xaml::Media::IBrush * brush) = 0;
+};
+
 struct __declspec(uuid("08e9a257-ae05-489b-8839-28c6225d2349")) __declspec(novtable) RateChangedRoutedEventHandler : IUnknown
 {
     virtual HRESULT __stdcall abi_Invoke(Windows::Foundation::IInspectable * sender, Windows::UI::Xaml::Media::IRateChangedRoutedEventArgs * e) = 0;
@@ -776,6 +857,8 @@ template <> struct traits<Windows::UI::Xaml::Media::ImageSource> { using default
 template <> struct traits<Windows::UI::Xaml::Media::LineGeometry> { using default_interface = Windows::UI::Xaml::Media::ILineGeometry; };
 template <> struct traits<Windows::UI::Xaml::Media::LineSegment> { using default_interface = Windows::UI::Xaml::Media::ILineSegment; };
 template <> struct traits<Windows::UI::Xaml::Media::LinearGradientBrush> { using default_interface = Windows::UI::Xaml::Media::ILinearGradientBrush; };
+template <> struct traits<Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> { using default_interface = Windows::UI::Xaml::Media::ILoadedImageSourceLoadCompletedEventArgs; };
+template <> struct traits<Windows::UI::Xaml::Media::LoadedImageSurface> { using default_interface = Windows::UI::Xaml::Media::ILoadedImageSurface; };
 template <> struct traits<Windows::UI::Xaml::Media::Matrix3DProjection> { using default_interface = Windows::UI::Xaml::Media::IMatrix3DProjection; };
 template <> struct traits<Windows::UI::Xaml::Media::MatrixHelper> { using default_interface = Windows::UI::Xaml::Media::IMatrixHelper; };
 template <> struct traits<Windows::UI::Xaml::Media::MatrixTransform> { using default_interface = Windows::UI::Xaml::Media::IMatrixTransform; };
@@ -809,6 +892,8 @@ template <> struct traits<Windows::UI::Xaml::Media::TransformCollection> { using
 template <> struct traits<Windows::UI::Xaml::Media::TransformGroup> { using default_interface = Windows::UI::Xaml::Media::ITransformGroup; };
 template <> struct traits<Windows::UI::Xaml::Media::TranslateTransform> { using default_interface = Windows::UI::Xaml::Media::ITranslateTransform; };
 template <> struct traits<Windows::UI::Xaml::Media::VisualTreeHelper> { using default_interface = Windows::UI::Xaml::Media::IVisualTreeHelper; };
+template <> struct traits<Windows::UI::Xaml::Media::XamlCompositionBrushBase> { using default_interface = Windows::UI::Xaml::Media::IXamlCompositionBrushBase; };
+template <> struct traits<Windows::UI::Xaml::Media::XamlLight> { using default_interface = Windows::UI::Xaml::Media::IXamlLight; };
 
 }
 
@@ -1175,6 +1260,33 @@ struct WINRT_EBO impl_ILinearGradientBrushStatics
 {
     Windows::UI::Xaml::DependencyProperty StartPointProperty() const;
     Windows::UI::Xaml::DependencyProperty EndPointProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILoadedImageSourceLoadCompletedEventArgs
+{
+    Windows::UI::Xaml::Media::LoadedImageSourceLoadStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILoadedImageSurface
+{
+    Windows::Foundation::Size DecodedPhysicalSize() const;
+    Windows::Foundation::Size DecodedSize() const;
+    Windows::Foundation::Size NaturalSize() const;
+    event_token LoadCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> & value) const;
+    using LoadCompleted_revoker = event_revoker<ILoadedImageSurface>;
+    LoadCompleted_revoker LoadCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::LoadedImageSurface, Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs> & value) const;
+    void LoadCompleted(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILoadedImageSurfaceStatics
+{
+    Windows::UI::Xaml::Media::LoadedImageSurface StartLoadFromUri(const Windows::Foundation::Uri & uri, const Windows::Foundation::Size & desiredMaxSize) const;
+    Windows::UI::Xaml::Media::LoadedImageSurface StartLoadFromUri(const Windows::Foundation::Uri & uri) const;
+    Windows::UI::Xaml::Media::LoadedImageSurface StartLoadFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Foundation::Size & desiredMaxSize) const;
+    Windows::UI::Xaml::Media::LoadedImageSurface StartLoadFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream) const;
 };
 
 template <typename D>
@@ -1619,6 +1731,74 @@ struct WINRT_EBO impl_IVisualTreeHelperStatics2
     Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> GetOpenPopups(const Windows::UI::Xaml::Window & window) const;
 };
 
+template <typename D>
+struct WINRT_EBO impl_IXamlCompositionBrushBase
+{
+    Windows::UI::Color FallbackColor() const;
+    void FallbackColor(const Windows::UI::Color & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlCompositionBrushBaseFactory
+{
+    Windows::UI::Xaml::Media::XamlCompositionBrushBase CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlCompositionBrushBaseOverrides
+{
+    void OnConnected() const;
+    void OnDisconnected() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlCompositionBrushBaseProtected
+{
+    Windows::UI::Composition::CompositionBrush CompositionBrush() const;
+    void CompositionBrush(const Windows::UI::Composition::CompositionBrush & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlCompositionBrushBaseStatics
+{
+    Windows::UI::Xaml::DependencyProperty FallbackColorProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlLight
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlLightFactory
+{
+    Windows::UI::Xaml::Media::XamlLight CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlLightOverrides
+{
+    hstring GetId() const;
+    void OnConnected(const Windows::UI::Xaml::UIElement & newElement) const;
+    void OnDisconnected(const Windows::UI::Xaml::UIElement & oldElement) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlLightProtected
+{
+    Windows::UI::Composition::CompositionLight CompositionLight() const;
+    void CompositionLight(const Windows::UI::Composition::CompositionLight & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlLightStatics
+{
+    void AddTargetElement(hstring_view lightId, const Windows::UI::Xaml::UIElement & element) const;
+    void RemoveTargetElement(hstring_view lightId, const Windows::UI::Xaml::UIElement & element) const;
+    void AddTargetBrush(hstring_view lightId, const Windows::UI::Xaml::Media::Brush & brush) const;
+    void RemoveTargetBrush(hstring_view lightId, const Windows::UI::Xaml::Media::Brush & brush) const;
+};
+
 }
 
 namespace impl {
@@ -1879,6 +2059,24 @@ template <> struct traits<Windows::UI::Xaml::Media::ILinearGradientBrushStatics>
 {
     using abi = ABI::Windows::UI::Xaml::Media::ILinearGradientBrushStatics;
     template <typename D> using consume = Windows::UI::Xaml::Media::impl_ILinearGradientBrushStatics<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::ILoadedImageSourceLoadCompletedEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::ILoadedImageSourceLoadCompletedEventArgs;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_ILoadedImageSourceLoadCompletedEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::ILoadedImageSurface>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::ILoadedImageSurface;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_ILoadedImageSurface<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::ILoadedImageSurfaceStatics;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_ILoadedImageSurfaceStatics<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::IMatrix3DProjection>
@@ -2211,6 +2409,66 @@ template <> struct traits<Windows::UI::Xaml::Media::IVisualTreeHelperStatics2>
     template <typename D> using consume = Windows::UI::Xaml::Media::impl_IVisualTreeHelperStatics2<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Media::IXamlCompositionBrushBase>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::IXamlCompositionBrushBase;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_IXamlCompositionBrushBase<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseFactory;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_IXamlCompositionBrushBaseFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseOverrides;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_IXamlCompositionBrushBaseOverrides<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseProtected;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_IXamlCompositionBrushBaseProtected<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::IXamlCompositionBrushBaseStatics>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::IXamlCompositionBrushBaseStatics;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_IXamlCompositionBrushBaseStatics<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::IXamlLight>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::IXamlLight;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_IXamlLight<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::IXamlLightFactory>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::IXamlLightFactory;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_IXamlLightFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::IXamlLightOverrides>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::IXamlLightOverrides;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_IXamlLightOverrides<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::IXamlLightProtected>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::IXamlLightProtected;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_IXamlLightProtected<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::IXamlLightStatics>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::IXamlLightStatics;
+    template <typename D> using consume = Windows::UI::Xaml::Media::impl_IXamlLightStatics<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Media::RateChangedRoutedEventHandler>
 {
     using abi = ABI::Windows::UI::Xaml::Media::RateChangedRoutedEventHandler;
@@ -2357,6 +2615,18 @@ template <> struct traits<Windows::UI::Xaml::Media::LinearGradientBrush>
 {
     using abi = ABI::Windows::UI::Xaml::Media::LinearGradientBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.LinearGradientBrush"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::LoadedImageSourceLoadCompletedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.LoadedImageSourceLoadCompletedEventArgs"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::LoadedImageSurface>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::LoadedImageSurface;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.LoadedImageSurface"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Matrix3DProjection>
@@ -2555,6 +2825,18 @@ template <> struct traits<Windows::UI::Xaml::Media::VisualTreeHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Media::VisualTreeHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.VisualTreeHelper"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::XamlCompositionBrushBase>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::XamlCompositionBrushBase;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.XamlCompositionBrushBase"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::XamlLight>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::XamlLight;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.XamlLight"; }
 };
 
 }

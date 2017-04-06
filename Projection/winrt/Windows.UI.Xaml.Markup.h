@@ -442,6 +442,28 @@ struct produce<D, Windows::UI::Xaml::Markup::IXamlBindingHelperStatics> : produc
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Markup::IXamlMarkupHelper> : produce_base<D, Windows::UI::Xaml::Markup::IXamlMarkupHelper>
+{};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Markup::IXamlMarkupHelperStatics> : produce_base<D, Windows::UI::Xaml::Markup::IXamlMarkupHelperStatics>
+{
+    HRESULT __stdcall abi_UnloadObject(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> element) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().UnloadObject(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Markup::IXamlMember> : produce_base<D, Windows::UI::Xaml::Markup::IXamlMember>
 {
     HRESULT __stdcall get_IsAttachable(bool * value) noexcept override
@@ -1276,6 +1298,11 @@ template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromObj
     check_hresult(WINRT_SHIM(IXamlBindingHelperStatics)->abi_SetPropertyFromObject(get_abi(dependencyObject), get_abi(propertyToSet), get_abi(value)));
 }
 
+template <typename D> void impl_IXamlMarkupHelperStatics<D>::UnloadObject(const Windows::UI::Xaml::DependencyObject & element) const
+{
+    check_hresult(WINRT_SHIM(IXamlMarkupHelperStatics)->abi_UnloadObject(get_abi(element)));
+}
+
 inline Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformation XamlBinaryWriter::Write(const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & inputStreams, const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & outputStreams, const Windows::UI::Xaml::Markup::IXamlMetadataProvider & xamlMetadataProvider)
 {
     return get_activation_factory<XamlBinaryWriter, IXamlBinaryWriterStatics>().Write(inputStreams, outputStreams, xamlMetadataProvider);
@@ -1396,6 +1423,11 @@ inline void XamlBindingHelper::SetPropertyFromObject(const Windows::Foundation::
     get_activation_factory<XamlBindingHelper, IXamlBindingHelperStatics>().SetPropertyFromObject(dependencyObject, propertyToSet, value);
 }
 
+inline void XamlMarkupHelper::UnloadObject(const Windows::UI::Xaml::DependencyObject & element)
+{
+    get_activation_factory<XamlMarkupHelper, IXamlMarkupHelperStatics>().UnloadObject(element);
+}
+
 inline Windows::Foundation::IInspectable XamlReader::Load(hstring_view xaml)
 {
     return get_activation_factory<XamlReader, IXamlReaderStatics>().Load(xaml);
@@ -1474,6 +1506,24 @@ struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlBindingHelperStatics>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlMarkupHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlMarkupHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlMarkupHelperStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlMarkupHelperStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Markup::IXamlMember>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Markup::IXamlMember & value) const noexcept
@@ -1531,6 +1581,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Markup::XamlBindingHelper>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Markup::XamlBindingHelper & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Markup::XamlMarkupHelper>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Markup::XamlMarkupHelper & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

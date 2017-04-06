@@ -15,6 +15,31 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a")) __declspec(novtable) IAsyncOperation<bool> : impl_IAsyncOperation<bool> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 #define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __declspec(novtable) IReference<Windows::Foundation::TimeSpan> : impl_IReference<Windows::Foundation::TimeSpan> {};
@@ -24,21 +49,6 @@ template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
-#endif
-
-#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
-#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
-template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
-#endif
-
-#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
-#endif
 
 #ifndef WINRT_GENERIC_b543562c_02b1_5824_80a8_9854130cdadd
 #define WINRT_GENERIC_b543562c_02b1_5824_80a8_9854130cdadd
@@ -83,6 +93,11 @@ template <> struct __declspec(uuid("a6214bde-02d5-55b3-ab0d-c6031be70da1")) __de
 #ifndef WINRT_GENERIC_5c43e195_7d39_5d0d_a309_1991e68acdb7
 #define WINRT_GENERIC_5c43e195_7d39_5d0d_a309_1991e68acdb7
 template <> struct __declspec(uuid("5c43e195-7d39-5d0d-a309-1991e68acdb7")) __declspec(novtable) TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Foundation::IInspectable> {};
+#endif
+
+#ifndef WINRT_GENERIC_07cd62fb_578d_56a6_a8ef_e653eb005d1b
+#define WINRT_GENERIC_07cd62fb_578d_56a6_a8ef_e653eb005d1b
+template <> struct __declspec(uuid("07cd62fb-578d-56a6-a8ef-e653eb005d1b")) __declspec(novtable) TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> : impl_TypedEventHandler<Windows::Media::MediaTimelineController, Windows::Media::MediaTimelineControllerFailedEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
@@ -171,6 +186,14 @@ struct IMediaExtensionManager :
     IMediaExtensionManager(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMediaExtensionManager2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaExtensionManager2>,
+    impl::require<IMediaExtensionManager2, Windows::Media::IMediaExtensionManager>
+{
+    IMediaExtensionManager2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMediaFrame :
     Windows::Foundation::IInspectable,
     impl::consume<IMediaFrame>,
@@ -212,6 +235,20 @@ struct IMediaTimelineController :
     impl::consume<IMediaTimelineController>
 {
     IMediaTimelineController(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMediaTimelineController2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaTimelineController2>
+{
+    IMediaTimelineController2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IMediaTimelineControllerFailedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMediaTimelineControllerFailedEventArgs>
+{
+    IMediaTimelineControllerFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMusicDisplayProperties :

@@ -37,6 +37,11 @@ struct __declspec(uuid("8504dbea-fb6a-4144-a6c2-33499c9284f5")) __declspec(novta
     virtual HRESULT __stdcall abi_FromArgb(uint8_t a, uint8_t r, uint8_t g, uint8_t b, Windows::UI::Color * returnValue) = 0;
 };
 
+struct __declspec(uuid("24d9af02-6eb0-4b94-855c-fcf0818d9a16")) __declspec(novtable) IColorHelperStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_ToDisplayName(Windows::UI::Color color, hstring * returnValue) = 0;
+};
+
 struct __declspec(uuid("9b8c9326-4ca6-4ce5-8994-9eff65cabdcc")) __declspec(novtable) IColors : Windows::Foundation::IInspectable
 {
 };
@@ -209,6 +214,12 @@ struct WINRT_EBO impl_IColorHelperStatics
 };
 
 template <typename D>
+struct WINRT_EBO impl_IColorHelperStatics2
+{
+    hstring ToDisplayName(const Windows::UI::Color & color) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IColors
 {
 };
@@ -373,6 +384,12 @@ template <> struct traits<Windows::UI::IColorHelperStatics>
 {
     using abi = ABI::Windows::UI::IColorHelperStatics;
     template <typename D> using consume = Windows::UI::impl_IColorHelperStatics<D>;
+};
+
+template <> struct traits<Windows::UI::IColorHelperStatics2>
+{
+    using abi = ABI::Windows::UI::IColorHelperStatics2;
+    template <typename D> using consume = Windows::UI::impl_IColorHelperStatics2<D>;
 };
 
 template <> struct traits<Windows::UI::IColors>

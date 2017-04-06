@@ -15,6 +15,7 @@ struct GameControllerFactoryManager
     static void RegisterCustomFactoryForGipInterface(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, GUID interfaceId);
     static void RegisterCustomFactoryForHardwareId(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, uint16_t hardwareVendorId, uint16_t hardwareProductId);
     static void RegisterCustomFactoryForXusbType(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, Windows::Gaming::Input::Custom::XusbDeviceType xusbType, Windows::Gaming::Input::Custom::XusbDeviceSubtype xusbSubtype);
+    static Windows::Gaming::Input::IGameController TryGetFactoryControllerFromGameController(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, const Windows::Gaming::Input::IGameController & gameController);
 };
 
 struct WINRT_EBO GipFirmwareUpdateResult :
@@ -27,6 +28,12 @@ struct WINRT_EBO GipGameControllerProvider :
     Windows::Gaming::Input::Custom::IGipGameControllerProvider
 {
     GipGameControllerProvider(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO HidGameControllerProvider :
+    Windows::Gaming::Input::Custom::IHidGameControllerProvider
+{
+    HidGameControllerProvider(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO XusbGameControllerProvider :

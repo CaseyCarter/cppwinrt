@@ -185,6 +185,13 @@ struct ICachedFileUpdaterActivatedEventArgs :
     ICachedFileUpdaterActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IContactPanelActivatedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IContactPanelActivatedEventArgs>
+{
+    IContactPanelActivatedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IContinuationActivatedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IContinuationActivatedEventArgs>,

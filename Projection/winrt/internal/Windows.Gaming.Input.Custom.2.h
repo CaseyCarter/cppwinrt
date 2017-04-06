@@ -43,6 +43,14 @@ struct IGameControllerFactoryManagerStatics :
     IGameControllerFactoryManagerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IGameControllerFactoryManagerStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGameControllerFactoryManagerStatics2>,
+    impl::require<IGameControllerFactoryManagerStatics2, Windows::Gaming::Input::Custom::IGameControllerFactoryManagerStatics>
+{
+    IGameControllerFactoryManagerStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IGameControllerInputSink :
     Windows::Foundation::IInspectable,
     impl::consume<IGameControllerInputSink>
@@ -78,6 +86,22 @@ struct IGipGameControllerProvider :
     impl::require<IGipGameControllerProvider, Windows::Gaming::Input::Custom::IGameControllerProvider>
 {
     IGipGameControllerProvider(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IHidGameControllerInputSink :
+    Windows::Foundation::IInspectable,
+    impl::consume<IHidGameControllerInputSink>,
+    impl::require<IHidGameControllerInputSink, Windows::Gaming::Input::Custom::IGameControllerInputSink>
+{
+    IHidGameControllerInputSink(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IHidGameControllerProvider :
+    Windows::Foundation::IInspectable,
+    impl::consume<IHidGameControllerProvider>,
+    impl::require<IHidGameControllerProvider, Windows::Gaming::Input::Custom::IGameControllerProvider>
+{
+    IHidGameControllerProvider(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IXusbGameControllerInputSink :

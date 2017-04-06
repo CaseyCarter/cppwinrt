@@ -78,6 +78,12 @@ struct __declspec(uuid("d700c079-30c8-4397-9654-961c3be8b855")) __declspec(novta
     virtual HRESULT __stdcall get_AppProperties(Windows::Foundation::Collections::IMap<hstring, hstring> ** requestProperties) = 0;
 };
 
+struct __declspec(uuid("5a755b51-3bb1-41a5-a63d-90bc32c7db9a")) __declspec(novtable) IWebTokenRequest3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_CorrelationId(hstring * value) = 0;
+    virtual HRESULT __stdcall put_CorrelationId(hstring value) = 0;
+};
+
 struct __declspec(uuid("6cf2141c-0ff0-4c67-b84f-99ddbe4a72c9")) __declspec(novtable) IWebTokenRequestFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Create(Windows::Security::Credentials::IWebAccountProvider * provider, hstring scope, hstring clientId, Windows::Security::Authentication::Web::Core::IWebTokenRequest ** webTokenRequest) = 0;
@@ -202,6 +208,13 @@ struct WINRT_EBO impl_IWebTokenRequest2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IWebTokenRequest3
+{
+    hstring CorrelationId() const;
+    void CorrelationId(hstring_view value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IWebTokenRequestFactory
 {
     Windows::Security::Authentication::Web::Core::WebTokenRequest Create(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope, hstring_view clientId) const;
@@ -292,6 +305,12 @@ template <> struct traits<Windows::Security::Authentication::Web::Core::IWebToke
 {
     using abi = ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest2;
     template <typename D> using consume = Windows::Security::Authentication::Web::Core::impl_IWebTokenRequest2<D>;
+};
+
+template <> struct traits<Windows::Security::Authentication::Web::Core::IWebTokenRequest3>
+{
+    using abi = ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest3;
+    template <typename D> using consume = Windows::Security::Authentication::Web::Core::impl_IWebTokenRequest3<D>;
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Core::IWebTokenRequestFactory>

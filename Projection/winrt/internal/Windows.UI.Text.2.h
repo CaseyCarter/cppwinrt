@@ -44,6 +44,14 @@ struct ITextDocument :
     ITextDocument(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ITextDocument2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ITextDocument2>,
+    impl::require<ITextDocument2, Windows::UI::Text::ITextDocument>
+{
+    ITextDocument2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ITextParagraphFormat :
     Windows::Foundation::IInspectable,
     impl::consume<ITextParagraphFormat>

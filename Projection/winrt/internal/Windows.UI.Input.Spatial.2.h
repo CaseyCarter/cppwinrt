@@ -9,16 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation {
 
-#ifndef WINRT_GENERIC_1ee770ff_c954_59ca_a754_6199a9be282c
-#define WINRT_GENERIC_1ee770ff_c954_59ca_a754_6199a9be282c
-template <> struct __declspec(uuid("1ee770ff-c954-59ca-a754-6199a9be282c")) __declspec(novtable) IReference<Windows::Foundation::Numerics::float3> : impl_IReference<Windows::Foundation::Numerics::float3> {};
-#endif
-
-#ifndef WINRT_GENERIC_b27004bb_c014_5dce_9a21_799c5a3c1461
-#define WINRT_GENERIC_b27004bb_c014_5dce_9a21_799c5a3c1461
-template <> struct __declspec(uuid("b27004bb-c014-5dce-9a21-799c5a3c1461")) __declspec(novtable) IReference<Windows::Foundation::Numerics::quaternion> : impl_IReference<Windows::Foundation::Numerics::quaternion> {};
-#endif
-
 #ifndef WINRT_GENERIC_f2bd99d6_99fa_5599_a14a_1f7a7a92e3d7
 #define WINRT_GENERIC_f2bd99d6_99fa_5599_a14a_1f7a7a92e3d7
 template <> struct __declspec(uuid("f2bd99d6-99fa-5599-a14a-1f7a7a92e3d7")) __declspec(novtable) TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> : impl_TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> {};
@@ -87,6 +77,16 @@ template <> struct __declspec(uuid("f0d459df-ebd3-5388-b0a9-5f44bcd6f58f")) __de
 #ifndef WINRT_GENERIC_9947ea8e_eb4d_5f93_9fd9_2ade6470bc5d
 #define WINRT_GENERIC_9947ea8e_eb4d_5f93_9fd9_2ade6470bc5d
 template <> struct __declspec(uuid("9947ea8e-eb4d-5f93-9fd9-2ade6470bc5d")) __declspec(novtable) TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> : impl_TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_1ee770ff_c954_59ca_a754_6199a9be282c
+#define WINRT_GENERIC_1ee770ff_c954_59ca_a754_6199a9be282c
+template <> struct __declspec(uuid("1ee770ff-c954-59ca-a754-6199a9be282c")) __declspec(novtable) IReference<Windows::Foundation::Numerics::float3> : impl_IReference<Windows::Foundation::Numerics::float3> {};
+#endif
+
+#ifndef WINRT_GENERIC_b27004bb_c014_5dce_9a21_799c5a3c1461
+#define WINRT_GENERIC_b27004bb_c014_5dce_9a21_799c5a3c1461
+template <> struct __declspec(uuid("b27004bb-c014-5dce-9a21-799c5a3c1461")) __declspec(novtable) IReference<Windows::Foundation::Numerics::quaternion> : impl_IReference<Windows::Foundation::Numerics::quaternion> {};
 #endif
 
 #ifndef WINRT_GENERIC_ae831d66_70f0_5371_866f_a3fc8b60e2d8
@@ -171,11 +171,33 @@ struct ISpatialInteraction :
     ISpatialInteraction(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ISpatialInteractionController :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialInteractionController>
+{
+    ISpatialInteractionController(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialInteractionControllerProperties :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialInteractionControllerProperties>
+{
+    ISpatialInteractionControllerProperties(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ISpatialInteractionDetectedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteractionDetectedEventArgs>
 {
     ISpatialInteractionDetectedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialInteractionDetectedEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialInteractionDetectedEventArgs2>,
+    impl::require<ISpatialInteractionDetectedEventArgs2, Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs>
+{
+    ISpatialInteractionDetectedEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteractionManager :
@@ -199,11 +221,27 @@ struct ISpatialInteractionSource :
     ISpatialInteractionSource(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ISpatialInteractionSource2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialInteractionSource2>,
+    impl::require<ISpatialInteractionSource2, Windows::UI::Input::Spatial::ISpatialInteractionSource>
+{
+    ISpatialInteractionSource2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ISpatialInteractionSourceEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<ISpatialInteractionSourceEventArgs>
 {
     ISpatialInteractionSourceEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialInteractionSourceEventArgs2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialInteractionSourceEventArgs2>,
+    impl::require<ISpatialInteractionSourceEventArgs2, Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs>
+{
+    ISpatialInteractionSourceEventArgs2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialInteractionSourceLocation :
@@ -232,6 +270,14 @@ struct ISpatialInteractionSourceState :
     impl::consume<ISpatialInteractionSourceState>
 {
     ISpatialInteractionSourceState(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialInteractionSourceState2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialInteractionSourceState2>,
+    impl::require<ISpatialInteractionSourceState2, Windows::UI::Input::Spatial::ISpatialInteractionSourceState>
+{
+    ISpatialInteractionSourceState2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialManipulationCanceledEventArgs :
@@ -297,11 +343,26 @@ struct ISpatialNavigationUpdatedEventArgs :
     ISpatialNavigationUpdatedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ISpatialPointerInteractionSourcePose :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialPointerInteractionSourcePose>
+{
+    ISpatialPointerInteractionSourcePose(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ISpatialPointerPose :
     Windows::Foundation::IInspectable,
     impl::consume<ISpatialPointerPose>
 {
     ISpatialPointerPose(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISpatialPointerPose2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISpatialPointerPose2>,
+    impl::require<ISpatialPointerPose2, Windows::UI::Input::Spatial::ISpatialPointerPose>
+{
+    ISpatialPointerPose2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISpatialPointerPoseStatics :

@@ -45,6 +45,13 @@ struct WINRT_EBO XamlBindingHelper :
     static void SetPropertyFromObject(const Windows::Foundation::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::IInspectable & value);
 };
 
+struct WINRT_EBO XamlMarkupHelper :
+    Windows::UI::Xaml::Markup::IXamlMarkupHelper
+{
+    XamlMarkupHelper(std::nullptr_t) noexcept {}
+    static void UnloadObject(const Windows::UI::Xaml::DependencyObject & element);
+};
+
 struct WINRT_EBO XamlReader :
     Windows::UI::Xaml::Markup::IXamlReader
 {

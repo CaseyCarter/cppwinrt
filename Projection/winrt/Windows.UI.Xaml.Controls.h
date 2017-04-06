@@ -21,6 +21,7 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.UI.Xaml.Documents.3.h"
 #include "internal/Windows.UI.Xaml.Input.3.h"
 #include "internal/Windows.UI.Xaml.Data.3.h"
+#include "internal/Windows.UI.Xaml.Media.Animation.3.h"
 #include "internal/Windows.ApplicationModel.Search.3.h"
 #include "internal/Windows.System.3.h"
 #include "internal/Windows.Web.3.h"
@@ -33,7 +34,6 @@ WINRT_WARNING_PUSH
 #include "internal/Windows.UI.3.h"
 #include "internal/Windows.Web.Http.3.h"
 #include "internal/Windows.Globalization.3.h"
-#include "internal/Windows.UI.Xaml.Media.Animation.3.h"
 #include "internal/Windows.UI.Core.3.h"
 #include "internal/Windows.UI.Xaml.Controls.3.h"
 #include "Windows.UI.Xaml.h"
@@ -2011,6 +2011,38 @@ struct produce<D, Windows::UI::Xaml::Controls::IBitmapIcon> : produce_base<D, Wi
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IBitmapIcon2> : produce_base<D, Windows::UI::Xaml::Controls::IBitmapIcon2>
+{
+    HRESULT __stdcall get_ShowAsMonochrome(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ShowAsMonochrome());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_ShowAsMonochrome(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ShowAsMonochrome(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IBitmapIconFactory> : produce_base<D, Windows::UI::Xaml::Controls::IBitmapIconFactory>
 {
     HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Controls::IBitmapIcon> instance) noexcept override
@@ -2039,6 +2071,25 @@ struct produce<D, Windows::UI::Xaml::Controls::IBitmapIconStatics> : produce_bas
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().UriSourceProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IBitmapIconStatics2> : produce_base<D, Windows::UI::Xaml::Controls::IBitmapIconStatics2>
+{
+    HRESULT __stdcall get_ShowAsMonochromeProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ShowAsMonochromeProperty());
             return S_OK;
         }
         catch (...)
@@ -6896,6 +6947,38 @@ struct produce<D, Windows::UI::Xaml::Controls::IComboBox3> : produce_base<D, Win
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IComboBox4> : produce_base<D, Windows::UI::Xaml::Controls::IComboBox4>
+{
+    HRESULT __stdcall get_SelectionChangedTrigger(Windows::UI::Xaml::Controls::ComboBoxSelectionChangedTrigger * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SelectionChangedTrigger());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_SelectionChangedTrigger(Windows::UI::Xaml::Controls::ComboBoxSelectionChangedTrigger value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SelectionChangedTrigger(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IComboBoxFactory> : produce_base<D, Windows::UI::Xaml::Controls::IComboBoxFactory>
 {
     HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Controls::IComboBox> instance) noexcept override
@@ -7078,6 +7161,25 @@ struct produce<D, Windows::UI::Xaml::Controls::IComboBoxStatics3> : produce_base
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().IsTextSearchEnabledProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IComboBoxStatics4> : produce_base<D, Windows::UI::Xaml::Controls::IComboBoxStatics4>
+{
+    HRESULT __stdcall get_SelectionChangedTriggerProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SelectionChangedTriggerProperty());
             return S_OK;
         }
         catch (...)
@@ -8401,6 +8503,240 @@ struct produce<D, Windows::UI::Xaml::Controls::IContentDialog> : produce_base<D,
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IContentDialog2> : produce_base<D, Windows::UI::Xaml::Controls::IContentDialog2>
+{
+    HRESULT __stdcall get_CloseButtonText(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CloseButtonText());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_CloseButtonText(impl::abi_arg_in<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CloseButtonText(*reinterpret_cast<const hstring *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CloseButtonCommand(impl::abi_arg_out<Windows::UI::Xaml::Input::ICommand> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CloseButtonCommand());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_CloseButtonCommand(impl::abi_arg_in<Windows::UI::Xaml::Input::ICommand> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CloseButtonCommand(*reinterpret_cast<const Windows::UI::Xaml::Input::ICommand *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CloseButtonCommandParameter(impl::abi_arg_out<Windows::Foundation::IInspectable> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CloseButtonCommandParameter());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_CloseButtonCommandParameter(impl::abi_arg_in<Windows::Foundation::IInspectable> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CloseButtonCommandParameter(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_PrimaryButtonStyle(impl::abi_arg_out<Windows::UI::Xaml::IStyle> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().PrimaryButtonStyle());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_PrimaryButtonStyle(impl::abi_arg_in<Windows::UI::Xaml::IStyle> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().PrimaryButtonStyle(*reinterpret_cast<const Windows::UI::Xaml::Style *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SecondaryButtonStyle(impl::abi_arg_out<Windows::UI::Xaml::IStyle> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SecondaryButtonStyle());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_SecondaryButtonStyle(impl::abi_arg_in<Windows::UI::Xaml::IStyle> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SecondaryButtonStyle(*reinterpret_cast<const Windows::UI::Xaml::Style *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CloseButtonStyle(impl::abi_arg_out<Windows::UI::Xaml::IStyle> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CloseButtonStyle());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_CloseButtonStyle(impl::abi_arg_in<Windows::UI::Xaml::IStyle> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CloseButtonStyle(*reinterpret_cast<const Windows::UI::Xaml::Style *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DefaultButton(Windows::UI::Xaml::Controls::ContentDialogButton * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DefaultButton());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_DefaultButton(Windows::UI::Xaml::Controls::ContentDialogButton value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().DefaultButton(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_CloseButtonClick(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().CloseButtonClick(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_CloseButtonClick(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().CloseButtonClick(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IContentDialogButtonClickDeferral> : produce_base<D, Windows::UI::Xaml::Controls::IContentDialogButtonClickDeferral>
 {
     HRESULT __stdcall abi_Complete() noexcept override
@@ -8745,6 +9081,115 @@ struct produce<D, Windows::UI::Xaml::Controls::IContentDialogStatics> : produce_
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().IsSecondaryButtonEnabledProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IContentDialogStatics2> : produce_base<D, Windows::UI::Xaml::Controls::IContentDialogStatics2>
+{
+    HRESULT __stdcall get_CloseButtonTextProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CloseButtonTextProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CloseButtonCommandProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CloseButtonCommandProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CloseButtonCommandParameterProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CloseButtonCommandParameterProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_PrimaryButtonStyleProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().PrimaryButtonStyleProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SecondaryButtonStyleProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SecondaryButtonStyleProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_CloseButtonStyleProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CloseButtonStyleProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_DefaultButtonProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DefaultButtonProperty());
             return S_OK;
         }
         catch (...)
@@ -10932,6 +11377,39 @@ struct produce<D, Windows::UI::Xaml::Controls::IControl4> : produce_base<D, Wind
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IControl5> : produce_base<D, Windows::UI::Xaml::Controls::IControl5>
+{
+    HRESULT __stdcall get_DefaultStyleResourceUri(impl::abi_arg_out<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DefaultStyleResourceUri());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_DefaultStyleResourceUri(impl::abi_arg_in<Windows::Foundation::IUriRuntimeClass> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().DefaultStyleResourceUri(*reinterpret_cast<const Windows::Foundation::Uri *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IControlFactory> : produce_base<D, Windows::UI::Xaml::Controls::IControlFactory>
 {
     HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Controls::IControl> instance) noexcept override
@@ -11857,6 +12335,68 @@ struct produce<D, Windows::UI::Xaml::Controls::IControlStatics4> : produce_base<
         catch (...)
         {
             *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IControlStatics5> : produce_base<D, Windows::UI::Xaml::Controls::IControlStatics5>
+{
+    HRESULT __stdcall get_DefaultStyleResourceUriProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().DefaultStyleResourceUriProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsTemplateKeyTipTargetProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsTemplateKeyTipTargetProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetIsTemplateKeyTipTarget(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetIsTemplateKeyTipTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetIsTemplateKeyTipTarget(impl::abi_arg_in<Windows::UI::Xaml::IDependencyObject> element, bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SetIsTemplateKeyTipTarget(*reinterpret_cast<const Windows::UI::Xaml::DependencyObject *>(&element), value);
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }
@@ -13680,6 +14220,38 @@ struct produce<D, Windows::UI::Xaml::Controls::IFocusEngagedEventArgs> : produce
 {};
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IFocusEngagedEventArgs2> : produce_base<D, Windows::UI::Xaml::Controls::IFocusEngagedEventArgs2>
+{
+    HRESULT __stdcall get_Handled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Handled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Handled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Handled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IFontIcon> : produce_base<D, Windows::UI::Xaml::Controls::IFontIcon>
 {
     HRESULT __stdcall get_Glyph(impl::abi_arg_out<hstring> value) noexcept override
@@ -14382,6 +14954,24 @@ struct produce<D, Windows::UI::Xaml::Controls::IFrame3> : produce_base<D, Window
         {
             typename D::abi_guard guard(this->shim());
             this->shim().GoBack(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo *>(&transitionInfoOverride));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IFrame4> : produce_base<D, Windows::UI::Xaml::Controls::IFrame4>
+{
+    HRESULT __stdcall abi_SetNavigationStateWithNavigationControl(impl::abi_arg_in<hstring> navigationState, bool suppressNavigate) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SetNavigationState(*reinterpret_cast<const hstring *>(&navigationState), suppressNavigate);
             return S_OK;
         }
         catch (...)
@@ -16653,6 +17243,137 @@ struct produce<D, Windows::UI::Xaml::Controls::IInkToolbar> : produce_base<D, Wi
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbar2> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbar2>
+{
+    HRESULT __stdcall get_IsStencilButtonChecked(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsStencilButtonChecked());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsStencilButtonChecked(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsStencilButtonChecked(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ButtonFlyoutPlacement(Windows::UI::Xaml::Controls::InkToolbarButtonFlyoutPlacement * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ButtonFlyoutPlacement());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_ButtonFlyoutPlacement(Windows::UI::Xaml::Controls::InkToolbarButtonFlyoutPlacement value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().ButtonFlyoutPlacement(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Orientation(Windows::UI::Xaml::Controls::Orientation * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Orientation());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Orientation(Windows::UI::Xaml::Controls::Orientation value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Orientation(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_IsStencilButtonCheckedChanged(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().IsStencilButtonCheckedChanged(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_IsStencilButtonCheckedChanged(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsStencilButtonCheckedChanged(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetMenuButton(Windows::UI::Xaml::Controls::InkToolbarMenuKind menu, impl::abi_arg_out<Windows::UI::Xaml::Controls::IInkToolbarMenuButton> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().GetMenuButton(menu));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton>
 {};
 
@@ -16951,6 +17672,38 @@ struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarEraserButton> : produc
 {};
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarEraserButton2> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarEraserButton2>
+{
+    HRESULT __stdcall get_IsClearAllVisible(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsClearAllVisible());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsClearAllVisible(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsClearAllVisible(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarEraserButtonFactory> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarEraserButtonFactory>
 {
     HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Controls::IInkToolbarEraserButton> instance) noexcept override
@@ -16965,6 +17718,25 @@ struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarEraserButtonFactory> :
         {
             *inner = nullptr;
             *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarEraserButtonStatics2> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarEraserButtonStatics2>
+{
+    HRESULT __stdcall get_IsClearAllVisibleProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsClearAllVisibleProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
             return impl::to_hresult();
         }
     }
@@ -16991,6 +17763,176 @@ struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarFactory> : produce_bas
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarFlyoutItem> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarFlyoutItem>
+{
+    HRESULT __stdcall get_Kind(Windows::UI::Xaml::Controls::InkToolbarFlyoutItemKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Kind());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Kind(Windows::UI::Xaml::Controls::InkToolbarFlyoutItemKind value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Kind(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsChecked(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsChecked());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsChecked(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsChecked(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_Checked(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().Checked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_Checked(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Checked(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall add_Unchecked(impl::abi_arg_in<Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable>> value, event_token * token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *token = detach_abi(this->shim().Unchecked(*reinterpret_cast<const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> *>(&value)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall remove_Unchecked(event_token token) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Unchecked(token);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemFactory> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemFactory>
+{
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Controls::IInkToolbarFlyoutItem> instance) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *inner = nullptr;
+            *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemStatics> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemStatics>
+{
+    HRESULT __stdcall get_KindProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().KindProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsCheckedProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsCheckedProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarHighlighterButton> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarHighlighterButton>
 {};
 
@@ -17009,6 +17951,108 @@ struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarHighlighterButtonFacto
         {
             *inner = nullptr;
             *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarIsStencilButtonCheckedChangedEventArgs> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarIsStencilButtonCheckedChangedEventArgs>
+{
+    HRESULT __stdcall get_StencilButton(impl::abi_arg_out<Windows::UI::Xaml::Controls::IInkToolbarStencilButton> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().StencilButton());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_StencilKind(Windows::UI::Xaml::Controls::InkToolbarStencilKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().StencilKind());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarMenuButton> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarMenuButton>
+{
+    HRESULT __stdcall get_MenuKind(Windows::UI::Xaml::Controls::InkToolbarMenuKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MenuKind());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsExtensionGlyphShown(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsExtensionGlyphShown());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsExtensionGlyphShown(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsExtensionGlyphShown(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarMenuButtonFactory> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarMenuButtonFactory>
+{};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarMenuButtonStatics> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarMenuButtonStatics>
+{
+    HRESULT __stdcall get_IsExtensionGlyphShownProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsExtensionGlyphShownProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
             return impl::to_hresult();
         }
     }
@@ -17496,6 +18540,272 @@ struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarStatics> : produce_bas
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().TargetInkCanvasProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarStatics2> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarStatics2>
+{
+    HRESULT __stdcall get_IsStencilButtonCheckedProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsStencilButtonCheckedProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ButtonFlyoutPlacementProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ButtonFlyoutPlacementProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_OrientationProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().OrientationProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarStencilButton> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarStencilButton>
+{
+    HRESULT __stdcall get_Ruler(impl::abi_arg_out<Windows::UI::Input::Inking::IInkPresenterRuler> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Ruler());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Protractor(impl::abi_arg_out<Windows::UI::Input::Inking::IInkPresenterProtractor> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Protractor());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SelectedStencil(Windows::UI::Xaml::Controls::InkToolbarStencilKind * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SelectedStencil());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_SelectedStencil(Windows::UI::Xaml::Controls::InkToolbarStencilKind value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SelectedStencil(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsRulerItemVisible(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsRulerItemVisible());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsRulerItemVisible(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsRulerItemVisible(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsProtractorItemVisible(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsProtractorItemVisible());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsProtractorItemVisible(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsProtractorItemVisible(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarStencilButtonFactory> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarStencilButtonFactory>
+{
+    HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Controls::IInkToolbarStencilButton> instance) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<const Windows::Foundation::IInspectable *>(&outer), *inner));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *inner = nullptr;
+            *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IInkToolbarStencilButtonStatics> : produce_base<D, Windows::UI::Xaml::Controls::IInkToolbarStencilButtonStatics>
+{
+    HRESULT __stdcall get_RulerProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().RulerProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ProtractorProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ProtractorProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SelectedStencilProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SelectedStencilProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsRulerItemVisibleProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsRulerItemVisibleProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_IsProtractorItemVisibleProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsProtractorItemVisibleProperty());
             return S_OK;
         }
         catch (...)
@@ -21210,6 +22520,40 @@ struct produce<D, Windows::UI::Xaml::Controls::IListViewBase5> : produce_base<D,
         }
         catch (...)
         {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IListViewBase6> : produce_base<D, Windows::UI::Xaml::Controls::IListViewBase6>
+{
+    HRESULT __stdcall abi_TryStartConnectedAnimationAsync(impl::abi_arg_in<Windows::UI::Xaml::Media::Animation::IConnectedAnimation> animation, impl::abi_arg_in<Windows::Foundation::IInspectable> item, impl::abi_arg_in<hstring> elementName, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<bool>> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().TryStartConnectedAnimationAsync(*reinterpret_cast<const Windows::UI::Xaml::Media::Animation::ConnectedAnimation *>(&animation), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&item), *reinterpret_cast<const hstring *>(&elementName)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_PrepareConnectedAnimation(impl::abi_arg_in<hstring> key, impl::abi_arg_in<Windows::Foundation::IInspectable> item, impl::abi_arg_in<hstring> elementName, impl::abi_arg_out<Windows::UI::Xaml::Media::Animation::IConnectedAnimation> returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().PrepareConnectedAnimation(*reinterpret_cast<const hstring *>(&key), *reinterpret_cast<const Windows::Foundation::IInspectable *>(&item), *reinterpret_cast<const hstring *>(&elementName)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *returnValue = nullptr;
             return impl::to_hresult();
         }
     }
@@ -25487,6 +26831,39 @@ struct produce<D, Windows::UI::Xaml::Controls::IMenuFlyoutItem> : produce_base<D
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IMenuFlyoutItem2> : produce_base<D, Windows::UI::Xaml::Controls::IMenuFlyoutItem2>
+{
+    HRESULT __stdcall get_Icon(impl::abi_arg_out<Windows::UI::Xaml::Controls::IIconElement> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Icon());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Icon(impl::abi_arg_in<Windows::UI::Xaml::Controls::IIconElement> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Icon(*reinterpret_cast<const Windows::UI::Xaml::Controls::IconElement *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IMenuFlyoutItemBase> : produce_base<D, Windows::UI::Xaml::Controls::IMenuFlyoutItemBase>
 {};
 
@@ -25553,6 +26930,25 @@ struct produce<D, Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics> : produce
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().CommandParameterProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics2> : produce_base<D, Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics2>
+{
+    HRESULT __stdcall get_IconProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IconProperty());
             return S_OK;
         }
         catch (...)
@@ -25698,6 +27094,39 @@ struct produce<D, Windows::UI::Xaml::Controls::IMenuFlyoutSubItem> : produce_bas
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IMenuFlyoutSubItem2> : produce_base<D, Windows::UI::Xaml::Controls::IMenuFlyoutSubItem2>
+{
+    HRESULT __stdcall get_Icon(impl::abi_arg_out<Windows::UI::Xaml::Controls::IIconElement> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Icon());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_Icon(impl::abi_arg_in<Windows::UI::Xaml::Controls::IIconElement> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Icon(*reinterpret_cast<const Windows::UI::Xaml::Controls::IconElement *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics> : produce_base<D, Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics>
 {
     HRESULT __stdcall get_TextProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
@@ -25706,6 +27135,25 @@ struct produce<D, Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics> : prod
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().TextProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics2> : produce_base<D, Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics2>
+{
+    HRESULT __stdcall get_IconProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IconProperty());
             return S_OK;
         }
         catch (...)
@@ -29832,6 +31280,67 @@ struct produce<D, Windows::UI::Xaml::Controls::IRichEditBox4> : produce_base<D, 
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IRichEditBox5> : produce_base<D, Windows::UI::Xaml::Controls::IRichEditBox5>
+{
+    HRESULT __stdcall get_SelectionHighlightColorWhenNotFocused(impl::abi_arg_out<Windows::UI::Xaml::Media::ISolidColorBrush> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SelectionHighlightColorWhenNotFocused());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_SelectionHighlightColorWhenNotFocused(impl::abi_arg_in<Windows::UI::Xaml::Media::ISolidColorBrush> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SelectionHighlightColorWhenNotFocused(*reinterpret_cast<const Windows::UI::Xaml::Media::SolidColorBrush *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_MaxLength(int32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MaxLength());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_MaxLength(int32_t value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().MaxLength(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IRichEditBoxFactory> : produce_base<D, Windows::UI::Xaml::Controls::IRichEditBoxFactory>
 {
     HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Controls::IRichEditBox> instance) noexcept override
@@ -30108,8 +31617,60 @@ struct produce<D, Windows::UI::Xaml::Controls::IRichEditBoxStatics4> : produce_b
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IRichEditBoxStatics5> : produce_base<D, Windows::UI::Xaml::Controls::IRichEditBoxStatics5>
+{
+    HRESULT __stdcall get_SelectionHighlightColorWhenNotFocusedProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SelectionHighlightColorWhenNotFocusedProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_MaxLengthProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().MaxLengthProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs> : produce_base<D, Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs>
 {};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs2> : produce_base<D, Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs2>
+{
+    HRESULT __stdcall get_IsContentChanging(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsContentChanging());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IRichTextBlock> : produce_base<D, Windows::UI::Xaml::Controls::IRichTextBlock>
@@ -31003,6 +32564,38 @@ struct produce<D, Windows::UI::Xaml::Controls::IRichTextBlock3> : produce_base<D
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IRichTextBlock4> : produce_base<D, Windows::UI::Xaml::Controls::IRichTextBlock4>
+{
+    HRESULT __stdcall get_TextDecorations(Windows::UI::Text::TextDecorations * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TextDecorations());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_TextDecorations(Windows::UI::Text::TextDecorations value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().TextDecorations(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::IRichTextBlockOverflow> : produce_base<D, Windows::UI::Xaml::Controls::IRichTextBlockOverflow>
 {
     HRESULT __stdcall get_OverflowContentTarget(impl::abi_arg_out<Windows::UI::Xaml::Controls::IRichTextBlockOverflow> value) noexcept override
@@ -31642,6 +33235,25 @@ struct produce<D, Windows::UI::Xaml::Controls::IRichTextBlockStatics3> : produce
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().IsTextScaleFactorEnabledProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::IRichTextBlockStatics4> : produce_base<D, Windows::UI::Xaml::Controls::IRichTextBlockStatics4>
+{
+    HRESULT __stdcall get_TextDecorationsProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TextDecorationsProperty());
             return S_OK;
         }
         catch (...)
@@ -38461,6 +40073,38 @@ struct produce<D, Windows::UI::Xaml::Controls::ITextBlock4> : produce_base<D, Wi
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::ITextBlock5> : produce_base<D, Windows::UI::Xaml::Controls::ITextBlock5>
+{
+    HRESULT __stdcall get_TextDecorations(Windows::UI::Text::TextDecorations * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TextDecorations());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_TextDecorations(Windows::UI::Text::TextDecorations value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().TextDecorations(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::ITextBlockStatics> : produce_base<D, Windows::UI::Xaml::Controls::ITextBlockStatics>
 {
     HRESULT __stdcall get_FontSizeProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
@@ -38807,6 +40451,25 @@ struct produce<D, Windows::UI::Xaml::Controls::ITextBlockStatics3> : produce_bas
         {
             typename D::abi_guard guard(this->shim());
             *value = detach_abi(this->shim().IsTextScaleFactorEnabledProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::ITextBlockStatics5> : produce_base<D, Windows::UI::Xaml::Controls::ITextBlockStatics5>
+{
+    HRESULT __stdcall get_TextDecorationsProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TextDecorationsProperty());
             return S_OK;
         }
         catch (...)
@@ -39710,6 +41373,39 @@ struct produce<D, Windows::UI::Xaml::Controls::ITextBox4> : produce_base<D, Wind
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::ITextBox5> : produce_base<D, Windows::UI::Xaml::Controls::ITextBox5>
+{
+    HRESULT __stdcall get_SelectionHighlightColorWhenNotFocused(impl::abi_arg_out<Windows::UI::Xaml::Media::ISolidColorBrush> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SelectionHighlightColorWhenNotFocused());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_SelectionHighlightColorWhenNotFocused(impl::abi_arg_in<Windows::UI::Xaml::Media::ISolidColorBrush> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SelectionHighlightColorWhenNotFocused(*reinterpret_cast<const Windows::UI::Xaml::Media::SolidColorBrush *>(&value));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::ITextBoxFactory> : produce_base<D, Windows::UI::Xaml::Controls::ITextBoxFactory>
 {
     HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Foundation::IInspectable> outer, impl::abi_arg_out<Windows::Foundation::IInspectable> inner, impl::abi_arg_out<Windows::UI::Xaml::Controls::ITextBox> instance) noexcept override
@@ -39997,8 +41693,45 @@ struct produce<D, Windows::UI::Xaml::Controls::ITextBoxStatics3> : produce_base<
 };
 
 template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::ITextBoxStatics5> : produce_base<D, Windows::UI::Xaml::Controls::ITextBoxStatics5>
+{
+    HRESULT __stdcall get_SelectionHighlightColorWhenNotFocusedProperty(impl::abi_arg_out<Windows::UI::Xaml::IDependencyProperty> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SelectionHighlightColorWhenNotFocusedProperty());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs> : produce_base<D, Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs>
 {};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs2> : produce_base<D, Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs2>
+{
+    HRESULT __stdcall get_IsContentChanging(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsContentChanging());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
 
 template <typename D>
 struct produce<D, Windows::UI::Xaml::Controls::ITextChangedEventArgs> : produce_base<D, Windows::UI::Xaml::Controls::ITextChangedEventArgs>
@@ -45512,6 +47245,13 @@ template <typename D> Windows::UI::Xaml::Controls::StyleSelector impl_IStyleSele
     return instance;
 }
 
+template <typename D> bool impl_ITextBoxTextChangingEventArgs2<D>::IsContentChanging() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(ITextBoxTextChangingEventArgs2)->get_IsContentChanging(&value));
+    return value;
+}
+
 template <typename D> int32_t impl_ITextCompositionChangedEventArgs<D>::StartIndex() const
 {
     int32_t value {};
@@ -47375,6 +49115,25 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichTextBlockS
     return value;
 }
 
+template <typename D> Windows::UI::Text::TextDecorations impl_IRichTextBlock4<D>::TextDecorations() const
+{
+    Windows::UI::Text::TextDecorations value {};
+    check_hresult(WINRT_SHIM(IRichTextBlock4)->get_TextDecorations(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichTextBlock4<D>::TextDecorations(Windows::UI::Text::TextDecorations value) const
+{
+    check_hresult(WINRT_SHIM(IRichTextBlock4)->put_TextDecorations(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichTextBlockStatics4<D>::TextDecorationsProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichTextBlockStatics4)->get_TextDecorationsProperty(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Xaml::Controls::RichTextBlockOverflow impl_IRichTextBlockOverflow<D>::OverflowContentTarget() const
 {
     Windows::UI::Xaml::Controls::RichTextBlockOverflow value { nullptr };
@@ -48018,6 +49777,25 @@ template <typename D> Windows::UI::Composition::CompositionBrush impl_ITextBlock
     Windows::UI::Composition::CompositionBrush returnValue { nullptr };
     check_hresult(WINRT_SHIM(ITextBlock4)->abi_GetAlphaMask(put_abi(returnValue)));
     return returnValue;
+}
+
+template <typename D> Windows::UI::Text::TextDecorations impl_ITextBlock5<D>::TextDecorations() const
+{
+    Windows::UI::Text::TextDecorations value {};
+    check_hresult(WINRT_SHIM(ITextBlock5)->get_TextDecorations(&value));
+    return value;
+}
+
+template <typename D> void impl_ITextBlock5<D>::TextDecorations(Windows::UI::Text::TextDecorations value) const
+{
+    check_hresult(WINRT_SHIM(ITextBlock5)->put_TextDecorations(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextBlockStatics5<D>::TextDecorationsProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ITextBlockStatics5)->get_TextDecorationsProperty(put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IViewbox<D>::Child() const
@@ -49884,484 +51662,6 @@ template <typename D> Windows::UI::Xaml::Controls::RelativePanel impl_IRelativeP
     return instance;
 }
 
-template <typename D> bool impl_IRichEditBox<D>::IsReadOnly() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IRichEditBox)->get_IsReadOnly(&value));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox<D>::IsReadOnly(bool value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox)->put_IsReadOnly(value));
-}
-
-template <typename D> bool impl_IRichEditBox<D>::AcceptsReturn() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IRichEditBox)->get_AcceptsReturn(&value));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox<D>::AcceptsReturn(bool value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox)->put_AcceptsReturn(value));
-}
-
-template <typename D> Windows::UI::Xaml::TextAlignment impl_IRichEditBox<D>::TextAlignment() const
-{
-    Windows::UI::Xaml::TextAlignment value {};
-    check_hresult(WINRT_SHIM(IRichEditBox)->get_TextAlignment(&value));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox<D>::TextAlignment(Windows::UI::Xaml::TextAlignment value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox)->put_TextAlignment(value));
-}
-
-template <typename D> Windows::UI::Xaml::TextWrapping impl_IRichEditBox<D>::TextWrapping() const
-{
-    Windows::UI::Xaml::TextWrapping value {};
-    check_hresult(WINRT_SHIM(IRichEditBox)->get_TextWrapping(&value));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox<D>::TextWrapping(Windows::UI::Xaml::TextWrapping value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox)->put_TextWrapping(value));
-}
-
-template <typename D> bool impl_IRichEditBox<D>::IsSpellCheckEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IRichEditBox)->get_IsSpellCheckEnabled(&value));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox<D>::IsSpellCheckEnabled(bool value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox)->put_IsSpellCheckEnabled(value));
-}
-
-template <typename D> bool impl_IRichEditBox<D>::IsTextPredictionEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IRichEditBox)->get_IsTextPredictionEnabled(&value));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox<D>::IsTextPredictionEnabled(bool value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox)->put_IsTextPredictionEnabled(value));
-}
-
-template <typename D> Windows::UI::Text::ITextDocument impl_IRichEditBox<D>::Document() const
-{
-    Windows::UI::Text::ITextDocument value;
-    check_hresult(WINRT_SHIM(IRichEditBox)->get_Document(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::Input::InputScope impl_IRichEditBox<D>::InputScope() const
-{
-    Windows::UI::Xaml::Input::InputScope value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBox)->get_InputScope(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox<D>::InputScope(const Windows::UI::Xaml::Input::InputScope & value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox)->put_InputScope(get_abi(value)));
-}
-
-template <typename D> event_token impl_IRichEditBox<D>::TextChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IRichEditBox)->add_TextChanged(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IRichEditBox> impl_IRichEditBox<D>::TextChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const
-{
-    return impl::make_event_revoker<D, IRichEditBox>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox::remove_TextChanged, TextChanged(value));
-}
-
-template <typename D> void impl_IRichEditBox<D>::TextChanged(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox)->remove_TextChanged(token));
-}
-
-template <typename D> event_token impl_IRichEditBox<D>::SelectionChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IRichEditBox)->add_SelectionChanged(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IRichEditBox> impl_IRichEditBox<D>::SelectionChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const
-{
-    return impl::make_event_revoker<D, IRichEditBox>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox::remove_SelectionChanged, SelectionChanged(value));
-}
-
-template <typename D> void impl_IRichEditBox<D>::SelectionChanged(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox)->remove_SelectionChanged(token));
-}
-
-template <typename D> event_token impl_IRichEditBox<D>::ContextMenuOpening(const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IRichEditBox)->add_ContextMenuOpening(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IRichEditBox> impl_IRichEditBox<D>::ContextMenuOpening(auto_revoke_t, const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const
-{
-    return impl::make_event_revoker<D, IRichEditBox>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox::remove_ContextMenuOpening, ContextMenuOpening(value));
-}
-
-template <typename D> void impl_IRichEditBox<D>::ContextMenuOpening(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox)->remove_ContextMenuOpening(token));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::IsReadOnlyProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_IsReadOnlyProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::AcceptsReturnProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_AcceptsReturnProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::TextAlignmentProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_TextAlignmentProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::TextWrappingProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_TextWrappingProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::IsSpellCheckEnabledProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_IsSpellCheckEnabledProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::IsTextPredictionEnabledProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_IsTextPredictionEnabledProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::InputScopeProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_InputScopeProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::Controls::RichEditBox impl_IRichEditBoxFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
-{
-    Windows::UI::Xaml::Controls::RichEditBox instance { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
-}
-
-template <typename D> Windows::Foundation::IInspectable impl_IRichEditBox2<D>::Header() const
-{
-    Windows::Foundation::IInspectable value;
-    check_hresult(WINRT_SHIM(IRichEditBox2)->get_Header(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox2<D>::Header(const Windows::Foundation::IInspectable & value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox2)->put_Header(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Xaml::DataTemplate impl_IRichEditBox2<D>::HeaderTemplate() const
-{
-    Windows::UI::Xaml::DataTemplate value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBox2)->get_HeaderTemplate(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox2<D>::HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox2)->put_HeaderTemplate(get_abi(value)));
-}
-
-template <typename D> hstring impl_IRichEditBox2<D>::PlaceholderText() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IRichEditBox2)->get_PlaceholderText(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox2<D>::PlaceholderText(hstring_view value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox2)->put_PlaceholderText(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Xaml::Media::SolidColorBrush impl_IRichEditBox2<D>::SelectionHighlightColor() const
-{
-    Windows::UI::Xaml::Media::SolidColorBrush value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBox2)->get_SelectionHighlightColor(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox2<D>::SelectionHighlightColor(const Windows::UI::Xaml::Media::SolidColorBrush & value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox2)->put_SelectionHighlightColor(get_abi(value)));
-}
-
-template <typename D> bool impl_IRichEditBox2<D>::PreventKeyboardDisplayOnProgrammaticFocus() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IRichEditBox2)->get_PreventKeyboardDisplayOnProgrammaticFocus(&value));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox2<D>::PreventKeyboardDisplayOnProgrammaticFocus(bool value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox2)->put_PreventKeyboardDisplayOnProgrammaticFocus(value));
-}
-
-template <typename D> bool impl_IRichEditBox2<D>::IsColorFontEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IRichEditBox2)->get_IsColorFontEnabled(&value));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox2<D>::IsColorFontEnabled(bool value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox2)->put_IsColorFontEnabled(value));
-}
-
-template <typename D> event_token impl_IRichEditBox2<D>::Paste(const Windows::UI::Xaml::Controls::TextControlPasteEventHandler & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IRichEditBox2)->add_Paste(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IRichEditBox2> impl_IRichEditBox2<D>::Paste(auto_revoke_t, const Windows::UI::Xaml::Controls::TextControlPasteEventHandler & value) const
-{
-    return impl::make_event_revoker<D, IRichEditBox2>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox2::remove_Paste, Paste(value));
-}
-
-template <typename D> void impl_IRichEditBox2<D>::Paste(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox2)->remove_Paste(token));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::HeaderProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_HeaderProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::HeaderTemplateProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_HeaderTemplateProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::PlaceholderTextProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_PlaceholderTextProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::SelectionHighlightColorProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_SelectionHighlightColorProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::PreventKeyboardDisplayOnProgrammaticFocusProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_PreventKeyboardDisplayOnProgrammaticFocusProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::IsColorFontEnabledProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_IsColorFontEnabledProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> event_token impl_IRichEditBox3<D>::TextCompositionStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IRichEditBox3)->add_TextCompositionStarted(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IRichEditBox3> impl_IRichEditBox3<D>::TextCompositionStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> & value) const
-{
-    return impl::make_event_revoker<D, IRichEditBox3>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox3::remove_TextCompositionStarted, TextCompositionStarted(value));
-}
-
-template <typename D> void impl_IRichEditBox3<D>::TextCompositionStarted(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox3)->remove_TextCompositionStarted(token));
-}
-
-template <typename D> event_token impl_IRichEditBox3<D>::TextCompositionChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IRichEditBox3)->add_TextCompositionChanged(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IRichEditBox3> impl_IRichEditBox3<D>::TextCompositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> & value) const
-{
-    return impl::make_event_revoker<D, IRichEditBox3>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox3::remove_TextCompositionChanged, TextCompositionChanged(value));
-}
-
-template <typename D> void impl_IRichEditBox3<D>::TextCompositionChanged(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox3)->remove_TextCompositionChanged(token));
-}
-
-template <typename D> event_token impl_IRichEditBox3<D>::TextCompositionEnded(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IRichEditBox3)->add_TextCompositionEnded(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IRichEditBox3> impl_IRichEditBox3<D>::TextCompositionEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> & value) const
-{
-    return impl::make_event_revoker<D, IRichEditBox3>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox3::remove_TextCompositionEnded, TextCompositionEnded(value));
-}
-
-template <typename D> void impl_IRichEditBox3<D>::TextCompositionEnded(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox3)->remove_TextCompositionEnded(token));
-}
-
-template <typename D> Windows::UI::Xaml::TextReadingOrder impl_IRichEditBox3<D>::TextReadingOrder() const
-{
-    Windows::UI::Xaml::TextReadingOrder value {};
-    check_hresult(WINRT_SHIM(IRichEditBox3)->get_TextReadingOrder(&value));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox3<D>::TextReadingOrder(Windows::UI::Xaml::TextReadingOrder value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox3)->put_TextReadingOrder(value));
-}
-
-template <typename D> Windows::UI::Xaml::Controls::CandidateWindowAlignment impl_IRichEditBox3<D>::DesiredCandidateWindowAlignment() const
-{
-    Windows::UI::Xaml::Controls::CandidateWindowAlignment value {};
-    check_hresult(WINRT_SHIM(IRichEditBox3)->get_DesiredCandidateWindowAlignment(&value));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox3<D>::DesiredCandidateWindowAlignment(Windows::UI::Xaml::Controls::CandidateWindowAlignment value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox3)->put_DesiredCandidateWindowAlignment(value));
-}
-
-template <typename D> event_token impl_IRichEditBox3<D>::CandidateWindowBoundsChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IRichEditBox3)->add_CandidateWindowBoundsChanged(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IRichEditBox3> impl_IRichEditBox3<D>::CandidateWindowBoundsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> & value) const
-{
-    return impl::make_event_revoker<D, IRichEditBox3>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox3::remove_CandidateWindowBoundsChanged, CandidateWindowBoundsChanged(value));
-}
-
-template <typename D> void impl_IRichEditBox3<D>::CandidateWindowBoundsChanged(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox3)->remove_CandidateWindowBoundsChanged(token));
-}
-
-template <typename D> event_token impl_IRichEditBox3<D>::TextChanging(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs> & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IRichEditBox3)->add_TextChanging(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IRichEditBox3> impl_IRichEditBox3<D>::TextChanging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs> & value) const
-{
-    return impl::make_event_revoker<D, IRichEditBox3>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox3::remove_TextChanging, TextChanging(value));
-}
-
-template <typename D> void impl_IRichEditBox3<D>::TextChanging(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox3)->remove_TextChanging(token));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics3<D>::DesiredCandidateWindowAlignmentProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics3)->get_DesiredCandidateWindowAlignmentProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics3<D>::TextReadingOrderProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics3)->get_TextReadingOrderProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IRichEditBox4<D>::GetLinguisticAlternativesAsync() const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> returnValue;
-    check_hresult(WINRT_SHIM(IRichEditBox4)->abi_GetLinguisticAlternativesAsync(put_abi(returnValue)));
-    return returnValue;
-}
-
-template <typename D> Windows::UI::Xaml::Controls::RichEditClipboardFormat impl_IRichEditBox4<D>::ClipboardCopyFormat() const
-{
-    Windows::UI::Xaml::Controls::RichEditClipboardFormat value {};
-    check_hresult(WINRT_SHIM(IRichEditBox4)->get_ClipboardCopyFormat(&value));
-    return value;
-}
-
-template <typename D> void impl_IRichEditBox4<D>::ClipboardCopyFormat(Windows::UI::Xaml::Controls::RichEditClipboardFormat value) const
-{
-    check_hresult(WINRT_SHIM(IRichEditBox4)->put_ClipboardCopyFormat(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics4<D>::ClipboardCopyFormatProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRichEditBoxStatics4)->get_ClipboardCopyFormatProperty(put_abi(value)));
-    return value;
-}
-
 template <typename D> Windows::UI::Xaml::Controls::ISemanticZoomInformation impl_ISemanticZoom<D>::ZoomedInView() const
 {
     Windows::UI::Xaml::Controls::ISemanticZoomInformation value;
@@ -51158,6 +52458,25 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> returnValue;
     check_hresult(WINRT_SHIM(ITextBox4)->abi_GetLinguisticAlternativesAsync(put_abi(returnValue)));
     return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Media::SolidColorBrush impl_ITextBox5<D>::SelectionHighlightColorWhenNotFocused() const
+{
+    Windows::UI::Xaml::Media::SolidColorBrush value { nullptr };
+    check_hresult(WINRT_SHIM(ITextBox5)->get_SelectionHighlightColorWhenNotFocused(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ITextBox5<D>::SelectionHighlightColorWhenNotFocused(const Windows::UI::Xaml::Media::SolidColorBrush & value) const
+{
+    check_hresult(WINRT_SHIM(ITextBox5)->put_SelectionHighlightColorWhenNotFocused(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextBoxStatics5<D>::SelectionHighlightColorWhenNotFocusedProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ITextBoxStatics5)->get_SelectionHighlightColorWhenNotFocusedProperty(put_abi(value)));
+    return value;
 }
 
 template <typename D> bool impl_IToggleSwitch<D>::IsOn() const
@@ -52356,6 +53675,25 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IComboBoxStatic
     return value;
 }
 
+template <typename D> Windows::UI::Xaml::Controls::ComboBoxSelectionChangedTrigger impl_IComboBox4<D>::SelectionChangedTrigger() const
+{
+    Windows::UI::Xaml::Controls::ComboBoxSelectionChangedTrigger value {};
+    check_hresult(WINRT_SHIM(IComboBox4)->get_SelectionChangedTrigger(&value));
+    return value;
+}
+
+template <typename D> void impl_IComboBox4<D>::SelectionChangedTrigger(Windows::UI::Xaml::Controls::ComboBoxSelectionChangedTrigger value) const
+{
+    check_hresult(WINRT_SHIM(IComboBox4)->put_SelectionChangedTrigger(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IComboBoxStatics4<D>::SelectionChangedTriggerProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IComboBoxStatics4)->get_SelectionChangedTriggerProperty(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Xaml::Controls::ComboBoxItem impl_IComboBoxItemFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::ComboBoxItem instance { nullptr };
@@ -53021,6 +54359,20 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IListViewBaseSt
     return value;
 }
 
+template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IListViewBase6<D>::TryStartConnectedAnimationAsync(const Windows::UI::Xaml::Media::Animation::ConnectedAnimation & animation, const Windows::Foundation::IInspectable & item, hstring_view elementName) const
+{
+    Windows::Foundation::IAsyncOperation<bool> returnValue;
+    check_hresult(WINRT_SHIM(IListViewBase6)->abi_TryStartConnectedAnimationAsync(get_abi(animation), get_abi(item), get_abi(elementName), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::ConnectedAnimation impl_IListViewBase6<D>::PrepareConnectedAnimation(hstring_view key, const Windows::Foundation::IInspectable & item, hstring_view elementName) const
+{
+    Windows::UI::Xaml::Media::Animation::ConnectedAnimation returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IListViewBase6)->abi_PrepareConnectedAnimation(get_abi(key), get_abi(item), get_abi(elementName), put_abi(returnValue)));
+    return returnValue;
+}
+
 template <typename D> bool impl_IVirtualizingStackPanel<D>::AreScrollSnapPointsRegular() const
 {
     bool value {};
@@ -53339,6 +54691,13 @@ template <typename D> Windows::Foundation::IAsyncAction impl_IListViewPersistenc
     Windows::Foundation::IAsyncAction returnValue;
     check_hresult(WINRT_SHIM(IListViewPersistenceHelperStatics)->abi_SetRelativeScrollPositionAsync(get_abi(listViewBase), get_abi(relativeScrollPosition), get_abi(keyToItemHandler), put_abi(returnValue)));
     return returnValue;
+}
+
+template <typename D> bool impl_IRichEditBoxTextChangingEventArgs2<D>::IsContentChanging() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRichEditBoxTextChangingEventArgs2)->get_IsContentChanging(&value));
+    return value;
 }
 
 template <typename D> double impl_IScrollViewerView<D>::HorizontalOffset() const
@@ -55634,6 +56993,25 @@ template <typename D> Windows::UI::Xaml::Controls::BitmapIcon impl_IBitmapIconFa
     Windows::UI::Xaml::Controls::BitmapIcon instance { nullptr };
     check_hresult(WINRT_SHIM(IBitmapIconFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
     return instance;
+}
+
+template <typename D> bool impl_IBitmapIcon2<D>::ShowAsMonochrome() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IBitmapIcon2)->get_ShowAsMonochrome(&value));
+    return value;
+}
+
+template <typename D> void impl_IBitmapIcon2<D>::ShowAsMonochrome(bool value) const
+{
+    check_hresult(WINRT_SHIM(IBitmapIcon2)->put_ShowAsMonochrome(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBitmapIconStatics2<D>::ShowAsMonochromeProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IBitmapIconStatics2)->get_ShowAsMonochromeProperty(put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_ICalendarDatePicker<D>::Date() const
@@ -58283,6 +59661,522 @@ template <typename D> Windows::UI::Xaml::Controls::PathIcon impl_IPathIconFactor
     return instance;
 }
 
+template <typename D> bool impl_IRichEditBox<D>::IsReadOnly() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRichEditBox)->get_IsReadOnly(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox<D>::IsReadOnly(bool value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox)->put_IsReadOnly(value));
+}
+
+template <typename D> bool impl_IRichEditBox<D>::AcceptsReturn() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRichEditBox)->get_AcceptsReturn(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox<D>::AcceptsReturn(bool value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox)->put_AcceptsReturn(value));
+}
+
+template <typename D> Windows::UI::Xaml::TextAlignment impl_IRichEditBox<D>::TextAlignment() const
+{
+    Windows::UI::Xaml::TextAlignment value {};
+    check_hresult(WINRT_SHIM(IRichEditBox)->get_TextAlignment(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox<D>::TextAlignment(Windows::UI::Xaml::TextAlignment value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox)->put_TextAlignment(value));
+}
+
+template <typename D> Windows::UI::Xaml::TextWrapping impl_IRichEditBox<D>::TextWrapping() const
+{
+    Windows::UI::Xaml::TextWrapping value {};
+    check_hresult(WINRT_SHIM(IRichEditBox)->get_TextWrapping(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox<D>::TextWrapping(Windows::UI::Xaml::TextWrapping value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox)->put_TextWrapping(value));
+}
+
+template <typename D> bool impl_IRichEditBox<D>::IsSpellCheckEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRichEditBox)->get_IsSpellCheckEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox<D>::IsSpellCheckEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox)->put_IsSpellCheckEnabled(value));
+}
+
+template <typename D> bool impl_IRichEditBox<D>::IsTextPredictionEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRichEditBox)->get_IsTextPredictionEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox<D>::IsTextPredictionEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox)->put_IsTextPredictionEnabled(value));
+}
+
+template <typename D> Windows::UI::Text::ITextDocument impl_IRichEditBox<D>::Document() const
+{
+    Windows::UI::Text::ITextDocument value;
+    check_hresult(WINRT_SHIM(IRichEditBox)->get_Document(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Input::InputScope impl_IRichEditBox<D>::InputScope() const
+{
+    Windows::UI::Xaml::Input::InputScope value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBox)->get_InputScope(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox<D>::InputScope(const Windows::UI::Xaml::Input::InputScope & value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox)->put_InputScope(get_abi(value)));
+}
+
+template <typename D> event_token impl_IRichEditBox<D>::TextChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRichEditBox)->add_TextChanged(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRichEditBox> impl_IRichEditBox<D>::TextChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const
+{
+    return impl::make_event_revoker<D, IRichEditBox>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox::remove_TextChanged, TextChanged(value));
+}
+
+template <typename D> void impl_IRichEditBox<D>::TextChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox)->remove_TextChanged(token));
+}
+
+template <typename D> event_token impl_IRichEditBox<D>::SelectionChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRichEditBox)->add_SelectionChanged(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRichEditBox> impl_IRichEditBox<D>::SelectionChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const
+{
+    return impl::make_event_revoker<D, IRichEditBox>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox::remove_SelectionChanged, SelectionChanged(value));
+}
+
+template <typename D> void impl_IRichEditBox<D>::SelectionChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox)->remove_SelectionChanged(token));
+}
+
+template <typename D> event_token impl_IRichEditBox<D>::ContextMenuOpening(const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRichEditBox)->add_ContextMenuOpening(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRichEditBox> impl_IRichEditBox<D>::ContextMenuOpening(auto_revoke_t, const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const
+{
+    return impl::make_event_revoker<D, IRichEditBox>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox::remove_ContextMenuOpening, ContextMenuOpening(value));
+}
+
+template <typename D> void impl_IRichEditBox<D>::ContextMenuOpening(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox)->remove_ContextMenuOpening(token));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::IsReadOnlyProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_IsReadOnlyProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::AcceptsReturnProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_AcceptsReturnProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::TextAlignmentProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_TextAlignmentProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::TextWrappingProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_TextWrappingProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::IsSpellCheckEnabledProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_IsSpellCheckEnabledProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::IsTextPredictionEnabledProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_IsTextPredictionEnabledProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics<D>::InputScopeProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics)->get_InputScopeProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::RichEditBox impl_IRichEditBoxFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
+{
+    Windows::UI::Xaml::Controls::RichEditBox instance { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
+template <typename D> Windows::Foundation::IInspectable impl_IRichEditBox2<D>::Header() const
+{
+    Windows::Foundation::IInspectable value;
+    check_hresult(WINRT_SHIM(IRichEditBox2)->get_Header(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox2<D>::Header(const Windows::Foundation::IInspectable & value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox2)->put_Header(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::DataTemplate impl_IRichEditBox2<D>::HeaderTemplate() const
+{
+    Windows::UI::Xaml::DataTemplate value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBox2)->get_HeaderTemplate(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox2<D>::HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox2)->put_HeaderTemplate(get_abi(value)));
+}
+
+template <typename D> hstring impl_IRichEditBox2<D>::PlaceholderText() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IRichEditBox2)->get_PlaceholderText(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox2<D>::PlaceholderText(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox2)->put_PlaceholderText(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Media::SolidColorBrush impl_IRichEditBox2<D>::SelectionHighlightColor() const
+{
+    Windows::UI::Xaml::Media::SolidColorBrush value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBox2)->get_SelectionHighlightColor(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox2<D>::SelectionHighlightColor(const Windows::UI::Xaml::Media::SolidColorBrush & value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox2)->put_SelectionHighlightColor(get_abi(value)));
+}
+
+template <typename D> bool impl_IRichEditBox2<D>::PreventKeyboardDisplayOnProgrammaticFocus() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRichEditBox2)->get_PreventKeyboardDisplayOnProgrammaticFocus(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox2<D>::PreventKeyboardDisplayOnProgrammaticFocus(bool value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox2)->put_PreventKeyboardDisplayOnProgrammaticFocus(value));
+}
+
+template <typename D> bool impl_IRichEditBox2<D>::IsColorFontEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRichEditBox2)->get_IsColorFontEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox2<D>::IsColorFontEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox2)->put_IsColorFontEnabled(value));
+}
+
+template <typename D> event_token impl_IRichEditBox2<D>::Paste(const Windows::UI::Xaml::Controls::TextControlPasteEventHandler & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRichEditBox2)->add_Paste(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRichEditBox2> impl_IRichEditBox2<D>::Paste(auto_revoke_t, const Windows::UI::Xaml::Controls::TextControlPasteEventHandler & value) const
+{
+    return impl::make_event_revoker<D, IRichEditBox2>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox2::remove_Paste, Paste(value));
+}
+
+template <typename D> void impl_IRichEditBox2<D>::Paste(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox2)->remove_Paste(token));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::HeaderProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_HeaderProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::HeaderTemplateProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_HeaderTemplateProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::PlaceholderTextProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_PlaceholderTextProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::SelectionHighlightColorProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_SelectionHighlightColorProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::PreventKeyboardDisplayOnProgrammaticFocusProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_PreventKeyboardDisplayOnProgrammaticFocusProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics2<D>::IsColorFontEnabledProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics2)->get_IsColorFontEnabledProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> event_token impl_IRichEditBox3<D>::TextCompositionStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRichEditBox3)->add_TextCompositionStarted(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRichEditBox3> impl_IRichEditBox3<D>::TextCompositionStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, IRichEditBox3>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox3::remove_TextCompositionStarted, TextCompositionStarted(value));
+}
+
+template <typename D> void impl_IRichEditBox3<D>::TextCompositionStarted(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox3)->remove_TextCompositionStarted(token));
+}
+
+template <typename D> event_token impl_IRichEditBox3<D>::TextCompositionChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRichEditBox3)->add_TextCompositionChanged(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRichEditBox3> impl_IRichEditBox3<D>::TextCompositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, IRichEditBox3>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox3::remove_TextCompositionChanged, TextCompositionChanged(value));
+}
+
+template <typename D> void impl_IRichEditBox3<D>::TextCompositionChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox3)->remove_TextCompositionChanged(token));
+}
+
+template <typename D> event_token impl_IRichEditBox3<D>::TextCompositionEnded(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRichEditBox3)->add_TextCompositionEnded(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRichEditBox3> impl_IRichEditBox3<D>::TextCompositionEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, IRichEditBox3>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox3::remove_TextCompositionEnded, TextCompositionEnded(value));
+}
+
+template <typename D> void impl_IRichEditBox3<D>::TextCompositionEnded(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox3)->remove_TextCompositionEnded(token));
+}
+
+template <typename D> Windows::UI::Xaml::TextReadingOrder impl_IRichEditBox3<D>::TextReadingOrder() const
+{
+    Windows::UI::Xaml::TextReadingOrder value {};
+    check_hresult(WINRT_SHIM(IRichEditBox3)->get_TextReadingOrder(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox3<D>::TextReadingOrder(Windows::UI::Xaml::TextReadingOrder value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox3)->put_TextReadingOrder(value));
+}
+
+template <typename D> Windows::UI::Xaml::Controls::CandidateWindowAlignment impl_IRichEditBox3<D>::DesiredCandidateWindowAlignment() const
+{
+    Windows::UI::Xaml::Controls::CandidateWindowAlignment value {};
+    check_hresult(WINRT_SHIM(IRichEditBox3)->get_DesiredCandidateWindowAlignment(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox3<D>::DesiredCandidateWindowAlignment(Windows::UI::Xaml::Controls::CandidateWindowAlignment value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox3)->put_DesiredCandidateWindowAlignment(value));
+}
+
+template <typename D> event_token impl_IRichEditBox3<D>::CandidateWindowBoundsChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRichEditBox3)->add_CandidateWindowBoundsChanged(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRichEditBox3> impl_IRichEditBox3<D>::CandidateWindowBoundsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, IRichEditBox3>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox3::remove_CandidateWindowBoundsChanged, CandidateWindowBoundsChanged(value));
+}
+
+template <typename D> void impl_IRichEditBox3<D>::CandidateWindowBoundsChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox3)->remove_CandidateWindowBoundsChanged(token));
+}
+
+template <typename D> event_token impl_IRichEditBox3<D>::TextChanging(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IRichEditBox3)->add_TextChanging(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IRichEditBox3> impl_IRichEditBox3<D>::TextChanging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, IRichEditBox3>(this, &ABI::Windows::UI::Xaml::Controls::IRichEditBox3::remove_TextChanging, TextChanging(value));
+}
+
+template <typename D> void impl_IRichEditBox3<D>::TextChanging(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox3)->remove_TextChanging(token));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics3<D>::DesiredCandidateWindowAlignmentProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics3)->get_DesiredCandidateWindowAlignmentProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics3<D>::TextReadingOrderProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics3)->get_TextReadingOrderProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IRichEditBox4<D>::GetLinguisticAlternativesAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> returnValue;
+    check_hresult(WINRT_SHIM(IRichEditBox4)->abi_GetLinguisticAlternativesAsync(put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::RichEditClipboardFormat impl_IRichEditBox4<D>::ClipboardCopyFormat() const
+{
+    Windows::UI::Xaml::Controls::RichEditClipboardFormat value {};
+    check_hresult(WINRT_SHIM(IRichEditBox4)->get_ClipboardCopyFormat(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox4<D>::ClipboardCopyFormat(Windows::UI::Xaml::Controls::RichEditClipboardFormat value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox4)->put_ClipboardCopyFormat(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics4<D>::ClipboardCopyFormatProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics4)->get_ClipboardCopyFormatProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Media::SolidColorBrush impl_IRichEditBox5<D>::SelectionHighlightColorWhenNotFocused() const
+{
+    Windows::UI::Xaml::Media::SolidColorBrush value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBox5)->get_SelectionHighlightColorWhenNotFocused(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox5<D>::SelectionHighlightColorWhenNotFocused(const Windows::UI::Xaml::Media::SolidColorBrush & value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox5)->put_SelectionHighlightColorWhenNotFocused(get_abi(value)));
+}
+
+template <typename D> int32_t impl_IRichEditBox5<D>::MaxLength() const
+{
+    int32_t value {};
+    check_hresult(WINRT_SHIM(IRichEditBox5)->get_MaxLength(&value));
+    return value;
+}
+
+template <typename D> void impl_IRichEditBox5<D>::MaxLength(int32_t value) const
+{
+    check_hresult(WINRT_SHIM(IRichEditBox5)->put_MaxLength(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics5<D>::SelectionHighlightColorWhenNotFocusedProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics5)->get_SelectionHighlightColorWhenNotFocusedProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRichEditBoxStatics5<D>::MaxLengthProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRichEditBoxStatics5)->get_MaxLengthProperty(put_abi(value)));
+    return value;
+}
+
 template <typename D> bool impl_IScrollContentPresenter<D>::CanVerticallyScroll() const
 {
     bool value {};
@@ -59797,6 +61691,156 @@ template <typename D> Windows::UI::Xaml::Controls::ContentDialog impl_IContentDi
     return instance;
 }
 
+template <typename D> hstring impl_IContentDialog2<D>::CloseButtonText() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IContentDialog2)->get_CloseButtonText(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IContentDialog2<D>::CloseButtonText(hstring_view value) const
+{
+    check_hresult(WINRT_SHIM(IContentDialog2)->put_CloseButtonText(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Input::ICommand impl_IContentDialog2<D>::CloseButtonCommand() const
+{
+    Windows::UI::Xaml::Input::ICommand value;
+    check_hresult(WINRT_SHIM(IContentDialog2)->get_CloseButtonCommand(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IContentDialog2<D>::CloseButtonCommand(const Windows::UI::Xaml::Input::ICommand & value) const
+{
+    check_hresult(WINRT_SHIM(IContentDialog2)->put_CloseButtonCommand(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::IInspectable impl_IContentDialog2<D>::CloseButtonCommandParameter() const
+{
+    Windows::Foundation::IInspectable value;
+    check_hresult(WINRT_SHIM(IContentDialog2)->get_CloseButtonCommandParameter(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IContentDialog2<D>::CloseButtonCommandParameter(const Windows::Foundation::IInspectable & value) const
+{
+    check_hresult(WINRT_SHIM(IContentDialog2)->put_CloseButtonCommandParameter(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Style impl_IContentDialog2<D>::PrimaryButtonStyle() const
+{
+    Windows::UI::Xaml::Style value { nullptr };
+    check_hresult(WINRT_SHIM(IContentDialog2)->get_PrimaryButtonStyle(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IContentDialog2<D>::PrimaryButtonStyle(const Windows::UI::Xaml::Style & value) const
+{
+    check_hresult(WINRT_SHIM(IContentDialog2)->put_PrimaryButtonStyle(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Style impl_IContentDialog2<D>::SecondaryButtonStyle() const
+{
+    Windows::UI::Xaml::Style value { nullptr };
+    check_hresult(WINRT_SHIM(IContentDialog2)->get_SecondaryButtonStyle(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IContentDialog2<D>::SecondaryButtonStyle(const Windows::UI::Xaml::Style & value) const
+{
+    check_hresult(WINRT_SHIM(IContentDialog2)->put_SecondaryButtonStyle(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Style impl_IContentDialog2<D>::CloseButtonStyle() const
+{
+    Windows::UI::Xaml::Style value { nullptr };
+    check_hresult(WINRT_SHIM(IContentDialog2)->get_CloseButtonStyle(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IContentDialog2<D>::CloseButtonStyle(const Windows::UI::Xaml::Style & value) const
+{
+    check_hresult(WINRT_SHIM(IContentDialog2)->put_CloseButtonStyle(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Controls::ContentDialogButton impl_IContentDialog2<D>::DefaultButton() const
+{
+    Windows::UI::Xaml::Controls::ContentDialogButton value {};
+    check_hresult(WINRT_SHIM(IContentDialog2)->get_DefaultButton(&value));
+    return value;
+}
+
+template <typename D> void impl_IContentDialog2<D>::DefaultButton(Windows::UI::Xaml::Controls::ContentDialogButton value) const
+{
+    check_hresult(WINRT_SHIM(IContentDialog2)->put_DefaultButton(value));
+}
+
+template <typename D> event_token impl_IContentDialog2<D>::CloseButtonClick(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IContentDialog2)->add_CloseButtonClick(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IContentDialog2> impl_IContentDialog2<D>::CloseButtonClick(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, IContentDialog2>(this, &ABI::Windows::UI::Xaml::Controls::IContentDialog2::remove_CloseButtonClick, CloseButtonClick(value));
+}
+
+template <typename D> void impl_IContentDialog2<D>::CloseButtonClick(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IContentDialog2)->remove_CloseButtonClick(token));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IContentDialogStatics2<D>::CloseButtonTextProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IContentDialogStatics2)->get_CloseButtonTextProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IContentDialogStatics2<D>::CloseButtonCommandProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IContentDialogStatics2)->get_CloseButtonCommandProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IContentDialogStatics2<D>::CloseButtonCommandParameterProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IContentDialogStatics2)->get_CloseButtonCommandParameterProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IContentDialogStatics2<D>::PrimaryButtonStyleProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IContentDialogStatics2)->get_PrimaryButtonStyleProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IContentDialogStatics2<D>::SecondaryButtonStyleProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IContentDialogStatics2)->get_SecondaryButtonStyleProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IContentDialogStatics2<D>::CloseButtonStyleProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IContentDialogStatics2)->get_CloseButtonStyleProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IContentDialogStatics2<D>::DefaultButtonProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IContentDialogStatics2)->get_DefaultButtonProperty(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Xaml::Controls::FlyoutPresenter impl_IFlyoutPresenterFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::FlyoutPresenter instance { nullptr };
@@ -60042,6 +62086,11 @@ template <typename D> void impl_IFrame3<D>::GoBack(const Windows::UI::Xaml::Medi
     check_hresult(WINRT_SHIM(IFrame3)->abi_GoBack(get_abi(transitionInfoOverride)));
 }
 
+template <typename D> void impl_IFrame4<D>::SetNavigationState(hstring_view navigationState, bool suppressNavigate) const
+{
+    check_hresult(WINRT_SHIM(IFrame4)->abi_SetNavigationStateWithNavigationControl(get_abi(navigationState), suppressNavigate));
+}
+
 template <typename D> hstring impl_IMenuFlyoutItem<D>::Text() const
 {
     hstring value;
@@ -60123,6 +62172,25 @@ template <typename D> Windows::UI::Xaml::Controls::MenuFlyoutItem impl_IMenuFlyo
     return instance;
 }
 
+template <typename D> Windows::UI::Xaml::Controls::IconElement impl_IMenuFlyoutItem2<D>::Icon() const
+{
+    Windows::UI::Xaml::Controls::IconElement value { nullptr };
+    check_hresult(WINRT_SHIM(IMenuFlyoutItem2)->get_Icon(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMenuFlyoutItem2<D>::Icon(const Windows::UI::Xaml::Controls::IconElement & value) const
+{
+    check_hresult(WINRT_SHIM(IMenuFlyoutItem2)->put_Icon(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMenuFlyoutItemStatics2<D>::IconProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IMenuFlyoutItemStatics2)->get_IconProperty(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Xaml::Controls::MenuFlyoutPresenter impl_IMenuFlyoutPresenterFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
 {
     Windows::UI::Xaml::Controls::MenuFlyoutPresenter instance { nullptr };
@@ -60167,6 +62235,25 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMenuFlyoutSubI
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
     check_hresult(WINRT_SHIM(IMenuFlyoutSubItemStatics)->get_TextProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::IconElement impl_IMenuFlyoutSubItem2<D>::Icon() const
+{
+    Windows::UI::Xaml::Controls::IconElement value { nullptr };
+    check_hresult(WINRT_SHIM(IMenuFlyoutSubItem2)->get_Icon(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IMenuFlyoutSubItem2<D>::Icon(const Windows::UI::Xaml::Controls::IconElement & value) const
+{
+    check_hresult(WINRT_SHIM(IMenuFlyoutSubItem2)->put_Icon(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IMenuFlyoutSubItemStatics2<D>::IconProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IMenuFlyoutSubItemStatics2)->get_IconProperty(put_abi(value)));
     return value;
 }
 
@@ -61724,6 +63811,18 @@ template <typename D> Windows::UI::Xaml::Controls::ListView impl_IListViewFactor
     return instance;
 }
 
+template <typename D> bool impl_IFocusEngagedEventArgs2<D>::Handled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IFocusEngagedEventArgs2)->get_Handled(&value));
+    return value;
+}
+
+template <typename D> void impl_IFocusEngagedEventArgs2<D>::Handled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IFocusEngagedEventArgs2)->put_Handled(value));
+}
+
 template <typename D> Windows::UI::Xaml::Interop::TypeName impl_IControlTemplate<D>::TargetType() const
 {
     Windows::UI::Xaml::Interop::TypeName value {};
@@ -62529,6 +64628,58 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IControlStatics
     return value;
 }
 
+template <typename D> Windows::Foundation::Uri impl_IControl5<D>::DefaultStyleResourceUri() const
+{
+    Windows::Foundation::Uri value { nullptr };
+    check_hresult(WINRT_SHIM(IControl5)->get_DefaultStyleResourceUri(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IControl5<D>::DefaultStyleResourceUri(const Windows::Foundation::Uri & value) const
+{
+    check_hresult(WINRT_SHIM(IControl5)->put_DefaultStyleResourceUri(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IControlStatics5<D>::DefaultStyleResourceUriProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IControlStatics5)->get_DefaultStyleResourceUriProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IControlStatics5<D>::IsTemplateKeyTipTargetProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IControlStatics5)->get_IsTemplateKeyTipTargetProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IControlStatics5<D>::GetIsTemplateKeyTipTarget(const Windows::UI::Xaml::DependencyObject & element) const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IControlStatics5)->abi_GetIsTemplateKeyTipTarget(get_abi(element), &value));
+    return value;
+}
+
+template <typename D> void impl_IControlStatics5<D>::SetIsTemplateKeyTipTarget(const Windows::UI::Xaml::DependencyObject & element, bool value) const
+{
+    check_hresult(WINRT_SHIM(IControlStatics5)->abi_SetIsTemplateKeyTipTarget(get_abi(element), value));
+}
+
+template <typename D> Windows::UI::Xaml::Controls::InkToolbarStencilButton impl_IInkToolbarIsStencilButtonCheckedChangedEventArgs<D>::StencilButton() const
+{
+    Windows::UI::Xaml::Controls::InkToolbarStencilButton value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarIsStencilButtonCheckedChangedEventArgs)->get_StencilButton(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::InkToolbarStencilKind impl_IInkToolbarIsStencilButtonCheckedChangedEventArgs<D>::StencilKind() const
+{
+    Windows::UI::Xaml::Controls::InkToolbarStencilKind value {};
+    check_hresult(WINRT_SHIM(IInkToolbarIsStencilButtonCheckedChangedEventArgs)->get_StencilKind(&value));
+    return value;
+}
+
 template <typename D> Windows::UI::Input::Inking::InkDrawingAttributes impl_IInkToolbarCustomPen<D>::CreateInkDrawingAttributes(const Windows::UI::Xaml::Media::Brush & brush, double strokeWidth) const
 {
     Windows::UI::Input::Inking::InkDrawingAttributes returnValue { nullptr };
@@ -62743,6 +64894,87 @@ template <typename D> Windows::UI::Xaml::Controls::InkToolbar impl_IInkToolbarFa
     return instance;
 }
 
+template <typename D> bool impl_IInkToolbar2<D>::IsStencilButtonChecked() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkToolbar2)->get_IsStencilButtonChecked(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkToolbar2<D>::IsStencilButtonChecked(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbar2)->put_IsStencilButtonChecked(value));
+}
+
+template <typename D> Windows::UI::Xaml::Controls::InkToolbarButtonFlyoutPlacement impl_IInkToolbar2<D>::ButtonFlyoutPlacement() const
+{
+    Windows::UI::Xaml::Controls::InkToolbarButtonFlyoutPlacement value {};
+    check_hresult(WINRT_SHIM(IInkToolbar2)->get_ButtonFlyoutPlacement(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkToolbar2<D>::ButtonFlyoutPlacement(Windows::UI::Xaml::Controls::InkToolbarButtonFlyoutPlacement value) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbar2)->put_ButtonFlyoutPlacement(value));
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Orientation impl_IInkToolbar2<D>::Orientation() const
+{
+    Windows::UI::Xaml::Controls::Orientation value {};
+    check_hresult(WINRT_SHIM(IInkToolbar2)->get_Orientation(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkToolbar2<D>::Orientation(Windows::UI::Xaml::Controls::Orientation value) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbar2)->put_Orientation(value));
+}
+
+template <typename D> event_token impl_IInkToolbar2<D>::IsStencilButtonCheckedChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IInkToolbar2)->add_IsStencilButtonCheckedChanged(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IInkToolbar2> impl_IInkToolbar2<D>::IsStencilButtonCheckedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs> & value) const
+{
+    return impl::make_event_revoker<D, IInkToolbar2>(this, &ABI::Windows::UI::Xaml::Controls::IInkToolbar2::remove_IsStencilButtonCheckedChanged, IsStencilButtonCheckedChanged(value));
+}
+
+template <typename D> void impl_IInkToolbar2<D>::IsStencilButtonCheckedChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbar2)->remove_IsStencilButtonCheckedChanged(token));
+}
+
+template <typename D> Windows::UI::Xaml::Controls::InkToolbarMenuButton impl_IInkToolbar2<D>::GetMenuButton(Windows::UI::Xaml::Controls::InkToolbarMenuKind menu) const
+{
+    Windows::UI::Xaml::Controls::InkToolbarMenuButton returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbar2)->abi_GetMenuButton(menu, put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarStatics2<D>::IsStencilButtonCheckedProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarStatics2)->get_IsStencilButtonCheckedProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarStatics2<D>::ButtonFlyoutPlacementProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarStatics2)->get_ButtonFlyoutPlacementProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarStatics2<D>::OrientationProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarStatics2)->get_OrientationProperty(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::UI::Xaml::Controls::InkToolbarPenButton impl_IInkToolbarPenConfigurationControl<D>::PenButton() const
 {
     Windows::UI::Xaml::Controls::InkToolbarPenButton value { nullptr };
@@ -62761,6 +64993,203 @@ template <typename D> Windows::UI::Xaml::Controls::InkToolbarPenConfigurationCon
 {
     Windows::UI::Xaml::Controls::InkToolbarPenConfigurationControl instance { nullptr };
     check_hresult(WINRT_SHIM(IInkToolbarPenConfigurationControlFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::InkToolbarFlyoutItemKind impl_IInkToolbarFlyoutItem<D>::Kind() const
+{
+    Windows::UI::Xaml::Controls::InkToolbarFlyoutItemKind value {};
+    check_hresult(WINRT_SHIM(IInkToolbarFlyoutItem)->get_Kind(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkToolbarFlyoutItem<D>::Kind(Windows::UI::Xaml::Controls::InkToolbarFlyoutItemKind value) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbarFlyoutItem)->put_Kind(value));
+}
+
+template <typename D> bool impl_IInkToolbarFlyoutItem<D>::IsChecked() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkToolbarFlyoutItem)->get_IsChecked(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkToolbarFlyoutItem<D>::IsChecked(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbarFlyoutItem)->put_IsChecked(value));
+}
+
+template <typename D> event_token impl_IInkToolbarFlyoutItem<D>::Checked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IInkToolbarFlyoutItem)->add_Checked(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IInkToolbarFlyoutItem> impl_IInkToolbarFlyoutItem<D>::Checked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> & value) const
+{
+    return impl::make_event_revoker<D, IInkToolbarFlyoutItem>(this, &ABI::Windows::UI::Xaml::Controls::IInkToolbarFlyoutItem::remove_Checked, Checked(value));
+}
+
+template <typename D> void impl_IInkToolbarFlyoutItem<D>::Checked(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbarFlyoutItem)->remove_Checked(token));
+}
+
+template <typename D> event_token impl_IInkToolbarFlyoutItem<D>::Unchecked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IInkToolbarFlyoutItem)->add_Unchecked(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IInkToolbarFlyoutItem> impl_IInkToolbarFlyoutItem<D>::Unchecked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> & value) const
+{
+    return impl::make_event_revoker<D, IInkToolbarFlyoutItem>(this, &ABI::Windows::UI::Xaml::Controls::IInkToolbarFlyoutItem::remove_Unchecked, Unchecked(value));
+}
+
+template <typename D> void impl_IInkToolbarFlyoutItem<D>::Unchecked(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbarFlyoutItem)->remove_Unchecked(token));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarFlyoutItemStatics<D>::KindProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarFlyoutItemStatics)->get_KindProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarFlyoutItemStatics<D>::IsCheckedProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarFlyoutItemStatics)->get_IsCheckedProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::InkToolbarFlyoutItem impl_IInkToolbarFlyoutItemFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
+{
+    Windows::UI::Xaml::Controls::InkToolbarFlyoutItem instance { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarFlyoutItemFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::InkToolbarMenuKind impl_IInkToolbarMenuButton<D>::MenuKind() const
+{
+    Windows::UI::Xaml::Controls::InkToolbarMenuKind value {};
+    check_hresult(WINRT_SHIM(IInkToolbarMenuButton)->get_MenuKind(&value));
+    return value;
+}
+
+template <typename D> bool impl_IInkToolbarMenuButton<D>::IsExtensionGlyphShown() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkToolbarMenuButton)->get_IsExtensionGlyphShown(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkToolbarMenuButton<D>::IsExtensionGlyphShown(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbarMenuButton)->put_IsExtensionGlyphShown(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarMenuButtonStatics<D>::IsExtensionGlyphShownProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarMenuButtonStatics)->get_IsExtensionGlyphShownProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Inking::InkPresenterRuler impl_IInkToolbarStencilButton<D>::Ruler() const
+{
+    Windows::UI::Input::Inking::InkPresenterRuler value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButton)->get_Ruler(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Input::Inking::InkPresenterProtractor impl_IInkToolbarStencilButton<D>::Protractor() const
+{
+    Windows::UI::Input::Inking::InkPresenterProtractor value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButton)->get_Protractor(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::InkToolbarStencilKind impl_IInkToolbarStencilButton<D>::SelectedStencil() const
+{
+    Windows::UI::Xaml::Controls::InkToolbarStencilKind value {};
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButton)->get_SelectedStencil(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkToolbarStencilButton<D>::SelectedStencil(Windows::UI::Xaml::Controls::InkToolbarStencilKind value) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButton)->put_SelectedStencil(value));
+}
+
+template <typename D> bool impl_IInkToolbarStencilButton<D>::IsRulerItemVisible() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButton)->get_IsRulerItemVisible(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkToolbarStencilButton<D>::IsRulerItemVisible(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButton)->put_IsRulerItemVisible(value));
+}
+
+template <typename D> bool impl_IInkToolbarStencilButton<D>::IsProtractorItemVisible() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButton)->get_IsProtractorItemVisible(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkToolbarStencilButton<D>::IsProtractorItemVisible(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButton)->put_IsProtractorItemVisible(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarStencilButtonStatics<D>::RulerProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButtonStatics)->get_RulerProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarStencilButtonStatics<D>::ProtractorProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButtonStatics)->get_ProtractorProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarStencilButtonStatics<D>::SelectedStencilProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButtonStatics)->get_SelectedStencilProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarStencilButtonStatics<D>::IsRulerItemVisibleProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButtonStatics)->get_IsRulerItemVisibleProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarStencilButtonStatics<D>::IsProtractorItemVisibleProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButtonStatics)->get_IsProtractorItemVisibleProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::InkToolbarStencilButton impl_IInkToolbarStencilButtonFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
+{
+    Windows::UI::Xaml::Controls::InkToolbarStencilButton instance { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarStencilButtonFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
     return instance;
 }
 
@@ -62835,6 +65264,25 @@ template <typename D> Windows::UI::Xaml::Controls::InkToolbarEraserButton impl_I
     Windows::UI::Xaml::Controls::InkToolbarEraserButton instance { nullptr };
     check_hresult(WINRT_SHIM(IInkToolbarEraserButtonFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
     return instance;
+}
+
+template <typename D> bool impl_IInkToolbarEraserButton2<D>::IsClearAllVisible() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IInkToolbarEraserButton2)->get_IsClearAllVisible(&value));
+    return value;
+}
+
+template <typename D> void impl_IInkToolbarEraserButton2<D>::IsClearAllVisible(bool value) const
+{
+    check_hresult(WINRT_SHIM(IInkToolbarEraserButton2)->put_IsClearAllVisible(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IInkToolbarEraserButtonStatics2<D>::IsClearAllVisibleProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IInkToolbarEraserButtonStatics2)->get_IsClearAllVisibleProperty(put_abi(value)));
+    return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Brush> impl_IInkToolbarPenButton<D>::Palette() const
@@ -64240,6 +66688,11 @@ inline Windows::UI::Xaml::DependencyProperty BitmapIcon::UriSourceProperty()
     return get_activation_factory<BitmapIcon, IBitmapIconStatics>().UriSourceProperty();
 }
 
+inline Windows::UI::Xaml::DependencyProperty BitmapIcon::ShowAsMonochromeProperty()
+{
+    return get_activation_factory<BitmapIcon, IBitmapIconStatics2>().ShowAsMonochromeProperty();
+}
+
 inline Border::Border() :
     Border(activate_instance<Border>())
 {}
@@ -64792,6 +67245,11 @@ inline Windows::UI::Xaml::DependencyProperty ComboBox::IsTextSearchEnabledProper
     return get_activation_factory<ComboBox, IComboBoxStatics3>().IsTextSearchEnabledProperty();
 }
 
+inline Windows::UI::Xaml::DependencyProperty ComboBox::SelectionChangedTriggerProperty()
+{
+    return get_activation_factory<ComboBox, IComboBoxStatics4>().SelectionChangedTriggerProperty();
+}
+
 inline ComboBoxItem::ComboBoxItem()
 {
     Windows::Foundation::IInspectable outer, inner;
@@ -64929,6 +67387,41 @@ inline Windows::UI::Xaml::DependencyProperty ContentDialog::IsPrimaryButtonEnabl
 inline Windows::UI::Xaml::DependencyProperty ContentDialog::IsSecondaryButtonEnabledProperty()
 {
     return get_activation_factory<ContentDialog, IContentDialogStatics>().IsSecondaryButtonEnabledProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty ContentDialog::CloseButtonTextProperty()
+{
+    return get_activation_factory<ContentDialog, IContentDialogStatics2>().CloseButtonTextProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty ContentDialog::CloseButtonCommandProperty()
+{
+    return get_activation_factory<ContentDialog, IContentDialogStatics2>().CloseButtonCommandProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty ContentDialog::CloseButtonCommandParameterProperty()
+{
+    return get_activation_factory<ContentDialog, IContentDialogStatics2>().CloseButtonCommandParameterProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty ContentDialog::PrimaryButtonStyleProperty()
+{
+    return get_activation_factory<ContentDialog, IContentDialogStatics2>().PrimaryButtonStyleProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty ContentDialog::SecondaryButtonStyleProperty()
+{
+    return get_activation_factory<ContentDialog, IContentDialogStatics2>().SecondaryButtonStyleProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty ContentDialog::CloseButtonStyleProperty()
+{
+    return get_activation_factory<ContentDialog, IContentDialogStatics2>().CloseButtonStyleProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty ContentDialog::DefaultButtonProperty()
+{
+    return get_activation_factory<ContentDialog, IContentDialogStatics2>().DefaultButtonProperty();
 }
 
 inline ContentPresenter::ContentPresenter()
@@ -65225,6 +67718,26 @@ inline Windows::UI::Xaml::DependencyProperty Control::XYFocusDownProperty()
 inline Windows::UI::Xaml::DependencyProperty Control::ElementSoundModeProperty()
 {
     return get_activation_factory<Control, IControlStatics4>().ElementSoundModeProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty Control::DefaultStyleResourceUriProperty()
+{
+    return get_activation_factory<Control, IControlStatics5>().DefaultStyleResourceUriProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty Control::IsTemplateKeyTipTargetProperty()
+{
+    return get_activation_factory<Control, IControlStatics5>().IsTemplateKeyTipTargetProperty();
+}
+
+inline bool Control::GetIsTemplateKeyTipTarget(const Windows::UI::Xaml::DependencyObject & element)
+{
+    return get_activation_factory<Control, IControlStatics5>().GetIsTemplateKeyTipTarget(element);
+}
+
+inline void Control::SetIsTemplateKeyTipTarget(const Windows::UI::Xaml::DependencyObject & element, bool value)
+{
+    get_activation_factory<Control, IControlStatics5>().SetIsTemplateKeyTipTarget(element, value);
 }
 
 inline ControlTemplate::ControlTemplate() :
@@ -65790,6 +68303,21 @@ inline Windows::UI::Xaml::DependencyProperty InkToolbar::TargetInkCanvasProperty
     return get_activation_factory<InkToolbar, IInkToolbarStatics>().TargetInkCanvasProperty();
 }
 
+inline Windows::UI::Xaml::DependencyProperty InkToolbar::IsStencilButtonCheckedProperty()
+{
+    return get_activation_factory<InkToolbar, IInkToolbarStatics2>().IsStencilButtonCheckedProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty InkToolbar::ButtonFlyoutPlacementProperty()
+{
+    return get_activation_factory<InkToolbar, IInkToolbarStatics2>().ButtonFlyoutPlacementProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty InkToolbar::OrientationProperty()
+{
+    return get_activation_factory<InkToolbar, IInkToolbarStatics2>().OrientationProperty();
+}
+
 inline InkToolbarBallpointPenButton::InkToolbarBallpointPenButton()
 {
     Windows::Foundation::IInspectable outer, inner;
@@ -65835,10 +68363,40 @@ inline InkToolbarEraserButton::InkToolbarEraserButton()
     impl_move(get_activation_factory<InkToolbarEraserButton, IInkToolbarEraserButtonFactory>().CreateInstance(outer, inner));
 }
 
+inline Windows::UI::Xaml::DependencyProperty InkToolbarEraserButton::IsClearAllVisibleProperty()
+{
+    return get_activation_factory<InkToolbarEraserButton, IInkToolbarEraserButtonStatics2>().IsClearAllVisibleProperty();
+}
+
+inline InkToolbarFlyoutItem::InkToolbarFlyoutItem()
+{
+    Windows::Foundation::IInspectable outer, inner;
+    impl_move(get_activation_factory<InkToolbarFlyoutItem, IInkToolbarFlyoutItemFactory>().CreateInstance(outer, inner));
+}
+
+inline Windows::UI::Xaml::DependencyProperty InkToolbarFlyoutItem::KindProperty()
+{
+    return get_activation_factory<InkToolbarFlyoutItem, IInkToolbarFlyoutItemStatics>().KindProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty InkToolbarFlyoutItem::IsCheckedProperty()
+{
+    return get_activation_factory<InkToolbarFlyoutItem, IInkToolbarFlyoutItemStatics>().IsCheckedProperty();
+}
+
 inline InkToolbarHighlighterButton::InkToolbarHighlighterButton()
 {
     Windows::Foundation::IInspectable outer, inner;
     impl_move(get_activation_factory<InkToolbarHighlighterButton, IInkToolbarHighlighterButtonFactory>().CreateInstance(outer, inner));
+}
+
+inline InkToolbarIsStencilButtonCheckedChangedEventArgs::InkToolbarIsStencilButtonCheckedChangedEventArgs() :
+    InkToolbarIsStencilButtonCheckedChangedEventArgs(activate_instance<InkToolbarIsStencilButtonCheckedChangedEventArgs>())
+{}
+
+inline Windows::UI::Xaml::DependencyProperty InkToolbarMenuButton::IsExtensionGlyphShownProperty()
+{
+    return get_activation_factory<InkToolbarMenuButton, IInkToolbarMenuButtonStatics>().IsExtensionGlyphShownProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarPenButton::PaletteProperty()
@@ -65897,6 +68455,37 @@ inline InkToolbarRulerButton::InkToolbarRulerButton()
 inline Windows::UI::Xaml::DependencyProperty InkToolbarRulerButton::RulerProperty()
 {
     return get_activation_factory<InkToolbarRulerButton, IInkToolbarRulerButtonStatics>().RulerProperty();
+}
+
+inline InkToolbarStencilButton::InkToolbarStencilButton()
+{
+    Windows::Foundation::IInspectable outer, inner;
+    impl_move(get_activation_factory<InkToolbarStencilButton, IInkToolbarStencilButtonFactory>().CreateInstance(outer, inner));
+}
+
+inline Windows::UI::Xaml::DependencyProperty InkToolbarStencilButton::RulerProperty()
+{
+    return get_activation_factory<InkToolbarStencilButton, IInkToolbarStencilButtonStatics>().RulerProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty InkToolbarStencilButton::ProtractorProperty()
+{
+    return get_activation_factory<InkToolbarStencilButton, IInkToolbarStencilButtonStatics>().ProtractorProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty InkToolbarStencilButton::SelectedStencilProperty()
+{
+    return get_activation_factory<InkToolbarStencilButton, IInkToolbarStencilButtonStatics>().SelectedStencilProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty InkToolbarStencilButton::IsRulerItemVisibleProperty()
+{
+    return get_activation_factory<InkToolbarStencilButton, IInkToolbarStencilButtonStatics>().IsRulerItemVisibleProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty InkToolbarStencilButton::IsProtractorItemVisibleProperty()
+{
+    return get_activation_factory<InkToolbarStencilButton, IInkToolbarStencilButtonStatics>().IsProtractorItemVisibleProperty();
 }
 
 inline Windows::UI::Xaml::DependencyProperty InkToolbarToolButton::IsExtensionGlyphShownProperty()
@@ -66717,6 +69306,11 @@ inline Windows::UI::Xaml::DependencyProperty MenuFlyoutItem::CommandParameterPro
     return get_activation_factory<MenuFlyoutItem, IMenuFlyoutItemStatics>().CommandParameterProperty();
 }
 
+inline Windows::UI::Xaml::DependencyProperty MenuFlyoutItem::IconProperty()
+{
+    return get_activation_factory<MenuFlyoutItem, IMenuFlyoutItemStatics2>().IconProperty();
+}
+
 inline MenuFlyoutPresenter::MenuFlyoutPresenter()
 {
     Windows::Foundation::IInspectable outer, inner;
@@ -66736,6 +69330,11 @@ inline MenuFlyoutSubItem::MenuFlyoutSubItem() :
 inline Windows::UI::Xaml::DependencyProperty MenuFlyoutSubItem::TextProperty()
 {
     return get_activation_factory<MenuFlyoutSubItem, IMenuFlyoutSubItemStatics>().TextProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty MenuFlyoutSubItem::IconProperty()
+{
+    return get_activation_factory<MenuFlyoutSubItem, IMenuFlyoutSubItemStatics2>().IconProperty();
 }
 
 inline Page::Page()
@@ -67356,6 +69955,16 @@ inline Windows::UI::Xaml::DependencyProperty RichEditBox::ClipboardCopyFormatPro
     return get_activation_factory<RichEditBox, IRichEditBoxStatics4>().ClipboardCopyFormatProperty();
 }
 
+inline Windows::UI::Xaml::DependencyProperty RichEditBox::SelectionHighlightColorWhenNotFocusedProperty()
+{
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics5>().SelectionHighlightColorWhenNotFocusedProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty RichEditBox::MaxLengthProperty()
+{
+    return get_activation_factory<RichEditBox, IRichEditBoxStatics5>().MaxLengthProperty();
+}
+
 inline RichTextBlock::RichTextBlock() :
     RichTextBlock(activate_instance<RichTextBlock>())
 {}
@@ -67483,6 +70092,11 @@ inline Windows::UI::Xaml::DependencyProperty RichTextBlock::TextReadingOrderProp
 inline Windows::UI::Xaml::DependencyProperty RichTextBlock::IsTextScaleFactorEnabledProperty()
 {
     return get_activation_factory<RichTextBlock, IRichTextBlockStatics3>().IsTextScaleFactorEnabledProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty RichTextBlock::TextDecorationsProperty()
+{
+    return get_activation_factory<RichTextBlock, IRichTextBlockStatics4>().TextDecorationsProperty();
 }
 
 inline RichTextBlockOverflow::RichTextBlockOverflow() :
@@ -68282,6 +70896,11 @@ inline Windows::UI::Xaml::DependencyProperty TextBlock::IsTextScaleFactorEnabled
     return get_activation_factory<TextBlock, ITextBlockStatics3>().IsTextScaleFactorEnabledProperty();
 }
 
+inline Windows::UI::Xaml::DependencyProperty TextBlock::TextDecorationsProperty()
+{
+    return get_activation_factory<TextBlock, ITextBlockStatics5>().TextDecorationsProperty();
+}
+
 inline TextBox::TextBox()
 {
     Windows::Foundation::IInspectable outer, inner;
@@ -68371,6 +70990,11 @@ inline Windows::UI::Xaml::DependencyProperty TextBox::DesiredCandidateWindowAlig
 inline Windows::UI::Xaml::DependencyProperty TextBox::TextReadingOrderProperty()
 {
     return get_activation_factory<TextBox, ITextBoxStatics3>().TextReadingOrderProperty();
+}
+
+inline Windows::UI::Xaml::DependencyProperty TextBox::SelectionHighlightColorWhenNotFocusedProperty()
+{
+    return get_activation_factory<TextBox, ITextBoxStatics5>().SelectionHighlightColorWhenNotFocusedProperty();
 }
 
 inline TimePickedEventArgs::TimePickedEventArgs() :
@@ -69141,6 +71765,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IBitmapIcon>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IBitmapIcon2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IBitmapIcon2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IBitmapIconFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IBitmapIconFactory & value) const noexcept
@@ -69153,6 +71786,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IBitmapIconStatics>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IBitmapIconStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IBitmapIconStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IBitmapIconStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -69483,6 +72125,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBox3>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBox4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBox4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBoxFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBoxFactory & value) const noexcept
@@ -69540,6 +72191,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBoxStatics3>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBoxStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IComboBoxStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IComboBoxStatics4 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -69708,6 +72368,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialog>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialog2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialog2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialogButtonClickDeferral>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialogButtonClickDeferral & value) const noexcept
@@ -69774,6 +72443,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialogStatics>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialogStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IContentDialogStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IContentDialogStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -69915,6 +72593,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IControl4>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControl5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControl5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IControlFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControlFactory & value) const noexcept
@@ -69972,6 +72659,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IControlStatics4>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControlStatics4 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IControlStatics5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IControlStatics5 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -70302,6 +72998,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IFocusEngagedEventArgs>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFocusEngagedEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFocusEngagedEventArgs2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IFontIcon>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFontIcon & value) const noexcept
@@ -70386,6 +73091,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IFrame3>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFrame3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IFrame4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IFrame4 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -70770,6 +73484,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbar>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbar2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbar2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton & value) const noexcept
@@ -70896,6 +73619,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButton>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButton2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButton2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButtonFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButtonFactory & value) const noexcept
@@ -70905,9 +73637,45 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButtonFact
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButtonStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarEraserButtonStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarFlyoutItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarFlyoutItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemStatics & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -70926,6 +73694,42 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarHighlighterButtonFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarHighlighterButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarIsStencilButtonCheckedChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarIsStencilButtonCheckedChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarMenuButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarMenuButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarMenuButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarMenuButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarMenuButtonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarMenuButtonStatics & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -71034,6 +73838,42 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarStatics>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarStencilButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarStencilButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarStencilButtonFactory>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarStencilButtonFactory & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IInkToolbarStencilButtonStatics>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IInkToolbarStencilButtonStatics & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -71445,6 +74285,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBase5>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBase6>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBase6 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IListViewBaseFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IListViewBaseFactory & value) const noexcept
@@ -71778,6 +74627,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItem>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItem2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItem2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemBase>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemBase & value) const noexcept
@@ -71808,6 +74666,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -71877,9 +74744,27 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSubItem>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSubItem2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSubItem2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -72327,6 +75212,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBox4>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBox5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBox5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBoxFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBoxFactory & value) const noexcept
@@ -72372,9 +75266,27 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBoxStatics4>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBoxStatics5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBoxStatics5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -72402,6 +75314,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlock3>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlock3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlock4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlock4 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -72465,6 +75386,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlockStatics3>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlockStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::IRichTextBlockStatics4>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::IRichTextBlockStatics4 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -73029,6 +75959,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlock4>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlock5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBlock5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlockStatics>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBlockStatics & value) const noexcept
@@ -73050,6 +75989,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlockStatics3>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBlockStatics3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBlockStatics5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBlockStatics5 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -73092,6 +76040,15 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBox4>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBox5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBox5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBoxFactory>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBoxFactory & value) const noexcept
@@ -73128,9 +76085,27 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBoxStatics3>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBoxStatics5>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBoxStatics5 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -74523,9 +77498,36 @@ struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarEraserButton>
 };
 
 template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarFlyoutItem>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarFlyoutItem & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarHighlighterButton>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarHighlighterButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarMenuButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarMenuButton & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -74562,6 +77564,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarRulerButton>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarRulerButton & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Controls::InkToolbarStencilButton>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Controls::InkToolbarStencilButton & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

@@ -44,7 +44,7 @@ struct WINRT_EBO WebProviderError :
 
 struct WINRT_EBO WebTokenRequest :
     Windows::Security::Authentication::Web::Core::IWebTokenRequest,
-    impl::require<WebTokenRequest, Windows::Security::Authentication::Web::Core::IWebTokenRequest2>
+    impl::require<WebTokenRequest, Windows::Security::Authentication::Web::Core::IWebTokenRequest2, Windows::Security::Authentication::Web::Core::IWebTokenRequest3>
 {
     WebTokenRequest(std::nullptr_t) noexcept {}
     WebTokenRequest(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_view scope, hstring_view clientId);

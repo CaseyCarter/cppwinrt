@@ -14,39 +14,14 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a")) __declspec(novtable) IAsyncOperation<bool> : impl_IAsyncOperation<bool> {};
 #endif
 
-#ifndef WINRT_GENERIC_3e1fe603_f897_5263_b328_0806426b8a79
-#define WINRT_GENERIC_3e1fe603_f897_5263_b328_0806426b8a79
-template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __declspec(novtable) IAsyncOperation<hstring> : impl_IAsyncOperation<hstring> {};
-#endif
-
 
 }
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
-#endif
-
-#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
-#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
-template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
-#endif
-
 #ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
 #define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
 template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
-#endif
-
-#ifndef WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
-#define WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
-template <> struct __declspec(uuid("0c7d1423-e8fd-5a91-b55c-8bfbe7ac2d40")) __declspec(novtable) IIterable<Windows::Security::Cryptography::Certificates::Certificate> : impl_IIterable<Windows::Security::Cryptography::Certificates::Certificate> {};
-#endif
-
-#ifndef WINRT_GENERIC_963f7013_77c2_51c5_8038_b5bcef633edb
-#define WINRT_GENERIC_963f7013_77c2_51c5_8038_b5bcef633edb
-template <> struct __declspec(uuid("963f7013-77c2-51c5-8038-b5bcef633edb")) __declspec(novtable) IVectorView<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVectorView<Windows::Security::Cryptography::Certificates::Certificate> {};
 #endif
 
 
@@ -59,10 +34,35 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("3bee8834-b9a7-5a80-a746-5ef097227878")) __declspec(novtable) IAsyncOperation<Windows::Storage::Streams::IBuffer> : impl_IAsyncOperation<Windows::Storage::Streams::IBuffer> {};
 #endif
 
+#ifndef WINRT_GENERIC_3e1fe603_f897_5263_b328_0806426b8a79
+#define WINRT_GENERIC_3e1fe603_f897_5263_b328_0806426b8a79
+template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __declspec(novtable) IAsyncOperation<hstring> : impl_IAsyncOperation<hstring> {};
+#endif
+
 
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_4c2523e8_9773_50fe_b870_483fd8b906dc
+#define WINRT_GENERIC_4c2523e8_9773_50fe_b870_483fd8b906dc
+template <> struct __declspec(uuid("4c2523e8-9773-50fe-b870-483fd8b906dc")) __declspec(novtable) IVector<Windows::Security::Cryptography::Certificates::CertificateExtension> : impl_IVector<Windows::Security::Cryptography::Certificates::CertificateExtension> {};
+#endif
+
+#ifndef WINRT_GENERIC_963f7013_77c2_51c5_8038_b5bcef633edb
+#define WINRT_GENERIC_963f7013_77c2_51c5_8038_b5bcef633edb
+template <> struct __declspec(uuid("963f7013-77c2-51c5-8038-b5bcef633edb")) __declspec(novtable) IVectorView<Windows::Security::Cryptography::Certificates::Certificate> : impl_IVectorView<Windows::Security::Cryptography::Certificates::Certificate> {};
+#endif
 
 #ifndef WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
 #define WINRT_GENERIC_36282c0f_2f1f_57f4_b2b1_867af90c3d13
@@ -83,6 +83,11 @@ template <> struct __declspec(uuid("f618c7d4-aee1-58ae-afe8-fc336daf0395")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
+#define WINRT_GENERIC_0c7d1423_e8fd_5a91_b55c_8bfbe7ac2d40
+template <> struct __declspec(uuid("0c7d1423-e8fd-5a91-b55c-8bfbe7ac2d40")) __declspec(novtable) IIterable<Windows::Security::Cryptography::Certificates::Certificate> : impl_IIterable<Windows::Security::Cryptography::Certificates::Certificate> {};
+#endif
 
 #ifndef WINRT_GENERIC_f46bcaa8_747c_5a93_82fe_85d63549fe81
 #define WINRT_GENERIC_f46bcaa8_747c_5a93_82fe_85d63549fe81
@@ -109,11 +114,6 @@ template <> struct __declspec(uuid("f09c0bcf-ce3b-5dff-971f-2c3ffe6fd04d")) __de
 template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __declspec(novtable) AsyncOperationCompletedHandler<bool> : impl_AsyncOperationCompletedHandler<bool> {};
 #endif
 
-#ifndef WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
-#define WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
-template <> struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41")) __declspec(novtable) AsyncOperationCompletedHandler<hstring> : impl_AsyncOperationCompletedHandler<hstring> {};
-#endif
-
 
 }
 
@@ -122,11 +122,6 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
-#endif
-
-#ifndef WINRT_GENERIC_676fc159_f15c_58bd_91a7_28f7e795c756
-#define WINRT_GENERIC_676fc159_f15c_58bd_91a7_28f7e795c756
-template <> struct __declspec(uuid("676fc159-f15c-58bd-91a7-28f7e795c756")) __declspec(novtable) IIterator<Windows::Security::Cryptography::Certificates::Certificate> : impl_IIterator<Windows::Security::Cryptography::Certificates::Certificate> {};
 #endif
 
 
@@ -138,6 +133,41 @@ namespace ABI::Windows::Foundation {
 #define WINRT_GENERIC_51c3d2fd_b8a1_5620_b746_7ee6d533aca3
 template <> struct __declspec(uuid("51c3d2fd-b8a1-5620-b746-7ee6d533aca3")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Storage::Streams::IBuffer> : impl_AsyncOperationCompletedHandler<Windows::Storage::Streams::IBuffer> {};
 #endif
+
+#ifndef WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
+#define WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
+template <> struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41")) __declspec(novtable) AsyncOperationCompletedHandler<hstring> : impl_AsyncOperationCompletedHandler<hstring> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_5e5af982_332d_54ec_8e54_e62c1a1eace9
+#define WINRT_GENERIC_5e5af982_332d_54ec_8e54_e62c1a1eace9
+template <> struct __declspec(uuid("5e5af982-332d-54ec-8e54-e62c1a1eace9")) __declspec(novtable) IIterator<Windows::Security::Cryptography::Certificates::CertificateExtension> : impl_IIterator<Windows::Security::Cryptography::Certificates::CertificateExtension> {};
+#endif
+
+#ifndef WINRT_GENERIC_1bdd7127_73b3_5192_8bde_20c136281260
+#define WINRT_GENERIC_1bdd7127_73b3_5192_8bde_20c136281260
+template <> struct __declspec(uuid("1bdd7127-73b3-5192-8bde-20c136281260")) __declspec(novtable) IIterable<Windows::Security::Cryptography::Certificates::CertificateExtension> : impl_IIterable<Windows::Security::Cryptography::Certificates::CertificateExtension> {};
+#endif
+
+#ifndef WINRT_GENERIC_43857453_e7b1_5cba_9730_5ea4ddebdd95
+#define WINRT_GENERIC_43857453_e7b1_5cba_9730_5ea4ddebdd95
+template <> struct __declspec(uuid("43857453-e7b1-5cba-9730-5ea4ddebdd95")) __declspec(novtable) IVectorView<Windows::Security::Cryptography::Certificates::CertificateExtension> : impl_IVectorView<Windows::Security::Cryptography::Certificates::CertificateExtension> {};
+#endif
+
+#ifndef WINRT_GENERIC_676fc159_f15c_58bd_91a7_28f7e795c756
+#define WINRT_GENERIC_676fc159_f15c_58bd_91a7_28f7e795c756
+template <> struct __declspec(uuid("676fc159-f15c-58bd-91a7-28f7e795c756")) __declspec(novtable) IIterator<Windows::Security::Cryptography::Certificates::Certificate> : impl_IIterator<Windows::Security::Cryptography::Certificates::Certificate> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_4c3f50e9_90e3_5a30_9015_4aa0376904f3
 #define WINRT_GENERIC_4c3f50e9_90e3_5a30_9015_4aa0376904f3
@@ -233,6 +263,13 @@ struct ICertificateEnrollmentManagerStatics3 :
     ICertificateEnrollmentManagerStatics3(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ICertificateExtension :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICertificateExtension>
+{
+    ICertificateExtension(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ICertificateFactory :
     Windows::Foundation::IInspectable,
     impl::consume<ICertificateFactory>
@@ -280,6 +317,13 @@ struct ICertificateRequestProperties3 :
     impl::consume<ICertificateRequestProperties3>
 {
     ICertificateRequestProperties3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICertificateRequestProperties4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICertificateRequestProperties4>
+{
+    ICertificateRequestProperties4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICertificateStore :
@@ -441,6 +485,13 @@ struct ISubjectAlternativeNameInfo :
     impl::consume<ISubjectAlternativeNameInfo>
 {
     ISubjectAlternativeNameInfo(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISubjectAlternativeNameInfo2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ISubjectAlternativeNameInfo2>
+{
+    ISubjectAlternativeNameInfo2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUserCertificateEnrollmentManager :

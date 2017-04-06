@@ -369,7 +369,7 @@ struct WINRT_EBO AdaptiveTrigger :
 
 struct WINRT_EBO Application :
     Windows::UI::Xaml::IApplication,
-    impl::require<Application, Windows::UI::Xaml::IApplicationOverrides, Windows::UI::Xaml::IApplication2, Windows::UI::Xaml::IApplicationOverrides2>
+    impl::require<Application, Windows::UI::Xaml::IApplicationOverrides, Windows::UI::Xaml::IApplication2, Windows::UI::Xaml::IApplicationOverrides2, Windows::UI::Xaml::IApplication3>
 {
     Application(std::nullptr_t) noexcept {}
     Application();
@@ -389,6 +389,13 @@ struct WINRT_EBO BindingFailedEventArgs :
     Windows::UI::Xaml::IBindingFailedEventArgs
 {
     BindingFailedEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO BringIntoViewOptions :
+    Windows::UI::Xaml::IBringIntoViewOptions
+{
+    BringIntoViewOptions(std::nullptr_t) noexcept {}
+    BringIntoViewOptions();
 };
 
 struct WINRT_EBO CornerRadiusHelper :
@@ -557,7 +564,7 @@ struct WINRT_EBO ExceptionRoutedEventArgs :
 struct WINRT_EBO FrameworkElement :
     Windows::UI::Xaml::IFrameworkElement,
     impl::bases<FrameworkElement, Windows::UI::Xaml::DependencyObject, Windows::UI::Xaml::UIElement>,
-    impl::require<FrameworkElement, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IFrameworkElementOverrides, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElementOverrides2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4>
+    impl::require<FrameworkElement, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElement, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IUIElement5, Windows::UI::Xaml::IFrameworkElementOverrides, Windows::UI::Xaml::IFrameworkElement2, Windows::UI::Xaml::IFrameworkElementOverrides2, Windows::UI::Xaml::IFrameworkElement3, Windows::UI::Xaml::IFrameworkElement4>
 {
     FrameworkElement(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::DependencyProperty TagProperty();
@@ -585,6 +592,7 @@ struct WINRT_EBO FrameworkElement :
     static Windows::UI::Xaml::DependencyProperty FocusVisualSecondaryBrushProperty();
     static Windows::UI::Xaml::DependencyProperty FocusVisualPrimaryBrushProperty();
     static Windows::UI::Xaml::DependencyProperty AllowFocusWhenDisabledProperty();
+    static void DeferTree(const Windows::UI::Xaml::DependencyObject & element);
 };
 
 struct WINRT_EBO FrameworkTemplate :
@@ -821,7 +829,7 @@ struct WINRT_EBO TriggerCollection :
 struct WINRT_EBO UIElement :
     Windows::UI::Xaml::IUIElement,
     impl::bases<UIElement, Windows::UI::Xaml::DependencyObject>,
-    impl::require<UIElement, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4>
+    impl::require<UIElement, Windows::UI::Xaml::IDependencyObject, Windows::UI::Xaml::IDependencyObject2, Windows::UI::Xaml::IUIElementOverrides, Windows::UI::Xaml::IUIElement2, Windows::UI::Xaml::IUIElement3, Windows::UI::Xaml::IUIElement4, Windows::UI::Xaml::IUIElement5>
 {
     UIElement(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::RoutedEvent KeyDownEvent();
@@ -873,6 +881,20 @@ struct WINRT_EBO UIElement :
     static Windows::UI::Xaml::DependencyProperty IsAccessKeyScopeProperty();
     static Windows::UI::Xaml::DependencyProperty AccessKeyScopeOwnerProperty();
     static Windows::UI::Xaml::DependencyProperty AccessKeyProperty();
+    static Windows::UI::Xaml::DependencyProperty LightsProperty();
+    static Windows::UI::Xaml::DependencyProperty KeyTipPlacementModeProperty();
+    static Windows::UI::Xaml::DependencyProperty KeyTipHorizontalOffsetProperty();
+    static Windows::UI::Xaml::DependencyProperty KeyTipVerticalOffsetProperty();
+    static Windows::UI::Xaml::DependencyProperty XYFocusKeyboardNavigationProperty();
+    static Windows::UI::Xaml::DependencyProperty XYFocusUpNavigationStrategyProperty();
+    static Windows::UI::Xaml::DependencyProperty XYFocusDownNavigationStrategyProperty();
+    static Windows::UI::Xaml::DependencyProperty XYFocusLeftNavigationStrategyProperty();
+    static Windows::UI::Xaml::DependencyProperty XYFocusRightNavigationStrategyProperty();
+    static Windows::UI::Xaml::DependencyProperty HighContrastAdjustmentProperty();
+    static Windows::UI::Xaml::DependencyProperty TabFocusNavigationProperty();
+    static Windows::UI::Xaml::RoutedEvent GettingFocusEvent();
+    static Windows::UI::Xaml::RoutedEvent LosingFocusEvent();
+    static Windows::UI::Xaml::RoutedEvent NoFocusCandidateFoundEvent();
 };
 
 struct WINRT_EBO UnhandledExceptionEventArgs :
@@ -931,7 +953,7 @@ struct WINRT_EBO VisualTransition :
 
 struct WINRT_EBO Window :
     Windows::UI::Xaml::IWindow,
-    impl::require<Window, Windows::UI::Xaml::IWindow2>
+    impl::require<Window, Windows::UI::Xaml::IWindow2, Windows::UI::Xaml::IWindow3>
 {
     Window(std::nullptr_t) noexcept {}
     static Windows::UI::Xaml::Window Current();

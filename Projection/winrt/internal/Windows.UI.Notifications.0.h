@@ -21,6 +21,8 @@ struct IKnownAdaptiveNotificationTextStylesStatics;
 struct IKnownNotificationBindingsStatics;
 struct INotification;
 struct INotificationBinding;
+struct INotificationData;
+struct INotificationDataFactory;
 struct INotificationVisual;
 struct IScheduledTileNotification;
 struct IScheduledTileNotificationFactory;
@@ -41,21 +43,29 @@ struct ITileUpdateManagerStatics2;
 struct ITileUpdater;
 struct ITileUpdater2;
 struct IToastActivatedEventArgs;
+struct IToastCollection;
+struct IToastCollectionFactory;
+struct IToastCollectionManager;
 struct IToastDismissedEventArgs;
 struct IToastFailedEventArgs;
 struct IToastNotification;
 struct IToastNotification2;
 struct IToastNotification3;
+struct IToastNotification4;
 struct IToastNotificationActionTriggerDetail;
 struct IToastNotificationFactory;
 struct IToastNotificationHistory;
 struct IToastNotificationHistory2;
 struct IToastNotificationHistoryChangedTriggerDetail;
+struct IToastNotificationHistoryChangedTriggerDetail2;
 struct IToastNotificationManagerForUser;
+struct IToastNotificationManagerForUser2;
 struct IToastNotificationManagerStatics;
 struct IToastNotificationManagerStatics2;
 struct IToastNotificationManagerStatics4;
+struct IToastNotificationManagerStatics5;
 struct IToastNotifier;
+struct IToastNotifier2;
 struct IUserNotification;
 struct IUserNotificationChangedEventArgs;
 struct AdaptiveNotificationText;
@@ -64,6 +74,7 @@ struct BadgeUpdateManagerForUser;
 struct BadgeUpdater;
 struct Notification;
 struct NotificationBinding;
+struct NotificationData;
 struct NotificationVisual;
 struct ScheduledTileNotification;
 struct ScheduledToastNotification;
@@ -74,6 +85,8 @@ struct TileNotification;
 struct TileUpdateManagerForUser;
 struct TileUpdater;
 struct ToastActivatedEventArgs;
+struct ToastCollection;
+struct ToastCollectionManager;
 struct ToastDismissedEventArgs;
 struct ToastFailedEventArgs;
 struct ToastNotification;
@@ -102,6 +115,8 @@ struct IKnownAdaptiveNotificationTextStylesStatics;
 struct IKnownNotificationBindingsStatics;
 struct INotification;
 struct INotificationBinding;
+struct INotificationData;
+struct INotificationDataFactory;
 struct INotificationVisual;
 struct IScheduledTileNotification;
 struct IScheduledTileNotificationFactory;
@@ -122,21 +137,29 @@ struct ITileUpdateManagerStatics2;
 struct ITileUpdater;
 struct ITileUpdater2;
 struct IToastActivatedEventArgs;
+struct IToastCollection;
+struct IToastCollectionFactory;
+struct IToastCollectionManager;
 struct IToastDismissedEventArgs;
 struct IToastFailedEventArgs;
 struct IToastNotification;
 struct IToastNotification2;
 struct IToastNotification3;
+struct IToastNotification4;
 struct IToastNotificationActionTriggerDetail;
 struct IToastNotificationFactory;
 struct IToastNotificationHistory;
 struct IToastNotificationHistory2;
 struct IToastNotificationHistoryChangedTriggerDetail;
+struct IToastNotificationHistoryChangedTriggerDetail2;
 struct IToastNotificationManagerForUser;
+struct IToastNotificationManagerForUser2;
 struct IToastNotificationManagerStatics;
 struct IToastNotificationManagerStatics2;
 struct IToastNotificationManagerStatics4;
+struct IToastNotificationManagerStatics5;
 struct IToastNotifier;
+struct IToastNotifier2;
 struct IUserNotification;
 struct IUserNotificationChangedEventArgs;
 struct AdaptiveNotificationText;
@@ -149,6 +172,7 @@ struct KnownAdaptiveNotificationTextStyles;
 struct KnownNotificationBindings;
 struct Notification;
 struct NotificationBinding;
+struct NotificationData;
 struct NotificationVisual;
 struct ScheduledTileNotification;
 struct ScheduledToastNotification;
@@ -161,6 +185,8 @@ struct TileUpdateManager;
 struct TileUpdateManagerForUser;
 struct TileUpdater;
 struct ToastActivatedEventArgs;
+struct ToastCollection;
+struct ToastCollectionManager;
 struct ToastDismissedEventArgs;
 struct ToastFailedEventArgs;
 struct ToastNotification;
@@ -190,6 +216,8 @@ template <typename T> struct impl_IKnownAdaptiveNotificationTextStylesStatics;
 template <typename T> struct impl_IKnownNotificationBindingsStatics;
 template <typename T> struct impl_INotification;
 template <typename T> struct impl_INotificationBinding;
+template <typename T> struct impl_INotificationData;
+template <typename T> struct impl_INotificationDataFactory;
 template <typename T> struct impl_INotificationVisual;
 template <typename T> struct impl_IScheduledTileNotification;
 template <typename T> struct impl_IScheduledTileNotificationFactory;
@@ -210,21 +238,29 @@ template <typename T> struct impl_ITileUpdateManagerStatics2;
 template <typename T> struct impl_ITileUpdater;
 template <typename T> struct impl_ITileUpdater2;
 template <typename T> struct impl_IToastActivatedEventArgs;
+template <typename T> struct impl_IToastCollection;
+template <typename T> struct impl_IToastCollectionFactory;
+template <typename T> struct impl_IToastCollectionManager;
 template <typename T> struct impl_IToastDismissedEventArgs;
 template <typename T> struct impl_IToastFailedEventArgs;
 template <typename T> struct impl_IToastNotification;
 template <typename T> struct impl_IToastNotification2;
 template <typename T> struct impl_IToastNotification3;
+template <typename T> struct impl_IToastNotification4;
 template <typename T> struct impl_IToastNotificationActionTriggerDetail;
 template <typename T> struct impl_IToastNotificationFactory;
 template <typename T> struct impl_IToastNotificationHistory;
 template <typename T> struct impl_IToastNotificationHistory2;
 template <typename T> struct impl_IToastNotificationHistoryChangedTriggerDetail;
+template <typename T> struct impl_IToastNotificationHistoryChangedTriggerDetail2;
 template <typename T> struct impl_IToastNotificationManagerForUser;
+template <typename T> struct impl_IToastNotificationManagerForUser2;
 template <typename T> struct impl_IToastNotificationManagerStatics;
 template <typename T> struct impl_IToastNotificationManagerStatics2;
 template <typename T> struct impl_IToastNotificationManagerStatics4;
+template <typename T> struct impl_IToastNotificationManagerStatics5;
 template <typename T> struct impl_IToastNotifier;
+template <typename T> struct impl_IToastNotifier2;
 template <typename T> struct impl_IUserNotification;
 template <typename T> struct impl_IUserNotificationChangedEventArgs;
 
@@ -264,6 +300,13 @@ enum class NotificationSetting
     DisabledForUser = 2,
     DisabledByGroupPolicy = 3,
     DisabledByManifest = 4,
+};
+
+enum class NotificationUpdateResult
+{
+    Succeeded = 0,
+    Failed = 1,
+    NotificationNotFound = 2,
 };
 
 enum class PeriodicUpdateRecurrence
@@ -423,6 +466,12 @@ enum class ToastHistoryChangedType
     Removed = 1,
     Expired = 2,
     Added = 3,
+};
+
+enum class ToastNotificationPriority
+{
+    Default = 0,
+    High = 1,
 };
 
 enum class ToastTemplateType

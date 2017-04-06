@@ -14,6 +14,7 @@
 #include "Windows.Foundation.Collections.1.h"
 #include "Windows.Foundation.1.h"
 #include "Windows.UI.1.h"
+#include "Windows.UI.Xaml.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -160,6 +161,14 @@ struct __declspec(uuid("3518628c-f387-4c25-ac98-44e86c3cadf0")) __declspec(novta
     virtual HRESULT __stdcall remove_Completed(event_token token) = 0;
     virtual HRESULT __stdcall abi_TryStart(Windows::UI::Xaml::IUIElement * destination, bool * returnValue) = 0;
     virtual HRESULT __stdcall abi_Cancel() = 0;
+};
+
+struct __declspec(uuid("5d2f8e5c-584b-4ddd-b668-973891431459")) __declspec(novtable) IConnectedAnimation2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsScaleAnimationEnabled(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsScaleAnimationEnabled(bool value) = 0;
+    virtual HRESULT __stdcall abi_TryStartWithCoordinatedElements(Windows::UI::Xaml::IUIElement * destination, Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> * coordinatedElements, bool * returnValue) = 0;
+    virtual HRESULT __stdcall abi_SetAnimationComponent(winrt::Windows::UI::Xaml::Media::Animation::ConnectedAnimationComponent component, Windows::UI::Composition::ICompositionAnimationBase * animation) = 0;
 };
 
 struct __declspec(uuid("1c6875c9-19bb-4d47-b9aa-66c802dcb9ff")) __declspec(novtable) IConnectedAnimationService : Windows::Foundation::IInspectable
@@ -1250,6 +1259,15 @@ struct WINRT_EBO impl_IConnectedAnimation
     void Completed(event_token token) const;
     bool TryStart(const Windows::UI::Xaml::UIElement & destination) const;
     void Cancel() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IConnectedAnimation2
+{
+    bool IsScaleAnimationEnabled() const;
+    void IsScaleAnimationEnabled(bool value) const;
+    bool TryStart(const Windows::UI::Xaml::UIElement & destination, iterable<Windows::UI::Xaml::UIElement> coordinatedElements) const;
+    void SetAnimationComponent(Windows::UI::Xaml::Media::Animation::ConnectedAnimationComponent component, const Windows::UI::Composition::ICompositionAnimationBase & animation) const;
 };
 
 template <typename D>
@@ -2346,6 +2364,12 @@ template <> struct traits<Windows::UI::Xaml::Media::Animation::IConnectedAnimati
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimation;
     template <typename D> using consume = Windows::UI::Xaml::Media::Animation::impl_IConnectedAnimation<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Media::Animation::IConnectedAnimation2>
+{
+    using abi = ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimation2;
+    template <typename D> using consume = Windows::UI::Xaml::Media::Animation::impl_IConnectedAnimation2<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::IConnectedAnimationService>

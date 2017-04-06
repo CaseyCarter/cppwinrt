@@ -47,12 +47,12 @@ struct produce<D, Windows::Devices::Pwm::IPwmController> : produce_base<D, Windo
         }
     }
 
-    HRESULT __stdcall abi_SetDesiredFrequency(double desiredFrequency, double * value) noexcept override
+    HRESULT __stdcall abi_SetDesiredFrequency(double desiredFrequency, double * result) noexcept override
     {
         try
         {
             typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().SetDesiredFrequency(desiredFrequency));
+            *result = detach_abi(this->shim().SetDesiredFrequency(desiredFrequency));
             return S_OK;
         }
         catch (...)
@@ -133,6 +133,55 @@ struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics2> : produce_base<
         {
             typename D::abi_guard guard(this->shim());
             *operation = detach_abi(this->shim().GetDefaultAsync());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::Pwm::IPwmControllerStatics3> : produce_base<D, Windows::Devices::Pwm::IPwmControllerStatics3>
+{
+    HRESULT __stdcall abi_GetDeviceSelector(impl::abi_arg_out<hstring> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetDeviceSelector());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetDeviceSelectorFromFriendlyName(impl::abi_arg_in<hstring> friendlyName, impl::abi_arg_out<hstring> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().GetDeviceSelector(*reinterpret_cast<const hstring *>(&friendlyName)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_FromIdAsync(impl::abi_arg_in<hstring> deviceId, impl::abi_arg_out<Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController>> operation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *operation = detach_abi(this->shim().FromIdAsync(*reinterpret_cast<const hstring *>(&deviceId)));
             return S_OK;
         }
         catch (...)
@@ -280,9 +329,9 @@ template <typename D> double impl_IPwmController<D>::ActualFrequency() const
 
 template <typename D> double impl_IPwmController<D>::SetDesiredFrequency(double desiredFrequency) const
 {
-    double value {};
-    check_hresult(WINRT_SHIM(IPwmController)->abi_SetDesiredFrequency(desiredFrequency, &value));
-    return value;
+    double result {};
+    check_hresult(WINRT_SHIM(IPwmController)->abi_SetDesiredFrequency(desiredFrequency, &result));
+    return result;
 }
 
 template <typename D> double impl_IPwmController<D>::MinFrequency() const
@@ -317,6 +366,27 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> operation;
     check_hresult(WINRT_SHIM(IPwmControllerStatics2)->abi_GetDefaultAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> hstring impl_IPwmControllerStatics3<D>::GetDeviceSelector() const
+{
+    hstring result;
+    check_hresult(WINRT_SHIM(IPwmControllerStatics3)->abi_GetDeviceSelector(put_abi(result)));
+    return result;
+}
+
+template <typename D> hstring impl_IPwmControllerStatics3<D>::GetDeviceSelector(hstring_view friendlyName) const
+{
+    hstring result;
+    check_hresult(WINRT_SHIM(IPwmControllerStatics3)->abi_GetDeviceSelectorFromFriendlyName(get_abi(friendlyName), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> impl_IPwmControllerStatics3<D>::FromIdAsync(hstring_view deviceId) const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> operation;
+    check_hresult(WINRT_SHIM(IPwmControllerStatics3)->abi_FromIdAsync(get_abi(deviceId), put_abi(operation)));
     return operation;
 }
 
@@ -378,6 +448,21 @@ inline Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController
     return get_activation_factory<PwmController, IPwmControllerStatics2>().GetDefaultAsync();
 }
 
+inline hstring PwmController::GetDeviceSelector()
+{
+    return get_activation_factory<PwmController, IPwmControllerStatics3>().GetDeviceSelector();
+}
+
+inline hstring PwmController::GetDeviceSelector(hstring_view friendlyName)
+{
+    return get_activation_factory<PwmController, IPwmControllerStatics3>().GetDeviceSelector(friendlyName);
+}
+
+inline Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> PwmController::FromIdAsync(hstring_view deviceId)
+{
+    return get_activation_factory<PwmController, IPwmControllerStatics3>().FromIdAsync(deviceId);
+}
+
 }
 
 }
@@ -404,6 +489,15 @@ template<>
 struct std::hash<winrt::Windows::Devices::Pwm::IPwmControllerStatics2>
 {
     size_t operator()(const winrt::Windows::Devices::Pwm::IPwmControllerStatics2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Pwm::IPwmControllerStatics3>
+{
+    size_t operator()(const winrt::Windows::Devices::Pwm::IPwmControllerStatics3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

@@ -1629,34 +1629,6 @@ template <typename D> Windows::Storage::Streams::DataWriter impl_IDataWriterFact
     return dataWriter;
 }
 
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> impl_IRandomAccessStreamReference<D>::OpenReadAsync() const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> operation;
-    check_hresult(WINRT_SHIM(IRandomAccessStreamReference)->abi_OpenReadAsync(put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> impl_IRandomAccessStreamStatics<D>::CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination) const
-{
-    Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> operation;
-    check_hresult(WINRT_SHIM(IRandomAccessStreamStatics)->abi_CopyAsync(get_abi(source), get_abi(destination), put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> impl_IRandomAccessStreamStatics<D>::CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination, uint64_t bytesToCopy) const
-{
-    Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> operation;
-    check_hresult(WINRT_SHIM(IRandomAccessStreamStatics)->abi_CopySizeAsync(get_abi(source), get_abi(destination), bytesToCopy, put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> impl_IRandomAccessStreamStatics<D>::CopyAndCloseAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination) const
-{
-    Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> operation;
-    check_hresult(WINRT_SHIM(IRandomAccessStreamStatics)->abi_CopyAndCloseAsync(get_abi(source), get_abi(destination), put_abi(operation)));
-    return operation;
-}
-
 template <typename D> Windows::Storage::Streams::Buffer impl_IBufferFactory<D>::Create(uint32_t capacity) const
 {
     Windows::Storage::Streams::Buffer value { nullptr };
@@ -1702,34 +1674,6 @@ template <typename D> hstring impl_IContentTypeProvider<D>::ContentType() const
     hstring value;
     check_hresult(WINRT_SHIM(IContentTypeProvider)->get_ContentType(put_abi(value)));
     return value;
-}
-
-template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> impl_IInputStreamReference<D>::OpenSequentialReadAsync() const
-{
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> operation;
-    check_hresult(WINRT_SHIM(IInputStreamReference)->abi_OpenSequentialReadAsync(put_abi(operation)));
-    return operation;
-}
-
-template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IRandomAccessStreamReferenceStatics<D>::CreateFromFile(const Windows::Storage::IStorageFile & file) const
-{
-    Windows::Storage::Streams::RandomAccessStreamReference streamReference { nullptr };
-    check_hresult(WINRT_SHIM(IRandomAccessStreamReferenceStatics)->abi_CreateFromFile(get_abi(file), put_abi(streamReference)));
-    return streamReference;
-}
-
-template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IRandomAccessStreamReferenceStatics<D>::CreateFromUri(const Windows::Foundation::Uri & uri) const
-{
-    Windows::Storage::Streams::RandomAccessStreamReference streamReference { nullptr };
-    check_hresult(WINRT_SHIM(IRandomAccessStreamReferenceStatics)->abi_CreateFromUri(get_abi(uri), put_abi(streamReference)));
-    return streamReference;
-}
-
-template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IRandomAccessStreamReferenceStatics<D>::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream) const
-{
-    Windows::Storage::Streams::RandomAccessStreamReference streamReference { nullptr };
-    check_hresult(WINRT_SHIM(IRandomAccessStreamReferenceStatics)->abi_CreateFromStream(get_abi(stream), put_abi(streamReference)));
-    return streamReference;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint32_t> impl_IInputStream<D>::ReadAsync(const Windows::Storage::Streams::IBuffer & buffer, uint32_t count, Windows::Storage::Streams::InputStreamOptions options) const
@@ -1810,6 +1754,62 @@ template <typename D> bool impl_IRandomAccessStream<D>::CanWrite() const
     bool value {};
     check_hresult(WINRT_SHIM(IRandomAccessStream)->get_CanWrite(&value));
     return value;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> impl_IRandomAccessStreamReference<D>::OpenReadAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> operation;
+    check_hresult(WINRT_SHIM(IRandomAccessStreamReference)->abi_OpenReadAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> impl_IRandomAccessStreamStatics<D>::CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination) const
+{
+    Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> operation;
+    check_hresult(WINRT_SHIM(IRandomAccessStreamStatics)->abi_CopyAsync(get_abi(source), get_abi(destination), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> impl_IRandomAccessStreamStatics<D>::CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination, uint64_t bytesToCopy) const
+{
+    Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> operation;
+    check_hresult(WINRT_SHIM(IRandomAccessStreamStatics)->abi_CopySizeAsync(get_abi(source), get_abi(destination), bytesToCopy, put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> impl_IRandomAccessStreamStatics<D>::CopyAndCloseAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination) const
+{
+    Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> operation;
+    check_hresult(WINRT_SHIM(IRandomAccessStreamStatics)->abi_CopyAndCloseAsync(get_abi(source), get_abi(destination), put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> impl_IInputStreamReference<D>::OpenSequentialReadAsync() const
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> operation;
+    check_hresult(WINRT_SHIM(IInputStreamReference)->abi_OpenSequentialReadAsync(put_abi(operation)));
+    return operation;
+}
+
+template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IRandomAccessStreamReferenceStatics<D>::CreateFromFile(const Windows::Storage::IStorageFile & file) const
+{
+    Windows::Storage::Streams::RandomAccessStreamReference streamReference { nullptr };
+    check_hresult(WINRT_SHIM(IRandomAccessStreamReferenceStatics)->abi_CreateFromFile(get_abi(file), put_abi(streamReference)));
+    return streamReference;
+}
+
+template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IRandomAccessStreamReferenceStatics<D>::CreateFromUri(const Windows::Foundation::Uri & uri) const
+{
+    Windows::Storage::Streams::RandomAccessStreamReference streamReference { nullptr };
+    check_hresult(WINRT_SHIM(IRandomAccessStreamReferenceStatics)->abi_CreateFromUri(get_abi(uri), put_abi(streamReference)));
+    return streamReference;
+}
+
+template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IRandomAccessStreamReferenceStatics<D>::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream) const
+{
+    Windows::Storage::Streams::RandomAccessStreamReference streamReference { nullptr };
+    check_hresult(WINRT_SHIM(IRandomAccessStreamReferenceStatics)->abi_CreateFromStream(get_abi(stream), put_abi(streamReference)));
+    return streamReference;
 }
 
 inline Buffer::Buffer(uint32_t capacity) :

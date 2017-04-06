@@ -15,12 +15,14 @@ struct WINRT_EBO SocialFeedChildItem :
     SocialFeedChildItem(std::nullptr_t) noexcept {}
     SocialFeedChildItem();
 };
+struct [[deprecated("SocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialFeedChildItem;
 
 struct WINRT_EBO SocialFeedContent :
     Windows::ApplicationModel::SocialInfo::ISocialFeedContent
 {
     SocialFeedContent(std::nullptr_t) noexcept {}
 };
+struct [[deprecated("SocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialFeedContent;
 
 struct WINRT_EBO SocialFeedItem :
     Windows::ApplicationModel::SocialInfo::ISocialFeedItem
@@ -28,6 +30,7 @@ struct WINRT_EBO SocialFeedItem :
     SocialFeedItem(std::nullptr_t) noexcept {}
     SocialFeedItem();
 };
+struct [[deprecated("SocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialFeedItem;
 
 struct WINRT_EBO SocialFeedSharedItem :
     Windows::ApplicationModel::SocialInfo::ISocialFeedSharedItem
@@ -35,6 +38,7 @@ struct WINRT_EBO SocialFeedSharedItem :
     SocialFeedSharedItem(std::nullptr_t) noexcept {}
     SocialFeedSharedItem();
 };
+struct [[deprecated("SocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialFeedSharedItem;
 
 struct WINRT_EBO SocialItemThumbnail :
     Windows::ApplicationModel::SocialInfo::ISocialItemThumbnail
@@ -42,12 +46,14 @@ struct WINRT_EBO SocialItemThumbnail :
     SocialItemThumbnail(std::nullptr_t) noexcept {}
     SocialItemThumbnail();
 };
+struct [[deprecated("SocialItemThumbnail is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialItemThumbnail;
 
 struct WINRT_EBO SocialUserInfo :
     Windows::ApplicationModel::SocialInfo::ISocialUserInfo
 {
     SocialUserInfo(std::nullptr_t) noexcept {}
 };
+struct [[deprecated("SocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")]] SocialUserInfo;
 
 }
 

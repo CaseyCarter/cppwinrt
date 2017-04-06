@@ -8,8 +8,8 @@ WINRT_WARNING_PUSH
 
 #include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
-#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Devices.Enumeration.3.h"
+#include "internal/Windows.Foundation.3.h"
 #include "internal/Windows.Networking.Sockets.3.h"
 #include "internal/Windows.Devices.WiFiDirect.Services.3.h"
 #include "Windows.Devices.WiFiDirect.h"
@@ -1106,6 +1106,27 @@ template <typename D> Windows::Devices::WiFiDirect::Services::WiFiDirectServiceS
     return value;
 }
 
+template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IWiFiDirectServiceSessionRequest<D>::DeviceInformation() const
+{
+    Windows::Devices::Enumeration::DeviceInformation value { nullptr };
+    check_hresult(WINRT_SHIM(IWiFiDirectServiceSessionRequest)->get_DeviceInformation(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::WiFiDirect::Services::WiFiDirectServiceProvisioningInfo impl_IWiFiDirectServiceSessionRequest<D>::ProvisioningInfo() const
+{
+    Windows::Devices::WiFiDirect::Services::WiFiDirectServiceProvisioningInfo value { nullptr };
+    check_hresult(WINRT_SHIM(IWiFiDirectServiceSessionRequest)->get_ProvisioningInfo(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Storage::Streams::IBuffer impl_IWiFiDirectServiceSessionRequest<D>::SessionInfo() const
+{
+    Windows::Storage::Streams::IBuffer value;
+    check_hresult(WINRT_SHIM(IWiFiDirectServiceSessionRequest)->get_SessionInfo(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser impl_IWiFiDirectServiceAdvertiserFactory<D>::CreateWiFiDirectServiceAdvertiser(hstring_view serviceName) const
 {
     Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser result { nullptr };
@@ -1397,27 +1418,6 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiF
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession> result;
     check_hresult(WINRT_SHIM(IWiFiDirectService)->abi_ConnectAsyncWithPin(get_abi(pin), put_abi(result)));
     return result;
-}
-
-template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IWiFiDirectServiceSessionRequest<D>::DeviceInformation() const
-{
-    Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(WINRT_SHIM(IWiFiDirectServiceSessionRequest)->get_DeviceInformation(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Devices::WiFiDirect::Services::WiFiDirectServiceProvisioningInfo impl_IWiFiDirectServiceSessionRequest<D>::ProvisioningInfo() const
-{
-    Windows::Devices::WiFiDirect::Services::WiFiDirectServiceProvisioningInfo value { nullptr };
-    check_hresult(WINRT_SHIM(IWiFiDirectServiceSessionRequest)->get_ProvisioningInfo(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Storage::Streams::IBuffer impl_IWiFiDirectServiceSessionRequest<D>::SessionInfo() const
-{
-    Windows::Storage::Streams::IBuffer value;
-    check_hresult(WINRT_SHIM(IWiFiDirectServiceSessionRequest)->get_SessionInfo(put_abi(value)));
-    return value;
 }
 
 template <typename D> hstring impl_IWiFiDirectServiceSession<D>::ServiceName() const

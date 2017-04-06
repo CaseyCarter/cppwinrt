@@ -1853,6 +1853,66 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense> : pr
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense2> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicense2>
+{
+    HRESULT __stdcall get_SecureStopId(GUID * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SecureStopId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_SecurityLevel(uint32_t * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().SecurityLevel());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_InMemoryOnly(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().InMemoryOnly());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ExpiresInRealTime(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ExpiresInRealTime());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest>
 {
     HRESULT __stdcall get_ContentHeader(impl::abi_arg_out<Windows::Media::Protection::PlayReady::IPlayReadyContentHeader> value) noexcept override
@@ -1932,6 +1992,25 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquis
 };
 
 template <typename D>
+struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest3> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest3>
+{
+    HRESULT __stdcall abi_CreateLicenseIterable(impl::abi_arg_in<Windows::Media::Protection::PlayReady::IPlayReadyContentHeader> contentHeader, bool fullyEvaluated, impl::abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::Media::Protection::PlayReady::IPlayReadyLicense>> result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().CreateLicenseIterable(*reinterpret_cast<const Windows::Media::Protection::PlayReady::PlayReadyContentHeader *>(&contentHeader), fullyEvaluated));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *result = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseIterableFactory> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseIterableFactory>
 {
     HRESULT __stdcall abi_CreateInstance(impl::abi_arg_in<Windows::Media::Protection::PlayReady::IPlayReadyContentHeader> contentHeader, bool fullyEvaluated, impl::abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::Media::Protection::PlayReady::IPlayReadyLicense>> instance) noexcept override
@@ -1997,6 +2076,25 @@ struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSessio
         }
         catch (...)
         {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession2> : produce_base<D, Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession2>
+{
+    HRESULT __stdcall abi_CreateLicenseIterable(impl::abi_arg_in<Windows::Media::Protection::PlayReady::IPlayReadyContentHeader> contentHeader, bool fullyEvaluated, impl::abi_arg_out<Windows::Foundation::Collections::IIterable<Windows::Media::Protection::PlayReady::IPlayReadyLicense>> licenseIterable) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *licenseIterable = detach_abi(this->shim().CreateLicenseIterable(*reinterpret_cast<const Windows::Media::Protection::PlayReady::PlayReadyContentHeader *>(&contentHeader), fullyEvaluated));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *licenseIterable = nullptr;
             return impl::to_hresult();
         }
     }
@@ -2752,6 +2850,34 @@ template <typename D> GUID impl_IPlayReadyLicense<D>::GetKIDAtChainDepth(uint32_
     return kid;
 }
 
+template <typename D> GUID impl_IPlayReadyLicense2<D>::SecureStopId() const
+{
+    GUID value {};
+    check_hresult(WINRT_SHIM(IPlayReadyLicense2)->get_SecureStopId(&value));
+    return value;
+}
+
+template <typename D> uint32_t impl_IPlayReadyLicense2<D>::SecurityLevel() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(IPlayReadyLicense2)->get_SecurityLevel(&value));
+    return value;
+}
+
+template <typename D> bool impl_IPlayReadyLicense2<D>::InMemoryOnly() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IPlayReadyLicense2)->get_InMemoryOnly(&value));
+    return value;
+}
+
+template <typename D> bool impl_IPlayReadyLicense2<D>::ExpiresInRealTime() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IPlayReadyLicense2)->get_ExpiresInRealTime(&value));
+    return value;
+}
+
 template <typename D> Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable impl_IPlayReadyLicenseIterableFactory<D>::CreateInstance(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader, bool fullyEvaluated) const
 {
     Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable instance { nullptr };
@@ -2951,6 +3077,13 @@ template <typename D> Windows::Media::Protection::PlayReady::IPlayReadyLicenseAc
 template <typename D> void impl_IPlayReadyLicenseSession<D>::ConfigureMediaProtectionManager(const Windows::Media::Protection::MediaProtectionManager & mpm) const
 {
     check_hresult(WINRT_SHIM(IPlayReadyLicenseSession)->abi_ConfigureMediaProtectionManager(get_abi(mpm)));
+}
+
+template <typename D> Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable impl_IPlayReadyLicenseSession2<D>::CreateLicenseIterable(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader, bool fullyEvaluated) const
+{
+    Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable licenseIterable { nullptr };
+    check_hresult(WINRT_SHIM(IPlayReadyLicenseSession2)->abi_CreateLicenseIterable(get_abi(contentHeader), fullyEvaluated, put_abi(licenseIterable)));
+    return licenseIterable;
 }
 
 template <typename D> Windows::Media::Protection::PlayReady::PlayReadyLicenseSession impl_IPlayReadyLicenseSessionFactory<D>::CreateInstance(const Windows::Foundation::Collections::IPropertySet & configuration) const
@@ -3615,6 +3748,13 @@ template <typename D> GUID impl_IPlayReadyLicenseAcquisitionServiceRequest2<D>::
     return value;
 }
 
+template <typename D> Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable impl_IPlayReadyLicenseAcquisitionServiceRequest3<D>::CreateLicenseIterable(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader, bool fullyEvaluated) const
+{
+    Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable result { nullptr };
+    check_hresult(WINRT_SHIM(IPlayReadyLicenseAcquisitionServiceRequest3)->abi_CreateLicenseIterable(get_abi(contentHeader), fullyEvaluated, put_abi(result)));
+    return result;
+}
+
 template <typename D> com_array<uint8_t> impl_IPlayReadyMeteringReportServiceRequest<D>::MeteringCertificate() const
 {
     com_array<uint8_t> meteringCertBytes {};
@@ -3690,6 +3830,10 @@ inline NDTCPMessenger::NDTCPMessenger(hstring_view remoteHostName, uint32_t remo
     NDTCPMessenger(get_activation_factory<NDTCPMessenger, INDTCPMessengerFactory>().CreateInstance(remoteHostName, remoteHostPort))
 {}
 
+inline PlayReadyContentHeader::PlayReadyContentHeader(uint32_t dwFlags, array_view<const GUID> contentKeyIds, array_view<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId) :
+    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory2>().CreateInstanceFromComponents2(dwFlags, contentKeyIds, contentKeyIdStrings, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
+{}
+
 inline PlayReadyContentHeader::PlayReadyContentHeader(array_view<const uint8_t> headerBytes, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId) :
     PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory>().CreateInstanceFromWindowsMediaDrmHeader(headerBytes, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
 {}
@@ -3700,10 +3844,6 @@ inline PlayReadyContentHeader::PlayReadyContentHeader(GUID contentKeyId, hstring
 
 inline PlayReadyContentHeader::PlayReadyContentHeader(array_view<const uint8_t> headerBytes) :
     PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory>().CreateInstanceFromPlayReadyHeader(headerBytes))
-{}
-
-inline PlayReadyContentHeader::PlayReadyContentHeader(uint32_t dwFlags, array_view<const GUID> contentKeyIds, array_view<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_view customAttributes, GUID domainServiceId) :
-    PlayReadyContentHeader(get_activation_factory<PlayReadyContentHeader, IPlayReadyContentHeaderFactory2>().CreateInstanceFromComponents2(dwFlags, contentKeyIds, contentKeyIdStrings, contentEncryptionAlgorithm, licenseAcquisitionUrl, licenseAcquisitionUserInterfaceUrl, customAttributes, domainServiceId))
 {}
 
 inline Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest PlayReadyContentResolver::ServiceRequest(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader)
@@ -4139,6 +4279,15 @@ struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicense
 };
 
 template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicense2>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicense2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest>
 {
     size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest & value) const noexcept
@@ -4151,6 +4300,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest2>
 {
     size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest3>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest3 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -4178,6 +4336,15 @@ template<>
 struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession>
 {
     size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession2>
+{
+    size_t operator()(const winrt::Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

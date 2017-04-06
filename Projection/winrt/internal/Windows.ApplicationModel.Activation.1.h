@@ -7,6 +7,7 @@
 #include "Windows.ApplicationModel.Activation.0.h"
 #include "Windows.ApplicationModel.Appointments.AppointmentsProvider.0.h"
 #include "Windows.ApplicationModel.Background.0.h"
+#include "Windows.ApplicationModel.Contacts.0.h"
 #include "Windows.ApplicationModel.DataTransfer.ShareTarget.0.h"
 #include "Windows.ApplicationModel.Search.0.h"
 #include "Windows.ApplicationModel.UserDataAccounts.Provider.0.h"
@@ -89,6 +90,12 @@ struct __declspec(uuid("ab14bee0-e760-440e-a91c-44796de3a92d")) __declspec(novta
 struct __declspec(uuid("d06eb1c7-3805-4ecb-b757-6cf15e26fef3")) __declspec(novtable) ICachedFileUpdaterActivatedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_CachedFileUpdaterUI(Windows::Storage::Provider::ICachedFileUpdaterUI ** value) = 0;
+};
+
+struct __declspec(uuid("52bb63e4-d3d4-4b63-8051-4af2082cab80")) __declspec(novtable) IContactPanelActivatedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ContactPanel(Windows::ApplicationModel::Contacts::IContactPanel ** value) = 0;
+    virtual HRESULT __stdcall get_Contact(Windows::ApplicationModel::Contacts::IContact ** value) = 0;
 };
 
 struct __declspec(uuid("e58106b5-155f-4a94-a742-c7e08f4e188c")) __declspec(novtable) IContinuationActivatedEventArgs : Windows::Foundation::IInspectable
@@ -281,6 +288,7 @@ template <> struct traits<Windows::ApplicationModel::Activation::AppointmentsPro
 template <> struct traits<Windows::ApplicationModel::Activation::AppointmentsProviderShowTimeFrameActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderShowTimeFrameActivatedEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IBackgroundActivatedEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs; };
+template <> struct traits<Windows::ApplicationModel::Activation::ContactPanelActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Activation::DeviceActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IDeviceActivatedEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Activation::DevicePairingActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IDevicePairingActivatedEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Activation::DialReceiverActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IDialReceiverActivatedEventArgs; };
@@ -292,6 +300,7 @@ template <> struct traits<Windows::ApplicationModel::Activation::FileSavePickerC
 template <> struct traits<Windows::ApplicationModel::Activation::FolderPickerContinuationEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IFolderPickerContinuationEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Activation::LaunchActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Activation::LockScreenActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::ILockScreenActivatedEventArgs; };
+template <> struct traits<Windows::ApplicationModel::Activation::LockScreenComponentActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IActivatedEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Activation::PickerReturnedActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IPickerReturnedActivatedEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IProtocolActivatedEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Activation::ProtocolForResultsActivatedEventArgs> { using default_interface = Windows::ApplicationModel::Activation::IProtocolForResultsActivatedEventArgs; };
@@ -379,6 +388,13 @@ template <typename D>
 struct WINRT_EBO impl_ICachedFileUpdaterActivatedEventArgs
 {
     Windows::Storage::Provider::CachedFileUpdaterUI CachedFileUpdaterUI() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContactPanelActivatedEventArgs
+{
+    Windows::ApplicationModel::Contacts::ContactPanel ContactPanel() const;
+    Windows::ApplicationModel::Contacts::Contact Contact() const;
 };
 
 template <typename D>
@@ -666,6 +682,12 @@ template <> struct traits<Windows::ApplicationModel::Activation::ICachedFileUpda
     template <typename D> using consume = Windows::ApplicationModel::Activation::impl_ICachedFileUpdaterActivatedEventArgs<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::Activation::IContactPanelActivatedEventArgs;
+    template <typename D> using consume = Windows::ApplicationModel::Activation::impl_IContactPanelActivatedEventArgs<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::IContinuationActivatedEventArgs;
@@ -912,6 +934,12 @@ template <> struct traits<Windows::ApplicationModel::Activation::CachedFileUpdat
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.CachedFileUpdaterActivatedEventArgs"; }
 };
 
+template <> struct traits<Windows::ApplicationModel::Activation::ContactPanelActivatedEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::Activation::ContactPanelActivatedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.ContactPanelActivatedEventArgs"; }
+};
+
 template <> struct traits<Windows::ApplicationModel::Activation::DeviceActivatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Activation::DeviceActivatedEventArgs;
@@ -976,6 +1004,12 @@ template <> struct traits<Windows::ApplicationModel::Activation::LockScreenActiv
 {
     using abi = ABI::Windows::ApplicationModel::Activation::LockScreenActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.LockScreenActivatedEventArgs"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::Activation::LockScreenComponentActivatedEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::Activation::LockScreenComponentActivatedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Activation.LockScreenComponentActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Activation::PickerReturnedActivatedEventArgs>

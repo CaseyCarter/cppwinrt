@@ -216,6 +216,13 @@ struct IWebTokenRequest2 :
     IWebTokenRequest2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IWebTokenRequest3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IWebTokenRequest3>
+{
+    IWebTokenRequest3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IWebTokenRequestFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IWebTokenRequestFactory>

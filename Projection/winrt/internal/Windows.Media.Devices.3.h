@@ -28,6 +28,25 @@ struct WINRT_EBO AudioDeviceController :
     AudioDeviceController(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO AudioDeviceModule :
+    Windows::Media::Devices::IAudioDeviceModule
+{
+    AudioDeviceModule(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO AudioDeviceModuleNotificationEventArgs :
+    Windows::Media::Devices::IAudioDeviceModuleNotificationEventArgs
+{
+    AudioDeviceModuleNotificationEventArgs(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO AudioDeviceModulesManager :
+    Windows::Media::Devices::IAudioDeviceModulesManager
+{
+    AudioDeviceModulesManager(std::nullptr_t) noexcept {}
+    AudioDeviceModulesManager(hstring_view deviceId);
+};
+
 struct WINRT_EBO DefaultAudioCaptureDeviceChangedEventArgs :
     Windows::Media::Devices::IDefaultAudioDeviceChangedEventArgs
 {
@@ -134,6 +153,12 @@ struct WINRT_EBO MediaDeviceControlCapabilities :
     MediaDeviceControlCapabilities(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO ModuleCommandResult :
+    Windows::Media::Devices::IModuleCommandResult
+{
+    ModuleCommandResult(std::nullptr_t) noexcept {}
+};
+
 struct WINRT_EBO OpticalImageStabilizationControl :
     Windows::Media::Devices::IOpticalImageStabilizationControl
 {
@@ -174,9 +199,15 @@ struct WINRT_EBO TorchControl :
 
 struct WINRT_EBO VideoDeviceController :
     Windows::Media::Devices::IVideoDeviceController,
-    impl::require<VideoDeviceController, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController2, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController3, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController4, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController>
+    impl::require<VideoDeviceController, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController2, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController3, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController4, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController5, Windows::Media::Devices::IAdvancedVideoCaptureDeviceController>
 {
     VideoDeviceController(std::nullptr_t) noexcept {}
+};
+
+struct WINRT_EBO VideoDeviceControllerGetDevicePropertyResult :
+    Windows::Media::Devices::IVideoDeviceControllerGetDevicePropertyResult
+{
+    VideoDeviceControllerGetDevicePropertyResult(std::nullptr_t) noexcept {}
 };
 
 struct WINRT_EBO WhiteBalanceControl :

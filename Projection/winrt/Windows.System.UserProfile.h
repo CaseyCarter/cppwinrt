@@ -92,6 +92,73 @@ struct produce<D, Windows::System::UserProfile::IAdvertisingManagerStatics2> : p
 };
 
 template <typename D>
+struct produce<D, Windows::System::UserProfile::IDiagnosticsSettings> : produce_base<D, Windows::System::UserProfile::IDiagnosticsSettings>
+{
+    HRESULT __stdcall get_CanUseDiagnosticsToTailorExperiences(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().CanUseDiagnosticsToTailorExperiences());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_User(impl::abi_arg_out<Windows::System::IUser> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().User());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::System::UserProfile::IDiagnosticsSettingsStatics> : produce_base<D, Windows::System::UserProfile::IDiagnosticsSettingsStatics>
+{
+    HRESULT __stdcall abi_GetDefault(impl::abi_arg_out<Windows::System::UserProfile::IDiagnosticsSettings> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetDefault());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_GetForUser(impl::abi_arg_in<Windows::System::IUser> user, impl::abi_arg_out<Windows::System::UserProfile::IDiagnosticsSettings> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().GetForUser(*reinterpret_cast<const Windows::System::User *>(&user)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::System::UserProfile::IFirstSignInSettings> : produce_base<D, Windows::System::UserProfile::IFirstSignInSettings>
 {};
 
@@ -306,6 +373,34 @@ template <typename D> Windows::System::UserProfile::AdvertisingManagerForUser im
     return value;
 }
 
+template <typename D> Windows::System::UserProfile::DiagnosticsSettings impl_IDiagnosticsSettingsStatics<D>::GetDefault() const
+{
+    Windows::System::UserProfile::DiagnosticsSettings value { nullptr };
+    check_hresult(WINRT_SHIM(IDiagnosticsSettingsStatics)->abi_GetDefault(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::System::UserProfile::DiagnosticsSettings impl_IDiagnosticsSettingsStatics<D>::GetForUser(const Windows::System::User & user) const
+{
+    Windows::System::UserProfile::DiagnosticsSettings value { nullptr };
+    check_hresult(WINRT_SHIM(IDiagnosticsSettingsStatics)->abi_GetForUser(get_abi(user), put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IDiagnosticsSettings<D>::CanUseDiagnosticsToTailorExperiences() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IDiagnosticsSettings)->get_CanUseDiagnosticsToTailorExperiences(&value));
+    return value;
+}
+
+template <typename D> Windows::System::User impl_IDiagnosticsSettings<D>::User() const
+{
+    Windows::System::User value { nullptr };
+    check_hresult(WINRT_SHIM(IDiagnosticsSettings)->get_User(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IUserProfilePersonalizationSettings<D>::TrySetLockScreenImageAsync(const Windows::Storage::StorageFile & imageFile) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
@@ -393,6 +488,16 @@ inline Windows::System::UserProfile::AdvertisingManagerForUser AdvertisingManage
     return get_activation_factory<AdvertisingManager, IAdvertisingManagerStatics2>().GetForUser(user);
 }
 
+inline Windows::System::UserProfile::DiagnosticsSettings DiagnosticsSettings::GetDefault()
+{
+    return get_activation_factory<DiagnosticsSettings, IDiagnosticsSettingsStatics>().GetDefault();
+}
+
+inline Windows::System::UserProfile::DiagnosticsSettings DiagnosticsSettings::GetForUser(const Windows::System::User & user)
+{
+    return get_activation_factory<DiagnosticsSettings, IDiagnosticsSettingsStatics>().GetForUser(user);
+}
+
 inline Windows::System::UserProfile::FirstSignInSettings FirstSignInSettings::GetDefault()
 {
     return get_activation_factory<FirstSignInSettings, IFirstSignInSettingsStatics>().GetDefault();
@@ -470,6 +575,24 @@ struct std::hash<winrt::Windows::System::UserProfile::IAdvertisingManagerStatics
 };
 
 template<>
+struct std::hash<winrt::Windows::System::UserProfile::IDiagnosticsSettings>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::IDiagnosticsSettings & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::IDiagnosticsSettingsStatics>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::IDiagnosticsSettingsStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
 struct std::hash<winrt::Windows::System::UserProfile::IFirstSignInSettings>
 {
     size_t operator()(const winrt::Windows::System::UserProfile::IFirstSignInSettings & value) const noexcept
@@ -518,6 +641,15 @@ template<>
 struct std::hash<winrt::Windows::System::UserProfile::AdvertisingManagerForUser>
 {
     size_t operator()(const winrt::Windows::System::UserProfile::AdvertisingManagerForUser & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::System::UserProfile::DiagnosticsSettings>
+{
+    size_t operator()(const winrt::Windows::System::UserProfile::DiagnosticsSettings & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

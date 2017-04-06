@@ -75,6 +75,16 @@ template <> struct __declspec(uuid("2ca3a9b7-3348-5953-8d0d-ef8d78640b23")) __de
 template <> struct __declspec(uuid("1555a628-3dff-5fd0-b10a-ca6adb2440c6")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Foundation::IInspectable> {};
 #endif
 
+#ifndef WINRT_GENERIC_abc21152_2495_5e8c_aed3_7dc55309ac08
+#define WINRT_GENERIC_abc21152_2495_5e8c_aed3_7dc55309ac08
+template <> struct __declspec(uuid("abc21152-2495-5e8c-aed3-7dc55309ac08")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> {};
+#endif
+
+#ifndef WINRT_GENERIC_4a7bcb69_2b09_55d1_af68_b5aa5c2c6471
+#define WINRT_GENERIC_4a7bcb69_2b09_55d1_af68_b5aa5c2c6471
+template <> struct __declspec(uuid("4a7bcb69-2b09-55d1-af68-b5aa5c2c6471")) __declspec(novtable) IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> : impl_IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> {};
+#endif
+
 
 }
 
@@ -175,11 +185,6 @@ template <> struct __declspec(uuid("702b0f49-a742-5c3a-abd6-77f9999b8a09")) __de
 template <> struct __declspec(uuid("f04b9d99-c0d5-5b48-9ae5-9802093cb45e")) __declspec(novtable) IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> : impl_IAsyncOperation<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> {};
 #endif
 
-#ifndef WINRT_GENERIC_4a7bcb69_2b09_55d1_af68_b5aa5c2c6471
-#define WINRT_GENERIC_4a7bcb69_2b09_55d1_af68_b5aa5c2c6471
-template <> struct __declspec(uuid("4a7bcb69-2b09-55d1-af68-b5aa5c2c6471")) __declspec(novtable) IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> : impl_IAsyncOperation<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> {};
-#endif
-
 #ifndef WINRT_GENERIC_135ba76a_ab44_5f69_b208_e732cce9403b
 #define WINRT_GENERIC_135ba76a_ab44_5f69_b208_e732cce9403b
 template <> struct __declspec(uuid("135ba76a-ab44-5f69-b208-e732cce9403b")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::Foundation::IInspectable> {};
@@ -200,11 +205,6 @@ template <> struct __declspec(uuid("31edabbd-d123-5e88-89d8-c80ee8f0f2ca")) __de
 template <> struct __declspec(uuid("b6c1b828-a157-54ed-9c18-6919b9f91be9")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs> {};
 #endif
 
-#ifndef WINRT_GENERIC_abc21152_2495_5e8c_aed3_7dc55309ac08
-#define WINRT_GENERIC_abc21152_2495_5e8c_aed3_7dc55309ac08
-template <> struct __declspec(uuid("abc21152-2495-5e8c-aed3-7dc55309ac08")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::Foundation::IInspectable> {};
-#endif
-
 #ifndef WINRT_GENERIC_a4a50ea5_778d_5056_a1cf_546a1be2c010
 #define WINRT_GENERIC_a4a50ea5_778d_5056_a1cf_546a1be2c010
 template <> struct __declspec(uuid("a4a50ea5-778d-5056-a1cf-546a1be2c010")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> {};
@@ -218,6 +218,11 @@ template <> struct __declspec(uuid("4d529b7e-eea0-511b-8285-47e8c85d0295")) __de
 #ifndef WINRT_GENERIC_687fef67_8871_56fe_8e7e_1d2929cc6f42
 #define WINRT_GENERIC_687fef67_8871_56fe_8e7e_1d2929cc6f42
 template <> struct __declspec(uuid("687fef67-8871-56fe-8e7e-1d2929cc6f42")) __declspec(novtable) TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> : impl_TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_3a06099c_dba6_58a5_8464_e2326896841a
+#define WINRT_GENERIC_3a06099c_dba6_58a5_8464_e2326896841a
+template <> struct __declspec(uuid("3a06099c-dba6-58a5-8464-e2326896841a")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> : impl_AsyncOperationCompletedHandler<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> {};
 #endif
 
 
@@ -350,11 +355,6 @@ template <> struct __declspec(uuid("f396602a-3d8d-5fd5-99e3-1d3630be5938")) __de
 template <> struct __declspec(uuid("48deeda0-684d-51e6-b07c-d234d1006bfc")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> : impl_AsyncOperationCompletedHandler<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper> {};
 #endif
 
-#ifndef WINRT_GENERIC_3a06099c_dba6_58a5_8464_e2326896841a
-#define WINRT_GENERIC_3a06099c_dba6_58a5_8464_e2326896841a
-template <> struct __declspec(uuid("3a06099c-dba6-58a5-8464-e2326896841a")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> : impl_AsyncOperationCompletedHandler<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult> {};
-#endif
-
 
 }
 
@@ -426,6 +426,7 @@ struct IKnownCameraIntrinsicsPropertiesStatics :
 {
     IKnownCameraIntrinsicsPropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("KnownCameraIntrinsicsProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownCameraIntrinsicsPropertiesStatics;
 
 struct IKnownPerceptionColorFrameSourcePropertiesStatics :
     Windows::Foundation::IInspectable,
@@ -433,6 +434,7 @@ struct IKnownPerceptionColorFrameSourcePropertiesStatics :
 {
     IKnownPerceptionColorFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("KnownPerceptionColorFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownPerceptionColorFrameSourcePropertiesStatics;
 
 struct IKnownPerceptionDepthFrameSourcePropertiesStatics :
     Windows::Foundation::IInspectable,
@@ -440,6 +442,7 @@ struct IKnownPerceptionDepthFrameSourcePropertiesStatics :
 {
     IKnownPerceptionDepthFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("KnownPerceptionDepthFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")]] IKnownPerceptionDepthFrameSourcePropertiesStatics;
 
 struct IKnownPerceptionFrameSourcePropertiesStatics :
     Windows::Foundation::IInspectable,
@@ -447,6 +450,7 @@ struct IKnownPerceptionFrameSourcePropertiesStatics :
 {
     IKnownPerceptionFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceInformation instead.")]] IKnownPerceptionFrameSourcePropertiesStatics;
 
 struct IKnownPerceptionFrameSourcePropertiesStatics2 :
     Windows::Foundation::IInspectable,
@@ -454,6 +458,7 @@ struct IKnownPerceptionFrameSourcePropertiesStatics2 :
 {
     IKnownPerceptionFrameSourcePropertiesStatics2(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("KnownPerceptionFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownPerceptionFrameSourcePropertiesStatics2;
 
 struct IKnownPerceptionInfraredFrameSourcePropertiesStatics :
     Windows::Foundation::IInspectable,
@@ -461,6 +466,7 @@ struct IKnownPerceptionInfraredFrameSourcePropertiesStatics :
 {
     IKnownPerceptionInfraredFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("KnownPerceptionInfraredFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownPerceptionInfraredFrameSourcePropertiesStatics;
 
 struct IKnownPerceptionVideoFrameSourcePropertiesStatics :
     Windows::Foundation::IInspectable,
@@ -468,6 +474,7 @@ struct IKnownPerceptionVideoFrameSourcePropertiesStatics :
 {
     IKnownPerceptionVideoFrameSourcePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("KnownPerceptionVideoFrameSourceProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownPerceptionVideoFrameSourcePropertiesStatics;
 
 struct IKnownPerceptionVideoProfilePropertiesStatics :
     Windows::Foundation::IInspectable,
@@ -475,6 +482,7 @@ struct IKnownPerceptionVideoProfilePropertiesStatics :
 {
     IKnownPerceptionVideoProfilePropertiesStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("KnownPerceptionVideoProfileProperties may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IKnownPerceptionVideoProfilePropertiesStatics;
 
 struct IPerceptionColorFrame :
     Windows::Foundation::IInspectable,
@@ -483,6 +491,7 @@ struct IPerceptionColorFrame :
 {
     IPerceptionColorFrame(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionColorFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.VideoMediaFrame instead.")]] IPerceptionColorFrame;
 
 struct IPerceptionColorFrameArrivedEventArgs :
     Windows::Foundation::IInspectable,
@@ -490,6 +499,7 @@ struct IPerceptionColorFrameArrivedEventArgs :
 {
     IPerceptionColorFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionColorFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] IPerceptionColorFrameArrivedEventArgs;
 
 struct IPerceptionColorFrameReader :
     Windows::Foundation::IInspectable,
@@ -498,6 +508,7 @@ struct IPerceptionColorFrameReader :
 {
     IPerceptionColorFrameReader(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionColorFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] IPerceptionColorFrameReader;
 
 struct IPerceptionColorFrameSource :
     Windows::Foundation::IInspectable,
@@ -505,6 +516,7 @@ struct IPerceptionColorFrameSource :
 {
     IPerceptionColorFrameSource(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionColorFrameSource;
 
 struct IPerceptionColorFrameSource2 :
     Windows::Foundation::IInspectable,
@@ -512,6 +524,7 @@ struct IPerceptionColorFrameSource2 :
 {
     IPerceptionColorFrameSource2(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionColorFrameSource2;
 
 struct IPerceptionColorFrameSourceAddedEventArgs :
     Windows::Foundation::IInspectable,
@@ -519,6 +532,7 @@ struct IPerceptionColorFrameSourceAddedEventArgs :
 {
     IPerceptionColorFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionColorFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionColorFrameSourceAddedEventArgs;
 
 struct IPerceptionColorFrameSourceRemovedEventArgs :
     Windows::Foundation::IInspectable,
@@ -526,6 +540,7 @@ struct IPerceptionColorFrameSourceRemovedEventArgs :
 {
     IPerceptionColorFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionColorFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionColorFrameSourceRemovedEventArgs;
 
 struct IPerceptionColorFrameSourceStatics :
     Windows::Foundation::IInspectable,
@@ -533,6 +548,7 @@ struct IPerceptionColorFrameSourceStatics :
 {
     IPerceptionColorFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionColorFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionColorFrameSourceStatics;
 
 struct IPerceptionColorFrameSourceWatcher :
     Windows::Foundation::IInspectable,
@@ -540,6 +556,7 @@ struct IPerceptionColorFrameSourceWatcher :
 {
     IPerceptionColorFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionColorFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] IPerceptionColorFrameSourceWatcher;
 
 struct IPerceptionControlSession :
     Windows::Foundation::IInspectable,
@@ -548,6 +565,7 @@ struct IPerceptionControlSession :
 {
     IPerceptionControlSession(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionControlSession may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionControlSession;
 
 struct IPerceptionDepthCorrelatedCameraIntrinsics :
     Windows::Foundation::IInspectable,
@@ -555,6 +573,7 @@ struct IPerceptionDepthCorrelatedCameraIntrinsics :
 {
     IPerceptionDepthCorrelatedCameraIntrinsics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionDepthCorrelatedCameraIntrinsics may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] IPerceptionDepthCorrelatedCameraIntrinsics;
 
 struct IPerceptionDepthCorrelatedCoordinateMapper :
     Windows::Foundation::IInspectable,
@@ -562,6 +581,7 @@ struct IPerceptionDepthCorrelatedCoordinateMapper :
 {
     IPerceptionDepthCorrelatedCoordinateMapper(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionDepthCorrelatedCoordinateMapper may be unavailable after Windows Creator Update.  Use Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper instead.")]] IPerceptionDepthCorrelatedCoordinateMapper;
 
 struct IPerceptionDepthFrame :
     Windows::Foundation::IInspectable,
@@ -570,6 +590,7 @@ struct IPerceptionDepthFrame :
 {
     IPerceptionDepthFrame(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionDepthFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.DepthMediaFrame instead.")]] IPerceptionDepthFrame;
 
 struct IPerceptionDepthFrameArrivedEventArgs :
     Windows::Foundation::IInspectable,
@@ -577,6 +598,7 @@ struct IPerceptionDepthFrameArrivedEventArgs :
 {
     IPerceptionDepthFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionDepthFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] IPerceptionDepthFrameArrivedEventArgs;
 
 struct IPerceptionDepthFrameReader :
     Windows::Foundation::IInspectable,
@@ -585,6 +607,7 @@ struct IPerceptionDepthFrameReader :
 {
     IPerceptionDepthFrameReader(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionDepthFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] IPerceptionDepthFrameReader;
 
 struct IPerceptionDepthFrameSource :
     Windows::Foundation::IInspectable,
@@ -592,6 +615,7 @@ struct IPerceptionDepthFrameSource :
 {
     IPerceptionDepthFrameSource(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionDepthFrameSource;
 
 struct IPerceptionDepthFrameSource2 :
     Windows::Foundation::IInspectable,
@@ -599,6 +623,7 @@ struct IPerceptionDepthFrameSource2 :
 {
     IPerceptionDepthFrameSource2(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionDepthFrameSource2;
 
 struct IPerceptionDepthFrameSourceAddedEventArgs :
     Windows::Foundation::IInspectable,
@@ -606,6 +631,7 @@ struct IPerceptionDepthFrameSourceAddedEventArgs :
 {
     IPerceptionDepthFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionDepthFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionDepthFrameSourceAddedEventArgs;
 
 struct IPerceptionDepthFrameSourceRemovedEventArgs :
     Windows::Foundation::IInspectable,
@@ -613,6 +639,7 @@ struct IPerceptionDepthFrameSourceRemovedEventArgs :
 {
     IPerceptionDepthFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionDepthFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionDepthFrameSourceRemovedEventArgs;
 
 struct IPerceptionDepthFrameSourceStatics :
     Windows::Foundation::IInspectable,
@@ -620,6 +647,7 @@ struct IPerceptionDepthFrameSourceStatics :
 {
     IPerceptionDepthFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionDepthFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionDepthFrameSourceStatics;
 
 struct IPerceptionDepthFrameSourceWatcher :
     Windows::Foundation::IInspectable,
@@ -627,6 +655,7 @@ struct IPerceptionDepthFrameSourceWatcher :
 {
     IPerceptionDepthFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionDepthFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] IPerceptionDepthFrameSourceWatcher;
 
 struct IPerceptionFrameSourcePropertiesChangedEventArgs :
     Windows::Foundation::IInspectable,
@@ -634,6 +663,7 @@ struct IPerceptionFrameSourcePropertiesChangedEventArgs :
 {
     IPerceptionFrameSourcePropertiesChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionFrameSourcePropertiesChangedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionFrameSourcePropertiesChangedEventArgs;
 
 struct IPerceptionFrameSourcePropertyChangeResult :
     Windows::Foundation::IInspectable,
@@ -641,6 +671,7 @@ struct IPerceptionFrameSourcePropertyChangeResult :
 {
     IPerceptionFrameSourcePropertyChangeResult(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionFrameSourcePropertyChangeResult may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionFrameSourcePropertyChangeResult;
 
 struct IPerceptionInfraredFrame :
     Windows::Foundation::IInspectable,
@@ -649,6 +680,7 @@ struct IPerceptionInfraredFrame :
 {
     IPerceptionInfraredFrame(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionInfraredFrame may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.InfraredMediaFrame instead.")]] IPerceptionInfraredFrame;
 
 struct IPerceptionInfraredFrameArrivedEventArgs :
     Windows::Foundation::IInspectable,
@@ -656,6 +688,7 @@ struct IPerceptionInfraredFrameArrivedEventArgs :
 {
     IPerceptionInfraredFrameArrivedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionInfraredFrameArrivedEventArgs may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs instead.")]] IPerceptionInfraredFrameArrivedEventArgs;
 
 struct IPerceptionInfraredFrameReader :
     Windows::Foundation::IInspectable,
@@ -664,6 +697,7 @@ struct IPerceptionInfraredFrameReader :
 {
     IPerceptionInfraredFrameReader(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionInfraredFrameReader may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameReader instead.")]] IPerceptionInfraredFrameReader;
 
 struct IPerceptionInfraredFrameSource :
     Windows::Foundation::IInspectable,
@@ -671,6 +705,7 @@ struct IPerceptionInfraredFrameSource :
 {
     IPerceptionInfraredFrameSource(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionInfraredFrameSource;
 
 struct IPerceptionInfraredFrameSource2 :
     Windows::Foundation::IInspectable,
@@ -678,6 +713,7 @@ struct IPerceptionInfraredFrameSource2 :
 {
     IPerceptionInfraredFrameSource2(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionInfraredFrameSource2;
 
 struct IPerceptionInfraredFrameSourceAddedEventArgs :
     Windows::Foundation::IInspectable,
@@ -685,6 +721,7 @@ struct IPerceptionInfraredFrameSourceAddedEventArgs :
 {
     IPerceptionInfraredFrameSourceAddedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionInfraredFrameSourceAddedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionInfraredFrameSourceAddedEventArgs;
 
 struct IPerceptionInfraredFrameSourceRemovedEventArgs :
     Windows::Foundation::IInspectable,
@@ -692,6 +729,7 @@ struct IPerceptionInfraredFrameSourceRemovedEventArgs :
 {
     IPerceptionInfraredFrameSourceRemovedEventArgs(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionInfraredFrameSourceRemovedEventArgs may be unavailable after Windows Creator Update.  Please refer to Windows.Media.Capture.Frames APIs on MSDN.")]] IPerceptionInfraredFrameSourceRemovedEventArgs;
 
 struct IPerceptionInfraredFrameSourceStatics :
     Windows::Foundation::IInspectable,
@@ -699,6 +737,7 @@ struct IPerceptionInfraredFrameSourceStatics :
 {
     IPerceptionInfraredFrameSourceStatics(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionInfraredFrameSource may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameSource instead.")]] IPerceptionInfraredFrameSourceStatics;
 
 struct IPerceptionInfraredFrameSourceWatcher :
     Windows::Foundation::IInspectable,
@@ -706,6 +745,7 @@ struct IPerceptionInfraredFrameSourceWatcher :
 {
     IPerceptionInfraredFrameSourceWatcher(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionInfraredFrameSourceWatcher may be unavailable after Windows Creator Update.  Use Windows.Devices.Enumeration.DeviceWatcher instead.")]] IPerceptionInfraredFrameSourceWatcher;
 
 struct IPerceptionVideoProfile :
     Windows::Foundation::IInspectable,
@@ -713,6 +753,7 @@ struct IPerceptionVideoProfile :
 {
     IPerceptionVideoProfile(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("PerceptionVideoProfile may be unavailable after Windows Creator Update.  Use Windows.Media.Capture.Frames.MediaFrameFormat instead.")]] IPerceptionVideoProfile;
 
 }
 

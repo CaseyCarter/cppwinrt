@@ -30,44 +30,9 @@ template <> struct __declspec(uuid("f6d1f700-49c2-52ae-8154-826f9908773c")) __de
 template <> struct __declspec(uuid("60310303-49c5-52e6-abc6-a9b36eccc716")) __declspec(novtable) IKeyValuePair<hstring, hstring> : impl_IKeyValuePair<hstring, hstring> {};
 #endif
 
-
-}
-
-namespace ABI::Windows::Foundation {
-
-#ifndef WINRT_GENERIC_3e1fe603_f897_5263_b328_0806426b8a79
-#define WINRT_GENERIC_3e1fe603_f897_5263_b328_0806426b8a79
-template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __declspec(novtable) IAsyncOperation<hstring> : impl_IAsyncOperation<hstring> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
-#endif
-
-#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
-#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
-template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
-#endif
-
 #ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
 #define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
 template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
-#endif
-
-#ifndef WINRT_GENERIC_e5ce1a07_8d33_5007_ba64_7d2508ccf85c
-#define WINRT_GENERIC_e5ce1a07_8d33_5007_ba64_7d2508ccf85c
-template <> struct __declspec(uuid("e5ce1a07-8d33-5007-ba64-7d2508ccf85c")) __declspec(novtable) IVectorView<uint32_t> : impl_IVectorView<uint32_t> {};
-#endif
-
-#ifndef WINRT_GENERIC_421d4b91_b13b_5f37_ae54_b5249bd80539
-#define WINRT_GENERIC_421d4b91_b13b_5f37_ae54_b5249bd80539
-template <> struct __declspec(uuid("421d4b91-b13b-5f37-ae54-b5249bd80539")) __declspec(novtable) IIterable<uint32_t> : impl_IIterable<uint32_t> {};
 #endif
 
 
@@ -80,10 +45,35 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("3bee8834-b9a7-5a80-a746-5ef097227878")) __declspec(novtable) IAsyncOperation<Windows::Storage::Streams::IBuffer> : impl_IAsyncOperation<Windows::Storage::Streams::IBuffer> {};
 #endif
 
+#ifndef WINRT_GENERIC_3e1fe603_f897_5263_b328_0806426b8a79
+#define WINRT_GENERIC_3e1fe603_f897_5263_b328_0806426b8a79
+template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __declspec(novtable) IAsyncOperation<hstring> : impl_IAsyncOperation<hstring> {};
+#endif
+
 
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+#define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
+template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_e5ce1a07_8d33_5007_ba64_7d2508ccf85c
+#define WINRT_GENERIC_e5ce1a07_8d33_5007_ba64_7d2508ccf85c
+template <> struct __declspec(uuid("e5ce1a07-8d33-5007-ba64-7d2508ccf85c")) __declspec(novtable) IVectorView<uint32_t> : impl_IVectorView<uint32_t> {};
+#endif
+
+#ifndef WINRT_GENERIC_421d4b91_b13b_5f37_ae54_b5249bd80539
+#define WINRT_GENERIC_421d4b91_b13b_5f37_ae54_b5249bd80539
+template <> struct __declspec(uuid("421d4b91-b13b-5f37-ae54-b5249bd80539")) __declspec(novtable) IIterable<uint32_t> : impl_IIterable<uint32_t> {};
+#endif
 
 #ifndef WINRT_GENERIC_ac7f26f2_feb7_5b2a_8ac4_345bc62caede
 #define WINRT_GENERIC_ac7f26f2_feb7_5b2a_8ac4_345bc62caede
@@ -108,6 +98,56 @@ template <> struct __declspec(uuid("c9704809-a0e2-5e1d-87cf-75a1d49d7bdb")) __de
 #ifndef WINRT_GENERIC_cfc8a053_f611_521a_8ab0_a460e1f7164d
 #define WINRT_GENERIC_cfc8a053_f611_521a_8ab0_a460e1f7164d
 template <> struct __declspec(uuid("cfc8a053-f611-521a-8ab0-a460e1f7164d")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::BarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::BarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_4f64e49a_bd8c_549d_970c_a5a250bd27ca
+#define WINRT_GENERIC_4f64e49a_bd8c_549d_970c_a5a250bd27ca
+template <> struct __declspec(uuid("4f64e49a-bd8c-549d-970c-a5a250bd27ca")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_c0acd2ae_5b55_588d_811b_be33a4fdda57
+#define WINRT_GENERIC_c0acd2ae_5b55_588d_811b_be33a4fdda57
+template <> struct __declspec(uuid("c0acd2ae-5b55-588d-811b-be33a4fdda57")) __declspec(novtable) EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> : impl_EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> {};
+#endif
+
+#ifndef WINRT_GENERIC_fba116af_2a39_516f_a579_cc3eaf36a34b
+#define WINRT_GENERIC_fba116af_2a39_516f_a579_cc3eaf36a34b
+template <> struct __declspec(uuid("fba116af-2a39-516f-a579-cc3eaf36a34b")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_ba42ff49_de12_5406_979e_06c45ca2d5a4
+#define WINRT_GENERIC_ba42ff49_de12_5406_979e_06c45ca2d5a4
+template <> struct __declspec(uuid("ba42ff49-de12-5406-979e-06c45ca2d5a4")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_461550ca_7bb3_5ade_a642_61b8fef2e35c
+#define WINRT_GENERIC_461550ca_7bb3_5ade_a642_61b8fef2e35c
+template <> struct __declspec(uuid("461550ca-7bb3-5ade-a642-61b8fef2e35c")) __declspec(novtable) IAsyncOperation<Windows::Devices::PointOfService::BarcodeSymbologyAttributes> : impl_IAsyncOperation<Windows::Devices::PointOfService::BarcodeSymbologyAttributes> {};
+#endif
+
+#ifndef WINRT_GENERIC_6a41d015_245e_51ba_bd6c_44775d70bfa2
+#define WINRT_GENERIC_6a41d015_245e_51ba_bd6c_44775d70bfa2
+template <> struct __declspec(uuid("6a41d015-245e-51ba-bd6c-44775d70bfa2")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_29e08f92_c3ab_57ea_aaba_789f792d7a46
+#define WINRT_GENERIC_29e08f92_c3ab_57ea_aaba_789f792d7a46
+template <> struct __declspec(uuid("29e08f92-c3ab-57ea-aaba-789f792d7a46")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_959124ba_ee44_560c_8183_61c6a2308d8f
+#define WINRT_GENERIC_959124ba_ee44_560c_8183_61c6a2308d8f
+template <> struct __declspec(uuid("959124ba-ee44-560c-8183-61c6a2308d8f")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_8006bf5d_0895_5b8c_808a_6bb8f26794fa
+#define WINRT_GENERIC_8006bf5d_0895_5b8c_808a_6bb8f26794fa
+template <> struct __declspec(uuid("8006bf5d-0895-5b8c-808a-6bb8f26794fa")) __declspec(novtable) EventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> : impl_EventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> {};
+#endif
+
+#ifndef WINRT_GENERIC_1464a1e6_9d92_547e_b4ac_f255ac85f950
+#define WINRT_GENERIC_1464a1e6_9d92_547e_b4ac_f255ac85f950
+template <> struct __declspec(uuid("1464a1e6-9d92-547e-b4ac-f255ac85f950")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_93726e09_817c_5f33_bee4_090de7074f19
@@ -155,6 +195,11 @@ template <> struct __declspec(uuid("b4476f95-355a-503d-b844-1756c8cfda98")) __de
 template <> struct __declspec(uuid("20b0c66a-5f41-5a32-b45a-344f12e70a34")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::PosPrinter, Windows::Devices::PointOfService::PosPrinterStatusUpdatedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::PosPrinter, Windows::Devices::PointOfService::PosPrinterStatusUpdatedEventArgs> {};
 #endif
 
+#ifndef WINRT_GENERIC_31424f6f_cfeb_5031_8a95_bea59b09e584
+#define WINRT_GENERIC_31424f6f_cfeb_5031_8a95_bea59b09e584
+template <> struct __declspec(uuid("31424f6f-cfeb-5031-8a95-bea59b09e584")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> {};
+#endif
+
 #ifndef WINRT_GENERIC_81495aa4_4476_577f_bf88_7fe8a1286444
 #define WINRT_GENERIC_81495aa4_4476_577f_bf88_7fe8a1286444
 template <> struct __declspec(uuid("81495aa4-4476-577f-bf88-7fe8a1286444")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::CashDrawerEventSource, Windows::Devices::PointOfService::CashDrawerClosedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::CashDrawerEventSource, Windows::Devices::PointOfService::CashDrawerClosedEventArgs> {};
@@ -185,59 +230,24 @@ template <> struct __declspec(uuid("64662ef4-cb0e-5c6f-a820-7d0a769554c9")) __de
 template <> struct __declspec(uuid("c54fbda4-5e0b-54c3-94f2-83351e41c46f")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::PointOfService::CashDrawerCloseAlarm, Windows::Foundation::IInspectable> {};
 #endif
 
-#ifndef WINRT_GENERIC_4f64e49a_bd8c_549d_970c_a5a250bd27ca
-#define WINRT_GENERIC_4f64e49a_bd8c_549d_970c_a5a250bd27ca
-template <> struct __declspec(uuid("4f64e49a-bd8c-549d-970c-a5a250bd27ca")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_c0acd2ae_5b55_588d_811b_be33a4fdda57
-#define WINRT_GENERIC_c0acd2ae_5b55_588d_811b_be33a4fdda57
-template <> struct __declspec(uuid("c0acd2ae-5b55-588d-811b-be33a4fdda57")) __declspec(novtable) EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> : impl_EventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> {};
-#endif
-
-#ifndef WINRT_GENERIC_fba116af_2a39_516f_a579_cc3eaf36a34b
-#define WINRT_GENERIC_fba116af_2a39_516f_a579_cc3eaf36a34b
-template <> struct __declspec(uuid("fba116af-2a39-516f-a579-cc3eaf36a34b")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_ba42ff49_de12_5406_979e_06c45ca2d5a4
-#define WINRT_GENERIC_ba42ff49_de12_5406_979e_06c45ca2d5a4
-template <> struct __declspec(uuid("ba42ff49-de12-5406-979e-06c45ca2d5a4")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner, Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_6a41d015_245e_51ba_bd6c_44775d70bfa2
-#define WINRT_GENERIC_6a41d015_245e_51ba_bd6c_44775d70bfa2
-template <> struct __declspec(uuid("6a41d015-245e-51ba-bd6c-44775d70bfa2")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_29e08f92_c3ab_57ea_aaba_789f792d7a46
-#define WINRT_GENERIC_29e08f92_c3ab_57ea_aaba_789f792d7a46
-template <> struct __declspec(uuid("29e08f92-c3ab-57ea-aaba-789f792d7a46")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_959124ba_ee44_560c_8183_61c6a2308d8f
-#define WINRT_GENERIC_959124ba_ee44_560c_8183_61c6a2308d8f
-template <> struct __declspec(uuid("959124ba-ee44-560c-8183-61c6a2308d8f")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_8006bf5d_0895_5b8c_808a_6bb8f26794fa
-#define WINRT_GENERIC_8006bf5d_0895_5b8c_808a_6bb8f26794fa
-template <> struct __declspec(uuid("8006bf5d-0895-5b8c-808a-6bb8f26794fa")) __declspec(novtable) EventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> : impl_EventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader> {};
-#endif
-
-#ifndef WINRT_GENERIC_1464a1e6_9d92_547e_b4ac_f255ac85f950
-#define WINRT_GENERIC_1464a1e6_9d92_547e_b4ac_f255ac85f950
-template <> struct __declspec(uuid("1464a1e6-9d92-547e-b4ac-f255ac85f950")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedMagneticStripeReader, Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_31424f6f_cfeb_5031_8a95_bea59b09e584
-#define WINRT_GENERIC_31424f6f_cfeb_5031_8a95_bea59b09e584
-template <> struct __declspec(uuid("31424f6f-cfeb-5031-8a95-bea59b09e584")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedPosPrinter, Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs> {};
-#endif
-
 #ifndef WINRT_GENERIC_db886581_2462_5c81_880c_06112ca70012
 #define WINRT_GENERIC_db886581_2462_5c81_880c_06112ca70012
 template <> struct __declspec(uuid("db886581-2462-5c81-880c-06112ca70012")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedCashDrawer, Windows::Foundation::IInspectable> {};
+#endif
+
+#ifndef WINRT_GENERIC_40ffdae9_e7c1_5c44_91b4_bd84ebf8539b
+#define WINRT_GENERIC_40ffdae9_e7c1_5c44_91b4_bd84ebf8539b
+template <> struct __declspec(uuid("40ffdae9-e7c1-5c44-91b4-bd84ebf8539b")) __declspec(novtable) IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> : impl_IAsyncOperation<Windows::Devices::PointOfService::LineDisplay> {};
+#endif
+
+#ifndef WINRT_GENERIC_4bd0a904_1aaa_545a_8cbc_1d45c3e80e5e
+#define WINRT_GENERIC_4bd0a904_1aaa_545a_8cbc_1d45c3e80e5e
+template <> struct __declspec(uuid("4bd0a904-1aaa-545a-8cbc-1d45c3e80e5e")) __declspec(novtable) IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> : impl_IAsyncOperation<Windows::Devices::PointOfService::ClaimedLineDisplay> {};
+#endif
+
+#ifndef WINRT_GENERIC_c997782b_46e9_5d92_ac84_ee9d7d073ab5
+#define WINRT_GENERIC_c997782b_46e9_5d92_ac84_ee9d7d073ab5
+template <> struct __declspec(uuid("c997782b-46e9-5d92-ac84-ee9d7d073ab5")) __declspec(novtable) TypedEventHandler<Windows::Devices::PointOfService::ClaimedLineDisplay, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::PointOfService::ClaimedLineDisplay, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -260,11 +270,6 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __declspec(novtable) AsyncOperationCompletedHandler<bool> : impl_AsyncOperationCompletedHandler<bool> {};
 #endif
 
-#ifndef WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
-#define WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
-template <> struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41")) __declspec(novtable) AsyncOperationCompletedHandler<hstring> : impl_AsyncOperationCompletedHandler<hstring> {};
-#endif
-
 
 }
 
@@ -273,11 +278,6 @@ namespace ABI::Windows::Foundation::Collections {
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
-#endif
-
-#ifndef WINRT_GENERIC_f06a2739_9443_5ef0_b284_dc5aff3e7d10
-#define WINRT_GENERIC_f06a2739_9443_5ef0_b284_dc5aff3e7d10
-template <> struct __declspec(uuid("f06a2739-9443-5ef0-b284-dc5aff3e7d10")) __declspec(novtable) IIterator<uint32_t> : impl_IIterator<uint32_t> {};
 #endif
 
 
@@ -290,6 +290,26 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("51c3d2fd-b8a1-5620-b746-7ee6d533aca3")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Storage::Streams::IBuffer> : impl_AsyncOperationCompletedHandler<Windows::Storage::Streams::IBuffer> {};
 #endif
 
+#ifndef WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
+#define WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
+template <> struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41")) __declspec(novtable) AsyncOperationCompletedHandler<hstring> : impl_AsyncOperationCompletedHandler<hstring> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_f06a2739_9443_5ef0_b284_dc5aff3e7d10
+#define WINRT_GENERIC_f06a2739_9443_5ef0_b284_dc5aff3e7d10
+template <> struct __declspec(uuid("f06a2739-9443-5ef0-b284-dc5aff3e7d10")) __declspec(novtable) IIterator<uint32_t> : impl_IIterator<uint32_t> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_8d8abf39_99dd_50a4_aa7c_2f7301b5ca9c
 #define WINRT_GENERIC_8d8abf39_99dd_50a4_aa7c_2f7301b5ca9c
 template <> struct __declspec(uuid("8d8abf39-99dd-50a4-aa7c-2f7301b5ca9c")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::PointOfService::BarcodeScanner> : impl_AsyncOperationCompletedHandler<Windows::Devices::PointOfService::BarcodeScanner> {};
@@ -298,6 +318,11 @@ template <> struct __declspec(uuid("8d8abf39-99dd-50a4-aa7c-2f7301b5ca9c")) __de
 #ifndef WINRT_GENERIC_ff72ba2d_f3c4_5abe_bbce_53150449b637
 #define WINRT_GENERIC_ff72ba2d_f3c4_5abe_bbce_53150449b637
 template <> struct __declspec(uuid("ff72ba2d-f3c4-5abe-bbce-53150449b637")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> : impl_AsyncOperationCompletedHandler<Windows::Devices::PointOfService::ClaimedBarcodeScanner> {};
+#endif
+
+#ifndef WINRT_GENERIC_f8fc5a52_2f45_5e46_a82e_3da009573b5c
+#define WINRT_GENERIC_f8fc5a52_2f45_5e46_a82e_3da009573b5c
+template <> struct __declspec(uuid("f8fc5a52-2f45-5e46-a82e-3da009573b5c")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::PointOfService::BarcodeSymbologyAttributes> : impl_AsyncOperationCompletedHandler<Windows::Devices::PointOfService::BarcodeSymbologyAttributes> {};
 #endif
 
 #ifndef WINRT_GENERIC_32c55f7b_8ee3_555d_998b_78c98aa9627b
@@ -353,6 +378,16 @@ template <> struct __declspec(uuid("57836710-f186-5636-891d-f8c5398ea6df")) __de
 #ifndef WINRT_GENERIC_e68c3736_fde7_5cfb_b22f_92119723e729
 #define WINRT_GENERIC_e68c3736_fde7_5cfb_b22f_92119723e729
 template <> struct __declspec(uuid("e68c3736-fde7-5cfb-b22f-92119723e729")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::PointOfService::ClaimedCashDrawer> : impl_AsyncOperationCompletedHandler<Windows::Devices::PointOfService::ClaimedCashDrawer> {};
+#endif
+
+#ifndef WINRT_GENERIC_b5c4d476_4f46_53c4_8a45_89dbe6d6f286
+#define WINRT_GENERIC_b5c4d476_4f46_53c4_8a45_89dbe6d6f286
+template <> struct __declspec(uuid("b5c4d476-4f46-53c4-8a45-89dbe6d6f286")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::PointOfService::LineDisplay> : impl_AsyncOperationCompletedHandler<Windows::Devices::PointOfService::LineDisplay> {};
+#endif
+
+#ifndef WINRT_GENERIC_4e1a79f1_dff2_5b18_bebe_2aca010bbfcc
+#define WINRT_GENERIC_4e1a79f1_dff2_5b18_bebe_2aca010bbfcc
+template <> struct __declspec(uuid("4e1a79f1-dff2-5b18-bebe-2aca010bbfcc")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::PointOfService::ClaimedLineDisplay> : impl_AsyncOperationCompletedHandler<Windows::Devices::PointOfService::ClaimedLineDisplay> {};
 #endif
 
 
@@ -463,6 +498,13 @@ struct IBarcodeScannerStatics :
     IBarcodeScannerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IBarcodeScannerStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBarcodeScannerStatics2>
+{
+    IBarcodeScannerStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IBarcodeScannerStatusUpdatedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IBarcodeScannerStatusUpdatedEventArgs>
@@ -475,6 +517,20 @@ struct IBarcodeSymbologiesStatics :
     impl::consume<IBarcodeSymbologiesStatics>
 {
     IBarcodeSymbologiesStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBarcodeSymbologiesStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBarcodeSymbologiesStatics2>
+{
+    IBarcodeSymbologiesStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBarcodeSymbologyAttributes :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBarcodeSymbologyAttributes>
+{
+    IBarcodeSymbologyAttributes(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICashDrawer :
@@ -519,6 +575,13 @@ struct ICashDrawerStatics :
     ICashDrawerStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct ICashDrawerStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICashDrawerStatics2>
+{
+    ICashDrawerStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct ICashDrawerStatus :
     Windows::Foundation::IInspectable,
     impl::consume<ICashDrawerStatus>
@@ -549,6 +612,14 @@ struct IClaimedBarcodeScanner1 :
     IClaimedBarcodeScanner1(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IClaimedBarcodeScanner2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IClaimedBarcodeScanner2>,
+    impl::require<IClaimedBarcodeScanner2, Windows::Foundation::IClosable>
+{
+    IClaimedBarcodeScanner2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IClaimedCashDrawer :
     Windows::Foundation::IInspectable,
     impl::consume<IClaimedCashDrawer>,
@@ -563,6 +634,21 @@ struct IClaimedJournalPrinter :
     impl::require<IClaimedJournalPrinter, Windows::Devices::PointOfService::ICommonClaimedPosPrinterStation>
 {
     IClaimedJournalPrinter(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IClaimedLineDisplay :
+    Windows::Foundation::IInspectable,
+    impl::consume<IClaimedLineDisplay>,
+    impl::require<IClaimedLineDisplay, Windows::Foundation::IClosable>
+{
+    IClaimedLineDisplay(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IClaimedLineDisplayStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IClaimedLineDisplayStatics>
+{
+    IClaimedLineDisplayStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IClaimedMagneticStripeReader :
@@ -625,6 +711,36 @@ struct IJournalPrinterCapabilities :
     impl::require<IJournalPrinterCapabilities, Windows::Devices::PointOfService::ICommonPosPrintStationCapabilities>
 {
     IJournalPrinterCapabilities(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ILineDisplay :
+    Windows::Foundation::IInspectable,
+    impl::consume<ILineDisplay>,
+    impl::require<ILineDisplay, Windows::Foundation::IClosable>
+{
+    ILineDisplay(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ILineDisplayCapabilities :
+    Windows::Foundation::IInspectable,
+    impl::consume<ILineDisplayCapabilities>
+{
+    ILineDisplayCapabilities(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ILineDisplayStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<ILineDisplayStatics>
+{
+    ILineDisplayStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ILineDisplayWindow :
+    Windows::Foundation::IInspectable,
+    impl::consume<ILineDisplayWindow>,
+    impl::require<ILineDisplayWindow, Windows::Foundation::IClosable>
+{
+    ILineDisplayWindow(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IMagneticStripeReader :
@@ -690,6 +806,13 @@ struct IMagneticStripeReaderStatics :
     IMagneticStripeReaderStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IMagneticStripeReaderStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IMagneticStripeReaderStatics2>
+{
+    IMagneticStripeReaderStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IMagneticStripeReaderStatusUpdatedEventArgs :
     Windows::Foundation::IInspectable,
     impl::consume<IMagneticStripeReaderStatusUpdatedEventArgs>
@@ -751,6 +874,13 @@ struct IPosPrinterStatics :
     impl::consume<IPosPrinterStatics>
 {
     IPosPrinterStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IPosPrinterStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IPosPrinterStatics2>
+{
+    IPosPrinterStatics2(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IPosPrinterStatus :

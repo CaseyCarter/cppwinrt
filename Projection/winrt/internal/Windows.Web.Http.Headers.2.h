@@ -30,6 +30,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3")) __declspec(novtable) IReference<uint32_t> : impl_IReference<uint32_t> {};
 #endif
 
+#ifndef WINRT_GENERIC_6755e376_53bb_568b_a11d_17239868309e
+#define WINRT_GENERIC_6755e376_53bb_568b_a11d_17239868309e
+template <> struct __declspec(uuid("6755e376-53bb-568b-a11d-17239868309e")) __declspec(novtable) IReference<uint64_t> : impl_IReference<uint64_t> {};
+#endif
+
 #ifndef WINRT_GENERIC_5541d8a7_497c_5aa4_86fc_7713adbf2a2c
 #define WINRT_GENERIC_5541d8a7_497c_5aa4_86fc_7713adbf2a2c
 template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __declspec(novtable) IReference<Windows::Foundation::DateTime> : impl_IReference<Windows::Foundation::DateTime> {};
@@ -59,21 +64,6 @@ template <> struct __declspec(uuid("ac7f26f2-feb7-5b2a-8ac4-345bc62caede")) __de
 #define WINRT_GENERIC_144b0f3d_2d59_5dd2_b012_908ec3e06435
 template <> struct __declspec(uuid("144b0f3d-2d59-5dd2-b012-908ec3e06435")) __declspec(novtable) IVectorView<Windows::Globalization::Language> : impl_IVectorView<Windows::Globalization::Language> {};
 #endif
-
-
-}
-
-namespace ABI::Windows::Foundation {
-
-#ifndef WINRT_GENERIC_6755e376_53bb_568b_a11d_17239868309e
-#define WINRT_GENERIC_6755e376_53bb_568b_a11d_17239868309e
-template <> struct __declspec(uuid("6755e376-53bb-568b-a11d-17239868309e")) __declspec(novtable) IReference<uint64_t> : impl_IReference<uint64_t> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
 
 #ifndef WINRT_GENERIC_b94e539f_44b6_54c6_9ad4_e2844b3e0be1
 #define WINRT_GENERIC_b94e539f_44b6_54c6_9ad4_e2844b3e0be1

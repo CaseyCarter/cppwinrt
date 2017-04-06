@@ -27,6 +27,14 @@ template <typename T> struct impl_IApiInformationStatics;
 
 namespace Windows::Foundation::Metadata {
 
+enum class FeatureStage
+{
+    AlwaysDisabled = 0,
+    DisabledByDefault = 1,
+    EnabledByDefault = 2,
+    AlwaysEnabled = 3,
+};
+
 enum class GCPressureAmount
 {
     Low = 0,

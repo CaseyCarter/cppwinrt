@@ -9,6 +9,13 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::System {
 
+struct WINRT_EBO AppDiagnosticInfo :
+    Windows::System::IAppDiagnosticInfo
+{
+    AppDiagnosticInfo(std::nullptr_t) noexcept {}
+    static Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::System::AppDiagnosticInfo>> RequestInfoAsync();
+};
+
 struct WINRT_EBO AppMemoryReport :
     Windows::System::IAppMemoryReport
 {
@@ -80,7 +87,7 @@ struct Launcher
 
 struct WINRT_EBO LauncherOptions :
     Windows::System::ILauncherOptions,
-    impl::require<LauncherOptions, Windows::System::ILauncherOptions2, Windows::System::ILauncherOptions3, Windows::System::ILauncherViewOptions>
+    impl::require<LauncherOptions, Windows::System::ILauncherOptions2, Windows::System::ILauncherOptions3, Windows::System::ILauncherOptions4, Windows::System::ILauncherViewOptions>
 {
     LauncherOptions(std::nullptr_t) noexcept {}
     LauncherOptions();

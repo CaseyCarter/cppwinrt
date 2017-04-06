@@ -327,6 +327,12 @@ struct __declspec(uuid("e8fe17cb-35f7-40f3-a185-48b397b73e68")) __declspec(novta
     virtual HRESULT __stdcall put_UriSource(Windows::Foundation::IUriRuntimeClass * value) = 0;
 };
 
+struct __declspec(uuid("0624a20a-9dd1-4201-bb20-42863da15658")) __declspec(novtable) IBitmapIcon2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ShowAsMonochrome(bool * value) = 0;
+    virtual HRESULT __stdcall put_ShowAsMonochrome(bool value) = 0;
+};
+
 struct __declspec(uuid("46d64b1d-7a49-4f66-9729-2848c788e402")) __declspec(novtable) IBitmapIconFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IBitmapIcon ** instance) = 0;
@@ -335,6 +341,11 @@ struct __declspec(uuid("46d64b1d-7a49-4f66-9729-2848c788e402")) __declspec(novta
 struct __declspec(uuid("e072d117-e4e7-4e0c-9470-53ff1ce84f67")) __declspec(novtable) IBitmapIconStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_UriSourceProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("9745026b-b742-4a89-a5d7-a0e5fb809af1")) __declspec(novtable) IBitmapIconStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ShowAsMonochromeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("797c4539-45bd-4633-a044-bfb02ef5170f")) __declspec(novtable) IBorder : Windows::Foundation::IInspectable
@@ -806,6 +817,12 @@ struct __declspec(uuid("52400a63-476c-4bb6-b781-019324d3fed9")) __declspec(novta
     virtual HRESULT __stdcall put_IsTextSearchEnabled(bool value) = 0;
 };
 
+struct __declspec(uuid("b7974f49-b05c-47f9-9aaf-d6f9187be5fd")) __declspec(novtable) IComboBox4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SelectionChangedTrigger(winrt::Windows::UI::Xaml::Controls::ComboBoxSelectionChangedTrigger * value) = 0;
+    virtual HRESULT __stdcall put_SelectionChangedTrigger(winrt::Windows::UI::Xaml::Controls::ComboBoxSelectionChangedTrigger value) = 0;
+};
+
 struct __declspec(uuid("ac0d0444-a65b-4abd-86df-3016049efedc")) __declspec(novtable) IComboBoxFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IComboBox ** instance) = 0;
@@ -843,6 +860,11 @@ struct __declspec(uuid("949e140f-ce7f-4e41-bdc5-d1d3388ad0a6")) __declspec(novta
 {
     virtual HRESULT __stdcall get_LightDismissOverlayModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsTextSearchEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("d9f58358-f7b0-46ce-8061-ad83ec2f2dd4")) __declspec(novtable) IComboBoxStatics4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SelectionChangedTriggerProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("98bc4280-4a3d-4cee-bd07-22ce94c5af76")) __declspec(novtable) ICommandBar : Windows::Foundation::IInspectable
@@ -1003,6 +1025,26 @@ struct __declspec(uuid("38dc4404-d24e-40d8-9415-349464c1afdc")) __declspec(novta
     virtual HRESULT __stdcall abi_ShowAsync(Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Controls::ContentDialogResult> ** returnValue) = 0;
 };
 
+struct __declspec(uuid("2f93eb45-ee43-4303-9b38-3fe1a111ecbf")) __declspec(novtable) IContentDialog2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_CloseButtonText(hstring * value) = 0;
+    virtual HRESULT __stdcall put_CloseButtonText(hstring value) = 0;
+    virtual HRESULT __stdcall get_CloseButtonCommand(Windows::UI::Xaml::Input::ICommand ** value) = 0;
+    virtual HRESULT __stdcall put_CloseButtonCommand(Windows::UI::Xaml::Input::ICommand * value) = 0;
+    virtual HRESULT __stdcall get_CloseButtonCommandParameter(Windows::Foundation::IInspectable ** value) = 0;
+    virtual HRESULT __stdcall put_CloseButtonCommandParameter(Windows::Foundation::IInspectable * value) = 0;
+    virtual HRESULT __stdcall get_PrimaryButtonStyle(Windows::UI::Xaml::IStyle ** value) = 0;
+    virtual HRESULT __stdcall put_PrimaryButtonStyle(Windows::UI::Xaml::IStyle * value) = 0;
+    virtual HRESULT __stdcall get_SecondaryButtonStyle(Windows::UI::Xaml::IStyle ** value) = 0;
+    virtual HRESULT __stdcall put_SecondaryButtonStyle(Windows::UI::Xaml::IStyle * value) = 0;
+    virtual HRESULT __stdcall get_CloseButtonStyle(Windows::UI::Xaml::IStyle ** value) = 0;
+    virtual HRESULT __stdcall put_CloseButtonStyle(Windows::UI::Xaml::IStyle * value) = 0;
+    virtual HRESULT __stdcall get_DefaultButton(winrt::Windows::UI::Xaml::Controls::ContentDialogButton * value) = 0;
+    virtual HRESULT __stdcall put_DefaultButton(winrt::Windows::UI::Xaml::Controls::ContentDialogButton value) = 0;
+    virtual HRESULT __stdcall add_CloseButtonClick(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_CloseButtonClick(event_token token) = 0;
+};
+
 struct __declspec(uuid("bd0d3637-19ce-4946-8e77-bd03fe8ebe03")) __declspec(novtable) IContentDialogButtonClickDeferral : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Complete() = 0;
@@ -1055,6 +1097,17 @@ struct __declspec(uuid("23ab47a6-508a-4f33-b786-f2fa96d869af")) __declspec(novta
     virtual HRESULT __stdcall get_SecondaryButtonCommandParameterProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsPrimaryButtonEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsSecondaryButtonEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("329825b2-8fb0-4125-bb07-e79a5a03819f")) __declspec(novtable) IContentDialogStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_CloseButtonTextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_CloseButtonCommandProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_CloseButtonCommandParameterProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_PrimaryButtonStyleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_SecondaryButtonStyleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_CloseButtonStyleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_DefaultButtonProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("79fde5b4-cd37-491c-8845-daf472defff6")) __declspec(novtable) IContentPresenter : Windows::Foundation::IInspectable
@@ -1265,6 +1318,12 @@ struct __declspec(uuid("0e18aeee-5f2e-44ea-8513-d3875c0a7513")) __declspec(novta
     virtual HRESULT __stdcall abi_RemoveFocusEngagement() = 0;
 };
 
+struct __declspec(uuid("5ebb51d5-9e58-49b7-bc2d-0155ff118664")) __declspec(novtable) IControl5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_DefaultStyleResourceUri(Windows::Foundation::IUriRuntimeClass ** value) = 0;
+    virtual HRESULT __stdcall put_DefaultStyleResourceUri(Windows::Foundation::IUriRuntimeClass * value) = 0;
+};
+
 struct __declspec(uuid("b12b1d5a-6419-4e16-b212-a45336b75778")) __declspec(novtable) IControlFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IControl ** instance) = 0;
@@ -1353,6 +1412,14 @@ struct __declspec(uuid("59fda728-c05a-4ec2-8a4b-06ad69b66e15")) __declspec(novta
     virtual HRESULT __stdcall get_XYFocusUpProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_XYFocusDownProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_ElementSoundModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("f635b5a3-ef8e-404f-877b-5580473710a6")) __declspec(novtable) IControlStatics5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_DefaultStyleResourceUriProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_IsTemplateKeyTipTargetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall abi_GetIsTemplateKeyTipTarget(Windows::UI::Xaml::IDependencyObject * element, bool * value) = 0;
+    virtual HRESULT __stdcall abi_SetIsTemplateKeyTipTarget(Windows::UI::Xaml::IDependencyObject * element, bool value) = 0;
 };
 
 struct __declspec(uuid("efd2418e-41e0-48bb-8b82-91eda1ba3fe2")) __declspec(novtable) IControlTemplate : Windows::Foundation::IInspectable
@@ -1614,6 +1681,12 @@ struct __declspec(uuid("a69fc352-da66-404c-823f-5358594e70bb")) __declspec(novta
 {
 };
 
+struct __declspec(uuid("4a59e0f4-87c0-4ccd-93c4-a3a01ce39265")) __declspec(novtable) IFocusEngagedEventArgs2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Handled(bool * value) = 0;
+    virtual HRESULT __stdcall put_Handled(bool value) = 0;
+};
+
 struct __declspec(uuid("d4d61391-39ac-4950-9166-3606c264418b")) __declspec(novtable) IFontIcon : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Glyph(hstring * value) = 0;
@@ -1699,6 +1772,11 @@ struct __declspec(uuid("3f367f87-9f5a-4b04-b818-b554c069597a")) __declspec(novta
 struct __declspec(uuid("648a2b4d-53ca-4b5a-aa8e-3cc7440f4a67")) __declspec(novtable) IFrame3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GoBack(Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo * transitionInfoOverride) = 0;
+};
+
+struct __declspec(uuid("9b17c21a-bd2b-4a00-99eb-946be9618084")) __declspec(novtable) IFrame4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_SetNavigationStateWithNavigationControl(hstring navigationState, bool suppressNavigate) = 0;
 };
 
 struct __declspec(uuid("02ee93d4-448e-469e-9799-0a8a1f70f171")) __declspec(novtable) IFrameFactory : Windows::Foundation::IInspectable
@@ -2012,6 +2090,19 @@ struct __declspec(uuid("3ddd0cca-51f0-486f-a03e-4ee13dc12bcb")) __declspec(novta
     virtual HRESULT __stdcall abi_GetToggleButton(winrt::Windows::UI::Xaml::Controls::InkToolbarToggle tool, Windows::UI::Xaml::Controls::IInkToolbarToggleButton ** returnValue) = 0;
 };
 
+struct __declspec(uuid("86f0c111-b484-454a-ae78-1d25a33d1c67")) __declspec(novtable) IInkToolbar2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsStencilButtonChecked(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsStencilButtonChecked(bool value) = 0;
+    virtual HRESULT __stdcall get_ButtonFlyoutPlacement(winrt::Windows::UI::Xaml::Controls::InkToolbarButtonFlyoutPlacement * value) = 0;
+    virtual HRESULT __stdcall put_ButtonFlyoutPlacement(winrt::Windows::UI::Xaml::Controls::InkToolbarButtonFlyoutPlacement value) = 0;
+    virtual HRESULT __stdcall get_Orientation(winrt::Windows::UI::Xaml::Controls::Orientation * value) = 0;
+    virtual HRESULT __stdcall put_Orientation(winrt::Windows::UI::Xaml::Controls::Orientation value) = 0;
+    virtual HRESULT __stdcall add_IsStencilButtonCheckedChanged(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_IsStencilButtonCheckedChanged(event_token token) = 0;
+    virtual HRESULT __stdcall abi_GetMenuButton(winrt::Windows::UI::Xaml::Controls::InkToolbarMenuKind menu, Windows::UI::Xaml::Controls::IInkToolbarMenuButton ** returnValue) = 0;
+};
+
 struct __declspec(uuid("158329f8-1e99-3acc-910f-9da2d872ae12")) __declspec(novtable) IInkToolbarBallpointPenButton : Windows::Foundation::IInspectable
 {
 };
@@ -2084,14 +2175,48 @@ struct __declspec(uuid("4cbdb92e-5f5e-4b35-a41c-16ffb0283bc0")) __declspec(novta
 {
 };
 
+struct __declspec(uuid("e7a59257-5ae8-436d-b2e2-93c200900ca0")) __declspec(novtable) IInkToolbarEraserButton2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsClearAllVisible(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsClearAllVisible(bool value) = 0;
+};
+
 struct __declspec(uuid("fd40611d-d1ba-4d67-af00-148036ad492c")) __declspec(novtable) IInkToolbarEraserButtonFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarEraserButton ** instance) = 0;
 };
 
+struct __declspec(uuid("038a1736-c5cd-4311-83f4-38cbf07c2066")) __declspec(novtable) IInkToolbarEraserButtonStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsClearAllVisibleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
 struct __declspec(uuid("3947aa99-36b1-4374-ab5c-98bf07a4320b")) __declspec(novtable) IInkToolbarFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbar ** instance) = 0;
+};
+
+struct __declspec(uuid("92b68786-37ee-4915-9e89-e187564a889a")) __declspec(novtable) IInkToolbarFlyoutItem : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Kind(winrt::Windows::UI::Xaml::Controls::InkToolbarFlyoutItemKind * value) = 0;
+    virtual HRESULT __stdcall put_Kind(winrt::Windows::UI::Xaml::Controls::InkToolbarFlyoutItemKind value) = 0;
+    virtual HRESULT __stdcall get_IsChecked(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsChecked(bool value) = 0;
+    virtual HRESULT __stdcall add_Checked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_Checked(event_token token) = 0;
+    virtual HRESULT __stdcall add_Unchecked(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_Unchecked(event_token token) = 0;
+};
+
+struct __declspec(uuid("352e7b93-803b-4f0e-8c72-9dfc0329329f")) __declspec(novtable) IInkToolbarFlyoutItemFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarFlyoutItem ** instance) = 0;
+};
+
+struct __declspec(uuid("1fe54b64-4063-4a5f-b89c-9f58935ee379")) __declspec(novtable) IInkToolbarFlyoutItemStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_KindProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_IsCheckedProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("0b3cc15b-7abf-487e-acc1-5b5048fee6d2")) __declspec(novtable) IInkToolbarHighlighterButton : Windows::Foundation::IInspectable
@@ -2101,6 +2226,28 @@ struct __declspec(uuid("0b3cc15b-7abf-487e-acc1-5b5048fee6d2")) __declspec(novta
 struct __declspec(uuid("7c334add-42ca-4943-94a4-23b5a6e55cf1")) __declspec(novtable) IInkToolbarHighlighterButtonFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarHighlighterButton ** instance) = 0;
+};
+
+struct __declspec(uuid("026edd26-d32b-4e28-a033-d5097662b292")) __declspec(novtable) IInkToolbarIsStencilButtonCheckedChangedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_StencilButton(Windows::UI::Xaml::Controls::IInkToolbarStencilButton ** value) = 0;
+    virtual HRESULT __stdcall get_StencilKind(winrt::Windows::UI::Xaml::Controls::InkToolbarStencilKind * value) = 0;
+};
+
+struct __declspec(uuid("860ecae5-7633-4ea1-a209-50392d1aebd1")) __declspec(novtable) IInkToolbarMenuButton : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_MenuKind(winrt::Windows::UI::Xaml::Controls::InkToolbarMenuKind * value) = 0;
+    virtual HRESULT __stdcall get_IsExtensionGlyphShown(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsExtensionGlyphShown(bool value) = 0;
+};
+
+struct __declspec(uuid("7a463a9d-5dc7-44a7-afd0-2b685cb9a96c")) __declspec(novtable) IInkToolbarMenuButtonFactory : Windows::Foundation::IInspectable
+{
+};
+
+struct __declspec(uuid("f03b17a6-b8b0-4a87-a961-37cd05d83137")) __declspec(novtable) IInkToolbarMenuButtonStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsExtensionGlyphShownProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("e0b80c21-b032-40ee-a2b9-507f6ccb827b")) __declspec(novtable) IInkToolbarPenButton : Windows::Foundation::IInspectable
@@ -2179,6 +2326,39 @@ struct __declspec(uuid("a3b493bb-cb4f-4e6b-a33d-f11e7a295efa")) __declspec(novta
     virtual HRESULT __stdcall get_InkDrawingAttributesProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_IsRulerButtonCheckedProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_TargetInkCanvasProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("aac1f8f2-2c1f-4e9c-b3f3-31ff22b51c7a")) __declspec(novtable) IInkToolbarStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsStencilButtonCheckedProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_ButtonFlyoutPlacementProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_OrientationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("306a2616-5b40-4bf3-92b7-f1df936aeff5")) __declspec(novtable) IInkToolbarStencilButton : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Ruler(Windows::UI::Input::Inking::IInkPresenterRuler ** value) = 0;
+    virtual HRESULT __stdcall get_Protractor(Windows::UI::Input::Inking::IInkPresenterProtractor ** value) = 0;
+    virtual HRESULT __stdcall get_SelectedStencil(winrt::Windows::UI::Xaml::Controls::InkToolbarStencilKind * value) = 0;
+    virtual HRESULT __stdcall put_SelectedStencil(winrt::Windows::UI::Xaml::Controls::InkToolbarStencilKind value) = 0;
+    virtual HRESULT __stdcall get_IsRulerItemVisible(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsRulerItemVisible(bool value) = 0;
+    virtual HRESULT __stdcall get_IsProtractorItemVisible(bool * value) = 0;
+    virtual HRESULT __stdcall put_IsProtractorItemVisible(bool value) = 0;
+};
+
+struct __declspec(uuid("a20701d1-8a70-4d77-89d4-1730a3a58edf")) __declspec(novtable) IInkToolbarStencilButtonFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IInkToolbarStencilButton ** instance) = 0;
+};
+
+struct __declspec(uuid("4748c07f-63e4-420d-939a-6b7243e9d124")) __declspec(novtable) IInkToolbarStencilButtonStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_RulerProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_ProtractorProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_SelectedStencilProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_IsRulerItemVisibleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_IsProtractorItemVisibleProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("b4a278fa-f5f0-4b1f-beb0-0b8a29905a4a")) __declspec(novtable) IInkToolbarToggleButton : Windows::Foundation::IInspectable
@@ -2604,6 +2784,12 @@ struct __declspec(uuid("1a9c6e99-1719-4b80-b335-628331a07019")) __declspec(novta
     virtual HRESULT __stdcall get_SingleSelectionFollowsFocus(bool * value) = 0;
     virtual HRESULT __stdcall put_SingleSelectionFollowsFocus(bool value) = 0;
     virtual HRESULT __stdcall abi_IsDragSource(bool * returnValue) = 0;
+};
+
+struct __declspec(uuid("f8a42637-965b-483b-94e5-e5c9fef0e352")) __declspec(novtable) IListViewBase6 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_TryStartConnectedAnimationAsync(Windows::UI::Xaml::Media::Animation::IConnectedAnimation * animation, Windows::Foundation::IInspectable * item, hstring elementName, Windows::Foundation::IAsyncOperation<bool> ** returnValue) = 0;
+    virtual HRESULT __stdcall abi_PrepareConnectedAnimation(hstring key, Windows::Foundation::IInspectable * item, hstring elementName, Windows::UI::Xaml::Media::Animation::IConnectedAnimation ** returnValue) = 0;
 };
 
 struct __declspec(uuid("e67e6c7f-150f-46d0-a6ac-c5002bd9ca53")) __declspec(novtable) IListViewBaseFactory : Windows::Foundation::IInspectable
@@ -3039,6 +3225,12 @@ struct __declspec(uuid("160775cf-b598-44af-a488-c3ce2af6d3f0")) __declspec(novta
     virtual HRESULT __stdcall remove_Click(event_token token) = 0;
 };
 
+struct __declspec(uuid("0ae266eb-028c-4423-a8e3-989fd9dd7126")) __declspec(novtable) IMenuFlyoutItem2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Icon(Windows::UI::Xaml::Controls::IIconElement ** value) = 0;
+    virtual HRESULT __stdcall put_Icon(Windows::UI::Xaml::Controls::IIconElement * value) = 0;
+};
+
 struct __declspec(uuid("f9b56047-8da6-4730-9208-144125c6b396")) __declspec(novtable) IMenuFlyoutItemBase : Windows::Foundation::IInspectable
 {
 };
@@ -3057,6 +3249,11 @@ struct __declspec(uuid("4950b424-a43a-41f7-aa3a-9ce9619747d5")) __declspec(novta
     virtual HRESULT __stdcall get_TextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CommandProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_CommandParameterProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("aca4f564-1790-4601-916e-5ae1f01f4bd6")) __declspec(novtable) IMenuFlyoutItemStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IconProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("906e0304-254e-413f-b219-c7b97f003752")) __declspec(novtable) IMenuFlyoutPresenter : Windows::Foundation::IInspectable
@@ -3094,9 +3291,20 @@ struct __declspec(uuid("e5386550-fe2c-43e2-a73f-62168f619973")) __declspec(novta
     virtual HRESULT __stdcall put_Text(hstring value) = 0;
 };
 
+struct __declspec(uuid("ac935626-190a-4de2-8d71-7cc4747da580")) __declspec(novtable) IMenuFlyoutSubItem2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Icon(Windows::UI::Xaml::Controls::IIconElement ** value) = 0;
+    virtual HRESULT __stdcall put_Icon(Windows::UI::Xaml::Controls::IIconElement * value) = 0;
+};
+
 struct __declspec(uuid("ddb27a36-1874-4aef-837d-6fec9da4e681")) __declspec(novtable) IMenuFlyoutSubItemStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_TextProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("ac14d09b-3e93-4785-94ef-fdb23baba965")) __declspec(novtable) IMenuFlyoutSubItemStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IconProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("bf2195a9-f4ea-4336-977c-f8fcf78b0d9e")) __declspec(novtable) INavigate : Windows::Foundation::IInspectable
@@ -3566,6 +3774,14 @@ struct __declspec(uuid("5caa8d35-c838-4bad-a07c-204183bb751f")) __declspec(novta
     virtual HRESULT __stdcall put_ClipboardCopyFormat(winrt::Windows::UI::Xaml::Controls::RichEditClipboardFormat value) = 0;
 };
 
+struct __declspec(uuid("a66d9cea-6391-4f3b-9fd3-1fd01f49f327")) __declspec(novtable) IRichEditBox5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SelectionHighlightColorWhenNotFocused(Windows::UI::Xaml::Media::ISolidColorBrush ** value) = 0;
+    virtual HRESULT __stdcall put_SelectionHighlightColorWhenNotFocused(Windows::UI::Xaml::Media::ISolidColorBrush * value) = 0;
+    virtual HRESULT __stdcall get_MaxLength(int32_t * value) = 0;
+    virtual HRESULT __stdcall put_MaxLength(int32_t value) = 0;
+};
+
 struct __declspec(uuid("61a1df62-2806-41ed-88ed-ae21f47ab422")) __declspec(novtable) IRichEditBoxFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::IRichEditBox ** instance) = 0;
@@ -3603,8 +3819,19 @@ struct __declspec(uuid("f5d54fd7-7796-42a5-a5e5-2cd211ee8176")) __declspec(novta
     virtual HRESULT __stdcall get_ClipboardCopyFormatProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
+struct __declspec(uuid("4b5c4568-43d5-43e6-bbb9-cb4e6250f45a")) __declspec(novtable) IRichEditBoxStatics5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SelectionHighlightColorWhenNotFocusedProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_MaxLengthProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
 struct __declspec(uuid("54065018-2813-4922-9f8e-b6bbafd995d8")) __declspec(novtable) IRichEditBoxTextChangingEventArgs : Windows::Foundation::IInspectable
 {
+};
+
+struct __declspec(uuid("395b0db5-636e-413e-9eb4-fc22ebfa3628")) __declspec(novtable) IRichEditBoxTextChangingEventArgs2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsContentChanging(bool * value) = 0;
 };
 
 struct __declspec(uuid("e5fff9e2-b968-49e7-97d4-8cca2ac3ae7c")) __declspec(novtable) IRichTextBlock : Windows::Foundation::IInspectable
@@ -3681,6 +3908,12 @@ struct __declspec(uuid("7d39ae83-8918-4613-b007-7c898ba2950e")) __declspec(novta
     virtual HRESULT __stdcall put_IsTextScaleFactorEnabled(bool value) = 0;
 };
 
+struct __declspec(uuid("3577c1ea-24fd-4f50-bbe4-3fb654ea58c5")) __declspec(novtable) IRichTextBlock4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TextDecorations(winrt::Windows::UI::Text::TextDecorations * value) = 0;
+    virtual HRESULT __stdcall put_TextDecorations(winrt::Windows::UI::Text::TextDecorations value) = 0;
+};
+
 struct __declspec(uuid("4f93749b-dac3-4a42-9cbb-99f0de37c071")) __declspec(novtable) IRichTextBlockOverflow : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_OverflowContentTarget(Windows::UI::Xaml::Controls::IRichTextBlockOverflow ** value) = 0;
@@ -3749,6 +3982,11 @@ struct __declspec(uuid("0d6131e1-af29-48ce-8aaf-74ecc28bfbb0")) __declspec(novta
 struct __declspec(uuid("073f7ef4-ca2b-4b49-a59a-31d8fa743332")) __declspec(novtable) IRichTextBlockStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("80155bc4-6d96-4b08-ad57-13db0f046412")) __declspec(novtable) IRichTextBlockStatics4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TextDecorationsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("4abae829-d80c-4a5e-a48c-f8b3d3b6533d")) __declspec(novtable) IRowDefinition : Windows::Foundation::IInspectable
@@ -4456,6 +4694,12 @@ struct __declspec(uuid("b014f270-9808-4adc-b452-60cda54100c1")) __declspec(novta
     virtual HRESULT __stdcall abi_GetAlphaMask(Windows::UI::Composition::ICompositionBrush ** returnValue) = 0;
 };
 
+struct __declspec(uuid("624a2d38-edbd-4a5a-b678-e49f1e07afbd")) __declspec(novtable) ITextBlock5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TextDecorations(winrt::Windows::UI::Text::TextDecorations * value) = 0;
+    virtual HRESULT __stdcall put_TextDecorations(winrt::Windows::UI::Text::TextDecorations value) = 0;
+};
+
 struct __declspec(uuid("193ec042-a847-4552-b4e8-db36655b840a")) __declspec(novtable) ITextBlockStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_FontSizeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
@@ -4489,6 +4733,11 @@ struct __declspec(uuid("88100b1b-ff24-4b93-a0e6-f029c94871f1")) __declspec(novta
 struct __declspec(uuid("8d16b9eb-20a1-4eab-bbf2-1d6bdcbcd705")) __declspec(novtable) ITextBlockStatics3 : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsTextScaleFactorEnabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("8e4d9c70-0d4e-48df-ae7f-bb7a9af6852e")) __declspec(novtable) ITextBlockStatics5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_TextDecorationsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
 struct __declspec(uuid("e48f5a8b-1dff-4352-a1f4-e516514ec882")) __declspec(novtable) ITextBox : Windows::Foundation::IInspectable
@@ -4569,6 +4818,12 @@ struct __declspec(uuid("b5f1a675-cce1-45af-aef9-c4787bbb5e30")) __declspec(novta
     virtual HRESULT __stdcall abi_GetLinguisticAlternativesAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> ** returnValue) = 0;
 };
 
+struct __declspec(uuid("35f9cfc1-4176-44f4-b756-e9ccc4399805")) __declspec(novtable) ITextBox5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SelectionHighlightColorWhenNotFocused(Windows::UI::Xaml::Media::ISolidColorBrush ** value) = 0;
+    virtual HRESULT __stdcall put_SelectionHighlightColorWhenNotFocused(Windows::UI::Xaml::Media::ISolidColorBrush * value) = 0;
+};
+
 struct __declspec(uuid("710e4278-8529-47d3-8d8e-307e34cff081")) __declspec(novtable) ITextBoxFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::Controls::ITextBox ** instance) = 0;
@@ -4603,8 +4858,18 @@ struct __declspec(uuid("0e1005c0-10b5-40f6-92c2-ce134b0d3457")) __declspec(novta
     virtual HRESULT __stdcall get_TextReadingOrderProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
 };
 
+struct __declspec(uuid("07d04b45-1b2f-4627-82fd-683f197e5a75")) __declspec(novtable) ITextBoxStatics5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_SelectionHighlightColorWhenNotFocusedProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
 struct __declspec(uuid("4e6a4b75-43dd-4e33-acbe-2d8796a17927")) __declspec(novtable) ITextBoxTextChangingEventArgs : Windows::Foundation::IInspectable
 {
+};
+
+struct __declspec(uuid("c0723d44-53a6-415f-a981-50dfaf1becbe")) __declspec(novtable) ITextBoxTextChangingEventArgs2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsContentChanging(bool * value) = 0;
 };
 
 struct __declspec(uuid("4dd04f7d-7a11-4b2e-9933-577df39252b6")) __declspec(novtable) ITextChangedEventArgs : Windows::Foundation::IInspectable
@@ -5343,11 +5608,15 @@ template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarCustomPenButton
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarCustomToggleButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarCustomToggleButton; };
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarCustomToolButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarCustomToolButton; };
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarEraserButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarEraserButton; };
+template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarFlyoutItem; };
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarHighlighterButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarHighlighterButton; };
+template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarIsStencilButtonCheckedChangedEventArgs; };
+template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarMenuButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarMenuButton; };
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarPenButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarPenButton; };
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarPenConfigurationControl> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarPenConfigurationControl; };
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarPencilButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarPencilButton; };
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarRulerButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarRulerButton; };
+template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarStencilButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarStencilButton; };
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarToggleButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarToggleButton; };
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarToolButton> { using default_interface = Windows::UI::Xaml::Controls::IInkToolbarToolButton; };
 template <> struct traits<Windows::UI::Xaml::Controls::ItemClickEventArgs> { using default_interface = Windows::UI::Xaml::Controls::IItemClickEventArgs; };
@@ -5770,6 +6039,13 @@ struct WINRT_EBO impl_IBitmapIcon
 };
 
 template <typename D>
+struct WINRT_EBO impl_IBitmapIcon2
+{
+    bool ShowAsMonochrome() const;
+    void ShowAsMonochrome(bool value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IBitmapIconFactory
 {
     Windows::UI::Xaml::Controls::BitmapIcon CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
@@ -5779,6 +6055,12 @@ template <typename D>
 struct WINRT_EBO impl_IBitmapIconStatics
 {
     Windows::UI::Xaml::DependencyProperty UriSourceProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapIconStatics2
+{
+    Windows::UI::Xaml::DependencyProperty ShowAsMonochromeProperty() const;
 };
 
 template <typename D>
@@ -6303,6 +6585,13 @@ struct WINRT_EBO impl_IComboBox3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IComboBox4
+{
+    Windows::UI::Xaml::Controls::ComboBoxSelectionChangedTrigger SelectionChangedTrigger() const;
+    void SelectionChangedTrigger(Windows::UI::Xaml::Controls::ComboBoxSelectionChangedTrigger value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IComboBoxFactory
 {
     Windows::UI::Xaml::Controls::ComboBox CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
@@ -6346,6 +6635,12 @@ struct WINRT_EBO impl_IComboBoxStatics3
 {
     Windows::UI::Xaml::DependencyProperty LightDismissOverlayModeProperty() const;
     Windows::UI::Xaml::DependencyProperty IsTextSearchEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComboBoxStatics4
+{
+    Windows::UI::Xaml::DependencyProperty SelectionChangedTriggerProperty() const;
 };
 
 template <typename D>
@@ -6537,6 +6832,29 @@ struct WINRT_EBO impl_IContentDialog
 };
 
 template <typename D>
+struct WINRT_EBO impl_IContentDialog2
+{
+    hstring CloseButtonText() const;
+    void CloseButtonText(hstring_view value) const;
+    Windows::UI::Xaml::Input::ICommand CloseButtonCommand() const;
+    void CloseButtonCommand(const Windows::UI::Xaml::Input::ICommand & value) const;
+    Windows::Foundation::IInspectable CloseButtonCommandParameter() const;
+    void CloseButtonCommandParameter(const Windows::Foundation::IInspectable & value) const;
+    Windows::UI::Xaml::Style PrimaryButtonStyle() const;
+    void PrimaryButtonStyle(const Windows::UI::Xaml::Style & value) const;
+    Windows::UI::Xaml::Style SecondaryButtonStyle() const;
+    void SecondaryButtonStyle(const Windows::UI::Xaml::Style & value) const;
+    Windows::UI::Xaml::Style CloseButtonStyle() const;
+    void CloseButtonStyle(const Windows::UI::Xaml::Style & value) const;
+    Windows::UI::Xaml::Controls::ContentDialogButton DefaultButton() const;
+    void DefaultButton(Windows::UI::Xaml::Controls::ContentDialogButton value) const;
+    event_token CloseButtonClick(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs> & value) const;
+    using CloseButtonClick_revoker = event_revoker<IContentDialog2>;
+    CloseButtonClick_revoker CloseButtonClick(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs> & value) const;
+    void CloseButtonClick(event_token token) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IContentDialogButtonClickDeferral
 {
     void Complete() const;
@@ -6596,6 +6914,18 @@ struct WINRT_EBO impl_IContentDialogStatics
     Windows::UI::Xaml::DependencyProperty SecondaryButtonCommandParameterProperty() const;
     Windows::UI::Xaml::DependencyProperty IsPrimaryButtonEnabledProperty() const;
     Windows::UI::Xaml::DependencyProperty IsSecondaryButtonEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentDialogStatics2
+{
+    Windows::UI::Xaml::DependencyProperty CloseButtonTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty CloseButtonCommandProperty() const;
+    Windows::UI::Xaml::DependencyProperty CloseButtonCommandParameterProperty() const;
+    Windows::UI::Xaml::DependencyProperty PrimaryButtonStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty SecondaryButtonStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty CloseButtonStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty DefaultButtonProperty() const;
 };
 
 template <typename D>
@@ -6828,6 +7158,13 @@ struct WINRT_EBO impl_IControl4
 };
 
 template <typename D>
+struct WINRT_EBO impl_IControl5
+{
+    Windows::Foundation::Uri DefaultStyleResourceUri() const;
+    void DefaultStyleResourceUri(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IControlFactory
 {
     Windows::UI::Xaml::Controls::Control CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
@@ -6922,6 +7259,15 @@ struct WINRT_EBO impl_IControlStatics4
     Windows::UI::Xaml::DependencyProperty XYFocusUpProperty() const;
     Windows::UI::Xaml::DependencyProperty XYFocusDownProperty() const;
     Windows::UI::Xaml::DependencyProperty ElementSoundModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControlStatics5
+{
+    Windows::UI::Xaml::DependencyProperty DefaultStyleResourceUriProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsTemplateKeyTipTargetProperty() const;
+    bool GetIsTemplateKeyTipTarget(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsTemplateKeyTipTarget(const Windows::UI::Xaml::DependencyObject & element, bool value) const;
 };
 
 template <typename D>
@@ -7224,6 +7570,13 @@ struct WINRT_EBO impl_IFocusEngagedEventArgs
 };
 
 template <typename D>
+struct WINRT_EBO impl_IFocusEngagedEventArgs2
+{
+    bool Handled() const;
+    void Handled(bool value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IFontIcon
 {
     hstring Glyph() const;
@@ -7326,6 +7679,12 @@ template <typename D>
 struct WINRT_EBO impl_IFrame3
 {
     void GoBack(const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & transitionInfoOverride) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrame4
+{
+    void SetNavigationState(hstring_view navigationState, bool suppressNavigate) const;
 };
 
 template <typename D>
@@ -7689,12 +8048,28 @@ struct WINRT_EBO impl_IInkToolbar
     using EraseAllClicked_revoker = event_revoker<IInkToolbar>;
     EraseAllClicked_revoker EraseAllClicked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
     void EraseAllClicked(event_token token) const;
-    event_token IsRulerButtonCheckedChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
+    [[deprecated("InkToolbarRulerButton is replaced by InkToolbarStencilButton starting from Windows 10 Creators Update. For more info, see MSDN.")]] event_token IsRulerButtonCheckedChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
     using IsRulerButtonCheckedChanged_revoker = event_revoker<IInkToolbar>;
-    IsRulerButtonCheckedChanged_revoker IsRulerButtonCheckedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
-    void IsRulerButtonCheckedChanged(event_token token) const;
+    [[deprecated("InkToolbarRulerButton is replaced by InkToolbarStencilButton starting from Windows 10 Creators Update. For more info, see MSDN.")]] IsRulerButtonCheckedChanged_revoker IsRulerButtonCheckedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::Foundation::IInspectable> & value) const;
+    [[deprecated("InkToolbarRulerButton is replaced by InkToolbarStencilButton starting from Windows 10 Creators Update. For more info, see MSDN.")]] void IsRulerButtonCheckedChanged(event_token token) const;
     Windows::UI::Xaml::Controls::InkToolbarToolButton GetToolButton(Windows::UI::Xaml::Controls::InkToolbarTool tool) const;
     Windows::UI::Xaml::Controls::InkToolbarToggleButton GetToggleButton(Windows::UI::Xaml::Controls::InkToolbarToggle tool) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbar2
+{
+    bool IsStencilButtonChecked() const;
+    void IsStencilButtonChecked(bool value) const;
+    Windows::UI::Xaml::Controls::InkToolbarButtonFlyoutPlacement ButtonFlyoutPlacement() const;
+    void ButtonFlyoutPlacement(Windows::UI::Xaml::Controls::InkToolbarButtonFlyoutPlacement value) const;
+    Windows::UI::Xaml::Controls::Orientation Orientation() const;
+    void Orientation(Windows::UI::Xaml::Controls::Orientation value) const;
+    event_token IsStencilButtonCheckedChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs> & value) const;
+    using IsStencilButtonCheckedChanged_revoker = event_revoker<IInkToolbar2>;
+    IsStencilButtonCheckedChanged_revoker IsStencilButtonCheckedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs> & value) const;
+    void IsStencilButtonCheckedChanged(event_token token) const;
+    Windows::UI::Xaml::Controls::InkToolbarMenuButton GetMenuButton(Windows::UI::Xaml::Controls::InkToolbarMenuKind menu) const;
 };
 
 template <typename D>
@@ -7784,15 +8159,58 @@ struct WINRT_EBO impl_IInkToolbarEraserButton
 };
 
 template <typename D>
+struct WINRT_EBO impl_IInkToolbarEraserButton2
+{
+    bool IsClearAllVisible() const;
+    void IsClearAllVisible(bool value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IInkToolbarEraserButtonFactory
 {
     Windows::UI::Xaml::Controls::InkToolbarEraserButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
+struct WINRT_EBO impl_IInkToolbarEraserButtonStatics2
+{
+    Windows::UI::Xaml::DependencyProperty IsClearAllVisibleProperty() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IInkToolbarFactory
 {
     Windows::UI::Xaml::Controls::InkToolbar CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarFlyoutItem
+{
+    Windows::UI::Xaml::Controls::InkToolbarFlyoutItemKind Kind() const;
+    void Kind(Windows::UI::Xaml::Controls::InkToolbarFlyoutItemKind value) const;
+    bool IsChecked() const;
+    void IsChecked(bool value) const;
+    event_token Checked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> & value) const;
+    using Checked_revoker = event_revoker<IInkToolbarFlyoutItem>;
+    Checked_revoker Checked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> & value) const;
+    void Checked(event_token token) const;
+    event_token Unchecked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> & value) const;
+    using Unchecked_revoker = event_revoker<IInkToolbarFlyoutItem>;
+    Unchecked_revoker Unchecked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem, Windows::Foundation::IInspectable> & value) const;
+    void Unchecked(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarFlyoutItemFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarFlyoutItem CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarFlyoutItemStatics
+{
+    Windows::UI::Xaml::DependencyProperty KindProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsCheckedProperty() const;
 };
 
 template <typename D>
@@ -7804,6 +8222,32 @@ template <typename D>
 struct WINRT_EBO impl_IInkToolbarHighlighterButtonFactory
 {
     Windows::UI::Xaml::Controls::InkToolbarHighlighterButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarIsStencilButtonCheckedChangedEventArgs
+{
+    Windows::UI::Xaml::Controls::InkToolbarStencilButton StencilButton() const;
+    Windows::UI::Xaml::Controls::InkToolbarStencilKind StencilKind() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarMenuButton
+{
+    Windows::UI::Xaml::Controls::InkToolbarMenuKind MenuKind() const;
+    bool IsExtensionGlyphShown() const;
+    void IsExtensionGlyphShown(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarMenuButtonFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarMenuButtonStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsExtensionGlyphShownProperty() const;
 };
 
 template <typename D>
@@ -7870,19 +8314,19 @@ struct WINRT_EBO impl_IInkToolbarPencilButtonFactory
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarRulerButton
 {
-    Windows::UI::Input::Inking::InkPresenterRuler Ruler() const;
+    [[deprecated("InkToolbarRulerButton is deprecated starting from Windows 10 Creators Update. Please use InkToolbarStencilButton going forward. For more info, see MSDN.")]] Windows::UI::Input::Inking::InkPresenterRuler Ruler() const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarRulerButtonFactory
 {
-    Windows::UI::Xaml::Controls::InkToolbarRulerButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
+    [[deprecated("InkToolbarRulerButton is deprecated starting from Windows 10 Creators Update. Please use InkToolbarStencilButton going forward. For more info, see MSDN.")]] Windows::UI::Xaml::Controls::InkToolbarRulerButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IInkToolbarRulerButtonStatics
 {
-    Windows::UI::Xaml::DependencyProperty RulerProperty() const;
+    [[deprecated("InkToolbarRulerButton is deprecated starting from Windows 10 Creators Update. Please use InkToolbarStencilButton going forward. For more info, see MSDN.")]] Windows::UI::Xaml::DependencyProperty RulerProperty() const;
 };
 
 template <typename D>
@@ -7894,6 +8338,43 @@ struct WINRT_EBO impl_IInkToolbarStatics
     Windows::UI::Xaml::DependencyProperty InkDrawingAttributesProperty() const;
     Windows::UI::Xaml::DependencyProperty IsRulerButtonCheckedProperty() const;
     Windows::UI::Xaml::DependencyProperty TargetInkCanvasProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarStatics2
+{
+    Windows::UI::Xaml::DependencyProperty IsStencilButtonCheckedProperty() const;
+    Windows::UI::Xaml::DependencyProperty ButtonFlyoutPlacementProperty() const;
+    Windows::UI::Xaml::DependencyProperty OrientationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarStencilButton
+{
+    Windows::UI::Input::Inking::InkPresenterRuler Ruler() const;
+    Windows::UI::Input::Inking::InkPresenterProtractor Protractor() const;
+    Windows::UI::Xaml::Controls::InkToolbarStencilKind SelectedStencil() const;
+    void SelectedStencil(Windows::UI::Xaml::Controls::InkToolbarStencilKind value) const;
+    bool IsRulerItemVisible() const;
+    void IsRulerItemVisible(bool value) const;
+    bool IsProtractorItemVisible() const;
+    void IsProtractorItemVisible(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarStencilButtonFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarStencilButton CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarStencilButtonStatics
+{
+    Windows::UI::Xaml::DependencyProperty RulerProperty() const;
+    Windows::UI::Xaml::DependencyProperty ProtractorProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedStencilProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsRulerItemVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsProtractorItemVisibleProperty() const;
 };
 
 template <typename D>
@@ -8380,6 +8861,13 @@ struct WINRT_EBO impl_IListViewBase5
     bool SingleSelectionFollowsFocus() const;
     void SingleSelectionFollowsFocus(bool value) const;
     bool IsDragSource() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBase6
+{
+    Windows::Foundation::IAsyncOperation<bool> TryStartConnectedAnimationAsync(const Windows::UI::Xaml::Media::Animation::ConnectedAnimation & animation, const Windows::Foundation::IInspectable & item, hstring_view elementName) const;
+    Windows::UI::Xaml::Media::Animation::ConnectedAnimation PrepareConnectedAnimation(hstring_view key, const Windows::Foundation::IInspectable & item, hstring_view elementName) const;
 };
 
 template <typename D>
@@ -8879,6 +9367,13 @@ struct WINRT_EBO impl_IMenuFlyoutItem
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutItem2
+{
+    Windows::UI::Xaml::Controls::IconElement Icon() const;
+    void Icon(const Windows::UI::Xaml::Controls::IconElement & value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMenuFlyoutItemBase
 {
 };
@@ -8900,6 +9395,12 @@ struct WINRT_EBO impl_IMenuFlyoutItemStatics
     Windows::UI::Xaml::DependencyProperty TextProperty() const;
     Windows::UI::Xaml::DependencyProperty CommandProperty() const;
     Windows::UI::Xaml::DependencyProperty CommandParameterProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutItemStatics2
+{
+    Windows::UI::Xaml::DependencyProperty IconProperty() const;
 };
 
 template <typename D>
@@ -8945,9 +9446,22 @@ struct WINRT_EBO impl_IMenuFlyoutSubItem
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutSubItem2
+{
+    Windows::UI::Xaml::Controls::IconElement Icon() const;
+    void Icon(const Windows::UI::Xaml::Controls::IconElement & value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMenuFlyoutSubItemStatics
 {
     Windows::UI::Xaml::DependencyProperty TextProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutSubItemStatics2
+{
+    Windows::UI::Xaml::DependencyProperty IconProperty() const;
 };
 
 template <typename D>
@@ -9503,6 +10017,15 @@ struct WINRT_EBO impl_IRichEditBox4
 };
 
 template <typename D>
+struct WINRT_EBO impl_IRichEditBox5
+{
+    Windows::UI::Xaml::Media::SolidColorBrush SelectionHighlightColorWhenNotFocused() const;
+    void SelectionHighlightColorWhenNotFocused(const Windows::UI::Xaml::Media::SolidColorBrush & value) const;
+    int32_t MaxLength() const;
+    void MaxLength(int32_t value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IRichEditBoxFactory
 {
     Windows::UI::Xaml::Controls::RichEditBox CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
@@ -9545,8 +10068,21 @@ struct WINRT_EBO impl_IRichEditBoxStatics4
 };
 
 template <typename D>
+struct WINRT_EBO impl_IRichEditBoxStatics5
+{
+    Windows::UI::Xaml::DependencyProperty SelectionHighlightColorWhenNotFocusedProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxLengthProperty() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IRichEditBoxTextChangingEventArgs
 {
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichEditBoxTextChangingEventArgs2
+{
+    bool IsContentChanging() const;
 };
 
 template <typename D>
@@ -9631,6 +10167,13 @@ struct WINRT_EBO impl_IRichTextBlock3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IRichTextBlock4
+{
+    Windows::UI::Text::TextDecorations TextDecorations() const;
+    void TextDecorations(Windows::UI::Text::TextDecorations value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IRichTextBlockOverflow
 {
     Windows::UI::Xaml::Controls::RichTextBlockOverflow OverflowContentTarget() const;
@@ -9705,6 +10248,12 @@ template <typename D>
 struct WINRT_EBO impl_IRichTextBlockStatics3
 {
     Windows::UI::Xaml::DependencyProperty IsTextScaleFactorEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichTextBlockStatics4
+{
+    Windows::UI::Xaml::DependencyProperty TextDecorationsProperty() const;
 };
 
 template <typename D>
@@ -10509,6 +11058,13 @@ struct WINRT_EBO impl_ITextBlock4
 };
 
 template <typename D>
+struct WINRT_EBO impl_ITextBlock5
+{
+    Windows::UI::Text::TextDecorations TextDecorations() const;
+    void TextDecorations(Windows::UI::Text::TextDecorations value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ITextBlockStatics
 {
     Windows::UI::Xaml::DependencyProperty FontSizeProperty() const;
@@ -10544,6 +11100,12 @@ template <typename D>
 struct WINRT_EBO impl_ITextBlockStatics3
 {
     Windows::UI::Xaml::DependencyProperty IsTextScaleFactorEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBlockStatics5
+{
+    Windows::UI::Xaml::DependencyProperty TextDecorationsProperty() const;
 };
 
 template <typename D>
@@ -10647,6 +11209,13 @@ struct WINRT_EBO impl_ITextBox4
 };
 
 template <typename D>
+struct WINRT_EBO impl_ITextBox5
+{
+    Windows::UI::Xaml::Media::SolidColorBrush SelectionHighlightColorWhenNotFocused() const;
+    void SelectionHighlightColorWhenNotFocused(const Windows::UI::Xaml::Media::SolidColorBrush & value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ITextBoxFactory
 {
     Windows::UI::Xaml::Controls::TextBox CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
@@ -10685,8 +11254,20 @@ struct WINRT_EBO impl_ITextBoxStatics3
 };
 
 template <typename D>
+struct WINRT_EBO impl_ITextBoxStatics5
+{
+    Windows::UI::Xaml::DependencyProperty SelectionHighlightColorWhenNotFocusedProperty() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_ITextBoxTextChangingEventArgs
 {
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBoxTextChangingEventArgs2
+{
+    bool IsContentChanging() const;
 };
 
 template <typename D>
@@ -11655,6 +12236,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IBitmapIcon>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IBitmapIcon<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IBitmapIcon2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IBitmapIcon2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IBitmapIcon2<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IBitmapIconFactory>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IBitmapIconFactory;
@@ -11665,6 +12252,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IBitmapIconStatics>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IBitmapIconStatics;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IBitmapIconStatics<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IBitmapIconStatics2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IBitmapIconStatics2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IBitmapIconStatics2<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IBorder>
@@ -11883,6 +12476,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IComboBox3>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IComboBox3<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IComboBox4>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IComboBox4;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IComboBox4<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IComboBoxFactory>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IComboBoxFactory;
@@ -11923,6 +12522,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IComboBoxStatics3>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IComboBoxStatics3;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IComboBoxStatics3<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IComboBoxStatics4>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IComboBoxStatics4;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IComboBoxStatics4<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ICommandBar>
@@ -12033,6 +12638,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IContentDialog>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IContentDialog<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IContentDialog2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IContentDialog2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IContentDialog2<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IContentDialogButtonClickDeferral>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IContentDialogButtonClickDeferral;
@@ -12079,6 +12690,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IContentDialogStatics>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IContentDialogStatics;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IContentDialogStatics<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IContentDialogStatics2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IContentDialogStatics2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IContentDialogStatics2<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IContentPresenter>
@@ -12171,6 +12788,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IControl4>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IControl4<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IControl5>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IControl5;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IControl5<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IControlFactory>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IControlFactory;
@@ -12211,6 +12834,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IControlStatics4>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IControlStatics4;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IControlStatics4<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IControlStatics5>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IControlStatics5;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IControlStatics5<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IControlTemplate>
@@ -12429,6 +13058,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IFocusEngagedEventArgs>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IFocusEngagedEventArgs<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IFocusEngagedEventArgs2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IFocusEngagedEventArgs2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IFocusEngagedEventArgs2<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IFontIcon>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IFontIcon;
@@ -12487,6 +13122,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IFrame3>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IFrame3;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IFrame3<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IFrame4>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IFrame4;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IFrame4<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IFrameFactory>
@@ -12741,6 +13382,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbar>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbar<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbar2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbar2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbar2<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton;
@@ -12825,16 +13472,46 @@ template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarEraserButton>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarEraserButton<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarEraserButton2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarEraserButton2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarEraserButton2<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarEraserButtonFactory>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarEraserButtonFactory;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarEraserButtonFactory<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarEraserButtonStatics2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarEraserButtonStatics2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarEraserButtonStatics2<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarFactory>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarFactory;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarFlyoutItem>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarFlyoutItem;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarFlyoutItem<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemFactory>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemFactory;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarFlyoutItemFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemStatics>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarFlyoutItemStatics;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarFlyoutItemStatics<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarHighlighterButton>
@@ -12847,6 +13524,30 @@ template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarHighlighterBut
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarHighlighterButtonFactory;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarHighlighterButtonFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarIsStencilButtonCheckedChangedEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarIsStencilButtonCheckedChangedEventArgs;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarIsStencilButtonCheckedChangedEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarMenuButton>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarMenuButton;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarMenuButton<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarMenuButtonFactory>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarMenuButtonFactory;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarMenuButtonFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarMenuButtonStatics>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarMenuButtonStatics;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarMenuButtonStatics<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarPenButton>
@@ -12919,6 +13620,30 @@ template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarStatics>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarStatics;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarStatics<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarStatics2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarStatics2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarStatics2<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarStencilButton>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarStencilButton;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarStencilButton<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarStencilButtonFactory>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarStencilButtonFactory;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarStencilButtonFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarStencilButtonStatics>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IInkToolbarStencilButtonStatics;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IInkToolbarStencilButtonStatics<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IInkToolbarToggleButton>
@@ -13191,6 +13916,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IListViewBase5>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IListViewBase5<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IListViewBase6>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IListViewBase6;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IListViewBase6<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IListViewBaseFactory>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IListViewBaseFactory;
@@ -13413,6 +14144,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IMenuFlyoutItem>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IMenuFlyoutItem<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IMenuFlyoutItem2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IMenuFlyoutItem2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IMenuFlyoutItem2<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IMenuFlyoutItemBase>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IMenuFlyoutItemBase;
@@ -13435,6 +14172,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IMenuFlyoutItemStatics<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IMenuFlyoutItemStatics2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IMenuFlyoutItemStatics2<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IMenuFlyoutPresenter>
@@ -13479,10 +14222,22 @@ template <> struct traits<Windows::UI::Xaml::Controls::IMenuFlyoutSubItem>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IMenuFlyoutSubItem<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IMenuFlyoutSubItem2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IMenuFlyoutSubItem2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IMenuFlyoutSubItem2<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IMenuFlyoutSubItemStatics<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IMenuFlyoutSubItemStatics2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IMenuFlyoutSubItemStatics2<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::INavigate>
@@ -13779,6 +14534,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IRichEditBox4>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IRichEditBox4<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IRichEditBox5>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IRichEditBox5;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IRichEditBox5<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IRichEditBoxFactory>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IRichEditBoxFactory;
@@ -13809,10 +14570,22 @@ template <> struct traits<Windows::UI::Xaml::Controls::IRichEditBoxStatics4>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IRichEditBoxStatics4<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::IRichEditBoxStatics5>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IRichEditBoxStatics5;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IRichEditBoxStatics5<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IRichEditBoxTextChangingEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IRichEditBoxTextChangingEventArgs2<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IRichTextBlock>
@@ -13831,6 +14604,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IRichTextBlock3>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IRichTextBlock3;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IRichTextBlock3<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IRichTextBlock4>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IRichTextBlock4;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IRichTextBlock4<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IRichTextBlockOverflow>
@@ -13873,6 +14652,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::IRichTextBlockStatics3>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IRichTextBlockStatics3;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IRichTextBlockStatics3<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::IRichTextBlockStatics4>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::IRichTextBlockStatics4;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_IRichTextBlockStatics4<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IRowDefinition>
@@ -14247,6 +15032,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::ITextBlock4>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_ITextBlock4<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::ITextBlock5>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::ITextBlock5;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_ITextBlock5<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::ITextBlockStatics>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ITextBlockStatics;
@@ -14263,6 +15054,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::ITextBlockStatics3>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ITextBlockStatics3;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_ITextBlockStatics3<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::ITextBlockStatics5>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::ITextBlockStatics5;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_ITextBlockStatics5<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ITextBox>
@@ -14289,6 +15086,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::ITextBox4>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_ITextBox4<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::ITextBox5>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::ITextBox5;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_ITextBox5<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::ITextBoxFactory>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ITextBoxFactory;
@@ -14313,10 +15116,22 @@ template <> struct traits<Windows::UI::Xaml::Controls::ITextBoxStatics3>
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_ITextBoxStatics3<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::ITextBoxStatics5>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::ITextBoxStatics5;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_ITextBoxStatics5<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs;
     template <typename D> using consume = Windows::UI::Xaml::Controls::impl_ITextBoxTextChangingEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs2>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs2;
+    template <typename D> using consume = Windows::UI::Xaml::Controls::impl_ITextBoxTextChangingEventArgs2<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ITextChangedEventArgs>
@@ -15293,10 +16108,28 @@ template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarEraserButton>
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarEraserButton"; }
 };
 
+template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarFlyoutItem>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarFlyoutItem;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarFlyoutItem"; }
+};
+
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarHighlighterButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarHighlighterButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarHighlighterButton"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarIsStencilButtonCheckedChangedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarIsStencilButtonCheckedChangedEventArgs"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarMenuButton>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarMenuButton;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarMenuButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarPenButton>
@@ -15321,6 +16154,12 @@ template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarRulerButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarRulerButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarRulerButton"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarStencilButton>
+{
+    using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarStencilButton;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarStencilButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarToggleButton>

@@ -15,6 +15,11 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("cdb5efb3-5788-509d-9be1-71ccb8a3362a")) __declspec(novtable) IAsyncOperation<bool> : impl_IAsyncOperation<bool> {};
 #endif
 
+#ifndef WINRT_GENERIC_ca821060_002b_526d_8122_982630d7cdbe
+#define WINRT_GENERIC_ca821060_002b_526d_8122_982630d7cdbe
+template <> struct __declspec(uuid("ca821060-002b-526d-8122-982630d7cdbe")) __declspec(novtable) EventHandler<Windows::UI::Core::BackRequestedEventArgs> : impl_EventHandler<Windows::UI::Core::BackRequestedEventArgs> {};
+#endif
+
 
 }
 
@@ -85,6 +90,11 @@ template <> struct __declspec(uuid("14b7f692-5583-52a1-aa42-fc1843c0f748")) __de
 template <> struct __declspec(uuid("21a652d2-bfe2-5b2e-a2ab-ca45253be8b0")) __declspec(novtable) TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> : impl_TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> {};
 #endif
 
+#ifndef WINRT_GENERIC_6368ae3d_52d4_5290_b936_717a9acf5bea
+#define WINRT_GENERIC_6368ae3d_52d4_5290_b936_717a9acf5bea
+template <> struct __declspec(uuid("6368ae3d-52d4-5290-b936-717a9acf5bea")) __declspec(novtable) TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::Foundation::IInspectable> {};
+#endif
+
 #ifndef WINRT_GENERIC_136dff0d_f7e8_5153_b31c_86390c701880
 #define WINRT_GENERIC_136dff0d_f7e8_5153_b31c_86390c701880
 template <> struct __declspec(uuid("136dff0d-f7e8-5153-b31c-86390c701880")) __declspec(novtable) TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs> : impl_TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs> {};
@@ -128,11 +138,6 @@ template <> struct __declspec(uuid("e2c62d42-0577-5112-9e59-eae159bf39e9")) __de
 #ifndef WINRT_GENERIC_29742d27_177d_54c3_b974_616fc45a2b0c
 #define WINRT_GENERIC_29742d27_177d_54c3_b974_616fc45a2b0c
 template <> struct __declspec(uuid("29742d27-177d-54c3-b974-616fc45a2b0c")) __declspec(novtable) TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> : impl_TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> {};
-#endif
-
-#ifndef WINRT_GENERIC_ca821060_002b_526d_8122_982630d7cdbe
-#define WINRT_GENERIC_ca821060_002b_526d_8122_982630d7cdbe
-template <> struct __declspec(uuid("ca821060-002b-526d-8122-982630d7cdbe")) __declspec(novtable) EventHandler<Windows::UI::Core::BackRequestedEventArgs> : impl_EventHandler<Windows::UI::Core::BackRequestedEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_c1d3d1a2_ae17_5a5f_b5a2_bdcc8844889a
@@ -347,6 +352,13 @@ struct ICoreWindow3 :
     impl::consume<ICoreWindow3>
 {
     ICoreWindow3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ICoreWindow4 :
+    Windows::Foundation::IInspectable,
+    impl::consume<ICoreWindow4>
+{
+    ICoreWindow4(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICoreWindowEventArgs :

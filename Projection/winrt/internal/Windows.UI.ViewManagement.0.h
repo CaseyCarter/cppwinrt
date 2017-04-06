@@ -13,7 +13,9 @@ struct IActivationViewSwitcher;
 struct IApplicationView;
 struct IApplicationView2;
 struct IApplicationView3;
+struct IApplicationView4;
 struct IApplicationViewConsolidatedEventArgs;
+struct IApplicationViewConsolidatedEventArgs2;
 struct IApplicationViewFullscreenStatics;
 struct IApplicationViewInteropStatics;
 struct IApplicationViewScaling;
@@ -23,6 +25,7 @@ struct IApplicationViewStatics2;
 struct IApplicationViewStatics3;
 struct IApplicationViewSwitcherStatics;
 struct IApplicationViewSwitcherStatics2;
+struct IApplicationViewSwitcherStatics3;
 struct IApplicationViewTitleBar;
 struct IApplicationViewTransferContext;
 struct IApplicationViewTransferContextStatics;
@@ -36,8 +39,11 @@ struct IProjectionManagerStatics2;
 struct IUISettings;
 struct IUISettings2;
 struct IUISettings3;
+struct IUISettings4;
 struct IUIViewSettings;
 struct IUIViewSettingsStatics;
+struct IViewModePreferences;
+struct IViewModePreferencesStatics;
 struct AccessibilitySettings;
 struct ActivationViewSwitcher;
 struct ApplicationView;
@@ -49,6 +55,7 @@ struct InputPane;
 struct InputPaneVisibilityEventArgs;
 struct UISettings;
 struct UIViewSettings;
+struct ViewModePreferences;
 
 }
 
@@ -59,7 +66,9 @@ struct IActivationViewSwitcher;
 struct IApplicationView;
 struct IApplicationView2;
 struct IApplicationView3;
+struct IApplicationView4;
 struct IApplicationViewConsolidatedEventArgs;
+struct IApplicationViewConsolidatedEventArgs2;
 struct IApplicationViewFullscreenStatics;
 struct IApplicationViewInteropStatics;
 struct IApplicationViewScaling;
@@ -69,6 +78,7 @@ struct IApplicationViewStatics2;
 struct IApplicationViewStatics3;
 struct IApplicationViewSwitcherStatics;
 struct IApplicationViewSwitcherStatics2;
+struct IApplicationViewSwitcherStatics3;
 struct IApplicationViewTitleBar;
 struct IApplicationViewTransferContext;
 struct IApplicationViewTransferContextStatics;
@@ -82,8 +92,11 @@ struct IProjectionManagerStatics2;
 struct IUISettings;
 struct IUISettings2;
 struct IUISettings3;
+struct IUISettings4;
 struct IUIViewSettings;
 struct IUIViewSettingsStatics;
+struct IViewModePreferences;
+struct IViewModePreferencesStatics;
 struct AccessibilitySettings;
 struct ActivationViewSwitcher;
 struct ApplicationView;
@@ -97,6 +110,7 @@ struct InputPaneVisibilityEventArgs;
 struct ProjectionManager;
 struct UISettings;
 struct UIViewSettings;
+struct ViewModePreferences;
 
 }
 
@@ -107,7 +121,9 @@ template <typename T> struct impl_IActivationViewSwitcher;
 template <typename T> struct impl_IApplicationView;
 template <typename T> struct impl_IApplicationView2;
 template <typename T> struct impl_IApplicationView3;
+template <typename T> struct impl_IApplicationView4;
 template <typename T> struct impl_IApplicationViewConsolidatedEventArgs;
+template <typename T> struct impl_IApplicationViewConsolidatedEventArgs2;
 template <typename T> struct impl_IApplicationViewFullscreenStatics;
 template <typename T> struct impl_IApplicationViewInteropStatics;
 template <typename T> struct impl_IApplicationViewScaling;
@@ -117,6 +133,7 @@ template <typename T> struct impl_IApplicationViewStatics2;
 template <typename T> struct impl_IApplicationViewStatics3;
 template <typename T> struct impl_IApplicationViewSwitcherStatics;
 template <typename T> struct impl_IApplicationViewSwitcherStatics2;
+template <typename T> struct impl_IApplicationViewSwitcherStatics3;
 template <typename T> struct impl_IApplicationViewTitleBar;
 template <typename T> struct impl_IApplicationViewTransferContext;
 template <typename T> struct impl_IApplicationViewTransferContextStatics;
@@ -130,8 +147,11 @@ template <typename T> struct impl_IProjectionManagerStatics2;
 template <typename T> struct impl_IUISettings;
 template <typename T> struct impl_IUISettings2;
 template <typename T> struct impl_IUISettings3;
+template <typename T> struct impl_IUISettings4;
 template <typename T> struct impl_IUIViewSettings;
 template <typename T> struct impl_IUIViewSettingsStatics;
+template <typename T> struct impl_IViewModePreferences;
+template <typename T> struct impl_IViewModePreferencesStatics;
 
 }
 
@@ -141,6 +161,12 @@ enum class ApplicationViewBoundsMode
 {
     UseVisible = 0,
     UseCoreWindow = 1,
+};
+
+enum class ApplicationViewMode
+{
+    Default = 0,
+    CompactOverlay = 1,
 };
 
 enum class ApplicationViewOrientation
@@ -230,6 +256,7 @@ enum class ViewSizePreference
     UseMore = 3,
     UseMinimum = 4,
     UseNone = 5,
+    Custom = 6,
 };
 
 }

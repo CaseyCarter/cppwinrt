@@ -7,11 +7,11 @@
 WINRT_WARNING_PUSH
 
 #include "internal/Windows.Foundation.3.h"
-#include "internal/Windows.UI.3.h"
 #include "internal/Windows.UI.Xaml.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
 #include "internal/Windows.UI.Xaml.Controls.Primitives.3.h"
 #include "internal/Windows.UI.Composition.3.h"
+#include "internal/Windows.UI.3.h"
 #include "internal/Windows.UI.Xaml.Controls.3.h"
 #include "internal/Windows.UI.Xaml.Media.Animation.3.h"
 #include "Windows.UI.Xaml.Media.h"
@@ -780,6 +780,66 @@ struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation> : pr
         {
             typename D::abi_guard guard(this->shim());
             this->shim().Cancel();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation2> : produce_base<D, Windows::UI::Xaml::Media::Animation::IConnectedAnimation2>
+{
+    HRESULT __stdcall get_IsScaleAnimationEnabled(bool * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().IsScaleAnimationEnabled());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall put_IsScaleAnimationEnabled(bool value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().IsScaleAnimationEnabled(value);
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_TryStartWithCoordinatedElements(impl::abi_arg_in<Windows::UI::Xaml::IUIElement> destination, impl::abi_arg_in<Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement>> coordinatedElements, bool * returnValue) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *returnValue = detach_abi(this->shim().TryStart(*reinterpret_cast<const Windows::UI::Xaml::UIElement *>(&destination), *reinterpret_cast<const Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> *>(&coordinatedElements)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_SetAnimationComponent(Windows::UI::Xaml::Media::Animation::ConnectedAnimationComponent component, impl::abi_arg_in<Windows::UI::Composition::ICompositionAnimationBase> animation) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().SetAnimationComponent(component, *reinterpret_cast<const Windows::UI::Composition::ICompositionAnimationBase *>(&animation));
             return S_OK;
         }
         catch (...)
@@ -6583,51 +6643,6 @@ template <typename D> bool impl_IRepeatBehaviorHelperStatics<D>::Equals(const Wi
     return returnValue;
 }
 
-template <typename D> Windows::UI::Color impl_IColorKeyFrame<D>::Value() const
-{
-    Windows::UI::Color value {};
-    check_hresult(WINRT_SHIM(IColorKeyFrame)->get_Value(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IColorKeyFrame<D>::Value(const Windows::UI::Color & value) const
-{
-    check_hresult(WINRT_SHIM(IColorKeyFrame)->put_Value(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Xaml::Media::Animation::KeyTime impl_IColorKeyFrame<D>::KeyTime() const
-{
-    Windows::UI::Xaml::Media::Animation::KeyTime value {};
-    check_hresult(WINRT_SHIM(IColorKeyFrame)->get_KeyTime(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IColorKeyFrame<D>::KeyTime(const Windows::UI::Xaml::Media::Animation::KeyTime & value) const
-{
-    check_hresult(WINRT_SHIM(IColorKeyFrame)->put_KeyTime(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IColorKeyFrameStatics<D>::ValueProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IColorKeyFrameStatics)->get_ValueProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IColorKeyFrameStatics<D>::KeyTimeProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IColorKeyFrameStatics)->get_KeyTimeProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::Media::Animation::ColorKeyFrame impl_IColorKeyFrameFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
-{
-    Windows::UI::Xaml::Media::Animation::ColorKeyFrame instance { nullptr };
-    check_hresult(WINRT_SHIM(IColorKeyFrameFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
-}
-
 template <typename D> double impl_IDoubleKeyFrame<D>::Value() const
 {
     double value {};
@@ -6784,51 +6799,6 @@ template <typename D> Windows::UI::Xaml::Media::Animation::ObjectKeyFrame impl_I
 {
     Windows::UI::Xaml::Media::Animation::ObjectKeyFrame instance { nullptr };
     check_hresult(WINRT_SHIM(IObjectKeyFrameFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
-    return instance;
-}
-
-template <typename D> Windows::Foundation::Point impl_IPointKeyFrame<D>::Value() const
-{
-    Windows::Foundation::Point value {};
-    check_hresult(WINRT_SHIM(IPointKeyFrame)->get_Value(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IPointKeyFrame<D>::Value(const Windows::Foundation::Point & value) const
-{
-    check_hresult(WINRT_SHIM(IPointKeyFrame)->put_Value(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Xaml::Media::Animation::KeyTime impl_IPointKeyFrame<D>::KeyTime() const
-{
-    Windows::UI::Xaml::Media::Animation::KeyTime value {};
-    check_hresult(WINRT_SHIM(IPointKeyFrame)->get_KeyTime(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IPointKeyFrame<D>::KeyTime(const Windows::UI::Xaml::Media::Animation::KeyTime & value) const
-{
-    check_hresult(WINRT_SHIM(IPointKeyFrame)->put_KeyTime(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointKeyFrameStatics<D>::ValueProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPointKeyFrameStatics)->get_ValueProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointKeyFrameStatics<D>::KeyTimeProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPointKeyFrameStatics)->get_KeyTimeProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::Media::Animation::PointKeyFrame impl_IPointKeyFrameFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
-{
-    Windows::UI::Xaml::Media::Animation::PointKeyFrame instance { nullptr };
-    check_hresult(WINRT_SHIM(IPointKeyFrameFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
     return instance;
 }
 
@@ -7153,32 +7123,6 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IColorAnimation
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Animation::ColorKeyFrameCollection impl_IColorAnimationUsingKeyFrames<D>::KeyFrames() const
-{
-    Windows::UI::Xaml::Media::Animation::ColorKeyFrameCollection value { nullptr };
-    check_hresult(WINRT_SHIM(IColorAnimationUsingKeyFrames)->get_KeyFrames(put_abi(value)));
-    return value;
-}
-
-template <typename D> bool impl_IColorAnimationUsingKeyFrames<D>::EnableDependentAnimation() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IColorAnimationUsingKeyFrames)->get_EnableDependentAnimation(&value));
-    return value;
-}
-
-template <typename D> void impl_IColorAnimationUsingKeyFrames<D>::EnableDependentAnimation(bool value) const
-{
-    check_hresult(WINRT_SHIM(IColorAnimationUsingKeyFrames)->put_EnableDependentAnimation(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IColorAnimationUsingKeyFramesStatics<D>::EnableDependentAnimationProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IColorAnimationUsingKeyFramesStatics)->get_EnableDependentAnimationProperty(put_abi(value)));
-    return value;
-}
-
 template <typename D> double impl_IContentThemeTransition<D>::HorizontalOffset() const
 {
     double value {};
@@ -7335,6 +7279,706 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IDoubleAnimatio
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
     check_hresult(WINRT_SHIM(IDoubleAnimationUsingKeyFramesStatics)->get_EnableDependentAnimationProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::EasingFunctionBase impl_IEasingDoubleKeyFrame<D>::EasingFunction() const
+{
+    Windows::UI::Xaml::Media::Animation::EasingFunctionBase value { nullptr };
+    check_hresult(WINRT_SHIM(IEasingDoubleKeyFrame)->get_EasingFunction(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IEasingDoubleKeyFrame<D>::EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const
+{
+    check_hresult(WINRT_SHIM(IEasingDoubleKeyFrame)->put_EasingFunction(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEasingDoubleKeyFrameStatics<D>::EasingFunctionProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IEasingDoubleKeyFrameStatics)->get_EasingFunctionProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation impl_IEdgeUIThemeTransition<D>::Edge() const
+{
+    Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value {};
+    check_hresult(WINRT_SHIM(IEdgeUIThemeTransition)->get_Edge(&value));
+    return value;
+}
+
+template <typename D> void impl_IEdgeUIThemeTransition<D>::Edge(Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value) const
+{
+    check_hresult(WINRT_SHIM(IEdgeUIThemeTransition)->put_Edge(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEdgeUIThemeTransitionStatics<D>::EdgeProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IEdgeUIThemeTransitionStatics)->get_EdgeProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> int32_t impl_IElasticEase<D>::Oscillations() const
+{
+    int32_t value {};
+    check_hresult(WINRT_SHIM(IElasticEase)->get_Oscillations(&value));
+    return value;
+}
+
+template <typename D> void impl_IElasticEase<D>::Oscillations(int32_t value) const
+{
+    check_hresult(WINRT_SHIM(IElasticEase)->put_Oscillations(value));
+}
+
+template <typename D> double impl_IElasticEase<D>::Springiness() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IElasticEase)->get_Springiness(&value));
+    return value;
+}
+
+template <typename D> void impl_IElasticEase<D>::Springiness(double value) const
+{
+    check_hresult(WINRT_SHIM(IElasticEase)->put_Springiness(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IElasticEaseStatics<D>::OscillationsProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IElasticEaseStatics)->get_OscillationsProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IElasticEaseStatics<D>::SpringinessProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IElasticEaseStatics)->get_SpringinessProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> double impl_IEntranceThemeTransition<D>::FromHorizontalOffset() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->get_FromHorizontalOffset(&value));
+    return value;
+}
+
+template <typename D> void impl_IEntranceThemeTransition<D>::FromHorizontalOffset(double value) const
+{
+    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->put_FromHorizontalOffset(value));
+}
+
+template <typename D> double impl_IEntranceThemeTransition<D>::FromVerticalOffset() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->get_FromVerticalOffset(&value));
+    return value;
+}
+
+template <typename D> void impl_IEntranceThemeTransition<D>::FromVerticalOffset(double value) const
+{
+    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->put_FromVerticalOffset(value));
+}
+
+template <typename D> bool impl_IEntranceThemeTransition<D>::IsStaggeringEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->get_IsStaggeringEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IEntranceThemeTransition<D>::IsStaggeringEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->put_IsStaggeringEnabled(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEntranceThemeTransitionStatics<D>::FromHorizontalOffsetProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IEntranceThemeTransitionStatics)->get_FromHorizontalOffsetProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEntranceThemeTransitionStatics<D>::FromVerticalOffsetProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IEntranceThemeTransitionStatics)->get_FromVerticalOffsetProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEntranceThemeTransitionStatics<D>::IsStaggeringEnabledProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IEntranceThemeTransitionStatics)->get_IsStaggeringEnabledProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> double impl_IExponentialEase<D>::Exponent() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IExponentialEase)->get_Exponent(&value));
+    return value;
+}
+
+template <typename D> void impl_IExponentialEase<D>::Exponent(double value) const
+{
+    check_hresult(WINRT_SHIM(IExponentialEase)->put_Exponent(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IExponentialEaseStatics<D>::ExponentProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IExponentialEaseStatics)->get_ExponentProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::ObjectKeyFrameCollection impl_IObjectAnimationUsingKeyFrames<D>::KeyFrames() const
+{
+    Windows::UI::Xaml::Media::Animation::ObjectKeyFrameCollection value { nullptr };
+    check_hresult(WINRT_SHIM(IObjectAnimationUsingKeyFrames)->get_KeyFrames(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IObjectAnimationUsingKeyFrames<D>::EnableDependentAnimation() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IObjectAnimationUsingKeyFrames)->get_EnableDependentAnimation(&value));
+    return value;
+}
+
+template <typename D> void impl_IObjectAnimationUsingKeyFrames<D>::EnableDependentAnimation(bool value) const
+{
+    check_hresult(WINRT_SHIM(IObjectAnimationUsingKeyFrames)->put_EnableDependentAnimation(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IObjectAnimationUsingKeyFramesStatics<D>::EnableDependentAnimationProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IObjectAnimationUsingKeyFramesStatics)->get_EnableDependentAnimationProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation impl_IPaneThemeTransition<D>::Edge() const
+{
+    Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value {};
+    check_hresult(WINRT_SHIM(IPaneThemeTransition)->get_Edge(&value));
+    return value;
+}
+
+template <typename D> void impl_IPaneThemeTransition<D>::Edge(Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value) const
+{
+    check_hresult(WINRT_SHIM(IPaneThemeTransition)->put_Edge(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPaneThemeTransitionStatics<D>::EdgeProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IPaneThemeTransitionStatics)->get_EdgeProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::Point> impl_IPointAnimation<D>::From() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::Point> value;
+    check_hresult(WINRT_SHIM(IPointAnimation)->get_From(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IPointAnimation<D>::From(const optional<Windows::Foundation::Point> & value) const
+{
+    check_hresult(WINRT_SHIM(IPointAnimation)->put_From(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::Point> impl_IPointAnimation<D>::To() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::Point> value;
+    check_hresult(WINRT_SHIM(IPointAnimation)->get_To(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IPointAnimation<D>::To(const optional<Windows::Foundation::Point> & value) const
+{
+    check_hresult(WINRT_SHIM(IPointAnimation)->put_To(get_abi(value)));
+}
+
+template <typename D> Windows::Foundation::IReference<Windows::Foundation::Point> impl_IPointAnimation<D>::By() const
+{
+    Windows::Foundation::IReference<Windows::Foundation::Point> value;
+    check_hresult(WINRT_SHIM(IPointAnimation)->get_By(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IPointAnimation<D>::By(const optional<Windows::Foundation::Point> & value) const
+{
+    check_hresult(WINRT_SHIM(IPointAnimation)->put_By(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::EasingFunctionBase impl_IPointAnimation<D>::EasingFunction() const
+{
+    Windows::UI::Xaml::Media::Animation::EasingFunctionBase value { nullptr };
+    check_hresult(WINRT_SHIM(IPointAnimation)->get_EasingFunction(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IPointAnimation<D>::EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const
+{
+    check_hresult(WINRT_SHIM(IPointAnimation)->put_EasingFunction(get_abi(value)));
+}
+
+template <typename D> bool impl_IPointAnimation<D>::EnableDependentAnimation() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IPointAnimation)->get_EnableDependentAnimation(&value));
+    return value;
+}
+
+template <typename D> void impl_IPointAnimation<D>::EnableDependentAnimation(bool value) const
+{
+    check_hresult(WINRT_SHIM(IPointAnimation)->put_EnableDependentAnimation(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointAnimationStatics<D>::FromProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IPointAnimationStatics)->get_FromProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointAnimationStatics<D>::ToProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IPointAnimationStatics)->get_ToProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointAnimationStatics<D>::ByProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IPointAnimationStatics)->get_ByProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointAnimationStatics<D>::EasingFunctionProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IPointAnimationStatics)->get_EasingFunctionProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointAnimationStatics<D>::EnableDependentAnimationProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IPointAnimationStatics)->get_EnableDependentAnimationProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> double impl_IPopupThemeTransition<D>::FromHorizontalOffset() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IPopupThemeTransition)->get_FromHorizontalOffset(&value));
+    return value;
+}
+
+template <typename D> void impl_IPopupThemeTransition<D>::FromHorizontalOffset(double value) const
+{
+    check_hresult(WINRT_SHIM(IPopupThemeTransition)->put_FromHorizontalOffset(value));
+}
+
+template <typename D> double impl_IPopupThemeTransition<D>::FromVerticalOffset() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IPopupThemeTransition)->get_FromVerticalOffset(&value));
+    return value;
+}
+
+template <typename D> void impl_IPopupThemeTransition<D>::FromVerticalOffset(double value) const
+{
+    check_hresult(WINRT_SHIM(IPopupThemeTransition)->put_FromVerticalOffset(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPopupThemeTransitionStatics<D>::FromHorizontalOffsetProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IPopupThemeTransitionStatics)->get_FromHorizontalOffsetProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPopupThemeTransitionStatics<D>::FromVerticalOffsetProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IPopupThemeTransitionStatics)->get_FromVerticalOffsetProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> double impl_IPowerEase<D>::Power() const
+{
+    double value {};
+    check_hresult(WINRT_SHIM(IPowerEase)->get_Power(&value));
+    return value;
+}
+
+template <typename D> void impl_IPowerEase<D>::Power(double value) const
+{
+    check_hresult(WINRT_SHIM(IPowerEase)->put_Power(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPowerEaseStatics<D>::PowerProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IPowerEaseStatics)->get_PowerProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IRepositionThemeTransition2<D>::IsStaggeringEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IRepositionThemeTransition2)->get_IsStaggeringEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IRepositionThemeTransition2<D>::IsStaggeringEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IRepositionThemeTransition2)->put_IsStaggeringEnabled(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRepositionThemeTransitionStatics2<D>::IsStaggeringEnabledProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IRepositionThemeTransitionStatics2)->get_IsStaggeringEnabledProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::KeySpline impl_ISplineDoubleKeyFrame<D>::KeySpline() const
+{
+    Windows::UI::Xaml::Media::Animation::KeySpline value { nullptr };
+    check_hresult(WINRT_SHIM(ISplineDoubleKeyFrame)->get_KeySpline(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_ISplineDoubleKeyFrame<D>::KeySpline(const Windows::UI::Xaml::Media::Animation::KeySpline & value) const
+{
+    check_hresult(WINRT_SHIM(ISplineDoubleKeyFrame)->put_KeySpline(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISplineDoubleKeyFrameStatics<D>::KeySplineProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(ISplineDoubleKeyFrameStatics)->get_KeySplineProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::TimelineCollection impl_IStoryboard<D>::Children() const
+{
+    Windows::UI::Xaml::Media::Animation::TimelineCollection value { nullptr };
+    check_hresult(WINRT_SHIM(IStoryboard)->get_Children(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IStoryboard<D>::Seek(const Windows::Foundation::TimeSpan & offset) const
+{
+    check_hresult(WINRT_SHIM(IStoryboard)->abi_Seek(get_abi(offset)));
+}
+
+template <typename D> void impl_IStoryboard<D>::Stop() const
+{
+    check_hresult(WINRT_SHIM(IStoryboard)->abi_Stop());
+}
+
+template <typename D> void impl_IStoryboard<D>::Begin() const
+{
+    check_hresult(WINRT_SHIM(IStoryboard)->abi_Begin());
+}
+
+template <typename D> void impl_IStoryboard<D>::Pause() const
+{
+    check_hresult(WINRT_SHIM(IStoryboard)->abi_Pause());
+}
+
+template <typename D> void impl_IStoryboard<D>::Resume() const
+{
+    check_hresult(WINRT_SHIM(IStoryboard)->abi_Resume());
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::ClockState impl_IStoryboard<D>::GetCurrentState() const
+{
+    Windows::UI::Xaml::Media::Animation::ClockState returnValue {};
+    check_hresult(WINRT_SHIM(IStoryboard)->abi_GetCurrentState(&returnValue));
+    return returnValue;
+}
+
+template <typename D> Windows::Foundation::TimeSpan impl_IStoryboard<D>::GetCurrentTime() const
+{
+    Windows::Foundation::TimeSpan returnValue {};
+    check_hresult(WINRT_SHIM(IStoryboard)->abi_GetCurrentTime(put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> void impl_IStoryboard<D>::SeekAlignedToLastTick(const Windows::Foundation::TimeSpan & offset) const
+{
+    check_hresult(WINRT_SHIM(IStoryboard)->abi_SeekAlignedToLastTick(get_abi(offset)));
+}
+
+template <typename D> void impl_IStoryboard<D>::SkipToFill() const
+{
+    check_hresult(WINRT_SHIM(IStoryboard)->abi_SkipToFill());
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IStoryboardStatics<D>::TargetPropertyProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IStoryboardStatics)->get_TargetPropertyProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IStoryboardStatics<D>::GetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element) const
+{
+    hstring path;
+    check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_GetTargetProperty(get_abi(element), put_abi(path)));
+    return path;
+}
+
+template <typename D> void impl_IStoryboardStatics<D>::SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view path) const
+{
+    check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_SetTargetProperty(get_abi(element), get_abi(path)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IStoryboardStatics<D>::TargetNameProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IStoryboardStatics)->get_TargetNameProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IStoryboardStatics<D>::GetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element) const
+{
+    hstring name;
+    check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_GetTargetName(get_abi(element), put_abi(name)));
+    return name;
+}
+
+template <typename D> void impl_IStoryboardStatics<D>::SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view name) const
+{
+    check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_SetTargetName(get_abi(element), get_abi(name)));
+}
+
+template <typename D> void impl_IStoryboardStatics<D>::SetTarget(const Windows::UI::Xaml::Media::Animation::Timeline & timeline, const Windows::UI::Xaml::DependencyObject & target) const
+{
+    check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_SetTarget(get_abi(timeline), get_abi(target)));
+}
+
+template <typename D> event_token impl_IConnectedAnimation<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> & value) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IConnectedAnimation)->add_Completed(get_abi(value), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IConnectedAnimation> impl_IConnectedAnimation<D>::Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> & value) const
+{
+    return impl::make_event_revoker<D, IConnectedAnimation>(this, &ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimation::remove_Completed, Completed(value));
+}
+
+template <typename D> void impl_IConnectedAnimation<D>::Completed(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IConnectedAnimation)->remove_Completed(token));
+}
+
+template <typename D> bool impl_IConnectedAnimation<D>::TryStart(const Windows::UI::Xaml::UIElement & destination) const
+{
+    bool returnValue {};
+    check_hresult(WINRT_SHIM(IConnectedAnimation)->abi_TryStart(get_abi(destination), &returnValue));
+    return returnValue;
+}
+
+template <typename D> void impl_IConnectedAnimation<D>::Cancel() const
+{
+    check_hresult(WINRT_SHIM(IConnectedAnimation)->abi_Cancel());
+}
+
+template <typename D> bool impl_IConnectedAnimation2<D>::IsScaleAnimationEnabled() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IConnectedAnimation2)->get_IsScaleAnimationEnabled(&value));
+    return value;
+}
+
+template <typename D> void impl_IConnectedAnimation2<D>::IsScaleAnimationEnabled(bool value) const
+{
+    check_hresult(WINRT_SHIM(IConnectedAnimation2)->put_IsScaleAnimationEnabled(value));
+}
+
+template <typename D> bool impl_IConnectedAnimation2<D>::TryStart(const Windows::UI::Xaml::UIElement & destination, iterable<Windows::UI::Xaml::UIElement> coordinatedElements) const
+{
+    bool returnValue {};
+    check_hresult(WINRT_SHIM(IConnectedAnimation2)->abi_TryStartWithCoordinatedElements(get_abi(destination), get_abi(coordinatedElements), &returnValue));
+    return returnValue;
+}
+
+template <typename D> void impl_IConnectedAnimation2<D>::SetAnimationComponent(Windows::UI::Xaml::Media::Animation::ConnectedAnimationComponent component, const Windows::UI::Composition::ICompositionAnimationBase & animation) const
+{
+    check_hresult(WINRT_SHIM(IConnectedAnimation2)->abi_SetAnimationComponent(component, get_abi(animation)));
+}
+
+template <typename D> Windows::Foundation::TimeSpan impl_IConnectedAnimationService<D>::DefaultDuration() const
+{
+    Windows::Foundation::TimeSpan value {};
+    check_hresult(WINRT_SHIM(IConnectedAnimationService)->get_DefaultDuration(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IConnectedAnimationService<D>::DefaultDuration(const Windows::Foundation::TimeSpan & value) const
+{
+    check_hresult(WINRT_SHIM(IConnectedAnimationService)->put_DefaultDuration(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Composition::CompositionEasingFunction impl_IConnectedAnimationService<D>::DefaultEasingFunction() const
+{
+    Windows::UI::Composition::CompositionEasingFunction value { nullptr };
+    check_hresult(WINRT_SHIM(IConnectedAnimationService)->get_DefaultEasingFunction(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IConnectedAnimationService<D>::DefaultEasingFunction(const Windows::UI::Composition::CompositionEasingFunction & value) const
+{
+    check_hresult(WINRT_SHIM(IConnectedAnimationService)->put_DefaultEasingFunction(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::ConnectedAnimation impl_IConnectedAnimationService<D>::PrepareToAnimate(hstring_view key, const Windows::UI::Xaml::UIElement & source) const
+{
+    Windows::UI::Xaml::Media::Animation::ConnectedAnimation returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IConnectedAnimationService)->abi_PrepareToAnimate(get_abi(key), get_abi(source), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::ConnectedAnimation impl_IConnectedAnimationService<D>::GetAnimation(hstring_view key) const
+{
+    Windows::UI::Xaml::Media::Animation::ConnectedAnimation returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IConnectedAnimationService)->abi_GetAnimation(get_abi(key), put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::ConnectedAnimationService impl_IConnectedAnimationServiceStatics<D>::GetForCurrentView() const
+{
+    Windows::UI::Xaml::Media::Animation::ConnectedAnimationService returnValue { nullptr };
+    check_hresult(WINRT_SHIM(IConnectedAnimationServiceStatics)->abi_GetForCurrentView(put_abi(returnValue)));
+    return returnValue;
+}
+
+template <typename D> Windows::UI::Color impl_IColorKeyFrame<D>::Value() const
+{
+    Windows::UI::Color value {};
+    check_hresult(WINRT_SHIM(IColorKeyFrame)->get_Value(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IColorKeyFrame<D>::Value(const Windows::UI::Color & value) const
+{
+    check_hresult(WINRT_SHIM(IColorKeyFrame)->put_Value(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::KeyTime impl_IColorKeyFrame<D>::KeyTime() const
+{
+    Windows::UI::Xaml::Media::Animation::KeyTime value {};
+    check_hresult(WINRT_SHIM(IColorKeyFrame)->get_KeyTime(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IColorKeyFrame<D>::KeyTime(const Windows::UI::Xaml::Media::Animation::KeyTime & value) const
+{
+    check_hresult(WINRT_SHIM(IColorKeyFrame)->put_KeyTime(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IColorKeyFrameStatics<D>::ValueProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IColorKeyFrameStatics)->get_ValueProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IColorKeyFrameStatics<D>::KeyTimeProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IColorKeyFrameStatics)->get_KeyTimeProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::ColorKeyFrame impl_IColorKeyFrameFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
+{
+    Windows::UI::Xaml::Media::Animation::ColorKeyFrame instance { nullptr };
+    check_hresult(WINRT_SHIM(IColorKeyFrameFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
+template <typename D> Windows::Foundation::Point impl_IPointKeyFrame<D>::Value() const
+{
+    Windows::Foundation::Point value {};
+    check_hresult(WINRT_SHIM(IPointKeyFrame)->get_Value(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IPointKeyFrame<D>::Value(const Windows::Foundation::Point & value) const
+{
+    check_hresult(WINRT_SHIM(IPointKeyFrame)->put_Value(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::KeyTime impl_IPointKeyFrame<D>::KeyTime() const
+{
+    Windows::UI::Xaml::Media::Animation::KeyTime value {};
+    check_hresult(WINRT_SHIM(IPointKeyFrame)->get_KeyTime(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IPointKeyFrame<D>::KeyTime(const Windows::UI::Xaml::Media::Animation::KeyTime & value) const
+{
+    check_hresult(WINRT_SHIM(IPointKeyFrame)->put_KeyTime(get_abi(value)));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointKeyFrameStatics<D>::ValueProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IPointKeyFrameStatics)->get_ValueProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointKeyFrameStatics<D>::KeyTimeProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IPointKeyFrameStatics)->get_KeyTimeProperty(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::PointKeyFrame impl_IPointKeyFrameFactory<D>::CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const
+{
+    Windows::UI::Xaml::Media::Animation::PointKeyFrame instance { nullptr };
+    check_hresult(WINRT_SHIM(IPointKeyFrameFactory)->abi_CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
+template <typename D> Windows::UI::Xaml::Media::Animation::ColorKeyFrameCollection impl_IColorAnimationUsingKeyFrames<D>::KeyFrames() const
+{
+    Windows::UI::Xaml::Media::Animation::ColorKeyFrameCollection value { nullptr };
+    check_hresult(WINRT_SHIM(IColorAnimationUsingKeyFrames)->get_KeyFrames(put_abi(value)));
+    return value;
+}
+
+template <typename D> bool impl_IColorAnimationUsingKeyFrames<D>::EnableDependentAnimation() const
+{
+    bool value {};
+    check_hresult(WINRT_SHIM(IColorAnimationUsingKeyFrames)->get_EnableDependentAnimation(&value));
+    return value;
+}
+
+template <typename D> void impl_IColorAnimationUsingKeyFrames<D>::EnableDependentAnimation(bool value) const
+{
+    check_hresult(WINRT_SHIM(IColorAnimationUsingKeyFrames)->put_EnableDependentAnimation(value));
+}
+
+template <typename D> Windows::UI::Xaml::DependencyProperty impl_IColorAnimationUsingKeyFramesStatics<D>::EnableDependentAnimationProperty() const
+{
+    Windows::UI::Xaml::DependencyProperty value { nullptr };
+    check_hresult(WINRT_SHIM(IColorAnimationUsingKeyFramesStatics)->get_EnableDependentAnimationProperty(put_abi(value)));
     return value;
 }
 
@@ -7604,25 +8248,6 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEasingColorKey
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Animation::EasingFunctionBase impl_IEasingDoubleKeyFrame<D>::EasingFunction() const
-{
-    Windows::UI::Xaml::Media::Animation::EasingFunctionBase value { nullptr };
-    check_hresult(WINRT_SHIM(IEasingDoubleKeyFrame)->get_EasingFunction(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IEasingDoubleKeyFrame<D>::EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const
-{
-    check_hresult(WINRT_SHIM(IEasingDoubleKeyFrame)->put_EasingFunction(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEasingDoubleKeyFrameStatics<D>::EasingFunctionProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IEasingDoubleKeyFrameStatics)->get_EasingFunctionProperty(put_abi(value)));
-    return value;
-}
-
 template <typename D> Windows::UI::Xaml::Media::Animation::EasingFunctionBase impl_IEasingPointKeyFrame<D>::EasingFunction() const
 {
     Windows::UI::Xaml::Media::Animation::EasingFunctionBase value { nullptr };
@@ -7639,139 +8264,6 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEasingPointKey
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
     check_hresult(WINRT_SHIM(IEasingPointKeyFrameStatics)->get_EasingFunctionProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation impl_IEdgeUIThemeTransition<D>::Edge() const
-{
-    Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value {};
-    check_hresult(WINRT_SHIM(IEdgeUIThemeTransition)->get_Edge(&value));
-    return value;
-}
-
-template <typename D> void impl_IEdgeUIThemeTransition<D>::Edge(Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value) const
-{
-    check_hresult(WINRT_SHIM(IEdgeUIThemeTransition)->put_Edge(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEdgeUIThemeTransitionStatics<D>::EdgeProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IEdgeUIThemeTransitionStatics)->get_EdgeProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> int32_t impl_IElasticEase<D>::Oscillations() const
-{
-    int32_t value {};
-    check_hresult(WINRT_SHIM(IElasticEase)->get_Oscillations(&value));
-    return value;
-}
-
-template <typename D> void impl_IElasticEase<D>::Oscillations(int32_t value) const
-{
-    check_hresult(WINRT_SHIM(IElasticEase)->put_Oscillations(value));
-}
-
-template <typename D> double impl_IElasticEase<D>::Springiness() const
-{
-    double value {};
-    check_hresult(WINRT_SHIM(IElasticEase)->get_Springiness(&value));
-    return value;
-}
-
-template <typename D> void impl_IElasticEase<D>::Springiness(double value) const
-{
-    check_hresult(WINRT_SHIM(IElasticEase)->put_Springiness(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IElasticEaseStatics<D>::OscillationsProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IElasticEaseStatics)->get_OscillationsProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IElasticEaseStatics<D>::SpringinessProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IElasticEaseStatics)->get_SpringinessProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> double impl_IEntranceThemeTransition<D>::FromHorizontalOffset() const
-{
-    double value {};
-    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->get_FromHorizontalOffset(&value));
-    return value;
-}
-
-template <typename D> void impl_IEntranceThemeTransition<D>::FromHorizontalOffset(double value) const
-{
-    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->put_FromHorizontalOffset(value));
-}
-
-template <typename D> double impl_IEntranceThemeTransition<D>::FromVerticalOffset() const
-{
-    double value {};
-    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->get_FromVerticalOffset(&value));
-    return value;
-}
-
-template <typename D> void impl_IEntranceThemeTransition<D>::FromVerticalOffset(double value) const
-{
-    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->put_FromVerticalOffset(value));
-}
-
-template <typename D> bool impl_IEntranceThemeTransition<D>::IsStaggeringEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->get_IsStaggeringEnabled(&value));
-    return value;
-}
-
-template <typename D> void impl_IEntranceThemeTransition<D>::IsStaggeringEnabled(bool value) const
-{
-    check_hresult(WINRT_SHIM(IEntranceThemeTransition)->put_IsStaggeringEnabled(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEntranceThemeTransitionStatics<D>::FromHorizontalOffsetProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IEntranceThemeTransitionStatics)->get_FromHorizontalOffsetProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEntranceThemeTransitionStatics<D>::FromVerticalOffsetProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IEntranceThemeTransitionStatics)->get_FromVerticalOffsetProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IEntranceThemeTransitionStatics<D>::IsStaggeringEnabledProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IEntranceThemeTransitionStatics)->get_IsStaggeringEnabledProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> double impl_IExponentialEase<D>::Exponent() const
-{
-    double value {};
-    check_hresult(WINRT_SHIM(IExponentialEase)->get_Exponent(&value));
-    return value;
-}
-
-template <typename D> void impl_IExponentialEase<D>::Exponent(double value) const
-{
-    check_hresult(WINRT_SHIM(IExponentialEase)->put_Exponent(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IExponentialEaseStatics<D>::ExponentProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IExponentialEaseStatics)->get_ExponentProperty(put_abi(value)));
     return value;
 }
 
@@ -7810,146 +8302,6 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFadeOutThemeAn
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
     check_hresult(WINRT_SHIM(IFadeOutThemeAnimationStatics)->get_TargetNameProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::Media::Animation::ObjectKeyFrameCollection impl_IObjectAnimationUsingKeyFrames<D>::KeyFrames() const
-{
-    Windows::UI::Xaml::Media::Animation::ObjectKeyFrameCollection value { nullptr };
-    check_hresult(WINRT_SHIM(IObjectAnimationUsingKeyFrames)->get_KeyFrames(put_abi(value)));
-    return value;
-}
-
-template <typename D> bool impl_IObjectAnimationUsingKeyFrames<D>::EnableDependentAnimation() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IObjectAnimationUsingKeyFrames)->get_EnableDependentAnimation(&value));
-    return value;
-}
-
-template <typename D> void impl_IObjectAnimationUsingKeyFrames<D>::EnableDependentAnimation(bool value) const
-{
-    check_hresult(WINRT_SHIM(IObjectAnimationUsingKeyFrames)->put_EnableDependentAnimation(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IObjectAnimationUsingKeyFramesStatics<D>::EnableDependentAnimationProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IObjectAnimationUsingKeyFramesStatics)->get_EnableDependentAnimationProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation impl_IPaneThemeTransition<D>::Edge() const
-{
-    Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value {};
-    check_hresult(WINRT_SHIM(IPaneThemeTransition)->get_Edge(&value));
-    return value;
-}
-
-template <typename D> void impl_IPaneThemeTransition<D>::Edge(Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value) const
-{
-    check_hresult(WINRT_SHIM(IPaneThemeTransition)->put_Edge(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPaneThemeTransitionStatics<D>::EdgeProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPaneThemeTransitionStatics)->get_EdgeProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Foundation::IReference<Windows::Foundation::Point> impl_IPointAnimation<D>::From() const
-{
-    Windows::Foundation::IReference<Windows::Foundation::Point> value;
-    check_hresult(WINRT_SHIM(IPointAnimation)->get_From(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IPointAnimation<D>::From(const optional<Windows::Foundation::Point> & value) const
-{
-    check_hresult(WINRT_SHIM(IPointAnimation)->put_From(get_abi(value)));
-}
-
-template <typename D> Windows::Foundation::IReference<Windows::Foundation::Point> impl_IPointAnimation<D>::To() const
-{
-    Windows::Foundation::IReference<Windows::Foundation::Point> value;
-    check_hresult(WINRT_SHIM(IPointAnimation)->get_To(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IPointAnimation<D>::To(const optional<Windows::Foundation::Point> & value) const
-{
-    check_hresult(WINRT_SHIM(IPointAnimation)->put_To(get_abi(value)));
-}
-
-template <typename D> Windows::Foundation::IReference<Windows::Foundation::Point> impl_IPointAnimation<D>::By() const
-{
-    Windows::Foundation::IReference<Windows::Foundation::Point> value;
-    check_hresult(WINRT_SHIM(IPointAnimation)->get_By(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IPointAnimation<D>::By(const optional<Windows::Foundation::Point> & value) const
-{
-    check_hresult(WINRT_SHIM(IPointAnimation)->put_By(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Xaml::Media::Animation::EasingFunctionBase impl_IPointAnimation<D>::EasingFunction() const
-{
-    Windows::UI::Xaml::Media::Animation::EasingFunctionBase value { nullptr };
-    check_hresult(WINRT_SHIM(IPointAnimation)->get_EasingFunction(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IPointAnimation<D>::EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const
-{
-    check_hresult(WINRT_SHIM(IPointAnimation)->put_EasingFunction(get_abi(value)));
-}
-
-template <typename D> bool impl_IPointAnimation<D>::EnableDependentAnimation() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IPointAnimation)->get_EnableDependentAnimation(&value));
-    return value;
-}
-
-template <typename D> void impl_IPointAnimation<D>::EnableDependentAnimation(bool value) const
-{
-    check_hresult(WINRT_SHIM(IPointAnimation)->put_EnableDependentAnimation(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointAnimationStatics<D>::FromProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPointAnimationStatics)->get_FromProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointAnimationStatics<D>::ToProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPointAnimationStatics)->get_ToProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointAnimationStatics<D>::ByProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPointAnimationStatics)->get_ByProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointAnimationStatics<D>::EasingFunctionProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPointAnimationStatics)->get_EasingFunctionProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPointAnimationStatics<D>::EnableDependentAnimationProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPointAnimationStatics)->get_EnableDependentAnimationProperty(put_abi(value)));
     return value;
 }
 
@@ -8093,63 +8445,6 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPopOutThemeAni
     return value;
 }
 
-template <typename D> double impl_IPopupThemeTransition<D>::FromHorizontalOffset() const
-{
-    double value {};
-    check_hresult(WINRT_SHIM(IPopupThemeTransition)->get_FromHorizontalOffset(&value));
-    return value;
-}
-
-template <typename D> void impl_IPopupThemeTransition<D>::FromHorizontalOffset(double value) const
-{
-    check_hresult(WINRT_SHIM(IPopupThemeTransition)->put_FromHorizontalOffset(value));
-}
-
-template <typename D> double impl_IPopupThemeTransition<D>::FromVerticalOffset() const
-{
-    double value {};
-    check_hresult(WINRT_SHIM(IPopupThemeTransition)->get_FromVerticalOffset(&value));
-    return value;
-}
-
-template <typename D> void impl_IPopupThemeTransition<D>::FromVerticalOffset(double value) const
-{
-    check_hresult(WINRT_SHIM(IPopupThemeTransition)->put_FromVerticalOffset(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPopupThemeTransitionStatics<D>::FromHorizontalOffsetProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPopupThemeTransitionStatics)->get_FromHorizontalOffsetProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPopupThemeTransitionStatics<D>::FromVerticalOffsetProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPopupThemeTransitionStatics)->get_FromVerticalOffsetProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> double impl_IPowerEase<D>::Power() const
-{
-    double value {};
-    check_hresult(WINRT_SHIM(IPowerEase)->get_Power(&value));
-    return value;
-}
-
-template <typename D> void impl_IPowerEase<D>::Power(double value) const
-{
-    check_hresult(WINRT_SHIM(IPowerEase)->put_Power(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPowerEaseStatics<D>::PowerProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IPowerEaseStatics)->get_PowerProperty(put_abi(value)));
-    return value;
-}
-
 template <typename D> hstring impl_IRepositionThemeAnimation<D>::TargetName() const
 {
     hstring value;
@@ -8207,25 +8502,6 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRepositionThem
     return value;
 }
 
-template <typename D> bool impl_IRepositionThemeTransition2<D>::IsStaggeringEnabled() const
-{
-    bool value {};
-    check_hresult(WINRT_SHIM(IRepositionThemeTransition2)->get_IsStaggeringEnabled(&value));
-    return value;
-}
-
-template <typename D> void impl_IRepositionThemeTransition2<D>::IsStaggeringEnabled(bool value) const
-{
-    check_hresult(WINRT_SHIM(IRepositionThemeTransition2)->put_IsStaggeringEnabled(value));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRepositionThemeTransitionStatics2<D>::IsStaggeringEnabledProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IRepositionThemeTransitionStatics2)->get_IsStaggeringEnabledProperty(put_abi(value)));
-    return value;
-}
-
 template <typename D> Windows::UI::Xaml::Media::Animation::KeySpline impl_ISplineColorKeyFrame<D>::KeySpline() const
 {
     Windows::UI::Xaml::Media::Animation::KeySpline value { nullptr };
@@ -8242,25 +8518,6 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISplineColorKey
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
     check_hresult(WINRT_SHIM(ISplineColorKeyFrameStatics)->get_KeySplineProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::UI::Xaml::Media::Animation::KeySpline impl_ISplineDoubleKeyFrame<D>::KeySpline() const
-{
-    Windows::UI::Xaml::Media::Animation::KeySpline value { nullptr };
-    check_hresult(WINRT_SHIM(ISplineDoubleKeyFrame)->get_KeySpline(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_ISplineDoubleKeyFrame<D>::KeySpline(const Windows::UI::Xaml::Media::Animation::KeySpline & value) const
-{
-    check_hresult(WINRT_SHIM(ISplineDoubleKeyFrame)->put_KeySpline(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISplineDoubleKeyFrameStatics<D>::KeySplineProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(ISplineDoubleKeyFrameStatics)->get_KeySplineProperty(put_abi(value)));
     return value;
 }
 
@@ -8701,105 +8958,6 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISplitOpenTheme
     return value;
 }
 
-template <typename D> Windows::UI::Xaml::Media::Animation::TimelineCollection impl_IStoryboard<D>::Children() const
-{
-    Windows::UI::Xaml::Media::Animation::TimelineCollection value { nullptr };
-    check_hresult(WINRT_SHIM(IStoryboard)->get_Children(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IStoryboard<D>::Seek(const Windows::Foundation::TimeSpan & offset) const
-{
-    check_hresult(WINRT_SHIM(IStoryboard)->abi_Seek(get_abi(offset)));
-}
-
-template <typename D> void impl_IStoryboard<D>::Stop() const
-{
-    check_hresult(WINRT_SHIM(IStoryboard)->abi_Stop());
-}
-
-template <typename D> void impl_IStoryboard<D>::Begin() const
-{
-    check_hresult(WINRT_SHIM(IStoryboard)->abi_Begin());
-}
-
-template <typename D> void impl_IStoryboard<D>::Pause() const
-{
-    check_hresult(WINRT_SHIM(IStoryboard)->abi_Pause());
-}
-
-template <typename D> void impl_IStoryboard<D>::Resume() const
-{
-    check_hresult(WINRT_SHIM(IStoryboard)->abi_Resume());
-}
-
-template <typename D> Windows::UI::Xaml::Media::Animation::ClockState impl_IStoryboard<D>::GetCurrentState() const
-{
-    Windows::UI::Xaml::Media::Animation::ClockState returnValue {};
-    check_hresult(WINRT_SHIM(IStoryboard)->abi_GetCurrentState(&returnValue));
-    return returnValue;
-}
-
-template <typename D> Windows::Foundation::TimeSpan impl_IStoryboard<D>::GetCurrentTime() const
-{
-    Windows::Foundation::TimeSpan returnValue {};
-    check_hresult(WINRT_SHIM(IStoryboard)->abi_GetCurrentTime(put_abi(returnValue)));
-    return returnValue;
-}
-
-template <typename D> void impl_IStoryboard<D>::SeekAlignedToLastTick(const Windows::Foundation::TimeSpan & offset) const
-{
-    check_hresult(WINRT_SHIM(IStoryboard)->abi_SeekAlignedToLastTick(get_abi(offset)));
-}
-
-template <typename D> void impl_IStoryboard<D>::SkipToFill() const
-{
-    check_hresult(WINRT_SHIM(IStoryboard)->abi_SkipToFill());
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IStoryboardStatics<D>::TargetPropertyProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IStoryboardStatics)->get_TargetPropertyProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> hstring impl_IStoryboardStatics<D>::GetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element) const
-{
-    hstring path;
-    check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_GetTargetProperty(get_abi(element), put_abi(path)));
-    return path;
-}
-
-template <typename D> void impl_IStoryboardStatics<D>::SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view path) const
-{
-    check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_SetTargetProperty(get_abi(element), get_abi(path)));
-}
-
-template <typename D> Windows::UI::Xaml::DependencyProperty impl_IStoryboardStatics<D>::TargetNameProperty() const
-{
-    Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(WINRT_SHIM(IStoryboardStatics)->get_TargetNameProperty(put_abi(value)));
-    return value;
-}
-
-template <typename D> hstring impl_IStoryboardStatics<D>::GetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element) const
-{
-    hstring name;
-    check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_GetTargetName(get_abi(element), put_abi(name)));
-    return name;
-}
-
-template <typename D> void impl_IStoryboardStatics<D>::SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_view name) const
-{
-    check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_SetTargetName(get_abi(element), get_abi(name)));
-}
-
-template <typename D> void impl_IStoryboardStatics<D>::SetTarget(const Windows::UI::Xaml::Media::Animation::Timeline & timeline, const Windows::UI::Xaml::DependencyObject & target) const
-{
-    check_hresult(WINRT_SHIM(IStoryboardStatics)->abi_SetTarget(get_abi(timeline), get_abi(target)));
-}
-
 template <typename D> hstring impl_ISwipeBackThemeAnimation<D>::TargetName() const
 {
     hstring value;
@@ -8912,80 +9070,6 @@ template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISwipeHintTheme
     Windows::UI::Xaml::DependencyProperty value { nullptr };
     check_hresult(WINRT_SHIM(ISwipeHintThemeAnimationStatics)->get_ToVerticalOffsetProperty(put_abi(value)));
     return value;
-}
-
-template <typename D> event_token impl_IConnectedAnimation<D>::Completed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> & value) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IConnectedAnimation)->add_Completed(get_abi(value), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IConnectedAnimation> impl_IConnectedAnimation<D>::Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::Foundation::IInspectable> & value) const
-{
-    return impl::make_event_revoker<D, IConnectedAnimation>(this, &ABI::Windows::UI::Xaml::Media::Animation::IConnectedAnimation::remove_Completed, Completed(value));
-}
-
-template <typename D> void impl_IConnectedAnimation<D>::Completed(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IConnectedAnimation)->remove_Completed(token));
-}
-
-template <typename D> bool impl_IConnectedAnimation<D>::TryStart(const Windows::UI::Xaml::UIElement & destination) const
-{
-    bool returnValue {};
-    check_hresult(WINRT_SHIM(IConnectedAnimation)->abi_TryStart(get_abi(destination), &returnValue));
-    return returnValue;
-}
-
-template <typename D> void impl_IConnectedAnimation<D>::Cancel() const
-{
-    check_hresult(WINRT_SHIM(IConnectedAnimation)->abi_Cancel());
-}
-
-template <typename D> Windows::Foundation::TimeSpan impl_IConnectedAnimationService<D>::DefaultDuration() const
-{
-    Windows::Foundation::TimeSpan value {};
-    check_hresult(WINRT_SHIM(IConnectedAnimationService)->get_DefaultDuration(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IConnectedAnimationService<D>::DefaultDuration(const Windows::Foundation::TimeSpan & value) const
-{
-    check_hresult(WINRT_SHIM(IConnectedAnimationService)->put_DefaultDuration(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Composition::CompositionEasingFunction impl_IConnectedAnimationService<D>::DefaultEasingFunction() const
-{
-    Windows::UI::Composition::CompositionEasingFunction value { nullptr };
-    check_hresult(WINRT_SHIM(IConnectedAnimationService)->get_DefaultEasingFunction(put_abi(value)));
-    return value;
-}
-
-template <typename D> void impl_IConnectedAnimationService<D>::DefaultEasingFunction(const Windows::UI::Composition::CompositionEasingFunction & value) const
-{
-    check_hresult(WINRT_SHIM(IConnectedAnimationService)->put_DefaultEasingFunction(get_abi(value)));
-}
-
-template <typename D> Windows::UI::Xaml::Media::Animation::ConnectedAnimation impl_IConnectedAnimationService<D>::PrepareToAnimate(hstring_view key, const Windows::UI::Xaml::UIElement & source) const
-{
-    Windows::UI::Xaml::Media::Animation::ConnectedAnimation returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IConnectedAnimationService)->abi_PrepareToAnimate(get_abi(key), get_abi(source), put_abi(returnValue)));
-    return returnValue;
-}
-
-template <typename D> Windows::UI::Xaml::Media::Animation::ConnectedAnimation impl_IConnectedAnimationService<D>::GetAnimation(hstring_view key) const
-{
-    Windows::UI::Xaml::Media::Animation::ConnectedAnimation returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IConnectedAnimationService)->abi_GetAnimation(get_abi(key), put_abi(returnValue)));
-    return returnValue;
-}
-
-template <typename D> Windows::UI::Xaml::Media::Animation::ConnectedAnimationService impl_IConnectedAnimationServiceStatics<D>::GetForCurrentView() const
-{
-    Windows::UI::Xaml::Media::Animation::ConnectedAnimationService returnValue { nullptr };
-    check_hresult(WINRT_SHIM(IConnectedAnimationServiceStatics)->abi_GetForCurrentView(put_abi(returnValue)));
-    return returnValue;
 }
 
 template <typename D> bool impl_ICommonNavigationTransitionInfo<D>::IsStaggeringEnabled() const
@@ -10310,6 +10394,15 @@ template<>
 struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IConnectedAnimation>
 {
     size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IConnectedAnimation & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::UI::Xaml::Media::Animation::IConnectedAnimation2>
+{
+    size_t operator()(const winrt::Windows::UI::Xaml::Media::Animation::IConnectedAnimation2 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

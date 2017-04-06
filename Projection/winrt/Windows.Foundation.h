@@ -669,6 +669,44 @@ template <typename D> Windows::Foundation::Deferral impl_IDeferralFactory<D>::Cr
     return result;
 }
 
+template <typename D> uint32_t impl_IMemoryBufferReference<D>::Capacity() const
+{
+    uint32_t value {};
+    check_hresult(WINRT_SHIM(IMemoryBufferReference)->get_Capacity(&value));
+    return value;
+}
+
+template <typename D> event_token impl_IMemoryBufferReference<D>::Closed(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token cookie {};
+    check_hresult(WINRT_SHIM(IMemoryBufferReference)->add_Closed(get_abi(handler), &cookie));
+    return cookie;
+}
+
+template <typename D> event_revoker<IMemoryBufferReference> impl_IMemoryBufferReference<D>::Closed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, IMemoryBufferReference>(this, &ABI::Windows::Foundation::IMemoryBufferReference::remove_Closed, Closed(handler));
+}
+
+template <typename D> void impl_IMemoryBufferReference<D>::Closed(event_token cookie) const
+{
+    check_hresult(WINRT_SHIM(IMemoryBufferReference)->remove_Closed(cookie));
+}
+
+template <typename D> Windows::Foundation::IMemoryBufferReference impl_IMemoryBuffer<D>::CreateReference() const
+{
+    Windows::Foundation::IMemoryBufferReference reference;
+    check_hresult(WINRT_SHIM(IMemoryBuffer)->abi_CreateReference(put_abi(reference)));
+    return reference;
+}
+
+template <typename D> Windows::Foundation::MemoryBuffer impl_IMemoryBufferFactory<D>::Create(uint32_t capacity) const
+{
+    Windows::Foundation::MemoryBuffer value { nullptr };
+    check_hresult(WINRT_SHIM(IMemoryBufferFactory)->abi_Create(capacity, put_abi(value)));
+    return value;
+}
+
 template <typename D> hstring impl_IUriRuntimeClass<D>::AbsoluteUri() const
 {
     hstring value;
@@ -863,44 +901,6 @@ template <typename D> Windows::Foundation::IInspectable impl_IGetActivationFacto
     Windows::Foundation::IInspectable factory;
     check_hresult(WINRT_SHIM(IGetActivationFactory)->abi_GetActivationFactory(get_abi(activatableClassId), put_abi(factory)));
     return factory;
-}
-
-template <typename D> uint32_t impl_IMemoryBufferReference<D>::Capacity() const
-{
-    uint32_t value {};
-    check_hresult(WINRT_SHIM(IMemoryBufferReference)->get_Capacity(&value));
-    return value;
-}
-
-template <typename D> event_token impl_IMemoryBufferReference<D>::Closed(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> & handler) const
-{
-    event_token cookie {};
-    check_hresult(WINRT_SHIM(IMemoryBufferReference)->add_Closed(get_abi(handler), &cookie));
-    return cookie;
-}
-
-template <typename D> event_revoker<IMemoryBufferReference> impl_IMemoryBufferReference<D>::Closed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::Foundation::IInspectable> & handler) const
-{
-    return impl::make_event_revoker<D, IMemoryBufferReference>(this, &ABI::Windows::Foundation::IMemoryBufferReference::remove_Closed, Closed(handler));
-}
-
-template <typename D> void impl_IMemoryBufferReference<D>::Closed(event_token cookie) const
-{
-    check_hresult(WINRT_SHIM(IMemoryBufferReference)->remove_Closed(cookie));
-}
-
-template <typename D> Windows::Foundation::IMemoryBufferReference impl_IMemoryBuffer<D>::CreateReference() const
-{
-    Windows::Foundation::IMemoryBufferReference reference;
-    check_hresult(WINRT_SHIM(IMemoryBuffer)->abi_CreateReference(put_abi(reference)));
-    return reference;
-}
-
-template <typename D> Windows::Foundation::MemoryBuffer impl_IMemoryBufferFactory<D>::Create(uint32_t capacity) const
-{
-    Windows::Foundation::MemoryBuffer value { nullptr };
-    check_hresult(WINRT_SHIM(IMemoryBufferFactory)->abi_Create(capacity, put_abi(value)));
-    return value;
 }
 
 inline Deferral::Deferral(const Windows::Foundation::DeferralCompletedHandler & handler) :

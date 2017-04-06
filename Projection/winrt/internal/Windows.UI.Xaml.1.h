@@ -12,6 +12,7 @@
 #include "Windows.ApplicationModel.DataTransfer.DragDrop.0.h"
 #include "Windows.Foundation.0.h"
 #include "Windows.Graphics.Imaging.0.h"
+#include "Windows.UI.Composition.0.h"
 #include "Windows.UI.Core.0.h"
 #include "Windows.UI.Input.0.h"
 #include "Windows.UI.Xaml.Automation.Peers.0.h"
@@ -28,6 +29,7 @@
 #include "Windows.Foundation.Collections.1.h"
 #include "Windows.UI.Xaml.Input.1.h"
 #include "Windows.ApplicationModel.DataTransfer.1.h"
+#include "Windows.UI.Xaml.Media.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -161,6 +163,12 @@ struct __declspec(uuid("019104be-522a-5904-f52f-de72010429e0")) __declspec(novta
     virtual HRESULT __stdcall remove_EnteredBackground(event_token token) = 0;
 };
 
+struct __declspec(uuid("b775ad7c-18b8-45ca-a1b0-dc483e4b1028")) __declspec(novtable) IApplication3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_HighContrastAdjustment(winrt::Windows::UI::Xaml::ApplicationHighContrastAdjustment * value) = 0;
+    virtual HRESULT __stdcall put_HighContrastAdjustment(winrt::Windows::UI::Xaml::ApplicationHighContrastAdjustment value) = 0;
+};
+
 struct __declspec(uuid("93bbe361-be5a-4ee3-b4a3-95118dc97a89")) __declspec(novtable) IApplicationFactory : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateInstance(Windows::Foundation::IInspectable * outer, Windows::Foundation::IInspectable ** inner, Windows::UI::Xaml::IApplication ** instance) = 0;
@@ -199,6 +207,14 @@ struct __declspec(uuid("06499997-f7b4-45fe-b763-7577d1d3cb4a")) __declspec(novta
 struct __declspec(uuid("32c1d013-4dbd-446d-bbb8-0de35048a449")) __declspec(novtable) IBindingFailedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Message(hstring * value) = 0;
+};
+
+struct __declspec(uuid("19bdd1b5-c7cb-46d9-a4dd-a1bbe83ef2fb")) __declspec(novtable) IBringIntoViewOptions : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AnimationDesired(bool * value) = 0;
+    virtual HRESULT __stdcall put_AnimationDesired(bool value) = 0;
+    virtual HRESULT __stdcall get_TargetRect(Windows::Foundation::IReference<Windows::Foundation::Rect> ** value) = 0;
+    virtual HRESULT __stdcall put_TargetRect(Windows::Foundation::IReference<Windows::Foundation::Rect> * value) = 0;
 };
 
 struct __declspec(uuid("fd7be182-1cdb-4288-b8c8-85ee79297bfc")) __declspec(novtable) ICornerRadiusHelper : Windows::Foundation::IInspectable
@@ -596,6 +612,11 @@ struct __declspec(uuid("9c41b155-c5d8-4663-bff2-d8d54fb5dbb3")) __declspec(novta
     virtual HRESULT __stdcall get_FocusVisualSecondaryBrushProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_FocusVisualPrimaryBrushProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_AllowFocusWhenDisabledProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("525d3941-0b3c-4be6-9978-19a8025c09d8")) __declspec(novtable) IFrameworkElementStatics5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_DeferTree(Windows::UI::Xaml::IDependencyObject * element) = 0;
 };
 
 struct __declspec(uuid("a1e254d8-a446-4a27-9a9d-a0f59e1258a5")) __declspec(novtable) IFrameworkTemplate : Windows::Foundation::IInspectable
@@ -998,6 +1019,39 @@ struct __declspec(uuid("69145cd4-199a-4657-9e57-e99e8f136712")) __declspec(novta
     virtual HRESULT __stdcall remove_AccessKeyInvoked(event_token token) = 0;
 };
 
+struct __declspec(uuid("8eed9bc2-a58c-4453-af0f-a92ee06d0317")) __declspec(novtable) IUIElement5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Lights(Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::XamlLight> ** value) = 0;
+    virtual HRESULT __stdcall get_KeyTipPlacementMode(winrt::Windows::UI::Xaml::Input::KeyTipPlacementMode * value) = 0;
+    virtual HRESULT __stdcall put_KeyTipPlacementMode(winrt::Windows::UI::Xaml::Input::KeyTipPlacementMode value) = 0;
+    virtual HRESULT __stdcall get_KeyTipHorizontalOffset(double * value) = 0;
+    virtual HRESULT __stdcall put_KeyTipHorizontalOffset(double value) = 0;
+    virtual HRESULT __stdcall get_KeyTipVerticalOffset(double * value) = 0;
+    virtual HRESULT __stdcall put_KeyTipVerticalOffset(double value) = 0;
+    virtual HRESULT __stdcall get_XYFocusKeyboardNavigation(winrt::Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode * value) = 0;
+    virtual HRESULT __stdcall put_XYFocusKeyboardNavigation(winrt::Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode value) = 0;
+    virtual HRESULT __stdcall get_XYFocusUpNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) = 0;
+    virtual HRESULT __stdcall put_XYFocusUpNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) = 0;
+    virtual HRESULT __stdcall get_XYFocusDownNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) = 0;
+    virtual HRESULT __stdcall put_XYFocusDownNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) = 0;
+    virtual HRESULT __stdcall get_XYFocusLeftNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) = 0;
+    virtual HRESULT __stdcall put_XYFocusLeftNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) = 0;
+    virtual HRESULT __stdcall get_XYFocusRightNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy * value) = 0;
+    virtual HRESULT __stdcall put_XYFocusRightNavigationStrategy(winrt::Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) = 0;
+    virtual HRESULT __stdcall get_HighContrastAdjustment(winrt::Windows::UI::Xaml::ElementHighContrastAdjustment * value) = 0;
+    virtual HRESULT __stdcall put_HighContrastAdjustment(winrt::Windows::UI::Xaml::ElementHighContrastAdjustment value) = 0;
+    virtual HRESULT __stdcall get_TabFocusNavigation(winrt::Windows::UI::Xaml::Input::KeyboardNavigationMode * value) = 0;
+    virtual HRESULT __stdcall put_TabFocusNavigation(winrt::Windows::UI::Xaml::Input::KeyboardNavigationMode value) = 0;
+    virtual HRESULT __stdcall add_GettingFocus(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_GettingFocus(event_token token) = 0;
+    virtual HRESULT __stdcall add_LosingFocus(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_LosingFocus(event_token token) = 0;
+    virtual HRESULT __stdcall add_NoFocusCandidateFound(Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> * value, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_NoFocusCandidateFound(event_token token) = 0;
+    virtual HRESULT __stdcall abi_StartBringIntoView() = 0;
+    virtual HRESULT __stdcall abi_StartBringIntoViewWithOptions(Windows::UI::Xaml::IBringIntoViewOptions * options) = 0;
+};
+
 struct __declspec(uuid("b9ee93fe-a338-419f-ac32-91dcaadf5d08")) __declspec(novtable) IUIElementFactory : Windows::Foundation::IInspectable
 {
 };
@@ -1072,6 +1126,28 @@ struct __declspec(uuid("1d157d61-16af-411f-b774-272375a4ac2c")) __declspec(novta
     virtual HRESULT __stdcall get_IsAccessKeyScopeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_AccessKeyScopeOwnerProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
     virtual HRESULT __stdcall get_AccessKeyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("59bd7d91-8fa3-4c65-ba1b-40df38556cbb")) __declspec(novtable) IUIElementStatics5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_LightsProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_KeyTipPlacementModeProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_KeyTipHorizontalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_KeyTipVerticalOffsetProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_XYFocusKeyboardNavigationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_XYFocusUpNavigationStrategyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_XYFocusDownNavigationStrategyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_XYFocusLeftNavigationStrategyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_XYFocusRightNavigationStrategyProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_HighContrastAdjustmentProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+    virtual HRESULT __stdcall get_TabFocusNavigationProperty(Windows::UI::Xaml::IDependencyProperty ** value) = 0;
+};
+
+struct __declspec(uuid("647e03b7-036a-4dea-9540-1dd7fd1266f1")) __declspec(novtable) IUIElementStatics6 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_GettingFocusEvent(Windows::UI::Xaml::IRoutedEvent ** value) = 0;
+    virtual HRESULT __stdcall get_LosingFocusEvent(Windows::UI::Xaml::IRoutedEvent ** value) = 0;
+    virtual HRESULT __stdcall get_NoFocusCandidateFoundEvent(Windows::UI::Xaml::IRoutedEvent ** value) = 0;
 };
 
 struct __declspec(uuid("7230269c-054e-4cf3-86c5-be90eb6863d5")) __declspec(novtable) IUnhandledExceptionEventArgs : Windows::Foundation::IInspectable
@@ -1190,6 +1266,11 @@ struct __declspec(uuid("d384759f-34f6-4482-8435-f552f9b24cc8")) __declspec(novta
     virtual HRESULT __stdcall abi_SetTitleBar(Windows::UI::Xaml::IUIElement * value) = 0;
 };
 
+struct __declspec(uuid("b70bdc9d-1c35-462a-9b97-808d5af9f28e")) __declspec(novtable) IWindow3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Compositor(Windows::UI::Composition::ICompositor ** value) = 0;
+};
+
 struct __declspec(uuid("31b71470-feff-4654-af48-9b398ab5772b")) __declspec(novtable) IWindowCreatedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Window(Windows::UI::Xaml::IWindow ** value) = 0;
@@ -1263,6 +1344,7 @@ template <> struct traits<Windows::UI::Xaml::AdaptiveTrigger> { using default_in
 template <> struct traits<Windows::UI::Xaml::Application> { using default_interface = Windows::UI::Xaml::IApplication; };
 template <> struct traits<Windows::UI::Xaml::ApplicationInitializationCallbackParams> { using default_interface = Windows::UI::Xaml::IApplicationInitializationCallbackParams; };
 template <> struct traits<Windows::UI::Xaml::BindingFailedEventArgs> { using default_interface = Windows::UI::Xaml::IBindingFailedEventArgs; };
+template <> struct traits<Windows::UI::Xaml::BringIntoViewOptions> { using default_interface = Windows::UI::Xaml::IBringIntoViewOptions; };
 template <> struct traits<Windows::UI::Xaml::CornerRadiusHelper> { using default_interface = Windows::UI::Xaml::ICornerRadiusHelper; };
 template <> struct traits<Windows::UI::Xaml::DataContextChangedEventArgs> { using default_interface = Windows::UI::Xaml::IDataContextChangedEventArgs; };
 template <> struct traits<Windows::UI::Xaml::DataTemplate> { using default_interface = Windows::UI::Xaml::IDataTemplate; };
@@ -1387,6 +1469,13 @@ struct WINRT_EBO impl_IApplication2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IApplication3
+{
+    Windows::UI::Xaml::ApplicationHighContrastAdjustment HighContrastAdjustment() const;
+    void HighContrastAdjustment(Windows::UI::Xaml::ApplicationHighContrastAdjustment value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IApplicationFactory
 {
     Windows::UI::Xaml::Application CreateInstance(const Windows::Foundation::IInspectable & outer, Windows::Foundation::IInspectable & inner) const;
@@ -1430,6 +1519,15 @@ template <typename D>
 struct WINRT_EBO impl_IBindingFailedEventArgs
 {
     hstring Message() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBringIntoViewOptions
+{
+    bool AnimationDesired() const;
+    void AnimationDesired(bool value) const;
+    Windows::Foundation::IReference<Windows::Foundation::Rect> TargetRect() const;
+    void TargetRect(const optional<Windows::Foundation::Rect> & value) const;
 };
 
 template <typename D>
@@ -1890,6 +1988,12 @@ struct WINRT_EBO impl_IFrameworkElementStatics4
     Windows::UI::Xaml::DependencyProperty FocusVisualSecondaryBrushProperty() const;
     Windows::UI::Xaml::DependencyProperty FocusVisualPrimaryBrushProperty() const;
     Windows::UI::Xaml::DependencyProperty AllowFocusWhenDisabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkElementStatics5
+{
+    void DeferTree(const Windows::UI::Xaml::DependencyObject & element) const;
 };
 
 template <typename D>
@@ -2406,6 +2510,46 @@ struct WINRT_EBO impl_IUIElement4
 };
 
 template <typename D>
+struct WINRT_EBO impl_IUIElement5
+{
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::XamlLight> Lights() const;
+    Windows::UI::Xaml::Input::KeyTipPlacementMode KeyTipPlacementMode() const;
+    void KeyTipPlacementMode(Windows::UI::Xaml::Input::KeyTipPlacementMode value) const;
+    double KeyTipHorizontalOffset() const;
+    void KeyTipHorizontalOffset(double value) const;
+    double KeyTipVerticalOffset() const;
+    void KeyTipVerticalOffset(double value) const;
+    Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode XYFocusKeyboardNavigation() const;
+    void XYFocusKeyboardNavigation(Windows::UI::Xaml::Input::XYFocusKeyboardNavigationMode value) const;
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy XYFocusUpNavigationStrategy() const;
+    void XYFocusUpNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const;
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy XYFocusDownNavigationStrategy() const;
+    void XYFocusDownNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const;
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy XYFocusLeftNavigationStrategy() const;
+    void XYFocusLeftNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const;
+    Windows::UI::Xaml::Input::XYFocusNavigationStrategy XYFocusRightNavigationStrategy() const;
+    void XYFocusRightNavigationStrategy(Windows::UI::Xaml::Input::XYFocusNavigationStrategy value) const;
+    Windows::UI::Xaml::ElementHighContrastAdjustment HighContrastAdjustment() const;
+    void HighContrastAdjustment(Windows::UI::Xaml::ElementHighContrastAdjustment value) const;
+    Windows::UI::Xaml::Input::KeyboardNavigationMode TabFocusNavigation() const;
+    void TabFocusNavigation(Windows::UI::Xaml::Input::KeyboardNavigationMode value) const;
+    event_token GettingFocus(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> & value) const;
+    using GettingFocus_revoker = event_revoker<IUIElement5>;
+    GettingFocus_revoker GettingFocus(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> & value) const;
+    void GettingFocus(event_token token) const;
+    event_token LosingFocus(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> & value) const;
+    using LosingFocus_revoker = event_revoker<IUIElement5>;
+    LosingFocus_revoker LosingFocus(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> & value) const;
+    void LosingFocus(event_token token) const;
+    event_token NoFocusCandidateFound(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> & value) const;
+    using NoFocusCandidateFound_revoker = event_revoker<IUIElement5>;
+    NoFocusCandidateFound_revoker NoFocusCandidateFound(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> & value) const;
+    void NoFocusCandidateFound(event_token token) const;
+    void StartBringIntoView() const;
+    void StartBringIntoView(const Windows::UI::Xaml::BringIntoViewOptions & options) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IUIElementFactory
 {
 };
@@ -2485,6 +2629,30 @@ struct WINRT_EBO impl_IUIElementStatics4
     Windows::UI::Xaml::DependencyProperty IsAccessKeyScopeProperty() const;
     Windows::UI::Xaml::DependencyProperty AccessKeyScopeOwnerProperty() const;
     Windows::UI::Xaml::DependencyProperty AccessKeyProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElementStatics5
+{
+    Windows::UI::Xaml::DependencyProperty LightsProperty() const;
+    Windows::UI::Xaml::DependencyProperty KeyTipPlacementModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty KeyTipHorizontalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty KeyTipVerticalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusKeyboardNavigationProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusUpNavigationStrategyProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusDownNavigationStrategyProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusLeftNavigationStrategyProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusRightNavigationStrategyProperty() const;
+    Windows::UI::Xaml::DependencyProperty HighContrastAdjustmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty TabFocusNavigationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElementStatics6
+{
+    Windows::UI::Xaml::RoutedEvent GettingFocusEvent() const;
+    Windows::UI::Xaml::RoutedEvent LosingFocusEvent() const;
+    Windows::UI::Xaml::RoutedEvent NoFocusCandidateFoundEvent() const;
 };
 
 template <typename D>
@@ -2630,6 +2798,12 @@ struct WINRT_EBO impl_IWindow2
 };
 
 template <typename D>
+struct WINRT_EBO impl_IWindow3
+{
+    Windows::UI::Composition::Compositor Compositor() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IWindowCreatedEventArgs
 {
     Windows::UI::Xaml::Window Window() const;
@@ -2715,6 +2889,12 @@ template <> struct traits<Windows::UI::Xaml::IApplication2>
     template <typename D> using consume = Windows::UI::Xaml::impl_IApplication2<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::IApplication3>
+{
+    using abi = ABI::Windows::UI::Xaml::IApplication3;
+    template <typename D> using consume = Windows::UI::Xaml::impl_IApplication3<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::IApplicationFactory>
 {
     using abi = ABI::Windows::UI::Xaml::IApplicationFactory;
@@ -2749,6 +2929,12 @@ template <> struct traits<Windows::UI::Xaml::IBindingFailedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::IBindingFailedEventArgs;
     template <typename D> using consume = Windows::UI::Xaml::impl_IBindingFailedEventArgs<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::IBringIntoViewOptions>
+{
+    using abi = ABI::Windows::UI::Xaml::IBringIntoViewOptions;
+    template <typename D> using consume = Windows::UI::Xaml::impl_IBringIntoViewOptions<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::ICornerRadiusHelper>
@@ -3031,6 +3217,12 @@ template <> struct traits<Windows::UI::Xaml::IFrameworkElementStatics4>
 {
     using abi = ABI::Windows::UI::Xaml::IFrameworkElementStatics4;
     template <typename D> using consume = Windows::UI::Xaml::impl_IFrameworkElementStatics4<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::IFrameworkElementStatics5>
+{
+    using abi = ABI::Windows::UI::Xaml::IFrameworkElementStatics5;
+    template <typename D> using consume = Windows::UI::Xaml::impl_IFrameworkElementStatics5<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::IFrameworkTemplate>
@@ -3327,6 +3519,12 @@ template <> struct traits<Windows::UI::Xaml::IUIElement4>
     template <typename D> using consume = Windows::UI::Xaml::impl_IUIElement4<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::IUIElement5>
+{
+    using abi = ABI::Windows::UI::Xaml::IUIElement5;
+    template <typename D> using consume = Windows::UI::Xaml::impl_IUIElement5<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::IUIElementFactory>
 {
     using abi = ABI::Windows::UI::Xaml::IUIElementFactory;
@@ -3361,6 +3559,18 @@ template <> struct traits<Windows::UI::Xaml::IUIElementStatics4>
 {
     using abi = ABI::Windows::UI::Xaml::IUIElementStatics4;
     template <typename D> using consume = Windows::UI::Xaml::impl_IUIElementStatics4<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::IUIElementStatics5>
+{
+    using abi = ABI::Windows::UI::Xaml::IUIElementStatics5;
+    template <typename D> using consume = Windows::UI::Xaml::impl_IUIElementStatics5<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::IUIElementStatics6>
+{
+    using abi = ABI::Windows::UI::Xaml::IUIElementStatics6;
+    template <typename D> using consume = Windows::UI::Xaml::impl_IUIElementStatics6<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::IUnhandledExceptionEventArgs>
@@ -3445,6 +3655,12 @@ template <> struct traits<Windows::UI::Xaml::IWindow2>
 {
     using abi = ABI::Windows::UI::Xaml::IWindow2;
     template <typename D> using consume = Windows::UI::Xaml::impl_IWindow2<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::IWindow3>
+{
+    using abi = ABI::Windows::UI::Xaml::IWindow3;
+    template <typename D> using consume = Windows::UI::Xaml::impl_IWindow3<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::IWindowCreatedEventArgs>
@@ -3536,6 +3752,12 @@ template <> struct traits<Windows::UI::Xaml::BindingFailedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::BindingFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.BindingFailedEventArgs"; }
+};
+
+template <> struct traits<Windows::UI::Xaml::BringIntoViewOptions>
+{
+    using abi = ABI::Windows::UI::Xaml::BringIntoViewOptions;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.BringIntoViewOptions"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::CornerRadiusHelper>

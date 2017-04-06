@@ -265,6 +265,19 @@ struct __declspec(uuid("da787c22-3a9b-4720-a71e-97900a316e5a")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateFrameReaderWithSubtypeAndSizeAsync(Windows::Media::Capture::Frames::IMediaFrameSource * inputSource, hstring outputSubtype, Windows::Graphics::Imaging::BitmapSize outputSize, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> ** value) = 0;
 };
 
+struct __declspec(uuid("228948bd-4b20-4bb1-9fd6-a583212a1012")) __declspec(novtable) IMediaCapture6 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall add_CaptureDeviceExclusiveControlStatusChanged(Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_CaptureDeviceExclusiveControlStatusChanged(event_token token) = 0;
+    virtual HRESULT __stdcall abi_CreateMultiSourceFrameReaderAsync(Windows::Foundation::Collections::IIterable<Windows::Media::Capture::Frames::MediaFrameSource> * inputSources, Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader> ** value) = 0;
+};
+
+struct __declspec(uuid("9d2f920d-a588-43c6-89d6-5ad322af006a")) __declspec(novtable) IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_DeviceId(hstring * value) = 0;
+    virtual HRESULT __stdcall get_Status(winrt::Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatus * value) = 0;
+};
+
 struct __declspec(uuid("80fde3f4-54c4-42c0-8d19-cea1a87ca18b")) __declspec(novtable) IMediaCaptureFailedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Message(hstring * value) = 0;
@@ -324,6 +337,12 @@ struct __declspec(uuid("d5a2e3b8-2626-4e94-b7b3-5308a0f64b1a")) __declspec(novta
     virtual HRESULT __stdcall put_SharingMode(winrt::Windows::Media::Capture::MediaCaptureSharingMode value) = 0;
     virtual HRESULT __stdcall get_MemoryPreference(winrt::Windows::Media::Capture::MediaCaptureMemoryPreference * value) = 0;
     virtual HRESULT __stdcall put_MemoryPreference(winrt::Windows::Media::Capture::MediaCaptureMemoryPreference value) = 0;
+};
+
+struct __declspec(uuid("b2e26b47-3db1-4d33-ab63-0ffa09056585")) __declspec(novtable) IMediaCaptureInitializationSettings6 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_AlwaysPlaySystemShutterSound(bool * value) = 0;
+    virtual HRESULT __stdcall put_AlwaysPlaySystemShutterSound(bool value) = 0;
 };
 
 struct __declspec(uuid("aec47ca3-4477-4b04-a06f-2c1c5182fe9d")) __declspec(novtable) IMediaCapturePauseResult : Windows::Foundation::IInspectable
@@ -446,6 +465,7 @@ template <> struct traits<Windows::Media::Capture::LowLagMediaRecording> { using
 template <> struct traits<Windows::Media::Capture::LowLagPhotoCapture> { using default_interface = Windows::Media::Capture::ILowLagPhotoCapture; };
 template <> struct traits<Windows::Media::Capture::LowLagPhotoSequenceCapture> { using default_interface = Windows::Media::Capture::ILowLagPhotoSequenceCapture; };
 template <> struct traits<Windows::Media::Capture::MediaCapture> { using default_interface = Windows::Media::Capture::IMediaCapture; };
+template <> struct traits<Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs> { using default_interface = Windows::Media::Capture::IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs; };
 template <> struct traits<Windows::Media::Capture::MediaCaptureFailedEventArgs> { using default_interface = Windows::Media::Capture::IMediaCaptureFailedEventArgs; };
 template <> struct traits<Windows::Media::Capture::MediaCaptureFocusChangedEventArgs> { using default_interface = Windows::Media::Capture::IMediaCaptureFocusChangedEventArgs; };
 template <> struct traits<Windows::Media::Capture::MediaCaptureInitializationSettings> { using default_interface = Windows::Media::Capture::IMediaCaptureInitializationSettings; };
@@ -727,6 +747,23 @@ struct WINRT_EBO impl_IMediaCapture5
 };
 
 template <typename D>
+struct WINRT_EBO impl_IMediaCapture6
+{
+    event_token CaptureDeviceExclusiveControlStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs> & handler) const;
+    using CaptureDeviceExclusiveControlStatusChanged_revoker = event_revoker<IMediaCapture6>;
+    CaptureDeviceExclusiveControlStatusChanged_revoker CaptureDeviceExclusiveControlStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs> & handler) const;
+    void CaptureDeviceExclusiveControlStatusChanged(event_token token) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MultiSourceMediaFrameReader> CreateMultiSourceFrameReaderAsync(iterable<Windows::Media::Capture::Frames::MediaFrameSource> inputSources) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs
+{
+    hstring DeviceId() const;
+    Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatus Status() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IMediaCaptureFailedEventArgs
 {
     hstring Message() const;
@@ -792,6 +829,13 @@ struct WINRT_EBO impl_IMediaCaptureInitializationSettings5
     void SharingMode(Windows::Media::Capture::MediaCaptureSharingMode value) const;
     Windows::Media::Capture::MediaCaptureMemoryPreference MemoryPreference() const;
     void MemoryPreference(Windows::Media::Capture::MediaCaptureMemoryPreference value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureInitializationSettings6
+{
+    bool AlwaysPlaySystemShutterSound() const;
+    void AlwaysPlaySystemShutterSound(bool value) const;
 };
 
 template <typename D>
@@ -1041,6 +1085,18 @@ template <> struct traits<Windows::Media::Capture::IMediaCapture5>
     template <typename D> using consume = Windows::Media::Capture::impl_IMediaCapture5<D>;
 };
 
+template <> struct traits<Windows::Media::Capture::IMediaCapture6>
+{
+    using abi = ABI::Windows::Media::Capture::IMediaCapture6;
+    template <typename D> using consume = Windows::Media::Capture::impl_IMediaCapture6<D>;
+};
+
+template <> struct traits<Windows::Media::Capture::IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs>
+{
+    using abi = ABI::Windows::Media::Capture::IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs;
+    template <typename D> using consume = Windows::Media::Capture::impl_IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs<D>;
+};
+
 template <> struct traits<Windows::Media::Capture::IMediaCaptureFailedEventArgs>
 {
     using abi = ABI::Windows::Media::Capture::IMediaCaptureFailedEventArgs;
@@ -1081,6 +1137,12 @@ template <> struct traits<Windows::Media::Capture::IMediaCaptureInitializationSe
 {
     using abi = ABI::Windows::Media::Capture::IMediaCaptureInitializationSettings5;
     template <typename D> using consume = Windows::Media::Capture::impl_IMediaCaptureInitializationSettings5<D>;
+};
+
+template <> struct traits<Windows::Media::Capture::IMediaCaptureInitializationSettings6>
+{
+    using abi = ABI::Windows::Media::Capture::IMediaCaptureInitializationSettings6;
+    template <typename D> using consume = Windows::Media::Capture::impl_IMediaCaptureInitializationSettings6<D>;
 };
 
 template <> struct traits<Windows::Media::Capture::IMediaCapturePauseResult>
@@ -1241,6 +1303,12 @@ template <> struct traits<Windows::Media::Capture::MediaCapture>
 {
     using abi = ABI::Windows::Media::Capture::MediaCapture;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.MediaCapture"; }
+};
+
+template <> struct traits<Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs>
+{
+    using abi = ABI::Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.MediaCaptureDeviceExclusiveControlStatusChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Capture::MediaCaptureFailedEventArgs>

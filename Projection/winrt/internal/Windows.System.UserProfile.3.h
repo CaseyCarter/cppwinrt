@@ -22,6 +22,14 @@ struct WINRT_EBO AdvertisingManagerForUser :
     AdvertisingManagerForUser(std::nullptr_t) noexcept {}
 };
 
+struct WINRT_EBO DiagnosticsSettings :
+    Windows::System::UserProfile::IDiagnosticsSettings
+{
+    DiagnosticsSettings(std::nullptr_t) noexcept {}
+    static Windows::System::UserProfile::DiagnosticsSettings GetDefault();
+    static Windows::System::UserProfile::DiagnosticsSettings GetForUser(const Windows::System::User & user);
+};
+
 struct WINRT_EBO FirstSignInSettings :
     Windows::System::UserProfile::IFirstSignInSettings
 {

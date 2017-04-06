@@ -552,6 +552,25 @@ struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView3> : prod
 };
 
 template <typename D>
+struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationView5> : produce_base<D, Windows::ApplicationModel::Core::ICoreApplicationView5>
+{
+    HRESULT __stdcall get_Properties(impl::abi_arg_out<Windows::Foundation::Collections::IPropertySet> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Properties());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar> : produce_base<D, Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar>
 {
     HRESULT __stdcall put_ExtendViewIntoTitleBar(bool value) noexcept override
@@ -1276,6 +1295,13 @@ template <typename D> void impl_ICoreApplicationView3<D>::HostedViewClosing(even
     check_hresult(WINRT_SHIM(ICoreApplicationView3)->remove_HostedViewClosing(token));
 }
 
+template <typename D> Windows::Foundation::Collections::IPropertySet impl_ICoreApplicationView5<D>::Properties() const
+{
+    Windows::Foundation::Collections::IPropertySet value;
+    check_hresult(WINRT_SHIM(ICoreApplicationView5)->get_Properties(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Foundation::Deferral impl_IHostedViewClosingEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral result { nullptr };
@@ -1638,6 +1664,15 @@ template<>
 struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreApplicationView3>
 {
     size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreApplicationView3 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::ApplicationModel::Core::ICoreApplicationView5>
+{
+    size_t operator()(const winrt::Windows::ApplicationModel::Core::ICoreApplicationView5 & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

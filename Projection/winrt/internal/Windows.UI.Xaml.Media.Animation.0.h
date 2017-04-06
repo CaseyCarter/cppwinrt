@@ -40,6 +40,7 @@ struct IColorKeyFrameStatics;
 struct ICommonNavigationTransitionInfo;
 struct ICommonNavigationTransitionInfoStatics;
 struct IConnectedAnimation;
+struct IConnectedAnimation2;
 struct IConnectedAnimationService;
 struct IConnectedAnimationServiceStatics;
 struct IContentThemeTransition;
@@ -270,6 +271,7 @@ struct IColorKeyFrameStatics;
 struct ICommonNavigationTransitionInfo;
 struct ICommonNavigationTransitionInfoStatics;
 struct IConnectedAnimation;
+struct IConnectedAnimation2;
 struct IConnectedAnimationService;
 struct IConnectedAnimationServiceStatics;
 struct IContentThemeTransition;
@@ -500,6 +502,7 @@ template <typename T> struct impl_IColorKeyFrameStatics;
 template <typename T> struct impl_ICommonNavigationTransitionInfo;
 template <typename T> struct impl_ICommonNavigationTransitionInfoStatics;
 template <typename T> struct impl_IConnectedAnimation;
+template <typename T> struct impl_IConnectedAnimation2;
 template <typename T> struct impl_IConnectedAnimationService;
 template <typename T> struct impl_IConnectedAnimationServiceStatics;
 template <typename T> struct impl_IContentThemeTransition;
@@ -634,6 +637,14 @@ enum class ClockState
     Active = 0,
     Filling = 1,
     Stopped = 2,
+};
+
+enum class ConnectedAnimationComponent
+{
+    OffsetX = 0,
+    OffsetY = 1,
+    CrossFade = 2,
+    Scale = 3,
 };
 
 enum class EasingMode

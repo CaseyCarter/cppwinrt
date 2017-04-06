@@ -15,6 +15,7 @@
 #include "Windows.Foundation.1.h"
 #include "Windows.Storage.Streams.1.h"
 #include "Windows.Data.Text.1.h"
+#include "Windows.UI.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -119,6 +120,12 @@ struct __declspec(uuid("821fc2ef-7d41-44a2-84c3-60a281dd7b86")) __declspec(novta
     virtual HRESULT __stdcall get_ProviderProperties(Windows::Foundation::Collections::IPropertySet ** value) = 0;
 };
 
+struct __declspec(uuid("b691ecf3-4ab7-4a1f-9941-0c9cf3171b75")) __declspec(novtable) IContactAnnotation2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ContactListId(hstring * value) = 0;
+    virtual HRESULT __stdcall put_ContactListId(hstring value) = 0;
+};
+
 struct __declspec(uuid("92a486aa-5c88-45b9-aad0-461888e68d8a")) __declspec(novtable) IContactAnnotationList : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Id(hstring * value) = 0;
@@ -142,6 +149,11 @@ struct __declspec(uuid("23acf4aa-7a77-457d-8203-987f4b31af09")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateAnnotationListInAccountAsync(hstring userDataAccountId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> ** value) = 0;
     virtual HRESULT __stdcall abi_GetAnnotationListAsync(hstring annotationListId, Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> ** value) = 0;
     virtual HRESULT __stdcall abi_FindAnnotationListsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotationList>> ** lists) = 0;
+};
+
+struct __declspec(uuid("7ede23fd-61e7-4967-8ec5-bdf280a24063")) __declspec(novtable) IContactAnnotationStore2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_FindAnnotationsForContactListAsync(hstring contactListId, Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> ** annotations) = 0;
 };
 
 struct __declspec(uuid("35d1972d-bfce-46bb-93f8-a5b06ec5e201")) __declspec(novtable) IContactBatch : Windows::Foundation::IInspectable
@@ -243,6 +255,10 @@ struct __declspec(uuid("85e2913f-0e4a-4a3e-8994-406ae7ed646e")) __declspec(novta
     virtual HRESULT __stdcall abi_CreateField_Default(hstring value, winrt::Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::IContactField ** field) = 0;
     virtual HRESULT __stdcall abi_CreateField_Category(hstring value, winrt::Windows::ApplicationModel::Contacts::ContactFieldType type, winrt::Windows::ApplicationModel::Contacts::ContactFieldCategory category, Windows::ApplicationModel::Contacts::IContactField ** field) = 0;
     virtual HRESULT __stdcall abi_CreateField_Custom(hstring name, hstring value, winrt::Windows::ApplicationModel::Contacts::ContactFieldType type, winrt::Windows::ApplicationModel::Contacts::ContactFieldCategory category, Windows::ApplicationModel::Contacts::IContactField ** field) = 0;
+};
+
+struct __declspec(uuid("59bdeb01-9e9a-475d-bfe5-a37b806d852c")) __declspec(novtable) IContactGroup : Windows::Foundation::IInspectable
+{
 };
 
 struct __declspec(uuid("275eb6d4-6a2e-4278-a914-e460d5f088f6")) __declspec(novtable) IContactInformation : Windows::Foundation::IInspectable
@@ -445,6 +461,11 @@ struct __declspec(uuid("b74bba57-1076-4bef-aef3-54686d18387d")) __declspec(novta
     virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
 };
 
+struct __declspec(uuid("4d469c2e-3b75-4a73-bb30-736645472256")) __declspec(novtable) IContactManagerForUser2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_ShowFullContactCard(Windows::ApplicationModel::Contacts::IContact * contact, Windows::ApplicationModel::Contacts::IFullContactCardOptions * fullContactCardOptions) = 0;
+};
+
 struct __declspec(uuid("81f21ac0-f661-4708-ba4f-d386bd0d622e")) __declspec(novtable) IContactManagerStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_ShowContactCard(Windows::ApplicationModel::Contacts::IContact * contact, Windows::Foundation::Rect selection) = 0;
@@ -480,6 +501,13 @@ struct __declspec(uuid("24982272-347b-46dc-8d95-51bd41e15aaf")) __declspec(novta
     virtual HRESULT __stdcall abi_GetForUser(Windows::System::IUser * user, Windows::ApplicationModel::Contacts::IContactManagerForUser ** result) = 0;
 };
 
+struct __declspec(uuid("f7591a87-acb7-4fad-90f2-a8ab64cdbba4")) __declspec(novtable) IContactManagerStatics5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_IsShowFullContactCardSupportedAsync(Windows::Foundation::IAsyncOperation<bool> ** result) = 0;
+    virtual HRESULT __stdcall get_IncludeMiddleNameInSystemDisplayAndSort(bool * value) = 0;
+    virtual HRESULT __stdcall put_IncludeMiddleNameInSystemDisplayAndSort(bool value) = 0;
+};
+
 struct __declspec(uuid("bc922504-e7d8-413e-95f4-b75c54c74077")) __declspec(novtable) IContactMatchReason : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Field(winrt::Windows::ApplicationModel::Contacts::ContactMatchReasonKind * value) = 0;
@@ -505,6 +533,28 @@ struct __declspec(uuid("f404e97b-9034-453c-8ebf-140a38c86f1d")) __declspec(novta
     virtual HRESULT __stdcall put_HonorificNamePrefix(hstring value) = 0;
     virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
     virtual HRESULT __stdcall get_YomiDisplayName(hstring * value) = 0;
+};
+
+struct __declspec(uuid("41bf1265-d2ee-4b97-a80a-7d8d64cca6f5")) __declspec(novtable) IContactPanel : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_ClosePanel() = 0;
+    virtual HRESULT __stdcall get_HeaderColor(Windows::Foundation::IReference<Windows::UI::Color> ** value) = 0;
+    virtual HRESULT __stdcall put_HeaderColor(Windows::Foundation::IReference<Windows::UI::Color> * value) = 0;
+    virtual HRESULT __stdcall add_LaunchFullAppRequested(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_LaunchFullAppRequested(event_token token) = 0;
+    virtual HRESULT __stdcall add_Closing(Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> * handler, event_token * token) = 0;
+    virtual HRESULT __stdcall remove_Closing(event_token token) = 0;
+};
+
+struct __declspec(uuid("222174d3-cf4b-46d7-b739-6edc16110bfb")) __declspec(novtable) IContactPanelClosingEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDeferral(Windows::Foundation::IDeferral ** deferral) = 0;
+};
+
+struct __declspec(uuid("88d61c0e-23b4-4be8-8afc-072c25a4190d")) __declspec(novtable) IContactPanelLaunchFullAppRequestedEventArgs : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Handled(bool * value) = 0;
+    virtual HRESULT __stdcall put_Handled(bool value) = 0;
 };
 
 struct __declspec(uuid("467dab65-2712-4f52-b783-9ea8111c63cd")) __declspec(novtable) IContactPhone : Windows::Foundation::IInspectable
@@ -533,6 +583,17 @@ struct __declspec(uuid("b35011cf-5cef-4d24-aa0c-340c5208725d")) __declspec(novta
     virtual HRESULT __stdcall get_DesiredFieldsWithContactFieldType(Windows::Foundation::Collections::IVector<winrt::Windows::ApplicationModel::Contacts::ContactFieldType> ** value) = 0;
     virtual HRESULT __stdcall abi_PickContactAsync(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> ** result) = 0;
     virtual HRESULT __stdcall abi_PickContactsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::Contact>> ** result) = 0;
+};
+
+struct __declspec(uuid("0e723315-b243-4bed-8516-22b1a7ac0ace")) __declspec(novtable) IContactPicker3 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
+};
+
+struct __declspec(uuid("7488c029-6a53-4258-a3e9-62dff6784b6c")) __declspec(novtable) IContactPickerStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateForUser(Windows::System::IUser * user, Windows::ApplicationModel::Contacts::IContactPicker ** result) = 0;
+    virtual HRESULT __stdcall abi_IsSupportedAsync(Windows::Foundation::IAsyncOperation<bool> ** result) = 0;
 };
 
 struct __declspec(uuid("4408cc9e-7d7c-42f0-8ac7-f50733ecdbc1")) __declspec(novtable) IContactQueryOptions : Windows::Foundation::IInspectable
@@ -640,6 +701,30 @@ struct __declspec(uuid("2e0e1b12-d627-4fca-bad4-1faf168c7d14")) __declspec(novta
     virtual HRESULT __stdcall abi_ConvertTypeToName(winrt::Windows::ApplicationModel::Contacts::ContactFieldType type, hstring * name) = 0;
 };
 
+struct __declspec(uuid("7d9b2552-1579-4ddc-871f-a30a3aea9ba1")) __declspec(novtable) IPinnedContactIdsQueryResult : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ContactIds(Windows::Foundation::Collections::IVector<hstring> ** value) = 0;
+};
+
+struct __declspec(uuid("fcbc740c-e1d6-45c3-b8b6-a35604e167a0")) __declspec(novtable) IPinnedContactManager : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_User(Windows::System::IUser ** user) = 0;
+    virtual HRESULT __stdcall abi_IsPinSurfaceSupported(winrt::Windows::ApplicationModel::Contacts::PinnedContactSurface surface, bool * result) = 0;
+    virtual HRESULT __stdcall abi_IsContactPinned(Windows::ApplicationModel::Contacts::IContact * contact, winrt::Windows::ApplicationModel::Contacts::PinnedContactSurface surface, bool * result) = 0;
+    virtual HRESULT __stdcall abi_RequestPinContactAsync(Windows::ApplicationModel::Contacts::IContact * contact, winrt::Windows::ApplicationModel::Contacts::PinnedContactSurface surface, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_RequestPinContactsAsync(Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Contacts::Contact> * contacts, winrt::Windows::ApplicationModel::Contacts::PinnedContactSurface surface, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_RequestUnpinContactAsync(Windows::ApplicationModel::Contacts::IContact * contact, winrt::Windows::ApplicationModel::Contacts::PinnedContactSurface surface, Windows::Foundation::IAsyncOperation<bool> ** operation) = 0;
+    virtual HRESULT __stdcall abi_SignalContactActivity(Windows::ApplicationModel::Contacts::IContact * contact) = 0;
+    virtual HRESULT __stdcall abi_GetPinnedContactIdsAsync(Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult> ** operation) = 0;
+};
+
+struct __declspec(uuid("f65ccc7e-fdf9-486a-ace9-bc311d0ae7f0")) __declspec(novtable) IPinnedContactManagerStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDefault(Windows::ApplicationModel::Contacts::IPinnedContactManager ** result) = 0;
+    virtual HRESULT __stdcall abi_GetForUser(Windows::System::IUser * user, Windows::ApplicationModel::Contacts::IPinnedContactManager ** result) = 0;
+    virtual HRESULT __stdcall abi_IsSupported(bool * result) = 0;
+};
+
 }
 
 namespace ABI {
@@ -663,6 +748,7 @@ template <> struct traits<Windows::ApplicationModel::Contacts::ContactDate> { us
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactEmail> { using default_interface = Windows::ApplicationModel::Contacts::IContactEmail; };
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactField> { using default_interface = Windows::ApplicationModel::Contacts::IContactField; };
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactFieldFactory> { using default_interface = Windows::ApplicationModel::Contacts::IContactFieldFactory; };
+template <> struct traits<Windows::ApplicationModel::Contacts::ContactGroup> { using default_interface = Windows::ApplicationModel::Contacts::IContactGroup; };
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactInformation> { using default_interface = Windows::ApplicationModel::Contacts::IContactInformation; };
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactInstantMessageField> { using default_interface = Windows::ApplicationModel::Contacts::IContactInstantMessageField; };
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactJobInfo> { using default_interface = Windows::ApplicationModel::Contacts::IContactJobInfo; };
@@ -672,6 +758,9 @@ template <> struct traits<Windows::ApplicationModel::Contacts::ContactListSyncMa
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactLocationField> { using default_interface = Windows::ApplicationModel::Contacts::IContactLocationField; };
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactManagerForUser> { using default_interface = Windows::ApplicationModel::Contacts::IContactManagerForUser; };
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactMatchReason> { using default_interface = Windows::ApplicationModel::Contacts::IContactMatchReason; };
+template <> struct traits<Windows::ApplicationModel::Contacts::ContactPanel> { using default_interface = Windows::ApplicationModel::Contacts::IContactPanel; };
+template <> struct traits<Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> { using default_interface = Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs; };
+template <> struct traits<Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> { using default_interface = Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs; };
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactPhone> { using default_interface = Windows::ApplicationModel::Contacts::IContactPhone; };
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactPicker> { using default_interface = Windows::ApplicationModel::Contacts::IContactPicker; };
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactQueryOptions> { using default_interface = Windows::ApplicationModel::Contacts::IContactQueryOptions; };
@@ -682,6 +771,8 @@ template <> struct traits<Windows::ApplicationModel::Contacts::ContactStore> { u
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactStoreNotificationTriggerDetails> { using default_interface = Windows::ApplicationModel::Contacts::IContactStoreNotificationTriggerDetails; };
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactWebsite> { using default_interface = Windows::ApplicationModel::Contacts::IContactWebsite; };
 template <> struct traits<Windows::ApplicationModel::Contacts::FullContactCardOptions> { using default_interface = Windows::ApplicationModel::Contacts::IFullContactCardOptions; };
+template <> struct traits<Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult> { using default_interface = Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult; };
+template <> struct traits<Windows::ApplicationModel::Contacts::PinnedContactManager> { using default_interface = Windows::ApplicationModel::Contacts::IPinnedContactManager; };
 
 }
 
@@ -794,6 +885,13 @@ struct WINRT_EBO impl_IContactAnnotation
 };
 
 template <typename D>
+struct WINRT_EBO impl_IContactAnnotation2
+{
+    hstring ContactListId() const;
+    void ContactListId(hstring_view value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IContactAnnotationList
 {
     hstring Id() const;
@@ -818,6 +916,12 @@ struct WINRT_EBO impl_IContactAnnotationStore
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> CreateAnnotationListAsync(hstring_view userDataAccountId) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> GetAnnotationListAsync(hstring_view annotationListId) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotationList>> FindAnnotationListsAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContactAnnotationStore2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> FindAnnotationsForContactListAsync(hstring_view contactListId) const;
 };
 
 template <typename D>
@@ -933,6 +1037,11 @@ struct WINRT_EBO impl_IContactFieldFactory
     Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type) const;
     Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
     Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_view name, hstring_view value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContactGroup
+{
 };
 
 template <typename D>
@@ -1153,6 +1262,12 @@ struct WINRT_EBO impl_IContactManagerForUser
 };
 
 template <typename D>
+struct WINRT_EBO impl_IContactManagerForUser2
+{
+    void ShowFullContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::ApplicationModel::Contacts::FullContactCardOptions & fullContactCardOptions) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IContactManagerStatics
 {
     void ShowContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection) const;
@@ -1192,6 +1307,14 @@ struct WINRT_EBO impl_IContactManagerStatics4
 };
 
 template <typename D>
+struct WINRT_EBO impl_IContactManagerStatics5
+{
+    Windows::Foundation::IAsyncOperation<bool> IsShowFullContactCardSupportedAsync() const;
+    bool IncludeMiddleNameInSystemDisplayAndSort() const;
+    void IncludeMiddleNameInSystemDisplayAndSort(bool value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IContactMatchReason
 {
     Windows::ApplicationModel::Contacts::ContactMatchReasonKind Field() const;
@@ -1218,6 +1341,35 @@ struct WINRT_EBO impl_IContactName
     void HonorificNamePrefix(hstring_view value) const;
     hstring DisplayName() const;
     hstring YomiDisplayName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContactPanel
+{
+    void ClosePanel() const;
+    Windows::Foundation::IReference<Windows::UI::Color> HeaderColor() const;
+    void HeaderColor(const optional<Windows::UI::Color> & value) const;
+    event_token LaunchFullAppRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> & handler) const;
+    using LaunchFullAppRequested_revoker = event_revoker<IContactPanel>;
+    LaunchFullAppRequested_revoker LaunchFullAppRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs> & handler) const;
+    void LaunchFullAppRequested(event_token token) const;
+    event_token Closing(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> & handler) const;
+    using Closing_revoker = event_revoker<IContactPanel>;
+    Closing_revoker Closing(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactPanel, Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs> & handler) const;
+    void Closing(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContactPanelClosingEventArgs
+{
+    Windows::Foundation::Deferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContactPanelLaunchFullAppRequestedEventArgs
+{
+    bool Handled() const;
+    void Handled(bool value) const;
 };
 
 template <typename D>
@@ -1249,6 +1401,19 @@ struct WINRT_EBO impl_IContactPicker2
     Windows::Foundation::Collections::IVector<winrt::Windows::ApplicationModel::Contacts::ContactFieldType> DesiredFieldsWithContactFieldType() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> PickContactAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::Contact>> PickContactsAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContactPicker3
+{
+    Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContactPickerStatics
+{
+    Windows::ApplicationModel::Contacts::ContactPicker CreateForUser(const Windows::System::User & user) const;
+    Windows::Foundation::IAsyncOperation<bool> IsSupportedAsync() const;
 };
 
 template <typename D>
@@ -1371,6 +1536,33 @@ struct WINRT_EBO impl_IKnownContactFieldStatics
     [[deprecated("IKnownContactFieldStatics may be altered or unavailable for releases after Windows 8.1. Instead, use ContactAddress, ContactPhone, ContactConnectedServiceAccount or ContactEmail.")]] hstring ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type) const;
 };
 
+template <typename D>
+struct WINRT_EBO impl_IPinnedContactIdsQueryResult
+{
+    Windows::Foundation::Collections::IVector<hstring> ContactIds() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPinnedContactManager
+{
+    Windows::System::User User() const;
+    bool IsPinSurfaceSupported(Windows::ApplicationModel::Contacts::PinnedContactSurface surface) const;
+    bool IsContactPinned(const Windows::ApplicationModel::Contacts::Contact & contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface) const;
+    Windows::Foundation::IAsyncOperation<bool> RequestPinContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface) const;
+    Windows::Foundation::IAsyncOperation<bool> RequestPinContactsAsync(iterable<Windows::ApplicationModel::Contacts::Contact> contacts, Windows::ApplicationModel::Contacts::PinnedContactSurface surface) const;
+    Windows::Foundation::IAsyncOperation<bool> RequestUnpinContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact, Windows::ApplicationModel::Contacts::PinnedContactSurface surface) const;
+    void SignalContactActivity(const Windows::ApplicationModel::Contacts::Contact & contact) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult> GetPinnedContactIdsAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPinnedContactManagerStatics
+{
+    Windows::ApplicationModel::Contacts::PinnedContactManager GetDefault() const;
+    Windows::ApplicationModel::Contacts::PinnedContactManager GetForUser(const Windows::System::User & user) const;
+    bool IsSupported() const;
+};
+
 }
 
 namespace impl {
@@ -1417,6 +1609,12 @@ template <> struct traits<Windows::ApplicationModel::Contacts::IContactAnnotatio
     template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactAnnotation<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::Contacts::IContactAnnotation2>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IContactAnnotation2;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactAnnotation2<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::Contacts::IContactAnnotationList>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::IContactAnnotationList;
@@ -1427,6 +1625,12 @@ template <> struct traits<Windows::ApplicationModel::Contacts::IContactAnnotatio
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::IContactAnnotationStore;
     template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactAnnotationStore<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::IContactAnnotationStore2>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IContactAnnotationStore2;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactAnnotationStore2<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::IContactBatch>
@@ -1513,6 +1717,12 @@ template <> struct traits<Windows::ApplicationModel::Contacts::IContactFieldFact
     template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactFieldFactory<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::Contacts::IContactGroup>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IContactGroup;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactGroup<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::Contacts::IContactInformation>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::IContactInformation;
@@ -1591,6 +1801,12 @@ template <> struct traits<Windows::ApplicationModel::Contacts::IContactManagerFo
     template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactManagerForUser<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::Contacts::IContactManagerForUser2>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IContactManagerForUser2;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactManagerForUser2<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::Contacts::IContactManagerStatics>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::IContactManagerStatics;
@@ -1615,6 +1831,12 @@ template <> struct traits<Windows::ApplicationModel::Contacts::IContactManagerSt
     template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactManagerStatics4<D>;
 };
 
+template <> struct traits<Windows::ApplicationModel::Contacts::IContactManagerStatics5>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IContactManagerStatics5;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactManagerStatics5<D>;
+};
+
 template <> struct traits<Windows::ApplicationModel::Contacts::IContactMatchReason>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::IContactMatchReason;
@@ -1625,6 +1847,24 @@ template <> struct traits<Windows::ApplicationModel::Contacts::IContactName>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::IContactName;
     template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactName<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::IContactPanel>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IContactPanel;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactPanel<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IContactPanelClosingEventArgs;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactPanelClosingEventArgs<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IContactPanelLaunchFullAppRequestedEventArgs;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactPanelLaunchFullAppRequestedEventArgs<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::IContactPhone>
@@ -1643,6 +1883,18 @@ template <> struct traits<Windows::ApplicationModel::Contacts::IContactPicker2>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::IContactPicker2;
     template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactPicker2<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::IContactPicker3>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IContactPicker3;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactPicker3<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::IContactPickerStatics>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IContactPickerStatics;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IContactPickerStatics<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::IContactQueryOptions>
@@ -1721,6 +1973,24 @@ template <> struct traits<Windows::ApplicationModel::Contacts::IKnownContactFiel
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::IKnownContactFieldStatics;
     template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IKnownContactFieldStatics<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IPinnedContactIdsQueryResult;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IPinnedContactIdsQueryResult<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::IPinnedContactManager>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IPinnedContactManager;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IPinnedContactManager<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::IPinnedContactManagerStatics;
+    template <typename D> using consume = Windows::ApplicationModel::Contacts::impl_IPinnedContactManagerStatics<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::AggregateContactManager>
@@ -1837,6 +2107,12 @@ template <> struct traits<Windows::ApplicationModel::Contacts::ContactFieldFacto
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactFieldFactory"; }
 };
 
+template <> struct traits<Windows::ApplicationModel::Contacts::ContactGroup>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::ContactGroup;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactGroup"; }
+};
+
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactInformation>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactInformation;
@@ -1899,6 +2175,24 @@ template <> struct traits<Windows::ApplicationModel::Contacts::ContactMatchReaso
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactMatchReason;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactMatchReason"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::ContactPanel>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::ContactPanel;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactPanel"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactPanelClosingEventArgs"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactPanelLaunchFullAppRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactPhone>
@@ -1964,6 +2258,18 @@ template <> struct traits<Windows::ApplicationModel::Contacts::FullContactCardOp
 template <> struct traits<Windows::ApplicationModel::Contacts::KnownContactField>
 {
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.KnownContactField"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.PinnedContactIdsQueryResult"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::Contacts::PinnedContactManager>
+{
+    using abi = ABI::Windows::ApplicationModel::Contacts::PinnedContactManager;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.PinnedContactManager"; }
 };
 
 }

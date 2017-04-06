@@ -6,10 +6,14 @@
 #include "../base.h"
 #include "Windows.ApplicationModel.Store.Preview.0.h"
 #include "Windows.Foundation.0.h"
+#include "Windows.Security.Authentication.Web.Core.0.h"
+#include "Windows.Security.Credentials.0.h"
 #include "Windows.System.0.h"
+#include "Windows.UI.Xaml.0.h"
 #include "Windows.Foundation.Collections.1.h"
 #include "Windows.Foundation.1.h"
 #include "Windows.Storage.Streams.1.h"
+#include "Windows.Security.Authentication.Web.Core.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -40,6 +44,18 @@ struct __declspec(uuid("6d45f57c-f144-4cb5-9d3f-4eb05e30b6d3")) __declspec(novta
     virtual HRESULT __stdcall abi_IsStoreWebAccountIdForUser(Windows::System::IUser * user, hstring webAccountId, bool * value) = 0;
     virtual HRESULT __stdcall abi_GetPurchasePromptingPolicyForUser(Windows::System::IUser * user, Windows::Foundation::IReference<uint32_t> ** value) = 0;
     virtual HRESULT __stdcall abi_SetPurchasePromptingPolicyForUser(Windows::System::IUser * user, Windows::Foundation::IReference<uint32_t> * value) = 0;
+};
+
+struct __declspec(uuid("20ff56d2-4ee3-4cf0-9b12-552c03310f75")) __declspec(novtable) IStoreConfigurationStatics4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetStoreWebAccountId(hstring * result) = 0;
+    virtual HRESULT __stdcall abi_GetStoreWebAccountIdForUser(Windows::System::IUser * user, hstring * result) = 0;
+    virtual HRESULT __stdcall abi_SetEnterpriseStoreWebAccountId(hstring webAccountId) = 0;
+    virtual HRESULT __stdcall abi_SetEnterpriseStoreWebAccountIdForUser(Windows::System::IUser * user, hstring webAccountId) = 0;
+    virtual HRESULT __stdcall abi_GetEnterpriseStoreWebAccountId(hstring * result) = 0;
+    virtual HRESULT __stdcall abi_GetEnterpriseStoreWebAccountIdForUser(Windows::System::IUser * user, hstring * result) = 0;
+    virtual HRESULT __stdcall abi_ShouldRestrictToEnterpriseStoreOnly(bool * result) = 0;
+    virtual HRESULT __stdcall abi_ShouldRestrictToEnterpriseStoreOnlyForUser(Windows::System::IUser * user, bool * result) = 0;
 };
 
 struct __declspec(uuid("f292dc08-c654-43ac-a21f-34801c9d3388")) __declspec(novtable) IStoreHardwareManufacturerInfo : Windows::Foundation::IInspectable
@@ -83,6 +99,12 @@ struct __declspec(uuid("81fd76e2-0b26-48d9-98ce-27461c669d6c")) __declspec(novta
     virtual HRESULT __stdcall get_ExtendedData(hstring * value) = 0;
 };
 
+struct __declspec(uuid("06a50525-e715-4123-9276-9d6f865ba55f")) __declspec(novtable) IWebAuthenticationCoreManagerHelper : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_RequestTokenWithUIElementHostingAsync(Windows::Security::Authentication::Web::Core::IWebTokenRequest * request, Windows::UI::Xaml::IUIElement * uiElement, Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> ** asyncInfo) = 0;
+    virtual HRESULT __stdcall abi_RequestTokenWithUIElementHostingAndWebAccountAsync(Windows::Security::Authentication::Web::Core::IWebTokenRequest * request, Windows::Security::Credentials::IWebAccount * webAccount, Windows::UI::Xaml::IUIElement * uiElement, Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> ** asyncInfo) = 0;
+};
+
 }
 
 namespace ABI {
@@ -124,6 +146,19 @@ struct WINRT_EBO impl_IStoreConfigurationStatics3
     bool IsStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId) const;
     Windows::Foundation::IReference<uint32_t> GetPurchasePromptingPolicyForUser(const Windows::System::User & user) const;
     void SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const optional<uint32_t> & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreConfigurationStatics4
+{
+    hstring GetStoreWebAccountId() const;
+    hstring GetStoreWebAccountIdForUser(const Windows::System::User & user) const;
+    void SetEnterpriseStoreWebAccountId(hstring_view webAccountId) const;
+    void SetEnterpriseStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId) const;
+    hstring GetEnterpriseStoreWebAccountId() const;
+    hstring GetEnterpriseStoreWebAccountIdForUser(const Windows::System::User & user) const;
+    bool ShouldRestrictToEnterpriseStoreOnly() const;
+    bool ShouldRestrictToEnterpriseStoreOnlyForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
@@ -172,6 +207,13 @@ struct WINRT_EBO impl_IStorePreviewSkuInfo
     hstring ExtendedData() const;
 };
 
+template <typename D>
+struct WINRT_EBO impl_IWebAuthenticationCoreManagerHelper
+{
+    Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> RequestTokenWithUIElementHostingAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request, const Windows::UI::Xaml::UIElement & uiElement) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> RequestTokenWithUIElementHostingAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request, const Windows::Security::Credentials::WebAccount & webAccount, const Windows::UI::Xaml::UIElement & uiElement) const;
+};
+
 }
 
 namespace impl {
@@ -192,6 +234,12 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::IStoreConfi
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics3;
     template <typename D> using consume = Windows::ApplicationModel::Store::Preview::impl_IStoreConfigurationStatics3<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4>
+{
+    using abi = ABI::Windows::ApplicationModel::Store::Preview::IStoreConfigurationStatics4;
+    template <typename D> using consume = Windows::ApplicationModel::Store::Preview::impl_IStoreConfigurationStatics4<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::Preview::IStoreHardwareManufacturerInfo>
@@ -222,6 +270,12 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::IStorePrevi
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInfo;
     template <typename D> using consume = Windows::ApplicationModel::Store::Preview::impl_IStorePreviewSkuInfo<D>;
+};
+
+template <> struct traits<Windows::ApplicationModel::Store::Preview::IWebAuthenticationCoreManagerHelper>
+{
+    using abi = ABI::Windows::ApplicationModel::Store::Preview::IWebAuthenticationCoreManagerHelper;
+    template <typename D> using consume = Windows::ApplicationModel::Store::Preview::impl_IWebAuthenticationCoreManagerHelper<D>;
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::Preview::StoreConfiguration>
@@ -256,6 +310,11 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::StorePrevie
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.StorePreviewSkuInfo"; }
+};
+
+template <> struct traits<Windows::ApplicationModel::Store::Preview::WebAuthenticationCoreManagerHelper>
+{
+    static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.WebAuthenticationCoreManagerHelper"; }
 };
 
 }

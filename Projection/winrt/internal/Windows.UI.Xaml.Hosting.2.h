@@ -23,6 +23,13 @@ struct IElementCompositionPreviewStatics :
     IElementCompositionPreviewStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IElementCompositionPreviewStatics2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IElementCompositionPreviewStatics2>
+{
+    IElementCompositionPreviewStatics2(std::nullptr_t = nullptr) noexcept {}
+};
+
 }
 
 }

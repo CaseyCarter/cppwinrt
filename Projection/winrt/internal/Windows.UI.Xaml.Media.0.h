@@ -63,6 +63,9 @@ struct ILineSegmentStatics;
 struct ILinearGradientBrush;
 struct ILinearGradientBrushFactory;
 struct ILinearGradientBrushStatics;
+struct ILoadedImageSourceLoadCompletedEventArgs;
+struct ILoadedImageSurface;
+struct ILoadedImageSurfaceStatics;
 struct IMatrix3DProjection;
 struct IMatrix3DProjectionStatics;
 struct IMatrixHelper;
@@ -118,6 +121,16 @@ struct ITranslateTransformStatics;
 struct IVisualTreeHelper;
 struct IVisualTreeHelperStatics;
 struct IVisualTreeHelperStatics2;
+struct IXamlCompositionBrushBase;
+struct IXamlCompositionBrushBaseFactory;
+struct IXamlCompositionBrushBaseOverrides;
+struct IXamlCompositionBrushBaseProtected;
+struct IXamlCompositionBrushBaseStatics;
+struct IXamlLight;
+struct IXamlLightFactory;
+struct IXamlLightOverrides;
+struct IXamlLightProtected;
+struct IXamlLightStatics;
 struct RateChangedRoutedEventHandler;
 struct TimelineMarkerRoutedEventHandler;
 struct ArcSegment;
@@ -143,6 +156,8 @@ struct ImageSource;
 struct LineGeometry;
 struct LineSegment;
 struct LinearGradientBrush;
+struct LoadedImageSourceLoadCompletedEventArgs;
+struct LoadedImageSurface;
 struct Matrix3DProjection;
 struct MatrixHelper;
 struct MatrixTransform;
@@ -176,6 +191,8 @@ struct TransformCollection;
 struct TransformGroup;
 struct TranslateTransform;
 struct VisualTreeHelper;
+struct XamlCompositionBrushBase;
+struct XamlLight;
 
 }
 
@@ -226,6 +243,9 @@ struct ILineSegmentStatics;
 struct ILinearGradientBrush;
 struct ILinearGradientBrushFactory;
 struct ILinearGradientBrushStatics;
+struct ILoadedImageSourceLoadCompletedEventArgs;
+struct ILoadedImageSurface;
+struct ILoadedImageSurfaceStatics;
 struct IMatrix3DProjection;
 struct IMatrix3DProjectionStatics;
 struct IMatrixHelper;
@@ -281,6 +301,16 @@ struct ITranslateTransformStatics;
 struct IVisualTreeHelper;
 struct IVisualTreeHelperStatics;
 struct IVisualTreeHelperStatics2;
+struct IXamlCompositionBrushBase;
+struct IXamlCompositionBrushBaseFactory;
+struct IXamlCompositionBrushBaseOverrides;
+struct IXamlCompositionBrushBaseProtected;
+struct IXamlCompositionBrushBaseStatics;
+struct IXamlLight;
+struct IXamlLightFactory;
+struct IXamlLightOverrides;
+struct IXamlLightProtected;
+struct IXamlLightStatics;
 struct ArcSegment;
 struct BezierSegment;
 struct BitmapCache;
@@ -304,6 +334,8 @@ struct ImageSource;
 struct LineGeometry;
 struct LineSegment;
 struct LinearGradientBrush;
+struct LoadedImageSourceLoadCompletedEventArgs;
+struct LoadedImageSurface;
 struct Matrix3DProjection;
 struct MatrixHelper;
 struct MatrixTransform;
@@ -337,6 +369,8 @@ struct TransformCollection;
 struct TransformGroup;
 struct TranslateTransform;
 struct VisualTreeHelper;
+struct XamlCompositionBrushBase;
+struct XamlLight;
 
 }
 
@@ -385,6 +419,9 @@ template <typename T> struct impl_ILineSegmentStatics;
 template <typename T> struct impl_ILinearGradientBrush;
 template <typename T> struct impl_ILinearGradientBrushFactory;
 template <typename T> struct impl_ILinearGradientBrushStatics;
+template <typename T> struct impl_ILoadedImageSourceLoadCompletedEventArgs;
+template <typename T> struct impl_ILoadedImageSurface;
+template <typename T> struct impl_ILoadedImageSurfaceStatics;
 template <typename T> struct impl_IMatrix3DProjection;
 template <typename T> struct impl_IMatrix3DProjectionStatics;
 template <typename T> struct impl_IMatrixHelper;
@@ -440,6 +477,16 @@ template <typename T> struct impl_ITranslateTransformStatics;
 template <typename T> struct impl_IVisualTreeHelper;
 template <typename T> struct impl_IVisualTreeHelperStatics;
 template <typename T> struct impl_IVisualTreeHelperStatics2;
+template <typename T> struct impl_IXamlCompositionBrushBase;
+template <typename T> struct impl_IXamlCompositionBrushBaseFactory;
+template <typename T> struct impl_IXamlCompositionBrushBaseOverrides;
+template <typename T> struct impl_IXamlCompositionBrushBaseProtected;
+template <typename T> struct impl_IXamlCompositionBrushBaseStatics;
+template <typename T> struct impl_IXamlLight;
+template <typename T> struct impl_IXamlLightFactory;
+template <typename T> struct impl_IXamlLightOverrides;
+template <typename T> struct impl_IXamlLightProtected;
+template <typename T> struct impl_IXamlLightStatics;
 template <typename T> struct impl_RateChangedRoutedEventHandler;
 template <typename T> struct impl_TimelineMarkerRoutedEventHandler;
 
@@ -521,6 +568,14 @@ enum class GradientSpreadMethod
     Pad = 0,
     Reflect = 1,
     Repeat = 2,
+};
+
+enum class LoadedImageSourceLoadStatus
+{
+    Success = 0,
+    NetworkError = 1,
+    InvalidFormat = 2,
+    Other = 3,
 };
 
 enum class MediaCanPlayResponse

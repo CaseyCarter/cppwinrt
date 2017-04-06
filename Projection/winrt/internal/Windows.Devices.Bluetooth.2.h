@@ -10,9 +10,24 @@ WINRT_EXPORT namespace winrt {
 
 namespace ABI::Windows::Foundation {
 
+#ifndef WINRT_GENERIC_513ef3af_e784_5325_a91e_97c2b8111cf3
+#define WINRT_GENERIC_513ef3af_e784_5325_a91e_97c2b8111cf3
+template <> struct __declspec(uuid("513ef3af-e784-5325-a91e-97c2b8111cf3")) __declspec(novtable) IReference<uint32_t> : impl_IReference<uint32_t> {};
+#endif
+
 #ifndef WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 #define WINRT_GENERIC_604d0c4c_91de_5c2a_935f_362f13eaf800
 template <> struct __declspec(uuid("604d0c4c-91de-5c2a-935f-362f13eaf800")) __declspec(novtable) IReference<Windows::Foundation::TimeSpan> : impl_IReference<Windows::Foundation::TimeSpan> {};
+#endif
+
+#ifndef WINRT_GENERIC_46fce70c_6c07_5a3a_b775_26f99402553f
+#define WINRT_GENERIC_46fce70c_6c07_5a3a_b775_26f99402553f
+template <> struct __declspec(uuid("46fce70c-6c07-5a3a-b775-26f99402553f")) __declspec(novtable) IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> : impl_IAsyncOperation<Windows::Devices::Bluetooth::BluetoothAdapter> {};
+#endif
+
+#ifndef WINRT_GENERIC_eac62c40_8dbc_5854_8ba0_b7b9940e7389
+#define WINRT_GENERIC_eac62c40_8dbc_5854_8ba0_b7b9940e7389
+template <> struct __declspec(uuid("eac62c40-8dbc-5854-8ba0-b7b9940e7389")) __declspec(novtable) IAsyncOperation<Windows::Devices::Radios::Radio> : impl_IAsyncOperation<Windows::Devices::Radios::Radio> {};
 #endif
 
 #ifndef WINRT_GENERIC_b58d8d19_44bd_5ac0_a0d6_1b50800f3181
@@ -55,6 +70,11 @@ template <> struct __declspec(uuid("c00bc2f2-a7f8-5f3f-80d1-2808ef6bca10")) __de
 template <> struct __declspec(uuid("b7f2f74d-bf9c-5721-bf6e-03f1b4409588")) __declspec(novtable) IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> : impl_IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> {};
 #endif
 
+#ifndef WINRT_GENERIC_375f9d67_74a2_5f91_a11d_169093718d41
+#define WINRT_GENERIC_375f9d67_74a2_5f91_a11d_169093718d41
+template <> struct __declspec(uuid("375f9d67-74a2-5f91-a11d-169093718d41")) __declspec(novtable) IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> : impl_IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> {};
+#endif
+
 
 }
 
@@ -75,14 +95,24 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("a90661e2-372e-5d1e-bbbb-b8a2ce0e7c4d")) __declspec(novtable) TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::Bluetooth::BluetoothLEDevice, Windows::Foundation::IInspectable> {};
 #endif
 
-#ifndef WINRT_GENERIC_375f9d67_74a2_5f91_a11d_169093718d41
-#define WINRT_GENERIC_375f9d67_74a2_5f91_a11d_169093718d41
-template <> struct __declspec(uuid("375f9d67-74a2-5f91-a11d-169093718d41")) __declspec(novtable) IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> : impl_IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> {};
+#ifndef WINRT_GENERIC_e7c667f6_e874_500f_86ff_760ca6f07a58
+#define WINRT_GENERIC_e7c667f6_e874_500f_86ff_760ca6f07a58
+template <> struct __declspec(uuid("e7c667f6-e874-500f-86ff-760ca6f07a58")) __declspec(novtable) IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> : impl_IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> {};
 #endif
 
 #ifndef WINRT_GENERIC_6ec9e41b_6709_5647_9918_a1270110fc4e
 #define WINRT_GENERIC_6ec9e41b_6709_5647_9918_a1270110fc4e
 template <> struct __declspec(uuid("6ec9e41b-6709-5647-9918-a1270110fc4e")) __declspec(novtable) IReference<int16_t> : impl_IReference<int16_t> {};
+#endif
+
+#ifndef WINRT_GENERIC_10a10a88_90e0_511a_9a08_d75feb52a19f
+#define WINRT_GENERIC_10a10a88_90e0_511a_9a08_d75feb52a19f
+template <> struct __declspec(uuid("10a10a88-90e0-511a-9a08-d75feb52a19f")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Bluetooth::BluetoothAdapter> : impl_AsyncOperationCompletedHandler<Windows::Devices::Bluetooth::BluetoothAdapter> {};
+#endif
+
+#ifndef WINRT_GENERIC_8a5c7e3a_80e2_585b_8630_7a8e777f0354
+#define WINRT_GENERIC_8a5c7e3a_80e2_585b_8630_7a8e777f0354
+template <> struct __declspec(uuid("8a5c7e3a-80e2-585b-8630-7a8e777f0354")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Radios::Radio> : impl_AsyncOperationCompletedHandler<Windows::Devices::Radios::Radio> {};
 #endif
 
 #ifndef WINRT_GENERIC_b2e8cdd1_66aa_5892_85a3_8f0b165e43fc
@@ -140,6 +170,11 @@ template <> struct __declspec(uuid("ee154d83-805b-53e8-8469-90715036d013")) __de
 template <> struct __declspec(uuid("522c25d1-866b-5de4-bd8e-1feb5ae60d47")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> : impl_AsyncOperationCompletedHandler<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> {};
 #endif
 
+#ifndef WINRT_GENERIC_9156b79f_c54a_5277_8f8b_d2cc43c7e004
+#define WINRT_GENERIC_9156b79f_c54a_5277_8f8b_d2cc43c7e004
+template <> struct __declspec(uuid("9156b79f-c54a-5277-8f8b-d2cc43c7e004")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Bluetooth::BluetoothLEDevice> : impl_AsyncOperationCompletedHandler<Windows::Devices::Bluetooth::BluetoothLEDevice> {};
+#endif
+
 
 }
 
@@ -165,15 +200,29 @@ template <> struct __declspec(uuid("4b192e23-4893-56b2-8eff-439c3ab7fd1f")) __de
 
 namespace ABI::Windows::Foundation {
 
-#ifndef WINRT_GENERIC_9156b79f_c54a_5277_8f8b_d2cc43c7e004
-#define WINRT_GENERIC_9156b79f_c54a_5277_8f8b_d2cc43c7e004
-template <> struct __declspec(uuid("9156b79f-c54a-5277-8f8b-d2cc43c7e004")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Bluetooth::BluetoothLEDevice> : impl_AsyncOperationCompletedHandler<Windows::Devices::Bluetooth::BluetoothLEDevice> {};
+#ifndef WINRT_GENERIC_74ab0892_a631_5d6c_b1b4_bd2e1a741a9b
+#define WINRT_GENERIC_74ab0892_a631_5d6c_b1b4_bd2e1a741a9b
+template <> struct __declspec(uuid("74ab0892-a631-5d6c-b1b4-bd2e1a741a9b")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> : impl_AsyncOperationCompletedHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult> {};
 #endif
 
 
 }
 
 namespace Windows::Devices::Bluetooth {
+
+struct IBluetoothAdapter :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBluetoothAdapter>
+{
+    IBluetoothAdapter(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBluetoothAdapterStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBluetoothAdapterStatics>
+{
+    IBluetoothAdapterStatics(std::nullptr_t = nullptr) noexcept {}
+};
 
 struct IBluetoothClassOfDevice :
     Windows::Foundation::IInspectable,
@@ -210,6 +259,13 @@ struct IBluetoothDevice3 :
     impl::require<IBluetoothDevice3, Windows::Devices::Bluetooth::IBluetoothDevice, Windows::Devices::Bluetooth::IBluetoothDevice2>
 {
     IBluetoothDevice3(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBluetoothDeviceId :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBluetoothDeviceId>
+{
+    IBluetoothDeviceId(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IBluetoothDeviceStatics :
@@ -270,6 +326,13 @@ struct IBluetoothLEDevice2 :
     IBluetoothLEDevice2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IBluetoothLEDevice3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBluetoothLEDevice3>
+{
+    IBluetoothLEDevice3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IBluetoothLEDeviceStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IBluetoothLEDeviceStatics>
@@ -289,6 +352,13 @@ struct IBluetoothSignalStrengthFilter :
     impl::consume<IBluetoothSignalStrengthFilter>
 {
     IBluetoothSignalStrengthFilter(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBluetoothUuidHelperStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBluetoothUuidHelperStatics>
+{
+    IBluetoothUuidHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
 }

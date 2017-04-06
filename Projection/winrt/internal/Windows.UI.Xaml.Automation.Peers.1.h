@@ -139,6 +139,11 @@ struct __declspec(uuid("f632e1c6-0a3f-4574-9fef-cdc151765674")) __declspec(novta
     virtual HRESULT __stdcall abi_GetFullDescription(hstring * returnValue) = 0;
 };
 
+struct __declspec(uuid("caf8608f-13ff-42fb-866d-22206434cc6b")) __declspec(novtable) IAutomationPeer6 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetCulture(int32_t * returnValue) = 0;
+};
+
 struct __declspec(uuid("0c456061-52cf-43fa-82f8-07f137351e5a")) __declspec(novtable) IAutomationPeerAnnotation : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Type(winrt::Windows::UI::Xaml::Automation::AnnotationType * value) = 0;
@@ -226,6 +231,11 @@ struct __declspec(uuid("2c847c85-781e-49f7-9fef-b9e14d014707")) __declspec(novta
     virtual HRESULT __stdcall abi_GetDescribedByCore(Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer> ** returnValue) = 0;
     virtual HRESULT __stdcall abi_GetFlowsToCore(Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer> ** returnValue) = 0;
     virtual HRESULT __stdcall abi_GetFlowsFromCore(Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer> ** returnValue) = 0;
+};
+
+struct __declspec(uuid("e98babe7-f6ff-444c-9c0d-277eaf0ad9c0")) __declspec(novtable) IAutomationPeerOverrides6 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetCultureCore(int32_t * returnValue) = 0;
 };
 
 struct __declspec(uuid("f4b40e52-642f-4629-a54a-ea5d2349c448")) __declspec(novtable) IAutomationPeerProtected : Windows::Foundation::IInspectable
@@ -1093,6 +1103,12 @@ struct WINRT_EBO impl_IAutomationPeer5
 };
 
 template <typename D>
+struct WINRT_EBO impl_IAutomationPeer6
+{
+    int32_t GetCulture() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IAutomationPeerAnnotation
 {
     Windows::UI::Xaml::Automation::AnnotationType Type() const;
@@ -1188,6 +1204,12 @@ struct WINRT_EBO impl_IAutomationPeerOverrides5
     Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetDescribedByCore() const;
     Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetFlowsToCore() const;
     Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetFlowsFromCore() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationPeerOverrides6
+{
+    int32_t GetCultureCore() const;
 };
 
 template <typename D>
@@ -2073,6 +2095,12 @@ template <> struct traits<Windows::UI::Xaml::Automation::Peers::IAutomationPeer5
     template <typename D> using consume = Windows::UI::Xaml::Automation::Peers::impl_IAutomationPeer5<D>;
 };
 
+template <> struct traits<Windows::UI::Xaml::Automation::Peers::IAutomationPeer6>
+{
+    using abi = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeer6;
+    template <typename D> using consume = Windows::UI::Xaml::Automation::Peers::impl_IAutomationPeer6<D>;
+};
+
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation;
@@ -2125,6 +2153,12 @@ template <> struct traits<Windows::UI::Xaml::Automation::Peers::IAutomationPeerO
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides5;
     template <typename D> using consume = Windows::UI::Xaml::Automation::Peers::impl_IAutomationPeerOverrides5<D>;
+};
+
+template <> struct traits<Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides6>
+{
+    using abi = ABI::Windows::UI::Xaml::Automation::Peers::IAutomationPeerOverrides6;
+    template <typename D> using consume = Windows::UI::Xaml::Automation::Peers::impl_IAutomationPeerOverrides6<D>;
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::IAutomationPeerProtected>

@@ -64,7 +64,7 @@ struct CoreApplication
 
 struct WINRT_EBO CoreApplicationView :
     Windows::ApplicationModel::Core::ICoreApplicationView,
-    impl::require<CoreApplicationView, Windows::ApplicationModel::Core::ICoreApplicationView2, Windows::ApplicationModel::Core::ICoreApplicationView3>
+    impl::require<CoreApplicationView, Windows::ApplicationModel::Core::ICoreApplicationView2, Windows::ApplicationModel::Core::ICoreApplicationView3, Windows::ApplicationModel::Core::ICoreApplicationView5>
 {
     CoreApplicationView(std::nullptr_t) noexcept {}
 };

@@ -15,13 +15,17 @@ struct IAccessKeyDisplayRequestedEventArgs;
 struct IAccessKeyInvokedEventArgs;
 struct IAccessKeyManager;
 struct IAccessKeyManagerStatics;
+struct IAccessKeyManagerStatics2;
 struct ICommand;
 struct IContextRequestedEventArgs;
 struct IDoubleTappedRoutedEventArgs;
+struct IFindNextElementOptions;
 struct IFocusManager;
 struct IFocusManagerStatics;
 struct IFocusManagerStatics2;
 struct IFocusManagerStatics3;
+struct IFocusManagerStatics4;
+struct IGettingFocusEventArgs;
 struct IHoldingRoutedEventArgs;
 struct IInertiaExpansionBehavior;
 struct IInertiaRotationBehavior;
@@ -32,6 +36,7 @@ struct IInputScopeNameFactory;
 struct IKeyRoutedEventArgs;
 struct IKeyRoutedEventArgs2;
 struct IKeyRoutedEventArgs3;
+struct ILosingFocusEventArgs;
 struct IManipulationCompletedRoutedEventArgs;
 struct IManipulationDeltaRoutedEventArgs;
 struct IManipulationInertiaStartingRoutedEventArgs;
@@ -40,6 +45,7 @@ struct IManipulationPivotFactory;
 struct IManipulationStartedRoutedEventArgs;
 struct IManipulationStartedRoutedEventArgsFactory;
 struct IManipulationStartingRoutedEventArgs;
+struct INoFocusCandidateFoundEventArgs;
 struct IPointer;
 struct IPointerRoutedEventArgs;
 struct IRightTappedRoutedEventArgs;
@@ -59,7 +65,9 @@ struct AccessKeyInvokedEventArgs;
 struct AccessKeyManager;
 struct ContextRequestedEventArgs;
 struct DoubleTappedRoutedEventArgs;
+struct FindNextElementOptions;
 struct FocusManager;
+struct GettingFocusEventArgs;
 struct HoldingRoutedEventArgs;
 struct InertiaExpansionBehavior;
 struct InertiaRotationBehavior;
@@ -67,12 +75,14 @@ struct InertiaTranslationBehavior;
 struct InputScope;
 struct InputScopeName;
 struct KeyRoutedEventArgs;
+struct LosingFocusEventArgs;
 struct ManipulationCompletedRoutedEventArgs;
 struct ManipulationDeltaRoutedEventArgs;
 struct ManipulationInertiaStartingRoutedEventArgs;
 struct ManipulationPivot;
 struct ManipulationStartedRoutedEventArgs;
 struct ManipulationStartingRoutedEventArgs;
+struct NoFocusCandidateFoundEventArgs;
 struct Pointer;
 struct PointerRoutedEventArgs;
 struct RightTappedRoutedEventArgs;
@@ -98,13 +108,17 @@ struct IAccessKeyDisplayRequestedEventArgs;
 struct IAccessKeyInvokedEventArgs;
 struct IAccessKeyManager;
 struct IAccessKeyManagerStatics;
+struct IAccessKeyManagerStatics2;
 struct ICommand;
 struct IContextRequestedEventArgs;
 struct IDoubleTappedRoutedEventArgs;
+struct IFindNextElementOptions;
 struct IFocusManager;
 struct IFocusManagerStatics;
 struct IFocusManagerStatics2;
 struct IFocusManagerStatics3;
+struct IFocusManagerStatics4;
+struct IGettingFocusEventArgs;
 struct IHoldingRoutedEventArgs;
 struct IInertiaExpansionBehavior;
 struct IInertiaRotationBehavior;
@@ -115,6 +129,7 @@ struct IInputScopeNameFactory;
 struct IKeyRoutedEventArgs;
 struct IKeyRoutedEventArgs2;
 struct IKeyRoutedEventArgs3;
+struct ILosingFocusEventArgs;
 struct IManipulationCompletedRoutedEventArgs;
 struct IManipulationDeltaRoutedEventArgs;
 struct IManipulationInertiaStartingRoutedEventArgs;
@@ -123,6 +138,7 @@ struct IManipulationPivotFactory;
 struct IManipulationStartedRoutedEventArgs;
 struct IManipulationStartedRoutedEventArgsFactory;
 struct IManipulationStartingRoutedEventArgs;
+struct INoFocusCandidateFoundEventArgs;
 struct IPointer;
 struct IPointerRoutedEventArgs;
 struct IRightTappedRoutedEventArgs;
@@ -133,7 +149,9 @@ struct AccessKeyInvokedEventArgs;
 struct AccessKeyManager;
 struct ContextRequestedEventArgs;
 struct DoubleTappedRoutedEventArgs;
+struct FindNextElementOptions;
 struct FocusManager;
+struct GettingFocusEventArgs;
 struct HoldingRoutedEventArgs;
 struct InertiaExpansionBehavior;
 struct InertiaRotationBehavior;
@@ -141,12 +159,14 @@ struct InertiaTranslationBehavior;
 struct InputScope;
 struct InputScopeName;
 struct KeyRoutedEventArgs;
+struct LosingFocusEventArgs;
 struct ManipulationCompletedRoutedEventArgs;
 struct ManipulationDeltaRoutedEventArgs;
 struct ManipulationInertiaStartingRoutedEventArgs;
 struct ManipulationPivot;
 struct ManipulationStartedRoutedEventArgs;
 struct ManipulationStartingRoutedEventArgs;
+struct NoFocusCandidateFoundEventArgs;
 struct Pointer;
 struct PointerRoutedEventArgs;
 struct RightTappedRoutedEventArgs;
@@ -161,13 +181,17 @@ template <typename T> struct impl_IAccessKeyDisplayRequestedEventArgs;
 template <typename T> struct impl_IAccessKeyInvokedEventArgs;
 template <typename T> struct impl_IAccessKeyManager;
 template <typename T> struct impl_IAccessKeyManagerStatics;
+template <typename T> struct impl_IAccessKeyManagerStatics2;
 template <typename T> struct impl_ICommand;
 template <typename T> struct impl_IContextRequestedEventArgs;
 template <typename T> struct impl_IDoubleTappedRoutedEventArgs;
+template <typename T> struct impl_IFindNextElementOptions;
 template <typename T> struct impl_IFocusManager;
 template <typename T> struct impl_IFocusManagerStatics;
 template <typename T> struct impl_IFocusManagerStatics2;
 template <typename T> struct impl_IFocusManagerStatics3;
+template <typename T> struct impl_IFocusManagerStatics4;
+template <typename T> struct impl_IGettingFocusEventArgs;
 template <typename T> struct impl_IHoldingRoutedEventArgs;
 template <typename T> struct impl_IInertiaExpansionBehavior;
 template <typename T> struct impl_IInertiaRotationBehavior;
@@ -178,6 +202,7 @@ template <typename T> struct impl_IInputScopeNameFactory;
 template <typename T> struct impl_IKeyRoutedEventArgs;
 template <typename T> struct impl_IKeyRoutedEventArgs2;
 template <typename T> struct impl_IKeyRoutedEventArgs3;
+template <typename T> struct impl_ILosingFocusEventArgs;
 template <typename T> struct impl_IManipulationCompletedRoutedEventArgs;
 template <typename T> struct impl_IManipulationDeltaRoutedEventArgs;
 template <typename T> struct impl_IManipulationInertiaStartingRoutedEventArgs;
@@ -186,6 +211,7 @@ template <typename T> struct impl_IManipulationPivotFactory;
 template <typename T> struct impl_IManipulationStartedRoutedEventArgs;
 template <typename T> struct impl_IManipulationStartedRoutedEventArgsFactory;
 template <typename T> struct impl_IManipulationStartingRoutedEventArgs;
+template <typename T> struct impl_INoFocusCandidateFoundEventArgs;
 template <typename T> struct impl_IPointer;
 template <typename T> struct impl_IPointerRoutedEventArgs;
 template <typename T> struct impl_IRightTappedRoutedEventArgs;
@@ -205,6 +231,16 @@ template <typename T> struct impl_TappedEventHandler;
 }
 
 namespace Windows::UI::Xaml::Input {
+
+enum class FocusInputDeviceKind
+{
+    None = 0,
+    Mouse = 1,
+    Touch = 2,
+    Pen = 3,
+    Keyboard = 4,
+    GameController = 5,
+};
 
 enum class FocusNavigationDirection
 {
@@ -264,6 +300,17 @@ enum class InputScopeNameValue
     ChatWithoutEmoji = 68,
 };
 
+enum class KeyTipPlacementMode
+{
+    Auto = 0,
+    Bottom = 1,
+    Top = 2,
+    Left = 3,
+    Right = 4,
+    Center = 5,
+    Hidden = 6,
+};
+
 enum class KeyboardNavigationMode
 {
     Local = 0,
@@ -288,6 +335,30 @@ enum class ManipulationModes : unsigned
 };
 
 DEFINE_ENUM_FLAG_OPERATORS(ManipulationModes)
+
+enum class XYFocusKeyboardNavigationMode
+{
+    Auto = 0,
+    Enabled = 1,
+    Disabled = 2,
+};
+
+enum class XYFocusNavigationStrategy
+{
+    Auto = 0,
+    Projection = 1,
+    NavigationDirectionDistance = 2,
+    RectilinearDistance = 3,
+};
+
+enum class XYFocusNavigationStrategyOverride
+{
+    None = 0,
+    Auto = 1,
+    Projection = 2,
+    NavigationDirectionDistance = 3,
+    RectilinearDistance = 4,
+};
 
 }
 

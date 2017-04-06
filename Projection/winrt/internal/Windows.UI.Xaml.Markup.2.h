@@ -83,6 +83,20 @@ struct IXamlBindingHelperStatics :
     IXamlBindingHelperStatics(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IXamlMarkupHelper :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlMarkupHelper>
+{
+    IXamlMarkupHelper(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IXamlMarkupHelperStatics :
+    Windows::Foundation::IInspectable,
+    impl::consume<IXamlMarkupHelperStatics>
+{
+    IXamlMarkupHelperStatics(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IXamlMember :
     Windows::Foundation::IInspectable,
     impl::consume<IXamlMember>

@@ -40,6 +40,7 @@ struct ISocialFeedChildItem :
 {
     ISocialFeedChildItem(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("ISocialFeedChildItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialFeedChildItem;
 
 struct ISocialFeedContent :
     Windows::Foundation::IInspectable,
@@ -47,6 +48,7 @@ struct ISocialFeedContent :
 {
     ISocialFeedContent(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("ISocialFeedContent is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialFeedContent;
 
 struct ISocialFeedItem :
     Windows::Foundation::IInspectable,
@@ -54,6 +56,7 @@ struct ISocialFeedItem :
 {
     ISocialFeedItem(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("ISocialFeedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialFeedItem;
 
 struct ISocialFeedSharedItem :
     Windows::Foundation::IInspectable,
@@ -61,6 +64,7 @@ struct ISocialFeedSharedItem :
 {
     ISocialFeedSharedItem(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("ISocialFeedSharedItem is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialFeedSharedItem;
 
 struct ISocialItemThumbnail :
     Windows::Foundation::IInspectable,
@@ -68,6 +72,7 @@ struct ISocialItemThumbnail :
 {
     ISocialItemThumbnail(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("ISocialItemThumbnail is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialItemThumbnail;
 
 struct ISocialUserInfo :
     Windows::Foundation::IInspectable,
@@ -75,6 +80,7 @@ struct ISocialUserInfo :
 {
     ISocialUserInfo(std::nullptr_t = nullptr) noexcept {}
 };
+struct [[deprecated("ISocialUserInfo is deprecated and might not work on all platforms. For more info, see MSDN.")]] ISocialUserInfo;
 
 }
 

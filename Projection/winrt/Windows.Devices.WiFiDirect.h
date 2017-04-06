@@ -7,8 +7,8 @@
 WINRT_WARNING_PUSH
 
 #include "internal/Windows.Foundation.3.h"
-#include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.Foundation.Collections.3.h"
+#include "internal/Windows.Storage.Streams.3.h"
 #include "internal/Windows.Devices.Enumeration.3.h"
 #include "internal/Windows.Security.Credentials.3.h"
 #include "internal/Windows.Devices.WiFiDirect.3.h"
@@ -821,6 +821,44 @@ template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiF
     return result;
 }
 
+template <typename D> Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus impl_IWiFiDirectDevice<D>::ConnectionStatus() const
+{
+    Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus value {};
+    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->get_ConnectionStatus(&value));
+    return value;
+}
+
+template <typename D> hstring impl_IWiFiDirectDevice<D>::DeviceId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->get_DeviceId(put_abi(value)));
+    return value;
+}
+
+template <typename D> event_token impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> & handler) const
+{
+    event_token token {};
+    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->add_ConnectionStatusChanged(get_abi(handler), &token));
+    return token;
+}
+
+template <typename D> event_revoker<IWiFiDirectDevice> impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> & handler) const
+{
+    return impl::make_event_revoker<D, IWiFiDirectDevice>(this, &ABI::Windows::Devices::WiFiDirect::IWiFiDirectDevice::remove_ConnectionStatusChanged, ConnectionStatusChanged(handler));
+}
+
+template <typename D> void impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(event_token token) const
+{
+    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->remove_ConnectionStatusChanged(token));
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> impl_IWiFiDirectDevice<D>::GetConnectionEndpointPairs() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> value;
+    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->abi_GetConnectionEndpointPairs(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> impl_IWiFiDirectInformationElementStatics<D>::CreateFromBuffer(const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> result;
@@ -1050,6 +1088,13 @@ template <typename D> void impl_IWiFiDirectConnectionParameters2<D>::PreferredPa
     check_hresult(WINRT_SHIM(IWiFiDirectConnectionParameters2)->put_PreferredPairingProcedure(value));
 }
 
+template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IWiFiDirectConnectionRequest<D>::DeviceInformation() const
+{
+    Windows::Devices::Enumeration::DeviceInformation value { nullptr };
+    check_hresult(WINRT_SHIM(IWiFiDirectConnectionRequest)->get_DeviceInformation(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest impl_IWiFiDirectConnectionRequestedEventArgs<D>::GetConnectionRequest() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest result { nullptr };
@@ -1072,51 +1117,6 @@ template <typename D> event_revoker<IWiFiDirectConnectionListener> impl_IWiFiDir
 template <typename D> void impl_IWiFiDirectConnectionListener<D>::ConnectionRequested(event_token token) const
 {
     check_hresult(WINRT_SHIM(IWiFiDirectConnectionListener)->remove_ConnectionRequested(token));
-}
-
-template <typename D> Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus impl_IWiFiDirectDevice<D>::ConnectionStatus() const
-{
-    Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus value {};
-    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->get_ConnectionStatus(&value));
-    return value;
-}
-
-template <typename D> hstring impl_IWiFiDirectDevice<D>::DeviceId() const
-{
-    hstring value;
-    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->get_DeviceId(put_abi(value)));
-    return value;
-}
-
-template <typename D> event_token impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> & handler) const
-{
-    event_token token {};
-    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->add_ConnectionStatusChanged(get_abi(handler), &token));
-    return token;
-}
-
-template <typename D> event_revoker<IWiFiDirectDevice> impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> & handler) const
-{
-    return impl::make_event_revoker<D, IWiFiDirectDevice>(this, &ABI::Windows::Devices::WiFiDirect::IWiFiDirectDevice::remove_ConnectionStatusChanged, ConnectionStatusChanged(handler));
-}
-
-template <typename D> void impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(event_token token) const
-{
-    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->remove_ConnectionStatusChanged(token));
-}
-
-template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> impl_IWiFiDirectDevice<D>::GetConnectionEndpointPairs() const
-{
-    Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> value;
-    check_hresult(WINRT_SHIM(IWiFiDirectDevice)->abi_GetConnectionEndpointPairs(put_abi(value)));
-    return value;
-}
-
-template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IWiFiDirectConnectionRequest<D>::DeviceInformation() const
-{
-    Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(WINRT_SHIM(IWiFiDirectConnectionRequest)->get_DeviceInformation(put_abi(value)));
-    return value;
 }
 
 inline WiFiDirectAdvertisementPublisher::WiFiDirectAdvertisementPublisher() :

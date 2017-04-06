@@ -19,6 +19,11 @@ template <> struct __declspec(uuid("1b0d3570-0877-5ec2-8a2c-3b9539506aca")) __de
 template <> struct __declspec(uuid("09335560-6c6b-5a26-9348-97b781132b20")) __declspec(novtable) IKeyValuePair<hstring, Windows::Foundation::IInspectable> : impl_IKeyValuePair<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
+#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
+template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
+#endif
+
 
 }
 
@@ -34,20 +39,25 @@ template <> struct __declspec(uuid("3e1fe603-f897-5263-b328-0806426b8a79")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
-template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
-#endif
-
 #ifndef WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 #define WINRT_GENERIC_2f13c006_a03a_5f69_b090_75a43e33423e
 template <> struct __declspec(uuid("2f13c006-a03a-5f69-b090-75a43e33423e")) __declspec(novtable) IVectorView<hstring> : impl_IVectorView<hstring> {};
+#endif
+
+#ifndef WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+#define WINRT_GENERIC_98b9acc1_4b56_532e_ac73_03d5291cca90
+template <> struct __declspec(uuid("98b9acc1-4b56-532e-ac73-03d5291cca90")) __declspec(novtable) IVector<hstring> : impl_IVector<hstring> {};
 #endif
 
 
 }
 
 namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_abf53c57_ee50_5342_b52a_26e3b8cc024f
+#define WINRT_GENERIC_abf53c57_ee50_5342_b52a_26e3b8cc024f
+template <> struct __declspec(uuid("abf53c57-ee50-5342-b52a-26e3b8cc024f")) __declspec(novtable) IAsyncOperation<Windows::Foundation::IInspectable> : impl_IAsyncOperation<Windows::Foundation::IInspectable> {};
+#endif
 
 #ifndef WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
 #define WINRT_GENERIC_c50898f6_c536_5f47_8583_8b2c2438a13b
@@ -64,11 +74,6 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("bb78502a-f79d-54fa-92c9-90c5039fdf7e")) __declspec(novtable) IMapView<hstring, Windows::Foundation::IInspectable> : impl_IMapView<hstring, Windows::Foundation::IInspectable> {};
 #endif
 
-#ifndef WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-#define WINRT_GENERIC_e2fcc7c1_3bfc_5a0b_b2b0_72e769d1cb7e
-template <> struct __declspec(uuid("e2fcc7c1-3bfc-5a0b-b2b0-72e769d1cb7e")) __declspec(novtable) IIterable<hstring> : impl_IIterable<hstring> {};
-#endif
-
 
 }
 
@@ -77,11 +82,6 @@ namespace ABI::Windows::Foundation {
 #ifndef WINRT_GENERIC_d90442ca_543c_504b_9eb9_294bcad8a283
 #define WINRT_GENERIC_d90442ca_543c_504b_9eb9_294bcad8a283
 template <> struct __declspec(uuid("d90442ca-543c-504b-9eb9-294bcad8a283")) __declspec(novtable) IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> : impl_IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> {};
-#endif
-
-#ifndef WINRT_GENERIC_abf53c57_ee50_5342_b52a_26e3b8cc024f
-#define WINRT_GENERIC_abf53c57_ee50_5342_b52a_26e3b8cc024f
-template <> struct __declspec(uuid("abf53c57-ee50-5342-b52a-26e3b8cc024f")) __declspec(novtable) IAsyncOperation<Windows::Foundation::IInspectable> : impl_IAsyncOperation<Windows::Foundation::IInspectable> {};
 #endif
 
 #ifndef WINRT_GENERIC_641cb9dd_a28d_59e2_b8db_a227eda6cf2e
@@ -144,6 +144,26 @@ template <> struct __declspec(uuid("bb8b8418-65d1-544b-b083-6d172f568c73")) __de
 
 namespace ABI::Windows::Foundation {
 
+#ifndef WINRT_GENERIC_f8f7e24a_56fe_58df_bc15_2365aec03966
+#define WINRT_GENERIC_f8f7e24a_56fe_58df_bc15_2365aec03966
+template <> struct __declspec(uuid("f8f7e24a-56fe-58df-bc15-2365aec03966")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> : impl_TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_a1687865_31e2_5536_97ec_292269a78046
+#define WINRT_GENERIC_a1687865_31e2_5536_97ec_292269a78046
+template <> struct __declspec(uuid("a1687865-31e2-5536-97ec-292269a78046")) __declspec(novtable) IVector<Windows::ApplicationModel::DataTransfer::ShareProvider> : impl_IVector<Windows::ApplicationModel::DataTransfer::ShareProvider> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_ec6f9cc8_46d0_5e0e_b4d2_7d7773ae37a0
 #define WINRT_GENERIC_ec6f9cc8_46d0_5e0e_b4d2_7d7773ae37a0
 template <> struct __declspec(uuid("ec6f9cc8-46d0-5e0e-b4d2-7d7773ae37a0")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> : impl_TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> {};
@@ -152,6 +172,11 @@ template <> struct __declspec(uuid("ec6f9cc8-46d0-5e0e-b4d2-7d7773ae37a0")) __de
 #ifndef WINRT_GENERIC_c4ac1ba2_7851_5a44_bc8d_3d7c713f1f41
 #define WINRT_GENERIC_c4ac1ba2_7851_5a44_bc8d_3d7c713f1f41
 template <> struct __declspec(uuid("c4ac1ba2-7851-5a44-bc8d-3d7c713f1f41")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> : impl_TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_147e2860_7397_582f_80db_b8685383a937
+#define WINRT_GENERIC_147e2860_7397_582f_80db_b8685383a937
+template <> struct __declspec(uuid("147e2860-7397-582f-80db-b8685383a937")) __declspec(novtable) TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> : impl_TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs> {};
 #endif
 
 #ifndef WINRT_GENERIC_5e52f8ce_aced_5a42_95b4_f674dd84885e
@@ -169,21 +194,6 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("802508e2-9c2c-5b91-89a8-39bcf7223344")) __declspec(novtable) IVector<Windows::Storage::IStorageItem> : impl_IVector<Windows::Storage::IStorageItem> {};
 #endif
 
-
-}
-
-namespace ABI::Windows::Foundation {
-
-#ifndef WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
-#define WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
-template <> struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41")) __declspec(novtable) AsyncOperationCompletedHandler<hstring> : impl_AsyncOperationCompletedHandler<hstring> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
-
 #ifndef WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 #define WINRT_GENERIC_8c304ebb_6615_50a4_8829_879ecd443236
 template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __declspec(novtable) IIterator<hstring> : impl_IIterator<hstring> {};
@@ -194,14 +204,19 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 
 namespace ABI::Windows::Foundation {
 
-#ifndef WINRT_GENERIC_3d203732_ded7_5d32_87e6_c179781f791f
-#define WINRT_GENERIC_3d203732_ded7_5d32_87e6_c179781f791f
-template <> struct __declspec(uuid("3d203732-ded7-5d32-87e6-c179781f791f")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Storage::Streams::RandomAccessStreamReference> : impl_AsyncOperationCompletedHandler<Windows::Storage::Streams::RandomAccessStreamReference> {};
+#ifndef WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
+#define WINRT_GENERIC_b79a741f_7fb5_50ae_9e99_911201ec3d41
+template <> struct __declspec(uuid("b79a741f-7fb5-50ae-9e99-911201ec3d41")) __declspec(novtable) AsyncOperationCompletedHandler<hstring> : impl_AsyncOperationCompletedHandler<hstring> {};
 #endif
 
 #ifndef WINRT_GENERIC_3f08262e_a2e1_5134_9297_e9211f481a2d
 #define WINRT_GENERIC_3f08262e_a2e1_5134_9297_e9211f481a2d
 template <> struct __declspec(uuid("3f08262e-a2e1-5134-9297-e9211f481a2d")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Foundation::IInspectable> : impl_AsyncOperationCompletedHandler<Windows::Foundation::IInspectable> {};
+#endif
+
+#ifndef WINRT_GENERIC_3d203732_ded7_5d32_87e6_c179781f791f
+#define WINRT_GENERIC_3d203732_ded7_5d32_87e6_c179781f791f
+template <> struct __declspec(uuid("3d203732-ded7-5d32-87e6-c179781f791f")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Storage::Streams::RandomAccessStreamReference> : impl_AsyncOperationCompletedHandler<Windows::Storage::Streams::RandomAccessStreamReference> {};
 #endif
 
 #ifndef WINRT_GENERIC_ad46f1cc_2bb0_585c_9885_03c2780d4d58
@@ -233,6 +248,31 @@ namespace ABI::Windows::Foundation {
 #define WINRT_GENERIC_2833ba54_a4e1_5c2d_8a7a_136e8510c78b
 template <> struct __declspec(uuid("2833ba54-a4e1-5c2d-8a7a-136e8510c78b")) __declspec(novtable) AsyncOperationCompletedHandler<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> : impl_AsyncOperationCompletedHandler<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> {};
 #endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_886f5642_e9f9_573b_9213_5840b5062b40
+#define WINRT_GENERIC_886f5642_e9f9_573b_9213_5840b5062b40
+template <> struct __declspec(uuid("886f5642-e9f9-573b-9213-5840b5062b40")) __declspec(novtable) IIterator<Windows::ApplicationModel::DataTransfer::ShareProvider> : impl_IIterator<Windows::ApplicationModel::DataTransfer::ShareProvider> {};
+#endif
+
+#ifndef WINRT_GENERIC_0903b218_5cad_53e6_9a21_6f4b31c4a409
+#define WINRT_GENERIC_0903b218_5cad_53e6_9a21_6f4b31c4a409
+template <> struct __declspec(uuid("0903b218-5cad-53e6-9a21-6f4b31c4a409")) __declspec(novtable) IIterable<Windows::ApplicationModel::DataTransfer::ShareProvider> : impl_IIterable<Windows::ApplicationModel::DataTransfer::ShareProvider> {};
+#endif
+
+#ifndef WINRT_GENERIC_946537a2_932c_5b77_ab36_b70650f0bcd5
+#define WINRT_GENERIC_946537a2_932c_5b77_ab36_b70650f0bcd5
+template <> struct __declspec(uuid("946537a2-932c-5b77-ab36-b70650f0bcd5")) __declspec(novtable) IVectorView<Windows::ApplicationModel::DataTransfer::ShareProvider> : impl_IVectorView<Windows::ApplicationModel::DataTransfer::ShareProvider> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_e521c894_2c26_5946_9e61_2b5e188d01ed
 #define WINRT_GENERIC_e521c894_2c26_5946_9e61_2b5e188d01ed
@@ -313,6 +353,15 @@ struct DataProviderHandler : Windows::Foundation::IUnknown
     void operator()(const Windows::ApplicationModel::DataTransfer::DataProviderRequest & request) const;
 };
 
+struct ShareProviderHandler : Windows::Foundation::IUnknown
+{
+    ShareProviderHandler(std::nullptr_t = nullptr) noexcept {}
+    template <typename L> ShareProviderHandler(L lambda);
+    template <typename F> ShareProviderHandler (F * function);
+    template <typename O, typename M> ShareProviderHandler(O * object, M method);
+    void operator()(const Windows::ApplicationModel::DataTransfer::ShareProviderOperation & operation) const;
+};
+
 struct IClipboardStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IClipboardStatics>
@@ -332,6 +381,13 @@ struct IDataPackage2 :
     impl::consume<IDataPackage2>
 {
     IDataPackage2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IDataPackage3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IDataPackage3>
+{
+    IDataPackage3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IDataPackagePropertySet :
@@ -448,6 +504,13 @@ struct IDataTransferManager :
     IDataTransferManager(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IDataTransferManager2 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IDataTransferManager2>
+{
+    IDataTransferManager2(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IDataTransferManagerStatics :
     Windows::Foundation::IInspectable,
     impl::consume<IDataTransferManagerStatics>
@@ -481,6 +544,48 @@ struct IOperationCompletedEventArgs2 :
     impl::consume<IOperationCompletedEventArgs2>
 {
     IOperationCompletedEventArgs2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IShareCompletedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IShareCompletedEventArgs>
+{
+    IShareCompletedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IShareProvider :
+    Windows::Foundation::IInspectable,
+    impl::consume<IShareProvider>
+{
+    IShareProvider(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IShareProviderFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IShareProviderFactory>
+{
+    IShareProviderFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IShareProviderOperation :
+    Windows::Foundation::IInspectable,
+    impl::consume<IShareProviderOperation>
+{
+    IShareProviderOperation(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IShareProvidersRequestedEventArgs :
+    Windows::Foundation::IInspectable,
+    impl::consume<IShareProvidersRequestedEventArgs>
+{
+    IShareProvidersRequestedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IShareTargetInfo :
+    Windows::Foundation::IInspectable,
+    impl::consume<IShareTargetInfo>
+{
+    IShareTargetInfo(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ISharedStorageAccessManagerStatics :

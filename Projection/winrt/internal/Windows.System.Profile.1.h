@@ -25,6 +25,11 @@ struct __declspec(uuid("926130b8-9955-4c74-bdc1-7cd0decf9b03")) __declspec(novta
     virtual HRESULT __stdcall get_DeviceFamilyVersion(hstring * value) = 0;
 };
 
+struct __declspec(uuid("fc53f0ef-4d3e-4e13-9b23-505f4d091e92")) __declspec(novtable) IEducationSettingsStatics : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_IsEducationEnvironment(bool * value) = 0;
+};
+
 struct __declspec(uuid("971260e0-f170-4a42-bd55-a900b212dae2")) __declspec(novtable) IHardwareIdentificationStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_GetPackageSpecificToken(Windows::Storage::Streams::IBuffer * nonce, Windows::System::Profile::IHardwareToken ** packageSpecificHardwareToken) = 0;
@@ -48,6 +53,11 @@ struct __declspec(uuid("b6e24c1b-7b1c-4b32-8c62-a66597ce723a")) __declspec(novta
 struct __declspec(uuid("893df40e-cad6-4d50-8c49-6fcfc03edb29")) __declspec(novtable) ISharedModeSettingsStatics : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_IsEnabled(bool * value) = 0;
+};
+
+struct __declspec(uuid("608988a4-ccf1-4ee8-a5e2-fd6a1d0cfac8")) __declspec(novtable) ISharedModeSettingsStatics2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_ShouldAvoidLocalStorage(bool * value) = 0;
 };
 
 struct __declspec(uuid("0c659e7d-c3c2-4d33-a2df-21bc41916eb3")) __declspec(novtable) ISystemIdentificationInfo : Windows::Foundation::IInspectable
@@ -89,6 +99,12 @@ struct WINRT_EBO impl_IAnalyticsVersionInfo
 };
 
 template <typename D>
+struct WINRT_EBO impl_IEducationSettingsStatics
+{
+    bool IsEducationEnvironment() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IHardwareIdentificationStatics
 {
     Windows::System::Profile::HardwareToken GetPackageSpecificToken(const Windows::Storage::Streams::IBuffer & nonce) const;
@@ -117,6 +133,12 @@ template <typename D>
 struct WINRT_EBO impl_ISharedModeSettingsStatics
 {
     bool IsEnabled() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISharedModeSettingsStatics2
+{
+    bool ShouldAvoidLocalStorage() const;
 };
 
 template <typename D>
@@ -149,6 +171,12 @@ template <> struct traits<Windows::System::Profile::IAnalyticsVersionInfo>
     template <typename D> using consume = Windows::System::Profile::impl_IAnalyticsVersionInfo<D>;
 };
 
+template <> struct traits<Windows::System::Profile::IEducationSettingsStatics>
+{
+    using abi = ABI::Windows::System::Profile::IEducationSettingsStatics;
+    template <typename D> using consume = Windows::System::Profile::impl_IEducationSettingsStatics<D>;
+};
+
 template <> struct traits<Windows::System::Profile::IHardwareIdentificationStatics>
 {
     using abi = ABI::Windows::System::Profile::IHardwareIdentificationStatics;
@@ -173,6 +201,12 @@ template <> struct traits<Windows::System::Profile::ISharedModeSettingsStatics>
     template <typename D> using consume = Windows::System::Profile::impl_ISharedModeSettingsStatics<D>;
 };
 
+template <> struct traits<Windows::System::Profile::ISharedModeSettingsStatics2>
+{
+    using abi = ABI::Windows::System::Profile::ISharedModeSettingsStatics2;
+    template <typename D> using consume = Windows::System::Profile::impl_ISharedModeSettingsStatics2<D>;
+};
+
 template <> struct traits<Windows::System::Profile::ISystemIdentificationInfo>
 {
     using abi = ABI::Windows::System::Profile::ISystemIdentificationInfo;
@@ -194,6 +228,11 @@ template <> struct traits<Windows::System::Profile::AnalyticsVersionInfo>
 {
     using abi = ABI::Windows::System::Profile::AnalyticsVersionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Profile.AnalyticsVersionInfo"; }
+};
+
+template <> struct traits<Windows::System::Profile::EducationSettings>
+{
+    static constexpr const wchar_t * name() noexcept { return L"Windows.System.Profile.EducationSettings"; }
 };
 
 template <> struct traits<Windows::System::Profile::HardwareIdentification>

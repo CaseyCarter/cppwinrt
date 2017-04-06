@@ -73,18 +73,18 @@ struct WINRT_EBO impl_IShareOperation
     Windows::ApplicationModel::DataTransfer::DataPackageView Data() const;
     hstring QuickLinkId() const;
     void RemoveThisQuickLink() const;
-    [[deprecated("ReportStarted is deprecated and might not work on all platforms. For more info, see MSDN.")]] void ReportStarted() const;
+    void ReportStarted() const;
     void ReportDataRetrieved() const;
-    [[deprecated("ReportSubmittedBackgroundTask is deprecated and might not work on all platforms. For more info, see MSDN.")]] void ReportSubmittedBackgroundTask() const;
+    void ReportSubmittedBackgroundTask() const;
     void ReportCompleted(const Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink & quicklink) const;
     void ReportCompleted() const;
-    [[deprecated("ReportError is deprecated and might not work on all platforms. For more info, see MSDN.")]] void ReportError(hstring_view value) const;
+    void ReportError(hstring_view value) const;
 };
 
 template <typename D>
 struct WINRT_EBO impl_IShareOperation2
 {
-    [[deprecated("DismissUI is deprecated and might not work on all platforms. For more info, see MSDN.")]] void DismissUI() const;
+    void DismissUI() const;
 };
 
 }

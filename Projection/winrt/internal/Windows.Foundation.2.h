@@ -7,21 +7,6 @@
 
 WINRT_EXPORT namespace winrt {
 
-namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_b1f00d3b_1f06_5117_93ea_2a0d79116701
-#define WINRT_GENERIC_b1f00d3b_1f06_5117_93ea_2a0d79116701
-template <> struct __declspec(uuid("b1f00d3b-1f06-5117-93ea-2a0d79116701")) __declspec(novtable) IVectorView<Windows::Foundation::IWwwFormUrlDecoderEntry> : impl_IVectorView<Windows::Foundation::IWwwFormUrlDecoderEntry> {};
-#endif
-
-#ifndef WINRT_GENERIC_876be83b_7218_5bfb_a169_83152ef7e146
-#define WINRT_GENERIC_876be83b_7218_5bfb_a169_83152ef7e146
-template <> struct __declspec(uuid("876be83b-7218-5bfb-a169-83152ef7e146")) __declspec(novtable) IIterable<Windows::Foundation::IWwwFormUrlDecoderEntry> : impl_IIterable<Windows::Foundation::IWwwFormUrlDecoderEntry> {};
-#endif
-
-
-}
-
 namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_f4637d4a_0760_5431_bfc0_24eb1d4f6c4f
@@ -33,6 +18,16 @@ template <> struct __declspec(uuid("f4637d4a-0760-5431-bfc0-24eb1d4f6c4f")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_b1f00d3b_1f06_5117_93ea_2a0d79116701
+#define WINRT_GENERIC_b1f00d3b_1f06_5117_93ea_2a0d79116701
+template <> struct __declspec(uuid("b1f00d3b-1f06-5117-93ea-2a0d79116701")) __declspec(novtable) IVectorView<Windows::Foundation::IWwwFormUrlDecoderEntry> : impl_IVectorView<Windows::Foundation::IWwwFormUrlDecoderEntry> {};
+#endif
+
+#ifndef WINRT_GENERIC_876be83b_7218_5bfb_a169_83152ef7e146
+#define WINRT_GENERIC_876be83b_7218_5bfb_a169_83152ef7e146
+template <> struct __declspec(uuid("876be83b-7218-5bfb-a169-83152ef7e146")) __declspec(novtable) IIterable<Windows::Foundation::IWwwFormUrlDecoderEntry> : impl_IIterable<Windows::Foundation::IWwwFormUrlDecoderEntry> {};
+#endif
 
 #ifndef WINRT_GENERIC_2f5fb6d3_231f_57a1_9f2a_daa7e43bf075
 #define WINRT_GENERIC_2f5fb6d3_231f_57a1_9f2a_daa7e43bf075

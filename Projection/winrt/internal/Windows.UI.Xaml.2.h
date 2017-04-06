@@ -21,10 +21,20 @@ template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __de
 template <> struct __declspec(uuid("8b98aea9-64f0-5672-b30e-dfd9c2e4f6fe")) __declspec(novtable) IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> : impl_IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> {};
 #endif
 
+#ifndef WINRT_GENERIC_80423f11_054f_5eac_afd3_63b6ce15e77b
+#define WINRT_GENERIC_80423f11_054f_5eac_afd3_63b6ce15e77b
+template <> struct __declspec(uuid("80423f11-054f-5eac-afd3-63b6ce15e77b")) __declspec(novtable) IReference<Windows::Foundation::Rect> : impl_IReference<Windows::Foundation::Rect> {};
+#endif
+
 
 }
 
 namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+#define WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
+template <> struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad")) __declspec(novtable) IVectorView<Windows::Foundation::Point> : impl_IVectorView<Windows::Foundation::Point> {};
+#endif
 
 #ifndef WINRT_GENERIC_c192280d_3a09_5423_9dc5_67b83ebde41d
 #define WINRT_GENERIC_c192280d_3a09_5423_9dc5_67b83ebde41d
@@ -141,6 +151,36 @@ template <> struct __declspec(uuid("a5c9a137-f716-5d8d-92c4-02f171936fa1")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_883f90ff_8f3e_5dd2_947c_d7b305daa504
+#define WINRT_GENERIC_883f90ff_8f3e_5dd2_947c_d7b305daa504
+template <> struct __declspec(uuid("883f90ff-8f3e-5dd2-947c-d7b305daa504")) __declspec(novtable) IVector<Windows::UI::Xaml::Media::XamlLight> : impl_IVector<Windows::UI::Xaml::Media::XamlLight> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
+#ifndef WINRT_GENERIC_34f34b77_ec52_5eb6_affc_220cb52ca093
+#define WINRT_GENERIC_34f34b77_ec52_5eb6_affc_220cb52ca093
+template <> struct __declspec(uuid("34f34b77-ec52-5eb6-affc-220cb52ca093")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::GettingFocusEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_a0f49f5f_c366_569a_895a_3a82d8801fe4
+#define WINRT_GENERIC_a0f49f5f_c366_569a_895a_3a82d8801fe4
+template <> struct __declspec(uuid("a0f49f5f-c366-569a-895a-3a82d8801fe4")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::LosingFocusEventArgs> {};
+#endif
+
+#ifndef WINRT_GENERIC_d5de4415_b53c_5312_9e1b_ac2a19f04e71
+#define WINRT_GENERIC_d5de4415_b53c_5312_9e1b_ac2a19f04e71
+template <> struct __declspec(uuid("d5de4415-b53c-5312-9e1b-ac2a19f04e71")) __declspec(novtable) TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> : impl_TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::NoFocusCandidateFoundEventArgs> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
 #ifndef WINRT_GENERIC_72dbaa30_9016_51d9_8500_4b215b5cb468
 #define WINRT_GENERIC_72dbaa30_9016_51d9_8500_4b215b5cb468
 template <> struct __declspec(uuid("72dbaa30-9016-51d9-8500-4b215b5cb468")) __declspec(novtable) IVector<Windows::UI::Xaml::StateTriggerBase> : impl_IVector<Windows::UI::Xaml::StateTriggerBase> {};
@@ -154,11 +194,6 @@ template <> struct __declspec(uuid("5aebeb8c-7ef7-5975-ba0a-6c19a529bb72")) __de
 #ifndef WINRT_GENERIC_5b6d19b8_bc0c_5a77_a406_c01c12fd46c3
 #define WINRT_GENERIC_5b6d19b8_bc0c_5a77_a406_c01c12fd46c3
 template <> struct __declspec(uuid("5b6d19b8-bc0c-5a77-a406-c01c12fd46c3")) __declspec(novtable) IVector<Windows::UI::Xaml::VisualState> : impl_IVector<Windows::UI::Xaml::VisualState> {};
-#endif
-
-#ifndef WINRT_GENERIC_729a0392_675e_58e4_b6a3_0457bb9ea968
-#define WINRT_GENERIC_729a0392_675e_58e4_b6a3_0457bb9ea968
-template <> struct __declspec(uuid("729a0392-675e-58e4-b6a3-0457bb9ea968")) __declspec(novtable) IVector<Windows::UI::Xaml::VisualStateGroup> : impl_IVector<Windows::UI::Xaml::VisualStateGroup> {};
 #endif
 
 
@@ -186,6 +221,11 @@ namespace ABI::Windows::Foundation::Collections {
 template <> struct __declspec(uuid("c0d513a9-ec4a-5a5d-b6d5-b707defdb9f7")) __declspec(novtable) IVector<Windows::Foundation::Point> : impl_IVector<Windows::Foundation::Point> {};
 #endif
 
+#ifndef WINRT_GENERIC_729a0392_675e_58e4_b6a3_0457bb9ea968
+#define WINRT_GENERIC_729a0392_675e_58e4_b6a3_0457bb9ea968
+template <> struct __declspec(uuid("729a0392-675e-58e4-b6a3-0457bb9ea968")) __declspec(novtable) IVector<Windows::UI::Xaml::VisualStateGroup> : impl_IVector<Windows::UI::Xaml::VisualStateGroup> {};
+#endif
+
 
 }
 
@@ -200,11 +240,6 @@ template <> struct __declspec(uuid("add21d46-17df-5a43-a685-3262fce84643")) __de
 }
 
 namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
-#define WINRT_GENERIC_0b7b4c9d_182f_582a_bddb_42b1aac30cad
-template <> struct __declspec(uuid("0b7b4c9d-182f-582a-bddb-42b1aac30cad")) __declspec(novtable) IVectorView<Windows::Foundation::Point> : impl_IVectorView<Windows::Foundation::Point> {};
-#endif
 
 #ifndef WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
 #define WINRT_GENERIC_c602b59e_0a8e_5e99_b478_2b564585278d
@@ -289,6 +324,21 @@ template <> struct __declspec(uuid("8cb1347d-8888-5fb3-bffd-e6caf61b4f03")) __de
 #ifndef WINRT_GENERIC_6cf9f859_2234_510d_860a_db328030cbcc
 #define WINRT_GENERIC_6cf9f859_2234_510d_860a_db328030cbcc
 template <> struct __declspec(uuid("6cf9f859-2234-510d-860a-db328030cbcc")) __declspec(novtable) IIterable<Windows::UI::Xaml::Input::Pointer> : impl_IIterable<Windows::UI::Xaml::Input::Pointer> {};
+#endif
+
+#ifndef WINRT_GENERIC_af1b4914_a3e9_5f74_b04d_e086ce23aba6
+#define WINRT_GENERIC_af1b4914_a3e9_5f74_b04d_e086ce23aba6
+template <> struct __declspec(uuid("af1b4914-a3e9-5f74-b04d-e086ce23aba6")) __declspec(novtable) IIterator<Windows::UI::Xaml::Media::XamlLight> : impl_IIterator<Windows::UI::Xaml::Media::XamlLight> {};
+#endif
+
+#ifndef WINRT_GENERIC_03229ead_2ba2_5101_9324_a2649db7e61d
+#define WINRT_GENERIC_03229ead_2ba2_5101_9324_a2649db7e61d
+template <> struct __declspec(uuid("03229ead-2ba2-5101-9324-a2649db7e61d")) __declspec(novtable) IIterable<Windows::UI::Xaml::Media::XamlLight> : impl_IIterable<Windows::UI::Xaml::Media::XamlLight> {};
+#endif
+
+#ifndef WINRT_GENERIC_79432908_e055_5c13_bc00_255796d59f5b
+#define WINRT_GENERIC_79432908_e055_5c13_bc00_255796d59f5b
+template <> struct __declspec(uuid("79432908-e055-5c13-bc00-255796d59f5b")) __declspec(novtable) IVectorView<Windows::UI::Xaml::Media::XamlLight> : impl_IVectorView<Windows::UI::Xaml::Media::XamlLight> {};
 #endif
 
 #ifndef WINRT_GENERIC_d78b9c25_3214_54c6_8405_479344309277
@@ -592,6 +642,13 @@ struct IApplication2 :
     IApplication2(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IApplication3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IApplication3>
+{
+    IApplication3(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IApplicationFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IApplicationFactory>
@@ -632,6 +689,13 @@ struct IBindingFailedEventArgs :
     impl::consume<IBindingFailedEventArgs>
 {
     IBindingFailedEventArgs(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBringIntoViewOptions :
+    Windows::Foundation::IInspectable,
+    impl::consume<IBringIntoViewOptions>
+{
+    IBringIntoViewOptions(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct ICornerRadiusHelper :
@@ -961,6 +1025,13 @@ struct IFrameworkElementStatics4 :
     impl::consume<IFrameworkElementStatics4>
 {
     IFrameworkElementStatics4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IFrameworkElementStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IFrameworkElementStatics5>
+{
+    IFrameworkElementStatics5(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IFrameworkTemplate :
@@ -1307,6 +1378,13 @@ struct IUIElement4 :
     IUIElement4(std::nullptr_t = nullptr) noexcept {}
 };
 
+struct IUIElement5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IUIElement5>
+{
+    IUIElement5(std::nullptr_t = nullptr) noexcept {}
+};
+
 struct IUIElementFactory :
     Windows::Foundation::IInspectable,
     impl::consume<IUIElementFactory>
@@ -1347,6 +1425,20 @@ struct IUIElementStatics4 :
     impl::consume<IUIElementStatics4>
 {
     IUIElementStatics4(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IUIElementStatics5 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IUIElementStatics5>
+{
+    IUIElementStatics5(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IUIElementStatics6 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IUIElementStatics6>
+{
+    IUIElementStatics6(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IUnhandledExceptionEventArgs :
@@ -1445,6 +1537,13 @@ struct IWindow2 :
     impl::consume<IWindow2>
 {
     IWindow2(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IWindow3 :
+    Windows::Foundation::IInspectable,
+    impl::consume<IWindow3>
+{
+    IWindow3(std::nullptr_t = nullptr) noexcept {}
 };
 
 struct IWindowCreatedEventArgs :

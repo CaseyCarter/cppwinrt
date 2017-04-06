@@ -9,11 +9,31 @@
 
 WINRT_EXPORT namespace winrt {
 
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_8780a851_6d48_5006_9288_81f3d7045a96
+#define WINRT_GENERIC_8780a851_6d48_5006_9288_81f3d7045a96
+template <> struct __declspec(uuid("8780a851-6d48-5006-9288-81f3d7045a96")) __declspec(novtable) IVectorView<Windows::Networking::EndpointPair> : impl_IVectorView<Windows::Networking::EndpointPair> {};
+#endif
+
+#ifndef WINRT_GENERIC_d7ec83c4_a17b_51bf_8997_aa33b9102dc9
+#define WINRT_GENERIC_d7ec83c4_a17b_51bf_8997_aa33b9102dc9
+template <> struct __declspec(uuid("d7ec83c4-a17b-51bf-8997-aa33b9102dc9")) __declspec(novtable) IIterable<Windows::Networking::EndpointPair> : impl_IIterable<Windows::Networking::EndpointPair> {};
+#endif
+
+
+}
+
 namespace ABI::Windows::Foundation {
 
 #ifndef WINRT_GENERIC_dad01b61_a82d_566c_ba82_224c11500669
 #define WINRT_GENERIC_dad01b61_a82d_566c_ba82_224c11500669
 template <> struct __declspec(uuid("dad01b61-a82d-566c-ba82-224c11500669")) __declspec(novtable) IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> : impl_IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> {};
+#endif
+
+#ifndef WINRT_GENERIC_9208929a_2a3c_50ad_aa08_a0a986edbabe
+#define WINRT_GENERIC_9208929a_2a3c_50ad_aa08_a0a986edbabe
+template <> struct __declspec(uuid("9208929a-2a3c-50ad-aa08-a0a986edbabe")) __declspec(novtable) TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> {};
 #endif
 
 
@@ -51,29 +71,14 @@ template <> struct __declspec(uuid("d04b0403-1fe2-532f-8e47-4823a14e624f")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
-#ifndef WINRT_GENERIC_8780a851_6d48_5006_9288_81f3d7045a96
-#define WINRT_GENERIC_8780a851_6d48_5006_9288_81f3d7045a96
-template <> struct __declspec(uuid("8780a851-6d48-5006-9288-81f3d7045a96")) __declspec(novtable) IVectorView<Windows::Networking::EndpointPair> : impl_IVectorView<Windows::Networking::EndpointPair> {};
+#ifndef WINRT_GENERIC_f996138f_a866_5ca4_ba46_09fcb2de7013
+#define WINRT_GENERIC_f996138f_a866_5ca4_ba46_09fcb2de7013
+template <> struct __declspec(uuid("f996138f-a866-5ca4-ba46-09fcb2de7013")) __declspec(novtable) IVector<Windows::Networking::EndpointPair> : impl_IVector<Windows::Networking::EndpointPair> {};
 #endif
 
-
-}
-
-namespace ABI::Windows::Foundation {
-
-#ifndef WINRT_GENERIC_9208929a_2a3c_50ad_aa08_a0a986edbabe
-#define WINRT_GENERIC_9208929a_2a3c_50ad_aa08_a0a986edbabe
-template <> struct __declspec(uuid("9208929a-2a3c-50ad-aa08-a0a986edbabe")) __declspec(novtable) TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> : impl_TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::Foundation::IInspectable> {};
-#endif
-
-
-}
-
-namespace ABI::Windows::Foundation::Collections {
-
-#ifndef WINRT_GENERIC_d7ec83c4_a17b_51bf_8997_aa33b9102dc9
-#define WINRT_GENERIC_d7ec83c4_a17b_51bf_8997_aa33b9102dc9
-template <> struct __declspec(uuid("d7ec83c4-a17b-51bf-8997-aa33b9102dc9")) __declspec(novtable) IIterable<Windows::Networking::EndpointPair> : impl_IIterable<Windows::Networking::EndpointPair> {};
+#ifndef WINRT_GENERIC_c899ff9f_e6f5_5673_810c_04e2ff98704f
+#define WINRT_GENERIC_c899ff9f_e6f5_5673_810c_04e2ff98704f
+template <> struct __declspec(uuid("c899ff9f-e6f5-5673-810c-04e2ff98704f")) __declspec(novtable) IIterator<Windows::Networking::EndpointPair> : impl_IIterator<Windows::Networking::EndpointPair> {};
 #endif
 
 
@@ -119,16 +124,6 @@ template <> struct __declspec(uuid("794f12da-2dc6-5277-82dc-b0781610537b")) __de
 #ifndef WINRT_GENERIC_61a32670_04d3_551d_ad66_bd04e9ef5c78
 #define WINRT_GENERIC_61a32670_04d3_551d_ad66_bd04e9ef5c78
 template <> struct __declspec(uuid("61a32670-04d3-551d-ad66-bd04e9ef5c78")) __declspec(novtable) IVectorView<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> : impl_IVectorView<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> {};
-#endif
-
-#ifndef WINRT_GENERIC_f996138f_a866_5ca4_ba46_09fcb2de7013
-#define WINRT_GENERIC_f996138f_a866_5ca4_ba46_09fcb2de7013
-template <> struct __declspec(uuid("f996138f-a866-5ca4-ba46-09fcb2de7013")) __declspec(novtable) IVector<Windows::Networking::EndpointPair> : impl_IVector<Windows::Networking::EndpointPair> {};
-#endif
-
-#ifndef WINRT_GENERIC_c899ff9f_e6f5_5673_810c_04e2ff98704f
-#define WINRT_GENERIC_c899ff9f_e6f5_5673_810c_04e2ff98704f
-template <> struct __declspec(uuid("c899ff9f-e6f5-5673-810c-04e2ff98704f")) __declspec(novtable) IIterator<Windows::Networking::EndpointPair> : impl_IIterator<Windows::Networking::EndpointPair> {};
 #endif
 
 

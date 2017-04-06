@@ -135,6 +135,139 @@ struct produce<D, Windows::Devices::Bluetooth::Background::IGattCharacteristicNo
 };
 
 template <typename D>
+struct produce<D, Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails2> : produce_base<D, Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails2>
+{
+    HRESULT __stdcall get_Error(Windows::Devices::Bluetooth::BluetoothError * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Error());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_EventTriggeringMode(Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode * value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().EventTriggeringMode());
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_ValueChangedEvents(impl::abi_arg_out<Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().ValueChangedEvents());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::Bluetooth::Background::IGattServiceProviderConnection> : produce_base<D, Windows::Devices::Bluetooth::Background::IGattServiceProviderConnection>
+{
+    HRESULT __stdcall get_TriggerId(impl::abi_arg_out<hstring> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().TriggerId());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall get_Service(impl::abi_arg_out<Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalService> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Service());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall abi_Start() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().Start();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::Bluetooth::Background::IGattServiceProviderConnectionStatics> : produce_base<D, Windows::Devices::Bluetooth::Background::IGattServiceProviderConnectionStatics>
+{
+    HRESULT __stdcall get_AllServices(impl::abi_arg_out<Windows::Foundation::Collections::IMapView<hstring, Windows::Devices::Bluetooth::Background::GattServiceProviderConnection>> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().AllServices());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Windows::Devices::Bluetooth::Background::IGattServiceProviderTriggerDetails> : produce_base<D, Windows::Devices::Bluetooth::Background::IGattServiceProviderTriggerDetails>
+{
+    HRESULT __stdcall get_Connection(impl::abi_arg_out<Windows::Devices::Bluetooth::Background::IGattServiceProviderConnection> value) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *value = detach_abi(this->shim().Connection());
+            return S_OK;
+        }
+        catch (...)
+        {
+            *value = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
 struct produce<D, Windows::Devices::Bluetooth::Background::IRfcommConnectionTriggerDetails> : produce_base<D, Windows::Devices::Bluetooth::Background::IRfcommConnectionTriggerDetails>
 {
     HRESULT __stdcall get_Socket(impl::abi_arg_out<Windows::Networking::Sockets::IStreamSocket> value) noexcept override
@@ -392,6 +525,60 @@ template <typename D> Windows::Storage::Streams::IBuffer impl_IGattCharacteristi
     return value;
 }
 
+template <typename D> Windows::Devices::Bluetooth::BluetoothError impl_IGattCharacteristicNotificationTriggerDetails2<D>::Error() const
+{
+    Windows::Devices::Bluetooth::BluetoothError value {};
+    check_hresult(WINRT_SHIM(IGattCharacteristicNotificationTriggerDetails2)->get_Error(&value));
+    return value;
+}
+
+template <typename D> Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode impl_IGattCharacteristicNotificationTriggerDetails2<D>::EventTriggeringMode() const
+{
+    Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode value {};
+    check_hresult(WINRT_SHIM(IGattCharacteristicNotificationTriggerDetails2)->get_EventTriggeringMode(&value));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> impl_IGattCharacteristicNotificationTriggerDetails2<D>::ValueChangedEvents() const
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> value;
+    check_hresult(WINRT_SHIM(IGattCharacteristicNotificationTriggerDetails2)->get_ValueChangedEvents(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Devices::Bluetooth::Background::GattServiceProviderConnection> impl_IGattServiceProviderConnectionStatics<D>::AllServices() const
+{
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Devices::Bluetooth::Background::GattServiceProviderConnection> value;
+    check_hresult(WINRT_SHIM(IGattServiceProviderConnectionStatics)->get_AllServices(put_abi(value)));
+    return value;
+}
+
+template <typename D> hstring impl_IGattServiceProviderConnection<D>::TriggerId() const
+{
+    hstring value;
+    check_hresult(WINRT_SHIM(IGattServiceProviderConnection)->get_TriggerId(put_abi(value)));
+    return value;
+}
+
+template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalService impl_IGattServiceProviderConnection<D>::Service() const
+{
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalService value { nullptr };
+    check_hresult(WINRT_SHIM(IGattServiceProviderConnection)->get_Service(put_abi(value)));
+    return value;
+}
+
+template <typename D> void impl_IGattServiceProviderConnection<D>::Start() const
+{
+    check_hresult(WINRT_SHIM(IGattServiceProviderConnection)->abi_Start());
+}
+
+template <typename D> Windows::Devices::Bluetooth::Background::GattServiceProviderConnection impl_IGattServiceProviderTriggerDetails<D>::Connection() const
+{
+    Windows::Devices::Bluetooth::Background::GattServiceProviderConnection value { nullptr };
+    check_hresult(WINRT_SHIM(IGattServiceProviderTriggerDetails)->get_Connection(put_abi(value)));
+    return value;
+}
+
 template <typename D> Windows::Devices::Bluetooth::BluetoothError impl_IBluetoothLEAdvertisementWatcherTriggerDetails<D>::Error() const
 {
     Windows::Devices::Bluetooth::BluetoothError value {};
@@ -427,6 +614,11 @@ template <typename D> Windows::Devices::Bluetooth::BluetoothError impl_IBluetoot
     return value;
 }
 
+inline Windows::Foundation::Collections::IMapView<hstring, Windows::Devices::Bluetooth::Background::GattServiceProviderConnection> GattServiceProviderConnection::AllServices()
+{
+    return get_activation_factory<GattServiceProviderConnection, IGattServiceProviderConnectionStatics>().AllServices();
+}
+
 }
 
 }
@@ -453,6 +645,42 @@ template<>
 struct std::hash<winrt::Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails>
 {
     size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails2>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::IGattCharacteristicNotificationTriggerDetails2 & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::IGattServiceProviderConnection>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::IGattServiceProviderConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::IGattServiceProviderConnectionStatics>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::IGattServiceProviderConnectionStatics & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::IGattServiceProviderTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::IGattServiceProviderTriggerDetails & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }
@@ -507,6 +735,24 @@ template<>
 struct std::hash<winrt::Windows::Devices::Bluetooth::Background::GattCharacteristicNotificationTriggerDetails>
 {
     size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::GattCharacteristicNotificationTriggerDetails & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::GattServiceProviderConnection>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::GattServiceProviderConnection & value) const noexcept
+    {
+        return winrt::impl::hash_unknown(value);
+    }
+};
+
+template<>
+struct std::hash<winrt::Windows::Devices::Bluetooth::Background::GattServiceProviderTriggerDetails>
+{
+    size_t operator()(const winrt::Windows::Devices::Bluetooth::Background::GattServiceProviderTriggerDetails & value) const noexcept
     {
         return winrt::impl::hash_unknown(value);
     }

@@ -27,6 +27,14 @@ struct StoreConfiguration
     static bool IsStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId);
     static Windows::Foundation::IReference<uint32_t> GetPurchasePromptingPolicyForUser(const Windows::System::User & user);
     static void SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const optional<uint32_t> & value);
+    static hstring GetStoreWebAccountId();
+    static hstring GetStoreWebAccountIdForUser(const Windows::System::User & user);
+    static void SetEnterpriseStoreWebAccountId(hstring_view webAccountId);
+    static void SetEnterpriseStoreWebAccountIdForUser(const Windows::System::User & user, hstring_view webAccountId);
+    static hstring GetEnterpriseStoreWebAccountId();
+    static hstring GetEnterpriseStoreWebAccountIdForUser(const Windows::System::User & user);
+    static bool ShouldRestrictToEnterpriseStoreOnly();
+    static bool ShouldRestrictToEnterpriseStoreOnlyForUser(const Windows::System::User & user);
 };
 
 struct WINRT_EBO StoreHardwareManufacturerInfo :
@@ -58,6 +66,13 @@ struct WINRT_EBO StorePreviewSkuInfo :
     Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInfo
 {
     StorePreviewSkuInfo(std::nullptr_t) noexcept {}
+};
+
+struct WebAuthenticationCoreManagerHelper
+{
+    WebAuthenticationCoreManagerHelper() = delete;
+    static Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> RequestTokenWithUIElementHostingAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request, const Windows::UI::Xaml::UIElement & uiElement);
+    static Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> RequestTokenWithUIElementHostingAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request, const Windows::Security::Credentials::WebAccount & webAccount, const Windows::UI::Xaml::UIElement & uiElement);
 };
 
 }

@@ -22,6 +22,12 @@ struct WINRT_EBO AnalyticsVersionInfo :
     AnalyticsVersionInfo(std::nullptr_t) noexcept {}
 };
 
+struct EducationSettings
+{
+    EducationSettings() = delete;
+    static bool IsEducationEnvironment();
+};
+
 struct HardwareIdentification
 {
     HardwareIdentification() = delete;
@@ -49,6 +55,7 @@ struct SharedModeSettings
 {
     SharedModeSettings() = delete;
     static bool IsEnabled();
+    static bool ShouldAvoidLocalStorage();
 };
 
 struct SystemIdentification

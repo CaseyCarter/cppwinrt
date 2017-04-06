@@ -35,6 +35,11 @@ template <> struct __declspec(uuid("44ba689b-7d42-5374-add9-ab41e877a34b")) __de
 
 namespace ABI::Windows::Foundation::Collections {
 
+#ifndef WINRT_GENERIC_c8c443c2_f7d4_5386_ad15_31838882bd9e
+#define WINRT_GENERIC_c8c443c2_f7d4_5386_ad15_31838882bd9e
+template <> struct __declspec(uuid("c8c443c2-f7d4-5386-ad15-31838882bd9e")) __declspec(novtable) IVector<Windows::Devices::Gpio::GpioChangeRecord> : impl_IVector<Windows::Devices::Gpio::GpioChangeRecord> {};
+#endif
+
 #ifndef WINRT_GENERIC_ada84338_13b1_5367_9692_57b066badd6c
 #define WINRT_GENERIC_ada84338_13b1_5367_9692_57b066badd6c
 template <> struct __declspec(uuid("ada84338-13b1-5367-9692-57b066badd6c")) __declspec(novtable) IVector<Windows::Devices::Gpio::GpioController> : impl_IVector<Windows::Devices::Gpio::GpioController> {};
@@ -60,6 +65,31 @@ namespace ABI::Windows::Foundation {
 template <> struct __declspec(uuid("370167c0-0f7b-5e77-9bae-d35089a3db75")) __declspec(novtable) AsyncOperationCompletedHandler<Windows::Devices::Gpio::GpioController> : impl_AsyncOperationCompletedHandler<Windows::Devices::Gpio::GpioController> {};
 #endif
 
+
+}
+
+namespace ABI::Windows::Foundation::Collections {
+
+#ifndef WINRT_GENERIC_a4c620b9_cb89_5a25_bf16_5f412c1a3388
+#define WINRT_GENERIC_a4c620b9_cb89_5a25_bf16_5f412c1a3388
+template <> struct __declspec(uuid("a4c620b9-cb89-5a25-bf16-5f412c1a3388")) __declspec(novtable) IIterator<Windows::Devices::Gpio::GpioChangeRecord> : impl_IIterator<Windows::Devices::Gpio::GpioChangeRecord> {};
+#endif
+
+#ifndef WINRT_GENERIC_b4afbf4f_620e_5725_878a_78c6ed10374e
+#define WINRT_GENERIC_b4afbf4f_620e_5725_878a_78c6ed10374e
+template <> struct __declspec(uuid("b4afbf4f-620e-5725-878a-78c6ed10374e")) __declspec(novtable) IIterable<Windows::Devices::Gpio::GpioChangeRecord> : impl_IIterable<Windows::Devices::Gpio::GpioChangeRecord> {};
+#endif
+
+#ifndef WINRT_GENERIC_d30ab625_1264_539e_acef_306dd214dc3b
+#define WINRT_GENERIC_d30ab625_1264_539e_acef_306dd214dc3b
+template <> struct __declspec(uuid("d30ab625-1264-539e-acef-306dd214dc3b")) __declspec(novtable) IVectorView<Windows::Devices::Gpio::GpioChangeRecord> : impl_IVectorView<Windows::Devices::Gpio::GpioChangeRecord> {};
+#endif
+
+
+}
+
+namespace ABI::Windows::Foundation {
+
 #ifndef WINRT_GENERIC_5da3faf4_60a7_5a14_9319_3941dfb13fed
 #define WINRT_GENERIC_5da3faf4_60a7_5a14_9319_3941dfb13fed
 template <> struct __declspec(uuid("5da3faf4-60a7-5a14-9319-3941dfb13fed")) __declspec(novtable) IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::GpioController>> : impl_IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::GpioController>> {};
@@ -74,6 +104,36 @@ template <> struct __declspec(uuid("ee427f2e-7d37-558f-9718-9cbcbff40c94")) __de
 }
 
 namespace Windows::Devices::Gpio {
+
+struct IGpioChangeCounter :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGpioChangeCounter>,
+    impl::require<IGpioChangeCounter, Windows::Foundation::IClosable>
+{
+    IGpioChangeCounter(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IGpioChangeCounterFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGpioChangeCounterFactory>
+{
+    IGpioChangeCounterFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IGpioChangeReader :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGpioChangeReader>,
+    impl::require<IGpioChangeReader, Windows::Foundation::IClosable>
+{
+    IGpioChangeReader(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IGpioChangeReaderFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume<IGpioChangeReaderFactory>
+{
+    IGpioChangeReaderFactory(std::nullptr_t = nullptr) noexcept {}
+};
 
 struct IGpioController :
     Windows::Foundation::IInspectable,

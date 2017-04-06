@@ -129,6 +129,19 @@ struct __declspec(uuid("f29e4b85-0370-4ad3-b4ea-da9e35e7eabf")) __declspec(novta
     virtual HRESULT __stdcall abi_GetTextElements(Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::AdaptiveNotificationText> ** result) = 0;
 };
 
+struct __declspec(uuid("9ffd2312-9d6a-4aaf-b6ac-ff17f0c1f280")) __declspec(novtable) INotificationData : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Values(Windows::Foundation::Collections::IMap<hstring, hstring> ** value) = 0;
+    virtual HRESULT __stdcall get_SequenceNumber(uint32_t * value) = 0;
+    virtual HRESULT __stdcall put_SequenceNumber(uint32_t value) = 0;
+};
+
+struct __declspec(uuid("23c1e33a-1c10-46fb-8040-dec384621cf8")) __declspec(novtable) INotificationDataFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateNotificationDataWithValuesAndSequenceNumber(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> * initialValues, uint32_t sequenceNumber, Windows::UI::Notifications::INotificationData ** result) = 0;
+    virtual HRESULT __stdcall abi_CreateNotificationDataWithValues(Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> * initialValues, Windows::UI::Notifications::INotificationData ** result) = 0;
+};
+
 struct __declspec(uuid("68835b8e-aa56-4e11-86d3-5f9a6957bc5b")) __declspec(novtable) INotificationVisual : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Language(hstring * value) = 0;
@@ -286,6 +299,33 @@ struct __declspec(uuid("e3bf92f3-c197-436f-8265-0625824f8dac")) __declspec(novta
     virtual HRESULT __stdcall get_Arguments(hstring * value) = 0;
 };
 
+struct __declspec(uuid("0a8bc3b0-e0be-4858-bc2a-89dfe0b32863")) __declspec(novtable) IToastCollection : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Id(hstring * value) = 0;
+    virtual HRESULT __stdcall get_DisplayName(hstring * value) = 0;
+    virtual HRESULT __stdcall put_DisplayName(hstring value) = 0;
+    virtual HRESULT __stdcall get_LaunchArgs(hstring * value) = 0;
+    virtual HRESULT __stdcall put_LaunchArgs(hstring value) = 0;
+    virtual HRESULT __stdcall get_Icon(Windows::Foundation::IUriRuntimeClass ** value) = 0;
+    virtual HRESULT __stdcall put_Icon(Windows::Foundation::IUriRuntimeClass * value) = 0;
+};
+
+struct __declspec(uuid("164dd3d7-73c4-44f7-b4ff-fb6d4bf1f4c6")) __declspec(novtable) IToastCollectionFactory : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_CreateInstance(hstring collectionId, hstring displayName, hstring launchArgs, Windows::Foundation::IUriRuntimeClass * iconUri, Windows::UI::Notifications::IToastCollection ** result) = 0;
+};
+
+struct __declspec(uuid("2a1821fe-179d-49bc-b79d-a527920d3665")) __declspec(novtable) IToastCollectionManager : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_SaveToastCollectionAsync(Windows::UI::Notifications::IToastCollection * collection, Windows::Foundation::IAsyncAction ** operation) = 0;
+    virtual HRESULT __stdcall abi_FindAllToastCollectionsAsync(Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastCollection>> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetToastCollectionAsync(hstring collectionId, Windows::Foundation::IAsyncOperation<Windows::UI::Notifications::ToastCollection> ** operation) = 0;
+    virtual HRESULT __stdcall abi_RemoveToastCollectionAsync(hstring collectionId, Windows::Foundation::IAsyncAction ** operation) = 0;
+    virtual HRESULT __stdcall abi_RemoveAllToastCollectionsAsync(Windows::Foundation::IAsyncAction ** operation) = 0;
+    virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
+    virtual HRESULT __stdcall get_AppId(hstring * value) = 0;
+};
+
 struct __declspec(uuid("3f89d935-d9cb-4538-a0f0-ffe7659938f8")) __declspec(novtable) IToastDismissedEventArgs : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Reason(winrt::Windows::UI::Notifications::ToastDismissalReason * value) = 0;
@@ -327,6 +367,14 @@ struct __declspec(uuid("31e8aed8-8141-4f99-bc0a-c4ed21297d77")) __declspec(novta
     virtual HRESULT __stdcall put_RemoteId(hstring value) = 0;
 };
 
+struct __declspec(uuid("15154935-28ea-4727-88e9-c58680e2d118")) __declspec(novtable) IToastNotification4 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_Data(Windows::UI::Notifications::INotificationData ** value) = 0;
+    virtual HRESULT __stdcall put_Data(Windows::UI::Notifications::INotificationData * value) = 0;
+    virtual HRESULT __stdcall get_Priority(winrt::Windows::UI::Notifications::ToastNotificationPriority * value) = 0;
+    virtual HRESULT __stdcall put_Priority(winrt::Windows::UI::Notifications::ToastNotificationPriority value) = 0;
+};
+
 struct __declspec(uuid("9445135a-38f3-42f6-96aa-7955b0f03da2")) __declspec(novtable) IToastNotificationActionTriggerDetail : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall get_Argument(hstring * argument) = 0;
@@ -360,12 +408,25 @@ struct __declspec(uuid("db037ffa-0068-412c-9c83-267c37f65670")) __declspec(novta
     virtual HRESULT __stdcall get_ChangeType(winrt::Windows::UI::Notifications::ToastHistoryChangedType * value) = 0;
 };
 
+struct __declspec(uuid("0b36e982-c871-49fb-babb-25bdbc4cc45b")) __declspec(novtable) IToastNotificationHistoryChangedTriggerDetail2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall get_CollectionId(hstring * collectionId) = 0;
+};
+
 struct __declspec(uuid("79ab57f6-43fe-487b-8a7f-99567200ae94")) __declspec(novtable) IToastNotificationManagerForUser : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_CreateToastNotifier(Windows::UI::Notifications::IToastNotifier ** result) = 0;
     virtual HRESULT __stdcall abi_CreateToastNotifierWithId(hstring applicationId, Windows::UI::Notifications::IToastNotifier ** result) = 0;
     virtual HRESULT __stdcall get_History(Windows::UI::Notifications::IToastNotificationHistory ** value) = 0;
     virtual HRESULT __stdcall get_User(Windows::System::IUser ** value) = 0;
+};
+
+struct __declspec(uuid("679c64b7-81ab-42c2-8819-c958767753f4")) __declspec(novtable) IToastNotificationManagerForUser2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetToastNotifierForToastCollectionIdAsync(hstring collectionId, Windows::Foundation::IAsyncOperation<Windows::UI::Notifications::ToastNotifier> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetHistoryForToastCollectionIdAsync(hstring collectionId, Windows::Foundation::IAsyncOperation<Windows::UI::Notifications::ToastNotificationHistory> ** operation) = 0;
+    virtual HRESULT __stdcall abi_GetToastCollectionManager(Windows::UI::Notifications::IToastCollectionManager ** result) = 0;
+    virtual HRESULT __stdcall abi_GetToastCollectionManagerWithAppId(hstring appId, Windows::UI::Notifications::IToastCollectionManager ** result) = 0;
 };
 
 struct __declspec(uuid("50ac103f-d235-4598-bbef-98fe4d1a3ad4")) __declspec(novtable) IToastNotificationManagerStatics : Windows::Foundation::IInspectable
@@ -386,6 +447,11 @@ struct __declspec(uuid("8f993fd3-e516-45fb-8130-398e93fa52c3")) __declspec(novta
     virtual HRESULT __stdcall abi_ConfigureNotificationMirroring(winrt::Windows::UI::Notifications::NotificationMirroring value) = 0;
 };
 
+struct __declspec(uuid("d6f5f569-d40d-407c-8989-88cab42cfd14")) __declspec(novtable) IToastNotificationManagerStatics5 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_GetDefault(Windows::UI::Notifications::IToastNotificationManagerForUser ** value) = 0;
+};
+
 struct __declspec(uuid("75927b93-03f3-41ec-91d3-6e5bac1b38e7")) __declspec(novtable) IToastNotifier : Windows::Foundation::IInspectable
 {
     virtual HRESULT __stdcall abi_Show(Windows::UI::Notifications::IToastNotification * notification) = 0;
@@ -394,6 +460,12 @@ struct __declspec(uuid("75927b93-03f3-41ec-91d3-6e5bac1b38e7")) __declspec(novta
     virtual HRESULT __stdcall abi_AddToSchedule(Windows::UI::Notifications::IScheduledToastNotification * scheduledToast) = 0;
     virtual HRESULT __stdcall abi_RemoveFromSchedule(Windows::UI::Notifications::IScheduledToastNotification * scheduledToast) = 0;
     virtual HRESULT __stdcall abi_GetScheduledToastNotifications(Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ScheduledToastNotification> ** scheduledToasts) = 0;
+};
+
+struct __declspec(uuid("354389c6-7c01-4bd5-9c20-604340cd2b74")) __declspec(novtable) IToastNotifier2 : Windows::Foundation::IInspectable
+{
+    virtual HRESULT __stdcall abi_UpdateWithTagAndGroup(Windows::UI::Notifications::INotificationData * data, hstring tag, hstring group, winrt::Windows::UI::Notifications::NotificationUpdateResult * result) = 0;
+    virtual HRESULT __stdcall abi_UpdateWithTag(Windows::UI::Notifications::INotificationData * data, hstring tag, winrt::Windows::UI::Notifications::NotificationUpdateResult * result) = 0;
 };
 
 struct __declspec(uuid("adf7e52f-4e53-42d5-9c33-eb5ea515b23e")) __declspec(novtable) IUserNotification : Windows::Foundation::IInspectable
@@ -420,6 +492,7 @@ template <> struct traits<Windows::UI::Notifications::BadgeUpdateManagerForUser>
 template <> struct traits<Windows::UI::Notifications::BadgeUpdater> { using default_interface = Windows::UI::Notifications::IBadgeUpdater; };
 template <> struct traits<Windows::UI::Notifications::Notification> { using default_interface = Windows::UI::Notifications::INotification; };
 template <> struct traits<Windows::UI::Notifications::NotificationBinding> { using default_interface = Windows::UI::Notifications::INotificationBinding; };
+template <> struct traits<Windows::UI::Notifications::NotificationData> { using default_interface = Windows::UI::Notifications::INotificationData; };
 template <> struct traits<Windows::UI::Notifications::NotificationVisual> { using default_interface = Windows::UI::Notifications::INotificationVisual; };
 template <> struct traits<Windows::UI::Notifications::ScheduledTileNotification> { using default_interface = Windows::UI::Notifications::IScheduledTileNotification; };
 template <> struct traits<Windows::UI::Notifications::ScheduledToastNotification> { using default_interface = Windows::UI::Notifications::IScheduledToastNotification; };
@@ -430,6 +503,8 @@ template <> struct traits<Windows::UI::Notifications::TileNotification> { using 
 template <> struct traits<Windows::UI::Notifications::TileUpdateManagerForUser> { using default_interface = Windows::UI::Notifications::ITileUpdateManagerForUser; };
 template <> struct traits<Windows::UI::Notifications::TileUpdater> { using default_interface = Windows::UI::Notifications::ITileUpdater; };
 template <> struct traits<Windows::UI::Notifications::ToastActivatedEventArgs> { using default_interface = Windows::UI::Notifications::IToastActivatedEventArgs; };
+template <> struct traits<Windows::UI::Notifications::ToastCollection> { using default_interface = Windows::UI::Notifications::IToastCollection; };
+template <> struct traits<Windows::UI::Notifications::ToastCollectionManager> { using default_interface = Windows::UI::Notifications::IToastCollectionManager; };
 template <> struct traits<Windows::UI::Notifications::ToastDismissedEventArgs> { using default_interface = Windows::UI::Notifications::IToastDismissedEventArgs; };
 template <> struct traits<Windows::UI::Notifications::ToastFailedEventArgs> { using default_interface = Windows::UI::Notifications::IToastFailedEventArgs; };
 template <> struct traits<Windows::UI::Notifications::ToastNotification> { using default_interface = Windows::UI::Notifications::IToastNotification; };
@@ -568,6 +643,21 @@ struct WINRT_EBO impl_INotificationBinding
     void Language(hstring_view value) const;
     Windows::Foundation::Collections::IMap<hstring, hstring> Hints() const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::AdaptiveNotificationText> GetTextElements() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INotificationData
+{
+    Windows::Foundation::Collections::IMap<hstring, hstring> Values() const;
+    uint32_t SequenceNumber() const;
+    void SequenceNumber(uint32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INotificationDataFactory
+{
+    Windows::UI::Notifications::NotificationData CreateNotificationData(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> initialValues, uint32_t sequenceNumber) const;
+    Windows::UI::Notifications::NotificationData CreateNotificationData(iterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> initialValues) const;
 };
 
 template <typename D>
@@ -748,6 +838,36 @@ struct WINRT_EBO impl_IToastActivatedEventArgs
 };
 
 template <typename D>
+struct WINRT_EBO impl_IToastCollection
+{
+    hstring Id() const;
+    hstring DisplayName() const;
+    void DisplayName(hstring_view value) const;
+    hstring LaunchArgs() const;
+    void LaunchArgs(hstring_view value) const;
+    Windows::Foundation::Uri Icon() const;
+    void Icon(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToastCollectionFactory
+{
+    Windows::UI::Notifications::ToastCollection CreateInstance(hstring_view collectionId, hstring_view displayName, hstring_view launchArgs, const Windows::Foundation::Uri & iconUri) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToastCollectionManager
+{
+    Windows::Foundation::IAsyncAction SaveToastCollectionAsync(const Windows::UI::Notifications::ToastCollection & collection) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastCollection>> FindAllToastCollectionsAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::UI::Notifications::ToastCollection> GetToastCollectionAsync(hstring_view collectionId) const;
+    Windows::Foundation::IAsyncAction RemoveToastCollectionAsync(hstring_view collectionId) const;
+    Windows::Foundation::IAsyncAction RemoveAllToastCollectionsAsync() const;
+    Windows::System::User User() const;
+    hstring AppId() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IToastDismissedEventArgs
 {
     Windows::UI::Notifications::ToastDismissalReason Reason() const;
@@ -800,6 +920,15 @@ struct WINRT_EBO impl_IToastNotification3
 };
 
 template <typename D>
+struct WINRT_EBO impl_IToastNotification4
+{
+    Windows::UI::Notifications::NotificationData Data() const;
+    void Data(const Windows::UI::Notifications::NotificationData & value) const;
+    Windows::UI::Notifications::ToastNotificationPriority Priority() const;
+    void Priority(Windows::UI::Notifications::ToastNotificationPriority value) const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IToastNotificationActionTriggerDetail
 {
     hstring Argument() const;
@@ -838,12 +967,27 @@ struct WINRT_EBO impl_IToastNotificationHistoryChangedTriggerDetail
 };
 
 template <typename D>
+struct WINRT_EBO impl_IToastNotificationHistoryChangedTriggerDetail2
+{
+    hstring CollectionId() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IToastNotificationManagerForUser
 {
     Windows::UI::Notifications::ToastNotifier CreateToastNotifier() const;
     Windows::UI::Notifications::ToastNotifier CreateToastNotifier(hstring_view applicationId) const;
     Windows::UI::Notifications::ToastNotificationHistory History() const;
     Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToastNotificationManagerForUser2
+{
+    Windows::Foundation::IAsyncOperation<Windows::UI::Notifications::ToastNotifier> GetToastNotifierForToastCollectionIdAsync(hstring_view collectionId) const;
+    Windows::Foundation::IAsyncOperation<Windows::UI::Notifications::ToastNotificationHistory> GetHistoryForToastCollectionIdAsync(hstring_view collectionId) const;
+    Windows::UI::Notifications::ToastCollectionManager GetToastCollectionManager() const;
+    Windows::UI::Notifications::ToastCollectionManager GetToastCollectionManager(hstring_view appId) const;
 };
 
 template <typename D>
@@ -868,6 +1012,12 @@ struct WINRT_EBO impl_IToastNotificationManagerStatics4
 };
 
 template <typename D>
+struct WINRT_EBO impl_IToastNotificationManagerStatics5
+{
+    Windows::UI::Notifications::ToastNotificationManagerForUser GetDefault() const;
+};
+
+template <typename D>
 struct WINRT_EBO impl_IToastNotifier
 {
     void Show(const Windows::UI::Notifications::ToastNotification & notification) const;
@@ -876,6 +1026,13 @@ struct WINRT_EBO impl_IToastNotifier
     void AddToSchedule(const Windows::UI::Notifications::ScheduledToastNotification & scheduledToast) const;
     void RemoveFromSchedule(const Windows::UI::Notifications::ScheduledToastNotification & scheduledToast) const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ScheduledToastNotification> GetScheduledToastNotifications() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToastNotifier2
+{
+    Windows::UI::Notifications::NotificationUpdateResult Update(const Windows::UI::Notifications::NotificationData & data, hstring_view tag, hstring_view group) const;
+    Windows::UI::Notifications::NotificationUpdateResult Update(const Windows::UI::Notifications::NotificationData & data, hstring_view tag) const;
 };
 
 template <typename D>
@@ -974,6 +1131,18 @@ template <> struct traits<Windows::UI::Notifications::INotificationBinding>
 {
     using abi = ABI::Windows::UI::Notifications::INotificationBinding;
     template <typename D> using consume = Windows::UI::Notifications::impl_INotificationBinding<D>;
+};
+
+template <> struct traits<Windows::UI::Notifications::INotificationData>
+{
+    using abi = ABI::Windows::UI::Notifications::INotificationData;
+    template <typename D> using consume = Windows::UI::Notifications::impl_INotificationData<D>;
+};
+
+template <> struct traits<Windows::UI::Notifications::INotificationDataFactory>
+{
+    using abi = ABI::Windows::UI::Notifications::INotificationDataFactory;
+    template <typename D> using consume = Windows::UI::Notifications::impl_INotificationDataFactory<D>;
 };
 
 template <> struct traits<Windows::UI::Notifications::INotificationVisual>
@@ -1096,6 +1265,24 @@ template <> struct traits<Windows::UI::Notifications::IToastActivatedEventArgs>
     template <typename D> using consume = Windows::UI::Notifications::impl_IToastActivatedEventArgs<D>;
 };
 
+template <> struct traits<Windows::UI::Notifications::IToastCollection>
+{
+    using abi = ABI::Windows::UI::Notifications::IToastCollection;
+    template <typename D> using consume = Windows::UI::Notifications::impl_IToastCollection<D>;
+};
+
+template <> struct traits<Windows::UI::Notifications::IToastCollectionFactory>
+{
+    using abi = ABI::Windows::UI::Notifications::IToastCollectionFactory;
+    template <typename D> using consume = Windows::UI::Notifications::impl_IToastCollectionFactory<D>;
+};
+
+template <> struct traits<Windows::UI::Notifications::IToastCollectionManager>
+{
+    using abi = ABI::Windows::UI::Notifications::IToastCollectionManager;
+    template <typename D> using consume = Windows::UI::Notifications::impl_IToastCollectionManager<D>;
+};
+
 template <> struct traits<Windows::UI::Notifications::IToastDismissedEventArgs>
 {
     using abi = ABI::Windows::UI::Notifications::IToastDismissedEventArgs;
@@ -1124,6 +1311,12 @@ template <> struct traits<Windows::UI::Notifications::IToastNotification3>
 {
     using abi = ABI::Windows::UI::Notifications::IToastNotification3;
     template <typename D> using consume = Windows::UI::Notifications::impl_IToastNotification3<D>;
+};
+
+template <> struct traits<Windows::UI::Notifications::IToastNotification4>
+{
+    using abi = ABI::Windows::UI::Notifications::IToastNotification4;
+    template <typename D> using consume = Windows::UI::Notifications::impl_IToastNotification4<D>;
 };
 
 template <> struct traits<Windows::UI::Notifications::IToastNotificationActionTriggerDetail>
@@ -1156,10 +1349,22 @@ template <> struct traits<Windows::UI::Notifications::IToastNotificationHistoryC
     template <typename D> using consume = Windows::UI::Notifications::impl_IToastNotificationHistoryChangedTriggerDetail<D>;
 };
 
+template <> struct traits<Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail2>
+{
+    using abi = ABI::Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail2;
+    template <typename D> using consume = Windows::UI::Notifications::impl_IToastNotificationHistoryChangedTriggerDetail2<D>;
+};
+
 template <> struct traits<Windows::UI::Notifications::IToastNotificationManagerForUser>
 {
     using abi = ABI::Windows::UI::Notifications::IToastNotificationManagerForUser;
     template <typename D> using consume = Windows::UI::Notifications::impl_IToastNotificationManagerForUser<D>;
+};
+
+template <> struct traits<Windows::UI::Notifications::IToastNotificationManagerForUser2>
+{
+    using abi = ABI::Windows::UI::Notifications::IToastNotificationManagerForUser2;
+    template <typename D> using consume = Windows::UI::Notifications::impl_IToastNotificationManagerForUser2<D>;
 };
 
 template <> struct traits<Windows::UI::Notifications::IToastNotificationManagerStatics>
@@ -1180,10 +1385,22 @@ template <> struct traits<Windows::UI::Notifications::IToastNotificationManagerS
     template <typename D> using consume = Windows::UI::Notifications::impl_IToastNotificationManagerStatics4<D>;
 };
 
+template <> struct traits<Windows::UI::Notifications::IToastNotificationManagerStatics5>
+{
+    using abi = ABI::Windows::UI::Notifications::IToastNotificationManagerStatics5;
+    template <typename D> using consume = Windows::UI::Notifications::impl_IToastNotificationManagerStatics5<D>;
+};
+
 template <> struct traits<Windows::UI::Notifications::IToastNotifier>
 {
     using abi = ABI::Windows::UI::Notifications::IToastNotifier;
     template <typename D> using consume = Windows::UI::Notifications::impl_IToastNotifier<D>;
+};
+
+template <> struct traits<Windows::UI::Notifications::IToastNotifier2>
+{
+    using abi = ABI::Windows::UI::Notifications::IToastNotifier2;
+    template <typename D> using consume = Windows::UI::Notifications::impl_IToastNotifier2<D>;
 };
 
 template <> struct traits<Windows::UI::Notifications::IUserNotification>
@@ -1254,6 +1471,12 @@ template <> struct traits<Windows::UI::Notifications::NotificationBinding>
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.NotificationBinding"; }
 };
 
+template <> struct traits<Windows::UI::Notifications::NotificationData>
+{
+    using abi = ABI::Windows::UI::Notifications::NotificationData;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.NotificationData"; }
+};
+
 template <> struct traits<Windows::UI::Notifications::NotificationVisual>
 {
     using abi = ABI::Windows::UI::Notifications::NotificationVisual;
@@ -1322,6 +1545,18 @@ template <> struct traits<Windows::UI::Notifications::ToastActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::Notifications::ToastActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastActivatedEventArgs"; }
+};
+
+template <> struct traits<Windows::UI::Notifications::ToastCollection>
+{
+    using abi = ABI::Windows::UI::Notifications::ToastCollection;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastCollection"; }
+};
+
+template <> struct traits<Windows::UI::Notifications::ToastCollectionManager>
+{
+    using abi = ABI::Windows::UI::Notifications::ToastCollectionManager;
+    static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastCollectionManager"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ToastDismissedEventArgs>
