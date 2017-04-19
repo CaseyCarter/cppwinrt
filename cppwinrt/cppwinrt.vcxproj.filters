@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="source\code_writer.cpp" />
+    <ClCompile Include="source\main_cppwinrt.cpp" />
+    <ClCompile Include="source\module_writer.cpp" />
+    <ClCompile Include="source\pch.cpp" />
+    <ClCompile Include="source\winmd_reader.cpp" />
+    <ClCompile Include="strings\strings.cpp">
+      <Filter>strings</Filter>
+    </ClCompile>
+    <ClCompile Include="source\settings.cpp" />
+    <ClCompile Include="source\platform_writer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\code_writer.h" />
+    <ClInclude Include="source\module_writer.h" />
+    <ClInclude Include="source\pch.h" />
+    <ClInclude Include="source\platform_writer.h" />
+    <ClInclude Include="source\text_writer.h" />
+    <ClInclude Include="source\version.h" />
+    <ClInclude Include="source\winmd_reader.h" />
+    <ClInclude Include="strings\strings.h">
+      <Filter>strings</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_activation.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_agile.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_array.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_async_consume.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_async_produce.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_await_consume.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_await_produce.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_chrono.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_collections_consume.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_collections_input.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_collections_input_iterable.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_collections_input_map_view.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_collections_input_vector_view.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_collections_map.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_collections_produce.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_collections_vector.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_com_ptr.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_composable.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_delegate.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_dependencies.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_error.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_event_consume.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_event_produce.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_foundation.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_handle.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_implements.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_lock.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_macros.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_meta.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_modern.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_module.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_ppl.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_reference.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_std_async_action.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_std_async_action_with_progress.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_std_async_operation.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_std_async_operation_with_progress.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_std_fire_and_forget.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_std_hash.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_string.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_string_hstring.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_string_hstring_ref.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_string_operators.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_weak.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_windows.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="source\settings.h" />
+    <ClInclude Include="strings\write\write_struct_abi.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_constexpr_traits.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_constexpr_guid.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_constexpr_sha1.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_constexpr_string.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_category.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_class_base.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_class_default_interface.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_class_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_constructor_declaration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_constructor_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_consume.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_default_constructor_declaration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_default_constructor_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_default_interface.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_delegate_abi.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_delegate_abi_method.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_delegate_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_delegate_member_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_delegate_produce.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_deprecated.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_edit_warning_header.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_edit_warning_source.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_enumeration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_enumeration_flag.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_enumerator.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_guid.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_abi.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_abi_method.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_consume.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_method_declaration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_method_test.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_produce.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_produce_method.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_logo.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_class_activation.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_source.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_name.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_require.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_shim.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_shim_body.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_shim_post.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_shim_pre.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_shim_pre_array.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_shim_pre_nullptr.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_static_class_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_static_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_static_method_declaration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_struct_abi.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_struct_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_using.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_class_header.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_class_source.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_class_base.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_factory_activate_instance.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_factory_activate_instance_not_implemented.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_interface_method_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_class_override.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_class_override_constructor.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_composable_constructor_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_edit_warning_h.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_override.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_override_method.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_factory_forwarding_constructor.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_factory_forwarding_static.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_class_constructor_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_class_static_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_lock_declaration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_module_source_empty.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="strings">
+      <UniqueIdentifier>{5a590d4e-3a01-4068-abd1-efe826af9ae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="strings\base">
+      <UniqueIdentifier>{7316cbfe-192e-43fa-a35f-caef4dc36b2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="strings\write">
+      <UniqueIdentifier>{9a47439f-f4b9-4fd5-b35d-9abef6e7e4a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="strings\print">
+      <UniqueIdentifier>{b59e9254-2c1b-4037-9fca-a01cbfcba21c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="strings\make_strings.cmd">
+      <Filter>strings</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="strings\print\print_exception.txt">
+      <Filter>strings\print</Filter>
+    </Text>
+    <Text Include="strings\print\print_hresult_error.txt">
+      <Filter>strings\print</Filter>
+    </Text>
+    <Text Include="strings\print\print_invalid_usage.txt">
+      <Filter>strings\print</Filter>
+    </Text>
+    <Text Include="strings\print\print_time.txt">
+      <Filter>strings\print</Filter>
+    </Text>
+    <Text Include="strings\print\print_usage.txt">
+      <Filter>strings\print</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="source\version.rc" />
+  </ItemGroup>
+</Project>

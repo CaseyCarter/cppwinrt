@@ -1,0 +1,17 @@
+
+C++/WinRT v%s
+Copyright (c) %d Microsoft Corporation. All rights reserved.
+
+  cppwinrt.exe [command] [options...]
+
+Commands:
+
+  platform          Create or update platform projection
+  header            Create or update module header
+  module            Create or update module project
+
+Options:
+
+  -in  <path>       Name or location of .winmd files
+  -out <path>       Location of resulting source files
+  -v   <version>    Version of platform to project

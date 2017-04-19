@@ -1,0 +1,4 @@
+
+inline %::%() :
+    %(activate_instance<%>())
+{}

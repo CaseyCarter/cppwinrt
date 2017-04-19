@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="ClangDebug|Win32">
+      <Configuration>ClangDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ClangDebug|x64">
+      <Configuration>ClangDebug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\code_writer.h" />
+    <ClInclude Include="source\module_writer.h" />
+    <ClInclude Include="source\pch.h" />
+    <ClInclude Include="source\platform_writer.h" />
+    <ClInclude Include="source\settings.h" />
+    <ClInclude Include="source\text_writer.h" />
+    <ClInclude Include="source\version.h" />
+    <ClInclude Include="source\winmd_reader.h" />
+    <ClInclude Include="strings\base\base_activation.h" />
+    <ClInclude Include="strings\base\base_agile.h" />
+    <ClInclude Include="strings\base\base_array.h" />
+    <ClInclude Include="strings\base\base_async_consume.h" />
+    <ClInclude Include="strings\base\base_async_produce.h" />
+    <ClInclude Include="strings\base\base_await_consume.h" />
+    <ClInclude Include="strings\base\base_await_produce.h" />
+    <ClInclude Include="strings\base\base_chrono.h" />
+    <ClInclude Include="strings\base\base_collections_consume.h" />
+    <ClInclude Include="strings\base\base_collections_input.h" />
+    <ClInclude Include="strings\base\base_collections_input_iterable.h" />
+    <ClInclude Include="strings\base\base_collections_input_map_view.h" />
+    <ClInclude Include="strings\base\base_collections_input_vector_view.h" />
+    <ClInclude Include="strings\base\base_collections_map.h" />
+    <ClInclude Include="strings\base\base_collections_produce.h" />
+    <ClInclude Include="strings\base\base_collections_vector.h" />
+    <ClInclude Include="strings\base\base_composable.h" />
+    <ClInclude Include="strings\base\base_com_ptr.h" />
+    <ClInclude Include="strings\base\base_constexpr_guid.h" />
+    <ClInclude Include="strings\base\base_constexpr_sha1.h" />
+    <ClInclude Include="strings\base\base_constexpr_string.h" />
+    <ClInclude Include="strings\base\base_constexpr_traits.h" />
+    <ClInclude Include="strings\base\base_delegate.h" />
+    <ClInclude Include="strings\base\base_dependencies.h" />
+    <ClInclude Include="strings\base\base_error.h" />
+    <ClInclude Include="strings\base\base_event_consume.h" />
+    <ClInclude Include="strings\base\base_event_produce.h" />
+    <ClInclude Include="strings\base\base_foundation.h" />
+    <ClInclude Include="strings\base\base_handle.h" />
+    <ClInclude Include="strings\base\base_implements.h" />
+    <ClInclude Include="strings\base\base_lock.h" />
+    <ClInclude Include="strings\base\base_macros.h" />
+    <ClInclude Include="strings\base\base_meta.h" />
+    <ClInclude Include="strings\base\base_modern.h" />
+    <ClInclude Include="strings\base\base_module.h" />
+    <ClInclude Include="strings\base\base_ppl.h" />
+    <ClInclude Include="strings\base\base_reference.h" />
+    <ClInclude Include="strings\base\base_std_async_action.h" />
+    <ClInclude Include="strings\base\base_std_async_action_with_progress.h" />
+    <ClInclude Include="strings\base\base_std_async_operation.h" />
+    <ClInclude Include="strings\base\base_std_async_operation_with_progress.h" />
+    <ClInclude Include="strings\base\base_std_fire_and_forget.h" />
+    <ClInclude Include="strings\base\base_std_hash.h" />
+    <ClInclude Include="strings\base\base_string.h" />
+    <ClInclude Include="strings\base\base_string_hstring.h" />
+    <ClInclude Include="strings\base\base_string_hstring_ref.h" />
+    <ClInclude Include="strings\base\base_string_operators.h" />
+    <ClInclude Include="strings\base\base_weak.h" />
+    <ClInclude Include="strings\base\base_windows.h" />
+    <ClInclude Include="strings\strings.h" />
+    <ClInclude Include="strings\write\write_category.h" />
+    <ClInclude Include="strings\write\write_class_base.h" />
+    <ClInclude Include="strings\write\write_class_default_interface.h" />
+    <ClInclude Include="strings\write\write_class_definition.h" />
+    <ClInclude Include="strings\write\write_class_override.h" />
+    <ClInclude Include="strings\write\write_class_override_constructor.h" />
+    <ClInclude Include="strings\write\write_composable_constructor_definition.h" />
+    <ClInclude Include="strings\write\write_constructor_declaration.h" />
+    <ClInclude Include="strings\write\write_constructor_definition.h" />
+    <ClInclude Include="strings\write\write_consume.h" />
+    <ClInclude Include="strings\write\write_default_constructor_declaration.h" />
+    <ClInclude Include="strings\write\write_default_constructor_definition.h" />
+    <ClInclude Include="strings\write\write_default_interface.h" />
+    <ClInclude Include="strings\write\write_delegate_abi.h" />
+    <ClInclude Include="strings\write\write_delegate_abi_method.h" />
+    <ClInclude Include="strings\write\write_delegate_definition.h" />
+    <ClInclude Include="strings\write\write_delegate_member_definition.h" />
+    <ClInclude Include="strings\write\write_delegate_produce.h" />
+    <ClInclude Include="strings\write\write_deprecated.h" />
+    <ClInclude Include="strings\write\write_edit_warning_h.h" />
+    <ClInclude Include="strings\write\write_edit_warning_header.h" />
+    <ClInclude Include="strings\write\write_edit_warning_source.h" />
+    <ClInclude Include="strings\write\write_enumeration.h" />
+    <ClInclude Include="strings\write\write_enumeration_flag.h" />
+    <ClInclude Include="strings\write\write_enumerator.h" />
+    <ClInclude Include="strings\write\write_guid.h" />
+    <ClInclude Include="strings\write\write_interface_abi.h" />
+    <ClInclude Include="strings\write\write_interface_abi_method.h" />
+    <ClInclude Include="strings\write\write_interface_consume.h" />
+    <ClInclude Include="strings\write\write_interface_definition.h" />
+    <ClInclude Include="strings\write\write_interface_method_declaration.h" />
+    <ClInclude Include="strings\write\write_interface_override.h" />
+    <ClInclude Include="strings\write\write_interface_override_method.h" />
+    <ClInclude Include="strings\write\write_module_class_constructor_definition.h" />
+    <ClInclude Include="strings\write\write_module_class_static_definition.h" />
+    <ClInclude Include="strings\write\write_module_factory_forwarding_constructor.h" />
+    <ClInclude Include="strings\write\write_module_factory_forwarding_static.h" />
+    <ClInclude Include="strings\write\write_module_interface_method_definition.h" />
+    <ClInclude Include="strings\write\write_interface_method_test.h" />
+    <ClInclude Include="strings\write\write_interface_produce.h" />
+    <ClInclude Include="strings\write\write_interface_produce_method.h" />
+    <ClInclude Include="strings\write\write_logo.h" />
+    <ClInclude Include="strings\write\write_module_class_activation.h" />
+    <ClInclude Include="strings\write\write_module_class_base.h" />
+    <ClInclude Include="strings\write\write_module_class_header.h" />
+    <ClInclude Include="strings\write\write_module_class_source.h" />
+    <ClInclude Include="strings\write\write_module_factory_activate_instance.h" />
+    <ClInclude Include="strings\write\write_module_factory_activate_instance_not_implemented.h" />
+    <ClInclude Include="strings\write\write_module_lock_declaration.h" />
+    <ClInclude Include="strings\write\write_module_source.h" />
+    <ClInclude Include="strings\write\write_module_source_empty.h" />
+    <ClInclude Include="strings\write\write_name.h" />
+    <ClInclude Include="strings\write\write_require.h" />
+    <ClInclude Include="strings\write\write_shim.h" />
+    <ClInclude Include="strings\write\write_shim_body.h" />
+    <ClInclude Include="strings\write\write_shim_post.h" />
+    <ClInclude Include="strings\write\write_shim_pre.h" />
+    <ClInclude Include="strings\write\write_shim_pre_array.h" />
+    <ClInclude Include="strings\write\write_shim_pre_nullptr.h" />
+    <ClInclude Include="strings\write\write_static_class_definition.h" />
+    <ClInclude Include="strings\write\write_static_definition.h" />
+    <ClInclude Include="strings\write\write_static_method_declaration.h" />
+    <ClInclude Include="strings\write\write_struct_abi.h" />
+    <ClInclude Include="strings\write\write_struct_definition.h" />
+    <ClInclude Include="strings\write\write_using.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\code_writer.cpp" />
+    <ClCompile Include="source\main_cppwinrt.cpp" />
+    <ClCompile Include="source\module_writer.cpp" />
+    <ClCompile Include="source\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="source\platform_writer.cpp" />
+    <ClCompile Include="source\settings.cpp" />
+    <ClCompile Include="source\winmd_reader.cpp" />
+    <ClCompile Include="strings\strings.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="strings\make_strings.cmd">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)strings\make_strings.cmd</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)strings\make_strings.cmd</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">$(ProjectDir)strings\make_strings.cmd</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)strings\make_strings.cmd</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)strings\make_strings.cmd</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'">$(ProjectDir)strings\make_strings.cmd</ExcludedFromBuild>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)strings\make_strings.cmd dep</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)strings\make_strings.cmd dep</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">$(ProjectDir)strings\make_strings.cmd dep</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)strings\make_strings.cmd dep</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)strings\make_strings.cmd dep</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'">$(ProjectDir)strings\make_strings.cmd dep</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">
+      </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'">
+      </Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">make_strings_does_its_own_dependency_checking</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">make_strings_does_its_own_dependency_checking</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">make_strings_does_its_own_dependency_checking</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">make_strings_does_its_own_dependency_checking</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">make_strings_does_its_own_dependency_checking</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'">make_strings_does_its_own_dependency_checking</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">
+      </AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'">
+      </AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="strings\print\print_exception.txt" />
+    <Text Include="strings\print\print_hresult_error.txt" />
+    <Text Include="strings\print\print_invalid_usage.txt" />
+    <Text Include="strings\print\print_time.txt" />
+    <Text Include="strings\print\print_usage.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="source\version.rc" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{75185506-62F6-4A35-A508-066BEA0BD213}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>compiler</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141_clang_c2</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141_clang_c2</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)x86\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)x86\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)x86\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)x86\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)x64\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)x64\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)x64\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)x64\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)x86\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)x86\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)x64\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)x64\$(Configuration)\Intermediate\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_HAS_AUTO_PTR_ETC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalOptions>/std:c++latest /permissive- /await</AdditionalOptions>
+      <AdditionalIncludeDirectories>strings;strings\base</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalOptions>-Wno-c++1z-extensions -Wno-delete-non-virtual-dtor -Wno-invalid-offsetof </AdditionalOptions>
+      <AdditionalIncludeDirectories>strings;strings\base</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_HAS_AUTO_PTR_ETC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalOptions>/std:c++latest /permissive- /await</AdditionalOptions>
+      <AdditionalIncludeDirectories>strings;strings\base</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ClangDebug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalOptions>-Wno-c++1z-extensions -Wno-delete-non-virtual-dtor -Wno-invalid-offsetof </AdditionalOptions>
+      <AdditionalIncludeDirectories>strings;strings\base</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_HAS_AUTO_PTR_ETC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalOptions>/std:c++latest /permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
+      <AdditionalIncludeDirectories>strings;strings\base</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_HAS_AUTO_PTR_ETC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalOptions>/std:c++latest /permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
+      <AdditionalIncludeDirectories>strings;strings\base</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

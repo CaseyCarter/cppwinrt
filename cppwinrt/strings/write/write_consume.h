@@ -1,0 +1,1 @@
+template <> struct consume<%>{ template <typename D> using type = consume_%<D>; };

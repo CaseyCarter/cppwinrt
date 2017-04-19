@@ -1,0 +1,1 @@
+    using impl::consume_%<%>::%;
