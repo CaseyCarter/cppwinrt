@@ -2194,7 +2194,7 @@ bind_output(write_class_tests, code_namespace, types));
         return interfaces;
     }
 
-    void write_module_instance_interfaces(output& out, meta::type const& type)
+    void write_component_instance_interfaces(output& out, meta::type const& type)
     {
         std::vector<meta::token> interfaces = get_module_instance_interfaces(type);
 
@@ -2205,7 +2205,7 @@ bind_output(write_class_tests, code_namespace, types));
         }
     }
 
-    void write_module_factory_interfaces(output& out, meta::type const& type)
+    void write_component_factory_interfaces(output& out, meta::type const& type)
     {
         for (meta::factory_attribute attribute : type.token().enum_factory_attributes())
         {
@@ -2219,13 +2219,13 @@ bind_output(write_class_tests, code_namespace, types));
         }
     }
 
-    void write_module_factory_forwarding_constructors(output& out, meta::type const& type, meta::token factory)
+    void write_component_factory_forwarding_constructors(output& out, meta::type const& type, meta::token factory)
     {
         meta::token default_interface = type.token().find_default_interface();
 
         for (meta::method const& method : factory.enum_methods())
         {
-            out.write(strings::write_module_factory_forwarding_constructor,
+            out.write(strings::write_component_factory_forwarding_constructor,
                 default_interface.get_name(),
                 method.name,
                 bind_output(write_params, method),
@@ -2233,11 +2233,11 @@ bind_output(write_class_tests, code_namespace, types));
         }
     }
 
-    void write_module_factory_forwarding_statics(output& out, meta::token factory)
+    void write_component_factory_forwarding_statics(output& out, meta::token factory)
     {
         for (meta::method const& method : factory.enum_methods())
         {
-            out.write(strings::write_module_factory_forwarding_static,
+            out.write(strings::write_component_factory_forwarding_static,
                 bind_output(write_return_type, method),
                 get_method_name(method.name),
                 bind_output(write_params, method),
@@ -2253,7 +2253,7 @@ bind_output(write_class_tests, code_namespace, types));
         return{ enum_factory_attributes.begin(), enum_factory_attributes.end() };
     }
 
-    void write_module_factory_forwarding_methods(output& out, meta::type const& type)
+    void write_component_factory_forwarding_methods(output& out, meta::type const& type)
     {
         std::vector<meta::factory_attribute> factory_attributes = get_module_factory_attributes(type.token());
 
@@ -2269,11 +2269,11 @@ bind_output(write_class_tests, code_namespace, types));
 
         if (default_activation)
         {
-            out.write(strings::write_module_factory_activate_instance);
+            out.write(strings::write_component_factory_activate_instance);
         }
         else
         {
-            out.write(strings::write_module_factory_activate_instance_not_implemented);
+            out.write(strings::write_component_factory_activate_instance_not_implemented);
         }
 
         for (meta::factory_attribute const& attribute : factory_attributes)
@@ -2285,7 +2285,7 @@ bind_output(write_class_tests, code_namespace, types));
                     continue;
                 }
 
-                write_module_factory_forwarding_constructors(out, type, attribute.factory);
+                write_component_factory_forwarding_constructors(out, type, attribute.factory);
             }
         }
 
@@ -2293,12 +2293,12 @@ bind_output(write_class_tests, code_namespace, types));
         {
             if (!attribute.activatable)
             {
-                write_module_factory_forwarding_statics(out, attribute.factory);
+                write_component_factory_forwarding_statics(out, attribute.factory);
             }
         }
     }
 
-    void write_module_header(std::vector<meta::type const*> const& types)
+    void write_component_header(std::vector<meta::type const*> const& types)
     {
         output out;
         write_warning(out, strings::write_edit_warning_header);
@@ -2312,7 +2312,7 @@ bind_output(write_class_tests, code_namespace, types));
         write_winrt_namespace_begin(out);
 
         out.write_namespace("impl");
-        out.write(strings::write_module_lock_declaration);
+        out.write(strings::write_component_lock_declaration);
 
         for (meta::type const* type : types)
         {
@@ -2323,14 +2323,14 @@ bind_output(write_class_tests, code_namespace, types));
 
             out.write_namespace(std::string(type->name_space()) + ".implementation");
 
-            out.write(strings::write_module_class_base,
+            out.write(strings::write_component_class_base,
                 type->name(),
-                bind_output(write_module_instance_interfaces, *type),
+                bind_output(write_component_instance_interfaces, *type),
                 bind_output(write_dot_name, type->full_name()),
                 type->name(),
-                bind_output(write_module_factory_interfaces, *type),
+                bind_output(write_component_factory_interfaces, *type),
                 bind_output(write_dot_name, type->full_name()),
-                bind_output(write_module_factory_forwarding_methods, *type));
+                bind_output(write_component_factory_forwarding_methods, *type));
         }
 
         write_winrt_namespace_end(out);
@@ -2340,7 +2340,7 @@ bind_output(write_class_tests, code_namespace, types));
         out.save_as(filename.string());
     }
 
-    void write_module_class_includes(output& out, std::vector<meta::type const*> const& types)
+    void write_component_class_includes(output& out, std::vector<meta::type const*> const& types)
     {
         for (meta::type const* type : types)
         {
@@ -2352,13 +2352,13 @@ bind_output(write_class_tests, code_namespace, types));
         }
     }
 
-    void write_module_class_activations(output& out, std::vector<meta::type const*> const& types)
+    void write_component_class_activations(output& out, std::vector<meta::type const*> const& types)
     {
         for (meta::type const* type : types)
         {
             if (type->is_class())
             {
-                out.write(strings::write_module_class_activation,
+                out.write(strings::write_component_class_activation,
                     bind_output(write_dot_name, type->full_name()),
                     type->name_space(),
                     type->name());
@@ -2366,20 +2366,20 @@ bind_output(write_class_tests, code_namespace, types));
         }
     }
 
-    void write_module_source(std::vector<meta::type const*> const& types)
+    void write_component_source(std::vector<meta::type const*> const& types)
     {
         output out;
         write_warning(out, strings::write_edit_warning_source);
 
         if (types.empty())
         {
-            out.write(strings::write_module_source_empty);
+            out.write(strings::write_component_source_empty);
         }
         else
         {
-            out.write(strings::write_module_source,
-                bind_output(write_module_class_includes, types),
-                bind_output(write_module_class_activations, types));
+            out.write(strings::write_component_source,
+                bind_output(write_component_class_includes, types),
+                bind_output(write_component_class_activations, types));
         }
 
         path filename = settings::output;
@@ -2387,7 +2387,7 @@ bind_output(write_class_tests, code_namespace, types));
         out.save_as(filename.string());
     }
 
-    void write_module_class_constructor_declarations(output& out, meta::type const& type, meta::token factory)
+    void write_component_class_constructor_declarations(output& out, meta::type const& type, meta::token factory)
     {
         for (meta::method const& method : factory.enum_methods())
         {
@@ -2397,7 +2397,7 @@ bind_output(write_class_tests, code_namespace, types));
         }
     }
 
-    void write_module_class_static_declarations(output& out, meta::token factory)
+    void write_component_class_static_declarations(output& out, meta::token factory)
     {
         for (meta::method const& method : factory.enum_methods())
         {
@@ -2421,7 +2421,7 @@ bind_output(write_class_tests, code_namespace, types));
         return false;
     }
 
-    void write_module_class_member_declarations(output& out, meta::type const& type)
+    void write_component_class_member_declarations(output& out, meta::type const& type)
     {
         std::vector<meta::factory_attribute> factory_attributes = get_module_factory_attributes(type.token());
 
@@ -2453,7 +2453,7 @@ bind_output(write_class_tests, code_namespace, types));
                     continue;
                 }
 
-                write_module_class_constructor_declarations(out, type, attribute.factory);
+                write_component_class_constructor_declarations(out, type, attribute.factory);
             }
         }
 
@@ -2485,28 +2485,28 @@ bind_output(write_class_tests, code_namespace, types));
             {
                 if (!attribute.activatable)
                 {
-                    write_module_class_static_declarations(out, attribute.factory);
+                    write_component_class_static_declarations(out, attribute.factory);
                 }
             }
         }
     }
 
-    void write_module_class_constructor_definitions(output& out, meta::type const& type, meta::token factory)
+    void write_component_class_constructor_definitions(output& out, meta::type const& type, meta::token factory)
     {
         for (meta::method const& method : factory.enum_methods())
         {
-            out.write(strings::write_module_class_constructor_definition,
+            out.write(strings::write_component_class_constructor_definition,
                 type.name(),
                 type.name(),
                 bind_output(write_params, method));
         }
     }
 
-    void write_module_class_static_definitions(output& out, meta::type const& type, meta::token factory)
+    void write_component_class_static_definitions(output& out, meta::type const& type, meta::token factory)
     {
         for (meta::method const& method : factory.enum_methods())
         {
-            out.write(strings::write_module_class_static_definition,
+            out.write(strings::write_component_class_static_definition,
                 bind_output(write_return_type, method),
                 type.name(),
                 get_method_name(method.name),
@@ -2514,7 +2514,7 @@ bind_output(write_class_tests, code_namespace, types));
         }
     }
 
-    void write_module_class_member_definitions(output& out, meta::type const& type)
+    void write_component_class_member_definitions(output& out, meta::type const& type)
     {
         for (meta::factory_attribute const& attribute : type.token().enum_factory_attributes())
         {
@@ -2525,7 +2525,7 @@ bind_output(write_class_tests, code_namespace, types));
                     continue;
                 }
 
-                write_module_class_constructor_definitions(out, type, attribute.factory);
+                write_component_class_constructor_definitions(out, type, attribute.factory);
             }
         }
 
@@ -2540,7 +2540,7 @@ bind_output(write_class_tests, code_namespace, types));
 
             for (meta::method const& method : required.enum_methods())
             {
-                out.write(strings::write_module_interface_method_definition,
+                out.write(strings::write_component_interface_method_definition,
                     bind_output(write_return_type, method),
                     type.name(),
                     get_method_name(method.name),
@@ -2552,12 +2552,12 @@ bind_output(write_class_tests, code_namespace, types));
         {
             if (!attribute.activatable)
             {
-                write_module_class_static_definitions(out, type, attribute.factory);
+                write_component_class_static_definitions(out, type, attribute.factory);
             }
         }
     }
 
-    void write_module_class_header(meta::type const& type)
+    void write_component_class_header(meta::type const& type)
     {
         path filename = settings::output;
         filename /= std::string(type.name());
@@ -2570,12 +2570,12 @@ bind_output(write_class_tests, code_namespace, types));
 
         output out;
 
-        out.write(strings::write_module_class_header,
+        out.write(strings::write_component_class_header,
             type.name_space(),
             type.name(),
             type.name(),
             type.name(),
-            bind_output(write_module_class_member_declarations, type),
+            bind_output(write_component_class_member_declarations, type),
             type.name(),
             type.name(),
             type.name(),
@@ -2584,7 +2584,7 @@ bind_output(write_class_tests, code_namespace, types));
         out.save_as(filename.string());
     }
 
-    void write_module_class_source(meta::type const& type)
+    void write_component_class_source(meta::type const& type)
     {
         path filename = settings::output;
         filename /= std::string(type.name());
@@ -2597,10 +2597,10 @@ bind_output(write_class_tests, code_namespace, types));
 
         output out;
 
-        out.write(strings::write_module_class_source,
+        out.write(strings::write_component_class_source,
             type.name(),
             type.name_space(),
-            bind_output(write_module_class_member_definitions, type));
+            bind_output(write_component_class_member_definitions, type));
 
         out.save_as(filename.string());
     }

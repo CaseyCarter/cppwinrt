@@ -6,7 +6,7 @@
 #include "version.h"
 #include "settings.h"
 #include "platform_writer.h"
-#include "module_writer.h"
+#include "component_writer.h"
 
 using namespace cppwinrt;
 using namespace std::chrono;
@@ -19,7 +19,7 @@ namespace
         none,
         platform,
         header,
-        module,
+        component,
     };
 
     enum class option
@@ -79,9 +79,9 @@ namespace
         {
             usage::command = command::header;
         }
-        else if (0 == wcscmp(argv[1], L"module"))
+        else if (0 == wcscmp(argv[1], L"component"))
         {
-            usage::command = command::module;
+            usage::command = command::component;
         }
         else
         {
@@ -280,9 +280,9 @@ namespace
         {
             write_header();
         }
-        else if (usage::command == command::module)
+        else if (usage::command == command::component)
         {
-            write_module();
+            write_component();
         }
         else
         {

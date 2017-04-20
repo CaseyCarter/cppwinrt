@@ -3,7 +3,6 @@
   <ItemGroup>
     <ClCompile Include="source\code_writer.cpp" />
     <ClCompile Include="source\main_cppwinrt.cpp" />
-    <ClCompile Include="source\module_writer.cpp" />
     <ClCompile Include="source\pch.cpp" />
     <ClCompile Include="source\winmd_reader.cpp" />
     <ClCompile Include="strings\strings.cpp">
@@ -11,10 +10,10 @@
     </ClCompile>
     <ClCompile Include="source\settings.cpp" />
     <ClCompile Include="source\platform_writer.cpp" />
+    <ClCompile Include="source\component_writer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\code_writer.h" />
-    <ClInclude Include="source\module_writer.h" />
     <ClInclude Include="source\pch.h" />
     <ClInclude Include="source\platform_writer.h" />
     <ClInclude Include="source\text_writer.h" />
@@ -369,6 +368,7 @@
     <ClInclude Include="strings\write\write_module_source_empty.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="source\component_writer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">

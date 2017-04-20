@@ -114,6 +114,34 @@ extern char const write_class_override[];
 
 extern char const write_class_override_constructor[];
 
+extern char const write_component_class_activation[];
+
+extern char const write_component_class_base[];
+
+extern char const write_component_class_constructor_definition[];
+
+extern char const write_component_class_header[];
+
+extern char const write_component_class_source[];
+
+extern char const write_component_class_static_definition[];
+
+extern char const write_component_factory_activate_instance[];
+
+extern char const write_component_factory_activate_instance_not_implemented[];
+
+extern char const write_component_factory_forwarding_constructor[];
+
+extern char const write_component_factory_forwarding_static[];
+
+extern char const write_component_interface_method_definition[];
+
+extern char const write_component_lock_declaration[];
+
+extern char const write_component_source[];
+
+extern char const write_component_source_empty[];
+
 extern char const write_composable_constructor_definition[];
 
 extern char const write_constructor_declaration[];
@@ -177,34 +205,6 @@ extern char const write_interface_produce[];
 extern char const write_interface_produce_method[];
 
 extern char const write_logo[];
-
-extern char const write_module_class_activation[];
-
-extern char const write_module_class_base[];
-
-extern char const write_module_class_constructor_definition[];
-
-extern char const write_module_class_header[];
-
-extern char const write_module_class_source[];
-
-extern char const write_module_class_static_definition[];
-
-extern char const write_module_factory_activate_instance[];
-
-extern char const write_module_factory_activate_instance_not_implemented[];
-
-extern char const write_module_factory_forwarding_constructor[];
-
-extern char const write_module_factory_forwarding_static[];
-
-extern char const write_module_interface_method_definition[];
-
-extern char const write_module_lock_declaration[];
-
-extern char const write_module_source[];
-
-extern char const write_module_source_empty[];
 
 extern char const write_name[];
 

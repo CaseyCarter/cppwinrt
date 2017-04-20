@@ -3,5 +3,5 @@
 namespace cppwinrt
 {
     void write_header();
-    void write_module();
+    void write_component();
 }

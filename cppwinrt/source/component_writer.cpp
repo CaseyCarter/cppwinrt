@@ -19,7 +19,7 @@ namespace cppwinrt
         out.save_as(filename.string());
     }
 
-    void write_module()
+    void write_component()
     {
         write_header();
 
@@ -37,16 +37,16 @@ namespace cppwinrt
             }
         }
 
-        write_module_header(types);
-        write_module_source(types);
+        write_component_header(types);
+        write_component_source(types);
 
         for (meta::type const* type : types)
         {
             if (type->is_class())
             {
                 // TODO: use name relative to winmd name
-                write_module_class_header(*type);
-                write_module_class_source(*type);
+                write_component_class_header(*type);
+                write_component_class_source(*type);
             }
         }
     }

@@ -11868,6 +11868,176 @@ extern char const write_class_override_constructor[] = R"xyz(
     }
 )xyz";
 
+extern char const write_component_class_activation[] = R"xyz( if (0 == wcscmp(name, L"%"))
+        {
+            *factory = detach_abi(make<%::implementation::%Factory>());
+        }
+        else)xyz";
+
+extern char const write_component_class_base[] = R"xyz(
+template <typename D, typename ... I>
+struct %T : impl::module_lock, implements<D%, I ...>
+{
+    hstring GetRuntimeClassName() const
+    {
+        return L"%";
+    }
+};
+
+template <typename D, typename T, typename ... I>
+struct %FactoryT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory%, I ...>
+{
+    hstring GetRuntimeClassName() const
+    {
+        return L"%";
+    }
+%};
+)xyz";
+
+extern char const write_component_class_constructor_definition[] = R"xyz(
+    %::%(%)
+    {
+        throw hresult_not_implemented();
+    }
+)xyz";
+
+extern char const write_component_class_header[] = R"xyz(#pragma once
+
+#include "module.h"
+
+namespace winrt::%::implementation
+{
+    struct % : %T<%>
+    {
+%    };
+
+    struct %Factory : %FactoryT<%Factory, %>
+    {
+    };
+}
+)xyz";
+
+extern char const write_component_class_source[] = R"xyz(#include "pch.h"
+#include "%.h"
+
+namespace winrt::%::implementation
+{%}
+)xyz";
+
+extern char const write_component_class_static_definition[] = R"xyz(
+    % %::%(%)
+    {
+        throw hresult_not_implemented();
+    }
+)xyz";
+
+extern char const write_component_factory_activate_instance[] = R"xyz(
+    Windows::Foundation::IInspectable ActivateInstance() const
+    {
+        return make<T>();
+    }
+)xyz";
+
+extern char const write_component_factory_activate_instance_not_implemented[] = R"xyz(
+    Windows::Foundation::IInspectable ActivateInstance() const
+    {
+        throw hresult_not_implemented();
+    }
+)xyz";
+
+extern char const write_component_factory_forwarding_constructor[] = R"xyz(
+    % %(%)
+    {
+        return make<T>(%);
+    }
+)xyz";
+
+extern char const write_component_factory_forwarding_static[] = R"xyz(
+    % %(%)
+    {
+        %T::%(%);
+    }
+)xyz";
+
+extern char const write_component_interface_method_definition[] = R"xyz(
+    % %::%(%)
+    {
+        throw hresult_not_implemented();
+    }
+)xyz";
+
+extern char const write_component_lock_declaration[] = R"xyz(
+struct module_lock
+{
+    module_lock();
+    ~module_lock();
+};
+)xyz";
+
+extern char const write_component_source[] = R"xyz(%
+namespace winrt::impl
+{
+    namespace
+    {
+        std::atomic<uint32_t> s_module_lock{};
+    }
+
+    module_lock::module_lock()
+    {
+        ++s_module_lock;
+    }
+
+    module_lock::~module_lock()
+    {
+        --s_module_lock;
+    }
+}
+
+using namespace winrt;
+using namespace Windows::Foundation;
+
+HRESULT __stdcall DllCanUnloadNow()
+{
+    return impl::s_module_lock ? S_FALSE : S_OK;
+}
+
+HRESULT __stdcall DllGetActivationFactory(HSTRING classId, ::IUnknown** factory)
+{
+    try
+    {
+        wchar_t const* const name = WindowsGetStringRawBuffer(classId, nullptr);
+
+       %
+        {
+            throw hresult_class_not_available();
+        }
+
+        return S_OK;
+    }
+    catch (...)
+    {
+        *factory = nullptr;
+        return impl::to_hresult();
+    }
+}
+)xyz";
+
+extern char const write_component_source_empty[] = R"xyz(
+using namespace winrt;
+using namespace Windows::Foundation;
+
+HRESULT __stdcall DllCanUnloadNow()
+{
+    return S_OK;
+}
+
+HRESULT __stdcall DllGetActivationFactory(HSTRING, ::IUnknown** factory)
+{
+    *factory = nullptr;
+    return hresult_class_not_available().to_abi();
+}
+)xyz";
+
 extern char const write_composable_constructor_definition[] = R"xyz(
 inline %::%(%)
 {
@@ -12079,176 +12249,6 @@ extern char const write_logo[] = R"xyz(// C++/WinRT v%
 // Copyright (c) % Microsoft Corporation. All rights reserved.
 
 #pragma once
-)xyz";
-
-extern char const write_module_class_activation[] = R"xyz( if (0 == wcscmp(name, L"%"))
-        {
-            *factory = detach_abi(make<%::implementation::%Factory>());
-        }
-        else)xyz";
-
-extern char const write_module_class_base[] = R"xyz(
-template <typename D, typename ... I>
-struct %T : impl::module_lock, implements<D%, I ...>
-{
-    hstring GetRuntimeClassName() const
-    {
-        return L"%";
-    }
-};
-
-template <typename D, typename T, typename ... I>
-struct %FactoryT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory%, I ...>
-{
-    hstring GetRuntimeClassName() const
-    {
-        return L"%";
-    }
-%};
-)xyz";
-
-extern char const write_module_class_constructor_definition[] = R"xyz(
-    %::%(%)
-    {
-        throw hresult_not_implemented();
-    }
-)xyz";
-
-extern char const write_module_class_header[] = R"xyz(#pragma once
-
-#include "module.h"
-
-namespace winrt::%::implementation
-{
-    struct % : %T<%>
-    {
-%    };
-
-    struct %Factory : %FactoryT<%Factory, %>
-    {
-    };
-}
-)xyz";
-
-extern char const write_module_class_source[] = R"xyz(#include "pch.h"
-#include "%.h"
-
-namespace winrt::%::implementation
-{%}
-)xyz";
-
-extern char const write_module_class_static_definition[] = R"xyz(
-    % %::%(%)
-    {
-        throw hresult_not_implemented();
-    }
-)xyz";
-
-extern char const write_module_factory_activate_instance[] = R"xyz(
-    Windows::Foundation::IInspectable ActivateInstance() const
-    {
-        return make<T>();
-    }
-)xyz";
-
-extern char const write_module_factory_activate_instance_not_implemented[] = R"xyz(
-    Windows::Foundation::IInspectable ActivateInstance() const
-    {
-        throw hresult_not_implemented();
-    }
-)xyz";
-
-extern char const write_module_factory_forwarding_constructor[] = R"xyz(
-    % %(%)
-    {
-        return make<T>(%);
-    }
-)xyz";
-
-extern char const write_module_factory_forwarding_static[] = R"xyz(
-    % %(%)
-    {
-        %T::%(%);
-    }
-)xyz";
-
-extern char const write_module_interface_method_definition[] = R"xyz(
-    % %::%(%)
-    {
-        throw hresult_not_implemented();
-    }
-)xyz";
-
-extern char const write_module_lock_declaration[] = R"xyz(
-struct module_lock
-{
-    module_lock();
-    ~module_lock();
-};
-)xyz";
-
-extern char const write_module_source[] = R"xyz(%
-namespace winrt::impl
-{
-    namespace
-    {
-        std::atomic<uint32_t> s_module_lock{};
-    }
-
-    module_lock::module_lock()
-    {
-        ++s_module_lock;
-    }
-
-    module_lock::~module_lock()
-    {
-        --s_module_lock;
-    }
-}
-
-using namespace winrt;
-using namespace Windows::Foundation;
-
-HRESULT __stdcall DllCanUnloadNow()
-{
-    return impl::s_module_lock ? S_FALSE : S_OK;
-}
-
-HRESULT __stdcall DllGetActivationFactory(HSTRING classId, ::IUnknown** factory)
-{
-    try
-    {
-        wchar_t const* const name = WindowsGetStringRawBuffer(classId, nullptr);
-
-       %
-        {
-            throw hresult_class_not_available();
-        }
-
-        return S_OK;
-    }
-    catch (...)
-    {
-        *factory = nullptr;
-        return impl::to_hresult();
-    }
-}
-)xyz";
-
-extern char const write_module_source_empty[] = R"xyz(
-using namespace winrt;
-using namespace Windows::Foundation;
-
-HRESULT __stdcall DllCanUnloadNow()
-{
-    return S_OK;
-}
-
-HRESULT __stdcall DllGetActivationFactory(HSTRING, ::IUnknown** factory)
-{
-    *factory = nullptr;
-    return hresult_class_not_available().to_abi();
-}
 )xyz";
 
 extern char const write_name[] = R"xyz(template <> struct name<%>{ static constexpr auto & value{ L"%" }; };

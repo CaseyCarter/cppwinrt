@@ -40,10 +40,10 @@ namespace cppwinrt
 
     void write_test(output& out, std::string const& namespace_name, std::vector<meta::type> const& types);
 
-    void write_module_header(std::vector<meta::type const*> const& types);
-    void write_module_source(std::vector<meta::type const*> const& types);
-    void write_module_class_header(meta::type const& type);
-    void write_module_class_source(meta::type const& type);
+    void write_component_header(std::vector<meta::type const*> const& types);
+    void write_component_source(std::vector<meta::type const*> const& types);
+    void write_component_class_header(meta::type const& type);
+    void write_component_class_source(meta::type const& type);
 
     void write_warning_push(output& out);
     void write_warning_pop(output& out);

@@ -28,7 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\code_writer.h" />
-    <ClInclude Include="source\module_writer.h" />
+    <ClInclude Include="source\component_writer.h" />
     <ClInclude Include="source\pch.h" />
     <ClInclude Include="source\platform_writer.h" />
     <ClInclude Include="source\settings.h" />
@@ -153,8 +153,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\code_writer.cpp" />
+    <ClCompile Include="source\component_writer.cpp" />
     <ClCompile Include="source\main_cppwinrt.cpp" />
-    <ClCompile Include="source\module_writer.cpp" />
     <ClCompile Include="source\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">Create</PrecompiledHeader>
