@@ -509,25 +509,29 @@ namespace cppwinrt
             {
                 ++signature;
 
+                std::string param_type = method.token.get_type_name_cursor(signature);
+
                 if (param.in)
                 {
-                    out.write("array_view<% const>(%, % + __%Size)",
-                        bind_output(write_type_name, method.token, signature),
+                    out.write("array_view<% const>(reinterpret_cast<% const *>(%), reinterpret_cast<% const *>(%) + __%Size)",
+                        param_type,
+                        param_type,
                         param.name,
+                        param_type,
                         param.name,
                         param.name);
                 }
                 else if (by_ref)
                 {
                     out.write("detach_abi<%>(__%Size, %)",
-                        bind_output(write_type_name, method.token, signature),
+                        param_type,
                         param.name,
                         param.name);
                 }
                 else
                 {
                     out.write("detach_abi<%>(__%Size, %)",
-                        bind_output(write_type_name, method.token, signature),
+                        param_type,
                         param.name,
                         param.name);
                 }

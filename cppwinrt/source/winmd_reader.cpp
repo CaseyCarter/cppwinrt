@@ -806,7 +806,7 @@ namespace cppwinrt::meta
         }
         else
         {
-            PCCOR_SIGNATURE signature = get_signature();
+            PCCOR_SIGNATURE signature = get_type_spec();
             return get_type_name_cursor(signature);
         }
 
@@ -904,7 +904,7 @@ namespace cppwinrt::meta
     {
         WINRT_ASSERT(is_type_spec());
 
-        auto signature = get_signature();
+        auto signature = get_type_spec();
         CorElementType category = CorSigUncompressElementType(signature);
 
         WINRT_ASSERT(category == ELEMENT_TYPE_GENERICINST);
@@ -1635,7 +1635,7 @@ namespace cppwinrt::meta
         return result;
     }
 
-    PCCOR_SIGNATURE token::get_signature() const
+    PCCOR_SIGNATURE token::get_type_spec() const
     {
         WINRT_ASSERT(is_type_spec());
 

@@ -83,7 +83,7 @@ namespace cppwinrt::meta
         generator<composable_attribute> enum_composable_attributes() const;
         generator<std::pair<token, std::string>> enum_interface_usings() const;
         std::string get_guid() const;
-        PCCOR_SIGNATURE get_signature() const;
+        PCCOR_SIGNATURE get_type_spec() const;
     };
 
     inline bool operator==(token left, token right) noexcept
