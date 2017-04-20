@@ -1518,6 +1518,7 @@ namespace cppwinrt::meta
         ULONG actual_name_size{};
         PCCOR_SIGNATURE signature{};
         name_converter converter;
+        DWORD flags{};
 
         for (token member_token : EnumMembers())
         {
@@ -1528,7 +1529,7 @@ namespace cppwinrt::meta
                 name_buffer.data(),
                 max_name_size,
                 &actual_name_size,
-                nullptr,
+                &flags,
                 &signature,
                 nullptr,
                 nullptr,
@@ -1542,7 +1543,7 @@ namespace cppwinrt::meta
             CorSigUncompressCallingConv(signature); // Skip preamble
             CorSigUncompressData(signature); // Skip param count
 
-            method method{ member_token, std::string(converter) };
+            method method{ member_token, std::string(converter), flags };
             method.token.unpack_method(signature, method.return_type, method.params, callback);
             co_yield std::move(method);
         }

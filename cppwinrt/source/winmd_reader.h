@@ -132,6 +132,7 @@ namespace cppwinrt::meta
     {
         token token;
         std::string name;
+        DWORD flags{};
         param return_type;
         std::vector<param> params;
 

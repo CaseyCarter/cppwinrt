@@ -10,18 +10,14 @@ namespace cppwinrt
 {
     namespace
     {
-        std::string_view get_method_name(std::string_view name)
+        std::string get_method_name(meta::method const& method)
         {
-            size_t const pos = name.find('_');
+            if (IsMdSpecialName(method.flags))
+            {
+                return method.name.substr(method.name.find('_') + 1);
+            }
 
-            if (pos == std::string_view::npos)
-            {
-                return name;
-            }
-            else
-            {
-                return name.substr(pos + 1);
-            }
+            return method.name;
         }
 
         void write_impl_name(output& out, std::string_view code_name)
@@ -633,7 +629,7 @@ namespace cppwinrt
                 out.write(strings::write_interface_method_declaration,
                     bind_output(write_deprecated, method.token),
                     bind_output(write_return_type, method),
-                    get_method_name(method.name),
+                    get_method_name(method),
                     bind_output(write_params, method));
             }
         }
@@ -666,7 +662,7 @@ namespace cppwinrt
             if (!method.has_return_type())
             {
                 out.write("this->shim().%(%)",
-                    get_method_name(method.name),
+                    get_method_name(method),
                     bind_output(write_produce_args, method));
 
                 return;
@@ -676,7 +672,7 @@ namespace cppwinrt
 
             out.write("*% = detach_abi(this->shim().%(%))",
                 method.return_type.name,
-                get_method_name(method.name),
+                get_method_name(method),
                 bind_output(write_produce_args, method));
         }
 
@@ -1026,12 +1022,12 @@ namespace cppwinrt
                 out.write(strings::write_static_definition,
                     bind_output(write_return_type, method),
                     type.name(),
-                    get_method_name(method.name),
+                    get_method_name(method),
                     bind_output(write_params, method),
                     method.has_return_type() ? "return " : "",
                     type.name(),
                     factory.get_name(),
-                    get_method_name(method.name),
+                    get_method_name(method),
                     bind_output(write_args, method));
 
                 // TODO: write event method overload if ABI starts with "add_"...
@@ -1159,7 +1155,7 @@ namespace cppwinrt
                     out.write(strings::write_static_method_declaration,
                         bind_output(write_deprecated, method.token),
                         bind_output(write_return_type, method),
-                        get_method_name(method.name),
+                        get_method_name(method),
                         bind_output(write_params, method));
                 }
             }
@@ -1223,7 +1219,7 @@ namespace cppwinrt
                 out.write(strings::write_shim,
                     bind_output(write_return_type, method),
                     bind_output(write_impl_name, type.full_name()),
-                    get_method_name(method.name),
+                    get_method_name(method),
                     bind_output(write_params, method));
 
                 write_shim_body(out, type, method);
@@ -1237,10 +1233,10 @@ namespace cppwinrt
                 out.write(strings::write_interface_override_method_definition,
                     bind_output(write_return_type, method),
                     type.get_simple_name(),
-                    get_method_name(method.name),
+                    get_method_name(method),
                     bind_output(write_params, method),
                     type.get_simple_name(),
-                    get_method_name(method.name),
+                    get_method_name(method),
                     bind_output(write_args, method));
             }
         }
@@ -1251,7 +1247,7 @@ namespace cppwinrt
             {
                 out.write(strings::write_interface_override_method_declaration,
                     bind_output(write_return_type, method),
-                    get_method_name(method.name),
+                    get_method_name(method),
                     bind_output(write_params, method));
             }
         }
@@ -1936,7 +1932,7 @@ namespace cppwinrt
             interface_name);
         for (meta::method const& method : token.enum_methods())
         {
-            auto method_name = get_method_name(method.name);
+            auto method_name = get_method_name(method);
 
             out.write(R"(
     { %o.%%(%); })",
@@ -2239,10 +2235,10 @@ bind_output(write_class_tests, code_namespace, types));
         {
             out.write(strings::write_component_factory_forwarding_static,
                 bind_output(write_return_type, method),
-                get_method_name(method.name),
+                get_method_name(method),
                 bind_output(write_params, method),
                 method.has_return_type() ? "return " : "",
-                get_method_name(method.name),
+                get_method_name(method),
                 bind_output(write_args, method));
         }
     }
@@ -2403,7 +2399,7 @@ bind_output(write_class_tests, code_namespace, types));
         {
             out.write("        static % %(%);\n",
                 bind_output(write_return_type, method),
-                get_method_name(method.name),
+                get_method_name(method),
                 bind_output(write_params, method));
         }
     }
@@ -2472,7 +2468,7 @@ bind_output(write_class_tests, code_namespace, types));
             {
                 out.write("        % %(%);\n",
                     bind_output(write_return_type, method),
-                    get_method_name(method.name),
+                    get_method_name(method),
                     bind_output(write_params, method));
             }
         }
@@ -2509,7 +2505,7 @@ bind_output(write_class_tests, code_namespace, types));
             out.write(strings::write_component_class_static_definition,
                 bind_output(write_return_type, method),
                 type.name(),
-                get_method_name(method.name),
+                get_method_name(method),
                 bind_output(write_params, method));
         }
     }
@@ -2543,7 +2539,7 @@ bind_output(write_class_tests, code_namespace, types));
                 out.write(strings::write_component_interface_method_definition,
                     bind_output(write_return_type, method),
                     type.name(),
-                    get_method_name(method.name),
+                    get_method_name(method),
                     bind_output(write_params, method));
             }
         }
