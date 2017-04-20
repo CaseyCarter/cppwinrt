@@ -92,6 +92,11 @@ TEST_CASE("non-agile event, basic add/remove/invoke")
     BasicTest<non_agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
 }
 
+TEST_CASE("single threaded event, basic add/remove/invoke")
+{
+    BasicTest<single_threaded_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+}
+
 struct event_traits : impl::handle_traits<HANDLE>
 {
     static void close(type value) noexcept

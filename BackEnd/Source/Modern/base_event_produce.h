@@ -256,7 +256,7 @@ namespace impl
 
         event_token get_token(const storage_type & delegate) const noexcept
         {
-            return event_token{ reinterpret_cast<int64_t>(get(delegate)) };
+            return event_token{ reinterpret_cast<int64_t>(get_abi(delegate)) };
         }
 
         no_lock_guard get_swap_guard() const noexcept

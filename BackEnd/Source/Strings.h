@@ -26,7 +26,7 @@ extern char const base_delegate[4642];
 extern char const base_dependencies[2098];
 extern char const base_error[10718];
 extern char const base_event_consume[2611];
-extern char const base_event_produce[9131];
+extern char const base_event_produce[9135];
 extern char const base_foundation[1287];
 extern char const base_handle[3469];
 extern char const base_implements[24796];
