@@ -1088,7 +1088,7 @@ namespace impl
     struct category<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
     {
         using type = pinterface_category<TResult>;
-        static constexpr GUID value{ 0xfcdcf02c, 0xe5d8, 0x4478,{ 0x91, 0x5a, 0x4d, 0x90, 0xb7, 0x4b, 0x83, 0xa5 } };)xyz" R"xyz(
+        static constexpr GUID value{ 0xfcdcf02c, 0xe5d8, 0x4478,{ 0x91, 0x5a, 0x4d, 0x90, 0xb7, 0x4b, 0x83, 0xa5 } };
     };
 
     template <typename TProgress>
@@ -1099,7 +1099,7 @@ namespace impl
 
     template <typename TProgress>
     struct guid<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
-    {
+    {)xyz" R"xyz(
         static constexpr GUID value{ pinterface_guid<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>::value };
     };
 
@@ -1466,7 +1466,7 @@ namespace impl
     void consume_IAsyncInfo<D>::Cancel() const
     {
         check_hresult((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->Cancel());
-    })xyz" R"xyz(
+    }
 
     template <typename D>
     void consume_IAsyncInfo<D>::Close() const
@@ -1485,7 +1485,7 @@ namespace impl
     Windows::Foundation::AsyncActionCompletedHandler consume_IAsyncAction<D>::Completed() const
     {
         Windows::Foundation::AsyncActionCompletedHandler handler{};
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncAction>**)&static_cast<Windows::Foundation::IAsyncAction const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(handler)));
+        check_hresult((*(abi_t<Windows::Foundation::IAsyncAction>**)&static_cast<Windows::Foundation::IAsyncAction const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(handler)));)xyz" R"xyz(
         return handler;
     }
 
@@ -3099,7 +3099,7 @@ namespace impl
     };
 
     template <typename T>
-    struct abi<wfc::VectorChangedEventHandler<T>>)xyz" R"xyz(
+    struct abi<wfc::VectorChangedEventHandler<T>>
     {
         struct __declspec(novtable) type : ::IUnknown
         {
@@ -3112,7 +3112,7 @@ namespace impl
     {
         template <typename H>
         struct type : implements_delegate<wfc::VectorChangedEventHandler<T>, H>
-        {
+        {)xyz" R"xyz(
             type(H&& handler) : implements_delegate<wfc::VectorChangedEventHandler<T>, H>(std::forward<H>(handler)) {}
 
             HRESULT __stdcall Invoke(::IUnknown* sender, ::IUnknown* args) noexcept override
@@ -3545,7 +3545,7 @@ namespace impl
     {
         using type = pinterface_category<K, V>;
         static constexpr GUID value{ 0x3c2925fe, 0x8519, 0x45c1,{ 0xaa, 0x79, 0x19, 0x7b, 0x67, 0x18, 0xc1, 0xc1 } };
-    };)xyz" R"xyz(
+    };
 
     template <typename K, typename V>
     struct guid<wfc::IObservableMap<K, V>>
@@ -3568,7 +3568,7 @@ namespace impl
 
     template <typename T>
     struct fast_iterator
-    {
+    {)xyz" R"xyz(
         using iterator_category = std::input_iterator_tag;
         using value_type = T;
         using difference_type = ptrdiff_t;
@@ -5570,7 +5570,7 @@ namespace impl
             {
                 typename D::abi_guard guard(this->shim());
                 this->shim().Remove(*reinterpret_cast<K const*>(&key));
-                return S_OK;)xyz" R"xyz(
+                return S_OK;
             }
             catch (...)
             {
@@ -5595,7 +5595,7 @@ namespace impl
 
     template <typename D, typename K>
     struct produce<D, wfc::IMapChangedEventArgs<K>> : produce_base<D, wfc::IMapChangedEventArgs<K>>
-    {
+    {)xyz" R"xyz(
         HRESULT __stdcall get_CollectionChange(wfc::CollectionChange* value) noexcept final
         {
             try
@@ -9191,7 +9191,7 @@ private:
 
     HRESULT query_interface(GUID const& id, void** object, std::true_type) noexcept
     {
-        static_assert(is_weak_ref_source::value, "This is only for weak ref support.");)xyz" R"xyz(
+        static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
 
         if (query_interface(id, object, std::false_type{}) == S_OK)
         {
@@ -9210,7 +9210,7 @@ private:
     HRESULT query_interface(GUID const& id, void** object, std::false_type) noexcept
     {
         *object = find_interface<impl::uncloak_t<I> ...>(id);
-
+)xyz" R"xyz(
         if (*object != nullptr)
         {
             AddRef();

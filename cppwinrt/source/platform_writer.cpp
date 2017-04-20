@@ -280,6 +280,7 @@ namespace cppwinrt
             write_delegate_definitions(out, namespace_types);
             write_struct_definitions(out, namespace_types);
             write_class_definitions(out, namespace_types);
+            write_interface_overrides(out, namespace_types);
             out.write_namespace("impl");
             write_winrt_namespace_end(out);
             path interface_path = paths._impl / definition_h;
@@ -302,6 +303,8 @@ namespace cppwinrt
             out.write_namespace(namespace_name);
             write_class_member_definitions(out, namespace_types);
             write_delegate_member_definitions(out, namespace_types);
+            write_interface_override_methods(out, namespace_types);
+            write_class_overrides(out, namespace_types);
             write_winrt_namespace_end(out);
             write_warning_pop(out);
             path namespace_path = paths._public / (namespace_name + ".h");
