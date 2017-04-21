@@ -212,14 +212,6 @@ namespace cppwinrt
             }
         };
 
-        auto write_external_includes = [](output& out, std::map<std::string, std::set<std::string>>& externals)
-        {
-            for (auto& external : externals)
-            {
-                out.write("%.h\n", external.first);
-            }
-        };
-
         auto write_external_forwards = [](output& out, std::map<std::string, std::set<std::string>>& externals)
         {
             for (auto& external : externals)
@@ -230,6 +222,26 @@ namespace cppwinrt
                     out.write("%;\n", forward_type);
                 }
                 out.write("}\n");
+            }
+        };
+
+        auto write_ancestor_includes = [](output& out, std::string namespace_name)
+        {
+            meta::index_type const& index = meta::get_index();
+            std::string parent_namespace = namespace_name;
+            while (true)
+            {
+                auto last_dot = parent_namespace.find_last_of('.');
+                if (last_dot == std::string::npos)
+                {
+                    break;
+                }
+                parent_namespace = parent_namespace.substr(0, last_dot);
+                if (index.find(parent_namespace) == index.end())
+                {
+                    break;
+                }
+                write_include(out, parent_namespace + ".h");
             }
         };
 
@@ -309,6 +321,7 @@ namespace cppwinrt
             out.write("#include \"impl\\complex_structs.h\"\n");
             write_warning_push(out);
             write_includes(out, method_namespaces, definition_ext, std::string("impl\\"));
+            write_ancestor_includes(out, namespace_name);
             write_winrt_namespace_begin(out);
             out.write_namespace("impl");
             write_interface_member_definitions(out, namespace_types);

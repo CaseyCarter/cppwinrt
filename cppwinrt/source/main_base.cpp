@@ -94,7 +94,7 @@ struct Factory : implements<Factory, IActivationFactory>
 int main()
 {
     HRESULT hr = hresult_class_not_available().to_abi();
-
+    hr;
 
     init_apartment();
 

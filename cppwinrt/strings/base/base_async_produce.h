@@ -125,7 +125,7 @@ namespace impl
     template <typename D, typename TProgress>
     struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : produce_base<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>>
     {
-        HRESULT __stdcall put_Progress(arg_in<Windows::Foundation::AsyncActionProgressHandler<TProgress>> handler) noexcept final
+        HRESULT __stdcall put_Progress(::IUnknown* handler) noexcept final
         {
             try
             {
@@ -139,7 +139,7 @@ namespace impl
             }
         }
 
-        HRESULT __stdcall get_Progress(arg_out<Windows::Foundation::AsyncActionProgressHandler<TProgress>> handler) noexcept final
+        HRESULT __stdcall get_Progress(::IUnknown** handler) noexcept final
         {
             try
             {
@@ -154,7 +154,7 @@ namespace impl
             }
         }
 
-        HRESULT __stdcall put_Completed(arg_in<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>> handler) noexcept final
+        HRESULT __stdcall put_Completed(::IUnknown* handler) noexcept final
         {
             try
             {
@@ -168,7 +168,7 @@ namespace impl
             }
         }
 
-        HRESULT __stdcall get_Completed(arg_out<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>> handler) noexcept final
+        HRESULT __stdcall get_Completed(::IUnknown** handler) noexcept final
         {
             try
             {
@@ -183,7 +183,7 @@ namespace impl
             }
         }
 
-        HRESULT __stdcall abi_GetResults() noexcept final
+        HRESULT __stdcall GetResults() noexcept final
         {
             try
             {
@@ -201,7 +201,7 @@ namespace impl
     template <typename D, typename TResult>
     struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<D, Windows::Foundation::IAsyncOperation<TResult>>
     {
-        HRESULT __stdcall put_Completed(arg_in<Windows::Foundation::AsyncOperationCompletedHandler<TResult>> handler) noexcept final
+        HRESULT __stdcall put_Completed(::IUnknown* handler) noexcept final
         {
             try
             {
@@ -215,7 +215,7 @@ namespace impl
             }
         }
 
-        HRESULT __stdcall get_Completed(arg_out<Windows::Foundation::AsyncOperationCompletedHandler<TResult>> handler) noexcept final
+        HRESULT __stdcall get_Completed(::IUnknown** handler) noexcept final
         {
             try
             {
@@ -249,7 +249,7 @@ namespace impl
     template <typename D, typename TResult, typename TProgress>
     struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> : produce_base<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
     {
-        HRESULT __stdcall put_Progress(arg_in<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>> handler) noexcept final
+        HRESULT __stdcall put_Progress(::IUnknown* handler) noexcept final
         {
             try
             {
@@ -263,7 +263,7 @@ namespace impl
             }
         }
 
-        HRESULT __stdcall get_Progress(arg_out<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>> handler) noexcept final
+        HRESULT __stdcall get_Progress(::IUnknown** handler) noexcept final
         {
             try
             {
@@ -278,7 +278,7 @@ namespace impl
             }
         }
 
-        HRESULT __stdcall put_Completed(arg_in<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> handler) noexcept final
+        HRESULT __stdcall put_Completed(::IUnknown* handler) noexcept final
         {
             try
             {
@@ -292,7 +292,7 @@ namespace impl
             }
         }
 
-        HRESULT __stdcall get_Completed(arg_out<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>> handler) noexcept final
+        HRESULT __stdcall get_Completed(::IUnknown** handler) noexcept final
         {
             try
             {
@@ -307,7 +307,7 @@ namespace impl
             }
         }
 
-        HRESULT __stdcall abi_GetResults(arg_out<TResult> results) noexcept final
+        HRESULT __stdcall GetResults(arg_out<TResult> results) noexcept final
         {
             try
             {

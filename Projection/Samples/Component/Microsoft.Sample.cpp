@@ -9,7 +9,7 @@ HRESULT __stdcall DllCanUnloadNow()
     return S_FALSE;
 }
 
-HRESULT __stdcall DllGetActivationFactory(HSTRING classId, abi<IActivationFactory> ** factory)
+HRESULT __stdcall DllGetActivationFactory(HSTRING classId, abi_t<IActivationFactory> ** factory)
 {
     try
     {
@@ -17,7 +17,7 @@ HRESULT __stdcall DllGetActivationFactory(HSTRING classId, abi<IActivationFactor
 
         if (0 == wcscmp(name, L"Microsoft.Sample.Hen"))
         {
-            *factory = detach_abi(make<Microsoft::Sample::HenFactory>());
+            *factory = reinterpret_cast<abi_t<IActivationFactory>*>(detach_abi(make<Microsoft::Sample::HenFactory>()));
         }
         else
         {
