@@ -8,4 +8,5 @@ namespace cppwinrt::settings
     extern bool create_tests;
     extern bool single_header;
     extern bool verbose;
+    extern std::vector<std::string> filters;
 }

@@ -28,6 +28,7 @@ namespace
         in,
         out,
         version,
+        filter,
     };
 
     namespace usage
@@ -109,6 +110,10 @@ namespace
                 {
                     last_option = option::version;
                 }
+                else if (0 == wcscmp(arg, L"f"))
+                {
+                    last_option = option::filter;
+                }
                 else if (0 == wcscmp(arg, L"single"))
                 {
                     settings::single_header = true;
@@ -142,6 +147,11 @@ namespace
             else if (last_option == option::version)
             {
                 settings::platform_version = arg;
+            }
+            else if (last_option == option::filter)
+            {
+                std::wstring filter(arg);
+                settings::filters.emplace_back(filter.begin(), filter.end());
             }
             else
             {
@@ -213,7 +223,6 @@ namespace
         if (usage::command != command::platform && !includes_foundation_input())
         {
             include_win_metadata(true);
-
         }
 
         if (!settings::output.empty())

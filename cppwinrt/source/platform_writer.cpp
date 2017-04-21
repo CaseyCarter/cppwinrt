@@ -88,14 +88,6 @@ namespace cppwinrt
         std::set<std::string> required_namespaces;
         std::map<std::string, std::set<std::string>> required_forwards;
 
-        if (settings::create_tests)
-        {
-            output out(split_header_capacity);
-            write_test(out, namespace_name, namespace_types);
-            path test_path = paths._tests / (namespace_name + ".cpp");
-            out.save_as(test_path.string());
-        }
-
         auto record_namespace = [&](std::set<std::string>& ref_set,
             std::map<std::string, std::set<std::string>>& forwards,
             meta::token const & token)
@@ -153,8 +145,14 @@ namespace cppwinrt
         };
 
         method_namespaces.insert(namespace_name);
+        bool types_found{};
         for (meta::type const & type : namespace_types)
         {
+            if (type.is_filtered())
+            {
+                continue;
+            }
+            types_found = true;
             if (type.is_class() || type.is_interface())
             {
                 for (auto& method : type.token().enum_methods(record_method_namespace))
@@ -174,8 +172,16 @@ namespace cppwinrt
                 }
             }
         }
+        if (!types_found)
+        {
+            return;
+        }
         for (meta::type const & type : namespace_types)
         {
+            if (type.is_filtered())
+            {
+                continue;
+            }
             if (type.is_class() || type.is_interface())
             {
                 token default_interface = type.token().find_default_interface();
@@ -188,6 +194,14 @@ namespace cppwinrt
                     record_namespace(required_namespaces, required_forwards, required_interface);
                 }
             }
+        }
+
+        if (settings::create_tests)
+        {
+            output out(split_header_capacity);
+            write_test(out, namespace_name, namespace_types);
+            path test_path = paths._tests / (namespace_name + ".cpp");
+            out.save_as(test_path.string());
         }
 
         auto write_includes = [](output& out, std::set<std::string> const & refs, std::string const & ext_h, std::string const & rel_path = "")
@@ -347,20 +361,11 @@ namespace cppwinrt
 
         complex_structs complex_structs;
 
-        bool shortcut = false;
-
         std::vector<IAsyncAction> writers(num_writers);
         num_writers = 0;
         writers[num_writers++] = create_base_header(paths);
         for (auto&& item : index)
         {
-            if (shortcut
-                //&& (item.first != "Windows.Foundation")
-                //&& (item.first != "Windows.ApplicationModel.DataTransfer")
-                && (item.first != "Windows.UI.Xaml.Interop")
-                //&& (item.first != "Windows.Storage.Streams")
-                //&& (item.first != "Windows.Storage.Search")
-                ) continue;
             writers[num_writers++] = create_namespace_headers(item.first, item.second, paths, complex_structs);
         }
         writers.resize(num_writers);

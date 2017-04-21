@@ -1409,7 +1409,7 @@ namespace cppwinrt
         {
             for (meta::type const& type : ns.second)
             {
-                if (!type.is_foundational())
+                if (!type.is_filtered())
                 {
                     return true;
                 }
@@ -1657,7 +1657,7 @@ namespace cppwinrt
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1672,7 +1672,7 @@ namespace cppwinrt
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1719,7 +1719,7 @@ namespace cppwinrt
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1739,7 +1739,7 @@ namespace cppwinrt
 
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1765,7 +1765,7 @@ namespace cppwinrt
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1781,7 +1781,7 @@ namespace cppwinrt
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1803,7 +1803,7 @@ namespace cppwinrt
 
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1824,7 +1824,7 @@ namespace cppwinrt
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1840,7 +1840,7 @@ namespace cppwinrt
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1856,7 +1856,7 @@ namespace cppwinrt
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1872,7 +1872,7 @@ namespace cppwinrt
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1888,7 +1888,7 @@ namespace cppwinrt
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -1999,7 +1999,7 @@ class_name,
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -2042,7 +2042,7 @@ bind_output(write_class_tests, code_namespace, types));
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -2058,7 +2058,7 @@ bind_output(write_class_tests, code_namespace, types));
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -2074,7 +2074,7 @@ bind_output(write_class_tests, code_namespace, types));
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -2090,7 +2090,7 @@ bind_output(write_class_tests, code_namespace, types));
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -2108,7 +2108,7 @@ bind_output(write_class_tests, code_namespace, types));
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -2126,7 +2126,7 @@ bind_output(write_class_tests, code_namespace, types));
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -2141,7 +2141,7 @@ bind_output(write_class_tests, code_namespace, types));
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }
@@ -2157,7 +2157,7 @@ bind_output(write_class_tests, code_namespace, types));
     {
         for (meta::type const& type : types)
         {
-            if (type.is_foundational())
+            if (type.is_filtered())
             {
                 continue;
             }

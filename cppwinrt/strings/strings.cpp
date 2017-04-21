@@ -12340,6 +12340,7 @@ Options:
   -in  <path>       Name or location of .winmd files
   -out <path>       Location of resulting source files
   -v   <version>    Version of platform to project
+  -f   <filter>     Prefix to include in projection 
 )xyz";
 
 }

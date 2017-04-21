@@ -30,7 +30,7 @@ namespace cppwinrt
         {
             for (meta::type const& type : ns.second)
             {
-                if (!type.is_foundational())
+                if (!type.is_filtered())
                 {
                     types.push_back(&type);
                 }

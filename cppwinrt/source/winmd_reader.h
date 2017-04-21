@@ -173,7 +173,7 @@ namespace cppwinrt::meta
         bool is_enum() const noexcept;
         bool is_interface() const noexcept;
         bool is_struct() const noexcept;
-        bool is_foundational() const noexcept;
+        bool is_filtered() const noexcept;
 
         token token() const noexcept;
         type_category category() const noexcept;
@@ -193,6 +193,7 @@ namespace cppwinrt::meta
     index_type const& get_index();
     type const* resolve(std::string_view name);
     bool is_foundation_type(std::string_view name);
+    bool is_filtered_type(std::string_view name);
 
     struct factory_attribute
     {

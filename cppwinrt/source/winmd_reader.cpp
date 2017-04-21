@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "winmd_reader.h"
+#include "settings.h"
 
 using namespace std::experimental::filesystem;
 
@@ -10,6 +11,7 @@ namespace cppwinrt::meta
         class database
         {
             winrt::com_ptr<IMetaDataImport2> m_db;
+            bool m_foundational;
             mdToken m_system_class{};
             mdToken m_system_enum{};
             mdToken m_system_struct{};
@@ -22,9 +24,9 @@ namespace cppwinrt::meta
             database& operator=(database const&) = delete;
             database(database&&) = default;
             database& operator=(database&&) = default;
-            explicit database(winrt::com_ptr<IMetaDataImport2>&& db);
+            explicit database(winrt::com_ptr<IMetaDataImport2>&& db, bool foundational);
 
-            generator<type> enum_types(bool foundation) const;
+            generator<type> enum_types() const;
         };
 
         static std::wstring_view const activatable_attribute{ L"Windows.Foundation.Metadata.ActivatableAttribute" };
@@ -170,7 +172,7 @@ namespace cppwinrt::meta
         }
 
         static winrt::com_ptr<IMetaDataDispenser> m_dispenser{ get_dispenser() };
-        static std::vector<std::pair<database, bool>> m_databases;
+        static std::vector<database> m_databases;
         static index_type m_index;
 
         void next_token(PCCOR_SIGNATURE& signature, IMetaDataImport2* db, token_callback callback)
@@ -331,6 +333,24 @@ namespace cppwinrt::meta
         return false;
     }
 
+    bool is_filtered_type(std::string_view name)
+    {
+        if (settings::filters.size() == 0)
+        {
+            return false;
+        }
+
+        for (std::string filter : settings::filters)
+        {
+            if(name.compare(0, filter.length(), filter) == 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     type const* resolve(std::string_view dot_name)
     {
         size_t split = dot_name.find_last_of('.');
@@ -364,9 +384,9 @@ namespace cppwinrt::meta
     {
         std::string name_space;
 
-        for (std::pair<database, bool> const& db : m_databases)
+        for (database const& db : m_databases)
         {
-            for (meta::type const& type : db.first.enum_types(db.second))
+            for (meta::type const& type : db.enum_types())
             {
                 name_space.clear();
 
@@ -409,8 +429,8 @@ namespace cppwinrt::meta
         return m_index;
     }
 
-    database::database(winrt::com_ptr<IMetaDataImport2>&& db) :
-        m_db(std::move(db))
+    database::database(winrt::com_ptr<IMetaDataImport2>&& db, bool foundational) :
+        m_db(std::move(db)), m_foundational(foundational)
     {
         mdToken mscorlib = get_mscorlib(m_db.get());
 
@@ -421,7 +441,7 @@ namespace cppwinrt::meta
         m_system_attribute = find_system_type(m_db, mscorlib, L"System.Attribute");
     }
 
-    generator<type> database::enum_types(bool const foundation) const
+    generator<type> database::enum_types() const
     {
         enum_handle eh{ m_db.get() };
         std::array<mdToken, max_token_count> token_buffer;
@@ -457,16 +477,11 @@ namespace cppwinrt::meta
 
                 WINRT_ASSERT(converter.simple_code_name() != "Windows.Foundation.Deferral");
 
-                bool local_foundation = foundation;
-
-                if (!local_foundation && is_foundation_type(converter))
-                {
-                    local_foundation = true;
-                }
+                bool filtered = m_foundational || is_foundation_type(converter) || is_filtered_type(converter);
 
                 if (flags& tdInterface)
                 {
-                    co_yield type{ token, type_category::interface_v, local_foundation, converter.code_name() };
+                    co_yield type{ token, type_category::interface_v, filtered, converter.code_name() };
                 }
                 else if (extends == m_system_attribute)
                 {
@@ -474,11 +489,11 @@ namespace cppwinrt::meta
                 }
                 else if (extends == m_system_class)
                 {
-                    co_yield type{ token, type_category::class_v, local_foundation, converter.code_name() };
+                    co_yield type{ token, type_category::class_v, filtered, converter.code_name() };
                 }
                 else if (extends == m_system_enum)
                 {
-                    co_yield type{ token, type_category::enum_v, local_foundation, converter.code_name() };
+                    co_yield type{ token, type_category::enum_v, filtered, converter.code_name() };
                 }
                 else if (extends == m_system_struct)
                 {
@@ -487,15 +502,15 @@ namespace cppwinrt::meta
                         continue;
                     }
 
-                    co_yield type{ token, type_category::struct_v, local_foundation, converter.code_name() };
+                    co_yield type{ token, type_category::struct_v, filtered, converter.code_name() };
                 }
                 else if (extends == m_system_delegate)
                 {
-                    co_yield type{ token, type_category::delegate_v, local_foundation, converter.code_name() };
+                    co_yield type{ token, type_category::delegate_v, filtered, converter.code_name() };
                 }
                 else
                 {
-                    co_yield type{ token, type_category::class_v, local_foundation, converter.code_name(),{ extends, m_db.get() } };
+                    co_yield type{ token, type_category::class_v, filtered, converter.code_name(),{ extends, m_db.get() } };
                 }
             }
         }
@@ -549,7 +564,7 @@ namespace cppwinrt::meta
         return m_category == type_category::struct_v;
     }
 
-    bool type::is_foundational() const noexcept
+    bool type::is_filtered() const noexcept
     {
         return m_foundation;
     }
