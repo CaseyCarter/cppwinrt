@@ -20,6 +20,17 @@ namespace cppwinrt
             return method.name;
         }
 
+        bool is_event_method(meta::method const& method)
+        {
+            if (IsMdSpecialName(method.flags))
+            {
+                static const std::string event_prefix{ "add_" };
+                return (method.name.substr(0, event_prefix.length()).compare(event_prefix) == 0);
+            }
+
+            return false;
+        }
+
         void write_impl_name(output& out, std::string_view code_name)
         {
             for (std::string_view::iterator c = code_name.begin(); c != code_name.end(); ++c)
@@ -622,7 +633,7 @@ namespace cppwinrt
             }
         }
 
-        void write_interface_method_declarations(output& out, meta::token token)
+        void write_interface_method_declarations(output& out, std::string_view full_name, meta::token token)
         {
             for (meta::method const& method : token.enum_methods())
             {
@@ -631,6 +642,17 @@ namespace cppwinrt
                     bind_output(write_return_type, method),
                     get_method_name(method),
                     bind_output(write_params, method));
+
+                if(is_event_method(method))
+                {
+                    out.write(strings::write_interface_event_declaration,
+                        get_method_name(method),
+                        full_name,
+                        bind_output(write_deprecated, method.token),
+                        get_method_name(method),
+                        get_method_name(method),
+                        bind_output(write_params, method));
+                }
             }
         }
 
@@ -652,7 +674,7 @@ namespace cppwinrt
         {
             out.write(strings::write_interface_consume,
                 bind_output(write_impl_name, type.full_name()),
-                bind_output(write_interface_method_declarations, type.token()),
+                bind_output(write_interface_method_declarations, type.full_name(), type.token()),
                 type.full_name(),
                 bind_output(write_impl_name, type.full_name()));
         }
@@ -1030,7 +1052,20 @@ namespace cppwinrt
                     get_method_name(method),
                     bind_output(write_args, method));
 
-                // TODO: write event method overload if ABI starts with "add_"...
+                if (is_event_method(method))
+                {
+                    out.write(strings::write_static_event_definition,
+                        factory.get_name(),
+                        type.name(),
+                        get_method_name(method),
+                        bind_output(write_params, method),
+                        type.name(),
+                        factory.get_name(),
+                        factory.get_name(),
+                        get_method_name(method),
+                        get_method_name(method),
+                        bind_output(write_args, method));
+                }
             }
         }
 
@@ -1157,6 +1192,17 @@ namespace cppwinrt
                         bind_output(write_return_type, method),
                         get_method_name(method),
                         bind_output(write_params, method));
+                    
+                    if (is_event_method(method))
+                    {
+                        out.write(strings::write_static_event_declaration,
+                            get_method_name(method),
+                            factory.get_name(),
+                            bind_output(write_deprecated, method.token),
+                            get_method_name(method),
+                            get_method_name(method),
+                            bind_output(write_params, method));
+                    }
                 }
             }
         }
@@ -1223,6 +1269,20 @@ namespace cppwinrt
                     bind_output(write_params, method));
 
                 write_shim_body(out, type, method);
+
+                if (is_event_method(method))
+                {
+                    out.write(strings::write_interface_event_definition,
+                        type.full_name(),
+                        bind_output(write_impl_name, type.full_name()),
+                        get_method_name(method),
+                        bind_output(write_params, method),
+                        type.full_name(),
+                        type.full_name(),
+                        get_method_name(method),
+                        get_method_name(method),
+                        bind_output(write_args, method));
+                }
             }
         }
 

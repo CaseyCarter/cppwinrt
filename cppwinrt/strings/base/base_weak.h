@@ -3,11 +3,11 @@ namespace impl
 {
     struct __declspec(uuid("00000037-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReference : ::IUnknown
     {
-        virtual HRESULT __stdcall Resolve(GUID const& iid, IInspectable** objectReference) = 0;
+        virtual HRESULT __stdcall Resolve(GUID const& iid, ::IInspectable** objectReference) = 0;
 
         template <typename Qi> HRESULT __stdcall Resolve(Qi** objectReference) noexcept
         {
-            return Resolve(__uuidof(Qi), reinterpret_cast<IInspectable**>(objectReference));
+            return Resolve(__uuidof(Qi), reinterpret_cast<::IInspectable**>(objectReference));
         }
     };
 

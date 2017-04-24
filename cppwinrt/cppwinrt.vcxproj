@@ -115,6 +115,8 @@
     <ClInclude Include="strings\write\write_interface_abi_method.h" />
     <ClInclude Include="strings\write\write_interface_consume.h" />
     <ClInclude Include="strings\write\write_interface_definition.h" />
+    <ClInclude Include="strings\write\write_interface_event_declaration.h" />
+    <ClInclude Include="strings\write\write_interface_event_definition.h" />
     <ClInclude Include="strings\write\write_interface_method_declaration.h" />
     <ClInclude Include="strings\write\write_interface_override.h" />
     <ClInclude Include="strings\write\write_interface_override_method.h" />
@@ -146,6 +148,8 @@
     <ClInclude Include="strings\write\write_shim_pre_nullptr.h" />
     <ClInclude Include="strings\write\write_static_class_definition.h" />
     <ClInclude Include="strings\write\write_static_definition.h" />
+    <ClInclude Include="strings\write\write_static_event_declaration.h" />
+    <ClInclude Include="strings\write\write_static_event_definition.h" />
     <ClInclude Include="strings\write\write_static_method_declaration.h" />
     <ClInclude Include="strings\write\write_struct_abi.h" />
     <ClInclude Include="strings\write\write_struct_definition.h" />

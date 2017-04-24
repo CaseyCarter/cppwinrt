@@ -8022,7 +8022,7 @@ struct event_revoker
 
         if (I object = m_object.get())
         {
-            ((*get_abi(object)).*(m_method))(m_token);
+            ((reinterpret_cast<abi_t<I> &>(object)).*(m_method))(m_token);
         }
 
         m_object = nullptr;
@@ -8064,7 +8064,7 @@ struct factory_event_revoker
             return;
         }
 
-        ((*get_abi(m_object)).*(m_method))(m_token);
+        ((reinterpret_cast<abi_t<I> &>(m_object)).*(m_method))(m_token);
         m_object = nullptr;
     }
 
@@ -11405,11 +11405,11 @@ namespace impl
 {
     struct __declspec(uuid("00000037-0000-0000-C000-000000000046")) __declspec(novtable) IWeakReference : ::IUnknown
     {
-        virtual HRESULT __stdcall Resolve(GUID const& iid, IInspectable** objectReference) = 0;
+        virtual HRESULT __stdcall Resolve(GUID const& iid, ::IInspectable** objectReference) = 0;
 
         template <typename Qi> HRESULT __stdcall Resolve(Qi** objectReference) noexcept
         {
-            return Resolve(__uuidof(Qi), reinterpret_cast<IInspectable**>(objectReference));
+            return Resolve(__uuidof(Qi), reinterpret_cast<::IInspectable**>(objectReference));
         }
     };
 
@@ -12190,6 +12190,17 @@ struct %% :
 %};
 )xyz";
 
+extern char const write_interface_event_declaration[] = R"xyz(    using %_revoker = event_revoker<%>;
+    %%_revoker %(auto_revoke_t, %) const;
+)xyz";
+
+extern char const write_interface_event_definition[] = R"xyz(
+template <typename D> event_revoker<%> consume_%<D>::%(auto_revoke_t, %) const
+{
+    return impl::make_event_revoker<D, %>(this, &abi_t<%>::remove_%, %(%));
+}
+)xyz";
+
 extern char const write_interface_method_declaration[] = R"xyz(    %% %(%) const;
 )xyz";
 
@@ -12289,6 +12300,18 @@ extern char const write_static_definition[] = R"xyz(
 inline % %::%(%)
 {
     %get_activation_factory<%, %>().%(%);
+}
+)xyz";
+
+extern char const write_static_event_declaration[] = R"xyz(    using %_revoker = factory_event_revoker<%>;
+    %static %_revoker %(auto_revoke_t, %);
+)xyz";
+
+extern char const write_static_event_definition[] = R"xyz(
+inline factory_event_revoker<%> %::%(auto_revoke_t, %)
+{
+    auto factory = get_activation_factory<%, %>();
+    return { factory, &abi_t<%>::remove_%, factory.%(%) };
 }
 )xyz";
 

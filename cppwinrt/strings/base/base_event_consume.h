@@ -43,7 +43,7 @@ struct event_revoker
 
         if (I object = m_object.get())
         {
-            ((*get_abi(object)).*(m_method))(m_token);
+            ((reinterpret_cast<abi_t<I> &>(object)).*(m_method))(m_token);
         }
 
         m_object = nullptr;
@@ -85,7 +85,7 @@ struct factory_event_revoker
             return;
         }
 
-        ((*get_abi(m_object)).*(m_method))(m_token);
+        ((reinterpret_cast<abi_t<I> &>(m_object)).*(m_method))(m_token);
         m_object = nullptr;
     }
 

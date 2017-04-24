@@ -188,6 +188,10 @@ extern char const write_interface_consume[];
 
 extern char const write_interface_definition[];
 
+extern char const write_interface_event_declaration[];
+
+extern char const write_interface_event_definition[];
+
 extern char const write_interface_method_declaration[];
 
 extern char const write_interface_method_test[];
@@ -225,6 +229,10 @@ extern char const write_shim_pre_nullptr[];
 extern char const write_static_class_definition[];
 
 extern char const write_static_definition[];
+
+extern char const write_static_event_declaration[];
+
+extern char const write_static_event_definition[];
 
 extern char const write_static_method_declaration[];
 

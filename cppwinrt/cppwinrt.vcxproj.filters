@@ -369,6 +369,18 @@
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="source\component_writer.h" />
+    <ClInclude Include="strings\write\write_interface_event_declaration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_event_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_static_event_declaration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_static_event_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">
