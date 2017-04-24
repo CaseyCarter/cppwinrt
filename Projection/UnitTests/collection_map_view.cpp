@@ -1,0 +1,108 @@
+#include "pch.h"
+#include "catch.hpp"
+
+namespace winrt::ABI::Windows::Foundation::Collections
+{
+    template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b61")) __declspec(novtable) IKeyValuePair<int, int> : impl_IKeyValuePair<int, int> {};
+    template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b62")) __declspec(novtable) IIterator<IKeyValuePair<int, int>> : impl_IIterator<IKeyValuePair<int, int>> {};
+    template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b63")) __declspec(novtable) IIterable<IKeyValuePair<int, int>> : impl_IIterable<IKeyValuePair<int, int>> {};
+    template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b65")) __declspec(novtable) IMapView<int, int> : impl_IMapView<int, int> {};
+    template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b66")) __declspec(novtable) IMap<int, int> : impl_IMap<int, int> {};
+}
+
+using namespace winrt;
+using namespace Windows::Foundation::Collections;
+
+namespace
+{
+    template <typename T>
+    auto make_copy(T const & param)
+    {
+        T::interface_type copy;
+        copy_from_abi(copy, get_abi(param));
+        return copy;
+    }
+
+    void test_empty_map_view(map_view<int, int> param)
+    {
+        auto values = make_copy(param);
+        REQUIRE(values.Size() == 0);
+    }
+
+    void test_null_map_view(map_view<int, int> param)
+    {
+        auto values = make_copy(param);
+        REQUIRE(values == nullptr);
+    }
+
+    IMapView<int, int> test_map_view_scope(map_view<int, int> param)
+    {
+        return make_copy(param);
+    }
+
+    void test_map_view(map_view<int, int> param)
+    {
+        IMapView<int, int> values = make_copy(param);
+
+        REQUIRE(3 == values.Size());
+
+        REQUIRE(10 == values.Lookup(1));
+        REQUIRE(20 == values.Lookup(2));
+        REQUIRE(30 == values.Lookup(3));
+        REQUIRE_THROWS_AS(values.Lookup(4), hresult_out_of_bounds);
+
+        REQUIRE(values.HasKey(1));
+        REQUIRE(values.HasKey(2));
+        REQUIRE(values.HasKey(3));
+        REQUIRE(!values.HasKey(4));
+
+        IMapView<int, int> left, right;
+        values.Split(left, right);
+        REQUIRE(left == nullptr);
+        REQUIRE(right == nullptr);
+    }
+
+    struct viewable
+    {
+        IMapView<int, int> view{ single_threaded_map<int, int>(std::map<int, int>{ { 1,10 },{ 2,20 },{ 3,30 } }).GetView() };
+
+        operator IMapView<int, int>() const
+        {
+            return view;
+        }
+    };
+}
+
+TEST_CASE("test_map_view")
+{
+    test_empty_map_view({});
+    test_null_map_view(nullptr);
+
+    // initializer_list
+    test_map_view({ { 1,10 },{ 2,20 },{ 3,30 } });
+
+    // std::map/unordered_map rvalue
+    test_map_view(std::map<int, int>{ { 1, 10 }, { 2,20 }, { 3,30 } });
+    test_map_view(std::unordered_map<int, int>{ { 1, 10 }, { 2,20 }, { 3,30 } });
+
+    // std::map/unordered_map lvalue
+    std::map<int, int> local_map{ { 1, 10 },{ 2,20 },{ 3,30 } };
+    test_map_view(local_map);
+    std::unordered_map<int, int> local_unordered_map{ { 1, 10 },{ 2,20 },{ 3,30 } };
+    test_map_view(local_unordered_map);
+
+    // WinRT interface
+    IMapView<int, int> view = single_threaded_map<int, int>(std::map<int, int>{ { 1, 10 }, { 2,20 }, { 3,30 } }).GetView();
+    test_map_view(view);
+
+    // Convertible WinRT interface
+    test_map_view(viewable());
+}
+
+TEST_CASE("test_map_view_scope")
+{
+    std::map<int, int> local{ { 1, 10 },{ 2,20 },{ 3,30 } };
+    IMapView<int, int> a = test_map_view_scope(local);
+    REQUIRE_THROWS_AS(a.First(), hresult_illegal_method_call);
+}
+

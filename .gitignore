@@ -7,6 +7,9 @@
 *_h.h
 *.c
 *.user
+*.output
+*.zip
+*.appx
 
 x86
 x64
@@ -17,3 +20,7 @@ packages
 debug
 release
 .vs
+DevProjection
+
+cppwinrt/strings/strings.h
+cppwinrt/strings/strings.cpp

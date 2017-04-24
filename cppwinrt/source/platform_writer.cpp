@@ -28,7 +28,7 @@ namespace cppwinrt
             _root(settings::output),
             _public(_root / "winrt"),
             _impl(_public / "impl"),
-            _tests(_root / "tests")
+            _tests(_root / "CompileTests")
         {
             create_directories(_impl);
             if (settings::create_tests)

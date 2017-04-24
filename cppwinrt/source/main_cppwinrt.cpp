@@ -174,9 +174,12 @@ namespace
     {
         for (auto&& input : usage::input)
         {
-            if (is_directory(input.first))
+            path input_path(input.first);
+            input_path = absolute(input_path);
+            input_path = canonical(input_path);
+            if (is_directory(input_path.c_str()))
             {
-                for (directory_entry const& item : recursive_directory_iterator(input.first))
+                for (directory_entry const& item : recursive_directory_iterator(input_path.c_str()))
                 {
                     if (is_winmd(item.path()))
                     {
@@ -184,9 +187,9 @@ namespace
                     }
                 }
             }
-            else if (is_winmd(input.first))
+            else if (is_winmd(input_path.c_str()))
             {
-                co_yield input;
+                co_yield{ input_path, input.second };
             }
             else
             {
@@ -225,17 +228,9 @@ namespace
             include_win_metadata(true);
         }
 
-        if (!settings::output.empty())
-        {
-            create_directories(settings::output); // fs::canonical requires the folder to exist...
-            settings::output = canonical(settings::output);
-        }
-        else
-        {
-            std::array<wchar_t, MAX_PATH> path;
-            check_win32_bool(GetCurrentDirectory(MAX_PATH, path.data()));
-            settings::output = path.data();
-        }
+        settings::output = absolute(settings::output);
+        create_directories(settings::output); // fs::canonical requires the folder to exist...
+        settings::output = canonical(settings::output);
 
         for (std::pair<std::wstring, bool> const& file : enum_winmd_files())
         {
