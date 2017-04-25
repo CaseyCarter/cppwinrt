@@ -73,4 +73,14 @@ namespace impl
     {
         using type = struct_category<float, float>;
     };
+    
+    template <> struct name<Windows::Foundation::Rect>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Rect" };
+    };
+
+    template <> struct category<Windows::Foundation::Rect>
+    {
+        using type = struct_category<float, float, float, float>;
+    };
 }
