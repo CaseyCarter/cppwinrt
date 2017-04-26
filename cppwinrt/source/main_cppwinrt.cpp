@@ -1,4 +1,5 @@
 #include "pch.h"
+#include <fstream>
 #include "text_writer.h"
 #include "code_writer.h"
 #include "winmd_reader.h"
@@ -38,10 +39,37 @@ namespace
         std::vector<std::pair<std::wstring, bool>> input;
     }
 
-    std::experimental::generator<wchar_t const*> enum_args(int const argc, wchar_t** argv)
+    std::experimental::generator<std::wstring> enum_args(int const argc, wchar_t** argv);
+
+    std::experimental::generator<std::wstring> enum_response_file(path response_path)
+    {
+        std::array<wchar_t, 8192> line_buf;
+        std::wifstream response_file(absolute(response_path).c_str());
+        while (response_file.getline(line_buf.data(), line_buf.size()))
+        {
+            int argc;
+            wchar_t** argv;
+            argv = CommandLineToArgvW(line_buf.data(), &argc);
+            winrt::impl::check_pointer(argv);
+            for (auto arg : enum_args(argc, argv))
+            {
+                co_yield arg;
+            }
+        }
+    }
+
+    std::experimental::generator<std::wstring> enum_args(int const argc, wchar_t** argv)
     {
         for (int i = 0; i < argc; ++i)
         {
+            if (argv[i][0] == L'@')
+            {
+                for (auto& arg : enum_response_file(argv[i] + 1))
+                {
+                    co_yield arg;
+                }
+                continue;
+            }
             co_yield argv[i];
         }
     }
@@ -65,66 +93,85 @@ namespace
             return false;
         }
 
-        if (0 == wcscmp(argv[1], L"platform"))
-        {
-            if (usage::command == command::none)
-            {
-                usage::command = command::platform;
-            }
-            else if (usage::command != command::platform)
-            {
-                usage::platform_input = true;
-            }
-        }
-        else if (0 == wcscmp(argv[1], L"header"))
-        {
-            usage::command = command::header;
-        }
-        else if (0 == wcscmp(argv[1], L"component"))
-        {
-            usage::command = command::component;
-        }
-        else
-        {
-            throw invalid_usage();
-        }
-
         option last_option{};
 
-        for (wchar_t const* arg : enum_args(argc - 2, argv + 2))
+        for (auto arg_str : enum_args(argc - 1, argv + 1))
         {
-            if (arg[0] == '/' || arg[0] == '-')
-            {
-                ++arg;
-                last_option = option::none;
+            auto arg = arg_str.c_str();
 
-                if (0 == wcscmp(arg, L"in"))
+            if (last_option == option::none)
+            {
+                if (arg[0] == '/' || arg[0] == '-')
                 {
-                    last_option = option::in;
+                    ++arg;
+                    if (0 == wcscmp(arg, L"in"))
+                    {
+                        if (usage::command == command::none)
+                        {
+                            throw invalid_usage();
+                        }
+                        last_option = option::in;
+                    }
+                    else if (0 == wcscmp(arg, L"out"))
+                    {
+                        last_option = option::out;
+                    }
+                    else if (0 == wcscmp(arg, L"v"))
+                    {
+                        if (usage::command == command::none)
+                        {
+                            throw invalid_usage();
+                        }
+                        last_option = option::version;
+                    }
+                    else if (0 == wcscmp(arg, L"f"))
+                    {
+                        last_option = option::filter;
+                    }
+                    else if (0 == wcscmp(arg, L"single"))
+                    {
+                        settings::single_header = true;
+                    }
+                    else if (0 == wcscmp(arg, L"tests"))
+                    {
+                        settings::create_tests = true;
+                    }
+                    else if (0 == wcscmp(arg, L"verbose"))
+                    {
+                        settings::verbose = true;
+                    }
+                    else
+                    {
+                        throw invalid_usage();
+                    }
+                    continue;
                 }
-                else if (0 == wcscmp(arg, L"out"))
+
+                command command_arg{};
+                if (0 == wcscmp(arg, L"platform"))
                 {
-                    last_option = option::out;
+                    command_arg = command::platform;
                 }
-                else if (0 == wcscmp(arg, L"v"))
+                else if (0 == wcscmp(arg, L"header"))
                 {
-                    last_option = option::version;
+                    command_arg = command::header;
                 }
-                else if (0 == wcscmp(arg, L"f"))
+                else if (0 == wcscmp(arg, L"component"))
                 {
-                    last_option = option::filter;
+                    command_arg = command::component;
                 }
-                else if (0 == wcscmp(arg, L"single"))
+                else
                 {
-                    settings::single_header = true;
+                    throw invalid_usage();
                 }
-                else if (0 == wcscmp(arg, L"tests"))
+
+                if (usage::command == command::none)
                 {
-                    settings::create_tests = true;
+                    usage::command = command_arg;
                 }
-                else if (0 == wcscmp(arg, L"verbose"))
+                else if ((command_arg == command::platform) && (usage::command != command::platform))
                 {
-                    settings::verbose = true;
+                    usage::platform_input = true;
                 }
                 else if (0 == wcscmp(arg, L"overwrite"))
                 {
@@ -134,14 +181,15 @@ namespace
                 {
                     throw invalid_usage();
                 }
+                continue;
             }
-            else if (last_option == option::in)
+
+            if (last_option == option::in)
             {
                 if (usage::command != command::platform && settings::first_input.empty())
                 {
                     settings::first_input = arg;
                 }
-
                 usage::input.emplace_back(arg, usage::platform_input);
             }
             else if (last_option == option::out)
@@ -161,6 +209,8 @@ namespace
             {
                 throw invalid_usage();
             }
+
+            last_option = option::none;
         }
 
         return true;
@@ -216,7 +266,7 @@ namespace
     void include_win_metadata(bool foundation)
     {
         std::array<wchar_t, MAX_PATH> path;
-        check_win32_bool(ExpandEnvironmentStrings(L"%windir%\\System32\\WinMetadata", path.data(), MAX_PATH));
+        check_win32_bool(ExpandEnvironmentStrings(L"%windir%\\System32\\WinMetadata", path.data(), static_cast<DWORD>(path.size())));
         usage::input.emplace_back(path.data(), foundation);
     }
 
