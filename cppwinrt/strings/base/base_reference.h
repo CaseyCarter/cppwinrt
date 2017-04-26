@@ -6,6 +6,15 @@ namespace Windows::Foundation
 
 namespace impl
 {
+    template <typename T>
+    struct abi<Windows::Foundation::IReference<T>>
+    {
+        struct __declspec(novtable) type : ::IInspectable
+        {
+            virtual HRESULT __stdcall get_Value(arg_out<T> value) = 0;
+        };
+    };
+
     template <typename D, typename T>
     struct consume_IReference
     {
@@ -15,15 +24,6 @@ namespace impl
             check_hresult((*(abi_t<Windows::Foundation::IReference<T>>**)&static_cast<const Windows::Foundation::IReference<T>&>(static_cast<const D&>(*this)))->get_Value(put_abi(result)));
             return result;
         }
-    };
-
-    template <typename T>
-    struct abi<Windows::Foundation::IReference<T>>
-    {
-        struct __declspec(novtable) type : ::IInspectable
-        {
-            virtual HRESULT __stdcall get_Value(arg_out<T> value) = 0;
-        };
     };
 
     template <typename T>

@@ -9,4 +9,5 @@ namespace cppwinrt::settings
     extern bool single_header;
     extern bool verbose;
     extern std::vector<std::string> filters;
+    extern bool overwrite;
 }

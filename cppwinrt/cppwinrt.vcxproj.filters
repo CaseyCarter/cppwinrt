@@ -266,12 +266,6 @@
     <ClInclude Include="strings\write\write_logo.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_module_class_activation.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_module_source.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
     <ClInclude Include="strings\write\write_name.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -314,24 +308,6 @@
     <ClInclude Include="strings\write\write_using.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_module_class_header.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_module_class_source.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_module_class_base.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_module_factory_activate_instance.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_module_factory_activate_instance_not_implemented.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_module_interface_method_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
     <ClInclude Include="strings\write\write_class_override.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -350,35 +326,59 @@
     <ClInclude Include="strings\write\write_interface_override_method.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_module_factory_forwarding_constructor.h">
+    <ClInclude Include="strings\write\write_interface_override_method_declaration.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_module_factory_forwarding_static.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_module_class_constructor_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_module_class_static_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_module_lock_declaration.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_module_source_empty.h">
+    <ClInclude Include="strings\write\write_interface_override_method_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="source\component_writer.h" />
-    <ClInclude Include="strings\write\write_interface_event_declaration.h">
+    <ClInclude Include="strings\write\write_component_class_activation.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_interface_event_definition.h">
+    <ClInclude Include="strings\write\write_component_class_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_static_event_declaration.h">
+    <ClInclude Include="strings\write\write_component_class_constructor_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_static_event_definition.h">
+    <ClInclude Include="strings\write\write_component_class_factory_base.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_header.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_source.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_static_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_factory_activate_instance.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_factory_activate_instance_not_implemented.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_factory_forwarding_constructor.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_factory_forwarding_static.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_interface_method_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_lock_declaration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_source.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_source_empty.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_static_class_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
   </ItemGroup>

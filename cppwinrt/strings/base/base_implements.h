@@ -269,7 +269,7 @@ namespace impl
         static com_ptr<IMarshal> get_marshaler() noexcept
         {
             com_ptr<::IUnknown> unknown;
-            CoCreateFreeThreadedMarshaler(nullptr, put_abi(unknown));
+            WINRT_VERIFY_(S_OK, CoCreateFreeThreadedMarshaler(nullptr, put_abi(unknown)));
             return unknown ? unknown.try_as<IMarshal>() : nullptr;
         }
     };

@@ -32,6 +32,17 @@ namespace cppwinrt::meta
     struct factory_attribute;
     struct composable_attribute;
 
+    struct signature
+    {
+        PCCOR_SIGNATURE data{};
+        IMetaDataImport2* db{};
+
+        // TODO: move token::* methods that works on signatures here since they're not really about the 
+        // token but just need the db...
+    };
+
+    struct required_type;
+
     class token
     {
         mdToken m_handle{};
@@ -41,9 +52,11 @@ namespace cppwinrt::meta
         generator<token> EnumCustomAttributes() const;
         generator<token> EnumMembers() const;
         generator<token> EnumParams() const;
+        token GetInterfaceImplProps() const;
 
         generator<param> enum_param_base() const;
-        void unpack_method(PCCOR_SIGNATURE signature, param& return_type, std::vector<param>& params, token_callback callback = {}) const;
+        void unpack_type_def_method(PCCOR_SIGNATURE signature, param& return_type, std::vector<param>& params, token_callback callback = {}) const;
+        void unpack_type_spec_method(std::vector<meta::signature> const& var_types, PCCOR_SIGNATURE signature, param& return_type, std::vector<param>& params, token_callback callback = {}) const;
 
     public:
 
@@ -62,9 +75,12 @@ namespace cppwinrt::meta
         bool is_interface_impl() const noexcept;
         bool is_field_def() const noexcept;
 
-        std::string get_generic_type_name(PCCOR_SIGNATURE& signature) const;
-        std::string get_type_name_cursor(PCCOR_SIGNATURE& signature) const;
-        std::string get_name(bool dotted = false) const;
+        generator<method> enum_type_def_methods(token_callback callback = {}) const;
+        generator<method> enum_type_spec_methods(std::vector<meta::signature>& var_types, token_callback callback = {}) const;
+
+        std::string get_generic_type_name(PCCOR_SIGNATURE& signature, std::vector<meta::signature> const* var_types = nullptr) const;
+        std::string get_type_name_cursor(PCCOR_SIGNATURE& signature, std::vector<meta::signature> const* var_types = nullptr) const;
+        std::string get_name(bool dotted = false, std::vector<meta::signature> const* var_types = nullptr) const;
         std::string get_simple_name() const;
         token get_abi_token() const;
         bool has_attribute(wchar_t const* const attribute) const noexcept;
@@ -79,17 +95,19 @@ namespace cppwinrt::meta
         std::pair<bool, std::string_view> get_string(wchar_t const* const attribute) const;
         generator<token> enum_required_interfaces(bool const skip_default) const;
         generator<token> enum_override_interfaces() const;
-        generator<factory_attribute> enum_factory_attributes() const;
-        generator<composable_attribute> enum_composable_attributes() const;
-        generator<std::pair<token, std::string>> enum_interface_usings() const;
+        std::vector<factory_attribute> enum_factory_attributes() const;
+        std::vector<composable_attribute> enum_composable_attributes() const;
+        generator<std::pair<std::string, std::string>> enum_interface_usings() const;
         std::string get_guid() const;
         PCCOR_SIGNATURE get_type_spec() const;
+        token get_type_def() const;
+
+        std::vector<required_type> enum_interface_required_types(std::vector<meta::signature> const* var_types) const;
     };
 
     inline bool operator==(token left, token right) noexcept
     {
-        return left.handle() == right.handle() &&
-            left.db() == right.db();
+        return left.handle() == right.handle() && left.db() == right.db();
     }
 
     inline bool operator!=(token left, token right) noexcept
@@ -100,6 +118,27 @@ namespace cppwinrt::meta
     inline bool operator<(token left, token right) noexcept
     {
         return (left.handle() < right.handle() || (!(right.handle() < left.handle()) && left.db() < right.db()));
+    }
+
+    struct required_type
+    {
+        std::string name;
+        token type_def;
+    };
+
+    inline bool operator==(required_type const& left, required_type const& right) noexcept
+    {
+        return left.name == right.name;
+    }
+
+    inline bool operator!=(required_type const& left, required_type const& right) noexcept
+    {
+        return !(left == right);
+    }
+
+    inline bool operator<(required_type const& left, required_type const& right) noexcept
+    {
+        return left.name < right.name;
     }
 
     struct assembly
@@ -182,7 +221,8 @@ namespace cppwinrt::meta
         std::string_view name_space() const noexcept;
         type const* base() const noexcept;
 
-        meta::generator<std::tuple<meta::token, std::string, bool>> enum_class_usings() const;
+        generator<std::tuple<std::string, std::string, bool>> enum_class_usings() const;
+        std::vector<required_type> enum_class_required_types() const;
     };
 
     using index_type = std::map<std::string, std::vector<type>>;
@@ -198,10 +238,7 @@ namespace cppwinrt::meta
     struct factory_attribute
     {
         token factory;
-        uint32_t version;
-        std::optional<int32_t> platform;
-        std::string_view contract;
-        bool activatable;
+        bool activatable{};
         static constexpr std::wstring_view activatable_name{ winrt::to_string_view(L"Windows.Foundation.Metadata.ActivatableAttribute") };
         static constexpr std::wstring_view static_name{ winrt::to_string_view(L"Windows.Foundation.Metadata.StaticAttribute") };
     };
@@ -209,9 +246,6 @@ namespace cppwinrt::meta
     struct composable_attribute
     {
         token factory;
-        uint32_t version;
-        std::optional<int32_t> platform;
-        std::string_view contract;
         enum composition_type
         {
             protected_v = 1,

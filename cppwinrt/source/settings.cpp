@@ -10,4 +10,5 @@ namespace cppwinrt::settings
     bool single_header{};
     bool verbose{};
     std::vector<std::string> filters;
+    bool overwrite{};
 }

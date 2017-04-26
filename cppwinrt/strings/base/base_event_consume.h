@@ -2,6 +2,11 @@
 struct event_token
 {
     int64_t value{};
+
+    explicit operator bool() const noexcept
+    {
+        return value != 0;
+    }
 };
 
 inline bool operator==(event_token const& left, event_token const& right) noexcept
@@ -49,6 +54,11 @@ struct event_revoker
         m_object = nullptr;
     }
 
+    explicit operator bool() const noexcept
+    {
+        return m_object != nullptr;
+    }
+
 private:
 
     weak_ref<I> m_object;
@@ -87,6 +97,11 @@ struct factory_event_revoker
 
         ((reinterpret_cast<abi_t<I> &>(m_object)).*(m_method))(m_token);
         m_object = nullptr;
+    }
+
+    explicit operator bool() const noexcept
+    {
+        return m_object != nullptr;
     }
 
 private:

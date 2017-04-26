@@ -47,9 +47,9 @@ namespace cppwinrt
             }
         }
 
-        void write_type_name(output& out, meta::token token, PCCOR_SIGNATURE signature)
+        void write_type_name(output& out, meta::token token, PCCOR_SIGNATURE signature, std::vector<meta::signature> const* var_types)
         {
-            out.write(token.get_type_name_cursor(signature));
+            out.write(token.get_type_name_cursor(signature, var_types));
         }
 
         void write_generic_type_name(output& out, meta::token token, PCCOR_SIGNATURE& signature)
@@ -278,7 +278,7 @@ namespace cppwinrt
             out.write(" %", param.name);
         }
 
-        void write_param_type(output& out, meta::token token, meta::param const& param)
+        void write_param_type(output& out, meta::token token, meta::param const& param, std::vector<meta::signature> const* var_types)
         {
             PCCOR_SIGNATURE signature = param.signature;
             CorElementType category = static_cast<CorElementType>(*signature);
@@ -295,7 +295,7 @@ namespace cppwinrt
 
             if (category < ELEMENT_TYPE_STRING)
             {
-                write_type_name(out, token, signature);
+                write_type_name(out, token, signature, var_types);
 
                 if (!param.in)
                 {
@@ -320,22 +320,22 @@ namespace cppwinrt
                 if (param.in)
                 {
                     out.write("array_view<% const>",
-                        bind_output(write_type_name, token, signature));
+                        bind_output(write_type_name, token, signature, var_types));
                 }
                 else if (by_ref)
                 {
                     out.write("com_array<%>&",
-                        bind_output(write_type_name, token, signature));
+                        bind_output(write_type_name, token, signature, var_types));
                 }
                 else
                 {
                     out.write("array_view<%>",
-                        bind_output(write_type_name, token, signature));
+                        bind_output(write_type_name, token, signature, var_types));
                 }
             }
             else
             {
-                write_type_name(out, token, signature);
+                write_type_name(out, token, signature, var_types);
 
                 if (param.in)
                 {
@@ -346,10 +346,24 @@ namespace cppwinrt
             }
         }
 
-        void write_param(output& out, meta::token token, meta::param const& param)
+        void write_param(output& out, meta::token token, meta::param const& param, std::vector<meta::signature> const* var_types)
         {
-            write_param_type(out, token, param);
+            write_param_type(out, token, param, var_types);
             out.write(" %", param.name);
+        }
+
+        void write_component_param(output& out, meta::token token, meta::param const& param, std::vector<meta::signature> const* var_types)
+        {
+            CorElementType category = static_cast<CorElementType>(*param.signature);
+
+            if (category == ELEMENT_TYPE_STRING && param.in)
+            {
+                out.write("hstring const& %", param.name);
+            }
+            else
+            {
+                write_param(out, token, param, var_types);
+            }
         }
 
         void write_abi_params(output& out, meta::method const& method)
@@ -548,13 +562,13 @@ namespace cppwinrt
                 if (param.in)
                 {
                     out.write("*reinterpret_cast<% const*>(&%)",
-                        bind_output(write_type_name, method.token, signature),
+                        bind_output(write_type_name, method.token, signature, nullptr),
                         param.name);
                 }
                 else
                 {
                     out.write("*reinterpret_cast<%*>(%)",
-                        bind_output(write_type_name, method.token, signature),
+                        bind_output(write_type_name, method.token, signature, nullptr),
                         param.name);
                 }
             }
@@ -579,7 +593,7 @@ namespace cppwinrt
             }
         }
 
-        void write_return_type(output& out, meta::method const& method)
+        void write_return_type(output& out, meta::method const& method, std::vector<meta::signature> const* var_types)
         {
             PCCOR_SIGNATURE signature = method.return_type.signature;
             CorElementType category = CorSigUncompressElementType(signature);
@@ -587,15 +601,15 @@ namespace cppwinrt
             if (category == ELEMENT_TYPE_SZARRAY)
             {
                 out.write("com_array<%>",
-                    bind_output(write_type_name, method.token, signature));
+                    bind_output(write_type_name, method.token, signature, var_types));
             }
             else
             {
-                write_type_name(out, method.token, method.return_type.signature);
+                write_type_name(out, method.token, method.return_type.signature, var_types);
             }
         }
 
-        void write_params(output& out, meta::method const& method)
+        void write_params(output& out, meta::method const& method, std::vector<meta::signature> const* var_types)
         {
             bool first = true;
 
@@ -610,7 +624,26 @@ namespace cppwinrt
                     out.write(", ");
                 }
 
-                write_param(out, method.token, param);
+                write_param(out, method.token, param, var_types);
+            }
+        }
+
+        void write_component_params(output& out, meta::method const& method, std::vector<meta::signature> const* var_types)
+        {
+            bool first = true;
+
+            for (meta::param const& param : method.params)
+            {
+                if (first)
+                {
+                    first = false;
+                }
+                else
+                {
+                    out.write(", ");
+                }
+
+                write_component_param(out, method.token, param, var_types);
             }
         }
 
@@ -639,9 +672,9 @@ namespace cppwinrt
             {
                 out.write(strings::write_interface_method_declaration,
                     bind_output(write_deprecated, method.token),
-                    bind_output(write_return_type, method),
+                    bind_output(write_return_type, method, nullptr),
                     get_method_name(method),
-                    bind_output(write_params, method));
+                    bind_output(write_params, method, nullptr));
 
                 if(is_event_method(method))
                 {
@@ -651,7 +684,7 @@ namespace cppwinrt
                         bind_output(write_deprecated, method.token),
                         get_method_name(method),
                         get_method_name(method),
-                        bind_output(write_params, method));
+                        bind_output(write_params, method, nullptr));
                 }
             }
         }
@@ -723,65 +756,9 @@ namespace cppwinrt
                 bind_output(write_interface_produce_methods, type));
         }
 
-        void add_required_interfaces(meta::token token, std::vector<std::string> & unique)
+        void write_interface_require(output& out, meta::type const& type)
         {
-            for (meta::token required : token.enum_required_interfaces(false))
-            {
-                std::string required_name = required.get_name();
-
-                if (unique.end() == std::find(unique.begin(), unique.end(), required_name))
-                {
-                    unique.push_back(std::move(required_name));
-                }
-            }
-        }
-
-        void remove_default_required_interfaces(meta::token token, std::vector<std::string> & unique)
-        {
-            if (token.is_type_spec())
-            {
-                // TODO: implement usings for generics
-                //token = token.resolve_generic().token();
-                return;
-            }
-
-            std::vector<std::string>::iterator found = std::find(unique.begin(), unique.end(), token.get_name());
-
-            if (found != unique.end())
-            {
-                unique.erase(found);
-            }
-
-            if (token.is_type_ref())
-            {
-                token = token.resolve().token();
-            }
-
-            for (meta::token required : token.enum_required_interfaces(false))
-            {
-                found = std::find(unique.begin(), unique.end(), required.get_name());
-
-                if (found != unique.end())
-                {
-                    unique.erase(found);
-                }
-            }
-        }
-
-        void write_require(output& out, meta::type const& type, meta::token default_interface)
-        {
-            std::vector<std::string> required;
-            add_required_interfaces(type.token(), required);
-
-            for (meta::type const* next = type.base(); next != nullptr; next = next->base())
-            {
-                add_required_interfaces(next->token(), required);
-            }
-
-            if (default_interface)
-            {
-                remove_default_required_interfaces(default_interface, required);
-            }
+            std::vector<meta::required_type> required = type.token().enum_interface_required_types(nullptr);
 
             if (required.empty())
             {
@@ -791,10 +768,31 @@ namespace cppwinrt
             out.write(strings::write_require,
                 type.name());
 
-            for (std::string const& required_name : required)
+            for (meta::required_type const& required_type : required)
             {
                 out.write(", ");
-                out.write(required_name);
+                out.write(required_type.name);
+            }
+
+            out.write('>');
+        }
+
+        void write_class_require(output& out, meta::type const& type)
+        {
+            std::vector<meta::required_type> required = type.enum_class_required_types();
+
+            if (required.empty())
+            {
+                return;
+            }
+
+            out.write(strings::write_require,
+                type.name());
+
+            for (meta::required_type const& required_type : required)
+            {
+                out.write(", ");
+                out.write(required_type.name);
             }
 
             out.write('>');
@@ -822,22 +820,22 @@ namespace cppwinrt
 
         void write_interface_usings(output& out, meta::type const& type)
         {
-            for (std::pair<meta::token, std::string> const pair : type.token().enum_interface_usings())
+            for (std::pair<std::string, std::string> const& pair : type.token().enum_interface_usings())
             {
                 out.write(strings::write_using,
-                    bind_output(write_impl_name, pair.first.get_name()),
                     type.name(),
+                    pair.first,
                     pair.second);
             }
         }
 
         void write_class_usings(output& out, meta::type const& type, meta::token default_interface)
         {
-            for (std::tuple<meta::token, std::string, bool> const pair : type.enum_class_usings())
+            for (std::tuple<std::string, std::string, bool> const pair : type.enum_class_usings())
             {
                 out.write(strings::write_using,
-                    bind_output(write_impl_name, std::get<0>(pair).get_name()),
                     std::get<2>(pair) ? default_interface.get_name() : type.name(),
+                    std::get<0>(pair),
                     std::get<1>(pair));
             }
         }
@@ -850,7 +848,7 @@ namespace cppwinrt
                 bind_output(write_deprecated, type.token()),
                 type.name(),
                 type.name(),
-                bind_output(write_require, type, meta::token{}),
+                bind_output(write_interface_require, type),
                 type.name(),
                 bind_output(write_interface_usings, type));
         }
@@ -868,8 +866,8 @@ namespace cppwinrt
                 type.name(),
                 type.name(),
                 type.name(),
-                bind_output(write_return_type, method),
-                bind_output(write_params, method));
+                bind_output(write_return_type, method, nullptr),
+                bind_output(write_params, method, nullptr));
         }
 
         void write_delegate_call_handler(output& out, meta::method const& method)
@@ -917,19 +915,19 @@ namespace cppwinrt
                 category == ELEMENT_TYPE_VALUETYPE)
             {
                 out.write(strings::write_shim_pre,
-                    bind_output(write_type_name, method.token, method.return_type.signature),
+                    bind_output(write_type_name, method.token, method.return_type.signature, nullptr),
                     method.return_type.name);
             }
             else if (category == ELEMENT_TYPE_SZARRAY)
             {
                 out.write(strings::write_shim_pre_array,
-                    bind_output(write_type_name, method.token, signature),
+                    bind_output(write_type_name, method.token, signature, nullptr),
                     method.return_type.name);
             }
             else
             {
                 out.write(strings::write_shim_pre_nullptr,
-                    bind_output(write_type_name, method.token, method.return_type.signature),
+                    bind_output(write_type_name, method.token, method.return_type.signature, nullptr),
                     method.return_type.name);
             }
         }
@@ -971,9 +969,9 @@ namespace cppwinrt
                 type.name(),
                 type.name(),
                 type.name(),
-                bind_output(write_return_type, method),
+                bind_output(write_return_type, method, nullptr),
                 type.name(),
-                bind_output(write_params, method),
+                bind_output(write_params, method, nullptr),
                 bind_output(write_shim_pre, method),
                 type.name(),
                 bind_output(write_abi_args, method),
@@ -998,7 +996,7 @@ namespace cppwinrt
                 out.write(strings::write_constructor_definition,
                     type.name(),
                     type.name(),
-                    bind_output(write_params, method),
+                    bind_output(write_params, method, nullptr),
                     type.name(),
                     type.name(),
                     factory.get_name(),
@@ -1027,7 +1025,7 @@ namespace cppwinrt
                 out.write(strings::write_composable_constructor_definition,
                     type.name(),
                     type.name(),
-                    bind_output(write_params, ctor),
+                    bind_output(write_params, ctor, nullptr),
                     outer_name,
                     inner_name,
                     type.name(),
@@ -1042,10 +1040,10 @@ namespace cppwinrt
             for (meta::method const& method : factory.enum_methods())
             {
                 out.write(strings::write_static_definition,
-                    bind_output(write_return_type, method),
+                    bind_output(write_return_type, method, nullptr),
                     type.name(),
                     get_method_name(method),
-                    bind_output(write_params, method),
+                    bind_output(write_params, method, nullptr),
                     method.has_return_type() ? "return " : "",
                     type.name(),
                     factory.get_name(),
@@ -1058,7 +1056,7 @@ namespace cppwinrt
                         factory.get_name(),
                         type.name(),
                         get_method_name(method),
-                        bind_output(write_params, method),
+                        bind_output(write_params, method, nullptr),
                         type.name(),
                         factory.get_name(),
                         factory.get_name(),
@@ -1159,7 +1157,7 @@ namespace cppwinrt
                         out.write(strings::write_constructor_declaration,
                             bind_output(write_deprecated, method.token),
                             type.name(),
-                            bind_output(write_params, method));
+                            bind_output(write_params, method, nullptr));
                     }
                 }
                 else
@@ -1176,23 +1174,23 @@ namespace cppwinrt
                     out.write(strings::write_constructor_declaration,
                         bind_output(write_deprecated, method.token),
                         type.name(),
-                        bind_output(write_params, method));
+                        bind_output(write_params, method, nullptr));
                 }
             }
         }
 
         void write_static_declarations(output& out, meta::type const& type)
         {
-            for (const meta::token& factory : enum_static_factories(type.token()))
+            for (meta::token const factory : enum_static_factories(type.token()))
             {
                 for (meta::method const& method : factory.enum_methods())
                 {
                     out.write(strings::write_static_method_declaration,
                         bind_output(write_deprecated, method.token),
-                        bind_output(write_return_type, method),
+                        bind_output(write_return_type, method, nullptr),
                         get_method_name(method),
-                        bind_output(write_params, method));
-                    
+                        bind_output(write_params, method, nullptr));
+
                     if (is_event_method(method))
                     {
                         out.write(strings::write_static_event_declaration,
@@ -1201,7 +1199,7 @@ namespace cppwinrt
                             bind_output(write_deprecated, method.token),
                             get_method_name(method),
                             get_method_name(method),
-                            bind_output(write_params, method));
+                            bind_output(write_params, method, nullptr));
                     }
                 }
             }
@@ -1220,7 +1218,7 @@ namespace cppwinrt
                     type.name(),
                     default_interface.get_name(),
                     bind_output(write_class_base, type),
-                    bind_output(write_require, type, default_interface),
+                    bind_output(write_class_require, type),
                     type.name(),
                     bind_output(write_constructor_declarations, type),
                     bind_output(write_class_usings, type, default_interface),
@@ -1241,7 +1239,7 @@ namespace cppwinrt
             for (meta::field const& field : type.token().enum_fields())
             {
                 out.write("    % %;\n",
-                    bind_output(write_type_name, type.token(), field.signature),
+                    bind_output(write_type_name, type.token(), field.signature, nullptr),
                     field.name);
             }
         }
@@ -1263,10 +1261,10 @@ namespace cppwinrt
             for (meta::method const& method : type.token().enum_methods())
             {
                 out.write(strings::write_shim,
-                    bind_output(write_return_type, method),
+                    bind_output(write_return_type, method, nullptr),
                     bind_output(write_impl_name, type.full_name()),
                     get_method_name(method),
-                    bind_output(write_params, method));
+                    bind_output(write_params, method, nullptr));
 
                 write_shim_body(out, type, method);
 
@@ -1276,7 +1274,7 @@ namespace cppwinrt
                         type.full_name(),
                         bind_output(write_impl_name, type.full_name()),
                         get_method_name(method),
-                        bind_output(write_params, method),
+                        bind_output(write_params, method, nullptr),
                         type.full_name(),
                         type.full_name(),
                         get_method_name(method),
@@ -1291,10 +1289,10 @@ namespace cppwinrt
             for (auto const& method : type.enum_methods())
             {
                 out.write(strings::write_interface_override_method_definition,
-                    bind_output(write_return_type, method),
+                    bind_output(write_return_type, method, nullptr),
                     type.get_simple_name(),
                     get_method_name(method),
-                    bind_output(write_params, method),
+                    bind_output(write_params, method, nullptr),
                     type.get_simple_name(),
                     get_method_name(method),
                     bind_output(write_args, method));
@@ -1306,9 +1304,9 @@ namespace cppwinrt
             for (auto const& method : type.enum_methods())
             {
                 out.write(strings::write_interface_override_method_declaration,
-                    bind_output(write_return_type, method),
+                    bind_output(write_return_type, method, nullptr),
                     get_method_name(method),
-                    bind_output(write_params, method));
+                    bind_output(write_params, method, nullptr));
             }
         }
 
@@ -1323,7 +1321,7 @@ namespace cppwinrt
 
         void write_class_override_constructors(output& out, meta::type const& type)
         {
-            for (const meta::token& factory : enum_composable_constructor_factories(type.token()))
+            for (meta::token const factory : enum_composable_constructor_factories(type.token()))
             {
                 for (meta::method method : factory.enum_methods())
                 {
@@ -1331,7 +1329,7 @@ namespace cppwinrt
                     const char* separator = method.params.empty() ? "" : ", ";
                     out.write(strings::write_class_override_constructor,
                         type.name(),
-                        bind_output(write_params, method),
+                        bind_output(write_params, method, nullptr),
                         type.name(),
                         factory.get_simple_name(),
                         method.name,
@@ -1459,7 +1457,7 @@ namespace cppwinrt
                     out.write(",");
                 }
 
-                write_type_name(out, type.token(), field.signature);
+                write_type_name(out, type.token(), field.signature, nullptr);
             }
 
             out.write(">");
@@ -1975,7 +1973,7 @@ namespace cppwinrt
                 out.write(", ");
             }
             out.write("arg<%>()",
-                bind_output(write_param_type, method.token, param));
+                bind_output(write_param_type, method.token, param, nullptr));
         }
     }
 
@@ -2001,7 +1999,7 @@ namespace cppwinrt
                 if (method.has_return_type())
                 {
                     out.write("% r = ",
-                        bind_output(write_return_type, method));
+                        bind_output(write_return_type, method, nullptr));
                 }
             },
                 // Special case: Windows.UI.Xaml.Controls.Maps.MapControl inherits two Style overloads with same arity.
@@ -2238,7 +2236,21 @@ bind_output(write_class_tests, code_namespace, types));
 
     std::vector<meta::token> get_module_instance_interfaces(meta::type const& type)
     {
+        meta::token default_interface = type.token().find_default_interface();
+
+        if (!default_interface)
+        {
+            return{};
+        }
+
+        if (default_interface.is_type_spec())
+        {
+            return{};
+        }
+
         std::vector<meta::token> interfaces;
+
+        default_interface = default_interface.resolve().token();
 
         for (meta::token required : type.token().enum_required_interfaces(false))
         {
@@ -2247,6 +2259,12 @@ bind_output(write_class_tests, code_namespace, types));
 
         std::sort(interfaces.begin(), interfaces.end());
         interfaces.erase(std::unique(interfaces.begin(), interfaces.end()), interfaces.end());
+
+        // Move the default interface to the front so that the module can simply "make"
+        // the implementation and return it directly.
+        interfaces.erase(std::find(interfaces.begin(), interfaces.end(), default_interface));
+        interfaces.insert(interfaces.begin(), default_interface);
+
         return interfaces;
     }
 
@@ -2279,12 +2297,19 @@ bind_output(write_class_tests, code_namespace, types));
     {
         meta::token default_interface = type.token().find_default_interface();
 
+        if (!default_interface)
+        {
+            return;
+        }
+
+        default_interface = default_interface.resolve().token();
+
         for (meta::method const& method : factory.enum_methods())
         {
             out.write(strings::write_component_factory_forwarding_constructor,
                 default_interface.get_name(),
                 method.name,
-                bind_output(write_params, method),
+                bind_output(write_component_params, method, nullptr),
                 bind_output(write_args, method));
         }
     }
@@ -2294,9 +2319,9 @@ bind_output(write_class_tests, code_namespace, types));
         for (meta::method const& method : factory.enum_methods())
         {
             out.write(strings::write_component_factory_forwarding_static,
-                bind_output(write_return_type, method),
+                bind_output(write_return_type, method, nullptr),
                 get_method_name(method),
-                bind_output(write_params, method),
+                bind_output(write_component_params, method, nullptr),
                 method.has_return_type() ? "return " : "",
                 get_method_name(method),
                 bind_output(write_args, method));
@@ -2305,8 +2330,7 @@ bind_output(write_class_tests, code_namespace, types));
 
     std::vector<meta::factory_attribute> get_module_factory_attributes(meta::token type)
     {
-        meta::generator<meta::factory_attribute> enum_factory_attributes = type.enum_factory_attributes();
-        return{ enum_factory_attributes.begin(), enum_factory_attributes.end() };
+        return type.enum_factory_attributes();
     }
 
     void write_component_factory_forwarding_methods(output& out, meta::type const& type)
@@ -2379,10 +2403,20 @@ bind_output(write_class_tests, code_namespace, types));
 
             out.write_namespace(std::string(type->name_space()) + ".implementation");
 
-            out.write(strings::write_component_class_base,
-                type->name(),
-                bind_output(write_component_instance_interfaces, *type),
-                bind_output(write_dot_name, type->full_name()),
+            if (type->token().find_default_interface())
+            {
+                out.write(strings::write_component_class_base,
+                    type->name(),
+                    bind_output(write_component_instance_interfaces, *type),
+                    bind_output(write_dot_name, type->full_name()));
+            }
+            else
+            {
+                out.write(strings::write_component_static_class_base,
+                    type->name());
+            }
+
+            out.write(strings::write_component_class_factory_base,
                 type->name(),
                 bind_output(write_component_factory_interfaces, *type),
                 bind_output(write_dot_name, type->full_name()),
@@ -2449,7 +2483,7 @@ bind_output(write_class_tests, code_namespace, types));
         {
             out.write("        %(%);\n",
                 type.name(),
-                bind_output(write_params, method));
+                bind_output(write_component_params, method, nullptr));
         }
     }
 
@@ -2458,9 +2492,9 @@ bind_output(write_class_tests, code_namespace, types));
         for (meta::method const& method : factory.enum_methods())
         {
             out.write("        static % %(%);\n",
-                bind_output(write_return_type, method),
+                bind_output(write_return_type, method, nullptr),
                 get_method_name(method),
-                bind_output(write_params, method));
+                bind_output(write_component_params, method, nullptr));
         }
     }
 
@@ -2513,23 +2547,36 @@ bind_output(write_class_tests, code_namespace, types));
             }
         }
 
-        out.write("\n");
-
         std::vector<meta::token> interfaces = get_module_instance_interfaces(type);
+
+        if (!interfaces.empty())
+        {
+            out.write("\n");
+        }
 
         for (meta::token required : interfaces)
         {
-            // TODO: the required interface may be a typespec, in which case we need to resolve
-            // the generic to a typedef and perform the specialization here so that the concrete
-            // runtime class has the necessary method stubs for the developer to implement.
-            if (required.is_type_spec()) continue;
-
-            for (meta::method const& method : required.enum_methods())
+            if (required.is_type_spec())
             {
-                out.write("        % %(%);\n",
-                    bind_output(write_return_type, method),
-                    get_method_name(method),
-                    bind_output(write_params, method));
+                std::vector<meta::signature> var_types;
+
+                for (meta::method const& method : required.enum_type_spec_methods(var_types))
+                {
+                    out.write("        % %(%);\n",
+                        bind_output(write_return_type, method, &var_types),
+                        get_method_name(method),
+                        bind_output(write_component_params, method, &var_types));
+                }
+            }
+            else
+            {
+                for (meta::method const& method : required.enum_methods())
+                {
+                    out.write("        % %(%);\n",
+                        bind_output(write_return_type, method, nullptr),
+                        get_method_name(method),
+                        bind_output(write_component_params, method, nullptr));
+                }
             }
         }
 
@@ -2554,7 +2601,7 @@ bind_output(write_class_tests, code_namespace, types));
             out.write(strings::write_component_class_constructor_definition,
                 type.name(),
                 type.name(),
-                bind_output(write_params, method));
+                bind_output(write_component_params, method, nullptr));
         }
     }
 
@@ -2563,16 +2610,16 @@ bind_output(write_class_tests, code_namespace, types));
         for (meta::method const& method : factory.enum_methods())
         {
             out.write(strings::write_component_class_static_definition,
-                bind_output(write_return_type, method),
+                bind_output(write_return_type, method, nullptr),
                 type.name(),
                 get_method_name(method),
-                bind_output(write_params, method));
+                bind_output(write_component_params, method, nullptr));
         }
     }
 
     void write_component_class_member_definitions(output& out, meta::type const& type)
     {
-        for (meta::factory_attribute const& attribute : type.token().enum_factory_attributes())
+        for (meta::factory_attribute const attribute : type.token().enum_factory_attributes())
         {
             if (attribute.activatable)
             {
@@ -2589,22 +2636,33 @@ bind_output(write_class_tests, code_namespace, types));
 
         for (meta::token required : interfaces)
         {
-            // TODO: the required interface may be a typespec, in which case we need to resolve
-            // the generic to a typedef and perform the specialization here so that the concrete
-            // runtime class has the necessary method stubs for the developer to implement.
-            if (required.is_type_spec()) continue;
-
-            for (meta::method const& method : required.enum_methods())
+            if (required.is_type_spec())
             {
-                out.write(strings::write_component_interface_method_definition,
-                    bind_output(write_return_type, method),
-                    type.name(),
-                    get_method_name(method),
-                    bind_output(write_params, method));
+                std::vector<meta::signature> var_types;
+
+                for (meta::method const& method : required.enum_type_spec_methods(var_types))
+                {
+                    out.write(strings::write_component_interface_method_definition,
+                        bind_output(write_return_type, method, &var_types),
+                        type.name(),
+                        get_method_name(method),
+                        bind_output(write_component_params, method, &var_types));
+                }
+            }
+            else
+            {
+                for (meta::method const& method : required.enum_methods())
+                {
+                    out.write(strings::write_component_interface_method_definition,
+                        bind_output(write_return_type, method, nullptr),
+                        type.name(),
+                        get_method_name(method),
+                        bind_output(write_component_params, method, nullptr));
+                }
             }
         }
 
-        for (meta::factory_attribute const& attribute : type.token().enum_factory_attributes())
+        for (meta::factory_attribute const attribute : type.token().enum_factory_attributes())
         {
             if (!attribute.activatable)
             {
@@ -2619,7 +2677,7 @@ bind_output(write_class_tests, code_namespace, types));
         filename /= std::string(type.name());
         filename += ".h";
 
-        if (exists(filename))
+        if (!settings::overwrite && exists(filename))
         {
             return;
         }
@@ -2646,7 +2704,7 @@ bind_output(write_class_tests, code_namespace, types));
         filename /= std::string(type.name());
         filename += ".cpp";
 
-        if (exists(filename))
+        if (!settings::overwrite && exists(filename))
         {
             return;
         }

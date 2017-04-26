@@ -26,9 +26,9 @@ struct resume_background
     }
 };
 
-struct thread_context
+struct apartment_context
 {
-    thread_context()
+    apartment_context()
     {
         check_hresult(CoGetObjectContext(__uuidof(m_context), reinterpret_cast<void**>(put_abi(m_context))));
     }

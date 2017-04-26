@@ -12,23 +12,23 @@ namespace impl
     {
         implements_delegate(H&& handler) : H(std::forward<H>(handler)) {}
 
-        HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept final
+        HRESULT __stdcall QueryInterface(GUID const& id, void** result) noexcept final
         {
             if (id == guid_v<T> || id == guid_v<Windows::Foundation::IUnknown>)
             {
-                *object = static_cast<winrt::abi_t<T>*>(this);
+                *result = static_cast<winrt::abi_t<T>*>(this);
                 AddRef();
                 return S_OK;
             }
 
             if (id == guid_v<IAgileObject> || id == guid_v<IMarshal>)
             {
-                *object = static_cast<IMarshal*>(this);
+                *result = static_cast<IMarshal*>(this);
                 AddRef();
                 return S_OK;
             }
 
-            *object = nullptr;
+            *result = nullptr;
             return E_NOINTERFACE;
         }
 

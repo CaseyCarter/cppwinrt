@@ -126,6 +126,10 @@ namespace
                 {
                     settings::verbose = true;
                 }
+                else if (0 == wcscmp(arg, L"overwrite"))
+                {
+                    settings::overwrite = true;
+                }
                 else
                 {
                     throw invalid_usage();

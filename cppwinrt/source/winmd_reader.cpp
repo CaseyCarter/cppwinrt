@@ -287,20 +287,6 @@ namespace cppwinrt::meta
             uint32_t m_size{};
         };
 
-        std::string get_method_name(std::string_view name)
-        {
-            size_t const pos = name.find('_');
-
-            if (pos == std::string_view::npos)
-            {
-                return std::string(name);
-            }
-            else
-            {
-                return std::string(name.substr(pos + 1));
-            }
-        }
-
         template<typename T>
         T ReadDataFromBlob(PCCOR_SIGNATURE& data)
         {
@@ -317,6 +303,56 @@ namespace cppwinrt::meta
             std::string_view result{ reinterpret_cast<const char*>(data), string_length };
             data += string_length;
             return result;
+        }
+
+        PCCOR_SIGNATURE get_type_spec_param_signature(std::vector<meta::signature> const& var_types, PCCOR_SIGNATURE signature)
+        {
+            PCCOR_SIGNATURE non_generic_signature = signature;
+            CorElementType category = CorSigUncompressElementType(signature);
+            bool by_ref{};
+
+            if (category == ELEMENT_TYPE_BYREF)
+            {
+                by_ref = true;
+                ++signature;
+                category = static_cast<CorElementType>(*signature);
+            }
+
+            if (category == ELEMENT_TYPE_VAR) // A generic interface type parameter
+            {
+                return var_types[CorSigUncompressData(signature)].data;
+            }
+
+            return non_generic_signature;
+        }
+
+        std::string_view get_method_name(std::string_view name, DWORD flags)
+        {
+            if (IsMdSpecialName(flags))
+            {
+                return name.substr(name.find('_') + 1);
+            }
+
+            return name;
+        }
+
+        template <typename T>
+        void append(std::vector<T>& destination, std::vector<T>&& source)
+        {
+            destination.reserve(destination.size() + source.size());
+            std::move(source.begin(), source.end(), std::back_inserter(destination));
+        }
+
+        template <typename T>
+        void remove(std::vector<T>& destination, std::vector<T> const& find)
+        {
+            std::vector<T>::iterator new_end = std::remove_if(destination.begin(), destination.end(),
+                [&](T const& value)
+            {
+                return find.end() != std::find(find.begin(), find.end(), value);
+            });
+
+            destination.erase(new_end, destination.end());
         }
     }
 
@@ -340,7 +376,7 @@ namespace cppwinrt::meta
             return false;
         }
 
-        for (std::string filter : settings::filters)
+        for (std::string const& filter : settings::filters)
         {
             if(name.compare(0, filter.length(), filter) == 0)
             {
@@ -682,13 +718,19 @@ namespace cppwinrt::meta
         }
     }
 
-    token::token(mdToken handle,
-        IMetaDataImport2* db) noexcept :
-    m_handle(handle),
+    token token::GetInterfaceImplProps() const
+    {
+        WINRT_ASSERT(is_interface_impl());
+
+        mdToken token{};
+        winrt::check_hresult(m_db->GetInterfaceImplProps(m_handle, nullptr, &token));
+        return { token, m_db };
+    }
+
+    token::token(mdToken handle, IMetaDataImport2* db) noexcept :
+        m_handle(handle),
         m_db(db)
     {
-        WINRT_ASSERT(handle);
-        WINRT_ASSERT(db);
     }
 
     mdToken token::handle() const noexcept
@@ -738,7 +780,7 @@ namespace cppwinrt::meta
         return TypeFromToken(m_handle) == mdtFieldDef;
     }
 
-    std::string token::get_generic_type_name(PCCOR_SIGNATURE& signature) const
+    std::string token::get_generic_type_name(PCCOR_SIGNATURE& signature, std::vector<meta::signature> const* var_types) const
     {
         CorSigUncompressElementType(signature);
         meta::token generic_type{ CorSigUncompressToken(signature), db() };
@@ -748,7 +790,7 @@ namespace cppwinrt::meta
         name += '<';
         while (count--)
         {
-            name += get_type_name_cursor(signature);
+            name += get_type_name_cursor(signature, var_types);
             if (count)
             {
                 name += ", ";
@@ -758,9 +800,19 @@ namespace cppwinrt::meta
         return name;
     }
 
-    std::string token::get_type_name_cursor(PCCOR_SIGNATURE& signature) const
+    std::string token::get_type_name_cursor(PCCOR_SIGNATURE& signature, std::vector<meta::signature> const* var_types) const
     {
         CorElementType category = CorSigUncompressElementType(signature);
+        bool by_ref{};
+
+        if (category == ELEMENT_TYPE_BYREF)
+        {
+            by_ref = true;
+            ++signature;
+            category = static_cast<CorElementType>(*signature);
+        }
+
+        WINRT_ASSERT(category != ELEMENT_TYPE_BYREF);
 
         switch (category)
         {
@@ -779,7 +831,7 @@ namespace cppwinrt::meta
         case ELEMENT_TYPE_R8:          return "double";
         case ELEMENT_TYPE_STRING:      return "hstring";
         case ELEMENT_TYPE_OBJECT:      return "Windows::Foundation::IInspectable";
-        case ELEMENT_TYPE_GENERICINST: return get_generic_type_name(signature);
+        case ELEMENT_TYPE_GENERICINST: return get_generic_type_name(signature, var_types);
         case ELEMENT_TYPE_VALUETYPE:
         case ELEMENT_TYPE_CLASS:
         {
@@ -788,8 +840,9 @@ namespace cppwinrt::meta
         }
         case ELEMENT_TYPE_VAR:
         {
-            CorSigUncompressData(signature);
-            return get_type_name_cursor(signature);
+            WINRT_ASSERT(var_types);
+            meta::signature var_signature = (*var_types)[CorSigUncompressData(signature)];
+            return token(0, var_signature.db).get_type_name_cursor(var_signature.data);
         }
         }
 
@@ -797,8 +850,10 @@ namespace cppwinrt::meta
         return{};
     }
 
-    std::string token::get_name(bool dotted) const
+    std::string token::get_name(bool dotted, std::vector<meta::signature> const* var_types) const
     {
+        // TODO: the "dotted" param is a bit broken - it only works for type_def and type_ref (not type_spec).
+
         std::array<wchar_t, max_name_size> name_buffer;
         ULONG actual_name_size{};
 
@@ -822,7 +877,7 @@ namespace cppwinrt::meta
         else
         {
             PCCOR_SIGNATURE signature = get_type_spec();
-            return get_type_name_cursor(signature);
+            return get_type_name_cursor(signature, var_types);
         }
 
         for (std::pair<std::wstring_view, std::string_view> const& pair : enum_renamed_types())
@@ -885,13 +940,7 @@ namespace cppwinrt::meta
                 continue;
             }
 
-            mdToken default_interface{};
-
-            winrt::check_hresult(m_db->GetInterfaceImplProps(impl_token.m_handle,
-                nullptr,
-                &default_interface));
-
-            return { default_interface, m_db };
+            return impl_token.GetInterfaceImplProps();
         }
 
         return {};
@@ -962,7 +1011,7 @@ namespace cppwinrt::meta
         }
     }
 
-    void token::unpack_method(PCCOR_SIGNATURE signature, param& return_type, std::vector<param>& params, token_callback callback) const
+    void token::unpack_type_def_method(PCCOR_SIGNATURE signature, param& return_type, std::vector<param>& params, token_callback callback) const
     {
         WINRT_ASSERT(is_method_def());
         WINRT_ASSERT(signature);
@@ -986,6 +1035,7 @@ namespace cppwinrt::meta
             if (first)
             {
                 first = false;
+                WINRT_ASSERT(!param_base.in);
                 return_type.name = std::move(param_base.name);
             }
             else
@@ -994,6 +1044,24 @@ namespace cppwinrt::meta
                 params.push_back(std::move(param_base));
                 next_token(signature, db(), callback);
             }
+        }
+    }
+
+    void token::unpack_type_spec_method(std::vector<meta::signature> const& var_types, PCCOR_SIGNATURE signature, param& return_type, std::vector<param>& params, token_callback callback) const
+    {
+        return_type.signature = get_type_spec_param_signature(var_types, signature);
+        next_token(signature, db(), callback);
+
+        if (static_cast<CorElementType>(*return_type.signature) != ELEMENT_TYPE_VOID)
+        {
+            return_type.name = "return_value";
+        }
+
+        for (param param_base : enum_param_base())
+        {
+            param_base.signature = get_type_spec_param_signature(var_types, signature);
+            params.push_back(std::move(param_base));
+            next_token(signature, db(), callback);
         }
     }
 
@@ -1030,11 +1098,133 @@ namespace cppwinrt::meta
             CorSigUncompressData(signature); // Skip param count
 
             method delegate{member_token};
-            delegate.token.unpack_method(signature, delegate.return_type, delegate.params, callback);
+            delegate.token.unpack_type_def_method(signature, delegate.return_type, delegate.params, callback);
             return delegate;
         }
 
         throw winrt::hresult_out_of_bounds(L"TODO: define invalid metadata exception");
+    }
+
+    token token::get_type_def() const
+    {
+        if (is_type_ref())
+        {
+            return resolve().token();
+        }
+
+        if (is_type_spec())
+        {
+            return resolve_generic().token();
+        }
+
+        return *this;
+    }
+
+    std::vector<required_type> token::enum_interface_required_types(std::vector<meta::signature> const* var_types) const
+    {
+        WINRT_ASSERT(is_type_def() || is_type_spec());
+        std::vector<required_type> values;
+
+        if (is_type_def())
+        {
+            for (token impl_token : EnumInterfaceImpls())
+            {
+                token required_token = impl_token.GetInterfaceImplProps();
+                WINRT_ASSERT(required_token.is_type_ref() || required_token.is_type_spec());
+                values.push_back({ required_token.get_name(false, var_types), required_token.get_type_def() });
+
+                if (required_token.is_type_ref())
+                {
+                    required_token = required_token.resolve().token();
+                    append(values, required_token.enum_interface_required_types(nullptr));
+                }
+                else
+                {
+                    WINRT_ASSERT(required_token.is_type_spec());
+                    std::vector<meta::signature> requred_var_types;
+
+                    PCCOR_SIGNATURE required_signature = required_token.get_type_spec();
+                    WINRT_VERIFY_(ELEMENT_TYPE_GENERICINST, CorSigUncompressElementType(required_signature));
+                    WINRT_VERIFY_(ELEMENT_TYPE_CLASS, CorSigUncompressElementType(required_signature));
+
+                    meta::token required_type_ref{ CorSigUncompressToken(required_signature), db() };
+                    WINRT_ASSERT(required_type_ref.is_type_ref());
+
+                    ULONG count = CorSigUncompressData(required_signature);
+
+                    while (count--)
+                    {
+                        requred_var_types.push_back({ required_signature, required_token.db() });
+                        next_token(required_signature, m_db, nullptr);
+                    }
+
+                    std::string dot_name = required_type_ref.get_name(true);
+                    dot_name.resize(dot_name.find_last_of('`'));
+                    meta::token required_type_def = meta::resolve(dot_name)->token();
+                    WINRT_ASSERT(required_type_def.is_type_def());
+
+                    append(values, required_type_def.enum_interface_required_types(var_types ? var_types : &requred_var_types));
+                }
+            }
+        }
+        else
+        {
+            std::vector<meta::signature> requred_var_types;
+
+            PCCOR_SIGNATURE required_signature = get_type_spec();
+            WINRT_VERIFY_(ELEMENT_TYPE_GENERICINST, CorSigUncompressElementType(required_signature));
+            WINRT_VERIFY_(ELEMENT_TYPE_CLASS, CorSigUncompressElementType(required_signature));
+
+            meta::token required_type_ref{ CorSigUncompressToken(required_signature), db() };
+            WINRT_ASSERT(required_type_ref.is_type_ref());
+
+            ULONG count = CorSigUncompressData(required_signature);
+
+            while (count--)
+            {
+                requred_var_types.push_back({ required_signature, db() });
+                next_token(required_signature, m_db, nullptr);
+            }
+
+            std::string dot_name = required_type_ref.get_name(true);
+            dot_name.resize(dot_name.find_last_of('`'));
+            meta::token required_type_def = meta::resolve(dot_name)->token();
+            WINRT_ASSERT(required_type_def.is_type_def());
+
+            append(values, required_type_def.enum_interface_required_types(&requred_var_types));
+        }
+
+        std::sort(values.begin(), values.end());
+        values.erase(std::unique(values.begin(), values.end()), values.end());
+        return values;
+    }
+
+    std::vector<required_type> type::enum_class_required_types() const
+    {
+        WINRT_ASSERT(token().is_type_def());
+
+        std::vector<required_type> values = token().enum_interface_required_types(nullptr);
+
+        for (meta::type const* next = base(); next != nullptr; next = next->base())
+        {
+            append(values, next->token().enum_interface_required_types(nullptr));
+        }
+
+        meta::token default_interface_token = token().find_default_interface();
+
+        if (default_interface_token.is_type_ref())
+        {
+            default_interface_token = default_interface_token.resolve().token();
+        }
+
+        std::vector<required_type> default_interfaces = default_interface_token.enum_interface_required_types(nullptr);
+        default_interfaces.push_back({ default_interface_token.get_name(), default_interface_token });
+
+        remove(values, default_interfaces);
+
+        std::sort(values.begin(), values.end());
+        values.erase(std::unique(values.begin(), values.end()), values.end());
+        return values;
     }
 
     generator<token> token::enum_required_interfaces(bool const skip_default) const
@@ -1055,14 +1245,7 @@ namespace cppwinrt::meta
                 continue;
             }
 
-            mdToken interface_token_handle{};
-            WINRT_ASSERT(impl_token.is_interface_impl());
-
-            winrt::check_hresult(m_db->GetInterfaceImplProps(impl_token.m_handle,
-                nullptr,
-                &interface_token_handle));
-
-            token interface_token{ interface_token_handle , m_db };
+            token interface_token = impl_token.GetInterfaceImplProps();
 
             if (interface_token.is_type_ref())
             {
@@ -1095,14 +1278,7 @@ namespace cppwinrt::meta
                 continue;
             }
 
-            mdToken interface_token_handle{};
-            WINRT_ASSERT(impl_token.is_interface_impl());
-
-            winrt::check_hresult(m_db->GetInterfaceImplProps(impl_token.m_handle,
-                nullptr,
-                &interface_token_handle));
-
-            token interface_token{ interface_token_handle, m_db };
+            token interface_token = impl_token.GetInterfaceImplProps();
 
             if (interface_token.is_type_ref())
             {
@@ -1112,13 +1288,15 @@ namespace cppwinrt::meta
             co_yield interface_token;
         }
     }
-
-    generator<factory_attribute> token::enum_factory_attributes() const
+    std::vector<factory_attribute> token::enum_factory_attributes() const
     {
+        WINRT_ASSERT(m_db);
+        std::vector<factory_attribute> factory_attributes;
+
         for (token attribute_token : EnumCustomAttributes())
         {
             uint8_t const* data{};
-            ULONG data_length;
+            ULONG data_length{};
             mdToken attribute{};
             winrt::check_hresult(m_db->GetCustomAttributeProps(attribute_token.m_handle,
                 nullptr,
@@ -1128,8 +1306,8 @@ namespace cppwinrt::meta
             WINRT_ASSERT(TypeFromToken(attribute) == mdtMemberRef);
             const uint8_t* const data_end = data + data_length;
 
-            PCCOR_SIGNATURE signature;
-            ULONG signature_length;
+            PCCOR_SIGNATURE signature{};
+            ULONG signature_length{};
 
             winrt::check_hresult(m_db->GetMemberRefProps(attribute,
                 &attribute,
@@ -1198,15 +1376,15 @@ namespace cppwinrt::meta
                     WINRT_ASSERT(tk.is_type_ref());
                     WINRT_ASSERT(tk.get_name(true) == "Windows.Foundation.Metadata.Platform");
                 }
-                result.platform = ReadDataFromBlob<int32_t>(data);
+                ReadDataFromBlob<int32_t>(data);
                 break;
 
                 case ELEMENT_TYPE_U4:
-                    result.version = ReadDataFromBlob<uint32_t>(data);
+                    ReadDataFromBlob<uint32_t>(data);
                     break;
 
                 case ELEMENT_TYPE_STRING:
-                    result.contract = ReadDataFromBlob<std::string_view>(data);
+                    ReadDataFromBlob<std::string_view>(data);
                     break;
 
                 default:
@@ -1214,12 +1392,16 @@ namespace cppwinrt::meta
                     break;
                 }
             }
-            co_yield result;
+            factory_attributes.push_back(result);
         }
+
+        return factory_attributes;
     }
 
-    generator<composable_attribute> token::enum_composable_attributes() const
+    std::vector<composable_attribute> token::enum_composable_attributes() const
     {
+        std::vector<composable_attribute> composable_attributes;
+
         for (token attribute_token : EnumCustomAttributes())
         {
             uint8_t const* data{};
@@ -1301,7 +1483,7 @@ namespace cppwinrt::meta
             // Third parameter is always the version
             category = CorSigUncompressElementType(signature);
             WINRT_ASSERT(category == ELEMENT_TYPE_U4);
-            result.version = ReadDataFromBlob<uint32_t>(data);
+            ReadDataFromBlob<uint32_t>(data);
 
             WINRT_ASSERT(signature <= signature_end);
             WINRT_ASSERT(data <= data_end);
@@ -1312,14 +1494,14 @@ namespace cppwinrt::meta
                 category = CorSigUncompressElementType(signature);
                 if (category == ELEMENT_TYPE_STRING)
                 {
-                    result.contract = ReadDataFromBlob<std::string_view>(data);
+                    ReadDataFromBlob<std::string_view>(data);
                 }
                 else if (category == ELEMENT_TYPE_VALUETYPE)
                 {
                     tk = token{ CorSigUncompressToken(signature), m_db };
                     WINRT_ASSERT(tk.is_type_ref());
                     WINRT_ASSERT(tk.get_name(true) == "Windows.Foundation.Metadata.Platform");
-                    result.platform = ReadDataFromBlob<int32_t>(data);
+                    ReadDataFromBlob<int32_t>(data);
                 }
                 else
                 {
@@ -1327,122 +1509,91 @@ namespace cppwinrt::meta
                 }
             }
 
-            co_yield result;
+            composable_attributes.push_back(result);
         }
+
+        return composable_attributes;
     }
 
-    generator<std::pair<token, std::string>> token::enum_interface_usings() const
+    generator<std::pair<std::string, std::string>> token::enum_interface_usings() const
     {
-        // TODO: the value should be the full_name rather than the token to support generics
-        std::map<std::string, std::vector<token>> usings;
+        std::vector<required_type> required_types = enum_interface_required_types(nullptr);
+        required_types.push_back({ get_name(), *this });
 
-        for (std::string method : enum_method_names())
+        std::map<std::string, std::vector<size_t>> usings;
+
+        for (size_t i = 0; i != required_types.size(); ++i)
         {
-            usings[get_method_name(method)].push_back(*this);
+            for (std::string const& method : required_types[i].type_def.enum_method_names())
+            {
+                usings[method].push_back(i);
+            }
         }
 
-        for (token token : enum_required_interfaces(false))
+        for (std::map<std::string, std::vector<size_t>>::value_type& pair : usings)
         {
-            if (token.is_type_spec())
+            std::sort(pair.second.begin(), pair.second.end());
+            std::vector<size_t>::iterator end = std::unique(pair.second.begin(), pair.second.end());
+            pair.second.erase(end, pair.second.end());
+
+            if (pair.second.size() <= 1)
             {
-                // todo: enable usings for generics
-                //token = token.resolve_generic().token();
                 continue;
             }
 
-            for (std::string method : token.enum_method_names())
+            for (size_t i : pair.second)
             {
-                usings[get_method_name(method)].push_back(token);
+                co_yield{ required_types[i].name, pair.first };
             }
         }
+    }
 
-        auto ctor = usings.find(".ctor");
-        if (ctor != usings.end())
+    generator<std::tuple<std::string, std::string, bool>> type::enum_class_usings() const
+    {
+        std::map<std::string, std::vector<std::pair<required_type, bool>>> usings;
+
         {
-            usings.erase(ctor);
-        }
+            meta::token default_interface = token().find_default_interface();
 
-        for (std::pair<std::string const, std::vector<token>>& pair : usings)
-        {
-            std::sort(pair.second.begin(), pair.second.end());
-            std::vector<token>::iterator end = std::unique(pair.second.begin(), pair.second.end());
-            pair.second.erase(end, pair.second.end());
-
-            if (pair.second.size() > 1)
+            if (default_interface.is_type_ref())
             {
-                for (token token : pair.second)
+                default_interface = default_interface.resolve().token();
+            }
+
+            std::vector<required_type> required_types = default_interface.enum_interface_required_types(nullptr);
+            required_types.push_back({ default_interface.get_name(), default_interface.get_type_def() });
+
+            for (size_t i = 0; i != required_types.size(); ++i)
+            {
+                for (std::string const& method : required_types[i].type_def.enum_method_names())
                 {
-                    co_yield{ token, pair.first };
+                    usings[method].push_back({ required_types[i], true });
                 }
             }
         }
-    }
 
-    void add_usings(meta::token token, std::map<std::string, std::vector<std::pair<meta::token, bool>>>& usings, bool default_interface)
-    {
-        if (token.is_type_spec())
         {
-            // todo: implement usings for generics
-            //token = token.resolve_generic().token();
-            return;
-        }
+            std::vector<required_type> required_types = enum_class_required_types();
 
-        WINRT_ASSERT(token.is_type_def());
-
-        for (std::string method : token.enum_method_names())
-        {
-            usings[std::string(get_method_name(method))].emplace_back(token, default_interface);
-        }
-    }
-
-    meta::generator<std::tuple<meta::token, std::string, bool>> type::enum_class_usings() const
-    {
-        // TODO: the value should be the full_name rather than the token to support generics
-        std::map<std::string, std::vector<std::pair<meta::token, bool>>> usings;
-
-        meta::token default_interface = token().find_default_interface();
-
-        if (default_interface.is_type_ref())
-        {
-            default_interface = default_interface.resolve().token();
-        }
-
-        add_usings(default_interface, usings, true);
-
-        for (meta::token required : default_interface.enum_required_interfaces(false))
-        {
-            add_usings(required, usings, true);
-        }
-
-        for (meta::token required : token().enum_required_interfaces(true))
-        {
-            add_usings(required, usings, false);
-        }
-
-        for (meta::type const* next = base(); next != nullptr; next = next->base())
-        {
-            for (meta::token required : next->token().enum_required_interfaces(false))
+            for (size_t i = 0; i != required_types.size(); ++i)
             {
-                add_usings(required, usings, false);
+                for (std::string const& method : required_types[i].type_def.enum_method_names())
+                {
+                    usings[method].push_back({ required_types[i], false });
+                }
             }
         }
 
-        auto ctor = usings.find(".ctor");
-        if (ctor != usings.end())
-        {
-            usings.erase(ctor);
-        }
-
-        for (std::pair<std::string const, std::vector<std::pair<meta::token, bool>>>& pair : usings)
+        for (std::map<std::string, std::vector<std::pair<required_type, bool>>>::value_type& pair : usings)
         {
             std::sort(pair.second.begin(), pair.second.end(),
-                [](std::pair<meta::token, bool> const& left, std::pair<meta::token, bool> const& right)
+                [](std::pair<required_type, bool> const& left, std::pair<required_type, bool> const& right)
             {
                 return left.first < right.first;
             });
 
-            std::vector<std::pair<meta::token, bool>>::iterator end = std::unique(pair.second.begin(), pair.second.end(),
-                [](std::pair<meta::token, bool> const& left, std::pair<meta::token, bool> const& right)
+            std::vector<std::pair<required_type, bool>>::iterator end = std::unique(pair.second.begin(), pair.second.end(),
+                [](std::pair<required_type, bool> const& left, std::pair<required_type, bool> const& right)
             {
                 return left.first == right.first;
             });
@@ -1451,9 +1602,9 @@ namespace cppwinrt::meta
 
             if (pair.second.size() > 1)
             {
-                for (std::pair<meta::token, bool> required : pair.second)
+                for (std::pair<required_type, bool> required : pair.second)
                 {
-                    co_yield{ required.first, pair.first, required.second };
+                    co_yield{ required.first.name, pair.first, required.second };
                 }
             }
         }
@@ -1527,8 +1678,12 @@ namespace cppwinrt::meta
         }
     }
 
-    generator<method> token::enum_methods(token_callback callback) const
+
+
+    generator<method> token::enum_type_def_methods(token_callback callback) const
     {
+        WINRT_ASSERT(is_type_def());
+
         std::array<wchar_t, max_name_size> name_buffer;
         ULONG actual_name_size{};
         PCCOR_SIGNATURE signature{};
@@ -1559,9 +1714,73 @@ namespace cppwinrt::meta
             CorSigUncompressData(signature); // Skip param count
 
             method method{ member_token, std::string(converter), flags };
-            method.token.unpack_method(signature, method.return_type, method.params, callback);
+            method.token.unpack_type_def_method(signature, method.return_type, method.params, callback);
             co_yield std::move(method);
         }
+    }
+
+    generator<method> token::enum_type_spec_methods(std::vector<meta::signature>& var_types, token_callback callback) const
+    {
+        WINRT_ASSERT(is_type_spec());
+        WINRT_ASSERT(var_types.empty());
+
+        PCCOR_SIGNATURE type_signature = get_type_spec();
+        WINRT_VERIFY_(ELEMENT_TYPE_GENERICINST, CorSigUncompressElementType(type_signature));
+        WINRT_VERIFY_(ELEMENT_TYPE_CLASS, CorSigUncompressElementType(type_signature));
+        meta::token type_ref{ CorSigUncompressToken(type_signature), db() };
+        WINRT_ASSERT(type_ref.is_type_ref());
+        std::string dot_name = type_ref.get_name(true);
+        dot_name.resize(dot_name.find_last_of('`'));
+        meta::token type_def = meta::resolve(dot_name)->token();
+        WINRT_ASSERT(type_def.is_type_def());
+
+        ULONG count = CorSigUncompressData(type_signature);
+
+        while (count--)
+        {
+            var_types.push_back({ type_signature, m_db });
+            next_token(type_signature, m_db, callback);
+        }
+
+        std::array<wchar_t, max_name_size> name_buffer;
+        ULONG actual_name_size{};
+        PCCOR_SIGNATURE method_signature{};
+        name_converter converter;
+        DWORD flags{};
+
+        for (token member_token : type_def.EnumMembers())
+        {
+            WINRT_ASSERT(member_token.is_method_def());
+
+            winrt::check_hresult(member_token.db()->GetMemberProps(member_token.m_handle,
+                nullptr,
+                name_buffer.data(),
+                max_name_size,
+                &actual_name_size,
+                &flags,
+                &method_signature,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr));
+
+            converter.convert(name_buffer.data(), actual_name_size - 1);
+
+            CorSigUncompressCallingConv(method_signature); // Skip preamble
+            CorSigUncompressData(method_signature); // Skip param count
+
+            method method{ member_token, std::string(converter), flags };
+            method.token.unpack_type_spec_method(var_types, method_signature, method.return_type, method.params, callback);
+            co_yield std::move(method);
+        }
+    }
+
+    generator<method> token::enum_methods(token_callback callback) const
+    {
+        WINRT_ASSERT(is_type_def());
+        return enum_type_def_methods(callback);
     }
 
     generator<std::string> token::enum_method_names() const
@@ -1569,6 +1788,7 @@ namespace cppwinrt::meta
         std::array<wchar_t, max_name_size> name_buffer;
         ULONG actual_name_size{};
         name_converter converter;
+        DWORD flags{};
 
         for (token member_token : EnumMembers())
         {
@@ -1579,7 +1799,7 @@ namespace cppwinrt::meta
                 name_buffer.data(),
                 max_name_size,
                 &actual_name_size,
-                nullptr,
+                &flags,
                 nullptr,
                 nullptr,
                 nullptr,
@@ -1589,7 +1809,7 @@ namespace cppwinrt::meta
                 nullptr));
 
             converter.convert(name_buffer.data(), actual_name_size - 1);
-            co_yield std::string(converter);
+            co_yield std::string(get_method_name(converter, flags));
         }
     }
 

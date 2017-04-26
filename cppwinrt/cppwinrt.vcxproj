@@ -115,29 +115,31 @@
     <ClInclude Include="strings\write\write_interface_abi_method.h" />
     <ClInclude Include="strings\write\write_interface_consume.h" />
     <ClInclude Include="strings\write\write_interface_definition.h" />
-    <ClInclude Include="strings\write\write_interface_event_declaration.h" />
-    <ClInclude Include="strings\write\write_interface_event_definition.h" />
     <ClInclude Include="strings\write\write_interface_method_declaration.h" />
     <ClInclude Include="strings\write\write_interface_override.h" />
     <ClInclude Include="strings\write\write_interface_override_method.h" />
-    <ClInclude Include="strings\write\write_module_class_constructor_definition.h" />
-    <ClInclude Include="strings\write\write_module_class_static_definition.h" />
-    <ClInclude Include="strings\write\write_module_factory_forwarding_constructor.h" />
-    <ClInclude Include="strings\write\write_module_factory_forwarding_static.h" />
-    <ClInclude Include="strings\write\write_module_interface_method_definition.h" />
+    <ClInclude Include="strings\write\write_interface_override_method_declaration.h" />
+    <ClInclude Include="strings\write\write_interface_override_method_definition.h" />
+    <ClInclude Include="strings\write\write_component_class_constructor_definition.h" />
+    <ClInclude Include="strings\write\write_component_class_factory_base.h" />
+    <ClInclude Include="strings\write\write_component_class_static_definition.h" />
+    <ClInclude Include="strings\write\write_component_factory_forwarding_constructor.h" />
+    <ClInclude Include="strings\write\write_component_factory_forwarding_static.h" />
+    <ClInclude Include="strings\write\write_component_interface_method_definition.h" />
     <ClInclude Include="strings\write\write_interface_method_test.h" />
     <ClInclude Include="strings\write\write_interface_produce.h" />
     <ClInclude Include="strings\write\write_interface_produce_method.h" />
     <ClInclude Include="strings\write\write_logo.h" />
-    <ClInclude Include="strings\write\write_module_class_activation.h" />
-    <ClInclude Include="strings\write\write_module_class_base.h" />
-    <ClInclude Include="strings\write\write_module_class_header.h" />
-    <ClInclude Include="strings\write\write_module_class_source.h" />
-    <ClInclude Include="strings\write\write_module_factory_activate_instance.h" />
-    <ClInclude Include="strings\write\write_module_factory_activate_instance_not_implemented.h" />
-    <ClInclude Include="strings\write\write_module_lock_declaration.h" />
-    <ClInclude Include="strings\write\write_module_source.h" />
-    <ClInclude Include="strings\write\write_module_source_empty.h" />
+    <ClInclude Include="strings\write\write_component_class_activation.h" />
+    <ClInclude Include="strings\write\write_component_class_base.h" />
+    <ClInclude Include="strings\write\write_component_class_header.h" />
+    <ClInclude Include="strings\write\write_component_class_source.h" />
+    <ClInclude Include="strings\write\write_component_factory_activate_instance.h" />
+    <ClInclude Include="strings\write\write_component_factory_activate_instance_not_implemented.h" />
+    <ClInclude Include="strings\write\write_component_lock_declaration.h" />
+    <ClInclude Include="strings\write\write_component_source.h" />
+    <ClInclude Include="strings\write\write_component_source_empty.h" />
+    <ClInclude Include="strings\write\write_component_static_class_base.h" />
     <ClInclude Include="strings\write\write_name.h" />
     <ClInclude Include="strings\write\write_require.h" />
     <ClInclude Include="strings\write\write_shim.h" />
@@ -148,8 +150,6 @@
     <ClInclude Include="strings\write\write_shim_pre_nullptr.h" />
     <ClInclude Include="strings\write\write_static_class_definition.h" />
     <ClInclude Include="strings\write\write_static_definition.h" />
-    <ClInclude Include="strings\write\write_static_event_declaration.h" />
-    <ClInclude Include="strings\write\write_static_event_definition.h" />
     <ClInclude Include="strings\write\write_static_method_declaration.h" />
     <ClInclude Include="strings\write\write_struct_abi.h" />
     <ClInclude Include="strings\write\write_struct_definition.h" />
@@ -157,8 +157,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\code_writer.cpp" />
-    <ClCompile Include="source\component_writer.cpp" />
     <ClCompile Include="source\main_cppwinrt.cpp" />
+    <ClCompile Include="source\component_writer.cpp" />
     <ClCompile Include="source\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ClangDebug|Win32'">Create</PrecompiledHeader>
