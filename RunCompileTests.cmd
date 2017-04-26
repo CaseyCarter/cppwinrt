@@ -14,12 +14,15 @@ if "%1"=="spec" (
 ) 
 
 call SetBuildVars %*
+set TestLocation=%BuildStaging%\CompileTests
+
+powershell ".\GenerateConstexprCompileTests.ps1" %TestLocation%
 
 set test_output=%cd%\RunCompileTests.output
 
 echo Executing Projection Compile Tests
 echo Executing Projection Compile Tests...> %test_output%
-pushd %BuildStaging%\CompileTests
+pushd %TestLocation%
 echo // RunCompileTests.cmd generated PCH > pch.h
 echo #define WIN32_LEAN_AND_MEAN >> pch.h
 echo #include "base.h" >> pch.h
@@ -32,6 +35,7 @@ echo T arg(); >> pch.h
 echo.>> pch.h
 echo #include "pch.h" > pch.cpp
 del *.obj
+call :Compile constexpr_test.cpp
 call :Compile pch.cpp /Ycpch.h 
 for /f %%i in ('dir /b %_namespace_spec%') do call :Compile %%~ni.cpp /Yupch.h 
 call :Timer
