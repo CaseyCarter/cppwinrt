@@ -20,14 +20,6 @@ goto :eof
 :publish
 md %PublishShare%
 
-pushd Projection\Samples 
-git clean -d -f -x
-popd
-
-pushd Projection\UnitTests
-git clean -d -f -x
-popd
-
 echo Publishing Compiler
 for %%x in (exe pdb) do XCOPY CppWinRT\%BuildPlatform%\%BuildConfiguration%\*.%%x compiler /D /R /Y /J /I
 powershell -ExecutionPolicy ByPass -Command "& '%cd%\zip.ps1' -directory '%cd%\compiler' -name 'compiler.zip'"

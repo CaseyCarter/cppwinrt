@@ -1,6 +1,11 @@
 #pragma once
 
 #pragma comment(lib, "windowsapp")
+
+#include <cor.h>
+#include <corerror.h>
+#include <corhdr.h>
+
 #include "base_dependencies.h"
 #include "base_macros.h"
 

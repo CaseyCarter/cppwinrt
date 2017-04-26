@@ -1,6 +1,18 @@
 @echo off
 setlocal ENABLEDELAYEDEXPANSION
 
+if "%1"=="stats" (
+	set _compiler_stats = /Bt+ /d1templateStats 
+	shift
+)
+
+set _namespace_spec=*.cpp
+if "%1"=="spec" (
+	set _namespace_spec=%2.cpp
+	shift
+	shift
+) 
+
 call SetBuildVars %*
 
 set test_output=%cd%\RunCompileTests.output
@@ -8,15 +20,6 @@ set test_output=%cd%\RunCompileTests.output
 echo Executing Projection Compile Tests
 echo Executing Projection Compile Tests...> %test_output%
 pushd %BuildStaging%\CompileTests
-if "%1"=="stats" (
-	set _compiler_stats = /Bt+ /d1templateStats 
-	shift
-)
-if not "%1"=="" (
-	set _namespace_spec=%1.cpp
-) else (
-	set _namespace_spec=*.cpp
-)
 echo // RunCompileTests.cmd generated PCH > pch.h
 echo #define WIN32_LEAN_AND_MEAN >> pch.h
 echo #include "base.h" >> pch.h
