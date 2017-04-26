@@ -28,7 +28,7 @@ inline hstring::hstring(hstring_view value) :
 {}
 
 inline hstring::hstring(wchar_t const* const value) :
-    hstring(value, static_cast<size_type>(wcslen(value)))
+    hstring(value, impl::string_length(value))
 {}
 
 inline hstring::hstring(wchar_t const* const value, size_type const size) :

@@ -20,6 +20,11 @@ struct overrides : implements<D, R ...>
         return result;
     }
 
+    explicit operator bool() const noexcept
+    {
+        return m_inner.operator bool();
+    }
+
 protected:
 
     Windows::Foundation::IInspectable m_inner;

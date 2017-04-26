@@ -270,14 +270,14 @@ namespace impl
         K Key() const
         {
             K result{ empty_value<K>() };
-            check_hresult((*(abi<wfc::IKeyValuePair<K, V>>**)&static_cast<wfc::IKeyValuePair<K, V> const&>(static_cast<D const&>(*this)))->get_Key(put_abi(result)));
+            check_hresult((*(abi_t<wfc::IKeyValuePair<K, V>>**)&static_cast<wfc::IKeyValuePair<K, V> const&>(static_cast<D const&>(*this)))->get_Key(put_abi(result)));
             return result;
         }
 
         V Value() const
         {
             V result{ empty_value<V>() };
-            check_hresult((*(abi<wfc::IKeyValuePair<K, V>>**)&static_cast<wfc::IKeyValuePair<K, V> const&>(static_cast<D const&>(*this)))->get_Value(put_abi(result)));
+            check_hresult((*(abi_t<wfc::IKeyValuePair<K, V>>**)&static_cast<wfc::IKeyValuePair<K, V> const&>(static_cast<D const&>(*this)))->get_Value(put_abi(result)));
             return result;
         }
 
@@ -298,26 +298,26 @@ namespace impl
         V Lookup(K const& key) const
         {
             V result{ empty_value<V>() };
-            check_hresult((*(abi<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->Lookup(get_abi(key), put_abi(result)));
+            check_hresult((*(abi_t<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->Lookup(get_abi(key), put_abi(result)));
             return result;
         }
 
         uint32_t Size() const
         {
             uint32_t size{};
-            check_hresult((*(abi<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
+            check_hresult((*(abi_t<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
             return size;
         }
 
         bool HasKey(K const& key) const
         {
             bool found{};
-            check_hresult((*(abi<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->HasKey(get_abi(key), &found));
+            check_hresult((*(abi_t<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->HasKey(get_abi(key), &found));
             return found;
         }
         void Split(wfc::IMapView<K, V>& firstPartition, wfc::IMapView<K, V>& secondPartition)
         {
-            check_hresult((*(abi<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->Split(put_abi(firstPartition), put_abi(secondPartition)));
+            check_hresult((*(abi_t<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->Split(put_abi(firstPartition), put_abi(secondPartition)));
         }
     };
 
@@ -327,46 +327,46 @@ namespace impl
         V Lookup(K const& key) const
         {
             V result{ empty_value<V>() };
-            check_hresult((*(abi<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Lookup(get_abi(key), put_abi(result)));
+            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Lookup(get_abi(key), put_abi(result)));
             return result;
         }
 
         uint32_t Size() const
         {
             uint32_t size{};
-            check_hresult((*(abi<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
+            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
             return size;
         }
 
         bool HasKey(K const& key) const
         {
             bool found{};
-            check_hresult((*(abi<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->HasKey(get_abi(key), &found));
+            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->HasKey(get_abi(key), &found));
             return found;
         }
 
         wfc::IMapView<K, V> GetView() const
         {
             wfc::IMapView<K, V> view;
-            check_hresult((*(abi<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->GetView(put_abi(view)));
+            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->GetView(put_abi(view)));
             return view;
         }
 
         bool Insert(K const& key, V const& value) const
         {
             bool replaced{};
-            check_hresult((*(abi<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Insert(get_abi(key), get_abi(value), &replaced));
+            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Insert(get_abi(key), get_abi(value), &replaced));
             return replaced;
         }
 
         void Remove(K const& key) const
         {
-            check_hresult((*(abi<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Remove(get_abi(key)));
+            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Remove(get_abi(key)));
         }
 
         void Clear() const
         {
-            check_hresult((*(abi<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Clear());
+            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->Clear());
         }
     };
 
@@ -376,20 +376,20 @@ namespace impl
         event_token MapChanged(wfc::MapChangedEventHandler<K, V> const& handler) const
         {
             event_token cookie{};
-            check_hresult((*(abi<wfc::IObservableMap<K, V>>**)&static_cast<wfc::IObservableMap<K, V> const&>(static_cast<D const&>(*this)))->add_MapChanged(get_abi(handler), &cookie));
+            check_hresult((*(abi_t<wfc::IObservableMap<K, V>>**)&static_cast<wfc::IObservableMap<K, V> const&>(static_cast<D const&>(*this)))->add_MapChanged(get_abi(handler), &cookie));
             return cookie;
         }
 
         void MapChanged(event_token const cookie) const
         {
-            check_hresult((*(abi<wfc::IObservableMap<K, V>>**)&static_cast<wfc::IObservableMap<K, V> const&>(static_cast<D const&>(*this)))->remove_MapChanged(cookie));
+            check_hresult((*(abi_t<wfc::IObservableMap<K, V>>**)&static_cast<wfc::IObservableMap<K, V> const&>(static_cast<D const&>(*this)))->remove_MapChanged(cookie));
         }
 
         using MapChanged_revoker = event_revoker<wfc::IObservableMap<K, V>>;
 
         MapChanged_revoker MapChanged(auto_revoke_t, wfc::MapChangedEventHandler<K, V> const& handler) const
         {
-            return make_event_revoker<D, wfc::IObservableMap<K, V>>(this, &abi<wfc::IObservableMap<K, V>>::remove_MapChanged, MapChanged(handler));
+            return make_event_revoker<D, wfc::IObservableMap<K, V>>(this, &abi_t<wfc::IObservableMap<K, V>>::remove_MapChanged, MapChanged(handler));
         }
     };
 

@@ -8,7 +8,7 @@ inline hstring_view::hstring_view(hstring const& value) noexcept :
 {}
 
 inline hstring_view::hstring_view(wchar_t const* const value) noexcept :
-    hstring_view(value, static_cast<size_type>(wcslen(value)))
+    hstring_view(value, impl::string_length(value))
 {}
 
 inline hstring_view::hstring_view(wchar_t const* const value, size_type const size) noexcept

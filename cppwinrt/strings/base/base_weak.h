@@ -30,7 +30,10 @@ struct weak_ref
     T get() const noexcept
     {
         T object = nullptr;
-        m_ref->Resolve(put_abi(object));
+        if (m_ref)
+        {
+            m_ref->Resolve(impl::guid_v<T>, reinterpret_cast<::IInspectable*>(put_abi(object)));
+        }
         return object;
     }
 

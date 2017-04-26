@@ -15,6 +15,17 @@ namespace impl
         return result;
     }
 
+    inline uint32_t string_length(wchar_t const* value) noexcept
+    {
+        size_t length = 0;
+        if (value)
+        {
+            length = wcslen(value);
+        }
+        WINRT_ASSERT(length <= 0xffffffff);
+        return length;
+    }
+
     inline bool embedded_null(HSTRING value) noexcept
     {
         BOOL result = 0;
@@ -212,7 +223,7 @@ namespace impl
     {
         static HSTRING detach(wchar_t const* const value)
         {
-            return create_string(value, static_cast<uint32_t>(wcslen(value)));
+            return create_string(value, string_length(value));
         }
     };
 
