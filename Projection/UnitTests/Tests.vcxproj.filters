@@ -44,6 +44,7 @@
     <ClCompile Include="collection_vector.cpp" />
     <ClCompile Include="collection_map.cpp" />
     <ClCompile Include="marshal.cpp" />
+    <ClCompile Include="Hash.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

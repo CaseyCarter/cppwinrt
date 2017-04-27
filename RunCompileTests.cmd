@@ -13,12 +13,12 @@ if "%1"=="spec" (
 	shift
 ) 
 
-call SetBuildVars %*
+call SetBuildVars.cmd %*
 set TestLocation=%BuildStaging%\CompileTests
 
 powershell ".\GenerateConstexprCompileTests.ps1" %TestLocation%
 
-set test_output=%cd%\RunCompileTests.output
+set test_output=%~dp0\RunCompileTests.output
 
 echo Executing Projection Compile Tests
 echo Executing Projection Compile Tests...> %test_output%
@@ -54,4 +54,5 @@ cl %* /c /nologo /I ..\winrt /EHsc /std:c++latest /permissive- /await %_compiler
 goto :eof
 rem todo: add clang
 
-ReportBuildErrorsAndExit.cmd %test_output%
+call ReportBuildErrors.cmd %test_output%
+exit /B %ERRORLEVEL%

@@ -1,6 +1,6 @@
 @echo off
 
-call SetBuildVars %*
+call SetBuildVars.cmd %*
 
 pushd cppwinrt
 echo Building compiler for %BuildConfiguration% %BuildPlatform%...

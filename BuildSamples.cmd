@@ -1,9 +1,9 @@
 @echo off
 setlocal
 
-call SetBuildVars %*
+call SetBuildVars.cmd %*
 
-set test_output=%cd%\BuildSamples.output
+set test_output=%~dp0\BuildSamples.output
 echo Building Samples...> %test_output%
 
 pushd %BuildStaging%\Samples
@@ -17,4 +17,5 @@ for /f %%i in ('dir /s /b *.sln') do @echo %%i & msbuild "%%i" /nologo /m /p:Con
 
 popd
 
-ReportBuildErrorsAndExit.cmd %test_output%
+call ReportBuildError.cmd %test_output%
+exit /B %ERRORLEVEL%
