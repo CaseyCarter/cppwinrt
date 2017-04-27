@@ -1,0 +1,4 @@
+[submodule "Projection/winrt"]
+	path = Projection/winrt
+	url = https://microsoft.visualstudio.com/DefaultCollection/Dart/_git/ModernCPP_NightlyProjection
+	branch = master
