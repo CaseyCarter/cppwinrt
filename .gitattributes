@@ -1,0 +1,42 @@
+# Set default line ending behavior to autocrlf=true for all text files
+* text=auto
+
+# Any files not listed here will apply the autocrlf setting defined in the repo's clone.
+
+# Source files
+*.c text
+*.h text
+*.hpp text
+*.hxx text
+*.cpp text
+*.cxx text
+*.idl text
+*.cs text
+*.asm text
+*.inl text
+*.sql text
+*.xaml text
+*.xml text
+*.htm text
+*.html text
+*.js text
+*.json text
+
+# Script files
+*.ps1 text
+*.cmd text
+*.bat text
+
+# Solution files
+*.sln text
+*.vcxproj text
+*.vcxproj.filters text
+*.vcxproj.user text
+*.csproj text
+*.config text
+
+# Simple text files
+*.txt text
+*.md text
+LICENSE text
+
