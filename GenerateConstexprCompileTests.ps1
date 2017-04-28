@@ -72,7 +72,6 @@ for($i = 0; $i -lt $header.Count; $i++)
 
 #figure out the headers we need
 $headers = New-Object System.Collections.Generic.HashSet[System.String]
-$added = $headers.Add('pch.h')
 $added = $headers.Add('Windows.Foundation.h')
 $added = $headers.Add('Windows.Foundation.Collections.h')
 
@@ -91,7 +90,7 @@ foreach($pair in $types)
 }
 
 # Write the test file
-$filename = $args[0] + '\constexpr_test.cpp'
+$filename = $args[0]
 
 '// constexpr static assert tests for generics' | out-file $filename
 
