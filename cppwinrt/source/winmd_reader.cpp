@@ -514,10 +514,12 @@ namespace cppwinrt::meta
                 WINRT_ASSERT(converter.simple_code_name() != "Windows.Foundation.Deferral");
 
                 bool filtered = m_foundational || is_foundation_type(converter) || is_filtered_type(converter);
+                const bool sealed = flags & tdSealed;
 
                 if (flags& tdInterface)
                 {
-                    co_yield type{ token, type_category::interface_v, filtered, converter.code_name() };
+                    WINRT_ASSERT(!sealed);
+                    co_yield type{ token, type_category::interface_v, filtered, converter.code_name(), sealed };
                 }
                 else if (extends == m_system_attribute)
                 {
@@ -525,11 +527,12 @@ namespace cppwinrt::meta
                 }
                 else if (extends == m_system_class)
                 {
-                    co_yield type{ token, type_category::class_v, filtered, converter.code_name() };
+                    co_yield type{ token, type_category::class_v, filtered, converter.code_name(), sealed };
                 }
                 else if (extends == m_system_enum)
                 {
-                    co_yield type{ token, type_category::enum_v, filtered, converter.code_name() };
+                    WINRT_ASSERT(sealed);
+                    co_yield type{ token, type_category::enum_v, filtered, converter.code_name(), sealed };
                 }
                 else if (extends == m_system_struct)
                 {
@@ -538,15 +541,16 @@ namespace cppwinrt::meta
                         continue;
                     }
 
-                    co_yield type{ token, type_category::struct_v, filtered, converter.code_name() };
+                    WINRT_ASSERT(sealed);
+                    co_yield type{ token, type_category::struct_v, filtered, converter.code_name(), sealed };
                 }
                 else if (extends == m_system_delegate)
                 {
-                    co_yield type{ token, type_category::delegate_v, filtered, converter.code_name() };
+                    co_yield type{ token, type_category::delegate_v, filtered, converter.code_name(), sealed };
                 }
                 else
                 {
-                    co_yield type{ token, type_category::class_v, filtered, converter.code_name(),{ extends, m_db.get() } };
+                    co_yield type{ token, type_category::class_v, filtered, converter.code_name(), sealed,{ extends, m_db.get() } };
                 }
             }
         }
@@ -556,12 +560,14 @@ namespace cppwinrt::meta
         type_category category,
         bool foundation,
         std::pair<std::string, uint32_t>&& name,
+        bool sealed,
         meta::token base) :
         m_name(std::move(name)),
         m_token(token),
         m_base({ base }),
         m_category(category),
-        m_foundation(foundation)
+        m_foundation(foundation),
+        m_sealed(sealed)
     {
         WINRT_ASSERT(token.is_type_def());
     }
@@ -603,6 +609,11 @@ namespace cppwinrt::meta
     bool type::is_filtered() const noexcept
     {
         return m_foundation;
+    }
+
+    bool type::is_sealed() const noexcept
+    {
+        return m_sealed;
     }
 
     token type::token() const noexcept

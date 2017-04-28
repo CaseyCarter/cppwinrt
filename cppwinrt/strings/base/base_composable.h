@@ -60,7 +60,7 @@ namespace impl
             return this->shim().NonDelegatingRelease();
         }
 
-        HRESULT __stdcall GetIids(uint32_t* count, GUID** array) noexcept final
+        HRESULT __stdcall GetIids(ULONG* count, GUID** array) noexcept final
         {
             return this->shim().NonDelegatingGetIids(count, array);
         }
@@ -68,11 +68,6 @@ namespace impl
         HRESULT __stdcall GetRuntimeClassName(HSTRING* name) noexcept final
         {
             return this->shim().NonDelegatingGetRuntimeClassName(name);
-        }
-
-        HRESULT __stdcall GetTrustLevel(TrustLevel* trustLevel) noexcept final
-        {
-            return this->shim().NonDelegatingGetTrustLevel(trustLevel);
         }
     };
 
@@ -89,7 +84,7 @@ namespace impl
             D& object = *instance;
             detach_abi(instance);
 
-            object.m_outer = get_abi(outer);
+            object.m_outer = static_cast<::IInspectable*>(get_abi(outer));
             attach_abi(inner, to_abi<INonDelegatingInspectable>(&object));
             return inner.as<I>();
         }
@@ -145,7 +140,7 @@ namespace impl
 }
 
 template <typename D, typename ... R>
-class composable_base : public implements<D, R...>, public impl::producer<D, impl::INonDelegatingInspectable>
+class implements_composable : public implements<D, R...>, public impl::producer<D, impl::INonDelegatingInspectable>
 {
     using base_type = implements<D, R...>;
     ::IInspectable* m_outer = nullptr;
@@ -178,31 +173,22 @@ public:
         return base_type::Release();
     }
 
-    HRESULT __stdcall GetIids(uint32_t* count, GUID** array) noexcept
+    HRESULT __stdcall GetIids(ULONG* count, GUID** array) noexcept
     {
         if (IsComposed())
         {
-            return m_outer->GetIids(reinterpret_cast<ULONG*>(count), array);
+            return m_outer->GetIids(count, array);
         }
         return base_type::GetIids(count, array);
     }
 
-    HRESULT __stdcall GetRuntimeClassName(HSTRING* name) noexcept
+    HRESULT __stdcall abi_GetRuntimeClassName(HSTRING* name) noexcept
     {
         if (IsComposed())
         {
             return m_outer->GetRuntimeClassName(name);
         }
-        return base_type::GetRuntimeClassName(name);
-    }
-
-    HRESULT __stdcall GetTrustLevel(TrustLevel* trustLevel) noexcept
-    {
-        if (IsComposed())
-        {
-            return m_outer->GetTrustLevel(trustLevel);
-        }
-        return base_type::GetTrustLevel(trustLevel);
+        return base_type::abi_GetRuntimeClassName(name);
     }
 
     bool IsComposed() const noexcept
@@ -233,19 +219,14 @@ protected:
         return base_type::Release();
     }
 
-    HRESULT __stdcall NonDelegatingGetIids(uint32_t* count, GUID** array) noexcept
+    HRESULT __stdcall NonDelegatingGetIids(ULONG* count, GUID** array) noexcept
     {
         return base_type::GetIids(count, array);
     }
 
     HRESULT __stdcall NonDelegatingGetRuntimeClassName(HSTRING* name) noexcept
     {
-        return base_type::GetRuntimeClassName(name);
-    }
-
-    HRESULT __stdcall NonDelegatingGetTrustLevel(TrustLevel* trustLevel) noexcept
-    {
-        return base_type::GetTrustLevel(trustLevel);
+        return base_type::abi_GetRuntimeClassName(name);
     }
 
     template <typename D, typename I>
@@ -259,9 +240,9 @@ protected:
 };
 
 template <typename D, typename... R>
-class composable_base_overrides : public composable_base<D, R...>
+class overrides_composable : public implements_composable<D, R...>
 {
-    using base_type = composable_base<D, R...>;
+    using base_type = implements_composable<D, R...>;
 public:
     template <typename Qi>
     Qi as() const

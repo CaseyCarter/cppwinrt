@@ -7,8 +7,8 @@ Copyright (c) %d Microsoft Corporation. All rights reserved.
 Commands:
 
   platform          Create or update platform projection
-  header            Create or update module header
-  module            Create or update module project
+  header            Create or update component header
+  component         Create or update component project
 
 Options:
 

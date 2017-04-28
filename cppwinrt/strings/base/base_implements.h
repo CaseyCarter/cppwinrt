@@ -28,7 +28,10 @@ namespace impl
     using uncloak_t = typename uncloak<T>::type;
 
     template <typename I>
-    struct is_cloaked : std::negation<std::is_base_of<::IInspectable, abi_t<I>>> {};
+    struct is_cloaked : std::disjunction<
+        std::is_same<::IInspectable, abi_t<I>>,
+        std::negation<std::is_base_of<::IInspectable, abi_t<I>>>
+    > {};
 
     template <typename I>
     struct is_cloaked<cloaked<I>> : std::true_type {};
@@ -168,9 +171,10 @@ namespace impl
             return shim().abi_GetRuntimeClassName(name);
         }
 
-        HRESULT __stdcall GetTrustLevel(TrustLevel* trustLevel) noexcept override
+        HRESULT __stdcall GetTrustLevel(TrustLevel* trustLevel) noexcept override final
         {
-            return shim().GetTrustLevel(trustLevel);
+            *trustLevel = BaseTrust;
+            return S_OK;
         }
     };
 

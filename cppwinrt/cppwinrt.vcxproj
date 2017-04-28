@@ -91,6 +91,10 @@
     <ClInclude Include="strings\write\write_class_definition.h" />
     <ClInclude Include="strings\write\write_class_override.h" />
     <ClInclude Include="strings\write\write_class_override_constructor.h" />
+    <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h" />
+    <ClInclude Include="strings\write\write_component_factory_forwarding_composable.h" />
+    <ClInclude Include="strings\write\write_component_produce_override_dispatch.h" />
+    <ClInclude Include="strings\write\write_component_produce_override_dispatch_method.h" />
     <ClInclude Include="strings\write\write_composable_constructor_definition.h" />
     <ClInclude Include="strings\write\write_constructor_declaration.h" />
     <ClInclude Include="strings\write\write_constructor_definition.h" />
@@ -141,6 +145,7 @@
     <ClInclude Include="strings\write\write_component_source_empty.h" />
     <ClInclude Include="strings\write\write_component_static_class_base.h" />
     <ClInclude Include="strings\write\write_name.h" />
+    <ClInclude Include="strings\write\write_override_fallbacks.h" />
     <ClInclude Include="strings\write\write_require.h" />
     <ClInclude Include="strings\write\write_shim.h" />
     <ClInclude Include="strings\write\write_shim_body.h" />

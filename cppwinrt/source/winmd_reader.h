@@ -196,6 +196,7 @@ namespace cppwinrt::meta
         base m_base;
         type_category m_category{};
         bool m_foundation{};
+        bool m_sealed{};
 
     public:
 
@@ -203,6 +204,7 @@ namespace cppwinrt::meta
             type_category category,
             bool foundation,
             std::pair<std::string, uint32_t>&& name,
+            bool sealed,
             meta::token base = {});
 
         void index_base();
@@ -213,6 +215,7 @@ namespace cppwinrt::meta
         bool is_interface() const noexcept;
         bool is_struct() const noexcept;
         bool is_filtered() const noexcept;
+        bool is_sealed() const noexcept;
 
         token token() const noexcept;
         type_category category() const noexcept;

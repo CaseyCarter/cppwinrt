@@ -381,6 +381,21 @@
     <ClInclude Include="strings\write\write_component_static_class_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\write\write_component_factory_forwarding_composable.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_produce_override_dispatch.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_produce_override_dispatch_method.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_override_fallbacks.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">
