@@ -5,4 +5,6 @@ call SetBuildVars.cmd %*
 pushd cppwinrt
 echo Building compiler for %BuildConfiguration% %BuildPlatform%...
 msbuild "cppwinrt.sln" /nologo /m /p:Configuration=%BuildConfiguration% /p:Platform=%BuildPlatform% 
-popd 
+set MsbuildErrorLevel=%ERRORLEVEL%
+popd
+exit %MsbuildErrorLevel%
