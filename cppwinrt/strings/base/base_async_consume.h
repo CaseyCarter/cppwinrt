@@ -451,7 +451,6 @@ namespace impl
         static constexpr GUID value{ 0x6d844858, 0x0cff, 0x4590,{ 0xae, 0x89, 0x95, 0xa5, 0xa5, 0xc8, 0xb4, 0xb8 } };
     };
 
-
     template <typename TResult, typename TProgress>
     struct guid<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
     {

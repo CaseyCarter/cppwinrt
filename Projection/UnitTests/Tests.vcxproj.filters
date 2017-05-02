@@ -35,7 +35,6 @@
     <ClCompile Include="marshal.cpp" />
     <ClCompile Include="meta.cpp" />
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="ppl.cpp" />
     <ClCompile Include="produce.cpp" />
     <ClCompile Include="produce_async.cpp" />
     <ClCompile Include="produce_map.cpp" />

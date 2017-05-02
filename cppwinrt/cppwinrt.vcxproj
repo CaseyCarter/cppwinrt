@@ -70,7 +70,6 @@
     <ClInclude Include="strings\base\base_meta.h" />
     <ClInclude Include="strings\base\base_modern.h" />
     <ClInclude Include="strings\base\base_module.h" />
-    <ClInclude Include="strings\base\base_ppl.h" />
     <ClInclude Include="strings\base\base_reference.h" />
     <ClInclude Include="strings\base\base_reference_produce.h" />
     <ClInclude Include="strings\base\base_std_async_action.h" />

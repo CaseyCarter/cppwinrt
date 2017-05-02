@@ -69,20 +69,11 @@ namespace cppwinrt
         out.save_as(file_path.string());
     }
 
-    void create_ppl_header(path const& base_path)
-    {
-        output out(split_header_capacity);
-        write_ppl_header(out);
-        path file_path = base_path / "ppl.h";
-        out.save_as(file_path.string());
-    }
-    
     IAsyncAction create_base_headers(platform_paths const& paths)
     {
         co_await resume_background();
 
         create_base_header(paths._public);
-        create_ppl_header(paths._public);
     }
 
     IAsyncAction create_namespace_headers(
@@ -378,7 +369,6 @@ namespace cppwinrt
         sdk.save_as(sdk_path.string());
 
         create_base_header(settings::output);
-        create_ppl_header(settings::output);
     }
 
     void write_multi_header_platform()

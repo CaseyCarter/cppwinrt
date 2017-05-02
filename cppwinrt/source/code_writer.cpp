@@ -1827,12 +1827,6 @@ namespace cppwinrt
         write_warning_pop(out);
     }
 
-    void write_ppl_header(output& out)
-    {
-        write_logo(out);
-        out.write(strings::base_ppl);
-    }
-
     void write_names(output& out, std::vector<meta::type> const& types)
     {
         for (meta::type const& type : types)

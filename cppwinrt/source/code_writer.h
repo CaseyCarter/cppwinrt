@@ -10,7 +10,6 @@ namespace cppwinrt
     void write_winrt_namespace_begin(output& out);
     void write_winrt_namespace_end(output& out);
     void write_base_header(output& out);
-    void write_ppl_header(output& out);
 
     void write_names(output& out, std::vector<meta::type> const& types);
     void write_categories(output& out, std::vector<meta::type> const& types);
