@@ -480,7 +480,7 @@ namespace impl
     };
 
     template <typename T>
-    struct accessors<array_view<T>, std::enable_if_t<!std::is_base_of<Windows::Foundation::IUnknown, T>::value>>
+    struct accessors<array_view<T>, std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
     {
         static auto get(array_view<T> object) noexcept
         {
@@ -489,7 +489,7 @@ namespace impl
     };
 
     template <typename T>
-    struct accessors<array_view<T>, std::enable_if_t<std::is_base_of<Windows::Foundation::IUnknown, T>::value>>
+    struct accessors<array_view<T>, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
     {
         static auto get(array_view<T> object) noexcept
         {

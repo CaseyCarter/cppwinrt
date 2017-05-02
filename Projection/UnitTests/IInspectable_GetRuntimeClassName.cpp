@@ -12,11 +12,11 @@ using namespace winrt;
 using namespace Windows;
 using namespace Windows::Foundation;
 
-struct Test_GetRuntimeClassName_NoOverride : implements<Test_GetRuntimeClassName_NoOverride, IInspectable>
+struct Test_GetRuntimeClassName_NoOverride : implements<Test_GetRuntimeClassName_NoOverride, Windows::Foundation::IInspectable>
 {
 };
 
-struct Test_GetRuntimeClassName_Override : implements<Test_GetRuntimeClassName_Override, IInspectable>
+struct Test_GetRuntimeClassName_Override : implements<Test_GetRuntimeClassName_Override, Windows::Foundation::IInspectable>
 {
     hstring GetRuntimeClassName()
     {
@@ -26,14 +26,14 @@ struct Test_GetRuntimeClassName_Override : implements<Test_GetRuntimeClassName_O
 
 TEST_CASE("Test_GetRuntimeClassName_NoOverride")
 {
-    IInspectable i = make<Test_GetRuntimeClassName_NoOverride>();
+    Windows::Foundation::IInspectable i = make<Test_GetRuntimeClassName_NoOverride>();
 
     REQUIRE_THROWS_AS(GetRuntimeClassName(i), hresult_not_implemented);
 }
 
 TEST_CASE("Test_GetRuntimeClassName_Override")
 {
-    IInspectable i = make<Test_GetRuntimeClassName_Override>();
+    Windows::Foundation::IInspectable i = make<Test_GetRuntimeClassName_Override>();
 
     REQUIRE(GetRuntimeClassName(i) == L"GetRuntimeClassName");
 }

@@ -17,5 +17,5 @@ for /f %%i in ('dir /s /b *.sln') do @echo %%i & msbuild "%%i" /nologo /m /p:Con
 
 popd
 
-call ReportBuildError.cmd %test_output%
+call ReportBuildErrors.cmd %test_output%
 exit /B %ERRORLEVEL%

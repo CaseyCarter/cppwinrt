@@ -133,7 +133,7 @@ TEST_CASE("delegate,lambda,EventHandler")
 {
     Movable movable = 1;
 
-    EventHandler<IInspectable> h = [capture = std::move(movable)](auto && ...)
+    EventHandler<Windows::Foundation::IInspectable> h = [capture = std::move(movable)](auto && ...)
     {
         REQUIRE(capture.Value == 1);
     };
@@ -147,7 +147,7 @@ TEST_CASE("delegate,lambda,TypedEventHandler")
 {
     Movable movable = 1;
 
-    TypedEventHandler<DisplayInformation, IInspectable> h = [capture = std::move(movable)](auto && ...)
+    TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable> h = [capture = std::move(movable)](auto && ...)
     {
         REQUIRE(capture.Value == 1);
     };
@@ -161,7 +161,7 @@ TEST_CASE("delegate,lambda,VectorChangedEventHandler")
 {
     Movable movable = 1;
 
-    VectorChangedEventHandler<IInspectable> h = [capture = std::move(movable)](auto && ...)
+    VectorChangedEventHandler<Windows::Foundation::IInspectable> h = [capture = std::move(movable)](auto && ...)
     {
         REQUIRE(capture.Value == 1);
     };

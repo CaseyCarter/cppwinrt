@@ -33,7 +33,7 @@ check_invoke lambda_invoked;
 
 struct MemberHandler
 {
-    void handler(const DisplayInformation & sender, const IInspectable & args)
+    void handler(const DisplayInformation & sender, const Windows::Foundation::IInspectable & args)
     {
         REQUIRE(sender == nullptr);
         REQUIRE(args == nullptr);
@@ -42,9 +42,9 @@ struct MemberHandler
 };
 
 MemberHandler handler_object;
-TypedEventHandler<DisplayInformation, IInspectable> member_delegate(&handler_object, &MemberHandler::handler);
+TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable> member_delegate(&handler_object, &MemberHandler::handler);
 
-TypedEventHandler<DisplayInformation, IInspectable> lambda_delegate = [](const DisplayInformation & sender, const IInspectable & args)
+TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable> lambda_delegate = [](const DisplayInformation & sender, const Windows::Foundation::IInspectable & args)
 {
     REQUIRE(sender == nullptr);
     REQUIRE(args == nullptr);
@@ -84,17 +84,17 @@ void BasicTest()
 
 TEST_CASE("agile event, basic add/remove/invoke")
 {
-    BasicTest<agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+    BasicTest<agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }
 
 TEST_CASE("non-agile event, basic add/remove/invoke")
 {
-    BasicTest<non_agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+    BasicTest<non_agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }
 
 TEST_CASE("single threaded event, basic add/remove/invoke")
 {
-    BasicTest<single_threaded_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+    BasicTest<single_threaded_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }
 
 struct event_traits : impl::handle_traits<HANDLE>
@@ -115,7 +115,7 @@ struct BlockingHandler
         Error
     };
 
-    void handler(const DisplayInformation &, const IInspectable &)
+    void handler(const DisplayInformation &, const Windows::Foundation::IInspectable &)
     {
         m_state = Executing;
 
@@ -186,8 +186,8 @@ BlockingHandler blocking_object2;
 event_token blocking_object1_token;
 event_token blocking_object2_token;
 
-TypedEventHandler<DisplayInformation, IInspectable> blocking_delegate1(&blocking_object1, &BlockingHandler::handler);
-TypedEventHandler<DisplayInformation, IInspectable> blocking_delegate2(&blocking_object2, &BlockingHandler::handler);
+TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable> blocking_delegate1(&blocking_object1, &BlockingHandler::handler);
+TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable> blocking_delegate2(&blocking_object2, &BlockingHandler::handler);
 
 template <typename T>
 void ConcurrentAddTest()
@@ -280,12 +280,12 @@ void ConcurrentAddTest()
 
 TEST_CASE("agile event, add an event when the event source is already being invoked")
 {
-    ConcurrentAddTest<agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+    ConcurrentAddTest<agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }
 
 TEST_CASE("non-agile event, add an event when the event source is already being invoked")
 {
-    ConcurrentAddTest<non_agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+    ConcurrentAddTest<non_agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }
 
 template <typename T>
@@ -388,10 +388,10 @@ void ConcurrentRemoveTest()
 
 TEST_CASE("agile event, remove an event when the event source is already being invoked")
 {
-    ConcurrentRemoveTest<agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+    ConcurrentRemoveTest<agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }
 
 TEST_CASE("non-agile event, remove an event when the event source is already being invoked")
 {
-    ConcurrentRemoveTest<non_agile_event<TypedEventHandler<DisplayInformation, IInspectable>>>();
+    ConcurrentRemoveTest<non_agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }

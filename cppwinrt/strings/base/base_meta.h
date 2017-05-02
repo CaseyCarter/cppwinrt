@@ -33,6 +33,9 @@ namespace impl
     };
 
     template <typename T>
+    using default_interface_t = typename default_interface<T>::type;
+
+    template <typename T>
     struct name;
 
     template <typename T>
@@ -66,12 +69,13 @@ namespace impl
     };
 
     template <typename T>
-    struct guid;
+    struct guid
+    {
+        static constexpr GUID value = __uuidof(T);
+    };
 
     template <typename T>
-    constexpr GUID guid_v = guid<typename default_interface<T>::type>::value;
-
-
+    constexpr GUID guid_v = guid<default_interface_t<T>>::value;
 }
 
 template <typename T>

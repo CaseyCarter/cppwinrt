@@ -1,28 +1,5 @@
 #pragma once
 
-namespace winrt { namespace ABI { namespace Windows { namespace Foundation { namespace Collections {
-
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b64")) __declspec(novtable) IMapChangedEventArgs<uint32_t> : impl_IMapChangedEventArgs<uint32_t> {};
-
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b61")) __declspec(novtable) IKeyValuePair<int32_t, hstring> : impl_IKeyValuePair<int32_t, hstring> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b62")) __declspec(novtable) IIterator<IKeyValuePair<int32_t, hstring>> : impl_IIterator<IKeyValuePair<int32_t, hstring>> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b63")) __declspec(novtable) IIterable<IKeyValuePair<int32_t, hstring>> : impl_IIterable<IKeyValuePair<int32_t, hstring>> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b64")) __declspec(novtable) IMap<int32_t, hstring> : impl_IMap<int32_t, hstring> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b65")) __declspec(novtable) IMapView<int32_t, hstring> : impl_IMapView<int32_t, hstring> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b66")) __declspec(novtable) MapChangedEventHandler<int32_t, hstring> : impl_MapChangedEventHandler<int32_t, hstring> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b66")) __declspec(novtable) IObservableMap<int32_t, hstring> : impl_IObservableMap<int32_t, hstring> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b67")) __declspec(novtable) IMapChangedEventArgs<int32_t> : impl_IMapChangedEventArgs<int32_t> {};
-
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b61")) __declspec(novtable) IKeyValuePair<hstring, int32_t> : impl_IKeyValuePair<hstring, int32_t> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b62")) __declspec(novtable) IIterator<IKeyValuePair<hstring, int32_t>> : impl_IIterator<IKeyValuePair<hstring, int32_t>> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b63")) __declspec(novtable) IIterable<IKeyValuePair<hstring, int32_t>> : impl_IIterable<IKeyValuePair<hstring, int32_t>> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b64")) __declspec(novtable) IMap<hstring, int32_t> : impl_IMap<hstring, int32_t> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b65")) __declspec(novtable) IMapView<hstring, int32_t> : impl_IMapView<hstring, int32_t> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b66")) __declspec(novtable) MapChangedEventHandler<hstring, int32_t> : impl_MapChangedEventHandler<hstring, int32_t> {};
-template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b66")) __declspec(novtable) IObservableMap<hstring, int32_t> : impl_IObservableMap<hstring, int32_t> {};
-
-}}}}}
-
 //
 // What follows is a complete reference implementation of IMap/IMapView/IIterable/IIterator used for testing
 // both the consumer and producer sides of the projection of these collection interfaces.

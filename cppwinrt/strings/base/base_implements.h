@@ -85,13 +85,13 @@ D* from_abi(I const& from) noexcept
     return&static_cast<impl::produce<D, I>*>(get_abi(from))->shim();
 }
 
-template <typename I, typename D, std::enable_if_t<std::is_base_of<Windows::Foundation::IUnknown, I>::value>* = nullptr>
+template <typename I, typename D, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, I>>* = nullptr>
 abi_t<I>* to_abi(impl::producer<D, I> const* from) noexcept
 {
     return reinterpret_cast<abi_t<I>*>(const_cast<impl::producer<D, I>*>(from));
 }
 
-template <typename I, typename D, std::enable_if_t<std::is_base_of< ::IUnknown, I>::value>* = nullptr>
+template <typename I, typename D, std::enable_if_t<std::is_base_of_v< ::IUnknown, I>>* = nullptr>
 abi_t<I>* to_abi(impl::producer<D, I> const* from) noexcept
 {
     return const_cast<impl::producer<D, I>*>(from);
@@ -179,7 +179,7 @@ namespace impl
     };
 
     template <typename D, typename I>
-    struct producer<D, I, std::enable_if_t<std::is_base_of< ::IUnknown, I>::value>> : abi_t<I>
+    struct producer<D, I, std::enable_if_t<std::is_base_of_v< ::IUnknown, I>>> : abi_t<I>
     {};
 
     template <typename D, typename I>
@@ -518,7 +518,7 @@ protected:
         catch (...) { return impl::to_hresult(); }
     }
 
-    HRESULT __stdcall GetTrustLevel(TrustLevel* trustLevel) noexcept
+    HRESULT __stdcall abi_GetTrustLevel(TrustLevel* trustLevel) noexcept
     {
         try
         {

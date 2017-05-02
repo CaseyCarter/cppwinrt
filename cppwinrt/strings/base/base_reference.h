@@ -1,4 +1,3 @@
-
 namespace Windows::Foundation
 {
     template <typename T> struct IReference;
@@ -49,17 +48,6 @@ namespace impl
     {
         using type = pinterface_category<T>;
         static constexpr GUID value{ 0x61c17706, 0x2d65, 0x11e0,{ 0x9a, 0xe8, 0xd4, 0x85, 0x64, 0x01, 0x54, 0x72 } };
-    };
-}
-
-namespace Windows::Foundation
-{
-    template <typename T>
-    struct IReference :
-        IInspectable,
-        impl::consume_t<IReference<T>>
-    {
-        IReference<T>(std::nullptr_t = nullptr) noexcept {}
     };
 }
 

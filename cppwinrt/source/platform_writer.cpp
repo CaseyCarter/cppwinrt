@@ -61,14 +61,28 @@ namespace cppwinrt
         }
     };
 
-    IAsyncAction create_base_header(platform_paths const& paths)
+    void create_base_header(path const& base_path)
+    {
+        output out(split_header_capacity);
+        write_base_header(out);
+        path file_path = base_path / "base.h";
+        out.save_as(file_path.string());
+    }
+
+    void create_ppl_header(path const& base_path)
+    {
+        output out(split_header_capacity);
+        write_ppl_header(out);
+        path file_path = base_path / "ppl.h";
+        out.save_as(file_path.string());
+    }
+    
+    IAsyncAction create_base_headers(platform_paths const& paths)
     {
         co_await resume_background();
 
-        output out(split_header_capacity);
-        write_base_header(out);
-        path base_path = paths._public / "base.h";
-        out.save_as(base_path.string());
+        create_base_header(paths._public);
+        create_ppl_header(paths._public);
     }
 
     IAsyncAction create_namespace_headers(
@@ -225,7 +239,7 @@ namespace cppwinrt
             }
         };
 
-        auto write_ancestor_includes = [](output& out, std::string namespace_name)
+        auto write_ancestor_includes = [](output& out, std::string const& namespace_name)
         {
             meta::index_type const& index = meta::get_index();
             std::string parent_namespace = namespace_name;
@@ -333,6 +347,13 @@ namespace cppwinrt
             write_interface_override_methods(out, namespace_types);
             write_class_overrides(out, namespace_types);
             write_winrt_namespace_end(out);
+            
+            write_namespace_special(out, namespace_name);
+            
+            out.write_namespace("std");
+            write_std_hashes(out, namespace_types);
+            out.write_namespace();
+
             write_warning_pop(out);
             path namespace_path = paths._public / (namespace_name + ".h");
             out.save_as(namespace_path.string());
@@ -352,17 +373,12 @@ namespace cppwinrt
     {
         path sdk_path = settings::output;
         sdk_path /= "sdk.h";
-
-        path base_path = settings::output;
-        base_path /= "base.h";
-
         output sdk;
         write_projection(sdk);
         sdk.save_as(sdk_path.string());
 
-        output base;
-        write_base_header(base);
-        base.save_as(base_path.string());
+        create_base_header(settings::output);
+        create_ppl_header(settings::output);
     }
 
     void write_multi_header_platform()
@@ -376,7 +392,7 @@ namespace cppwinrt
 
         std::vector<IAsyncAction> writers(num_writers);
         num_writers = 0;
-        writers[num_writers++] = create_base_header(paths);
+        writers[num_writers++] = create_base_headers(paths);
         for (auto&& item : index)
         {
             writers[num_writers++] = create_namespace_headers(item.first, item.second, paths, complex_structs);

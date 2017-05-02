@@ -19,7 +19,7 @@ namespace impl
 
     template <> struct abi<Windows::Foundation::IActivationFactory>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(uuid("00000035-0000-0000-C000-000000000046")) __declspec(novtable) type : ::IInspectable
         {
             virtual HRESULT __stdcall ActivateInstance(::IUnknown** instance) = 0;
         };
@@ -30,7 +30,7 @@ namespace impl
         static constexpr GUID value{ 0x00000000,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
     };
 
-        template <> struct name<Windows::Foundation::IUnknown>
+    template <> struct name<Windows::Foundation::IUnknown>
     {
         static constexpr auto & value{ L"Windows.Foundation.IUnknown" };
     };
@@ -227,7 +227,7 @@ namespace impl
     // TODO: with the ABI simplification, there's no need for hte accessors traits. We can simply use ADL.
 
     template <typename T>
-    struct accessors<T, std::enable_if_t<std::is_base_of<Windows::Foundation::IUnknown, T>::value>>
+    struct accessors<T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
     {
         static ::IUnknown* get(T const& object) noexcept
         {
@@ -347,13 +347,13 @@ namespace Windows::Foundation
 
 namespace impl
 {
-    template <typename T, std::enable_if_t<!std::is_base_of<Windows::Foundation::IUnknown, T>::value>* = nullptr>
+    template <typename T, std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, T>>* = nullptr>
     T empty_value()
     {
         return {};
     }
 
-    template <typename T, std::enable_if_t<std::is_base_of<Windows::Foundation::IUnknown, T>::value>* = nullptr>
+    template <typename T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>* = nullptr>
     T empty_value()
     {
         return nullptr;

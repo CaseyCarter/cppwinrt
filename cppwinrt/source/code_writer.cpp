@@ -960,7 +960,8 @@ namespace cppwinrt
         {
             WINRT_ASSERT(type.is_delegate());
             meta::method method = type.token().get_delegate();
-
+            auto conditional_return = method.has_return_type() ? "return " : "";
+            
             out.write(strings::write_delegate_member_definition,
                 type.name(),
                 type.name(),
@@ -969,9 +970,11 @@ namespace cppwinrt
                 type.name(),
                 type.name(),
                 type.name(),
+                conditional_return,
                 type.name(),
                 type.name(),
                 type.name(),
+                conditional_return,
                 bind_output(write_return_type, method, nullptr),
                 type.name(),
                 bind_output(write_params, method, nullptr),
@@ -1687,8 +1690,22 @@ namespace cppwinrt
             write_interface_override_methods(out, ns.second);
             write_class_overrides(out, ns.second);
         }
-
         write_winrt_namespace_end(out);
+
+        write_namespace_special(out, "Windows.Foundation");
+        write_namespace_special(out, "Windows.Foundation.Collections");
+
+        out.write_namespace("std");
+        for (meta::index_pair const& ns : index)
+        {
+            if (!has_module_type(ns))
+            {
+                continue;
+            }
+            out.write_namespace(ns.first);
+            write_std_hashes(out, ns.second);
+        }
+        out.write_namespace();
     }
 
     void write_dot_name(output& out, std::string_view const& code_name)
@@ -1785,6 +1802,7 @@ namespace cppwinrt
         out.write(strings::base_collections_input_map_view);
         out.write(strings::base_collections_vector);
         out.write(strings::base_collections_map);
+        out.write(strings::base_reference);
 
         out.write(strings::base_foundation);
         out.write(strings::base_chrono);
@@ -1792,7 +1810,6 @@ namespace cppwinrt
         out.write(strings::base_async_produce);
         out.write(strings::base_await_consume);
         out.write(strings::base_await_produce);
-        out.write(strings::base_reference);
 
         write_winrt_namespace_end(out);
         out.write(strings::base_std_hash);
@@ -1808,6 +1825,12 @@ namespace cppwinrt
         out.write("\n#endif\n");
 
         write_warning_pop(out);
+    }
+
+    void write_ppl_header(output& out)
+    {
+        write_logo(out);
+        out.write(strings::base_ppl);
     }
 
     void write_names(output& out, std::vector<meta::type> const& types)
@@ -2291,6 +2314,21 @@ bind_output(write_class_tests, code_namespace, types));
             {
                 write_class_override(out, type);
             }
+        }
+    }
+
+    void write_std_hashes(output& out, std::vector<meta::type> const& types)
+    {
+        for (meta::type const& type : types)
+        {
+            if (type.is_filtered() || !(type.is_interface() || type.is_class()))
+            {
+                continue;
+            }
+            out.write(strings::write_std_hash,
+                "",
+                type.full_name(),
+                type.full_name());
         }
     }
 
@@ -2864,5 +2902,85 @@ bind_output(write_class_tests, code_namespace, types));
             bind_output(write_component_class_member_definitions, type));
 
         out.save_as(filename.string());
+    }
+
+    // todo: generate as much WF/WFC code as possible (e.g., generics) from metadata.
+    void write_namespace_special(output& out, std::string const& namespace_name)
+    {
+        if (namespace_name == "Windows.Foundation")
+        {
+            out.write(strings::base_reference_produce);
+
+            static const struct
+            {
+                char const* params;
+                char const* name;
+            }
+            generic_interfaces[] =
+            {
+                { "", "Windows::Foundation::IUnknown" },
+                { "", "Windows::Foundation::IInspectable" },
+                { "", "Windows::Foundation::IActivationFactory" },
+                { "", "Windows::Foundation::IAsyncInfo" },
+                { "", "Windows::Foundation::IAsyncAction" },
+                { "typename TProgress", "Windows::Foundation::IAsyncActionWithProgress<TProgress>" },
+                { "typename TResult", "Windows::Foundation::IAsyncOperation<TResult>" },
+                { "typename TResult, typename TProgress", "Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>" },
+                { "", "Windows::Foundation::AsyncActionCompletedHandler" },
+                { "typename TProgress", "Windows::Foundation::AsyncActionProgressHandler<TProgress>" },
+                { "typename TProgress", "Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>" },
+                { "typename TResult", "Windows::Foundation::AsyncOperationCompletedHandler<TResult>" },
+                { "typename TResult, typename TProgress", "Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>" },
+                { "typename TResult, typename TProgress", "Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>" },
+                { "typename T", "Windows::Foundation::IReference<T>" },
+                { "typename T", "Windows::Foundation::EventHandler<T>" },
+                { "typename TSender, typename TArgs", "Windows::Foundation::TypedEventHandler<TSender, TArgs>" },
+            };
+
+            out.write_namespace("std");
+            for (auto& generic : generic_interfaces)
+            {
+                out.write(strings::write_std_hash,
+                    generic.params,
+                    generic.name,
+                    generic.name);
+            }
+            out.write_namespace();
+        }
+
+        if (namespace_name == "Windows.Foundation.Collections")
+        {
+            static const struct
+            {
+                char const* params;
+                char const* name;
+            }
+            generic_interfaces[] =
+            {
+                { "typename T", "Windows::Foundation::Collections::IIterator<T>" },
+                { "typename T", "Windows::Foundation::Collections::IIterable<T>" },
+                { "typename T", "Windows::Foundation::Collections::IVectorView<T>" },
+                { "typename T", "Windows::Foundation::Collections::IVector<T>" },
+                { "typename T", "Windows::Foundation::Collections::IObservableVector<T>" },
+                { "typename T", "Windows::Foundation::Collections::VectorChangedEventHandler<T>" },
+                { "", "Windows::Foundation::Collections::IVectorChangedEventArgs" },
+                { "typename K, typename V", "Windows::Foundation::Collections::IKeyValuePair<K, V>" },
+                { "typename K, typename V", "Windows::Foundation::Collections::IMapView<K, V>" },
+                { "typename K, typename V", "Windows::Foundation::Collections::IMap<K, V>" },
+                { "typename K, typename V", "Windows::Foundation::Collections::IObservableMap<K, V>" },
+                { "typename K, typename V", "Windows::Foundation::Collections::MapChangedEventHandler<K, V>" },
+                { "typename K", "Windows::Foundation::Collections::IMapChangedEventArgs<K>" },
+            };
+
+            out.write_namespace("std");
+            for (auto& generic : generic_interfaces)
+            {
+                out.write(strings::write_std_hash,
+                    generic.params,
+                    generic.name,
+                    generic.name);
+            }
+            out.write_namespace();
+        }
     }
 }

@@ -957,15 +957,15 @@ namespace impl
     }
 
     template <typename T, std::enable_if_t<has_GetAt<T>::value>* = nullptr>
-    fast_iterator<T> begin(T const& collection) noexcept
+    impl::fast_iterator<T> begin(T const& collection) noexcept
     {
-        return fast_iterator<T>(collection, 0);
+        return impl::fast_iterator<T>(collection, 0);
     }
 
     template <typename T, std::enable_if_t<has_GetAt<T>::value>* = nullptr>
-    fast_iterator<T> end(T const& collection)
+    impl::fast_iterator<T> end(T const& collection)
     {
-        return fast_iterator<T>(collection, collection.Size());
+        return impl::fast_iterator<T>(collection, collection.Size());
     }
 }
 
@@ -1117,36 +1117,4 @@ namespace Windows::Foundation::Collections
     {
         IObservableMap(std::nullptr_t = nullptr) noexcept {}
     };
-
-    template <typename T, std::enable_if_t<!impl::has_GetAt<T>::value>* = nullptr>
-    auto begin(T const& collection) -> decltype(collection.First())
-    {
-        auto result = collection.First();
-
-        if (!result.HasCurrent())
-        {
-            return {};
-        }
-
-        return result;
-    }
-
-    template <typename T, std::enable_if_t<!impl::has_GetAt<T>::value>* = nullptr>
-    auto end(T const& collection) -> decltype(collection.First())
-    {
-        collection;
-        return {};
-    }
-
-    template <typename T, std::enable_if_t<impl::has_GetAt<T>::value>* = nullptr>
-    impl::fast_iterator<T> begin(T const& collection) noexcept
-    {
-        return impl::fast_iterator<T>(collection, 0);
-    }
-
-    template <typename T, std::enable_if_t<impl::has_GetAt<T>::value>* = nullptr>
-    impl::fast_iterator<T> end(T const& collection)
-    {
-        return impl::fast_iterator<T>(collection, collection.Size());
-    }
 }

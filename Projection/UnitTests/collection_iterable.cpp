@@ -1,15 +1,6 @@
 #include "pch.h"
 #include "catch.hpp"
 
-namespace winrt::ABI::Windows::Foundation::Collections
-{
-    template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b61")) __declspec(novtable) IKeyValuePair<int, int> : impl_IKeyValuePair<int, int> {};
-    template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b62")) __declspec(novtable) IIterator<IKeyValuePair<int, int>> : impl_IIterator<IKeyValuePair<int, int>> {};
-    template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b63")) __declspec(novtable) IIterable<IKeyValuePair<int, int>> : impl_IIterable<IKeyValuePair<int, int>> {};
-    template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b65")) __declspec(novtable) IMapView<int, int> : impl_IMapView<int, int> {};
-    template <> struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b66")) __declspec(novtable) IMap<int, int> : impl_IMap<int, int> {};
-}
-
 using namespace winrt;
 using namespace Windows::Foundation::Collections;
 

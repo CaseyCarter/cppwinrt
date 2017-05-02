@@ -23,7 +23,7 @@ namespace impl
             length = wcslen(value);
         }
         WINRT_ASSERT(length <= 0xffffffff);
-        return length;
+        return static_cast<uint32_t>(length);
     }
 
     inline bool embedded_null(HSTRING value) noexcept

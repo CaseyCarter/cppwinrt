@@ -11,7 +11,7 @@ using namespace Windows::Foundation;
 // These are some basic implementations of runtime classes used for testing event consumption.
 //
 
-struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference, ABI::Windows::Foundation::IWeakReference>
+struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference, abi_t<impl::IWeakReference>>
 {
     IInspectable m_reference; // not actually a weak reference! :)
 
@@ -20,13 +20,13 @@ struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference,
     {
     }
 
-    HRESULT __stdcall abi_Resolve(const GUID & iid, abi<IInspectable> ** objectReference) override
+    HRESULT __stdcall Resolve(const GUID & iid, ::IInspectable ** objectReference) override
     {
         return get_abi(m_reference)->QueryInterface(iid, reinterpret_cast<void **>(objectReference));
     }
 };
 
-struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windows::Foundation::IWeakReferenceSource>
+struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, abi_t<impl::IWeakReferenceSource>>
 {
     operator SplashScreen() const noexcept
     {
@@ -54,7 +54,7 @@ struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windo
         m_dismissed.remove(cookie);
     }
 
-    HRESULT __stdcall abi_GetWeakReference(ABI::Windows::Foundation::IWeakReference ** weakReference) override
+    HRESULT __stdcall GetWeakReference(impl::IWeakReference ** weakReference) override
     {
         try
         {
@@ -116,7 +116,7 @@ struct TestClipboard
     static ContentChanged_revoker ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & changeHandler)
     {
         auto factory = GetStatics();
-        return{ factory, &ABI::Windows::ApplicationModel::DataTransfer::IClipboardStatics::remove_ContentChanged, factory.ContentChanged(changeHandler) };
+        return{ factory, &abi_t<Windows::ApplicationModel::DataTransfer::IClipboardStatics>::remove_ContentChanged, factory.ContentChanged(changeHandler) };
     }
 
     static void ContentChanged(event_token token)

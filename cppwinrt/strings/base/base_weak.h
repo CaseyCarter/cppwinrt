@@ -32,7 +32,7 @@ struct weak_ref
         T object = nullptr;
         if (m_ref)
         {
-            m_ref->Resolve(impl::guid_v<T>, reinterpret_cast<::IInspectable*>(put_abi(object)));
+            m_ref->Resolve(impl::guid_v<T>, reinterpret_cast<::IInspectable**>(put_abi(object)));
         }
         return object;
     }

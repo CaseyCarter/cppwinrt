@@ -519,9 +519,9 @@ TEST_CASE("hresult, exception")
     }
 }
 
+#pragma warning(disable: 4702)  // unreachable code
 TEST_CASE("hresult, throw_last_error")
 {
     SetLastError(ERROR_CANCELLED);
-
     REQUIRE_THROWS_AS(throw_last_error(), hresult_canceled);
 }

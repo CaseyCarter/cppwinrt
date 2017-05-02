@@ -1,11 +1,19 @@
 #include "pch.h"
 #include "catch.hpp"
 
+#pragma warning(disable: 4505)
+
 using namespace winrt;
 using namespace Windows::Foundation;
 
-static_assert(std::is_same_v<impl::abi_arg_in<int>, int>, "fail");
-static_assert(std::is_same_v<impl::abi_arg_out<int>, int *>, "fail");
+template<typename T>
+using get_abi_t = decltype(get_abi(std::declval<T&>()));
 
-static_assert(std::is_same_v<impl::abi_arg_in<IUriRuntimeClass>, ABI::Windows::Foundation::IUriRuntimeClass *>, "fail");
-static_assert(std::is_same_v<impl::abi_arg_out<IUriRuntimeClass>, ABI::Windows::Foundation::IUriRuntimeClass **>, "fail");
+template<typename T>
+using put_abi_t = decltype(put_abi(std::declval<T&>()));
+
+static_assert(std::is_same_v<get_abi_t<int>, int>, "fail");
+static_assert(std::is_same_v<put_abi_t<int>, int *>, "fail");
+
+static_assert(std::is_same_v<get_abi_t<IUriRuntimeClass>, ::IUnknown *>, "fail");
+static_assert(std::is_same_v<put_abi_t<IUriRuntimeClass>, ::IUnknown **>, "fail");

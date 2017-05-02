@@ -263,7 +263,7 @@ namespace impl
     template <typename T>
     struct category_signature<class_category, T>
     {
-        constexpr static auto data { "rc(" + name_utf8_v<T> + ";" + signature<typename default_interface<T>::type>::data + ")" };
+        constexpr static auto data { "rc(" + name_utf8_v<T> + ";" + signature<default_interface_t<T>>::data + ")" };
     };
 
     template <typename ... Args, typename T>
@@ -275,12 +275,12 @@ namespace impl
     template <typename T>
     struct category_signature<interface_category, T>
     {
-        constexpr static auto data{ guid_to_string(guid<T>::value) };
+        constexpr static auto data{ guid_to_string(guid_v<T>) };
     };
 
     template <typename T>
     struct category_signature<delegate_category, T>
     {
-        constexpr static auto data{ "delegate(" + guid_to_string(guid<T>::value) + ")" };
+        constexpr static auto data{ "delegate(" + guid_to_string(guid_v<T>) + ")" };
     };
 }

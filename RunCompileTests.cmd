@@ -27,6 +27,7 @@ echo // RunCompileTests.cmd generated PCH > pch.h
 echo #define WIN32_LEAN_AND_MEAN >> pch.h
 echo #include "base.h" >> pch.h
 echo #include "impl\complex_structs.h" >> pch.h
+echo #include "Windows.Foundation.h" >> pch.h
 echo.>> pch.h
 echo using namespace winrt; >> pch.h
 echo.>> pch.h

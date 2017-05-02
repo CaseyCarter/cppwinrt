@@ -10,6 +10,7 @@ namespace cppwinrt
     void write_winrt_namespace_begin(output& out);
     void write_winrt_namespace_end(output& out);
     void write_base_header(output& out);
+    void write_ppl_header(output& out);
 
     void write_names(output& out, std::vector<meta::type> const& types);
     void write_categories(output& out, std::vector<meta::type> const& types);
@@ -36,6 +37,8 @@ namespace cppwinrt
     void write_delegate_produce(output& out, std::vector<meta::type> const& types);
     void write_delegate_member_definitions(output& out, std::vector<meta::type> const& types);
     
+    void write_std_hashes(output& out, std::vector<meta::type> const& types);
+    
     void write_include(output& out, std::string const& include);
 
     void write_test(output& out, std::string const& namespace_name, std::vector<meta::type> const& types);
@@ -47,4 +50,6 @@ namespace cppwinrt
 
     void write_warning_push(output& out);
     void write_warning_pop(output& out);
+
+    void write_namespace_special(output& out, std::string const& namespace_name);
 }

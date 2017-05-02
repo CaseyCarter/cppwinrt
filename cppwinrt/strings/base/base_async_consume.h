@@ -414,15 +414,28 @@ namespace impl
     };
 
     template <typename TProgress>
-    struct guid<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::AsyncActionProgressHandler<TProgress>>::value };
-    };
-
-    template <typename TProgress>
     struct guid<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
     {
         static constexpr GUID value{ pinterface_guid<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>::value };
+    };
+
+    template <typename TProgress>
+    struct name<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+    {
+        static constexpr auto value{ L"Windows.Foundation.AsyncActionWithProgressCompletedHandler`1<" + make_constexpr_string(name_v<TProgress>) + L">" };
+    };
+
+    template <typename TProgress>
+    struct category<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+    {
+        using type = pinterface_category<TProgress>;
+        static constexpr GUID value{ 0x9c029f91, 0xcc84, 0x44fd,{ 0xac, 0x26, 0x0a, 0x6c, 0x4e, 0x55, 0x52, 0x81 } };
+    };
+
+    template <typename TProgress>
+    struct guid<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
+    {
+        static constexpr GUID value{ pinterface_guid<Windows::Foundation::AsyncActionProgressHandler<TProgress>>::value };
     };
 
     template <typename TProgress>
@@ -437,6 +450,7 @@ namespace impl
         using type = pinterface_category<TProgress>;
         static constexpr GUID value{ 0x6d844858, 0x0cff, 0x4590,{ 0xae, 0x89, 0x95, 0xa5, 0xa5, 0xc8, 0xb4, 0xb8 } };
     };
+
 
     template <typename TResult, typename TProgress>
     struct guid<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>

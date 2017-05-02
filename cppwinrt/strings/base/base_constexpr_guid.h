@@ -149,10 +149,8 @@ namespace impl
     template <typename T>
     struct pinterface_guid
     {
-    #pragma warning(push)
-    #pragma warning(disable: 4307)
+#pragma warning(suppress: 4307)
         static constexpr GUID value{ generate_guid(pinterface_namespace_guid, signature<T>::data) };
-    #pragma warning(pop)
     };
 }
 

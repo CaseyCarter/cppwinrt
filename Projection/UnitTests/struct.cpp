@@ -83,12 +83,12 @@ struct TestHttpProgress
 {
     winrt::Windows::Web::Http::HttpProgress m_value {};
 
-    void abi_in(ABI::Windows::Web::Http::HttpProgress value)
+    void abi_in(abi_t<Windows::Web::Http::HttpProgress> value)
     {
         copy_from_abi(m_value, value);
     }
 
-    void abi_out(ABI::Windows::Web::Http::HttpProgress * value)
+    void abi_out(abi_t<Windows::Web::Http::HttpProgress> * value)
     {
         copy_to_abi(m_value, *value);
     }

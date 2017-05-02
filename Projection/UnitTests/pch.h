@@ -4,6 +4,7 @@
 
 #pragma comment(lib, "windowsapp") 
 
+#include "winrt\Windows.Foundation.Collections.h"
 #include "winrt\Windows.Foundation.Diagnostics.h"
 #include "winrt\Windows.ApplicationModel.Activation.h"
 #include "winrt\Windows.ApplicationModel.DataTransfer.h"
@@ -29,3 +30,5 @@
 #include <future>
 #include <array>
 #include <forward_list>
+
+WINRT_WARNING_PUSH

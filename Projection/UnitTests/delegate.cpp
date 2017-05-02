@@ -46,7 +46,7 @@ TEST_CASE("delegate,return")
             return Uri(L"http://moderncpp.com/");
         };
 
-        IInspectable result = handler();
+        Windows::Foundation::IInspectable result = handler();
 
         Uri uri = result.as<Uri>();
 
@@ -61,7 +61,7 @@ TEST_CASE("delegate,return")
         using namespace Windows::UI::Xaml::Controls;
 
         {
-            ListViewItemToKeyHandler handler = [] (IInspectable const &) { return L"raw"; };
+            ListViewItemToKeyHandler handler = [] (Windows::Foundation::IInspectable const &) { return L"raw"; };
 
             hstring result = handler(nullptr);
 
@@ -69,7 +69,7 @@ TEST_CASE("delegate,return")
         }
 
         {
-            ListViewItemToKeyHandler handler = [](IInspectable const &) { return std::wstring(L"std"); };
+            ListViewItemToKeyHandler handler = [](Windows::Foundation::IInspectable const &) { return std::wstring(L"std"); };
 
             hstring result = handler(nullptr);
 
@@ -77,7 +77,7 @@ TEST_CASE("delegate,return")
         }
 
         {
-            ListViewItemToKeyHandler handler = [](IInspectable const &)
+            ListViewItemToKeyHandler handler = [](Windows::Foundation::IInspectable const &)
             {
                 return hstring_view(L"hstring_view");
             };
@@ -88,7 +88,7 @@ TEST_CASE("delegate,return")
         }
 
         {
-            ListViewItemToKeyHandler handler = [](IInspectable const &)
+            ListViewItemToKeyHandler handler = [](Windows::Foundation::IInspectable const &)
             {
                 return hstring(L"hstring");
             };
@@ -112,11 +112,11 @@ TEST_CASE("delegate,return")
             return nullptr;
         };
 
-        IAsyncOperation<IInspectable> result = handler(L"key");
+        IAsyncOperation<Windows::Foundation::IInspectable> result = handler(L"key");
     }
 }
 
-IInspectable Handler()
+Windows::Foundation::IInspectable Handler()
 {
     return Uri(L"http://free/");
 }
@@ -125,7 +125,7 @@ struct MemberHandler
 {
     Uri m_uri { L"http://member/" };
 
-    IInspectable Handler()
+    Windows::Foundation::IInspectable Handler()
     {
         return m_uri;
     }
@@ -140,7 +140,7 @@ TEST_CASE("delegate,binding")
 
         CreateDefaultValueCallback handler = Handler;
 
-        IInspectable result = handler();
+        Windows::Foundation::IInspectable result = handler();
 
         Uri uri = result.as<Uri>();
 
@@ -156,7 +156,7 @@ TEST_CASE("delegate,binding")
 
         CreateDefaultValueCallback handler = { &that, &MemberHandler::Handler };
 
-        IInspectable result = handler();
+        Windows::Foundation::IInspectable result = handler();
 
         Uri uri = result.as<Uri>();
 
@@ -173,7 +173,7 @@ TEST_CASE("delegate,binding")
             return Uri(L"http://lambda/");
         };
 
-        IInspectable result = handler();
+        Windows::Foundation::IInspectable result = handler();
 
         Uri uri = result.as<Uri>();
 
@@ -491,7 +491,7 @@ TEST_CASE("delegate,AsyncOperationCompletedHandler")
     }
 }
 
-static void EventHandler_Free(const IInspectable & sender, const IInspectable & args)
+static void EventHandler_Free(const Windows::Foundation::IInspectable & sender, const Windows::Foundation::IInspectable & args)
 {
     REQUIRE(sender == nullptr);
     REQUIRE(args == nullptr);
@@ -499,7 +499,7 @@ static void EventHandler_Free(const IInspectable & sender, const IInspectable & 
 
 struct EventHandler_Member
 {
-    void Handler(const IInspectable & sender, const IInspectable & args)
+    void Handler(const Windows::Foundation::IInspectable & sender, const Windows::Foundation::IInspectable & args)
     {
         REQUIRE(sender == nullptr);
         REQUIRE(args == nullptr);
@@ -519,7 +519,7 @@ TEST_CASE("delegate,EventHandler")
 
     SECTION("lambda")
     {
-        EventHandler<IInspectable> h = [](const IInspectable & sender, const IInspectable & args)
+        EventHandler<Windows::Foundation::IInspectable> h = [](const Windows::Foundation::IInspectable & sender, const Windows::Foundation::IInspectable & args)
         {
             REQUIRE(sender == nullptr);
             REQUIRE(args == nullptr);
@@ -530,19 +530,19 @@ TEST_CASE("delegate,EventHandler")
 
     SECTION("free function")
     {
-        EventHandler<IInspectable> h = EventHandler_Free;
+        EventHandler<Windows::Foundation::IInspectable> h = EventHandler_Free;
         h(nullptr, nullptr);
     }
 
     SECTION("member function")
     {
         EventHandler_Member object;
-        EventHandler<IInspectable> h{ &object, &EventHandler_Member::Handler };
+        EventHandler<Windows::Foundation::IInspectable> h{ &object, &EventHandler_Member::Handler };
         h(nullptr, nullptr);
     }
 }
 
-static void TypedEventHandler_Free(const IInspectable & sender, const IInspectable & args)
+static void TypedEventHandler_Free(const Windows::Foundation::IInspectable & sender, const Windows::Foundation::IInspectable & args)
 {
     REQUIRE(sender == nullptr);
     REQUIRE(args == nullptr);
@@ -550,7 +550,7 @@ static void TypedEventHandler_Free(const IInspectable & sender, const IInspectab
 
 struct TypedEventHandler_Member
 {
-    void Handler(const IInspectable & sender, const IInspectable & args)
+    void Handler(const Windows::Foundation::IInspectable & sender, const Windows::Foundation::IInspectable & args)
     {
         REQUIRE(sender == nullptr);
         REQUIRE(args == nullptr);
@@ -564,13 +564,13 @@ TEST_CASE("delegate,TypedEventHandler")
     //
     SECTION("default")
     {
-        TypedEventHandler<DisplayInformation, IInspectable> a;
-        TypedEventHandler<DisplayInformation, IInspectable> b = nullptr;
+        TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable> a;
+        TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable> b = nullptr;
     }
 
     SECTION("lambda")
     {
-        TypedEventHandler<DisplayInformation, IInspectable> h = [](const DisplayInformation & sender, const IInspectable & args)
+        TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable> h = [](const DisplayInformation & sender, const Windows::Foundation::IInspectable & args)
         {
             REQUIRE(sender == nullptr);
             REQUIRE(args == nullptr);
@@ -581,19 +581,19 @@ TEST_CASE("delegate,TypedEventHandler")
 
     SECTION("free function")
     {
-        TypedEventHandler<DisplayInformation, IInspectable> h = TypedEventHandler_Free;
+        TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable> h = TypedEventHandler_Free;
         h(nullptr, nullptr);
     }
 
     SECTION("member function")
     {
         TypedEventHandler_Member object;
-        TypedEventHandler<DisplayInformation, IInspectable> h{ &object, &TypedEventHandler_Member::Handler };
+        TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable> h{ &object, &TypedEventHandler_Member::Handler };
         h(nullptr, nullptr);
     }
 }
 
-static void VectorChangedEventHandler_Free(IObservableVector<IInspectable> const & sender, IVectorChangedEventArgs const & args)
+static void VectorChangedEventHandler_Free(IObservableVector<Windows::Foundation::IInspectable> const & sender, IVectorChangedEventArgs const & args)
 {
     REQUIRE(sender == nullptr);
     REQUIRE(args == nullptr);
@@ -601,7 +601,7 @@ static void VectorChangedEventHandler_Free(IObservableVector<IInspectable> const
 
 struct VectorChangedEventHandler_Member
 {
-    void Handler(IObservableVector<IInspectable> const & sender, IVectorChangedEventArgs const & args)
+    void Handler(IObservableVector<Windows::Foundation::IInspectable> const & sender, IVectorChangedEventArgs const & args)
     {
         REQUIRE(sender == nullptr);
         REQUIRE(args == nullptr);
@@ -615,13 +615,13 @@ TEST_CASE("delegate,VectorChangedEventHandler")
     //
     SECTION("default")
     {
-        VectorChangedEventHandler<IInspectable> a;
-        VectorChangedEventHandler<IInspectable> b = nullptr;
+        VectorChangedEventHandler<Windows::Foundation::IInspectable> a;
+        VectorChangedEventHandler<Windows::Foundation::IInspectable> b = nullptr;
     }
 
     SECTION("lambda")
     {
-        VectorChangedEventHandler<IInspectable> h = [](IObservableVector<IInspectable> const & sender, IVectorChangedEventArgs const & args)
+        VectorChangedEventHandler<Windows::Foundation::IInspectable> h = [](IObservableVector<Windows::Foundation::IInspectable> const & sender, IVectorChangedEventArgs const & args)
         {
             REQUIRE(sender == nullptr);
             REQUIRE(args == nullptr);
@@ -632,19 +632,19 @@ TEST_CASE("delegate,VectorChangedEventHandler")
 
     SECTION("free function")
     {
-        VectorChangedEventHandler<IInspectable> h = VectorChangedEventHandler_Free;
+        VectorChangedEventHandler<Windows::Foundation::IInspectable> h = VectorChangedEventHandler_Free;
         h(nullptr, nullptr);
     }
 
     SECTION("member function")
     {
         VectorChangedEventHandler_Member object;
-        VectorChangedEventHandler<IInspectable> h{ &object, &VectorChangedEventHandler_Member::Handler };
+        VectorChangedEventHandler<Windows::Foundation::IInspectable> h{ &object, &VectorChangedEventHandler_Member::Handler };
         h(nullptr, nullptr);
     }
 }
 
-static void MapChangedEventHandler_Free(IObservableMap<hstring, IInspectable> const & sender, IMapChangedEventArgs<hstring> const & args)
+static void MapChangedEventHandler_Free(IObservableMap<hstring, Windows::Foundation::IInspectable> const & sender, IMapChangedEventArgs<hstring> const & args)
 {
     REQUIRE(sender == nullptr);
     REQUIRE(args == nullptr);
@@ -652,7 +652,7 @@ static void MapChangedEventHandler_Free(IObservableMap<hstring, IInspectable> co
 
 struct MapChangedEventHandler_Member
 {
-    void Handler(IObservableMap<hstring, IInspectable> const & sender, IMapChangedEventArgs<hstring> const & args)
+    void Handler(IObservableMap<hstring, Windows::Foundation::IInspectable> const & sender, IMapChangedEventArgs<hstring> const & args)
     {
         REQUIRE(sender == nullptr);
         REQUIRE(args == nullptr);
@@ -666,13 +666,13 @@ TEST_CASE("delegate,MapChangedEventHandler")
     //
     SECTION("default")
     {
-        MapChangedEventHandler<hstring, IInspectable> a;
-        MapChangedEventHandler<hstring, IInspectable> b = nullptr;
+        MapChangedEventHandler<hstring, Windows::Foundation::IInspectable> a;
+        MapChangedEventHandler<hstring, Windows::Foundation::IInspectable> b = nullptr;
     }
 
     SECTION("lambda")
     {
-        MapChangedEventHandler<hstring, IInspectable> h = [](IObservableMap<hstring, IInspectable> const & sender, IMapChangedEventArgs<hstring> const & args)
+        MapChangedEventHandler<hstring, Windows::Foundation::IInspectable> h = [](IObservableMap<hstring, Windows::Foundation::IInspectable> const & sender, IMapChangedEventArgs<hstring> const & args)
         {
             REQUIRE(sender == nullptr);
             REQUIRE(args == nullptr);
@@ -683,14 +683,14 @@ TEST_CASE("delegate,MapChangedEventHandler")
 
     SECTION("free function")
     {
-        MapChangedEventHandler<hstring, IInspectable> h = MapChangedEventHandler_Free;
+        MapChangedEventHandler<hstring, Windows::Foundation::IInspectable> h = MapChangedEventHandler_Free;
         h(nullptr, nullptr);
     }
 
     SECTION("member function")
     {
         MapChangedEventHandler_Member object;
-        MapChangedEventHandler<hstring, IInspectable> h{ &object, &MapChangedEventHandler_Member::Handler };
+        MapChangedEventHandler<hstring, Windows::Foundation::IInspectable> h{ &object, &MapChangedEventHandler_Member::Handler };
         h(nullptr, nullptr);
     }
 }

@@ -26,17 +26,33 @@ enum my_enum
     double_plus_good
 };
 
-namespace winrt::ABI::Windows::Foundation
+namespace winrt::impl
 {
-    template <> struct __declspec(uuid("e5198cc8-2873-55f5-b0a1-84ff9e4aad62")) __declspec(novtable) IReference<uint8_t> : impl_IReference<uint8_t> {};
-    template <> struct __declspec(uuid("fd416dfb-2a07-52eb-aae3-dfce14116c05")) __declspec(novtable) IReference<hstring> : impl_IReference<hstring> {};
-    template <> struct __declspec(uuid("afa37cbd-31f7-495c-a85d-534B4f15969e")) __declspec(novtable) IReference<my_struct> : impl_IReference<my_struct> {};
-    template <> struct __declspec(uuid("b8c904ef-43e9-4b77-82a0-5d65970960a4")) __declspec(novtable) IReference<my_enum> : impl_IReference<my_enum> {};
-    template <> struct __declspec(uuid("01968daa-f6cc-42fd-b6f3-6c12cdf7df94")) __declspec(novtable) IReference<ABI::Windows::UI::Xaml::Interop::TypeName> : impl_IReference<ABI::Windows::UI::Xaml::Interop::TypeName> {};
+    template <>
+    struct name<my_enum>
+    {
+        static constexpr auto & value{ L"my_enum" };
+        static constexpr auto & data{ "my_enum" };
+    };
 
-    // Re-enable once we support IReferenceArray
-    //template <> struct __declspec(uuid("1b8e9594-588e-5a07-9e65-0731a4c9a2db")) __declspec(novtable) IReference<array_view<DateTime const>> : impl_IReference<array_view<DateTime const>> {};
-    //template <> struct __declspec(uuid("a6d080a5-b087-5bc2-9a9f-5cd687b4d1f7")) __declspec(novtable) IReference<array_view<int32_t const>> : impl_IReference<array_view<int32_t const>> {};
+    template <>
+    struct signature<my_enum>
+    {
+        static constexpr auto data{ category_signature<enum_category, my_enum>::data };
+    };
+
+    template <>
+    struct name<my_struct>
+    {
+        static constexpr auto & value{ L"my_struct" };
+        static constexpr auto & data{ "my_struct" };
+    };
+
+    template <>
+    struct signature<my_struct>
+    {
+        static constexpr auto data{ category_signature<struct_category<int, double>, my_struct>::data };
+    };
 }
 
 TEST_CASE("IReference, constructor and getter")

@@ -9,4 +9,4 @@ echo Erasing headers in checked in projection module...
 erase /s /q Projection\winrt\*.h
 
 :wrapup
-exit %ERRORLEVEL%
+exit /B %ERRORLEVEL%

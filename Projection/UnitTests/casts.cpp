@@ -11,7 +11,7 @@ using namespace Windows::UI::Xaml;
 // Test cast of null via bases
 TEST_CASE("cast_null_via_bases")
 {
-    static_assert(std::is_base_of<impl::bases_one<ContainerVisual, Visual>, ContainerVisual>::value, "Type relationship violated");
+    static_assert(std::is_base_of<impl::base_one<ContainerVisual, Visual>, ContainerVisual>::value, "Type relationship violated");
     ContainerVisual derived(nullptr);
     const Visual& base = derived;
     REQUIRE(!base);

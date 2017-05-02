@@ -5,14 +5,6 @@
 //   - A non-trivial destructor
 //   - A distinct ABI/projected representation
 
-namespace winrt::ABI::Windows::Foundation
-{
-    template <>
-    struct __declspec(uuid("81a643fb-f51c-5565-83c4-f96425777b66")) __declspec(novtable)
-        IReference<Windows::UI::Xaml::Interop::TypeName> : impl_IReference<Windows::UI::Xaml::Interop::TypeName>
-    {};
-}
-
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::UI::Xaml::Interop;

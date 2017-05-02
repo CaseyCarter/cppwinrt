@@ -115,7 +115,7 @@ TEST_CASE("com_ptr, ::IUnknown interop")
 
     com_ptr<::IUnknown> a = stringable.as<::IUnknown>();
 
-    com_ptr<Windows::Foundation::IUnknown> b = a.as<abi<Windows::Foundation::IUnknown>>();
+    com_ptr<Windows::Foundation::IUnknown> b = a.as<abi_t<Windows::Foundation::IUnknown>>();
 
     stringable = b.as<IStringable>();
 
@@ -125,60 +125,22 @@ TEST_CASE("com_ptr, ::IUnknown interop")
 //
 // Test the convertible constructor and convertible assignment.
 //
-TEST_CASE("com_ptr, convertible")
+TEST_CASE("convertible")
 {
     bool destroyed = true;
 
-    com_ptr<IStringable> stringable = make<Stringable>(L"Hello world!", &destroyed).as<abi<IStringable>>();
+    IStringable stringable = make<Stringable>(L"Hello world!", &destroyed).as<IStringable>();
 
-    com_ptr<Windows::Foundation::IUnknown> a = stringable; // convertible copy ctor
+    Windows::Foundation::IUnknown a = stringable; // convertible copy ctor
 
     REQUIRE(a);
 
-    com_ptr<Windows::Foundation::IUnknown> b = std::move(stringable); // convertible move ctor
+    Windows::Foundation::IUnknown b = std::move(stringable); // convertible move ctor
 
     REQUIRE(b);
     REQUIRE(!stringable);
 
-    stringable = b.as<abi<IStringable>>();
-
-    a = nullptr;
-    b = nullptr;
-
-    a = stringable; // convertible copy assign
-    b = std::move(stringable); // convertible move assign
-
-    REQUIRE(a);
-    REQUIRE(b);
-    REQUIRE(!stringable);
-
-    REQUIRE(!destroyed);
-
-    a = nullptr;
-    b = nullptr;
-
-    REQUIRE(destroyed);
-}
-
-//
-// Test the convertible constructor and convertible assignment with the ABI interfaces.
-//
-TEST_CASE("com_ptr, convertible, abi")
-{
-    bool destroyed = true;
-
-    com_ptr<abi<IStringable>> stringable = make<Stringable>(L"Hello world!", &destroyed).as<abi<IStringable>>();
-
-    com_ptr<abi<Windows::Foundation::IUnknown>> a = stringable; // convertible copy ctor
-
-    REQUIRE(a);
-
-    com_ptr<abi<Windows::Foundation::IUnknown>> b = std::move(stringable); // convertible move ctor
-
-    REQUIRE(b);
-    REQUIRE(!stringable);
-
-    stringable = b.as<abi<IStringable>>();
+    stringable = b.as<IStringable>();
 
     a = nullptr;
     b = nullptr;
@@ -205,7 +167,7 @@ TEST_CASE("com_ptr, accessors")
 {
     bool destroyed = true;
 
-    com_ptr<IStringable> a = make<Stringable>(L"Hello world!", &destroyed).as<abi<IStringable>>();
+    IStringable a = make<Stringable>(L"Hello world!", &destroyed).as<IStringable>();
 
     REQUIRE(!destroyed);
 

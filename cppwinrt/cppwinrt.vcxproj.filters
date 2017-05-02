@@ -381,6 +381,27 @@
     <ClInclude Include="strings\write\write_component_static_class_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\base\base_reference_produce.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_warnings.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_event_declaration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_event_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_static_event_declaration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_static_event_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_std_hash.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
     <ClInclude Include="strings\write\write_component_factory_forwarding_composable.h">
       <Filter>strings\write</Filter>
     </ClInclude>
