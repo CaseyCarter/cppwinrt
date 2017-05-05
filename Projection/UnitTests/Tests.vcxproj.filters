@@ -44,6 +44,7 @@
     <ClCompile Include="Release.cpp" />
     <ClCompile Include="struct.cpp" />
     <ClCompile Include="weak.cpp" />
+    <ClCompile Include="natvis.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />

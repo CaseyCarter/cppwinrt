@@ -70,6 +70,7 @@
     <ClInclude Include="strings\base\base_meta.h" />
     <ClInclude Include="strings\base\base_modern.h" />
     <ClInclude Include="strings\base\base_module.h" />
+    <ClInclude Include="strings\base\base_natvis.h" />
     <ClInclude Include="strings\base\base_reference.h" />
     <ClInclude Include="strings\base\base_reference_produce.h" />
     <ClInclude Include="strings\base\base_std_async_action.h" />
@@ -148,6 +149,7 @@
     <ClInclude Include="strings\write\write_component_source_empty.h" />
     <ClInclude Include="strings\write\write_component_static_class_base.h" />
     <ClInclude Include="strings\write\write_name.h" />
+    <ClInclude Include="strings\write\write_natvis.h" />
     <ClInclude Include="strings\write\write_override_fallbacks.h" />
     <ClInclude Include="strings\write\write_require.h" />
     <ClInclude Include="strings\write\write_shim.h" />

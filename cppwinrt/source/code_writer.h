@@ -50,5 +50,6 @@ namespace cppwinrt
     void write_warning_push(output& out);
     void write_warning_pop(output& out);
 
+    void write_natvis(output& out, std::vector<meta::type const*> const& types);
     void write_namespace_special(output& out, std::string const& namespace_name);
 }

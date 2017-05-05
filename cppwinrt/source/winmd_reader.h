@@ -98,7 +98,7 @@ namespace cppwinrt::meta
         std::vector<factory_attribute> enum_factory_attributes() const;
         std::vector<composable_attribute> enum_composable_attributes() const;
         generator<std::pair<std::string, std::string>> enum_interface_usings() const;
-        std::string get_guid() const;
+        std::string get_guid(char const* format = "0x%08X,0x%04X,0x%04X,{ 0x%02X,0x%02X,0x%02X,0x%02X,0x%02X,0x%02X,0x%02X,0x%02X }") const;
         PCCOR_SIGNATURE get_type_spec() const;
         token get_type_def() const;
 

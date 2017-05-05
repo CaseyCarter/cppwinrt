@@ -1850,7 +1850,7 @@ namespace cppwinrt::meta
         return { true,{ reinterpret_cast<char const*>(signature), count } };
     }
 
-    std::string token::get_guid() const
+    std::string token::get_guid(char const* format) const
     {
         void const* data{};
         ULONG size{};
@@ -1864,9 +1864,9 @@ namespace cppwinrt::meta
 
         std::string result(68, '?');
 
-        sprintf_s(result.data(),
+        int count = sprintf_s(result.data(),
             result.size() + 1,
-            "0x%08X,0x%04X,0x%04X,{ 0x%02X,0x%02X,0x%02X,0x%02X,0x%02X,0x%02X,0x%02X,0x%02X }",
+            format,
             guid.Data1,
             guid.Data2,
             guid.Data3,
@@ -1878,6 +1878,8 @@ namespace cppwinrt::meta
             guid.Data4[5],
             guid.Data4[6],
             guid.Data4[7]);
+
+        result.resize(count);
 
         return result;
     }

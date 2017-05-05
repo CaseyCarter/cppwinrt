@@ -89,6 +89,16 @@ namespace cppwinrt
             append_format("0x%X", value);
         }
 
+        void write_arg(char const value) noexcept
+        {
+            append_format("%hc", value);
+        }
+
+        void write_arg(wchar_t const value) noexcept
+        {
+            append_format("%lc", value);
+        }
+
     public:
 
         output(output const&) = delete;

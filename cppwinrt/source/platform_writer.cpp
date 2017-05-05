@@ -69,11 +69,34 @@ namespace cppwinrt
         out.save_as(file_path.string());
     }
 
-    IAsyncAction create_base_headers(platform_paths const& paths)
+    void create_natvis(path const& base_path)
+    {
+        meta::index_type const& index = meta::get_index();
+        std::vector<meta::type const*> types;
+
+        for (meta::index_pair const& ns : index)
+        {
+            for (meta::type const& type : ns.second)
+            {
+                if (!type.is_filtered())
+                {
+                    types.push_back(&type);
+                }
+            }
+        }
+
+        output out(split_header_capacity);
+        write_natvis(out, types);
+        path file_path = base_path / "cppwinrt.natvis";
+        out.save_as(file_path.string());
+    }
+
+    IAsyncAction create_base_files(platform_paths const& paths)
     {
         co_await resume_background();
 
         create_base_header(paths._public);
+        create_natvis(paths._public);
     }
 
     IAsyncAction create_namespace_headers(
@@ -382,7 +405,7 @@ namespace cppwinrt
 
         std::vector<IAsyncAction> writers(num_writers);
         num_writers = 0;
-        writers[num_writers++] = create_base_headers(paths);
+        writers[num_writers++] = create_base_files(paths);
         for (auto&& item : index)
         {
             writers[num_writers++] = create_namespace_headers(item.first, item.second, paths, complex_structs);

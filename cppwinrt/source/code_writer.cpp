@@ -34,6 +34,17 @@ namespace cppwinrt
             return false;
         }
 
+        bool is_get_accessor(meta::method const& method)
+        {
+            if (IsMdSpecialName(method.flags))
+            {
+                static const std::string get_prefix{ "get_" };
+                return (method.name.substr(0, get_prefix.length()).compare(get_prefix) == 0);
+            }
+
+            return false;
+        }
+
         void write_impl_name(output& out, std::string_view code_name)
         {
             for (std::string_view::iterator c = code_name.begin(); c != code_name.end(); ++c)
@@ -1824,6 +1835,8 @@ namespace cppwinrt
         out.write_namespace();
         out.write("\n#endif\n");
 
+        out.write(strings::base_natvis);
+
         write_warning_pop(out);
     }
 
@@ -2896,6 +2909,158 @@ bind_output(write_class_tests, code_namespace, types));
             bind_output(write_component_class_member_definitions, type));
 
         out.save_as(filename.string());
+    }
+
+    char const* get_natvis_property_field(CorElementType category)
+    {
+        switch (category)
+        {
+        case ELEMENT_TYPE_BOOLEAN: return "b";
+        case ELEMENT_TYPE_CHAR: return "c";
+        case ELEMENT_TYPE_I1: return "i1";
+        case ELEMENT_TYPE_I2: return "i2";
+        case ELEMENT_TYPE_I4: return "i4";
+        case ELEMENT_TYPE_I8: return "i8";
+        case ELEMENT_TYPE_U1: return "u1";
+        case ELEMENT_TYPE_U2: return "u2";
+        case ELEMENT_TYPE_U4: return "u4";
+        case ELEMENT_TYPE_U8: return "u8";
+        case ELEMENT_TYPE_R4: return "r4";
+        case ELEMENT_TYPE_R8: return "r8";
+        case ELEMENT_TYPE_STRING: return "s";
+        case ELEMENT_TYPE_VALUETYPE: return "v";
+        }
+        return{};
+    }
+
+    using natvis_properties = std::vector<std::tuple<std::string, std::string, int32_t, char const*>>;
+
+    auto enum_natvis_interfaces(meta::type const& type)
+    {
+        std::map<std::string, natvis_properties> natvis_interfaces;
+        bool is_stringable{};
+
+        for (meta::token ifc : type.token().enum_required_interfaces(false))
+        {
+            // todo: generics and their guids
+            if (ifc.is_type_spec())
+            {
+                continue;
+            }
+            if (ifc.is_type_ref())
+            {
+                ifc = ifc.resolve().token();
+            }
+
+            natvis_properties natvis_properties;
+            int32_t property_index = -1;
+            for (meta::method const& method : ifc.enum_methods())
+            {
+                property_index++;
+                if (!is_get_accessor(method))
+                {
+                    continue;
+                }
+
+                meta::param const& param = method.return_type;
+                PCCOR_SIGNATURE signature = param.signature;
+                CorElementType category = CorSigUncompressElementType(signature);
+                char const* property_field = get_natvis_property_field(category);
+                if (!property_field)
+                {
+                    continue;
+                }
+
+                std::string property_cast;
+                if (category == ELEMENT_TYPE_VALUETYPE)
+                {
+                    meta::token property_token{ CorSigUncompressToken(signature), method.token.db() };
+                    meta::type const& property_type = property_token.resolve();
+                    if (!&property_type)
+                    {
+                        std::string property_typename = property_token.get_name();
+                        if (property_typename == "GUID")
+                        {
+                            property_field = "g";
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    else if (property_type.is_enum() || property_type.is_struct())
+                    {
+                        property_cast = std::string("*(winrt::") + std::string(property_type.full_name()) + "*)";
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+
+                natvis_properties.push_back({ get_method_name(method), property_cast, property_index, property_field });
+            }
+            
+            static const std::string IID_IStringable = "96369F54-8EB6-48F0-ABCE-C1B211E627C3";
+            std::string iid = ifc.get_guid("%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X");
+            if (!natvis_properties.empty())
+            {
+                natvis_interfaces[iid] = std::move(natvis_properties);
+            }
+            else if (iid == IID_IStringable)
+            {
+                is_stringable = true;
+            }
+        }
+
+        return std::make_pair(natvis_interfaces, is_stringable);
+    }
+
+    void write_natvis_properties(output& out, std::map<std::string, natvis_properties> natvis_interfaces)
+    {
+        for (auto& natvis_interface : natvis_interfaces)
+        {
+            for (auto& natvis_property : natvis_interface.second)
+            {
+                std::string name;
+                std::string cast;
+                int32_t index;
+                char const* type;
+                std::tie(name, cast, index, type) = natvis_property;
+                out.write(R"(
+        <Item Name="[%]">%WINRT_get_val(this,L"{%}",%).%</Item>)",
+                    name, cast, natvis_interface.first, index, type);
+            }
+        }
+    }
+
+    void write_natvis_classes(output& out, std::vector<meta::type const*> const& types)
+    {
+        for (meta::type const* type : types)
+        {
+            if (type->is_class())
+            {
+                auto interfaces = enum_natvis_interfaces(*type);
+                if (!interfaces.first.empty())
+                {
+                    out.write(R"(
+<Type Name="winrt::%">
+    <DisplayString>%</DisplayString>  
+    <Expand>%
+    </Expand>
+</Type>
+)",
+                        type->full_name(),
+                        interfaces.second ? R"({WINRT_get_val(this,L"{96369F54-8EB6-48F0-ABCE-C1B211E627C3}",0).s})" : "(expand to display properties)",
+                        bind_output(write_natvis_properties, interfaces.first));
+                }
+            }
+        }
+    }
+
+    void write_natvis(output& out, std::vector<meta::type const*> const& types)
+    {
+        out.write(strings::write_natvis, bind_output(write_natvis_classes, types));
     }
 
     // todo: generate as much WF/WFC code as possible (e.g., generics) from metadata.
