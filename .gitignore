@@ -21,6 +21,7 @@ debug
 release
 .vs
 DevProjection
+AppPackages
 
 cppwinrt/strings/strings.h
 cppwinrt/strings/strings.cpp
