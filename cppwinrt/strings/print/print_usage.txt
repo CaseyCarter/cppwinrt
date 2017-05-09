@@ -2,17 +2,19 @@
 C++/WinRT v%s
 Copyright (c) %d Microsoft Corporation. All rights reserved.
 
-  cppwinrt.exe [command] [options...]
-
-Commands:
-
-  platform          Create or update platform projection
-  header            Create or update component header
-  component         Create or update component project
+  cppwinrt.exe [options...]
 
 Options:
 
-  -in  <path>       Name or location of .winmd files
-  -out <path>       Location of resulting source files
-  -v   <version>    Version of platform to project
-  -f   <filter>     Prefix to include in projection 
+  -i[n] <spec>          Winmd files to include in projection
+  -r[ef] <spec>         Winmd files to reference from projection
+  -o[ut] <path>         Location of generated projection files
+  -f[ilter] <prefix>    One or more prefixes to include in projection
+  -c[omponent]          Generate component implementation source files 
+  -h[elp]               Show detailed help with examples
+  @<path>               Response file containing command line options
+
+Where <spec> is one or more of:
+
+  local                 Local %%WinDir%%\System32\WinMetadata folder
+  path                  Path to winmd file or recursively scanned folder

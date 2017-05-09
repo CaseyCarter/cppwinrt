@@ -15,28 +15,10 @@ using namespace std::experimental::filesystem;
 
 namespace
 {
-    enum class command
-    {
-        none,
-        platform,
-        header,
-        component,
-    };
-
-    enum class option
-    {
-        none,
-        in,
-        out,
-        version,
-        filter,
-    };
-
     namespace usage
     {
-        ::command command{};
-        bool platform_input{};
-        std::vector<std::pair<std::wstring, bool>> input;
+        std::vector<std::wstring> inputs;
+        std::vector<std::wstring> refs;
     }
 
     std::experimental::generator<std::wstring> enum_args(int const argc, wchar_t** argv);
@@ -51,7 +33,7 @@ namespace
             wchar_t** argv;
             argv = CommandLineToArgvW(line_buf.data(), &argc);
             winrt::impl::check_pointer(argv);
-            for (auto arg : enum_args(argc, argv))
+            for (auto const& arg : enum_args(argc, argv))
             {
                 co_yield arg;
             }
@@ -64,7 +46,7 @@ namespace
         {
             if (argv[i][0] == L'@')
             {
-                for (auto& arg : enum_response_file(argv[i] + 1))
+                for (auto const& arg : enum_response_file(argv[i] + 1))
                 {
                     co_yield arg;
                 }
@@ -76,13 +58,37 @@ namespace
 
     struct invalid_usage {};
 
-    void print_usage()
+    void print_usage(bool detailed = false)
     {
         time_t t{ time(nullptr) };
         tm tm{};
         localtime_s(&tm, &t);
 
         printf(strings::print_usage, CPPWINRT_VERSION_STRING, 1900 + tm.tm_year);
+        if (detailed)
+        {
+            printf(strings::print_usage_details);
+        }
+    }
+
+    enum class option
+    {
+        none,
+        in,
+        ref,
+        out,
+        comp,
+        filter,
+        tests,
+        verbose,
+        help,
+    };
+
+    std::wstring get_win_metadata()
+    {
+        std::array<wchar_t, MAX_PATH> path;
+        check_win32_bool(ExpandEnvironmentStrings(L"%windir%\\System32\\WinMetadata", path.data(), static_cast<DWORD>(path.size())));
+        return path.data();
     }
 
     bool parse_usage(int const argc, wchar_t** argv)
@@ -99,118 +105,94 @@ namespace
         {
             auto arg = arg_str.c_str();
 
-            if (last_option == option::none)
+            if (arg[0] == '/' || arg[0] == '-')
             {
-                if (arg[0] == '/' || arg[0] == '-')
+                ++arg;
+                static const struct
                 {
-                    ++arg;
-                    if (0 == wcscmp(arg, L"in"))
-                    {
-                        if (usage::command == command::none)
-                        {
-                            throw invalid_usage();
-                        }
-                        last_option = option::in;
-                    }
-                    else if (0 == wcscmp(arg, L"out"))
-                    {
-                        last_option = option::out;
-                    }
-                    else if (0 == wcscmp(arg, L"v"))
-                    {
-                        if (usage::command == command::none)
-                        {
-                            throw invalid_usage();
-                        }
-                        last_option = option::version;
-                    }
-                    else if (0 == wcscmp(arg, L"f"))
-                    {
-                        last_option = option::filter;
-                    }
-                    else if (0 == wcscmp(arg, L"single"))
-                    {
-                        settings::single_header = true;
-                    }
-                    else if (0 == wcscmp(arg, L"tests"))
-                    {
-                        settings::create_tests = true;
-                    }
-                    else if (0 == wcscmp(arg, L"verbose"))
-                    {
-                        settings::verbose = true;
-                    }
-                    else
-                    {
-                        throw invalid_usage();
-                    }
-                    continue;
+                    wchar_t const* string;
+                    option value;
                 }
+                options[] =
+                {
+                    { L"in", option::in },
+                    { L"ref", option::ref },
+                    { L"out", option::out },
+                    { L"comp", option::comp },
+                    { L"filter", option::filter },
+                    { L"tests", option::tests },
+                    { L"verbose", option::verbose },
+                    { L"help", option::help },
+                };
 
-                command command_arg{};
-                if (0 == wcscmp(arg, L"platform"))
+                option cur_option = option::none;
+                for (auto const& o : options)
                 {
-                    command_arg = command::platform;
+                    if (arg[0] == o.string[0])
+                    {
+                        if ((arg[1] == L'\0') || (0 == wcscmp(arg, o.string)))
+                        {
+                            cur_option = o.value;
+                            break;
+                        }
+                    }
                 }
-                else if (0 == wcscmp(arg, L"header"))
+                switch (cur_option)
                 {
-                    command_arg = command::header;
-                }
-                else if (0 == wcscmp(arg, L"component"))
-                {
-                    command_arg = command::component;
-                }
-                else
-                {
+                case option::none:
                     throw invalid_usage();
-                }
-
-                if (usage::command == command::none)
-                {
-                    usage::command = command_arg;
-                }
-                else if ((command_arg == command::platform) && (usage::command != command::platform))
-                {
-                    usage::platform_input = true;
-                }
-                else if (0 == wcscmp(arg, L"overwrite"))
-                {
-                    settings::overwrite = true;
-                }
-                else
-                {
-                    throw invalid_usage();
+                case option::comp:
+                    settings::component = true;
+                    break;
+                case option::tests:
+                    settings::create_tests = true;
+                    break;
+                case option::verbose:
+                    settings::verbose = true;
+                    break;
+                case option::help:
+                    print_usage(true);
+                    return false;
+                default:
+                    last_option = cur_option;
+                    break;
                 }
                 continue;
             }
 
-            if (last_option == option::in)
+            switch (last_option)
             {
-                if (usage::command != command::platform && settings::first_input.empty())
+            case option::in: 
+                if (settings::first_input.empty())
                 {
                     settings::first_input = arg;
                 }
-                usage::input.emplace_back(arg, usage::platform_input);
-            }
-            else if (last_option == option::out)
-            {
-                settings::output = arg;
-            }
-            else if (last_option == option::version)
-            {
-                settings::platform_version = arg;
-            }
-            else if (last_option == option::filter)
-            {
-                std::wstring filter(arg);
-                settings::filters.emplace_back(filter.begin(), filter.end());
-            }
-            else
-            {
+                if (_wcsicmp(arg, L"local") == 0)
+                {
+                    usage::inputs.emplace_back(get_win_metadata());
+                }
+                usage::inputs.emplace_back(arg); 
+                break;
+            case option::ref: 
+                if (_wcsicmp(arg, L"local") == 0)
+                {
+                    usage::refs.emplace_back(get_win_metadata());
+                }
+                usage::refs.emplace_back(arg);
+                break;
+            case option::out: 
+                settings::output = arg; 
+                last_option = option::none; 
+                break;
+            case option::filter: 
+                {
+                    std::wstring filter(arg);
+                    settings::filters.emplace_back(filter.begin(), filter.end());
+                }
+                break;
+            default: 
                 throw invalid_usage();
             }
-
-            last_option = option::none;
         }
 
         return true;
@@ -224,26 +206,26 @@ namespace
         return extension == L".winmd";
     }
 
-    std::experimental::generator<std::pair<std::wstring, bool>> enum_winmd_files()
+    std::experimental::generator<path> enum_winmd_files(std::vector<std::wstring> winmd_specs)
     {
-        for (auto&& input : usage::input)
+        for (auto const& winmd_spec : winmd_specs)
         {
-            path input_path(input.first);
-            input_path = absolute(input_path);
-            input_path = canonical(input_path);
-            if (is_directory(input_path.c_str()))
+            path winmd_path(winmd_spec);
+            winmd_path = absolute(winmd_path);
+            winmd_path = canonical(winmd_path);
+            if (is_directory(winmd_path.c_str()))
             {
-                for (directory_entry const& item : recursive_directory_iterator(input_path.c_str()))
+                for (directory_entry const& item : std::experimental::filesystem::recursive_directory_iterator(winmd_path.c_str()))
                 {
                     if (is_winmd(item.path()))
                     {
-                        co_yield{ item.path(), input.second };
+                        co_yield{ item.path() };
                     }
                 }
             }
-            else if (is_winmd(input_path.c_str()))
+            else if (is_winmd(winmd_path.c_str()))
             {
-                co_yield{ input_path, input.second };
+                co_yield{ winmd_path };
             }
             else
             {
@@ -252,50 +234,49 @@ namespace
         }
     }
 
-    bool includes_foundation_input()
+    std::vector<path> get_winmd_files(std::vector<std::wstring> winmd_specs)
     {
-        WINRT_ASSERT(usage::command != command::platform);
-
-        return usage::input.end() != std::find_if(usage::input.begin(), usage::input.end(),
-            [](std::pair<std::wstring, bool> const& value)
+        std::vector<path> files;
+        for (auto file : enum_winmd_files(winmd_specs))
         {
-            return value.second;
-        });
-    }
-
-    void include_win_metadata(bool foundation)
-    {
-        std::array<wchar_t, MAX_PATH> path;
-        check_win32_bool(ExpandEnvironmentStrings(L"%windir%\\System32\\WinMetadata", path.data(), static_cast<DWORD>(path.size())));
-        usage::input.emplace_back(path.data(), foundation);
+            files.push_back(file);
+        }
+        std::sort(files.begin(), files.end());
+        files.erase(std::unique(files.begin(), files.end()), files.end());
+        return files;
     }
 
     void prepare_input()
     {
-        if (usage::input.empty())
+        auto inputs = get_winmd_files(usage::inputs);
+        for(auto const& input: inputs)
         {
-            include_win_metadata(usage::platform_input);
+            if (settings::verbose)
+            {
+                printf(" in:   %ls\n", input.c_str());
+            }
+            meta::open_database(input, false);
         }
 
-        if (usage::command != command::platform && !includes_foundation_input())
+        auto refs = get_winmd_files(usage::refs);
+        refs.erase(std::remove_if(refs.begin(), refs.end(),
+            [&](path const& p)
+            {
+                return std::find(inputs.begin(), inputs.end(), p) != inputs.end();
+            }), 
+            refs.end());
+        for (auto const& ref : refs)
         {
-            include_win_metadata(true);
+            if (settings::verbose)
+            {
+                printf(" ref:  %ls\n", ref.c_str());
+            }
+            meta::open_database(ref, true);
         }
 
         settings::output = absolute(settings::output);
         create_directories(settings::output); // fs::canonical requires the folder to exist...
         settings::output = canonical(settings::output);
-
-        for (std::pair<std::wstring, bool> const& file : enum_winmd_files())
-        {
-            if (settings::verbose)
-            {
-                printf(" in:   %ls%s\n", file.first.c_str(), (file.second ? " (platform)" : ""));
-            }
-
-            meta::open_database(file.first, file.second);
-        }
-
         if (settings::verbose)
         {
             printf(" out:  %ls\n", settings::output.c_str());
@@ -330,21 +311,13 @@ namespace
 
         prepare_input();
 
-        if (usage::command == command::platform)
-        {
-            write_platform();
-        }
-        else if (usage::command == command::header)
-        {
-            write_header();
-        }
-        else if (usage::command == command::component)
+        if (settings::component)
         {
             write_component();
         }
         else
         {
-            WINRT_ASSERT(false);
+            write_platform();
         }
 
         if (settings::verbose)

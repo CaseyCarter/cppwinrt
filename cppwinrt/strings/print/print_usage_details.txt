@@ -1,0 +1,15 @@
+
+Examples:
+
+1. Generate a projection from local metadata, in the current directory:
+>cppwinrt.exe -in local
+
+2. Generate a Desktop SDK projection using a response file, into output directory
+>type desktop.rsp 
+	"C:\Program Files (x86)\Windows Kits\10\...\Windows.Foundation.FoundationContract.winmd"
+	"C:\Program Files (x86)\Windows Kits\10\...\Windows.Foundation.UniversalApiContract.winmd"
+	...
+>cppwinrt.exe -in @desktop.rsp -out c:\desktop
+
+3. Generate a filtered component projection, referencing the Desktop SDK above:
+>cppwinrt.exe -comp -in comp.winmd -filter Component.Namespace. -ref @desktop.rsp 

@@ -238,6 +238,7 @@
     <Text Include="strings\print\print_invalid_usage.txt" />
     <Text Include="strings\print\print_time.txt" />
     <Text Include="strings\print\print_usage.txt" />
+    <Text Include="strings\print\print_usage_details.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="source\version.rc" />
