@@ -5,6 +5,6 @@ struct %T
 %{
     hstring GetRuntimeClassName() const
     {
-        return L"%";
+        return hstring{ L"%" };
     }
 %};

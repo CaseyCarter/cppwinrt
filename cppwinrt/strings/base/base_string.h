@@ -53,19 +53,24 @@ struct hstring
     using const_iterator = const_pointer;
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
-    hstring() noexcept = default;
+    hstring(nullptr_t = nullptr) noexcept {}
     hstring(hstring const& value);
     hstring& operator=(hstring const& value);
-    hstring(hstring&& value) noexcept;
-    hstring& operator=(hstring&& value) noexcept;
+    hstring(hstring&&) noexcept = default;
+    hstring& operator=(hstring&&)  = default;
 
-    hstring(std::wstring const& value);
-    hstring(hstring_view value);
-    hstring(wchar_t const* value);
+    template <typename T, typename = std::enable_if_t<std::is_constructible_v<std::wstring_view, T&&> && !std::is_same_v<std::wstring_view, std::decay_t<T>>>>
+    explicit hstring(T&& str)
+        : hstring(std::wstring_view(std::forward<T>(str)))
+    {}
+
+    explicit hstring(std::wstring_view const& value);
     hstring(wchar_t const* value, size_type size);
 
+    hstring& operator=(std::wstring_view const& value);
+
     void clear() noexcept;
-    operator std::wstring() const;
+    operator std::wstring_view() const noexcept;
 
     const_reference operator[](size_type pos) const noexcept;
     const_reference front() const noexcept;
@@ -117,12 +122,19 @@ struct hstring_view
     using const_iterator = const_pointer;
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
+    hstring_view(nullptr_t = nullptr) noexcept {}
     hstring_view(std::wstring const& value) noexcept;
+    hstring_view(std::wstring_view const& value) noexcept;
     hstring_view(hstring const& value) noexcept;
     hstring_view(wchar_t const* value) noexcept;
     explicit hstring_view(HSTRING value) noexcept;
 
-    operator std::wstring() const;
+    template <typename T, typename = std::enable_if_t<std::is_constructible_v<std::wstring_view, T&&> && !std::is_same_v<std::wstring_view, std::decay_t<T>>>>
+    explicit hstring_view(T&& str)
+        : hstring_view(std::wstring_view(std::forward<T>(str)))
+    {}
+
+    operator std::wstring_view() const noexcept;
 
     const_reference operator[](size_type pos) const noexcept;
     const_reference front() const noexcept;
@@ -149,8 +161,8 @@ private:
 
     hstring_view(wchar_t const* value, size_type size) noexcept;
 
-    HSTRING m_handle;
-    HSTRING_HEADER m_header;
+    HSTRING m_handle{};
+    HSTRING_HEADER m_header{};
 };
 
 namespace impl

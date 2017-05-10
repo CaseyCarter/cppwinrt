@@ -37,7 +37,7 @@ TEST_CASE("struct, TypeName")
     REQUIRE(value.Kind == TypeKind::Primitive);
     REQUIRE(value.Name.empty());
 
-    object.TargetType({ L"Value", TypeKind::Custom });
+    object.TargetType({ hstring{ L"Value"}, TypeKind::Custom });
 
     value = object.TargetType();
     REQUIRE(value.Kind == TypeKind::Custom);

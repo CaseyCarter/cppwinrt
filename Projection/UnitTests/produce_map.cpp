@@ -22,7 +22,7 @@ TEST_CASE("produce_IMapChangedEventArgs")
     }
 
     {
-        IMapChangedEventArgs<hstring> args = make<impl::MapChangedEventArgs<hstring>>(CollectionChange::Reset, L"value");
+        IMapChangedEventArgs<hstring> args = make<impl::MapChangedEventArgs<hstring>>(CollectionChange::Reset, hstring{ L"value" });
         REQUIRE(args.CollectionChange() == CollectionChange::Reset);
         REQUIRE(args.Key() == L"value");
     }
@@ -48,20 +48,20 @@ TEST_CASE("produce_IMap_int32_t_hstring")
     });
 
     REQUIRE(handlerCount == 0);
-    REQUIRE(!m.Insert(1, L"one"));
+    REQUIRE(!m.Insert(1, hstring{ L"one" }));
     REQUIRE(handlerCount == 1);
 
     om.MapChanged(token); // Unregister and thus handlerCount should not increase after this.
 
     REQUIRE(handlerCount == 1);
-    REQUIRE(m.Insert(1, L"one"));
+    REQUIRE(m.Insert(1, hstring{ L"one" }));
     REQUIRE(handlerCount == 1);
 
     REQUIRE(handlerCount == 1);
-    REQUIRE(!m.Insert(2, L"two"));
+    REQUIRE(!m.Insert(2, hstring{ L"two" }));
     REQUIRE(handlerCount == 1);
 
-    REQUIRE(m.Insert(2, L"two"));
+    REQUIRE(m.Insert(2, hstring{ L"two" }));
 
     REQUIRE(m.Lookup(1) == L"one");
     REQUIRE(m.Lookup(2) == L"two");
@@ -99,9 +99,9 @@ TEST_CASE("produce_IMap_IIterable_int32_t_hstring")
     using Container = std::map<int32_t, hstring>;
 
     IMap<int32_t, hstring> m = make<impl::Map<Container>>();
-    m.Insert(1, L"one");
-    m.Insert(2, L"two");
-    m.Insert(3, L"three");
+    m.Insert(1, hstring{ L"one" });
+    m.Insert(2, hstring{ L"two" });
+    m.Insert(3, hstring{ L"three" });
 
     IIterable<IKeyValuePair<int32_t, hstring>> iterable = m;
 
@@ -111,13 +111,13 @@ TEST_CASE("produce_IMap_IIterable_int32_t_hstring")
     REQUIRE(iterable.First() != m.First());
 
     IIterator<IKeyValuePair<int32_t, hstring>> i = m.First();
-    REQUIRE((i.Current() == make<impl::KeyValuePair<int32_t, hstring>>(1, L"one")));
+    REQUIRE((i.Current() == make<impl::KeyValuePair<int32_t, hstring>>(1, hstring{ L"one" })));
     REQUIRE(i.HasCurrent());
     REQUIRE(i.MoveNext());
-    REQUIRE((i.Current() == make<impl::KeyValuePair<int32_t, hstring>>(2, L"two")));
+    REQUIRE((i.Current() == make<impl::KeyValuePair<int32_t, hstring>>(2, hstring{ L"two" })));
     REQUIRE(i.HasCurrent());
     REQUIRE(i.MoveNext());
-    REQUIRE((i.Current() == make<impl::KeyValuePair<int32_t, hstring>>(3, L"three")));
+    REQUIRE((i.Current() == make<impl::KeyValuePair<int32_t, hstring>>(3, hstring{ L"three" })));
     REQUIRE(i.HasCurrent());
     REQUIRE(!i.MoveNext());
 
@@ -127,9 +127,9 @@ TEST_CASE("produce_IMap_IIterable_int32_t_hstring")
     // Reset iterator
     i = m.First();
     REQUIRE(3 == i.GetMany(many));
-    REQUIRE((many[0] == make<impl::KeyValuePair<int32_t, hstring>>(1, L"one")));
-    REQUIRE((many[1] == make<impl::KeyValuePair<int32_t, hstring>>(2, L"two")));
-    REQUIRE((many[2] == make<impl::KeyValuePair<int32_t, hstring>>(3, L"three")));
+    REQUIRE((many[0] == make<impl::KeyValuePair<int32_t, hstring>>(1, hstring{ L"one" })));
+    REQUIRE((many[1] == make<impl::KeyValuePair<int32_t, hstring>>(2, hstring{ L"two" })));
+    REQUIRE((many[2] == make<impl::KeyValuePair<int32_t, hstring>>(3, hstring{ L"three" })));
     REQUIRE((!many[3]));
 }
 
@@ -141,29 +141,29 @@ TEST_CASE("produce_IMap_hstring_int32_t")
 
     IMap<hstring, int32_t> m = make<impl::Map<Container>>();
 
-    REQUIRE(!m.Insert(L"one", 1));
-    REQUIRE(m.Insert(L"one", 1));
+    REQUIRE(!m.Insert(hstring{ L"one" }, 1));
+    REQUIRE(m.Insert(hstring{ L"one" }, 1));
 
-    REQUIRE(!m.Insert(L"two", 2));
-    REQUIRE(m.Insert(L"two", 2));
+    REQUIRE(!m.Insert(hstring{ L"two" }, 2));
+    REQUIRE(m.Insert(hstring{ L"two" }, 2));
 
-    REQUIRE(m.Lookup(L"one") == 1);
-    REQUIRE(m.Lookup(L"two") == 2);
-    REQUIRE_THROWS_AS(m.Lookup(L"three"), hresult_out_of_bounds);
+    REQUIRE(m.Lookup(hstring{ L"one" }) == 1);
+    REQUIRE(m.Lookup(hstring{ L"two" }) == 2);
+    REQUIRE_THROWS_AS(m.Lookup(hstring{ L"three" }), hresult_out_of_bounds);
 
     REQUIRE(m.Size() == 2);
 
-    REQUIRE(m.HasKey(L"one"));
-    REQUIRE(!m.HasKey(L"three"));
+    REQUIRE(m.HasKey(hstring{ L"one" }));
+    REQUIRE(!m.HasKey(hstring{ L"three" }));
 
     IMapView<hstring, int32_t> view = m.GetView();
     const bool same = view.as<IMap<hstring, int32_t>>() == m;
     REQUIRE(same);
 
     REQUIRE(m.Size() == 2);
-    m.Remove(L"one"); // existing
+    m.Remove(hstring{ L"one" }); // existing
     REQUIRE(m.Size() == 1);
-    m.Remove(L"three"); // not existing
+    m.Remove(hstring{ L"three" }); // not existing
     REQUIRE(m.Size() == 1);
 
     m.Clear();
@@ -183,9 +183,9 @@ TEST_CASE("produce_IMap_IIterable_hstring_int32_t")
     using Container = std::map<hstring, int32_t>;
 
     IMap<hstring, int32_t> m = make<impl::Map<Container>>();
-    m.Insert(L"one", 1);
-    m.Insert(L"two", 2);
-    m.Insert(L"three", 3);
+    m.Insert(hstring{ L"one" }, 1);
+    m.Insert(hstring{ L"two" }, 2);
+    m.Insert(hstring{ L"three" }, 3);
 
     IIterable<IKeyValuePair<hstring, int32_t>> iterable = m;
 
@@ -195,13 +195,13 @@ TEST_CASE("produce_IMap_IIterable_hstring_int32_t")
     REQUIRE(iterable.First() != m.First());
 
     IIterator<IKeyValuePair<hstring, int32_t>> i = m.First();
-    REQUIRE((i.Current() == make<impl::KeyValuePair<hstring, int32_t>>(L"one", 1)));
+    REQUIRE((i.Current() == make<impl::KeyValuePair<hstring, int32_t>>(hstring{ L"one" }, 1)));
     REQUIRE(i.HasCurrent());
     REQUIRE(i.MoveNext());
-    REQUIRE((i.Current() == make<impl::KeyValuePair<hstring, int32_t>>(L"three", 3)));
+    REQUIRE((i.Current() == make<impl::KeyValuePair<hstring, int32_t>>(hstring{ L"three" }, 3)));
     REQUIRE(i.HasCurrent());
     REQUIRE(i.MoveNext());
-    REQUIRE((i.Current() == make<impl::KeyValuePair<hstring, int32_t>>(L"two", 2)));
+    REQUIRE((i.Current() == make<impl::KeyValuePair<hstring, int32_t>>(hstring{ L"two" }, 2)));
     REQUIRE(i.HasCurrent());
     REQUIRE(!i.MoveNext());
 
@@ -211,8 +211,8 @@ TEST_CASE("produce_IMap_IIterable_hstring_int32_t")
     // Reset iterator
     i = m.First();
     REQUIRE(3 == i.GetMany(many));
-    REQUIRE((many[0] == make<impl::KeyValuePair<hstring, int32_t>>(L"one", 1)));
-    REQUIRE((many[1] == make<impl::KeyValuePair<hstring, int32_t>>(L"three", 3)));
-    REQUIRE((many[2] == make<impl::KeyValuePair<hstring, int32_t>>(L"two", 2)));
+    REQUIRE((many[0] == make<impl::KeyValuePair<hstring, int32_t>>(hstring{ L"one" }, 1)));
+    REQUIRE((many[1] == make<impl::KeyValuePair<hstring, int32_t>>(hstring{ L"three" }, 3)));
+    REQUIRE((many[2] == make<impl::KeyValuePair<hstring, int32_t>>(hstring{ L"two" }, 2)));
     REQUIRE((!many[3]));
 }

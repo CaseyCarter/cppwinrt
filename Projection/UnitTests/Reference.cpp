@@ -38,7 +38,7 @@ TEST_CASE("IReference<Rect>")
 
 TEST_CASE("IReference<TypeName>")
 {
-    TypeName original{ L"TestName", TypeKind::Custom };
+    TypeName original{ hstring{ L"TestName"}, TypeKind::Custom };
     IReference<TypeName> ref = make<Reference<TypeName>>(original);
     TypeName value = ref.Value();
     REQUIRE(original.Name == value.Name);

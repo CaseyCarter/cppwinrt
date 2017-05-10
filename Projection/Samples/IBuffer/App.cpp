@@ -87,9 +87,9 @@ public:
         picker.SuggestedStartLocation(PickerLocationId::PicturesLibrary);
 
         auto fileTypeFilters = picker.FileTypeFilter();
-        fileTypeFilters.Append(L".jpg");
-        fileTypeFilters.Append(L".jpeg");
-        fileTypeFilters.Append(L".png");
+        fileTypeFilters.Append(hstring{ L".jpg" });
+        fileTypeFilters.Append(hstring{ L".jpeg" });
+        fileTypeFilters.Append(hstring{ L".png" });
 
         StorageFile selectedFile = await picker.PickSingleFileAsync();
         if (!selectedFile)

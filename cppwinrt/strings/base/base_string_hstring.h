@@ -9,40 +9,29 @@ inline hstring& hstring::operator=(hstring const& value)
     return*this;
 }
 
-inline hstring::hstring(hstring&& value) noexcept :
-m_handle(std::move(value.m_handle))
-{}
-
-inline hstring& hstring::operator=(hstring&& value) noexcept
-{
-    m_handle = std::move(value.m_handle);
-    return*this;
-}
-
-inline hstring::hstring(std::wstring const& value) :
-    hstring(value.c_str(), static_cast<size_type>(value.size()))
-{}
-
-inline hstring::hstring(hstring_view value) :
-    m_handle(impl::duplicate_string(get_abi(value)))
-{}
-
-inline hstring::hstring(wchar_t const* const value) :
-    hstring(value, impl::string_length(value))
+inline hstring::hstring(std::wstring_view const& value) :
+    hstring(value.data(), static_cast<size_type>(value.size()))
 {}
 
 inline hstring::hstring(wchar_t const* const value, size_type const size) :
     m_handle(impl::create_string(value, size))
 {}
 
+inline hstring& hstring::operator=(std::wstring_view const& value)
+{
+    return (*this = hstring{ value });
+}
+
 inline void hstring::clear() noexcept
 {
     m_handle.close();
 }
 
-inline hstring::operator std::wstring() const
+inline hstring::operator std::wstring_view() const noexcept
 {
-    return std::wstring(begin(), end());
+    uint32_t size;
+    wchar_t const* data = WindowsGetStringRawBuffer(get_abi(m_handle), &size);
+    return std::wstring_view(data, size);
 }
 
 inline hstring::const_reference hstring::operator[](size_type const pos) const noexcept

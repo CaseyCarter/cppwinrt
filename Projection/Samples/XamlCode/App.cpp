@@ -37,7 +37,7 @@ struct App : ApplicationT<App>
     fire_and_forget Async(TextBlock block)
     {
         FileOpenPicker picker;
-        picker.FileTypeFilter().Append(L".png");
+        picker.FileTypeFilter().Append(hstring{ L".png" });
         picker.SuggestedStartLocation(PickerLocationId::PicturesLibrary);
         auto file = co_await picker.PickSingleFileAsync();
 

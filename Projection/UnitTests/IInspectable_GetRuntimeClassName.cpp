@@ -20,7 +20,7 @@ struct Test_GetRuntimeClassName_Override : implements<Test_GetRuntimeClassName_O
 {
     hstring GetRuntimeClassName()
     {
-        return L"GetRuntimeClassName";
+        return hstring{ L"GetRuntimeClassName" };
     }
 };
 

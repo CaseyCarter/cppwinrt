@@ -14,7 +14,7 @@ hstring MessagePath()
     wchar_t buffer[1024]{};
     GetCurrentDirectory(_countof(buffer), buffer);
     check_hresult(PathCchAppendEx(buffer, _countof(buffer), L"message.png", PATHCCH_ALLOW_LONG_PATHS));
-    return buffer;
+    return hstring{ buffer };
 }
 
 IAsyncOperation<hstring> AsyncSample()

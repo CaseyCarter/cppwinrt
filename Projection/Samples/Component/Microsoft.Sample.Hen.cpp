@@ -6,5 +6,5 @@ using namespace Microsoft::Sample;
 
 hstring HenInstance::ToString()
 {
-    return L"Cluck!";
+    return hstring{ L"Cluck!" };
 }

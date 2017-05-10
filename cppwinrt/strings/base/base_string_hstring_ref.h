@@ -1,6 +1,10 @@
 
 inline hstring_view::hstring_view(std::wstring const& value) noexcept :
-hstring_view(value.c_str(), static_cast<size_type>(value.size()))
+hstring_view(std::wstring_view(value))
+{}
+
+inline hstring_view::hstring_view(std::wstring_view const& value) noexcept :
+hstring_view(value.data(), static_cast<size_type>(value.size()))
 {}
 
 inline hstring_view::hstring_view(hstring const& value) noexcept :
@@ -20,9 +24,11 @@ inline hstring_view::hstring_view(HSTRING value) noexcept :
 m_handle(value)
 {}
 
-inline hstring_view::operator std::wstring() const
+inline hstring_view::operator std::wstring_view() const noexcept
 {
-    return std::wstring(begin(), end());
+    uint32_t size;
+    wchar_t const* data = WindowsGetStringRawBuffer(get_abi(m_handle), &size);
+    return std::wstring_view(data, size);
 }
 
 inline hstring_view::const_reference hstring_view::operator[](size_type const pos) const noexcept

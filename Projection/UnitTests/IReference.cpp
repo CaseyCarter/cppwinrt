@@ -62,7 +62,7 @@ TEST_CASE("IReference, constructor and getter")
     IReference<uint64_t> obj_uint64(ref_uint64);
     REQUIRE(obj_uint64.Value() == 100);
 
-    hstring val_hstring = L"Everything is awesome";
+    hstring val_hstring = hstring{ L"Everything is awesome" };
     IReference<hstring> obj_hstring(val_hstring);
     REQUIRE(obj_hstring.Value() == L"Everything is awesome");
 
@@ -78,7 +78,7 @@ TEST_CASE("IReference, constructor and getter")
     REQUIRE(fetched_user_enum == plus_good);
 
     // Test a struct type that has both an enum and hstring member
-    TypeName val_xaml_struct = { L"Super cool type", TypeKind::Primitive };
+    TypeName val_xaml_struct = { hstring{ L"Super cool type"}, TypeKind::Primitive };
     IReference<TypeName> obj_xaml_struct(val_xaml_struct);
     TypeName fetched_xaml_struct = obj_xaml_struct.Value();
     REQUIRE(fetched_xaml_struct.Kind == TypeKind::Primitive);

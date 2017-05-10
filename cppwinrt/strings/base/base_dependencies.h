@@ -13,6 +13,7 @@
 #include <memory>
 #include <new>
 #include <string>
+#include <string_view>
 #include <stdexcept>
 #include <tuple>
 #include <type_traits>
