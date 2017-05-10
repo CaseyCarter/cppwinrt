@@ -95,7 +95,10 @@ namespace cppwinrt
     {
         co_await resume_background();
 
-        create_base_header(paths._public);
+        if (!settings::skip_base_header)
+        {
+            create_base_header(paths._public);
+        }
         create_natvis(paths._public);
     }
 

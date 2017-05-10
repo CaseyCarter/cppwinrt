@@ -54,7 +54,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
         template <typename Expression>
         Expression&& await_transform(Expression&& expression)
         {
-            if (this->Status() == AsyncStatus::Canceled)
+            if (this->Status() == winrt::Windows::Foundation::AsyncStatus::Canceled)
             {
                 throw winrt::hresult_canceled();
             }

@@ -19,6 +19,15 @@ namespace cppwinrt
         out.save_as(filename.string());
     }
 
+    void create_natvis(std::vector<meta::type const*> types)
+    {
+        output out;
+        write_natvis(out, types);
+        path filename = settings::output / settings::first_input.filename();
+        filename.replace_extension(".natvis");
+        out.save_as(filename.string());
+    }
+
     void write_component()
     {
         write_header();
@@ -49,5 +58,7 @@ namespace cppwinrt
                 write_component_class_source(*type);
             }
         }
+
+        create_natvis(types);
     }
 }

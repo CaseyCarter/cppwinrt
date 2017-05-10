@@ -1618,6 +1618,7 @@ namespace cppwinrt
         meta::index_type const& index = meta::get_index();
 
         write_edit_warning_header(out);
+        out.write("#include \"winrt/base.h\"\n");
         write_winrt_namespace_begin(out);
 
         for (meta::index_pair const& ns : index)
@@ -1703,9 +1704,6 @@ namespace cppwinrt
         }
         write_winrt_namespace_end(out);
 
-        write_namespace_special(out, "Windows.Foundation");
-        write_namespace_special(out, "Windows.Foundation.Collections");
-
         out.write_namespace("std");
         for (meta::index_pair const& ns : index)
         {
@@ -1713,7 +1711,6 @@ namespace cppwinrt
             {
                 continue;
             }
-            out.write_namespace(ns.first);
             write_std_hashes(out, ns.second);
         }
         out.write_namespace();

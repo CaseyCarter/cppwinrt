@@ -6,6 +6,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncActionWithProgress<TPr
         winrt::Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
     {
         using ProgressHandler = winrt::Windows::Foundation::AsyncActionProgressHandler<TProgress>;
+        using AsyncStatus = winrt::Windows::Foundation::AsyncStatus;
 
         void Progress(ProgressHandler const& handler)
         {
@@ -76,7 +77,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncActionWithProgress<TPr
         template <typename Expression>
         Expression&& await_transform(Expression&& expression)
         {
-            if (this->Status() == AsyncStatus::Canceled)
+            if (this->Status() == winrt::Windows::Foundation::AsyncStatus::Canceled)
             {
                 throw winrt::hresult_canceled();
             }

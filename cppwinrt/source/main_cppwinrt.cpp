@@ -84,11 +84,18 @@ namespace
         help,
     };
 
-    std::wstring get_win_metadata()
+    void add_winmd_spec(std::vector<std::wstring>& winmd_specs, std::wstring const& winmd_spec)
     {
-        std::array<wchar_t, MAX_PATH> path;
-        check_win32_bool(ExpandEnvironmentStrings(L"%windir%\\System32\\WinMetadata", path.data(), static_cast<DWORD>(path.size())));
-        return path.data();
+        if (_wcsicmp(winmd_spec.c_str(), L"local") == 0)
+        {
+            std::array<wchar_t, MAX_PATH> path;
+            check_win32_bool(ExpandEnvironmentStrings(L"%windir%\\System32\\WinMetadata", path.data(), static_cast<DWORD>(path.size())));
+            winmd_specs.emplace_back(path.data());
+        }
+        else
+        {
+            winmd_specs.emplace_back(winmd_spec);
+        }
     }
 
     bool parse_usage(int const argc, wchar_t** argv)
@@ -167,18 +174,11 @@ namespace
                 {
                     settings::first_input = arg;
                 }
-                if (_wcsicmp(arg, L"local") == 0)
-                {
-                    usage::inputs.emplace_back(get_win_metadata());
-                }
-                usage::inputs.emplace_back(arg); 
+                add_winmd_spec(usage::inputs, arg);
                 break;
             case option::ref: 
-                if (_wcsicmp(arg, L"local") == 0)
-                {
-                    usage::refs.emplace_back(get_win_metadata());
-                }
-                usage::refs.emplace_back(arg);
+                settings::skip_base_header = true;
+                add_winmd_spec(usage::refs, arg);
                 break;
             case option::out: 
                 settings::output = arg; 
