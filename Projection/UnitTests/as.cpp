@@ -17,6 +17,16 @@ namespace
         {
         }
     };
+
+    // This is to ensure that com_ptr knows how to QueryInterface an object that doesn't inherit from IUnknown.
+    struct Stringable_non_agile : implements<Stringable_non_agile, IStringable, non_agile>
+    {
+        hstring ToString()
+        {
+            return hstring{ L"Stringable_non_agile" };
+        }
+    };
+    static_assert(!std::is_base_of_v<::IUnknown, Stringable_non_agile>);
 }
 
 TEST_CASE("as<T>")
@@ -89,4 +99,17 @@ TEST_CASE("try_as(T)")
     IPropertyValue pv;
     s.try_as(pv);
     REQUIRE(!pv);
+}
+
+TEST_CASE("as, non-IUnknown")
+{
+    constexpr auto test_string = L"Stringable_non_agile";
+    com_ptr<Stringable_non_agile> obj = make_self<Stringable_non_agile>();
+
+    REQUIRE(obj->ToString() == test_string);
+    REQUIRE(obj.as<IStringable>().ToString() == test_string);
+
+    auto obj_IStringable = obj.try_as<IStringable>();
+    REQUIRE(obj_IStringable != nullptr);
+    REQUIRE(obj_IStringable.ToString() == test_string);
 }

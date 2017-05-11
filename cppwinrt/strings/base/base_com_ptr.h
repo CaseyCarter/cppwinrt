@@ -12,35 +12,19 @@ namespace Windows::Foundation
 
 namespace impl
 {
-    template <typename U>
-    auto as(::IUnknown* ptr, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, U>>* = nullptr)
+    template <typename To, typename From>
+    auto as(From* ptr)
     {
-        U temp{ nullptr };
-        check_hresult(ptr->QueryInterface(guid_v<U>, reinterpret_cast<void**>(&temp)));
+        std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, To>, To, com_ptr<To>> temp{ nullptr };
+        check_hresult(ptr->QueryInterface(guid_v<To>, reinterpret_cast<void**>(put_abi(temp))));
         return temp;
     }
 
-    template <typename U>
-    auto as(::IUnknown* ptr, std::enable_if_t<std::is_base_of_v<::IUnknown, U>>* = nullptr)
+    template <typename To, typename From>
+    auto try_as(From* ptr)
     {
-        com_ptr<U> temp;
-        check_hresult(ptr->QueryInterface(__uuidof(U), reinterpret_cast<void**>(&temp)));
-        return temp;
-    }
-
-    template <typename U>
-    auto try_as(::IUnknown* ptr, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, U>>* = nullptr) noexcept
-    {
-        U temp{ nullptr };
-        ptr->QueryInterface(guid_v<U>, reinterpret_cast<void**>(&temp));
-        return temp;
-    }
-
-    template <typename U>
-    auto try_as(::IUnknown* ptr, std::enable_if_t<std::is_base_of_v<::IUnknown, U>>* = nullptr) noexcept
-    {
-        com_ptr<U> temp;
-        ptr->QueryInterface(__uuidof(U), reinterpret_cast<void**>(&temp));
+        std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, To>, To, com_ptr<To>> temp{ nullptr };
+        ptr->QueryInterface(guid_v<To>, reinterpret_cast<void**>(put_abi(temp)));
         return temp;
     }
 
