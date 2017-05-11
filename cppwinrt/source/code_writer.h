@@ -44,6 +44,7 @@ namespace cppwinrt
 
     void write_component_header(std::vector<meta::type const*> const& types);
     void write_component_source(std::vector<meta::type const*> const& types);
+    void write_component_class_generated_header(meta::type const& type);
     void write_component_class_header(meta::type const& type);
     void write_component_class_source(meta::type const& type);
 

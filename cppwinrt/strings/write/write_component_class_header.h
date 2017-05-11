@@ -1,6 +1,7 @@
 #pragma once
 
 #include "module.h"
+#include "%.g.h"
 
 namespace winrt::%::implementation
 {

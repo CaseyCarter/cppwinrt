@@ -2563,40 +2563,13 @@ bind_output(write_class_tests, code_namespace, types));
         path projection_path = settings::first_input.filename();
         projection_path.replace_extension(".h");
 
-        out.write("\n#include \"%\"\n",
-            projection_path.string());
+        out.write("\n#include \"%\"\n", projection_path.string());
 
         write_winrt_namespace_begin(out);
 
         out.write_namespace("impl");
         out.write(strings::write_component_lock_declaration);
         write_component_produce_override_dispatch(out, types);
-
-        for (meta::type const* type : types)
-        {
-            if (!type->is_class())
-            {
-                continue;
-            }
-
-            out.write_namespace(std::string(type->name_space()) + ".implementation");
-
-            if (type->token().find_default_interface())
-            {
-                write_component_class_base(out, *type);
-            }
-            else
-            {
-                out.write(strings::write_component_static_class_base,
-                    type->name());
-            }
-
-            out.write(strings::write_component_class_factory_base,
-                type->name(),
-                bind_output(write_component_factory_interfaces, *type),
-                bind_output(write_dot_name, type->full_name()),
-                bind_output(write_component_factory_forwarding_methods, *type));
-        }
 
         write_winrt_namespace_end(out);
 
@@ -2858,6 +2831,43 @@ bind_output(write_class_tests, code_namespace, types));
         }
     }
 
+    void write_component_class_generated_header(meta::type const& type)
+    {
+        path filename = settings::output;
+        filename /= std::string(type.name());
+        filename += ".g.h";
+
+        output out;
+
+        write_warning(out, strings::write_edit_warning_header);
+
+        out.write("\n#include \"module.h\"\n");
+
+        write_winrt_namespace_begin(out);
+
+        out.write_namespace(std::string(type.name_space()) + ".implementation");
+
+        if (type.token().find_default_interface())
+        {
+            write_component_class_base(out, type);
+        }
+        else
+        {
+            out.write(strings::write_component_static_class_base,
+                type.name());
+        }
+
+        out.write(strings::write_component_class_factory_base,
+            type.name(),
+            bind_output(write_component_factory_interfaces, type),
+            bind_output(write_dot_name, type.full_name()),
+            bind_output(write_component_factory_forwarding_methods, type));
+
+        write_winrt_namespace_end(out);
+
+        out.save_as(filename.string());
+    }
+
     void write_component_class_header(meta::type const& type)
     {
         path filename = settings::output;
@@ -2872,6 +2882,7 @@ bind_output(write_class_tests, code_namespace, types));
         output out;
 
         out.write(strings::write_component_class_header,
+            type.name(),
             type.name_space(),
             type.name(),
             type.name(),

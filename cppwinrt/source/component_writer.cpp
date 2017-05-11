@@ -54,6 +54,7 @@ namespace cppwinrt
             if (type->is_class())
             {
                 // TODO: use name relative to winmd name
+                write_component_class_generated_header(*type);
                 write_component_class_header(*type);
                 write_component_class_source(*type);
             }

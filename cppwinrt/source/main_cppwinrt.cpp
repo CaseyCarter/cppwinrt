@@ -77,10 +77,11 @@ namespace
         in,
         ref,
         out,
-        comp,
+        component,
         filter,
         tests,
         verbose,
+        overwrite,
         help,
     };
 
@@ -125,30 +126,28 @@ namespace
                     { L"in", option::in },
                     { L"ref", option::ref },
                     { L"out", option::out },
-                    { L"comp", option::comp },
+                    { L"component", option::component },
                     { L"filter", option::filter },
                     { L"tests", option::tests },
                     { L"verbose", option::verbose },
+                    { L"write", option::overwrite },
                     { L"help", option::help },
                 };
 
                 option cur_option = option::none;
                 for (auto const& o : options)
                 {
-                    if (arg[0] == o.string[0])
+                    if (0 == wcsncmp(arg, o.string, wcslen(arg)))
                     {
-                        if ((arg[1] == L'\0') || (0 == wcscmp(arg, o.string)))
-                        {
-                            cur_option = o.value;
-                            break;
-                        }
+                        cur_option = o.value;
+                        break;
                     }
                 }
                 switch (cur_option)
                 {
                 case option::none:
                     throw invalid_usage();
-                case option::comp:
+                case option::component:
                     settings::component = true;
                     break;
                 case option::tests:
@@ -156,6 +155,9 @@ namespace
                     break;
                 case option::verbose:
                     settings::verbose = true;
+                    break;
+                case option::overwrite:
+                    settings::overwrite = true;
                     break;
                 case option::help:
                     print_usage(true);
