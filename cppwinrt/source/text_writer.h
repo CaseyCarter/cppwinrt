@@ -1,5 +1,7 @@
 #pragma once
 
+#include "helpers.h"
+
 namespace cppwinrt
 {
     static constexpr size_t default_output_capacity{ 48 * 1024 * 1000 };

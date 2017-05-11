@@ -141,16 +141,29 @@ namespace Windows::Foundation
             return*this;
         }
 
-        template <typename U>
+        template <typename To>
         auto as() const
         {
-            return impl::as<U>(m_ptr);
+            return impl::as<To>(m_ptr);
         }
 
-        template <typename U>
+        template <typename To>
         auto try_as() const noexcept
         {
-            return impl::try_as<U>(m_ptr);
+            return impl::try_as<To>(m_ptr);
+        }
+
+        template <typename To>
+        void as(To& to)
+        {
+            to = as<impl::wrapped_type_t<To>>();
+        }
+
+        template <typename To>
+        bool try_as(To& to)
+        {
+            to = try_as<impl::wrapped_type_t<To>>();
+            return static_cast<bool>(to);
         }
 
         friend ::IUnknown* impl_detach(IUnknown& object) noexcept

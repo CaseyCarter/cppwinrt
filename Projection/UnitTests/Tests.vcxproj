@@ -23,6 +23,7 @@
     <ClCompile Include="agile_ref.cpp" />
     <ClCompile Include="agility.cpp" />
     <ClCompile Include="array.cpp" />
+    <ClCompile Include="as.cpp" />
     <ClCompile Include="async.cpp" />
     <ClCompile Include="casts.cpp" />
     <ClCompile Include="clock.cpp" />
@@ -159,9 +160,10 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/bigobj /await /std:c++latest /d1permissive- %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await /permissive- %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -177,9 +179,10 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/bigobj /await /std:c++latest /d1permissive- %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await /permissive- %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -197,8 +200,9 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/bigobj /await /std:c++latest /d1permissive- %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await /permissive- %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -218,8 +222,9 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/bigobj /await /std:c++latest /d1permissive- %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await /permissive- %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

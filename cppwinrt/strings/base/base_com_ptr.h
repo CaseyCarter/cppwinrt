@@ -43,6 +43,21 @@ namespace impl
         ptr->QueryInterface(__uuidof(U), reinterpret_cast<void**>(&temp));
         return temp;
     }
+
+    template <typename T>
+    struct wrapped_type
+    {
+        using type = T;
+    };
+
+    template <typename T>
+    struct wrapped_type<com_ptr<T>>
+    {
+        using type = T;
+    };
+
+    template <typename T>
+    using wrapped_type_t = typename wrapped_type<T>::type;
 }
 
 template <typename T>
@@ -141,16 +156,29 @@ struct com_ptr
         std::swap(left.m_ptr, right.m_ptr);
     }
 
-    template <typename U>
+    template <typename To>
     auto as() const
     {
-        return impl::as<U>(m_ptr);
+        return impl::as<To>(m_ptr);
     }
 
-    template <typename U>
+    template <typename To>
     auto try_as() const noexcept
     {
-        return impl::try_as<U>(m_ptr);
+        return impl::try_as<To>(m_ptr);
+    }
+
+    template <typename To>
+    void as(To& to)
+    {
+        to = as<impl::wrapped_type_t<To>>();
+    }
+
+    template <typename To>
+    bool try_as(To& to)
+    {
+        to = try_as<impl::wrapped_type_t<To>>();
+        return static_cast<bool>(to);
     }
 
     void copy_from(type* other) noexcept

@@ -957,15 +957,15 @@ namespace impl
     }
 
     template <typename T, std::enable_if_t<has_GetAt<T>::value>* = nullptr>
-    impl::fast_iterator<T> begin(T const& collection) noexcept
+    fast_iterator<T> begin(T const& collection) noexcept
     {
-        return impl::fast_iterator<T>(collection, 0);
+        return fast_iterator<T>(collection, 0);
     }
 
     template <typename T, std::enable_if_t<has_GetAt<T>::value>* = nullptr>
-    impl::fast_iterator<T> end(T const& collection)
+    fast_iterator<T> end(T const& collection)
     {
-        return impl::fast_iterator<T>(collection, collection.Size());
+        return fast_iterator<T>(collection, collection.Size());
     }
 }
 

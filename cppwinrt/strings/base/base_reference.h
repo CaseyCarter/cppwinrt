@@ -1,3 +1,4 @@
+
 namespace Windows::Foundation
 {
     template <typename T> struct IReference;

@@ -70,19 +70,9 @@ namespace std::experimental {
 
 #endif
 
-#include "win32_errors.h"
 #include <experimental/generator>
 #include <functional>
 #include <rometadataapi.h>
 #include <rometadata.h>
 #include <filesystem>
 #include <optional>
-
-namespace winrt
-{
-    template<typename T, size_t N>
-    constexpr std::basic_string_view<T> to_string_view(T const (&s)[N]) noexcept
-    {
-        return std::basic_string_view<T>{ s, N - 1 };
-    }
-}

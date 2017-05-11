@@ -127,11 +127,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
-      <AdditionalOptions>/bigobj /await /std:c++latest</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>..\..;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -150,11 +151,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <ClCompile>
-      <AdditionalOptions>/bigobj /await /std:c++latest</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>..\..;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -173,11 +175,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalOptions>/bigobj /await /std:c++latest</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>..\..;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -196,11 +199,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalOptions>/bigobj /await /std:c++latest</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>..\..;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -219,11 +223,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalOptions>/bigobj /await /std:c++latest</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>..\..;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -242,11 +247,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalOptions>/bigobj /await /std:c++latest</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>..\..;$(ProjectDir);$(GeneratedFilesDir);$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <PostBuildEvent>
       <Command>

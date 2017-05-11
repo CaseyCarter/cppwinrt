@@ -134,9 +134,10 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>strings\base</AdditionalIncludeDirectories>
-      <AdditionalOptions>/std:c++latest /permissive- /await</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await</AdditionalOptions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -163,9 +164,10 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>strings\base</AdditionalIncludeDirectories>
-      <AdditionalOptions>/std:c++latest /permissive- /await</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await</AdditionalOptions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -194,9 +196,10 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>strings\base</AdditionalIncludeDirectories>
-      <AdditionalOptions>/std:c++latest /permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -214,9 +217,10 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>strings\base</AdditionalIncludeDirectories>
-      <AdditionalOptions>/std:c++latest /permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

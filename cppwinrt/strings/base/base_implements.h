@@ -171,7 +171,7 @@ namespace impl
             return shim().abi_GetRuntimeClassName(name);
         }
 
-        HRESULT __stdcall GetTrustLevel(TrustLevel* trustLevel) noexcept override final
+        HRESULT __stdcall GetTrustLevel(TrustLevel* trustLevel) noexcept final
         {
             *trustLevel = BaseTrust;
             return S_OK;
@@ -541,7 +541,7 @@ private:
     using is_agile = impl::is_agile<I ...>;
     using is_factory = std::disjunction<std::is_same<abi_t<Windows::Foundation::IActivationFactory>, abi_t<I>> ...>;
     using is_inspectable = std::disjunction<std::is_base_of<::IInspectable, abi_t<I>> ...>;
-    using is_weak_ref_source = std::disjunction<is_inspectable, std::negation<is_factory>, std::negation<std::disjunction<std::is_same<no_weak_ref, I> ...>>>;
+    using is_weak_ref_source = std::conjunction<is_inspectable, std::negation<is_factory>, std::negation<std::disjunction<std::is_same<no_weak_ref, I> ...>>>;
     using weak_ref_t = impl::weak_ref<is_agile::value>;
 
     static_assert(!is_factory::value || (is_factory::value&& is_agile::value), "winrt::implements - activation factories must be agile.");

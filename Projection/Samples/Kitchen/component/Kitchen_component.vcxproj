@@ -86,9 +86,10 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(RepoRootDir)\DevProjection</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -102,9 +103,10 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(RepoRootDir)\DevProjection</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -120,9 +122,10 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(RepoRootDir)\DevProjection</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -140,9 +143,10 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(RepoRootDir)\DevProjection</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -29,6 +29,7 @@
   <ItemGroup>
     <ClInclude Include="source\code_writer.h" />
     <ClInclude Include="source\component_writer.h" />
+    <ClInclude Include="source\helpers.h" />
     <ClInclude Include="source\pch.h" />
     <ClInclude Include="source\platform_writer.h" />
     <ClInclude Include="source\settings.h" />
@@ -356,9 +357,10 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_HAS_AUTO_PTR_ETC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await</AdditionalOptions>
       <AdditionalIncludeDirectories>strings;strings\base</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -385,9 +387,10 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_HAS_AUTO_PTR_ETC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await</AdditionalOptions>
       <AdditionalIncludeDirectories>strings;strings\base</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -416,9 +419,10 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>_HAS_AUTO_PTR_ETC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
       <AdditionalIncludeDirectories>strings;strings\base</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -435,9 +439,10 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>_HAS_AUTO_PTR_ETC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
+      <AdditionalOptions>/permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
       <AdditionalIncludeDirectories>strings;strings\base</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

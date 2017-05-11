@@ -21,7 +21,7 @@ namespace impl
     {
         wchar_t const* back = message + size - 1;
 
-        while (size&& isspace(*back))
+        while (size&& iswspace(*back))
         {
             --size;
             --back;
@@ -40,22 +40,19 @@ struct hresult_error
 
     hresult_error() noexcept = default;
 
-    explicit hresult_error(HRESULT const code) noexcept :
-    m_code(code)
+    explicit hresult_error(HRESULT const code) noexcept : m_code(code)
     {
         WINRT_RoOriginateError(code, nullptr);
         WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
-    hresult_error(HRESULT const code, hstring_view message) noexcept :
-    m_code(code)
+    hresult_error(HRESULT const code, hstring_view message) noexcept : m_code(code)
     {
         WINRT_RoOriginateError(code, get_abi(message));
         WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
-    hresult_error(HRESULT const code, from_abi_t) noexcept :
-    m_code(code)
+    hresult_error(HRESULT const code, from_abi_t) noexcept : m_code(code)
     {
         WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }

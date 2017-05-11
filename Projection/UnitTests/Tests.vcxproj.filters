@@ -45,6 +45,7 @@
     <ClCompile Include="struct.cpp" />
     <ClCompile Include="weak.cpp" />
     <ClCompile Include="natvis.cpp" />
+    <ClCompile Include="as.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />

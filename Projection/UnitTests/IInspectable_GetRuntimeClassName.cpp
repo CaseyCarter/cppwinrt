@@ -28,7 +28,7 @@ TEST_CASE("Test_GetRuntimeClassName_NoOverride")
 {
     Windows::Foundation::IInspectable i = make<Test_GetRuntimeClassName_NoOverride>();
 
-    REQUIRE_THROWS_AS(GetRuntimeClassName(i), hresult_not_implemented);
+    REQUIRE(GetRuntimeClassName(i) == L"Windows.Foundation.IInspectable");
 }
 
 TEST_CASE("Test_GetRuntimeClassName_Override")

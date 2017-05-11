@@ -525,3 +525,10 @@ TEST_CASE("hresult, throw_last_error")
     SetLastError(ERROR_CANCELLED);
     REQUIRE_THROWS_AS(throw_last_error(), hresult_canceled);
 }
+
+TEST_CASE("hresult, trim_hresult_message")
+{
+    hresult_error e(E_FAIL, L":) is \u263A \n \t ");
+
+    REQUIRE(e.message() == L":) is \u263A");
+}

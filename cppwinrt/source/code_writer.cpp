@@ -27,8 +27,7 @@ namespace cppwinrt
         {
             if (IsMdSpecialName(method.flags))
             {
-                static const std::string event_prefix{ "add_" };
-                return (method.name.substr(0, event_prefix.length()).compare(event_prefix) == 0);
+                return starts_with(method.name, "add_");
             }
 
             return false;
@@ -38,8 +37,7 @@ namespace cppwinrt
         {
             if (IsMdSpecialName(method.flags))
             {
-                static const std::string get_prefix{ "get_" };
-                return (method.name.substr(0, get_prefix.length()).compare(get_prefix) == 0);
+                return starts_with(method.name, "get_");
             }
 
             return false;

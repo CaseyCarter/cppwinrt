@@ -420,6 +420,7 @@
     <ClInclude Include="strings\base\base_natvis.h">
       <Filter>strings\base</Filter>
     </ClInclude>
+    <ClInclude Include="source\helpers.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">

@@ -5,6 +5,8 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
     struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncAction,
         winrt::Windows::Foundation::AsyncActionCompletedHandler>
     {
+        using AsyncStatus = winrt::Windows::Foundation::AsyncStatus;
+
         void GetResults()
         {
             winrt::impl::lock_guard const guard(this->m_lock);
@@ -54,7 +56,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
         template <typename Expression>
         Expression&& await_transform(Expression&& expression)
         {
-            if (this->Status() == winrt::Windows::Foundation::AsyncStatus::Canceled)
+            if (this->Status() == AsyncStatus::Canceled)
             {
                 throw winrt::hresult_canceled();
             }

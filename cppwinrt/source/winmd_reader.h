@@ -1,5 +1,7 @@
 #pragma once
 
+#include "helpers.h"
+
 namespace cppwinrt::meta
 {
     constexpr uint32_t max_name_size = 300;
@@ -242,8 +244,8 @@ namespace cppwinrt::meta
     {
         token factory;
         bool activatable{};
-        static constexpr std::wstring_view activatable_name{ winrt::to_string_view(L"Windows.Foundation.Metadata.ActivatableAttribute") };
-        static constexpr std::wstring_view static_name{ winrt::to_string_view(L"Windows.Foundation.Metadata.StaticAttribute") };
+        static constexpr std::wstring_view activatable_name{ to_string_view(L"Windows.Foundation.Metadata.ActivatableAttribute") };
+        static constexpr std::wstring_view static_name{ to_string_view(L"Windows.Foundation.Metadata.StaticAttribute") };
     };
 
     struct composable_attribute
@@ -262,6 +264,6 @@ namespace cppwinrt::meta
         {
             return type == composition_type::protected_v;
         }
-        static constexpr std::wstring_view name{ winrt::to_string_view(L"Windows.Foundation.Metadata.ComposableAttribute") };
+        static constexpr std::wstring_view name{ to_string_view(L"Windows.Foundation.Metadata.ComposableAttribute") };
     };
 }
