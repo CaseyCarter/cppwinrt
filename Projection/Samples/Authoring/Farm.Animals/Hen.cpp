@@ -9,7 +9,7 @@ namespace winrt::Farm::Animals::implementation
 {
     hstring Hen::Name()
     {
-        return L"Hilda";
+        return hstring(L"Hilda");
     }
 
     Windows::Foundation::IAsyncOperationWithProgress<hstring, uint32_t> Hen::LayEggAsync()

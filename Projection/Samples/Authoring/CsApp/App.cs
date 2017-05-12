@@ -1,9 +1,11 @@
 ﻿using System;
 using Windows.ApplicationModel.Activation;
+using Windows.Foundation;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using Windows.UI.ViewManagement;
 using System.Diagnostics;
 using Farm.Animals;
 
@@ -43,6 +45,9 @@ class App : Application
 
     static void Main()
     {
+        ApplicationView.PreferredLaunchViewSize = new Size(1000,600);
+        ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
         Application.Start(o =>
         {
             new App();
