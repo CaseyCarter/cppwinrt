@@ -59,13 +59,11 @@ struct hstring
     hstring(hstring&&) noexcept = default;
     hstring& operator=(hstring&&)  = default;
 
-    template <typename T, typename = std::enable_if_t<std::is_constructible_v<std::wstring_view, T&&> && !std::is_same_v<std::wstring_view, std::decay_t<T>>>>
-    explicit hstring(T&& str)
-        : hstring(std::wstring_view(std::forward<T>(str)))
-    {}
+    hstring(wchar_t const* value);
+    hstring(wchar_t const* value, size_type size);
+    hstring(std::wstring const& value);
 
     explicit hstring(std::wstring_view const& value);
-    hstring(wchar_t const* value, size_type size);
 
     hstring& operator=(std::wstring_view const& value);
 

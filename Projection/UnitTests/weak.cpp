@@ -10,7 +10,7 @@ namespace
     {
         hstring ToString()
         {
-            return hstring{ L"Weak" };
+            return L"Weak";
         }
     };
 
@@ -18,7 +18,7 @@ namespace
     {
         hstring ToString()
         {
-            return hstring{ L"WeakNonAgile" };
+            return L"WeakNonAgile";
         }
     };
 
@@ -38,7 +38,7 @@ namespace
     {
         hstring ToString()
         {
-            return hstring{ L"NoWeakRef" };
+            return L"NoWeakRef";
         }
     };
 }

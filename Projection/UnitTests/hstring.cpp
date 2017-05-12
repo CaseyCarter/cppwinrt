@@ -112,6 +112,59 @@ TEST_CASE("hstring,assign,move")
     }
 }
 
+TEST_CASE("hstring,assign,std::wstring")
+{
+    hstring a;
+    REQUIRE(a.empty());
+    std::wstring b(L"abc");
+
+    a = b;
+    REQUIRE(a == b);
+    REQUIRE(a == L"abc");
+}
+
+TEST_CASE("hstring,assign,std::wstring_view")
+{
+    hstring a;
+    REQUIRE(a.empty());
+    std::wstring_view b(L"abc");
+
+    a = b;
+    REQUIRE(a == b);
+    REQUIRE(a == L"abc");
+}
+
+TEST_CASE("hstring,assign,wchar_t*")
+{
+    hstring a;
+    REQUIRE(a.empty());
+    wchar_t const* b = L"abc";
+
+    a = b;
+    REQUIRE(a == b);
+    REQUIRE(a == L"abc");
+}
+
+TEST_CASE("hstring,assign,wchar_t[]")
+{
+    hstring a;
+    REQUIRE(a.empty());
+    wchar_t const b[] = L"abc";
+
+    a = b;
+    REQUIRE(a == b);
+    REQUIRE(a == L"abc");
+}
+
+TEST_CASE("hstring,assign,nullptr")
+{
+    hstring a(L"abc");
+    REQUIRE(a == L"abc");
+
+    a = nullptr;
+    REQUIRE(a.empty());
+}
+
 TEST_CASE("hstring,constructor,wchar_t,size")
 {
     {
@@ -536,27 +589,50 @@ TEST_CASE("wchar_t const *,compare,hstring")
     test_compare<wchar_t const *, hstring>();
 }
 
+TEST_CASE("hstring,compare,std::wstring_view")
+{
+    test_compare<hstring, std::wstring_view>();
+}
+
+TEST_CASE("std::wstring_view,compare,hstring")
+{
+    test_compare<std::wstring_view, hstring>();
+}
+
+TEST_CASE("hstring,compare,null")
+{
+    REQUIRE(hstring() == hstring(L""));
+    
+    REQUIRE(hstring() == nullptr);
+    REQUIRE(nullptr == hstring());
+    REQUIRE(hstring(nullptr) == nullptr);
+    REQUIRE(nullptr == hstring(nullptr));
+
+    REQUIRE(hstring(L"") == nullptr);
+    REQUIRE(nullptr == hstring(L""));
+}
+
 TEST_CASE("hstring,map")
 {
     // Ensures that std::less<winrt::hstring> can be instantiated.
 
-    std::map<hstring, int> m{ { hstring{ L"abc"}, 10 },{ hstring{ L"def"}, 20 } };
-    REQUIRE(m[hstring{ L"abc" }] == 10);
-    REQUIRE(m[hstring{ L"def" }] == 20);
+    std::map<hstring, int> m{ { L"abc", 10 },{ L"def", 20 } };
+    REQUIRE(m[L"abc"] == 10);
+    REQUIRE(m[L"def"] == 20);
 }
 
 TEST_CASE("hstring,unordered_map")
 {
     // Ensures that std::hash<winrt::hstring> can be instantiated.
 
-    std::unordered_map<hstring, int> m{ { hstring{ L"abc"}, 10 },{ hstring{ L"def"}, 20 } };
-    REQUIRE(m[hstring{ L"abc" }] == 10);
-    REQUIRE(m[hstring{ L"def" }] == 20);
+    std::unordered_map<hstring, int> m{ { L"abc", 10 },{ L"def", 20 } };
+    REQUIRE(m[L"abc"] == 10);
+    REQUIRE(m[L"def"] == 20);
 }
 
 static bool compare_hash(const std::wstring & value)
 {
-    return std::hash<std::wstring>{}(value) == std::hash<winrt::hstring>{}(hstring{ value });
+    return std::hash<std::wstring>{}(value) == std::hash<winrt::hstring>{}(value);
 }
 
 TEST_CASE("hstring,hash")
@@ -572,6 +648,7 @@ TEST_CASE("hstring,hash")
 TEST_CASE("hstring, concat")
 {
     hstring s{ L"abc" };
+
     REQUIRE(s + L"def" == L"abcdef");
     REQUIRE(s + std::wstring{ L"def" } == L"abcdef");
     REQUIRE(s + static_cast<const wchar_t*>(L"def") == L"abcdef");
@@ -583,4 +660,11 @@ TEST_CASE("hstring, concat")
     REQUIRE(static_cast<const wchar_t*>(L"def") + s == L"defabc");
     REQUIRE(std::wstring_view{ L"def" } + s == L"defabc");
     REQUIRE(hstring{ L"def" } + s == L"defabc");
+
+    REQUIRE(s + nullptr == L"abc");
+    REQUIRE(nullptr + s == L"abc");
+    REQUIRE(s + hstring() == L"abc");
+    REQUIRE(hstring() + s == L"abc");
+    REQUIRE(s + L"" == L"abc");
+    REQUIRE(L"" + s == L"abc");
 }

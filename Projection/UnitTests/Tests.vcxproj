@@ -160,7 +160,7 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/bigobj /await /permissive- %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await /permissive- /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -179,7 +179,7 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/bigobj /await /permissive- %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await /permissive- /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -200,7 +200,7 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/bigobj /await /permissive- %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await /permissive- /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
@@ -222,7 +222,7 @@
       <SDLCheck>false</SDLCheck>
       <AdditionalIncludeDirectories>..</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/bigobj /await /permissive- %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /await /permissive- /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>

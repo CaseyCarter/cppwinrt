@@ -4,6 +4,6 @@ struct %FactoryT : impl::module_lock, implements<D, Windows::Foundation::IActiva
 {
     hstring GetRuntimeClassName() const
     {
-        return hstring{ L"%" };
+        return L"%";
     }
 %};

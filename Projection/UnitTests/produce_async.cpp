@@ -229,7 +229,7 @@ TEST_CASE("produce_IAsyncOperation_uint32_t")
 
 TEST_CASE("produce_IAsyncOperation_hstring")
 {
-    IAsyncOperation<hstring> operation = make<AsyncOperation<hstring>>(hstring{ L"value" });
+    IAsyncOperation<hstring> operation = make<AsyncOperation<hstring>>(L"value");
 
     AsyncOperationCompletedHandler<hstring> completed = [&](const IAsyncOperation<hstring> & sender, const AsyncStatus args)
     {
@@ -247,8 +247,8 @@ TEST_CASE("produce_IAsyncOperation_hstring")
 
 struct TestErrorDetails : implements<TestErrorDetails, IErrorDetails>
 {
-    hstring Description() { return hstring{ L"description" }; }
-    hstring LongDescription() { return hstring{ L"long description" }; }
+    hstring Description() { return L"description"; }
+    hstring LongDescription() { return L"long description"; }
     Windows::Foundation::Uri HelpUri() { return nullptr; }
 };
 
@@ -344,7 +344,7 @@ TEST_CASE("produce_IAsyncOperationWithProgress_uint64_t_uint64_t")
 
 struct TestDeploymentResult : implements<TestDeploymentResult, IDeploymentResult>
 {
-    hstring ErrorText() { return hstring{ L"ErrorText" }; }
+    hstring ErrorText() { return L"ErrorText"; }
     GUID ActivityId() { return GUID_NULL; }
     HRESULT ExtendedErrorCode() { return E_FAIL; }
 };

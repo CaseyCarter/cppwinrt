@@ -60,9 +60,9 @@ TEST_CASE("range_for,IIterable,IKeyValuePair")
 {
     std::map<int, hstring> values
     {
-        { 1, hstring{ L"one" }},
-        { 2, hstring{ L"two" }},
-        { 3, hstring{ L"three" }},
+        { 1, L"one"},
+        { 2, L"two"},
+        { 3, L"three"},
     };
 
     IIterable<IKeyValuePair<int32_t, hstring>> c = make<impl::Map<std::map<int, hstring>>>(values);
@@ -80,9 +80,9 @@ TEST_CASE("range_for,IMap")
 {
     std::map<int, hstring> values
     {
-        { 1, hstring{ L"one" } },
-        { 2, hstring{ L"two" } },
-        { 3, hstring{ L"three" } },
+        { 1, L"one" },
+        { 2, L"two" },
+        { 3, L"three" },
     };
 
     IMap<int32_t, hstring> c = make<impl::Map<std::map<int, hstring>>>(values);
@@ -100,9 +100,9 @@ TEST_CASE("range_for,IMapView")
 {
     std::map<int, hstring> values
     {
-        { 1, hstring{ L"one" } },
-        { 2, hstring{ L"two" } },
-        { 3, hstring{ L"three" } },
+        { 1, L"one" },
+        { 2, L"two" },
+        { 3, L"three" },
     };
 
     IMapView<int32_t, hstring> c = make<impl::Map<std::map<int, hstring>>>(values).GetView();

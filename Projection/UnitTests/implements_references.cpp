@@ -25,7 +25,7 @@ struct References : implements<References, Windows::Foundation::IStringable>
 
     hstring ToString()
     {
-        return hstring{ L"value" };
+        return L"value";
     }
 };
 

@@ -126,7 +126,7 @@ struct produce_IInspectable_RuntimeClassName : implements<produce_IInspectable_R
 {
     hstring GetRuntimeClassName()
     {
-        return hstring{ L"produce_IInspectable_RuntimeClassName" };
+        return L"produce_IInspectable_RuntimeClassName";
     }
 };
 
@@ -147,7 +147,7 @@ struct produce_IActivationFactory_Instance : implements<produce_IActivationFacto
 {
     hstring ToString()
     {
-        return hstring{ L"produce_IActivationFactory_Instance" };
+        return L"produce_IActivationFactory_Instance";
     }
 };
 

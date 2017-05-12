@@ -16,7 +16,7 @@ namespace
     {
         hstring ToString()
         {
-            return hstring{ L"Agile" };
+            return L"Agile";
         }
     };
 
@@ -24,7 +24,7 @@ namespace
     {
         hstring ToString()
         {
-            return hstring{ L"NonAgile" };
+            return L"NonAgile";
         }
     };
 }

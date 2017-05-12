@@ -794,7 +794,7 @@ private:
 
     hstring GetRuntimeClassName() const
     {
-        return hstring(impl::string_data(impl::name_v<first_interface>));
+        return impl::string_data(impl::name_v<first_interface>);
     }
 
     TrustLevel GetTrustLevel() const noexcept

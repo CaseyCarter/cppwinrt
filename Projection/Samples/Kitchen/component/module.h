@@ -24,7 +24,7 @@ struct BreadT
 {
     hstring GetRuntimeClassName() const
     {
-        return hstring{ L"Microsoft.SDKSamples.Kitchen.Bread" };
+        return L"Microsoft.SDKSamples.Kitchen.Bread";
     }
 };
 
@@ -33,7 +33,7 @@ struct BreadFactoryT : impl::module_lock, implements<D, Windows::Foundation::IAc
 {
     hstring GetRuntimeClassName() const
     {
-        return hstring{ L"Microsoft.SDKSamples.Kitchen.Bread" };
+        return L"Microsoft.SDKSamples.Kitchen.Bread";
     }
 
     Windows::Foundation::IInspectable ActivateInstance() const
@@ -48,7 +48,7 @@ struct BreadBakedEventArgsT
 {
     hstring GetRuntimeClassName() const
     {
-        return hstring{ L"Microsoft.SDKSamples.Kitchen.BreadBakedEventArgs" };
+        return L"Microsoft.SDKSamples.Kitchen.BreadBakedEventArgs";
     }
 };
 
@@ -57,7 +57,7 @@ struct BreadBakedEventArgsFactoryT : impl::module_lock, implements<D, Windows::F
 {
     hstring GetRuntimeClassName() const
     {
-        return hstring{ L"Microsoft.SDKSamples.Kitchen.BreadBakedEventArgs" };
+        return L"Microsoft.SDKSamples.Kitchen.BreadBakedEventArgs";
     }
 
     Windows::Foundation::IInspectable ActivateInstance() const
@@ -72,7 +72,7 @@ struct OvenT
 {
     hstring GetRuntimeClassName() const
     {
-        return hstring{ L"Microsoft.SDKSamples.Kitchen.Oven" };
+        return L"Microsoft.SDKSamples.Kitchen.Oven";
     }
 };
 
@@ -81,7 +81,7 @@ struct OvenFactoryT : impl::module_lock, implements<D, Windows::Foundation::IAct
 {
     hstring GetRuntimeClassName() const
     {
-        return hstring{ L"Microsoft.SDKSamples.Kitchen.Oven" };
+        return L"Microsoft.SDKSamples.Kitchen.Oven";
     }
 
     Windows::Foundation::IInspectable ActivateInstance() const

@@ -13,6 +13,14 @@ inline hstring::hstring(std::wstring_view const& value) :
     hstring(value.data(), static_cast<size_type>(value.size()))
 {}
 
+inline hstring::hstring(std::wstring const& value) :
+    hstring(static_cast<std::wstring_view const&>(value))
+{}
+
+inline hstring::hstring(wchar_t const* const value) :
+    hstring(std::wstring_view(value))
+{}
+
 inline hstring::hstring(wchar_t const* const value, size_type const size) :
     m_handle(impl::create_string(value, size))
 {}

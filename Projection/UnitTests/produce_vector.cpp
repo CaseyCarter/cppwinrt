@@ -234,7 +234,7 @@ TEST_CASE("produce_IVector_IIterable_int32_t")
 
 TEST_CASE("produce_IVector_hstring")
 {
-    IVector<hstring> v = make<impl::Vector<hstring>>(std::vector<hstring>{ hstring{ L"1" }, hstring{ L"2" }, hstring{ L"3" } });
+    IVector<hstring> v = make<impl::Vector<hstring>>(std::vector<hstring>{ L"1", L"2", L"3" });
 
     REQUIRE(v.GetAt(0) == L"1");
     REQUIRE(v.GetAt(2) == L"3");
@@ -246,18 +246,18 @@ TEST_CASE("produce_IVector_hstring")
     REQUIRE(view.as<IVector<hstring>>() == v);
 
     uint32_t index = 0;
-    REQUIRE(v.IndexOf(hstring{ L"2" }, index));
+    REQUIRE(v.IndexOf(L"2", index));
     REQUIRE(index == 1);
-    REQUIRE(!v.IndexOf(hstring{ L"4" }, index));
+    REQUIRE(!v.IndexOf(L"4", index));
 
-    v.SetAt(1, hstring{ L"20" });
+    v.SetAt(1, L"20");
     REQUIRE(v.GetAt(1) == L"20");
-    REQUIRE_THROWS_AS(v.SetAt(v.Size(), hstring{ L"0" }), hresult_out_of_bounds);
-    v.SetAt(1, hstring{ L"2" });
+    REQUIRE_THROWS_AS(v.SetAt(v.Size(), L"0"), hresult_out_of_bounds);
+    v.SetAt(1, L"2");
 
-    v.InsertAt(0, hstring{ L"0" });
-    v.InsertAt(v.Size(), hstring{ L"4" });
-    REQUIRE_THROWS_AS(v.InsertAt(v.Size() + 1, hstring{ L"0" }), hresult_out_of_bounds);
+    v.InsertAt(0, L"0");
+    v.InsertAt(v.Size(), L"4");
+    REQUIRE_THROWS_AS(v.InsertAt(v.Size() + 1, L"0"), hresult_out_of_bounds);
     REQUIRE(v.Size() == 5);
     REQUIRE(v.GetAt(0) == L"0");
     REQUIRE(v.GetAt(1) == L"1");
@@ -273,7 +273,7 @@ TEST_CASE("produce_IVector_hstring")
     REQUIRE(v.GetAt(1) == L"2");
     REQUIRE(v.GetAt(2) == L"3");
 
-    v.Append(hstring{ L"4" });
+    v.Append(L"4");
     REQUIRE(v.Size() == 4);
     REQUIRE(v.GetAt(0) == L"1");
     REQUIRE(v.GetAt(1) == L"2");
@@ -295,7 +295,7 @@ TEST_CASE("produce_IVector_hstring")
 
 TEST_CASE("produce_IVector_array_hstring")
 {
-    IVector<hstring> v = make<impl::Vector<hstring>>(std::vector<hstring>{ hstring{ L"1" }, hstring{ L"2" }, hstring{ L"3" } });
+    IVector<hstring> v = make<impl::Vector<hstring>>(std::vector<hstring>{ L"1", L"2", L"3" });
 
     {
         // Exact number of values.
@@ -337,7 +337,7 @@ TEST_CASE("produce_IVector_array_hstring")
     }
 
     {
-        std::array<hstring, 2> many{ hstring{ L"10"}, hstring{ L"20" } };
+        std::array<hstring, 2> many{ L"10", L"20" };
         REQUIRE(v.Size() == 3);
         v.ReplaceAll(many);
         REQUIRE(v.Size() == 2);
@@ -350,7 +350,7 @@ TEST_CASE("produce_IVector_array_hstring")
 
 TEST_CASE("produce_IVector_IIterable_hstring")
 {
-    IVector<hstring> v = make<impl::Vector<hstring>>(std::vector<hstring>{ hstring{ L"1" }, hstring{ L"2" }, hstring{ L"3" } });
+    IVector<hstring> v = make<impl::Vector<hstring>>(std::vector<hstring>{ L"1", L"2", L"3" });
 
     IIterable<hstring> iterable = v;
 

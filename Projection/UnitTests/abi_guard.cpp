@@ -23,7 +23,7 @@ namespace
 
         hstring ToString()
         {
-            return hstring{ L"" };
+            return L"";
         }
 
         void abi_enter()
@@ -72,7 +72,7 @@ namespace
 
         hstring ToString()
         {
-            return hstring{ L"" };
+            return L"";
         }
 
         void abi_enter()
@@ -115,7 +115,7 @@ namespace
 
         hstring ToString()
         {
-            return hstring{ L"" };
+            return L"";
         }
 
         void abi_enter()
@@ -159,7 +159,7 @@ namespace
 
         hstring ToString()
         {
-            return hstring{ L"" };
+            return L"";
         }
 
         int m_enter{};
@@ -238,7 +238,7 @@ namespace
 
         hstring ToString()
         {
-            return hstring{ L"" };
+            return L"";
         }
 
         int m_enter{};
@@ -291,7 +291,7 @@ namespace
 
         hstring ToString()
         {
-            return hstring{ L"" };
+            return L"";
         }
 
         using abi_guard = throw_guard<F>;
