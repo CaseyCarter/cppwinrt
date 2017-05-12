@@ -6,7 +6,7 @@ if "%1"=="stats" (
 	shift
 )
 
-set _namespace_spec=*.cpp
+set _namespace_spec=*.*.cpp
 if "%1"=="spec" (
 	set _namespace_spec=%2.cpp
 	shift
@@ -25,9 +25,10 @@ echo Executing Projection Compile Tests...> %test_output%
 pushd %TestLocation%
 echo // RunCompileTests.cmd generated PCH > pch.h
 echo #define WIN32_LEAN_AND_MEAN >> pch.h
-echo #include "base.h" >> pch.h
-echo #include "impl\complex_structs.h" >> pch.h
-echo #include "Windows.Foundation.h" >> pch.h
+echo #include "winrt\base.h" >> pch.h
+echo #include "winrt\impl\complex_structs.h" >> pch.h
+echo #include "winrt\Windows.Foundation.h" >> pch.h
+echo #include "winrt\Windows.Foundation.Collections.h" >> pch.h
 echo.>> pch.h
 echo using namespace winrt; >> pch.h
 echo.>> pch.h
@@ -37,7 +38,6 @@ echo.>> pch.h
 echo #include "pch.h" > pch.cpp
 del *.obj
 call :Compile %constexpr_test_file%
-erase /q %constexpr_test_file%
 call :Compile pch.cpp /Ycpch.h 
 for /f %%i in ('dir /b %_namespace_spec%') do call :Compile %%~ni.cpp /Yupch.h 
 call :Timer
@@ -52,7 +52,7 @@ goto :eof
 :Compile
 call :Timer
 echo %1
-cl %* /c /nologo /I ..\winrt /EHsc /std:c++latest /permissive- /await %_compiler_stats% >>%test_output%
+cl %* /c /nologo /I .. /EHsc /std:c++latest /permissive- /await %_compiler_stats% >>%test_output%
 goto :eof
 rem todo: add clang
 

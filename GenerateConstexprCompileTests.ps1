@@ -72,8 +72,7 @@ for($i = 0; $i -lt $header.Count; $i++)
 
 #figure out the headers we need
 $headers = New-Object System.Collections.Generic.HashSet[System.String]
-$added = $headers.Add('Windows.Foundation.h')
-$added = $headers.Add('Windows.Foundation.Collections.h')
+$added = $headers.Add('pch.h')
 
 foreach($pair in $types)
 {

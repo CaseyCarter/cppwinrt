@@ -743,9 +743,56 @@ namespace cppwinrt
                 bind_output(write_produce_args, method));
         }
 
-        void write_produce_cleanup(output& /*out*/, meta::method const& /*method*/)
+        void write_produce_cleanup_param(output& out, meta::param const& param, bool is_return = false)
         {
-            // TODO: clear out params
+            PCCOR_SIGNATURE signature = param.signature;
+            CorElementType category = static_cast<CorElementType>(*signature);
+            bool by_ref{};
+
+            if (category < ELEMENT_TYPE_STRING ||
+                category == ELEMENT_TYPE_VALUETYPE)
+            {
+                return;
+            }
+
+            if (category == ELEMENT_TYPE_BYREF)
+            {
+                by_ref = true;
+                ++signature;
+                category = static_cast<CorElementType>(*signature);
+            }
+            WINRT_ASSERT(category != ELEMENT_TYPE_BYREF);
+
+            if (!by_ref && !is_return)
+            {
+                return;
+            }
+
+            if (category == ELEMENT_TYPE_SZARRAY)
+            {
+                out.write("\n            *__%Size = 0;", param.name);
+                out.write("\n            *% = nullptr;", param.name);
+            }
+            else 
+            {
+                out.write("\n            *% = nullptr;", param.name);
+            }
+        }
+
+        void write_produce_cleanup(output& out, meta::method const& method)
+        {
+            for (meta::param const& param : method.params)
+            {
+                if (param.in)
+                {
+                    continue;
+                }
+                write_produce_cleanup_param(out, param);
+            }
+            if( method.has_return_type() )
+            {
+                write_produce_cleanup_param(out, method.return_type, true);
+            }
         }
 
         void write_interface_produce_methods(output& out, meta::type const& type)
@@ -2210,7 +2257,7 @@ class_name,
 
         out.write(
             R"(#include "pch.h"
-#include "%.h"
+#include "winrt/%.h"
 
 void t()
 {
