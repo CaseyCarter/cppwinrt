@@ -50,7 +50,7 @@ namespace winrt::impl
 
 extern "C"
 __declspec(selectany)
-extern decltype(winrt::impl::natvis::get_val) & WINRT_get_val = winrt::impl::natvis::get_val;
+decltype(winrt::impl::natvis::get_val) & WINRT_get_val = winrt::impl::natvis::get_val;
 
 #ifdef _M_IX86
 #pragma comment(linker, "/include:_WINRT_get_val")
