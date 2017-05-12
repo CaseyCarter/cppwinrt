@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Hen.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="module.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Hen.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Farm.Animals.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="Hen.g.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="module.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="module.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="generated">
+      <UniqueIdentifier>{058696a6-0970-4018-8334-c95caf915018}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Farm.Animals.idl">
+      <Filter>generated</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="Farm.Animals.natvis">
+      <Filter>generated</Filter>
+    </Natvis>
+  </ItemGroup>
+</Project>
