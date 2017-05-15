@@ -21,10 +21,28 @@ namespace
         std::vector<std::wstring> refs;
     }
 
+    struct invalid_usage {
+        std::wstring message = L"Invalid usage";
+        std::wstring arg = L"";
+        HRESULT code = E_INVALIDARG;
+    };
+
+    bool is_winmd(path const& filename)
+    {
+        std::wstring extension = filename.extension();
+        std::transform(extension.begin(), extension.end(), extension.begin(), towlower);
+
+        return extension == L".winmd";
+    }
+
     std::experimental::generator<std::wstring> enum_args(int const argc, wchar_t** argv);
 
     std::experimental::generator<std::wstring> enum_response_file(path response_path)
     {
+        if (is_directory(response_path) || is_winmd(response_path))
+        {
+            throw invalid_usage{ L"Invalid usage - '@' is reserved for response files" };
+        }
         std::array<wchar_t, 8192> line_buf;
         std::wifstream response_file(absolute(response_path).c_str());
         while (response_file.getline(line_buf.data(), line_buf.size()))
@@ -56,8 +74,6 @@ namespace
         }
     }
 
-    struct invalid_usage {};
-
     void print_usage(bool detailed = false)
     {
         time_t t{ time(nullptr) };
@@ -80,6 +96,7 @@ namespace
         component,
         filter,
         tests,
+        natvis,
         verbose,
         overwrite,
         help,
@@ -107,8 +124,26 @@ namespace
             return false;
         }
 
-        option last_option{};
+        static const struct
+        {
+            wchar_t const* string;
+            option value;
+        }
+        options[] =
+        {
+            { L"in", option::in },
+            { L"ref", option::ref },
+            { L"out", option::out },
+            { L"component", option::component },
+            { L"filter", option::filter },
+            { L"tests", option::tests },
+            { L"natvis", option::natvis },
+            { L"verbose", option::verbose },
+            { L"write", option::overwrite },
+            { L"help", option::help },
+        };
 
+        option last_option{};
         for (auto arg_str : enum_args(argc - 1, argv + 1))
         {
             auto arg = arg_str.c_str();
@@ -116,24 +151,6 @@ namespace
             if (arg[0] == '/' || arg[0] == '-')
             {
                 ++arg;
-                static const struct
-                {
-                    wchar_t const* string;
-                    option value;
-                }
-                options[] =
-                {
-                    { L"in", option::in },
-                    { L"ref", option::ref },
-                    { L"out", option::out },
-                    { L"component", option::component },
-                    { L"filter", option::filter },
-                    { L"tests", option::tests },
-                    { L"verbose", option::verbose },
-                    { L"write", option::overwrite },
-                    { L"help", option::help },
-                };
-
                 option cur_option = option::none;
                 for (auto const& o : options)
                 {
@@ -146,12 +163,15 @@ namespace
                 switch (cur_option)
                 {
                 case option::none:
-                    throw invalid_usage();
+                    throw invalid_usage{ L"Unsupported option: ", arg };
                 case option::component:
                     settings::component = true;
                     break;
                 case option::tests:
                     settings::create_tests = true;
+                    break;
+                case option::natvis:
+                    settings::create_natvis = true;
                     break;
                 case option::verbose:
                     settings::verbose = true;
@@ -171,7 +191,9 @@ namespace
 
             switch (last_option)
             {
-            case option::in: 
+            case option::none:
+                break;
+            case option::in:
                 if (settings::first_input.empty())
                 {
                     settings::first_input = arg;
@@ -193,19 +215,12 @@ namespace
                 }
                 break;
             default: 
-                throw invalid_usage();
+                throw invalid_usage{ L"Internal error: ", 
+                    options[static_cast<size_t>(last_option) - 1].string, HRESULT_FROM_WIN32(ERROR_INTERNAL_ERROR) };
             }
         }
 
         return true;
-    }
-
-    bool is_winmd(path const& filename)
-    {
-        std::wstring extension = filename.extension();
-        std::transform(extension.begin(), extension.end(), extension.begin(), towlower);
-
-        return extension == L".winmd";
     }
 
     std::experimental::generator<path> enum_winmd_files(std::vector<std::wstring> winmd_specs)
@@ -231,7 +246,7 @@ namespace
             }
             else
             {
-                throw invalid_usage();
+                throw invalid_usage{ L"Invalid winmd spec: ", winmd_spec };
             }
         }
     }
@@ -343,8 +358,8 @@ int wmain(int argc, wchar_t** argv)
     {
         printf(strings::print_exception, E_FAIL, e.what());
     }
-    catch (invalid_usage const&)
+    catch (invalid_usage const& e)
     {
-        printf(strings::print_invalid_usage, E_INVALIDARG);
+        printf(strings::print_invalid_usage, e.code, e.message.c_str(), e.arg.c_str());
     }
 }

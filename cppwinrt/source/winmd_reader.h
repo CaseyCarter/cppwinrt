@@ -7,6 +7,12 @@ namespace cppwinrt::meta
     constexpr uint32_t max_name_size = 300;
     constexpr uint32_t max_token_count = 100;
 
+    struct meta_error
+    {
+        meta_error(std::wstring_view message) : message(message) {}
+        std::wstring message;
+    };
+
     enum class type_category
     {
         none,

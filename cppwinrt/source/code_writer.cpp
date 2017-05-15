@@ -3028,26 +3028,22 @@ bind_output(write_class_tests, code_namespace, types));
                 if (category == ELEMENT_TYPE_VALUETYPE)
                 {
                     meta::token property_token{ CorSigUncompressToken(signature), method.token.db() };
-                    meta::type const& property_type = property_token.resolve();
-                    if (!&property_type)
+                    std::string property_typename = property_token.get_name();
+                    if (property_typename == "GUID")
                     {
-                        std::string property_typename = property_token.get_name();
-                        if (property_typename == "GUID")
+                        property_field = "g";
+                    }
+                    else
+                    {
+                        meta::type const& property_type = property_token.resolve();
+                        if (property_type.is_enum() || property_type.is_struct())
                         {
-                            property_field = "g";
+                            property_cast = std::string("*(winrt::") + std::string(property_type.full_name()) + "*)";
                         }
                         else
                         {
                             continue;
                         }
-                    }
-                    else if (property_type.is_enum() || property_type.is_struct())
-                    {
-                        property_cast = std::string("*(winrt::") + std::string(property_type.full_name()) + "*)";
-                    }
-                    else
-                    {
-                        continue;
                     }
                 }
 

@@ -7,6 +7,7 @@ namespace cppwinrt::settings
     extern std::wstring platform_version;
     extern bool component;
     extern bool create_tests;
+    extern bool create_natvis;
     extern bool skip_base_header;
     extern bool single_header;
     extern bool verbose;

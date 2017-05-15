@@ -401,7 +401,8 @@ namespace cppwinrt::meta
             }
         }
 
-        return nullptr;
+        std::wstring type(dot_name.begin(), dot_name.end());
+        throw meta_error{ L"Unresolved type: " + type };
     }
 
     void open_database(std::wstring const& filename, bool const foundational)
@@ -1113,7 +1114,7 @@ namespace cppwinrt::meta
             return delegate;
         }
 
-        throw winrt::hresult_out_of_bounds(L"TODO: define invalid metadata exception");
+        throw meta_error{ L"Invoke method not found" };
     }
 
     token token::get_type_def() const

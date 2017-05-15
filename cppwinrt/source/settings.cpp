@@ -9,6 +9,7 @@ namespace cppwinrt::settings
     std::wstring platform_version;
     bool component{};
     bool create_tests{};
+    bool create_natvis{};
     bool skip_base_header{};
     bool single_header{};
     bool verbose{};
