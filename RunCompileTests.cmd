@@ -43,7 +43,7 @@ for /f %%i in ('dir /b %_namespace_spec%') do call :Compile %%~ni.cpp /Yupch.h
 call :Timer
 popd
 type %test_output%
-goto :eof
+goto :WrapUp
 
 :Timer
 for /f "tokens=5 delims= " %%i in ('echo.^|time^|findstr current') do @echo %%i
@@ -56,5 +56,6 @@ cl %* /c /nologo /I .. /EHsc /std:c++latest /permissive- /await %_compiler_stats
 goto :eof
 rem todo: add clang
 
+:WrapUp
 call ReportBuildErrors.cmd %test_output%
 exit /B %ERRORLEVEL%
