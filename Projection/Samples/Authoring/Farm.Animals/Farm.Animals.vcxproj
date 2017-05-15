@@ -88,7 +88,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <CustomBuildStep>
-      <Command>cppwinrt -comp -in $(ProjectDir)Farm.Animals.winmd -ref "C:\Program Files (x86)\Windows Kits\10\References\windows.foundation.foundationcontract\2.0.0.0" -out $(ProjectDir)</Command>
+      <Command>cppwinrt -comp -in $(ProjectDir)Farm.Animals.winmd -n -out $(ProjectDir)</Command>
       <Message>C++/WinRT compiler</Message>
       <Outputs>Farm.Animals.h;module.h</Outputs>
       <Inputs>Farm.Animals.winmd</Inputs>
