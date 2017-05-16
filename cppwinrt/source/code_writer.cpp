@@ -735,12 +735,22 @@ namespace cppwinrt
                 return;
             }
 
-            // TODO: determine if return param is array... else
-
-            out.write("*% = detach_abi(this->shim().%(%))",
-                method.return_type.name,
-                get_method_name(method),
-                bind_output(write_produce_args, method));
+            PCCOR_SIGNATURE signature = method.return_type.signature;
+            if (static_cast<CorElementType>(*signature) == ELEMENT_TYPE_SZARRAY)
+            {
+                out.write("std::tie(*__%Size, *%) = detach_abi(this->shim().%(%))",
+                    method.return_type.name,
+                    method.return_type.name,
+                    get_method_name(method),
+                    bind_output(write_produce_args, method));
+            }
+            else
+            {
+                out.write("*% = detach_abi(this->shim().%(%))",
+                    method.return_type.name,
+                    get_method_name(method),
+                    bind_output(write_produce_args, method));
+            }
         }
 
         void write_produce_cleanup_param(output& out, meta::param const& param, bool is_return = false)
@@ -939,11 +949,20 @@ namespace cppwinrt
                 return;
             }
 
-            // TODO: determine if return param is array... else
-
-            out.write("*% = detach_abi((*this)(%))",
-                method.return_type.name,
-                bind_output(write_produce_args, method));
+            PCCOR_SIGNATURE signature = method.return_type.signature;
+            if (static_cast<CorElementType>(*signature) == ELEMENT_TYPE_SZARRAY)
+            {
+                out.write("std::tie(*__%Size, *%) = detach_abi((*this)(%))",
+                    method.return_type.name,
+                    method.return_type.name,
+                    bind_output(write_produce_args, method));
+            }
+            else
+            {
+                out.write("*% = detach_abi((*this)(%))",
+                    method.return_type.name,
+                    bind_output(write_produce_args, method));
+            }
         }
 
         void write_delegate_produce(output& out, meta::type const& type)
