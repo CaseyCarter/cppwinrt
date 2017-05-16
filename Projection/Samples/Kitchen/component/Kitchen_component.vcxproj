@@ -95,6 +95,7 @@
       <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib</AdditionalDependencies>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -113,6 +114,7 @@
       <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib</AdditionalDependencies>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
