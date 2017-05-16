@@ -29,8 +29,14 @@ namespace impl
     constexpr uint32_t K[4] = { 0x5A827999, 0x6ED9EBA1, 0x8F1BBCDC, 0xCA62C1D6 };
 
     template <size_t Size>
-    constexpr auto process_msg_block(constexpr_array<uint8_t, Size> const & input, uint32_t start_pos, constexpr_array<uint32_t, 5> const & intermediate_hash, constexpr_array<uint32_t, 80> W = {})
-    {
+    constexpr auto process_msg_block(constexpr_array<uint8_t, Size> const & input, uint32_t start_pos, constexpr_array<uint32_t, 5> const & intermediate_hash
+#if _MSC_FULL_VER < 191125303
+        , constexpr_array<uint32_t, 80> W = {}
+#endif
+    ){
+#if _MSC_FULL_VER >= 191125303
+        constexpr_array<uint32_t, 80> W = {};
+#endif
         if (start_pos + message_block_size > Size)
         {
             throw std::out_of_range("process_msg_block needs at least 64 bytes to work on");
