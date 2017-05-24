@@ -591,75 +591,83 @@ namespace cppwinrt::meta
     {
         std::string name_space(match.data(), match.rfind('.'));
         match = match.substr(name_space.size() + 1);
-        namespace_types const& types = index.at(name_space);
-
-        auto find = [&](std::vector<type> const& vector) -> type const*
+        
+        try
         {
-            auto result = std::find_if(vector.begin(), vector.end(),
-                [&](type const& type)
-            {
-                return type.name() == match;
-            });
+            namespace_types const& types = index.at(name_space);
 
-            if (result != vector.end())
+            auto find = [&](std::vector<type> const& vector) -> type const*
             {
-                return &*result;
+                auto result = std::find_if(vector.begin(), vector.end(),
+                    [&](type const& type)
+                {
+                    return type.name() == match;
+                });
+
+                if (result != vector.end())
+                {
+                    return &*result;
+                }
+
+                return nullptr;
+            };
+
+            if (type const* result = find(types.interfaces))
+            {
+                if (category)
+                {
+                    *category = type_category::interface_v;
+                }
+
+                return result;
             }
 
-            return nullptr;
-        };
-
-        if (type const* result = find(types.interfaces))
-        {
-            if (category)
+            if (type const* result = find(types.classes))
             {
-                *category = type_category::interface_v;
+                if (category)
+                {
+                    *category = type_category::class_v;
+                }
+
+                return result;
             }
 
-            return result;
+            if (type const* result = find(types.enums))
+            {
+                if (category)
+                {
+                    *category = type_category::enum_v;
+                }
+
+                return result;
+            }
+
+            if (type const* result = find(types.structs))
+            {
+                if (category)
+                {
+                    *category = type_category::struct_v;
+                }
+
+                return result;
+            }
+
+            if (type const* result = find(types.delegates))
+            {
+                if (category)
+                {
+                    *category = type_category::delegate_v;
+                }
+
+                return result;
+            }
+        }
+        catch (std::out_of_range&)
+        {
+            throw meta_error{ "Unknown namespace: " + name_space };
         }
 
-        if (type const* result = find(types.classes))
-        {
-            if (category)
-            {
-                *category = type_category::class_v;
-            }
-
-            return result;
-        }
-
-        if (type const* result = find(types.enums))
-        {
-            if (category)
-            {
-                *category = type_category::enum_v;
-            }
-
-            return result;
-        }
-
-        if (type const* result = find(types.structs))
-        {
-            if (category)
-            {
-                *category = type_category::struct_v;
-            }
-
-            return result;
-        }
-
-        if (type const* result = find(types.delegates))
-        {
-            if (category)
-            {
-                *category = type_category::delegate_v;
-            }
-
-            return result;
-        }
-
-        return nullptr;
+        throw meta_error{ "Unresolved type: " + std::string(match) };
     }
 
     std::string signature::get_name() const
@@ -758,7 +766,7 @@ namespace cppwinrt::meta
         return static_cast<CorElementType>(*data);
     }
 
-    signature signature::next(token_callback callback) const noexcept
+    signature signature::next(token_callback callback) const 
     {
         signature next{ data, db };
 

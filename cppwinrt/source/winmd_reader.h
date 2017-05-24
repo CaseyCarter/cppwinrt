@@ -6,9 +6,8 @@ namespace cppwinrt::meta
 {
     struct meta_error
     {
-        // why not just a pod?
-        meta_error(std::wstring_view message) : message(message) {}
-        std::wstring message;
+        meta_error(std::string_view message) : message(message) {}
+        std::string message;
     };
 
     enum class type_category
@@ -52,7 +51,7 @@ namespace cppwinrt::meta
         std::string get_name(std::vector<std::string> const& generic_params) const;
         std::string get_abi_name() const;
         CorElementType get_category() const;
-        signature next(token_callback callback = {}) const noexcept;
+        signature next(token_callback callback = {}) const;
     };
 
     struct field
