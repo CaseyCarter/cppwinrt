@@ -10,7 +10,7 @@ namespace cppwinrt::settings
     bool component{};
     bool create_tests{};
     bool create_natvis{};
-    bool skip_base_header{};
+    bool skip_base_headers{};
     bool verbose{};
     bool overwrite{};
 }

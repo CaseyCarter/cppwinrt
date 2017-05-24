@@ -201,7 +201,7 @@ namespace
                 add_winmd_spec(usage::inputs, arg);
                 break;
             case option::ref: 
-                settings::skip_base_header = true;
+                settings::skip_base_headers = true;
                 add_winmd_spec(usage::refs, arg);
                 break;
             case option::out: 
