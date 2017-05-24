@@ -685,7 +685,12 @@ namespace cppwinrt
                 return;
             }
 
-            if (category == ELEMENT_TYPE_SZARRAY)
+            if (category < ELEMENT_TYPE_STRING ||
+                category == ELEMENT_TYPE_VALUETYPE)
+            {
+                out.write("\n            *% = {};", param.name);
+            }
+            else if (category == ELEMENT_TYPE_SZARRAY)
             {
                 out.write("\n            *__%Size = 0;", param.name);
                 out.write("\n            *% = nullptr;", param.name);
@@ -2311,7 +2316,7 @@ namespace cppwinrt
         }
     }
 
-    void write_interface_test(output& out, std::string_view class_name, meta::required const& required)
+    void write_interface_consume_test(output& out, std::string_view class_name, meta::required const& required)
     {
         out.write(R"(
     // %)",
@@ -2324,23 +2329,53 @@ namespace cppwinrt
             out.write(R"(
     { %o.%%(%); })",
                 [&](output& out)
-            {
-                if (method.has_return_type())
-                {
-                    out.write("@ r = ", method.return_type.signature.get_name(required.generic_params));
-                }
-            },
+	            {
+	                if (method.has_return_type())
+	                {
+	                    out.write("@ r = ", method.return_type.signature.get_name(required.generic_params));
+	                }
+	            },
                 // Special case: Windows.UI.Xaml.Controls.Maps.MapControl inherits two Style overloads with same arity.
                 // Add explicit interface cast to disambiguate.
                 [&](output& out)
-            {
-                if ((method_name == "Style") && (class_name == "MapControl"))
-                {
-                    out.write("as<@>().", required.name);
-                }
-            },
+	            {
+	                if ((method_name == "Style") && (class_name == "MapControl"))
+	                {
+	                    out.write("as<@>().", required.name);
+	                }
+	            },
                 method_name,
                 bind_output(write_params_test, method, required.generic_params));
+        }
+    }
+
+    void write_static_test(output& out, meta::type const& factory)
+    {
+        for (meta::method const& method : factory.token.get_methods())
+        {
+            std::string const method_name = method.get_name();
+
+            out.write(R"(
+    { %s.%(%); })",
+                [&](output& out)
+                {
+                    if (method.has_return_type())
+                    {
+                        out.write("@ r = ", method.return_type.signature.get_name());
+                    }
+                },
+                method_name,
+                bind_output(write_params_test, method, empty_generic_params));
+
+            if (is_event_method(method))
+            {
+                out.write(R"(
+    { @::%_revoker r = s.%(auto_revoke, %); })",
+                    factory.full_name(),
+                    method_name,
+                    method_name,
+                    bind_output(write_params_test, method, empty_generic_params));
+            }
         }
     }
 
@@ -2356,15 +2391,15 @@ namespace cppwinrt
                 R"({
     @::% o{nullptr};%
 })",
-namespace_name,
-type.name(),
-[&](output& out)
+				namespace_name,
+				type.name(),
+				[&](output& out)
             {
 
                 // TODO: the test code doesn't currently support referring to type params from other namespaces. For now just emitting
                 // tests for default interface until we figure out what to test here.
 
-                write_interface_test(out, type.name(), { default_interface.get_name(), default_interface, default_interface.get_generic_params() });
+                write_interface_consume_test(out, type.name(), { default_interface.get_name(), default_interface, default_interface.get_generic_params() });
 
                 //for (meta::required const& required : type.token.get_class_required())
                 //{
@@ -2374,22 +2409,48 @@ type.name(),
         }
         else
         {
-            // todo: write static method invocations
-            //out.write(strings::write_static_class_definition,
-            //    bind_output(write_deprecated, type.token),
-            //    type.name(),
-            //    type.name(),
-            //    bind_output(write_static_declarations, factories));
+            for (meta::factory_attribute const& attribute : type.token.get_factory_attributes())
+            {
+                auto& factory = *attribute.type;
+                out.write(
+                R"({
+    @ s{nullptr};%
+})",
+                factory.full_name(),
+                bind_output(write_static_test, factory));
+            }
         }
     }
 
-    void write_class_tests(output& out,
+    void write_interface_produce_test(output& out, meta::type const& type)
+    {
+        // todo: ignore generics for testing until requireds are working
+        if (!type.token.is_type_def())
+        {
+            return;
+        }
+
+        std::string_view interface_name = type.full_name();
+        out.write(
+            R"(
+{ struct s : implements<s, @> {
+%}; })",
+            interface_name,
+            bind_output(write_interface_method_declarations, type));
+    }
+
+    void write_namespace_test(output& out,
         std::string const& namespace_name,
         meta::namespace_types const& types)
     {
         for (meta::type const& type : get_unfiltered_types(types.classes))
         {
             write_class_test(out, namespace_name, type);
+        }
+
+        for (meta::type const& type : get_unfiltered_types(types.interfaces))
+        {
+            write_interface_produce_test(out, type);
         }
     }
 
@@ -2405,8 +2466,8 @@ void t()
 {
 %
 })",
-namespace_name,
-bind_output(write_class_tests, namespace_name, types));
+            namespace_name,
+			bind_output(write_namespace_test, namespace_name, types));
     }
 
     void write_tests()
