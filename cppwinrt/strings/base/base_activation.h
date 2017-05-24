@@ -28,6 +28,7 @@ namespace impl
         }
     };
 
+#ifndef WINRT_DISABLE_FACTORY_CACHE
     template <typename Class, typename Interface>
     Interface get_agile_activation_factory()
     {
@@ -43,6 +44,7 @@ namespace impl
 
         return factory;
     }
+#endif
 
     template <typename Class, typename Interface>
     Interface get_activation_factory()
@@ -89,6 +91,9 @@ inline void uninit_apartment() noexcept
 template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
 Interface get_activation_factory()
 {
+#ifdef WINRT_DISABLE_FACTORY_CACHE
+    return impl::get_activation_factory<Class, Interface>();
+#else
     static Interface factory = impl::get_agile_activation_factory<Class, Interface>();
 
     if (!factory)
@@ -97,6 +102,7 @@ Interface get_activation_factory()
     }
 
     return factory;
+#endif
 }
 
 template <typename Class, typename Instance = Class>
