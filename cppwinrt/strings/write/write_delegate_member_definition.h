@@ -11,7 +11,7 @@ template <typename O, typename M> %::%(O* object, M method) :
     %([=](auto&& ... args) { %((*object).*(method))(args ...); })
 {}
 
-inline % %::operator()(%) const
+inline @ %::operator()(%) const
 {%
     check_hresult((*(abi_t<%>**)this)->Invoke(%));%
 }

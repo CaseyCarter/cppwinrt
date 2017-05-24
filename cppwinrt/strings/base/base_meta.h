@@ -10,19 +10,18 @@ namespace impl
     template <typename T>
     using abi_t = typename abi<T>::type;
 
-    template <typename T> // TODO: should probably be <typename D, typename I>
+    template <typename T>
     struct consume;
 
     template <typename D, typename I = D>
     using consume_t = typename consume<I>::template type<D>;
 
-    template <typename T> // TODO: should probably be <typename D, typename I>
+    template <typename T>
     struct delegate;
 
     template <typename T, typename H>
     using delegate_t = typename delegate<T>::template type<H>;
 
-    // TODO: denormalize produce - does it give us a good cl build perf boost?
     template <typename D, typename I>
     struct produce;
 

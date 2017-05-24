@@ -9,7 +9,6 @@ namespace cppwinrt::settings
     extern bool create_tests;
     extern bool create_natvis;
     extern bool skip_base_header;
-    extern bool single_header;
     extern bool verbose;
     extern std::vector<std::string> filters;
     extern bool overwrite;

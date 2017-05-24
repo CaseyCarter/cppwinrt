@@ -5,5 +5,5 @@ struct %% : Windows::Foundation::IUnknown
     template <typename L> %(L lambda);
     template <typename F> %(F* function);
     template <typename O, typename M> %(O* object, M method);
-    % operator()(%) const;
+    @ operator()(%) const;
 };

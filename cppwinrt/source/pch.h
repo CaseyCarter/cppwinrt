@@ -76,3 +76,4 @@ namespace std::experimental {
 #include <rometadata.h>
 #include <filesystem>
 #include <optional>
+#include <set>

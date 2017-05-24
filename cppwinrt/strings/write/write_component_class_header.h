@@ -3,7 +3,7 @@
 #include "module.h"
 #include "%.g.h"
 
-namespace winrt::%::implementation
+namespace winrt::@::implementation
 {
     struct % : %T<%>
     {

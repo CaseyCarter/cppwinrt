@@ -44,7 +44,7 @@ namespace
             throw invalid_usage{ L"Invalid usage - '@' is reserved for response files" };
         }
         std::array<wchar_t, 8192> line_buf;
-        std::wifstream response_file(absolute(response_path).c_str());
+        std::wifstream response_file(absolute(response_path));
         while (response_file.getline(line_buf.data(), line_buf.size()))
         {
             int argc;
@@ -223,24 +223,27 @@ namespace
         return true;
     }
 
-    std::experimental::generator<path> enum_winmd_files(std::vector<std::wstring> winmd_specs)
+    std::experimental::generator<path> enum_winmd_files(std::vector<std::wstring> const& winmd_specs)
     {
-        for (auto const& winmd_spec : winmd_specs)
+        for (std::wstring const& winmd_spec : winmd_specs)
         {
             path winmd_path(winmd_spec);
             winmd_path = absolute(winmd_path);
             winmd_path = canonical(winmd_path);
-            if (is_directory(winmd_path.c_str()))
+
+            if (is_directory(winmd_path))
             {
-                for (directory_entry const& item : std::experimental::filesystem::recursive_directory_iterator(winmd_path.c_str()))
+                for (directory_entry const& item : recursive_directory_iterator(winmd_path))
                 {
-                    if (is_winmd(item.path()))
+                    path const item_path = item.path();
+
+                    if (is_winmd(item_path))
                     {
-                        co_yield{ item.path() };
+                        co_yield{ item_path };
                     }
                 }
             }
-            else if (is_winmd(winmd_path.c_str()))
+            else if (is_winmd(winmd_path))
             {
                 co_yield{ winmd_path };
             }
@@ -251,7 +254,7 @@ namespace
         }
     }
 
-    std::vector<path> get_winmd_files(std::vector<std::wstring> winmd_specs)
+    std::vector<path> get_winmd_files(std::vector<std::wstring> const& winmd_specs)
     {
         std::vector<path> files;
         for (auto file : enum_winmd_files(winmd_specs))
@@ -299,7 +302,7 @@ namespace
             printf(" out:  %ls\n", settings::output.c_str());
         }
 
-        meta::index_types();
+        meta::build_index();
     }
 
     void init_crt()

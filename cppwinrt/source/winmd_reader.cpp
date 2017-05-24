@@ -2,115 +2,88 @@
 #include "winmd_reader.h"
 #include "settings.h"
 
-using namespace std::experimental::filesystem;
-
 namespace cppwinrt::meta
 {
     namespace
     {
-        class database
-        {
-            winrt::com_ptr<IMetaDataImport2> m_db;
-            bool m_foundational;
-            mdToken m_system_class{};
-            mdToken m_system_enum{};
-            mdToken m_system_struct{};
-            mdToken m_system_delegate{};
-            mdToken m_system_attribute{};
+        constexpr uint32_t max_name_size = 300;
+        constexpr uint32_t max_token_count = 100;
 
-        public:
-
-            database(database const&) = delete;
-            database& operator=(database const&) = delete;
-            database(database&&) = default;
-            database& operator=(database&&) = default;
-            explicit database(winrt::com_ptr<IMetaDataImport2>&& db, bool foundational);
-
-            generator<type> enum_types() const;
-        };
-
-        static std::wstring_view const activatable_attribute{ L"Windows.Foundation.Metadata.ActivatableAttribute" };
-        static std::wstring_view const static_attribute{ L"Windows.Foundation.Metadata.StaticAttribute" };
-
-        winrt::com_ptr<IMetaDataDispenser> get_dispenser()
-        {
-            winrt::com_ptr<IMetaDataDispenser> dispenser;
-
-            winrt::check_hresult(MetaDataGetDispenser(CLSID_CorMetaDataDispenser,
-                IID_IMetaDataDispenser,
-                reinterpret_cast<void**>(put_abi(dispenser))));
-
-            return dispenser;
-        }
-
-        struct enum_handle
+        struct database
         {
             IMetaDataImport2* db{};
-            HCORENUM value{};
+            bool foundational{};
+            mdToken system_enum{};
+            mdToken system_struct{};
+            mdToken system_delegate{};
+            mdToken system_attribute{};
 
-            operator HCORENUM*() noexcept
-            {
-                return &value;
-            }
+            database(std::wstring const& filename, bool foundational);
+            generator<token> EnumTypeDefs() const noexcept;
+        };
 
-            ~enum_handle() noexcept
+        generator<mdToken> EnumAssemblyRefs(IMetaDataAssemblyImport* assembly) noexcept
+        {
+            HCORENUM eh{};
+            std::array<mdToken, max_token_count> buffer;
+            ULONG actual{};
+
+            while (S_OK == assembly->EnumAssemblyRefs(&eh, buffer.data(), max_token_count, &actual))
             {
-                if (value)
+                for (ULONG i = 0; i != actual; ++i)
                 {
-                    db->CloseEnum(value);
+                    co_yield{ buffer[i] };
                 }
             }
-        };
+        }
 
         mdToken get_mscorlib(IMetaDataImport2* db)
         {
-            enum_handle eh{ db };
-            std::array<mdToken, max_token_count> token_buffer;
-            ULONG actual_token_count{};
-            std::array<wchar_t, max_name_size> name_buffer;
-            ULONG actual_name_size{};
-            winrt::com_ptr<IMetaDataAssemblyImport> assembly;
+            IMetaDataAssemblyImport* assembly{};
+            winrt::check_hresult(db->QueryInterface(IID_IMetaDataAssemblyImport, reinterpret_cast<void**>(&assembly)));
 
-            winrt::check_hresult(db->QueryInterface(IID_IMetaDataAssemblyImport,
-                reinterpret_cast<void**>(put_abi(assembly))));
+            std::array<wchar_t, max_name_size> buffer;
+            ULONG actual{};
 
-            while (S_OK == assembly->EnumAssemblyRefs(eh,
-                token_buffer.data(),
-                max_token_count,
-                &actual_token_count))
+            for (mdToken token : EnumAssemblyRefs(assembly))
             {
-                for (ULONG i = 0; i != actual_token_count; ++i)
-                {
-                    winrt::check_hresult(assembly->GetAssemblyRefProps(token_buffer[i],
-                        nullptr,
-                        nullptr,
-                        name_buffer.data(),
-                        max_name_size,
-                        &actual_name_size,
-                        nullptr,
-                        nullptr,
-                        nullptr,
-                        nullptr));
+                winrt::check_hresult(assembly->GetAssemblyRefProps(
+                    token,
+                    nullptr,
+                    nullptr,
+                    buffer.data(),
+                    max_name_size,
+                    &actual,
+                    nullptr,
+                    nullptr,
+                    nullptr,
+                    nullptr));
 
-                    if (0 == wcscmp(name_buffer.data(), L"mscorlib"))
-                    {
-                        return token_buffer[i];
-                    }
+                if (0 == wcscmp(buffer.data(), L"mscorlib"))
+                {
+                    return token;
                 }
             }
 
             WINRT_ASSERT(false);
-            return 0;
+            return {};
         }
 
-        mdToken find_system_type(winrt::com_ptr<IMetaDataImport2> const& db, mdToken mscorlib, wchar_t const* const name) noexcept
+        generator<std::pair<std::string_view, std::string_view>> enum_renamed_types()
         {
-            mdToken token{};
-            db->FindTypeRef(mscorlib, name, &token);
-            return token;
+            co_yield{ "System.Guid", "GUID" };
+            co_yield{ "Windows.Foundation.EventRegistrationToken", "event_token" };
+            co_yield{ "Windows.Foundation.HResult", "HRESULT" };
+            co_yield{ "Windows.Foundation.Numerics.Matrix3x2", "Windows.Foundation.Numerics.float3x2" };
+            co_yield{ "Windows.Foundation.Numerics.Matrix4x4", "Windows.Foundation.Numerics.float4x4" };
+            co_yield{ "Windows.Foundation.Numerics.Plane", "Windows.Foundation.Numerics.plane" };
+            co_yield{ "Windows.Foundation.Numerics.Quaternion", "Windows.Foundation.Numerics.quaternion" };
+            co_yield{ "Windows.Foundation.Numerics.Vector2", "Windows.Foundation.Numerics.float2" };
+            co_yield{ "Windows.Foundation.Numerics.Vector3", "Windows.Foundation.Numerics.float3" };
+            co_yield{ "Windows.Foundation.Numerics.Vector4", "Windows.Foundation.Numerics.float4" };
         }
 
-        generator<std::string_view> enum_foundation_types()
+        generator<std::string_view> get_foundation_types()
         {
             co_yield "Windows.Foundation.Collections.IIterable`1";
             co_yield "Windows.Foundation.Collections.IIterator`1";
@@ -147,186 +120,157 @@ namespace cppwinrt::meta
             co_yield "Windows.Foundation.Point";
             co_yield "Windows.Foundation.Size";
             co_yield "Windows.Foundation.Rect";
-            co_yield "Windows.Foundation.HResult";
-            co_yield "Windows.Foundation.EventRegistrationToken";
 
             co_yield "Windows.Foundation.Collections.CollectionChange";
             co_yield "Windows.Foundation.Collections.VectorChangedEventHandler`1";
             co_yield "Windows.Foundation.Collections.MapChangedEventHandler`2";
             co_yield "Windows.Foundation.Collections.IVectorChangedEventArgs";
+
+            for (std::pair<std::string_view, std::string_view > const& pair : enum_renamed_types())
+            {
+                co_yield pair.second;
+            }
         }
 
-        generator<std::pair<std::wstring_view, std::string_view>> enum_renamed_types()
+        bool is_filtered_type(std::string_view name)
         {
-            co_yield{ L"System.Guid", "GUID" };
-            co_yield{ L"Windows.Foundation.EventRegistrationToken", "event_token" };
-            co_yield{ L"Windows.Foundation.HResult", "HRESULT" };
+            if (settings::filters.size() == 0)
+            {
+                return false;
+            }
 
-            co_yield{ L"Windows.Foundation.Numerics.Vector2", "Windows::Foundation::Numerics::float2" };
-            co_yield{ L"Windows.Foundation.Numerics.Vector3", "Windows::Foundation::Numerics::float3" };
-            co_yield{ L"Windows.Foundation.Numerics.Vector4", "Windows::Foundation::Numerics::float4" };
-            co_yield{ L"Windows.Foundation.Numerics.Matrix3x2", "Windows::Foundation::Numerics::float3x2" };
-            co_yield{ L"Windows.Foundation.Numerics.Matrix4x4", "Windows::Foundation::Numerics::float4x4" };
-            co_yield{ L"Windows.Foundation.Numerics.Plane", "Windows::Foundation::Numerics::plane" };
-            co_yield{ L"Windows.Foundation.Numerics.Quaternion", "Windows::Foundation::Numerics::quaternion" };
+            for (std::string const& filter : settings::filters)
+            {
+                if (starts_with(name, filter))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
-        static winrt::com_ptr<IMetaDataDispenser> m_dispenser{ get_dispenser() };
-        static std::vector<database> m_databases;
-        static index_type m_index;
-
-        void next_token(PCCOR_SIGNATURE& signature, IMetaDataImport2* db, token_callback callback)
+        IMetaDataDispenser* MetaDataGetDispenser()
         {
-            // Advance the signature pointer by reading the current parameter information. 
-
-            CorElementType category = CorSigUncompressElementType(signature);
-
-            if (category < ELEMENT_TYPE_PTR || category == ELEMENT_TYPE_OBJECT)
-            {
-                return;
-            }
-
-            if (category == ELEMENT_TYPE_BYREF)
-            {
-                next_token(signature, db, callback);
-                return;
-            }
-
-            if (category == ELEMENT_TYPE_SZARRAY)
-            {
-                next_token(signature, db, callback);
-                return;
-            }
-
-            if (category == ELEMENT_TYPE_VALUETYPE || category == ELEMENT_TYPE_CLASS)
-            {
-                mdToken token = CorSigUncompressToken(signature);
-
-                if (callback)
-                {
-                    callback({ token, db });
-                }
-
-                return;
-            }
-
-            if (category == ELEMENT_TYPE_GENERICINST)
-            {
-                CorSigUncompressElementType(signature);
-
-                mdToken token = CorSigUncompressToken(signature);
-
-                if (callback)
-                {
-                    callback({ token, db });
-                }
-                ULONG count = CorSigUncompressData(signature);
-
-                while (count--)
-                {
-                    next_token(signature, db, callback);
-                }
-
-                return;
-            }
-
-            if (category == ELEMENT_TYPE_VAR) // A generic interface type parameter
-            {
-                CorSigUncompressData(signature); // The index of the type parameter
-                return;
-            }
-
-            WINRT_ASSERT(false);
+            IMetaDataDispenser* dispenser{};
+            winrt::check_hresult(MetaDataGetDispenser(CLSID_CorMetaDataDispenser, IID_IMetaDataDispenser, reinterpret_cast<void**>(&dispenser)));
+            return dispenser;
         }
 
-        struct name_converter
+        static IMetaDataDispenser* dispenser{ MetaDataGetDispenser() };
+        static std::vector<database> databases;
+        static index_type index;
+
+        std::string to_string(std::wstring_view source)
         {
-            void convert(wchar_t const* const buffer, uint32_t const size) noexcept
+            std::string result(source.size(), '?');
+
+            auto WideCharToMultiByte = [&]
             {
-                m_size = WideCharToMultiByte(CP_UTF8, 0, buffer, size, m_buffer.data(), static_cast<uint32_t>(m_buffer.size()), nullptr, nullptr);
+                WINRT_ASSERT(source.size() <= result.size());
+
+                return ::WideCharToMultiByte(
+                    CP_UTF8,
+                    0,
+                    source.data(),
+                    static_cast<uint32_t>(source.size()),
+                    result.data(),
+                    static_cast<uint32_t>(result.size()),
+                    nullptr,
+                    nullptr);
+            };
+
+            int size = WideCharToMultiByte();
+
+            while (size == 0)
+            {
+                result.resize(result.size() * 2);
+                size = WideCharToMultiByte();
             }
 
-            std::pair<std::string, uint32_t> code_name() const
-            {
-                std::pair<std::string, uint32_t> result;
-                char const* const end = m_buffer.data() + m_size;
+            result.resize(size);
+            return result;
+        }
 
-                for (char const* c = m_buffer.data(); c != end; ++c)
+        void load_index_types()
+        {
+            std::array<wchar_t, max_name_size> buffer;
+            ULONG actual{};
+            DWORD flags{};
+            mdToken extends{};
+
+            for (database const& database : databases)
+            {
+                for (token token : database.EnumTypeDefs())
                 {
-                    if (*c == '.')
+                    winrt::check_hresult(database.db->GetTypeDefProps(
+                        token.handle,
+                        buffer.data(),
+                        max_name_size,
+                        &actual,
+                        &flags,
+                        &extends));
+
+                    if (!(flags & tdWindowsRuntime))
                     {
-                        result.second = static_cast<uint32_t>(result.first.size());
-                        result.first += "::";
+                        continue;
                     }
-                    else if (*c == '`')
+
+                    std::string name = to_string({ buffer.data(), actual - 1 });
+
+                    for (std::pair<std::string_view, std::string_view > const& pair : enum_renamed_types())
                     {
-                        break;
+                        if (pair.first == name)
+                        {
+                            name = std::string(pair.second);
+                            break;
+                        }
+                    }
+
+                    bool const filtered = database.foundational || is_foundation_type(name) || is_filtered_type(name);
+                    type type(std::move(name), token, filtered);
+
+                    if (type.name_space().empty())
+                    {
+                        continue;
+                    }
+
+                    std::string const name_space(type.name_space());
+
+                    if (IsTdInterface(flags))
+                    {
+                        index[name_space].interfaces.push_back(std::move(type));
+                    }
+                    else if (extends == database.system_attribute)
+                    {
+                        continue;
+                    }
+                    else if (extends == database.system_enum)
+                    {
+                        index[name_space].enums.push_back(std::move(type));
+                    }
+                    else if (extends == database.system_struct)
+                    {
+                        if (token.is_api_contract() || filtered)
+                        {
+                            continue;
+                        }
+
+                        index[name_space].structs.push_back(std::move(type));
+                    }
+                    else if (extends == database.system_delegate)
+                    {
+                        index[name_space].delegates.push_back(std::move(type));
                     }
                     else
                     {
-                        result.first += *c;
+                        index[name_space].classes.push_back(std::move(type));
                     }
                 }
-
-                return result;
             }
-
-            std::string simple_code_name() const
-            {
-                return code_name().first;
-            }
-
-            operator std::string_view() const noexcept
-            {
-                return { m_buffer.data(), m_size };
-            }
-
-        private:
-
-            std::array<char, max_name_size> m_buffer;
-            uint32_t m_size{};
-        };
-
-        template<typename T>
-        T ReadDataFromBlob(PCCOR_SIGNATURE& data)
-        {
-            static_assert(std::is_arithmetic_v<T> || std::is_enum_v<T>);
-            T result = *reinterpret_cast<const T*>(data);
-            data += (std::is_enum_v<T> ? sizeof(int32_t) : sizeof(T));
-            return result;
         }
 
-        template<>
-        std::string_view ReadDataFromBlob(PCCOR_SIGNATURE& data)
-        {
-            ULONG string_length = CorSigUncompressData(data);
-            std::string_view result{ reinterpret_cast<const char*>(data), string_length };
-            data += string_length;
-            return result;
-        }
-
-        PCCOR_SIGNATURE get_type_spec_param_signature(std::vector<meta::signature> const& var_types, PCCOR_SIGNATURE signature)
-        {
-            PCCOR_SIGNATURE non_generic_signature = signature;
-            CorElementType category = CorSigUncompressElementType(signature);
-            bool by_ref{};
-
-            if (category == ELEMENT_TYPE_BYREF)
-            {
-                by_ref = true;
-                ++signature;
-                category = static_cast<CorElementType>(*signature);
-            }
-
-            if (category == ELEMENT_TYPE_VAR) // A generic interface type parameter
-            {
-                return var_types[CorSigUncompressData(signature)].data;
-            }
-
-            return non_generic_signature;
-        }
-
-        std::string_view get_method_name(std::string_view name, DWORD flags)
+        std::string to_method_name(std::string const& name, DWORD flags)
         {
             if (IsMdSpecialName(flags))
             {
@@ -336,29 +280,303 @@ namespace cppwinrt::meta
             return name;
         }
 
-        template <typename T>
-        void append(std::vector<T>& destination, std::vector<T>&& source)
+        std::string read(IMetaDataImport2* db, PCCOR_SIGNATURE& cursor, std::vector<std::string> const& generic_params)
         {
-            destination.reserve(destination.size() + source.size());
-            std::move(source.begin(), source.end(), std::back_inserter(destination));
-        }
+            CorElementType category = CorSigUncompressElementType(cursor);
+            bool by_ref{};
 
-        template <typename T>
-        void remove(std::vector<T>& destination, std::vector<T> const& find)
-        {
-            std::vector<T>::iterator new_end = std::remove_if(destination.begin(), destination.end(),
-                [&](T const& value)
+            if (category == ELEMENT_TYPE_BYREF)
             {
-                return find.end() != std::find(find.begin(), find.end(), value);
-            });
+                by_ref = true;
+                category = CorSigUncompressElementType(cursor);
+            }
 
-            destination.erase(new_end, destination.end());
+            switch (category)
+            {
+            case ELEMENT_TYPE_VOID:    return "void";
+            case ELEMENT_TYPE_BOOLEAN: return "bool";
+            case ELEMENT_TYPE_CHAR:    return "wchar_t";
+            case ELEMENT_TYPE_I1:      return "int8_t";
+            case ELEMENT_TYPE_U1:      return "uint8_t";
+            case ELEMENT_TYPE_I2:      return "int16_t";
+            case ELEMENT_TYPE_U2:      return "uint16_t";
+            case ELEMENT_TYPE_I4:      return "int32_t";
+            case ELEMENT_TYPE_U4:      return "uint32_t";
+            case ELEMENT_TYPE_I8:      return "int64_t";
+            case ELEMENT_TYPE_U8:      return "uint64_t";
+            case ELEMENT_TYPE_R4:      return "float";
+            case ELEMENT_TYPE_R8:      return "double";
+            case ELEMENT_TYPE_STRING:  return "hstring";
+            case ELEMENT_TYPE_OBJECT:  return "Windows.Foundation.IInspectable";
+            }
+
+            if (category == ELEMENT_TYPE_VALUETYPE || category == ELEMENT_TYPE_CLASS)
+            {
+                return token{ CorSigUncompressToken(cursor), db }.get_name(generic_params);
+            }
+
+            if (category == ELEMENT_TYPE_GENERICINST)
+            {
+                WINRT_VERIFY_(ELEMENT_TYPE_CLASS, CorSigUncompressElementType(cursor));
+                std::string name = token{ CorSigUncompressToken(cursor), db }.get_name();
+                name.resize(name.rfind('`'));
+                name += '<';
+                ULONG count = CorSigUncompressData(cursor);
+                name += read(db, cursor, generic_params);
+
+                while (--count)
+                {
+                    name += ", ";
+                    name += read(db, cursor, generic_params);
+                }
+
+                name += '>';
+                return name;
+            }
+
+            if (category == ELEMENT_TYPE_SZARRAY)
+            {
+                return "com_array<" + read(db, cursor, generic_params) + ">";
+            }
+
+            if (category == ELEMENT_TYPE_VAR)
+            {
+                return generic_params[CorSigUncompressData(cursor)];
+            }
+
+            WINRT_ASSERT(false);
+            return {};
         }
+
+        void append_required(std::vector<required>& values, token derived, std::vector<std::string> const& generic_params)
+        {
+            for (token impl_token : derived.get_definition().EnumInterfaceImpls())
+            {
+                token token = impl_token.GetInterfaceImplProps();
+
+                if (token.is_type_spec())
+                {
+                    if (generic_params.empty())
+                    {
+                        values.push_back({ token.get_name(generic_params), token, token.get_generic_params() });
+                    }
+                    else
+                    {
+                        values.push_back({ token.get_name(generic_params), token, generic_params });
+                    }
+
+                    append_required(values, token, token.get_signature().get_generic_params(generic_params));
+                }
+                else
+                {
+                    values.push_back({ token.get_name(generic_params), token, generic_params });
+                    append_required(values, token, generic_params);
+                }
+            }
+        }
+
+        void exclude_required(std::vector<required>& values, token default_interface)
+        {
+            std::string name = default_interface.get_name();
+
+            values.erase(std::remove_if(
+                values.begin(),
+                values.end(),
+                [&](required const& value)
+                {
+                    return value.name == name;
+                }),
+                values.end());
+
+            std::vector<required> exclude = default_interface.get_interface_required();
+
+            values.erase(std::remove_if(
+                values.begin(),
+                values.end(),
+                [&](required const& value)
+                {
+                    return exclude.end() != std::find(exclude.begin(), exclude.end(), value);
+                }),
+                values.end());
+        }
+
+        template <typename T>
+        void sort_unique(std::vector<T>& values)
+        {
+            std::sort(values.begin(), values.end());
+            values.erase(std::unique(values.begin(), values.end()), values.end());
+        }
+
+        std::vector<required> get_class_required_base(token class_token)
+        {
+            std::vector<required> values;
+            append_required(values, class_token, {});
+
+            if (values.empty())
+            {
+                return values;
+            }
+
+            for (token base = class_token.get_base(); base; base = base.get_base())
+            {
+                append_required(values, base, {});
+            }
+
+            sort_unique(values);
+            return values;
+        }
+
+        template<typename T>
+        T read_blob(PCCOR_SIGNATURE& data)
+        {
+            static_assert(std::is_arithmetic_v<T> || std::is_enum_v<T>);
+            T result = *reinterpret_cast<const T*>(data);
+            data += (std::is_enum_v<T> ? sizeof(int32_t) : sizeof(T));
+            return result;
+        }
+
+        template<>
+        std::string read_blob(PCCOR_SIGNATURE& data)
+        {
+            ULONG string_length = CorSigUncompressData(data);
+            std::string result{ reinterpret_cast<const char*>(data), string_length };
+            data += string_length;
+            return result;
+        }
+
+        void sort_index_types()
+        {
+            auto sort = [](std::vector<type>& vector)
+            {
+                std::sort(vector.begin(), vector.end(),
+                    [](type const& left, type const& right)
+                    {
+                        return left.name() < right.name();
+                    });
+            };
+
+            for (index_pair& pair : index)
+            {
+                sort(pair.second.enums);
+                sort(pair.second.structs);
+                sort(pair.second.interfaces);
+                sort(pair.second.classes);
+                sort(pair.second.delegates);
+            }
+        }
+
+        std::string get_name(token const token)
+        {
+            WINRT_ASSERT(token.is_type_def() || token.is_type_ref());
+
+            std::array<wchar_t, max_name_size> buffer;
+            ULONG actual{};
+
+            if (token.is_type_def())
+            {
+                winrt::check_hresult(token.db->GetTypeDefProps(
+                    token.handle,
+                    buffer.data(),
+                    max_name_size,
+                    &actual,
+                    nullptr,
+                    nullptr));
+            }
+            else
+            {
+                winrt::check_hresult(token.db->GetTypeRefProps(
+                    token.handle,
+                    nullptr,
+                    buffer.data(),
+                    max_name_size,
+                    &actual));
+            }
+
+            std::string result = to_string({ buffer.data(), actual - 1 });
+
+            for (std::pair<std::string_view, std::string_view > const& pair : enum_renamed_types())
+            {
+                if (pair.first == result)
+                {
+                    return std::string(pair.second);
+                }
+            }
+
+            return result;
+        }
+
+        void add_override_interfaces(std::vector<token>& interfaces, token token)
+        {
+            for (meta::token impl_token : token.EnumInterfaceImpls())
+            {
+                if (!impl_token.has_attribute(L"Windows.Foundation.Metadata.OverridableAttribute"))
+                {
+                    continue;
+                }
+
+                interfaces.push_back(impl_token.GetInterfaceImplProps().get_definition());
+            }
+        }
+    }
+
+    database::database(std::wstring const& filename, bool const foundational) : foundational(foundational)
+    {
+        winrt::check_hresult(dispenser->OpenScope(
+            filename.c_str(),
+            ofRead,
+            IID_IMetaDataImport2,
+            reinterpret_cast<::IUnknown**>(&db)));
+
+        mdToken mscorlib = get_mscorlib(db);
+
+        auto FindTypeRef = [&](wchar_t const* const name) noexcept
+        {
+            mdToken token{};
+            db->FindTypeRef(mscorlib, name, &token);
+            return token;
+        };
+
+        system_enum = FindTypeRef(L"System.Enum");
+        system_struct = FindTypeRef(L"System.ValueType");
+        system_delegate = FindTypeRef(L"System.MulticastDelegate");
+        system_attribute = FindTypeRef(L"System.Attribute");
+    }
+
+    generator<token> database::EnumTypeDefs() const noexcept
+    {
+        HCORENUM eh{};
+        std::array<mdToken, max_token_count> buffer;
+        ULONG actual{};
+
+        while (S_OK == db->EnumTypeDefs(&eh, buffer.data(), max_token_count, &actual))
+        {
+            for (ULONG i = 0; i != actual; ++i)
+            {
+                co_yield{ buffer[i], db };
+            }
+        }
+    }
+
+    void open_database(std::wstring const& filename, bool const foundational)
+    {
+        databases.emplace_back(filename, foundational);
+    }
+
+    void build_index()
+    {
+        WINRT_ASSERT(index.empty());
+        load_index_types();
+        sort_index_types();
+    }
+
+    index_type const& get_index()
+    {
+        return index;
     }
 
     bool is_foundation_type(std::string_view name)
     {
-        for (std::string_view type : enum_foundation_types())
+        for (std::string_view type : get_foundation_types())
         {
             if (type == name)
             {
@@ -369,321 +587,331 @@ namespace cppwinrt::meta
         return false;
     }
 
-    bool is_filtered_type(std::string_view name)
+    type const* find_type(std::string_view match, type_category* category)
     {
-        if (settings::filters.size() == 0)
-        {
-            return false;
-        }
+        std::string name_space(match.data(), match.rfind('.'));
+        match = match.substr(name_space.size() + 1);
+        namespace_types const& types = index.at(name_space);
 
-        for (std::string const& filter : settings::filters)
+        auto find = [&](std::vector<type> const& vector) -> type const*
         {
-            if(name.compare(0, filter.length(), filter) == 0)
+            auto result = std::find_if(vector.begin(), vector.end(),
+                [&](type const& type)
             {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    type const* resolve(std::string_view dot_name)
-    {
-        size_t split = dot_name.find_last_of('.');
-        std::string const name_space(dot_name.substr(0, split));
-        std::string_view name = dot_name.substr(split + 1);
-
-        for (type const & type : m_index[name_space])
-        {
-            if (type.name() == name)
-            {
-                return &type;
-            }
-        }
-
-        std::wstring type(dot_name.begin(), dot_name.end());
-        throw meta_error{ L"Unresolved type: " + type };
-    }
-
-    void open_database(std::wstring const& filename, bool const foundational)
-    {
-        winrt::com_ptr<IMetaDataImport2> db;
-
-        winrt::check_hresult(m_dispenser->OpenScope(filename.c_str(),
-            ofRead,
-            IID_IMetaDataImport2,
-            reinterpret_cast<::IUnknown**>(put_abi(db))));
-
-        m_databases.emplace_back(std::move(db), foundational);
-    }
-
-    void index_types()
-    {
-        std::string name_space;
-
-        for (database const& db : m_databases)
-        {
-            for (meta::type const& type : db.enum_types())
-            {
-                name_space.clear();
-
-                for (std::string_view::iterator c = type.name_space().begin(); c != type.name_space().end(); ++c)
-                {
-                    if (*c == ':')
-                    {
-                        ++c;
-                        name_space += '.';
-                    }
-                    else
-                    {
-                        name_space += *c;
-                    }
-                }
-
-                m_index[name_space].push_back(std::move(type));
-            }
-        }
-
-        for (std::pair<std::string const, std::vector<type>>& pair : m_index)
-        {
-            std::sort(pair.second.begin(), pair.second.end(), [](type const& left, type const& right)
-            {
-                return left.full_name() < right.full_name();
+                return type.name() == match;
             });
-        }
 
-        for (std::pair<std::string const, std::vector<type>>& pair : m_index)
-        {
-            for (type& type : pair.second)
+            if (result != vector.end())
             {
-                type.index_base();
+                return &*result;
             }
-        }
-    }
 
-    index_type const& get_index()
-    {
-        return m_index;
-    }
+            return nullptr;
+        };
 
-    database::database(winrt::com_ptr<IMetaDataImport2>&& db, bool foundational) :
-        m_db(std::move(db)), m_foundational(foundational)
-    {
-        mdToken mscorlib = get_mscorlib(m_db.get());
-
-        m_system_class = find_system_type(m_db, mscorlib, L"System.Object");
-        m_system_enum = find_system_type(m_db, mscorlib, L"System.Enum");
-        m_system_struct = find_system_type(m_db, mscorlib, L"System.ValueType");
-        m_system_delegate = find_system_type(m_db, mscorlib, L"System.MulticastDelegate");
-        m_system_attribute = find_system_type(m_db, mscorlib, L"System.Attribute");
-    }
-
-    generator<type> database::enum_types() const
-    {
-        enum_handle eh{ m_db.get() };
-        std::array<mdToken, max_token_count> token_buffer;
-        ULONG actual_token_count{};
-        std::array<wchar_t, max_name_size> name_buffer;
-        name_converter converter;
-        ULONG actual_name_size{};
-        DWORD flags{};
-        mdToken extends{};
-
-        while (S_OK == m_db->EnumTypeDefs(eh,
-            token_buffer.data(),
-            max_token_count,
-            &actual_token_count))
+        if (type const* result = find(types.interfaces))
         {
-            for (ULONG i = 0; i != actual_token_count; ++i)
+            if (category)
             {
-                token token{ token_buffer[i], m_db.get() };
-
-                winrt::check_hresult(m_db->GetTypeDefProps(token.handle(),
-                    name_buffer.data(),
-                    max_name_size,
-                    &actual_name_size,
-                    &flags,
-                    &extends));
-
-                if (!(flags & tdWindowsRuntime))
-                {
-                    continue;
-                }
-
-                converter.convert(name_buffer.data(), actual_name_size - 1);
-
-                WINRT_ASSERT(converter.simple_code_name() != "Windows.Foundation.Deferral");
-
-                bool filtered = m_foundational || is_foundation_type(converter) || is_filtered_type(converter);
-                const bool sealed = flags & tdSealed;
-
-                if (flags& tdInterface)
-                {
-                    WINRT_ASSERT(!sealed);
-                    co_yield type{ token, type_category::interface_v, filtered, converter.code_name(), sealed };
-                }
-                else if (extends == m_system_attribute)
-                {
-                    continue;
-                }
-                else if (extends == m_system_class)
-                {
-                    co_yield type{ token, type_category::class_v, filtered, converter.code_name(), sealed };
-                }
-                else if (extends == m_system_enum)
-                {
-                    WINRT_ASSERT(sealed);
-                    co_yield type{ token, type_category::enum_v, filtered, converter.code_name(), sealed };
-                }
-                else if (extends == m_system_struct)
-                {
-                    if (token.has_attribute(L"Windows.Foundation.Metadata.ApiContractAttribute"))
-                    {
-                        continue;
-                    }
-
-                    WINRT_ASSERT(sealed);
-                    co_yield type{ token, type_category::struct_v, filtered, converter.code_name(), sealed };
-                }
-                else if (extends == m_system_delegate)
-                {
-                    co_yield type{ token, type_category::delegate_v, filtered, converter.code_name(), sealed };
-                }
-                else
-                {
-                    co_yield type{ token, type_category::class_v, filtered, converter.code_name(), sealed,{ extends, m_db.get() } };
-                }
+                *category = type_category::interface_v;
             }
+
+            return result;
         }
-    }
 
-    type::type(meta::token token,
-        type_category category,
-        bool foundation,
-        std::pair<std::string, uint32_t>&& name,
-        bool sealed,
-        meta::token base) :
-        m_name(std::move(name)),
-        m_token(token),
-        m_base({ base }),
-        m_category(category),
-        m_foundation(foundation),
-        m_sealed(sealed)
-    {
-        WINRT_ASSERT(token.is_type_def());
-    }
-
-    void type::index_base()
-    {
-        if (m_base.token)
+        if (type const* result = find(types.classes))
         {
-            m_base.type = &m_base.token.resolve();
-            WINRT_ASSERT(m_base.type);
+            if (category)
+            {
+                *category = type_category::class_v;
+            }
+
+            return result;
         }
+
+        if (type const* result = find(types.enums))
+        {
+            if (category)
+            {
+                *category = type_category::enum_v;
+            }
+
+            return result;
+        }
+
+        if (type const* result = find(types.structs))
+        {
+            if (category)
+            {
+                *category = type_category::struct_v;
+            }
+
+            return result;
+        }
+
+        if (type const* result = find(types.delegates))
+        {
+            if (category)
+            {
+                *category = type_category::delegate_v;
+            }
+
+            return result;
+        }
+
+        return nullptr;
     }
 
-    bool type::is_class() const noexcept
+    std::string signature::get_name() const
     {
-        return m_category == type_category::class_v;
+        PCCOR_SIGNATURE cursor = data;
+        return read(db, cursor, {}); 
     }
 
-    bool type::is_delegate() const noexcept
+    std::string signature::get_name(std::vector<std::string> const& generic_params) const
     {
-        return m_category == type_category::delegate_v;
+        PCCOR_SIGNATURE cursor = data;
+        return read(db, cursor, generic_params);
     }
 
-    bool type::is_enum() const noexcept
+    std::vector<std::string> signature::get_generic_params(std::vector<std::string> const& generic_params) const
     {
-        return m_category == type_category::enum_v;
+        PCCOR_SIGNATURE cursor = data;
+        WINRT_VERIFY_(ELEMENT_TYPE_GENERICINST, CorSigUncompressElementType(cursor));
+        WINRT_VERIFY_(ELEMENT_TYPE_CLASS, CorSigUncompressElementType(cursor));
+        CorSigUncompressToken(cursor);
+        ULONG count = CorSigUncompressData(cursor);
+        std::vector<std::string> values;
+
+        while (count--)
+        {
+            values.push_back(read(db, cursor, generic_params));
+        }
+
+        return values;
     }
 
-    bool type::is_interface() const noexcept
+    token signature::get_token() const noexcept
     {
-        return m_category == type_category::interface_v;
+        PCCOR_SIGNATURE cursor = data;
+        CorElementType category = CorSigUncompressElementType(cursor);
+        token result;
+
+        if (category == ELEMENT_TYPE_VALUETYPE || category == ELEMENT_TYPE_CLASS)
+        {
+            // do nothing
+        }
+        else if (category == ELEMENT_TYPE_GENERICINST)
+        {
+            WINRT_VERIFY_(ELEMENT_TYPE_CLASS, CorSigUncompressElementType(cursor));
+        }
+        else
+        {
+            WINRT_ASSERT(false);
+            return {};
+        }
+
+        return token{ CorSigUncompressToken(cursor), db };
     }
 
-    bool type::is_struct() const noexcept
+    std::string signature::get_abi_name() const
     {
-        return m_category == type_category::struct_v;
+        PCCOR_SIGNATURE cursor = data;
+        CorElementType category = CorSigUncompressElementType(cursor);
+
+        switch (category)
+        {
+        case ELEMENT_TYPE_BOOLEAN: return "bool";
+        case ELEMENT_TYPE_CHAR:    return "wchar_t";
+        case ELEMENT_TYPE_I1:      return "int8_t";
+        case ELEMENT_TYPE_U1:      return "uint8_t";
+        case ELEMENT_TYPE_I2:      return "int16_t";
+        case ELEMENT_TYPE_U2:      return "uint16_t";
+        case ELEMENT_TYPE_I4:      return "int32_t";
+        case ELEMENT_TYPE_U4:      return "uint32_t";
+        case ELEMENT_TYPE_I8:      return "int64_t";
+        case ELEMENT_TYPE_U8:      return "uint64_t";
+        case ELEMENT_TYPE_R4:      return "float";
+        case ELEMENT_TYPE_R8:      return "double";
+        case ELEMENT_TYPE_STRING:  return "HSTRING";
+        }
+
+        if (category == ELEMENT_TYPE_CLASS || category == ELEMENT_TYPE_GENERICINST || category == ELEMENT_TYPE_OBJECT)
+        {
+            return "::IUnknown*";
+        }
+
+        if (category == ELEMENT_TYPE_VALUETYPE)
+        {
+            std::string name("abi_t<");
+            name += token{ CorSigUncompressToken(cursor), db }.get_name();
+            name += '>';
+            return name;
+        }
+
+        WINRT_ASSERT(false);
+        return {};
     }
 
-    bool type::is_filtered() const noexcept
+    CorElementType signature::get_category() const
     {
-        return m_foundation;
+        return static_cast<CorElementType>(*data);
     }
 
-    bool type::is_sealed() const noexcept
+    signature signature::next(token_callback callback) const noexcept
     {
-        return m_sealed;
+        signature next{ data, db };
+
+        CorElementType category = CorSigUncompressElementType(next.data);
+
+        if (category < ELEMENT_TYPE_PTR || category == ELEMENT_TYPE_OBJECT)
+        {
+            return next;
+        }
+
+        if (category == ELEMENT_TYPE_BYREF || category == ELEMENT_TYPE_SZARRAY)
+        {
+            return next.next(callback);
+        }
+
+        if (category == ELEMENT_TYPE_VALUETYPE || category == ELEMENT_TYPE_CLASS)
+        {
+            mdToken token = CorSigUncompressToken(next.data);
+
+            if (callback)
+            {
+                callback({ token, db });
+            }
+
+            return next;
+        }
+
+        if (category == ELEMENT_TYPE_GENERICINST)
+        {
+            CorSigUncompressElementType(next.data);
+            mdToken token = CorSigUncompressToken(next.data);
+
+            if (callback)
+            {
+                callback({ token, db });
+            }
+
+            ULONG count = CorSigUncompressData(next.data);
+
+            while (count--)
+            {
+                next = next.next(callback);
+            }
+
+            return next;
+        }
+
+        if (category == ELEMENT_TYPE_VAR)
+        {
+            CorSigUncompressData(next.data);
+            return next;
+        }
+
+        WINRT_ASSERT(false);
+        return {};
     }
 
-    token type::token() const noexcept
+    bool param::is_in() const noexcept
     {
-        return m_token;
+        return IsPdIn(flags);
     }
 
-    type_category type::category() const noexcept
+    bool composable_attribute::is_public() const noexcept
     {
-        return m_category;
+        return access == composition_access::public_v;
+    }
+    bool composable_attribute::is_protected() const noexcept
+    {
+        return access == composition_access::protected_v;
     }
 
-    std::string_view type::full_name() const noexcept
+    token::operator bool() const noexcept
     {
-        return m_name.first;
+        return handle != 0;
     }
 
-    std::string_view type::name() const noexcept
+    bool token::is_type_def() const noexcept
     {
-        return{ m_name.first.data() + m_name.second + 2, m_name.first.size() - m_name.second - 2 };
+        return TypeFromToken(handle) == mdtTypeDef;
     }
 
-    std::string_view type::name_space() const noexcept
+    bool token::is_type_ref() const noexcept
     {
-        return { m_name.first.data(), m_name.second };
+        return TypeFromToken(handle) == mdtTypeRef;
     }
 
-    type const* type::base() const noexcept
+    bool token::is_type_spec() const noexcept
     {
-        return m_base.type;
+        return TypeFromToken(handle) == mdtTypeSpec;
+    }
+
+    bool token::is_method_def() const noexcept
+    {
+        return TypeFromToken(handle) == mdtMethodDef;
+    }
+
+    bool token::is_member_ref() const noexcept
+    {
+        return TypeFromToken(handle) == mdtMemberRef;
+    }
+
+    bool token::is_method_spec() const noexcept
+    {
+        return TypeFromToken(handle) == mdtMethodSpec;
+    }
+
+    bool token::is_interface_impl() const noexcept
+    {
+        return TypeFromToken(handle) == mdtInterfaceImpl;
+    }
+
+    bool token::is_field_def() const noexcept
+    {
+        return TypeFromToken(handle) == mdtFieldDef;
+    }
+
+    bool token::is_param_def() const noexcept
+    {
+        return TypeFromToken(handle) == mdtParamDef;
+    }
+
+    bool token::is_generic_param() const noexcept
+    {
+        return TypeFromToken(handle) == mdtGenericParam;
     }
 
     generator<token> token::EnumInterfaceImpls() const
     {
         WINRT_ASSERT(is_type_def());
-
-        enum_handle eh{ m_db };
+        HCORENUM eh{};
         std::array<mdToken, max_token_count> buffer;
-        ULONG count{};
+        ULONG actual{};
 
-        while (S_OK == m_db->EnumInterfaceImpls(eh,
-            m_handle,
-            buffer.data(),
-            max_token_count,
-            &count))
+        while (S_OK == db->EnumInterfaceImpls(&eh, handle, buffer.data(), max_token_count, &actual))
         {
-            for (ULONG i = 0; i != count; ++i)
+            for (ULONG i = 0; i != actual; ++i)
             {
-                co_yield{ buffer[i], m_db };
+                co_yield{ buffer[i], db };
             }
         }
     }
 
     generator<token> token::EnumCustomAttributes() const
     {
-        enum_handle eh{ m_db };
+        HCORENUM eh{};
         std::array<mdToken, max_token_count> buffer;
-        ULONG count{};
+        ULONG actual{};
 
-        while (S_OK == m_db->EnumCustomAttributes(eh,
-            m_handle,
-            0, // type
-            buffer.data(),
-            max_token_count,
-            &count))
+        while (S_OK == db->EnumCustomAttributes(&eh, handle, 0, buffer.data(), max_token_count, &actual))
         {
-            for (ULONG i = 0; i != count; ++i)
+            for (ULONG i = 0; i != actual; ++i)
             {
-                co_yield{ buffer[i], m_db };
+                co_yield{ buffer[i], db };
             }
         }
     }
@@ -691,20 +919,15 @@ namespace cppwinrt::meta
     generator<token> token::EnumMembers() const
     {
         WINRT_ASSERT(is_type_def());
-
-        enum_handle eh{ m_db };
+        HCORENUM eh{};
         std::array<mdToken, max_token_count> buffer;
-        ULONG count{};
+        ULONG actual{};
 
-        while (S_OK == m_db->EnumMembers(eh,
-            m_handle,
-            buffer.data(),
-            max_token_count,
-            &count))
+        while (S_OK == db->EnumMembers(&eh, handle, buffer.data(), max_token_count, &actual))
         {
-            for (ULONG i = 0; i != count; ++i)
+            for (ULONG i = 0; i != actual; ++i)
             {
-                co_yield{ buffer[i], m_db };
+                co_yield{ buffer[i], db };
             }
         }
     }
@@ -712,20 +935,15 @@ namespace cppwinrt::meta
     generator<token> token::EnumParams() const
     {
         WINRT_ASSERT(is_method_def());
-
-        enum_handle eh{ m_db };
+        HCORENUM eh{};
         std::array<mdToken, max_token_count> buffer;
-        ULONG count{};
+        ULONG actual{};
 
-        while (S_OK == m_db->EnumParams(eh,
-            m_handle,
-            buffer.data(),
-            max_token_count,
-            &count))
+        while (S_OK == db->EnumParams(&eh, handle, buffer.data(), max_token_count, &actual))
         {
-            for (ULONG i = 0; i != count; ++i)
+            for (ULONG i = 0; i != actual; ++i)
             {
-                co_yield{ buffer[i], m_db };
+                co_yield{ buffer[i], db };
             }
         }
     }
@@ -733,622 +951,152 @@ namespace cppwinrt::meta
     token token::GetInterfaceImplProps() const
     {
         WINRT_ASSERT(is_interface_impl());
-
         mdToken token{};
-        winrt::check_hresult(m_db->GetInterfaceImplProps(m_handle, nullptr, &token));
-        return { token, m_db };
+        winrt::check_hresult(db->GetInterfaceImplProps(handle, nullptr, &token));
+        return { token, db };
     }
 
-    token::token(mdToken handle, IMetaDataImport2* db) noexcept :
-        m_handle(handle),
-        m_db(db)
+    std::string token::get_name() const
     {
-    }
-
-    mdToken token::handle() const noexcept
-    {
-        WINRT_ASSERT(m_handle);
-        return m_handle;
-    }
-
-    IMetaDataImport2* token::db() const noexcept
-    {
-        WINRT_ASSERT(m_db);
-        return m_db;
-    }
-
-    token::operator bool() const noexcept
-    {
-        return m_handle != 0;
-    }
-
-    bool token::is_type_def() const noexcept
-    {
-        return TypeFromToken(m_handle) == mdtTypeDef;
-    }
-
-    bool token::is_type_ref() const noexcept
-    {
-        return TypeFromToken(m_handle) == mdtTypeRef;
-    }
-
-    bool token::is_type_spec() const noexcept
-    {
-        return TypeFromToken(m_handle) == mdtTypeSpec;
-    }
-
-    bool token::is_method_def() const noexcept
-    {
-        return TypeFromToken(m_handle) == mdtMethodDef;
-    }
-
-    bool token::is_interface_impl() const noexcept
-    {
-        return TypeFromToken(m_handle) == mdtInterfaceImpl;
-    }
-
-    bool token::is_field_def() const noexcept
-    {
-        return TypeFromToken(m_handle) == mdtFieldDef;
-    }
-
-    std::string token::get_generic_type_name(PCCOR_SIGNATURE& signature, std::vector<meta::signature> const* var_types) const
-    {
-        CorSigUncompressElementType(signature);
-        meta::token generic_type{ CorSigUncompressToken(signature), db() };
-        WINRT_ASSERT(generic_type.is_type_ref());
-        std::string name = generic_type.get_name();
-        ULONG count = CorSigUncompressData(signature);
-        name += '<';
-        while (count--)
-        {
-            name += get_type_name_cursor(signature, var_types);
-            if (count)
-            {
-                name += ", ";
-            }
-        }
-        name += '>';
-        return name;
-    }
-
-    std::string token::get_type_name_cursor(PCCOR_SIGNATURE& signature, std::vector<meta::signature> const* var_types) const
-    {
-        CorElementType category = CorSigUncompressElementType(signature);
-        bool by_ref{};
-
-        if (category == ELEMENT_TYPE_BYREF)
-        {
-            by_ref = true;
-            ++signature;
-            category = static_cast<CorElementType>(*signature);
-        }
-
-        WINRT_ASSERT(category != ELEMENT_TYPE_BYREF);
-
-        switch (category)
-        {
-        case ELEMENT_TYPE_VOID:        return "void";
-        case ELEMENT_TYPE_BOOLEAN:     return "bool";
-        case ELEMENT_TYPE_CHAR:        return "wchar_t";
-        case ELEMENT_TYPE_I1:          return "int8_t";
-        case ELEMENT_TYPE_U1:          return "uint8_t";
-        case ELEMENT_TYPE_I2:          return "int16_t";
-        case ELEMENT_TYPE_U2:          return "uint16_t";
-        case ELEMENT_TYPE_I4:          return "int32_t";
-        case ELEMENT_TYPE_U4:          return "uint32_t";
-        case ELEMENT_TYPE_I8:          return "int64_t";
-        case ELEMENT_TYPE_U8:          return "uint64_t";
-        case ELEMENT_TYPE_R4:          return "float";
-        case ELEMENT_TYPE_R8:          return "double";
-        case ELEMENT_TYPE_STRING:      return "hstring";
-        case ELEMENT_TYPE_OBJECT:      return "Windows::Foundation::IInspectable";
-        case ELEMENT_TYPE_GENERICINST: return get_generic_type_name(signature, var_types);
-        case ELEMENT_TYPE_VALUETYPE:
-        case ELEMENT_TYPE_CLASS:
-        {
-            meta::token param_type{ CorSigUncompressToken(signature), db() };
-            return param_type.get_name();
-        }
-        case ELEMENT_TYPE_VAR:
-        {
-            WINRT_ASSERT(var_types);
-            meta::signature var_signature = (*var_types)[CorSigUncompressData(signature)];
-            return token(0, var_signature.db).get_type_name_cursor(var_signature.data);
-        }
-        }
-
-        WINRT_ASSERT(false);
-        return{};
-    }
-
-    std::string token::get_name(bool dotted, std::vector<meta::signature> const* var_types) const
-    {
-        // TODO: the "dotted" param is a bit broken - it only works for type_def and type_ref (not type_spec).
-
-        std::array<wchar_t, max_name_size> name_buffer;
-        ULONG actual_name_size{};
-
-        if (is_type_def())
-        {
-            winrt::check_hresult(m_db->GetTypeDefProps(m_handle,
-                name_buffer.data(),
-                max_name_size,
-                &actual_name_size,
-                nullptr,
-                nullptr));
-        }
-        else if (is_type_ref())
-        {
-            winrt::check_hresult(m_db->GetTypeRefProps(m_handle,
-                nullptr,
-                name_buffer.data(),
-                max_name_size,
-                &actual_name_size));
-        }
-        else
-        {
-            PCCOR_SIGNATURE signature = get_type_spec();
-            return get_type_name_cursor(signature, var_types);
-        }
-
-        for (std::pair<std::wstring_view, std::string_view> const& pair : enum_renamed_types())
-        {
-            if (pair.first == name_buffer.data())
-            {
-                return std::string(pair.second);
-            }
-        }
-
-        name_converter converter;
-        converter.convert(name_buffer.data(), actual_name_size - 1);
-
-        return dotted ? std::string(converter) : converter.simple_code_name();
-    }
-
-    std::string token::get_simple_name() const
-    {
-        auto result = get_name(true);
-        auto pos = result.find_last_of('.');
-        if (pos != std::string::npos)
-        {
-            result.erase(0, pos + 1);
-        }
-        return result;
-    }
-
-    token token::get_abi_token() const
-    {
-        WINRT_ASSERT(is_type_def() || is_type_ref());
-        token abi_token = *this;
-
-        if (is_type_ref())
-        {
-            abi_token = resolve().token(); // Needed for find_default_interface?
-        }
-
-        if (token default_interface = abi_token.find_default_interface())
-        {
-            abi_token = default_interface;
-        }
-
-        return abi_token;
-    }
-
-    bool token::has_attribute(wchar_t const* const attribute) const noexcept
-    {
-        return S_OK == m_db->GetCustomAttributeByName(m_handle,
-            attribute,
-            nullptr,
-            nullptr);
-    }
-
-    token token::find_default_interface() const
-    {
-        for (token impl_token : EnumInterfaceImpls())
-        {
-            if (!impl_token.has_attribute(L"Windows.Foundation.Metadata.DefaultAttribute"))
-            {
-                continue;
-            }
-
-            return impl_token.GetInterfaceImplProps();
-        }
-
-        return {};
-    }
-
-    type const& token::resolve() const
-    {
-        WINRT_ASSERT(is_type_ref());
-        std::array<wchar_t, max_name_size> name_buffer;
-        ULONG actual_name_size{};
-
-        winrt::check_hresult(m_db->GetTypeRefProps(m_handle,
-            nullptr,
-            name_buffer.data(),
-            max_name_size,
-            &actual_name_size));
-
-        name_converter converter;
-        converter.convert(name_buffer.data(), actual_name_size - 1);
-
-        return *meta::resolve(converter);
-    }
-
-    type const& token::resolve_generic() const
-    {
-        WINRT_ASSERT(is_type_spec());
-
-        auto signature = get_type_spec();
-        CorElementType category = CorSigUncompressElementType(signature);
-
-        WINRT_ASSERT(category == ELEMENT_TYPE_GENERICINST);
-        CorSigUncompressElementType(signature);
-        meta::token generic_type{ CorSigUncompressToken(signature), db() };
-
-        WINRT_ASSERT(generic_type.is_type_ref());
-        std::string dot_name = generic_type.get_name(true);
-        size_t pos = dot_name.find('`');
-
-        WINRT_ASSERT(pos != std::string_view::npos);
-        dot_name = dot_name.substr(0, pos);
-
-        return *meta::resolve(dot_name);
-    }
-
-    generator<param> token::enum_param_base() const
-    {
-        DWORD attribute{};
-        std::array<wchar_t, max_name_size> name_buffer;
-        ULONG actual_name_size{};
-        name_converter converter;
-
-        for (token param_token : EnumParams())
-        {
-            winrt::check_hresult(m_db->GetParamProps(param_token.m_handle,
-                nullptr,
-                nullptr,
-                name_buffer.data(),
-                max_name_size,
-                &actual_name_size,
-                &attribute,
-                nullptr,
-                nullptr,
-                nullptr));
-
-            converter.convert(name_buffer.data(), actual_name_size - 1);
-
-            co_yield{ std::string(converter), nullptr, (attribute& pdIn) == pdIn };
-        }
-    }
-
-    void token::unpack_type_def_method(PCCOR_SIGNATURE signature, param& return_type, std::vector<param>& params, token_callback callback) const
-    {
-        WINRT_ASSERT(is_method_def());
-        WINRT_ASSERT(signature);
-
-        // If the return type is void then the param enumeration will not include the return type since
-        // it is not named. That's why we have to handle this case specially here. Some other return types
-        // may also not be named, typically a few (but not all) properties so we might have to produce a 
-        // name in those cases for the ABI to use.
-
-        return_type.signature = signature;
-        next_token(signature, db(), callback);
-        bool first = true;
-
-        if (static_cast<CorElementType>(*return_type.signature) == ELEMENT_TYPE_VOID)
-        {
-            first = false;
-        }
-
-        for (param param_base : enum_param_base())
-        {
-            if (first)
-            {
-                first = false;
-                WINRT_ASSERT(!param_base.in);
-                return_type.name = std::move(param_base.name);
-            }
-            else
-            {
-                param_base.signature = signature;
-                params.push_back(std::move(param_base));
-                next_token(signature, db(), callback);
-            }
-        }
-    }
-
-    void token::unpack_type_spec_method(std::vector<meta::signature> const& var_types, PCCOR_SIGNATURE signature, param& return_type, std::vector<param>& params, token_callback callback) const
-    {
-        return_type.signature = get_type_spec_param_signature(var_types, signature);
-        next_token(signature, db(), callback);
-
-        if (static_cast<CorElementType>(*return_type.signature) != ELEMENT_TYPE_VOID)
-        {
-            return_type.name = "return_value";
-        }
-
-        for (param param_base : enum_param_base())
-        {
-            param_base.signature = get_type_spec_param_signature(var_types, signature);
-            params.push_back(std::move(param_base));
-            next_token(signature, db(), callback);
-        }
-    }
-
-    method token::get_delegate(token_callback callback) const
-    {
-        std::array<wchar_t, max_name_size> name_buffer;
-        ULONG actual_name_size{};
-        PCCOR_SIGNATURE signature{};
-
-        for (token member_token : EnumMembers())
-        {
-            WINRT_ASSERT(member_token.is_method_def());
-
-            winrt::check_hresult(m_db->GetMemberProps(member_token.m_handle,
-                nullptr,
-                name_buffer.data(),
-                max_name_size,
-                &actual_name_size,
-                nullptr,
-                &signature,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr));
-
-            if (0 != wcscmp(name_buffer.data(), L"Invoke"))
-            {
-                continue;
-            }
-
-            CorSigUncompressCallingConv(signature); // Skip preamble
-            CorSigUncompressData(signature); // Skip param count
-
-            method delegate{member_token};
-            delegate.token.unpack_type_def_method(signature, delegate.return_type, delegate.params, callback);
-            return delegate;
-        }
-
-        throw meta_error{ L"Invoke method not found" };
-    }
-
-    token token::get_type_def() const
-    {
-        if (is_type_ref())
-        {
-            return resolve().token();
-        }
+        WINRT_ASSERT(is_type_def() || is_type_ref() || is_type_spec());
 
         if (is_type_spec())
         {
-            return resolve_generic().token();
+            return get_signature().get_name();
         }
 
-        return *this;
+        return meta::get_name(*this);
     }
 
-    std::vector<required_type> token::enum_interface_required_types(std::vector<meta::signature> const* var_types) const
+    std::string token::get_name(std::vector<std::string> const& generic_params) const
     {
-        WINRT_ASSERT(is_type_def() || is_type_spec());
-        std::vector<required_type> values;
+        WINRT_ASSERT(is_type_def() || is_type_ref() || is_type_spec());
 
-        if (is_type_def())
-        {
-            for (token impl_token : EnumInterfaceImpls())
-            {
-                token required_token = impl_token.GetInterfaceImplProps();
-                WINRT_ASSERT(required_token.is_type_ref() || required_token.is_type_spec());
-                values.push_back({ required_token.get_name(false, var_types), required_token.get_type_def() });
-
-                if (required_token.is_type_ref())
-                {
-                    required_token = required_token.resolve().token();
-                    append(values, required_token.enum_interface_required_types(nullptr));
-                }
-                else
-                {
-                    WINRT_ASSERT(required_token.is_type_spec());
-                    std::vector<meta::signature> requred_var_types;
-
-                    PCCOR_SIGNATURE required_signature = required_token.get_type_spec();
-                    WINRT_VERIFY_(ELEMENT_TYPE_GENERICINST, CorSigUncompressElementType(required_signature));
-                    WINRT_VERIFY_(ELEMENT_TYPE_CLASS, CorSigUncompressElementType(required_signature));
-
-                    meta::token required_type_ref{ CorSigUncompressToken(required_signature), db() };
-                    WINRT_ASSERT(required_type_ref.is_type_ref());
-
-                    ULONG count = CorSigUncompressData(required_signature);
-
-                    while (count--)
-                    {
-                        requred_var_types.push_back({ required_signature, required_token.db() });
-                        next_token(required_signature, m_db, nullptr);
-                    }
-
-                    std::string dot_name = required_type_ref.get_name(true);
-                    dot_name.resize(dot_name.find_last_of('`'));
-                    meta::token required_type_def = meta::resolve(dot_name)->token();
-                    WINRT_ASSERT(required_type_def.is_type_def());
-
-                    append(values, required_type_def.enum_interface_required_types(var_types ? var_types : &requred_var_types));
-                }
-            }
-        }
-        else
-        {
-            std::vector<meta::signature> requred_var_types;
-
-            PCCOR_SIGNATURE required_signature = get_type_spec();
-            WINRT_VERIFY_(ELEMENT_TYPE_GENERICINST, CorSigUncompressElementType(required_signature));
-            WINRT_VERIFY_(ELEMENT_TYPE_CLASS, CorSigUncompressElementType(required_signature));
-
-            meta::token required_type_ref{ CorSigUncompressToken(required_signature), db() };
-            WINRT_ASSERT(required_type_ref.is_type_ref());
-
-            ULONG count = CorSigUncompressData(required_signature);
-
-            while (count--)
-            {
-                requred_var_types.push_back({ required_signature, db() });
-                next_token(required_signature, m_db, nullptr);
-            }
-
-            std::string dot_name = required_type_ref.get_name(true);
-            dot_name.resize(dot_name.find_last_of('`'));
-            meta::token required_type_def = meta::resolve(dot_name)->token();
-            WINRT_ASSERT(required_type_def.is_type_def());
-
-            append(values, required_type_def.enum_interface_required_types(&requred_var_types));
-        }
-
-        std::sort(values.begin(), values.end());
-        values.erase(std::unique(values.begin(), values.end()), values.end());
-        return values;
-    }
-
-    std::vector<required_type> type::enum_class_required_types() const
-    {
-        WINRT_ASSERT(token().is_type_def());
-
-        std::vector<required_type> values = token().enum_interface_required_types(nullptr);
-
-        for (meta::type const* next = base(); next != nullptr; next = next->base())
-        {
-            append(values, next->token().enum_interface_required_types(nullptr));
-        }
-
-        meta::token default_interface_token = token().find_default_interface();
-
-        if (default_interface_token.is_type_ref())
-        {
-            default_interface_token = default_interface_token.resolve().token();
-        }
-
-        std::vector<required_type> default_interfaces = default_interface_token.enum_interface_required_types(nullptr);
-        default_interfaces.push_back({ default_interface_token.get_name(), default_interface_token });
-
-        remove(values, default_interfaces);
-
-        std::sort(values.begin(), values.end());
-        values.erase(std::unique(values.begin(), values.end()), values.end());
-        return values;
-    }
-
-    generator<token> token::enum_required_interfaces(bool const skip_default) const
-    {
         if (is_type_spec())
         {
-            // todo: implement usings for generics
-            //token = token.resolve_generic().token();
-            return;
+            return get_signature().get_name(generic_params);
         }
 
+        std::string value = meta::get_name(*this);
+        size_t const tick = value.rfind('`');
+
+        if (tick != std::string::npos)
+        {
+            value.resize(tick);
+            value += '<';
+            value += generic_params[0];
+
+            for (size_t i = 1; i != generic_params.size(); ++i)
+            {
+                value += ", ";
+                value += generic_params[i];
+            }
+
+            value += '>';
+        }
+
+        return value;
+    }
+
+    generator<token> token::EnumGenericParams() const
+    {
         WINRT_ASSERT(is_type_def());
+        HCORENUM eh{};
+        std::array<mdToken, max_token_count> buffer;
+        ULONG actual{};
 
-        for (token impl_token : EnumInterfaceImpls())
+        while (S_OK == db->EnumGenericParams(&eh, handle, buffer.data(), max_token_count, &actual))
         {
-            if (skip_default && impl_token.has_attribute(L"Windows.Foundation.Metadata.DefaultAttribute"))
+            for (ULONG i = 0; i != actual; ++i)
             {
-                continue;
-            }
-
-            token interface_token = impl_token.GetInterfaceImplProps();
-
-            if (interface_token.is_type_ref())
-            {
-                interface_token = interface_token.resolve().token();
-            }
-
-            co_yield interface_token;
-
-            WINRT_ASSERT(interface_token.is_type_def() || interface_token.is_type_spec());
-
-            if (!interface_token.is_type_def())
-            {
-                // todo: support recursive enum of generic interfaces
-                continue; // generic type spec
-            }
-
-            for (token recursive_interface_token : interface_token.enum_required_interfaces(false))
-            {
-                co_yield recursive_interface_token;
+                co_yield{ buffer[i], db };
             }
         }
     }
 
-    generator<token> token::enum_override_interfaces() const
+    std::vector<std::string> token::get_generic_params() const
     {
-        for (token impl_token : EnumInterfaceImpls())
+        if (is_type_spec())
         {
-            if (!impl_token.has_attribute(L"Windows.Foundation.Metadata.OverridableAttribute"))
-            {
-                continue;
-            }
-
-            token interface_token = impl_token.GetInterfaceImplProps();
-
-            if (interface_token.is_type_ref())
-            {
-                interface_token = interface_token.resolve().token();
-            }
-
-            co_yield interface_token;
+            return get_signature().get_generic_params({});
         }
+
+        if (is_type_ref())
+        {
+            return {};
+        }
+
+        std::vector<std::string> generic_params;
+        std::array<wchar_t, max_name_size> buffer;
+        ULONG actual{};
+
+        for (token param : EnumGenericParams())
+        {
+            winrt::check_hresult(db->GetGenericParamProps(
+                param.handle,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr,
+                buffer.data(),
+                max_name_size,
+                &actual));
+
+            generic_params.push_back(to_string({ buffer.data(), actual - 1 }));
+        }
+
+        return generic_params;
     }
-    std::vector<factory_attribute> token::enum_factory_attributes() const
+
+    std::vector<factory_attribute> token::get_factory_attributes() const
     {
-        WINRT_ASSERT(m_db);
         std::vector<factory_attribute> factory_attributes;
 
         for (token attribute_token : EnumCustomAttributes())
         {
             uint8_t const* data{};
             ULONG data_length{};
-            mdToken attribute{};
-            winrt::check_hresult(m_db->GetCustomAttributeProps(attribute_token.m_handle,
+            token attribute{ 0, db };
+
+            winrt::check_hresult(db->GetCustomAttributeProps(
+                attribute_token.handle,
                 nullptr,
-                &attribute,
+                &attribute.handle,
                 reinterpret_cast<void const**>(&data),
                 &data_length));
-            WINRT_ASSERT(TypeFromToken(attribute) == mdtMemberRef);
+
+            WINRT_ASSERT(attribute.is_member_ref());
             const uint8_t* const data_end = data + data_length;
 
+            // TODO: update meta::signature to handle this and simplify this parsing code...
             PCCOR_SIGNATURE signature{};
             ULONG signature_length{};
 
-            winrt::check_hresult(m_db->GetMemberRefProps(attribute,
-                &attribute,
+            winrt::check_hresult(attribute.db->GetMemberRefProps(
+                attribute.handle,
+                &attribute.handle,
                 nullptr,
                 0,
                 nullptr,
                 &signature,
                 &signature_length));
-            WINRT_ASSERT(TypeFromToken(attribute) == mdtTypeRef);
+
+            WINRT_ASSERT(attribute.is_type_ref());
             const PCCOR_SIGNATURE signature_end = signature + signature_length;
 
-            factory_attribute result;
+            bool activatable{};
+            type const* factory_type{};
 
             {
-                std::array<wchar_t, max_name_size> name_buffer;
-                ULONG actual_name_size{};
-                winrt::check_hresult(m_db->GetTypeRefProps(attribute,
-                    nullptr,
-                    name_buffer.data(),
-                    max_name_size,
-                    &actual_name_size));
-                const std::wstring_view name{ name_buffer.data(), actual_name_size - 1 };
-                if (name == factory_attribute::activatable_name)
+                std::string const name = attribute.get_name();
+
+                if (name == "Windows.Foundation.Metadata.ActivatableAttribute")
                 {
-                    result.activatable = true;
+                    activatable = true;
                 }
-                else if (name == factory_attribute::static_name)
+                else if (name == "Windows.Foundation.Metadata.StaticAttribute")
                 {
-                    result.activatable = false;
+                    activatable = false;
                 }
                 else
                 {
@@ -1356,7 +1104,7 @@ namespace cppwinrt::meta
                 }
             }
 
-            const auto prologue = ReadDataFromBlob<uint16_t>(data);
+            const auto prologue = read_blob<uint16_t>(data);
             WINRT_ASSERT(prologue == 0x0001);
 
             WINRT_ASSERT(*signature == IMAGE_CEE_CS_CALLCONV_HASTHIS);
@@ -1375,28 +1123,28 @@ namespace cppwinrt::meta
                 {
                 case ELEMENT_TYPE_CLASS:
                 {
-                    token tk{ CorSigUncompressToken(signature), m_db };
+                    token tk{ CorSigUncompressToken(signature), db };
                     WINRT_ASSERT(tk.is_type_ref());
-                    WINRT_ASSERT(tk.get_name(true) == "System.Type");
+                    WINRT_ASSERT(tk.get_name() == "System.Type");
                 }
-                result.factory = meta::resolve(ReadDataFromBlob<std::string_view>(data))->token();
+                factory_type = find_type(read_blob<std::string>(data));
                 break;
 
                 case ELEMENT_TYPE_VALUETYPE:
                 {
-                    token tk{ CorSigUncompressToken(signature), m_db };
+                    token tk{ CorSigUncompressToken(signature), db };
                     WINRT_ASSERT(tk.is_type_ref());
-                    WINRT_ASSERT(tk.get_name(true) == "Windows.Foundation.Metadata.Platform");
+                    WINRT_ASSERT(tk.get_name() == "Windows.Foundation.Metadata.Platform");
                 }
-                ReadDataFromBlob<int32_t>(data);
+                read_blob<int32_t>(data);
                 break;
 
                 case ELEMENT_TYPE_U4:
-                    ReadDataFromBlob<uint32_t>(data);
+                    read_blob<uint32_t>(data);
                     break;
 
                 case ELEMENT_TYPE_STRING:
-                    ReadDataFromBlob<std::string_view>(data);
+                    read_blob<std::string>(data);
                     break;
 
                 default:
@@ -1404,57 +1152,74 @@ namespace cppwinrt::meta
                     break;
                 }
             }
-            factory_attributes.push_back(result);
+
+            factory_attributes.push_back({ factory_type, activatable });
         }
+
+        std::sort(factory_attributes.begin(), factory_attributes.end(),
+            [](factory_attribute const& left, factory_attribute const& right)
+        {
+            std::string_view left_name;
+            std::string_view right_name;
+
+            if (left.type)
+            {
+                left_name = left.type->full_name();
+            }
+
+            if (right.type)
+            {
+                right_name = right.type->full_name();
+            }
+
+            return left_name < right_name;
+        });
 
         return factory_attributes;
     }
 
-    std::vector<composable_attribute> token::enum_composable_attributes() const
+    std::vector<composable_attribute> token::get_composable_attributes() const
     {
         std::vector<composable_attribute> composable_attributes;
 
         for (token attribute_token : EnumCustomAttributes())
         {
             uint8_t const* data{};
-            ULONG data_length;
-            mdToken attribute{};
-            winrt::check_hresult(m_db->GetCustomAttributeProps(attribute_token.m_handle,
+            ULONG data_length{};
+            token attribute{ 0, db };
+
+            winrt::check_hresult(db->GetCustomAttributeProps(
+                attribute_token.handle,
                 nullptr,
-                &attribute,
+                &attribute.handle,
                 reinterpret_cast<void const**>(&data),
                 &data_length));
-            WINRT_ASSERT(TypeFromToken(attribute) == mdtMemberRef);
+
+            WINRT_ASSERT(attribute.is_member_ref());
             const uint8_t* const data_end = data + data_length;
 
-            PCCOR_SIGNATURE signature;
-            ULONG signature_length;
+            // TODO: update meta::signature to handle this and simplify this parsing code...
+            PCCOR_SIGNATURE signature{};
+            ULONG signature_length{};
 
-            winrt::check_hresult(m_db->GetMemberRefProps(attribute,
-                &attribute,
+            winrt::check_hresult(attribute.db->GetMemberRefProps(
+                attribute.handle,
+                &attribute.handle,
                 nullptr,
                 0,
                 nullptr,
                 &signature,
                 &signature_length));
-            WINRT_ASSERT(TypeFromToken(attribute) == mdtTypeRef);
+
+            WINRT_ASSERT(attribute.is_type_ref());
             const PCCOR_SIGNATURE signature_end = signature + signature_length;
 
+            if (attribute.get_name() != "Windows.Foundation.Metadata.ComposableAttribute")
             {
-                std::array<wchar_t, max_name_size> name_buffer;
-                ULONG actual_name_size{};
-                winrt::check_hresult(m_db->GetTypeRefProps(attribute,
-                    nullptr,
-                    name_buffer.data(),
-                    max_name_size,
-                    &actual_name_size));
-                if (composable_attribute::name != std::wstring_view{ name_buffer.data(), actual_name_size - 1 })
-                {
-                    continue;
-                }
+                continue;
             }
 
-            const auto prologue = ReadDataFromBlob<uint16_t>(data);
+            const auto prologue = read_blob<uint16_t>(data);
             WINRT_ASSERT(prologue == 0x0001);
 
             WINRT_ASSERT(*signature == IMAGE_CEE_CS_CALLCONV_HASTHIS);
@@ -1464,16 +1229,14 @@ namespace cppwinrt::meta
             WINRT_ASSERT(*signature == ELEMENT_TYPE_VOID);
             CorSigUncompressElementType(signature);
 
-            composable_attribute result;
-
             // First parameter should always be System.Type
             CorElementType category = CorSigUncompressElementType(signature);
             WINRT_ASSERT(category == ELEMENT_TYPE_CLASS);
-            token tk{ CorSigUncompressToken(signature), m_db };
+            token tk{ CorSigUncompressToken(signature), db };
             WINRT_ASSERT(tk.is_type_ref());
-            WINRT_ASSERT(tk.get_name(true) == "System.Type");
+            WINRT_ASSERT(tk.get_name() == "System.Type");
 
-            result.factory = meta::resolve(ReadDataFromBlob<std::string_view>(data))->token();
+            type const* factory_type = find_type(read_blob<std::string>(data));
 
             WINRT_ASSERT(signature <= signature_end);
             WINRT_ASSERT(data <= data_end);
@@ -1481,13 +1244,12 @@ namespace cppwinrt::meta
             // Second parameter is always the CompositionType
             category = CorSigUncompressElementType(signature);
             WINRT_ASSERT(category == ELEMENT_TYPE_VALUETYPE);
-            tk = token{ CorSigUncompressToken(signature), m_db };
+            tk = token{ CorSigUncompressToken(signature), db };
             WINRT_ASSERT(tk.is_type_ref());
-            WINRT_ASSERT(tk.get_name(true) == "Windows.Foundation.Metadata.CompositionType");
+            WINRT_ASSERT(tk.get_name() == "Windows.Foundation.Metadata.CompositionType");
 
-            result.type = ReadDataFromBlob<composable_attribute::composition_type>(data);
-            WINRT_ASSERT(result.type == composable_attribute::composition_type::protected_v ||
-                result.type == composable_attribute::composition_type::public_v);
+            composition_access access = read_blob<composition_access>(data);
+            WINRT_ASSERT(access == composition_access::protected_v || access == composition_access::public_v);
 
             WINRT_ASSERT(signature <= signature_end);
             WINRT_ASSERT(data <= data_end);
@@ -1495,7 +1257,7 @@ namespace cppwinrt::meta
             // Third parameter is always the version
             category = CorSigUncompressElementType(signature);
             WINRT_ASSERT(category == ELEMENT_TYPE_U4);
-            ReadDataFromBlob<uint32_t>(data);
+            read_blob<uint32_t>(data);
 
             WINRT_ASSERT(signature <= signature_end);
             WINRT_ASSERT(data <= data_end);
@@ -1506,14 +1268,14 @@ namespace cppwinrt::meta
                 category = CorSigUncompressElementType(signature);
                 if (category == ELEMENT_TYPE_STRING)
                 {
-                    ReadDataFromBlob<std::string_view>(data);
+                    read_blob<std::string>(data);
                 }
                 else if (category == ELEMENT_TYPE_VALUETYPE)
                 {
-                    tk = token{ CorSigUncompressToken(signature), m_db };
+                    tk = token{ CorSigUncompressToken(signature), db };
                     WINRT_ASSERT(tk.is_type_ref());
-                    WINRT_ASSERT(tk.get_name(true) == "Windows.Foundation.Metadata.Platform");
-                    ReadDataFromBlob<int32_t>(data);
+                    WINRT_ASSERT(tk.get_name() == "Windows.Foundation.Metadata.Platform");
+                    read_blob<int32_t>(data);
                 }
                 else
                 {
@@ -1521,32 +1283,51 @@ namespace cppwinrt::meta
                 }
             }
 
-            composable_attributes.push_back(result);
+            composable_attributes.push_back({ factory_type, access });
         }
 
         return composable_attributes;
     }
 
-    generator<std::pair<std::string, std::string>> token::enum_interface_usings() const
+    std::vector<token> token::get_direct_override_interfaces() const
     {
-        std::vector<required_type> required_types = enum_interface_required_types(nullptr);
-        required_types.push_back({ get_name(), *this });
+        std::vector<token> interfaces;
+        add_override_interfaces(interfaces, *this);
+        return interfaces;
+    }
 
-        std::map<std::string, std::vector<size_t>> usings;
+    std::vector<token> token::get_all_override_interfaces() const
+    {
+        std::vector<token> interfaces;
+        add_override_interfaces(interfaces, *this);
 
-        for (size_t i = 0; i != required_types.size(); ++i)
+        for (token base = get_base(); base; base = base.get_base())
         {
-            for (std::string const& method : required_types[i].type_def.enum_method_names())
+            add_override_interfaces(interfaces, base);
+        }
+
+        return interfaces;
+    }
+
+    generator<using_pair> token::get_interface_usings() const
+    {
+        std::vector<required> required_interfaces = get_interface_required();
+        required_interfaces.push_back({ get_name(), *this });
+        using using_map = std::map<std::string, std::vector<size_t>>;
+        using_map usings;
+
+        for (size_t i = 0; i != required_interfaces.size(); ++i)
+        {
+            for (std::string const& method : required_interfaces[i].token.get_method_names())
             {
                 usings[method].push_back(i);
             }
         }
 
-        for (std::map<std::string, std::vector<size_t>>::value_type& pair : usings)
+        for (using_map::value_type& pair : usings)
         {
             std::sort(pair.second.begin(), pair.second.end());
-            std::vector<size_t>::iterator end = std::unique(pair.second.begin(), pair.second.end());
-            pair.second.erase(end, pair.second.end());
+            pair.second.erase(std::unique(pair.second.begin(), pair.second.end()), pair.second.end());
 
             if (pair.second.size() <= 1)
             {
@@ -1555,318 +1336,97 @@ namespace cppwinrt::meta
 
             for (size_t i : pair.second)
             {
-                co_yield{ required_types[i].name, pair.first };
+                co_yield{ pair.first, required_interfaces[i].name };
             }
         }
     }
 
-    generator<std::tuple<std::string, std::string, bool>> type::enum_class_usings() const
+    generator<using_pair> token::get_class_usings() const
     {
-        std::map<std::string, std::vector<std::pair<required_type, bool>>> usings;
+        token default_interface = get_default();
+        std::vector<required> required_interfaces = default_interface.get_interface_required();
+        required_interfaces.push_back({ default_interface.get_name(), default_interface });
+        using using_map = std::map<std::string, std::vector<size_t>>;
+        using_map usings;
 
+        for (size_t i = 0; i != required_interfaces.size(); ++i)
         {
-            meta::token default_interface = token().find_default_interface();
-
-            if (default_interface.is_type_ref())
+            for (std::string const& method : required_interfaces[i].token.get_method_names())
             {
-                default_interface = default_interface.resolve().token();
-            }
-
-            std::vector<required_type> required_types = default_interface.enum_interface_required_types(nullptr);
-            required_types.push_back({ default_interface.get_name(), default_interface.get_type_def() });
-
-            for (size_t i = 0; i != required_types.size(); ++i)
-            {
-                for (std::string const& method : required_types[i].type_def.enum_method_names())
-                {
-                    usings[method].push_back({ required_types[i], true });
-                }
+                usings[method].push_back(UINTPTR_MAX);
             }
         }
 
-        {
-            std::vector<required_type> required_types = enum_class_required_types();
+        required_interfaces = get_class_required_excluding_default();
 
-            for (size_t i = 0; i != required_types.size(); ++i)
+        for (size_t i = 0; i != required_interfaces.size(); ++i)
+        {
+            for (std::string const& method : required_interfaces[i].token.get_method_names())
             {
-                for (std::string const& method : required_types[i].type_def.enum_method_names())
-                {
-                    usings[method].push_back({ required_types[i], false });
-                }
+                usings[method].push_back(i);
             }
         }
 
-        for (std::map<std::string, std::vector<std::pair<required_type, bool>>>::value_type& pair : usings)
+        for (using_map::value_type& pair : usings)
         {
-            std::sort(pair.second.begin(), pair.second.end(),
-                [](std::pair<required_type, bool> const& left, std::pair<required_type, bool> const& right)
-            {
-                return left.first < right.first;
-            });
+            std::sort(pair.second.begin(), pair.second.end());
+            pair.second.erase(std::unique(pair.second.begin(), pair.second.end()), pair.second.end());
 
-            std::vector<std::pair<required_type, bool>>::iterator end = std::unique(pair.second.begin(), pair.second.end(),
-                [](std::pair<required_type, bool> const& left, std::pair<required_type, bool> const& right)
-            {
-                return left.first == right.first;
-            });
-
-            pair.second.erase(end, pair.second.end());
-
-            if (pair.second.size() > 1)
-            {
-                for (std::pair<required_type, bool> required : pair.second)
-                {
-                    co_yield{ required.first.name, pair.first, required.second };
-                }
-            }
-        }
-    }
-
-    generator<field> token::enum_fields(token_callback callback) const
-    {
-        std::array<wchar_t, max_name_size> name_buffer;
-        ULONG actual_name_size{};
-        PCCOR_SIGNATURE signature{};
-        name_converter converter;
-
-        for (token member_token : EnumMembers())
-        {
-            WINRT_ASSERT(member_token.is_field_def());
-
-            winrt::check_hresult(m_db->GetFieldProps(member_token.m_handle,
-                nullptr,
-                name_buffer.data(),
-                max_name_size,
-                &actual_name_size,
-                nullptr,
-                &signature,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr));
-
-            if (callback)
-            {
-                auto sig = signature + 1;
-                next_token(sig, db(), callback);
-            }
-
-            converter.convert(name_buffer.data(), actual_name_size - 1);
-            co_yield{ std::string(converter), signature + 1 };
-        }
-    }
-
-    generator<enumerator> token::enum_enumerators() const
-    {
-        std::array<wchar_t, max_name_size> name_buffer;
-        ULONG actual_name_size{};
-        UVCP_CONSTANT enum_value{};
-        name_converter converter;
-
-        for (token member_token : EnumMembers())
-        {
-            WINRT_ASSERT(member_token.is_field_def());
-
-            winrt::check_hresult(m_db->GetFieldProps(member_token.m_handle,
-                nullptr,
-                name_buffer.data(),
-                max_name_size,
-                &actual_name_size,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr,
-                &enum_value,
-                nullptr));
-
-            if (enum_value == nullptr)
+            if (pair.second.size() <= 1)
             {
                 continue;
             }
 
-            converter.convert(name_buffer.data(), actual_name_size - 1);
-
-            co_yield{ member_token, std::string(converter), *static_cast<int32_t const*>(enum_value) };
+            for (size_t i : pair.second)
+            {
+                if (i == UINTPTR_MAX)
+                {
+                    co_yield{ pair.first, {} };
+                }
+                else
+                {
+                    co_yield{ pair.first, required_interfaces[i].name };
+                }
+            }
         }
     }
 
-
-
-    generator<method> token::enum_type_def_methods(token_callback callback) const
-    {
-        WINRT_ASSERT(is_type_def());
-
-        std::array<wchar_t, max_name_size> name_buffer;
-        ULONG actual_name_size{};
-        PCCOR_SIGNATURE signature{};
-        name_converter converter;
-        DWORD flags{};
-
-        for (token member_token : EnumMembers())
-        {
-            WINRT_ASSERT(member_token.is_method_def());
-
-            winrt::check_hresult(m_db->GetMemberProps(member_token.m_handle,
-                nullptr,
-                name_buffer.data(),
-                max_name_size,
-                &actual_name_size,
-                &flags,
-                &signature,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr));
-
-            converter.convert(name_buffer.data(), actual_name_size - 1);
-
-            CorSigUncompressCallingConv(signature); // Skip preamble
-            CorSigUncompressData(signature); // Skip param count
-
-            method method{ member_token, std::string(converter), flags };
-            method.token.unpack_type_def_method(signature, method.return_type, method.params, callback);
-            co_yield std::move(method);
-        }
-    }
-
-    generator<method> token::enum_type_spec_methods(std::vector<meta::signature>& var_types, token_callback callback) const
+    signature token::get_signature() const
     {
         WINRT_ASSERT(is_type_spec());
-        WINRT_ASSERT(var_types.empty());
-
-        PCCOR_SIGNATURE type_signature = get_type_spec();
-        WINRT_VERIFY_(ELEMENT_TYPE_GENERICINST, CorSigUncompressElementType(type_signature));
-        WINRT_VERIFY_(ELEMENT_TYPE_CLASS, CorSigUncompressElementType(type_signature));
-        meta::token type_ref{ CorSigUncompressToken(type_signature), db() };
-        WINRT_ASSERT(type_ref.is_type_ref());
-        std::string dot_name = type_ref.get_name(true);
-        dot_name.resize(dot_name.find_last_of('`'));
-        meta::token type_def = meta::resolve(dot_name)->token();
-        WINRT_ASSERT(type_def.is_type_def());
-
-        ULONG count = CorSigUncompressData(type_signature);
-
-        while (count--)
-        {
-            var_types.push_back({ type_signature, m_db });
-            next_token(type_signature, m_db, callback);
-        }
-
-        std::array<wchar_t, max_name_size> name_buffer;
-        ULONG actual_name_size{};
-        PCCOR_SIGNATURE method_signature{};
-        name_converter converter;
-        DWORD flags{};
-
-        for (token member_token : type_def.EnumMembers())
-        {
-            WINRT_ASSERT(member_token.is_method_def());
-
-            winrt::check_hresult(member_token.db()->GetMemberProps(member_token.m_handle,
-                nullptr,
-                name_buffer.data(),
-                max_name_size,
-                &actual_name_size,
-                &flags,
-                &method_signature,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr));
-
-            converter.convert(name_buffer.data(), actual_name_size - 1);
-
-            CorSigUncompressCallingConv(method_signature); // Skip preamble
-            CorSigUncompressData(method_signature); // Skip param count
-
-            method method{ member_token, std::string(converter), flags };
-            method.token.unpack_type_spec_method(var_types, method_signature, method.return_type, method.params, callback);
-            co_yield std::move(method);
-        }
-    }
-
-    generator<method> token::enum_methods(token_callback callback) const
-    {
-        WINRT_ASSERT(is_type_def());
-        return enum_type_def_methods(callback);
-    }
-
-    generator<std::string> token::enum_method_names() const
-    {
-        std::array<wchar_t, max_name_size> name_buffer;
-        ULONG actual_name_size{};
-        name_converter converter;
-        DWORD flags{};
-
-        for (token member_token : EnumMembers())
-        {
-            WINRT_ASSERT(member_token.is_method_def());
-
-            winrt::check_hresult(m_db->GetMemberProps(member_token.m_handle,
-                nullptr,
-                name_buffer.data(),
-                max_name_size,
-                &actual_name_size,
-                &flags,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr,
-                nullptr));
-
-            converter.convert(name_buffer.data(), actual_name_size - 1);
-            co_yield std::string(get_method_name(converter, flags));
-        }
-    }
-
-    std::pair<bool, std::string_view> token::get_string(wchar_t const* const attribute) const
-    {
-        void const* data{};
+        PCCOR_SIGNATURE signature{};
         ULONG size{};
+        winrt::check_hresult(db->GetTypeSpecFromToken(handle, &signature, &size));
+        return { signature, db };
+    }
 
-        HRESULT const hr = m_db->GetCustomAttributeByName(m_handle,
-            attribute,
-            &data,
-            &size);
+    token token::get_definition() const
+    {
+        WINRT_ASSERT(is_type_def() || is_type_ref() || is_type_spec());
 
-        if (hr != S_OK)
+        if (is_type_def())
         {
-            return{ false,{} };
+            return *this;
         }
 
-        PCCOR_SIGNATURE signature = static_cast<PCCOR_SIGNATURE>(data);
+        if (is_type_ref())
+        {
+            return find_type(get_name())->token;
+        }
 
-        WINRT_ASSERT(*signature == 1);
-        ++signature;
-        WINRT_ASSERT(*signature == 0);
-        ++signature;
-
-        ULONG const count = CorSigUncompressData(signature);
-        return { true,{ reinterpret_cast<char const*>(signature), count } };
+        return find_type(get_signature().get_token().get_name())->token;
     }
 
     std::string token::get_guid(char const* format) const
     {
         void const* data{};
         ULONG size{};
-
-        winrt::check_hresult(m_db->GetCustomAttributeByName(m_handle,
-            L"Windows.Foundation.Metadata.GuidAttribute",
-            &data,
-            &size));
-
+        winrt::check_hresult(db->GetCustomAttributeByName(handle, L"Windows.Foundation.Metadata.GuidAttribute", &data, &size));
         GUID const& guid = *reinterpret_cast<GUID const*>(static_cast<uint8_t const*>(data) + 2);
 
         std::string result(68, '?');
 
-        int count = sprintf_s(result.data(),
-            result.size() + 1,
+        sprintf_s(result.data(), result.size() + 1,
             format,
             guid.Data1,
             guid.Data2,
@@ -1880,23 +1440,388 @@ namespace cppwinrt::meta
             guid.Data4[6],
             guid.Data4[7]);
 
-        result.resize(count);
-
         return result;
     }
 
-    PCCOR_SIGNATURE token::get_type_spec() const
+    generator<method> token::get_methods(token_callback callback) const
     {
-        WINRT_ASSERT(is_type_spec());
+        token type_def = get_definition();
+        std::array<wchar_t, max_name_size> buffer;
+        ULONG actual{};
+        DWORD flags{};
+        signature signature{ nullptr, type_def.db };
 
-        PCCOR_SIGNATURE signature{};
-        ULONG size{};
+        for (token member_token : type_def.EnumMembers())
+        {
+            WINRT_ASSERT(member_token.is_method_def());
 
-        winrt::check_hresult(m_db->GetTypeSpecFromToken(m_handle,
-            &signature,
-            &size));
+            winrt::check_hresult(member_token.db->GetMemberProps(
+                member_token.handle,
+                nullptr,
+                buffer.data(),
+                max_name_size,
+                &actual,
+                &flags,
+                &signature.data,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr));
 
-        return signature;
+            if (0 == wcscmp(buffer.data(), L".ctor"))
+            {
+                continue;
+            }
+
+            CorSigUncompressCallingConv(signature.data);
+            CorSigUncompressData(signature.data);
+
+            method method{ member_token, to_string({ buffer.data(), actual - 1 }), flags };
+            method.return_type.signature = signature;
+            signature = signature.next(callback);
+            bool first = static_cast<CorElementType>(*method.return_type.signature.data) != ELEMENT_TYPE_VOID;
+            ULONG sequence{};
+
+            for (token param_token : member_token.EnumParams())
+            {
+                winrt::check_hresult(param_token.db->GetParamProps(
+                    param_token.handle,
+                    nullptr,
+                    &sequence,
+                    buffer.data(),
+                    max_name_size,
+                    &actual,
+                    &flags,
+                    nullptr,
+                    nullptr,
+                    nullptr));
+
+                if (first && sequence == 0)
+                {
+                    first = false;
+                    method.return_type.name = to_string({ buffer.data(), actual - 1 });
+                }
+                else
+                {
+                    method.params.push_back({ to_string({ buffer.data(), actual - 1 }), flags, signature });
+                    signature = signature.next(callback);
+                }
+            }
+
+            co_yield method;
+        }
     }
 
+    generator<std::string> token::get_method_names() const
+    {
+        token type_def = get_definition();
+        std::array<wchar_t, max_name_size> buffer;
+        ULONG actual{};
+        DWORD flags{};
+
+        for (token member_token : type_def.EnumMembers())
+        {
+            WINRT_ASSERT(member_token.is_method_def());
+
+            winrt::check_hresult(member_token.db->GetMemberProps(
+                member_token.handle,
+                nullptr,
+                buffer.data(),
+                max_name_size,
+                &actual,
+                &flags,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr));
+
+            co_yield to_method_name(to_string({ buffer.data(), actual - 1 }), flags);
+        }
+    }
+
+    bool token::has_attribute(wchar_t const* attribute) const noexcept
+    {
+        return S_OK == db->GetCustomAttributeByName(handle, attribute, nullptr, nullptr);
+    }
+
+    bool token::is_default() const noexcept
+    {
+        return has_attribute(L"Windows.Foundation.Metadata.DefaultAttribute");
+    }
+
+    bool token::is_overridable() const noexcept
+    {
+        return has_attribute(L"Windows.Foundation.Metadata.OverridableAttribute");
+    }
+
+    bool token::is_api_contract() const noexcept
+    {
+        return has_attribute(L"Windows.Foundation.Metadata.ApiContractAttribute");
+    }
+
+    bool token::is_flags() const noexcept
+    {
+        return has_attribute(L"System.FlagsAttribute");
+    }
+
+    bool token::get_attribute_string(wchar_t const* attribute, std::string& value) const
+    {
+        void const* data{};
+        ULONG size{};
+        HRESULT const hr = db->GetCustomAttributeByName(handle, attribute, &data, &size);
+
+        if (hr != S_OK)
+        {
+            return false;
+        }
+
+        PCCOR_SIGNATURE signature = static_cast<PCCOR_SIGNATURE>(data);
+        WINRT_ASSERT(*signature == 1);
+        ++signature;
+        WINRT_ASSERT(*signature == 0);
+        ++signature;
+
+        ULONG const count = CorSigUncompressData(signature);
+        value.assign(reinterpret_cast<char const*>(signature), count);
+        return true;
+    }
+
+    generator<enumerator> token::get_enumerators() const
+    {
+        std::array<wchar_t, max_name_size> buffer;
+        ULONG actual{};
+        UVCP_CONSTANT enum_value{};
+
+        for (token member_token : EnumMembers())
+        {
+            WINRT_ASSERT(member_token.is_field_def());
+
+            winrt::check_hresult(member_token.db->GetFieldProps(
+                member_token.handle,
+                nullptr,
+                buffer.data(),
+                max_name_size,
+                &actual,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr,
+                &enum_value,
+                nullptr));
+
+            if (enum_value == nullptr)
+            {
+                continue;
+            }
+
+            co_yield{ member_token, to_string({ buffer.data(), actual - 1 }), *static_cast<int32_t const*>(enum_value) };
+        }
+    }
+
+    std::vector<field> token::get_fields(token_callback callback) const
+    {
+        std::vector<field> fields;
+        std::array<wchar_t, max_name_size> buffer;
+        ULONG actual{};
+        signature signature{ nullptr, db };
+
+        for (token member_token : EnumMembers())
+        {
+            WINRT_ASSERT(member_token.is_field_def());
+
+            winrt::check_hresult(member_token.db->GetFieldProps(member_token.handle,
+                nullptr,
+                buffer.data(),
+                max_name_size,
+                &actual,
+                nullptr,
+                &signature.data,
+                nullptr,
+                nullptr,
+                nullptr,
+                nullptr));
+
+            ++signature.data;
+
+            fields.push_back({ to_string({ buffer.data(), actual - 1 }), signature });
+
+            if (callback)
+            {
+                signature.next(callback);
+            }
+        }
+
+        return fields;
+    }
+
+    std::vector<required> token::get_interface_required() const
+    {
+        std::vector<required> values;
+        append_required(values, *this, get_generic_params());
+        sort_unique(values);
+        return values;
+    }
+
+    std::vector<required> token::get_class_required() const
+    {
+        std::vector<required> values = get_class_required_base(*this);
+
+        if (values.empty())
+        {
+            return values;
+        }
+
+        std::string default_name = get_default().get_name();
+
+        std::vector<required>::iterator position = std::find_if(values.begin(), values.end(),
+            [&](required const& value)
+        {
+            return value.name == default_name;
+        });
+
+        std::rotate(values.begin(), position, position + 1);
+        return values;
+    }
+
+    std::vector<required> token::get_class_required_excluding_default() const
+    {
+        std::vector<required> values = get_class_required_base(*this);
+
+        if (values.empty())
+        {
+            return values;
+        }
+
+        exclude_required(values, get_default());
+        return values;
+    }
+
+    token token::get_extends() const
+    {
+        WINRT_ASSERT(is_type_def());
+        mdToken extends{};
+        winrt::check_hresult(db->GetTypeDefProps(handle, nullptr, 0, nullptr, nullptr, &extends));
+        return{ extends, db };
+    }
+
+    token token::get_base() const
+    {
+        token base = get_extends();
+
+        if (base.get_name() == "System.Object")
+        {
+            return {};
+        }
+
+        return base.get_definition();
+    }
+
+    token token::get_default() const
+    {
+        for (token impl_token : EnumInterfaceImpls())
+        {
+            if (impl_token.is_default())
+            {
+                return impl_token.GetInterfaceImplProps();
+            }
+        }
+
+        return {};
+    }
+
+    method token::get_delegate(token_callback callback) const
+    {
+        return *get_methods(callback).begin();
+    }
+
+    bool operator==(token left, token right) noexcept
+    {
+        WINRT_ASSERT(left.is_type_def());
+        return left.handle == right.handle && left.db == right.db;
+    }
+
+    bool operator!=(token left, token right) noexcept
+    {
+        return !(left == right);
+    }
+
+    bool operator<(token left, token right) noexcept
+    {
+        WINRT_ASSERT(left.is_type_def());
+        return (left.handle < right.handle || (!(right.handle < left.handle) && left.db < right.db));
+    }
+
+    bool operator==(required const& left, required const& right) noexcept
+    {
+        return left.name == right.name;
+    }
+
+    bool operator!=(required const& left, required const& right) noexcept
+    {
+        return !(left == right);
+    }
+
+    bool operator<(required const& left, required const& right) noexcept
+    {
+        return left.name < right.name;
+    }
+
+    bool method::is_special() const noexcept
+    {
+        return IsMdSpecialName(flags);
+    }
+
+    bool method::has_return_type() const noexcept
+    {
+        return static_cast<CorElementType>(*return_type.signature.data) != ELEMENT_TYPE_VOID;
+    }
+
+    std::string method::get_name() const noexcept
+    {
+        return to_method_name(raw_name, flags);
+    }
+
+    std::string method::get_abi_name() const noexcept
+    {
+        std::string value;
+
+        if (token.get_attribute_string(L"Windows.Foundation.Metadata.OverloadAttribute", value))
+        {
+            return value;
+        }
+
+        return raw_name;
+    }
+
+    type::type(std::string&& name, meta::token token, bool const filtered) :
+        buffer(std::move(name)),
+        offset(buffer.rfind('.') + 1),
+        token(token),
+        filtered(filtered)
+    {
+        if (offset == 0)
+        {
+            offset = 1;
+        }
+    }
+
+    std::string_view type::full_name() const noexcept
+    {
+        return buffer;
+    }
+
+    std::string_view type::name_space() const noexcept
+    {
+        return { buffer.data(), offset - 1 };
+    }
+
+    std::string_view type::name() const noexcept
+    {
+        return { buffer.data() + offset, buffer.size() - offset };
+    }
 }

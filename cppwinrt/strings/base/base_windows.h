@@ -237,8 +237,6 @@ namespace Windows::Foundation
 
 namespace impl
 {
-    // TODO: with the ABI simplification, there's no need for hte accessors traits. We can simply use ADL.
-
     template <typename T>
     struct accessors<T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
     {

@@ -155,9 +155,6 @@
       <Filter>strings\base</Filter>
     </ClInclude>
     <ClInclude Include="source\settings.h" />
-    <ClInclude Include="strings\write\write_struct_abi.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
     <ClInclude Include="strings\base\base_constexpr_traits.h">
       <Filter>strings\base</Filter>
     </ClInclude>
@@ -170,139 +167,21 @@
     <ClInclude Include="strings\base\base_constexpr_string.h">
       <Filter>strings\base</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_category.h">
-      <Filter>strings\write</Filter>
+    <ClInclude Include="source\component_writer.h" />
+    <ClInclude Include="strings\base\base_reference_produce.h">
+      <Filter>strings\base</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_class_base.h">
-      <Filter>strings\write</Filter>
+    <ClInclude Include="strings\base\base_warnings.h">
+      <Filter>strings\base</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_class_default_interface.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_class_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_constructor_declaration.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_constructor_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_consume.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_default_constructor_declaration.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_default_constructor_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_default_interface.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_delegate_abi.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_delegate_abi_method.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_delegate_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_delegate_member_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_delegate_produce.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_deprecated.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_edit_warning_header.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_edit_warning_source.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_enumeration.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_enumeration_flag.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_enumerator.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_guid.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_abi.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_abi_method.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_consume.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_method_declaration.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_method_test.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_produce.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_produce_method.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_logo.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_name.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_require.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_shim.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_shim_body.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_shim_post.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_shim_pre.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_shim_pre_array.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_shim_pre_nullptr.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_static_class_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_static_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_static_method_declaration.h">
-      <Filter>strings\write</Filter>
+    <ClInclude Include="strings\base\base_natvis.h">
+      <Filter>strings\base</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_struct_abi.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_struct_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_using.h">
+    <ClInclude Include="source\helpers.h" />
+    <ClInclude Include="strings\write\write_class_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_class_override.h">
@@ -311,25 +190,6 @@
     <ClInclude Include="strings\write\write_class_override_constructor.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_composable_constructor_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_edit_warning_h.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_override.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_override_method.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_override_method_declaration.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_interface_override_method_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="source\component_writer.h" />
     <ClInclude Include="strings\write\write_component_class_activation.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -357,6 +217,9 @@
     <ClInclude Include="strings\write\write_component_factory_activate_instance_not_implemented.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\write\write_component_factory_forwarding_composable.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
     <ClInclude Include="strings\write\write_component_factory_forwarding_constructor.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -369,6 +232,12 @@
     <ClInclude Include="strings\write\write_component_lock_declaration.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\write\write_component_produce_override_dispatch.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_produce_override_dispatch_method.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
     <ClInclude Include="strings\write\write_component_source.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -378,16 +247,82 @@
     <ClInclude Include="strings\write\write_component_static_class_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\base\base_reference_produce.h">
-      <Filter>strings\base</Filter>
+    <ClInclude Include="strings\write\write_composable_constructor_definition.h">
+      <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\base\base_warnings.h">
-      <Filter>strings\base</Filter>
+    <ClInclude Include="strings\write\write_constructor_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_default_constructor_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_delegate_abi.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_delegate_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_delegate_member_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_delegate_produce.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_edit_warning_header.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_edit_warning_source.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_enumeration.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_enumeration_flag.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_abi.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_consume.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_definition.h">
+      <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_interface_event_declaration.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_interface_event_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_override.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_override_method.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_override_method_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_produce.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_interface_produce_method.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_logo.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_natvis.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_shim_body.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_static_class_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_static_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_static_event_declaration.h">
@@ -399,28 +334,24 @@
     <ClInclude Include="strings\write\write_std_hash.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_component_factory_forwarding_composable.h">
+    <ClInclude Include="strings\write\write_struct_abi.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h">
+    <ClInclude Include="strings\write\write_struct_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_component_produce_override_dispatch.h">
+    <ClInclude Include="strings\write\write_include_tests.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_component_produce_override_dispatch_method.h">
+    <ClInclude Include="strings\write\write_consume_tests.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_override_fallbacks.h">
+    <ClInclude Include="strings\write\write_produce_tests.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_natvis.h">
+    <ClInclude Include="strings\write\write_produce_test_interface.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\base\base_natvis.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
-    <ClInclude Include="source\helpers.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">
@@ -455,9 +386,6 @@
       <Filter>strings\print</Filter>
     </Text>
     <Text Include="strings\print\print_usage.txt">
-      <Filter>strings\print</Filter>
-    </Text>
-    <Text Include="strings\print\print_usage_details.txt">
       <Filter>strings\print</Filter>
     </Text>
   </ItemGroup>

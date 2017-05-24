@@ -9,40 +9,44 @@ using namespace std::experimental::filesystem;
 
 namespace cppwinrt
 {
-    void write_header()
+    namespace
     {
-        output out;
-        write_projection(out);
+        void write_header()
+        {
+            output out;
+            write_projection(out);
+            path filename = settings::output / settings::first_input.filename();
+            filename.replace_extension(".h");
+            out.save_as(filename.string());
+        }
 
-        path filename = settings::output / settings::first_input.filename();
-        filename.replace_extension(".h");
-        out.save_as(filename.string());
-    }
+        void create_natvis()
+        {
+            if (!settings::create_natvis)
+            {
+                return;
+            }
 
-    void create_natvis(std::vector<meta::type const*> types)
-    {
-        output out;
-        write_natvis(out, types);
-        path filename = settings::output / settings::first_input.filename();
-        filename.replace_extension(".natvis");
-        out.save_as(filename.string());
+            output out;
+            write_natvis(out);
+            path filename = settings::output / settings::first_input.filename();
+            filename.replace_extension(".natvis");
+            out.save_as(filename.string());
+        }
     }
 
     void write_component()
     {
         write_header();
-
+        create_natvis();
         meta::index_type const& index = meta::get_index();
         std::vector<meta::type const*> types;
 
-        for (meta::index_pair const& ns : index)
+        for (meta::index_pair const& pair : index)
         {
-            for (meta::type const& type : ns.second)
+            for (meta::type const& type : get_unfiltered_types(pair.second.classes))
             {
-                if (!type.is_filtered())
-                {
-                    types.push_back(&type);
-                }
+                types.push_back(&type);
             }
         }
 
@@ -51,17 +55,9 @@ namespace cppwinrt
 
         for (meta::type const* type : types)
         {
-            if (type->is_class())
-            {
-                write_component_class_generated_header(*type);
-                write_component_class_header(*type);
-                write_component_class_source(*type);
-            }
-        }
-
-        if (settings::create_natvis)
-        {
-            create_natvis(types);
+            write_component_class_generated_header(*type);
+            write_component_class_header(*type);
+            write_component_class_source(*type);
         }
     }
 }

@@ -28,7 +28,7 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
         void return_void()
         {
             winrt::Windows::Foundation::AsyncActionCompletedHandler handler;
-            winrt::Windows::Foundation::AsyncStatus status;
+            AsyncStatus status;
 
             {
                 winrt::impl::lock_guard const guard(this->m_lock);

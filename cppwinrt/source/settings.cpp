@@ -11,7 +11,6 @@ namespace cppwinrt::settings
     bool create_tests{};
     bool create_natvis{};
     bool skip_base_header{};
-    bool single_header{};
     bool verbose{};
     bool overwrite{};
 }
