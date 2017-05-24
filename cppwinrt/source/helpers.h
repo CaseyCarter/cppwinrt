@@ -1,5 +1,7 @@
 #pragma once
 
+#include "generator.h"
+
 namespace cppwinrt
 {
     template<typename T>
@@ -25,9 +27,6 @@ namespace cppwinrt
     {
         return 0 == value.compare(0, match.size(), match);
     }
-
-    template <typename T>
-    using generator = std::experimental::generator<T>;
 
     template <typename First, typename ... Rest>
     generator<First> get_values(First const& first, Rest const& ... rest)

@@ -352,6 +352,7 @@
     <ClInclude Include="strings\write\write_produce_test_interface.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="source\generator.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">

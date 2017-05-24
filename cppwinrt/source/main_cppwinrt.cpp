@@ -35,9 +35,9 @@ namespace
         return extension == L".winmd";
     }
 
-    std::experimental::generator<std::wstring> enum_args(int const argc, wchar_t** argv);
+    generator<std::wstring> enum_args(int const argc, wchar_t** argv);
 
-    std::experimental::generator<std::wstring> enum_response_file(path response_path)
+    generator<std::wstring> enum_response_file(path response_path)
     {
         if (is_directory(response_path) || is_winmd(response_path))
         {
@@ -58,7 +58,7 @@ namespace
         }
     }
 
-    std::experimental::generator<std::wstring> enum_args(int const argc, wchar_t** argv)
+    generator<std::wstring> enum_args(int const argc, wchar_t** argv)
     {
         for (int i = 0; i < argc; ++i)
         {
@@ -223,7 +223,7 @@ namespace
         return true;
     }
 
-    std::experimental::generator<path> enum_winmd_files(std::vector<std::wstring> const& winmd_specs)
+    generator<path> enum_winmd_files(std::vector<std::wstring> const& winmd_specs)
     {
         for (std::wstring const& winmd_spec : winmd_specs)
         {

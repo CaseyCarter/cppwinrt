@@ -29,6 +29,7 @@
   <ItemGroup>
     <ClInclude Include="source\code_writer.h" />
     <ClInclude Include="source\component_writer.h" />
+    <ClInclude Include="source\generator.h" />
     <ClInclude Include="source\helpers.h" />
     <ClInclude Include="source\pch.h" />
     <ClInclude Include="source\platform_writer.h" />
