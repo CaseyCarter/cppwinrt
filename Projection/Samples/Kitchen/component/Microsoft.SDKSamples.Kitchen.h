@@ -81,7 +81,7 @@ template <typename D>
 struct consume_Microsoft_SDKSamples_Kitchen_IOven
 {
     void ConfigurePreheatTemperature(Microsoft::SDKSamples::Kitchen::OvenTemperature const& temperature) const;
-    void BakeBread(hstring_view flavor) const;
+    void BakeBread(param::hstring flavor) const;
     event_token BreadBaked(Windows::Foundation::TypedEventHandler<Microsoft::SDKSamples::Kitchen::Oven, Microsoft::SDKSamples::Kitchen::BreadBakedEventArgs> const& handler) const;
     using BreadBaked_revoker = event_revoker<Microsoft::SDKSamples::Kitchen::IOven>;
     BreadBaked_revoker BreadBaked(auto_revoke_t, Windows::Foundation::TypedEventHandler<Microsoft::SDKSamples::Kitchen::Oven, Microsoft::SDKSamples::Kitchen::BreadBakedEventArgs> const& handler) const;
@@ -221,7 +221,7 @@ template <typename D> void consume_Microsoft_SDKSamples_Kitchen_IOven<D>::Config
     check_hresult(WINRT_SHIM(Microsoft::SDKSamples::Kitchen::IOven)->ConfigurePreheatTemperature(get_abi(temperature)));
 }
 
-template <typename D> void consume_Microsoft_SDKSamples_Kitchen_IOven<D>::BakeBread(hstring_view flavor) const
+template <typename D> void consume_Microsoft_SDKSamples_Kitchen_IOven<D>::BakeBread(param::hstring flavor) const
 {
     check_hresult(WINRT_SHIM(Microsoft::SDKSamples::Kitchen::IOven)->BakeBread(get_abi(flavor)));
 }
