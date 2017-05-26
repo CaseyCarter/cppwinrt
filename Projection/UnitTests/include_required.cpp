@@ -51,7 +51,7 @@ public:
     void Timeout(uint32_t) { throw winrt::hresult_not_implemented(); };
     bool BypassCacheOnRetrieve() { throw winrt::hresult_not_implemented(); };
     void BypassCacheOnRetrieve(bool) { throw winrt::hresult_not_implemented(); };
-    void SetRequestHeader(hstring_view, hstring_view) { throw winrt::hresult_not_implemented(); };
+    void SetRequestHeader(hstring const&, hstring const&) { throw winrt::hresult_not_implemented(); };
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationFeed, Windows::Web::Syndication::RetrievalProgress> RetrieveFeedAsync(const Windows::Foundation::Uri &) { throw winrt::hresult_not_implemented(); };
 };
 

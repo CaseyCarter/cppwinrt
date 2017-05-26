@@ -248,72 +248,128 @@ namespace impl
     }
 }
 
-template <typename T>
-struct vector_view
+namespace param
 {
-    using value_type = T;
-    using interface_type = Windows::Foundation::Collections::IVectorView<value_type>;
-
-    vector_view(std::nullptr_t) noexcept
+    template <typename T>
+    struct vector_view
     {
-    }
+        using value_type = T;
+        using interface_type = Windows::Foundation::Collections::IVectorView<value_type>;
 
-    vector_view(vector_view const& values) noexcept : m_owned(false)
-    {
-        attach_abi(m_pair.first, get_abi(values));
-    }
-
-    vector_view(interface_type const& values) noexcept : m_owned(false)
-    {
-        attach_abi(m_pair.first, get_abi(values));
-    }
-
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
-    vector_view(Collection const& values) noexcept : m_owned(true)
-    {
-        m_pair.first = values;
-    }
-
-    template <typename Allocator>
-    vector_view(std::vector<value_type, Allocator>&& values) : m_pair(make<impl::input_vector_view<value_type, std::vector<value_type, Allocator>>>(std::move(values)), nullptr)
-    {
-    }
-
-    template <typename Allocator>
-    vector_view(std::vector<value_type, Allocator> const& values) : m_pair(impl::make_scoped_input_vector_view<value_type>(values.begin(), values.end()))
-    {
-    }
-
-    vector_view(std::initializer_list<value_type> values) : m_pair(impl::make_scoped_input_vector_view<value_type>(values.begin(), values.end()))
-    {
-    }
-
-    template<class InputIt>
-    vector_view(InputIt first, InputIt last) : m_pair(impl::make_scoped_input_vector_view<value_type>(first, last))
-    {
-    }
-
-    ~vector_view() noexcept
-    {
-        if (m_pair.second)
+        vector_view(std::nullptr_t) noexcept
         {
-            m_pair.second->invalidate_scope();
         }
 
-        if (!m_owned)
+        vector_view(vector_view const& values) = delete;
+        vector_view& operator=(vector_view const& values) = delete;
+
+        vector_view(interface_type const& values) noexcept : m_owned(false)
         {
-            detach_abi(m_pair.first);
+            attach_abi(m_pair.first, winrt::get_abi(values));
         }
+
+        template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
+        vector_view(Collection const& values) noexcept : m_owned(true)
+        {
+            m_pair.first = values;
+        }
+
+        template <typename Allocator>
+        vector_view(std::vector<value_type, Allocator>&& values) : m_pair(make<impl::input_vector_view<value_type, std::vector<value_type, Allocator>>>(std::move(values)), nullptr)
+        {
+        }
+
+        template <typename Allocator>
+        vector_view(std::vector<value_type, Allocator> const& values) : m_pair(impl::make_scoped_input_vector_view<value_type>(values.begin(), values.end()))
+        {
+        }
+
+        vector_view(std::initializer_list<value_type> values) : m_pair(impl::make_scoped_input_vector_view<value_type>(values.begin(), values.end()))
+        {
+        }
+
+        template<class InputIt>
+        vector_view(InputIt first, InputIt last) : m_pair(impl::make_scoped_input_vector_view<value_type>(first, last))
+        {
+        }
+
+        ~vector_view() noexcept
+        {
+            if (m_pair.second)
+            {
+                m_pair.second->invalidate_scope();
+            }
+
+            if (!m_owned)
+            {
+                detach_abi(m_pair.first);
+            }
+        }
+
+    private:
+
+        std::pair<interface_type, impl::input_scope*> m_pair;
+        bool m_owned{ true };
+    };
+
+    template <typename T>
+    auto get_abi(vector_view<T> const& object) noexcept
+    {
+        return *(::IUnknown**)(&object);
     }
 
-private:
+    template <typename T>
+    struct async_vector_view
+    {
+        using value_type = T;
+        using interface_type = Windows::Foundation::Collections::IVectorView<value_type>;
 
-    std::pair<interface_type, impl::input_scope*> m_pair;
-    bool m_owned{ true };
-};
+        async_vector_view(std::nullptr_t) noexcept
+        {
+        }
 
-template <typename T>
-auto get_abi(vector_view<T> const& object) noexcept
-{
-    return*reinterpret_cast<abi_t<Windows::Foundation::Collections::IVectorView<T>>**>(&const_cast<vector_view<T>&>(object));
+        async_vector_view(async_vector_view const& values) = delete;
+        async_vector_view& operator=(async_vector_view const& values) = delete;
+
+        async_vector_view(interface_type const& values) noexcept : m_owned(false)
+        {
+            attach_abi(m_interface, winrt::get_abi(values));
+        }
+
+        template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
+        async_vector_view(Collection const& values) noexcept : m_owned(true)
+        {
+            m_interface = values;
+        }
+
+        template <typename Allocator>
+        async_vector_view(std::vector<value_type, Allocator>&& values) :
+            m_interface(make<impl::input_vector_view<value_type, std::vector<value_type, Allocator>>>(std::move(values)))
+        {
+        }
+
+        async_vector_view(std::initializer_list<value_type> values) :
+            m_interface(make<impl::input_vector_view<value_type, std::vector<value_type>>>(values))
+        {
+        }
+
+        ~async_vector_view() noexcept
+        {
+            if (!m_owned)
+            {
+                detach_abi(m_interface);
+            }
+        }
+
+    private:
+
+        interface_type m_interface;
+        bool m_owned{ true };
+    };
+
+    template <typename T>
+    auto get_abi(async_vector_view<T> const& object) noexcept
+    {
+        return *(::IUnknown**)(&object);
+    }
 }

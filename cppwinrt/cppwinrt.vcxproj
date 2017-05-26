@@ -27,6 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\base.h" />
     <ClInclude Include="source\code_writer.h" />
     <ClInclude Include="source\component_writer.h" />
     <ClInclude Include="source\generator.h" />
@@ -83,7 +84,6 @@
     <ClInclude Include="strings\base\base_std_hash.h" />
     <ClInclude Include="strings\base\base_string.h" />
     <ClInclude Include="strings\base\base_string_hstring.h" />
-    <ClInclude Include="strings\base\base_string_hstring_ref.h" />
     <ClInclude Include="strings\base\base_string_operators.h" />
     <ClInclude Include="strings\base\base_warnings.h" />
     <ClInclude Include="strings\base\base_weak.h" />

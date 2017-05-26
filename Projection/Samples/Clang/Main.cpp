@@ -1,4 +1,3 @@
-struct IUnknown;
 
 #pragma comment(lib, "windowsapp") 
 

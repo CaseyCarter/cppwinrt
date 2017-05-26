@@ -138,7 +138,7 @@ struct Sample : winrt::implements<Sample, winrt::IChatQueryOptions>
 
     winrt::hstring SearchString() { return L""; }
 
-    void SearchString(winrt::hstring_view value)
+    void SearchString(winrt::hstring const& value)
     {
         m_check += value.size();
     }

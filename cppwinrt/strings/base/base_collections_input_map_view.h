@@ -237,77 +237,139 @@ namespace impl
     }
 }
 
-template <typename K, typename V>
-struct map_view
+namespace param
 {
-    using value_type = Windows::Foundation::Collections::IKeyValuePair<K, V>;
-    using interface_type = Windows::Foundation::Collections::IMapView<K, V>;
-
-    map_view(std::nullptr_t) noexcept
+    template <typename K, typename V>
+    struct map_view
     {
-    }
+        using value_type = Windows::Foundation::Collections::IKeyValuePair<K, V>;
+        using interface_type = Windows::Foundation::Collections::IMapView<K, V>;
 
-    map_view(map_view const& values) noexcept : m_owned(false)
-    {
-        attach_abi(m_pair.first, get_abi(values));
-    }
-
-    map_view(interface_type const& values) noexcept : m_owned(false)
-    {
-        attach_abi(m_pair.first, get_abi(values));
-    }
-
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
-    map_view(Collection const& values) noexcept : m_owned(true)
-    {
-        m_pair.first = values;
-    }
-
-    template <typename Compare, typename Allocator>
-    map_view(std::map<K, V, Compare, Allocator>&& values) : m_pair(impl::make_input_map_view<K, V>(std::move(values)), nullptr)
-    {
-    }
-
-    template <typename Compare, typename Allocator>
-    map_view(std::map<K, V, Compare, Allocator> const& values) : m_pair(impl::make_scoped_input_map_view<K, V>(values))
-    {
-    }
-
-    template <typename Hash, typename KeyEqual, typename Allocator>
-    map_view(std::unordered_map<K, V, Hash, KeyEqual, Allocator>&& values) : m_pair(impl::make_input_map_view<K, V>(std::move(values)), nullptr)
-    {
-    }
-
-    template <typename Hash, typename KeyEqual, typename Allocator>
-    map_view(std::unordered_map<K, V, Hash, KeyEqual, Allocator> const& values) : m_pair(impl::make_scoped_input_map_view<K, V>(values))
-    {
-    }
-
-    map_view(std::initializer_list<std::pair<K const, V>> values) : m_pair(impl::make_input_map_view<K, V>(std::map<K, V>(values)), nullptr)
-    {
-    }
-
-    ~map_view() noexcept
-    {
-        if (m_pair.second)
+        map_view(std::nullptr_t) noexcept
         {
-            m_pair.second->invalidate_scope();
         }
 
-        if (!m_owned)
+        map_view(map_view const& values) = delete;
+        map_view& operator=(map_view const& values) = delete;
+
+        map_view(interface_type const& values) noexcept : m_owned(false)
         {
-            detach_abi(m_pair.first);
+            attach_abi(m_pair.first, winrt::get_abi(values));
         }
+
+        template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
+        map_view(Collection const& values) noexcept : m_owned(true)
+        {
+            m_pair.first = values;
+        }
+
+        template <typename Compare, typename Allocator>
+        map_view(std::map<K, V, Compare, Allocator>&& values) : m_pair(impl::make_input_map_view<K, V>(std::move(values)), nullptr)
+        {
+        }
+
+        template <typename Compare, typename Allocator>
+        map_view(std::map<K, V, Compare, Allocator> const& values) : m_pair(impl::make_scoped_input_map_view<K, V>(values))
+        {
+        }
+
+        template <typename Hash, typename KeyEqual, typename Allocator>
+        map_view(std::unordered_map<K, V, Hash, KeyEqual, Allocator>&& values) : m_pair(impl::make_input_map_view<K, V>(std::move(values)), nullptr)
+        {
+        }
+
+        template <typename Hash, typename KeyEqual, typename Allocator>
+        map_view(std::unordered_map<K, V, Hash, KeyEqual, Allocator> const& values) : m_pair(impl::make_scoped_input_map_view<K, V>(values))
+        {
+        }
+
+        map_view(std::initializer_list<std::pair<K const, V>> values) : m_pair(impl::make_input_map_view<K, V>(std::map<K, V>(values)), nullptr)
+        {
+        }
+
+        ~map_view() noexcept
+        {
+            if (m_pair.second)
+            {
+                m_pair.second->invalidate_scope();
+            }
+
+            if (!m_owned)
+            {
+                detach_abi(m_pair.first);
+            }
+        }
+
+    private:
+
+        std::pair<interface_type, impl::input_scope*> m_pair;
+        bool m_owned{ true };
+    };
+
+    template <typename K, typename V>
+    auto get_abi(map_view<K, V> const& object) noexcept
+    {
+        return *(::IUnknown**)(&object);
     }
 
-private:
+    template <typename K, typename V>
+    struct async_map_view
+    {
+        using value_type = Windows::Foundation::Collections::IKeyValuePair<K, V>;
+        using interface_type = Windows::Foundation::Collections::IMapView<K, V>;
 
-    std::pair<interface_type, impl::input_scope*> m_pair;
-    bool m_owned{ true };
-};
+        async_map_view(std::nullptr_t) noexcept
+        {
+        }
 
-template <typename K, typename V>
-auto get_abi(map_view<K, V> const& object) noexcept
-{
-    return*reinterpret_cast<abi_t<Windows::Foundation::Collections::IMapView<K, V>>**>(&const_cast<map_view<K, V>&>(object));
+        async_map_view(async_map_view const& values) = delete;
+        async_map_view& operator=(async_map_view const& values) = delete;
+
+        async_map_view(interface_type const& values) noexcept : m_owned(false)
+        {
+            attach_abi(m_interface, winrt::get_abi(values));
+        }
+
+        template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
+        async_map_view(Collection const& values) noexcept : m_owned(true)
+        {
+            m_interface = values;
+        }
+
+        template <typename Compare, typename Allocator>
+        async_map_view(std::map<K, V, Compare, Allocator>&& values) :
+            m_interface(impl::make_input_map_view<K, V>(std::move(values)))
+        {
+        }
+
+        template <typename Hash, typename KeyEqual, typename Allocator>
+        async_map_view(std::unordered_map<K, V, Hash, KeyEqual, Allocator>&& values) :
+            m_interface(impl::make_input_map_view<K, V>(std::move(values)))
+        {
+        }
+
+        async_map_view(std::initializer_list<std::pair<K const, V>> values) :
+            m_interface(impl::make_input_map_view<K, V>(std::map<K, V>(values)))
+        {
+        }
+
+        ~async_map_view() noexcept
+        {
+            if (!m_owned)
+            {
+                detach_abi(m_interface);
+            }
+        }
+
+    private:
+
+        interface_type m_interface;
+        bool m_owned{ true };
+    };
+
+    template <typename K, typename V>
+    auto get_abi(async_map_view<K, V> const& object) noexcept
+    {
+        return *(::IUnknown**)(&object);
+    }
 }

@@ -14,24 +14,24 @@ namespace
         return copy;
     }
 
-    void test_empty_map_view(map_view<int, int> param)
+    void test_empty_map_view(param::map_view<int, int> const& param)
     {
         auto values = make_copy(param);
         REQUIRE(values.Size() == 0);
     }
 
-    void test_null_map_view(map_view<int, int> param)
+    void test_null_map_view(param::map_view<int, int> const& param)
     {
         auto values = make_copy(param);
         REQUIRE(values == nullptr);
     }
 
-    IMapView<int, int> test_map_view_scope(map_view<int, int> param)
+    IMapView<int, int> test_map_view_scope(param::map_view<int, int> const& param)
     {
         return make_copy(param);
     }
 
-    void test_map_view(map_view<int, int> param)
+    void test_map_view(param::map_view<int, int> const& param)
     {
         IMapView<int, int> values = make_copy(param);
 

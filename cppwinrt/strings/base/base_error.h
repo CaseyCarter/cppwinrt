@@ -46,7 +46,7 @@ struct hresult_error
         WINRT_GetRestrictedErrorInfo(put_abi(m_info));
     }
 
-    hresult_error(HRESULT const code, hstring_view message) noexcept : m_code(code)
+    hresult_error(HRESULT const code, param::hstring const& message) noexcept : m_code(code)
     {
         WINRT_RoOriginateError(code, get_abi(message));
         WINRT_GetRestrictedErrorInfo(put_abi(m_info));
@@ -121,91 +121,91 @@ private:
 struct hresult_access_denied : hresult_error
 {
     hresult_access_denied() : hresult_error(E_ACCESSDENIED) {}
-    hresult_access_denied(hstring_view message) : hresult_error(E_ACCESSDENIED, message) {}
+    hresult_access_denied(param::hstring const& message) : hresult_error(E_ACCESSDENIED, message) {}
     hresult_access_denied(from_abi_t) : hresult_error(E_ACCESSDENIED, from_abi) {}
 };
 
 struct hresult_wrong_thread : hresult_error
 {
     hresult_wrong_thread() : hresult_error(RPC_E_WRONG_THREAD) {}
-    hresult_wrong_thread(hstring_view message) : hresult_error(RPC_E_WRONG_THREAD, message) {}
+    hresult_wrong_thread(param::hstring const& message) : hresult_error(RPC_E_WRONG_THREAD, message) {}
     hresult_wrong_thread(from_abi_t) : hresult_error(RPC_E_WRONG_THREAD, from_abi) {}
 };
 
 struct hresult_not_implemented : hresult_error
 {
     hresult_not_implemented() : hresult_error(E_NOTIMPL) {}
-    hresult_not_implemented(hstring_view message) : hresult_error(E_NOTIMPL, message) {}
+    hresult_not_implemented(param::hstring const& message) : hresult_error(E_NOTIMPL, message) {}
     hresult_not_implemented(from_abi_t) : hresult_error(E_NOTIMPL, from_abi) {}
 };
 
 struct hresult_invalid_argument : hresult_error
 {
     hresult_invalid_argument() : hresult_error(E_INVALIDARG) {}
-    hresult_invalid_argument(hstring_view message) : hresult_error(E_INVALIDARG, message) {}
+    hresult_invalid_argument(param::hstring const& message) : hresult_error(E_INVALIDARG, message) {}
     hresult_invalid_argument(from_abi_t) : hresult_error(E_INVALIDARG, from_abi) {}
 };
 
 struct hresult_out_of_bounds : hresult_error
 {
     hresult_out_of_bounds() : hresult_error(E_BOUNDS) {}
-    hresult_out_of_bounds(hstring_view message) : hresult_error(E_BOUNDS, message) {}
+    hresult_out_of_bounds(param::hstring const& message) : hresult_error(E_BOUNDS, message) {}
     hresult_out_of_bounds(from_abi_t) : hresult_error(E_BOUNDS, from_abi) {}
 };
 
 struct hresult_no_interface : hresult_error
 {
     hresult_no_interface() : hresult_error(E_NOINTERFACE) {}
-    hresult_no_interface(hstring_view message) : hresult_error(E_NOINTERFACE, message) {}
+    hresult_no_interface(param::hstring const& message) : hresult_error(E_NOINTERFACE, message) {}
     hresult_no_interface(from_abi_t) : hresult_error(E_NOINTERFACE, from_abi) {}
 };
 
 struct hresult_disconnected : hresult_error
 {
     hresult_disconnected() : hresult_error(RPC_E_DISCONNECTED) {}
-    hresult_disconnected(hstring_view message) : hresult_error(RPC_E_DISCONNECTED, message) {}
+    hresult_disconnected(param::hstring const& message) : hresult_error(RPC_E_DISCONNECTED, message) {}
     hresult_disconnected(from_abi_t) : hresult_error(RPC_E_DISCONNECTED, from_abi) {}
 };
 
 struct hresult_class_not_available : hresult_error
 {
     hresult_class_not_available() : hresult_error(CLASS_E_CLASSNOTAVAILABLE) {}
-    hresult_class_not_available(hstring_view message) : hresult_error(CLASS_E_CLASSNOTAVAILABLE, message) {}
+    hresult_class_not_available(param::hstring const& message) : hresult_error(CLASS_E_CLASSNOTAVAILABLE, message) {}
     hresult_class_not_available(from_abi_t) : hresult_error(CLASS_E_CLASSNOTAVAILABLE, from_abi) {}
 };
 
 struct hresult_changed_state : hresult_error
 {
     hresult_changed_state() : hresult_error(E_CHANGED_STATE) {}
-    hresult_changed_state(hstring_view message) : hresult_error(E_CHANGED_STATE, message) {}
+    hresult_changed_state(param::hstring const& message) : hresult_error(E_CHANGED_STATE, message) {}
     hresult_changed_state(from_abi_t) : hresult_error(E_CHANGED_STATE, from_abi) {}
 };
 
 struct hresult_illegal_method_call : hresult_error
 {
     hresult_illegal_method_call() : hresult_error(E_ILLEGAL_METHOD_CALL) {}
-    hresult_illegal_method_call(hstring_view message) : hresult_error(E_ILLEGAL_METHOD_CALL, message) {}
+    hresult_illegal_method_call(param::hstring const& message) : hresult_error(E_ILLEGAL_METHOD_CALL, message) {}
     hresult_illegal_method_call(from_abi_t) : hresult_error(E_ILLEGAL_METHOD_CALL, from_abi) {}
 };
 
 struct hresult_illegal_state_change : hresult_error
 {
     hresult_illegal_state_change() : hresult_error(E_ILLEGAL_STATE_CHANGE) {}
-    hresult_illegal_state_change(hstring_view message) : hresult_error(E_ILLEGAL_STATE_CHANGE, message) {}
+    hresult_illegal_state_change(param::hstring const& message) : hresult_error(E_ILLEGAL_STATE_CHANGE, message) {}
     hresult_illegal_state_change(from_abi_t) : hresult_error(E_ILLEGAL_STATE_CHANGE, from_abi) {}
 };
 
 struct hresult_illegal_delegate_assignment : hresult_error
 {
     hresult_illegal_delegate_assignment() : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT) {}
-    hresult_illegal_delegate_assignment(hstring_view message) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, message) {}
+    hresult_illegal_delegate_assignment(param::hstring const& message) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, message) {}
     hresult_illegal_delegate_assignment(from_abi_t) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, from_abi) {}
 };
 
 struct hresult_canceled : hresult_error
 {
     hresult_canceled() : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED)) {}
-    hresult_canceled(hstring_view message) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), message) {}
+    hresult_canceled(param::hstring const& message) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), message) {}
     hresult_canceled(from_abi_t) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), from_abi) {}
 };
 

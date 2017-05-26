@@ -176,146 +176,255 @@ namespace impl
     }
 }
 
-template <typename T>
-struct iterable
+namespace param
 {
-    using value_type = T;
-    using interface_type = Windows::Foundation::Collections::IIterable<value_type>;
-
-    iterable(std::nullptr_t) noexcept
+    template <typename T>
+    struct iterable
     {
-    }
+        using value_type = T;
+        using interface_type = Windows::Foundation::Collections::IIterable<value_type>;
 
-    iterable(iterable const& values) noexcept : m_owned(false)
-    {
-        attach_abi(m_pair.first, get_abi(values));
-    }
-
-    iterable(interface_type const& values) noexcept : m_owned(false)
-    {
-        attach_abi(m_pair.first, get_abi(values));
-    }
-
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
-    iterable(Collection const& values) noexcept : m_owned(true)
-    {
-        m_pair.first = values;
-    }
-
-    template <typename Allocator>
-    iterable(std::vector<value_type, Allocator>&& values) : m_pair(impl::make_input_iterable<value_type>(std::move(values)), nullptr)
-    {
-    }
-
-    template <typename Allocator>
-    iterable(std::vector<value_type, Allocator> const& values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
-    {
-    }
-
-    iterable(std::initializer_list<value_type> values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
-    {
-    }
-
-    template<class InputIt>
-    iterable(InputIt first, InputIt last) : m_pair(impl::make_scoped_input_iterable<value_type>(first, last))
-    {
-    }
-
-    ~iterable() noexcept
-    {
-        if (m_pair.second)
+        iterable(std::nullptr_t) noexcept
         {
-            m_pair.second->invalidate_scope();
         }
 
-        if (!m_owned)
+        iterable(iterable const& values) = delete;
+        iterable& operator=(iterable const& values) = delete;
+
+        iterable(interface_type const& values) noexcept : m_owned(false)
         {
-            detach_abi(m_pair.first);
-        }
-    }
-
-private:
-
-    std::pair<interface_type, impl::input_scope*> m_pair;
-    bool m_owned{ true };
-};
-
-template <typename K, typename V>
-struct iterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>
-{
-    using value_type = Windows::Foundation::Collections::IKeyValuePair<K, V>;
-    using interface_type = Windows::Foundation::Collections::IIterable<value_type>;
-
-    iterable(std::nullptr_t) noexcept
-    {
-    }
-
-    iterable(iterable const& values) noexcept : m_owned(false)
-    {
-        attach_abi(m_pair.first, get_abi(values));
-    }
-
-    iterable(interface_type const& values) noexcept : m_owned(false)
-    {
-        attach_abi(m_pair.first, get_abi(values));
-    }
-
-    template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
-    iterable(Collection const& values) noexcept : m_owned(true)
-    {
-        m_pair.first = values;
-    }
-
-    template <typename Compare, typename Allocator>
-    iterable(std::map<K, V, Compare, Allocator>&& values) : m_pair(impl::make_input_iterable<value_type>(std::move(values)), nullptr)
-    {
-    }
-
-    template <typename Compare, typename Allocator>
-    iterable(std::map<K, V, Compare, Allocator> const& values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
-    {
-    }
-
-    template <typename Hash, typename KeyEqual, typename Allocator>
-    iterable(std::unordered_map<K, V, Hash, KeyEqual, Allocator>&& values) : m_pair(impl::make_input_iterable<value_type>(std::move(values)), nullptr)
-    {
-    }
-
-    template <typename Hash, typename KeyEqual, typename Allocator>
-    iterable(std::unordered_map<K, V, Hash, KeyEqual, Allocator> const& values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
-    {
-    }
-
-    iterable(std::initializer_list<std::pair<K const, V>> values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
-    {
-    }
-
-    template<class InputIt>
-    iterable(InputIt first, InputIt last) : m_pair(impl::make_scoped_input_iterable<value_type>(first, last))
-    {
-    }
-
-    ~iterable() noexcept
-    {
-        if (m_pair.second)
-        {
-            m_pair.second->invalidate_scope();
+            attach_abi(m_pair.first, winrt::get_abi(values));
         }
 
-        if (!m_owned)
+        template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
+        iterable(Collection const& values) noexcept : m_owned(true)
         {
-            detach_abi(m_pair.first);
+            m_pair.first = values;
         }
+
+        template <typename Allocator>
+        iterable(std::vector<value_type, Allocator>&& values) : m_pair(impl::make_input_iterable<value_type>(std::move(values)), nullptr)
+        {
+        }
+
+        template <typename Allocator>
+        iterable(std::vector<value_type, Allocator> const& values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
+        {
+        }
+
+        iterable(std::initializer_list<value_type> values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
+        {
+        }
+
+        template<class InputIt>
+        iterable(InputIt first, InputIt last) : m_pair(impl::make_scoped_input_iterable<value_type>(first, last))
+        {
+        }
+
+        ~iterable() noexcept
+        {
+            if (m_pair.second)
+            {
+                m_pair.second->invalidate_scope();
+            }
+
+            if (!m_owned)
+            {
+                detach_abi(m_pair.first);
+            }
+        }
+
+    private:
+
+        std::pair<interface_type, impl::input_scope*> m_pair;
+        bool m_owned{ true };
+    };
+
+    template <typename K, typename V>
+    struct iterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>
+    {
+        using value_type = Windows::Foundation::Collections::IKeyValuePair<K, V>;
+        using interface_type = Windows::Foundation::Collections::IIterable<value_type>;
+
+        iterable(std::nullptr_t) noexcept
+        {
+        }
+
+        iterable(iterable const& values) = delete;
+        iterable& operator=(iterable const& values) = delete;
+
+        iterable(interface_type const& values) noexcept : m_owned(false)
+        {
+            attach_abi(m_pair.first, winrt::get_abi(values));
+        }
+
+        template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
+        iterable(Collection const& values) noexcept : m_owned(true)
+        {
+            m_pair.first = values;
+        }
+
+        template <typename Compare, typename Allocator>
+        iterable(std::map<K, V, Compare, Allocator>&& values) : m_pair(impl::make_input_iterable<value_type>(std::move(values)), nullptr)
+        {
+        }
+
+        template <typename Compare, typename Allocator>
+        iterable(std::map<K, V, Compare, Allocator> const& values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
+        {
+        }
+
+        template <typename Hash, typename KeyEqual, typename Allocator>
+        iterable(std::unordered_map<K, V, Hash, KeyEqual, Allocator>&& values) : m_pair(impl::make_input_iterable<value_type>(std::move(values)), nullptr)
+        {
+        }
+
+        template <typename Hash, typename KeyEqual, typename Allocator>
+        iterable(std::unordered_map<K, V, Hash, KeyEqual, Allocator> const& values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
+        {
+        }
+
+        iterable(std::initializer_list<std::pair<K const, V>> values) : m_pair(impl::make_scoped_input_iterable<value_type>(values.begin(), values.end()))
+        {
+        }
+
+        template<class InputIt>
+        iterable(InputIt first, InputIt last) : m_pair(impl::make_scoped_input_iterable<value_type>(first, last))
+        {
+        }
+
+        ~iterable() noexcept
+        {
+            if (m_pair.second)
+            {
+                m_pair.second->invalidate_scope();
+            }
+
+            if (!m_owned)
+            {
+                detach_abi(m_pair.first);
+            }
+        }
+
+    private:
+
+        std::pair<interface_type, impl::input_scope*> m_pair;
+        bool m_owned{ true };
+    };
+
+    template <typename T>
+    auto get_abi(iterable<T> const& object) noexcept
+    {
+        return *(::IUnknown**)(&object);
     }
 
-private:
+    template <typename T>
+    struct async_iterable
+    {
+        using value_type = T;
+        using interface_type = Windows::Foundation::Collections::IIterable<value_type>;
 
-    std::pair<interface_type, impl::input_scope*> m_pair;
-    bool m_owned{ true };
-};
+        async_iterable(std::nullptr_t) noexcept
+        {
+        }
 
-template <typename T>
-auto get_abi(iterable<T> const& object) noexcept
-{
-    return*reinterpret_cast<abi_t<Windows::Foundation::Collections::IIterable<T>>**>(&const_cast<iterable<T>&>(object));
+        async_iterable(async_iterable const& values) = delete;
+        async_iterable& operator=(async_iterable const& values) = delete;
+
+        async_iterable(interface_type const& values) noexcept : m_owned(false)
+        {
+            attach_abi(m_interface, winrt::get_abi(values));
+        }
+
+        template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
+        async_iterable(Collection const& values) noexcept : m_owned(true)
+        {
+            m_interface = values;
+        }
+
+        template <typename Allocator>
+        async_iterable(std::vector<value_type, Allocator>&& values) :
+            m_interface(impl::make_input_iterable<value_type>(std::move(values)))
+        {
+        }
+
+        async_iterable(std::initializer_list<value_type> values) :
+            m_interface(impl::make_input_iterable<value_type>(std::vector<value_type>(values)))
+        {
+        }
+
+        ~async_iterable() noexcept
+        {
+            if (!m_owned)
+            {
+                detach_abi(m_interface);
+            }
+        }
+
+    private:
+
+        interface_type m_interface;
+        bool m_owned{ true };
+    };
+
+    template <typename K, typename V>
+    struct async_iterable<Windows::Foundation::Collections::IKeyValuePair<K, V>>
+    {
+        using value_type = Windows::Foundation::Collections::IKeyValuePair<K, V>;
+        using interface_type = Windows::Foundation::Collections::IIterable<value_type>;
+
+        async_iterable(std::nullptr_t) noexcept
+        {
+        }
+
+        async_iterable(async_iterable const& values) = delete;
+        async_iterable& operator=(async_iterable const& values) = delete;
+
+        async_iterable(interface_type const& values) noexcept : m_owned(false)
+        {
+            attach_abi(m_interface, winrt::get_abi(values));
+        }
+
+        template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
+        async_iterable(Collection const& values) noexcept : m_owned(true)
+        {
+            m_interface = values;
+        }
+
+        template <typename Compare, typename Allocator>
+        async_iterable(std::map<K, V, Compare, Allocator>&& values) :
+            m_interface(impl::make_input_iterable<value_type>(std::move(values)))
+        {
+        }
+
+        template <typename Hash, typename KeyEqual, typename Allocator>
+        async_iterable(std::unordered_map<K, V, Hash, KeyEqual, Allocator>&& values) :
+            m_interface(impl::make_input_iterable<value_type>(std::move(values)))
+        {
+        }
+
+        async_iterable(std::initializer_list<std::pair<K const, V>> values) :
+            m_interface(impl::make_input_iterable<value_type>(std::map<K, V>(values)))
+        {
+        }
+
+        ~async_iterable() noexcept
+        {
+            if (!m_owned)
+            {
+                detach_abi(m_interface);
+            }
+        }
+
+    private:
+
+        interface_type m_interface;
+        bool m_owned{ true };
+    };
+
+    template <typename T>
+    auto get_abi(async_iterable<T> const& object) noexcept
+    {
+        return *(::IUnknown**)(&object);
+    }
 }

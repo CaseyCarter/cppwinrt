@@ -105,7 +105,7 @@ TEST_CASE("single_threaded_vector - construction")
     compare(values, { 1,2,3 });
 }
 
-TEST_CASE("test_vector")
+TEST_CASE("test_single_threaded_vector")
 {
     test_vector(single_threaded_vector<int>());
 

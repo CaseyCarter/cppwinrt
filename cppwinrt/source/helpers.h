@@ -28,6 +28,12 @@ namespace cppwinrt
         return 0 == value.compare(0, match.size(), match);
     }
 
+    inline bool ends_with(std::string_view value, std::string_view match)
+    {
+        return value.size() >= match.size() &&
+               0 == value.compare(value.size() - match.size(), match.size(), match);
+    }
+
     template <typename First, typename ... Rest>
     generator<First> get_values(First const& first, Rest const& ... rest)
     {

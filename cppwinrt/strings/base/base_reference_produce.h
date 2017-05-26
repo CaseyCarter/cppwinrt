@@ -157,12 +157,6 @@ struct reference_traits <hstring>
 };
 
 template <>
-struct reference_traits <hstring_view>
-{
-    static Windows::Foundation::IInspectable make(hstring_view val) { return Windows::Foundation::PropertyValue::CreateString(val); }
-};
-
-template <>
 struct reference_traits <Windows::Foundation::IInspectable>
 {
     static Windows::Foundation::IInspectable make(Windows::Foundation::IInspectable const & val) { return Windows::Foundation::PropertyValue::CreateInspectable(val); }

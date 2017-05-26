@@ -42,8 +42,6 @@ namespace impl
     };
 }
 
-struct hstring_view;
-
 struct hstring
 {
     using value_type = wchar_t;
@@ -53,7 +51,7 @@ struct hstring
     using const_iterator = const_pointer;
     using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
-    hstring(nullptr_t = nullptr) noexcept {}
+    hstring(std::nullptr_t = nullptr) noexcept {}
     hstring(hstring const& value);
     hstring& operator=(hstring const& value);
     hstring(hstring&&) noexcept = default;
@@ -111,58 +109,6 @@ private:
     impl::handle<impl::hstring_traits> m_handle;
 };
 
-struct hstring_view
-{
-    using value_type = wchar_t;
-    using size_type = uint32_t;
-    using const_reference = const value_type&;
-    using const_pointer = const value_type*;
-    using const_iterator = const_pointer;
-    using const_reverse_iterator = std::reverse_iterator<const_iterator>;
-
-    hstring_view(nullptr_t = nullptr) noexcept {}
-    hstring_view(std::wstring const& value) noexcept;
-    hstring_view(std::wstring_view const& value) noexcept;
-    hstring_view(hstring const& value) noexcept;
-    hstring_view(wchar_t const* value) noexcept;
-    explicit hstring_view(HSTRING value) noexcept;
-
-    template <typename T, typename = std::enable_if_t<std::is_constructible_v<std::wstring_view, T&&> && !std::is_same_v<std::wstring_view, std::decay_t<T>>>>
-    explicit hstring_view(T&& str)
-        : hstring_view(std::wstring_view(std::forward<T>(str)))
-    {}
-
-    operator std::wstring_view() const noexcept;
-
-    const_reference operator[](size_type pos) const noexcept;
-    const_reference front() const noexcept;
-    const_reference back() const noexcept;
-    const_pointer data() const noexcept;
-    const_pointer c_str() const noexcept;
-    const_iterator begin() const noexcept;
-    const_iterator cbegin() const noexcept;
-    const_iterator end() const noexcept;
-    const_iterator cend() const noexcept;
-    const_reverse_iterator rbegin() const noexcept;
-    const_reverse_iterator crbegin() const noexcept;
-    const_reverse_iterator rend() const noexcept;
-    const_reverse_iterator crend() const noexcept;
-    bool empty() const noexcept;
-    size_type size() const noexcept;
-
-    friend HSTRING impl_get(hstring_view string) noexcept
-    {
-        return string.m_handle;
-    }
-
-private:
-
-    hstring_view(wchar_t const* value, size_type size) noexcept;
-
-    HSTRING m_handle{};
-    HSTRING_HEADER m_header{};
-};
-
 namespace impl
 {
     template <> struct abi<hstring>
@@ -170,7 +116,7 @@ namespace impl
         using type = HSTRING;
     };
 
-        template <> struct name<hstring>
+    template <> struct name<hstring>
     {
         static constexpr auto & value{ L"String" };
         static constexpr auto & data{ "string" };
@@ -216,19 +162,6 @@ namespace impl
         }
     };
 
-    template <> struct accessors<hstring_view>
-    {
-        static HSTRING get(hstring_view object) noexcept
-        {
-            return impl_get(object);
-        }
-
-        static HSTRING detach(hstring_view object)
-        {
-            return duplicate_string(get(object));
-        }
-    };
-
     template <> struct accessors<wchar_t const*>
     {
         static HSTRING detach(wchar_t const* const value)
@@ -244,11 +177,14 @@ namespace impl
             return create_string(value.c_str(), static_cast<uint32_t>(value.size()));
         }
     };
-}
 
-inline bool embedded_null(hstring_view value) noexcept
-{
-    return impl::embedded_null(get_abi(value));
+    template <> struct accessors<std::wstring_view>
+    {
+        static HSTRING detach(std::wstring_view const& value)
+        {
+            return create_string(value.data(), static_cast<uint32_t>(value.size()));
+        }
+    };
 }
 
 inline bool embedded_null(hstring const& value) noexcept

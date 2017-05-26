@@ -84,7 +84,7 @@ TEST_CASE("single_threaded_map - construction")
     compare(values, { { 1,10 },{ 2,20 },{ 3,30 } });
 }
 
-TEST_CASE("test_map")
+TEST_CASE("test_single_threaded_map")
 {
     test_map(single_threaded_map<int, int>());
 

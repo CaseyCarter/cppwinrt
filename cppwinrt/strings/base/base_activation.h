@@ -28,14 +28,21 @@ namespace impl
         }
     };
 
+    template <typename Class, typename Interface>
+    Interface get_activation_factory()
+    {
+        param::hstring classId(string_data(impl::name_v<Class>));
+
+        Interface factory;
+        check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), guid_v<Interface>, reinterpret_cast<void**>(put_abi(factory))));
+        return factory;
+    }
+
 #ifndef WINRT_DISABLE_FACTORY_CACHE
     template <typename Class, typename Interface>
     Interface get_agile_activation_factory()
     {
-        hstring_view classId(string_data(impl::name_v<Class>));
-
-        Interface factory;
-        check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), guid_v<Interface>, reinterpret_cast<void**>(put_abi(factory))));
+        Interface factory = get_activation_factory<Class, Interface>();
 
         if (!factory.template try_as<IAgileObject>())
         {
@@ -45,16 +52,6 @@ namespace impl
         return factory;
     }
 #endif
-
-    template <typename Class, typename Interface>
-    Interface get_activation_factory()
-    {
-        hstring_view classId(string_data(impl::name_v<Class>));
-
-        Interface factory;
-        check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), guid_v<Interface>, reinterpret_cast<void**>(put_abi(factory))));
-        return factory;
-    }
 }
 
 namespace Windows::Foundation

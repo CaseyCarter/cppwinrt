@@ -14,7 +14,7 @@ namespace
         return copy;
     }
 
-    void test_empty_iterable(iterable<int> param)
+    void test_empty_iterable(param::iterable<int> const& param)
     {
         auto values = make_copy(param);
         REQUIRE(!values.First().HasCurrent());
@@ -25,7 +25,7 @@ namespace
         REQUIRE(0 == values.First().GetMany(copy));
     }
 
-    void test_empty_iterable_pair(iterable<IKeyValuePair<int, int>> param)
+    void test_empty_iterable_pair(param::iterable<IKeyValuePair<int, int>> const& param)
     {
         auto values = make_copy(param);
         REQUIRE(!values.First().HasCurrent());
@@ -36,29 +36,29 @@ namespace
         REQUIRE(0 == values.First().GetMany(copy));
     }
 
-    IIterable<int> test_iterable_scope(iterable<int> param)
+    IIterable<int> test_iterable_scope(param::iterable<int> const& param)
     {
         return make_copy(param);
     }
 
-    IIterable<IKeyValuePair<int, int>> test_iterable_pair_scope(iterable<IKeyValuePair<int, int>> param)
+    IIterable<IKeyValuePair<int, int>> test_iterable_pair_scope(param::iterable<IKeyValuePair<int, int>> const& param)
     {
         return make_copy(param);
     }
 
-    void test_null_iterable(iterable<int> param)
+    void test_null_iterable(param::iterable<int> const& param)
     {
         auto values = make_copy(param);
         REQUIRE(values == nullptr);
     }
 
-    void test_null_iterable_pair(iterable<IKeyValuePair<int, int>> param)
+    void test_null_iterable_pair(param::iterable<IKeyValuePair<int, int>> const& param)
     {
         auto values = make_copy(param);
         REQUIRE(values == nullptr);
     }
 
-    void test_iterable(iterable<int> param)
+    void test_iterable(param::iterable<int> const& param)
     {
         IIterable<int> values = make_copy(param);
 
@@ -94,7 +94,7 @@ namespace
         REQUIRE(!iterator.MoveNext());
     }
 
-    void test_iterable_pair(iterable<IKeyValuePair<int, int>> param)
+    void test_iterable_pair(param::iterable<IKeyValuePair<int, int>> const& param)
     {
         auto values = make_copy(param);
 

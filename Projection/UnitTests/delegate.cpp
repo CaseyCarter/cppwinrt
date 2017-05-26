@@ -79,12 +79,12 @@ TEST_CASE("delegate,return")
         {
             ListViewItemToKeyHandler handler = [](Windows::Foundation::IInspectable const &)
             {
-                return hstring_view(L"hstring_view");
+                return std::wstring_view(L"std::wstring_view");
             };
 
             hstring result = handler(nullptr);
 
-            REQUIRE(result == L"hstring_view");
+            REQUIRE(result == L"std::wstring_view");
         }
 
         {
@@ -107,7 +107,7 @@ TEST_CASE("delegate,return")
         using namespace Windows::Foundation;
         using namespace Windows::UI::Xaml::Controls;
 
-        ListViewKeyToItemHandler handler = [] (hstring_view)
+        ListViewKeyToItemHandler handler = [] (hstring const&)
         {
             return nullptr;
         };

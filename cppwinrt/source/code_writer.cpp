@@ -32,6 +32,16 @@ namespace cppwinrt
             return false;
         }
 
+        bool is_put_accessor(meta::method const& method)
+        {
+            if (method.is_special())
+            {
+                return starts_with(method.raw_name, "put_");
+            }
+
+            return false;
+        }
+
         std::string get_impl_name(std::string_view name)
         {
             std::string result;
@@ -216,7 +226,19 @@ namespace cppwinrt
             out.write(" %", param.name);
         }
 
-        void write_param_type(output& out, meta::param const& param, std::vector<std::string> const& generic_params)
+        bool has_reference_param(meta::method const& method)
+        {
+            // This function determines whether the method is async with respect to the behavior of its input parameters
+            // in the sense that an input parameter is expected to be read synchronously or might well be held for later
+            // inspection. In that case, we prefer to err on the side of safety and avoid providing no-copy behavior by
+            // default. We use the convention of async methods ending with "Async" because checking whether the method's
+            // return type implements one of the async interfaces (directly or required) is prohibitively expensive.
+            // This may lead to false positives but these rare exxceptions are easily dealt with by the developer.
+
+            return is_put_accessor(method) || ends_with(method.raw_name, "Async");
+        }
+
+        void write_param_type(output& out, meta::method const& method, meta::param const& param, std::vector<std::string> const& generic_params)
         {
             meta::signature signature = param.signature;
             CorElementType category = signature.get_category();
@@ -239,19 +261,25 @@ namespace cppwinrt
                 {
                     out.write('&');
                 }
+
+                return;
             }
-            else if (category == ELEMENT_TYPE_STRING)
+
+            if (category == ELEMENT_TYPE_STRING)
             {
                 if (param.is_in())
                 {
-                    out.write("hstring_view");
+                    out.write("param::hstring const&");
                 }
                 else
                 {
                     out.write("hstring&");
                 }
+
+                return;
             }
-            else if (category == ELEMENT_TYPE_SZARRAY)
+
+            if (category == ELEMENT_TYPE_SZARRAY)
             {
                 ++signature.data;
 
@@ -267,38 +295,177 @@ namespace cppwinrt
                 {
                     out.write("array_view<@>", signature.get_name(generic_params));
                 }
+
+                return;
             }
-            else
+
+            if (!param.is_in())
             {
-                out.write("@", signature.get_name(generic_params));
+                out.write("@&", signature.get_name(generic_params));
+                return;
+            }
+
+            if (category != ELEMENT_TYPE_GENERICINST)
+            {
+                out.write("@ const&", signature.get_name(generic_params));
+                return;
+            }
+
+            static std::string_view const optional("Windows.Foundation.IReference");
+            static std::string_view const iterable("Windows.Foundation.Collections.IIterable");
+            static std::string_view const vector_view("Windows.Foundation.Collections.IVectorView");
+            static std::string_view const map_view("Windows.Foundation.Collections.IMapView");
+            static std::string_view const vector("Windows.Foundation.Collections.IVector");
+            static std::string_view const map("Windows.Foundation.Collections.IMap");
+
+            std::string signature_name = signature.get_name(generic_params);
+
+            if (starts_with(signature_name, optional))
+            {
+                out.write("optional@ const&", signature_name.data() + optional.size());
+                return;
+            }
+
+            bool const async = has_reference_param(method);
+
+            if (starts_with(signature_name, iterable))
+            {
+                if (async)
+                {
+                    out.write("param::async_iterable@ const&", signature_name.data() + iterable.size());
+                }
+                else
+                {
+                    out.write("param::iterable@ const&", signature_name.data() + iterable.size());
+                }
+
+                return;
+            }
+
+            if (starts_with(signature_name, vector_view))
+            {
+                if (async)
+                {
+                    out.write("param::async_vector_view@ const&", signature_name.data() + vector_view.size());
+                }
+                else
+                {
+                    out.write("param::vector_view@ const&", signature_name.data() + vector_view.size());
+                }
+
+                return;
+            }
+
+            if (starts_with(signature_name, map_view))
+            {
+                if (async)
+                {
+                    out.write("param::async_map_view@ const&", signature_name.data() + map_view.size());
+                }
+                else
+                {
+                    out.write("param::map_view@ const&", signature_name.data() + map_view.size());
+                }
+
+                return;
+            }
+
+            if (starts_with(signature_name, vector))
+            {
+                out.write("param::vector@ const&", signature_name.data() + vector.size());
+                return;
+            }
+
+            if (starts_with(signature_name, map))
+            {
+                out.write("param::map@ const&", signature_name.data() + map.size());
+                return;
+            }
+
+            out.write("@ const&", signature_name);
+        }
+
+        void write_param(output& out, meta::method const& method, meta::param const& param, std::vector<std::string> const& generic_params)
+        {
+            write_param_type(out, method, param, generic_params);
+            out.write(" %", param.name);
+        }
+
+        void write_component_param_type(output& out, meta::param const& param, std::vector<std::string> const& generic_params)
+        {
+            meta::signature signature = param.signature;
+            CorElementType category = signature.get_category();
+            bool by_ref{};
+
+            if (category == ELEMENT_TYPE_BYREF)
+            {
+                by_ref = true;
+                ++signature.data;
+                category = signature.get_category();
+            }
+
+            WINRT_ASSERT(category != ELEMENT_TYPE_BYREF);
+
+            if (category < ELEMENT_TYPE_STRING)
+            {
+                out.write(signature.get_name(generic_params));
+
+                if (!param.is_in())
+                {
+                    out.write('&');
+                }
+
+                return;
+            }
+
+            if (category == ELEMENT_TYPE_STRING)
+            {
+                if (param.is_in())
+                {
+                    out.write("hstring const&");
+                }
+                else
+                {
+                    out.write("hstring&");
+                }
+
+                return;
+            }
+
+            if (category == ELEMENT_TYPE_SZARRAY)
+            {
+                ++signature.data;
 
                 if (param.is_in())
                 {
-                    out.write(" const");
+                    out.write("array_view<@ const>", signature.get_name(generic_params));
+                }
+                else if (by_ref)
+                {
+                    out.write("com_array<@>&", signature.get_name(generic_params));
+                }
+                else
+                {
+                    out.write("array_view<@>", signature.get_name(generic_params));
                 }
 
-                out.write('&');
+                return;
             }
-        }
 
-        void write_param(output& out, meta::param const& param, std::vector<std::string> const& generic_params)
-        {
-            write_param_type(out, param, generic_params);
-            out.write(" %", param.name);
+            if (param.is_in())
+            {
+                out.write("@ const&", signature.get_name(generic_params));
+            }
+            else
+            {
+                out.write("@&", signature.get_name(generic_params));
+            }
         }
 
         void write_component_param(output& out, meta::param const& param, std::vector<std::string> const& generic_params)
         {
-            CorElementType category = param.signature.get_category();
-
-            if (category == ELEMENT_TYPE_STRING && param.is_in())
-            {
-                out.write("hstring const& %", param.name);
-            }
-            else
-            {
-                write_param(out, param, generic_params);
-            }
+            write_component_param_type(out, param, generic_params);
+            out.write(" %", param.name);
         }
 
         void write_abi_params(output& out, meta::method const& method)
@@ -544,7 +711,7 @@ namespace cppwinrt
                     out.write(", ");
                 }
 
-                write_param(out, param, generic_params);
+                write_param(out, method, param, generic_params);
             }
         }
 
@@ -1814,7 +1981,7 @@ namespace cppwinrt
                 }
 
                 out.write("arg<%>()",
-                    bind_output(write_param_type, param, generic_params));
+                    bind_output(write_param_type, method, param, generic_params));
             }
         }
 
@@ -2098,8 +2265,8 @@ namespace cppwinrt
         out.write(strings::base_com_ptr);
         out.write(strings::base_string);
         out.write(strings::base_string_hstring);
-        out.write(strings::base_string_hstring_ref);
         out.write(strings::base_string_operators);
+        out.write(strings::base_string_input);
         out.write(strings::base_constexpr_guid);
         out.write(strings::base_constexpr_sha1);
         out.write(strings::base_constexpr_traits);
@@ -2118,14 +2285,17 @@ namespace cppwinrt
 
         out.write(strings::base_collections_consume);
         out.write(strings::base_collections_produce);
+
         out.write(strings::base_collections_input);
         out.write(strings::base_collections_input_iterable);
         out.write(strings::base_collections_input_vector_view);
         out.write(strings::base_collections_input_map_view);
+        out.write(strings::base_collections_input_vector);
+        out.write(strings::base_collections_input_map);
         out.write(strings::base_collections_vector);
         out.write(strings::base_collections_map);
-        out.write(strings::base_reference);
 
+        out.write(strings::base_reference);
         out.write(strings::base_foundation);
         out.write(strings::base_chrono);
         out.write(strings::base_async_consume);
@@ -2312,7 +2482,7 @@ namespace cppwinrt
             }
 
             out.write("arg<%>()",
-                bind_output(write_param_type, param, generic_params));
+                bind_output(write_param_type, method, param, generic_params));
         }
     }
 

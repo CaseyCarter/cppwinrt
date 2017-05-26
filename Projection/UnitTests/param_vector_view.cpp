@@ -15,7 +15,7 @@ namespace
         return copy;
     }
 
-    void test_empty_vector_view(vector_view<int> param)
+    void test_empty_vector_view(param::vector_view<int> const& param)
     {
         auto values = make_copy(param);
         REQUIRE(values.Size() == 0);
@@ -25,18 +25,18 @@ namespace
         REQUIRE(0 == values.GetMany(0, copy));
     }
 
-    IVectorView<int> test_vector_view_scope(vector_view<int> param)
+    IVectorView<int> test_vector_view_scope(param::vector_view<int> const& param)
     {
         return make_copy(param);
     }
 
-    void test_null_vector_view(vector_view<int> param)
+    void test_null_vector_view(param::vector_view<int> const& param)
     {
         auto values = make_copy(param);
         REQUIRE(values == nullptr);
     }
 
-    void test_vector_view(vector_view<int> param)
+    void test_vector_view(param::vector_view<int> const& param)
     {
         IVectorView<int> values = make_copy(param);
 

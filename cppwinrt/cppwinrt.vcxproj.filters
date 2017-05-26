@@ -142,9 +142,6 @@
     <ClInclude Include="strings\base\base_string_hstring.h">
       <Filter>strings\base</Filter>
     </ClInclude>
-    <ClInclude Include="strings\base\base_string_hstring_ref.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
     <ClInclude Include="strings\base\base_string_operators.h">
       <Filter>strings\base</Filter>
     </ClInclude>
@@ -352,6 +349,7 @@
     <ClInclude Include="strings\write\write_produce_test_interface.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="source\base.h" />
     <ClInclude Include="source\generator.h" />
   </ItemGroup>
   <ItemGroup>

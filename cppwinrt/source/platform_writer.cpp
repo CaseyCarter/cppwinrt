@@ -48,14 +48,14 @@ namespace cppwinrt
 
             void write_header(platform_paths const& paths)
             {
-	            if (settings::skip_base_headers)
-	            {
-	                if (!_headers.empty())
-	                {
-	                    printf("Complex struct defined in non-reference metadata.  Projection may be incorrect.\n");
-	                }
-	                return;
-	            }
+                if (settings::skip_base_headers)
+                {
+                    if (!_headers.empty())
+                    {
+                        printf("Complex struct defined in non-reference metadata.  Projection may be incorrect.\n");
+                    }
+                    return;
+                }
 
                 output out;
                 for (auto& header : _headers)

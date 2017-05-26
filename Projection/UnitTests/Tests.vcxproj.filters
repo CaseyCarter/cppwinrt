@@ -8,11 +8,6 @@
     <ClCompile Include="async.cpp" />
     <ClCompile Include="casts.cpp" />
     <ClCompile Include="clock.cpp" />
-    <ClCompile Include="collection_iterable.cpp" />
-    <ClCompile Include="collection_map.cpp" />
-    <ClCompile Include="collection_map_view.cpp" />
-    <ClCompile Include="collection_vector.cpp" />
-    <ClCompile Include="collection_vector_view.cpp" />
     <ClCompile Include="Collections.cpp" />
     <ClCompile Include="com_ptr.cpp" />
     <ClCompile Include="delegate.cpp" />
@@ -46,6 +41,14 @@
     <ClCompile Include="weak.cpp" />
     <ClCompile Include="natvis.cpp" />
     <ClCompile Include="as.cpp" />
+    <ClCompile Include="param_iterable.cpp" />
+    <ClCompile Include="single_threaded_map.cpp" />
+    <ClCompile Include="single_threaded_vector.cpp" />
+    <ClCompile Include="param_map_view.cpp" />
+    <ClCompile Include="param_vector_view.cpp" />
+    <ClCompile Include="param_vector.cpp" />
+    <ClCompile Include="param_map.cpp" />
+    <ClCompile Include="param_hstring.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />
