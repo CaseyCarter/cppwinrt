@@ -1434,7 +1434,7 @@ namespace cppwinrt::meta
 
         std::string result(68, '?');
 
-        sprintf_s(result.data(), result.size() + 1,
+        int count = sprintf_s(result.data(), result.size() + 1,
             format,
             guid.Data1,
             guid.Data2,
@@ -1447,6 +1447,8 @@ namespace cppwinrt::meta
             guid.Data4[5],
             guid.Data4[6],
             guid.Data4[7]);
+
+        result.resize(count);
 
         return result;
     }

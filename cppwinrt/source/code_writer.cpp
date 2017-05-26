@@ -3119,41 +3119,8 @@ void t()
                 if (category == ELEMENT_TYPE_VALUETYPE)
                 {
                     meta::token property_token = signature.get_token();
-
-                    meta::type_category type_category{};
-                    meta::type const* property_type{ nullptr };
                     std::string property_typename = property_token.get_name();
-
-                    if (starts_with(property_typename, "Windows.Foundation.Numerics"))
-                    {
-                        // TODO: cache does not store these types...
-                        continue;
-                    }
-
-                    if (property_typename.find('.') != std::string::npos)
-                    {
-                        property_type = find_type(property_typename, &type_category);
-                    }
-
-                    if (!property_type)
-                    {
-                        if (property_typename == "GUID")
-                        {
-                            property_field = "g";
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                    else if (type_category == meta::type_category::enum_v || type_category == meta::type_category::struct_v)
-                    {
-                        property_cast = "*(winrt::" + property_typename + "*)";
-                    }
-                    else
-                    {
-                        continue;
-                    }
+                    property_cast = "*(winrt::" + property_typename + "*)";
                 }
 
                 natvis_properties.push_back({ method.get_name(), property_cast, property_index, property_field });
@@ -3161,7 +3128,7 @@ void t()
 
             meta::token required_type_def = required.token.get_definition();
             
-            static const std::string IID_IStringable = "96369F54-8EB6-48F0-ABCE-C1B211E627C3";
+            static const std::string_view IID_IStringable = "96369F54-8EB6-48F0-ABCE-C1B211E627C3";
             std::string iid = required_type_def.get_guid("%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X");
 
             if (!natvis_properties.empty())

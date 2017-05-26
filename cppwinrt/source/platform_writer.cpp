@@ -83,7 +83,7 @@ namespace cppwinrt
             out.save_as(file_path.string());
         }
 
-        void ReportMetadataError()
+        void ReportMetadataError(std::string_view context)
         {
             try
             {
@@ -100,7 +100,7 @@ namespace cppwinrt
             catch (meta::meta_error const& e)
             {
                 printf(strings::print_exception, E_INVALIDARG, e.message.c_str());
-                printf("    The projection is incomplete. A required reference may be missing.\n");
+                printf("    The %s projection is incomplete. A required reference may be missing.\n", context.data());
             }
         }
 
@@ -122,7 +122,7 @@ namespace cppwinrt
             }
             catch (...)
             {
-                ReportMetadataError();
+                ReportMetadataError("base");
             }
         }
 
@@ -430,7 +430,7 @@ namespace cppwinrt
             }
             catch (...)
             {
-                ReportMetadataError();
+                ReportMetadataError(namespace_name);
             }
         }
 
