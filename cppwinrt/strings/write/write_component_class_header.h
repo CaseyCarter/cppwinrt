@@ -5,7 +5,7 @@
 
 namespace winrt::@::implementation
 {
-    struct % : %T<%>
+    struct % : %T<%@>
     {
 %    };
 

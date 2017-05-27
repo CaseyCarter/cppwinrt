@@ -102,8 +102,10 @@ namespace cppwinrt::meta
         std::string get_name(std::vector<std::string> const& generic_params) const;
         signature get_signature() const;
         token get_definition() const;
+        type const* get_type() const;
         std::string get_guid(char const* format) const;
         token get_base() const;
+        type const* get_base_type() const;
         token get_extends() const;
         token get_default() const;
         method get_delegate(token_callback callback = {}) const;
@@ -115,6 +117,7 @@ namespace cppwinrt::meta
         std::vector<required> get_interface_required() const;
         std::vector<required> get_class_required() const;
         std::vector<required> get_class_required_excluding_default() const;
+        std::vector<required> get_component_class_required() const;
         std::vector<std::string> get_generic_params() const;
         std::vector<factory_attribute> get_factory_attributes() const;
         std::vector<composable_attribute> get_composable_attributes() const;

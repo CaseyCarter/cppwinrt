@@ -351,6 +351,9 @@
     </ClInclude>
     <ClInclude Include="source\base.h" />
     <ClInclude Include="source\generator.h" />
+    <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">

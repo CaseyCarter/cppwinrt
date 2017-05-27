@@ -1,0 +1,76 @@
+import "Windows.Foundation.idl";
+
+namespace Composable.Base
+{
+    runtimeclass Root;
+    runtimeclass Derived;
+
+    [uuid(5AF1D906-D669-42B3-A900-2277D328A3BE)]
+    [version(1.0)]
+    interface IRoot : IInspectable
+    {
+        HRESULT RootMethod([out, retval] HSTRING* result);
+        HRESULT VirtualInternalRootMethod([out, retval] HSTRING* result);
+        HRESULT CallVirtualPublicRootMethod([out, retval] HSTRING* result);
+    }
+
+    [uuid(F6A711E9-C1C9-4E46-9E43-3D8E8E220D2B)]
+    [version(1.0)]
+    [exclusiveto(Composable.Base.Root)]
+    interface IRootOverrides : IInspectable
+    {
+        HRESULT VirtualPublicRootMethod([out, retval] HSTRING* result);
+    }
+
+    [uuid(9F102F80-7151-4B32-A0C6-FEBCBB773191)]
+    [version(1.0)]
+    [exclusiveto(Composable.Base.Root)]
+    interface IRootFactory : IInspectable
+    {
+        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out, retval] Composable.Base.Root** instance);
+    }
+
+    [composable(Composable.Base.IRootFactory, public, 1.0)]
+    [version(1.0)]
+    [marshaling_behavior(agile)]
+    [threading(both)]
+    runtimeclass Root
+    {
+        [default] interface Composable.Base.IRoot;
+        [overridable] interface Composable.Base.IRootOverrides;
+    }
+
+    [uuid(27ECA5A0-F765-404A-9BB2-8FB99BED74CB)]
+    [version(1.0)]
+    interface IDerived : IInspectable
+    {
+        HRESULT DerivedMethod([out, retval] HSTRING* result);
+        HRESULT CallVirtualPublicDerivedMethod([out, retval] HSTRING* result);
+    }
+
+    [uuid(70ED6303-3C59-4913-996B-4DDB25B7FC3A)]
+    [version(1.0)]
+    [exclusiveto(Composable.Base.Derived)]
+    interface IDerivedOverrides : IInspectable
+    {
+        HRESULT VirtualPublicDerivedMethod([out, retval] HSTRING* result);
+    }
+
+    [uuid(307F5696-B194-4AA8-B9BF-B601D5D5F9B3)]
+    [version(1.0)]
+    [exclusiveto(Composable.Base.Derived)]
+    interface IDerivedFactory : IInspectable
+    {
+        HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out, retval] Composable.Base.Derived** instance);
+    }
+
+    [composable(Composable.Base.IDerivedFactory, public, 1.0)]
+    [version(1.0)]
+    [marshaling_behavior(agile)]
+    [threading(both)]
+    runtimeclass Derived : Composable.Base.Root
+    {
+        [default] interface Composable.Base.IDerived;
+        [overridable] interface Composable.Base.IDerivedOverrides;
+    }
+}

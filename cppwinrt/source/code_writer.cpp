@@ -1499,6 +1499,11 @@ namespace cppwinrt
             }
         }
 
+        bool is_composable(meta::token const token)
+        {
+            return !token.get_composable_attributes().empty();
+        }
+
         bool has_composable_constructor(meta::token const token)
         {
             for (meta::composable_attribute const& attribute : token.get_composable_attributes())
@@ -1514,6 +1519,22 @@ namespace cppwinrt
             return false;
         }
 
+        std::vector<meta::token> get_component_implemented_override_interfaces(meta::type const& type, bool ignore_self = false)
+        {
+            std::vector<meta::token> override_interfaces;
+            for (meta::type const* current = &type; current; current = current->token.get_base_type())
+            {
+                if (current->filtered || (!ignore_self && current == &type))
+                {
+                    for (meta::token t : current->token.get_direct_override_interfaces())
+                    {
+                        override_interfaces.push_back(t);
+                    }
+                }
+            }
+            return override_interfaces;
+        }
+
         void write_override_fallbacks(output& out, std::vector<meta::token> const& tokens)
         {
             bool first = true;
@@ -1523,7 +1544,9 @@ namespace cppwinrt
                 if (first)
                 {
                     first = false;
-                    out.write(",\n    @T<D>", token.get_name());
+                    char const* str = R"xyz(,
+    @T<D>)xyz";
+                    out.write(str, token.get_name());
                 }
                 else
                 {
@@ -1632,45 +1655,42 @@ namespace cppwinrt
 
         void write_component_class_override_dispatch_base(output& out, meta::type const& type)
         {
-            std::vector<meta::token> base_overrides;
-
-            if (meta::token const base = type.token.get_base())
-            {
-                base_overrides = base.get_all_override_interfaces();
-            }
-
-            std::vector<meta::token> all_overrides;
-
-            for (meta::token const token : type.token.get_direct_override_interfaces())
-            {
-                all_overrides.push_back(token);
-            }
-
-            all_overrides.insert(all_overrides.end(), base_overrides.begin(), base_overrides.end());
-
-            if (all_overrides.empty())
+            std::vector<meta::token> overrides = type.token.get_all_override_interfaces();
+            if (overrides.empty())
             {
                 return;
             }
 
-            auto comma_names = [](output& out, std::vector<meta::token> const& tokens)
+            auto comma_names = [](std::vector<meta::token> const& tokens)
             {
+                std::string result;
                 for (meta::token const token : tokens)
                 {
-                    out.write(", ");
-                    out.write(token.get_name());
+                    result += ", ";
+                    result += token.get_name();
                 }
+                return result;
             };
 
-            out.write(",\n    impl::dispatch_to_super<D%>\n", bind_output(comma_names, all_overrides));
-            write_override_fallbacks(out, base_overrides);
+            out.write(strings::write_component_class_override_dispatch_base,
+                comma_names(overrides));
         }
 
         void write_component_instance_interfaces(output& out, meta::type const& type)
         {
-            for (meta::required required : type.token.get_class_required())
+            for (meta::required required : type.token.get_component_class_required())
             {
                 out.write(", @", required.name);
+            }
+
+            if (is_composable(type.token))
+            {
+                out.write(", composable");
+            }
+            meta::type const* base_type = type.token.get_base_type();
+            if (base_type && base_type->filtered && is_composable(base_type->token))
+            {
+                out.write(", composing");
             }
         }
 
@@ -1801,32 +1821,33 @@ namespace cppwinrt
         void write_component_class_base(output& out, meta::type const& type)
         {
             WINRT_ASSERT(type.token.get_default());
-            std::string implements = "implements";
-            meta::token const base = type.token.get_base();
+            meta::token inner_type{};
+            std::vector<meta::token> fallback_overrides;
 
-            if (has_composable_constructor(type.token))
+            meta::type const* base_type = type.token.get_base_type();
+            if (base_type)
             {
-                if (base && has_composable_constructor(base))
+                fallback_overrides = get_component_implemented_override_interfaces(*base_type, true);
+                if (base_type->filtered)
                 {
-                    implements = "overrides_composable";
-                }
-                else
-                {
-                    implements = "implements_composable";
+                    inner_type = base_type->token;
                 }
             }
-            else if (base && has_composable_constructor(base))
+
+            std::string module_lock;
+            if (!base_type || base_type->filtered)
             {
-                implements = "overrides";
+                module_lock = "impl::module_lock, ";
             }
 
             out.write(strings::write_component_class_base,
                 type.name(),
-                implements,
+                module_lock,
                 bind_output(write_component_instance_interfaces, type),
-                bind_output(write_component_class_override_dispatch_base, type),
+                bind_output(write_override_fallbacks, fallback_overrides),
                 type.full_name(),
-                bind_output(write_class_override_constructors, base, type.name()));
+                bind_output(write_class_override_constructors, inner_type, type.name()),
+                bind_output(write_component_class_override_dispatch_base, type));
         }
 
         void write_component_produce_override_dispatch_methods(output& out, meta::token const token)
@@ -2883,7 +2904,7 @@ void t()
             }
         }
 
-        std::vector<meta::required> interfaces = type.token.get_class_required();
+        std::vector<meta::required> interfaces = type.token.get_component_class_required();
 
         if (!interfaces.empty())
         {
@@ -2953,7 +2974,7 @@ void t()
             }
         }
 
-        std::vector<meta::required> interfaces = type.token.get_class_required();
+        std::vector<meta::required> interfaces = type.token.get_component_class_required();
 
         for (meta::required const& required : interfaces)
         {
@@ -3023,6 +3044,16 @@ void t()
         {
             return;
         }
+        
+        std::string base_name;
+        meta::type const* base_type = type.token.get_base_type();
+        if (base_type && !base_type->filtered)
+        {
+            base_name = ", ";
+            base_name += base_type->name_space();
+            base_name += "::implementation::";
+            base_name += base_type->name();
+        }
 
         output out;
 
@@ -3032,6 +3063,7 @@ void t()
             type.name(),
             type.name(),
             type.name(),
+            base_name,
             bind_output(write_component_class_member_declarations, type),
             type.name(),
             type.name(),

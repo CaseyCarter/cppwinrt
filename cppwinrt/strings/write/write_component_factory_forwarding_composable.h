@@ -1,5 +1,5 @@
 
     % %(%)
     {
-        return impl::composable_factory<T>::CreateInstance<%>(%);
+        return impl::composable_factory<T>::template CreateInstance<@>(%);
     }

@@ -2,6 +2,12 @@
 namespace impl
 {
     template <typename T>
+    struct identity
+    {
+        using type = T;
+    };
+
+    template <typename T>
     struct abi
     {
         using type = T;

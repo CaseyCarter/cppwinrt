@@ -6,12 +6,23 @@ namespace impl
 
 struct non_agile : impl::marker {};
 struct no_weak_ref : impl::marker {};
+struct composing : impl::marker {};
+struct composable : impl::marker {};
 
 template <typename Interface>
 struct cloaked : Interface {};
 
+template <typename D, typename ... I>
+struct implements;
+
 namespace impl
 {
+    template <typename T>
+    struct is_marker : std::is_base_of<impl::marker, T> {};
+
+    template <typename T>
+    constexpr bool is_marker_v = is_marker<T>::value;
+
     template <typename T>
     struct uncloak
     {
@@ -39,17 +50,96 @@ namespace impl
     template <typename I>
     constexpr bool is_cloaked_v = is_cloaked<I>::value;
 
-    template <typename ... I>
-    struct first_interface
+
+    template <typename D, typename ... I>
+    struct root_implements;
+    
+    template <typename, typename = std::void_t<>>
+    struct is_implements : std::false_type {};
+
+    template <typename T>
+    struct is_implements<T, std::void_t<typename T::implements_type>> : std::true_type {};
+
+    template <typename T>
+    constexpr bool is_implements_v = is_implements<T>::value;
+
+    template <typename ...>
+    struct nested_implements
+    {};
+
+    template <typename First, typename ... Rest>
+    struct nested_implements<First, Rest...>
+        : std::conditional_t<is_implements_v<First>,
+        impl::identity<First>, nested_implements<Rest...>>
     {
-        using type = void;
+        static_assert(!is_implements_v<First> || !std::disjunction_v<is_implements<Rest> ...>,
+            "Duplicate nested implements found");
     };
+
+    template <typename D, typename Dummy = std::void_t<>, typename ... I>
+    struct base_implements_impl
+        : impl::identity<root_implements<D, I...>> {};
+
+    template <typename D, typename ... I>
+    struct base_implements_impl<D, std::void_t<typename nested_implements<I...>::type>, I...>
+        : nested_implements<I...> {};
+
+    template <typename D, typename ... I>
+    using base_implements = base_implements_impl<D, void, I...>;
+
+    template <typename ...>
+    struct uncloaked_interfaces;
+
+    template <typename I, typename = std::void_t<>>
+    struct uncloaked_interface_one
+        : std::integral_constant<uint32_t, 1> {};
+
+    template <typename I>
+    struct uncloaked_interface_one<I, std::enable_if_t<(is_cloaked_v<I> || is_marker_v<I>) && !is_implements_v<I>>>
+        : std::integral_constant<uint32_t, 0> {};
+
+    template <typename D, typename ... I>
+    struct uncloaked_interface_one<implements<D, I...>>
+        : uncloaked_interfaces<I...> {};
+
+    template <typename T>
+    struct uncloaked_interface_one<T, std::void_t<typename T::implements_type>>
+        : uncloaked_interface_one<typename T::implements_type> {};
+
+    template <typename ...>
+    struct uncloaked_interfaces
+        : std::integral_constant<uint32_t, 0> {};
+
+    template <typename First, typename ... Rest>
+    struct uncloaked_interfaces<First, Rest ...>
+        : std::integral_constant<uint32_t, uncloaked_interface_one<First>() + uncloaked_interfaces<Rest ...>()> {};
+
+    template <typename T, typename = std::void_t<>>
+    struct extract_interface
+    {
+        using type = T;
+    };
+
+    template <typename T>
+    struct extract_interface<T, std::enable_if_t<is_implements_v<T>>>
+    {
+        using type = typename T::first_interface;
+    };
+
+    template <typename T>
+    struct extract_interface<T, std::enable_if_t<is_marker_v<T>>>
+    {};
+
+    template <typename ... >
+    struct first_interface
+    {};
 
     template <typename First, typename ... Rest>
     struct first_interface<First, Rest ...>
-    {
-        using type = std::conditional_t<std::is_base_of_v<marker, First>, typename first_interface<Rest ...>::type, First>;
-    };
+        : std::conditional_t<!is_marker_v<First>,
+            extract_interface<First>, first_interface<Rest...>
+        >
+    {};
 
     template <typename D, typename I>
     struct produce;
@@ -57,15 +147,28 @@ namespace impl
     template <typename D, typename I, typename Enable = void>
     struct producer;
 
+    template <typename T, typename = std::void_t<>>
+    struct has_composable : std::false_type {};
+
     template <typename T>
-    class has_composable
+    struct has_composable<T, std::void_t<typename T::composable>> : std::true_type {};
+
+    template <typename I, typename = std::void_t<>>
+    struct runtime_class_name
     {
-        template <typename U> static constexpr bool get_value(typename U::composable*) { return true; }
-        template <typename>   static constexpr bool get_value(...) { return false; }
+        static hstring get()
+        {
+            throw hresult_not_implemented{};
+        }
+    };
 
-    public:
-
-        static constexpr bool value = get_value<T>(0);
+    template <typename I>
+    struct runtime_class_name<I, std::void_t<decltype(name<I>::value)>>
+    {
+        static hstring get()
+        {
+            return hstring{ impl::string_data(impl::name_v<I>) };
+        }
     };
 
     template <typename T>
@@ -179,16 +282,59 @@ namespace impl
     };
 
     template <typename D, typename I>
-    struct producer<D, I, std::enable_if_t<std::is_base_of_v< ::IUnknown, I>>> : abi_t<I>
+    struct producer<D, I, std::enable_if_t<std::is_base_of_v< ::IUnknown, I> && !is_implements_v<I>>> : abi_t<I>
     {};
 
     template <typename D, typename I>
-    struct producer<D, I, std::enable_if_t<std::is_base_of_v<marker, I>>>
+    struct producer<D, I, std::enable_if_t<is_marker_v<I>>>
+    {};
+
+    template <typename D, typename I>
+    struct producer<D, I, std::enable_if_t<is_implements_v<I>>>
     {};
 
     template <typename D>
     struct produce<D, Windows::Foundation::IInspectable> : produce_base<D, Windows::Foundation::IInspectable>
     {};
+
+    struct INonDelegatingInspectable : Windows::Foundation::IUnknown
+    {
+        INonDelegatingInspectable(std::nullptr_t = nullptr) noexcept {}
+    };
+
+    template <> struct abi<INonDelegatingInspectable>
+    {
+        using type = ::IInspectable;
+    };
+
+    template <typename D>
+    struct produce<D, INonDelegatingInspectable> : produce_base<D, INonDelegatingInspectable>
+    {
+        HRESULT __stdcall QueryInterface(const GUID& id, void** object) noexcept final
+        {
+            return this->shim().NonDelegatingQueryInterface(id, object);
+        }
+
+        unsigned long __stdcall AddRef() noexcept final
+        {
+            return this->shim().NonDelegatingAddRef();
+        }
+
+        unsigned long __stdcall Release() noexcept final
+        {
+            return this->shim().NonDelegatingRelease();
+        }
+
+        HRESULT __stdcall GetIids(ULONG* count, GUID** array) noexcept final
+        {
+            return this->shim().NonDelegatingGetIids(count, array);
+        }
+
+        HRESULT __stdcall GetRuntimeClassName(HSTRING* name) noexcept final
+        {
+            return this->shim().NonDelegatingGetRuntimeClassName(name);
+        }
+    };
 
     template <bool Agile>
     struct free_threaded_marshaler
@@ -425,11 +571,458 @@ namespace impl
 
     template <typename ... I>
     using is_agile = std::negation<std::disjunction<std::is_same<non_agile, I> ...>>;
+
+    template <bool>
+    struct WINRT_EBO root_implements_composing_outer
+    {
+    protected:
+        static constexpr ::IInspectable* m_inner = nullptr;
+    };
+
+    template <>
+    struct WINRT_EBO root_implements_composing_outer<true>
+    {
+        template <typename Qi>
+        Qi as() const
+        {
+            return m_inner.as<Qi>();
+        }
+
+        explicit operator bool() const noexcept
+        {
+            return m_inner.operator bool();
+        }
+    protected:
+        Windows::Foundation::IInspectable m_inner;
+    };
+
+    template <typename D, bool>
+    struct WINRT_EBO root_implements_composable_inner
+    {
+    protected:
+        static constexpr ::IInspectable* outer() noexcept { return nullptr; }
+
+        template <typename T, typename D, typename I>
+        friend class produce_dispatch_to_super_base;
+    };
+
+    template <typename D>
+    struct WINRT_EBO root_implements_composable_inner<D, true> : producer<D, INonDelegatingInspectable>
+    {
+    protected:
+        ::IInspectable* outer() noexcept { return m_outer; }
+    private:
+        ::IInspectable* m_outer = nullptr;
+
+        template <typename T, typename D, typename I>
+        friend class produce_dispatch_to_super_base;
+
+        template <typename D>
+        friend struct composable_factory;
+    };
+
+    template <typename D, typename ... I>
+    struct root_implements
+        : root_implements_composing_outer<std::disjunction<std::is_same<composing, I> ...>::value>
+        , root_implements_composable_inner<D, std::disjunction<std::is_same<composable, I> ...>::value>
+        , free_threaded_marshaler<impl::is_agile<I ...>::value>
+    {
+        using IInspectable = Windows::Foundation::IInspectable;
+        using root_implements_type = root_implements;
+
+        HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept
+        {
+            if (this->outer())
+            {
+                return this->outer()->QueryInterface(id, object);
+            }
+            HRESULT result = query_interface(id, object, is_weak_ref_source{});
+            if (result == E_NOINTERFACE && this->m_inner)
+            {
+                result = get_abi(this->m_inner)->QueryInterface(id, object);
+            }
+            return result;
+        }
+
+        unsigned long __stdcall AddRef() noexcept
+        {
+            if (this->outer())
+            {
+                return this->outer()->AddRef();
+            }
+            return NonDelegatingAddRef();
+        }
+
+        unsigned long __stdcall Release() noexcept
+        {
+            if (this->outer())
+            {
+                return this->outer()->Release();
+            }
+            return NonDelegatingRelease();
+        }
+
+        struct abi_guard
+        {
+            abi_guard(D& derived) :
+                m_derived(derived)
+            {
+                m_derived.abi_enter();
+            }
+
+            ~abi_guard()
+            {
+                m_derived.abi_exit();
+            }
+
+        private:
+
+            D& m_derived;
+        };
+
+    protected:
+        explicit root_implements(uint32_t references = 1)
+            : m_references(references)
+        {}
+
+        virtual ~root_implements() {}
+
+        HRESULT __stdcall GetIids(ULONG* count, GUID** array) noexcept
+        {
+            if (this->outer())
+            {
+                return this->outer()->GetIids(count, array);
+            }
+            return NonDelegatingGetIids(count, array);
+        }
+
+        HRESULT __stdcall abi_GetRuntimeClassName(HSTRING* name) noexcept
+        {
+            if (this->outer())
+            {
+                return this->outer()->GetRuntimeClassName(name);
+            }
+            return NonDelegatingGetRuntimeClassName(name);
+        }
+
+        HRESULT __stdcall abi_GetTrustLevel(TrustLevel* trustLevel) noexcept
+        {
+            if (this->outer())
+            {
+                return this->outer()->GetTrustLevel(trustLevel);
+            }
+            return NonDelegatingGetTrustLevel(trustLevel);
+        }
+
+        unsigned long __stdcall NonDelegatingAddRef() noexcept
+        {
+            return add_reference(is_weak_ref_source{});
+        }
+
+        unsigned long __stdcall NonDelegatingRelease() noexcept
+        {
+            uint32_t const target = subtract_reference();
+
+            if (target == 0)
+            {
+                std::atomic_thread_fence(std::memory_order_acquire);
+                delete static_cast<D*>(this);
+            }
+
+            return target;
+        }
+
+        HRESULT __stdcall NonDelegatingQueryInterface(const GUID& id, void** object) noexcept
+        {
+            if (id == impl::guid_v<Windows::Foundation::IInspectable> || id == impl::guid_v<Windows::Foundation::IInspectable>)
+            {
+                ::IInspectable* result = to_abi<impl::INonDelegatingInspectable>(this);
+                NonDelegatingAddRef();
+                *object = result;
+                return S_OK;
+            }
+            HRESULT result = query_interface(id, object, is_weak_ref_source{});
+            if (result == E_NOINTERFACE && this->m_inner)
+            {
+                result = get_abi(this->m_inner)->QueryInterface(id, object);
+            }
+            return result;
+        }
+
+        HRESULT __stdcall NonDelegatingGetIids(ULONG* count, GUID** array) noexcept
+        {
+            *count = static_cast<D*>(this)->uncloaked_interfaces_nested();
+
+            if (*count == 0)
+            {
+                *array = nullptr;
+                return S_OK;
+            }
+
+            *array = static_cast<GUID*>(CoTaskMemAlloc(sizeof(GUID)**count));
+            if (*array == nullptr)
+            {
+                return E_OUTOFMEMORY;
+            }
+
+            copy_guids_nested(*array);
+            return S_OK;
+        }
+
+        HRESULT __stdcall NonDelegatingGetRuntimeClassName(HSTRING* name) noexcept
+        {
+            try
+            {
+                *name = detach_abi(static_cast<D*>(this)->GetRuntimeClassName());
+                return S_OK;
+            }
+            catch (...) { return impl::to_hresult(); }
+        }
+
+        HRESULT __stdcall NonDelegatingGetTrustLevel(TrustLevel* trustLevel) noexcept
+        {
+            try
+            {
+                *trustLevel = static_cast<D*>(this)->GetTrustLevel();
+                return S_OK;
+            }
+            catch (...) { return impl::to_hresult(); }
+        }
+
+        virtual void* find_interface_nested(GUID const&) const noexcept
+        {
+            return nullptr;
+        }
+
+        virtual ::IInspectable* find_inspectable_nested() const noexcept
+        {
+            return nullptr;
+        }
+
+        virtual void copy_guids_nested(GUID*) const noexcept
+        {
+        }
+
+        uint32_t subtract_reference() noexcept
+        {
+            return subtract_reference(is_weak_ref_source{});
+        }
+
+    private:
+        void abi_enter() noexcept {}
+        void abi_exit() noexcept {}
+
+        using is_agile = impl::is_agile<I ...>;
+        using is_factory = std::disjunction<std::is_same<abi_t<Windows::Foundation::IActivationFactory>, abi_t<I>> ...>;
+        using is_inspectable = std::disjunction<std::is_base_of<::IInspectable, abi_t<I>> ...>;
+        using is_weak_ref_source = std::conjunction<is_inspectable, std::negation<is_factory>, std::negation<std::disjunction<std::is_same<no_weak_ref, I> ...>>>;
+        using weak_ref_t = impl::weak_ref<is_agile::value>;
+
+        static_assert(!is_factory::value || (is_factory::value&& is_agile::value), "winrt::implements - activation factories must be agile.");
+
+        std::atomic<std::conditional_t<is_weak_ref_source::value, uintptr_t, uint32_t>> m_references;
+
+        HRESULT query_interface(GUID const& id, void** object, std::true_type) noexcept
+        {
+            static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
+
+            if (query_interface(id, object, std::false_type{}) == S_OK)
+            {
+                return S_OK;
+            }
+
+            if (id == __uuidof(impl::IWeakReferenceSource))
+            {
+                *object = make_weak_ref();
+                return*object ? S_OK : E_OUTOFMEMORY;
+            }
+
+            return E_NOINTERFACE;
+        }
+
+        HRESULT query_interface(GUID const& id, void** object, std::false_type) noexcept
+        {
+            *object = static_cast<D*>(this)->find_interface_nested(id);
+
+            if (*object != nullptr)
+            {
+                AddRef();
+                return S_OK;
+            }
+
+            if (is_agile::value)
+            {
+                if (id == __uuidof(IAgileObject) || id == __uuidof(IMarshal))
+                {
+                    *object = this->find_marshal();
+                    AddRef();
+                    return S_OK;
+                }
+            }
+
+            if (is_inspectable::value)
+            {
+                if (id == __uuidof(::IInspectable))
+                {
+                    *object = find_inspectable_nested();
+                    AddRef();
+                    return S_OK;
+                }
+            }
+
+            if (id == __uuidof(::IUnknown))
+            {
+                *object = get_unknown();
+                AddRef();
+                return S_OK;
+            }
+
+            return E_NOINTERFACE;
+        }
+
+        uint32_t add_reference(std::false_type) noexcept
+        {
+            return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
+        }
+
+        uint32_t subtract_reference(std::false_type) noexcept
+        {
+            return m_references.fetch_sub(1, std::memory_order_release) - 1;
+        }
+
+        uint32_t add_reference(std::true_type) noexcept
+        {
+            static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
+            uintptr_t count_or_pointer = m_references.load(std::memory_order_relaxed);
+
+            while (true)
+            {
+                if (is_weak_ref(count_or_pointer))
+                {
+                    return decode_weak_ref(count_or_pointer)->increment_strong();
+                }
+
+                uintptr_t const target = count_or_pointer + 1;
+
+                if (m_references.compare_exchange_weak(count_or_pointer, target, std::memory_order_relaxed))
+                {
+                    return static_cast<uint32_t>(target);
+                }
+            }
+        }
+
+        uint32_t subtract_reference(std::true_type) noexcept
+        {
+            static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
+            uintptr_t count_or_pointer = m_references.load(std::memory_order_relaxed);
+
+            while (true)
+            {
+                if (is_weak_ref(count_or_pointer))
+                {
+                    return decode_weak_ref(count_or_pointer)->decrement_strong();
+                }
+
+                uintptr_t const target = count_or_pointer - 1;
+
+                if (m_references.compare_exchange_weak(count_or_pointer, target, std::memory_order_release, std::memory_order_relaxed))
+                {
+                    return static_cast<uint32_t>(target);
+                }
+            }
+        }
+
+        impl::IWeakReferenceSource* make_weak_ref() noexcept
+        {
+            static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
+            uintptr_t count_or_pointer = m_references.load(std::memory_order_relaxed);
+
+            if (is_weak_ref(count_or_pointer))
+            {
+                return decode_weak_ref(count_or_pointer)->get_source();
+            }
+
+            com_ptr<weak_ref_t> weak_ref;
+            *put_abi(weak_ref) = new (std::nothrow) weak_ref_t(get_unknown(), static_cast<uint32_t>(count_or_pointer));
+
+            if (!weak_ref)
+            {
+                return nullptr;
+            }
+
+            uintptr_t const encoding = encode_weak_ref(get_abi(weak_ref));
+
+            for (;;)
+            {
+                if (m_references.compare_exchange_weak(count_or_pointer, encoding, std::memory_order_acq_rel, std::memory_order_relaxed))
+                {
+                    impl::IWeakReferenceSource* result = weak_ref->get_source();
+                    detach_abi(weak_ref);
+                    return result;
+                }
+
+                if (is_weak_ref(count_or_pointer))
+                {
+                    return decode_weak_ref(count_or_pointer)->get_source();
+                }
+
+                weak_ref->set_strong(static_cast<uint32_t>(count_or_pointer));
+            }
+        }
+
+        static bool is_weak_ref(intptr_t const value) noexcept
+        {
+            static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
+            return value < 0;
+        }
+
+        static weak_ref_t* decode_weak_ref(uintptr_t const value) noexcept
+        {
+            static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
+            return reinterpret_cast<weak_ref_t*>(value << 1);
+        }
+
+        static uintptr_t encode_weak_ref(weak_ref_t* value) noexcept
+        {
+            static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
+            constexpr uintptr_t pointer_flag = static_cast<uintptr_t>(1) << ((sizeof(uintptr_t) * 8) - 1);
+            WINRT_ASSERT((reinterpret_cast<uintptr_t>(value) & 1) == 0);
+            return (reinterpret_cast<uintptr_t>(value) >> 1) | pointer_flag;
+        }
+
+        virtual ::IUnknown* get_unknown() const noexcept = 0;
+        virtual uint32_t uncloaked_interfaces_nested() const noexcept = 0;
+        virtual hstring GetRuntimeClassName() const = 0;
+
+        virtual TrustLevel GetTrustLevel() const noexcept
+        {
+            return BaseTrust;
+        }
+
+        template <typename D, typename I>
+        friend struct impl::produce_base;
+
+        template <typename D, typename I>
+        friend struct impl::produce;
+    };
 }
 
 template <typename D, typename ... I>
-struct implements : impl::producer<D, impl::uncloak_t<I>> ..., impl::free_threaded_marshaler<impl::is_agile<I ...>::value>
+struct implements
+    : impl::producer<D, impl::uncloak_t<I>> ...
+    , impl::base_implements<D, I...>::type
 {
+protected:
+    using base_type = typename impl::base_implements<D, I...>::type;
+    using root_implements_type = typename base_type::root_implements_type;
+
+    template <typename ... Args>
+    explicit implements(Args&&... args)
+        : base_type(std::forward<Args>(args)...)
+    {}
+
+public:
+    using implements_type = implements;
     using first_interface = typename impl::first_interface<impl::uncloak_t<I> ...>::type;
     using IInspectable = Windows::Foundation::IInspectable;
 
@@ -442,295 +1035,43 @@ struct implements : impl::producer<D, impl::uncloak_t<I>> ..., impl::free_thread
 
     HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept
     {
-        return query_interface(id, object, is_weak_ref_source{});
+        return root_implements_type::QueryInterface(id, object);
     }
 
     unsigned long __stdcall AddRef() noexcept
     {
-        return add_reference(is_weak_ref_source{});
+        return root_implements_type::AddRef();
     }
 
     unsigned long __stdcall Release() noexcept
     {
-        uint32_t const target = subtract_reference();
-
-        if (target == 0)
-        {
-            std::atomic_thread_fence(std::memory_order_acquire);
-            delete static_cast<D*>(this);
-        }
-
-        return target;
+        return root_implements_type::Release();
+    }
+    void* find_interface_nested(GUID const& id) const noexcept override
+    {
+        return find_interface<impl::uncloak_t<I> ...>(id);
     }
 
-    struct abi_guard
+    ::IInspectable* find_inspectable_nested() const noexcept override
     {
-        abi_guard(D& derived) :
-            m_derived(derived)
-        {
-            m_derived.abi_enter();
-        }
-
-        ~abi_guard()
-        {
-            m_derived.abi_exit();
-        }
-
-    private:
-
-        D& m_derived;
-    };
-
-protected:
-
-    implements(uint32_t references = 1) :
-        m_references(references)
-    {}
-
-    HRESULT __stdcall GetIids(ULONG* count, GUID** array) noexcept
-    {
-        *count = uncloaked_interfaces<I ...>();
-
-        if (*count == 0)
-        {
-            *array = nullptr;
-            return S_OK;
-        }
-
-        *array = static_cast<GUID*>(CoTaskMemAlloc(sizeof(GUID)**count));
-
-        if (*array == nullptr)
-        {
-            return E_OUTOFMEMORY;
-        }
-
-        copy_guids<I ...>(*array);
-        return S_OK;
+        return find_inspectable<I...>();
     }
 
-    HRESULT __stdcall abi_GetRuntimeClassName(HSTRING* name) noexcept
+    uint32_t uncloaked_interfaces_nested() const noexcept override
     {
-        try
-        {
-            *name = detach_abi(static_cast<D*>(this)->GetRuntimeClassName());
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
+        return impl::uncloaked_interfaces<I...>();
     }
 
-    HRESULT __stdcall abi_GetTrustLevel(TrustLevel* trustLevel) noexcept
+    virtual void copy_guids_nested(GUID* ids) const noexcept override
     {
-        try
-        {
-            *trustLevel = static_cast<D*>(this)->GetTrustLevel();
-            return S_OK;
-        }
-        catch (...) { return impl::to_hresult(); }
-    }
-
-    uint32_t subtract_reference() noexcept
-    {
-        return subtract_reference(is_weak_ref_source{});
+        return copy_guids<I ...>(ids);
     }
 
 private:
-
-    void abi_enter() noexcept {}
-    void abi_exit() noexcept {}
-
-    using is_agile = impl::is_agile<I ...>;
-    using is_factory = std::disjunction<std::is_same<abi_t<Windows::Foundation::IActivationFactory>, abi_t<I>> ...>;
-    using is_inspectable = std::disjunction<std::is_base_of<::IInspectable, abi_t<I>> ...>;
-    using is_weak_ref_source = std::conjunction<is_inspectable, std::negation<is_factory>, std::negation<std::disjunction<std::is_same<no_weak_ref, I> ...>>>;
-    using weak_ref_t = impl::weak_ref<is_agile::value>;
-
-    static_assert(!is_factory::value || (is_factory::value&& is_agile::value), "winrt::implements - activation factories must be agile.");
-
-    std::atomic<std::conditional_t<is_weak_ref_source::value, uintptr_t, uint32_t>> m_references;
-
-    HRESULT query_interface(GUID const& id, void** object, std::true_type) noexcept
-    {
-        static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
-
-        if (query_interface(id, object, std::false_type{}) == S_OK)
-        {
-            return S_OK;
-        }
-
-        if (id == __uuidof(impl::IWeakReferenceSource))
-        {
-            *object = make_weak_ref();
-            return*object ? S_OK : E_OUTOFMEMORY;
-        }
-
-        return E_NOINTERFACE;
-    }
-
-    HRESULT query_interface(GUID const& id, void** object, std::false_type) noexcept
-    {
-        *object = find_interface<impl::uncloak_t<I> ...>(id);
-
-        if (*object != nullptr)
-        {
-            AddRef();
-            return S_OK;
-        }
-
-        if (is_agile::value)
-        {
-            if (id == __uuidof(IAgileObject) || id == __uuidof(IMarshal))
-            {
-                *object = this->find_marshal();
-                AddRef();
-                return S_OK;
-            }
-        }
-
-        if (is_inspectable::value)
-        {
-            if (id == __uuidof(::IInspectable))
-            {
-                *object = find_inspectable<I ...>();
-                AddRef();
-                return S_OK;
-            }
-        }
-
-        if (id == __uuidof(::IUnknown))
-        {
-            *object = get_unknown();
-            AddRef();
-            return S_OK;
-        }
-
-        return E_NOINTERFACE;
-    }
-
-    uint32_t add_reference(std::false_type) noexcept
-    {
-        return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
-    }
-
-    uint32_t subtract_reference(std::false_type) noexcept
-    {
-        return m_references.fetch_sub(1, std::memory_order_release) - 1;
-    }
-
-    uint32_t add_reference(std::true_type) noexcept
-    {
-        static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
-        uintptr_t count_or_pointer = m_references.load(std::memory_order_relaxed);
-
-        while (true)
-        {
-            if (is_weak_ref(count_or_pointer))
-            {
-                return decode_weak_ref(count_or_pointer)->increment_strong();
-            }
-
-            uintptr_t const target = count_or_pointer + 1;
-
-            if (m_references.compare_exchange_weak(count_or_pointer, target, std::memory_order_relaxed))
-            {
-                return static_cast<uint32_t>(target);
-            }
-        }
-    }
-
-    uint32_t subtract_reference(std::true_type) noexcept
-    {
-        static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
-        uintptr_t count_or_pointer = m_references.load(std::memory_order_relaxed);
-
-        while (true)
-        {
-            if (is_weak_ref(count_or_pointer))
-            {
-                return decode_weak_ref(count_or_pointer)->decrement_strong();
-            }
-
-            uintptr_t const target = count_or_pointer - 1;
-
-            if (m_references.compare_exchange_weak(count_or_pointer, target, std::memory_order_release, std::memory_order_relaxed))
-            {
-                return static_cast<uint32_t>(target);
-            }
-        }
-    }
-
-    impl::IWeakReferenceSource* make_weak_ref() noexcept
-    {
-        static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
-        uintptr_t count_or_pointer = m_references.load(std::memory_order_relaxed);
-
-        if (is_weak_ref(count_or_pointer))
-        {
-            return decode_weak_ref(count_or_pointer)->get_source();
-        }
-
-        com_ptr<weak_ref_t> weak_ref;
-        *put_abi(weak_ref) = new (std::nothrow) weak_ref_t(get_unknown(), static_cast<uint32_t>(count_or_pointer));
-
-        if (!weak_ref)
-        {
-            return nullptr;
-        }
-
-        uintptr_t const encoding = encode_weak_ref(get_abi(weak_ref));
-
-        while (true)
-        {
-            if (m_references.compare_exchange_weak(count_or_pointer, encoding, std::memory_order_acq_rel, std::memory_order_relaxed))
-            {
-                impl::IWeakReferenceSource* result = weak_ref->get_source();
-                detach_abi(weak_ref);
-                return result;
-            }
-
-            if (is_weak_ref(count_or_pointer))
-            {
-                return decode_weak_ref(count_or_pointer)->get_source();
-            }
-
-            weak_ref->set_strong(static_cast<uint32_t>(count_or_pointer));
-        }
-    }
-
-    static bool is_weak_ref(intptr_t const value) noexcept
-    {
-        static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
-        return value < 0;
-    }
-
-    static weak_ref_t* decode_weak_ref(uintptr_t const value) noexcept
-    {
-        static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
-        return reinterpret_cast<weak_ref_t*>(value << 1);
-    }
-
-    static uintptr_t encode_weak_ref(weak_ref_t* value) noexcept
-    {
-        static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
-        constexpr uintptr_t pointer_flag = static_cast<uintptr_t>(1) << ((sizeof(uintptr_t) * 8) - 1);
-        WINRT_ASSERT((reinterpret_cast<uintptr_t>(value) & 1) == 0);
-        return (reinterpret_cast<uintptr_t>(value) >> 1) | pointer_flag;
-    }
-
     template <int = 0>
-    static constexpr uint32_t uncloaked_interfaces() noexcept
+    void copy_guids(GUID* ids) const noexcept
     {
-        return 0;
-    }
-
-    template <typename First, typename ... Rest>
-    static constexpr uint32_t uncloaked_interfaces() noexcept
-    {
-        return !impl::is_cloaked_v<First> +uncloaked_interfaces<Rest ...>();
-    }
-
-    template <int = 0>
-    void copy_guids(GUID*) const noexcept
-    {
+        base_type::copy_guids_nested(ids);
     }
 
     template <typename First, typename ... Rest>
@@ -747,9 +1088,31 @@ private:
     }
 
     template <int = 0>
+    void* find_interface(GUID const& id) const noexcept
+    {
+        return base_type::find_interface_nested(id);
+    }
+
+    template <typename First, typename ... Rest>
+    void* find_interface(GUID const& id, std::enable_if_t<impl::is_marker_v<First> || impl::is_implements_v<First>>* = nullptr) const noexcept
+    {
+        return find_interface<Rest ...>(id);
+    }
+
+    template <typename First, typename ... Rest>
+    void* find_interface(GUID const& id, std::enable_if_t<!impl::is_marker_v<First> && !impl::is_implements_v<First>>* = nullptr) const noexcept
+    {
+        if (id == impl::guid_v<First>)
+        {
+            return to_abi<First>(this);
+        }
+        return find_interface<Rest ...>(id);
+    }
+
+    template <int = 0>
     ::IInspectable* find_inspectable() const noexcept
     {
-        return nullptr;
+        return base_type::find_inspectable_nested();
     }
 
     template <typename First, typename ... Rest>
@@ -764,47 +1127,16 @@ private:
         return find_inspectable<Rest ...>();
     }
 
-    template <int = 0>
-    void* find_interface(GUID const&) const noexcept
-    {
-        return nullptr;
-    }
-
-    template <typename First, typename ... Rest>
-    void* find_interface(GUID const& id, std::enable_if_t<std::is_base_of_v<impl::marker, First>>* = nullptr) const noexcept
-    {
-        return find_interface<Rest ...>(id);
-    }
-
-    template <typename First, typename ... Rest>
-    void* find_interface(GUID const& id, std::enable_if_t<!std::is_base_of_v<impl::marker, First>>* = nullptr) const noexcept
-    {
-        if (id == impl::guid_v<First>)
-        {
-            return to_abi<First>(this);
-        }
-
-        return find_interface<Rest ...>(id);
-    }
-
-    ::IUnknown* get_unknown() const noexcept
+    ::IUnknown* get_unknown() const noexcept override
     {
         return to_abi<first_interface>(this);
     }
 
-    hstring GetRuntimeClassName() const
+    hstring GetRuntimeClassName() const override
     {
-        return impl::string_data(impl::name_v<first_interface>);
+        return impl::runtime_class_name<first_interface>::get();
     }
 
-    TrustLevel GetTrustLevel() const noexcept
-    {
-        return BaseTrust;
-    }
-
-    template <typename D, typename I>
-    friend struct impl::produce_base;
-
-    template <typename D, typename I>
-    friend struct impl::produce;
+    template <typename D, typename ... I>
+    friend struct impl::root_implements;
 };

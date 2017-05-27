@@ -1,6 +1,6 @@
     % %(%)
     {
-        % super = this->shim_super();
+        @ super = this->shim_super();
         if (super)
         {
             return super.%(%);

@@ -407,7 +407,7 @@ namespace cppwinrt::meta
             values.erase(std::unique(values.begin(), values.end()), values.end());
         }
 
-        std::vector<required> get_class_required_base(token class_token)
+        std::vector<required> get_class_required_base(token class_token, bool component_mode = false)
         {
             std::vector<required> values;
             append_required(values, class_token, {});
@@ -417,12 +417,33 @@ namespace cppwinrt::meta
                 return values;
             }
 
-            for (token base = class_token.get_base(); base; base = base.get_base())
+            for (type const* base = class_token.get_base_type(); base && (!component_mode || base->filtered); base = base->token.get_base_type())
             {
-                append_required(values, base, {});
+                append_required(values, base->token, {});
             }
 
             sort_unique(values);
+            return values;
+        }
+
+        std::vector<required> get_class_required_impl(token class_token, bool component_mode)
+        {
+            std::vector<required> values = get_class_required_base(class_token, component_mode);
+
+            if (values.empty())
+            {
+                return values;
+            }
+
+            std::string default_name = class_token.get_default().get_name();
+
+            std::vector<required>::iterator position = std::find_if(values.begin(), values.end(),
+                [&](required const& value)
+            {
+                return value.name == default_name;
+            });
+
+            std::rotate(values.begin(), position, position + 1);
             return values;
         }
 
@@ -1417,12 +1438,19 @@ namespace cppwinrt::meta
             return *this;
         }
 
-        if (is_type_ref())
+        return get_type()->token;
+    }
+
+    type const* token::get_type() const
+    {
+        WINRT_ASSERT(is_type_def() || is_type_ref() || is_type_spec());
+
+        if (is_type_def() || is_type_ref())
         {
-            return find_type(get_name())->token;
+            return find_type(get_name());
         }
 
-        return find_type(get_signature().get_token().get_name())->token;
+        return find_type(get_signature().get_token().get_name());
     }
 
     std::string token::get_guid(char const* format) const
@@ -1679,23 +1707,12 @@ namespace cppwinrt::meta
 
     std::vector<required> token::get_class_required() const
     {
-        std::vector<required> values = get_class_required_base(*this);
+        return get_class_required_impl(*this, false);
+    }
 
-        if (values.empty())
-        {
-            return values;
-        }
-
-        std::string default_name = get_default().get_name();
-
-        std::vector<required>::iterator position = std::find_if(values.begin(), values.end(),
-            [&](required const& value)
-        {
-            return value.name == default_name;
-        });
-
-        std::rotate(values.begin(), position, position + 1);
-        return values;
+    std::vector<required> token::get_component_class_required() const
+    {
+        return get_class_required_impl(*this, true);
     }
 
     std::vector<required> token::get_class_required_excluding_default() const
@@ -1729,6 +1746,18 @@ namespace cppwinrt::meta
         }
 
         return base.get_definition();
+    }
+
+    type const* token::get_base_type() const
+    {
+        token base = get_extends();
+
+        if (base.get_name() == "System.Object")
+        {
+            return nullptr;
+        }
+
+        return base.get_type();
     }
 
     token token::get_default() const
