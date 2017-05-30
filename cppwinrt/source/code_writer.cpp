@@ -1622,7 +1622,7 @@ namespace cppwinrt
                 require_names(required_interfaces),
                 bind_output(write_override_fallbacks, override_interfaces),
                 simple_name,
-                bind_output(write_class_override_constructors, type.token, type.name()));
+                bind_output(write_class_override_constructors, type.token, std::string(type.name()) + "T"));
         }
 
         void write_category_field_types(output& out, std::string_view category, meta::type const& type)
@@ -1846,7 +1846,7 @@ namespace cppwinrt
                 bind_output(write_component_instance_interfaces, type),
                 bind_output(write_override_fallbacks, fallback_overrides),
                 type.full_name(),
-                bind_output(write_class_override_constructors, inner_type, type.name()),
+                bind_output(write_class_override_constructors, base, std::string(type.name()) + "Base"),
                 bind_output(write_component_class_override_dispatch_base, type));
         }
 
@@ -3019,8 +3019,7 @@ void t()
         }
         else
         {
-            out.write(strings::write_component_static_class_base,
-                type.name());
+            out.write(strings::write_component_static_class_base, type.name());
         }
 
         out.write(strings::write_component_class_factory_base,
@@ -3028,6 +3027,17 @@ void t()
             bind_output(write_component_factory_interfaces, type),
             type.full_name(),
             bind_output(write_component_factory_forwarding_methods, type));
+
+        std::string upper(type.name());
+        std::transform(upper.begin(), upper.end(), upper.begin(), [](char c) {return (char)::toupper(c); });
+        out.write(strings::write_component_class_xaml_shim,
+            upper,
+            type.name(),
+            type.name(),
+            type.name(),
+            type.name(),
+            type.name(),
+            type.name());
 
         write_winrt_namespace_end(out);
 

@@ -1,6 +1,6 @@
 
 template <typename D, typename ... I>
-struct %T
+struct %Base
     : %implements<D%, I ...>%
 {
     hstring GetRuntimeClassName() const
