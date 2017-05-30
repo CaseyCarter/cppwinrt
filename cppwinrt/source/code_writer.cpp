@@ -1846,7 +1846,7 @@ namespace cppwinrt
                 bind_output(write_component_instance_interfaces, type),
                 bind_output(write_override_fallbacks, fallback_overrides),
                 type.full_name(),
-                bind_output(write_class_override_constructors, base_type->token, std::string(type.name()) + "Base"),
+                bind_output(write_class_override_constructors, inner_type, std::string(type.name()) + "Base"),
                 bind_output(write_component_class_override_dispatch_base, type));
         }
 
