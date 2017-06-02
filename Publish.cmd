@@ -39,3 +39,6 @@ XCOPY Projection\SDKResponseFiles stage\SDKResponseFiles /D /S /R /Y /J /I
 XCOPY Projection\UnitTests stage\Tests /D /R /Y /J /I 
 powershell -ExecutionPolicy ByPass -Command "& '%~dp0\zip.ps1' -directory '%~dp0\stage' -name 'projection.zip'"
 echo d | XCOPY projection.zip %PublishShare% /D /R /Y /J 
+
+echo Publish VSIX
+XCOPY vsix\bin\%BuildConfiguration%\cppwinrt.vsix %PublishShare% /D /R /Y /J 
