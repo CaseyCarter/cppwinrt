@@ -233,7 +233,7 @@ namespace cppwinrt
             // inspection. In that case, we prefer to err on the side of safety and avoid providing no-copy behavior by
             // default. We use the convention of async methods ending with "Async" because checking whether the method's
             // return type implements one of the async interfaces (directly or required) is prohibitively expensive.
-            // This may lead to false positives but these rare exxceptions are easily dealt with by the developer.
+            // This may lead to false positives but these rare exceptions are easily dealt with by the developer.
 
             return is_put_accessor(method) || ends_with(method.raw_name, "Async");
         }
