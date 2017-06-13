@@ -61,7 +61,11 @@ namespace cppwinrt
         }
 
         template <typename F>
-        auto write_code_arg(F const&) -> std::enable_if_t<std::is_callable_v<F(output&)>>
+#if _MSC_FULL_VER < 191125325
+        auto write_code_arg(F const&)->std::enable_if_t<std::is_callable_v<F(output&)>>
+#else
+        auto write_code_arg(F const&)->std::enable_if_t<std::is_invocable_v<F, output&>>
+#endif
         {
             WINRT_ASSERT(false);
         }
@@ -87,7 +91,11 @@ namespace cppwinrt
         }
 
         template <typename F>
-        auto write_arg(F const& f) -> std::enable_if_t<std::is_callable_v<F(output&)>>
+#if _MSC_FULL_VER < 191125325
+        auto write_arg(F const& f)->std::enable_if_t<std::is_callable_v<F(output&)>>
+#else
+        auto write_arg(F const& f) -> std::enable_if_t<std::is_invocable_v<F, output&>>
+#endif
         {
             f(*this);
         }

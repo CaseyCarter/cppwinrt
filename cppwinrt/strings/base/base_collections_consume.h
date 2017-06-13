@@ -430,7 +430,7 @@ namespace impl
         template <typename H>
         struct type : implements_delegate<wfc::VectorChangedEventHandler<T>, H>
         {
-            type(H&& handler) : implements_delegate<wfc::VectorChangedEventHandler<T>, H>(std::forward<H>(handler)) {}
+            type(H&& handler) : implements_delegate<Windows::Foundation::Collections::VectorChangedEventHandler<T>, H>(std::forward<H>(handler)) {}
 
             HRESULT __stdcall Invoke(::IUnknown* sender, ::IUnknown* args) noexcept override
             {
@@ -459,7 +459,7 @@ namespace impl
         template <typename H>
         struct type : implements_delegate<wfc::MapChangedEventHandler<K, V>, H>
         {
-            type(H&& handler) : implements_delegate<wfc::MapChangedEventHandler<K, V>, H>(std::forward<H>(handler)) {}
+            type(H&& handler) : implements_delegate<Windows::Foundation::Collections::MapChangedEventHandler<K, V>, H>(std::forward<H>(handler)) {}
 
             HRESULT __stdcall Invoke(::IUnknown* sender, ::IUnknown* args) noexcept override
             {

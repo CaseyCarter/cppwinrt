@@ -10,7 +10,7 @@ namespace
     template <typename T>
     auto make_copy(T const & param)
     {
-        T::interface_type copy;
+        typename T::interface_type copy;
         copy_from_abi(copy, get_abi(param));
         return copy;
     }

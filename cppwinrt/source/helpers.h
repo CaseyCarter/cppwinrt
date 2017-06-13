@@ -1,7 +1,5 @@
 #pragma once
 
-#include "generator.h"
-
 namespace cppwinrt
 {
     template<typename T>

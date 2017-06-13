@@ -9,21 +9,21 @@ namespace winrt {
 namespace Farm::Animals::implementation {
 
 template <typename D, typename ... I>
-struct HenT
+struct HenBase
     : impl::module_lock, implements<D, Farm::Animals::IHen, I ...>
 {
     hstring GetRuntimeClassName() const
     {
-        return hstring{ L"Farm.Animals.Hen" };
+        return L"Farm.Animals.Hen";
     }
 };
 
 template <typename D, typename T, typename ... I>
-struct HenFactoryT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+struct HenFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
-        return hstring{ L"Farm.Animals.Hen" };
+        return L"Farm.Animals.Hen";
     }
 
     Windows::Foundation::IInspectable ActivateInstance() const
@@ -31,6 +31,20 @@ struct HenFactoryT : impl::module_lock, implements<D, Windows::Foundation::IActi
         return make<T>();
     }
 };
+
+#if defined(WINRT_FORCE_INCLUDE_HEN_X_H) || __has_include("Hen.x.h")
+
+#include "Hen.x.h"
+
+#else
+
+template <typename D, typename ... I>
+using HenT = HenBase<D, I ...>;
+
+template <typename D, typename T, typename ... I>
+using HenFactoryT = HenFactoryBase<D, T, I ...>;
+
+#endif
 
 }
 
