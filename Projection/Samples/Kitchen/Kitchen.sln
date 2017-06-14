@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26606.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kitchen_component", "component\Kitchen_component.vcxproj", "{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}"
 EndProject
@@ -12,36 +12,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kitchen_uwp_managed_tests",
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
-		Release|ARM = Release|ARM
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}.Debug|ARM.ActiveCfg = Debug|Win32
 		{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}.Debug|x64.ActiveCfg = Debug|x64
 		{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}.Debug|x64.Build.0 = Debug|x64
 		{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}.Debug|x86.ActiveCfg = Debug|Win32
 		{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}.Debug|x86.Build.0 = Debug|Win32
-		{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}.Release|ARM.ActiveCfg = Release|Win32
 		{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}.Release|x64.ActiveCfg = Release|x64
 		{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}.Release|x64.Build.0 = Release|x64
 		{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}.Release|x86.ActiveCfg = Release|Win32
 		{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}.Release|x86.Build.0 = Release|Win32
-		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Debug|ARM.ActiveCfg = Debug|ARM
-		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Debug|ARM.Build.0 = Debug|ARM
-		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Debug|ARM.Deploy.0 = Debug|ARM
 		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Debug|x64.ActiveCfg = Debug|x64
 		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Debug|x64.Build.0 = Debug|x64
 		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Debug|x64.Deploy.0 = Debug|x64
 		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Debug|x86.ActiveCfg = Debug|x86
 		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Debug|x86.Build.0 = Debug|x86
 		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Debug|x86.Deploy.0 = Debug|x86
-		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Release|ARM.ActiveCfg = Release|ARM
-		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Release|ARM.Build.0 = Release|ARM
-		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Release|ARM.Deploy.0 = Release|ARM
 		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Release|x64.ActiveCfg = Release|x64
 		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Release|x64.Build.0 = Release|x64
 		{5A245529-4BBD-4879-A8E6-98A95FA87FF8}.Release|x64.Deploy.0 = Release|x64
