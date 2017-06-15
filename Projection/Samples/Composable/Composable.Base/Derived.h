@@ -13,6 +13,7 @@ namespace winrt::Composable::Base::implementation
         hstring DerivedMethod();
         hstring CallVirtualPublicDerivedMethod();
         hstring VirtualPublicDerivedMethod();
+        hstring VirtualInternalRootMethod() override;
     };
 
     struct DerivedFactory : DerivedFactoryT<DerivedFactory, Derived>

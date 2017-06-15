@@ -65,6 +65,7 @@ namespace cppwinrt::meta
         std::string name;
         uint32_t flags{};
         signature signature;
+        bool is_optional_out = false;
 
         bool is_in() const noexcept;
     };

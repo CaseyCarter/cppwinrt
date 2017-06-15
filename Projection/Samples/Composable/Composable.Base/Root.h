@@ -10,7 +10,7 @@ namespace winrt::Composable::Base::implementation
         Root() = default;
 
         hstring RootMethod();
-        hstring VirtualInternalRootMethod();
+        virtual hstring VirtualInternalRootMethod();
         hstring CallVirtualPublicRootMethod();
         hstring VirtualPublicRootMethod();
     };

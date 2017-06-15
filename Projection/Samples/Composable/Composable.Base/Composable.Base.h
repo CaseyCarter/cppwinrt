@@ -7,34 +7,34 @@ namespace winrt {
 
 namespace Composable::Base {
 
-struct Derived;
 struct IDerived;
 struct IDerivedFactory;
 struct IDerivedOverrides;
 struct IRoot;
 struct IRootFactory;
 struct IRootOverrides;
+struct Derived;
 struct Root;
 
 }
 
 namespace impl {
 
-template <> struct category<Composable::Base::Derived>{ using type = class_category; };
 template <> struct category<Composable::Base::IDerived>{ using type = interface_category; };
 template <> struct category<Composable::Base::IDerivedFactory>{ using type = interface_category; };
 template <> struct category<Composable::Base::IDerivedOverrides>{ using type = interface_category; };
 template <> struct category<Composable::Base::IRoot>{ using type = interface_category; };
 template <> struct category<Composable::Base::IRootFactory>{ using type = interface_category; };
 template <> struct category<Composable::Base::IRootOverrides>{ using type = interface_category; };
+template <> struct category<Composable::Base::Derived>{ using type = class_category; };
 template <> struct category<Composable::Base::Root>{ using type = class_category; };
-template <> struct name<Composable::Base::Derived>{ static constexpr auto & value{ L"Composable.Base.Derived" }; };
 template <> struct name<Composable::Base::IDerived>{ static constexpr auto & value{ L"Composable.Base.IDerived" }; };
 template <> struct name<Composable::Base::IDerivedFactory>{ static constexpr auto & value{ L"Composable.Base.IDerivedFactory" }; };
 template <> struct name<Composable::Base::IDerivedOverrides>{ static constexpr auto & value{ L"Composable.Base.IDerivedOverrides" }; };
 template <> struct name<Composable::Base::IRoot>{ static constexpr auto & value{ L"Composable.Base.IRoot" }; };
 template <> struct name<Composable::Base::IRootFactory>{ static constexpr auto & value{ L"Composable.Base.IRootFactory" }; };
 template <> struct name<Composable::Base::IRootOverrides>{ static constexpr auto & value{ L"Composable.Base.IRootOverrides" }; };
+template <> struct name<Composable::Base::Derived>{ static constexpr auto & value{ L"Composable.Base.Derived" }; };
 template <> struct name<Composable::Base::Root>{ static constexpr auto & value{ L"Composable.Base.Root" }; };
 template <> struct guid<Composable::Base::IDerived>{ static constexpr GUID value{ 0x27ECA5A0,0xF765,0x404A,{ 0x9B,0xB2,0x8F,0xB9,0x9B,0xED,0x74,0xCB } }; };
 template <> struct guid<Composable::Base::IDerivedFactory>{ static constexpr GUID value{ 0x307F5696,0xB194,0x4AA8,{ 0xB9,0xBF,0xB6,0x01,0xD5,0xD5,0xF9,0xB3 } }; };
@@ -190,9 +190,12 @@ template <typename D>
 class IDerivedOverridesT
 {
     D& shim() noexcept { return *static_cast<D*>(this); }
-    const D& shim() const noexcept { return *static_cast<const D*>(this); }
+    D const& shim() const noexcept { return *static_cast<const D*>(this); }
+
 public:
+
     using IDerivedOverrides = winrt::Composable::Base::IDerivedOverrides;
+
     hstring VirtualPublicDerivedMethod() const;
 };
 
@@ -200,9 +203,12 @@ template <typename D>
 class IRootOverridesT
 {
     D& shim() noexcept { return *static_cast<D*>(this); }
-    const D& shim() const noexcept { return *static_cast<const D*>(this); }
+    D const& shim() const noexcept { return *static_cast<const D*>(this); }
+
 public:
+
     using IRootOverrides = winrt::Composable::Base::IRootOverrides;
+
     hstring VirtualPublicRootMethod() const;
 };
 
@@ -315,12 +321,14 @@ struct produce<D, Composable::Base::IDerivedFactory> : produce_base<D, Composabl
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), *reinterpret_cast<Windows::Foundation::IInspectable*>(inner)));
+            Windows::Foundation::IInspectable __local_inner;
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
+            if (inner) *inner = detach_abi(__local_inner);
             return S_OK;
         }
         catch (...)
         {
-            *inner = nullptr;
+            if (inner) *inner = nullptr;
             *instance = nullptr;
             return impl::to_hresult();
         }
@@ -403,12 +411,14 @@ struct produce<D, Composable::Base::IRootFactory> : produce_base<D, Composable::
         try
         {
             typename D::abi_guard guard(this->shim());
-            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), *reinterpret_cast<Windows::Foundation::IInspectable*>(inner)));
+            Windows::Foundation::IInspectable __local_inner;
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
+            if (inner) *inner = detach_abi(__local_inner);
             return S_OK;
         }
         catch (...)
         {
-            *inner = nullptr;
+            if (inner) *inner = nullptr;
             *instance = nullptr;
             return impl::to_hresult();
         }
@@ -461,12 +471,13 @@ template <typename D> hstring IRootOverridesT<D>::VirtualPublicRootMethod() cons
 }
 
 template <typename D, typename ... Interfaces>
-struct DerivedT
-    : implements<D, Composable::Base::IDerivedOverrides, Composable::Base::IRootOverrides, composing, Interfaces ...>
-    , impl::require<D, Composable::Base::IDerived, Composable::Base::IRoot>
-    , Composable::Base::IDerivedOverridesT<D>, Composable::Base::IRootOverridesT<D>
+struct DerivedT :
+    implements<D, Composable::Base::IDerivedOverrides, Composable::Base::IRootOverrides, composing, Interfaces ...>,
+    impl::require<D, Composable::Base::IDerived, Composable::Base::IRoot>,
+    Composable::Base::IDerivedOverridesT<D>, Composable::Base::IRootOverridesT<D>
 {
     using composable = Derived;
+
 protected:
     DerivedT()
     {
@@ -475,12 +486,13 @@ protected:
 };
 
 template <typename D, typename ... Interfaces>
-struct RootT
-    : implements<D, Composable::Base::IRootOverrides, composing, Interfaces ...>
-    , impl::require<D, Composable::Base::IRoot>
-    , Composable::Base::IRootOverridesT<D>
+struct RootT :
+    implements<D, Composable::Base::IRootOverrides, composing, Interfaces ...>,
+    impl::require<D, Composable::Base::IRoot>,
+    Composable::Base::IRootOverridesT<D>
 {
     using composable = Root;
+
 protected:
     RootT()
     {
@@ -493,9 +505,6 @@ protected:
 }
 
 namespace std {
-
-template<> struct hash<winrt::Composable::Base::Derived> : 
-    winrt::impl::impl_hash_unknown<winrt::Composable::Base::Derived> {};
 
 template<> struct hash<winrt::Composable::Base::IDerived> : 
     winrt::impl::impl_hash_unknown<winrt::Composable::Base::IDerived> {};
@@ -514,6 +523,9 @@ template<> struct hash<winrt::Composable::Base::IRootFactory> :
 
 template<> struct hash<winrt::Composable::Base::IRootOverrides> : 
     winrt::impl::impl_hash_unknown<winrt::Composable::Base::IRootOverrides> {};
+
+template<> struct hash<winrt::Composable::Base::Derived> : 
+    winrt::impl::impl_hash_unknown<winrt::Composable::Base::Derived> {};
 
 template<> struct hash<winrt::Composable::Base::Root> : 
     winrt::impl::impl_hash_unknown<winrt::Composable::Base::Root> {};

@@ -670,9 +670,16 @@ namespace cppwinrt
                 }
                 else
                 {
-                    out.write("*reinterpret_cast<@*>(%)",
-                        signature.get_name(),
-                        param.name);
+                    if (param.is_optional_out)
+                    {
+                        out.write("__local_%", param.name);
+                    }
+                    else
+                    {
+                        out.write("*reinterpret_cast<@*>(%)",
+                            signature.get_name(),
+                            param.name);
+                    }
                 }
             }
         }
@@ -801,6 +808,17 @@ namespace cppwinrt
                 get_impl_name(type.full_name()));
         }
 
+        void write_optional_out_wrappers(output& out, meta::method const& method)
+        {
+            for (meta::param const& param : method.params)
+            {
+                if (param.is_optional_out)
+                {
+                    out.write("\n            @ __local_%;", param.signature.get_name(), param.name);
+                }
+            }
+        }
+
         void write_interface_produce_upcall(output& out, meta::method const& method)
         {
             if (!method.has_return_type())
@@ -826,6 +844,17 @@ namespace cppwinrt
                     method.return_type.name,
                     method.get_name(),
                     bind_output(write_produce_args, method));
+            }
+        }
+
+        void write_optional_out_results(output& out, meta::method const& method)
+        {
+            for (meta::param const& param : method.params)
+            {
+                if (param.is_optional_out)
+                {
+                    out.write("\n            if (%) *% = detach_abi(__local_%);", param.name, param.name, param.name);
+                }
             }
         }
 
@@ -864,7 +893,14 @@ namespace cppwinrt
             }
             else
             {
-                out.write("\n            *% = nullptr;", param.name);
+                if (param.is_optional_out)
+                {
+                    out.write("\n            if (%) *% = nullptr;", param.name, param.name);
+                }
+                else
+                {
+                    out.write("\n            *% = nullptr;", param.name);
+                }
             }
         }
 
@@ -888,12 +924,32 @@ namespace cppwinrt
 
         void write_interface_produce_methods(output& out, meta::type const& type)
         {
-            for (meta::method const& method : type.token.get_methods())
+            bool is_composable_factory = false;
+            std::string runtimeclass_name;
+            if (type.token.get_attribute_string(L"Windows.Foundation.Metadata.ExclusiveToAttribute", runtimeclass_name))
             {
+                auto match_type = [&type](meta::composable_attribute const& attribute)
+                {
+                    return attribute.type->token == type.token;
+                };
+
+                std::vector<meta::composable_attribute> const& attributes = meta::find_type(runtimeclass_name)->token.get_composable_attributes();
+                is_composable_factory = std::any_of(attributes.begin(), attributes.end(), match_type);
+            }
+
+            for (meta::method method : type.token.get_methods())
+            {
+                if (is_composable_factory)
+                {
+                    WINRT_ASSERT(method.params.size() >= 2);
+                    method.params[method.params.size() - 1].is_optional_out = true;
+                }
                 out.write(strings::write_interface_produce_method,
                     method.get_abi_name(),
                     bind_output(write_abi_params, method),
+                    bind_output(write_optional_out_wrappers, method),
                     bind_output(write_interface_produce_upcall, method),
+                    bind_output(write_optional_out_results, method),
                     bind_output(write_produce_cleanup, method));
             }
         }

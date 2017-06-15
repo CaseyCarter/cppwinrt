@@ -10,6 +10,7 @@
 *.output
 *.zip
 *.appx
+*.dll
 
 x86
 x64
@@ -22,6 +23,7 @@ release
 .vs
 DevProjection
 AppPackages
+Generated\ Files
 
 cppwinrt/strings/strings.h
 cppwinrt/strings/strings.cpp

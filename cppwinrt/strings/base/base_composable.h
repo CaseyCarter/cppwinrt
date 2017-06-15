@@ -4,27 +4,21 @@ namespace impl
     template <typename D>
     struct composable_factory
     {
-        template <typename I>
-        static I CreateInstance(const Windows::Foundation::IInspectable& outer, Windows::Foundation::IInspectable& inner)
+        template <typename I, typename ... Args>
+        static I CreateInstance(const Windows::Foundation::IInspectable& outer, Windows::Foundation::IInspectable& inner, Args&& ... args)
         {
             static_assert(std::is_base_of_v<Windows::Foundation::IInspectable, I>, "Requested interface must derive from winrt::Windows::Foundation::IInspectable");
-            Windows::Foundation::IInspectable local_inner = CreateInstanceImpl(outer);
-            I instance = local_inner.as<I>();
-
-            if (&inner)
-            {
-                inner = std::move(local_inner);
-            }
-
-            return instance;
+            inner = CreateInstanceImpl(outer, std::forward<Args>(args) ...);
+            return inner.as<I>();
         }
 
     private:
-        static Windows::Foundation::IInspectable CreateInstanceImpl(const Windows::Foundation::IInspectable& outer)
+        template <typename ... Args>
+        static Windows::Foundation::IInspectable CreateInstanceImpl(const Windows::Foundation::IInspectable& outer, Args&& ... args)
         {
             // Very specific dance here. The return value must have a ref on the outer, while inner must have a ref count of 1.
             // Be sure not to make a delegating QueryInterface call because the controlling outer is not fully constructed yet.
-            com_ptr<D> instance = make_self<D>();
+            com_ptr<D> instance = make_self<D>(std::forward<Args>(args) ...);
             instance->m_outer = static_cast<::IInspectable*>(get_abi(outer));
             Windows::Foundation::IInspectable inner;
             attach_abi(inner, to_abi<INonDelegatingInspectable>(detach_abi(instance)));

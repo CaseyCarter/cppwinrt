@@ -3,8 +3,8 @@
     {
         try
         {
-            typename D::abi_guard guard(this->shim());
-            %;
+            typename D::abi_guard guard(this->shim());%
+            %;%
             return S_OK;
         }
         catch (...)

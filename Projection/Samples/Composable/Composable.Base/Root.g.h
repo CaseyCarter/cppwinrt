@@ -9,7 +9,7 @@ namespace winrt {
 namespace Composable::Base::implementation {
 
 template <typename D, typename ... I>
-struct RootT
+struct RootBase
     : impl::module_lock, implements<D, Composable::Base::IRoot, Composable::Base::IRootOverrides, composable, I ...>
 {
     hstring GetRuntimeClassName() const
@@ -22,7 +22,7 @@ protected:
 };
 
 template <typename D, typename T, typename ... I>
-struct RootFactoryT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Composable::Base::IRootFactory, I ...>
+struct RootFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Composable::Base::IRootFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -39,6 +39,20 @@ struct RootFactoryT : impl::module_lock, implements<D, Windows::Foundation::IAct
         return impl::composable_factory<T>::template CreateInstance<Composable::Base::IRoot>(outer, inner);
     }
 };
+
+#if defined(WINRT_FORCE_INCLUDE_ROOT_X_H) || __has_include("Root.x.h")
+
+#include "Root.x.h"
+
+#else
+
+template <typename D, typename ... I>
+using RootT = RootBase<D, I ...>;
+
+template <typename D, typename T, typename ... I>
+using RootFactoryT = RootFactoryBase<D, T, I ...>;
+
+#endif
 
 }
 

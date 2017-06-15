@@ -9,7 +9,7 @@ namespace winrt {
 namespace Composable::Base::implementation {
 
 template <typename D, typename ... I>
-struct DerivedT
+struct DerivedBase
     : implements<D, Composable::Base::IDerived, Composable::Base::IDerivedOverrides, composable, I ...>
 {
     hstring GetRuntimeClassName() const
@@ -22,7 +22,7 @@ protected:
 };
 
 template <typename D, typename T, typename ... I>
-struct DerivedFactoryT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Composable::Base::IDerivedFactory, I ...>
+struct DerivedFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Composable::Base::IDerivedFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -39,6 +39,20 @@ struct DerivedFactoryT : impl::module_lock, implements<D, Windows::Foundation::I
         return impl::composable_factory<T>::template CreateInstance<Composable::Base::IDerived>(outer, inner);
     }
 };
+
+#if defined(WINRT_FORCE_INCLUDE_DERIVED_X_H) || __has_include("Derived.x.h")
+
+#include "Derived.x.h"
+
+#else
+
+template <typename D, typename ... I>
+using DerivedT = DerivedBase<D, I ...>;
+
+template <typename D, typename T, typename ... I>
+using DerivedFactoryT = DerivedFactoryBase<D, T, I ...>;
+
+#endif
 
 }
 

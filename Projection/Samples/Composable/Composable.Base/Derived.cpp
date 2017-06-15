@@ -5,16 +5,21 @@ namespace winrt::Composable::Base::implementation
 {
     hstring Derived::DerivedMethod()
     {
-        throw hresult_not_implemented();
+        return L"Composable.Base.Derived.DerivedMethod";
     }
 
     hstring Derived::CallVirtualPublicDerivedMethod()
     {
-        throw hresult_not_implemented();
+        return super().VirtualPublicDerivedMethod();
     }
 
     hstring Derived::VirtualPublicDerivedMethod()
     {
-        throw hresult_not_implemented();
+        return L"Composable.Base.Derived.VirtualPublicDerivedMethod";
+    }
+
+    hstring Derived::VirtualInternalRootMethod()
+    {
+        return L"Composable.Base.Derived.VirtualInternalRootMethod";
     }
 }

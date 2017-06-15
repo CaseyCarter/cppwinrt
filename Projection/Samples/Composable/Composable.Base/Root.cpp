@@ -5,21 +5,21 @@ namespace winrt::Composable::Base::implementation
 {
     hstring Root::RootMethod()
     {
-        throw hresult_not_implemented();
+        return L"Composable.Base.Root.RootMethod";
     }
 
     hstring Root::VirtualInternalRootMethod()
     {
-        throw hresult_not_implemented();
+        return L"Composable.Base.Root.VirtualInternalRootMethod";
     }
 
     hstring Root::CallVirtualPublicRootMethod()
     {
-        throw hresult_not_implemented();
+        return super().VirtualPublicRootMethod();
     }
 
     hstring Root::VirtualPublicRootMethod()
     {
-        throw hresult_not_implemented();
+        return L"Composable.Base.Root.VirtualPublicRootMethod";
     }
 }
