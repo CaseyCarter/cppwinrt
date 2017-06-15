@@ -83,4 +83,79 @@ namespace impl
     {
         using type = struct_category<float, float, float, float>;
     };
+
+    template <> struct name<Windows::Foundation::Numerics::float2>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Vector2" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::float2>
+    {
+        using type = struct_category<float, float>;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::float3>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Vector3" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::float3>
+    {
+        using type = struct_category<float, float, float>;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::float4>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Vector4" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::float4>
+    {
+        using type = struct_category<float, float, float, float>;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::float3x2>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Matrix3x2" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::float3x2>
+    {
+        using type = struct_category<float, float, float, float, float, float>;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::float4x4>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Matrix4x4" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::float4x4>
+    {
+        using type = struct_category<
+            float, float, float, float,
+            float, float, float, float,
+            float, float, float, float,
+            float, float, float, float
+        >;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::quaternion>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Quaternion" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::quaternion>
+    {
+        using type = struct_category<float, float, float, float>;
+    };
+
+    template <> struct name<Windows::Foundation::Numerics::plane>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.Numerics.Plane" };
+    };
+
+    template <> struct category<Windows::Foundation::Numerics::plane>
+    {
+        using type = struct_category<Windows::Foundation::Numerics::float3, float>;
+    };
 }

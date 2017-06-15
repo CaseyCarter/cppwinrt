@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "catch.hpp"
+#include "winrt/Windows.Foundation.Numerics.h"
 
 #include <chrono>
 
@@ -9,6 +10,25 @@ using namespace Windows::UI::Xaml::Interop;
 using namespace Windows::Web::Http::Headers;
 
 using namespace std::literals::chrono_literals;
+
+namespace
+{
+    constexpr bool guid_equal(GUID const& lhs, GUID const& rhs)
+    {
+        return std::tie(lhs.Data1, lhs.Data2, lhs.Data3,
+                lhs.Data4[0], lhs.Data4[1], lhs.Data4[2], lhs.Data4[3], lhs.Data4[4], lhs.Data4[5], lhs.Data4[6], lhs.Data4[7]) ==
+            std::tie(rhs.Data1, rhs.Data2, rhs.Data3,
+                rhs.Data4[0], rhs.Data4[1], rhs.Data4[2], rhs.Data4[3], rhs.Data4[4], rhs.Data4[5], rhs.Data4[6], rhs.Data4[7]);
+    }
+}
+
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::float2>>, impl::guid_v<IReference<Numerics::Vector2>>));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::float3>>, impl::guid_v<IReference<Numerics::Vector3>>));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::float4>>, impl::guid_v<IReference<Numerics::Vector4>>));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::float3x2>>, impl::guid_v<IReference<Numerics::Matrix3x2>>));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::float4x4>>, impl::guid_v<IReference<Numerics::Matrix4x4>>));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::plane>>, impl::guid_v<IReference<Numerics::Plane>>));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::quaternion>>, impl::guid_v<IReference<Numerics::Quaternion>>));
 
 struct my_struct
 {
