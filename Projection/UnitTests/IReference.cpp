@@ -19,15 +19,24 @@ namespace
             std::tie(rhs.Data1, rhs.Data2, rhs.Data3,
                 rhs.Data4[0], rhs.Data4[1], rhs.Data4[2], rhs.Data4[3], rhs.Data4[4], rhs.Data4[5], rhs.Data4[6], rhs.Data4[7]);
     }
+
+    // I used midlrt to generate IReference<T> pinterfaces for the Numerics types and "manually" obtain their GUIDs.
+    constexpr GUID ireference_matrix3x2 { 0x76358cfd, 0x2cbd, 0x525b,{ 0xa4, 0x9e, 0x90, 0xee, 0x18, 0x24, 0x7b, 0x71 } };
+    constexpr GUID ireference_matrix4x4 { 0xdacbffdc, 0x68ef, 0x5fd0,{ 0xb6, 0x57, 0x78, 0x2d, 0x0a, 0xc9, 0x80, 0x7e } };
+    constexpr GUID ireference_plane     { 0x46d542a1, 0x52f7, 0x58e7,{ 0xac, 0xfc, 0x9a, 0x6d, 0x36, 0x4d, 0xa0, 0x22 } };
+    constexpr GUID ireference_quaternion{ 0xb27004bb, 0xc014, 0x5dce,{ 0x9a, 0x21, 0x79, 0x9c, 0x5a, 0x3c, 0x14, 0x61 } };
+    constexpr GUID ireference_vector2   { 0x48f6a69e, 0x8465, 0x57ae,{ 0x94, 0x00, 0x97, 0x64, 0x08, 0x7f, 0x65, 0xad } };
+    constexpr GUID ireference_vector3   { 0x1ee770ff, 0xc954, 0x59ca,{ 0xa7, 0x54, 0x61, 0x99, 0xa9, 0xbe, 0x28, 0x2c } };
+    constexpr GUID ireference_vector4   { 0xa5e843c9, 0xed20, 0x5339,{ 0x8f, 0x8d, 0x9f, 0xe4, 0x04, 0xcf, 0x36, 0x54 } };
 }
 
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::float2>>, impl::guid_v<IReference<Numerics::Vector2>>));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::float3>>, impl::guid_v<IReference<Numerics::Vector3>>));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::float4>>, impl::guid_v<IReference<Numerics::Vector4>>));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::float3x2>>, impl::guid_v<IReference<Numerics::Matrix3x2>>));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::float4x4>>, impl::guid_v<IReference<Numerics::Matrix4x4>>));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::plane>>, impl::guid_v<IReference<Numerics::Plane>>));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::quaternion>>, impl::guid_v<IReference<Numerics::Quaternion>>));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::float2>>, ireference_vector2));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::float3>>, ireference_vector3));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::float4>>, ireference_vector4));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::float3x2>>, ireference_matrix3x2));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::float4x4>>, ireference_matrix4x4));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::plane>>, ireference_plane));
+static_assert(guid_equal(impl::guid_v<IReference<Numerics::quaternion>>, ireference_quaternion));
 
 struct my_struct
 {
