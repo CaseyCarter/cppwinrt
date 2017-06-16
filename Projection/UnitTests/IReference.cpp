@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "catch.hpp"
-#include "winrt/Windows.Foundation.Numerics.h"
 
 #include <chrono>
 

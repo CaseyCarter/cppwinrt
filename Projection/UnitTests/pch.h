@@ -8,6 +8,7 @@
 
 #include "winrt\Windows.Foundation.Collections.h"
 #include "winrt\Windows.Foundation.Diagnostics.h"
+#include "winrt\Windows.Foundation.Numerics.h"
 #include "winrt\Windows.ApplicationModel.Activation.h"
 #include "winrt\Windows.ApplicationModel.DataTransfer.h"
 #include "winrt\Windows.ApplicationModel.Store.h"
