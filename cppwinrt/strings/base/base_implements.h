@@ -487,7 +487,7 @@ namespace impl
 
         HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept override
         {
-            if (id == guid_v<IWeakReference> || id == guid_v<::IUnknown>)
+            if (id == guid_v<IWeakReference> || id == guid_v<Windows::Foundation::IUnknown>)
             {
                 *object = static_cast<IWeakReference*>(this);
                 AddRef();
