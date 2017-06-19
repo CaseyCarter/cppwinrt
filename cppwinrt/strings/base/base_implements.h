@@ -425,7 +425,58 @@ namespace impl
     };
 
     template <bool Agile>
-    struct weak_ref : IWeakReference, free_threaded_marshaler<Agile>
+    struct weak_ref;
+
+    template <bool Agile>
+    struct weak_source_producer;
+
+    template <bool Agile>
+    struct weak_source : IWeakReferenceSource
+    {
+        weak_ref<Agile>* that() noexcept
+        {
+            return static_cast<weak_ref<Agile>*>(reinterpret_cast<weak_source_producer<Agile>*>(this));
+        }
+
+        HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept override
+        {
+            if (id == guid_v<IWeakReferenceSource>)
+            {
+                *object = static_cast<IWeakReferenceSource*>(this);
+                that()->increment_strong();
+                return S_OK;
+            }
+
+            return that()->m_object->QueryInterface(id, object);
+        }
+
+        unsigned long __stdcall AddRef() noexcept override
+        {
+            return that()->increment_strong();
+        }
+
+        unsigned long __stdcall Release() noexcept override
+        {
+            return that()->m_object->Release();
+        }
+
+        HRESULT __stdcall GetWeakReference(IWeakReference** weakReference) noexcept override
+        {
+            *weakReference = that();
+            that()->AddRef();
+            return S_OK;
+        }
+    };
+
+    template <bool Agile>
+    struct weak_source_producer
+    {
+    protected:
+        weak_source<Agile> m_source;
+    };
+
+    template <bool Agile>
+    struct weak_ref : IWeakReference, free_threaded_marshaler<Agile>, weak_source_producer<Agile>
     {
         weak_ref(::IUnknown* object, uint32_t const strong) :
             m_object(object),
@@ -436,7 +487,7 @@ namespace impl
 
         HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept override
         {
-            if (id == __uuidof(IWeakReference) || id == __uuidof(::IUnknown))
+            if (id == guid_v<IWeakReference> || id == guid_v<::IUnknown>)
             {
                 *object = static_cast<IWeakReference*>(this);
                 AddRef();
@@ -445,7 +496,7 @@ namespace impl
 
             if (Agile)
             {
-                if (id == __uuidof(IAgileObject) || id == __uuidof(IMarshal))
+                if (id == guid_v<IAgileObject> || id == guid_v<IMarshal>)
                 {
                     *object = this->find_marshal();
                     AddRef();
@@ -521,49 +572,15 @@ namespace impl
         IWeakReferenceSource* get_source()
         {
             increment_strong();
-            return&m_source;
+            return &this->m_source;
         }
 
     private:
+        template <bool Agile>
+        friend struct weak_source;
 
-        struct weak_source : IWeakReferenceSource
-        {
-            weak_ref* that() noexcept
-            {
-                return reinterpret_cast<weak_ref*>(reinterpret_cast<uint8_t*>(this) - offsetof(weak_ref, m_source));
-            }
+        static_assert(sizeof(weak_source_producer<Agile>) == sizeof(weak_source<Agile>));
 
-            HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept override
-            {
-                if (id == __uuidof(IWeakReferenceSource))
-                {
-                    *object = static_cast<IWeakReferenceSource*>(this);
-                    that()->increment_strong();
-                    return S_OK;
-                }
-
-                return that()->m_object->QueryInterface(id, object);
-            }
-
-            unsigned long __stdcall AddRef() noexcept override
-            {
-                return that()->increment_strong();
-            }
-
-            unsigned long __stdcall Release() noexcept override
-            {
-                return that()->m_object->Release();
-            }
-
-            HRESULT __stdcall GetWeakReference(IWeakReference** weakReference) noexcept override
-            {
-                *weakReference = that();
-                that()->AddRef();
-                return S_OK;
-            }
-        };
-
-        weak_source m_source;
         ::IUnknown* m_object{};
         std::atomic<uint32_t> m_strong{ 1 };
         std::atomic<uint32_t> m_weak{ 1 };
