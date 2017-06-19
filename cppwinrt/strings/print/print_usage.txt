@@ -11,6 +11,9 @@ Options:
   -o[ut] <path>         Location of generated projection files
   -f[ilter] <prefix>    One or more prefixes to include in projection
   -c[omponent]          Generate component implementation source files 
+  -n[atvis]             Generate a natvis script for debug visualization
+  -v[erbose]            Show detailed progress information
+  -w[rite]              Overwrite existing component projection files
   -h[elp]               Show detailed help with examples
   @<path>               Response file containing command line options
 
