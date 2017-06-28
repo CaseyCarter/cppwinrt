@@ -2,7 +2,7 @@
 
 // VS 2017.3 Preview has a generator bug that causes premature destruction of the coroutine frame 
 // in release (optimized) builds.  Work around by disabling optimizations for this version.
-#if _MSC_FULL_VER >= 191125303 && _MSC_FULL_VER <= 191125325
+#if _MSC_FULL_VER >= 191125303 && _MSC_FULL_VER <= 191125415
 #pragma message("WARNING: Build is unoptimized, to work around generator bug in VS 2017.3 Preview")
 #pragma optimize("", off)
 #endif
