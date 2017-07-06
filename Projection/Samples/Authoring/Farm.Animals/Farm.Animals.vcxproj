@@ -88,7 +88,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <CustomBuildStep>
-      <Command>cppwinrt -comp -in $(ProjectDir)Farm.Animals.winmd -n -out $(ProjectDir)</Command>
+      <Command>cppwinrt -comp -in $(ProjectDir)Farm.Animals.winmd -ref local -n -out $(ProjectDir)</Command>
       <Message>C++/WinRT compiler</Message>
       <Outputs>Farm.Animals.h;module.h</Outputs>
       <Inputs>Farm.Animals.winmd</Inputs>

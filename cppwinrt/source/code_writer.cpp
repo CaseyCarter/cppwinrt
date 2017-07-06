@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "code_writer.h"
+#include "reference_writer.h"
 #include "version.h"
 #include "strings.h"
 #include "settings.h"
@@ -2222,14 +2223,30 @@ namespace cppwinrt
 
         write_edit_warning_header(out);
         out.write("#include \"winrt/base.h\"\n");
-        write_winrt_namespace_begin(out);
 
+        std::vector<std::reference_wrapper<const meta::index_pair>> unfiltered_namespaces;
+        std::vector<reference_writer> ref_writers;
         for (meta::index_pair const& ns : index)
+        {
+            auto classes = get_unfiltered_types(ns.second.classes);
+            if(classes.begin() != classes.end())
+            {
+                unfiltered_namespaces.push_back(std::ref(ns));
+                break;
+            }
+        }
+        for (meta::index_pair const& ns : unfiltered_namespaces)
+        {
+            reference_writer ref_writer(ns.first, ns.second);
+            ref_writer.write_includes(out, ".h", "winrt/");
+            ref_writer.write_parent_includes(out, "winrt/");
+        }
+        write_winrt_namespace_begin(out);
+        for (meta::index_pair const& ns : unfiltered_namespaces)
         {
             out.write_namespace(ns.first);
             write_forwards(out, ns.second);
         }
-
         out.write_namespace("impl");
         out.write("\n");
 

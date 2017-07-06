@@ -354,6 +354,7 @@
     <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="source\reference_writer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">
@@ -390,6 +391,7 @@
     <Text Include="strings\print\print_usage.txt">
       <Filter>strings\print</Filter>
     </Text>
+    <Text Include="strings\print\print_usage_details.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="source\version.rc" />

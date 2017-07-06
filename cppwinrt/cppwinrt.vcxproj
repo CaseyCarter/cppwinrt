@@ -34,6 +34,7 @@
     <ClInclude Include="source\helpers.h" />
     <ClInclude Include="source\pch.h" />
     <ClInclude Include="source\platform_writer.h" />
+    <ClInclude Include="source\reference_writer.h" />
     <ClInclude Include="source\settings.h" />
     <ClInclude Include="source\text_writer.h" />
     <ClInclude Include="source\version.h" />
@@ -218,6 +219,7 @@
     <Text Include="strings\print\print_invalid_usage.txt" />
     <Text Include="strings\print\print_time.txt" />
     <Text Include="strings\print\print_usage.txt" />
+    <Text Include="strings\print\print_usage_details.txt" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="source\version.rc" />
@@ -227,7 +229,7 @@
     <ProjectGuid>{75185506-62F6-4A35-A508-066BEA0BD213}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>compiler</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

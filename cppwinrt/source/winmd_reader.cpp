@@ -12,13 +12,13 @@ namespace cppwinrt::meta
         struct database
         {
             IMetaDataImport2* db{};
-            bool foundational{};
+            bool is_reference{};
             mdToken system_enum{};
             mdToken system_struct{};
             mdToken system_delegate{};
             mdToken system_attribute{};
 
-            database(std::wstring const& filename, bool foundational);
+            database(std::wstring const& filename, bool is_reference);
             generator<token> EnumTypeDefs() const noexcept;
         };
 
@@ -227,7 +227,7 @@ namespace cppwinrt::meta
                         }
                     }
 
-                    bool const filtered = database.foundational || is_foundation_type(name) || is_filtered_type(name);
+                    bool const filtered = database.is_reference || is_foundation_type(name) || is_filtered_type(name);
                     type type(std::move(name), token, filtered);
 
                     if (type.name_space().empty())
@@ -540,7 +540,7 @@ namespace cppwinrt::meta
         }
     }
 
-    database::database(std::wstring const& filename, bool const foundational) : foundational(foundational)
+    database::database(std::wstring const& filename, bool const is_reference) : is_reference(is_reference)
     {
         winrt::check_hresult(dispenser->OpenScope(
             filename.c_str(),
@@ -578,9 +578,9 @@ namespace cppwinrt::meta
         }
     }
 
-    void open_database(std::wstring const& filename, bool const foundational)
+    void open_database(std::wstring const& filename, bool const is_reference)
     {
-        databases.emplace_back(filename, foundational);
+        databases.emplace_back(filename, is_reference);
     }
 
     void build_index()

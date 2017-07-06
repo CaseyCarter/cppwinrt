@@ -141,6 +141,7 @@ namespace
             { L"verbose", option::verbose },
             { L"write", option::overwrite },
             { L"help", option::help },
+            { L"?", option::help },
         };
 
         option last_option{};

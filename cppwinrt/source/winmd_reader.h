@@ -216,7 +216,7 @@ namespace cppwinrt::meta
     using index_type = std::map<std::string, namespace_types>;
     using index_pair = index_type::value_type;
 
-    void open_database(std::wstring const& filename, bool foundation);
+    void open_database(std::wstring const& filename, bool is_reference);
     void build_index();
     index_type const& get_index();
     bool is_foundation_type(std::string_view name);

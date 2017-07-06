@@ -3,6 +3,11 @@
 namespace cppwinrt
 {
     template<typename T>
+    void unreferenced_parameter(T const&)
+    {
+    }
+
+    template<typename T>
     void check_win32_bool(T result)
     {
         if (!result)
