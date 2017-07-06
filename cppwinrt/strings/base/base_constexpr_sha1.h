@@ -137,6 +137,7 @@ namespace impl
     template <size_t InputSize, size_t RemainderSize>
     constexpr auto make_buffer(constexpr_array<uint8_t, RemainderSize> const & remaining_buffer)
     {
+#pragma warning(suppress: 6326)
         constexpr auto message_length = (RemainderSize + 8 <= message_block_size) ? message_block_size : message_block_size * 2;
         constexpr auto padding_length = message_length - RemainderSize - 8;
 

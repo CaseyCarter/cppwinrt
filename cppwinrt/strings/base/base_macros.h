@@ -12,15 +12,15 @@ template <typename ... Args>
 void WINRT_TRACE(char const* const message, Args ... args) noexcept
 {
     char buffer[1024];
-    snprintf(buffer, sizeof(buffer), message, args ...);
+    (void)snprintf(buffer, sizeof(buffer), message, args ...);
     OutputDebugStringA(buffer);
 }
 
 #else
 
 #define WINRT_ASSERT __noop
-#define WINRT_VERIFY(expression) (expression)
-#define WINRT_VERIFY_(result, expression) (expression)
+#define WINRT_VERIFY(expression) (void)(expression)
+#define WINRT_VERIFY_(result, expression) (void)(expression)
 #define WINRT_TRACE __noop
 
 #endif
