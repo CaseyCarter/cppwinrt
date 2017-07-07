@@ -68,6 +68,7 @@ namespace cppwinrt::meta
         bool is_optional_out = false;
 
         bool is_in() const noexcept;
+        bool is_const() const noexcept;
     };
 
     struct using_pair

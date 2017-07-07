@@ -251,7 +251,7 @@ namespace cppwinrt::meta
                     }
                     else if (extends == database.system_struct)
                     {
-                        if (token.is_api_contract() || filtered)
+                        if (token.is_api_contract())
                         {
                             continue;
                         }
@@ -284,6 +284,14 @@ namespace cppwinrt::meta
         {
             CorElementType category = CorSigUncompressElementType(cursor);
             bool by_ref{};
+
+            if (category == ELEMENT_TYPE_CMOD_REQD || category == ELEMENT_TYPE_CMOD_OPT)
+            {
+                // Followed by a type token; typically used to denote a parameter as const via typeref to "IsConst"
+                // We'll ignore this as we typically don't care about this from a consumption standpoint
+                CorSigUncompressToken(cursor);
+                category = CorSigUncompressElementType(cursor);
+            }
 
             if (category == ELEMENT_TYPE_BYREF)
             {
@@ -377,6 +385,11 @@ namespace cppwinrt::meta
 
         void exclude_required(std::vector<required>& values, token default_interface)
         {
+            if (!default_interface)
+            {
+                return;
+            }
+
             std::string name = default_interface.get_name();
 
             values.erase(std::remove_if(
@@ -748,6 +761,17 @@ namespace cppwinrt::meta
         PCCOR_SIGNATURE cursor = data;
         CorElementType category = CorSigUncompressElementType(cursor);
 
+        if (category == ELEMENT_TYPE_CMOD_REQD || category == ELEMENT_TYPE_CMOD_OPT)
+        {
+            CorSigUncompressToken(cursor);
+            category = CorSigUncompressElementType(cursor);
+        }
+
+        if (category == ELEMENT_TYPE_BYREF)
+        {
+            category = CorSigUncompressElementType(cursor);
+        }
+
         switch (category)
         {
         case ELEMENT_TYPE_BOOLEAN: return "bool";
@@ -841,6 +865,12 @@ namespace cppwinrt::meta
             return next;
         }
 
+        if (category == ELEMENT_TYPE_CMOD_REQD || category == ELEMENT_TYPE_CMOD_OPT)
+        {
+            CorSigUncompressToken(next.data);
+            return next.next(callback);
+        }
+
         WINRT_ASSERT(false);
         return {};
     }
@@ -848,6 +878,18 @@ namespace cppwinrt::meta
     bool param::is_in() const noexcept
     {
         return IsPdIn(flags);
+    }
+
+    bool param::is_const() const noexcept
+    {
+        PCCOR_SIGNATURE cursor = signature.data;
+        CorElementType category = CorSigUncompressElementType(cursor);
+        if (category != ELEMENT_TYPE_CMOD_OPT)
+        {
+            return false;
+        }
+
+        return get_name(token{ CorSigUncompressToken(cursor), signature.db }) == "System.Runtime.CompilerServices.IsConst";
     }
 
     bool composable_attribute::is_public() const noexcept
