@@ -101,6 +101,7 @@
     <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h" />
     <ClInclude Include="strings\write\write_component_class_source.h" />
     <ClInclude Include="strings\write\write_component_class_static_definition.h" />
+    <ClInclude Include="strings\write\write_component_class_xaml_shim.h" />
     <ClInclude Include="strings\write\write_component_factory_activate_instance.h" />
     <ClInclude Include="strings\write\write_component_factory_activate_instance_not_implemented.h" />
     <ClInclude Include="strings\write\write_component_factory_forwarding_composable.h" />

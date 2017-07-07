@@ -22,7 +22,7 @@ class App : Application
         block.TextAlignment = TextAlignment.Center;
 
         var hen = new Hen();
-        block.Text = hen.Name;
+        block.Text = hen.Français;
 
         Window window = Window.Current;
         window.Content = block;
@@ -45,7 +45,7 @@ class App : Application
 
     static void Main()
     {
-        ApplicationView.PreferredLaunchViewSize = new Size(1000,600);
+        ApplicationView.PreferredLaunchViewSize = new Size(1000, 600);
         ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
         Application.Start(o =>

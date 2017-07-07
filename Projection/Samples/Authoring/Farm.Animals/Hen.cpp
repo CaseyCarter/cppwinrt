@@ -1,15 +1,13 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "Hen.h"
 
 using namespace std::chrono;
-using namespace winrt;
-using namespace Windows::Foundation;
 
 namespace winrt::Farm::Animals::implementation
 {
-    hstring Hen::Name()
+    hstring Hen::Français()
     {
-        return hstring(L"Hilda");
+        return L"Une poule française"; // A french hen
     }
 
     Windows::Foundation::IAsyncOperationWithProgress<hstring, uint32_t> Hen::LayEggAsync()
@@ -22,6 +20,6 @@ namespace winrt::Farm::Animals::implementation
             progress(percent);
         }
 
-        co_return hstring(L"An egg!");
+        co_return hstring(L"Un œuf!"); // An egg!
     }
 }

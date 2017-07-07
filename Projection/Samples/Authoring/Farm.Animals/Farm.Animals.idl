@@ -1,19 +1,15 @@
-//*********************************************************
-//
-// Copyright (c) Microsoft. All rights reserved.
-//
-//*********************************************************
-
-#include <sdkddkver.h>
-import "Windows.Foundation.idl";
+﻿import "Windows.Foundation.idl";
 
 namespace Farm.Animals
 {
     [version(1.0), uuid(d81c56de-8304-46eb-adad-2382336b69df)]
     interface IHen : IInspectable
     {
-        [propget] HRESULT Name([out,retval] HSTRING* name);
+        // Illustrates C++/WinRT support for UTF-8
+        [propget] HRESULT Français([out,retval] HSTRING* value);
+
         HRESULT LayEggAsync([out, retval] Windows.Foundation.IAsyncOperationWithProgress<HSTRING, UINT32>** operation);
+
     };
 
     [version(1.0), activatable(1.0)]

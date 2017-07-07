@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+<!--Base support for C++/WinRT projections-->
+<Type Name="winrt::Windows::Foundation::IInspectable">
+    <Intrinsic Name="WINRT_get_ref" Expression='"C++/WinRT reference properties are not supported."'>
+        <Parameter Name="object" Type="void *" />
+        <Parameter Name="iid" Type="const wchar_t *" />
+        <Parameter Name="method" Type="int" />
+    </Intrinsic>
+</Type>
+
+
+<Type Name="winrt::Farm::Animals::Hen">
+    <DisplayString>(expand to display properties)</DisplayString>  
+    <Expand>
+        <Item Name="[Français]">WINRT_get_val(this,L"{D81C56DE-8304-46EB-ADAD-2382336B69DF}",0).s</Item>
+    </Expand>
+</Type>
+
+</AutoVisualizer>

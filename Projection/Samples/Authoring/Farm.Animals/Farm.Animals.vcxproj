@@ -116,6 +116,9 @@
     <PostBuildEvent>
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
+    <Midl>
+      <AdditionalOptions>/nomidl %(AdditionalOptions)</AdditionalOptions>
+    </Midl>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -139,6 +142,9 @@
     <PostBuildEvent>
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
+    <Midl>
+      <AdditionalOptions>/nomidl %(AdditionalOptions)</AdditionalOptions>
+    </Midl>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -166,6 +172,9 @@
     <PostBuildEvent>
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
+    <Midl>
+      <AdditionalOptions>/nomidl %(AdditionalOptions)</AdditionalOptions>
+    </Midl>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -193,6 +202,9 @@
     <PostBuildEvent>
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
+    <Midl>
+      <AdditionalOptions>/nomidl %(AdditionalOptions)</AdditionalOptions>
+    </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Hen.cpp" />

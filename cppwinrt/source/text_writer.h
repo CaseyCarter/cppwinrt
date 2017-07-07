@@ -196,6 +196,16 @@ namespace cppwinrt
 
             DWORD copied = 0;
 
+            std::array<uint8_t, 3> byte_order_mark{ 0xEF, 0xBB, 0xBF };
+
+            check_win32_bool(WriteFile(file.value,
+                byte_order_mark.data(),
+                static_cast<uint32_t>(byte_order_mark.size()),
+                &copied,
+                nullptr));
+
+            WINRT_ASSERT(copied == byte_order_mark.size());
+
             check_win32_bool(WriteFile(file.value,
                 m_buffer.data(),
                 size(),
