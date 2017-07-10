@@ -174,10 +174,14 @@
     <ClInclude Include="strings\base\base_natvis.h">
       <Filter>strings\base</Filter>
     </ClInclude>
+    <ClInclude Include="source\helpers.h" />
     <ClInclude Include="strings\write\write_struct_abi.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="source\helpers.h" />
+    <ClInclude Include="source\base.h" />
+    <ClInclude Include="source\generator.h" />
+    <ClInclude Include="source\reference_writer.h" />
+    <ClInclude Include="strings\write\write_component_class_xaml_shim.h" />
     <ClInclude Include="strings\write\write_class_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -200,6 +204,9 @@
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_component_class_header.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_component_class_source.h">
@@ -250,6 +257,9 @@
     <ClInclude Include="strings\write\write_constructor_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\write\write_consume_tests.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
     <ClInclude Include="strings\write\write_default_constructor_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -275,6 +285,9 @@
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_enumeration_flag.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_include_tests.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_interface_abi.h">
@@ -313,6 +326,12 @@
     <ClInclude Include="strings\write\write_natvis.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\write\write_produce_test_interface.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_produce_tests.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
     <ClInclude Include="strings\write\write_shim_body.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -337,24 +356,6 @@
     <ClInclude Include="strings\write\write_struct_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_include_tests.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_consume_tests.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_produce_tests.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_produce_test_interface.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="source\base.h" />
-    <ClInclude Include="source\generator.h" />
-    <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="source\reference_writer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">

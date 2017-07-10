@@ -905,25 +905,6 @@ namespace cppwinrt
             }
         }
 
-        void write_produce_validation(output& out, meta::method const& method)
-        {
-            for (meta::param const& param : method.params)
-            {
-                if (!param.is_in())
-                {
-                    continue;
-                }
-
-                PCCOR_SIGNATURE cursor = param.signature.data;
-                CorElementType category = CorSigUncompressElementType(cursor);
-
-                if (category == ELEMENT_TYPE_CLASS || category == ELEMENT_TYPE_GENERICINST || category == ELEMENT_TYPE_OBJECT)
-                {
-                    out.write("\n            if (!%) throw hresult_invalid_argument(L\"%\");", param.name, param.name);
-                }
-            }
-        }
-
         void write_produce_cleanup(output& out, meta::method const& method)
         {
             for (meta::param const& param : method.params)
@@ -967,7 +948,6 @@ namespace cppwinrt
                 out.write(strings::write_interface_produce_method,
                     method.get_abi_name(),
                     bind_output(write_abi_params, method),
-                    bind_output(write_produce_validation, method),
                     bind_output(write_optional_out_wrappers, method),
                     bind_output(write_interface_produce_upcall, method),
                     bind_output(write_optional_out_results, method),

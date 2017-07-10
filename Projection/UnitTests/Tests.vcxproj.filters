@@ -50,7 +50,6 @@
     <ClCompile Include="param_map.cpp" />
     <ClCompile Include="param_hstring.cpp" />
     <ClCompile Include="implements_nested.cpp" />
-    <ClCompile Include="produce_validate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />

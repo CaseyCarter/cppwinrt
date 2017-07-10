@@ -184,14 +184,14 @@ TEST_CASE("consume factory events")
                                                     ++count;
                                                 });
 
-    TestClipboard::SetContent(DataPackage());
+    TestClipboard::SetContent(nullptr);
 
     REQUIRE(count == 1); // handler was called
 
     revoker.revoke();
     revoker.revoke(); // redundant revoke is harmless
 
-    TestClipboard::SetContent(DataPackage());
+    TestClipboard::SetContent(nullptr);
     REQUIRE(count == 1); // count is unchanged so handler was not called
 
     {
@@ -202,12 +202,12 @@ TEST_CASE("consume factory events")
                                                        ++count;
                                                    });
 
-        TestClipboard::SetContent(DataPackage()); // fire event
+        TestClipboard::SetContent(nullptr); // fire event
         REQUIRE(count == 2); // handler was called
 
         // destructor revokes automatically
     }
 
-    TestClipboard::SetContent(DataPackage()); // fire event
+    TestClipboard::SetContent(nullptr); // fire event
     REQUIRE(count == 2); // count is unchanged so handler was not called
 }
