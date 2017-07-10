@@ -33,6 +33,7 @@
     <ClCompile Include="param_iterable.cpp" />
     <ClCompile Include="param_map.cpp" />
     <ClCompile Include="param_vector.cpp" />
+    <ClCompile Include="produce_validate.cpp" />
     <ClCompile Include="single_threaded_map.cpp" />
     <ClCompile Include="param_map_view.cpp" />
     <ClCompile Include="single_threaded_vector.cpp" />
