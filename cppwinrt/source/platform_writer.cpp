@@ -228,7 +228,7 @@ namespace cppwinrt
                     out.write("#include \"impl\\complex_structs.h\"\n");
                     write_warning_push(out);
                     ref_writer.write_includes(out, definition_ext, std::string("impl\\"));
-                    ref_writer.write_parent_includes(out);
+                    ref_writer.write_parent_include(out);
                     write_winrt_namespace_begin(out);
                     out.write_namespace("impl");
                     write_interface_member_definitions(out, namespace_types);

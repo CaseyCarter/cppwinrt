@@ -37,27 +37,21 @@ namespace cppwinrt
             }
         }
 
-        void write_parent_includes(output& out, std::string const & rel_path = "") const
+        void write_parent_include(output& out, std::string const & rel_path = "") const
         {
             meta::index_type const& index = meta::get_index();
             std::string parent_namespace = _namespace_name;
-            while (true)
+            auto last_dot = parent_namespace.find_last_of('.');
+            if (last_dot == std::string::npos)
             {
-                auto last_dot = parent_namespace.find_last_of('.');
-                if (last_dot == std::string::npos)
-                {
-                    break;
-                }
-                parent_namespace = parent_namespace.substr(0, last_dot);
-                if (index.find(parent_namespace) == index.end())
-                {
-                    break;
-                }
-                if (!namespace_recorded(parent_namespace))
-                {
-                    write_include(out, rel_path + parent_namespace + ".h");
-                }
+                return;
             }
+            parent_namespace = parent_namespace.substr(0, last_dot);
+            if (index.find(parent_namespace) == index.end())
+            {
+                return;
+            }
+            write_include(out, rel_path + parent_namespace + ".h");
         }
 
     private:
@@ -215,25 +209,6 @@ namespace cppwinrt
             {
                 write_include(out, rel_path + ref + ext_h);
             }
-        }
-
-        bool namespace_recorded(std::string const & ns) const
-        {
-            for (auto& ref : _method_namespaces)
-            {
-                if (ns == ref)
-                {
-                    return true;
-                }
-            }
-            for (auto& ref : _required_namespaces)
-            {
-                if (ns == ref)
-                {
-                    return true;
-                }
-            }
-            return false;
         }
     };
 }

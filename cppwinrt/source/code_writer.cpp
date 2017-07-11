@@ -2219,30 +2219,30 @@ namespace cppwinrt
 
     void write_projection(output& out)
     {
-        meta::index_type const& index = meta::get_index();
+        meta::index_type const& complete_index = meta::get_index();
 
         write_edit_warning_header(out);
         out.write("#include \"winrt/base.h\"\n");
 
-        std::vector<std::reference_wrapper<const meta::index_pair>> unfiltered_namespaces;
+        std::vector<std::reference_wrapper<const meta::index_pair>> unfiltered_index;
         std::vector<reference_writer> ref_writers;
-        for (meta::index_pair const& ns : index)
+        for (meta::index_pair const& ns : complete_index)
         {
             auto classes = get_unfiltered_types(ns.second.classes);
             if(classes.begin() != classes.end())
             {
-                unfiltered_namespaces.push_back(std::ref(ns));
+                unfiltered_index.push_back(std::ref(ns));
                 break;
             }
         }
-        for (meta::index_pair const& ns : unfiltered_namespaces)
+        for (meta::index_pair const& ns : unfiltered_index)
         {
             reference_writer ref_writer(ns.first, ns.second);
             ref_writer.write_includes(out, ".h", "winrt/");
-            ref_writer.write_parent_includes(out, "winrt/");
+            ref_writer.write_parent_include(out, "winrt/");
         }
         write_winrt_namespace_begin(out);
-        for (meta::index_pair const& ns : unfiltered_namespaces)
+        for (meta::index_pair const& ns : unfiltered_index)
         {
             out.write_namespace(ns.first);
             write_forwards(out, ns.second);
@@ -2250,7 +2250,7 @@ namespace cppwinrt
         out.write_namespace("impl");
         out.write("\n");
 
-        for (meta::index_pair const& ns : index)
+        for (meta::index_pair const& ns : unfiltered_index)
         {
             write_categories(out, ns.second);
             write_names(out, ns.second);
@@ -2263,12 +2263,12 @@ namespace cppwinrt
         // This is separate from the previous set because the ABI virtual functions need the
         // size of the handful of structs that have a distinct ABI shape since structs are
         // passed by value.
-        for (meta::index_pair const& ns : index)
+        for (meta::index_pair const& ns : unfiltered_index)
         {
             write_abi(out, ns.second);
         }
 
-        for (meta::index_pair const& ns : index)
+        for (meta::index_pair const& ns : unfiltered_index)
         {
             out.write_namespace(ns.first);
             write_interface_definitions(out, ns.second);
@@ -2278,7 +2278,7 @@ namespace cppwinrt
 
         // This is separate from the previous set because a base class must be defined before use
         // and we must therefore define the default interfaces before the runtime classes are defined.
-        for (meta::index_pair const& ns : index)
+        for (meta::index_pair const& ns : unfiltered_index)
         {
             out.write_namespace(ns.first);
             write_class_definitions(out, ns.second);
@@ -2287,14 +2287,14 @@ namespace cppwinrt
 
         out.write_namespace("impl");
 
-        for (meta::index_pair const& ns : index)
+        for (meta::index_pair const& ns : unfiltered_index)
         {
             write_interface_member_definitions(out, ns.second);
             write_delegate_produce(out, ns.second);
             write_produce(out, ns.second);
         }
 
-        for (meta::index_pair const& ns : index)
+        for (meta::index_pair const& ns : unfiltered_index)
         {
             out.write_namespace(ns.first);
             write_class_member_definitions(out, ns.second);
@@ -2306,7 +2306,7 @@ namespace cppwinrt
         write_winrt_namespace_end(out);
 
         out.write_namespace("std");
-        for (meta::index_pair const& ns : index)
+        for (meta::index_pair const& ns : unfiltered_index)
         {
             write_std_hashes(out, ns.second);
         }
