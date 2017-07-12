@@ -2,15 +2,35 @@
 
 namespace Farm.Animals
 {
+    runtimeclass Egg;
+    runtimeclass Hen;
+
+    [version(1.0), uuid(b9e01f66-c31f-40aa-b7c2-1f7114f8c642)]
+    interface IEggFactory : IInspectable
+    {
+        HRESULT CreateWithHen([in] Hen* mother, [out, retval] Egg** egg);
+    };
+
+    [version(1.0), uuid(20bf2128-6328-48ca-8b48-9ba85872adb2)]
+    interface IEgg : IInspectable
+    {
+        [propget] HRESULT Mother([out, retval] Hen** mother);
+    };
+
     [version(1.0), uuid(d81c56de-8304-46eb-adad-2382336b69df)]
     interface IHen : IInspectable
     {
         // Illustrates C++/WinRT support for UTF-8
-        [propget] HRESULT Français([out,retval] HSTRING* value);
+        [propget] HRESULT Français([out,retval] HSTRING* name);
 
-        HRESULT LayEggAsync([out, retval] Windows.Foundation.IAsyncOperationWithProgress<HSTRING, UINT32>** operation);
-
+        HRESULT LayEggAsync([out, retval] Windows.Foundation.IAsyncOperationWithProgress<Egg, UINT32>** operation);
     };
+
+    [version(1.0), activatable(IEggFactory, 1.0)]
+    runtimeclass Egg
+    {
+        [default] interface IEgg;
+    }
 
     [version(1.0), activatable(1.0)]
     runtimeclass Hen

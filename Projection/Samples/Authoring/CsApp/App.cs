@@ -40,7 +40,9 @@ class App : Application
             Debug.WriteLine("Cooking {0}%", args);
         };
 
-        block.Text = await operation;
+        Egg egg = await operation;
+
+        block.Text = "An egg: " + egg.Mother.Français;
     }
 
     static void Main()

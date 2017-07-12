@@ -9,9 +9,9 @@ namespace winrt {
 namespace Farm::Animals::implementation {
 
 template <typename D, typename ... I>
-struct HenBase : impl::module_lock, implements<D, Farm::Animals::IHen, I ...>
+struct EggBase : impl::module_lock, implements<D, Farm::Animals::IEgg, I ...>
 {
-    using class_type = Farm::Animals::Hen;
+    using class_type = Farm::Animals::Egg;
 
     operator class_type() const noexcept
     {
@@ -22,36 +22,41 @@ struct HenBase : impl::module_lock, implements<D, Farm::Animals::IHen, I ...>
 
     hstring GetRuntimeClassName() const
     {
-        return L"Farm.Animals.Hen";
+        return L"Farm.Animals.Egg";
     }
 };
 
 template <typename D, typename T, typename ... I>
-struct HenFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+struct EggFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Farm::Animals::IEggFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
-        return L"Farm.Animals.Hen";
+        return L"Farm.Animals.Egg";
     }
 
     Windows::Foundation::IInspectable ActivateInstance() const
     {
-        return make<T>();
+        throw hresult_not_implemented();
+    }
+
+    Farm::Animals::IEgg CreateWithHen(Farm::Animals::Hen const& mother)
+    {
+        return make<T>(mother);
     }
 };
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_HEN_X_H) || __has_include("Hen.x.h")
+#if defined(WINRT_FORCE_INCLUDE_EGG_X_H) || __has_include("Egg.x.h")
 
-#include "Hen.x.h"
+#include "Egg.x.h"
 
 #else
 
 template <typename D, typename ... I>
-using HenT = HenBase<D, I ...>;
+using EggT = EggBase<D, I ...>;
 
 template <typename D, typename T, typename ... I>
-using HenFactoryT = HenFactoryBase<D, T, I ...>;
+using EggFactoryT = EggFactoryBase<D, T, I ...>;
 
 #endif
 

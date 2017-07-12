@@ -6,6 +6,7 @@
       <Filter>generated</Filter>
     </ClCompile>
     <ClCompile Include="Hen.cpp" />
+    <ClCompile Include="Egg.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -19,6 +20,10 @@
       <Filter>generated</Filter>
     </ClInclude>
     <ClInclude Include="Hen.h" />
+    <ClInclude Include="Egg.h" />
+    <ClInclude Include="Egg.g.h">
+      <Filter>generated</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="module.def" />

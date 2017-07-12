@@ -153,6 +153,12 @@ namespace impl
     template <typename T>
     struct has_composable<T, std::void_t<typename T::composable>> : std::true_type {};
 
+    template <typename T, typename = std::void_t<>>
+    struct has_class_type : std::false_type {};
+
+    template <typename T>
+    struct has_class_type<T, std::void_t<typename T::class_type>> : std::true_type {};
+
     template <typename I, typename = std::void_t<>>
     struct runtime_class_name
     {
@@ -200,28 +206,36 @@ abi_t<I>* to_abi(impl::producer<D, I> const* from) noexcept
     return const_cast<impl::producer<D, I>*>(from);
 }
 
-template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value>* = nullptr>
+template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value && !impl::has_class_type<D>::value>* = nullptr>
 auto make(Args&& ... args)
 {
-    std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, I>, I, com_ptr<I>> instance = nullptr;
-    *put_abi(instance) = to_abi<I>(new D(std::forward<Args>(args) ...));
-    return instance;
+    std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, I>, I, com_ptr<I>> result{ nullptr };
+    *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args) ...));
+    return result;
+}
+
+template <typename D, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value && impl::has_class_type<D>::value>* = nullptr>
+auto make(Args&& ... args)
+{
+    D::class_type result{ nullptr };
+    *put_abi(result) = to_abi<D::first_interface>(new D(std::forward<Args>(args) ...));
+    return result;
 }
 
 template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<impl::has_composable<D>::value>* = nullptr>
 auto make(Args&& ... args)
 {
-    com_ptr<I> instance;
-    *put_abi(instance) = to_abi<I>(new D(std::forward<Args>(args) ...));
-    return instance.template as<typename D::composable>();
+    com_ptr<I> result;
+    *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args) ...));
+    return result.template as<typename D::composable>();
 }
 
 template <typename D, typename ... Args>
 auto make_self(Args&& ... args)
 {
-    com_ptr<D> instance;
-    *put_abi(instance) = new D(std::forward<Args>(args) ...);
-    return instance;
+    com_ptr<D> result;
+    *put_abi(result) = new D(std::forward<Args>(args) ...);
+    return result;
 }
 
 namespace impl
