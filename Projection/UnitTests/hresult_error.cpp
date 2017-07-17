@@ -532,3 +532,76 @@ TEST_CASE("hresult, trim_hresult_message")
 
     REQUIRE(e.message() == L":) is \u263A");
 }
+
+TEST_CASE("hresult, to_hstring")
+{
+    REQUIRE(impl::to_hstring("hello") == L"hello");
+    REQUIRE(impl::to_hstring("") == L"");
+}
+
+TEST_CASE("hresult, std abi support")
+{
+    try
+    {
+        EventHandler<int> handler = [](auto&& ...)
+        {
+            throw std::exception("std__exception");
+        };
+
+        handler(nullptr, 0);
+        FAIL(L"Previous line should throw");
+    }
+    catch (hresult_error const& e)
+    {
+        REQUIRE(E_FAIL == e.code());
+        REQUIRE(L"std__exception" == e.message());
+    }
+
+    try
+    {
+        EventHandler<int> handler = [](auto&& ...)
+        {
+            throw std::bad_alloc();
+        };
+
+        handler(nullptr, 0);
+        FAIL(L"Previous line should throw");
+    }
+    catch (std::bad_alloc const&)
+    {
+        printf("bad_alloc\n");
+    }
+
+    try
+    {
+        EventHandler<int> handler = [](auto&& ...)
+        {
+            throw std::out_of_range("std__out_of_range");
+        };
+
+        handler(nullptr, 0);
+        FAIL(L"Previous line should throw");
+    }
+    catch (hresult_out_of_bounds const& e)
+    {
+        REQUIRE(E_BOUNDS == e.code());
+        REQUIRE(L"std__out_of_range" == e.message());
+    }
+
+    try
+    {
+        EventHandler<int> handler = [](auto&& ...)
+        {
+            throw std::invalid_argument("std__invalid_argument");
+        };
+
+        handler(nullptr, 0);
+        FAIL(L"Previous line should throw");
+    }
+    catch (hresult_invalid_argument const& e)
+    {
+        REQUIRE(E_INVALIDARG == e.code());
+        REQUIRE(L"std__invalid_argument" == e.message());
+    }
+}
+

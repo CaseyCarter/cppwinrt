@@ -31,6 +31,73 @@ namespace impl
         WindowsCreateString(message, size, put_abi(result));
         return result;
     }
+
+    struct hstring_builder
+    {
+        hstring_builder(hstring_builder const&) = delete;
+        hstring_builder& operator=(hstring_builder const&) = delete;
+
+        explicit hstring_builder(uint32_t const size)
+        {
+            check_hresult(WindowsPreallocateStringBuffer(size, &m_data, &m_buffer));
+        }
+
+        ~hstring_builder() noexcept
+        {
+            if (m_buffer != nullptr)
+            {
+                WINRT_VERIFY_(S_OK, WindowsDeleteStringBuffer(m_buffer));
+            }
+        }
+
+        wchar_t* data() noexcept
+        {
+            WINRT_ASSERT(m_buffer != nullptr);
+            return m_data;
+        }
+
+        hstring to_hstring()
+        {
+            WINRT_ASSERT(m_buffer != nullptr);
+            hstring result;
+            check_hresult(WindowsPromoteStringBuffer(m_buffer, put_abi(result)));
+            m_buffer = nullptr;
+            return result;
+        }
+
+    private:
+
+        wchar_t* m_data{ nullptr };
+        HSTRING_BUFFER m_buffer{ nullptr };
+    };
+
+    inline hstring to_hstring(std::string_view source)
+    {
+        int const size = ::MultiByteToWideChar(
+            CP_UTF8,
+            0,
+            source.data(),
+            static_cast<int32_t>(source.size()),
+            nullptr,
+            0);
+
+        if (size == 0)
+        {
+            return{};
+        }
+
+        hstring_builder result(size);
+
+        ::MultiByteToWideChar(
+            CP_UTF8,
+            0,
+            source.data(),
+            static_cast<int32_t>(source.size()),
+            result.data(),
+            size);
+
+        return result.to_hstring();
+    }
 }
 
 struct hresult_error
@@ -288,8 +355,6 @@ namespace impl
 
     inline __declspec(noinline) HRESULT to_hresult() noexcept
     {
-        HRESULT value = S_OK;
-
         try
         {
             throw;
@@ -302,21 +367,18 @@ namespace impl
         {
             return E_OUTOFMEMORY;
         }
-        catch (std::out_of_range const&)
+        catch (std::out_of_range const& e)
         {
-            value = E_BOUNDS;
+            return hresult_out_of_bounds(to_hstring(e.what())).to_abi();
         }
-        catch (std::invalid_argument const&)
+        catch (std::invalid_argument const& e)
         {
-            value = E_INVALIDARG;
+            return hresult_invalid_argument(to_hstring(e.what())).to_abi();
         }
-        catch (std::exception const&)
+        catch (std::exception const& e)
         {
-            value = E_FAIL;
+            return hresult_error(E_FAIL, to_hstring(e.what())).to_abi();
         }
-
-        WINRT_RoOriginateError(value, nullptr);
-        return value;
     }
 }
 
