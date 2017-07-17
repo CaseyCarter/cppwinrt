@@ -27,7 +27,7 @@ namespace cppwinrt
             write_forwards(out, _default_forwards);
         }
 
-        void write_includes(output& out, std::string const & ext_h = ".h", std::string const & rel_path = "") const
+        void write_includes(output& out, std::string const & ext_h = ".h", std::string const & rel_path = "winrt/") const
         {
             write_includes(out, _method_namespaces, ext_h, rel_path);
             write_includes(out, _required_namespaces, ext_h, rel_path);
@@ -37,7 +37,7 @@ namespace cppwinrt
             }
         }
 
-        void write_parent_include(output& out, std::string const & rel_path = "") const
+        void write_parent_include(output& out) const
         {
             meta::index_type const& index = meta::get_index();
             std::string parent_namespace = _namespace_name;
@@ -51,7 +51,7 @@ namespace cppwinrt
             {
                 return;
             }
-            write_include(out, rel_path + parent_namespace + ".h");
+            write_include(out, "winrt/" + parent_namespace + ".h");
         }
 
     private:

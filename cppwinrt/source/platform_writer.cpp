@@ -61,7 +61,7 @@ namespace cppwinrt
                 output out;
                 for (auto& header : _headers)
                 {
-                    out.write("#include \"%\"\n", header);
+                    out.write("#include \"winrt/impl/%\"\n", header);
                 }
                 path base_path = paths._impl / "complex_structs.h";
                 out.save_as(base_path.string());
@@ -156,7 +156,6 @@ namespace cppwinrt
                 std::string forward_h = namespace_name + forward_ext;
                 std::string interface_h = namespace_name + interface_ext;
                 std::string definition_h = namespace_name + definition_ext;
-                std::string namespace_h = namespace_name + ".h";
 
                 // internal and external forward declarations, consume/abi definitions
                 {
@@ -187,7 +186,7 @@ namespace cppwinrt
                 {
                     output out;
                     write_logo(out);
-                    ref_writer.write_includes(out, forward_ext);
+                    ref_writer.write_includes(out, forward_ext, "winrt/impl/");
                     write_winrt_namespace_begin(out);
                     out.write_namespace(namespace_name);
                     write_interface_definitions(out, namespace_types);
@@ -200,7 +199,7 @@ namespace cppwinrt
                 {
                     output out;
                     write_logo(out);
-                    ref_writer.write_includes(out, interface_ext);
+                    ref_writer.write_includes(out, interface_ext, "winrt/impl/");
                     write_winrt_namespace_begin(out);
                     out.write_namespace(namespace_name);
                     write_delegate_definitions(out, namespace_types);
@@ -217,17 +216,17 @@ namespace cppwinrt
                 {
                     output out;
                     write_logo(out);
-                    out.write("#include \"base.h\"\n");
+                    out.write("#include \"winrt/base.h\"\n");
 
                     if (!starts_with(namespace_name, "Windows.Foundation"))
                     {
-                        out.write("#include \"Windows.Foundation.h\"\n");
-                        out.write("#include \"Windows.Foundation.Collections.h\"\n");
+                        out.write("#include \"winrt/Windows.Foundation.h\"\n");
+                        out.write("#include \"winrt/Windows.Foundation.Collections.h\"\n");
                     }
 
-                    out.write("#include \"impl\\complex_structs.h\"\n");
+                    out.write("#include \"winrt/impl/complex_structs.h\"\n");
                     write_warning_push(out);
-                    ref_writer.write_includes(out, definition_ext, std::string("impl\\"));
+                    ref_writer.write_includes(out, definition_ext, "winrt/impl/");
                     ref_writer.write_parent_include(out);
                     write_winrt_namespace_begin(out);
                     out.write_namespace("impl");

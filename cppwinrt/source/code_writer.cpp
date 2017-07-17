@@ -2246,8 +2246,8 @@ namespace cppwinrt
         for (meta::index_pair const& ns : unfiltered_index)
         {
             reference_writer ref_writer(ns.first, ns.second);
-            ref_writer.write_includes(out, ".h", "winrt/");
-            ref_writer.write_parent_include(out, "winrt/");
+            ref_writer.write_includes(out, ".h");
+            ref_writer.write_parent_include(out);
         }
         write_winrt_namespace_begin(out);
         for (meta::index_pair const& ns : unfiltered_index)
