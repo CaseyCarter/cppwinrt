@@ -195,7 +195,14 @@ namespace cppwinrt
             {
                 out.write("@", signature.get_abi_name());
 
-                if (!param.is_in())
+                if (param.is_in())
+                {
+                    if (category == ELEMENT_TYPE_CMOD_OPT)
+                    {
+                        out.write(" const&");
+                    }
+                }
+                else
                 {
                     out.write('*');
                 }

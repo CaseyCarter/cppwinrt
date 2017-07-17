@@ -23,4 +23,14 @@ namespace winrt::Farm::Animals::implementation
 
         co_return make<Egg>(*this);
     }
+
+    Windows::Foundation::Rect Hen::StructByValue(Windows::Foundation::Rect const& byValue)
+    {
+        return byValue;
+    }
+
+    Windows::Foundation::Rect Hen::StructByRef(Windows::Foundation::Rect const& byRef)
+    {
+        return byRef;
+    }
 }

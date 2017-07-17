@@ -52,6 +52,8 @@ struct consume_Farm_Animals_IHen
 {
     hstring Français() const;
     Windows::Foundation::IAsyncOperationWithProgress<Farm::Animals::Egg, uint32_t> LayEggAsync() const;
+    Windows::Foundation::Rect StructByValue(Windows::Foundation::Rect const& byValue) const;
+    Windows::Foundation::Rect StructByRef(Windows::Foundation::Rect const& byRef) const;
 };
 template <> struct consume<Farm::Animals::IHen> { template <typename D> using type = consume_Farm_Animals_IHen<D>; };
 
@@ -69,6 +71,8 @@ template <> struct abi<Farm::Animals::IHen>{ struct type : ::IInspectable
 {
     virtual HRESULT __stdcall get_Français(HSTRING* name) = 0;
     virtual HRESULT __stdcall LayEggAsync(::IUnknown** operation) = 0;
+    virtual HRESULT __stdcall StructByValue(abi_t<Windows::Foundation::Rect> byValue, abi_t<Windows::Foundation::Rect>* result) = 0;
+    virtual HRESULT __stdcall StructByRef(abi_t<Windows::Foundation::Rect> const& byRef, abi_t<Windows::Foundation::Rect>* result) = 0;
 };};
 
 }
@@ -142,6 +146,20 @@ template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Farm::Ani
     return operation;
 }
 
+template <typename D> Windows::Foundation::Rect consume_Farm_Animals_IHen<D>::StructByValue(Windows::Foundation::Rect const& byValue) const
+{
+    Windows::Foundation::Rect result{};
+    check_hresult(WINRT_SHIM(Farm::Animals::IHen)->StructByValue(get_abi(byValue), put_abi(result)));
+    return result;
+}
+
+template <typename D> Windows::Foundation::Rect consume_Farm_Animals_IHen<D>::StructByRef(Windows::Foundation::Rect const& byRef) const
+{
+    Windows::Foundation::Rect result{};
+    check_hresult(WINRT_SHIM(Farm::Animals::IHen)->StructByRef(get_abi(byRef), put_abi(result)));
+    return result;
+}
+
 template <typename D>
 struct produce<D, Farm::Animals::IEgg> : produce_base<D, Farm::Animals::IEgg>
 {
@@ -209,6 +227,34 @@ struct produce<D, Farm::Animals::IHen> : produce_base<D, Farm::Animals::IHen>
         catch (...)
         {
             *operation = nullptr;
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall StructByValue(abi_t<Windows::Foundation::Rect> byValue, abi_t<Windows::Foundation::Rect>* result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().StructByValue(*reinterpret_cast<Windows::Foundation::Rect const*>(&byValue)));
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+
+    HRESULT __stdcall StructByRef(abi_t<Windows::Foundation::Rect> const& byRef, abi_t<Windows::Foundation::Rect>* result) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            *result = detach_abi(this->shim().StructByRef(*reinterpret_cast<Windows::Foundation::Rect const*>(&byRef)));
+            return S_OK;
+        }
+        catch (...)
+        {
             return impl::to_hresult();
         }
     }

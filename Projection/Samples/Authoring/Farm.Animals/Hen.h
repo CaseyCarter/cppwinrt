@@ -11,6 +11,8 @@ namespace winrt::Farm::Animals::implementation
 
         hstring Français();
         Windows::Foundation::IAsyncOperationWithProgress<Farm::Animals::Egg, uint32_t> LayEggAsync();
+        Windows::Foundation::Rect StructByValue(Windows::Foundation::Rect const& byValue);
+        Windows::Foundation::Rect StructByRef(Windows::Foundation::Rect const& byRef);
     };
 
     struct HenFactory : HenFactoryT<HenFactory, Hen>

@@ -24,6 +24,9 @@ namespace Farm.Animals
         [propget] HRESULT Français([out,retval] HSTRING* name);
 
         HRESULT LayEggAsync([out, retval] Windows.Foundation.IAsyncOperationWithProgress<Egg, UINT32>** operation);
+
+        HRESULT StructByValue([in] Windows.Foundation.Rect byValue, [out,retval] Windows.Foundation.Rect* result);
+        HRESULT StructByRef([in] Windows.Foundation.Rect const* byRef, [out, retval] Windows.Foundation.Rect* result);
     };
 
     [version(1.0), activatable(IEggFactory, 1.0)]

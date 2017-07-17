@@ -24,6 +24,11 @@ class App : Application
         var hen = new Hen();
         block.Text = hen.Français;
 
+        Rect copy = hen.StructByValue(new Rect(1, 2, 3, 4));
+        Debug.Assert(copy == new Rect(1, 2, 3, 4));
+        copy = hen.StructByRef(new Rect(10, 20, 30, 40));
+        Debug.Assert(copy == new Rect(10, 20, 30, 40));
+
         Window window = Window.Current;
         window.Content = block;
         window.Activate();
