@@ -7,7 +7,7 @@ struct %Base : %implements<D%, I ...>%
     operator class_type() const noexcept
     {
         class_type result{ nullptr };
-        attach_abi(result, detach_abi(static_cast<D::first_interface>(*this)));
+        attach_abi(result, detach_abi(static_cast<typename D::first_interface>(*this)));
         return result;
     }
 
