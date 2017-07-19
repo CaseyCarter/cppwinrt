@@ -151,6 +151,7 @@ namespace
 
             if (arg[0] == '/' || arg[0] == '-')
             {
+                last_option = option::none;
                 ++arg;
                 option cur_option = option::none;
                 for (auto const& o : options)
@@ -193,7 +194,7 @@ namespace
             switch (last_option)
             {
             case option::none:
-                break;
+                throw invalid_usage{ L"Unexpected argument: ", arg };
             case option::in:
                 if (settings::first_input.empty())
                 {

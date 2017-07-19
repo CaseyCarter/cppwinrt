@@ -1,1 +1,1 @@
-error 0x%08X: Invalid usage.
+error 0x%08X: %ls%ls
