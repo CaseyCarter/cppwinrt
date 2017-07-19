@@ -22,12 +22,7 @@ class App : Application
         block.TextAlignment = TextAlignment.Center;
 
         var hen = new Hen();
-        block.Text = hen.Français;
-
-        Rect copy = hen.StructByValue(new Rect(1, 2, 3, 4));
-        Debug.Assert(copy == new Rect(1, 2, 3, 4));
-        copy = hen.StructByRef(new Rect(10, 20, 30, 40));
-        Debug.Assert(copy == new Rect(10, 20, 30, 40));
+        block.Text = hen.Name;
 
         Window window = Window.Current;
         window.Content = block;
@@ -47,7 +42,7 @@ class App : Application
 
         Egg egg = await operation;
 
-        block.Text = "An egg: " + egg.Mother.Français;
+        block.Text = "An egg from " + egg.Mother.Name;
     }
 
     static void Main()

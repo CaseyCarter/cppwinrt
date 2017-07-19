@@ -6,12 +6,12 @@
 
 namespace winrt {
 
-namespace Farm::Animals::implementation {
+namespace Complex::Authoring::Nested::implementation {
 
 template <typename D, typename ... I>
-struct EggBase : impl::module_lock, implements<D, Farm::Animals::IEgg, I ...>
+struct SimpleBase : impl::module_lock, implements<D, Complex::Authoring::Nested::ISimple, I ...>
 {
-    using class_type = Farm::Animals::Egg;
+    using class_type = Complex::Authoring::Nested::Simple;
 
     operator class_type() const noexcept
     {
@@ -22,41 +22,36 @@ struct EggBase : impl::module_lock, implements<D, Farm::Animals::IEgg, I ...>
 
     hstring GetRuntimeClassName() const
     {
-        return L"Farm.Animals.Egg";
+        return L"Complex.Authoring.Nested.Simple";
     }
 };
 
 template <typename D, typename T, typename ... I>
-struct EggFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Farm::Animals::IEggFactory, I ...>
+struct SimpleFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
-        return L"Farm.Animals.Egg";
+        return L"Complex.Authoring.Nested.Simple";
     }
 
     Windows::Foundation::IInspectable ActivateInstance() const
     {
-        throw hresult_not_implemented();
-    }
-
-    Farm::Animals::IEgg CreateWithHen(Farm::Animals::Hen const& mother)
-    {
-        return make<T>(mother);
+        return make<T>();
     }
 };
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_EGG_X_H) || __has_include("Egg.x.h")
+#if defined(WINRT_FORCE_INCLUDE_SIMPLE_X_H) || __has_include("Simple.x.h")
 
-#include "Egg.x.h"
+#include "Simple.x.h"
 
 #else
 
 template <typename D, typename ... I>
-using EggT = EggBase<D, I ...>;
+using SimpleT = SimpleBase<D, I ...>;
 
 template <typename D, typename T, typename ... I>
-using EggFactoryT = EggFactoryBase<D, T, I ...>;
+using SimpleFactoryT = SimpleFactoryBase<D, T, I ...>;
 
 #endif
 

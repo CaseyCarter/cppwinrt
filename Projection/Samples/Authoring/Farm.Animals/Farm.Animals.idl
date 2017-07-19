@@ -20,13 +20,9 @@ namespace Farm.Animals
     [version(1.0), uuid(d81c56de-8304-46eb-adad-2382336b69df)]
     interface IHen : IInspectable
     {
-        // Illustrates C++/WinRT support for UTF-8
-        [propget] HRESULT Français([out,retval] HSTRING* name);
+        [propget] HRESULT Name([out,retval] HSTRING* name);
 
         HRESULT LayEggAsync([out, retval] Windows.Foundation.IAsyncOperationWithProgress<Egg, UINT32>** operation);
-
-        HRESULT StructByValue([in] Windows.Foundation.Rect byValue, [out,retval] Windows.Foundation.Rect* result);
-        HRESULT StructByRef([in] Windows.Foundation.Rect const* byRef, [out, retval] Windows.Foundation.Rect* result);
     };
 
     [version(1.0), activatable(IEggFactory, 1.0)]

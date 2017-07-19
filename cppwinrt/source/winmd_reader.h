@@ -98,6 +98,7 @@ namespace cppwinrt::meta
         bool is_overridable() const noexcept;
         bool is_api_contract() const noexcept;
         bool is_flags() const noexcept;
+        bool is_static() const noexcept;
         bool get_attribute_string(wchar_t const* attribute, std::string& value) const;
 
         std::string get_name() const;

@@ -196,9 +196,9 @@ namespace
             case option::none:
                 throw invalid_usage{ L"Unexpected argument: ", arg };
             case option::in:
-                if (settings::first_input.empty())
+                if (settings::component_name.empty())
                 {
-                    settings::first_input = arg;
+                    settings::component_name = path(arg).filename().replace_extension().string();
                 }
                 add_winmd_spec(usage::inputs, arg);
                 break;

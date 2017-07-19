@@ -1,4 +1,4 @@
-    % %(%)
+    @ %(%)
     {
         @ super = this->shim_super();
         if (super)

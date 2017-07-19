@@ -1,0 +1,87 @@
+﻿import "Windows.Foundation.idl";
+
+namespace Complex.Authoring
+{
+    //
+    // The simplest of classes.
+    //
+
+    [version(1.0), uuid(09839e70-b064-4287-a473-78656719bada)]
+    interface ISimple : IInspectable
+    {
+        [propget] HRESULT Name([out, retval] HSTRING* value);
+    };
+
+    [version(1.0), activatable(1.0)]
+    runtimeclass Simple
+    {
+        [default] interface ISimple;
+    }
+
+    //
+    // This class illustrates support for UTF-8.
+    //
+
+    [version(1.0), uuid(c242f075-4be5-4000-b77e-5634bc87547f)]
+    interface ILanguage : IInspectable
+    {
+        [propget] HRESULT Français([out, retval] HSTRING* value);
+    };
+
+    [version(1.0), activatable(1.0)]
+    runtimeclass Language
+    {
+        [default] interface ILanguage;
+    }
+
+    //
+    // This class illustrates support for passing structs by reference.
+    //
+
+    [version(1.0), uuid(24ec9145-7f4b-4515-8910-ef499b267c06)]
+    interface IStructByRef : IInspectable
+    {
+        HRESULT CopyByValue([in] Windows.Foundation.Rect byValue, [out, retval] Windows.Foundation.Rect* result);
+        HRESULT CopyByRef([in] Windows.Foundation.Rect const* byRef, [out, retval] Windows.Foundation.Rect* result);
+    };
+
+    [version(1.0), activatable(1.0)]
+    runtimeclass StructByRef
+    {
+        [default] interface IStructByRef;
+    }
+
+    //
+    // This class illustrates support for nested types (with the same class name).
+    //
+
+    namespace Nested
+    {
+        [version(1.0), uuid(34b0d9cc-0dbb-421c-ba71-7e40d0966804)]
+        interface ISimple : IInspectable
+        {
+            [propget] HRESULT Name([out, retval] HSTRING* value);
+        };
+
+        [version(1.0), activatable(1.0)]
+        runtimeclass Simple
+        {
+            [default] interface ISimple;
+        }
+    }
+
+    //
+    // This class illustrates support for static classes.
+    //
+
+    [version(1.0), uuid(c242f075-4be5-4000-b77e-5634bc87547f)]
+    interface IStatic : IInspectable
+    {
+        [propget] HRESULT Bounds([out, retval] Windows.Foundation.Rect* value);
+    };
+
+    [version(1.0), static(IStatic, 1.0)]
+    runtimeclass Static
+    {
+    }
+}

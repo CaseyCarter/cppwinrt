@@ -356,6 +356,12 @@
     <ClInclude Include="strings\write\write_struct_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_no_xaml_shim.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_static_class_header.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">

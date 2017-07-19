@@ -1649,6 +1649,11 @@ namespace cppwinrt::meta
         return has_attribute(L"System.FlagsAttribute");
     }
 
+    bool token::is_static() const noexcept
+    {
+        return !static_cast<bool>(get_default());
+    }
+
     bool token::get_attribute_string(wchar_t const* attribute, std::string& value) const
     {
         void const* data{};

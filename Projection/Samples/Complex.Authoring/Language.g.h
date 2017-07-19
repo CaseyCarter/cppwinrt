@@ -6,12 +6,12 @@
 
 namespace winrt {
 
-namespace Farm::Animals::implementation {
+namespace Complex::Authoring::implementation {
 
 template <typename D, typename ... I>
-struct EggBase : impl::module_lock, implements<D, Farm::Animals::IEgg, I ...>
+struct LanguageBase : impl::module_lock, implements<D, Complex::Authoring::ILanguage, I ...>
 {
-    using class_type = Farm::Animals::Egg;
+    using class_type = Complex::Authoring::Language;
 
     operator class_type() const noexcept
     {
@@ -22,41 +22,36 @@ struct EggBase : impl::module_lock, implements<D, Farm::Animals::IEgg, I ...>
 
     hstring GetRuntimeClassName() const
     {
-        return L"Farm.Animals.Egg";
+        return L"Complex.Authoring.Language";
     }
 };
 
 template <typename D, typename T, typename ... I>
-struct EggFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Farm::Animals::IEggFactory, I ...>
+struct LanguageFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
-        return L"Farm.Animals.Egg";
+        return L"Complex.Authoring.Language";
     }
 
     Windows::Foundation::IInspectable ActivateInstance() const
     {
-        throw hresult_not_implemented();
-    }
-
-    Farm::Animals::IEgg CreateWithHen(Farm::Animals::Hen const& mother)
-    {
-        return make<T>(mother);
+        return make<T>();
     }
 };
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_EGG_X_H) || __has_include("Egg.x.h")
+#if defined(WINRT_FORCE_INCLUDE_LANGUAGE_X_H) || __has_include("Language.x.h")
 
-#include "Egg.x.h"
+#include "Language.x.h"
 
 #else
 
 template <typename D, typename ... I>
-using EggT = EggBase<D, I ...>;
+using LanguageT = LanguageBase<D, I ...>;
 
 template <typename D, typename T, typename ... I>
-using EggFactoryT = EggFactoryBase<D, T, I ...>;
+using LanguageFactoryT = LanguageFactoryBase<D, T, I ...>;
 
 #endif
 

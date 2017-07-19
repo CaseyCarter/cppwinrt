@@ -2,7 +2,7 @@
 
 namespace cppwinrt::settings
 {
-    extern std::experimental::filesystem::path first_input;
+    extern std::string component_name;
     extern std::experimental::filesystem::path output;
     extern std::wstring platform_version;
     extern bool component;

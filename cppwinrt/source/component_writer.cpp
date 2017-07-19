@@ -15,9 +15,9 @@ namespace cppwinrt
         {
             output out;
             write_projection(out);
-            path filename = settings::output / settings::first_input.filename();
-            filename.replace_extension(".h");
-            out.save_as(filename.string());
+            std::string filename = (settings::output / settings::component_name).string();
+            filename += ".h";
+            out.save_as(filename);
         }
 
         void create_natvis()
@@ -29,9 +29,9 @@ namespace cppwinrt
 
             output out;
             write_natvis(out);
-            path filename = settings::output / settings::first_input.filename();
-            filename.replace_extension(".natvis");
-            out.save_as(filename.string());
+            std::string filename = (settings::output / settings::component_name).string();
+            filename += ".natvis";
+            out.save_as(filename);
         }
     }
 

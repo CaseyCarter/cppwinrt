@@ -6,9 +6,9 @@ using namespace std::chrono;
 
 namespace winrt::Farm::Animals::implementation
 {
-    hstring Hen::Français()
+    hstring Hen::Name()
     {
-        return L"Une poule française"; // A french hen
+        return L"Hilda";
     }
 
     Windows::Foundation::IAsyncOperationWithProgress<Farm::Animals::Egg, uint32_t> Hen::LayEggAsync()
@@ -22,15 +22,5 @@ namespace winrt::Farm::Animals::implementation
         }
 
         co_return make<Egg>(*this);
-    }
-
-    Windows::Foundation::Rect Hen::StructByValue(Windows::Foundation::Rect const& byValue)
-    {
-        return byValue;
-    }
-
-    Windows::Foundation::Rect Hen::StructByRef(Windows::Foundation::Rect const& byRef)
-    {
-        return byRef;
     }
 }

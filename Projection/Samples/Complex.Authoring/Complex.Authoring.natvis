@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+<!--Base support for C++/WinRT projections-->
+<Type Name="winrt::Windows::Foundation::IInspectable">
+    <Intrinsic Name="WINRT_get_ref" Expression='"C++/WinRT reference properties are not supported."'>
+        <Parameter Name="object" Type="void *" />
+        <Parameter Name="iid" Type="const wchar_t *" />
+        <Parameter Name="method" Type="int" />
+    </Intrinsic>
+</Type>
+
+
+<Type Name="winrt::Complex::Authoring::Language">
+    <DisplayString>(expand to display properties)</DisplayString>  
+    <Expand>
+        <Item Name="[Français]">WINRT_get_val(this,L"{C242F075-4BE5-4000-B77E-5634BC87547F}",0).s</Item>
+    </Expand>
+</Type>
+
+<Type Name="winrt::Complex::Authoring::Simple">
+    <DisplayString>(expand to display properties)</DisplayString>  
+    <Expand>
+        <Item Name="[Name]">WINRT_get_val(this,L"{09839E70-B064-4287-A473-78656719BADA}",0).s</Item>
+    </Expand>
+</Type>
+
+<Type Name="winrt::Complex::Authoring::Nested::Simple">
+    <DisplayString>(expand to display properties)</DisplayString>  
+    <Expand>
+        <Item Name="[Name]">WINRT_get_val(this,L"{34B0D9CC-0DBB-421C-BA71-7E40D0966804}",0).s</Item>
+    </Expand>
+</Type>
+
+</AutoVisualizer>

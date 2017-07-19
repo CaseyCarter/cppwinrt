@@ -14,7 +14,7 @@
 <Type Name="winrt::Farm::Animals::Hen">
     <DisplayString>(expand to display properties)</DisplayString>  
     <Expand>
-        <Item Name="[Français]">WINRT_get_val(this,L"{D81C56DE-8304-46EB-ADAD-2382336B69DF}",0).s</Item>
+        <Item Name="[Name]">WINRT_get_val(this,L"{D81C56DE-8304-46EB-ADAD-2382336B69DF}",0).s</Item>
     </Expand>
 </Type>
 

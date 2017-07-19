@@ -2223,6 +2223,25 @@ namespace cppwinrt
 
             out.save_as(p.string());
         }
+
+        std::string_view get_relative_component_name(meta::type const& type)
+        {
+            if (starts_with(type.full_name(), settings::component_name))
+            {
+                return type.full_name().substr(settings::component_name.size() + 1);
+            }
+            else
+            {
+                return type.full_name();
+            }
+        }
+
+        std::string get_component_filename(meta::type const& type)
+        {
+            path filename = settings::output;
+            filename /= std::string(get_relative_component_name(type));
+            return filename.string();
+        }
     }
 
     void write_projection(output& out)
@@ -2240,15 +2259,9 @@ namespace cppwinrt
             if(classes.begin() != classes.end())
             {
                 unfiltered_index.push_back(std::ref(ns));
-                break;
             }
         }
-        for (meta::index_pair const& ns : unfiltered_index)
-        {
-            reference_writer ref_writer(ns.first, ns.second);
-            ref_writer.write_includes(out, ".h");
-            ref_writer.write_parent_include(out);
-        }
+
         write_winrt_namespace_begin(out);
         for (meta::index_pair const& ns : unfiltered_index)
         {
@@ -2846,10 +2859,7 @@ void t()
         output out;
         write_warning(out, strings::write_edit_warning_header);
 
-        path projection_path = settings::first_input.filename();
-        projection_path.replace_extension(".h");
-
-        out.write("\n#include \"%\"\n", projection_path.string());
+        out.write("\n#include \"%.h\"\n", settings::component_name);
 
         write_winrt_namespace_begin(out);
 
@@ -2868,7 +2878,7 @@ void t()
     {
         for (meta::type const* type : types)
         {
-            out.write("#include \"%.h\"\n", type->name());
+            out.write("#include \"%.h\"\n", get_relative_component_name(*type));
         }
     }
 
@@ -2918,7 +2928,7 @@ void t()
     {
         for (meta::method const& method : factory.get_methods())
         {
-            out.write("        static % %(%);\n",
+            out.write("        static @ %(%);\n",
                 method.return_type.signature.get_name(),
                 method.get_name(),
                 bind_output(write_component_params, method, empty_generic_params));
@@ -3080,9 +3090,7 @@ void t()
 
     void write_component_class_generated_header(meta::type const& type)
     {
-        path filename = settings::output;
-        filename /= std::string(type.name());
-        filename += ".g.h";
+        std::string const filename = get_component_filename(type) + ".g.h";
 
         output out;
 
@@ -3094,13 +3102,11 @@ void t()
 
         out.write_namespace(std::string(type.name_space()) + ".implementation");
 
-        if (type.token.get_default())
+        bool const static_class = type.token.is_static();
+
+        if (!static_class)
         {
             write_component_class_base(out, type);
-        }
-        else
-        {
-            out.write(strings::write_component_static_class_base, type.name());
         }
 
         out.write(strings::write_component_class_factory_base,
@@ -3109,66 +3115,89 @@ void t()
             type.full_name(),
             bind_output(write_component_factory_forwarding_methods, type));
 
-        std::string upper(type.name());
-        std::transform(upper.begin(), upper.end(), upper.begin(), [](char c) {return (char)::toupper(c); });
-        out.write(strings::write_component_class_xaml_shim,
-            upper,
-            type.name(),
-            type.name(),
-            type.name(),
-            type.name(),
-            type.name(),
-            type.name());
+        if (static_class)
+        {
+            out.write(strings::write_component_class_no_xaml_shim,
+                type.name(),
+                type.name());
+        }
+        else
+        {
+            std::string upper(type.name());
+            std::transform(upper.begin(), upper.end(), upper.begin(), [](char c) {return (char)::toupper(c); });
+
+            out.write(strings::write_component_class_xaml_shim,
+                upper,
+                type.name(),
+                type.name(),
+                type.name(),
+                type.name(),
+                type.name(),
+                type.name());
+        }
 
         write_winrt_namespace_end(out);
 
-        out.save_as(filename.string());
+        out.save_as(filename);
     }
 
     void write_component_class_header(meta::type const& type)
     {
-        path filename = settings::output;
-        filename /= std::string(type.name());
-        filename += ".h";
+        std::string const filename = get_component_filename(type) + ".h";
 
         if (!settings::overwrite && exists(filename))
         {
             return;
         }
-        
-        std::string base_name;
-        meta::type const* base_type = type.token.get_base_type();
-        if (base_type && !base_type->filtered)
-        {
-            base_name = ", ";
-            base_name += base_type->name_space();
-            base_name += "::implementation::";
-            base_name += base_type->name();
-        }
 
         output out;
 
-        out.write(strings::write_component_class_header,
-            type.name(),
-            type.name_space(),
-            type.name(),
-            type.name(),
-            type.name(),
-            base_name,
-            bind_output(write_component_class_member_declarations, type),
-            type.name(),
-            type.name(),
-            type.name(),
-            type.name());
+        bool const static_class = type.token.is_static();
 
-        out.save_as(filename.string());
+        if (static_class)
+        {
+            out.write(strings::write_component_static_class_header,
+                get_relative_component_name(type),
+                type.name_space(),
+                type.name(),
+                bind_output(write_component_class_member_declarations, type),
+                type.name(),
+                type.name(),
+                type.name(),
+                type.name());
+        }
+        else
+        {
+            std::string base_name;
+            meta::type const* base_type = type.token.get_base_type();
+            if (base_type && !base_type->filtered)
+            {
+                base_name = ", ";
+                base_name += base_type->name_space();
+                base_name += "::implementation::";
+                base_name += base_type->name();
+            }
+
+            out.write(strings::write_component_class_header,
+                get_relative_component_name(type),
+                type.name_space(),
+                type.name(),
+                type.name(),
+                type.name(),
+                base_name,
+                bind_output(write_component_class_member_declarations, type),
+                type.name(),
+                type.name(),
+                type.name(),
+                type.name());
+        }
+
+        out.save_as(filename);
     }
 
     void write_component_class_source(meta::type const& type)
     {
-        path filename = settings::output;
-        filename /= std::string(type.name());
-        filename += ".cpp";
+        std::string const filename = get_component_filename(type) + ".cpp";
 
         if (!settings::overwrite && exists(filename))
         {
@@ -3178,11 +3207,11 @@ void t()
         output out;
 
         out.write(strings::write_component_class_source,
-            type.name(),
+            get_relative_component_name(type),
             type.name_space(),
             bind_output(write_component_class_member_definitions, type));
 
-        out.save_as(filename.string());
+        out.save_as(filename);
     }
 
     char const* get_natvis_property_field(CorElementType category)

@@ -3,7 +3,7 @@
 
 namespace cppwinrt::settings
 {
-    std::experimental::filesystem::path first_input;
+    std::string component_name;
     std::experimental::filesystem::path output;
     std::vector<std::string> filters;
     std::wstring platform_version;
