@@ -181,7 +181,6 @@
     <ClInclude Include="source\base.h" />
     <ClInclude Include="source\generator.h" />
     <ClInclude Include="source\reference_writer.h" />
-    <ClInclude Include="strings\write\write_component_class_xaml_shim.h" />
     <ClInclude Include="strings\write\write_class_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -246,9 +245,6 @@
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_component_source_empty.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_static_class_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_composable_constructor_definition.h">
@@ -356,10 +352,10 @@
     <ClInclude Include="strings\write\write_struct_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_component_class_no_xaml_shim.h">
+    <ClInclude Include="strings\write\write_component_static_class_header.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_component_static_class_header.h">
+    <ClInclude Include="strings\write\write_component_class_xaml_shim.h">
       <Filter>strings\write</Filter>
     </ClInclude>
   </ItemGroup>

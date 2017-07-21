@@ -1,6 +1,5 @@
 ﻿#pragma once
 
-#include "module.h"
 #include "Language.g.h"
 
 namespace winrt::Complex::Authoring::implementation
@@ -11,8 +10,11 @@ namespace winrt::Complex::Authoring::implementation
 
         hstring Français();
     };
+}
 
-    struct LanguageFactory : LanguageFactoryT<LanguageFactory, Language>
+namespace winrt::Complex::Authoring::factory_implementation
+{
+    struct Language : LanguageT<Language, implementation::Language>
     {
     };
 }

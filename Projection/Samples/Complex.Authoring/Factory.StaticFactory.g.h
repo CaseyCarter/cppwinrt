@@ -6,24 +6,19 @@
 
 namespace winrt {
 
-namespace Complex::Authoring::factory_implementation {
+namespace Complex::Authoring::Factory::factory_implementation {
 
 template <typename D, typename T, typename ... I>
-struct StaticT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::IStatic, I ...>
+struct StaticFactoryT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::Factory::IStaticFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
-        return L"Complex.Authoring.Static";
+        return L"Complex.Authoring.Factory.StaticFactory";
     }
 
     Windows::Foundation::IInspectable ActivateInstance() const
     {
         throw hresult_not_implemented();
-    }
-
-    Windows::Foundation::Rect Bounds()
-    {
-        return T::Bounds();
     }
 };
 

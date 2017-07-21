@@ -23,7 +23,6 @@ namespace winrt::impl
 }
 
 using namespace winrt;
-using namespace Windows::Foundation;
 
 HRESULT __stdcall DllCanUnloadNow()
 {
@@ -38,18 +37,18 @@ HRESULT __stdcall DllGetActivationFactory(HSTRING classId, ::IUnknown** factory)
 
         if (0 == wcscmp(name, L"Farm.Animals.Egg"))
         {
-            *factory = detach_abi(make<Farm::Animals::implementation::EggFactory>());
-        }
-        else if (0 == wcscmp(name, L"Farm.Animals.Hen"))
-        {
-            *factory = detach_abi(make<Farm::Animals::implementation::HenFactory>());
-        }
-        else
-        {
-            throw hresult_class_not_available();
+            *factory = detach_abi(make<Farm::Animals::factory_implementation::Egg>());
+            return S_OK;
         }
 
-        return S_OK;
+        if (0 == wcscmp(name, L"Farm.Animals.Hen"))
+        {
+            *factory = detach_abi(make<Farm::Animals::factory_implementation::Hen>());
+            return S_OK;
+        }
+
+        *factory = nullptr;
+        return hresult_class_not_available().to_abi();
     }
     catch (...)
     {

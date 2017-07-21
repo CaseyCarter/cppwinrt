@@ -13,6 +13,11 @@ namespace cppwinrt
     {
         void write_header()
         {
+            if (settings::component_name.empty())
+            {
+                return;
+            }
+
             output out;
             write_projection(out);
             std::string filename = (settings::output / settings::component_name).string();
@@ -22,7 +27,7 @@ namespace cppwinrt
 
         void create_natvis()
         {
-            if (!settings::create_natvis)
+            if (settings::component_name.empty() || !settings::create_natvis)
             {
                 return;
             }
@@ -32,6 +37,24 @@ namespace cppwinrt
             std::string filename = (settings::output / settings::component_name).string();
             filename += ".natvis";
             out.save_as(filename);
+        }
+
+        bool is_filtered_type(meta::type const& type)
+        {
+            if (settings::filters.empty())
+            {
+                return !type.is_reference;
+            }
+
+            for (std::string const& match : settings::filters)
+            {
+                if (starts_with(type.full_name(), match))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 
@@ -44,9 +67,12 @@ namespace cppwinrt
 
         for (meta::index_pair const& pair : index)
         {
-            for (meta::type const& type : get_unfiltered_types(pair.second.classes))
+            for (meta::type const& type : pair.second.classes)
             {
-                types.push_back(&type);
+                if (is_filtered_type(type))
+                {
+                    types.push_back(&type);
+                }
             }
         }
 

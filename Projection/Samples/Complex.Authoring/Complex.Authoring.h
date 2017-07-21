@@ -18,6 +18,19 @@ struct StructByRef;
 
 }
 
+namespace Complex::Authoring::Factory {
+
+struct ISimple;
+struct ISimpleFactory;
+struct IStatic;
+struct IStaticFactory;
+struct Simple;
+struct SimpleFactory;
+struct Static;
+struct StaticFactory;
+
+}
+
 namespace Complex::Authoring::Nested {
 
 struct ISimple;
@@ -79,6 +92,52 @@ struct consume_Complex_Authoring_IStructByRef
     Windows::Foundation::Rect CopyByRef(Windows::Foundation::Rect const& byRef) const;
 };
 template <> struct consume<Complex::Authoring::IStructByRef> { template <typename D> using type = consume_Complex_Authoring_IStructByRef<D>; };
+template <> struct category<Complex::Authoring::Factory::ISimple>{ using type = interface_category; };
+template <> struct category<Complex::Authoring::Factory::ISimpleFactory>{ using type = interface_category; };
+template <> struct category<Complex::Authoring::Factory::IStatic>{ using type = interface_category; };
+template <> struct category<Complex::Authoring::Factory::IStaticFactory>{ using type = interface_category; };
+template <> struct category<Complex::Authoring::Factory::Simple>{ using type = class_category; };
+template <> struct category<Complex::Authoring::Factory::SimpleFactory>{ using type = class_category; };
+template <> struct category<Complex::Authoring::Factory::Static>{ using type = class_category; };
+template <> struct category<Complex::Authoring::Factory::StaticFactory>{ using type = class_category; };
+template <> struct name<Complex::Authoring::Factory::ISimple>{ static constexpr auto & value{ L"Complex.Authoring.Factory.ISimple" }; };
+template <> struct name<Complex::Authoring::Factory::ISimpleFactory>{ static constexpr auto & value{ L"Complex.Authoring.Factory.ISimpleFactory" }; };
+template <> struct name<Complex::Authoring::Factory::IStatic>{ static constexpr auto & value{ L"Complex.Authoring.Factory.IStatic" }; };
+template <> struct name<Complex::Authoring::Factory::IStaticFactory>{ static constexpr auto & value{ L"Complex.Authoring.Factory.IStaticFactory" }; };
+template <> struct name<Complex::Authoring::Factory::Simple>{ static constexpr auto & value{ L"Complex.Authoring.Factory.Simple" }; };
+template <> struct name<Complex::Authoring::Factory::SimpleFactory>{ static constexpr auto & value{ L"Complex.Authoring.Factory.SimpleFactory" }; };
+template <> struct name<Complex::Authoring::Factory::Static>{ static constexpr auto & value{ L"Complex.Authoring.Factory.Static" }; };
+template <> struct name<Complex::Authoring::Factory::StaticFactory>{ static constexpr auto & value{ L"Complex.Authoring.Factory.StaticFactory" }; };
+template <> struct guid<Complex::Authoring::Factory::ISimple>{ static constexpr GUID value{ 0x68504FD7,0xF10E,0x4E7B,{ 0xB2,0xC5,0x2A,0x89,0x06,0x70,0xB3,0x9B } }; };
+template <> struct guid<Complex::Authoring::Factory::ISimpleFactory>{ static constexpr GUID value{ 0x3590E075,0x41F5,0x4DBD,{ 0xA5,0xEA,0x30,0xDD,0x29,0x94,0xF8,0x84 } }; };
+template <> struct guid<Complex::Authoring::Factory::IStatic>{ static constexpr GUID value{ 0x9987FDEA,0x6A97,0x41AD,{ 0x9B,0x9F,0x0F,0x27,0x4C,0xE0,0x77,0xD9 } }; };
+template <> struct guid<Complex::Authoring::Factory::IStaticFactory>{ static constexpr GUID value{ 0xBFA00357,0x1F74,0x48C2,{ 0x9B,0xA2,0x37,0xAD,0x82,0x5A,0x63,0x9C } }; };
+template <> struct default_interface<Complex::Authoring::Factory::Simple>{ using type = Complex::Authoring::Factory::ISimple; };
+template <> struct default_interface<Complex::Authoring::Factory::SimpleFactory>{ using type = Complex::Authoring::Factory::ISimpleFactory; };
+
+template <typename D>
+struct consume_Complex_Authoring_Factory_ISimple
+{
+};
+template <> struct consume<Complex::Authoring::Factory::ISimple> { template <typename D> using type = consume_Complex_Authoring_Factory_ISimple<D>; };
+
+template <typename D>
+struct consume_Complex_Authoring_Factory_ISimpleFactory
+{
+};
+template <> struct consume<Complex::Authoring::Factory::ISimpleFactory> { template <typename D> using type = consume_Complex_Authoring_Factory_ISimpleFactory<D>; };
+
+template <typename D>
+struct consume_Complex_Authoring_Factory_IStatic
+{
+};
+template <> struct consume<Complex::Authoring::Factory::IStatic> { template <typename D> using type = consume_Complex_Authoring_Factory_IStatic<D>; };
+
+template <typename D>
+struct consume_Complex_Authoring_Factory_IStaticFactory
+{
+};
+template <> struct consume<Complex::Authoring::Factory::IStaticFactory> { template <typename D> using type = consume_Complex_Authoring_Factory_IStaticFactory<D>; };
 template <> struct category<Complex::Authoring::Nested::ISimple>{ using type = interface_category; };
 template <> struct category<Complex::Authoring::Nested::Simple>{ using type = class_category; };
 template <> struct name<Complex::Authoring::Nested::ISimple>{ static constexpr auto & value{ L"Complex.Authoring.Nested.ISimple" }; };
@@ -112,6 +171,22 @@ template <> struct abi<Complex::Authoring::IStructByRef>{ struct type : ::IInspe
 {
     virtual HRESULT __stdcall CopyByValue(abi_t<Windows::Foundation::Rect> byValue, abi_t<Windows::Foundation::Rect>* result) = 0;
     virtual HRESULT __stdcall CopyByRef(abi_t<Windows::Foundation::Rect> const& byRef, abi_t<Windows::Foundation::Rect>* result) = 0;
+};};
+
+template <> struct abi<Complex::Authoring::Factory::ISimple>{ struct type : ::IInspectable
+{
+};};
+
+template <> struct abi<Complex::Authoring::Factory::ISimpleFactory>{ struct type : ::IInspectable
+{
+};};
+
+template <> struct abi<Complex::Authoring::Factory::IStatic>{ struct type : ::IInspectable
+{
+};};
+
+template <> struct abi<Complex::Authoring::Factory::IStaticFactory>{ struct type : ::IInspectable
+{
 };};
 
 template <> struct abi<Complex::Authoring::Nested::ISimple>{ struct type : ::IInspectable
@@ -149,6 +224,38 @@ struct IStructByRef :
     impl::consume_t<IStructByRef>
 {
     IStructByRef(std::nullptr_t = nullptr) noexcept {}
+};
+
+}
+
+namespace Complex::Authoring::Factory {
+
+struct ISimple :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISimple>
+{
+    ISimple(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct ISimpleFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<ISimpleFactory>
+{
+    ISimpleFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IStatic :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStatic>
+{
+    IStatic(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IStaticFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IStaticFactory>
+{
+    IStaticFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 }
@@ -191,6 +298,34 @@ struct StructByRef :
 {
     StructByRef(std::nullptr_t) noexcept {}
     StructByRef();
+};
+
+}
+
+namespace Complex::Authoring::Factory {
+
+struct Simple :
+    Complex::Authoring::Factory::ISimple
+{
+    Simple(std::nullptr_t) noexcept {}
+    Simple();
+};
+
+struct SimpleFactory :
+    Complex::Authoring::Factory::ISimpleFactory
+{
+    SimpleFactory(std::nullptr_t) noexcept {}
+    SimpleFactory();
+};
+
+struct Static
+{
+    Static() = delete;
+};
+
+struct StaticFactory
+{
+    StaticFactory() = delete;
 };
 
 }
@@ -331,6 +466,22 @@ struct produce<D, Complex::Authoring::IStructByRef> : produce_base<D, Complex::A
     }
 };
 
+template <typename D>
+struct produce<D, Complex::Authoring::Factory::ISimple> : produce_base<D, Complex::Authoring::Factory::ISimple>
+{};
+
+template <typename D>
+struct produce<D, Complex::Authoring::Factory::ISimpleFactory> : produce_base<D, Complex::Authoring::Factory::ISimpleFactory>
+{};
+
+template <typename D>
+struct produce<D, Complex::Authoring::Factory::IStatic> : produce_base<D, Complex::Authoring::Factory::IStatic>
+{};
+
+template <typename D>
+struct produce<D, Complex::Authoring::Factory::IStaticFactory> : produce_base<D, Complex::Authoring::Factory::IStaticFactory>
+{};
+
 template <typename D> hstring consume_Complex_Authoring_Nested_ISimple<D>::Name() const
 {
     hstring value{};
@@ -380,6 +531,18 @@ inline StructByRef::StructByRef() :
 
 }
 
+namespace Complex::Authoring::Factory {
+
+inline Simple::Simple() :
+    Simple(activate_instance<Simple>())
+{}
+
+inline SimpleFactory::SimpleFactory() :
+    SimpleFactory(activate_instance<SimpleFactory>())
+{}
+
+}
+
 namespace Complex::Authoring::Nested {
 
 inline Simple::Simple() :
@@ -415,6 +578,30 @@ template<> struct hash<winrt::Complex::Authoring::Static> :
 
 template<> struct hash<winrt::Complex::Authoring::StructByRef> : 
     winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::StructByRef> {};
+
+template<> struct hash<winrt::Complex::Authoring::Factory::ISimple> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Factory::ISimple> {};
+
+template<> struct hash<winrt::Complex::Authoring::Factory::ISimpleFactory> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Factory::ISimpleFactory> {};
+
+template<> struct hash<winrt::Complex::Authoring::Factory::IStatic> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Factory::IStatic> {};
+
+template<> struct hash<winrt::Complex::Authoring::Factory::IStaticFactory> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Factory::IStaticFactory> {};
+
+template<> struct hash<winrt::Complex::Authoring::Factory::Simple> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Factory::Simple> {};
+
+template<> struct hash<winrt::Complex::Authoring::Factory::SimpleFactory> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Factory::SimpleFactory> {};
+
+template<> struct hash<winrt::Complex::Authoring::Factory::Static> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Factory::Static> {};
+
+template<> struct hash<winrt::Complex::Authoring::Factory::StaticFactory> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Factory::StaticFactory> {};
 
 template<> struct hash<winrt::Complex::Authoring::Nested::ISimple> : 
     winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Nested::ISimple> {};

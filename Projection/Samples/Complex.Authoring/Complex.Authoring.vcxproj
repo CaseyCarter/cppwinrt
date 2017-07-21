@@ -88,7 +88,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <CustomBuildStep>
-      <Command>cppwinrt -comp -in $(ProjectDir)Complex.Authoring.winmd -ref local -n -out $(ProjectDir) -write</Command>
+      <Command>cppwinrt -component -in $(ProjectDir)Complex.Authoring.winmd -ref local -out $(ProjectDir) -overwrite -filter Windows.Foundation.Uri Complex.Authoring -natvis</Command>
       <Message>C++/WinRT compiler</Message>
       <Outputs>Complex.Authoring.h;module.h</Outputs>
       <Inputs>Complex.Authoring.winmd</Inputs>
@@ -102,7 +102,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4100</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -130,7 +130,7 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4100</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -160,7 +160,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4100</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -192,7 +192,7 @@
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4100</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -215,6 +215,10 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Factory.Simple.cpp" />
+    <ClCompile Include="Factory.SimpleFactory.cpp" />
+    <ClCompile Include="Factory.Static.cpp" />
+    <ClCompile Include="Factory.StaticFactory.cpp" />
     <ClCompile Include="Language.cpp" />
     <ClCompile Include="module.cpp" />
     <ClCompile Include="Nested.Simple.cpp" />
@@ -227,9 +231,18 @@
     <ClCompile Include="Simple.cpp" />
     <ClCompile Include="Static.cpp" />
     <ClCompile Include="StructByRef.cpp" />
+    <ClCompile Include="Windows.Foundation.Uri.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Complex.Authoring.h" />
+    <ClInclude Include="Factory.Simple.g.h" />
+    <ClInclude Include="Factory.Simple.h" />
+    <ClInclude Include="Factory.SimpleFactory.g.h" />
+    <ClInclude Include="Factory.SimpleFactory.h" />
+    <ClInclude Include="Factory.Static.g.h" />
+    <ClInclude Include="Factory.Static.h" />
+    <ClInclude Include="Factory.StaticFactory.g.h" />
+    <ClInclude Include="Factory.StaticFactory.h" />
     <ClInclude Include="Language.g.h" />
     <ClInclude Include="Language.h" />
     <ClInclude Include="module.h" />
@@ -242,6 +255,8 @@
     <ClInclude Include="Static.h" />
     <ClInclude Include="StructByRef.g.h" />
     <ClInclude Include="StructByRef.h" />
+    <ClInclude Include="Windows.Foundation.Uri.g.h" />
+    <ClInclude Include="Windows.Foundation.Uri.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cppwinrt.cmd" />

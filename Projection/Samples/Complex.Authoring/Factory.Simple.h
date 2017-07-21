@@ -1,18 +1,17 @@
 ﻿#pragma once
 
-#include "Simple.g.h"
+#include "Factory.Simple.g.h"
 
-namespace winrt::Complex::Authoring::implementation
+namespace winrt::Complex::Authoring::Factory::implementation
 {
     struct Simple : SimpleT<Simple>
     {
         Simple() = default;
 
-        hstring Name();
     };
 }
 
-namespace winrt::Complex::Authoring::factory_implementation
+namespace winrt::Complex::Authoring::Factory::factory_implementation
 {
     struct Simple : SimpleT<Simple, implementation::Simple>
     {

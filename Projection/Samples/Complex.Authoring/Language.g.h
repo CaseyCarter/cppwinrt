@@ -9,7 +9,7 @@ namespace winrt {
 namespace Complex::Authoring::implementation {
 
 template <typename D, typename ... I>
-struct LanguageBase : impl::module_lock, implements<D, Complex::Authoring::ILanguage, I ...>
+struct Language_base : impl::module_lock, implements<D, Complex::Authoring::ILanguage, I ...>
 {
     using class_type = Complex::Authoring::Language;
 
@@ -26,8 +26,12 @@ struct LanguageBase : impl::module_lock, implements<D, Complex::Authoring::ILang
     }
 };
 
+}
+
+namespace Complex::Authoring::factory_implementation {
+
 template <typename D, typename T, typename ... I>
-struct LanguageFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+struct LanguageT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -40,6 +44,10 @@ struct LanguageFactoryBase : impl::module_lock, implements<D, Windows::Foundatio
     }
 };
 
+}
+
+}
+
 #pragma warning(suppress: 4067)
 #if defined(WINRT_FORCE_INCLUDE_LANGUAGE_X_H) || __has_include("Language.x.h")
 
@@ -47,14 +55,10 @@ struct LanguageFactoryBase : impl::module_lock, implements<D, Windows::Foundatio
 
 #else
 
-template <typename D, typename ... I>
-using LanguageT = LanguageBase<D, I ...>;
-
-template <typename D, typename T, typename ... I>
-using LanguageFactoryT = LanguageFactoryBase<D, T, I ...>;
+namespace winrt::Complex::Authoring::implementation
+{
+    template <typename D, typename ... I>
+    using LanguageT = Language_base<D, I ...>;
+}
 
 #endif
-
-}
-
-}

@@ -1,6 +1,5 @@
 ﻿#pragma once
 
-#include "module.h"
 #include "Hen.g.h"
 
 namespace winrt::Farm::Animals::implementation
@@ -12,8 +11,11 @@ namespace winrt::Farm::Animals::implementation
         hstring Name();
         Windows::Foundation::IAsyncOperationWithProgress<Farm::Animals::Egg, uint32_t> LayEggAsync();
     };
+}
 
-    struct HenFactory : HenFactoryT<HenFactory, Hen>
+namespace winrt::Farm::Animals::factory_implementation
+{
+    struct Hen : HenT<Hen, implementation::Hen>
     {
     };
 }

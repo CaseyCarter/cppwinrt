@@ -1,6 +1,5 @@
 #pragma once
 
-#include "module.h"
 #include "%.g.h"
 
 namespace winrt::@::implementation
@@ -8,8 +7,11 @@ namespace winrt::@::implementation
     struct % : %T<%@>
     {
 %    };
+}
 
-    struct %Factory : %FactoryT<%Factory, %>
+namespace winrt::@::factory_implementation
+{
+    struct % : %T<%, implementation::%>
     {
     };
 }

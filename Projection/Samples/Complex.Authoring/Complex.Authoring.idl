@@ -84,4 +84,55 @@ namespace Complex.Authoring
     runtimeclass Static
     {
     }
+
+    //
+    // These classes illustrate an issue with runtime class name mangling
+    // when authoring types with C++/WinRT, specifically when the class name
+    // ends with -Factory.
+    //
+
+    namespace Factory
+    {
+        [version(1.0), uuid(68504fd7-f10e-4e7b-b2c5-2a890670b39b)]
+        interface ISimple : IInspectable
+        {
+        };
+
+        [version(1.0), activatable(1.0)]
+        runtimeclass Simple
+        {
+            [default] interface ISimple;
+        }
+
+        [version(1.0), uuid(3590e075-41f5-4dbd-a5ea-30dd2994f884)]
+        interface ISimpleFactory : IInspectable
+        {
+        };
+
+        [version(1.0), activatable(1.0)]
+        runtimeclass SimpleFactory
+        {
+            [default] interface ISimpleFactory;
+        }
+
+        [version(1.0), uuid(9987fdea-6a97-41ad-9b9f-0f274ce077d9)]
+        interface IStatic : IInspectable
+        {
+        };
+
+        [version(1.0), static(IStatic, 1.0)]
+        runtimeclass Static
+        {
+        }
+
+        [version(1.0), uuid(bfa00357-1f74-48c2-9ba2-37ad825a639c)]
+        interface IStaticFactory : IInspectable
+        {
+        };
+
+        [version(1.0), static(IStaticFactory, 1.0)]
+        runtimeclass StaticFactory
+        {
+        }
+    }
 }

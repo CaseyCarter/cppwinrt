@@ -1,6 +1,5 @@
 ﻿#pragma once
 
-#include "module.h"
 #include "Nested.Simple.g.h"
 
 namespace winrt::Complex::Authoring::Nested::implementation
@@ -11,8 +10,11 @@ namespace winrt::Complex::Authoring::Nested::implementation
 
         hstring Name();
     };
+}
 
-    struct SimpleFactory : SimpleFactoryT<SimpleFactory, Simple>
+namespace winrt::Complex::Authoring::Nested::factory_implementation
+{
+    struct Simple : SimpleT<Simple, implementation::Simple>
     {
     };
 }

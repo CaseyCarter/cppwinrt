@@ -18,7 +18,6 @@ namespace winrt::impl
 }
 
 using namespace winrt;
-using namespace Windows::Foundation;
 
 HRESULT __stdcall DllCanUnloadNow()
 {
@@ -30,13 +29,9 @@ HRESULT __stdcall DllGetActivationFactory(HSTRING classId, ::IUnknown** factory)
     try
     {
         wchar_t const* const name = WindowsGetStringRawBuffer(classId, nullptr);
-
-       %
-        {
-            throw hresult_class_not_available();
-        }
-
-        return S_OK;
+%
+        *factory = nullptr;
+        return hresult_class_not_available().to_abi();
     }
     catch (...)
     {

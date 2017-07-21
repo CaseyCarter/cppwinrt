@@ -6,10 +6,10 @@
 
 #else
 
-template <typename D, typename ... I>
-using %T = %Base<D, I ...>;
-
-template <typename D, typename T, typename ... I>
-using %FactoryT = %FactoryBase<D, T, I ...>;
+namespace winrt::@::implementation
+{
+    template <typename D, typename ... I>
+    using %T = %_base<D, I ...>;
+}
 
 #endif

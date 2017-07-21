@@ -9,7 +9,7 @@ namespace winrt {
 namespace Complex::Authoring::Nested::implementation {
 
 template <typename D, typename ... I>
-struct SimpleBase : impl::module_lock, implements<D, Complex::Authoring::Nested::ISimple, I ...>
+struct Simple_base : impl::module_lock, implements<D, Complex::Authoring::Nested::ISimple, I ...>
 {
     using class_type = Complex::Authoring::Nested::Simple;
 
@@ -26,8 +26,12 @@ struct SimpleBase : impl::module_lock, implements<D, Complex::Authoring::Nested:
     }
 };
 
+}
+
+namespace Complex::Authoring::Nested::factory_implementation {
+
 template <typename D, typename T, typename ... I>
-struct SimpleFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+struct SimpleT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -40,21 +44,21 @@ struct SimpleFactoryBase : impl::module_lock, implements<D, Windows::Foundation:
     }
 };
 
-#pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_SIMPLE_X_H) || __has_include("Simple.x.h")
+}
 
-#include "Simple.x.h"
+}
+
+#pragma warning(suppress: 4067)
+#if defined(WINRT_FORCE_INCLUDE_SIMPLE_X_H) || __has_include("Nested.Simple.x.h")
+
+#include "Nested.Simple.x.h"
 
 #else
 
-template <typename D, typename ... I>
-using SimpleT = SimpleBase<D, I ...>;
-
-template <typename D, typename T, typename ... I>
-using SimpleFactoryT = SimpleFactoryBase<D, T, I ...>;
+namespace winrt::Complex::Authoring::Nested::implementation
+{
+    template <typename D, typename ... I>
+    using SimpleT = Simple_base<D, I ...>;
+}
 
 #endif
-
-}
-
-}

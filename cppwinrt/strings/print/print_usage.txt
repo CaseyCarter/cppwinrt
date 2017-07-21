@@ -6,18 +6,18 @@ Copyright (c) %d Microsoft Corporation. All rights reserved.
 
 Options:
 
-  -i[n] <spec>          Winmd files to include in projection
-  -r[ef] <spec>         Winmd files to reference from projection
-  -o[ut] <path>         Location of generated projection files
-  -f[ilter] <prefix>    One or more prefixes to include in projection
-  -c[omponent]          Generate component implementation source files 
-  -n[atvis]             Generate a natvis script for debug visualization
-  -v[erbose]            Show detailed progress information
-  -w[rite]              Overwrite existing component projection files
-  -h[elp]               Show detailed help with examples
-  @<path>               Response file containing command line options
+  -in <spec>          Winmd files to include in projection
+  -ref <spec>         Winmd files to reference from projection
+  -out <path>         Location of generated projection files
+  -component          Generate component implementation source files 
+  -filter <prefix>    One or more prefixes to include in component
+  -natvis             Generate a natvis script for debug visualization
+  -verbose            Show detailed progress information
+  -overwrite          Overwrite existing component projection files
+  -help               Show detailed help with examples
+  @<path>             Response file containing command line options
 
 Where <spec> is one or more of:
 
-  local                 Local %%WinDir%%\System32\WinMetadata folder
-  path                  Path to winmd file or recursively scanned folder
+  local               Local %%WinDir%%\System32\WinMetadata folder
+  path                Path to winmd file or recursively scanned folder

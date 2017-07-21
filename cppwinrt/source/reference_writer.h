@@ -75,7 +75,7 @@ namespace cppwinrt
                 record_namespace(_method_namespaces, _methods_forwards, token);
             };
 
-            for (meta::type const & type : get_unfiltered_types(_namespace_types.interfaces, _namespace_types.classes))
+            for (meta::type const & type : get_projected_types(_namespace_types.interfaces, _namespace_types.classes))
             {
                 _types_found = true;
 
@@ -85,13 +85,13 @@ namespace cppwinrt
                 }
             }
 
-            for (meta::type const & type : get_unfiltered_types(_namespace_types.delegates))
+            for (meta::type const & type : get_projected_types(_namespace_types.delegates))
             {
                 _types_found = true;
                 type.token.get_delegate(record_method_namespace);
             }
 
-            for (meta::type const & type : get_unfiltered_types(_namespace_types.structs))
+            for (meta::type const & type : get_projected_types(_namespace_types.structs))
             {
                 _types_found = true;
 
@@ -101,13 +101,13 @@ namespace cppwinrt
                 }
             }
 
-            auto enums = get_unfiltered_types(_namespace_types.enums);
+            auto enums = get_projected_types(_namespace_types.enums);
             if(enums.begin() != enums.end())
             {
                 _types_found = true;
             }
 
-            for (meta::type const & type : get_unfiltered_types(_namespace_types.classes))
+            for (meta::type const & type : get_projected_types(_namespace_types.classes))
             {
                 meta::token default_interface = type.token.get_default();
 
@@ -122,7 +122,7 @@ namespace cppwinrt
                 }
             }
 
-            for (meta::type const & type : get_unfiltered_types(_namespace_types.interfaces))
+            for (meta::type const & type : get_projected_types(_namespace_types.interfaces))
             {
                 for (auto& required_interface : type.token.get_interface_required())
                 {

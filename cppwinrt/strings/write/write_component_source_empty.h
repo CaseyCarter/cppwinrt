@@ -1,6 +1,5 @@
 
 using namespace winrt;
-using namespace Windows::Foundation;
 
 HRESULT __stdcall DllCanUnloadNow()
 {

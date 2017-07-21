@@ -5,7 +5,12 @@
 #include "Simple.h"
 #include "Static.h"
 #include "StructByRef.h"
+#include "Factory.Simple.h"
+#include "Factory.SimpleFactory.h"
+#include "Factory.Static.h"
+#include "Factory.StaticFactory.h"
 #include "Nested.Simple.h"
+#include "Windows.Foundation.Uri.h"
 
 namespace winrt::impl
 {
@@ -26,7 +31,6 @@ namespace winrt::impl
 }
 
 using namespace winrt;
-using namespace Windows::Foundation;
 
 HRESULT __stdcall DllCanUnloadNow()
 {
@@ -41,30 +45,66 @@ HRESULT __stdcall DllGetActivationFactory(HSTRING classId, ::IUnknown** factory)
 
         if (0 == wcscmp(name, L"Complex.Authoring.Language"))
         {
-            *factory = detach_abi(make<Complex::Authoring::implementation::LanguageFactory>());
-        }
-        else if (0 == wcscmp(name, L"Complex.Authoring.Simple"))
-        {
-            *factory = detach_abi(make<Complex::Authoring::implementation::SimpleFactory>());
-        }
-        else if (0 == wcscmp(name, L"Complex.Authoring.Static"))
-        {
-            *factory = detach_abi(make<Complex::Authoring::implementation::StaticFactory>());
-        }
-        else if (0 == wcscmp(name, L"Complex.Authoring.StructByRef"))
-        {
-            *factory = detach_abi(make<Complex::Authoring::implementation::StructByRefFactory>());
-        }
-        else if (0 == wcscmp(name, L"Complex.Authoring.Nested.Simple"))
-        {
-            *factory = detach_abi(make<Complex::Authoring::Nested::implementation::SimpleFactory>());
-        }
-        else
-        {
-            throw hresult_class_not_available();
+            *factory = detach_abi(make<Complex::Authoring::factory_implementation::Language>());
+            return S_OK;
         }
 
-        return S_OK;
+        if (0 == wcscmp(name, L"Complex.Authoring.Simple"))
+        {
+            *factory = detach_abi(make<Complex::Authoring::factory_implementation::Simple>());
+            return S_OK;
+        }
+
+        if (0 == wcscmp(name, L"Complex.Authoring.Static"))
+        {
+            *factory = detach_abi(make<Complex::Authoring::factory_implementation::Static>());
+            return S_OK;
+        }
+
+        if (0 == wcscmp(name, L"Complex.Authoring.StructByRef"))
+        {
+            *factory = detach_abi(make<Complex::Authoring::factory_implementation::StructByRef>());
+            return S_OK;
+        }
+
+        if (0 == wcscmp(name, L"Complex.Authoring.Factory.Simple"))
+        {
+            *factory = detach_abi(make<Complex::Authoring::Factory::factory_implementation::Simple>());
+            return S_OK;
+        }
+
+        if (0 == wcscmp(name, L"Complex.Authoring.Factory.SimpleFactory"))
+        {
+            *factory = detach_abi(make<Complex::Authoring::Factory::factory_implementation::SimpleFactory>());
+            return S_OK;
+        }
+
+        if (0 == wcscmp(name, L"Complex.Authoring.Factory.Static"))
+        {
+            *factory = detach_abi(make<Complex::Authoring::Factory::factory_implementation::Static>());
+            return S_OK;
+        }
+
+        if (0 == wcscmp(name, L"Complex.Authoring.Factory.StaticFactory"))
+        {
+            *factory = detach_abi(make<Complex::Authoring::Factory::factory_implementation::StaticFactory>());
+            return S_OK;
+        }
+
+        if (0 == wcscmp(name, L"Complex.Authoring.Nested.Simple"))
+        {
+            *factory = detach_abi(make<Complex::Authoring::Nested::factory_implementation::Simple>());
+            return S_OK;
+        }
+
+        if (0 == wcscmp(name, L"Windows.Foundation.Uri"))
+        {
+            *factory = detach_abi(make<Windows::Foundation::factory_implementation::Uri>());
+            return S_OK;
+        }
+
+        *factory = nullptr;
+        return hresult_class_not_available().to_abi();
     }
     catch (...)
     {

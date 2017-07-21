@@ -132,24 +132,6 @@ namespace cppwinrt::meta
             }
         }
 
-        bool is_filtered_type(std::string_view name)
-        {
-            if (settings::filters.size() == 0)
-            {
-                return false;
-            }
-
-            for (std::string const& filter : settings::filters)
-            {
-                if (starts_with(name, filter))
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
         IMetaDataDispenser* MetaDataGetDispenser()
         {
             IMetaDataDispenser* dispenser{};
@@ -160,37 +142,6 @@ namespace cppwinrt::meta
         static IMetaDataDispenser* dispenser{ MetaDataGetDispenser() };
         static std::vector<database> databases;
         static index_type index;
-
-        std::string to_string(std::wstring_view source)
-        {
-            std::string result(source.size(), '?');
-
-            auto WideCharToMultiByte = [&]
-            {
-                WINRT_ASSERT(source.size() <= result.size());
-
-                return ::WideCharToMultiByte(
-                    CP_UTF8,
-                    0,
-                    source.data(),
-                    static_cast<uint32_t>(source.size()),
-                    result.data(),
-                    static_cast<uint32_t>(result.size()),
-                    nullptr,
-                    nullptr);
-            };
-
-            int size = WideCharToMultiByte();
-
-            while (size == 0)
-            {
-                result.resize(result.size() * 2);
-                size = WideCharToMultiByte();
-            }
-
-            result.resize(size);
-            return result;
-        }
 
         void load_index_types()
         {
@@ -227,8 +178,8 @@ namespace cppwinrt::meta
                         }
                     }
 
-                    bool const filtered = database.is_reference || is_foundation_type(name) || is_filtered_type(name);
-                    type type(std::move(name), token, filtered);
+                    bool const is_reference = database.is_reference || is_foundation_type(name);
+                    type type(std::move(name), token, is_reference);
 
                     if (type.name_space().empty())
                     {
@@ -430,7 +381,7 @@ namespace cppwinrt::meta
                 return values;
             }
 
-            for (type const* base = class_token.get_base_type(); base && (!component_mode || base->filtered); base = base->token.get_base_type())
+            for (type const* base = class_token.get_base_type(); base && (!component_mode || base->is_reference); base = base->token.get_base_type())
             {
                 append_required(values, base->token, {});
             }
@@ -1884,11 +1835,11 @@ namespace cppwinrt::meta
         return raw_name;
     }
 
-    type::type(std::string&& name, meta::token token, bool const filtered) :
+    type::type(std::string&& name, meta::token token, bool const reference) :
         buffer(std::move(name)),
         offset(buffer.rfind('.') + 1),
         token(token),
-        filtered(filtered)
+        is_reference(reference)
     {
         if (offset == 0)
         {

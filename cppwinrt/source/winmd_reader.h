@@ -198,9 +198,9 @@ namespace cppwinrt::meta
         type& operator=(type&&) = default;
 
         token token;
-        bool filtered{};
+        bool is_reference{};
 
-        type(std::string&& name, meta::token token, bool filtered);
+        type(std::string&& name, meta::token token, bool reference);
         std::string_view full_name() const noexcept;
         std::string_view name_space() const noexcept;
         std::string_view name() const noexcept;
@@ -225,11 +225,11 @@ namespace cppwinrt::meta
     type const* find_type(std::string_view full_name, type_category* category = nullptr);
 
     template <typename ... Container>
-    generator<type> get_unfiltered_types(Container const& ... container)
+    generator<type> get_projected_types(Container const& ... container)
     {
         for (type const& type : get_container_values(container ...))
         {
-            if (type.filtered)
+            if (type.is_reference)
             {
                 continue;
             }

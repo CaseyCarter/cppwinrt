@@ -1,6 +1,5 @@
 ﻿#pragma once
 
-#include "module.h"
 #include "Egg.g.h"
 
 namespace winrt::Farm::Animals::implementation
@@ -16,8 +15,11 @@ namespace winrt::Farm::Animals::implementation
 
         Farm::Animals::Hen m_mother{ nullptr };
     };
+}
 
-    struct EggFactory : EggFactoryT<EggFactory, Egg>
+namespace winrt::Farm::Animals::factory_implementation
+{
+    struct Egg : EggT<Egg, implementation::Egg>
     {
     };
 }

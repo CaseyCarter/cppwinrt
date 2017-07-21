@@ -98,7 +98,6 @@
     <ClInclude Include="strings\write\write_component_class_constructor_definition.h" />
     <ClInclude Include="strings\write\write_component_class_factory_base.h" />
     <ClInclude Include="strings\write\write_component_class_header.h" />
-    <ClInclude Include="strings\write\write_component_class_no_xaml_shim.h" />
     <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h" />
     <ClInclude Include="strings\write\write_component_class_source.h" />
     <ClInclude Include="strings\write\write_component_class_static_definition.h" />
@@ -114,7 +113,6 @@
     <ClInclude Include="strings\write\write_component_produce_override_dispatch_method.h" />
     <ClInclude Include="strings\write\write_component_source.h" />
     <ClInclude Include="strings\write\write_component_source_empty.h" />
-    <ClInclude Include="strings\write\write_component_static_class_base.h" />
     <ClInclude Include="strings\write\write_component_static_class_header.h" />
     <ClInclude Include="strings\write\write_composable_constructor_definition.h" />
     <ClInclude Include="strings\write\write_constructor_definition.h" />

@@ -1588,7 +1588,7 @@ namespace cppwinrt
             std::vector<meta::token> override_interfaces;
             for (meta::type const* current = &type; current; current = current->token.get_base_type())
             {
-                if (current->filtered || (!ignore_self && current == &type))
+                if (current->is_reference || (!ignore_self && current == &type))
                 {
                     for (meta::token t : current->token.get_direct_override_interfaces())
                     {
@@ -1752,7 +1752,7 @@ namespace cppwinrt
                 out.write(", composable");
             }
             meta::type const* base_type = type.token.get_base_type();
-            if (base_type && base_type->filtered && is_composable(base_type->token))
+            if (base_type && base_type->is_reference && is_composable(base_type->token))
             {
                 out.write(", composing");
             }
@@ -1892,14 +1892,14 @@ namespace cppwinrt
             if (base_type)
             {
                 fallback_overrides = get_component_implemented_override_interfaces(*base_type, true);
-                if (base_type->filtered)
+                if (base_type->is_reference)
                 {
                     inner_type = base_type->token;
                 }
             }
 
             std::string module_lock;
-            if (!base_type || base_type->filtered)
+            if (!base_type || base_type->is_reference)
             {
                 module_lock = "impl::module_lock, ";
             }
@@ -1971,13 +1971,13 @@ namespace cppwinrt
 
         void write_include_test(output& out, meta::namespace_types const& types)
         {
-            for (meta::type const& type : meta::get_unfiltered_types(types.interfaces))
+            for (meta::type const& type : meta::get_projected_types(types.interfaces))
             {
                 out.write("    @{};\n", type.full_name());
                 out.write("    static_assert(sizeof(void*) == sizeof(@));\n", type.full_name());
             }
 
-            for (meta::type const& type : meta::get_unfiltered_types(types.classes))
+            for (meta::type const& type : meta::get_projected_types(types.classes))
             {
                 if (type.token.get_default())
                 {
@@ -1991,17 +1991,17 @@ namespace cppwinrt
                 }
             }
 
-            for (meta::type const& type : meta::get_unfiltered_types(types.enums))
+            for (meta::type const& type : meta::get_projected_types(types.enums))
             {
                 out.write("    @{};\n", type.full_name());
             }
 
-            for (meta::type const& type : meta::get_unfiltered_types(types.structs))
+            for (meta::type const& type : meta::get_projected_types(types.structs))
             {
                 out.write("    @{};\n", type.full_name());
             }
 
-            for (meta::type const& type : meta::get_unfiltered_types(types.delegates))
+            for (meta::type const& type : meta::get_projected_types(types.delegates))
             {
                 meta::method method = type.token.get_delegate();
 
@@ -2136,7 +2136,7 @@ namespace cppwinrt
 
             for (meta::index_pair const& ns : index)
             {
-                for (meta::type const& type : meta::get_unfiltered_types(ns.second.interfaces))
+                for (meta::type const& type : meta::get_projected_types(ns.second.interfaces))
                 {
                     out.write("\nvoid %()\n{\n    @ o{ nullptr };\n",
                         get_impl_name(type.full_name()),
@@ -2146,7 +2146,7 @@ namespace cppwinrt
                     out.write("}\n");
                 }
 
-                for (meta::type const& type : meta::get_unfiltered_types(ns.second.classes))
+                for (meta::type const& type : meta::get_projected_types(ns.second.classes))
                 {
                     out.write("\nvoid %()\n{\n", get_impl_name(type.full_name()));
 
@@ -2178,7 +2178,7 @@ namespace cppwinrt
 
             for (meta::index_pair const& ns : index)
             {
-                for (meta::type const& type : meta::get_unfiltered_types(ns.second.interfaces))
+                for (meta::type const& type : meta::get_projected_types(ns.second.interfaces))
                 {
                     if (type.full_name() == "Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics" ||
                         type.full_name() == "Windows.Media.Audio.ILimiterEffectDefinition")
@@ -2226,7 +2226,7 @@ namespace cppwinrt
 
         std::string_view get_relative_component_name(meta::type const& type)
         {
-            if (starts_with(type.full_name(), settings::component_name))
+            if (!settings::component_name.empty() && starts_with(type.full_name(), settings::component_name))
             {
                 return type.full_name().substr(settings::component_name.size() + 1);
             }
@@ -2255,7 +2255,7 @@ namespace cppwinrt
         std::vector<reference_writer> ref_writers;
         for (meta::index_pair const& ns : complete_index)
         {
-            auto classes = get_unfiltered_types(ns.second.classes);
+            auto classes = get_projected_types(ns.second.classes);
             if(classes.begin() != classes.end())
             {
                 unfiltered_index.push_back(std::ref(ns));
@@ -2438,7 +2438,7 @@ namespace cppwinrt
 
     void write_names(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.interfaces, types.classes, types.enums, types.structs, types.delegates))
+        for (meta::type const& type : get_projected_types(types.interfaces, types.classes, types.enums, types.structs, types.delegates))
         {
             out.write("template <> struct name<@>{ static constexpr auto & value{ L\"%\" }; };\n",
                 type.full_name(),
@@ -2448,29 +2448,29 @@ namespace cppwinrt
 
     void write_categories(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.interfaces))
+        for (meta::type const& type : get_projected_types(types.interfaces))
         {
             out.write("template <> struct category<@>{ using type = interface_category; };\n", type.full_name());
         }
 
-        for (meta::type const& type : get_unfiltered_types(types.classes))
+        for (meta::type const& type : get_projected_types(types.classes))
         {
             out.write("template <> struct category<@>{ using type = class_category; };\n", type.full_name());
         }
 
-        for (meta::type const& type : get_unfiltered_types(types.enums))
+        for (meta::type const& type : get_projected_types(types.enums))
         {
             out.write("template <> struct category<@>{ using type = enum_category; };\n", type.full_name());
         }
 
-        for (meta::type const& type : get_unfiltered_types(types.structs))
+        for (meta::type const& type : get_projected_types(types.structs))
         {
             out.write("template <> struct category<@>{ using type = %; };\n",
                 type.full_name(),
                 bind_output(write_category_field_types, "struct_category", type));
         }
 
-        for (meta::type const& type : get_unfiltered_types(types.delegates))
+        for (meta::type const& type : get_projected_types(types.delegates))
         {
             out.write("template <> struct category<@>{ using type = delegate_category; };\n", type.full_name());
         }
@@ -2478,7 +2478,7 @@ namespace cppwinrt
 
     void write_guids(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.interfaces, types.delegates))
+        for (meta::type const& type : get_projected_types(types.interfaces, types.delegates))
         {
             write_guid(out, type);
         }
@@ -2486,14 +2486,14 @@ namespace cppwinrt
 
     void write_forwards(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.enums))
+        for (meta::type const& type : get_projected_types(types.enums))
         {
             write_enum(out, type);
         }
 
         bool first = true;
 
-        for (meta::type const& type : get_unfiltered_types(types.interfaces, types.classes, types.structs, types.delegates))
+        for (meta::type const& type : get_projected_types(types.interfaces, types.classes, types.structs, types.delegates))
         {
             if (first)
             {
@@ -2507,7 +2507,7 @@ namespace cppwinrt
 
     void write_default_interfaces(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.classes))
+        for (meta::type const& type : get_projected_types(types.classes))
         {
             write_default_interface(out, type);
         }
@@ -2515,12 +2515,12 @@ namespace cppwinrt
 
     void write_abi(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.interfaces))
+        for (meta::type const& type : get_projected_types(types.interfaces))
         {
             write_interface_abi(out, type);
         }
 
-        for (meta::type const& type : get_unfiltered_types(types.delegates))
+        for (meta::type const& type : get_projected_types(types.delegates))
         {
             write_delegate_abi(out, type);
         }
@@ -2530,7 +2530,7 @@ namespace cppwinrt
     {
         bool struct_written = false;
 
-        for (meta::type const& type : get_unfiltered_types(types.structs))
+        for (meta::type const& type : get_projected_types(types.structs))
         {
             if (write_struct_abi(out, type))
             {
@@ -2543,7 +2543,7 @@ namespace cppwinrt
 
     void write_consume(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.interfaces))
+        for (meta::type const& type : get_projected_types(types.interfaces))
         {
             write_interface_consume(out, type);
         }
@@ -2551,7 +2551,7 @@ namespace cppwinrt
 
     void write_produce(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.interfaces))
+        for (meta::type const& type : get_projected_types(types.interfaces))
         {
             write_interface_produce(out, type);
         }
@@ -2559,7 +2559,7 @@ namespace cppwinrt
 
     void write_interface_definitions(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.interfaces))
+        for (meta::type const& type : get_projected_types(types.interfaces))
         {
             write_interface_definition(out, type);
         }
@@ -2567,7 +2567,7 @@ namespace cppwinrt
 
     void write_delegate_definitions(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.delegates))
+        for (meta::type const& type : get_projected_types(types.delegates))
         {
             write_delegate_definition(out, type);
         }
@@ -2575,7 +2575,7 @@ namespace cppwinrt
 
     void write_class_definitions(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.classes))
+        for (meta::type const& type : get_projected_types(types.classes))
         {
             write_class_definition(out, type);
         }
@@ -2728,12 +2728,12 @@ namespace cppwinrt
         std::string const& namespace_name,
         meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.classes))
+        for (meta::type const& type : get_projected_types(types.classes))
         {
             write_class_test(out, namespace_name, type);
         }
 
-        for (meta::type const& type : get_unfiltered_types(types.interfaces))
+        for (meta::type const& type : get_projected_types(types.interfaces))
         {
             write_interface_produce_test(out, type);
         }
@@ -2768,7 +2768,7 @@ void t()
 
     void write_struct_definitions(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.structs))
+        for (meta::type const& type : get_projected_types(types.structs))
         {
             write_struct_definition(out, type);
         }
@@ -2776,7 +2776,7 @@ void t()
 
     void write_interface_member_definitions(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.interfaces))
+        for (meta::type const& type : get_projected_types(types.interfaces))
         {
             write_shims(out, type);
         }
@@ -2784,7 +2784,7 @@ void t()
 
     void write_class_member_definitions(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.classes))
+        for (meta::type const& type : get_projected_types(types.classes))
         {
             write_class_member_definitions(out, type);
         }
@@ -2792,7 +2792,7 @@ void t()
 
     void write_interface_overrides(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.classes))
+        for (meta::type const& type : get_projected_types(types.classes))
         {
             for (meta::token const token : type.token.get_direct_override_interfaces())
             {
@@ -2803,7 +2803,7 @@ void t()
 
     void write_interface_override_methods(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.classes))
+        for (meta::type const& type : get_projected_types(types.classes))
         {
             for (meta::token const token : type.token.get_direct_override_interfaces())
             {
@@ -2814,7 +2814,7 @@ void t()
 
     void write_class_overrides(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.classes))
+        for (meta::type const& type : get_projected_types(types.classes))
         {
             write_class_override(out, type);
         }
@@ -2822,7 +2822,7 @@ void t()
 
     void write_std_hashes(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.interfaces, types.classes))
+        for (meta::type const& type : get_projected_types(types.interfaces, types.classes))
         {
             out.write(strings::write_std_hash,
                 "",
@@ -2833,7 +2833,7 @@ void t()
 
     void write_delegate_produce(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.delegates))
+        for (meta::type const& type : get_projected_types(types.delegates))
         {
             write_delegate_produce(out, type);
         }
@@ -2841,7 +2841,7 @@ void t()
 
     void write_delegate_member_definitions(output& out, meta::namespace_types const& types)
     {
-        for (meta::type const& type : get_unfiltered_types(types.delegates))
+        for (meta::type const& type : get_projected_types(types.delegates))
         {
             write_delegate_member_definition(out, type);
         }
@@ -2859,7 +2859,10 @@ void t()
         output out;
         write_warning(out, strings::write_edit_warning_header);
 
-        out.write("\n#include \"%.h\"\n", settings::component_name);
+        if (!settings::component_name.empty())
+        {
+            out.write("\n#include \"%.h\"\n", settings::component_name);
+        }
 
         write_winrt_namespace_begin(out);
 
@@ -3093,21 +3096,18 @@ void t()
         std::string const filename = get_component_filename(type) + ".g.h";
 
         output out;
-
         write_warning(out, strings::write_edit_warning_header);
-
         out.write("\n#include \"module.h\"\n");
-
         write_winrt_namespace_begin(out);
-
-        out.write_namespace(std::string(type.name_space()) + ".implementation");
-
         bool const static_class = type.token.is_static();
 
         if (!static_class)
         {
+            out.write_namespace(std::string(type.name_space()) + ".implementation");
             write_component_class_base(out, type);
         }
+
+        out.write_namespace(std::string(type.name_space()) + ".factory_implementation");
 
         out.write(strings::write_component_class_factory_base,
             type.name(),
@@ -3115,28 +3115,21 @@ void t()
             type.full_name(),
             bind_output(write_component_factory_forwarding_methods, type));
 
-        if (static_class)
-        {
-            out.write(strings::write_component_class_no_xaml_shim,
-                type.name(),
-                type.name());
-        }
-        else
+        write_winrt_namespace_end(out);
+
+        if (!static_class)
         {
             std::string upper(type.name());
             std::transform(upper.begin(), upper.end(), upper.begin(), [](char c) {return (char)::toupper(c); });
 
             out.write(strings::write_component_class_xaml_shim,
                 upper,
-                type.name(),
-                type.name(),
-                type.name(),
-                type.name(),
+                get_relative_component_name(type),
+                get_relative_component_name(type),
+                type.name_space(),
                 type.name(),
                 type.name());
         }
-
-        write_winrt_namespace_end(out);
 
         out.save_as(filename);
     }
@@ -3161,6 +3154,7 @@ void t()
                 type.name_space(),
                 type.name(),
                 bind_output(write_component_class_member_declarations, type),
+                type.name_space(),
                 type.name(),
                 type.name(),
                 type.name(),
@@ -3170,7 +3164,7 @@ void t()
         {
             std::string base_name;
             meta::type const* base_type = type.token.get_base_type();
-            if (base_type && !base_type->filtered)
+            if (base_type && !base_type->is_reference)
             {
                 base_name = ", ";
                 base_name += base_type->name_space();
@@ -3186,6 +3180,7 @@ void t()
                 type.name(),
                 base_name,
                 bind_output(write_component_class_member_declarations, type),
+                type.name_space(),
                 type.name(),
                 type.name(),
                 type.name(),
@@ -3319,7 +3314,7 @@ void t()
         meta::index_type const& index = meta::get_index();
 
         for (meta::index_pair const& ns : index)
-        for (meta::type const& type : get_unfiltered_types(ns.second.classes))
+        for (meta::type const& type : get_projected_types(ns.second.classes))
         {
             auto interfaces = enum_natvis_interfaces(type);
 

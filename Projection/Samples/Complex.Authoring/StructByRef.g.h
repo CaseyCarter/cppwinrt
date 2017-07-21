@@ -9,7 +9,7 @@ namespace winrt {
 namespace Complex::Authoring::implementation {
 
 template <typename D, typename ... I>
-struct StructByRefBase : impl::module_lock, implements<D, Complex::Authoring::IStructByRef, I ...>
+struct StructByRef_base : impl::module_lock, implements<D, Complex::Authoring::IStructByRef, I ...>
 {
     using class_type = Complex::Authoring::StructByRef;
 
@@ -26,8 +26,12 @@ struct StructByRefBase : impl::module_lock, implements<D, Complex::Authoring::IS
     }
 };
 
+}
+
+namespace Complex::Authoring::factory_implementation {
+
 template <typename D, typename T, typename ... I>
-struct StructByRefFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+struct StructByRefT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -40,6 +44,10 @@ struct StructByRefFactoryBase : impl::module_lock, implements<D, Windows::Founda
     }
 };
 
+}
+
+}
+
 #pragma warning(suppress: 4067)
 #if defined(WINRT_FORCE_INCLUDE_STRUCTBYREF_X_H) || __has_include("StructByRef.x.h")
 
@@ -47,14 +55,10 @@ struct StructByRefFactoryBase : impl::module_lock, implements<D, Windows::Founda
 
 #else
 
-template <typename D, typename ... I>
-using StructByRefT = StructByRefBase<D, I ...>;
-
-template <typename D, typename T, typename ... I>
-using StructByRefFactoryT = StructByRefFactoryBase<D, T, I ...>;
+namespace winrt::Complex::Authoring::implementation
+{
+    template <typename D, typename ... I>
+    using StructByRefT = StructByRef_base<D, I ...>;
+}
 
 #endif
-
-}
-
-}

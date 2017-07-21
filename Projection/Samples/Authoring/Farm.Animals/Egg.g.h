@@ -9,7 +9,7 @@ namespace winrt {
 namespace Farm::Animals::implementation {
 
 template <typename D, typename ... I>
-struct EggBase : impl::module_lock, implements<D, Farm::Animals::IEgg, I ...>
+struct Egg_base : impl::module_lock, implements<D, Farm::Animals::IEgg, I ...>
 {
     using class_type = Farm::Animals::Egg;
 
@@ -26,8 +26,12 @@ struct EggBase : impl::module_lock, implements<D, Farm::Animals::IEgg, I ...>
     }
 };
 
+}
+
+namespace Farm::Animals::factory_implementation {
+
 template <typename D, typename T, typename ... I>
-struct EggFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Farm::Animals::IEggFactory, I ...>
+struct EggT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Farm::Animals::IEggFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -45,6 +49,10 @@ struct EggFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IA
     }
 };
 
+}
+
+}
+
 #pragma warning(suppress: 4067)
 #if defined(WINRT_FORCE_INCLUDE_EGG_X_H) || __has_include("Egg.x.h")
 
@@ -52,14 +60,10 @@ struct EggFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IA
 
 #else
 
-template <typename D, typename ... I>
-using EggT = EggBase<D, I ...>;
-
-template <typename D, typename T, typename ... I>
-using EggFactoryT = EggFactoryBase<D, T, I ...>;
+namespace winrt::Farm::Animals::implementation
+{
+    template <typename D, typename ... I>
+    using EggT = Egg_base<D, I ...>;
+}
 
 #endif
-
-}
-
-}

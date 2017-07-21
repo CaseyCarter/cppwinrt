@@ -9,7 +9,7 @@ namespace winrt {
 namespace Farm::Animals::implementation {
 
 template <typename D, typename ... I>
-struct HenBase : impl::module_lock, implements<D, Farm::Animals::IHen, I ...>
+struct Hen_base : impl::module_lock, implements<D, Farm::Animals::IHen, I ...>
 {
     using class_type = Farm::Animals::Hen;
 
@@ -26,8 +26,12 @@ struct HenBase : impl::module_lock, implements<D, Farm::Animals::IHen, I ...>
     }
 };
 
+}
+
+namespace Farm::Animals::factory_implementation {
+
 template <typename D, typename T, typename ... I>
-struct HenFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+struct HenT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -40,6 +44,10 @@ struct HenFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IA
     }
 };
 
+}
+
+}
+
 #pragma warning(suppress: 4067)
 #if defined(WINRT_FORCE_INCLUDE_HEN_X_H) || __has_include("Hen.x.h")
 
@@ -47,14 +55,10 @@ struct HenFactoryBase : impl::module_lock, implements<D, Windows::Foundation::IA
 
 #else
 
-template <typename D, typename ... I>
-using HenT = HenBase<D, I ...>;
-
-template <typename D, typename T, typename ... I>
-using HenFactoryT = HenFactoryBase<D, T, I ...>;
+namespace winrt::Farm::Animals::implementation
+{
+    template <typename D, typename ... I>
+    using HenT = Hen_base<D, I ...>;
+}
 
 #endif
-
-}
-
-}

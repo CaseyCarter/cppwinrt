@@ -6,12 +6,12 @@
 
 namespace winrt {
 
-namespace Complex::Authoring::implementation {
+namespace Complex::Authoring::Factory::implementation {
 
 template <typename D, typename ... I>
-struct Simple_base : impl::module_lock, implements<D, Complex::Authoring::ISimple, I ...>
+struct Simple_base : impl::module_lock, implements<D, Complex::Authoring::Factory::ISimple, I ...>
 {
-    using class_type = Complex::Authoring::Simple;
+    using class_type = Complex::Authoring::Factory::Simple;
 
     operator class_type() const noexcept
     {
@@ -22,20 +22,20 @@ struct Simple_base : impl::module_lock, implements<D, Complex::Authoring::ISimpl
 
     hstring GetRuntimeClassName() const
     {
-        return L"Complex.Authoring.Simple";
+        return L"Complex.Authoring.Factory.Simple";
     }
 };
 
 }
 
-namespace Complex::Authoring::factory_implementation {
+namespace Complex::Authoring::Factory::factory_implementation {
 
 template <typename D, typename T, typename ... I>
 struct SimpleT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
-        return L"Complex.Authoring.Simple";
+        return L"Complex.Authoring.Factory.Simple";
     }
 
     Windows::Foundation::IInspectable ActivateInstance() const
@@ -49,13 +49,13 @@ struct SimpleT : impl::module_lock, implements<D, Windows::Foundation::IActivati
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_SIMPLE_X_H) || __has_include("Simple.x.h")
+#if defined(WINRT_FORCE_INCLUDE_SIMPLE_X_H) || __has_include("Factory.Simple.x.h")
 
-#include "Simple.x.h"
+#include "Factory.Simple.x.h"
 
 #else
 
-namespace winrt::Complex::Authoring::implementation
+namespace winrt::Complex::Authoring::Factory::implementation
 {
     template <typename D, typename ... I>
     using SimpleT = Simple_base<D, I ...>;

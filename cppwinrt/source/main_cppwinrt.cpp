@@ -139,7 +139,7 @@ namespace
             { L"tests", option::tests },
             { L"natvis", option::natvis },
             { L"verbose", option::verbose },
-            { L"write", option::overwrite },
+            { L"overwrite", option::overwrite },
             { L"help", option::help },
             { L"?", option::help },
         };
@@ -156,7 +156,7 @@ namespace
                 option cur_option = option::none;
                 for (auto const& o : options)
                 {
-                    if (0 == wcsncmp(arg, o.string, wcslen(arg)))
+                    if (0 == wcscmp(arg, o.string))
                     {
                         cur_option = o.value;
                         break;
@@ -211,10 +211,7 @@ namespace
                 last_option = option::none; 
                 break;
             case option::filter: 
-                {
-                    std::wstring filter(arg);
-                    settings::filters.emplace_back(filter.begin(), filter.end());
-                }
+                settings::filters.push_back(to_string(arg));
                 break;
             default: 
                 throw invalid_usage{ L"Internal error: ", 
