@@ -2393,6 +2393,7 @@ namespace cppwinrt
         out.write(strings::base_agile);
         out.write(strings::base_event_consume);
         out.write(strings::base_event_produce);
+        out.write(strings::base_implements_marshal);
         out.write(strings::base_implements);
         out.write(strings::base_composable);
         out.write(strings::base_activation);

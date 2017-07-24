@@ -351,94 +351,6 @@ namespace impl
     };
 
     template <bool Agile>
-    struct free_threaded_marshaler
-    {
-        void* find_marshal() noexcept
-        {
-            WINRT_ASSERT(false);
-            return nullptr;
-        }
-    };
-
-    template <>
-    struct free_threaded_marshaler<true> : IMarshal
-    {
-        void* find_marshal() noexcept
-        {
-            return static_cast<IMarshal*>(this);
-        }
-
-        HRESULT __stdcall GetUnmarshalClass(REFIID riid, void* pv, DWORD dwDestContext, void* pvDestContext, DWORD mshlflags, CLSID* pCid) noexcept final
-        {
-            if (com_ptr<IMarshal> marshal = get_marshaler())
-            {
-                return marshal->GetUnmarshalClass(riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
-            }
-
-            return E_OUTOFMEMORY;
-        }
-
-        HRESULT __stdcall GetMarshalSizeMax(REFIID riid, void* pv, DWORD dwDestContext, void* pvDestContext, DWORD mshlflags, DWORD* pSize) noexcept final
-        {
-            if (com_ptr<IMarshal> marshal = get_marshaler())
-            {
-                return marshal->GetMarshalSizeMax(riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
-            }
-
-            return E_OUTOFMEMORY;
-        }
-
-        HRESULT __stdcall MarshalInterface(IStream* pStm, REFIID riid, void* pv, DWORD dwDestContext, void* pvDestContext, DWORD mshlflags) noexcept final
-        {
-            if (com_ptr<IMarshal> marshal = get_marshaler())
-            {
-                return marshal->MarshalInterface(pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
-            }
-
-            return E_OUTOFMEMORY;
-        }
-
-        HRESULT __stdcall UnmarshalInterface(IStream* pStm, REFIID riid, void** ppv) noexcept final
-        {
-            if (com_ptr<IMarshal> marshal = get_marshaler())
-            {
-                return marshal->UnmarshalInterface(pStm, riid, ppv);
-            }
-
-            return E_OUTOFMEMORY;
-        }
-
-        HRESULT __stdcall ReleaseMarshalData(IStream* pStm) noexcept final
-        {
-            if (com_ptr<IMarshal> marshal = get_marshaler())
-            {
-                return marshal->ReleaseMarshalData(pStm);
-            }
-
-            return E_OUTOFMEMORY;
-        }
-
-        HRESULT __stdcall DisconnectObject(DWORD dwReserved) noexcept final
-        {
-            if (com_ptr<IMarshal> marshal = get_marshaler())
-            {
-                return marshal->DisconnectObject(dwReserved);
-            }
-
-            return E_OUTOFMEMORY;
-        }
-
-    private:
-
-        static com_ptr<IMarshal> get_marshaler() noexcept
-        {
-            com_ptr<::IUnknown> unknown;
-            WINRT_VERIFY_(S_OK, CoCreateFreeThreadedMarshaler(nullptr, put_abi(unknown)));
-            return unknown ? unknown.try_as<IMarshal>() : nullptr;
-        }
-    };
-
-    template <bool Agile>
     struct weak_ref;
 
     template <bool Agile>
@@ -490,7 +402,7 @@ namespace impl
     };
 
     template <bool Agile>
-    struct weak_ref : IWeakReference, free_threaded_marshaler<Agile>, weak_source_producer<Agile>
+    struct weak_ref : IWeakReference, weak_source_producer<Agile>
     {
         weak_ref(::IUnknown* object, uint32_t const strong) :
             m_object(object),
@@ -510,11 +422,17 @@ namespace impl
 
             if (Agile)
             {
-                if (id == guid_v<IAgileObject> || id == guid_v<IMarshal>)
+                if (id == guid_v<IAgileObject>)
                 {
-                    *object = this->find_marshal();
+                    *object = static_cast<::IUnknown*>(this);
                     AddRef();
                     return S_OK;
+                }
+
+                if (id == guid_v<IMarshal>)
+                {
+                    *object = new (std::nothrow) free_threaded_marshaler(this);
+                    return *object ? S_OK : E_OUTOFMEMORY;
                 }
             }
 
@@ -537,7 +455,6 @@ namespace impl
             }
 
             return target;
-
         }
 
         HRESULT __stdcall Resolve(GUID const& id, ::IInspectable** objectReference) noexcept override
@@ -656,7 +573,6 @@ namespace impl
     struct root_implements
         : root_implements_composing_outer<std::disjunction<std::is_same<composing, I> ...>::value>
         , root_implements_composable_inner<D, std::disjunction<std::is_same<composable, I> ...>::value>
-        , free_threaded_marshaler<impl::is_agile<I ...>::value>
     {
         using IInspectable = Windows::Foundation::IInspectable;
         using root_implements_type = root_implements;
@@ -667,7 +583,9 @@ namespace impl
             {
                 return this->outer()->QueryInterface(id, object);
             }
+
             HRESULT result = query_interface(id, object, is_weak_ref_source{});
+
             if (result == E_NOINTERFACE && this->m_inner)
             {
                 result = get_abi(this->m_inner)->QueryInterface(id, object);
@@ -883,11 +801,17 @@ namespace impl
 
             if (is_agile::value)
             {
-                if (id == __uuidof(IAgileObject) || id == __uuidof(IMarshal))
+                if (id == guid_v<IAgileObject>)
                 {
-                    *object = this->find_marshal();
+                    *object = get_unknown();
                     AddRef();
                     return S_OK;
+                }
+
+                if (id == guid_v<IMarshal>)
+                {
+                    *object = new (std::nothrow) free_threaded_marshaler(get_unknown());
+                    return *object ? S_OK : E_OUTOFMEMORY;
                 }
             }
 

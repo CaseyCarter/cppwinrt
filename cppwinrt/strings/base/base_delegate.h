@@ -8,24 +8,23 @@ namespace Windows::Foundation
 namespace impl
 {
     template <typename T, typename H>
-    struct implements_delegate : abi_t<T>, free_threaded_marshaler<true>, H
+    struct implements_delegate : abi_t<T>, H
     {
         implements_delegate(H&& handler) : H(std::forward<H>(handler)) {}
 
         HRESULT __stdcall QueryInterface(GUID const& id, void** result) noexcept final
         {
-            if (id == guid_v<T> || id == guid_v<Windows::Foundation::IUnknown>)
+            if (id == guid_v<T> || id == guid_v<Windows::Foundation::IUnknown> || id == guid_v<IAgileObject>)
             {
                 *result = static_cast<winrt::abi_t<T>*>(this);
                 AddRef();
                 return S_OK;
             }
 
-            if (id == guid_v<IAgileObject> || id == guid_v<IMarshal>)
+            if (id == guid_v<IMarshal>)
             {
-                *result = static_cast<IMarshal*>(this);
-                AddRef();
-                return S_OK;
+                *result = new (std::nothrow) free_threaded_marshaler(this);
+                return *result ? S_OK : E_OUTOFMEMORY;
             }
 
             *result = nullptr;
@@ -50,11 +49,6 @@ namespace impl
             return target;
         }
 
-        ::IUnknown* get_unknown() noexcept
-        {
-            return static_cast<abi_t<T>*>(this);
-        }
-
     private:
 
         std::atomic<uint32_t> m_references{ 1 };
@@ -64,7 +58,7 @@ namespace impl
     auto make_delegate(H&& handler)
     {
         T instance{};
-        *put_abi(instance) = (new delegate_t<T, H>(std::forward<H>(handler)))->get_unknown();
+        *put_abi(instance) = (new delegate_t<T, H>(std::forward<H>(handler)));
         return instance;
     }
 

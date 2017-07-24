@@ -69,3 +69,89 @@ TEST_CASE("TestNonAgile")
 
     REQUIRE_THROWS_AS(object.as<IMarshal>(), hresult_no_interface);
 }
+
+TEST_CASE("TestMarshalTearoffLifetime")
+{
+    using Windows::Foundation::IUnknown;
+    using Windows::Foundation::IInspectable;
+
+    bool destroyed = false;
+
+    IInspectable object = make<TestAgile>(destroyed);
+    com_ptr<IMarshal> marshal = object.as<IMarshal>();
+    object = nullptr;
+    REQUIRE(!destroyed);
+
+    // Confirm agility (back to object):
+
+    marshal.as<IAgileObject>();
+
+    // QI on tearoff itself:
+
+    com_ptr<IMarshal> marshal2 = marshal.as<IMarshal>();
+    REQUIRE(marshal == marshal2);
+    marshal2 = nullptr;
+
+    REQUIRE(!destroyed);
+    // Confirm tear-off does not leak reference:
+    marshal = nullptr;
+    REQUIRE(destroyed);
+}
+
+TEST_CASE("TestAgileDelegate")
+{
+    using Windows::Foundation::IUnknown;
+    using Windows::Foundation::IInspectable;
+
+    IUnknown object = Windows::UI::Xaml::CreateDefaultValueCallback([] { return nullptr; });
+    com_ptr<IMarshal> marshal = object.as<IMarshal>();
+    object = nullptr;
+
+    // Confirm agility (back to object):
+
+    marshal.as<IAgileObject>();
+
+    // QI on tearoff itself:
+
+    com_ptr<IMarshal> marshal2 = marshal.as<IMarshal>();
+    REQUIRE(marshal == marshal2);
+}
+
+TEST_CASE("TestAgileWeakReference")
+{
+    using Windows::Foundation::IUnknown;
+    using Windows::Foundation::IInspectable;
+
+    bool destroyed = false;
+    IClosable object = make<TestAgile>(destroyed);
+    com_ptr<winrt::impl::IWeakReferenceSource> source = object.as<winrt::impl::IWeakReferenceSource>();
+
+    // Clear object but source keeps object alive
+    object = nullptr;
+    source.as<IMarshal>();
+
+    com_ptr<winrt::impl::IWeakReference> ref;
+    check_hresult(source->GetWeakReference(put_abi(ref)));
+
+    // Drop the source object
+    REQUIRE(S_OK == ref->Resolve(put_abi(object)));
+    REQUIRE(object != nullptr);
+    source = nullptr;
+    REQUIRE(!destroyed);
+    object = nullptr;
+    REQUIRE(destroyed);
+    REQUIRE(S_OK == ref->Resolve(put_abi(object)));
+    REQUIRE(object == nullptr);
+
+    // Marshaling support on weak ref
+    com_ptr<IMarshal> marshal = ref.as<IMarshal>();
+    ref = nullptr;
+
+    // Confirm agility (back to object):
+    marshal.as<IAgileObject>();
+
+    // QI on tearoff itself:
+
+    com_ptr<IMarshal> marshal2 = marshal.as<IMarshal>();
+    REQUIRE(marshal == marshal2);
+}
