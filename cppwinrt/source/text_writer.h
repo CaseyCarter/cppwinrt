@@ -4,7 +4,7 @@
 
 namespace cppwinrt
 {
-    static constexpr size_t default_output_capacity{ 4 * 1024 * 1000 };
+    static constexpr size_t default_output_capacity{ 16 * 1024 };
 
     class output
     {

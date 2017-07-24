@@ -8,6 +8,7 @@
 #include "settings.h"
 #include "platform_writer.h"
 #include "component_writer.h"
+#include "helpers.h"
 
 using namespace cppwinrt;
 using namespace std::chrono;
@@ -354,14 +355,17 @@ int wmain(int argc, wchar_t** argv)
     }
     catch (winrt::hresult_error const& e)
     {
-        printf(strings::print_hresult_error, e.code(), e.message().c_str());
+        print_error(strings::print_hresult_error, e.code(), e.message().c_str());
+        return 1;
     }
     catch (std::exception const& e)
     {
-        printf(strings::print_exception, E_FAIL, e.what());
+        print_error(strings::print_exception, E_FAIL, e.what());
+        return 1;
     }
     catch (invalid_usage const& e)
     {
-        printf(strings::print_invalid_usage, e.code, e.message.c_str(), e.arg.c_str());
+        print_error(strings::print_invalid_usage, e.code, e.message.c_str(), e.arg.c_str());
+        return 1;
     }
 }

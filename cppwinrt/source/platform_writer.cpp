@@ -53,7 +53,7 @@ namespace cppwinrt
                 {
                     if (!_headers.empty())
                     {
-                        printf("Complex struct defined in non-reference metadata.  Projection may be incorrect.\n");
+                        print_error("Complex struct defined in non-reference metadata.  Projection may be incorrect.\n");
                     }
                     return;
                 }
@@ -90,18 +90,10 @@ namespace cppwinrt
             {
                 throw;
             }
-            catch (winrt::hresult_error const& e)
-            {
-                printf(strings::print_hresult_error, e.code(), e.message().c_str());
-            }
-            catch (std::exception const& e)
-            {
-                printf(strings::print_exception, E_FAIL, e.what());
-            }
             catch (meta::meta_error const& e)
             {
-                printf(strings::print_exception, E_INVALIDARG, e.message.c_str());
-                printf("    The %s projection is incomplete. A required reference may be missing.\n", context.data());
+                print_error("    The %s projection is incomplete. A required reference may be missing.\n", context.data());
+                throw std::exception(e.message.c_str());
             }
         }
 

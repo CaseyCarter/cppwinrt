@@ -265,6 +265,8 @@ namespace cppwinrt::meta
             case ELEMENT_TYPE_U8:      return "uint64_t";
             case ELEMENT_TYPE_R4:      return "float";
             case ELEMENT_TYPE_R8:      return "double";
+            case ELEMENT_TYPE_I:       return "LONG_PTR";
+            case ELEMENT_TYPE_U:       return "ULONG_PTR";
             case ELEMENT_TYPE_STRING:  return "hstring";
             case ELEMENT_TYPE_OBJECT:  return "Windows.Foundation.IInspectable";
             }
@@ -737,6 +739,8 @@ namespace cppwinrt::meta
         case ELEMENT_TYPE_U8:      return "uint64_t";
         case ELEMENT_TYPE_R4:      return "float";
         case ELEMENT_TYPE_R8:      return "double";
+        case ELEMENT_TYPE_I:       return "LONG_PTR";
+        case ELEMENT_TYPE_U:       return "ULONG_PTR";
         case ELEMENT_TYPE_STRING:  return "HSTRING";
         }
 
@@ -768,7 +772,7 @@ namespace cppwinrt::meta
 
         CorElementType category = CorSigUncompressElementType(next.data);
 
-        if (category < ELEMENT_TYPE_PTR || category == ELEMENT_TYPE_OBJECT)
+        if (CorIsPrimitiveType(category) || category == ELEMENT_TYPE_OBJECT)
         {
             return next;
         }

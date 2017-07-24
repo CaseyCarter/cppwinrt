@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdio>
+
 namespace cppwinrt
 {
     template<typename T>
@@ -84,5 +86,11 @@ namespace cppwinrt
 
         result.resize(size);
         return result;
+    }
+	
+	template <typename ... Args>
+    void print_error(Args&& ... args)
+    {
+        fprintf(stderr, std::forward<Args>(args) ...);
     }
 }
