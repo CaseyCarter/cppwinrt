@@ -102,7 +102,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996;4100</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -130,7 +130,7 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996;4100</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -160,7 +160,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996;4100</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -192,7 +192,7 @@
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996;4100</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
