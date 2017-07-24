@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "Root.h"
 
 namespace winrt::Composable::Base::implementation

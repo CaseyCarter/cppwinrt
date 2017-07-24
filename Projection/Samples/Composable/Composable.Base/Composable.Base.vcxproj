@@ -102,7 +102,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt -comp -in $(ProjectDir)Composable.Base.winmd -n -out $(ProjectDir)</Command>
+      <Command>cppwinrt -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -135,7 +135,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt -comp -in $(ProjectDir)Composable.Base.winmd -n -out $(ProjectDir)</Command>
+      <Command>cppwinrt -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -172,7 +172,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt -comp -in $(ProjectDir)Composable.Base.winmd -n -out $(ProjectDir)</Command>
+      <Command>cppwinrt -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -209,7 +209,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt -comp -in $(ProjectDir)Composable.Base.winmd -n -out $(ProjectDir)</Command>
+      <Command>cppwinrt -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>

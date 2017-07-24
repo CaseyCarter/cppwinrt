@@ -1,6 +1,5 @@
-#pragma once
+﻿#pragma once
 
-#include "module.h"
 #include "Root.g.h"
 
 namespace winrt::Composable::Base::implementation
@@ -14,8 +13,11 @@ namespace winrt::Composable::Base::implementation
         hstring CallVirtualPublicRootMethod();
         hstring VirtualPublicRootMethod();
     };
+}
 
-    struct RootFactory : RootFactoryT<RootFactory, Root>
+namespace winrt::Composable::Base::factory_implementation
+{
+    struct Root : RootT<Root, implementation::Root>
     {
     };
 }

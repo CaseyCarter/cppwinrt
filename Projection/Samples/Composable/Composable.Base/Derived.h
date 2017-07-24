@@ -1,6 +1,5 @@
-#pragma once
+﻿#pragma once
 
-#include "module.h"
 #include "Derived.g.h"
 #include "Root.h"
 
@@ -15,8 +14,11 @@ namespace winrt::Composable::Base::implementation
         hstring VirtualPublicDerivedMethod();
         hstring VirtualInternalRootMethod() override;
     };
+}
 
-    struct DerivedFactory : DerivedFactoryT<DerivedFactory, Derived>
+namespace winrt::Composable::Base::factory_implementation
+{
+    struct Derived : DerivedT<Derived, implementation::Derived>
     {
     };
 }
