@@ -19,6 +19,7 @@ namespace impl
 
         void exit() noexcept
         {
+            __analysis_assume_lock_acquired(m_lock);
             ReleaseSRWLockExclusive(&m_lock);
         }
 
