@@ -96,6 +96,7 @@ namespace
         out,
         component,
         filter,
+        name,
         tests,
         natvis,
         verbose,
@@ -137,6 +138,7 @@ namespace
             { L"out", option::out },
             { L"component", option::component },
             { L"filter", option::filter },
+            { L"name", option::name },
             { L"tests", option::tests },
             { L"natvis", option::natvis },
             { L"verbose", option::verbose },
@@ -213,6 +215,9 @@ namespace
                 break;
             case option::filter: 
                 settings::filters.push_back(to_string(arg));
+                break;
+            case option::name:
+                settings::component_name = to_string(arg);
                 break;
             default: 
                 throw invalid_usage{ L"Internal error: ", 

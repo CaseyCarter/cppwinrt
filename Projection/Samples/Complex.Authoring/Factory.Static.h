@@ -8,6 +8,7 @@ namespace winrt::Complex::Authoring::Factory::implementation
     {
         Static() = delete;
 
+        static void StaticMethod();
     };
 }
 

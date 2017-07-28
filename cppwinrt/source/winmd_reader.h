@@ -199,6 +199,7 @@ namespace cppwinrt::meta
 
         token token;
         bool is_reference{};
+        bool is_filtered() const;
 
         type(std::string&& name, meta::token token, bool reference);
         std::string_view full_name() const noexcept;

@@ -18,6 +18,27 @@ struct StructByRef;
 
 }
 
+namespace Complex::Authoring::Composability::Closed {
+
+struct IBase;
+struct IBaseFactory;
+struct IDerived;
+struct Base;
+struct Derived;
+
+}
+
+namespace Complex::Authoring::Composability::Open {
+
+struct IBase;
+struct IBaseFactory;
+struct IDerived;
+struct IDerivedFactory;
+struct Base;
+struct Derived;
+
+}
+
 namespace Complex::Authoring::Factory {
 
 struct ISimple;
@@ -92,6 +113,87 @@ struct consume_Complex_Authoring_IStructByRef
     Windows::Foundation::Rect CopyByRef(Windows::Foundation::Rect const& byRef) const;
 };
 template <> struct consume<Complex::Authoring::IStructByRef> { template <typename D> using type = consume_Complex_Authoring_IStructByRef<D>; };
+template <> struct category<Complex::Authoring::Composability::Closed::IBase>{ using type = interface_category; };
+template <> struct category<Complex::Authoring::Composability::Closed::IBaseFactory>{ using type = interface_category; };
+template <> struct category<Complex::Authoring::Composability::Closed::IDerived>{ using type = interface_category; };
+template <> struct category<Complex::Authoring::Composability::Closed::Base>{ using type = class_category; };
+template <> struct category<Complex::Authoring::Composability::Closed::Derived>{ using type = class_category; };
+template <> struct name<Complex::Authoring::Composability::Closed::IBase>{ static constexpr auto & value{ L"Complex.Authoring.Composability.Closed.IBase" }; };
+template <> struct name<Complex::Authoring::Composability::Closed::IBaseFactory>{ static constexpr auto & value{ L"Complex.Authoring.Composability.Closed.IBaseFactory" }; };
+template <> struct name<Complex::Authoring::Composability::Closed::IDerived>{ static constexpr auto & value{ L"Complex.Authoring.Composability.Closed.IDerived" }; };
+template <> struct name<Complex::Authoring::Composability::Closed::Base>{ static constexpr auto & value{ L"Complex.Authoring.Composability.Closed.Base" }; };
+template <> struct name<Complex::Authoring::Composability::Closed::Derived>{ static constexpr auto & value{ L"Complex.Authoring.Composability.Closed.Derived" }; };
+template <> struct guid<Complex::Authoring::Composability::Closed::IBase>{ static constexpr GUID value{ 0x1C24DF03,0xC99E,0x41E2,{ 0x84,0x14,0x34,0x92,0x4D,0x3C,0xFD,0xE3 } }; };
+template <> struct guid<Complex::Authoring::Composability::Closed::IBaseFactory>{ static constexpr GUID value{ 0x21E466E7,0x1B63,0x42C2,{ 0xAA,0x85,0x39,0x74,0xE4,0x42,0xB4,0xB2 } }; };
+template <> struct guid<Complex::Authoring::Composability::Closed::IDerived>{ static constexpr GUID value{ 0x3AC15533,0xBD69,0x468C,{ 0xBB,0xD1,0x38,0x3E,0x2F,0x8C,0xD9,0x84 } }; };
+template <> struct default_interface<Complex::Authoring::Composability::Closed::Base>{ using type = Complex::Authoring::Composability::Closed::IBase; };
+template <> struct default_interface<Complex::Authoring::Composability::Closed::Derived>{ using type = Complex::Authoring::Composability::Closed::IDerived; };
+
+template <typename D>
+struct consume_Complex_Authoring_Composability_Closed_IBase
+{
+    void MethodOnBase() const;
+};
+template <> struct consume<Complex::Authoring::Composability::Closed::IBase> { template <typename D> using type = consume_Complex_Authoring_Composability_Closed_IBase<D>; };
+
+template <typename D>
+struct consume_Complex_Authoring_Composability_Closed_IBaseFactory
+{
+};
+template <> struct consume<Complex::Authoring::Composability::Closed::IBaseFactory> { template <typename D> using type = consume_Complex_Authoring_Composability_Closed_IBaseFactory<D>; };
+
+template <typename D>
+struct consume_Complex_Authoring_Composability_Closed_IDerived
+{
+    void MethodOnDerived() const;
+};
+template <> struct consume<Complex::Authoring::Composability::Closed::IDerived> { template <typename D> using type = consume_Complex_Authoring_Composability_Closed_IDerived<D>; };
+template <> struct category<Complex::Authoring::Composability::Open::IBase>{ using type = interface_category; };
+template <> struct category<Complex::Authoring::Composability::Open::IBaseFactory>{ using type = interface_category; };
+template <> struct category<Complex::Authoring::Composability::Open::IDerived>{ using type = interface_category; };
+template <> struct category<Complex::Authoring::Composability::Open::IDerivedFactory>{ using type = interface_category; };
+template <> struct category<Complex::Authoring::Composability::Open::Base>{ using type = class_category; };
+template <> struct category<Complex::Authoring::Composability::Open::Derived>{ using type = class_category; };
+template <> struct name<Complex::Authoring::Composability::Open::IBase>{ static constexpr auto & value{ L"Complex.Authoring.Composability.Open.IBase" }; };
+template <> struct name<Complex::Authoring::Composability::Open::IBaseFactory>{ static constexpr auto & value{ L"Complex.Authoring.Composability.Open.IBaseFactory" }; };
+template <> struct name<Complex::Authoring::Composability::Open::IDerived>{ static constexpr auto & value{ L"Complex.Authoring.Composability.Open.IDerived" }; };
+template <> struct name<Complex::Authoring::Composability::Open::IDerivedFactory>{ static constexpr auto & value{ L"Complex.Authoring.Composability.Open.IDerivedFactory" }; };
+template <> struct name<Complex::Authoring::Composability::Open::Base>{ static constexpr auto & value{ L"Complex.Authoring.Composability.Open.Base" }; };
+template <> struct name<Complex::Authoring::Composability::Open::Derived>{ static constexpr auto & value{ L"Complex.Authoring.Composability.Open.Derived" }; };
+template <> struct guid<Complex::Authoring::Composability::Open::IBase>{ static constexpr GUID value{ 0x1C24DF03,0xC99E,0x41E2,{ 0x84,0x14,0x34,0x92,0x4D,0x3C,0xFD,0xE3 } }; };
+template <> struct guid<Complex::Authoring::Composability::Open::IBaseFactory>{ static constexpr GUID value{ 0x21E466E7,0x1B63,0x42C2,{ 0xAA,0x85,0x39,0x74,0xE4,0x42,0xB4,0xB2 } }; };
+template <> struct guid<Complex::Authoring::Composability::Open::IDerived>{ static constexpr GUID value{ 0x3AC15533,0xBD69,0x468C,{ 0xBB,0xD1,0x38,0x3E,0x2F,0x8C,0xD9,0x84 } }; };
+template <> struct guid<Complex::Authoring::Composability::Open::IDerivedFactory>{ static constexpr GUID value{ 0xF950A4DB,0xDC20,0x47CB,{ 0x96,0xCF,0x6F,0x7D,0x89,0x5E,0x53,0xE6 } }; };
+template <> struct default_interface<Complex::Authoring::Composability::Open::Base>{ using type = Complex::Authoring::Composability::Open::IBase; };
+template <> struct default_interface<Complex::Authoring::Composability::Open::Derived>{ using type = Complex::Authoring::Composability::Open::IDerived; };
+
+template <typename D>
+struct consume_Complex_Authoring_Composability_Open_IBase
+{
+    void MethodOnBase() const;
+};
+template <> struct consume<Complex::Authoring::Composability::Open::IBase> { template <typename D> using type = consume_Complex_Authoring_Composability_Open_IBase<D>; };
+
+template <typename D>
+struct consume_Complex_Authoring_Composability_Open_IBaseFactory
+{
+    Complex::Authoring::Composability::Open::Base CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+};
+template <> struct consume<Complex::Authoring::Composability::Open::IBaseFactory> { template <typename D> using type = consume_Complex_Authoring_Composability_Open_IBaseFactory<D>; };
+
+template <typename D>
+struct consume_Complex_Authoring_Composability_Open_IDerived
+{
+    void MethodOnDerived() const;
+};
+template <> struct consume<Complex::Authoring::Composability::Open::IDerived> { template <typename D> using type = consume_Complex_Authoring_Composability_Open_IDerived<D>; };
+
+template <typename D>
+struct consume_Complex_Authoring_Composability_Open_IDerivedFactory
+{
+    Complex::Authoring::Composability::Open::Derived CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const;
+};
+template <> struct consume<Complex::Authoring::Composability::Open::IDerivedFactory> { template <typename D> using type = consume_Complex_Authoring_Composability_Open_IDerivedFactory<D>; };
 template <> struct category<Complex::Authoring::Factory::ISimple>{ using type = interface_category; };
 template <> struct category<Complex::Authoring::Factory::ISimpleFactory>{ using type = interface_category; };
 template <> struct category<Complex::Authoring::Factory::IStatic>{ using type = interface_category; };
@@ -130,12 +232,14 @@ template <> struct consume<Complex::Authoring::Factory::ISimpleFactory> { templa
 template <typename D>
 struct consume_Complex_Authoring_Factory_IStatic
 {
+    void StaticMethod() const;
 };
 template <> struct consume<Complex::Authoring::Factory::IStatic> { template <typename D> using type = consume_Complex_Authoring_Factory_IStatic<D>; };
 
 template <typename D>
 struct consume_Complex_Authoring_Factory_IStaticFactory
 {
+    void StaticMethod() const;
 };
 template <> struct consume<Complex::Authoring::Factory::IStaticFactory> { template <typename D> using type = consume_Complex_Authoring_Factory_IStaticFactory<D>; };
 template <> struct category<Complex::Authoring::Nested::ISimple>{ using type = interface_category; };
@@ -173,6 +277,40 @@ template <> struct abi<Complex::Authoring::IStructByRef>{ struct type : ::IInspe
     virtual HRESULT __stdcall CopyByRef(abi_t<Windows::Foundation::Rect> const& byRef, abi_t<Windows::Foundation::Rect>* result) = 0;
 };};
 
+template <> struct abi<Complex::Authoring::Composability::Closed::IBase>{ struct type : ::IInspectable
+{
+    virtual HRESULT __stdcall MethodOnBase() = 0;
+};};
+
+template <> struct abi<Complex::Authoring::Composability::Closed::IBaseFactory>{ struct type : ::IInspectable
+{
+};};
+
+template <> struct abi<Complex::Authoring::Composability::Closed::IDerived>{ struct type : ::IInspectable
+{
+    virtual HRESULT __stdcall MethodOnDerived() = 0;
+};};
+
+template <> struct abi<Complex::Authoring::Composability::Open::IBase>{ struct type : ::IInspectable
+{
+    virtual HRESULT __stdcall MethodOnBase() = 0;
+};};
+
+template <> struct abi<Complex::Authoring::Composability::Open::IBaseFactory>{ struct type : ::IInspectable
+{
+    virtual HRESULT __stdcall CreateInstance(::IUnknown* outer, ::IUnknown** inner, ::IUnknown** instance) = 0;
+};};
+
+template <> struct abi<Complex::Authoring::Composability::Open::IDerived>{ struct type : ::IInspectable
+{
+    virtual HRESULT __stdcall MethodOnDerived() = 0;
+};};
+
+template <> struct abi<Complex::Authoring::Composability::Open::IDerivedFactory>{ struct type : ::IInspectable
+{
+    virtual HRESULT __stdcall CreateInstance(::IUnknown* outer, ::IUnknown** inner, ::IUnknown** instance) = 0;
+};};
+
 template <> struct abi<Complex::Authoring::Factory::ISimple>{ struct type : ::IInspectable
 {
 };};
@@ -183,10 +321,12 @@ template <> struct abi<Complex::Authoring::Factory::ISimpleFactory>{ struct type
 
 template <> struct abi<Complex::Authoring::Factory::IStatic>{ struct type : ::IInspectable
 {
+    virtual HRESULT __stdcall StaticMethod() = 0;
 };};
 
 template <> struct abi<Complex::Authoring::Factory::IStaticFactory>{ struct type : ::IInspectable
 {
+    virtual HRESULT __stdcall StaticMethod() = 0;
 };};
 
 template <> struct abi<Complex::Authoring::Nested::ISimple>{ struct type : ::IInspectable
@@ -224,6 +364,63 @@ struct IStructByRef :
     impl::consume_t<IStructByRef>
 {
     IStructByRef(std::nullptr_t = nullptr) noexcept {}
+};
+
+}
+
+namespace Complex::Authoring::Composability::Closed {
+
+struct IBase :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBase>
+{
+    IBase(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBaseFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBaseFactory>
+{
+    IBaseFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IDerived :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDerived>
+{
+    IDerived(std::nullptr_t = nullptr) noexcept {}
+};
+
+}
+
+namespace Complex::Authoring::Composability::Open {
+
+struct IBase :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBase>
+{
+    IBase(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IBaseFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IBaseFactory>
+{
+    IBaseFactory(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IDerived :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDerived>
+{
+    IDerived(std::nullptr_t = nullptr) noexcept {}
+};
+
+struct IDerivedFactory :
+    Windows::Foundation::IInspectable,
+    impl::consume_t<IDerivedFactory>
+{
+    IDerivedFactory(std::nullptr_t = nullptr) noexcept {}
 };
 
 }
@@ -302,6 +499,43 @@ struct StructByRef :
 
 }
 
+namespace Complex::Authoring::Composability::Closed {
+
+struct Base :
+    Complex::Authoring::Composability::Closed::IBase
+{
+    Base(std::nullptr_t) noexcept {}
+};
+
+struct Derived :
+    Complex::Authoring::Composability::Closed::IDerived,
+    impl::base<Derived, Complex::Authoring::Composability::Closed::Base>,
+    impl::require<Derived, Complex::Authoring::Composability::Closed::IBase>
+{
+    Derived(std::nullptr_t) noexcept {}
+};
+
+}
+
+namespace Complex::Authoring::Composability::Open {
+
+struct Base :
+    Complex::Authoring::Composability::Open::IBase
+{
+    Base(std::nullptr_t) noexcept {}
+};
+
+struct Derived :
+    Complex::Authoring::Composability::Open::IDerived,
+    impl::base<Derived, Complex::Authoring::Composability::Open::Base>,
+    impl::require<Derived, Complex::Authoring::Composability::Open::IBase>
+{
+    Derived(std::nullptr_t) noexcept {}
+    Derived();
+};
+
+}
+
 namespace Complex::Authoring::Factory {
 
 struct Simple :
@@ -321,11 +555,13 @@ struct SimpleFactory :
 struct Static
 {
     Static() = delete;
+    static void StaticMethod();
 };
 
 struct StaticFactory
 {
     StaticFactory() = delete;
+    static void StaticMethod();
 };
 
 }
@@ -466,6 +702,170 @@ struct produce<D, Complex::Authoring::IStructByRef> : produce_base<D, Complex::A
     }
 };
 
+template <typename D> void consume_Complex_Authoring_Composability_Closed_IBase<D>::MethodOnBase() const
+{
+    check_hresult(WINRT_SHIM(Complex::Authoring::Composability::Closed::IBase)->MethodOnBase());
+}
+
+template <typename D> void consume_Complex_Authoring_Composability_Closed_IDerived<D>::MethodOnDerived() const
+{
+    check_hresult(WINRT_SHIM(Complex::Authoring::Composability::Closed::IDerived)->MethodOnDerived());
+}
+
+template <typename D>
+struct produce<D, Complex::Authoring::Composability::Closed::IBase> : produce_base<D, Complex::Authoring::Composability::Closed::IBase>
+{
+    HRESULT __stdcall MethodOnBase() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().MethodOnBase();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Complex::Authoring::Composability::Closed::IBaseFactory> : produce_base<D, Complex::Authoring::Composability::Closed::IBaseFactory>
+{};
+
+template <typename D>
+struct produce<D, Complex::Authoring::Composability::Closed::IDerived> : produce_base<D, Complex::Authoring::Composability::Closed::IDerived>
+{
+    HRESULT __stdcall MethodOnDerived() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().MethodOnDerived();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D> void consume_Complex_Authoring_Composability_Open_IBase<D>::MethodOnBase() const
+{
+    check_hresult(WINRT_SHIM(Complex::Authoring::Composability::Open::IBase)->MethodOnBase());
+}
+
+template <typename D> Complex::Authoring::Composability::Open::Base consume_Complex_Authoring_Composability_Open_IBaseFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+{
+    Complex::Authoring::Composability::Open::Base instance{ nullptr };
+    check_hresult(WINRT_SHIM(Complex::Authoring::Composability::Open::IBaseFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
+template <typename D> void consume_Complex_Authoring_Composability_Open_IDerived<D>::MethodOnDerived() const
+{
+    check_hresult(WINRT_SHIM(Complex::Authoring::Composability::Open::IDerived)->MethodOnDerived());
+}
+
+template <typename D> Complex::Authoring::Composability::Open::Derived consume_Complex_Authoring_Composability_Open_IDerivedFactory<D>::CreateInstance(Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner) const
+{
+    Complex::Authoring::Composability::Open::Derived instance{ nullptr };
+    check_hresult(WINRT_SHIM(Complex::Authoring::Composability::Open::IDerivedFactory)->CreateInstance(get_abi(outer), put_abi(inner), put_abi(instance)));
+    return instance;
+}
+
+template <typename D>
+struct produce<D, Complex::Authoring::Composability::Open::IBase> : produce_base<D, Complex::Authoring::Composability::Open::IBase>
+{
+    HRESULT __stdcall MethodOnBase() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().MethodOnBase();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Complex::Authoring::Composability::Open::IBaseFactory> : produce_base<D, Complex::Authoring::Composability::Open::IBaseFactory>
+{
+    HRESULT __stdcall CreateInstance(::IUnknown* outer, ::IUnknown** inner, ::IUnknown** instance) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            Windows::Foundation::IInspectable __local_inner;
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
+            if (inner) *inner = detach_abi(__local_inner);
+            return S_OK;
+        }
+        catch (...)
+        {
+            if (inner) *inner = nullptr;
+            *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Complex::Authoring::Composability::Open::IDerived> : produce_base<D, Complex::Authoring::Composability::Open::IDerived>
+{
+    HRESULT __stdcall MethodOnDerived() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().MethodOnDerived();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D>
+struct produce<D, Complex::Authoring::Composability::Open::IDerivedFactory> : produce_base<D, Complex::Authoring::Composability::Open::IDerivedFactory>
+{
+    HRESULT __stdcall CreateInstance(::IUnknown* outer, ::IUnknown** inner, ::IUnknown** instance) noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            Windows::Foundation::IInspectable __local_inner;
+            *instance = detach_abi(this->shim().CreateInstance(*reinterpret_cast<Windows::Foundation::IInspectable const*>(&outer), __local_inner));
+            if (inner) *inner = detach_abi(__local_inner);
+            return S_OK;
+        }
+        catch (...)
+        {
+            if (inner) *inner = nullptr;
+            *instance = nullptr;
+            return impl::to_hresult();
+        }
+    }
+};
+
+template <typename D> void consume_Complex_Authoring_Factory_IStatic<D>::StaticMethod() const
+{
+    check_hresult(WINRT_SHIM(Complex::Authoring::Factory::IStatic)->StaticMethod());
+}
+
+template <typename D> void consume_Complex_Authoring_Factory_IStaticFactory<D>::StaticMethod() const
+{
+    check_hresult(WINRT_SHIM(Complex::Authoring::Factory::IStaticFactory)->StaticMethod());
+}
+
 template <typename D>
 struct produce<D, Complex::Authoring::Factory::ISimple> : produce_base<D, Complex::Authoring::Factory::ISimple>
 {};
@@ -476,11 +876,39 @@ struct produce<D, Complex::Authoring::Factory::ISimpleFactory> : produce_base<D,
 
 template <typename D>
 struct produce<D, Complex::Authoring::Factory::IStatic> : produce_base<D, Complex::Authoring::Factory::IStatic>
-{};
+{
+    HRESULT __stdcall StaticMethod() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StaticMethod();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
 
 template <typename D>
 struct produce<D, Complex::Authoring::Factory::IStaticFactory> : produce_base<D, Complex::Authoring::Factory::IStaticFactory>
-{};
+{
+    HRESULT __stdcall StaticMethod() noexcept override
+    {
+        try
+        {
+            typename D::abi_guard guard(this->shim());
+            this->shim().StaticMethod();
+            return S_OK;
+        }
+        catch (...)
+        {
+            return impl::to_hresult();
+        }
+    }
+};
 
 template <typename D> hstring consume_Complex_Authoring_Nested_ISimple<D>::Name() const
 {
@@ -531,6 +959,48 @@ inline StructByRef::StructByRef() :
 
 }
 
+namespace Complex::Authoring::Composability::Closed {
+
+}
+
+namespace Complex::Authoring::Composability::Open {
+
+inline Derived::Derived()
+{
+    Windows::Foundation::IInspectable outer, inner;
+    impl_move(get_activation_factory<Derived, Complex::Authoring::Composability::Open::IDerivedFactory>().CreateInstance(outer, inner));
+}
+
+template <typename D, typename ... Interfaces>
+struct BaseT :
+    implements<D, Windows::Foundation::IInspectable, composing, Interfaces ...>,
+    impl::require<D, Complex::Authoring::Composability::Open::IBase>
+{
+    using composable = Base;
+
+protected:
+    BaseT()
+    {
+        get_activation_factory<Complex::Authoring::Composability::Open::Base, Complex::Authoring::Composability::Open::IBaseFactory>().CreateInstance(*this, this->m_inner);
+    }
+};
+
+template <typename D, typename ... Interfaces>
+struct DerivedT :
+    implements<D, Windows::Foundation::IInspectable, composing, Interfaces ...>,
+    impl::require<D, Complex::Authoring::Composability::Open::IDerived, Complex::Authoring::Composability::Open::IBase>
+{
+    using composable = Derived;
+
+protected:
+    DerivedT()
+    {
+        get_activation_factory<Complex::Authoring::Composability::Open::Derived, Complex::Authoring::Composability::Open::IDerivedFactory>().CreateInstance(*this, this->m_inner);
+    }
+};
+
+}
+
 namespace Complex::Authoring::Factory {
 
 inline Simple::Simple() :
@@ -540,6 +1010,16 @@ inline Simple::Simple() :
 inline SimpleFactory::SimpleFactory() :
     SimpleFactory(activate_instance<SimpleFactory>())
 {}
+
+inline void Static::StaticMethod()
+{
+    get_activation_factory<Static, Complex::Authoring::Factory::IStatic>().StaticMethod();
+}
+
+inline void StaticFactory::StaticMethod()
+{
+    get_activation_factory<StaticFactory, Complex::Authoring::Factory::IStaticFactory>().StaticMethod();
+}
 
 }
 
@@ -578,6 +1058,39 @@ template<> struct hash<winrt::Complex::Authoring::Static> :
 
 template<> struct hash<winrt::Complex::Authoring::StructByRef> : 
     winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::StructByRef> {};
+
+template<> struct hash<winrt::Complex::Authoring::Composability::Closed::IBase> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Composability::Closed::IBase> {};
+
+template<> struct hash<winrt::Complex::Authoring::Composability::Closed::IBaseFactory> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Composability::Closed::IBaseFactory> {};
+
+template<> struct hash<winrt::Complex::Authoring::Composability::Closed::IDerived> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Composability::Closed::IDerived> {};
+
+template<> struct hash<winrt::Complex::Authoring::Composability::Closed::Base> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Composability::Closed::Base> {};
+
+template<> struct hash<winrt::Complex::Authoring::Composability::Closed::Derived> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Composability::Closed::Derived> {};
+
+template<> struct hash<winrt::Complex::Authoring::Composability::Open::IBase> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Composability::Open::IBase> {};
+
+template<> struct hash<winrt::Complex::Authoring::Composability::Open::IBaseFactory> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Composability::Open::IBaseFactory> {};
+
+template<> struct hash<winrt::Complex::Authoring::Composability::Open::IDerived> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Composability::Open::IDerived> {};
+
+template<> struct hash<winrt::Complex::Authoring::Composability::Open::IDerivedFactory> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Composability::Open::IDerivedFactory> {};
+
+template<> struct hash<winrt::Complex::Authoring::Composability::Open::Base> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Composability::Open::Base> {};
+
+template<> struct hash<winrt::Complex::Authoring::Composability::Open::Derived> : 
+    winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Composability::Open::Derived> {};
 
 template<> struct hash<winrt::Complex::Authoring::Factory::ISimple> : 
     winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::Factory::ISimple> {};

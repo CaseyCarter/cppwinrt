@@ -97,7 +97,9 @@
     <ClInclude Include="strings\write\write_component_class_base.h" />
     <ClInclude Include="strings\write\write_component_class_constructor_definition.h" />
     <ClInclude Include="strings\write\write_component_class_factory_base.h" />
-    <ClInclude Include="strings\write\write_component_class_header.h" />
+    <ClInclude Include="strings\write\write_component_class_header_factory_implementation.h" />
+    <ClInclude Include="strings\write\write_component_class_header_implementation.h" />
+    <ClInclude Include="strings\write\write_component_class_header_static_implementation.h" />
     <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h" />
     <ClInclude Include="strings\write\write_component_class_source.h" />
     <ClInclude Include="strings\write\write_component_class_static_definition.h" />

@@ -38,24 +38,6 @@ namespace cppwinrt
             filename += ".natvis";
             out.save_as(filename);
         }
-
-        bool is_filtered_type(meta::type const& type)
-        {
-            if (settings::filters.empty())
-            {
-                return !type.is_reference;
-            }
-
-            for (std::string const& match : settings::filters)
-            {
-                if (starts_with(type.full_name(), match))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
     }
 
     void write_component()
@@ -69,7 +51,7 @@ namespace cppwinrt
         {
             for (meta::type const& type : pair.second.classes)
             {
-                if (is_filtered_type(type))
+                if (type.is_filtered())
                 {
                     types.push_back(&type);
                 }

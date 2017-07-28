@@ -118,6 +118,7 @@ namespace Complex.Authoring
         [version(1.0), uuid(9987fdea-6a97-41ad-9b9f-0f274ce077d9)]
         interface IStatic : IInspectable
         {
+            HRESULT StaticMethod();
         };
 
         [version(1.0), static(IStatic, 1.0)]
@@ -128,11 +129,129 @@ namespace Complex.Authoring
         [version(1.0), uuid(bfa00357-1f74-48c2-9ba2-37ad825a639c)]
         interface IStaticFactory : IInspectable
         {
+            HRESULT StaticMethod();
         };
 
         [version(1.0), static(IStaticFactory, 1.0)]
         runtimeclass StaticFactory
         {
+        }
+    }
+
+    //
+    // These classes illustrate support for closed composbility
+    // with implementation inheritance (e.g. Windows.UI.Composition).
+    //
+
+    namespace Composability
+    {
+        namespace Closed
+        {
+            runtimeclass Base;
+
+            [version(1.0)]
+            [exclusiveto(Base)]
+            [uuid(1c24df03-c99e-41e2-8414-34924d3cfde3)]
+            interface IBase : IInspectable
+            {
+                HRESULT MethodOnBase();
+            }
+
+            [version(1.0)]
+            [exclusiveto(Base)]
+            [uuid(21e466e7-1b63-42c2-aa85-3974e442b4b2)]
+            interface IBaseFactory : IInspectable
+            {
+            }
+
+            [composable(IBaseFactory, protected, 1.0)]
+            [version(1.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass Base
+            {
+                [default] interface IBase;
+            }
+
+            runtimeclass Derived;
+
+            [version(1.0)]
+            [exclusiveto(Derived)]
+            [uuid(3ac15533-bd69-468c-bbd1-383e2f8cd984)]
+            interface IDerived : IInspectable
+            {
+                HRESULT MethodOnDerived();
+            }
+
+            [version(1.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass Derived : Base
+            {
+                [default] interface IDerived;
+            }
+        }
+
+        //
+        // These classes illustrate support for open composbility
+        // with binary inheritance (e.g. Windows.UI.Xaml).
+        //
+
+        namespace Open
+        {
+            runtimeclass Base;
+
+            [version(1.0)]
+            [exclusiveto(Base)]
+            [uuid(1c24df03-c99e-41e2-8414-34924d3cfde3)]
+            interface IBase : IInspectable
+            {
+                HRESULT MethodOnBase();
+            }
+
+            [version(1.0)]
+            [exclusiveto(Base)]
+            [uuid(21e466e7-1b63-42c2-aa85-3974e442b4b2)]
+            interface IBaseFactory : IInspectable
+            {
+                HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out][retval] Base** instance);
+            }
+
+            [composable(IBaseFactory, protected, 1.0)]
+            [version(1.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass Base
+            {
+                [default] interface IBase;
+            }
+
+            runtimeclass Derived;
+
+            [version(1.0)]
+            [exclusiveto(Derived)]
+            [uuid(3ac15533-bd69-468c-bbd1-383e2f8cd984)]
+            interface IDerived : IInspectable
+            {
+                HRESULT MethodOnDerived();
+            }
+
+            [version(1.0)]
+            [exclusiveto(Derived)]
+            [uuid(f950a4db-dc20-47cb-96cf-6f7d895e53e6)]
+            interface IDerivedFactory : IInspectable
+            {
+                HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out][retval] Derived** instance);
+            }
+
+            [composable(IDerivedFactory, public, 1.0)]
+            [version(1.0)]
+            [marshaling_behavior(agile)]
+            [threading(both)]
+            runtimeclass Derived : Base
+            {
+                [default] interface IDerived;
+            }
         }
     }
 }

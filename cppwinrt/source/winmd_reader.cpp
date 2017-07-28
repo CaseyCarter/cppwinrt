@@ -383,7 +383,7 @@ namespace cppwinrt::meta
                 return values;
             }
 
-            for (type const* base = class_token.get_base_type(); base && (!component_mode || base->is_reference); base = base->token.get_base_type())
+            for (type const* base = class_token.get_base_type(); base && (!component_mode || !base->is_filtered()); base = base->token.get_base_type())
             {
                 append_required(values, base->token, {});
             }
@@ -1837,6 +1837,24 @@ namespace cppwinrt::meta
         }
 
         return raw_name;
+    }
+
+    bool type::is_filtered() const
+    {
+        if (settings::filters.empty())
+        {
+            return !is_reference;
+        }
+
+        for (std::string const& match : settings::filters)
+        {
+            if (starts_with(full_name(), match))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     type::type(std::string&& name, meta::token token, bool const reference) :

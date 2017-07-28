@@ -6,11 +6,12 @@ Copyright (c) %d Microsoft Corporation. All rights reserved.
 
 Options:
 
-  -in <spec>          Winmd files to include in projection
-  -ref <spec>         Winmd files to reference from projection
-  -out <path>         Location of generated projection files
-  -component          Generate component implementation source files 
+  -in     <spec>      Winmd files to include in projection
+  -ref    <spec>      Winmd files to reference from projection
+  -out    <path>      Location of generated projection files
+  -component          Generate component implementation source files
   -filter <prefix>    One or more prefixes to include in component
+  -name   <name>      Assume this component name to shorten file names
   -natvis             Generate a natvis script for debug visualization
   -verbose            Show detailed progress information
   -overwrite          Overwrite existing component projection files

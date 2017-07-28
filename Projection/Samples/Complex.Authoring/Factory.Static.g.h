@@ -20,6 +20,11 @@ struct StaticT : impl::module_lock, implements<D, Windows::Foundation::IActivati
     {
         throw hresult_not_implemented();
     }
+
+    void StaticMethod()
+    {
+        T::StaticMethod();
+    }
 };
 
 }

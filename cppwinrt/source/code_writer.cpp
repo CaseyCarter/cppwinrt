@@ -1568,13 +1568,40 @@ namespace cppwinrt
             return !token.get_composable_attributes().empty();
         }
 
+        bool has_methods(meta::token const token)
+        {
+            generator<meta::method> methods = token.get_methods();
+            return methods.begin() != methods.end();
+        }
+
         bool has_composable_constructor(meta::token const token)
         {
             for (meta::composable_attribute const& attribute : token.get_composable_attributes())
             {
-                generator<meta::method> methods = attribute.type->token.get_methods();
+                if (has_methods(attribute.type->token))
+                {
+                    return true;
+                }
+            }
 
-                if (methods.begin() != methods.end())
+            return false;
+        }
+
+        bool has_factory_members(meta::token const token)
+        {
+            if (has_composable_constructor(token))
+            {
+                return true;
+            }
+
+            for (meta::factory_attribute attribute : token.get_factory_attributes())
+            {
+                if (!attribute.type) // IActivationFactory
+                {
+                    return true;
+                }
+
+                if (has_methods(attribute.type->token))
                 {
                     return true;
                 }
@@ -1588,7 +1615,7 @@ namespace cppwinrt
             std::vector<meta::token> override_interfaces;
             for (meta::type const* current = &type; current; current = current->token.get_base_type())
             {
-                if (current->is_reference || (!ignore_self && current == &type))
+                if (!current->is_filtered() || (!ignore_self && current == &type))
                 {
                     for (meta::token t : current->token.get_direct_override_interfaces())
                     {
@@ -1747,12 +1774,12 @@ namespace cppwinrt
                 out.write(", @", required.name);
             }
 
-            if (is_composable(type.token))
+            if (is_composable(type.token) && has_composable_constructor(type.token))
             {
                 out.write(", composable");
             }
             meta::type const* base_type = type.token.get_base_type();
-            if (base_type && base_type->is_reference && is_composable(base_type->token))
+            if (base_type && !base_type->is_filtered() && is_composable(base_type->token))
             {
                 out.write(", composing");
             }
@@ -1892,21 +1919,32 @@ namespace cppwinrt
             if (base_type)
             {
                 fallback_overrides = get_component_implemented_override_interfaces(*base_type, true);
-                if (base_type->is_reference)
+                if (!base_type->is_filtered())
                 {
                     inner_type = base_type->token;
                 }
             }
 
             std::string module_lock;
-            if (!base_type || base_type->is_reference)
+            if (!base_type || !base_type->is_filtered())
             {
                 module_lock = "impl::module_lock, ";
+            }
+
+            std::string base_name;
+
+            if (base_type && base_type->is_filtered())
+            {
+                base_name = ", ";
+                base_name += base_type->name_space();
+                base_name += "::implementation::";
+                base_name += base_type->name();
             }
 
             out.write(strings::write_component_class_base,
                 type.name(),
                 module_lock,
+                base_name,
                 bind_output(write_component_instance_interfaces, type),
                 bind_output(write_override_fallbacks, fallback_overrides),
                 type.full_name(),
@@ -2882,7 +2920,10 @@ void t()
     {
         for (meta::type const* type : types)
         {
-            out.write("#include \"%.h\"\n", get_relative_component_name(*type));
+            if (has_factory_members(type->token))
+            {
+                out.write("#include \"%.h\"\n", get_relative_component_name(*type));
+            }
         }
     }
 
@@ -2890,10 +2931,13 @@ void t()
     {
         for (meta::type const* type : types)
         {
-            out.write(strings::write_component_class_activation,
-                type->full_name(),
-                type->name_space(),
-                type->name());
+            if (has_factory_members(type->token))
+            {
+                out.write(strings::write_component_class_activation,
+                    type->full_name(),
+                    type->name_space(),
+                    type->name());
+            }
         }
     }
 
@@ -3099,6 +3143,14 @@ void t()
         output out;
         write_warning(out, strings::write_edit_warning_header);
         out.write("\n#include \"module.h\"\n");
+
+        meta::type const* base_type = type.token.get_base_type();
+
+        if (base_type && base_type->is_filtered())
+        {
+            out.write("#include \"%.h\"\n", get_relative_component_name(*base_type));
+        }
+
         write_winrt_namespace_begin(out);
         bool const static_class = type.token.is_static();
 
@@ -3108,13 +3160,16 @@ void t()
             write_component_class_base(out, type);
         }
 
-        out.write_namespace(std::string(type.name_space()) + ".factory_implementation");
+        if (has_factory_members(type.token))
+        {
+            out.write_namespace(std::string(type.name_space()) + ".factory_implementation");
 
-        out.write(strings::write_component_class_factory_base,
-            type.name(),
-            bind_output(write_component_factory_interfaces, type),
-            type.full_name(),
-            bind_output(write_component_factory_forwarding_methods, type));
+            out.write(strings::write_component_class_factory_base,
+                      type.name(),
+                      bind_output(write_component_factory_interfaces, type),
+                      type.full_name(),
+                      bind_output(write_component_factory_forwarding_methods, type));
+        }
 
         write_winrt_namespace_end(out);
 
@@ -3145,49 +3200,38 @@ void t()
         }
 
         output out;
+        out.write("#pragma once\n\n#include \"%.g.h\"\n\n", get_relative_component_name(type));
 
-        bool const static_class = type.token.is_static();
+        out.write("namespace winrt::@::implementation\n{\n", type.name_space());
 
-        if (static_class)
+        if (type.token.is_static())
         {
-            out.write(strings::write_component_static_class_header,
-                get_relative_component_name(type),
-                type.name_space(),
-                type.name(),
-                bind_output(write_component_class_member_declarations, type),
-                type.name_space(),
-                type.name(),
-                type.name(),
-                type.name(),
-                type.name());
+            out.write(strings::write_component_class_header_static_implementation,
+                      type.name(),
+                      bind_output(write_component_class_member_declarations, type));
+
         }
         else
         {
-            std::string base_name;
-            meta::type const* base_type = type.token.get_base_type();
-            if (base_type && !base_type->is_reference)
-            {
-                base_name = ", ";
-                base_name += base_type->name_space();
-                base_name += "::implementation::";
-                base_name += base_type->name();
-            }
-
-            out.write(strings::write_component_class_header,
-                get_relative_component_name(type),
-                type.name_space(),
-                type.name(),
-                type.name(),
-                type.name(),
-                base_name,
-                bind_output(write_component_class_member_declarations, type),
-                type.name_space(),
-                type.name(),
-                type.name(),
-                type.name(),
-                type.name());
+            out.write(strings::write_component_class_header_implementation,
+                      type.name(),
+                      type.name(),
+                      type.name(),
+                      bind_output(write_component_class_member_declarations, type));
         }
 
+        if (has_factory_members(type.token))
+        {
+            out.write("}\n\nnamespace winrt::@::factory_implementation\n{\n", type.name_space());
+
+            out.write(strings::write_component_class_header_factory_implementation,
+                              type.name(),
+                              type.name(),
+                              type.name(),
+                              type.name());
+        }
+
+        out.write("}\n");
         out.save_as(filename);
     }
 

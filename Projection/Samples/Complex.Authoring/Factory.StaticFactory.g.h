@@ -20,6 +20,11 @@ struct StaticFactoryT : impl::module_lock, implements<D, Windows::Foundation::IA
     {
         throw hresult_not_implemented();
     }
+
+    void StaticMethod()
+    {
+        T::StaticMethod();
+    }
 };
 
 }

@@ -5,6 +5,8 @@
 #include "Simple.h"
 #include "Static.h"
 #include "StructByRef.h"
+#include "Composability.Open.Base.h"
+#include "Composability.Open.Derived.h"
 #include "Factory.Simple.h"
 #include "Factory.SimpleFactory.h"
 #include "Factory.Static.h"
@@ -64,6 +66,18 @@ HRESULT __stdcall DllGetActivationFactory(HSTRING classId, ::IUnknown** factory)
         if (0 == wcscmp(name, L"Complex.Authoring.StructByRef"))
         {
             *factory = detach_abi(make<Complex::Authoring::factory_implementation::StructByRef>());
+            return S_OK;
+        }
+
+        if (0 == wcscmp(name, L"Complex.Authoring.Composability.Open.Base"))
+        {
+            *factory = detach_abi(make<Complex::Authoring::Composability::Open::factory_implementation::Base>());
+            return S_OK;
+        }
+
+        if (0 == wcscmp(name, L"Complex.Authoring.Composability.Open.Derived"))
+        {
+            *factory = detach_abi(make<Complex::Authoring::Composability::Open::factory_implementation::Derived>());
             return S_OK;
         }
 

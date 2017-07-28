@@ -202,9 +202,6 @@
     <ClInclude Include="strings\write\write_component_class_factory_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_component_class_header.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
     <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -356,6 +353,15 @@
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_component_class_xaml_shim.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_header_factory_implementation.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_header_implementation.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_header_static_implementation.h">
       <Filter>strings\write</Filter>
     </ClInclude>
   </ItemGroup>
