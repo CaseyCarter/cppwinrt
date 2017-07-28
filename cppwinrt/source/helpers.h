@@ -4,6 +4,13 @@
 
 namespace cppwinrt
 {
+    struct invalid_usage
+    {
+        std::wstring message = L"Invalid usage";
+        std::wstring arg = L"";
+        HRESULT code = E_INVALIDARG;
+    };
+
     template<typename T>
     void unreferenced_parameter(T const&)
     {
@@ -87,8 +94,8 @@ namespace cppwinrt
         result.resize(size);
         return result;
     }
-	
-	template <typename ... Args>
+
+    template <typename ... Args>
     void print_error(Args&& ... args)
     {
         fprintf(stderr, std::forward<Args>(args) ...);

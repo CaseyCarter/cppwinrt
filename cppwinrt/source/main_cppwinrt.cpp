@@ -9,7 +9,9 @@
 #include "platform_writer.h"
 #include "component_writer.h"
 #include "helpers.h"
+#include "sdk.h"
 
+using namespace winrt;
 using namespace cppwinrt;
 using namespace std::chrono;
 using namespace std::experimental::filesystem;
@@ -21,12 +23,6 @@ namespace
         std::vector<std::wstring> inputs;
         std::vector<std::wstring> refs;
     }
-
-    struct invalid_usage {
-        std::wstring message = L"Invalid usage";
-        std::wstring arg = L"";
-        HRESULT code = E_INVALIDARG;
-    };
 
     bool is_winmd(path const& filename)
     {
@@ -111,11 +107,16 @@ namespace
             std::array<wchar_t, MAX_PATH> path;
             check_win32_bool(ExpandEnvironmentStrings(L"%windir%\\System32\\WinMetadata", path.data(), static_cast<DWORD>(path.size())));
             winmd_specs.emplace_back(path.data());
+            return;
         }
-        else
+
+        if (exists(winmd_spec))
         {
             winmd_specs.emplace_back(winmd_spec);
+            return;
         }
+
+        add_winmds_from_sdk(winmd_specs, winmd_spec);
     }
 
     bool parse_usage(int const argc, wchar_t** argv)

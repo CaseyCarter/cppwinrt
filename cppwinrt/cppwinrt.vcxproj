@@ -35,6 +35,7 @@
     <ClInclude Include="source\pch.h" />
     <ClInclude Include="source\platform_writer.h" />
     <ClInclude Include="source\reference_writer.h" />
+    <ClInclude Include="source\sdk.h" />
     <ClInclude Include="source\settings.h" />
     <ClInclude Include="source\text_writer.h" />
     <ClInclude Include="source\version.h" />

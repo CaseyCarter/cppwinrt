@@ -20,5 +20,6 @@ Options:
 
 Where <spec> is one or more of:
 
-  local               Local %%WinDir%%\System32\WinMetadata folder
   path                Path to winmd file or recursively scanned folder
+  local               Local %%WinDir%%\System32\WinMetadata folder
+  10.0.15063.0        Specific version of Windows SDK
