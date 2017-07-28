@@ -3,13 +3,14 @@
 #pragma once
 
 #include "module.h"
+#include "Root.h"
 
 namespace winrt {
 
 namespace Composable::Base::implementation {
 
 template <typename D, typename ... I>
-struct Derived_base : implements<D, Composable::Base::IDerived, Composable::Base::IDerivedOverrides, composable, I ...>
+struct Derived_base : implements<D, Composable::Base::implementation::Root, Composable::Base::IDerived, Composable::Base::IDerivedOverrides, composable, I ...>
 {
     using class_type = Composable::Base::Derived;
 

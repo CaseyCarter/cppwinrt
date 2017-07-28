@@ -241,10 +241,10 @@
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Composable.Base.idl">
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Program Files (x86)\Windows Kits\10\References\windows.foundation.foundationcontract\2.0.0.0"</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Program Files (x86)\Windows Kits\10\References\windows.foundation.foundationcontract\2.0.0.0"</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"C:\Program Files (x86)\Windows Kits\10\References\windows.foundation.foundationcontract\2.0.0.0"</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"C:\Program Files (x86)\Windows Kits\10\References\windows.foundation.foundationcontract\2.0.0.0"</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnableWindowsRuntime>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableWindowsRuntime>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnableWindowsRuntime>

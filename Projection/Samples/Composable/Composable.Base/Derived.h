@@ -5,7 +5,7 @@
 
 namespace winrt::Composable::Base::implementation
 {
-    struct Derived : DerivedT<Derived, Composable::Base::implementation::Root>
+    struct Derived : DerivedT<Derived>
     {
         Derived() = default;
 
