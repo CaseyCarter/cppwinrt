@@ -86,17 +86,17 @@ struct hstring
 
     friend HSTRING impl_get(hstring const& string) noexcept
     {
-        return get_abi(string.m_handle);
+        return string.m_handle.get();
     }
 
     friend HSTRING* impl_put(hstring& string) noexcept
     {
-        return put_abi(string.m_handle);
+        return string.m_handle.put();
     }
 
     friend HSTRING impl_detach(hstring& string) noexcept
     {
-        return detach_abi(string.m_handle);
+        return string.m_handle.detach();
     }
 
     friend void swap(hstring& left, hstring& right) noexcept

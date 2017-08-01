@@ -16,7 +16,7 @@ namespace impl
         void await_suspend(std::experimental::coroutine_handle<> handle) const
         {
             com_ptr<IContextCallback> context;
-            check_hresult(CoGetObjectContext(__uuidof(context), reinterpret_cast<void**>(put_abi(context))));
+            check_hresult(CoGetObjectContext(__uuidof(context), context.put_void()));
 
             async.Completed([handle, context = std::move(context)](auto const&, Windows::Foundation::AsyncStatus)
             {

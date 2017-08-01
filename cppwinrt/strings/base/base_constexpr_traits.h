@@ -216,14 +216,14 @@ namespace impl
     };
 
     template <>
-    struct name<wchar_t>
+    struct name<char16_t>
     {
         static constexpr auto & value { L"Char16" };
         static constexpr auto & data{ "c2" };
     };
 
     template <>
-    struct category<wchar_t>
+    struct category<char16_t>
     {
         using type = basic_category;
     };

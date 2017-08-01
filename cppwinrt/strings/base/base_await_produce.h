@@ -30,7 +30,7 @@ struct apartment_context
 {
     apartment_context()
     {
-        check_hresult(CoGetObjectContext(__uuidof(m_context), reinterpret_cast<void**>(put_abi(m_context))));
+        check_hresult(CoGetObjectContext(__uuidof(m_context), m_context.put_void()));
     }
 
     bool await_ready() const noexcept
@@ -64,7 +64,7 @@ private:
 struct resume_after
 {
     explicit resume_after(Windows::Foundation::TimeSpan duration) noexcept :
-    m_duration(duration)
+        m_duration(duration)
     {
     }
 
@@ -77,7 +77,7 @@ struct resume_after
     {
         m_timer = impl::check_pointer(CreateThreadpoolTimer(callback, handle.address(), nullptr));
         int64_t relative_count = -m_duration.count();
-        SetThreadpoolTimer(get_abi(m_timer), reinterpret_cast<PFILETIME>(&relative_count), 0, 0);
+        SetThreadpoolTimer(m_timer.get(), reinterpret_cast<PFILETIME>(&relative_count), 0, 0);
     }
 
     void await_resume() const noexcept
@@ -125,7 +125,7 @@ struct resume_on_signal
         m_wait = impl::check_pointer(CreateThreadpoolWait(callback, this, nullptr));
         int64_t relative_count = -m_timeout.count();
         PFILETIME file_time = relative_count != 0 ? reinterpret_cast<PFILETIME>(&relative_count) : nullptr;
-        SetThreadpoolWait(get_abi(m_wait), m_handle, file_time);
+        SetThreadpoolWait(m_wait.get(), m_handle, file_time);
     }
 
     bool await_resume() const noexcept
@@ -283,7 +283,7 @@ struct resumable_io
 
     PTP_IO get() const noexcept
     {
-        return winrt::get_abi(m_io);
+        return m_io.get();
     }
 
 private:

@@ -898,14 +898,14 @@ namespace impl
             }
 
             com_ptr<weak_ref_t> weak_ref;
-            *put_abi(weak_ref) = new (std::nothrow) weak_ref_t(get_unknown(), static_cast<uint32_t>(count_or_pointer));
+            *weak_ref.put() = new (std::nothrow) weak_ref_t(get_unknown(), static_cast<uint32_t>(count_or_pointer));
 
             if (!weak_ref)
             {
                 return nullptr;
             }
 
-            uintptr_t const encoding = encode_weak_ref(get_abi(weak_ref));
+            uintptr_t const encoding = encode_weak_ref(weak_ref.get());
 
             for (;;)
             {

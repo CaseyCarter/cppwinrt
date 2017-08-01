@@ -110,18 +110,18 @@ struct hresult_error
     explicit hresult_error(HRESULT const code) noexcept : m_code(code)
     {
         WINRT_RoOriginateError(code, nullptr);
-        WINRT_GetRestrictedErrorInfo(put_abi(m_info));
+        WINRT_GetRestrictedErrorInfo(m_info.put());
     }
 
     hresult_error(HRESULT const code, param::hstring const& message) noexcept : m_code(code)
     {
         WINRT_RoOriginateError(code, get_abi(message));
-        WINRT_GetRestrictedErrorInfo(put_abi(m_info));
+        WINRT_GetRestrictedErrorInfo(m_info.put());
     }
 
     hresult_error(HRESULT const code, from_abi_t) noexcept : m_code(code)
     {
-        WINRT_GetRestrictedErrorInfo(put_abi(m_info));
+        WINRT_GetRestrictedErrorInfo(m_info.put());
     }
 
     HRESULT code() const noexcept
@@ -138,17 +138,17 @@ struct hresult_error
             impl::handle<impl::bstr_traits> message;
             impl::handle<impl::bstr_traits> unused;
 
-            if (S_OK == m_info->GetErrorDetails(put_abi(fallback), &code, put_abi(message), put_abi(unused)))
+            if (S_OK == m_info->GetErrorDetails(fallback.put(), &code, message.put(), unused.put()))
             {
                 if (code == m_code)
                 {
                     if (message)
                     {
-                        return impl::trim_hresult_message(get_abi(message), SysStringLen(get_abi(message)));
+                        return impl::trim_hresult_message(message.get(), SysStringLen(message.get()));
                     }
                     else
                     {
-                        return impl::trim_hresult_message(get_abi(fallback), SysStringLen(get_abi(fallback)));
+                        return impl::trim_hresult_message(fallback.get(), SysStringLen(fallback.get()));
                     }
                 }
             }
@@ -164,7 +164,7 @@ struct hresult_error
                                              0,
                                              nullptr);
 
-        return impl::trim_hresult_message(get_abi(message), size);
+        return impl::trim_hresult_message(message.get(), size);
     }
 
     HRESULT to_abi() const noexcept
@@ -173,7 +173,7 @@ struct hresult_error
 
         if (m_info)
         {
-            WINRT_SetRestrictedErrorInfo(get_abi(m_info));
+            WINRT_SetRestrictedErrorInfo(m_info.get());
         }
 
         return m_code;

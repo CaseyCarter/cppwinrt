@@ -26,14 +26,14 @@ namespace impl
         {}
 
         handle(handle&& other) noexcept :
-            m_value(detach_abi(other))
+            m_value(other.detach())
         {}
 
         handle& operator=(handle&& other) noexcept
         {
             if (this != &other)
             {
-                attach_abi(*this, detach_abi(other));
+                attach(other.detach());
             }
 
             return*this;
@@ -58,21 +58,27 @@ namespace impl
             return T::invalid() != m_value;
         }
 
-        friend type impl_get(handle const& handle) noexcept
+        type get() const noexcept
         {
-            return handle.m_value;
+            return m_value;
         }
 
-        friend type* impl_put(handle& handle) noexcept
+        type* put() noexcept
         {
-            WINRT_ASSERT(!handle);
-            return&handle.m_value;
+            WINRT_ASSERT(m_value == T::invalid());
+            return &m_value;
         }
 
-        friend type impl_detach(handle& handle) noexcept
+        void attach(type value) noexcept
         {
-            type value = handle.m_value;
-            handle.m_value = T::invalid();
+            close();
+            *put() = value;
+        }
+
+        type detach() noexcept
+        {
+            type value = m_value;
+            m_value = T::invalid();
             return value;
         }
 
@@ -89,7 +95,7 @@ namespace impl
     template <typename T>
     bool operator==(handle<T> const& left, handle<T> const& right) noexcept
     {
-        return get_abi(left) == get_abi(right);
+        return left.get() == right.get();
     }
 
     template <typename T>
@@ -101,7 +107,7 @@ namespace impl
     template <typename T>
     bool operator<(handle<T> const& left, handle<T> const& right) noexcept
     {
-        return get_abi(left) < get_abi(right);
+        return left.get() < right.get();
     }
 
     template <typename T>
@@ -121,31 +127,4 @@ namespace impl
     {
         return !(left < right);
     }
-
-    template <typename T>
-    struct accessors<handle<T>>
-    {
-        using type = typename handle<T>::type;
-
-        static type get(handle<T> const& object) noexcept
-        {
-            return impl_get(object);
-        }
-
-        static type* put(handle<T>& object) noexcept
-        {
-            return impl_put(object);
-        }
-
-        static void attach(handle<T>& object, type value) noexcept
-        {
-            object.close();
-            *put(object) = value;
-        }
-
-        static type detach(handle<T>& object) noexcept
-        {
-            return impl_detach(object);
-        }
-    };
 }

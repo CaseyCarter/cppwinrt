@@ -98,7 +98,7 @@ TEST_CASE("handle, get")
 
     impl::handle<test_event_traits> a = h;
 
-    REQUIRE(h == get_abi(a));
+    REQUIRE(h == a.get());
 }
 
 static void test_put(HANDLE * value)
@@ -114,7 +114,7 @@ TEST_CASE("handle, put")
     impl::handle<test_event_traits> a;
     REQUIRE(!a);
 
-    test_put(put_abi(a));
+    test_put(a.put());
 
     REQUIRE(a);
 }
@@ -125,16 +125,16 @@ TEST_CASE("handle, detach")
 
     impl::handle<test_event_traits> a = h;
 
-    REQUIRE(h == get_abi(a));
+    REQUIRE(h == a.get());
 
-    HANDLE detached = detach_abi(a);
+    HANDLE detached = a.detach();
 
     REQUIRE(!a);
     REQUIRE(h == detached);
 
-    attach_abi(a, detached);
+    a.attach(detached);
     REQUIRE(a);
-    REQUIRE(h == get_abi(a));
+    REQUIRE(h == a.get());
 }
 
 TEST_CASE("handle, swap")
@@ -146,8 +146,8 @@ TEST_CASE("handle, swap")
     REQUIRE(b);
     REQUIRE(a != b);
 
-    HANDLE ga = get_abi(a);
-    HANDLE gb = get_abi(b);
+    HANDLE ga = a.get();
+    HANDLE gb = b.get();
 
     swap(a, b);
 
@@ -155,8 +155,8 @@ TEST_CASE("handle, swap")
     REQUIRE(b);
     REQUIRE(a != b);
 
-    REQUIRE(gb == get_abi(a));
-    REQUIRE(ga == get_abi(b));
+    REQUIRE(gb == a.get());
+    REQUIRE(ga == b.get());
 }
 
 TEST_CASE("handle, compare")

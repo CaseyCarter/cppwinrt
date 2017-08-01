@@ -122,16 +122,27 @@ struct com_ptr
         return m_ptr;
     }
 
-    friend type** impl_put(com_ptr& object) noexcept
+    type** put() noexcept
     {
-        WINRT_ASSERT(object.m_ptr == nullptr);
-        return&object.m_ptr;
+        WINRT_ASSERT(m_ptr == nullptr);
+        return &m_ptr;
     }
 
-    friend type* impl_detach(com_ptr& object) noexcept
+    void** put_void() noexcept
     {
-        type* temp = object.m_ptr;
-        object.m_ptr = nullptr;
+        return reinterpret_cast<void**>(put());
+    }
+
+    void attach(type* value) noexcept
+    {
+        release();
+        *put() = value;
+    }
+
+    type* detach() noexcept
+    {
+        type* temp = m_ptr;
+        m_ptr = nullptr;
         return temp;
     }
 
@@ -225,18 +236,17 @@ namespace impl
 
         static auto put(com_ptr<T>& object) noexcept
         {
-            return impl_put(object);
+            return object.put();
         }
 
         static void attach(com_ptr<T>& object, abi_t<T>* value) noexcept
         {
-            object = nullptr;
-            *put(object) = value;
+            object.attach(value);
         }
 
         static auto detach(com_ptr<T>& object) noexcept
         {
-            return impl_detach(object);
+            return object.detach();
         }
     };
 }

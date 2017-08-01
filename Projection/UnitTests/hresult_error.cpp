@@ -569,7 +569,6 @@ TEST_CASE("hresult, std abi support")
     }
     catch (std::bad_alloc const&)
     {
-        printf("bad_alloc\n");
     }
 
     try

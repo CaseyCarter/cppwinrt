@@ -254,7 +254,7 @@ namespace cppwinrt::meta
             {
             case ELEMENT_TYPE_VOID:    return "void";
             case ELEMENT_TYPE_BOOLEAN: return "bool";
-            case ELEMENT_TYPE_CHAR:    return "wchar_t";
+            case ELEMENT_TYPE_CHAR:    return "char16_t";
             case ELEMENT_TYPE_I1:      return "int8_t";
             case ELEMENT_TYPE_U1:      return "uint8_t";
             case ELEMENT_TYPE_I2:      return "int16_t";
@@ -728,7 +728,7 @@ namespace cppwinrt::meta
         switch (category)
         {
         case ELEMENT_TYPE_BOOLEAN: return "bool";
-        case ELEMENT_TYPE_CHAR:    return "wchar_t";
+        case ELEMENT_TYPE_CHAR:    return "char16_t";
         case ELEMENT_TYPE_I1:      return "int8_t";
         case ELEMENT_TYPE_U1:      return "uint8_t";
         case ELEMENT_TYPE_I2:      return "int16_t";

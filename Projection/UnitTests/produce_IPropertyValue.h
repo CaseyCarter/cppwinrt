@@ -13,7 +13,7 @@ struct produce_IPropertyValue : winrt::implements<produce_IPropertyValue, winrt:
     uint64_t GetUInt64() { throw winrt::hresult_not_implemented(); }
     float GetSingle() { throw winrt::hresult_not_implemented(); }
     double GetDouble() { throw winrt::hresult_not_implemented(); }
-    wchar_t GetChar16() { throw winrt::hresult_not_implemented(); }
+    char16_t GetChar16() { throw winrt::hresult_not_implemented(); }
     bool GetBoolean() { throw winrt::hresult_not_implemented(); }
     winrt::hstring GetString() { throw winrt::hresult_not_implemented(); }
     GUID GetGuid() { throw winrt::hresult_not_implemented(); }
@@ -36,7 +36,7 @@ struct produce_IPropertyValue : winrt::implements<produce_IPropertyValue, winrt:
     void GetUInt64Array(winrt::com_array<uint64_t> &) { throw winrt::hresult_not_implemented(); }
     void GetSingleArray(winrt::com_array<float> &) { throw winrt::hresult_not_implemented(); }
     void GetDoubleArray(winrt::com_array<double> &) { throw winrt::hresult_not_implemented(); }
-    void GetChar16Array(winrt::com_array<wchar_t> &) { throw winrt::hresult_not_implemented(); }
+    void GetChar16Array(winrt::com_array<char16_t> &) { throw winrt::hresult_not_implemented(); }
     void GetBooleanArray(winrt::com_array<bool> &) { throw winrt::hresult_not_implemented(); }
     void GetStringArray(winrt::com_array<winrt::hstring> &) { throw winrt::hresult_not_implemented(); }
 

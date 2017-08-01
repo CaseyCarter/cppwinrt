@@ -44,7 +44,7 @@ struct reference : implements<reference<T>, Windows::Foundation::IReference<T>, 
     uint64_t GetUInt64() { throw hresult_not_implemented(); }
     float GetSingle() { throw hresult_not_implemented(); }
     double GetDouble() { throw hresult_not_implemented(); }
-    wchar_t GetChar16() { throw hresult_not_implemented(); }
+    char16_t GetChar16() { throw hresult_not_implemented(); }
     bool GetBoolean() { throw hresult_not_implemented(); }
     hstring GetString() { throw hresult_not_implemented(); }
     GUID GetGuid() { throw hresult_not_implemented(); }
@@ -62,7 +62,7 @@ struct reference : implements<reference<T>, Windows::Foundation::IReference<T>, 
     void GetUInt64Array(com_array<uint64_t> &) { throw hresult_not_implemented(); }
     void GetSingleArray(com_array<float> &) { throw hresult_not_implemented(); }
     void GetDoubleArray(com_array<double> &) { throw hresult_not_implemented(); }
-    void GetChar16Array(com_array<wchar_t> &) { throw hresult_not_implemented(); }
+    void GetChar16Array(com_array<char16_t> &) { throw hresult_not_implemented(); }
     void GetBooleanArray(com_array<bool> &) { throw hresult_not_implemented(); }
     void GetStringArray(com_array<hstring> &) { throw hresult_not_implemented(); }
     void GetInspectableArray(com_array<Windows::Foundation::IInspectable> &) { throw hresult_not_implemented(); }
@@ -139,9 +139,9 @@ struct reference_traits <double>
 };
 
 template <>
-struct reference_traits <wchar_t>
+struct reference_traits <char16_t>
 {
-    static Windows::Foundation::IInspectable make(wchar_t val) { return Windows::Foundation::PropertyValue::CreateChar16(val); }
+    static Windows::Foundation::IInspectable make(char16_t val) { return Windows::Foundation::PropertyValue::CreateChar16(val); }
 };
 
 template <>
