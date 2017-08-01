@@ -31,12 +31,12 @@ namespace cppwinrt
                 L"SOFTWARE\\Microsoft\\Windows Kits\\Installed Roots",
                 0,
                 KEY_READ,
-                winrt::put_abi(key)));
+                key.put()));
 
             DWORD path_size = 0;
 
             check_registry(RegQueryValueEx(
-                winrt::get_abi(key),
+                key.get(),
                 L"KitsRoot10",
                 nullptr,
                 nullptr,
@@ -46,7 +46,7 @@ namespace cppwinrt
             std::wstring root((path_size / sizeof(wchar_t)) - 1, L'?');
 
             check_registry(RegQueryValueEx(
-                winrt::get_abi(key),
+                key.get(),
                 L"KitsRoot10",
                 nullptr,
                 nullptr,
