@@ -106,22 +106,50 @@ struct hresult_error
     static constexpr from_abi_t from_abi{};
 
     hresult_error() noexcept = default;
+    hresult_error(hresult_error&&) = default;
+    hresult_error& operator=(hresult_error&&) = default;
+
+    hresult_error(hresult_error const& other) noexcept :
+        m_code(other.m_code),
+        m_info(other.m_info)
+    {
+    }
+
+    hresult_error& operator=(hresult_error const& other) noexcept
+    {
+        m_code = other.m_code;
+        m_info = other.m_info;
+        return *this;
+    }
 
     explicit hresult_error(HRESULT const code) noexcept : m_code(code)
     {
-        WINRT_RoOriginateError(code, nullptr);
-        WINRT_GetRestrictedErrorInfo(m_info.put());
+        WINRT_VERIFY(WINRT_RoOriginateLanguageException(code, nullptr, nullptr));
+        WINRT_VERIFY_(S_OK, WINRT_GetRestrictedErrorInfo(m_info.put()));
     }
 
-    hresult_error(HRESULT const code, param::hstring const& message) noexcept : m_code(code)
+    hresult_error(HRESULT const code, param::hstring const& message, ::IUnknown* object = nullptr) noexcept : m_code(code)
     {
-        WINRT_RoOriginateError(code, get_abi(message));
-        WINRT_GetRestrictedErrorInfo(m_info.put());
+        WINRT_VERIFY(WINRT_RoOriginateLanguageException(code, get_abi(message), object));
+        WINRT_VERIFY_(S_OK, WINRT_GetRestrictedErrorInfo(m_info.put()));
     }
 
     hresult_error(HRESULT const code, from_abi_t) noexcept : m_code(code)
     {
         WINRT_GetRestrictedErrorInfo(m_info.put());
+
+        if (m_info == nullptr)
+        {
+            WINRT_VERIFY(WINRT_RoOriginateLanguageException(code, nullptr, nullptr));
+            WINRT_VERIFY_(S_OK, WINRT_GetRestrictedErrorInfo(m_info.put()));
+        }
+
+        if (m_info != nullptr)
+        {
+            com_ptr<ILanguageExceptionErrorInfo2> info2 = m_info.as<ILanguageExceptionErrorInfo2>();
+            WINRT_VERIFY_(S_OK, info2->CapturePropagationContext(nullptr));
+            WINRT_VERIFY_(S_OK, m_info->GetReference(m_debug_reference.put()));
+        }
     }
 
     HRESULT code() const noexcept
@@ -133,7 +161,7 @@ struct hresult_error
     {
         if (m_info)
         {
-            HRESULT code = S_OK;
+            HRESULT code{};
             impl::handle<impl::bstr_traits> fallback;
             impl::handle<impl::bstr_traits> message;
             impl::handle<impl::bstr_traits> unused;
@@ -167,6 +195,11 @@ struct hresult_error
         return impl::trim_hresult_message(message.get(), size);
     }
 
+    com_ptr<IRestrictedErrorInfo> const& info() const noexcept
+    {
+        return m_info;
+    }
+
     HRESULT to_abi() const noexcept
     {
         WINRT_TRACE("winrt::hresult_error (0x%8X) %ls\n", code(), message().c_str());
@@ -181,7 +214,9 @@ struct hresult_error
 
 private:
 
-    HRESULT m_code = E_FAIL;
+    impl::handle<impl::bstr_traits> m_debug_reference;
+    uint32_t const m_debug_magic{ 0xAABBCCDD };
+    HRESULT m_code{ E_FAIL };
     com_ptr<IRestrictedErrorInfo> m_info;
 };
 

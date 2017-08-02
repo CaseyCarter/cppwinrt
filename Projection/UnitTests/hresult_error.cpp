@@ -28,15 +28,6 @@ TEST_CASE("hresult,S_FALSE")
         REQUIRE(S_FALSE == e.code());
     }
 #endif
-
-    try
-    {
-        throw hresult_error(S_FALSE);
-    }
-    catch (...)
-    {
-        REQUIRE(S_FALSE == impl::to_hresult());
-    }
 }
 
 TEST_CASE("hresult,init_apartment")
@@ -118,7 +109,7 @@ TEST_CASE("hresult,restricted,producing")
 
     try
     {
-        WINRT_RoOriginateError(E_INVALIDARG, get_abi(hstring(L"Correctly matched error info")));
+        WINRT_RoOriginateLanguageException(E_INVALIDARG, get_abi(hstring(L"Correctly matched error info")), nullptr);
         throw hresult_invalid_argument(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_invalid_argument const & e)
@@ -129,7 +120,7 @@ TEST_CASE("hresult,restricted,producing")
 
     try
     {
-        WINRT_RoOriginateError(E_FAIL, get_abi(hstring(L"Incorrectly matched error info")));
+        WINRT_RoOriginateLanguageException(E_FAIL, get_abi(hstring(L"Incorrectly matched error info")), nullptr);
         throw hresult_invalid_argument(hresult_error::from_abi); // no restricted error info at all
     }
     catch (hresult_invalid_argument const & e)

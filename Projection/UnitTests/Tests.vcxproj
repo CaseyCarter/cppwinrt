@@ -29,6 +29,7 @@
     <ClCompile Include="char16.cpp" />
     <ClCompile Include="clock.cpp" />
     <ClCompile Include="Collections.cpp" />
+    <ClCompile Include="error_chaining.cpp" />
     <ClCompile Include="implements_nested.cpp" />
     <ClCompile Include="param_hstring.cpp" />
     <ClCompile Include="param_iterable.cpp" />
