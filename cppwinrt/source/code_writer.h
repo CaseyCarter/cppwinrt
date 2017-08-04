@@ -40,8 +40,6 @@ namespace cppwinrt
     
     void write_std_hashes(output& out, meta::namespace_types const& types);
 
-    void write_include(output& out, std::string const& include);
-
     void write_test(output& out, std::string const& namespace_name, meta::namespace_types const& types);
     void write_tests();
 
@@ -55,4 +53,12 @@ namespace cppwinrt
 
     void write_natvis(output& out);
     void write_namespace_special(output& out, std::string const& namespace_name);
+
+    template <typename ... Args>
+    void write_platform_include(output& out, Args const& ... include)
+    {
+        out.write("#include %winrt/", settings::brackets ? '<' : '\"');
+        int ignored[] = { (out.write(include), 0) ... }; ignored;
+        out.write("%\n", settings::brackets ? '>' : '\"');
+    }
 }

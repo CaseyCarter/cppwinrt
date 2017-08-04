@@ -12,4 +12,5 @@ namespace cppwinrt::settings
     extern bool verbose;
     extern std::vector<std::string> filters;
     extern bool overwrite;
+    extern bool brackets;
 }

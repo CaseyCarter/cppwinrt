@@ -27,13 +27,13 @@ namespace cppwinrt
             write_forwards(out, _default_forwards);
         }
 
-        void write_includes(output& out, std::string const & ext_h = ".h", std::string const & rel_path = "winrt/") const
+        void write_includes(output& out, std::string const & ext_h = ".h", std::string const & rel_path = "") const
         {
             write_includes(out, _method_namespaces, ext_h, rel_path);
             write_includes(out, _required_namespaces, ext_h, rel_path);
             if (ext_h != ".h")
             {
-                write_include(out, rel_path + _namespace_name + ext_h);
+                write_platform_include(out, rel_path, _namespace_name, ext_h);
             }
         }
 
@@ -51,7 +51,7 @@ namespace cppwinrt
             {
                 return;
             }
-            write_include(out, "winrt/" + parent_namespace + ".h");
+            write_platform_include(out, parent_namespace, ".h");
         }
 
     private:
@@ -207,7 +207,7 @@ namespace cppwinrt
         {
             for (auto& ref : refs)
             {
-                write_include(out, rel_path + ref + ext_h);
+                write_platform_include(out, rel_path, ref, ext_h);
             }
         }
     };

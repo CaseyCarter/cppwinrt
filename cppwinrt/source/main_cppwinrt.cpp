@@ -98,6 +98,7 @@ namespace
         verbose,
         overwrite,
         help,
+        brackets,
     };
 
     void add_winmd_spec(std::vector<std::wstring>& winmd_specs, std::wstring const& winmd_spec)
@@ -144,6 +145,7 @@ namespace
             { L"natvis", option::natvis },
             { L"verbose", option::verbose },
             { L"overwrite", option::overwrite },
+            { L"brackets", option::brackets },
             { L"help", option::help },
             { L"?", option::help },
         };
@@ -184,6 +186,9 @@ namespace
                     break;
                 case option::overwrite:
                     settings::overwrite = true;
+                    break;
+                case option::brackets:
+                    settings::brackets = true;
                     break;
                 case option::help:
                     print_usage(true);

@@ -13,4 +13,5 @@ namespace cppwinrt::settings
     bool skip_base_headers{};
     bool verbose{};
     bool overwrite{};
+    bool brackets{};
 }

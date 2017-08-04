@@ -2085,7 +2085,7 @@ namespace cppwinrt
 
             for (meta::index_pair const& ns : index)
             {
-                out.write("#include \"winrt/%.h\"\n", ns.first);
+                write_platform_include(out, ns.first, ".h");
             }
         }
 
@@ -2287,7 +2287,7 @@ namespace cppwinrt
         meta::index_type const& complete_index = meta::get_index();
 
         write_edit_warning_header(out);
-        out.write("#include \"winrt/base.h\"\n");
+        write_platform_include(out, "base.h");
 
         std::vector<std::reference_wrapper<const meta::index_pair>> unfiltered_index;
         std::vector<reference_writer> ref_writers;
@@ -2791,7 +2791,7 @@ void t()
 %
 })",
             namespace_name,
-			bind_output(write_namespace_test, namespace_name, types));
+            bind_output(write_namespace_test, namespace_name, types));
     }
 
     void write_tests()
@@ -2884,13 +2884,6 @@ void t()
         {
             write_delegate_member_definition(out, type);
         }
-    }
-
-    void write_include(output& out, std::string const& include)
-    {
-        out.write("#include \"");
-        out.write(include);
-        out.write("\"\n");
     }
 
     void write_component_header(std::vector<meta::type const*> const& types)

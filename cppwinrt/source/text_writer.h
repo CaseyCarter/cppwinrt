@@ -105,6 +105,11 @@ namespace cppwinrt
             append(value);
         }
 
+        void write_arg(char const value) noexcept
+        {
+            append(value);
+        }
+
         void write_arg(int32_t const value) noexcept
         {
             append(std::to_string(value));

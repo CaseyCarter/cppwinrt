@@ -61,7 +61,7 @@ namespace cppwinrt
                 output out;
                 for (auto& header : _headers)
                 {
-                    out.write("#include \"winrt/impl/%\"\n", header);
+                    write_platform_include(out, "impl/", header);
                 }
                 path base_path = paths._impl / "complex_structs.h";
                 out.save_as(base_path.string());
@@ -178,7 +178,7 @@ namespace cppwinrt
                 {
                     output out;
                     write_logo(out);
-                    ref_writer.write_includes(out, forward_ext, "winrt/impl/");
+                    ref_writer.write_includes(out, forward_ext, "impl/");
                     write_winrt_namespace_begin(out);
                     out.write_namespace(namespace_name);
                     write_interface_definitions(out, namespace_types);
@@ -191,7 +191,7 @@ namespace cppwinrt
                 {
                     output out;
                     write_logo(out);
-                    ref_writer.write_includes(out, interface_ext, "winrt/impl/");
+                    ref_writer.write_includes(out, interface_ext, "impl/");
                     write_winrt_namespace_begin(out);
                     out.write_namespace(namespace_name);
                     write_delegate_definitions(out, namespace_types);
@@ -208,17 +208,17 @@ namespace cppwinrt
                 {
                     output out;
                     write_logo(out);
-                    out.write("#include \"winrt/base.h\"\n");
+                    write_platform_include(out, "base.h");
 
                     if (!starts_with(namespace_name, "Windows.Foundation"))
                     {
-                        out.write("#include \"winrt/Windows.Foundation.h\"\n");
-                        out.write("#include \"winrt/Windows.Foundation.Collections.h\"\n");
+                        write_platform_include(out, "Windows.Foundation.h");
+                        write_platform_include(out, "Windows.Foundation.Collections.h");
                     }
 
-                    out.write("#include \"winrt/impl/complex_structs.h\"\n");
+                    write_platform_include(out, "impl/complex_structs.h");
                     write_warning_push(out);
-                    ref_writer.write_includes(out, definition_ext, "winrt/impl/");
+                    ref_writer.write_includes(out, definition_ext, "impl/");
                     ref_writer.write_parent_include(out);
                     write_winrt_namespace_begin(out);
                     out.write_namespace("impl");
