@@ -146,9 +146,12 @@ struct hresult_error
 
         if (m_info != nullptr)
         {
-            com_ptr<ILanguageExceptionErrorInfo2> info2 = m_info.as<ILanguageExceptionErrorInfo2>();
-            WINRT_VERIFY_(S_OK, info2->CapturePropagationContext(nullptr));
             WINRT_VERIFY_(S_OK, m_info->GetReference(m_debug_reference.put()));
+
+            if (com_ptr<ILanguageExceptionErrorInfo2> info2 = m_info.try_as<ILanguageExceptionErrorInfo2>())
+            {
+                WINRT_VERIFY_(S_OK, info2->CapturePropagationContext(nullptr));
+            }
         }
     }
 
