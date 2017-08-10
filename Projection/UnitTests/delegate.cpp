@@ -7,6 +7,9 @@ using namespace Windows::Graphics::Display;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
 
+// Artifacts used in tests below are now deprecated
+WINRT_WARNING_PUSH
+
 //
 // Each of the sections in this test case exercises a unique edge case presented by an existing delegate in the Windows SDK.
 // 
@@ -694,3 +697,5 @@ TEST_CASE("delegate,MapChangedEventHandler")
         h(nullptr, nullptr);
     }
 }
+
+WINRT_WARNING_POP
