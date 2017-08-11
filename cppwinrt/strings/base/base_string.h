@@ -1,5 +1,5 @@
 
-namespace impl
+namespace winrt::impl
 {
     inline HSTRING duplicate_string(HSTRING other)
     {
@@ -42,74 +42,77 @@ namespace impl
     };
 }
 
-struct hstring
+WINRT_EXPORT namespace winrt
 {
-    using value_type = wchar_t;
-    using size_type = uint32_t;
-    using const_reference = value_type const&;
-    using const_pointer = value_type const*;
-    using const_iterator = const_pointer;
-    using const_reverse_iterator = std::reverse_iterator<const_iterator>;
-
-    hstring(std::nullptr_t = nullptr) noexcept {}
-    hstring(hstring const& value);
-    hstring& operator=(hstring const& value);
-    hstring(hstring&&) noexcept = default;
-    hstring& operator=(hstring&&)  = default;
-
-    hstring(wchar_t const* value);
-    hstring(wchar_t const* value, size_type size);
-    hstring(std::wstring const& value);
-
-    explicit hstring(std::wstring_view const& value);
-
-    hstring& operator=(std::wstring_view const& value);
-
-    void clear() noexcept;
-    operator std::wstring_view() const noexcept;
-
-    const_reference operator[](size_type pos) const noexcept;
-    const_reference front() const noexcept;
-    const_reference back() const noexcept;
-    const_pointer data() const noexcept;
-    const_pointer c_str() const noexcept;
-    const_iterator begin() const noexcept;
-    const_iterator cbegin() const noexcept;
-    const_iterator end() const noexcept;
-    const_iterator cend() const noexcept;
-    const_reverse_iterator rbegin() const noexcept;
-    const_reverse_iterator crbegin() const noexcept;
-    const_reverse_iterator rend() const noexcept;
-    const_reverse_iterator crend() const noexcept;
-    bool empty() const noexcept;
-    size_type size() const noexcept;
-
-    friend HSTRING impl_get(hstring const& string) noexcept
+    struct hstring
     {
-        return string.m_handle.get();
-    }
+        using value_type = wchar_t;
+        using size_type = uint32_t;
+        using const_reference = value_type const&;
+        using const_pointer = value_type const*;
+        using const_iterator = const_pointer;
+        using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
-    friend HSTRING* impl_put(hstring& string) noexcept
-    {
-        return string.m_handle.put();
-    }
+        hstring(std::nullptr_t = nullptr) noexcept {}
+        hstring(hstring const& value);
+        hstring& operator=(hstring const& value);
+        hstring(hstring&&) noexcept = default;
+        hstring& operator=(hstring&&) = default;
 
-    friend HSTRING impl_detach(hstring& string) noexcept
-    {
-        return string.m_handle.detach();
-    }
+        hstring(wchar_t const* value);
+        hstring(wchar_t const* value, size_type size);
+        hstring(std::wstring const& value);
 
-    friend void swap(hstring& left, hstring& right) noexcept
-    {
-        swap(left.m_handle, right.m_handle);
-    }
+        explicit hstring(std::wstring_view const& value);
 
-private:
+        hstring& operator=(std::wstring_view const& value);
 
-    impl::handle<impl::hstring_traits> m_handle;
-};
+        void clear() noexcept;
+        operator std::wstring_view() const noexcept;
 
-namespace impl
+        const_reference operator[](size_type pos) const noexcept;
+        const_reference front() const noexcept;
+        const_reference back() const noexcept;
+        const_pointer data() const noexcept;
+        const_pointer c_str() const noexcept;
+        const_iterator begin() const noexcept;
+        const_iterator cbegin() const noexcept;
+        const_iterator end() const noexcept;
+        const_iterator cend() const noexcept;
+        const_reverse_iterator rbegin() const noexcept;
+        const_reverse_iterator crbegin() const noexcept;
+        const_reverse_iterator rend() const noexcept;
+        const_reverse_iterator crend() const noexcept;
+        bool empty() const noexcept;
+        size_type size() const noexcept;
+
+        friend HSTRING impl_get(hstring const& string) noexcept
+        {
+            return string.m_handle.get();
+        }
+
+        friend HSTRING* impl_put(hstring& string) noexcept
+        {
+            return string.m_handle.put();
+        }
+
+        friend HSTRING impl_detach(hstring& string) noexcept
+        {
+            return string.m_handle.detach();
+        }
+
+        friend void swap(hstring& left, hstring& right) noexcept
+        {
+            swap(left.m_handle, right.m_handle);
+        }
+
+    private:
+
+        impl::handle<impl::hstring_traits> m_handle;
+    };
+}
+
+namespace winrt::impl
 {
     template <> struct abi<hstring>
     {
@@ -187,7 +190,10 @@ namespace impl
     };
 }
 
-inline bool embedded_null(hstring const& value) noexcept
+WINRT_EXPORT namespace winrt
 {
-    return impl::embedded_null(get_abi(value));
+    inline bool embedded_null(hstring const& value) noexcept
+    {
+        return impl::embedded_null(get_abi(value));
+    }
 }

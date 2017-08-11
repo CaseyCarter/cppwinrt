@@ -1,5 +1,5 @@
 
-namespace param
+WINRT_EXPORT namespace winrt::param
 {
     struct hstring
     {
@@ -34,5 +34,4 @@ namespace param
     {
         return *(HSTRING*)(&object);
     }
-
 }

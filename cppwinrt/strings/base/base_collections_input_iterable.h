@@ -1,5 +1,5 @@
 
-namespace impl
+namespace winrt::impl
 {
     template <typename T, typename Container>
     struct input_iterable : implements<input_iterable<T, Container>, non_agile, no_weak_ref, wfc::IIterable<T>>
@@ -176,7 +176,7 @@ namespace impl
     }
 }
 
-namespace param
+WINRT_EXPORT namespace winrt::param
 {
     template <typename T>
     struct iterable

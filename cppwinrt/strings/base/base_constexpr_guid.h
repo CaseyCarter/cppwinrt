@@ -1,4 +1,5 @@
-namespace impl 
+
+namespace winrt::impl 
 {
     template<size_t Size>
     using byte_array = constexpr_array<uint8_t, Size>;

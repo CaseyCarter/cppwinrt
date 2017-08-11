@@ -1,5 +1,5 @@
 
-namespace impl
+namespace winrt::impl
 {
     template <typename D>
     struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::Foundation::IAsyncAction>

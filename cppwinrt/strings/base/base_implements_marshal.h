@@ -1,5 +1,5 @@
 
-namespace impl
+namespace winrt::impl
 {
     struct free_threaded_marshaler : ::IMarshal
     {

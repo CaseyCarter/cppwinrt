@@ -1,5 +1,5 @@
 
-namespace impl
+namespace winrt::impl
 {
     template <typename K, typename V, typename Container>
     struct input_map_view : implements<input_map_view<K, V, Container>, non_agile, no_weak_ref, wfc::IMapView<K, V>, wfc::IIterable<wfc::IKeyValuePair<K, V>>>
@@ -237,7 +237,7 @@ namespace impl
     }
 }
 
-namespace param
+WINRT_EXPORT namespace winrt::param
 {
     template <typename K, typename V>
     struct map_view

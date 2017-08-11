@@ -1,5 +1,5 @@
 
-namespace impl
+namespace winrt::impl
 {
     template <typename D>
     Windows::Foundation::IInspectable consume_IActivationFactory<D>::ActivateInstance() const
@@ -54,56 +54,59 @@ namespace impl
 #endif
 }
 
-namespace Windows::Foundation
+WINRT_EXPORT namespace winrt
 {
-    struct IActivationFactory :
-        IInspectable,
-        impl::consume_t<IActivationFactory>
+    namespace Windows::Foundation
     {
-        IActivationFactory(std::nullptr_t = nullptr) noexcept {}
+        struct IActivationFactory :
+            IInspectable,
+            impl::consume_t<IActivationFactory>
+        {
+            IActivationFactory(std::nullptr_t = nullptr) noexcept {}
+        };
+    }
+
+    enum class apartment_type
+    {
+        single_threaded,
+        multi_threaded
     };
-}
 
-enum class apartment_type
-{
-    single_threaded,
-    multi_threaded
-};
-
-inline void init_apartment(apartment_type const type = apartment_type::multi_threaded)
-{
-    HRESULT const result = WINRT_RoInitialize(static_cast<uint32_t>(type));
-
-    if (result < 0)
+    inline void init_apartment(apartment_type const type = apartment_type::multi_threaded)
     {
-        impl::throw_hresult(result);
+        HRESULT const result = WINRT_RoInitialize(static_cast<uint32_t>(type));
+
+        if (result < 0)
+        {
+            impl::throw_hresult(result);
+        }
     }
-}
 
-inline void uninit_apartment() noexcept
-{
-    WINRT_RoUninitialize();
-}
+    inline void uninit_apartment() noexcept
+    {
+        WINRT_RoUninitialize();
+    }
 
-template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
-Interface get_activation_factory()
-{
+    template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
+    Interface get_activation_factory()
+    {
 #ifdef WINRT_DISABLE_FACTORY_CACHE
-    return impl::get_activation_factory<Class, Interface>();
-#else
-    static Interface factory = impl::get_agile_activation_factory<Class, Interface>();
-
-    if (!factory)
-    {
         return impl::get_activation_factory<Class, Interface>();
+#else
+        static Interface factory = impl::get_agile_activation_factory<Class, Interface>();
+
+        if (!factory)
+        {
+            return impl::get_activation_factory<Class, Interface>();
+        }
+
+        return factory;
+#endif
     }
 
-    return factory;
-#endif
-}
-
-template <typename Class, typename Instance = Class>
-Instance activate_instance()
-{
-    return get_activation_factory<Class>().ActivateInstance().template as<Instance>();
+    template <typename Class, typename Instance = Class>
+    Instance activate_instance()
+    {
+        return get_activation_factory<Class>().ActivateInstance().template as<Instance>();
+    }
 }

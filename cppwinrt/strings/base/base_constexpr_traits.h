@@ -1,5 +1,5 @@
 
-namespace impl 
+namespace winrt::impl
 {
     constexpr size_t bytes_needed(wchar_t const & ch)
     {

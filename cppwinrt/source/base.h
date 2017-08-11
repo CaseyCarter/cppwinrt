@@ -4,9 +4,6 @@
 #include "base_dependencies.h"
 #include "base_macros.h"
 
-namespace winrt
-{
-
 #include "base_meta.h"
 #include "base_constexpr_string.h"
 #include "base_handle.h"
@@ -52,21 +49,14 @@ namespace winrt
 #include "base_await_consume.h"
 #include "base_await_produce.h"
 
-}
-
 #include "base_std_hash.h"
 
 #ifdef WINRT_ASYNC
-
-namespace std::experimental
-{
 
 #include "base_std_fire_and_forget.h"
 #include "base_std_async_action.h"
 #include "base_std_async_action_with_progress.h"
 #include "base_std_async_operation.h"
 #include "base_std_async_operation_with_progress.h"
-
-}
 
 #endif

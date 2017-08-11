@@ -1,7 +1,7 @@
 
 #ifdef WINRT_ASYNC
 
-namespace impl
+namespace winrt::impl
 {
     template <typename Async>
     struct await_adapter
@@ -40,7 +40,7 @@ namespace impl
     };
 }
 
-namespace Windows::Foundation
+WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     inline impl::await_adapter<IAsyncAction> operator co_await(IAsyncAction const& async)
     {

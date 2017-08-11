@@ -1,5 +1,5 @@
 
-namespace impl
+namespace winrt::impl
 {
     template <typename K, typename V>
     struct key_value_pair : implements<key_value_pair<K, V>, wfc::IKeyValuePair<K, V>>

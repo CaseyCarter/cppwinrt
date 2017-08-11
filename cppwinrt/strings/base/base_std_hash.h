@@ -1,3 +1,4 @@
+
 namespace winrt::impl
 {
     inline size_t hash_data(const void* ptr, size_t numBytes) noexcept
@@ -39,7 +40,7 @@ namespace winrt::impl
     };
 }
 
-namespace std
+WINRT_EXPORT namespace std
 {
     template<> struct hash<winrt::hstring>
     {

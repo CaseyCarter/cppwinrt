@@ -2382,7 +2382,7 @@ namespace cppwinrt
 
     void write_winrt_namespace_begin(output& out)
     {
-        out.write("\nnamespace winrt {\n");
+        out.write("\nWINRT_EXPORT namespace winrt {\n");
     }
 
     void write_winrt_namespace_end(output& out)
@@ -2409,8 +2409,6 @@ namespace cppwinrt
 
         out.write(strings::base_dependencies);
         out.write(strings::base_macros);
-
-        write_winrt_namespace_begin(out);
 
         out.write(strings::base_meta);
         out.write(strings::base_constexpr_string);
@@ -2457,11 +2455,9 @@ namespace cppwinrt
         out.write(strings::base_await_consume);
         out.write(strings::base_await_produce);
 
-        write_winrt_namespace_end(out);
         out.write(strings::base_std_hash);
 
         out.write("\n#ifdef WINRT_ASYNC\n");
-        out.write_namespace("std::experimental");
         out.write(strings::base_std_fire_and_forget);
         out.write(strings::base_std_async_action);
         out.write(strings::base_std_async_action_with_progress);

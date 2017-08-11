@@ -1,5 +1,5 @@
 
-namespace impl 
+namespace winrt::impl 
 {
     template <typename T, size_t N, typename D = void>
     struct constexpr_array 

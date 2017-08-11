@@ -1,5 +1,5 @@
 
-namespace impl
+namespace winrt::impl
 {
     template <typename T>
     struct identity
@@ -83,10 +83,7 @@ namespace impl
     constexpr GUID guid_v = guid<default_interface_t<T>>::value;
 }
 
-template <typename T>
-using abi_t = impl::abi_t<T>;
-
-namespace impl
+namespace winrt::impl
 {
     template <typename T, typename Enable = void>
     struct accessors
@@ -126,49 +123,55 @@ namespace impl
     }
 }
 
-template <typename T>
-auto get_abi(T const& object) noexcept
+WINRT_EXPORT namespace winrt
 {
-    return impl::accessors<T>::get(object);
+    template <typename T>
+    using abi_t = impl::abi_t<T>;
+
+    template <typename T>
+    auto get_abi(T const& object) noexcept
+    {
+        return impl::accessors<T>::get(object);
+    }
+
+    template <typename T>
+    auto put_abi(T& object) noexcept
+    {
+        return impl::accessors<T>::put(object);
+    }
+
+    template <typename T, typename V>
+    void attach_abi(T& object, V&& value) noexcept
+    {
+        impl::accessors<T>::attach(object, value);
+    }
+
+    template <typename T, typename V>
+    void copy_from_abi(T& object, V&& value)
+    {
+        impl::accessors<T>::copy_from(object, value);
+    }
+
+    template <typename T, typename V>
+    void copy_to_abi(T const& object, V& value)
+    {
+        impl::accessors<T>::copy_to(object, value);
+    }
+
+    template <typename T>
+    auto detach_abi(T& object)
+    {
+        return impl::accessors<std::decay_t<T>>::detach(object);
+    }
+
+    template <typename T>
+    auto detach_abi(T&& object)
+    {
+        return impl::accessors<T>::detach(object);
+    }
 }
 
-template <typename T>
-auto put_abi(T& object) noexcept
-{
-    return impl::accessors<T>::put(object);
-}
-
-template <typename T, typename V>
-void attach_abi(T& object, V&& value) noexcept
-{
-    impl::accessors<T>::attach(object, value);
-}
-
-template <typename T, typename V>
-void copy_from_abi(T& object, V&& value)
-{
-    impl::accessors<T>::copy_from(object, value);
-}
-
-template <typename T, typename V>
-void copy_to_abi(T const& object, V& value)
-{
-    impl::accessors<T>::copy_to(object, value);
-}
-
-template <typename T>
-auto detach_abi(T& object)
-{
-    return impl::accessors<std::decay_t<T>>::detach(object);
-}
-
-template <typename T>
-auto detach_abi(T&& object)
-{
-    return impl::accessors<T>::detach(object);
-}
-
-namespace impl
+namespace winrt::impl
 {
     template <typename D, typename I>
     struct require_one : consume_t<D, I>

@@ -73,3 +73,7 @@ void WINRT_TRACE(char const* const message, Args ... args) noexcept
 #define WINRT_SHIM(Type) (*(abi_t<Type>**)&static_cast<Type const&>(static_cast<D const&>(*this)))
 
 #undef GetCurrentTime
+
+#ifndef WINRT_EXPORT
+#define WINRT_EXPORT
+#endif

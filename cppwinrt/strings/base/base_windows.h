@@ -1,11 +1,11 @@
 
-namespace Windows::Foundation
+WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     struct IInspectable;
     struct IActivationFactory;
 }
 
-namespace impl
+namespace winrt::impl
 {
     template <> struct abi<Windows::Foundation::IUnknown>
     {
@@ -93,7 +93,7 @@ namespace impl
     };
 }
 
-namespace Windows::Foundation
+WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     struct IUnknown
     {
@@ -235,7 +235,7 @@ namespace Windows::Foundation
     };
 }
 
-namespace impl
+namespace winrt::impl
 {
     template <typename T>
     struct accessors<T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
@@ -288,7 +288,7 @@ namespace impl
     };
 }
 
-namespace Windows::Foundation
+WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     inline bool operator==(IUnknown const& left, IUnknown const& right) noexcept
     {
@@ -356,7 +356,7 @@ namespace Windows::Foundation
     }
 }
 
-namespace impl
+namespace winrt::impl
 {
     template <typename T, std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, T>>* = nullptr>
     T empty_value()

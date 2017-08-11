@@ -1,47 +1,50 @@
 
 #ifndef WINRT_NO_AGILE_REFERENCE
 
-template <typename T>
-struct agile_ref
+WINRT_EXPORT namespace winrt
 {
-    agile_ref(std::nullptr_t = nullptr) noexcept {}
-
-    agile_ref(T const& object)
+    template <typename T>
+    struct agile_ref
     {
-#ifdef WINRT_DEBUG
-        if (object.template try_as<IAgileObject>())
+        agile_ref(std::nullptr_t = nullptr) noexcept {}
+
+        agile_ref(T const& object)
         {
-            WINRT_TRACE("winrt::agile_ref - wrapping an agile object is unnecessary.\n");
-        }
+#ifdef WINRT_DEBUG
+            if (object.template try_as<IAgileObject>())
+            {
+                WINRT_TRACE("winrt::agile_ref - wrapping an agile object is unnecessary.\n");
+            }
 #endif
 
-        check_hresult(RoGetAgileReference(AGILEREFERENCE_DEFAULT,
-                                          impl::guid_v<T>,
-                                          winrt::get_abi(object),
-                                          put_abi(m_ref)));
-    }
+            check_hresult(RoGetAgileReference(AGILEREFERENCE_DEFAULT,
+                impl::guid_v<T>,
+                winrt::get_abi(object),
+                put_abi(m_ref)));
+        }
 
-    T get() const
+        T get() const
+        {
+            T result = nullptr;
+            check_hresult(m_ref->Resolve(put_abi(result)));
+            return result;
+        }
+
+        explicit operator bool() const noexcept
+        {
+            return static_cast<bool>(m_ref);
+        }
+
+    private:
+
+        com_ptr<IAgileReference> m_ref;
+    };
+
+    template <typename T>
+    agile_ref<T> make_agile(T const& object)
     {
-        T result = nullptr;
-        check_hresult(m_ref->Resolve(put_abi(result)));
-        return result;
+        return object;
     }
-
-    explicit operator bool() const noexcept
-    {
-        return static_cast<bool>(m_ref);
-    }
-
-private:
-
-    com_ptr<IAgileReference> m_ref;
-};
-
-template <typename T>
-agile_ref<T> make_agile(T const& object)
-{
-    return object;
 }
 
 #endif

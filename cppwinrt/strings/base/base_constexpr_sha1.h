@@ -1,6 +1,6 @@
-namespace impl 
+
+namespace winrt::impl
 {
-        
     // SHA-1 constexpr implementation. Port of C Reference from https://tools.ietf.org/html/rfc3174 using constexpr.
 
     constexpr auto message_block_size = 64;

@@ -1,26 +1,29 @@
 
-template <typename ... Args>
-struct coroutine_traits<winrt::fire_and_forget, Args ...>
+WINRT_EXPORT namespace std::experimental
 {
-    struct promise_type
+    template <typename ... Args>
+    struct coroutine_traits<winrt::fire_and_forget, Args ...>
     {
-        winrt::fire_and_forget get_return_object() const noexcept
+        struct promise_type
         {
-            return{};
-        }
+            winrt::fire_and_forget get_return_object() const noexcept
+            {
+                return{};
+            }
 
-        void return_void() const noexcept
-        {
-        }
+            void return_void() const noexcept
+            {
+            }
 
-        suspend_never initial_suspend() const noexcept
-        {
-            return{};
-        }
+            suspend_never initial_suspend() const noexcept
+            {
+                return{};
+            }
 
-        suspend_never final_suspend() const noexcept
-        {
-            return{};
-        }
+            suspend_never final_suspend() const noexcept
+            {
+                return{};
+            }
+        };
     };
-};
+}

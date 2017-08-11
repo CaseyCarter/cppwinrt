@@ -1,5 +1,5 @@
 
-namespace Windows::Foundation::Collections
+WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
 {
     enum class CollectionChange
     {
@@ -27,7 +27,7 @@ namespace Windows::Foundation::Collections
     template <typename K, typename V> struct IObservableMap;
 }
 
-namespace impl
+namespace winrt::impl
 {
     namespace wfc = Windows::Foundation::Collections;
 
@@ -969,7 +969,7 @@ namespace impl
     }
 }
 
-namespace Windows::Foundation::Collections
+WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
 {
     struct IVectorChangedEventArgs :
         IInspectable,

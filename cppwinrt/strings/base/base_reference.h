@@ -1,10 +1,10 @@
 
-namespace Windows::Foundation
+WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     template <typename T> struct IReference;
 }
 
-namespace impl
+namespace winrt::impl
 {
     template <typename T>
     struct abi<Windows::Foundation::IReference<T>>
@@ -52,5 +52,8 @@ namespace impl
     };
 }
 
-template <typename T>
-using optional = Windows::Foundation::IReference<T>;
+WINRT_EXPORT namespace winrt
+{
+    template <typename T>
+    using optional = Windows::Foundation::IReference<T>;
+}

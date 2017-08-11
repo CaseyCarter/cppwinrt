@@ -1,5 +1,5 @@
 
-namespace impl
+namespace winrt::impl
 {
     template <typename T>
     struct event_array
@@ -312,15 +312,18 @@ namespace impl
     };
 }
 
+WINRT_EXPORT namespace winrt
+{
 #ifndef WINRT_NO_AGILE_REFERENCE
 
-template <typename Delegate>
-using agile_event = impl::event<impl::agile_event_traits<Delegate>>;
+    template <typename Delegate>
+    using agile_event = impl::event<impl::agile_event_traits<Delegate>>;
 
 #endif
 
-template <typename Delegate>
-using non_agile_event = impl::event<impl::non_agile_event_traits<Delegate>>;
+    template <typename Delegate>
+    using non_agile_event = impl::event<impl::non_agile_event_traits<Delegate>>;
 
-template <typename Delegate>
-using single_threaded_event = impl::event<impl::single_threaded_event_traits<Delegate>>;
+    template <typename Delegate>
+    using single_threaded_event = impl::event<impl::single_threaded_event_traits<Delegate>>;
+}

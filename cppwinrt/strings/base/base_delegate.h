@@ -1,11 +1,11 @@
 
-namespace Windows::Foundation
+WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     template <typename T> struct EventHandler;
     template <typename TSender, typename TArgs> struct TypedEventHandler;
 }
 
-namespace impl
+namespace winrt::impl
 {
     template <typename T, typename H>
     struct implements_delegate : abi_t<T>, H
@@ -160,7 +160,7 @@ namespace impl
     };
 }
 
-namespace Windows::Foundation
+WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     template <typename T>
     struct WINRT_EBO EventHandler : IUnknown

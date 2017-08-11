@@ -1,5 +1,5 @@
 
-namespace impl
+namespace winrt::impl
 {
     template <typename T, typename Container>
     struct input_vector_view : implements<input_vector_view<T, Container>, non_agile, no_weak_ref, wfc::IVectorView<T>, wfc::IIterable<T>>
@@ -248,7 +248,7 @@ namespace impl
     }
 }
 
-namespace param
+WINRT_EXPORT namespace winrt::param
 {
     template <typename T>
     struct vector_view

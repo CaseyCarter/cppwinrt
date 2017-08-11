@@ -1,5 +1,5 @@
 
-namespace Windows::Foundation
+WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     enum class AsyncStatus
     {
@@ -23,7 +23,7 @@ namespace Windows::Foundation
     template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
 }
 
-namespace impl
+namespace winrt::impl
 {
     inline bool is_sta() noexcept
     {
@@ -583,7 +583,7 @@ namespace impl
     };
 }
 
-namespace Windows::Foundation
+WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     struct IAsyncInfo :
         IInspectable,
@@ -771,7 +771,7 @@ namespace Windows::Foundation
     };
 }
 
-namespace impl
+namespace winrt::impl
 {
     template <typename D>
     uint32_t consume_IAsyncInfo<D>::Id() const
