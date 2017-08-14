@@ -3,7 +3,7 @@ WINRT_EXPORT namespace winrt::param
 {
     struct hstring
     {
-        hstring(std::nullptr_t = nullptr) noexcept {}
+        hstring(std::nullptr_t = nullptr) noexcept : m_handle(nullptr) {}
         hstring(hstring const& values) = delete;
         hstring& operator=(hstring const& values) = delete;
 
@@ -26,8 +26,8 @@ WINRT_EXPORT namespace winrt::param
 
     private:
 
-        HSTRING m_handle{};
-        HSTRING_HEADER m_header{};
+        HSTRING m_handle;
+        HSTRING_HEADER m_header;
     };
 
     inline HSTRING get_abi(hstring const& object) noexcept
