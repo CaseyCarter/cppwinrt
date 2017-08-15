@@ -7,8 +7,6 @@ namespace cppwinrt
 {
     void write_projection(output& out);
     void write_logo(output& out);
-    void write_winrt_namespace_begin(output& out);
-    void write_winrt_namespace_end(output& out);
     void write_warning_push(output& out);
     void write_warning_pop(output& out);
     void write_base_header(output& out);

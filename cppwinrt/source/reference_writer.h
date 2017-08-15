@@ -193,12 +193,13 @@ namespace cppwinrt
             {
                 if (!external.second.empty())
                 {
-                    out.write("namespace @ {\n", external.first);
+                    out.write_meta_namespace(external.first);
+                    out.write('\n');
                     for (auto& forward_type : external.second)
                     {
                         out.write("@;\n", forward_type);
                     }
-                    out.write("}\n");
+                    out.write_close_namespace();
                 }
             }
         }

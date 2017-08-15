@@ -4,9 +4,7 @@
 
 #include "module.h"
 
-namespace winrt {
-
-namespace Complex::Authoring::implementation {
+namespace winrt::Complex::Authoring::implementation {
 
 template <typename D, typename ... I>
 struct Simple_base : impl::module_lock, implements<D, Complex::Authoring::ISimple, I ...>
@@ -28,7 +26,7 @@ struct Simple_base : impl::module_lock, implements<D, Complex::Authoring::ISimpl
 
 }
 
-namespace Complex::Authoring::factory_implementation {
+namespace winrt::Complex::Authoring::factory_implementation {
 
 template <typename D, typename T, typename ... I>
 struct SimpleT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
@@ -43,8 +41,6 @@ struct SimpleT : impl::module_lock, implements<D, Windows::Foundation::IActivati
         return make<T>();
     }
 };
-
-}
 
 }
 

@@ -3,9 +3,7 @@
 #pragma once
 #include "winrt/base.h"
 
-namespace winrt {
-
-namespace Farm::Animals {
+WINRT_EXPORT namespace winrt::Farm::Animals {
 
 struct IEgg;
 struct IEggFactory;
@@ -15,7 +13,7 @@ struct Hen;
 
 }
 
-namespace impl {
+namespace winrt::impl {
 
 template <> struct category<Farm::Animals::IEgg>{ using type = interface_category; };
 template <> struct category<Farm::Animals::IEggFactory>{ using type = interface_category; };
@@ -73,7 +71,7 @@ template <> struct abi<Farm::Animals::IHen>{ struct type : ::IInspectable
 
 }
 
-namespace Farm::Animals {
+WINRT_EXPORT namespace winrt::Farm::Animals {
 
 struct IEgg :
     Windows::Foundation::IInspectable,
@@ -96,6 +94,10 @@ struct IHen :
     IHen(std::nullptr_t = nullptr) noexcept {}
 };
 
+}
+
+WINRT_EXPORT namespace winrt::Farm::Animals {
+
 struct Egg :
     Farm::Animals::IEgg
 {
@@ -112,7 +114,7 @@ struct Hen :
 
 }
 
-namespace impl {
+namespace winrt::impl {
 
 template <typename D> Farm::Animals::Hen consume_Farm_Animals_IEgg<D>::Mother() const
 {
@@ -216,7 +218,7 @@ struct produce<D, Farm::Animals::IHen> : produce_base<D, Farm::Animals::IHen>
 
 }
 
-namespace Farm::Animals {
+WINRT_EXPORT namespace winrt::Farm::Animals {
 
 inline Egg::Egg(Farm::Animals::Hen const& mother) :
     Egg(get_activation_factory<Egg, Farm::Animals::IEggFactory>().CreateWithHen(mother))
@@ -228,9 +230,7 @@ inline Hen::Hen() :
 
 }
 
-}
-
-namespace std {
+WINRT_EXPORT namespace std {
 
 template<> struct hash<winrt::Farm::Animals::IEgg> : 
     winrt::impl::impl_hash_unknown<winrt::Farm::Animals::IEgg> {};

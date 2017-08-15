@@ -2075,7 +2075,7 @@ namespace cppwinrt
                 p /= ns.first;
                 p += ".cpp";
 
-                out.save_as(p.string());
+                out.save_as(p);
             }
         }
 
@@ -2242,10 +2242,7 @@ namespace cppwinrt
                 bind_output(write_test_includes),
                 bind_output(write_consume_test_functions));
 
-            path p = settings::output;
-            p /= "tests/consume.cpp";
-
-            out.save_as(p.string());
+            out.save_as(settings::output / "tests/consume.cpp");
         }
 
         void write_produce_tests()
@@ -2256,10 +2253,7 @@ namespace cppwinrt
                 bind_output(write_test_includes),
                 bind_output(write_produce_test_interfaces));
 
-            path p = settings::output;
-            p /= "tests/produce.cpp";
-
-            out.save_as(p.string());
+            out.save_as(settings::output / "tests/produce.cpp");
         }
 
         std::string_view get_relative_component_name(meta::type const& type)
@@ -2300,14 +2294,14 @@ namespace cppwinrt
             }
         }
 
-        write_winrt_namespace_begin(out);
         for (meta::index_pair const& ns : unfiltered_index)
         {
-            out.write_namespace(ns.first);
+            out.write_meta_namespace(ns.first);
             write_forwards(out, ns.second);
+            out.write_close_namespace();
         }
-        out.write_namespace("impl");
-        out.write("\n");
+        out.write_impl_namespace();
+        out.write('\n');
 
         for (meta::index_pair const& ns : unfiltered_index)
         {
@@ -2327,24 +2321,28 @@ namespace cppwinrt
             write_abi(out, ns.second);
         }
 
+        out.write_close_namespace();
+
         for (meta::index_pair const& ns : unfiltered_index)
         {
-            out.write_namespace(ns.first);
+            out.write_meta_namespace(ns.first);
             write_interface_definitions(out, ns.second);
             write_delegate_definitions(out, ns.second);
             write_struct_definitions(out, ns.second);
+            out.write_close_namespace();
         }
 
         // This is separate from the previous set because a base class must be defined before use
         // and we must therefore define the default interfaces before the runtime classes are defined.
         for (meta::index_pair const& ns : unfiltered_index)
         {
-            out.write_namespace(ns.first);
+            out.write_meta_namespace(ns.first);
             write_class_definitions(out, ns.second);
             write_interface_overrides(out, ns.second);
+            out.write_close_namespace();
         }
 
-        out.write_namespace("impl");
+        out.write_impl_namespace();
 
         for (meta::index_pair const& ns : unfiltered_index)
         {
@@ -2353,23 +2351,24 @@ namespace cppwinrt
             write_produce(out, ns.second);
         }
 
+        out.write_close_namespace();
+
         for (meta::index_pair const& ns : unfiltered_index)
         {
-            out.write_namespace(ns.first);
+            out.write_meta_namespace(ns.first);
             write_class_member_definitions(out, ns.second);
             write_delegate_member_definitions(out, ns.second);
             write_interface_override_methods(out, ns.second);
             write_class_overrides(out, ns.second);
+            out.write_close_namespace();
         }
 
-        write_winrt_namespace_end(out);
-
-        out.write_namespace("std");
+        out.write_std_namespace();
         for (meta::index_pair const& ns : unfiltered_index)
         {
             write_std_hashes(out, ns.second);
         }
-        out.write_namespace();
+        out.write_close_namespace();
     }
 
     void write_logo(output& out)
@@ -2378,17 +2377,6 @@ namespace cppwinrt
         tm tm{};
         localtime_s(&tm, &t);
         out.write(strings::write_logo, CPPWINRT_VERSION_STRING, 1900 + tm.tm_year);
-    }
-
-    void write_winrt_namespace_begin(output& out)
-    {
-        out.write("\nWINRT_EXPORT namespace winrt {\n");
-    }
-
-    void write_winrt_namespace_end(output& out)
-    {
-        out.write_namespace();
-        out.write("\n}\n");
     }
 
     void write_warning_push(output& out)
@@ -2463,7 +2451,6 @@ namespace cppwinrt
         out.write(strings::base_std_async_action_with_progress);
         out.write(strings::base_std_async_operation);
         out.write(strings::base_std_async_operation_with_progress);
-        out.write_namespace();
         out.write("\n#endif\n");
 
         out.write(strings::base_natvis);
@@ -2892,17 +2879,12 @@ void t()
             out.write("\n#include \"%.h\"\n", settings::component_name);
         }
 
-        write_winrt_namespace_begin(out);
-
-        out.write_namespace("impl");
+        out.write_impl_namespace();
         out.write(strings::write_component_lock_declaration);
         write_component_produce_override_dispatch(out, types);
+        out.write_close_namespace();
 
-        write_winrt_namespace_end(out);
-
-        path filename = settings::output;
-        filename /= "module.h";
-        out.save_as(filename.string());
+        out.save_as(settings::output / "module.h");
     }
 
     void write_component_class_includes(output& out, std::vector<meta::type const*> const& types)
@@ -2946,9 +2928,7 @@ void t()
                 bind_output(write_component_class_activations, types));
         }
 
-        path filename = settings::output;
-        filename /= "module.cpp";
-        out.save_as(filename.string());
+        out.save_as(settings::output / "module.cpp");
     }
 
     void write_component_class_constructor_declarations(output& out, meta::type const& type, meta::token const factory)
@@ -3140,27 +3120,27 @@ void t()
             out.write("#include \"%.h\"\n", get_relative_component_name(*base_type));
         }
 
-        write_winrt_namespace_begin(out);
         bool const static_class = type.token.is_static();
 
         if (!static_class)
         {
-            out.write_namespace(std::string(type.name_space()) + ".implementation");
+            out.write_component_namespace(std::string(type.name_space()) + ".implementation");
             write_component_class_base(out, type);
+            out.write_close_namespace();
         }
 
         if (has_factory_members(type.token))
         {
-            out.write_namespace(std::string(type.name_space()) + ".factory_implementation");
+            out.write_component_namespace(std::string(type.name_space()) + ".factory_implementation");
 
             out.write(strings::write_component_class_factory_base,
                       type.name(),
                       bind_output(write_component_factory_interfaces, type),
                       type.full_name(),
                       bind_output(write_component_factory_forwarding_methods, type));
-        }
 
-        write_winrt_namespace_end(out);
+            out.write_close_namespace();
+        }
 
         if (!static_class)
         {
@@ -3407,7 +3387,7 @@ void t()
                 { "typename TSender, typename TArgs", "Windows::Foundation::TypedEventHandler<TSender, TArgs>" },
             };
 
-            out.write_namespace("std");
+            out.write_std_namespace();
 
             for (auto& generic : generic_interfaces)
             {
@@ -3417,7 +3397,7 @@ void t()
                     generic.name);
             }
 
-            out.write_namespace();
+            out.write_close_namespace();
         }
 
         if (namespace_name == "Windows.Foundation.Collections")
@@ -3445,7 +3425,7 @@ void t()
                 { "typename K", "Windows::Foundation::Collections::IMapChangedEventArgs<K>" },
             };
 
-            out.write_namespace("std");
+            out.write_std_namespace();
 
             for (auto& generic : generic_interfaces)
             {
@@ -3455,7 +3435,7 @@ void t()
                     generic.name);
             }
 
-            out.write_namespace();
+            out.write_close_namespace();
         }
     }
 }

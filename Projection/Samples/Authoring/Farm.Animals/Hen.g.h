@@ -4,9 +4,7 @@
 
 #include "module.h"
 
-namespace winrt {
-
-namespace Farm::Animals::implementation {
+namespace winrt::Farm::Animals::implementation {
 
 template <typename D, typename ... I>
 struct Hen_base : impl::module_lock, implements<D, Farm::Animals::IHen, I ...>
@@ -28,7 +26,7 @@ struct Hen_base : impl::module_lock, implements<D, Farm::Animals::IHen, I ...>
 
 }
 
-namespace Farm::Animals::factory_implementation {
+namespace winrt::Farm::Animals::factory_implementation {
 
 template <typename D, typename T, typename ... I>
 struct HenT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
@@ -43,8 +41,6 @@ struct HenT : impl::module_lock, implements<D, Windows::Foundation::IActivationF
         return make<T>();
     }
 };
-
-}
 
 }
 

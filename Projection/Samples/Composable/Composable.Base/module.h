@@ -4,9 +4,7 @@
 
 #include "Composable.Base.h"
 
-namespace winrt {
-
-namespace impl {
+namespace winrt::impl {
 
 struct module_lock
 {
@@ -42,6 +40,4 @@ struct WINRT_EBO produce_dispatch_to_super<T, D, Composable::Base::IDerivedOverr
         return this->shim().VirtualPublicDerivedMethod();
     }
 };
-}
-
 }

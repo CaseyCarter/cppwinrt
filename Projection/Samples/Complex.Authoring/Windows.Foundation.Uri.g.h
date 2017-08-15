@@ -4,9 +4,7 @@
 
 #include "module.h"
 
-namespace winrt {
-
-namespace Windows::Foundation::implementation {
+namespace winrt::Windows::Foundation::implementation {
 
 template <typename D, typename ... I>
 struct Uri_base : impl::module_lock, implements<D, Windows::Foundation::IUriRuntimeClass, Windows::Foundation::IStringable, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri, I ...>
@@ -28,7 +26,7 @@ struct Uri_base : impl::module_lock, implements<D, Windows::Foundation::IUriRunt
 
 }
 
-namespace Windows::Foundation::factory_implementation {
+namespace winrt::Windows::Foundation::factory_implementation {
 
 template <typename D, typename T, typename ... I>
 struct UriT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Windows::Foundation::IUriEscapeStatics, Windows::Foundation::IUriRuntimeClassFactory, I ...>
@@ -63,8 +61,6 @@ struct UriT : impl::module_lock, implements<D, Windows::Foundation::IActivationF
         return T::EscapeComponent(toEscape);
     }
 };
-
-}
 
 }
 

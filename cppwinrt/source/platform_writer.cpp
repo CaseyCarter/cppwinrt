@@ -63,8 +63,7 @@ namespace cppwinrt
                 {
                     write_platform_include(out, "impl/", header);
                 }
-                path base_path = paths._impl / "complex_structs.h";
-                out.save_as(base_path.string());
+                out.save_as(paths._impl / "complex_structs.h");
             }
         };
 
@@ -72,16 +71,14 @@ namespace cppwinrt
         {
             output out;
             write_base_header(out);
-            path file_path = base_path / "base.h";
-            out.save_as(file_path.string());
+            out.save_as(base_path / "base.h");
         }
 
         void create_natvis(path const& base_path)
         {
             output out;
             write_natvis(out);
-            path file_path = base_path / "cppwinrt.natvis";
-            out.save_as(file_path.string());
+            out.save_as(base_path / "cppwinrt.natvis");
         }
 
         void ReportMetadataError(std::string_view context)
@@ -137,8 +134,7 @@ namespace cppwinrt
                 {
                     output out;
                     write_test(out, namespace_name, namespace_types);
-                    path test_path = paths._tests / (namespace_name + ".cpp");
-                    out.save_as(test_path.string());
+                    out.save_as(paths._tests / (namespace_name + ".cpp"));
                 }
 
                 static char const * forward_ext = ".0.h";
@@ -154,11 +150,12 @@ namespace cppwinrt
                     output out;
                     write_logo(out);
 
-                    write_winrt_namespace_begin(out);
                     ref_writer.write_forwards(out);
-                    out.write_namespace(namespace_name);
+                    out.write_meta_namespace(namespace_name);
                     write_forwards(out, namespace_types);
-                    out.write_namespace("impl");
+                    out.write_close_namespace();
+                    out.write_impl_namespace();
+                    out.write('\n');
                     write_categories(out, namespace_types);
                     write_names(out, namespace_types);
                     write_guids(out, namespace_types);
@@ -169,9 +166,8 @@ namespace cppwinrt
                     }
                     write_consume(out, namespace_types);
                     write_abi(out, namespace_types);
-                    write_winrt_namespace_end(out);
-                    path forward_path = paths._impl / forward_h;
-                    out.save_as(forward_path.string());
+                    out.write_close_namespace();
+                    out.save_as(paths._impl / forward_h);
                 }
 
                 // inteface definitions, which reference abi/consume definitions, potentially circularly
@@ -179,12 +175,10 @@ namespace cppwinrt
                     output out;
                     write_logo(out);
                     ref_writer.write_includes(out, forward_ext, "impl/");
-                    write_winrt_namespace_begin(out);
-                    out.write_namespace(namespace_name);
+                    out.write_meta_namespace(namespace_name);
                     write_interface_definitions(out, namespace_types);
-                    write_winrt_namespace_end(out);
-                    path interface_path = paths._impl / interface_h;
-                    out.save_as(interface_path.string());
+                    out.write_close_namespace();
+                    out.save_as(paths._impl / interface_h);
                 }
 
                 // class definitions, which reference interface definitions, potentially circularly
@@ -192,16 +186,13 @@ namespace cppwinrt
                     output out;
                     write_logo(out);
                     ref_writer.write_includes(out, interface_ext, "impl/");
-                    write_winrt_namespace_begin(out);
-                    out.write_namespace(namespace_name);
+                    out.write_meta_namespace(namespace_name);
                     write_delegate_definitions(out, namespace_types);
                     write_struct_definitions(out, namespace_types);
                     write_class_definitions(out, namespace_types);
                     write_interface_overrides(out, namespace_types);
-                    out.write_namespace("impl");
-                    write_winrt_namespace_end(out);
-                    path interface_path = paths._impl / definition_h;
-                    out.save_as(interface_path.string());
+                    out.write_close_namespace();
+                    out.save_as(paths._impl / definition_h);
                 }
 
                 // implementations, which require full class definitions
@@ -220,27 +211,26 @@ namespace cppwinrt
                     write_warning_push(out);
                     ref_writer.write_includes(out, definition_ext, "impl/");
                     ref_writer.write_parent_include(out);
-                    write_winrt_namespace_begin(out);
-                    out.write_namespace("impl");
+                    out.write_impl_namespace();
                     write_interface_member_definitions(out, namespace_types);
                     write_delegate_produce(out, namespace_types);
                     write_produce(out, namespace_types);
-                    out.write_namespace(namespace_name);
+                    out.write_close_namespace();
+                    out.write_meta_namespace(namespace_name);
                     write_class_member_definitions(out, namespace_types);
                     write_delegate_member_definitions(out, namespace_types);
                     write_interface_override_methods(out, namespace_types);
                     write_class_overrides(out, namespace_types);
-                    write_winrt_namespace_end(out);
+                    out.write_close_namespace();
 
                     write_namespace_special(out, namespace_name);
 
-                    out.write_namespace("std");
+                    out.write_std_namespace();
                     write_std_hashes(out, namespace_types);
-                    out.write_namespace();
+                    out.write_close_namespace();
 
                     write_warning_pop(out);
-                    path namespace_path = paths._public / (namespace_name + ".h");
-                    out.save_as(namespace_path.string());
+                    out.save_as(paths._public / (namespace_name + ".h"));
                 }
             }
             catch (...)
@@ -261,12 +251,31 @@ namespace cppwinrt
         }
 
         template <typename Collection>
-        static IAsyncAction wait_all(Collection & collection)
+        IAsyncAction wait_all(Collection & collection)
         {
             for (auto&& item : collection)
             {
                 co_await item;
             }
+        }
+
+        void write_module()
+        {
+            output out;
+            out.write("module winrt;\n");
+            out.write("#define WINRT_EXPORT export\n\n");
+
+            meta::index_type const& index = meta::get_index();
+
+            for (meta::index_pair const& item : index)
+            {
+                if (item.second.has_projected_types())
+                {
+                    write_platform_include(out, item.first, ".h");
+                }
+            }
+
+            out.save_as(settings::output / "winrt\\module.ixx");
         }
     }
 
@@ -287,10 +296,10 @@ namespace cppwinrt
             writers[num_writers++] = create_namespace_headers_async(item.first, item.second, paths, complex_structs);
         }
         writers.resize(num_writers);
-
         wait_all(writers).get();
 
         complex_structs.write_header(paths);
+        write_module();
 
         if (settings::create_tests)
         {

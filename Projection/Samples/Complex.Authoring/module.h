@@ -4,16 +4,12 @@
 
 #include "Complex.Authoring.h"
 
-namespace winrt {
-
-namespace impl {
+namespace winrt::impl {
 
 struct module_lock
 {
     module_lock();
     ~module_lock();
 };
-
-}
 
 }

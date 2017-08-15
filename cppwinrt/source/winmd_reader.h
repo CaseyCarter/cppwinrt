@@ -214,6 +214,8 @@ namespace cppwinrt::meta
         std::vector<type> enums;
         std::vector<type> structs;
         std::vector<type> delegates;
+
+        bool has_projected_types() const noexcept;
     };
 
     using index_type = std::map<std::string, namespace_types>;

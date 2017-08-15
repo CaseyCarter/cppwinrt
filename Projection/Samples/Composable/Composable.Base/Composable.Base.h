@@ -3,9 +3,7 @@
 #pragma once
 #include "winrt/base.h"
 
-namespace winrt {
-
-namespace Composable::Base {
+WINRT_EXPORT namespace winrt::Composable::Base {
 
 struct IDerived;
 struct IDerivedFactory;
@@ -18,7 +16,7 @@ struct Root;
 
 }
 
-namespace impl {
+namespace winrt::impl {
 
 template <> struct category<Composable::Base::IDerived>{ using type = interface_category; };
 template <> struct category<Composable::Base::IDerivedFactory>{ using type = interface_category; };
@@ -125,7 +123,7 @@ template <> struct abi<Composable::Base::IRootOverrides>{ struct type : ::IInspe
 
 }
 
-namespace Composable::Base {
+WINRT_EXPORT namespace winrt::Composable::Base {
 
 struct IDerived :
     Windows::Foundation::IInspectable,
@@ -168,6 +166,10 @@ struct IRootOverrides :
 {
     IRootOverrides(std::nullptr_t = nullptr) noexcept {}
 };
+
+}
+
+WINRT_EXPORT namespace winrt::Composable::Base {
 
 struct Derived :
     Composable::Base::IDerived,
@@ -214,7 +216,7 @@ public:
 
 }
 
-namespace impl {
+namespace winrt::impl {
 
 template <typename D> hstring consume_Composable_Base_IDerived<D>::DerivedMethod() const
 {
@@ -446,7 +448,7 @@ struct produce<D, Composable::Base::IRootOverrides> : produce_base<D, Composable
 
 }
 
-namespace Composable::Base {
+WINRT_EXPORT namespace winrt::Composable::Base {
 
 inline Derived::Derived()
 {
@@ -502,9 +504,7 @@ protected:
 
 }
 
-}
-
-namespace std {
+WINRT_EXPORT namespace std {
 
 template<> struct hash<winrt::Composable::Base::IDerived> : 
     winrt::impl::impl_hash_unknown<winrt::Composable::Base::IDerived> {};

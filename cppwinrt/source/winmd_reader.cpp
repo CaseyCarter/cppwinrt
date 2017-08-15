@@ -544,6 +544,19 @@ namespace cppwinrt::meta
         }
     }
 
+    bool namespace_types::has_projected_types() const noexcept
+    {
+        for (type const& type : get_container_values(interfaces, classes, enums, structs, delegates))
+        {
+            if (!type.is_reference)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     void open_database(std::wstring const& filename, bool const is_reference)
     {
         databases.emplace_back(filename, is_reference);

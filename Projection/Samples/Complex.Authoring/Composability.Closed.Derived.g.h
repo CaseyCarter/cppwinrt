@@ -5,9 +5,7 @@
 #include "module.h"
 #include "Composability.Closed.Base.h"
 
-namespace winrt {
-
-namespace Complex::Authoring::Composability::Closed::implementation {
+namespace winrt::Complex::Authoring::Composability::Closed::implementation {
 
 template <typename D, typename ... I>
 struct Derived_base : implements<D, Complex::Authoring::Composability::Closed::implementation::Base, Complex::Authoring::Composability::Closed::IDerived, I ...>
@@ -26,8 +24,6 @@ struct Derived_base : implements<D, Complex::Authoring::Composability::Closed::i
         return L"Complex.Authoring.Composability.Closed.Derived";
     }
 };
-
-}
 
 }
 

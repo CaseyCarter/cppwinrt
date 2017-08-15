@@ -9,7 +9,6 @@ namespace cppwinrt
     class output
     {
         std::vector<char> m_buffer;
-        std::string m_namespace;
 
         static constexpr uint32_t count_placeholders(std::string_view format) noexcept
         {
@@ -137,26 +136,29 @@ namespace cppwinrt
             m_buffer.reserve(default_output_capacity);
         }
 
-        bool write_namespace(std::string_view ns = {})
+        void write_impl_namespace()
         {
-            if (m_namespace == ns)
-            {
-                return false;
-            }
+            write("\nnamespace winrt::impl {\n");
+        }
 
-            if (!m_namespace.empty())
-            {
-                write("\n}\n");
-            }
+        void write_std_namespace()
+        {
+            write("\nWINRT_EXPORT namespace std {\n");
+        }
 
-            m_namespace = ns;
+        void write_meta_namespace(std::string_view ns)
+        {
+            write("\nWINRT_EXPORT namespace winrt::@ {\n", ns);
+        }
 
-            if (!m_namespace.empty())
-            {
-                write("\nnamespace @ {\n", m_namespace);
-            }
+        void write_component_namespace(std::string_view ns)
+        {
+            write("\nnamespace winrt::@ {\n", ns);
+        }
 
-            return true;
+        void write_close_namespace()
+        {
+            write("\n}\n");
         }
 
         void write(std::string_view value)
@@ -218,6 +220,11 @@ namespace cppwinrt
                 nullptr));
 
             WINRT_ASSERT(copied == size());
+        }
+
+        void save_as(std::experimental::filesystem::path const& filename)
+        {
+            save_as(filename.string());
         }
     };
 

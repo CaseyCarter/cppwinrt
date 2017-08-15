@@ -3,9 +3,7 @@
 #pragma once
 #include "winrt/base.h"
 
-namespace winrt {
-
-namespace Complex::Authoring {
+WINRT_EXPORT namespace winrt::Complex::Authoring {
 
 struct ILanguage;
 struct ISimple;
@@ -18,7 +16,7 @@ struct StructByRef;
 
 }
 
-namespace Complex::Authoring::Composability::Closed {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Composability::Closed {
 
 struct IBase;
 struct IBaseFactory;
@@ -28,7 +26,7 @@ struct Derived;
 
 }
 
-namespace Complex::Authoring::Composability::Open {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Composability::Open {
 
 struct IBase;
 struct IBaseFactory;
@@ -39,7 +37,7 @@ struct Derived;
 
 }
 
-namespace Complex::Authoring::Factory {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Factory {
 
 struct ISimple;
 struct ISimpleFactory;
@@ -52,14 +50,14 @@ struct StaticFactory;
 
 }
 
-namespace Complex::Authoring::Nested {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Nested {
 
 struct ISimple;
 struct Simple;
 
 }
 
-namespace impl {
+namespace winrt::impl {
 
 template <> struct category<Complex::Authoring::ILanguage>{ using type = interface_category; };
 template <> struct category<Complex::Authoring::ISimple>{ using type = interface_category; };
@@ -336,7 +334,7 @@ template <> struct abi<Complex::Authoring::Nested::ISimple>{ struct type : ::IIn
 
 }
 
-namespace Complex::Authoring {
+WINRT_EXPORT namespace winrt::Complex::Authoring {
 
 struct ILanguage :
     Windows::Foundation::IInspectable,
@@ -368,7 +366,7 @@ struct IStructByRef :
 
 }
 
-namespace Complex::Authoring::Composability::Closed {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Composability::Closed {
 
 struct IBase :
     Windows::Foundation::IInspectable,
@@ -393,7 +391,7 @@ struct IDerived :
 
 }
 
-namespace Complex::Authoring::Composability::Open {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Composability::Open {
 
 struct IBase :
     Windows::Foundation::IInspectable,
@@ -425,7 +423,7 @@ struct IDerivedFactory :
 
 }
 
-namespace Complex::Authoring::Factory {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Factory {
 
 struct ISimple :
     Windows::Foundation::IInspectable,
@@ -457,7 +455,7 @@ struct IStaticFactory :
 
 }
 
-namespace Complex::Authoring::Nested {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Nested {
 
 struct ISimple :
     Windows::Foundation::IInspectable,
@@ -468,7 +466,7 @@ struct ISimple :
 
 }
 
-namespace Complex::Authoring {
+WINRT_EXPORT namespace winrt::Complex::Authoring {
 
 struct Language :
     Complex::Authoring::ILanguage
@@ -499,7 +497,7 @@ struct StructByRef :
 
 }
 
-namespace Complex::Authoring::Composability::Closed {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Composability::Closed {
 
 struct Base :
     Complex::Authoring::Composability::Closed::IBase
@@ -517,7 +515,7 @@ struct Derived :
 
 }
 
-namespace Complex::Authoring::Composability::Open {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Composability::Open {
 
 struct Base :
     Complex::Authoring::Composability::Open::IBase
@@ -536,7 +534,7 @@ struct Derived :
 
 }
 
-namespace Complex::Authoring::Factory {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Factory {
 
 struct Simple :
     Complex::Authoring::Factory::ISimple
@@ -566,7 +564,7 @@ struct StaticFactory
 
 }
 
-namespace Complex::Authoring::Nested {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Nested {
 
 struct Simple :
     Complex::Authoring::Nested::ISimple
@@ -577,7 +575,7 @@ struct Simple :
 
 }
 
-namespace impl {
+namespace winrt::impl {
 
 template <typename D> hstring consume_Complex_Authoring_ILanguage<D>::Français() const
 {
@@ -938,7 +936,7 @@ struct produce<D, Complex::Authoring::Nested::ISimple> : produce_base<D, Complex
 
 }
 
-namespace Complex::Authoring {
+WINRT_EXPORT namespace winrt::Complex::Authoring {
 
 inline Language::Language() :
     Language(activate_instance<Language>())
@@ -959,11 +957,11 @@ inline StructByRef::StructByRef() :
 
 }
 
-namespace Complex::Authoring::Composability::Closed {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Composability::Closed {
 
 }
 
-namespace Complex::Authoring::Composability::Open {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Composability::Open {
 
 inline Derived::Derived()
 {
@@ -1001,7 +999,7 @@ protected:
 
 }
 
-namespace Complex::Authoring::Factory {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Factory {
 
 inline Simple::Simple() :
     Simple(activate_instance<Simple>())
@@ -1023,7 +1021,7 @@ inline void StaticFactory::StaticMethod()
 
 }
 
-namespace Complex::Authoring::Nested {
+WINRT_EXPORT namespace winrt::Complex::Authoring::Nested {
 
 inline Simple::Simple() :
     Simple(activate_instance<Simple>())
@@ -1031,9 +1029,7 @@ inline Simple::Simple() :
 
 }
 
-}
-
-namespace std {
+WINRT_EXPORT namespace std {
 
 template<> struct hash<winrt::Complex::Authoring::ILanguage> : 
     winrt::impl::impl_hash_unknown<winrt::Complex::Authoring::ILanguage> {};

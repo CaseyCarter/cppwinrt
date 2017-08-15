@@ -4,9 +4,7 @@
 
 #include "module.h"
 
-namespace winrt {
-
-namespace Complex::Authoring::Composability::Open::implementation {
+namespace winrt::Complex::Authoring::Composability::Open::implementation {
 
 template <typename D, typename ... I>
 struct Base_base : impl::module_lock, implements<D, Complex::Authoring::Composability::Open::IBase, composable, I ...>
@@ -28,7 +26,7 @@ struct Base_base : impl::module_lock, implements<D, Complex::Authoring::Composab
 
 }
 
-namespace Complex::Authoring::Composability::Open::factory_implementation {
+namespace winrt::Complex::Authoring::Composability::Open::factory_implementation {
 
 template <typename D, typename T, typename ... I>
 struct BaseT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::Composability::Open::IBaseFactory, I ...>
@@ -48,8 +46,6 @@ struct BaseT : impl::module_lock, implements<D, Windows::Foundation::IActivation
         return impl::composable_factory<T>::template CreateInstance<Complex::Authoring::Composability::Open::IBase>(outer, inner);
     }
 };
-
-}
 
 }
 

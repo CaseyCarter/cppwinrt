@@ -4,9 +4,7 @@
 
 #include "module.h"
 
-namespace winrt {
-
-namespace Complex::Authoring::Factory::factory_implementation {
+namespace winrt::Complex::Authoring::Factory::factory_implementation {
 
 template <typename D, typename T, typename ... I>
 struct StaticFactoryT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::Factory::IStaticFactory, I ...>
@@ -26,7 +24,5 @@ struct StaticFactoryT : impl::module_lock, implements<D, Windows::Foundation::IA
         T::StaticMethod();
     }
 };
-
-}
 
 }

@@ -4,9 +4,7 @@
 
 #include "module.h"
 
-namespace winrt {
-
-namespace Composable::Base::implementation {
+namespace winrt::Composable::Base::implementation {
 
 template <typename D, typename ... I>
 struct Root_base : impl::module_lock, implements<D, Composable::Base::IRoot, Composable::Base::IRootOverrides, composable, I ...>
@@ -31,7 +29,7 @@ protected:
 
 }
 
-namespace Composable::Base::factory_implementation {
+namespace winrt::Composable::Base::factory_implementation {
 
 template <typename D, typename T, typename ... I>
 struct RootT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Composable::Base::IRootFactory, I ...>
@@ -51,8 +49,6 @@ struct RootT : impl::module_lock, implements<D, Windows::Foundation::IActivation
         return impl::composable_factory<T>::template CreateInstance<Composable::Base::IRoot>(outer, inner);
     }
 };
-
-}
 
 }
 

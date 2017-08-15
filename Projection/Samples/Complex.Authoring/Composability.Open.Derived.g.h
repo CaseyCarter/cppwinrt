@@ -5,9 +5,7 @@
 #include "module.h"
 #include "Composability.Open.Base.h"
 
-namespace winrt {
-
-namespace Complex::Authoring::Composability::Open::implementation {
+namespace winrt::Complex::Authoring::Composability::Open::implementation {
 
 template <typename D, typename ... I>
 struct Derived_base : implements<D, Complex::Authoring::Composability::Open::implementation::Base, Complex::Authoring::Composability::Open::IDerived, composable, I ...>
@@ -29,7 +27,7 @@ struct Derived_base : implements<D, Complex::Authoring::Composability::Open::imp
 
 }
 
-namespace Complex::Authoring::Composability::Open::factory_implementation {
+namespace winrt::Complex::Authoring::Composability::Open::factory_implementation {
 
 template <typename D, typename T, typename ... I>
 struct DerivedT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::Composability::Open::IDerivedFactory, I ...>
@@ -49,8 +47,6 @@ struct DerivedT : impl::module_lock, implements<D, Windows::Foundation::IActivat
         return impl::composable_factory<T>::template CreateInstance<Complex::Authoring::Composability::Open::IDerived>(outer, inner);
     }
 };
-
-}
 
 }
 

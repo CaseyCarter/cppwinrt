@@ -4,9 +4,7 @@
 
 #include "module.h"
 
-namespace winrt {
-
-namespace Complex::Authoring::implementation {
+namespace winrt::Complex::Authoring::implementation {
 
 template <typename D, typename ... I>
 struct Language_base : impl::module_lock, implements<D, Complex::Authoring::ILanguage, I ...>
@@ -28,7 +26,7 @@ struct Language_base : impl::module_lock, implements<D, Complex::Authoring::ILan
 
 }
 
-namespace Complex::Authoring::factory_implementation {
+namespace winrt::Complex::Authoring::factory_implementation {
 
 template <typename D, typename T, typename ... I>
 struct LanguageT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
@@ -43,8 +41,6 @@ struct LanguageT : impl::module_lock, implements<D, Windows::Foundation::IActiva
         return make<T>();
     }
 };
-
-}
 
 }
 

@@ -81,10 +81,7 @@ namespace winrt::impl
 
     template <typename T>
     constexpr GUID guid_v = guid<default_interface_t<T>>::value;
-}
 
-namespace winrt::impl
-{
     template <typename T, typename Enable = void>
     struct accessors
     {
