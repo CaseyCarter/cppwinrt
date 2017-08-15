@@ -372,7 +372,7 @@ namespace winrt::impl
 
         HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept override
         {
-            if (id == guid_v<IWeakReferenceSource>)
+            if (id == guid_of<IWeakReferenceSource>())
             {
                 *object = static_cast<IWeakReferenceSource*>(this);
                 that()->increment_strong();
@@ -419,7 +419,7 @@ namespace winrt::impl
 
         HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept override
         {
-            if (id == guid_v<IWeakReference> || id == guid_v<Windows::Foundation::IUnknown>)
+            if (id == guid_of<IWeakReference>() || id == guid_of<Windows::Foundation::IUnknown>())
             {
                 *object = static_cast<IWeakReference*>(this);
                 AddRef();
@@ -428,14 +428,14 @@ namespace winrt::impl
 
             if (Agile)
             {
-                if (id == guid_v<IAgileObject>)
+                if (id == guid_of<IAgileObject>())
                 {
                     *object = static_cast<::IUnknown*>(this);
                     AddRef();
                     return S_OK;
                 }
 
-                if (id == guid_v<IMarshal>)
+                if (id == guid_of<IMarshal>())
                 {
                     *object = new (std::nothrow) free_threaded_marshaler(this);
                     return *object ? S_OK : E_OUTOFMEMORY;
@@ -689,7 +689,7 @@ namespace winrt::impl
 
         HRESULT __stdcall NonDelegatingQueryInterface(const GUID& id, void** object) noexcept
         {
-            if (id == impl::guid_v<Windows::Foundation::IInspectable> || id == impl::guid_v<Windows::Foundation::IInspectable>)
+            if (id == impl::guid_of<Windows::Foundation::IInspectable>() || id == impl::guid_of<Windows::Foundation::IInspectable>())
             {
                 ::IInspectable* result = to_abi<impl::INonDelegatingInspectable>(this);
                 NonDelegatingAddRef();
@@ -807,14 +807,14 @@ namespace winrt::impl
 
             if (is_agile::value)
             {
-                if (id == guid_v<IAgileObject>)
+                if (id == guid_of<IAgileObject>())
                 {
                     *object = get_unknown();
                     AddRef();
                     return S_OK;
                 }
 
-                if (id == guid_v<IMarshal>)
+                if (id == guid_of<IMarshal>())
                 {
                     *object = new (std::nothrow) free_threaded_marshaler(get_unknown());
                     return *object ? S_OK : E_OUTOFMEMORY;
@@ -1046,7 +1046,7 @@ WINRT_EXPORT namespace winrt
         template <typename First, typename ... Rest>
         void copy_guids(GUID* ids, std::enable_if_t<!impl::is_cloaked_v<First>>* = nullptr) const noexcept
         {
-            *ids++ = impl::guid_v<First>;
+            *ids++ = impl::guid_of<First>();
             copy_guids<Rest ...>(ids);
         }
 
@@ -1065,7 +1065,7 @@ WINRT_EXPORT namespace winrt
         template <typename First, typename ... Rest>
         void* find_interface(GUID const& id, std::enable_if_t<!impl::is_marker_v<First> && !impl::is_implements_v<First>>* = nullptr) const noexcept
         {
-            if (id == impl::guid_v<First>)
+            if (id == impl::guid_of<First>())
             {
                 return to_abi<First>(this);
             }

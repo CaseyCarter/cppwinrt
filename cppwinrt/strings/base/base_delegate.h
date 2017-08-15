@@ -14,14 +14,14 @@ namespace winrt::impl
 
         HRESULT __stdcall QueryInterface(GUID const& id, void** result) noexcept final
         {
-            if (id == guid_v<T> || id == guid_v<Windows::Foundation::IUnknown> || id == guid_v<IAgileObject>)
+            if (id == guid_of<T>() || id == guid_of<Windows::Foundation::IUnknown>() || id == guid_of<IAgileObject>())
             {
                 *result = static_cast<winrt::abi_t<T>*>(this);
                 AddRef();
                 return S_OK;
             }
 
-            if (id == guid_v<IMarshal>)
+            if (id == guid_of<IMarshal>())
             {
                 *result = new (std::nothrow) free_threaded_marshaler(this);
                 return *result ? S_OK : E_OUTOFMEMORY;

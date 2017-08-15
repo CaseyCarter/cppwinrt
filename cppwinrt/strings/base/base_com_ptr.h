@@ -18,7 +18,7 @@ namespace winrt::impl
     auto as(From* ptr)
     {
         std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, To>, To, com_ptr<To>> temp{ nullptr };
-        check_hresult(ptr->QueryInterface(guid_v<To>, reinterpret_cast<void**>(put_abi(temp))));
+        check_hresult(ptr->QueryInterface(guid_of<To>(), reinterpret_cast<void**>(put_abi(temp))));
         return temp;
     }
 
@@ -26,7 +26,7 @@ namespace winrt::impl
     auto try_as(From* ptr)
     {
         std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, To>, To, com_ptr<To>> temp{ nullptr };
-        ptr->QueryInterface(guid_v<To>, reinterpret_cast<void**>(put_abi(temp)));
+        ptr->QueryInterface(guid_of<To>(), reinterpret_cast<void**>(put_abi(temp)));
         return temp;
     }
 

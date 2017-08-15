@@ -39,7 +39,7 @@ TEST_CASE("implements_nested")
 
         Windows::Foundation::IInspectable inspect = *obj;
         com_array<GUID> actual_iids = Windows::Foundation::GetIids(inspect);
-        com_array<GUID> expected_iids{ impl::guid_v<Windows::Foundation::IClosable>, impl::guid_v<Windows::Foundation::IStringable> };
+        com_array<GUID> expected_iids{ impl::guid_of<Windows::Foundation::IClosable>(), impl::guid_of<Windows::Foundation::IStringable>() };
 
         auto guid_compare = [](GUID const& lhs, GUID const& rhs)
         {

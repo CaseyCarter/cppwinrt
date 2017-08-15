@@ -34,7 +34,7 @@ namespace winrt::impl
         param::hstring classId(string_data(impl::name_v<Class>));
 
         Interface factory;
-        check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), guid_v<Interface>, reinterpret_cast<void**>(put_abi(factory))));
+        check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), guid_of<Interface>(), reinterpret_cast<void**>(put_abi(factory))));
         return factory;
     }
 

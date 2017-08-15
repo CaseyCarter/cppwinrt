@@ -275,12 +275,12 @@ namespace winrt::impl
     template <typename T>
     struct category_signature<interface_category, T>
     {
-        constexpr static auto data{ guid_to_string(guid_v<T>) };
+        constexpr static auto data{ guid_to_string(guid_of<T>()) };
     };
 
     template <typename T>
     struct category_signature<delegate_category, T>
     {
-        constexpr static auto data{ "delegate(" + guid_to_string(guid_v<T>) + ")" };
+        constexpr static auto data{ "delegate(" + guid_to_string(guid_of<T>()) + ")" };
     };
 }

@@ -30,13 +30,13 @@ namespace
     constexpr GUID ireference_vector4   { 0xa5e843c9, 0xed20, 0x5339,{ 0x8f, 0x8d, 0x9f, 0xe4, 0x04, 0xcf, 0x36, 0x54 } };
 }
 
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::float2>>, ireference_vector2));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::float3>>, ireference_vector3));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::float4>>, ireference_vector4));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::float3x2>>, ireference_matrix3x2));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::float4x4>>, ireference_matrix4x4));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::plane>>, ireference_plane));
-static_assert(guid_equal(impl::guid_v<IReference<Numerics::quaternion>>, ireference_quaternion));
+static_assert(guid_equal(impl::guid_of<IReference<Numerics::float2>>(), ireference_vector2));
+static_assert(guid_equal(impl::guid_of<IReference<Numerics::float3>>(), ireference_vector3));
+static_assert(guid_equal(impl::guid_of<IReference<Numerics::float4>>(), ireference_vector4));
+static_assert(guid_equal(impl::guid_of<IReference<Numerics::float3x2>>(), ireference_matrix3x2));
+static_assert(guid_equal(impl::guid_of<IReference<Numerics::float4x4>>(), ireference_matrix4x4));
+static_assert(guid_equal(impl::guid_of<IReference<Numerics::plane>>(), ireference_plane));
+static_assert(guid_equal(impl::guid_of<IReference<Numerics::quaternion>>(), ireference_quaternion));
 
 struct my_struct
 {

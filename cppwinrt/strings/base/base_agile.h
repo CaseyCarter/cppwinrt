@@ -18,7 +18,7 @@ WINRT_EXPORT namespace winrt
 #endif
 
             check_hresult(RoGetAgileReference(AGILEREFERENCE_DEFAULT,
-                impl::guid_v<T>,
+                impl::guid_of<T>(),
                 winrt::get_abi(object),
                 put_abi(m_ref)));
         }

@@ -114,5 +114,5 @@ foreach($pair in $types)
     $success = [Guid]::TryParse($pair[1], [ref]$guid)
     
 
-    ('static_assert(compare(' + $guid.ToString('X') + ', winrt::impl::guid_v<' + $pair[0] + '>));') | out-file -append $filename
+    ('static_assert(compare(' + $guid.ToString('X') + ', winrt::impl::guid_of<' + $pair[0] + '>()));') | out-file -append $filename
 }

@@ -10,7 +10,7 @@ namespace winrt::impl
 
         HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept final
         {
-            if (id == guid_v<::IMarshal>)
+            if (id == guid_of<::IMarshal>())
             {
                 *object = static_cast<::IMarshal*>(this);
                 AddRef();
