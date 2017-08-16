@@ -2,6 +2,7 @@
 #include <inspectable.h>
 #include <restrictederrorinfo.h>
 #include <winstring.h>
+#include <ctxtcall.h>
 
 #include <algorithm>
 #include <array>
@@ -12,6 +13,7 @@
 #include <map>
 #include <memory>
 #include <new>
+#include <optional>
 #include <string>
 #include <string_view>
 #include <stdexcept>
@@ -20,12 +22,7 @@
 #include <utility>
 #include <unordered_map>
 #include <vector>
-
-#ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
-#define WINRT_ASYNC
-#include <ctxtcall.h>
-#include <experimental/resumable>
-#endif
+#include <experimental/coroutine>
 
 extern "C"
 {

@@ -7,76 +7,83 @@ namespace cppwinrt
     {
         struct promise_type
         {
-            T const* m_current{ nullptr };
-            std::optional<std::exception_ptr> m_exception;
+            std::variant<T const*, std::exception_ptr> value;
 
             promise_type& get_return_object() noexcept
             {
                 return *this;
             }
 
-            bool initial_suspend() noexcept
+            std::experimental::suspend_always initial_suspend() const noexcept
             {
-                return true;
+                return {};
             }
 
-            bool final_suspend() noexcept
+            std::experimental::suspend_always final_suspend() const noexcept
             {
-                return true;
+                return {};
             }
 
-            void yield_value(T const& value) noexcept
+            std::experimental::suspend_always yield_value(T const& other) noexcept
             {
-                m_current = std::addressof(value);
+                value = std::addressof(other);
+                return {};
+            }
+
+            void return_void() const noexcept
+            {
             }
 
             template <typename Expression>
-            Expression&& await_transform(Expression&& expression) noexcept
+            Expression&& await_transform(Expression&& expression) const noexcept
             {
-                static_assert(false, "co_await is not supported in coroutines of type generator");
+                static_assert(sizeof(expression) == 0, "co_await is not supported in coroutines of type generator");
                 return std::forward<Expression>(expression);
             }
 
-            void set_exception(std::exception_ptr&& exception) noexcept
+            void unhandled_exception() noexcept
             {
-                m_exception = std::move(exception);
+                value = std::current_exception();
             }
 
-            void rethrow_exception()
+            void rethrow_if_failed() const
             {
-                if (m_exception)
+                if (value.index() == 1)
                 {
-                    std::rethrow_exception(m_exception.value());
+                    std::rethrow_exception(std::get<1>(value));
                 }
             }
         };
+
+        using handle_type = std::experimental::coroutine_handle<promise_type>;
 
         struct iterator
         {
             using iterator_category = std::input_iterator_tag;
             using value_type = T;
             using difference_type = ptrdiff_t;
-            using pointer = T*;
-            using reference = T&;
+            using pointer = T const*;
+            using reference = T const&;
 
-            std::experimental::coroutine_handle<promise_type> m_coroutine;
+            handle_type m_handle;
 
-            iterator(std::nullptr_t) noexcept : m_coroutine(nullptr)
+            iterator(std::nullptr_t) noexcept : m_handle(nullptr)
             {
             }
 
-            iterator(std::experimental::coroutine_handle<promise_type> handle) noexcept : m_coroutine(handle)
+            iterator(handle_type handle_type) noexcept : m_handle(handle_type)
             {
             }
 
             iterator &operator++()
             {
-                m_coroutine.resume();
+                m_handle.resume();
 
-                if (m_coroutine.done())
+                if (m_handle.done())
                 {
-                    m_coroutine.promise().rethrow_exception();
-                    m_coroutine = nullptr;
+                    promise_type& promise = m_handle.promise();
+                    m_handle = nullptr;
+                    promise.rethrow_if_failed();
                 }
 
                 return *this;
@@ -86,7 +93,7 @@ namespace cppwinrt
 
             bool operator==(iterator const& other) const noexcept
             {
-                return m_coroutine == other.m_coroutine;
+                return m_handle == other.m_handle;
             }
 
             bool operator!=(iterator const& other) const noexcept
@@ -96,7 +103,7 @@ namespace cppwinrt
 
             T const& operator*() const noexcept
             {
-                return *m_coroutine.promise().m_current;
+                return *std::get<0>(m_handle.promise().value);
             }
 
             T const* operator->() const noexcept
@@ -107,18 +114,20 @@ namespace cppwinrt
 
         iterator begin()
         {
-            if (m_coroutine)
+            if (!m_handle)
             {
-                m_coroutine.resume();
-
-                if (m_coroutine.done())
-                {
-                    m_coroutine.promise().rethrow_exception();
-                    return nullptr;
-                }
+                return nullptr;
             }
 
-            return m_coroutine;
+            m_handle.resume();
+
+            if (m_handle.done())
+            {
+                m_handle.promise().rethrow_if_failed();
+                return nullptr;
+            }
+
+            return m_handle;
         }
 
         iterator end() noexcept
@@ -126,8 +135,7 @@ namespace cppwinrt
             return nullptr;
         }
 
-        explicit generator(promise_type& promise) noexcept :
-            m_coroutine(std::experimental::coroutine_handle<promise_type>::from_promise(promise))
+        generator(promise_type& promise) noexcept : m_handle(handle_type::from_promise(promise))
         {
         }
 
@@ -135,17 +143,17 @@ namespace cppwinrt
         generator(generator const&) = delete;
         generator &operator=(generator const&) = delete;
 
-        generator(generator&& other) noexcept : m_coroutine(other.m_coroutine)
+        generator(generator&& other) noexcept : m_handle(other.m_handle)
         {
-            other.m_coroutine = nullptr;
+            other.m_handle = nullptr;
         }
 
         generator &operator=(generator&& other) noexcept
         {
-            if (this != std::addressof(other))
+            if (this != &other)
             {
-                m_coroutine = other.m_coroutine;
-                other.m_coroutine = nullptr;
+                m_handle = other.m_handle;
+                other.m_handle = nullptr;
             }
 
             return *this;
@@ -153,14 +161,14 @@ namespace cppwinrt
 
         ~generator() noexcept
         {
-            if (m_coroutine)
+            if (m_handle)
             {
-                m_coroutine.destroy();
+                m_handle.destroy();
             }
         }
 
     private:
 
-        std::experimental::coroutine_handle<promise_type> m_coroutine{ nullptr };
+        handle_type m_handle{ nullptr };
     };
 }

@@ -98,7 +98,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>strings\base</AdditionalIncludeDirectories>
-      <AdditionalOptions>/permissive- /await</AdditionalOptions>
+      <AdditionalOptions>/permissive-</AdditionalOptions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -115,7 +115,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>strings\base</AdditionalIncludeDirectories>
-      <AdditionalOptions>/permissive- /await</AdditionalOptions>
+      <AdditionalOptions>/permissive-</AdditionalOptions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -134,7 +134,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>strings\base</AdditionalIncludeDirectories>
-      <AdditionalOptions>/permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
+      <AdditionalOptions>/permissive- /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <LanguageStandard>stdcpplatest</LanguageStandard>
@@ -155,7 +155,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>strings\base</AdditionalIncludeDirectories>
-      <AdditionalOptions>/permissive- /await /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
+      <AdditionalOptions>/permissive- /d1ReturnUdtEHInline /d2ReturnUdtEHInline</AdditionalOptions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <LanguageStandard>stdcpplatest</LanguageStandard>

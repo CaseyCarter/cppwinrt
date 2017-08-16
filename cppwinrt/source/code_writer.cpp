@@ -2406,8 +2406,8 @@ namespace cppwinrt
         out.write(strings::base_string_hstring);
         out.write(strings::base_string_input);
         out.write(strings::base_string_operators);
-        out.write(strings::base_constexpr_guid);
         out.write(strings::base_constexpr_sha1);
+        out.write(strings::base_constexpr_guid);
         out.write(strings::base_constexpr_traits);
         out.write(strings::base_error);
         out.write(strings::base_lock);
@@ -2444,14 +2444,11 @@ namespace cppwinrt
         out.write(strings::base_await_produce);
 
         out.write(strings::base_std_hash);
-
-        out.write("\n#ifdef WINRT_ASYNC\n");
         out.write(strings::base_std_fire_and_forget);
         out.write(strings::base_std_async_action);
         out.write(strings::base_std_async_action_with_progress);
         out.write(strings::base_std_async_operation);
         out.write(strings::base_std_async_operation_with_progress);
-        out.write("\n#endif\n");
 
         out.write(strings::base_natvis);
 

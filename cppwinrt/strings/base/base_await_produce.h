@@ -1,6 +1,4 @@
 
-#ifdef WINRT_ASYNC
-
 WINRT_EXPORT namespace winrt
 {
     struct resume_background
@@ -301,10 +299,12 @@ WINRT_EXPORT namespace winrt
         impl::handle<io_traits> m_io;
     };
 
+#ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
     inline auto operator co_await(Windows::Foundation::TimeSpan duration)
     {
         return resume_after(duration);
     }
+#endif
 
     struct get_progress_token_t {};
     constexpr get_progress_token_t get_progress_token{};
@@ -321,14 +321,6 @@ namespace winrt::impl
     struct promise_base : implements<Derived, AsyncInterface, Windows::Foundation::IAsyncInfo>
     {
         using AsyncStatus = Windows::Foundation::AsyncStatus;
-
-        ~promise_base() noexcept
-        {
-            if (m_status == AsyncStatus::Error || m_status == AsyncStatus::Canceled)
-            {
-                reinterpret_cast<std::exception_ptr*>(&m_exception)->~exception_ptr();
-            }
-        }
 
         unsigned long __stdcall Release() noexcept
         {
@@ -394,12 +386,7 @@ namespace winrt::impl
             try
             {
                 lock_guard const guard(m_lock);
-
-                if (m_status == AsyncStatus::Error)
-                {
-                    rethrow_exception(*reinterpret_cast<std::exception_ptr*>(&m_exception));
-                }
-
+                rethrow_if_failed();
                 return S_OK;
             }
             catch (...)
@@ -469,7 +456,7 @@ namespace winrt::impl
             return{ this };
         }
 
-        void set_exception(std::exception_ptr&& exception)
+        void unhandled_exception() noexcept
         {
             CompletedHandler handler;
             AsyncStatus status;
@@ -477,10 +464,11 @@ namespace winrt::impl
             {
                 lock_guard const guard(m_lock);
                 WINRT_ASSERT(m_status == AsyncStatus::Started || m_status == AsyncStatus::Canceled);
+                m_exception = std::current_exception();
 
                 try
                 {
-                    rethrow_exception(exception);
+                    std::rethrow_exception(m_exception.value());
                 }
                 catch (winrt::hresult_canceled const&)
                 {
@@ -491,7 +479,6 @@ namespace winrt::impl
                     m_status = AsyncStatus::Error;
                 }
 
-                new (&m_exception) std::exception_ptr(std::move(exception));
                 handler = std::move(m_completed);
                 status = m_status;
             }
@@ -504,7 +491,15 @@ namespace winrt::impl
 
     protected:
 
-        std::aligned_union_t<0, std::exception_ptr> m_exception;
+        void rethrow_if_failed() const
+        {
+            if (this->m_status == AsyncStatus::Error || this->m_status == AsyncStatus::Canceled)
+            {
+                std::rethrow_exception(m_exception.value());
+            }
+        }
+
+        std::optional<std::exception_ptr> m_exception;
         lock m_lock;
         CompletedHandler m_completed;
         AsyncStatus m_status{ AsyncStatus::Started };
@@ -575,5 +570,3 @@ namespace winrt::impl
         Promise* m_promise;
     };
 }
-
-#endif

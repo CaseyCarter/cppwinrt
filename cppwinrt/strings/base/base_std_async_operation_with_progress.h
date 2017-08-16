@@ -31,11 +31,7 @@ WINRT_EXPORT namespace std::experimental
                     return m_result;
                 }
 
-                if (this->m_status == AsyncStatus::Error || this->m_status == AsyncStatus::Canceled)
-                {
-                    rethrow_exception(*reinterpret_cast<exception_ptr*>(&this->m_exception));
-                }
-
+                this->rethrow_if_failed();
                 WINRT_ASSERT(this->m_status == AsyncStatus::Started);
                 throw winrt::hresult_illegal_method_call();
             }
@@ -56,7 +52,7 @@ WINRT_EXPORT namespace std::experimental
                     else
                     {
                         WINRT_ASSERT(this->m_status == AsyncStatus::Canceled);
-                        new (&this->m_exception) exception_ptr(make_exception_ptr(winrt::hresult_canceled()));
+                        this->m_exception = make_exception_ptr(winrt::hresult_canceled());
                     }
 
                     handler = std::move(this->m_completed);

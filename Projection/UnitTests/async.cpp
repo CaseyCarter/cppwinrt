@@ -789,7 +789,7 @@ TEST_CASE("async, Cancel_IAsyncAction")
     REQUIRE(WaitForSingleObject(event.get(), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
-    REQUIRE(async.ErrorCode() == S_OK);
+    REQUIRE(async.ErrorCode() == HRESULT_FROM_WIN32(ERROR_CANCELLED));
 
     bool completed = false;
     bool objectMatches = false;
@@ -830,7 +830,7 @@ TEST_CASE("async, Cancel_IAsyncAction, 2")
     REQUIRE(WaitForSingleObject(event.get(), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
-    REQUIRE(async.ErrorCode() == S_OK);
+    REQUIRE(async.ErrorCode() == HRESULT_FROM_WIN32(ERROR_CANCELLED));
 
     REQUIRE(completed);
     REQUIRE(objectMatches);
@@ -849,7 +849,7 @@ TEST_CASE("async, Cancel_IAsyncActionWithProgress")
     REQUIRE(WaitForSingleObject(event.get(), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
-    REQUIRE(async.ErrorCode() == S_OK);
+    REQUIRE(async.ErrorCode() == HRESULT_FROM_WIN32(ERROR_CANCELLED));
 
     bool completed = false;
     bool objectMatches = false;
@@ -890,7 +890,7 @@ TEST_CASE("async, Cancel_IAsyncActionWithProgress, 2")
     REQUIRE(WaitForSingleObject(event.get(), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
-    REQUIRE(async.ErrorCode() == S_OK);
+    REQUIRE(async.ErrorCode() == HRESULT_FROM_WIN32(ERROR_CANCELLED));
 
     REQUIRE(completed);
     REQUIRE(objectMatches);
@@ -909,7 +909,7 @@ TEST_CASE("async, Cancel_IAsyncOperation")
     REQUIRE(WaitForSingleObject(event.get(), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
-    REQUIRE(async.ErrorCode() == S_OK);
+    REQUIRE(async.ErrorCode() == HRESULT_FROM_WIN32(ERROR_CANCELLED));
 
     bool completed = false;
     bool objectMatches = false;
@@ -950,7 +950,7 @@ TEST_CASE("async, Cancel_IAsyncOperation, 2")
     REQUIRE(WaitForSingleObject(event.get(), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
-    REQUIRE(async.ErrorCode() == S_OK);
+    REQUIRE(async.ErrorCode() == HRESULT_FROM_WIN32(ERROR_CANCELLED));
 
     REQUIRE(completed);
     REQUIRE(objectMatches);
@@ -969,7 +969,7 @@ TEST_CASE("async, Cancel_IAsyncOperationWithProgress")
     REQUIRE(WaitForSingleObject(event.get(), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
-    REQUIRE(async.ErrorCode() == S_OK);
+    REQUIRE(async.ErrorCode() == HRESULT_FROM_WIN32(ERROR_CANCELLED));
 
     bool completed = false;
     bool objectMatches = false;
@@ -1010,7 +1010,7 @@ TEST_CASE("async, Cancel_IAsyncOperationWithProgress, 2")
     REQUIRE(WaitForSingleObject(event.get(), INFINITE) == WAIT_OBJECT_0); // wait for async to be canceled
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
-    REQUIRE(async.ErrorCode() == S_OK);
+    REQUIRE(async.ErrorCode() == HRESULT_FROM_WIN32(ERROR_CANCELLED));
 
     REQUIRE(completed);
     REQUIRE(objectMatches);

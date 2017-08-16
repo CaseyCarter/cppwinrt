@@ -180,16 +180,6 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
     protected:
 
-        void impl_copy(::IUnknown* other) noexcept
-        {
-            if (m_ptr != other)
-            {
-                impl_release();
-                m_ptr = other;
-                impl_addref();
-            }
-        }
-
         void impl_copy(IUnknown const& other) noexcept
         {
             if (this != &other)

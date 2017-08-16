@@ -15,5 +15,6 @@
 #include <filesystem>
 #include <optional>
 #include <set>
+#include <variant>
 
 #include "generator.h"

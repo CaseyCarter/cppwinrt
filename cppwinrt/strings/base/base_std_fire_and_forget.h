@@ -24,6 +24,10 @@ WINRT_EXPORT namespace std::experimental
             {
                 return{};
             }
+
+            void unhandled_exception() noexcept
+            {
+            }
         };
     };
 }

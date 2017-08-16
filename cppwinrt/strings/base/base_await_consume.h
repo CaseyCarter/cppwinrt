@@ -1,6 +1,4 @@
 
-#ifdef WINRT_ASYNC
-
 namespace winrt::impl
 {
     template <typename Async>
@@ -40,6 +38,7 @@ namespace winrt::impl
     };
 }
 
+#ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
 WINRT_EXPORT namespace winrt::Windows::Foundation
 {
     inline impl::await_adapter<IAsyncAction> operator co_await(IAsyncAction const& async)
@@ -65,5 +64,4 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         return{ async };
     }
 }
-
 #endif

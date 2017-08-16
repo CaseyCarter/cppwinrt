@@ -12,8 +12,8 @@
 #include "base_string_hstring.h"
 #include "base_string_input.h"
 #include "base_string_operators.h"
-#include "base_constexpr_guid.h"
 #include "base_constexpr_sha1.h"
+#include "base_constexpr_guid.h"
 #include "base_constexpr_traits.h"
 #include "base_error.h"
 #include "base_lock.h"
@@ -50,13 +50,8 @@
 #include "base_await_produce.h"
 
 #include "base_std_hash.h"
-
-#ifdef WINRT_ASYNC
-
 #include "base_std_fire_and_forget.h"
 #include "base_std_async_action.h"
 #include "base_std_async_action_with_progress.h"
 #include "base_std_async_operation.h"
 #include "base_std_async_operation_with_progress.h"
-
-#endif
