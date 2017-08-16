@@ -45,9 +45,9 @@ struct LanguageT : impl::module_lock, implements<D, Windows::Foundation::IActiva
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_LANGUAGE_X_H) || __has_include("Language.x.h")
+#if defined(WINRT_FORCE_INCLUDE_LANGUAGE_XAML_G_H) || __has_include("Language.xaml.g.h")
 
-#include "Language.x.h"
+#include "Language.xaml.g.h"
 
 #else
 

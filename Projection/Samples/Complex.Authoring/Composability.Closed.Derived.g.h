@@ -28,9 +28,9 @@ struct Derived_base : implements<D, Complex::Authoring::Composability::Closed::i
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_DERIVED_X_H) || __has_include("Composability.Closed.Derived.x.h")
+#if defined(WINRT_FORCE_INCLUDE_DERIVED_XAML_G_H) || __has_include("Composability.Closed.Derived.xaml.g.h")
 
-#include "Composability.Closed.Derived.x.h"
+#include "Composability.Closed.Derived.xaml.g.h"
 
 #else
 

@@ -45,9 +45,9 @@ struct StructByRefT : impl::module_lock, implements<D, Windows::Foundation::IAct
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_STRUCTBYREF_X_H) || __has_include("StructByRef.x.h")
+#if defined(WINRT_FORCE_INCLUDE_STRUCTBYREF_XAML_G_H) || __has_include("StructByRef.xaml.g.h")
 
-#include "StructByRef.x.h"
+#include "StructByRef.xaml.g.h"
 
 #else
 

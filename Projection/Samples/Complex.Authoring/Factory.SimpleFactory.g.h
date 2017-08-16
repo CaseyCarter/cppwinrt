@@ -45,9 +45,9 @@ struct SimpleFactoryT : impl::module_lock, implements<D, Windows::Foundation::IA
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_SIMPLEFACTORY_X_H) || __has_include("Factory.SimpleFactory.x.h")
+#if defined(WINRT_FORCE_INCLUDE_SIMPLEFACTORY_XAML_G_H) || __has_include("Factory.SimpleFactory.xaml.g.h")
 
-#include "Factory.SimpleFactory.x.h"
+#include "Factory.SimpleFactory.xaml.g.h"
 
 #else
 

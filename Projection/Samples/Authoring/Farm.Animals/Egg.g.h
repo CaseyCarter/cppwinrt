@@ -50,9 +50,9 @@ struct EggT : impl::module_lock, implements<D, Windows::Foundation::IActivationF
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_EGG_X_H) || __has_include("Egg.x.h")
+#if defined(WINRT_FORCE_INCLUDE_EGG_XAML_G_H) || __has_include("Egg.xaml.g.h")
 
-#include "Egg.x.h"
+#include "Egg.xaml.g.h"
 
 #else
 

@@ -45,9 +45,9 @@ struct HenT : impl::module_lock, implements<D, Windows::Foundation::IActivationF
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_HEN_X_H) || __has_include("Hen.x.h")
+#if defined(WINRT_FORCE_INCLUDE_HEN_XAML_G_H) || __has_include("Hen.xaml.g.h")
 
-#include "Hen.x.h"
+#include "Hen.xaml.g.h"
 
 #else
 

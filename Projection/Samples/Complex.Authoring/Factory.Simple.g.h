@@ -45,9 +45,9 @@ struct SimpleT : impl::module_lock, implements<D, Windows::Foundation::IActivati
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_SIMPLE_X_H) || __has_include("Factory.Simple.x.h")
+#if defined(WINRT_FORCE_INCLUDE_SIMPLE_XAML_G_H) || __has_include("Factory.Simple.xaml.g.h")
 
-#include "Factory.Simple.x.h"
+#include "Factory.Simple.xaml.g.h"
 
 #else
 

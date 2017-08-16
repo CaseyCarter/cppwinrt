@@ -53,9 +53,9 @@ struct RootT : impl::module_lock, implements<D, Windows::Foundation::IActivation
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_ROOT_X_H) || __has_include("Root.x.h")
+#if defined(WINRT_FORCE_INCLUDE_ROOT_XAML_G_H) || __has_include("Root.xaml.g.h")
 
-#include "Root.x.h"
+#include "Root.xaml.g.h"
 
 #else
 

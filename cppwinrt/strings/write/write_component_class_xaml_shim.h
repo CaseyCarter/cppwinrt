@@ -1,8 +1,8 @@
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_%_X_H) || __has_include("%.x.h")
+#if defined(WINRT_FORCE_INCLUDE_%_XAML_G_H) || __has_include("%.xaml.g.h")
 
-#include "%.x.h"
+#include "%.xaml.g.h"
 
 #else
 

@@ -51,9 +51,9 @@ struct DerivedT : impl::module_lock, implements<D, Windows::Foundation::IActivat
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_DERIVED_X_H) || __has_include("Composability.Open.Derived.x.h")
+#if defined(WINRT_FORCE_INCLUDE_DERIVED_XAML_G_H) || __has_include("Composability.Open.Derived.xaml.g.h")
 
-#include "Composability.Open.Derived.x.h"
+#include "Composability.Open.Derived.xaml.g.h"
 
 #else
 

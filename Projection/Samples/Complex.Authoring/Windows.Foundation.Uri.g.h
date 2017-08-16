@@ -65,9 +65,9 @@ struct UriT : impl::module_lock, implements<D, Windows::Foundation::IActivationF
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_URI_X_H) || __has_include("Windows.Foundation.Uri.x.h")
+#if defined(WINRT_FORCE_INCLUDE_URI_XAML_G_H) || __has_include("Windows.Foundation.Uri.xaml.g.h")
 
-#include "Windows.Foundation.Uri.x.h"
+#include "Windows.Foundation.Uri.xaml.g.h"
 
 #else
 

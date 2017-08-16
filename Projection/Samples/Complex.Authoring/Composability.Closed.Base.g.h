@@ -27,9 +27,9 @@ struct Base_base : impl::module_lock, implements<D, Complex::Authoring::Composab
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_BASE_X_H) || __has_include("Composability.Closed.Base.x.h")
+#if defined(WINRT_FORCE_INCLUDE_BASE_XAML_G_H) || __has_include("Composability.Closed.Base.xaml.g.h")
 
-#include "Composability.Closed.Base.x.h"
+#include "Composability.Closed.Base.xaml.g.h"
 
 #else
 
