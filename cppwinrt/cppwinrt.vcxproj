@@ -79,6 +79,7 @@
     <ClInclude Include="strings\base\base_string.h" />
     <ClInclude Include="strings\base\base_string_hstring.h" />
     <ClInclude Include="strings\base\base_string_operators.h" />
+    <ClInclude Include="strings\base\base_version.h" />
     <ClInclude Include="strings\base\base_warnings.h" />
     <ClInclude Include="strings\base\base_weak.h" />
     <ClInclude Include="strings\base\base_windows.h" />

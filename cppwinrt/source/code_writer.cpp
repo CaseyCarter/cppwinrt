@@ -2452,6 +2452,8 @@ namespace cppwinrt
 
         out.write(strings::base_natvis);
 
+        out.write(strings::base_version, CPPWINRT_VERSION_STRING);
+
         write_warning_pop(out);
     }
 
