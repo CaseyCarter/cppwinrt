@@ -115,7 +115,7 @@ namespace winrt::impl
 
     template <typename First, typename ... Rest>
     struct uncloaked_interfaces<First, Rest ...>
-        : std::integral_constant<uint32_t, uncloaked_interface_one<First>() + uncloaked_interfaces<Rest ...>()> {};
+        : std::integral_constant<uint32_t, uncloaked_interface_one<First>::value + uncloaked_interfaces<Rest ...>::value> {};
 
     template <typename T, typename = std::void_t<>>
     struct extract_interface
