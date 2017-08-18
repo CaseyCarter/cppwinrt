@@ -98,6 +98,11 @@ namespace winrt::impl
 
         return result.to_hstring();
     }
+
+    template <> struct guid<::ILanguageExceptionErrorInfo2>
+    {
+        static constexpr GUID value{ 0x5746E5C4,0x5B97,0x424C,{ 0xB6,0x20,0x28,0x22,0x91,0x57,0x34,0xDD } };
+    };
 }
 
 WINRT_EXPORT namespace winrt

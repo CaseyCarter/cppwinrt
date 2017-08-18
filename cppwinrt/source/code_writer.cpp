@@ -2064,18 +2064,21 @@ namespace cppwinrt
 
             for (meta::index_pair const& ns : index)
             {
-                output out;
+                if (ns.second.has_projected_types())
+                {
+                    output out;
 
-                out.write(strings::write_include_tests,
-                    ns.first,
-                    bind_output(write_include_test, ns.second));
+                    out.write(strings::write_include_tests,
+                        ns.first,
+                        bind_output(write_include_test, ns.second));
 
-                path p = settings::output;
-                p /= "tests";
-                p /= ns.first;
-                p += ".cpp";
+                    path p = settings::output;
+                    p /= "tests";
+                    p /= ns.first;
+                    p += ".cpp";
 
-                out.save_as(p);
+                    out.save_as(p);
+                }
             }
         }
 
@@ -2085,7 +2088,10 @@ namespace cppwinrt
 
             for (meta::index_pair const& ns : index)
             {
-                write_platform_include(out, ns.first, ".h");
+                if (ns.second.has_projected_types())
+                {
+                    write_platform_include(out, ns.first, ".h");
+                }
             }
         }
 

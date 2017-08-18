@@ -1,5 +1,5 @@
 
-struct %% :
+struct WINRT_EBO %% :
     Windows::Foundation::IInspectable,
     impl::consume_t<%>%
 {

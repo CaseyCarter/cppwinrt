@@ -275,7 +275,7 @@ namespace cppwinrt
                 }
             }
 
-            out.save_as(settings::output / "winrt\\module.ixx");
+            out.save_as(settings::output / "winrt\\winrt.ixx");
         }
     }
 

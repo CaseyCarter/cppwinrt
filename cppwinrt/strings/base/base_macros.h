@@ -29,11 +29,7 @@ void WINRT_TRACE(char const* const message, Args ... args) noexcept
 #define WINRT_EXPORT
 #endif
 
-#if defined(__clang__) || defined(__INTELLISENSE__)
-#define WINRT_EBO
-#else
 #define WINRT_EBO __declspec(empty_bases)
-#endif
 
 #ifdef _WIN64
 #define WINRT_64

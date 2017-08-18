@@ -14,15 +14,17 @@ WINRT_EXPORT namespace winrt
 
         void await_suspend(std::experimental::coroutine_handle<> handle) const
         {
-            auto callback = [](PTP_CALLBACK_INSTANCE, void* context)
-            {
-                std::experimental::coroutine_handle<>::from_address(context)();
-            };
-
             if (!TrySubmitThreadpoolCallback(callback, handle.address(), nullptr))
             {
                 throw_last_error();
             }
+        }
+
+    private:
+
+        static void __stdcall callback(PTP_CALLBACK_INSTANCE, void* context) noexcept
+        {
+            std::experimental::coroutine_handle<>::from_address(context)();
         }
     };
 
@@ -46,17 +48,16 @@ WINRT_EXPORT namespace winrt
         {
             ComCallData data = {};
             data.pUserDefined = handle.address();
-
-            auto callback = [](ComCallData* data)
-            {
-                std::experimental::coroutine_handle<>::from_address(data->pUserDefined)();
-                return S_OK;
-            };
-
             check_hresult(m_context->ContextCallback(callback, &data, IID_ICallbackWithNoReentrancyToApplicationSTA, 5, nullptr));
         }
 
     private:
+
+        static HRESULT __stdcall callback(ComCallData* data) noexcept
+        {
+            std::experimental::coroutine_handle<>::from_address(data->pUserDefined)();
+            return S_OK;
+        }
 
         com_ptr<IContextCallback> m_context;
     };
@@ -106,12 +107,12 @@ WINRT_EXPORT namespace winrt
     struct resume_on_signal
     {
         explicit resume_on_signal(HANDLE handle) noexcept :
-        m_handle(handle)
+            m_handle(handle)
         {}
 
         resume_on_signal(HANDLE handle, Windows::Foundation::TimeSpan timeout) noexcept :
-            m_handle(handle),
-            m_timeout(timeout)
+            m_timeout(timeout),
+            m_handle(handle)
         {}
 
         bool await_ready() const noexcept
@@ -530,7 +531,7 @@ namespace winrt::impl
 
         bool operator()() const noexcept
         {
-            return m_promise->Status() == AsyncStatus::Canceled;
+            return m_promise->Status() == Windows::Foundation::AsyncStatus::Canceled;
         }
 
     private:
