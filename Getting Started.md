@@ -68,12 +68,14 @@ are using one.
 > When you \#include "winrt/Windows.Foundation.h", you get the C++/WinRT
 > header file. This also allows you to include both files, if desired.
 
-Using the Visual Studio Update 3 C++ compiler
+Using the Visual Studio 2017 version 15.3 C++ compiler
 =============================================
 
-You need the C++ compiler from Visual Studio 2015 Update 3 or later to
-compile the C++/WinRT header files. You can determine the version of VS
-by going to Help – About Visual Studio.
+This version of the C++/WinRT library was developed and tested with 
+Visual Studio 2017 version 15.3.0.  It is recommended that you use 
+this version or later to compile the C++/WinRT header files.  
+Visual Studio displays its version in Help | About Microsoft Visual Studio.  
+It is reported by the compiler (cl.exe) as 19.11.25506.  
 
 ![](./media/image3.png)
 
@@ -82,18 +84,18 @@ Enabling the latest C++ standard language features
 
 The C++/WinRT library uses a number of the latest C++ standard language 
 features. By default, some of those features are not enabled in the Visual 
-Studio 2015 C++ compiler. You enable them by specifying the
+C++ compiler. You enable them by specifying the
 /await and /std:c++latest as additional command line options.
 
 ![](./media/image4.png)
 
-Use the Windows 10 Anniversary Update SDK
+Use the Windows 10 Creators Update SDK
 =========================================
 
-The C++/WinRT library requires at least version 10.0.14393.0 (Windows 10
-Anniversary Update) of the Windows 10 SDK. To set this in Visual Studio,
+The C++/WinRT library requires at least version 10.0.15063.0 (Windows 10
+Creators Update) of the Windows 10 SDK. To set this in Visual Studio,
 open the **Project Settings**, and set the **Target Platform Min.
-Version** to at least 10.0.14393.0.
+Version** to at least 10.0.15063.0.
 
 ![](./media/image2.png)
 
@@ -102,7 +104,7 @@ If you are not working in Visual Studio, set the **MinVersion** and
 
 ```XML
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.15063.0" MaxVersionTested="10.0.15063.0" />
   </Dependencies>
 ```
 Read the docs!
