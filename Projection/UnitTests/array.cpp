@@ -38,7 +38,7 @@ static std::future<IDataReader> CreateDataReader(std::initializer_list<byte> val
 //
 static std::future<SyndicationFeed> GetSyndicationFeed()
 {
-    Uri uri(L"https://blogs.msdn.microsoft.com/vcblog/feed/");
+    Uri uri(L"https://moderncpp.com/feed/");
     SyndicationClient client;
 
     return await client.RetrieveFeedAsync(uri);
