@@ -20,93 +20,129 @@ namespace cppwinrt
         }
     }
 
-    inline void add_winmds_from_sdk(std::vector<std::wstring>& winmd_specs, std::wstring const& version)
+    inline std::experimental::filesystem::path get_sdk_path()
+    {
+        registry_key key;
+
+        check_registry(RegOpenKeyEx(
+            HKEY_LOCAL_MACHINE,
+            L"SOFTWARE\\Microsoft\\Windows Kits\\Installed Roots",
+            0,
+            KEY_READ,
+            key.put()));
+
+        DWORD path_size = 0;
+
+        check_registry(RegQueryValueEx(
+            key.get(),
+            L"KitsRoot10",
+            nullptr,
+            nullptr,
+            nullptr,
+            &path_size));
+
+        std::wstring root((path_size / sizeof(wchar_t)) - 1, L'?');
+
+        check_registry(RegQueryValueEx(
+            key.get(),
+            L"KitsRoot10",
+            nullptr,
+            nullptr,
+            reinterpret_cast<BYTE*>(root.data()),
+            &path_size));
+
+        return root;
+    }
+
+    inline void add_winmds_from_xml(
+        std::vector<std::wstring>& winmd_specs,
+        std::wstring const& version,
+        std::experimental::filesystem::path const& sdk_path,
+        std::experimental::filesystem::path path)
+    {
+        winrt::com_ptr<IStream> stream;
+
+        winrt::check_hresult(SHCreateStreamOnFile(
+            path.c_str(),
+            STGM_READ, winrt::put_abi(stream)));
+
+        winrt::com_ptr<IXmlReader> reader;
+
+        winrt::check_hresult(CreateXmlReader(
+            __uuidof(IXmlReader),
+            reinterpret_cast<void**>(put_abi(reader)),
+            0));
+
+        winrt::check_hresult(reader->SetInput(get_abi(stream)));
+        XmlNodeType node_type = XmlNodeType_None;
+
+        while (S_OK == reader->Read(&node_type))
+        {
+            if (node_type != XmlNodeType_Element)
+            {
+                continue;
+            }
+
+            wchar_t const* value{ nullptr };
+            winrt::check_hresult(reader->GetLocalName(&value, nullptr));
+
+            if (0 != wcscmp(value, L"ApiContract"))
+            {
+                continue;
+            }
+
+            path = sdk_path;
+            path /= L"References";
+            path /= version;
+
+            winrt::check_hresult(reader->MoveToAttributeByName(L"name", nullptr));
+            winrt::check_hresult(reader->GetValue(&value, nullptr));
+            path /= value;
+
+            winrt::check_hresult(reader->MoveToAttributeByName(L"version", nullptr));
+            winrt::check_hresult(reader->GetValue(&value, nullptr));
+            path /= value;
+
+            winrt::check_hresult(reader->MoveToAttributeByName(L"name", nullptr));
+            winrt::check_hresult(reader->GetValue(&value, nullptr));
+            path /= value;
+
+            path += L".winmd";
+            winmd_specs.push_back(path);
+        }
+    }
+
+    inline void add_winmds_from_sdk(std::vector<std::wstring>& winmd_specs, std::wstring version)
     {
         try
         {
-            registry_key key;
+            std::experimental::filesystem::path const sdk_path = get_sdk_path();
+            bool const include_extensions = version.back() == L'+';
 
-            check_registry(RegOpenKeyEx(
-                HKEY_LOCAL_MACHINE,
-                L"SOFTWARE\\Microsoft\\Windows Kits\\Installed Roots",
-                0,
-                KEY_READ,
-                key.put()));
+            if (include_extensions)
+            {
+                version.pop_back();
+            }
 
-            DWORD path_size = 0;
-
-            check_registry(RegQueryValueEx(
-                key.get(),
-                L"KitsRoot10",
-                nullptr,
-                nullptr,
-                nullptr,
-                &path_size));
-
-            std::wstring root((path_size / sizeof(wchar_t)) - 1, L'?');
-
-            check_registry(RegQueryValueEx(
-                key.get(),
-                L"KitsRoot10",
-                nullptr,
-                nullptr,
-                reinterpret_cast<BYTE*>(root.data()),
-                &path_size));
-
-            std::experimental::filesystem::path path = root;
+            std::experimental::filesystem::path path = sdk_path;
             path /= L"Platforms\\UAP";
             path /= version;
             path /= L"Platform.xml";
 
-            winrt::com_ptr<IStream> stream;
+            add_winmds_from_xml(winmd_specs, version, sdk_path, path);
 
-            winrt::check_hresult(SHCreateStreamOnFile(
-                path.c_str(),
-                STGM_READ, winrt::put_abi(stream)));
-
-            winrt::com_ptr<IXmlReader> reader;
-
-            winrt::check_hresult(CreateXmlReader(
-                __uuidof(IXmlReader),
-                reinterpret_cast<void**>(put_abi(reader)),
-                0));
-
-            winrt::check_hresult(reader->SetInput(get_abi(stream)));
-            XmlNodeType node_type = XmlNodeType_None;
-
-            while (S_OK == reader->Read(&node_type))
+            if (!include_extensions)
             {
-                if (node_type != XmlNodeType_Element)
-                {
-                    continue;
-                }
+                return;
+            }
 
-                wchar_t const* value{ nullptr };
-                winrt::check_hresult(reader->GetLocalName(&value, nullptr));
+            for (std::experimental::filesystem::directory_entry const& item :
+                 std::experimental::filesystem::directory_iterator(sdk_path / L"Extension SDKs"))
+            {
+                path = item.path() / version;
+                path /= L"SDKManifest.xml";
 
-                if (0 != wcscmp(value, L"ApiContract"))
-                {
-                    continue;
-                }
-
-                path = root;
-                path /= L"References";
-                path /= version;
-
-                winrt::check_hresult(reader->MoveToAttributeByName(L"name", nullptr));
-                winrt::check_hresult(reader->GetValue(&value, nullptr));
-                path /= value;
-
-                winrt::check_hresult(reader->MoveToAttributeByName(L"version", nullptr));
-                winrt::check_hresult(reader->GetValue(&value, nullptr));
-                path /= value;
-
-                winrt::check_hresult(reader->MoveToAttributeByName(L"name", nullptr));
-                winrt::check_hresult(reader->GetValue(&value, nullptr));
-                path /= value;
-
-                path += L".winmd";
-                winmd_specs.push_back(path);
+                add_winmds_from_xml(winmd_specs, version, sdk_path, path);
             }
         }
         catch (winrt::hresult_error const& e)
