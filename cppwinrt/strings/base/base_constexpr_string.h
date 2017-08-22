@@ -164,7 +164,7 @@ namespace winrt::impl
     template <typename T, size_t N1, size_t N2>
     constexpr bool string_compare(T const (&left)[N1], T const (&right)[N2])
     {
-        if (N1 != N2)
+        if constexpr(N1 != N2)
         {
             return false;
         }

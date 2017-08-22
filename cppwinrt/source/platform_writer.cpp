@@ -200,6 +200,10 @@ namespace cppwinrt
                     output out;
                     write_logo(out);
                     write_platform_include(out, "base.h");
+                    if (settings::skip_base_headers)
+                    {
+                        write_version_assert(out);
+                    }
 
                     if (!starts_with(namespace_name, "Windows.Foundation"))
                     {

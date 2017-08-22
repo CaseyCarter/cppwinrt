@@ -2288,6 +2288,7 @@ namespace cppwinrt
 
         write_edit_warning_header(out);
         write_platform_include(out, "base.h");
+        write_version_assert(out);
 
         std::vector<std::reference_wrapper<const meta::index_pair>> unfiltered_index;
         std::vector<reference_writer> ref_writers;
@@ -3358,7 +3359,11 @@ void t()
         out.write(strings::write_natvis, bind_output(write_natvis_classes));
     }
 
-    // todo: generate as much WF/WFC code as possible (e.g., generics) from metadata.
+    void write_version_assert(output& out)
+    {
+        out.write(strings::write_version_assert, CPPWINRT_VERSION_STRING);
+    }
+
     void write_namespace_special(output& out, std::string const& namespace_name)
     {
         if (namespace_name == "Windows.Foundation")

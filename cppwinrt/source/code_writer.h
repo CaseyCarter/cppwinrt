@@ -59,4 +59,6 @@ namespace cppwinrt
         int ignored[] = { (out.write(include), 0) ... }; ignored;
         out.write("%\n", settings::brackets ? '>' : '\"');
     }
+
+    void write_version_assert(output& out);
 }

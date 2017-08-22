@@ -55,7 +55,9 @@ void WINRT_TRACE(char const* const message, Args ... args) noexcept
 #define _XM_NO_INTRINSICS_
 #endif
 
-// If this include fails it means that you're targeting an older platform version. Please use 10.0.14393.0 or later.
+#if !__has_include(<WindowsNumerics.impl.h>)
+static_assert(false, "Please target platform version 10.0.14393.0 or later.");
+#endif
 #include <WindowsNumerics.impl.h>
 
 #ifdef __clang__
