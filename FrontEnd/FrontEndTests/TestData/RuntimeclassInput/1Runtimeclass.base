@@ -1,5 +1,0 @@
-Modern::Test::Bar3|Modern::Test|Bar3||Modern::Test::IFoo2|0|
-Modern::Test::Bar4|Modern::Test|Bar4|1|Modern::Test::IFoo2|0|
-Modern::Test::Bar1|Modern::Test|Bar1||Modern::Test::IFoo2|1|
-Modern::Test::Bar2|Modern::Test|Bar2||Modern::Test::IFoo1|0|
-Modern::Test::BarDeprecated|Modern::Test|BarDeprecated||Modern::Test::IFoo2|0|Awesome deprecated text

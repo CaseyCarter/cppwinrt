@@ -1,9 +1,0 @@
-Modern::Test::Bar3|Modern::Test::IFoo2|1|0|0
-Modern::Test::Bar3|Modern.Test.IFoo3|0|1|0
-Modern::Test::Bar4|Modern::Test::IFoo2|1|0|0
-Modern::Test::Bar4|Modern.Test.IFoo4|0|1|1
-Modern::Test::Bar1|Modern::Test::IFoo1|0|0|0
-Modern::Test::Bar1|Modern::Test::IFoo2|1|0|0
-Modern::Test::Bar1|Modern::Test::IFoo0|0|0|0
-Modern::Test::Bar2|Modern::Test::IFoo1|1|0|0
-Modern::Test::Bar2|Modern::Test::IFoo2|0|0|0
