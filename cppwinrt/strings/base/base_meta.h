@@ -79,11 +79,22 @@ namespace winrt::impl
         static constexpr GUID value = __uuidof(T);
     };
 
+#ifdef __clang__
+    template <typename T>
+    constexpr GUID const guid_v = guid<default_interface_t<T>>::value;
+
+    template <typename T>
+    inline constexpr GUID const& guid_of() noexcept
+    {
+        return guid_v<T>;
+    }
+#else
     template <typename T>
     inline constexpr GUID const& guid_of() noexcept
     {
         return guid<default_interface_t<T>>::value;
     }
+#endif
 
     template <typename T, typename Enable = void>
     struct accessors
