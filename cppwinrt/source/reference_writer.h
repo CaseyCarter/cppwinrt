@@ -33,8 +33,13 @@ namespace cppwinrt
             write_includes(out, _required_namespaces, ext_h, rel_path);
             if (ext_h != ".h")
             {
-                write_platform_include(out, rel_path, _namespace_name, ext_h);
+                write_projection_include(out, rel_path, _namespace_name, ext_h);
             }
+        }
+
+        void write_struct_includes(output& out, std::string const & ext_h = ".h", std::string const & rel_path = "") const
+        {
+            write_includes(out, _struct_namespaces, ext_h, rel_path);
         }
 
         void write_parent_include(output& out) const
@@ -51,7 +56,7 @@ namespace cppwinrt
             {
                 return;
             }
-            write_platform_include(out, parent_namespace, ".h");
+            write_projection_include(out, parent_namespace, ".h");
         }
 
     private:
@@ -67,6 +72,8 @@ namespace cppwinrt
 
         std::set<std::string> _required_namespaces;
         std::map<std::string, std::set<std::string>> _required_forwards;
+
+        std::set<std::string> _struct_namespaces;
 
         void record()
         {
@@ -88,6 +95,7 @@ namespace cppwinrt
             for (meta::type const & type : get_projected_types(_namespace_types.delegates))
             {
                 _types_found = true;
+                
                 type.token.get_delegate(record_method_namespace);
             }
 
@@ -97,7 +105,25 @@ namespace cppwinrt
 
                 for (auto& field : type.token.get_fields(record_method_namespace))
                 {
-                    unreferenced_parameter(field);
+                    // Record namespaces of struct field types
+                    auto category = field.type.get_category();
+                    if (category == ELEMENT_TYPE_VALUETYPE)
+                    {
+                        meta::token field_token = field.type.get_token();
+                        std::string field_token_name = field_token.get_name();
+                        if (!meta::is_foundation_type(field_token_name))
+                        {
+                            meta::type_category resolved_category{};
+                            meta::find_type(field_token_name, &resolved_category);
+                            if (resolved_category == meta::type_category::struct_v)
+                            {
+                                std::string const token_name = field_token.get_definition().get_name();
+                                size_t ns_end = token_name.find_last_of('.');
+                                std::string token_namespace = token_name.substr(0, ns_end);
+                                _struct_namespaces.emplace(std::move(token_namespace));
+                            }
+                        }
+                    }
                 }
             }
 
@@ -208,7 +234,7 @@ namespace cppwinrt
         {
             for (auto& ref : refs)
             {
-                write_platform_include(out, rel_path, ref, ext_h);
+                write_projection_include(out, rel_path, ref, ext_h);
             }
         }
     };

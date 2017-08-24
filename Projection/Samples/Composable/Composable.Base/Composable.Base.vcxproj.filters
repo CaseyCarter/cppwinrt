@@ -41,9 +41,6 @@
     <ClInclude Include="Root.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Composable.Base.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Derived.g.h">
       <Filter>Header Files</Filter>
     </ClInclude>

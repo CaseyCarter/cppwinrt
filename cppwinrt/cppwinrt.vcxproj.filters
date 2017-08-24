@@ -9,13 +9,12 @@
       <Filter>strings</Filter>
     </ClCompile>
     <ClCompile Include="source\settings.cpp" />
-    <ClCompile Include="source\platform_writer.cpp" />
     <ClCompile Include="source\component_writer.cpp" />
+    <ClCompile Include="source\projection_writer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\code_writer.h" />
     <ClInclude Include="source\pch.h" />
-    <ClInclude Include="source\platform_writer.h" />
     <ClInclude Include="source\text_writer.h" />
     <ClInclude Include="source\version.h" />
     <ClInclude Include="source\winmd_reader.h" />
@@ -368,6 +367,7 @@
     <ClInclude Include="strings\base\base_version.h">
       <Filter>strings\base</Filter>
     </ClInclude>
+    <ClInclude Include="source\projection_writer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">

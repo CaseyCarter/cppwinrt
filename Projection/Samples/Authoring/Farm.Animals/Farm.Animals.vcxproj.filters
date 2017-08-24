@@ -10,9 +10,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Farm.Animals.h">
-      <Filter>generated</Filter>
-    </ClInclude>
     <ClInclude Include="Hen.g.h">
       <Filter>generated</Filter>
     </ClInclude>

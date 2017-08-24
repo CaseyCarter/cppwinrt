@@ -5,7 +5,6 @@
 
 namespace cppwinrt
 {
-    void write_projection(output& out);
     void write_logo(output& out);
     void write_warning_push(output& out);
     void write_warning_pop(output& out);
@@ -42,7 +41,7 @@ namespace cppwinrt
     void write_tests();
 
     // These two should not be needing the types list as it should go into write_component_class_generated_header
-    void write_component_header(std::vector<meta::type const*> const& types);
+    void write_component_header(std::vector<meta::type const*> const& types, std::set<std::string> const& projected_namespaces);
     void write_component_source(std::vector<meta::type const*> const& types);
 
     void write_component_class_generated_header(meta::type const& type);
@@ -53,7 +52,7 @@ namespace cppwinrt
     void write_namespace_special(output& out, std::string const& namespace_name);
 
     template <typename ... Args>
-    void write_platform_include(output& out, Args const& ... include)
+    void write_projection_include(output& out, Args const& ... include)
     {
         out.write("#include %winrt/", settings::brackets ? '<' : '\"');
         int ignored[] = { (out.write(include), 0) ... }; ignored;

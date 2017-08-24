@@ -1,4 +1,5 @@
 ﻿import "Windows.Foundation.idl";
+import "Windows.UI.idl";
 
 namespace Complex.Authoring
 {
@@ -35,20 +36,30 @@ namespace Complex.Authoring
     }
 
     //
-    // This class illustrates support for passing structs by reference.
+    // This class illustrates support for passing structs by value and by reference,
+    // and exercises projection of complex and nested structs.
     //
 
+    [version(1.0)]
+    typedef struct ComplexStruct
+    {
+        HSTRING Name;
+        HSTRING Value;
+        // Windows.UI.Color Color;
+    } ComplexStruct;
+
     [version(1.0), uuid(24ec9145-7f4b-4515-8910-ef499b267c06)]
-    interface IStructByRef : IInspectable
+    interface IStructs : IInspectable
     {
         HRESULT CopyByValue([in] Windows.Foundation.Rect byValue, [out, retval] Windows.Foundation.Rect* result);
         HRESULT CopyByRef([in] Windows.Foundation.Rect const* byRef, [out, retval] Windows.Foundation.Rect* result);
+        HRESULT PassComplex([in] Complex.Authoring.ComplexStruct const* complex, [out, retval] Complex.Authoring.ComplexStruct * result);
     };
 
     [version(1.0), activatable(1.0)]
-    runtimeclass StructByRef
+    runtimeclass Structs
     {
-        [default] interface IStructByRef;
+        [default] interface IStructs;
     }
 
     //

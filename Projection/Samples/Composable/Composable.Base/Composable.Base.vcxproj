@@ -228,7 +228,6 @@
     <ClCompile Include="Root.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Composable.Base.h" />
     <ClInclude Include="Derived.g.h" />
     <ClInclude Include="Derived.h" />
     <ClInclude Include="module.h" />

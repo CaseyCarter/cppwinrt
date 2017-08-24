@@ -6,8 +6,7 @@
 #include "strings.h"
 #include "version.h"
 #include "settings.h"
-#include "platform_writer.h"
-#include "component_writer.h"
+#include "projection_writer.h"
 #include "helpers.h"
 #include "sdk.h"
 
@@ -341,15 +340,7 @@ namespace
         }
 
         prepare_input();
-
-        if (settings::component)
-        {
-            write_component();
-        }
-        else
-        {
-            write_platform();
-        }
+        write_projection();
 
         if (settings::verbose)
         {

@@ -1,7 +1,8 @@
 #include "pch.h"
-#include "platform_writer.h"
+#include "projection_writer.h"
 #include "code_writer.h"
 #include "reference_writer.h"
+#include "component_writer.h"
 #include "winmd_reader.h"
 #include "settings.h"
 #include "strings.h"
@@ -15,14 +16,14 @@ namespace cppwinrt
 {
     namespace
     {
-        struct platform_paths
+        struct projection_paths
         {
             path _root;
             path _public;
             path _impl;
             path _tests;
 
-            platform_paths() :
+            projection_paths() :
                 _root(settings::output),
                 _public(_root / "winrt"),
                 _impl(_public / "impl"),
@@ -36,34 +37,62 @@ namespace cppwinrt
             }
         };
 
-        struct complex_structs
+        struct namespace_recorder
         {
-            std::set<std::string> _headers;
-            lock _headers_lock;
+            std::set<std::string> _complex_namespaces;
+            std::set<std::string> _projected_namespaces;
+            lock _lock;
 
-            void record_header(std::string const& header)
+            void record_complex_struct_namespace(std::string const& ns)
             {
-                lock_guard const guard(_headers_lock);
-                _headers.emplace(header);
+                lock_guard const guard(_lock);
+                _complex_namespaces.emplace(ns);
             }
 
-            void write_header(platform_paths const& paths)
+            void record_projected_namespace(std::string const& ns)
             {
-                if (settings::skip_base_headers)
+                lock_guard const guard(_lock);
+                _projected_namespaces.emplace(ns);
+            }
+
+            void write_complex_struct_header(projection_paths const& paths)
+            {
+                output out;
+
+                // if componennt, intersect recorded headers with complex struct headers (exclude platform),
+                // and #include complex_structs.h from platform projection
+                if (settings::component)
                 {
-                    if (!_headers.empty())
+                    for (auto iter = _complex_namespaces.begin(); iter != _complex_namespaces.end(); ++iter)
                     {
-                        print_error("Complex struct defined in non-reference metadata.  Projection may be incorrect.\n");
+                        if (std::find(_projected_namespaces.begin(), _projected_namespaces.end(), *iter) == _projected_namespaces.end())
+                        {
+                            _complex_namespaces.erase(iter);
+                        }
                     }
-                    return;
                 }
 
-                output out;
-                for (auto& header : _headers)
+                for (auto& ns : _complex_namespaces)
                 {
-                    write_platform_include(out, "impl/", header);
+                    write_projection_include(out, "impl/", ns, ".0.h");
                 }
-                out.save_as(paths._impl / "complex_structs.h");
+
+                out.save_as(paths._impl / (get_complex_struct_name() + ".h"));
+            }
+
+            static void write_complex_struct_includes(output& out)
+            {
+                write_projection_include(out, "impl/complex_structs.h");
+                if (settings::component)
+                {
+                    write_projection_include(out, "impl/", get_complex_struct_name(), ".h");
+                }
+            }
+
+            static std::string get_complex_struct_name()
+            {
+                return settings::component ? 
+                    settings::component_name + "_complex_structs" : "complex_structs";
             }
         };
 
@@ -76,9 +105,14 @@ namespace cppwinrt
 
         void create_natvis(path const& base_path)
         {
+            std::string natvis_name(settings::component ? settings::component_name : "cppwinrt");
+            if (natvis_name.empty())
+            {
+                return;
+            }
             output out;
             write_natvis(out);
-            out.save_as(base_path / "cppwinrt.natvis");
+            out.save_as(base_path / (natvis_name + ".natvis"));
         }
 
         void ReportMetadataError(std::string_view context)
@@ -94,7 +128,7 @@ namespace cppwinrt
             }
         }
 
-        IAsyncAction create_base_files(platform_paths const& paths)
+        IAsyncAction create_base_files(projection_paths const& paths)
         {
             co_await resume_background();
 
@@ -116,11 +150,11 @@ namespace cppwinrt
             }
         }
 
-        void create_namespace_headers(
+        void create_projected_namespace(
             std::string const& namespace_name,
             meta::namespace_types const& namespace_types,
-            platform_paths const& paths,
-            complex_structs& complex_structs)
+            projection_paths const& paths,
+            namespace_recorder& namespace_recorder)
         {
             try
             {
@@ -162,7 +196,7 @@ namespace cppwinrt
                     write_default_interfaces(out, namespace_types);
                     if (write_struct_abi(out, namespace_types))
                     {
-                        complex_structs.record_header(forward_h);
+                        namespace_recorder.record_complex_struct_namespace(namespace_name);
                     }
                     write_consume(out, namespace_types);
                     write_abi(out, namespace_types);
@@ -186,6 +220,7 @@ namespace cppwinrt
                     output out;
                     write_logo(out);
                     ref_writer.write_includes(out, interface_ext, "impl/");
+                    ref_writer.write_struct_includes(out, definition_ext, "impl/");
                     out.write_meta_namespace(namespace_name);
                     write_delegate_definitions(out, namespace_types);
                     write_struct_definitions(out, namespace_types);
@@ -199,7 +234,7 @@ namespace cppwinrt
                 {
                     output out;
                     write_logo(out);
-                    write_platform_include(out, "base.h");
+                    write_projection_include(out, "base.h");
                     if (settings::skip_base_headers)
                     {
                         write_version_assert(out);
@@ -207,11 +242,11 @@ namespace cppwinrt
 
                     if (!starts_with(namespace_name, "Windows.Foundation"))
                     {
-                        write_platform_include(out, "Windows.Foundation.h");
-                        write_platform_include(out, "Windows.Foundation.Collections.h");
+                        write_projection_include(out, "Windows.Foundation.h");
+                        write_projection_include(out, "Windows.Foundation.Collections.h");
                     }
 
-                    write_platform_include(out, "impl/complex_structs.h");
+                    namespace_recorder.write_complex_struct_includes(out);
                     write_warning_push(out);
                     ref_writer.write_includes(out, definition_ext, "impl/");
                     ref_writer.write_parent_include(out);
@@ -235,6 +270,7 @@ namespace cppwinrt
 
                     write_warning_pop(out);
                     out.save_as(paths._public / (namespace_name + ".h"));
+                    namespace_recorder.record_projected_namespace(namespace_name);
                 }
             }
             catch (...)
@@ -243,15 +279,15 @@ namespace cppwinrt
             }
         }
 
-        IAsyncAction create_namespace_headers_async(
+        IAsyncAction create_projected_namespace_async(
             std::string const& namespace_name,
             meta::namespace_types const& namespace_types,
-            platform_paths const& paths,
-            complex_structs& complex_structs)
+            projection_paths const& paths,
+            namespace_recorder& namespace_recorder)
         {
             co_await resume_background();
 
-            create_namespace_headers(namespace_name, namespace_types, paths, complex_structs);
+            create_projected_namespace(namespace_name, namespace_types, paths, namespace_recorder);
         }
 
         template <typename Collection>
@@ -265,8 +301,14 @@ namespace cppwinrt
 
         void write_module()
         {
+            std::string module_name(settings::component ? settings::component_name : "winrt");
+            if (module_name.empty())
+            {
+                return;
+            }
+
             output out;
-            out.write("module winrt;\n");
+            out.write("module %;\n", module_name);
             out.write("#define WINRT_EXPORT export\n\n");
 
             meta::index_type const& index = meta::get_index();
@@ -275,39 +317,44 @@ namespace cppwinrt
             {
                 if (item.second.has_projected_types())
                 {
-                    write_platform_include(out, item.first, ".h");
+                    write_projection_include(out, item.first, ".h");
                 }
             }
 
-            out.save_as(settings::output / "winrt\\winrt.ixx");
+            out.save_as(settings::output / ("winrt\\" + module_name + ".ixx") );
         }
     }
 
-    void write_platform()
+    void write_projection()
     {
-        platform_paths paths;
+        projection_paths paths;
 
         meta::index_type const& index = meta::get_index();
         size_t num_writers = index.size() + 1;
 
-        complex_structs complex_structs;
+        namespace_recorder namespace_recorder;
 
         std::vector<IAsyncAction> writers(num_writers);
         num_writers = 0;
         writers[num_writers++] = create_base_files(paths);
         for (auto&& item : index)
         {
-            writers[num_writers++] = create_namespace_headers_async(item.first, item.second, paths, complex_structs);
+            writers[num_writers++] = create_projected_namespace_async(item.first, item.second, paths, namespace_recorder);
         }
         writers.resize(num_writers);
         wait_all(writers).get();
 
-        complex_structs.write_header(paths);
+        namespace_recorder.write_complex_struct_header(paths);
         write_module();
 
         if (settings::create_tests)
         {
             write_tests();
+        }
+
+        if (settings::component)
+        {
+            write_component_headers(namespace_recorder._projected_namespaces);
         }
     }
 }

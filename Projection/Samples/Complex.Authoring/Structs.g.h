@@ -7,9 +7,9 @@
 namespace winrt::Complex::Authoring::implementation {
 
 template <typename D, typename ... I>
-struct StructByRef_base : impl::module_lock, implements<D, Complex::Authoring::IStructByRef, I ...>
+struct Structs_base : impl::module_lock, implements<D, Complex::Authoring::IStructs, I ...>
 {
-    using class_type = Complex::Authoring::StructByRef;
+    using class_type = Complex::Authoring::Structs;
 
     operator class_type() const noexcept
     {
@@ -20,7 +20,7 @@ struct StructByRef_base : impl::module_lock, implements<D, Complex::Authoring::I
 
     hstring GetRuntimeClassName() const
     {
-        return L"Complex.Authoring.StructByRef";
+        return L"Complex.Authoring.Structs";
     }
 };
 
@@ -29,11 +29,11 @@ struct StructByRef_base : impl::module_lock, implements<D, Complex::Authoring::I
 namespace winrt::Complex::Authoring::factory_implementation {
 
 template <typename D, typename T, typename ... I>
-struct StructByRefT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+struct StructsT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
-        return L"Complex.Authoring.StructByRef";
+        return L"Complex.Authoring.Structs";
     }
 
     Windows::Foundation::IInspectable ActivateInstance() const
@@ -45,16 +45,16 @@ struct StructByRefT : impl::module_lock, implements<D, Windows::Foundation::IAct
 }
 
 #pragma warning(suppress: 4067)
-#if defined(WINRT_FORCE_INCLUDE_STRUCTBYREF_XAML_G_H) || __has_include("StructByRef.xaml.g.h")
+#if defined(WINRT_FORCE_INCLUDE_STRUCTS_XAML_G_H) || __has_include("Structs.xaml.g.h")
 
-#include "StructByRef.xaml.g.h"
+#include "Structs.xaml.g.h"
 
 #else
 
 namespace winrt::Complex::Authoring::implementation
 {
     template <typename D, typename ... I>
-    using StructByRefT = StructByRef_base<D, I ...>;
+    using StructsT = Structs_base<D, I ...>;
 }
 
 #endif

@@ -90,7 +90,7 @@
     <CustomBuildStep>
       <Command>cppwinrt -component -in $(ProjectDir)Farm.Animals.winmd -ref local -natvis -out $(ProjectDir)</Command>
       <Message>C++/WinRT compiler</Message>
-      <Outputs>Farm.Animals.h;module.h</Outputs>
+      <Outputs>winrt/Farm.Animals.h;module.h</Outputs>
       <Inputs>Farm.Animals.winmd</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
@@ -103,7 +103,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -129,7 +129,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -157,7 +157,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -187,7 +187,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -220,7 +220,6 @@
   <ItemGroup>
     <ClInclude Include="Egg.g.h" />
     <ClInclude Include="Egg.h" />
-    <ClInclude Include="Farm.Animals.h" />
     <ClInclude Include="Hen.g.h" />
     <ClInclude Include="Hen.h" />
     <ClInclude Include="module.h" />

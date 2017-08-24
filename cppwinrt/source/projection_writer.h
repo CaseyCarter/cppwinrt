@@ -2,5 +2,5 @@
 
 namespace cppwinrt
 {
-    void write_platform();
+    void write_projection();
 }

@@ -4,7 +4,7 @@
 #include "Language.h"
 #include "Simple.h"
 #include "Static.h"
-#include "StructByRef.h"
+#include "Structs.h"
 #include "Composability.Open.Base.h"
 #include "Composability.Open.Derived.h"
 #include "Factory.Simple.h"
@@ -63,9 +63,9 @@ HRESULT __stdcall DllGetActivationFactory(HSTRING classId, ::IUnknown** factory)
             return S_OK;
         }
 
-        if (0 == wcscmp(name, L"Complex.Authoring.StructByRef"))
+        if (0 == wcscmp(name, L"Complex.Authoring.Structs"))
         {
-            *factory = detach_abi(make<Complex::Authoring::factory_implementation::StructByRef>());
+            *factory = detach_abi(make<Complex::Authoring::factory_implementation::Structs>());
             return S_OK;
         }
 

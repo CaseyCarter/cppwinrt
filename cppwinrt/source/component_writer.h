@@ -2,6 +2,5 @@
 
 namespace cppwinrt
 {
-    void write_header();
-    void write_component();
+    void write_component_headers(std::set<std::string> const& projected_namespaces);
 }

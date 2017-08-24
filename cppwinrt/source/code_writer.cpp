@@ -2090,7 +2090,7 @@ namespace cppwinrt
             {
                 if (ns.second.has_projected_types())
                 {
-                    write_platform_include(out, ns.first, ".h");
+                    write_projection_include(out, ns.first, ".h");
                 }
             }
         }
@@ -2280,102 +2280,6 @@ namespace cppwinrt
             filename /= std::string(get_relative_component_name(type));
             return filename.string();
         }
-    }
-
-    void write_projection(output& out)
-    {
-        meta::index_type const& complete_index = meta::get_index();
-
-        write_edit_warning_header(out);
-        write_platform_include(out, "base.h");
-        write_version_assert(out);
-
-        std::vector<std::reference_wrapper<const meta::index_pair>> unfiltered_index;
-        std::vector<reference_writer> ref_writers;
-        for (meta::index_pair const& ns : complete_index)
-        {
-            auto classes = get_projected_types(ns.second.classes);
-            if(classes.begin() != classes.end())
-            {
-                unfiltered_index.push_back(std::ref(ns));
-            }
-        }
-
-        for (meta::index_pair const& ns : unfiltered_index)
-        {
-            out.write_meta_namespace(ns.first);
-            write_forwards(out, ns.second);
-            out.write_close_namespace();
-        }
-        out.write_impl_namespace();
-        out.write('\n');
-
-        for (meta::index_pair const& ns : unfiltered_index)
-        {
-            write_categories(out, ns.second);
-            write_names(out, ns.second);
-            write_guids(out, ns.second);
-            write_default_interfaces(out, ns.second);
-            write_struct_abi(out, ns.second);
-            write_consume(out, ns.second);
-        }
-
-        // This is separate from the previous set because the ABI virtual functions need the
-        // size of the handful of structs that have a distinct ABI shape since structs are
-        // passed by value.
-        for (meta::index_pair const& ns : unfiltered_index)
-        {
-            write_abi(out, ns.second);
-        }
-
-        out.write_close_namespace();
-
-        for (meta::index_pair const& ns : unfiltered_index)
-        {
-            out.write_meta_namespace(ns.first);
-            write_interface_definitions(out, ns.second);
-            write_delegate_definitions(out, ns.second);
-            write_struct_definitions(out, ns.second);
-            out.write_close_namespace();
-        }
-
-        // This is separate from the previous set because a base class must be defined before use
-        // and we must therefore define the default interfaces before the runtime classes are defined.
-        for (meta::index_pair const& ns : unfiltered_index)
-        {
-            out.write_meta_namespace(ns.first);
-            write_class_definitions(out, ns.second);
-            write_interface_overrides(out, ns.second);
-            out.write_close_namespace();
-        }
-
-        out.write_impl_namespace();
-
-        for (meta::index_pair const& ns : unfiltered_index)
-        {
-            write_interface_member_definitions(out, ns.second);
-            write_delegate_produce(out, ns.second);
-            write_produce(out, ns.second);
-        }
-
-        out.write_close_namespace();
-
-        for (meta::index_pair const& ns : unfiltered_index)
-        {
-            out.write_meta_namespace(ns.first);
-            write_class_member_definitions(out, ns.second);
-            write_delegate_member_definitions(out, ns.second);
-            write_interface_override_methods(out, ns.second);
-            write_class_overrides(out, ns.second);
-            out.write_close_namespace();
-        }
-
-        out.write_std_namespace();
-        for (meta::index_pair const& ns : unfiltered_index)
-        {
-            write_std_hashes(out, ns.second);
-        }
-        out.write_close_namespace();
     }
 
     void write_logo(output& out)
@@ -2875,14 +2779,14 @@ void t()
         }
     }
 
-    void write_component_header(std::vector<meta::type const*> const& types)
+    void write_component_header(std::vector<meta::type const*> const& types, std::set<std::string> const& projected_namespaces)
     {
         output out;
         write_warning(out, strings::write_edit_warning_header);
 
-        if (!settings::component_name.empty())
+        for (auto& ns : projected_namespaces)
         {
-            out.write("\n#include \"%.h\"\n", settings::component_name);
+            write_projection_include(out, ns, ".h");
         }
 
         out.write_impl_namespace();

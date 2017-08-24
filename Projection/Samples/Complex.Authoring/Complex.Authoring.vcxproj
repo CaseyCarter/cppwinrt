@@ -90,7 +90,7 @@
     <CustomBuildStep>
       <Command>cppwinrt -component -in $(ProjectDir)Complex.Authoring.winmd -ref local -out $(ProjectDir) -overwrite -filter Windows.Foundation.Uri Complex.Authoring -natvis</Command>
       <Message>C++/WinRT compiler</Message>
-      <Outputs>Complex.Authoring.h;module.h</Outputs>
+      <Outputs>winrt/Complex.Authoring.h</Outputs>
       <Inputs>Complex.Authoring.winmd</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
@@ -103,7 +103,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -131,7 +131,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -161,7 +161,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -193,7 +193,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -234,7 +234,7 @@
     </ClCompile>
     <ClCompile Include="Simple.cpp" />
     <ClCompile Include="Static.cpp" />
-    <ClCompile Include="StructByRef.cpp" />
+    <ClCompile Include="Structs.cpp" />
     <ClCompile Include="Windows.Foundation.Uri.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -265,8 +265,8 @@
     <ClInclude Include="Simple.h" />
     <ClInclude Include="Static.g.h" />
     <ClInclude Include="Static.h" />
-    <ClInclude Include="StructByRef.g.h" />
-    <ClInclude Include="StructByRef.h" />
+    <ClInclude Include="Structs.g.h" />
+    <ClInclude Include="Structs.h" />
     <ClInclude Include="Windows.Foundation.Uri.g.h" />
     <ClInclude Include="Windows.Foundation.Uri.h" />
   </ItemGroup>

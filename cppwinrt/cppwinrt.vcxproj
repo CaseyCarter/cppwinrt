@@ -25,7 +25,7 @@
     <ClInclude Include="source\generator.h" />
     <ClInclude Include="source\helpers.h" />
     <ClInclude Include="source\pch.h" />
-    <ClInclude Include="source\platform_writer.h" />
+    <ClInclude Include="source\projection_writer.h" />
     <ClInclude Include="source\reference_writer.h" />
     <ClInclude Include="source\sdk.h" />
     <ClInclude Include="source\settings.h" />
@@ -156,7 +156,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="source\platform_writer.cpp" />
+    <ClCompile Include="source\projection_writer.cpp" />
     <ClCompile Include="source\settings.cpp" />
     <ClCompile Include="source\winmd_reader.cpp" />
     <ClCompile Include="strings\strings.cpp" />

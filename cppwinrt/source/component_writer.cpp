@@ -9,41 +9,8 @@ using namespace std::experimental::filesystem;
 
 namespace cppwinrt
 {
-    namespace
+    void write_component_headers(std::set<std::string> const& projected_namespaces)
     {
-        void write_header()
-        {
-            if (settings::component_name.empty())
-            {
-                return;
-            }
-
-            output out;
-            write_projection(out);
-            std::string filename = (settings::output / settings::component_name).string();
-            filename += ".h";
-            out.save_as(filename);
-        }
-
-        void create_natvis()
-        {
-            if (settings::component_name.empty() || !settings::create_natvis)
-            {
-                return;
-            }
-
-            output out;
-            write_natvis(out);
-            std::string filename = (settings::output / settings::component_name).string();
-            filename += ".natvis";
-            out.save_as(filename);
-        }
-    }
-
-    void write_component()
-    {
-        write_header();
-        create_natvis();
         meta::index_type const& index = meta::get_index();
         std::vector<meta::type const*> types;
 
@@ -58,7 +25,7 @@ namespace cppwinrt
             }
         }
 
-        write_component_header(types);
+        write_component_header(types, projected_namespaces);
         write_component_source(types);
 
         for (meta::type const* type : types)
