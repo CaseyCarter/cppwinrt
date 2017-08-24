@@ -303,7 +303,14 @@ WINRT_EXPORT namespace winrt
         {
             if (this->m_data)
             {
-                destruct(std::is_trivially_destructible<value_type>());
+                if constexpr (!std::is_trivially_destructible_v<value_type>)
+                {
+                    for (value_type& v : *this)
+                    {
+                        v.~value_type();
+                    }
+                }
+
                 CoTaskMemFree(this->m_data);
                 this->m_data = nullptr;
                 this->m_size = 0;
@@ -357,17 +364,6 @@ WINRT_EXPORT namespace winrt
                 }
 
                 this->m_size = size;
-            }
-        }
-
-        void destruct(std::true_type) noexcept
-        {}
-
-        void destruct(std::false_type) noexcept
-        {
-            for (value_type& v : *this)
-            {
-                v.~value_type();
             }
         }
     };

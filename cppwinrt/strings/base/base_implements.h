@@ -426,7 +426,7 @@ namespace winrt::impl
                 return S_OK;
             }
 
-            if (Agile)
+            if constexpr (Agile)
             {
                 if (id == guid_of<IAgileObject>())
                 {
@@ -590,12 +590,13 @@ namespace winrt::impl
                 return this->outer()->QueryInterface(id, object);
             }
 
-            HRESULT result = query_interface(id, object, is_weak_ref_source{});
+            HRESULT result = query_interface(id, object);
 
             if (result == E_NOINTERFACE && this->m_inner)
             {
                 result = get_abi(this->m_inner)->QueryInterface(id, object);
             }
+
             return result;
         }
 
@@ -605,6 +606,7 @@ namespace winrt::impl
             {
                 return this->outer()->AddRef();
             }
+
             return NonDelegatingAddRef();
         }
 
@@ -614,6 +616,7 @@ namespace winrt::impl
             {
                 return this->outer()->Release();
             }
+
             return NonDelegatingRelease();
         }
 
@@ -636,6 +639,7 @@ namespace winrt::impl
         };
 
     protected:
+
         explicit root_implements(uint32_t references = 1)
             : m_references(references)
         {}
@@ -648,6 +652,7 @@ namespace winrt::impl
             {
                 return this->outer()->GetIids(count, array);
             }
+
             return NonDelegatingGetIids(count, array);
         }
 
@@ -657,6 +662,7 @@ namespace winrt::impl
             {
                 return this->outer()->GetRuntimeClassName(name);
             }
+
             return NonDelegatingGetRuntimeClassName(name);
         }
 
@@ -666,12 +672,35 @@ namespace winrt::impl
             {
                 return this->outer()->GetTrustLevel(trustLevel);
             }
+
             return NonDelegatingGetTrustLevel(trustLevel);
         }
 
         unsigned long __stdcall NonDelegatingAddRef() noexcept
         {
-            return add_reference(is_weak_ref_source{});
+            if constexpr (is_weak_ref_source::value)
+            {
+                uintptr_t count_or_pointer = m_references.load(std::memory_order_relaxed);
+
+                while (true)
+                {
+                    if (is_weak_ref(count_or_pointer))
+                    {
+                        return decode_weak_ref(count_or_pointer)->increment_strong();
+                    }
+
+                    uintptr_t const target = count_or_pointer + 1;
+
+                    if (m_references.compare_exchange_weak(count_or_pointer, target, std::memory_order_relaxed))
+                    {
+                        return static_cast<uint32_t>(target);
+                    }
+                }
+            }
+            else
+            {
+                return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
+            }
         }
 
         unsigned long __stdcall NonDelegatingRelease() noexcept
@@ -696,11 +725,14 @@ namespace winrt::impl
                 *object = result;
                 return S_OK;
             }
-            HRESULT result = query_interface(id, object, is_weak_ref_source{});
+
+            HRESULT result = query_interface(id, object);
+
             if (result == E_NOINTERFACE && this->m_inner)
             {
                 result = get_abi(this->m_inner)->QueryInterface(id, object);
             }
+
             return result;
         }
 
@@ -715,6 +747,7 @@ namespace winrt::impl
             }
 
             *array = static_cast<GUID*>(CoTaskMemAlloc(sizeof(GUID)**count));
+
             if (*array == nullptr)
             {
                 return E_OUTOFMEMORY;
@@ -760,7 +793,29 @@ namespace winrt::impl
 
         uint32_t subtract_reference() noexcept
         {
-            return subtract_reference(is_weak_ref_source{});
+            if constexpr (is_weak_ref_source::value)
+            {
+                uintptr_t count_or_pointer = m_references.load(std::memory_order_relaxed);
+
+                while (true)
+                {
+                    if (is_weak_ref(count_or_pointer))
+                    {
+                        return decode_weak_ref(count_or_pointer)->decrement_strong();
+                    }
+
+                    uintptr_t const target = count_or_pointer - 1;
+
+                    if (m_references.compare_exchange_weak(count_or_pointer, target, std::memory_order_release, std::memory_order_relaxed))
+                    {
+                        return static_cast<uint32_t>(target);
+                    }
+                }
+            }
+            else
+            {
+                return m_references.fetch_sub(1, std::memory_order_release) - 1;
+            }
         }
 
     private:
@@ -777,25 +832,7 @@ namespace winrt::impl
 
         std::atomic<std::conditional_t<is_weak_ref_source::value, uintptr_t, uint32_t>> m_references;
 
-        HRESULT query_interface(GUID const& id, void** object, std::true_type) noexcept
-        {
-            static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
-
-            if (query_interface(id, object, std::false_type{}) == S_OK)
-            {
-                return S_OK;
-            }
-
-            if (id == __uuidof(impl::IWeakReferenceSource))
-            {
-                *object = make_weak_ref();
-                return*object ? S_OK : E_OUTOFMEMORY;
-            }
-
-            return E_NOINTERFACE;
-        }
-
-        HRESULT query_interface(GUID const& id, void** object, std::false_type) noexcept
+        HRESULT query_interface(GUID const& id, void** object) noexcept
         {
             *object = static_cast<D*>(this)->find_interface_nested(id);
 
@@ -805,7 +842,7 @@ namespace winrt::impl
                 return S_OK;
             }
 
-            if (is_agile::value)
+            if constexpr (is_agile::value)
             {
                 if (id == guid_of<IAgileObject>())
                 {
@@ -821,7 +858,7 @@ namespace winrt::impl
                 }
             }
 
-            if (is_inspectable::value)
+            if constexpr (is_inspectable::value)
             {
                 if (id == __uuidof(::IInspectable))
                 {
@@ -838,59 +875,16 @@ namespace winrt::impl
                 return S_OK;
             }
 
+            if constexpr (is_weak_ref_source::value)
+            {
+                if (id == __uuidof(impl::IWeakReferenceSource))
+                {
+                    *object = make_weak_ref();
+                    return*object ? S_OK : E_OUTOFMEMORY;
+                }
+            }
+
             return E_NOINTERFACE;
-        }
-
-        uint32_t add_reference(std::false_type) noexcept
-        {
-            return 1 + m_references.fetch_add(1, std::memory_order_relaxed);
-        }
-
-        uint32_t subtract_reference(std::false_type) noexcept
-        {
-            return m_references.fetch_sub(1, std::memory_order_release) - 1;
-        }
-
-        uint32_t add_reference(std::true_type) noexcept
-        {
-            static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
-            uintptr_t count_or_pointer = m_references.load(std::memory_order_relaxed);
-
-            while (true)
-            {
-                if (is_weak_ref(count_or_pointer))
-                {
-                    return decode_weak_ref(count_or_pointer)->increment_strong();
-                }
-
-                uintptr_t const target = count_or_pointer + 1;
-
-                if (m_references.compare_exchange_weak(count_or_pointer, target, std::memory_order_relaxed))
-                {
-                    return static_cast<uint32_t>(target);
-                }
-            }
-        }
-
-        uint32_t subtract_reference(std::true_type) noexcept
-        {
-            static_assert(is_weak_ref_source::value, "This is only for weak ref support.");
-            uintptr_t count_or_pointer = m_references.load(std::memory_order_relaxed);
-
-            while (true)
-            {
-                if (is_weak_ref(count_or_pointer))
-                {
-                    return decode_weak_ref(count_or_pointer)->decrement_strong();
-                }
-
-                uintptr_t const target = count_or_pointer - 1;
-
-                if (m_references.compare_exchange_weak(count_or_pointer, target, std::memory_order_release, std::memory_order_relaxed))
-                {
-                    return static_cast<uint32_t>(target);
-                }
-            }
         }
 
         impl::IWeakReferenceSource* make_weak_ref() noexcept
@@ -971,11 +965,10 @@ namespace winrt::impl
 WINRT_EXPORT namespace winrt
 {
     template <typename D, typename ... I>
-    struct implements
-        : impl::producer<D, impl::uncloak_t<I>> ...
-        , impl::base_implements<D, I...>::type
+    struct implements : impl::producer<D, impl::uncloak_t<I>> ..., impl::base_implements<D, I...>::type
     {
     protected:
+
         using base_type = typename impl::base_implements<D, I...>::type;
         using root_implements_type = typename base_type::root_implements_type;
 
@@ -985,6 +978,7 @@ WINRT_EXPORT namespace winrt
         {}
 
     public:
+
         using implements_type = implements;
         using first_interface = typename impl::first_interface<impl::uncloak_t<I> ...>::type;
         using IInspectable = Windows::Foundation::IInspectable;
@@ -1069,6 +1063,7 @@ WINRT_EXPORT namespace winrt
             {
                 return to_abi<First>(this);
             }
+
             return find_interface<Rest ...>(id);
         }
 
