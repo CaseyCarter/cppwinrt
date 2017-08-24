@@ -1,7 +1,7 @@
-Install the C++/WinRT header files
+﻿Install the C++/WinRT header files
 ===============================================
 
-First, you need to copy the C++/WinRT header files to your local system. Download the headers.
+First, copy the C++/WinRT header files to your local system. Download the headers.
 Unzip and copy the header files to the desired location on your system. Typically, you
 will either:
 
@@ -71,23 +71,28 @@ are using one.
 Using the Visual Studio 2017 version 15.3 C++ compiler
 =============================================
 
-This version of the C++/WinRT library was developed and tested with 
-Visual Studio 2017 version 15.3.0.  It is recommended that you use 
-this version or later to compile the C++/WinRT header files.  
+We developed and tested this version of the C++/WinRT library with 
+Visual Studio 2017 version 15.3 (and later) C++ compilers. We recommend
+that you use this version or later to compile C++/WinRT header files as you
+may encounter errors when using earlier compiler versions.  
+
 Visual Studio displays its version in Help | About Microsoft Visual Studio.  
-It is reported by the compiler (cl.exe) as 19.11.25506.  
 
 ![](./media/image3.png)
 
 Enabling the latest C++ standard language features
 ==================================================
 
-The C++/WinRT library uses a number of the latest C++ standard language 
+The C++/WinRT library uses a number of C++/17 and later C++ standard language 
 features. By default, some of those features are not enabled in the Visual 
 C++ compiler. You enable them by specifying the
 /await and /std:c++latest as additional command line options.
 
 ![](./media/image4.png)
+
+and 
+
+![](./media/image5.png)
 
 Use the Windows 10 Creators Update SDK
 =========================================
