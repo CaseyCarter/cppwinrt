@@ -27,7 +27,7 @@ echo d | XCOPY compiler.zip %PublishShare% /D /R /Y /J
 
 echo Publish GitHub Format 
 XCOPY %BuildStaging%\winrt stage\winrt /D /S /R /Y /J /I 
-set PUBLIC_SAMPLES=AsyncReader Blocks CL IBuffer JustCoroutines Ocr Syndication Video XamlCode
+set PUBLIC_SAMPLES=Blocks CL CustomBuffer Direct2D Interop JustCoroutines Ocr Syndication Video XamlCalendar XamlCode XamlMarkup
 for %%x in (%PUBLIC_SAMPLES%) do XCOPY Projection\Samples\%%x stage\Samples\%%x /D /S /R /Y /J /I 
 powershell -ExecutionPolicy ByPass -Command "& '%~dp0\zip.ps1' -directory '%~dp0\stage' -name 'github.zip'"
 echo d | XCOPY github.zip %PublishShare% /D /R /Y /J 
