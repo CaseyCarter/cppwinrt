@@ -279,9 +279,6 @@
     <ClInclude Include="strings\write\write_enumeration_flag.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_include_tests.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
     <ClInclude Include="strings\write\write_interface_abi.h">
       <Filter>strings\write</Filter>
     </ClInclude>

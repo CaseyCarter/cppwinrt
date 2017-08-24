@@ -2058,30 +2058,6 @@ namespace cppwinrt
             }
         }
 
-        void write_include_tests()
-        {
-            meta::index_type const& index = meta::get_index();
-
-            for (meta::index_pair const& ns : index)
-            {
-                if (ns.second.has_projected_types())
-                {
-                    output out;
-
-                    out.write(strings::write_include_tests,
-                        ns.first,
-                        bind_output(write_include_test, ns.second));
-
-                    path p = settings::output;
-                    p /= "tests";
-                    p /= ns.first;
-                    p += ".cpp";
-
-                    out.save_as(p);
-                }
-            }
-        }
-
         void write_test_includes(output& out)
         {
             meta::index_type const& index = meta::get_index();
@@ -2248,7 +2224,7 @@ namespace cppwinrt
                 bind_output(write_test_includes),
                 bind_output(write_consume_test_functions));
 
-            out.save_as(settings::output / "tests/consume.cpp");
+            out.save_as(settings::output / "CompileTests/consume.cpp");
         }
 
         void write_produce_tests()
@@ -2259,7 +2235,7 @@ namespace cppwinrt
                 bind_output(write_test_includes),
                 bind_output(write_produce_test_interfaces));
 
-            out.save_as(settings::output / "tests/produce.cpp");
+            out.save_as(settings::output / "CompileTests/produce.cpp");
         }
 
         std::string_view get_relative_component_name(meta::type const& type)
@@ -2682,18 +2658,15 @@ namespace cppwinrt
 void t()
 {
 %
+{%}
 })",
             namespace_name,
-            bind_output(write_namespace_test, namespace_name, types));
+            bind_output(write_namespace_test, namespace_name, types),
+            bind_output(write_include_test, types));
     }
 
     void write_tests()
     {
-        path p = settings::output;
-        p /= "tests";
-        create_directories(p);
-
-        write_include_tests();
         write_consume_tests();
         write_produce_tests();
     }

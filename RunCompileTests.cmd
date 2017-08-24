@@ -39,6 +39,11 @@ call :Compile pch.cpp /Ycpch.h
 if %_namespace_spec%==*.*.cpp (
 	powershell.exe "%~dp0\GenerateConstexprCompileTests.ps1" constexpr_test.cpp
 	call :Compile constexpr_test.cpp
+	rem x64 compiler required for consume/produce tests (else fatal error C1060: compiler is out of heap space)
+	if "%BuildPlatform%" == "x64" (
+		call :Compile consume.cpp
+		call :Compile produce.cpp
+	)
 )
 
 for /f %%i in ('dir /b %_namespace_spec%') do call :Compile %%~ni.cpp /Yupch.h 
