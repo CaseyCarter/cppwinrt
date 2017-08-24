@@ -83,7 +83,7 @@ Visual Studio displays its version in Help | About Microsoft Visual Studio.
 Enabling the latest C++ standard language features
 ==================================================
 
-The C++/WinRT library uses a number of C++/17 and later C++ standard language 
+The C++/WinRT library uses a number of C++17 and later C++ standard language 
 features. By default, some of those features are not enabled in the Visual 
 C++ compiler. You enable them by specifying the
 /await and /std:c++latest as additional command line options.
