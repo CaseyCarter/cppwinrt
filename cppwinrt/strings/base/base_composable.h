@@ -40,7 +40,7 @@ namespace winrt::impl
             I result;
             if (shim().outer())
             {
-                check_hresult(shim().QueryInterface(impl::guid_of<I>(), reinterpret_cast<void**>(put_abi(result))));
+                check_hresult(shim().QueryInterface(guid_of<I>(), reinterpret_cast<void**>(put_abi(result))));
             }
             return result;
         }

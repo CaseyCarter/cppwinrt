@@ -718,7 +718,7 @@ namespace winrt::impl
 
         HRESULT __stdcall NonDelegatingQueryInterface(const GUID& id, void** object) noexcept
         {
-            if (id == impl::guid_of<Windows::Foundation::IInspectable>() || id == impl::guid_of<Windows::Foundation::IInspectable>())
+            if (id == guid_of<Windows::Foundation::IInspectable>() || id == guid_of<Windows::Foundation::IInspectable>())
             {
                 ::IInspectable* result = to_abi<impl::INonDelegatingInspectable>(this);
                 NonDelegatingAddRef();
@@ -1040,7 +1040,7 @@ WINRT_EXPORT namespace winrt
         template <typename First, typename ... Rest>
         void copy_guids(GUID* ids, std::enable_if_t<!impl::is_cloaked_v<First>>* = nullptr) const noexcept
         {
-            *ids++ = impl::guid_of<First>();
+            *ids++ = guid_of<First>();
             copy_guids<Rest ...>(ids);
         }
 
@@ -1059,7 +1059,7 @@ WINRT_EXPORT namespace winrt
         template <typename First, typename ... Rest>
         void* find_interface(GUID const& id, std::enable_if_t<!impl::is_marker_v<First> && !impl::is_implements_v<First>>* = nullptr) const noexcept
         {
-            if (id == impl::guid_of<First>())
+            if (id == guid_of<First>())
             {
                 return to_abi<First>(this);
             }

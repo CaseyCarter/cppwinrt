@@ -33,5 +33,5 @@ TEST_CASE("Test_GetIids")
     com_array<GUID> iids = GetIids(i);
 
     REQUIRE(iids.size() == 1);
-    REQUIRE(iids[0] == impl::guid_of<Windows::Foundation::IStringable>());
+    REQUIRE(iids[0] == guid_of<Windows::Foundation::IStringable>());
 }

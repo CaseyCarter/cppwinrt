@@ -82,18 +82,6 @@ namespace winrt::impl
 #ifdef __clang__
     template <typename T>
     constexpr GUID const guid_v = guid<default_interface_t<T>>::value;
-
-    template <typename T>
-    inline constexpr GUID const& guid_of() noexcept
-    {
-        return guid_v<T>;
-    }
-#else
-    template <typename T>
-    inline constexpr GUID const& guid_of() noexcept
-    {
-        return guid<default_interface_t<T>>::value;
-    }
 #endif
 
     template <typename T, typename Enable = void>
@@ -138,6 +126,16 @@ WINRT_EXPORT namespace winrt
 {
     template <typename T>
     using abi_t = impl::abi_t<T>;
+
+    template <typename T>
+    inline constexpr GUID const& guid_of() noexcept
+    {
+#ifdef __clang__
+        return impl::guid_v<T>;
+#else
+        return impl::guid<impl::default_interface_t<T>>::value;
+#endif
+    }
 
     template <typename T>
     auto get_abi(T const& object) noexcept
