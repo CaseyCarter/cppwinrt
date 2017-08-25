@@ -7,7 +7,7 @@
         <MoreInfo>https://github.com/Microsoft/cppwinrt/</MoreInfo>
         <License>LICENSE</License>
         <GettingStartedGuide>https://github.com/Microsoft/cppwinrt/blob/master/Getting%20Started.md</GettingStartedGuide>
-        <ReleaseNotes>https://github.com/Microsoft/cppwinrt/blob/master/Breaking%20Changes.md</ReleaseNotes>
+        <ReleaseNotes>https://github.com/Microsoft/cppwinrt/blob/master/Changelog.md</ReleaseNotes>
         <Tags>WinRT, C++, native</Tags>
     </Metadata>
     <Installation>
