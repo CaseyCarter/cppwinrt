@@ -121,16 +121,24 @@ void ui_sample()
     cpp.Opacity(0.5f);
     printf("opacity: %.2f\n", cpp.Opacity());
 
+    // Convert from a C++/WinRT type to a C++/CX type
+
     cx::Visual^ cx = to_cx<cx::Visual>(cpp);
     printf("opacity: %.2f\n", cx->Opacity);
 
+    // Convert from a C++/CX type to a C++/WinRT type
+
     winrt::Visual cpp_from_cx = from_cx<winrt::Visual>(cx);
     printf("opacity: %.2f\n", cpp_from_cx.Opacity());
+
+    // Convert from a C++/WinRT type to a Windows SDK type
 
     winrt::com_ptr<abi::IVisual> ptr = cpp.as<abi::IVisual>();
     float opacity{};
     winrt::check_hresult(ptr->get_Opacity(&opacity));
     printf("opacity: %.2f\n", opacity);
+
+    // Convert from a Windows SDK type to a C++/WinRT type
 
     winrt::Visual cpp_from_abi = from_abi<winrt::Visual>(ptr.get());
     printf("opacity: %.2f\n", cpp_from_abi.Opacity());
@@ -141,17 +149,25 @@ void uri_sample()
     winrt::Uri cpp(L"http://moderncpp.com/");
     printf("C++/WinRT: %ls\n", cpp.Domain().c_str());
 
+    // Convert from a C++/WinRT type to a C++/CX type
+
     cx::Uri ^ cx = to_cx<cx::Uri>(cpp);
     printf("C++/CX: %ls\n", cx->Domain->Data());
+
+    // Convert from a C++/WinRT type to a Windows SDK type
 
     winrt::com_ptr<abi::IUriRuntimeClass> ptr = cpp.as<abi::IUriRuntimeClass>();
     winrt::hstring domain;
     winrt::check_hresult(ptr->get_Domain(put_abi(domain)));
     printf("ABI: %ls\n", domain.c_str());
 
+    // Convert from a C++/CX type to a C++/WinRT type
+
     winrt::Uri cpp_from_cx = from_cx<winrt::Uri>(cx);
     WINRT_ASSERT(cpp.Domain() == cpp_from_cx.Domain());
     WINRT_ASSERT(cpp == cpp_from_cx);
+
+    // Convert from a Windows SDK type to a C++/WinRT type
 
     winrt::Uri cpp_from_abi = from_abi<winrt::Uri>(ptr.get());
     WINRT_ASSERT(cpp.Domain() == cpp_from_abi.Domain());
