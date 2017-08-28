@@ -133,6 +133,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -146,8 +147,12 @@
       <Message />
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>copy App.winmd $(OutDir)App.winmd</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
+    <Link>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <ClCompile>
@@ -157,6 +162,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -170,8 +176,12 @@
       <Message />
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>copy App.winmd $(OutDir)App.winmd</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
+    <Link>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -181,6 +191,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -194,8 +205,12 @@
       <Message />
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>copy App.winmd $(OutDir)App.winmd</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
+    <Link>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -205,6 +220,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -218,8 +234,12 @@
       <Message />
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>copy App.winmd $(OutDir)App.winmd</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
+    <Link>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -229,6 +249,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -242,8 +263,12 @@
       <Message />
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>copy App.winmd $(OutDir)App.winmd</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
+    <Link>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -253,6 +278,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -266,8 +292,12 @@
       <Message />
     </CustomBuildStep>
     <PreBuildEvent>
-      <Command>copy App.winmd $(OutDir)App.winmd</Command>
+      <Command>
+      </Command>
     </PreBuildEvent>
+    <Link>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -293,6 +323,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</PreprocessToFile>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

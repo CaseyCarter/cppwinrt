@@ -91,22 +91,22 @@ public:
         fileTypeFilters.Append(L".jpeg");
         fileTypeFilters.Append(L".png");
 
-        StorageFile selectedFile = await picker.PickSingleFileAsync();
+        StorageFile selectedFile = co_await picker.PickSingleFileAsync();
         if (!selectedFile)
         {
             return;
         }
 
-        IRandomAccessStream imageStream = await selectedFile.OpenAsync(FileAccessMode::Read);
-        BitmapDecoder decoder = await BitmapDecoder::CreateAsync(imageStream);
-        BitmapFrame frame = await decoder.GetFrameAsync(0);
+        IRandomAccessStream imageStream = co_await selectedFile.OpenAsync(FileAccessMode::Read);
+        BitmapDecoder decoder = co_await BitmapDecoder::CreateAsync(imageStream);
+        BitmapFrame frame = co_await decoder.GetFrameAsync(0);
 
         m_width = frame.PixelWidth();
         m_height = frame.PixelHeight();
         m_xCenter = m_width / 2;
         m_yCenter = m_height / 2;
 
-        PixelDataProvider provider = await frame.GetPixelDataAsync();
+        PixelDataProvider provider = co_await frame.GetPixelDataAsync();
         m_srcPixels = provider.DetachPixelData();
 
         // Manipulation of the bitmap objects must be done on the UI thread

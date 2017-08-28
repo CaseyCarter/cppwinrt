@@ -60,7 +60,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
         FileOpenPicker picker;
         picker.SuggestedStartLocation(PickerLocationId::VideosLibrary);
         picker.FileTypeFilter().Append(L".mp4");
-        StorageFile file = await picker.PickSingleFileAsync();
+        StorageFile file = co_await picker.PickSingleFileAsync();
 
         if (!file)
         {
