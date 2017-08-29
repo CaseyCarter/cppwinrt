@@ -1,8 +1,6 @@
 
 #ifdef _DEBUG
 
-#include <assert.h>
-
 #define WINRT_DEBUG
 #define WINRT_ASSERT _ASSERTE
 #define WINRT_VERIFY WINRT_ASSERT
@@ -71,7 +69,3 @@ static_assert(false, "Please target platform version 10.0.14393.0 or later.");
 #define WINRT_SHIM(Type) (*(abi_t<Type>**)&static_cast<Type const&>(static_cast<D const&>(*this)))
 
 #undef GetCurrentTime
-
-#ifndef WINRT_EXPORT
-#define WINRT_EXPORT
-#endif
