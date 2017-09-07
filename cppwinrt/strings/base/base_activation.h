@@ -38,20 +38,100 @@ namespace winrt::impl
         return factory;
     }
 
-#ifndef WINRT_DISABLE_FACTORY_CACHE
-    template <typename Class, typename Interface>
-    Interface get_agile_activation_factory()
+    struct factory_cache_typeless_entry
     {
-        Interface factory = get_activation_factory<Class, Interface>();
-
-        if (!factory.template try_as<IAgileObject>())
+        void clear() noexcept
         {
-            return nullptr;
+            lock_guard const guard(m_lock);
+            m_factory = nullptr;
         }
 
-        return factory;
+        factory_cache_typeless_entry* next{ nullptr };
+
+    private:
+
+        lock m_lock;
+        Windows::Foundation::IUnknown m_factory;
+    };
+
+    struct factory_cache
+    {
+        void add(factory_cache_typeless_entry* entry)
+        {
+            WINRT_ASSERT(entry);
+            lock_guard const guard(m_lock);
+            entry->next = m_begin;
+            m_begin = entry;
+        }
+
+        void clear() noexcept
+        {
+            lock_guard const guard(m_lock);
+
+            while (m_begin != nullptr)
+            {
+                m_begin->clear();
+                m_begin = m_begin->next;
+            }
+        }
+
+    private:
+
+        lock m_lock;
+        factory_cache_typeless_entry* m_begin{ nullptr };
+    };
+
+    inline factory_cache& get_factory_cache() noexcept
+    {
+        static factory_cache cache;
+        return cache;
     }
-#endif
+
+    template <typename Class, typename Interface>
+    struct factory_cache_entry
+    {
+        Interface get()
+        {
+            {
+                shared_lock_guard const guard(m_lock);
+
+                if (m_factory)
+                {
+                    return m_factory;
+                }
+            }
+
+            Interface factory = get_activation_factory<Class, Interface>();
+
+            if (!factory.template try_as<IAgileObject>())
+            {
+                WINRT_TRACE("Warning non-agile factory: %ls\n", name_v<Class>);
+                return factory;
+            }
+
+            lock_guard const guard(m_lock);
+
+            if (!m_factory)
+            {
+                m_factory = std::move(factory);
+                get_factory_cache().add(reinterpret_cast<factory_cache_typeless_entry*>(this));
+            }
+
+            return m_factory;
+        }
+
+        void clear() noexcept
+        {
+            lock_guard const guard(m_lock);
+            m_factory = nullptr;
+        }
+
+    private:
+
+        void* m_next{ nullptr };
+        lock m_lock;
+        Interface m_factory;
+    };
 }
 
 WINRT_EXPORT namespace winrt
@@ -90,23 +170,18 @@ WINRT_EXPORT namespace winrt
     template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
     Interface get_activation_factory()
     {
-#ifdef WINRT_DISABLE_FACTORY_CACHE
-        return impl::get_activation_factory<Class, Interface>();
-#else
-        static Interface factory = impl::get_agile_activation_factory<Class, Interface>();
-
-        if (!factory)
-        {
-            return impl::get_activation_factory<Class, Interface>();
-        }
-
-        return factory;
-#endif
+        static impl::factory_cache_entry<Class, Interface> factory;
+        return factory.get();
     }
 
     template <typename Class, typename Instance = Class>
     Instance activate_instance()
     {
         return get_activation_factory<Class>().ActivateInstance().template as<Instance>();
+    }
+
+    inline void clear_factory_cache() noexcept
+    {
+        impl::get_factory_cache().clear();
     }
 }

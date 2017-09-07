@@ -12,6 +12,11 @@ namespace winrt::impl
             AcquireSRWLockExclusive(&m_lock);
         }
 
+        void enter_shared() noexcept
+        {
+            AcquireSRWLockShared(&m_lock);
+        }
+
         bool try_enter() noexcept
         {
             return 0 != TryAcquireSRWLockExclusive(&m_lock);
@@ -21,6 +26,12 @@ namespace winrt::impl
         {
             __analysis_assume_lock_acquired(m_lock);
             ReleaseSRWLockExclusive(&m_lock);
+        }
+
+        void exit_shared() noexcept
+        {
+            __analysis_assume_lock_acquired(m_lock);
+            ReleaseSRWLockShared(&m_lock);
         }
 
         PSRWLOCK get() noexcept
@@ -36,7 +47,7 @@ namespace winrt::impl
     struct lock_guard
     {
         explicit lock_guard(lock& lock) noexcept :
-        m_lock(lock)
+            m_lock(lock)
         {
             m_lock.enter();
         }
@@ -44,6 +55,24 @@ namespace winrt::impl
         ~lock_guard() noexcept
         {
             m_lock.exit();
+        }
+
+    private:
+
+        lock& m_lock;
+    };
+
+    struct shared_lock_guard
+    {
+        explicit shared_lock_guard(lock& lock) noexcept :
+            m_lock(lock)
+        {
+            m_lock.enter_shared();
+        }
+
+        ~shared_lock_guard() noexcept
+        {
+            m_lock.exit_shared();
         }
 
     private:

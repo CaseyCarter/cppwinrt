@@ -26,7 +26,13 @@ using namespace winrt;
 
 HRESULT __stdcall DllCanUnloadNow()
 {
-    return impl::s_module_lock ? S_FALSE : S_OK;
+    if (impl::s_module_lock)
+    {
+        return S_FALSE;
+    }
+
+    clear_factory_cache();
+    return S_OK;
 }
 
 HRESULT __stdcall DllGetActivationFactory(HSTRING classId, ::IUnknown** factory)
