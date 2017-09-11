@@ -33,7 +33,7 @@ namespace winrt::impl
     }
 
     template <typename Async>
-    void blocking_suspend(Async const& async)
+    void blocking_suspend(Async const& async) noexcept
     {
         WINRT_ASSERT(!is_sta());
 
@@ -60,9 +60,9 @@ namespace winrt::impl
     template <typename D>
     struct consume_IAsyncInfo
     {
-        uint32_t Id() const;
-        Windows::Foundation::AsyncStatus Status() const;
-        HRESULT ErrorCode() const;
+        uint32_t Id() const noexcept;
+        Windows::Foundation::AsyncStatus Status() const noexcept;
+        HRESULT ErrorCode() const noexcept;
         void Cancel() const;
         void Close() const;
     };
@@ -71,8 +71,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_IAsyncAction
     {
-        void Completed(Windows::Foundation::AsyncActionCompletedHandler const& handler) const;
-        Windows::Foundation::AsyncActionCompletedHandler Completed() const;
+        void Completed(Windows::Foundation::AsyncActionCompletedHandler const& handler) const noexcept;
+        Windows::Foundation::AsyncActionCompletedHandler Completed() const noexcept;
         void GetResults() const;
         void get() const;
     };
@@ -80,8 +80,8 @@ namespace winrt::impl
     template <typename D, typename TResult>
     struct consume_IAsyncOperation
     {
-        void Completed(Windows::Foundation::AsyncOperationCompletedHandler<TResult> const& handler) const;
-        Windows::Foundation::AsyncOperationCompletedHandler<TResult> Completed() const;
+        void Completed(Windows::Foundation::AsyncOperationCompletedHandler<TResult> const& handler) const noexcept;
+        Windows::Foundation::AsyncOperationCompletedHandler<TResult> Completed() const noexcept;
         TResult GetResults() const;
         TResult get() const;
     };
@@ -89,10 +89,10 @@ namespace winrt::impl
     template <typename D, typename TProgress>
     struct consume_IAsyncActionWithProgress
     {
-        void Progress(Windows::Foundation::AsyncActionProgressHandler<TProgress> const& handler) const;
-        Windows::Foundation::AsyncActionProgressHandler<TProgress> Progress() const;
-        void Completed(Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const& handler) const;
-        Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> Completed() const;
+        void Progress(Windows::Foundation::AsyncActionProgressHandler<TProgress> const& handler) const noexcept;
+        Windows::Foundation::AsyncActionProgressHandler<TProgress> Progress() const noexcept;
+        void Completed(Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const& handler) const noexcept;
+        Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> Completed() const noexcept;
         void GetResults() const;
         void get() const;
     };
@@ -100,10 +100,10 @@ namespace winrt::impl
     template <typename D, typename TResult, typename TProgress>
     struct consume_IAsyncOperationWithProgress
     {
-        void Progress(Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const& handler) const;
-        Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> Progress() const;
-        void Completed(Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const& handler) const;
-        Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const;
+        void Progress(Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const& handler) const noexcept;
+        Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> Progress() const noexcept;
+        void Completed(Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const& handler) const noexcept;
+        Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const noexcept;
         TResult GetResults() const;
         TResult get() const;
     };
@@ -774,26 +774,26 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 namespace winrt::impl
 {
     template <typename D>
-    uint32_t consume_IAsyncInfo<D>::Id() const
+    uint32_t consume_IAsyncInfo<D>::Id() const noexcept
     {
         uint32_t id{};
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->get_Id(&id));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->get_Id(&id));
         return id;
     }
 
     template <typename D>
-    Windows::Foundation::AsyncStatus consume_IAsyncInfo<D>::Status() const
+    Windows::Foundation::AsyncStatus consume_IAsyncInfo<D>::Status() const noexcept
     {
         Windows::Foundation::AsyncStatus status{};
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->get_Status(&status));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->get_Status(&status));
         return status;
     }
 
     template <typename D>
-    HRESULT consume_IAsyncInfo<D>::ErrorCode() const
+    HRESULT consume_IAsyncInfo<D>::ErrorCode() const noexcept
     {
         HRESULT code = S_OK;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->get_ErrorCode(&code));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncInfo>**)&static_cast<Windows::Foundation::IAsyncInfo const&>(static_cast<D const&>(*this)))->get_ErrorCode(&code));
         return code;
     }
 
@@ -811,16 +811,16 @@ namespace winrt::impl
 
 
     template <typename D>
-    void consume_IAsyncAction<D>::Completed(const Windows::Foundation::AsyncActionCompletedHandler& handler) const
+    void consume_IAsyncAction<D>::Completed(const Windows::Foundation::AsyncActionCompletedHandler& handler) const noexcept
     {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncAction>**)&static_cast<Windows::Foundation::IAsyncAction const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncAction>**)&static_cast<Windows::Foundation::IAsyncAction const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
     }
 
     template <typename D>
-    Windows::Foundation::AsyncActionCompletedHandler consume_IAsyncAction<D>::Completed() const
+    Windows::Foundation::AsyncActionCompletedHandler consume_IAsyncAction<D>::Completed() const noexcept
     {
         Windows::Foundation::AsyncActionCompletedHandler handler{};
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncAction>**)&static_cast<Windows::Foundation::IAsyncAction const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(handler)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncAction>**)&static_cast<Windows::Foundation::IAsyncAction const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(handler)));
         return handler;
     }
 
@@ -838,16 +838,16 @@ namespace winrt::impl
     }
 
     template <typename D, typename TResult>
-    void consume_IAsyncOperation<D, TResult>::Completed(Windows::Foundation::AsyncOperationCompletedHandler<TResult> const& handler) const
+    void consume_IAsyncOperation<D, TResult>::Completed(Windows::Foundation::AsyncOperationCompletedHandler<TResult> const& handler) const noexcept
     {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperation<TResult>>**)&static_cast<Windows::Foundation::IAsyncOperation<TResult> const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncOperation<TResult>>**)&static_cast<Windows::Foundation::IAsyncOperation<TResult> const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
     }
 
     template <typename D, typename TResult>
-    Windows::Foundation::AsyncOperationCompletedHandler<TResult> consume_IAsyncOperation<D, TResult>::Completed() const
+    Windows::Foundation::AsyncOperationCompletedHandler<TResult> consume_IAsyncOperation<D, TResult>::Completed() const noexcept
     {
         Windows::Foundation::AsyncOperationCompletedHandler<TResult> temp;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperation<TResult>>**)&static_cast<Windows::Foundation::IAsyncOperation<TResult> const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(temp)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncOperation<TResult>>**)&static_cast<Windows::Foundation::IAsyncOperation<TResult> const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(temp)));
         return temp;
     }
 
@@ -867,30 +867,30 @@ namespace winrt::impl
     }
 
     template <typename D, typename TProgress>
-    void consume_IAsyncActionWithProgress<D, TProgress>::Progress(Windows::Foundation::AsyncActionProgressHandler<TProgress> const& handler) const
+    void consume_IAsyncActionWithProgress<D, TProgress>::Progress(Windows::Foundation::AsyncActionProgressHandler<TProgress> const& handler) const noexcept
     {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->put_Progress(get_abi(handler)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->put_Progress(get_abi(handler)));
     }
 
     template <typename D, typename TProgress>
-    Windows::Foundation::AsyncActionProgressHandler<TProgress> consume_IAsyncActionWithProgress<D, TProgress>::Progress() const
+    Windows::Foundation::AsyncActionProgressHandler<TProgress> consume_IAsyncActionWithProgress<D, TProgress>::Progress() const noexcept
     {
         Windows::Foundation::AsyncActionProgressHandler<TProgress> handler;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->get_Progress(put_abi(handler)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->get_Progress(put_abi(handler)));
         return handler;
     }
 
     template <typename D, typename TProgress>
-    void consume_IAsyncActionWithProgress<D, TProgress>::Completed(Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const& handler) const
+    void consume_IAsyncActionWithProgress<D, TProgress>::Completed(Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const& handler) const noexcept
     {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
     }
 
     template <typename D, typename TProgress>
-    Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> consume_IAsyncActionWithProgress<D, TProgress>::Completed() const
+    Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> consume_IAsyncActionWithProgress<D, TProgress>::Completed() const noexcept
     {
         Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> handler;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(handler)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncActionWithProgress<TProgress>>**)&static_cast<Windows::Foundation::IAsyncActionWithProgress<TProgress> const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(handler)));
         return handler;
     }
 
@@ -908,30 +908,30 @@ namespace winrt::impl
     }
 
     template <typename D, typename TResult, typename TProgress>
-    void consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress(Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const& handler) const
+    void consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress(Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const& handler) const noexcept
     {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->put_Progress(get_abi(handler)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->put_Progress(get_abi(handler)));
     }
 
     template <typename D, typename TResult, typename TProgress>
-    Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress() const
+    Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Progress() const noexcept
     {
         Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> handler;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->get_Progress(put_abi(handler)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->get_Progress(put_abi(handler)));
         return handler;
     }
 
     template <typename D, typename TResult, typename TProgress>
-    void consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed(Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const& handler) const
+    void consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed(Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const& handler) const noexcept
     {
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->put_Completed(get_abi(handler)));
     }
 
     template <typename D, typename TResult, typename TProgress>
-    Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed() const
+    Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> consume_IAsyncOperationWithProgress<D, TResult, TProgress>::Completed() const noexcept
     {
         Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
-        check_hresult((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(handler)));
+        check_terminate((*(abi_t<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>**)&static_cast<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress> const&>(static_cast<D const&>(*this)))->get_Completed(put_abi(handler)));
         return handler;
     }
 

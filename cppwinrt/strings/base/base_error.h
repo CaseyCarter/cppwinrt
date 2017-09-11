@@ -232,93 +232,93 @@ WINRT_EXPORT namespace winrt
 
     struct hresult_access_denied : hresult_error
     {
-        hresult_access_denied() : hresult_error(E_ACCESSDENIED) {}
-        hresult_access_denied(param::hstring const& message) : hresult_error(E_ACCESSDENIED, message) {}
-        hresult_access_denied(from_abi_t) : hresult_error(E_ACCESSDENIED, from_abi) {}
+        hresult_access_denied() noexcept : hresult_error(E_ACCESSDENIED) {}
+        hresult_access_denied(param::hstring const& message) noexcept : hresult_error(E_ACCESSDENIED, message) {}
+        hresult_access_denied(from_abi_t) noexcept : hresult_error(E_ACCESSDENIED, from_abi) {}
     };
 
     struct hresult_wrong_thread : hresult_error
     {
-        hresult_wrong_thread() : hresult_error(RPC_E_WRONG_THREAD) {}
-        hresult_wrong_thread(param::hstring const& message) : hresult_error(RPC_E_WRONG_THREAD, message) {}
-        hresult_wrong_thread(from_abi_t) : hresult_error(RPC_E_WRONG_THREAD, from_abi) {}
+        hresult_wrong_thread() noexcept : hresult_error(RPC_E_WRONG_THREAD) {}
+        hresult_wrong_thread(param::hstring const& message) noexcept : hresult_error(RPC_E_WRONG_THREAD, message) {}
+        hresult_wrong_thread(from_abi_t) noexcept : hresult_error(RPC_E_WRONG_THREAD, from_abi) {}
     };
 
     struct hresult_not_implemented : hresult_error
     {
-        hresult_not_implemented() : hresult_error(E_NOTIMPL) {}
-        hresult_not_implemented(param::hstring const& message) : hresult_error(E_NOTIMPL, message) {}
-        hresult_not_implemented(from_abi_t) : hresult_error(E_NOTIMPL, from_abi) {}
+        hresult_not_implemented() noexcept : hresult_error(E_NOTIMPL) {}
+        hresult_not_implemented(param::hstring const& message) noexcept : hresult_error(E_NOTIMPL, message) {}
+        hresult_not_implemented(from_abi_t) noexcept : hresult_error(E_NOTIMPL, from_abi) {}
     };
 
     struct hresult_invalid_argument : hresult_error
     {
-        hresult_invalid_argument() : hresult_error(E_INVALIDARG) {}
-        hresult_invalid_argument(param::hstring const& message) : hresult_error(E_INVALIDARG, message) {}
-        hresult_invalid_argument(from_abi_t) : hresult_error(E_INVALIDARG, from_abi) {}
+        hresult_invalid_argument() noexcept : hresult_error(E_INVALIDARG) {}
+        hresult_invalid_argument(param::hstring const& message) noexcept : hresult_error(E_INVALIDARG, message) {}
+        hresult_invalid_argument(from_abi_t) noexcept : hresult_error(E_INVALIDARG, from_abi) {}
     };
 
     struct hresult_out_of_bounds : hresult_error
     {
-        hresult_out_of_bounds() : hresult_error(E_BOUNDS) {}
-        hresult_out_of_bounds(param::hstring const& message) : hresult_error(E_BOUNDS, message) {}
-        hresult_out_of_bounds(from_abi_t) : hresult_error(E_BOUNDS, from_abi) {}
+        hresult_out_of_bounds() noexcept : hresult_error(E_BOUNDS) {}
+        hresult_out_of_bounds(param::hstring const& message) noexcept : hresult_error(E_BOUNDS, message) {}
+        hresult_out_of_bounds(from_abi_t) noexcept : hresult_error(E_BOUNDS, from_abi) {}
     };
 
     struct hresult_no_interface : hresult_error
     {
-        hresult_no_interface() : hresult_error(E_NOINTERFACE) {}
-        hresult_no_interface(param::hstring const& message) : hresult_error(E_NOINTERFACE, message) {}
-        hresult_no_interface(from_abi_t) : hresult_error(E_NOINTERFACE, from_abi) {}
+        hresult_no_interface() noexcept : hresult_error(E_NOINTERFACE) {}
+        hresult_no_interface(param::hstring const& message) noexcept : hresult_error(E_NOINTERFACE, message) {}
+        hresult_no_interface(from_abi_t) noexcept : hresult_error(E_NOINTERFACE, from_abi) {}
     };
 
     struct hresult_disconnected : hresult_error
     {
-        hresult_disconnected() : hresult_error(RPC_E_DISCONNECTED) {}
-        hresult_disconnected(param::hstring const& message) : hresult_error(RPC_E_DISCONNECTED, message) {}
-        hresult_disconnected(from_abi_t) : hresult_error(RPC_E_DISCONNECTED, from_abi) {}
+        hresult_disconnected() noexcept : hresult_error(RPC_E_DISCONNECTED) {}
+        hresult_disconnected(param::hstring const& message) noexcept : hresult_error(RPC_E_DISCONNECTED, message) {}
+        hresult_disconnected(from_abi_t) noexcept : hresult_error(RPC_E_DISCONNECTED, from_abi) {}
     };
 
     struct hresult_class_not_available : hresult_error
     {
-        hresult_class_not_available() : hresult_error(CLASS_E_CLASSNOTAVAILABLE) {}
-        hresult_class_not_available(param::hstring const& message) : hresult_error(CLASS_E_CLASSNOTAVAILABLE, message) {}
-        hresult_class_not_available(from_abi_t) : hresult_error(CLASS_E_CLASSNOTAVAILABLE, from_abi) {}
+        hresult_class_not_available() noexcept : hresult_error(CLASS_E_CLASSNOTAVAILABLE) {}
+        hresult_class_not_available(param::hstring const& message) noexcept : hresult_error(CLASS_E_CLASSNOTAVAILABLE, message) {}
+        hresult_class_not_available(from_abi_t) noexcept : hresult_error(CLASS_E_CLASSNOTAVAILABLE, from_abi) {}
     };
 
     struct hresult_changed_state : hresult_error
     {
-        hresult_changed_state() : hresult_error(E_CHANGED_STATE) {}
-        hresult_changed_state(param::hstring const& message) : hresult_error(E_CHANGED_STATE, message) {}
-        hresult_changed_state(from_abi_t) : hresult_error(E_CHANGED_STATE, from_abi) {}
+        hresult_changed_state() noexcept : hresult_error(E_CHANGED_STATE) {}
+        hresult_changed_state(param::hstring const& message) noexcept : hresult_error(E_CHANGED_STATE, message) {}
+        hresult_changed_state(from_abi_t) noexcept : hresult_error(E_CHANGED_STATE, from_abi) {}
     };
 
     struct hresult_illegal_method_call : hresult_error
     {
-        hresult_illegal_method_call() : hresult_error(E_ILLEGAL_METHOD_CALL) {}
-        hresult_illegal_method_call(param::hstring const& message) : hresult_error(E_ILLEGAL_METHOD_CALL, message) {}
-        hresult_illegal_method_call(from_abi_t) : hresult_error(E_ILLEGAL_METHOD_CALL, from_abi) {}
+        hresult_illegal_method_call() noexcept : hresult_error(E_ILLEGAL_METHOD_CALL) {}
+        hresult_illegal_method_call(param::hstring const& message) noexcept : hresult_error(E_ILLEGAL_METHOD_CALL, message) {}
+        hresult_illegal_method_call(from_abi_t) noexcept : hresult_error(E_ILLEGAL_METHOD_CALL, from_abi) {}
     };
 
     struct hresult_illegal_state_change : hresult_error
     {
-        hresult_illegal_state_change() : hresult_error(E_ILLEGAL_STATE_CHANGE) {}
-        hresult_illegal_state_change(param::hstring const& message) : hresult_error(E_ILLEGAL_STATE_CHANGE, message) {}
-        hresult_illegal_state_change(from_abi_t) : hresult_error(E_ILLEGAL_STATE_CHANGE, from_abi) {}
+        hresult_illegal_state_change() noexcept : hresult_error(E_ILLEGAL_STATE_CHANGE) {}
+        hresult_illegal_state_change(param::hstring const& message) noexcept : hresult_error(E_ILLEGAL_STATE_CHANGE, message) {}
+        hresult_illegal_state_change(from_abi_t) noexcept : hresult_error(E_ILLEGAL_STATE_CHANGE, from_abi) {}
     };
 
     struct hresult_illegal_delegate_assignment : hresult_error
     {
-        hresult_illegal_delegate_assignment() : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT) {}
-        hresult_illegal_delegate_assignment(param::hstring const& message) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, message) {}
-        hresult_illegal_delegate_assignment(from_abi_t) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, from_abi) {}
+        hresult_illegal_delegate_assignment() noexcept : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT) {}
+        hresult_illegal_delegate_assignment(param::hstring const& message) noexcept : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, message) {}
+        hresult_illegal_delegate_assignment(from_abi_t) noexcept : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, from_abi) {}
     };
 
     struct hresult_canceled : hresult_error
     {
-        hresult_canceled() : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED)) {}
-        hresult_canceled(param::hstring const& message) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), message) {}
-        hresult_canceled(from_abi_t) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), from_abi) {}
+        hresult_canceled() noexcept : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED)) {}
+        hresult_canceled(param::hstring const& message) noexcept : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), message) {}
+        hresult_canceled(from_abi_t) noexcept : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), from_abi) {}
     };
 }
 
@@ -470,6 +470,18 @@ WINRT_EXPORT namespace winrt
 #endif
         {
             impl::throw_hresult(result);
+        }
+    }
+
+    __forceinline void check_terminate(HRESULT const result) noexcept
+    {
+#ifdef WINRT_STRICT_HRESULT
+        if (result != S_OK)
+#else
+        if (result < 0)
+#endif
+        {
+            WINRT_TERMINATE
         }
     }
 }

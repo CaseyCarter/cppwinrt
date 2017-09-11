@@ -26,7 +26,7 @@ WINRT_EXPORT namespace winrt
         T get() const
         {
             T result = nullptr;
-            check_hresult(m_ref->Resolve(put_abi(result)));
+            check_hresult(m_ref->Resolve(guid_of<T>(), reinterpret_cast<void**>(put_abi(result))));
             return result;
         }
 

@@ -23,7 +23,7 @@ namespace winrt::impl
     }
 
     template <typename To, typename From>
-    auto try_as(From* ptr)
+    auto try_as(From* ptr) noexcept
     {
         std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, To>, To, com_ptr<To>> temp{ nullptr };
         ptr->QueryInterface(guid_of<To>(), reinterpret_cast<void**>(put_abi(temp)));
@@ -55,22 +55,19 @@ WINRT_EXPORT namespace winrt
 
         com_ptr(std::nullptr_t = nullptr) noexcept {}
 
-        com_ptr(com_ptr const& other) noexcept :
-        m_ptr(other.m_ptr)
+        com_ptr(com_ptr const& other) noexcept : m_ptr(other.m_ptr)
         {
             addref();
         }
 
         template <typename U>
-        com_ptr(com_ptr<U> const& other) noexcept :
-        m_ptr(other.m_ptr)
+        com_ptr(com_ptr<U> const& other) noexcept : m_ptr(other.m_ptr)
         {
             addref();
         }
 
         template <typename U>
-        com_ptr(com_ptr<U>&& other) noexcept :
-        m_ptr(other.m_ptr)
+        com_ptr(com_ptr<U>&& other) noexcept : m_ptr(other.m_ptr)
         {
             other.m_ptr = nullptr;
         }
@@ -168,13 +165,13 @@ WINRT_EXPORT namespace winrt
         }
 
         template <typename To>
-        void as(To& to)
+        void as(To& to) const
         {
             to = as<impl::wrapped_type_t<To>>();
         }
 
         template <typename To>
-        bool try_as(To& to)
+        bool try_as(To& to) const noexcept
         {
             to = try_as<impl::wrapped_type_t<To>>();
             return static_cast<bool>(to);
@@ -225,7 +222,7 @@ WINRT_EXPORT namespace winrt
         template <typename U>
         friend struct com_ptr;
 
-        type* m_ptr = nullptr;
+        type* m_ptr{ nullptr };
     };
 }
 

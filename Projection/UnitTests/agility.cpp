@@ -134,13 +134,13 @@ TEST_CASE("TestAgileWeakReference")
     check_hresult(source->GetWeakReference(put_abi(ref)));
 
     // Drop the source object
-    REQUIRE(S_OK == ref->Resolve(put_abi(object)));
+    REQUIRE(S_OK == ref->Resolve(guid_of<IClosable>(), put_abi(object)));
     REQUIRE(object != nullptr);
     source = nullptr;
     REQUIRE(!destroyed);
     object = nullptr;
     REQUIRE(destroyed);
-    REQUIRE(S_OK == ref->Resolve(put_abi(object)));
+    REQUIRE(S_OK == ref->Resolve(guid_of<IClosable>(), put_abi(object)));
     REQUIRE(object == nullptr);
 
     // Marshaling support on weak ref

@@ -66,7 +66,7 @@ TEST_CASE("marshal agile weak-ref")
     check_hresult(CoUnmarshalInterface(get_abi(stream), guid_of<impl::IWeakReference>(), reinterpret_cast<void **>(put_abi(ref_copy))));
 
     IStringable copy;
-    check_hresult(ref_copy->Resolve(put_abi(copy)));
+    check_hresult(ref_copy->Resolve(guid_of<IStringable>(), put_abi(copy)));
 
     REQUIRE(copy.ToString() == L"Agile");
 }

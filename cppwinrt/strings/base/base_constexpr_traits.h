@@ -1,7 +1,7 @@
 
 namespace winrt::impl
 {
-    constexpr size_t bytes_needed(wchar_t const & ch)
+    constexpr size_t bytes_needed(wchar_t const & ch) noexcept
     {
         if (ch <= 0x7F)
         {
@@ -17,7 +17,7 @@ namespace winrt::impl
     }
 
     template <size_t Size>
-    constexpr size_t utf8_name_length(wchar_t const (&str)[Size])
+    constexpr size_t utf8_name_length(wchar_t const (&str)[Size]) noexcept
     {
         size_t length = 0;
 
@@ -30,12 +30,12 @@ namespace winrt::impl
     }
 
     template <size_t Size>
-    constexpr size_t utf8_name_length(constexpr_string<wchar_t, Size> const & str)
+    constexpr size_t utf8_name_length(constexpr_string<wchar_t, Size> const & str) noexcept
     {
         return utf8_name_length(str.elems_);
     }
 
-    constexpr size_t wchar_to_utf8(wchar_t const & ch, char * buf)
+    constexpr size_t wchar_to_utf8(wchar_t const & ch, char * buf) noexcept
     {
         if (ch <= 0x7F)
         {
@@ -57,7 +57,7 @@ namespace winrt::impl
     }
 
     template <size_t Utf8Size, size_t Size>
-    constexpr auto wchar_string_to_utf8(wchar_t const (&str)[Size])
+    constexpr auto wchar_string_to_utf8(wchar_t const (&str)[Size]) noexcept
     {
         char utf8[Utf8Size] = {};
         size_t utf8_index = 0;
@@ -71,7 +71,7 @@ namespace winrt::impl
     }
 
     template <size_t Utf8Size, size_t Size>
-    constexpr auto wchar_string_to_utf8(constexpr_string<wchar_t, Size> const & str)
+    constexpr auto wchar_string_to_utf8(constexpr_string<wchar_t, Size> const & str) noexcept
     {
         return wchar_string_to_utf8<Utf8Size>(str.elems_);
     }

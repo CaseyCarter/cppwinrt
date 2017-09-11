@@ -34,7 +34,7 @@ void TestIterable(IIterable<int> const & collection)
     REQUIRE(!it.MoveNext());
     REQUIRE(!it.MoveNext());
 
-    REQUIRE_THROWS_AS(it.Current(), hresult_out_of_bounds);
+    REQUIRE_TERMINATE(it.Current(), hresult_out_of_bounds);
 
     // nothing left
     std::array<int, 4> many {};

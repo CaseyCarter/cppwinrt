@@ -101,14 +101,12 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         IUnknown(std::nullptr_t) noexcept {}
         void* operator new(size_t) = delete;
 
-        IUnknown(IUnknown const& other) noexcept :
-        m_ptr(other.m_ptr)
+        IUnknown(IUnknown const& other) noexcept : m_ptr(other.m_ptr)
         {
             impl_addref();
         }
 
-        IUnknown(IUnknown&& other) noexcept :
-        m_ptr(other.m_ptr)
+        IUnknown(IUnknown&& other) noexcept : m_ptr(other.m_ptr)
         {
             other.m_ptr = nullptr;
         }
@@ -154,13 +152,13 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         }
 
         template <typename To>
-        void as(To& to)
+        void as(To& to) const
         {
             to = as<impl::wrapped_type_t<To>>();
         }
 
         template <typename To>
-        bool try_as(To& to)
+        bool try_as(To& to) const noexcept
         {
             to = try_as<impl::wrapped_type_t<To>>();
             return static_cast<bool>(to);
@@ -200,7 +198,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
             }
         }
 
-        ::IUnknown* m_ptr = nullptr;
+        ::IUnknown* m_ptr{ nullptr };
 
     private:
 
@@ -349,13 +347,13 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 namespace winrt::impl
 {
     template <typename T, std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, T>>* = nullptr>
-    T empty_value()
+    T empty_value() noexcept
     {
         return {};
     }
 
     template <typename T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>* = nullptr>
-    T empty_value()
+    T empty_value() noexcept
     {
         return nullptr;
     }

@@ -1,5 +1,5 @@
 
 template <typename D> @ %T<D>::%(%) const
 {
-    return shim().template as<@>().%(%);
+    return shim().template try_as<@>().%(%);
 }

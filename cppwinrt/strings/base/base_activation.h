@@ -56,7 +56,7 @@ namespace winrt::impl
 
     struct factory_cache
     {
-        void add(factory_cache_typeless_entry* entry)
+        void add(factory_cache_typeless_entry* entry) noexcept
         {
             WINRT_ASSERT(entry);
             lock_guard const guard(m_lock);
@@ -177,7 +177,7 @@ WINRT_EXPORT namespace winrt
     template <typename Class, typename Instance = Class>
     Instance activate_instance()
     {
-        return get_activation_factory<Class>().ActivateInstance().template as<Instance>();
+        return get_activation_factory<Class>().ActivateInstance().template try_as<Instance>();
     }
 
     inline void clear_factory_cache() noexcept

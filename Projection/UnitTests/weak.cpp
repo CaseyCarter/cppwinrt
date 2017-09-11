@@ -169,7 +169,7 @@ TEST_CASE("weak,lifetime")
         com_ptr<winrt::impl::IWeakReference> ref;
         check_hresult(source->GetWeakReference(put_abi(ref)));
         IStringable object2;
-        check_hresult(ref->Resolve(put_abi(object2)));
+        check_hresult(ref->Resolve(guid_of<IStringable>(), put_abi(object2)));
         REQUIRE(object == object2);
     }
     {
@@ -177,7 +177,7 @@ TEST_CASE("weak,lifetime")
         com_ptr<winrt::impl::IWeakReference> ref;
         check_hresult(object.as<winrt::impl::IWeakReferenceSource>()->GetWeakReference(put_abi(ref)));
         IStringable object2;
-        check_hresult(ref->Resolve(put_abi(object2)));
+        check_hresult(ref->Resolve(guid_of<IStringable>(), put_abi(object2)));
         REQUIRE(object == object2);
     }
     {
@@ -186,7 +186,7 @@ TEST_CASE("weak,lifetime")
         object = nullptr;
         com_ptr<winrt::impl::IWeakReference> ref;
         check_hresult(source->GetWeakReference(put_abi(ref)));
-        check_hresult(ref->Resolve(put_abi(object)));
+        check_hresult(ref->Resolve(guid_of<IStringable>(), put_abi(object)));
         REQUIRE(object.ToString() == L"Weak");
     }
     {
@@ -196,7 +196,7 @@ TEST_CASE("weak,lifetime")
         check_hresult(source->GetWeakReference(put_abi(ref)));
         source = nullptr;
         IStringable object2;
-        check_hresult(ref->Resolve(put_abi(object2)));
+        check_hresult(ref->Resolve(guid_of<IStringable>(), put_abi(object2)));
         REQUIRE(object.ToString() == L"Weak");
     }
     {
@@ -206,7 +206,7 @@ TEST_CASE("weak,lifetime")
         com_ptr<winrt::impl::IWeakReference> ref;
         check_hresult(source->GetWeakReference(put_abi(ref)));
         source = nullptr;
-        check_hresult(ref->Resolve(put_abi(object)));
+        check_hresult(ref->Resolve(guid_of<IStringable>(), put_abi(object)));
         REQUIRE(object == nullptr);
     }
 

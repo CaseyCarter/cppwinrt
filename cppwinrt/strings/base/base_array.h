@@ -216,13 +216,13 @@ WINRT_EXPORT namespace winrt
 
     protected:
 
-        array_view(pointer data, uint32_t size) :
+        array_view(pointer data, uint32_t size) noexcept :
             m_data(data),
             m_size(size)
         {}
 
-        pointer m_data = nullptr;
-        uint32_t m_size = 0;
+        pointer m_data{ nullptr };
+        uint32_t m_size{ 0 };
     };
 
     template <typename T>
@@ -393,8 +393,7 @@ namespace winrt::impl
     {
         array_size_proxy& operator=(array_size_proxy const&) = delete;
 
-        array_size_proxy(com_array<T>& value) noexcept :
-        m_value(value)
+        array_size_proxy(com_array<T>& value) noexcept : m_value(value)
         {}
 
         ~array_size_proxy() noexcept
@@ -415,15 +414,13 @@ namespace winrt::impl
     private:
 
         com_array<T>& m_value;
-        uint32_t m_size = 0;
+        uint32_t m_size{ 0 };
     };
 
     template <typename T>
     struct com_array_proxy
     {
-        com_array_proxy(uint32_t* size, winrt::impl::arg_out<T>* value) noexcept :
-        m_size(size),
-            m_value(value)
+        com_array_proxy(uint32_t* size, winrt::impl::arg_out<T>* value) noexcept : m_size(size), m_value(value)
         {}
 
         ~com_array_proxy() noexcept

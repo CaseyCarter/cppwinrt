@@ -3,7 +3,7 @@ namespace winrt::impl
 {
     struct free_threaded_marshaler : ::IMarshal
     {
-        free_threaded_marshaler(::IUnknown* object)
+        free_threaded_marshaler(::IUnknown* object) noexcept
         {
             m_object.copy_from(object);
         }

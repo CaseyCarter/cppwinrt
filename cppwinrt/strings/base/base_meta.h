@@ -185,13 +185,13 @@ namespace winrt::impl
     template <typename D, typename I>
     struct require_one : consume_t<D, I>
     {
-        operator I() const
+        operator I() const noexcept
         {
             D const& d = *static_cast<D const*>(this);
 
             if (d)
             {
-                return d.template as<I>();
+                return d.template try_as<I>();
             }
 
             return nullptr;
@@ -205,13 +205,13 @@ namespace winrt::impl
     template <typename D, typename I>
     struct base_one
     {
-        operator I() const
+        operator I() const noexcept
         {
             D const& d = *static_cast<D const*>(this);
 
             if (d)
             {
-                return d.template as<I>();
+                return d.template try_as<I>();
             }
 
             return nullptr;

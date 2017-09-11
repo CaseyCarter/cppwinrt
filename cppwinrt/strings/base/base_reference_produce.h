@@ -22,9 +22,8 @@ namespace winrt::impl
     template <typename T>
     struct reference : implements<reference<T>, Windows::Foundation::IReference<T>, Windows::Foundation::IPropertyValue>
     {
-        reference(T const & value)
+        reference(T const & value) : m_value(value)
         {
-            m_value = value;
         }
 
         T Value() const
@@ -32,7 +31,11 @@ namespace winrt::impl
             return m_value;
         }
 
-        Windows::Foundation::PropertyType Type() { throw hresult_not_implemented(); }
+        Windows::Foundation::PropertyType Type() const noexcept
+        {
+            return Windows::Foundation::PropertyType::OtherType;
+        }
+
         bool IsNumericScalar() { throw hresult_not_implemented(); }
         uint8_t GetUInt8() { throw hresult_not_implemented(); }
         int16_t GetInt16() { throw hresult_not_implemented(); }

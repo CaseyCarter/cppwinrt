@@ -1,3 +1,3 @@
 {%
-    check_hresult(WINRT_SHIM(@)->%(%));%
+    %(WINRT_SHIM(@)->%(%));%
 }

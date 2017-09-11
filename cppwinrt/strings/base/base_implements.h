@@ -410,7 +410,7 @@ namespace winrt::impl
     template <bool Agile>
     struct weak_ref : IWeakReference, weak_source_producer<Agile>
     {
-        weak_ref(::IUnknown* object, uint32_t const strong) :
+        weak_ref(::IUnknown* object, uint32_t const strong) noexcept :
             m_object(object),
             m_strong(strong)
         {
@@ -463,7 +463,7 @@ namespace winrt::impl
             return target;
         }
 
-        HRESULT __stdcall Resolve(GUID const& id, ::IInspectable** objectReference) noexcept override
+        HRESULT __stdcall Resolve(GUID const& id, ::IUnknown** objectReference) noexcept override
         {
             uint32_t target = m_strong.load(std::memory_order_relaxed);
 
@@ -484,7 +484,7 @@ namespace winrt::impl
             }
         }
 
-        void set_strong(uint32_t const count)
+        void set_strong(uint32_t const count) noexcept
         {
             m_strong = count;
         }
@@ -506,7 +506,7 @@ namespace winrt::impl
             return target;
         }
 
-        IWeakReferenceSource* get_source()
+        IWeakReferenceSource* get_source() noexcept
         {
             increment_strong();
             return &this->m_source;
@@ -537,9 +537,9 @@ namespace winrt::impl
     struct WINRT_EBO root_implements_composing_outer<true>
     {
         template <typename Qi>
-        Qi as() const
+        Qi try_as() const noexcept
         {
-            return m_inner.as<Qi>();
+            return m_inner.try_as<Qi>();
         }
 
         explicit operator bool() const noexcept
@@ -640,7 +640,7 @@ namespace winrt::impl
 
     protected:
 
-        explicit root_implements(uint32_t references = 1)
+        explicit root_implements(uint32_t references = 1) noexcept
             : m_references(references)
         {}
 

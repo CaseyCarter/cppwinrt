@@ -44,6 +44,16 @@ namespace cppwinrt
             return false;
         }
 
+        bool is_property(meta::method const& method)
+        {
+            if (method.is_special())
+            {
+                return starts_with(method.raw_name, "put_") || starts_with(method.raw_name, "get_");
+            }
+
+            return false;
+        }
+
         std::string get_impl_name(std::string_view name)
         {
             std::string result;
@@ -769,17 +779,30 @@ namespace cppwinrt
             }
         }
 
+        char const* get_noexcept(meta::method const& method)
+        {
+            if (is_property(method))
+            {
+                return " noexcept";
+            }
+            else
+            {
+                return "";
+            }
+        }
+
         void write_interface_method_declarations(output& out, meta::type const& type)
         {
             for (meta::method const& method : type.token.get_methods())
             {
                 std::string method_name = method.get_name();
 
-                out.write("    %@ %(%) const;\n",
+                out.write("    %@ %(%) const%;\n",
                     bind_output(write_deprecated, method.token),
                     method.return_type.signature.get_name(),
                     method_name,
-                    bind_output(write_params, method, empty_generic_params));
+                    bind_output(write_params, method, empty_generic_params),
+                    get_noexcept(method));
 
                 if (is_event_method(method))
                 {
@@ -1165,10 +1188,23 @@ namespace cppwinrt
             }
         }
 
+        void write_shim_check(output& out, meta::method const& method)
+        {
+            if (is_property(method))
+            {
+                out.write("check_terminate");
+            }
+            else
+            {
+                out.write("check_hresult");
+            }
+        }
+
         void write_shim_body(output& out, meta::type const& type, meta::method const& method)
         {
             out.write(strings::write_shim_body,
                 bind_output(write_shim_pre, method),
+                bind_output(write_shim_check, method),
                 type.full_name(),
                 method.get_abi_name(),
                 bind_output(write_abi_args, method),
@@ -1460,11 +1496,12 @@ namespace cppwinrt
             {
                 std::string const method_name = method.get_name();
 
-                out.write("\ntemplate <typename D> @ consume_%<D>::%(%) const\n",
+                out.write("\ntemplate <typename D> @ consume_%<D>::%(%) const%\n",
                     method.return_type.signature.get_name(),
                     get_impl_name(type.full_name()),
                     method_name,
-                    bind_output(write_params, method, empty_generic_params));
+                    bind_output(write_params, method, empty_generic_params),
+                    get_noexcept(method));
 
                 write_shim_body(out, type, method);
 

@@ -20,7 +20,7 @@ struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference,
     {
     }
 
-    HRESULT __stdcall Resolve(const GUID & iid, ::IInspectable ** objectReference) override
+    HRESULT __stdcall Resolve(const GUID & iid, ::IUnknown** objectReference) override
     {
         return get_abi(m_reference)->QueryInterface(iid, reinterpret_cast<void **>(objectReference));
     }

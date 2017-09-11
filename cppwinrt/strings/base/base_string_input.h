@@ -7,20 +7,20 @@ WINRT_EXPORT namespace winrt::param
         hstring(hstring const& values) = delete;
         hstring& operator=(hstring const& values) = delete;
 
-        hstring(winrt::hstring const& value) : m_handle(get_abi(value))
+        hstring(winrt::hstring const& value) noexcept : m_handle(get_abi(value))
         {
         }
 
-        hstring(std::wstring_view const& value)
+        hstring(std::wstring_view const& value) noexcept
         {
             WINRT_VERIFY_(S_OK, WindowsCreateStringReference(value.data(), static_cast<uint32_t>(value.size()), &m_header, &m_handle));
         }
 
-        hstring(std::wstring const& value) : hstring(std::wstring_view(value))
+        hstring(std::wstring const& value) noexcept : hstring(std::wstring_view(value))
         {
         }
 
-        hstring(wchar_t const* const value) : hstring(std::wstring_view(value))
+        hstring(wchar_t const* const value) noexcept : hstring(std::wstring_view(value))
         {
         }
 
