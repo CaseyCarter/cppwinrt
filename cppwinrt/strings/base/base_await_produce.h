@@ -214,7 +214,10 @@ WINRT_EXPORT namespace winrt
 
                 uint32_t await_resume() const
                 {
-                    check_win32<ERROR_HANDLE_EOF>(m_result);
+                    if (m_result != ERROR_HANDLE_EOF)
+                    {
+                        winrt::impl::check_win32(m_result);
+                    }
                     return static_cast<uint32_t>(m_overlapped.InternalHigh);
                 }
 
@@ -264,7 +267,10 @@ WINRT_EXPORT namespace winrt
 
                 uint32_t await_resume() const
                 {
-                    check_win32<ERROR_HANDLE_EOF>(m_result);
+                    if (m_result != ERROR_HANDLE_EOF)
+                    {
+                        winrt::impl::check_win32(m_result);
+                    }
                     return static_cast<uint32_t>(m_overlapped.InternalHigh);
                 }
 
