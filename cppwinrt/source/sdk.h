@@ -1,5 +1,7 @@
 #pragma once
 
+#include <regex>
+
 namespace cppwinrt
 {
     struct registry_traits : winrt::impl::handle_traits<HKEY>
@@ -12,19 +14,11 @@ namespace cppwinrt
 
     using registry_key = winrt::impl::handle<registry_traits>;
 
-    inline void check_registry(LONG result)
-    {
-        if (result != ERROR_SUCCESS)
-        {
-            winrt::impl::throw_hresult(HRESULT_FROM_WIN32(result));
-        }
-    }
-
     inline std::experimental::filesystem::path get_sdk_path()
     {
         registry_key key;
 
-        check_registry(RegOpenKeyEx(
+        winrt::impl::check_win32(RegOpenKeyEx(
             HKEY_LOCAL_MACHINE,
             L"SOFTWARE\\Microsoft\\Windows Kits\\Installed Roots",
             0,
@@ -33,7 +27,7 @@ namespace cppwinrt
 
         DWORD path_size = 0;
 
-        check_registry(RegQueryValueEx(
+        winrt::impl::check_win32(RegQueryValueEx(
             key.get(),
             L"KitsRoot10",
             nullptr,
@@ -43,7 +37,7 @@ namespace cppwinrt
 
         std::wstring root((path_size / sizeof(wchar_t)) - 1, L'?');
 
-        check_registry(RegQueryValueEx(
+        winrt::impl::check_win32(RegQueryValueEx(
             key.get(),
             L"KitsRoot10",
             nullptr,
@@ -137,7 +131,7 @@ namespace cppwinrt
             }
 
             for (std::experimental::filesystem::directory_entry const& item :
-                 std::experimental::filesystem::directory_iterator(sdk_path / L"Extension SDKs"))
+                std::experimental::filesystem::directory_iterator(sdk_path / L"Extension SDKs"))
             {
                 path = item.path() / version;
                 path /= L"SDKManifest.xml";
@@ -149,5 +143,62 @@ namespace cppwinrt
         {
             throw invalid_usage{ L"Could not find Windows SDK: ", std::wstring(e.message()), e.code() };
         }
+    }
+
+    std::wstring detect_sdk_version()
+    {
+        std::array<wchar_t, MAX_PATH> module_path;
+        auto size = GetModuleFileNameW(nullptr, module_path.data(), static_cast<DWORD>(module_path.size()));
+        check_win32_bool(size);
+        
+        std::wregex versionRx(LR"((\d+\.\d+\.\d+\.\d+))");
+        std::wcmatch versionMatch;
+        if (std::regex_search(module_path.data(), versionMatch, versionRx))
+        {
+            return versionMatch[1].str();
+        }
+
+        registry_key key;
+        winrt::impl::check_win32(RegOpenKeyEx(
+            HKEY_LOCAL_MACHINE,
+            L"SOFTWARE\\Microsoft\\Windows Kits\\Installed Roots",
+            0,
+            KEY_READ,
+            key.put()));
+
+        std::wstring sdk_version{ L"10.0.15063.0" };
+        DWORD index{ 0 };
+        ULONG version_parts[4]{ 0 };
+        std::array<wchar_t, MAX_PATH> kit_root;
+        while (RegEnumKeyW(key.get(), index++, kit_root.data(), kit_root.size()) == ERROR_SUCCESS)
+        {
+            if (!std::regex_search(kit_root.data(), versionMatch, versionRx))
+            {
+                continue;
+            }
+            std::wstring version_str{ versionMatch[1].str() };
+            wchar_t * next_part{ version_str.data() };
+            for (int i = 0; ; ++i)
+            {
+                auto version_part = wcstoul(next_part, &next_part, 10);
+                if (version_part < version_parts[i])
+                {
+                    break;
+                }
+                version_parts[i] = version_part;
+                if (i == _countof(version_parts) - 1)
+                {
+                    sdk_version = version_str;
+                    break;
+                }
+                if (!next_part)
+                {
+                    break;
+                }
+                ++next_part;
+            }
+        }
+
+        return sdk_version;
     }
 }

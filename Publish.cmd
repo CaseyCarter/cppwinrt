@@ -25,17 +25,16 @@ for %%x in (exe pdb) do XCOPY CppWinRT\%BuildPlatform%\%BuildConfiguration%\*.%%
 powershell -ExecutionPolicy ByPass -Command "& '%~dp0\zip.ps1' -directory '%~dp0\compiler' -name 'compiler.zip'"
 echo d | XCOPY compiler.zip %PublishShare% /D /R /Y /J 
 
-echo Publish GitHub Format 
+echo Publish GitHub distribution
 XCOPY %BuildStaging%\winrt stage\winrt /D /S /R /Y /J /I 
 set PUBLIC_SAMPLES=Blocks CL CustomBuffer Direct2D Interop JustCoroutines Ocr Syndication Video XamlCalendar XamlCode XamlMarkup
 for %%x in (%PUBLIC_SAMPLES%) do XCOPY Projection\Samples\%%x stage\Samples\%%x /D /S /R /Y /J /I 
 powershell -ExecutionPolicy ByPass -Command "& '%~dp0\zip.ps1' -directory '%~dp0\stage' -name 'github.zip'"
 echo d | XCOPY github.zip %PublishShare% /D /R /Y /J 
 
-echo Publish Projection 
+echo Publish entire projection (github + remaining samples and unit tests)
+XCOPY compiler stage /D /R /Y /J /I
 XCOPY Projection\Samples stage\Samples /D /S /R /Y /J /I 
-XCOPY Projection\SDKReferences stage\SDKReferences /D /S /R /Y /J /I 
-XCOPY Projection\SDKResponseFiles stage\SDKResponseFiles /D /S /R /Y /J /I 
 XCOPY Projection\UnitTests stage\Tests /D /R /Y /J /I 
 powershell -ExecutionPolicy ByPass -Command "& '%~dp0\zip.ps1' -directory '%~dp0\stage' -name 'projection.zip'"
 echo d | XCOPY projection.zip %PublishShare% /D /R /Y /J 

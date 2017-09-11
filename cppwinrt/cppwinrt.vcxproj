@@ -98,6 +98,7 @@
     <ClInclude Include="strings\write\write_component_class_source.h" />
     <ClInclude Include="strings\write\write_component_class_static_definition.h" />
     <ClInclude Include="strings\write\write_component_class_xaml_shim.h" />
+    <ClInclude Include="strings\write\write_component_def.h" />
     <ClInclude Include="strings\write\write_component_factory_activate_instance.h" />
     <ClInclude Include="strings\write\write_component_factory_activate_instance_not_implemented.h" />
     <ClInclude Include="strings\write\write_component_factory_forwarding_composable.h" />
@@ -105,8 +106,12 @@
     <ClInclude Include="strings\write\write_component_factory_forwarding_static.h" />
     <ClInclude Include="strings\write\write_component_interface_method_definition.h" />
     <ClInclude Include="strings\write\write_component_lock_declaration.h" />
+    <ClInclude Include="strings\write\write_component_pch_header.h" />
+    <ClInclude Include="strings\write\write_component_pch_source.h" />
     <ClInclude Include="strings\write\write_component_produce_override_dispatch.h" />
     <ClInclude Include="strings\write\write_component_produce_override_dispatch_method.h" />
+    <ClInclude Include="strings\write\write_component_project.h" />
+    <ClInclude Include="strings\write\write_component_project_filters.h" />
     <ClInclude Include="strings\write\write_component_source.h" />
     <ClInclude Include="strings\write\write_component_source_empty.h" />
     <ClInclude Include="strings\write\write_component_static_class_header.h" />

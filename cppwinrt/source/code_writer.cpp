@@ -1,4 +1,5 @@
 #include "pch.h"
+#include <algorithm>
 #include "code_writer.h"
 #include "reference_writer.h"
 #include "version.h"
@@ -2812,6 +2813,199 @@ void t()
         }
 
         out.save_as(settings::output / "module.cpp");
+    }
+
+    void write_component_project_sources(output& out, std::vector<meta::type const*> const& types)
+    {
+        for (meta::type const* type : types)
+        {
+            out.write(R"(
+    <ClCompile Include="%.cpp" />)",
+                get_relative_component_name(*type));
+        }
+    }
+
+    void write_component_project_includes(output& out, std::vector<meta::type const*> const& types)
+    {
+        for (meta::type const* type : types)
+        {
+            std::string_view filename = get_relative_component_name(*type);
+            out.write(R"(
+    <ClInclude Include="%.g.h" />
+    <ClInclude Include="%.h" />)",
+                filename,
+                filename);
+        }
+    }
+
+    struct rpc_cstr_traits : winrt::impl::handle_traits<RPC_CSTR>
+    {
+        static void close(type& value) noexcept
+        {
+            RpcStringFreeA(&value);
+        }
+    };
+
+    std::string
+    CreateGuid()
+    {
+        GUID guid;
+        winrt::impl::check_win32(UuidCreate(&guid));
+        winrt::impl::handle<rpc_cstr_traits> rpcStr;
+        winrt::impl::check_win32(UuidToStringA(&guid, rpcStr.put()));
+        return std::string((PCSTR)rpcStr.get());
+    }
+
+    void write_component_def()
+    {
+        std::experimental::filesystem::path comp_def = settings::output / "module.def";
+        if (!settings::overwrite && exists(comp_def.string()))
+        {
+            return;
+        }
+        output out;
+        out.write(strings::write_component_def);
+        out.save_as(comp_def);
+    }
+
+    void write_component_pch_source()
+    {
+        std::experimental::filesystem::path pch_source = settings::output / "pch.cpp";
+        if (!settings::overwrite && exists(pch_source.string()))
+        {
+            return;
+        }
+        output out;
+        out.write(strings::write_component_pch_source);
+        out.save_as(pch_source);
+    }
+
+    void write_component_pch_header()
+    {
+        std::experimental::filesystem::path pch_header = settings::output / "pch.h";
+        if (!settings::overwrite && exists(pch_header.string()))
+        {
+            return;
+        }
+        output out;
+        out.write(strings::write_component_pch_header);
+        out.save_as(pch_header);
+    }
+
+    void write_component_project_natvis(output& out, std::string const& project_name)
+    {
+        if (!settings::create_natvis)
+        {
+            return;
+        }
+        out.write(R"(
+  <ItemGroup>
+    <Natvis Include="%.natvis" />
+  </ItemGroup>)", project_name);
+    }
+
+    void write_component_winmd_dependencies(output& out)
+    {
+        for (auto& input : settings::inputs)
+        {
+            out.write(input.string(), ";");
+        }
+    }
+
+    void write_component_project(std::vector<meta::type const*> const& types)
+    {
+        std::string project_name(settings::component ? settings::component_name : "cppwinrt");
+        if (project_name.empty())
+        {
+            return;
+        }
+        std::experimental::filesystem::path project_path = settings::output / (project_name + ".vcxproj");
+        if (exists(project_path.string()))
+        {
+            return;
+        }
+
+        static PCSTR platform_toolset = "v141";
+        std::string platform_version(begin(settings::platform_version), end(settings::platform_version));
+        std::string project_ns = project_name;
+        project_ns.erase(std::remove(project_ns.begin(), project_ns.end(), '.'), project_ns.end());
+        std::string project_exports = project_ns + "_EXPORTS";
+        std::transform(project_ns.begin(), project_ns.end(), project_exports.begin(), [](char c) {return (char)::toupper(c); });
+
+        output out;
+        out.write(strings::write_component_project,
+            CreateGuid(),
+            project_ns,
+            platform_version,    
+            platform_toolset,   
+            platform_toolset,
+            platform_toolset,
+            platform_toolset,
+            GetCommandLineA(),
+            project_name,
+            bind_output(write_component_winmd_dependencies),
+            project_exports,
+            project_exports,
+            project_exports,
+            project_exports,
+            bind_output(write_component_project_sources, types),
+            bind_output(write_component_project_includes, types),
+            bind_output(write_component_project_natvis, project_name)
+        );
+
+        out.save_as(project_path);
+    }
+
+    void write_component_project_filters_sources(output& out, std::vector<meta::type const*> const& types)
+    {
+        for (meta::type const* type : types)
+        {
+            out.write(R"(
+    <ClCompile Include="%.cpp">
+      <Filter>Generated</Filter>
+    </ClCompile>)",
+                get_relative_component_name(*type));
+        }
+    }
+
+    void write_component_project_filters_includes(output& out, std::vector<meta::type const*> const& types)
+    {
+        for (meta::type const* type : types)
+        {
+            std::string_view filename = get_relative_component_name(*type);
+            out.write(R"(
+    <ClInclude Include="%.g.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="%.h">
+      <Filter>Generated</Filter>
+    </ClInclude>)",
+                filename,
+                filename);
+        }
+    }
+
+    void write_component_project_filters(std::vector<meta::type const*> const& types)
+    {
+        std::string project_name(settings::component ? settings::component_name : "cppwinrt");
+        if (project_name.empty())
+        {
+            return;
+        }
+        std::experimental::filesystem::path filters_path = settings::output / (project_name + ".vcxproj.filters");
+        if (exists(filters_path.string()))
+        {
+            return;
+        }
+
+        output out;
+        out.write(strings::write_component_project_filters,
+            bind_output(write_component_project_filters_sources, types),
+            bind_output(write_component_project_filters_includes, types),
+            CreateGuid()
+        );
+
+        out.save_as(filters_path);
     }
 
     void write_component_class_constructor_declarations(output& out, meta::type const& type, meta::token const factory)

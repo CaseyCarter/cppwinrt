@@ -14,12 +14,19 @@ namespace cppwinrt
         {
             uint32_t count = 0;
 
+            bool escape = false;
             for (char const c : format)
             {
-                if (c == '%' || c == '@')
+                if (c == '^')
+                {
+                    escape = true;
+                    continue;
+                }
+                if ((c == '%' || c == '@') && !escape)
                 {
                     ++count;
                 }
+                escape = false;
             }
 
             return count;
@@ -43,20 +50,36 @@ namespace cppwinrt
         template <typename First, typename ... Rest>
         void write_segment(std::string_view value, First const& first, Rest const& ... rest)
         {
-            size_t const offset = value.find_first_of("%@");
+            size_t offset = value.find_first_of("^%@");
             WINRT_ASSERT(offset != std::string_view::npos);
             append(value.substr(0, offset));
 
-            if (value[offset] == '%')
+            if (value[offset] == '^')
             {
-                write_arg(first);
+                char next = value[offset + 1];
+                if (next == '%' || next == '@')
+                {
+                    append(next);
+                    offset++;
+                }
+                else
+                {
+                    append('^');
+                }
+                write_segment(value.substr(offset + 1), first, rest ...);
             }
             else
             {
-                write_code_arg(first);
+                if (value[offset] == '%')
+                {
+                    write_arg(first);
+                }
+                else
+                {
+                    write_code_arg(first);
+                }
+                write_segment(value.substr(offset + 1), rest ...);
             }
-
-            write_segment(value.substr(offset + 1), rest ...);
         }
 
         template <typename F>

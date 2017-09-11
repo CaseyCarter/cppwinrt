@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,36 +20,37 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{079B3738-37CD-4705-9C86-43AF7E9E577C}</ProjectGuid>
-    <RootNamespace>ComposableBase</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <ProjectGuid>{%}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>%</RootNamespace>
+    <WindowsTargetPlatformVersion>%</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>%</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>%</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>%</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>%</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -70,34 +71,42 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
-    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);..\..\..</ExecutablePath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
-    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);..\..\..</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
-    <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);..\..\..</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
-    <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);..\..\..</ExecutablePath>
   </PropertyGroup>
+  <ItemDefinitionGroup>
+    <CustomBuildStep>
+      <Command>% -out $(ProjectDir)</Command>
+      <Message>C++/WinRT compiler</Message>
+      <Outputs>winrt/%.h;module.h</Outputs>
+      <Inputs>%</Inputs>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>false</SDLCheck>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;%;^%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..</AdditionalIncludeDirectories>
-      <AdditionalOptions> /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++17 /permissive- /await  /D "NDEBUG" ^%(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
+      <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)</Command>
@@ -105,32 +114,23 @@
     <PostBuildEvent>
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
-    <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Message>C++/WinRT compiler</Message>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>Composable.Base.h;module.h</Outputs>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Inputs>Composable.Base.winmd</Inputs>
-    </CustomBuildStep>
+    <Midl>
+      <AdditionalOptions>/nomidl /struct_by_ref ^%(AdditionalOptions)</AdditionalOptions>
+    </Midl>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>false</SDLCheck>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;%;^%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..</AdditionalIncludeDirectories>
-      <AdditionalOptions> /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++17 /permissive- /await ^%(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
+      <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)</Command>
@@ -138,36 +138,27 @@
     <PostBuildEvent>
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
-    <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Message>C++/WinRT compiler</Message>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>Composable.Base.h;module.h</Outputs>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Inputs>Composable.Base.winmd</Inputs>
-    </CustomBuildStep>
+    <Midl>
+      <AdditionalOptions>/nomidl /struct_by_ref ^%(AdditionalOptions)</AdditionalOptions>
+    </Midl>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>false</SDLCheck>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;%;^%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..</AdditionalIncludeDirectories>
-      <AdditionalOptions> /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++17 /permissive- /await ^%(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)</Command>
@@ -175,36 +166,27 @@
     <PostBuildEvent>
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
-    <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Message>C++/WinRT compiler</Message>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>Composable.Base.h;module.h</Outputs>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Inputs>Composable.Base.winmd</Inputs>
-    </CustomBuildStep>
+    <Midl>
+      <AdditionalOptions>/nomidl /struct_by_ref ^%(AdditionalOptions)</AdditionalOptions>
+    </Midl>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>false</SDLCheck>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;%;^%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..</AdditionalIncludeDirectories>
-      <AdditionalOptions> /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/std:c++17 /permissive- /await ^%(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)</Command>
@@ -212,52 +194,26 @@
     <PostBuildEvent>
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
-    <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Message>C++/WinRT compiler</Message>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>Composable.Base.h;module.h</Outputs>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Inputs>Composable.Base.winmd</Inputs>
-    </CustomBuildStep>
+    <Midl>
+      <AdditionalOptions>/nomidl /struct_by_ref ^%(AdditionalOptions)</AdditionalOptions>
+    </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Derived.cpp" />
     <ClCompile Include="module.cpp" />
-    <ClCompile Include="pch.cpp" />
-    <ClCompile Include="Root.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>%
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Derived.g.h" />
-    <ClInclude Include="Derived.h" />
     <ClInclude Include="module.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="Root.g.h" />
-    <ClInclude Include="Root.h" />
+    <ClInclude Include="pch.h" />%
   </ItemGroup>
   <ItemGroup>
     <None Include="module.def" />
-  </ItemGroup>
-  <ItemGroup>
-    <Midl Include="Composable.Base.idl">
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnableWindowsRuntime>
-      <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableWindowsRuntime>
-      <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnableWindowsRuntime>
-      <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableWindowsRuntime>
-      <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Composable.Base.winmd</MetadataFileName>
-      <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Composable.Base.winmd</MetadataFileName>
-      <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Composable.Base.winmd</MetadataFileName>
-      <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Composable.Base.winmd</MetadataFileName>
-    </Midl>
-  </ItemGroup>
+  </ItemGroup>%
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

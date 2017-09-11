@@ -43,6 +43,12 @@ namespace cppwinrt
     // These two should not be needing the types list as it should go into write_component_class_generated_header
     void write_component_header(std::vector<meta::type const*> const& types, std::set<std::string> const& projected_namespaces);
     void write_component_source(std::vector<meta::type const*> const& types);
+    
+    void write_component_project(std::vector<meta::type const*> const& types);
+    void write_component_project_filters(std::vector<meta::type const*> const& types);
+    void write_component_def();
+    void write_component_pch_source();
+    void write_component_pch_header();
 
     void write_component_class_generated_header(meta::type const& type);
     void write_component_class_header(meta::type const& type);

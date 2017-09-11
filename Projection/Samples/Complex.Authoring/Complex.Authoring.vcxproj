@@ -20,9 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}</ProjectGuid>
+    <ProjectGuid>{12032a77-a717-4327-a465-c1f46405376c}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>FarmAnimals</RootNamespace>
+    <RootNamespace>ComplexAuthoring</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -73,24 +73,28 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);..\..</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
+    <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);..\..</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);..\..</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
+    <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);..\..</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <CustomBuildStep>
-      <Command>cppwinrt -component -in $(ProjectDir)Complex.Authoring.winmd -ref local -out $(ProjectDir) -overwrite -filter Windows.Foundation.Uri Complex.Authoring -natvis</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Complex.Authoring.winmd -ref 10.0.15063.0 -out $(ProjectDir) -filter Windows.Foundation.Uri Complex.Authoring -natvis</Command>
       <Message>C++/WinRT compiler</Message>
-      <Outputs>winrt/Complex.Authoring.h</Outputs>
+      <Outputs>winrt/Complex.Authoring.h;module.h</Outputs>
       <Inputs>Complex.Authoring.winmd</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
@@ -99,11 +103,10 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;COMPLEXAUTHORING_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
+      <AdditionalOptions>/std:c++17 /permissive- /await  /D "NDEBUG" %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4100</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -111,12 +114,10 @@
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy $(TargetPath) $(ProjectDir)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <Midl>
       <AdditionalOptions>/nomidl /struct_by_ref %(AdditionalOptions)</AdditionalOptions>
@@ -127,11 +128,10 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;COMPLEXAUTHORING_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
+      <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4100</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -139,12 +139,10 @@
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy $(TargetPath) $(ProjectDir)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <Midl>
       <AdditionalOptions>/nomidl /struct_by_ref %(AdditionalOptions)</AdditionalOptions>
@@ -157,11 +155,10 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;COMPLEXAUTHORING_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
+      <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4100</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -171,12 +168,10 @@
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy $(TargetPath) $(ProjectDir)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <Midl>
       <AdditionalOptions>/nomidl /struct_by_ref %(AdditionalOptions)</AdditionalOptions>
@@ -189,11 +184,10 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;FARMANIMALS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;COMPLEXAUTHORING_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalOptions>/std:c++latest /permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <DisableSpecificWarnings>4996;4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..</AdditionalIncludeDirectories>
+      <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4100</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -203,18 +197,27 @@
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy $(TargetPath) $(ProjectDir)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>
-      </Message>
+      <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <Midl>
       <AdditionalOptions>/nomidl /struct_by_ref %(AdditionalOptions)</AdditionalOptions>
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="module.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Language.cpp" />
+    <ClCompile Include="Simple.cpp" />
+    <ClCompile Include="Static.cpp" />
+    <ClCompile Include="Structs.cpp" />
     <ClCompile Include="Composability.Closed.Base.cpp" />
     <ClCompile Include="Composability.Closed.Derived.cpp" />
     <ClCompile Include="Composability.Open.Base.cpp" />
@@ -223,22 +226,20 @@
     <ClCompile Include="Factory.SimpleFactory.cpp" />
     <ClCompile Include="Factory.Static.cpp" />
     <ClCompile Include="Factory.StaticFactory.cpp" />
-    <ClCompile Include="Language.cpp" />
-    <ClCompile Include="module.cpp" />
     <ClCompile Include="Nested.Simple.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Simple.cpp" />
-    <ClCompile Include="Static.cpp" />
-    <ClCompile Include="Structs.cpp" />
     <ClCompile Include="Windows.Foundation.Uri.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Complex.Authoring.h" />
+    <ClInclude Include="module.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Language.g.h" />
+    <ClInclude Include="Language.h" />
+    <ClInclude Include="Simple.g.h" />
+    <ClInclude Include="Simple.h" />
+    <ClInclude Include="Static.g.h" />
+    <ClInclude Include="Static.h" />
+    <ClInclude Include="Structs.g.h" />
+    <ClInclude Include="Structs.h" />
     <ClInclude Include="Composability.Closed.Base.g.h" />
     <ClInclude Include="Composability.Closed.Base.h" />
     <ClInclude Include="Composability.Closed.Derived.g.h" />
@@ -255,35 +256,24 @@
     <ClInclude Include="Factory.Static.h" />
     <ClInclude Include="Factory.StaticFactory.g.h" />
     <ClInclude Include="Factory.StaticFactory.h" />
-    <ClInclude Include="Language.g.h" />
-    <ClInclude Include="Language.h" />
-    <ClInclude Include="module.h" />
     <ClInclude Include="Nested.Simple.g.h" />
     <ClInclude Include="Nested.Simple.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="simple.g.h" />
-    <ClInclude Include="Simple.h" />
-    <ClInclude Include="Static.g.h" />
-    <ClInclude Include="Static.h" />
-    <ClInclude Include="Structs.g.h" />
-    <ClInclude Include="Structs.h" />
     <ClInclude Include="Windows.Foundation.Uri.g.h" />
     <ClInclude Include="Windows.Foundation.Uri.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="cppwinrt.cmd" />
     <None Include="module.def" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Complex.Authoring.idl">
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnableWindowsRuntime>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableWindowsRuntime>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnableWindowsRuntime>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableWindowsRuntime>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Complex.Authoring.winmd</MetadataFileName>
       <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Complex.Authoring.winmd</MetadataFileName>
       <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Complex.Authoring.winmd</MetadataFileName>
@@ -296,10 +286,6 @@
       </RedirectOutputAndErrors>
       <RedirectOutputAndErrors Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </RedirectOutputAndErrors>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/nomidl %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">/nomidl %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/nomidl %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">/nomidl %(AdditionalOptions)</AdditionalOptions>
     </Midl>
   </ItemGroup>
   <ItemGroup>

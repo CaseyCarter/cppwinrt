@@ -105,31 +105,37 @@
     <OutDir>$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(Configuration)\$(Platform)\temp\</IntDir>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);..\..</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(Configuration)\$(Platform)\temp\</IntDir>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);..\..</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <OutDir>$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(Configuration)\$(Platform)\temp\</IntDir>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
+    <ExecutablePath>$(VC_ExecutablePath_ARM);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);..\..</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <OutDir>$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(Configuration)\$(Platform)\temp\</IntDir>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
+    <ExecutablePath>$(VC_ExecutablePath_ARM);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);..\..</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(Configuration)\$(Platform)\temp\</IntDir>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
+    <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);..\..</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(Configuration)\$(Platform)\temp\</IntDir>
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
+    <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);..\..</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
@@ -145,7 +151,7 @@
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.cmd $(OutDir)</Command>
+      <Command>cppwinrt.exe -in packages\Win2D.uwp.1.21.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd -ref 10.0.15063.0 -verbose -out Win2D</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -174,7 +180,7 @@
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.cmd $(OutDir)</Command>
+      <Command>cppwinrt.exe -in packages\Win2D.uwp.1.21.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd -ref 10.0.15063.0 -verbose -out Win2D</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -203,7 +209,7 @@
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.cmd $(OutDir)</Command>
+      <Command>cppwinrt.exe -in packages\Win2D.uwp.1.21.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd -ref 10.0.15063.0 -verbose -out Win2D</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -232,7 +238,7 @@
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.cmd $(OutDir)</Command>
+      <Command>cppwinrt.exe -in packages\Win2D.uwp.1.21.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd -ref 10.0.15063.0 -verbose -out Win2D</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -261,7 +267,7 @@
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.cmd $(OutDir)</Command>
+      <Command>cppwinrt.exe -in packages\Win2D.uwp.1.21.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd -ref 10.0.15063.0 -verbose -out Win2D</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -290,7 +296,7 @@
       </Command>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.cmd $(OutDir)</Command>
+      <Command>cppwinrt.exe -in packages\Win2D.uwp.1.21.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd -ref 10.0.15063.0 -verbose -out Win2D</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -332,7 +338,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="cppwinrt.cmd" />
     <None Include="packages.config" />
     <None Include="XamlCode_TemporaryKey.pfx" />
   </ItemGroup>

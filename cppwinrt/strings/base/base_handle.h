@@ -10,8 +10,6 @@ namespace winrt::impl
         {
             return nullptr;
         }
-
-        // static void close(type value) noexcept;
     };
 
     template <typename T>

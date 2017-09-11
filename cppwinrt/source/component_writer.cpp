@@ -27,6 +27,11 @@ namespace cppwinrt
 
         write_component_header(types, projected_namespaces);
         write_component_source(types);
+        write_component_project(types);
+        write_component_project_filters(types);
+        write_component_pch_source();
+        write_component_pch_header();
+        write_component_def();
 
         for (meta::type const* type : types)
         {

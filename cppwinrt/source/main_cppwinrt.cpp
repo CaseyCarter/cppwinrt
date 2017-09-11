@@ -100,7 +100,7 @@ namespace
         brackets,
     };
 
-    void add_winmd_spec(std::vector<std::wstring>& winmd_specs, std::wstring const& winmd_spec)
+    void add_winmd_spec(std::vector<std::wstring>& winmd_specs, std::wstring const& winmd_spec, std::wstring& platform_version)
     {
         if (_wcsicmp(winmd_spec.c_str(), L"local") == 0)
         {
@@ -117,6 +117,7 @@ namespace
         }
 
         add_winmds_from_sdk(winmd_specs, winmd_spec);
+        platform_version = winmd_spec;
     }
 
     bool parse_usage(int const argc, wchar_t** argv)
@@ -161,7 +162,7 @@ namespace
                 option cur_option = option::none;
                 for (auto const& o : options)
                 {
-                    if (0 == wcscmp(arg, o.string))
+                    if (0 == wcsncmp(arg, o.string, wcslen(arg)))
                     {
                         cur_option = o.value;
                         break;
@@ -208,11 +209,18 @@ namespace
                 {
                     settings::component_name = path(arg).filename().replace_extension().string();
                 }
-                add_winmd_spec(usage::inputs, arg);
+                {
+                    std::wstring unused;
+                    add_winmd_spec(usage::inputs, arg, unused);
+                }
                 break;
             case option::ref: 
                 settings::skip_base_headers = true;
-                add_winmd_spec(usage::refs, arg);
+                add_winmd_spec(usage::refs, arg, settings::platform_version);
+                if (settings::platform_version.empty())
+                {
+                    settings::platform_version = detect_sdk_version();
+                }
                 break;
             case option::out: 
                 settings::output = arg; 
@@ -235,7 +243,7 @@ namespace
 
     generator<path> enum_winmd_files(std::vector<std::wstring> const& winmd_specs)
     {
-        for (std::wstring const& winmd_spec : winmd_specs)
+        for (std::wstring winmd_spec : winmd_specs)
         {
             path winmd_path(winmd_spec);
             winmd_path = absolute(winmd_path);
@@ -269,14 +277,16 @@ namespace
         std::vector<path> files;
         for (auto file : enum_winmd_files(winmd_specs))
         {
-            files.push_back(file);
+            std::wstring file_lower = file.wstring();
+            std::transform(file_lower.begin(), file_lower.end(), file_lower.begin(), towlower);
+            files.push_back(file_lower);
         }
         std::sort(files.begin(), files.end());
         files.erase(std::unique(files.begin(), files.end()), files.end());
         return files;
     }
 
-    void prepare_input()
+    void prepare_metadata()
     {
         auto inputs = get_winmd_files(usage::inputs);
         for(auto const& input: inputs)
@@ -304,12 +314,16 @@ namespace
             meta::open_database(ref, true);
         }
 
+        settings::inputs = std::move(inputs);
+        settings::refs = std::move(refs);
+
         settings::output = absolute(settings::output);
         create_directories(settings::output); // fs::canonical requires the folder to exist...
         settings::output = canonical(settings::output);
         if (settings::verbose)
         {
             printf(" out:  %ls\n", settings::output.c_str());
+            printf(" sdk:  %ls\n", settings::platform_version.c_str());
         }
 
         meta::build_index();
@@ -339,7 +353,7 @@ namespace
             return;
         }
 
-        prepare_input();
+        prepare_metadata();
         write_projection();
 
         if (settings::verbose)

@@ -448,6 +448,27 @@ namespace winrt::impl
 
         return pointer;
     }
+
+    template<typename T, T First, T... Rest>
+    constexpr bool sequence_contains(T value)
+    {
+        return (value == First) || sequence_contains<T, Rest...>(value);
+    }
+
+    template<typename T>
+    constexpr bool sequence_contains(T)
+    {
+        return false;
+    }
+
+    template<typename T, T... ValuesToIgnore>
+    void check_win32(T result)
+    {
+        if (!sequence_contains<T, 0, ValuesToIgnore...>(result))
+        {
+            winrt::impl::throw_hresult(HRESULT_FROM_WIN32(result));
+        }
+    }
 }
 
 WINRT_EXPORT namespace winrt

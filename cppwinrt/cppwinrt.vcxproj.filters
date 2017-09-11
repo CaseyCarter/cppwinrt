@@ -365,6 +365,21 @@
       <Filter>strings\base</Filter>
     </ClInclude>
     <ClInclude Include="source\projection_writer.h" />
+    <ClInclude Include="strings\write\write_component_project.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_def.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_pch_header.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_pch_source.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_project_filters.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">
