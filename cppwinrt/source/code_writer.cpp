@@ -3126,7 +3126,7 @@ void t()
             }
         }
 
-        std::vector<meta::required> interfaces = type.token.get_component_class_required();
+        std::vector<meta::required> interfaces = type.token.get_component_class_required_direct();
 
         if (!interfaces.empty())
         {
@@ -3196,7 +3196,7 @@ void t()
             }
         }
 
-        std::vector<meta::required> interfaces = type.token.get_component_class_required();
+        std::vector<meta::required> interfaces = type.token.get_component_class_required_direct();
 
         for (meta::required const& required : interfaces)
         {

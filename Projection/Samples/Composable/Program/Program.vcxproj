@@ -209,6 +209,10 @@
       <HintPath>..\Composable.Base\Composable.Base.winmd</HintPath>
       <IsWinMDFile>true</IsWinMDFile>
     </Reference>
+    <Reference Include="Composable.Outer">
+      <HintPath>..\Composable.Outer\Composable.Outer.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
+    </Reference>
   </ItemGroup>
 
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

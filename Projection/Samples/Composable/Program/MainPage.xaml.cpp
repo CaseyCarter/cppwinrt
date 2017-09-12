@@ -23,7 +23,9 @@ using namespace Windows::UI::Xaml::Navigation;
 
 MainPage::MainPage()
 {
-	InitializeComponent();
+    InitializeComponent();
     auto root = ref new Composable::Base::Root;
     root->CallVirtualPublicRootMethod();
+    auto foo = ref new Composable::Outer::Foo;
+    foo->CallVirtualPublicRootMethod();
 }

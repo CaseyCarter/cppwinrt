@@ -1,0 +1,22 @@
+import "Windows.Foundation.idl";
+import "Composable.Base.idl";
+
+namespace Composable.Outer
+{
+    runtimeclass Foo;
+
+    [uuid(6D653894-400D-4BAE-BD9A-D7076D7752DF)]
+    [version(1.0)]
+    interface IFoo : IInspectable
+    {
+        HRESULT FooMethod([out, retval] HSTRING* result);
+    }
+
+    [version(1.0), activatable(1.0)]
+    [marshaling_behavior(agile)]
+    [threading(both)]
+    runtimeclass Foo : Composable.Base.Root
+    {
+        [default] interface Composable.Outer.IFoo;
+    }
+}

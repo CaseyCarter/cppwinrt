@@ -121,6 +121,7 @@ namespace cppwinrt::meta
         std::vector<required> get_class_required() const;
         std::vector<required> get_class_required_excluding_default() const;
         std::vector<required> get_component_class_required() const;
+        std::vector<required> get_component_class_required_direct() const;
         std::vector<std::string> get_generic_params() const;
         std::vector<factory_attribute> get_factory_attributes() const;
         std::vector<composable_attribute> get_composable_attributes() const;

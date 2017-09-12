@@ -373,28 +373,38 @@ namespace cppwinrt::meta
             values.erase(std::unique(values.begin(), values.end()), values.end());
         }
 
-        std::vector<required> get_class_required_base(token class_token, bool component_mode = false)
+        std::vector<required> get_class_required_base(token class_token, bool component_mode = false, bool direct = false)
         {
             std::vector<required> values;
             append_required(values, class_token, {});
 
-            if (values.empty())
+            if (values.empty() || direct)
             {
                 return values;
             }
 
-            for (type const* base = class_token.get_base_type(); base && (!component_mode || !base->is_filtered()); base = base->token.get_base_type())
+            for (type const* base = class_token.get_base_type(); base && (!component_mode || base->is_reference); base = base->token.get_base_type())
             {
-                append_required(values, base->token, {});
+                if (component_mode)
+                {
+                    for (token interface_token : base->token.get_direct_override_interfaces())
+                    {
+                        values.push_back({ interface_token.get_name(), interface_token, {} });
+                    }
+                }
+                else
+                {
+                    append_required(values, base->token, {});
+                }
             }
 
             sort_unique(values);
             return values;
         }
 
-        std::vector<required> get_class_required_impl(token class_token, bool component_mode)
+        std::vector<required> get_class_required_impl(token class_token, bool component_mode, bool direct = false)
         {
-            std::vector<required> values = get_class_required_base(class_token, component_mode);
+            std::vector<required> values = get_class_required_base(class_token, component_mode, direct);
 
             if (values.empty())
             {
@@ -1728,6 +1738,11 @@ namespace cppwinrt::meta
     std::vector<required> token::get_component_class_required() const
     {
         return get_class_required_impl(*this, true);
+    }
+
+    std::vector<required> token::get_component_class_required_direct() const
+    {
+        return get_class_required_impl(*this, true, true);
     }
 
     std::vector<required> token::get_class_required_excluding_default() const
