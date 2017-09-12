@@ -1528,6 +1528,7 @@ namespace cppwinrt::meta
                 nullptr,
                 nullptr));
 
+            WINRT_ASSERT(actual > 0);
             if (0 == wcscmp(buffer.data(), L".ctor"))
             {
                 continue;
@@ -1559,11 +1560,27 @@ namespace cppwinrt::meta
                 if (first && sequence == 0)
                 {
                     first = false;
-                    method.return_type.name = to_string({ buffer.data(), actual - 1 });
+                    if (actual > 0)
+                    {
+                        method.return_type.name = to_string({ buffer.data(), actual - 1 });
+                    }
+                    else
+                    {
+                        method.return_type.name = "_unnamed_return_";
+                    }
                 }
                 else
                 {
-                    method.params.push_back({ to_string({ buffer.data(), actual - 1 }), flags, signature });
+                    if (actual > 0)
+                    {
+                        method.params.push_back({ to_string({ buffer.data(), actual - 1 }), flags, signature });
+                    }
+                    else
+                    {
+                        std::array<char, 64> temp;
+                        snprintf(temp.data(), temp.size(), "_unnamed_param_%d_", sequence);
+                        method.params.push_back({ std::string(temp.data()), flags, signature });
+                    }
                     signature = signature.next(callback);
                 }
             }
@@ -1598,6 +1615,7 @@ namespace cppwinrt::meta
                 nullptr,
                 nullptr));
 
+            WINRT_ASSERT(actual > 0);
             co_yield to_method_name(to_string({ buffer.data(), actual - 1 }), flags);
         }
     }
