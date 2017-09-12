@@ -107,6 +107,7 @@
       <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
+      <FullProgramDatabaseFile>true</FullProgramDatabaseFile>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)</Command>
@@ -131,6 +132,7 @@
       <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
+      <FullProgramDatabaseFile>true</FullProgramDatabaseFile>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)</Command>
