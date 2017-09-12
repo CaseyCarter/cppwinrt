@@ -976,13 +976,26 @@ namespace cppwinrt
                     WINRT_ASSERT(method.params.size() >= 2);
                     method.params[method.params.size() - 1].is_optional_out = true;
                 }
-                out.write(strings::write_interface_produce_method,
-                    method.get_abi_name(),
-                    bind_output(write_abi_params, method),
-                    bind_output(write_optional_out_wrappers, method),
-                    bind_output(write_interface_produce_upcall, method),
-                    bind_output(write_optional_out_results, method),
-                    bind_output(write_produce_cleanup, method));
+
+                if (is_property(method))
+                {
+                    out.write(strings::write_interface_produce_method_noexcept,
+                        method.get_abi_name(),
+                        bind_output(write_abi_params, method),
+                        bind_output(write_optional_out_wrappers, method),
+                        bind_output(write_interface_produce_upcall, method),
+                        bind_output(write_optional_out_results, method));
+                }
+                else
+                {
+                    out.write(strings::write_interface_produce_method,
+                        method.get_abi_name(),
+                        bind_output(write_abi_params, method),
+                        bind_output(write_optional_out_wrappers, method),
+                        bind_output(write_interface_produce_upcall, method),
+                        bind_output(write_optional_out_results, method),
+                        bind_output(write_produce_cleanup, method));
+                }
             }
         }
 

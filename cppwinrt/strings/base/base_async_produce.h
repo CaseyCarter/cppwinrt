@@ -6,31 +6,16 @@ namespace winrt::impl
     {
         HRESULT __stdcall put_Completed(::IUnknown* handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncActionCompletedHandler const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncActionCompletedHandler const*>(&handler));
+            return S_OK;
         }
 
         HRESULT __stdcall get_Completed(::IUnknown** handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Completed());
-                return S_OK;
-            }
-            catch (...)
-            {
-                *handler = nullptr;
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            *handler = detach_abi(this->shim().Completed());
+            return S_OK;
         }
 
         HRESULT __stdcall GetResults() noexcept final
@@ -53,44 +38,23 @@ namespace winrt::impl
     {
         HRESULT __stdcall get_Id(uint32_t* id) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *id = this->shim().Id();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            *id = this->shim().Id();
+            return S_OK;
         }
 
         HRESULT __stdcall get_Status(winrt::Windows::Foundation::AsyncStatus* status) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *status = this->shim().Status();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            *status = this->shim().Status();
+            return S_OK;
         }
 
         HRESULT __stdcall get_ErrorCode(HRESULT* errorCode) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *errorCode = this->shim().ErrorCode();
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            *errorCode = this->shim().ErrorCode();
+            return S_OK;
         }
 
         HRESULT __stdcall Cancel() noexcept final
@@ -127,60 +91,30 @@ namespace winrt::impl
     {
         HRESULT __stdcall put_Progress(::IUnknown* handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Progress(*reinterpret_cast<Windows::Foundation::AsyncActionProgressHandler<TProgress> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            this->shim().Progress(*reinterpret_cast<Windows::Foundation::AsyncActionProgressHandler<TProgress> const*>(&handler));
+            return S_OK;
         }
 
         HRESULT __stdcall get_Progress(::IUnknown** handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Progress());
-                return S_OK;
-            }
-            catch (...)
-            {
-                *handler = nullptr;
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            *handler = detach_abi(this->shim().Progress());
+            return S_OK;
         }
 
         HRESULT __stdcall put_Completed(::IUnknown* handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> const*>(&handler));
+            return S_OK;
         }
 
         HRESULT __stdcall get_Completed(::IUnknown** handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Completed());
-                return S_OK;
-            }
-            catch (...)
-            {
-                *handler = nullptr;
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            *handler = detach_abi(this->shim().Completed());
+            return S_OK;
         }
 
         HRESULT __stdcall GetResults() noexcept final
@@ -203,31 +137,16 @@ namespace winrt::impl
     {
         HRESULT __stdcall put_Completed(::IUnknown* handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncOperationCompletedHandler<TResult> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncOperationCompletedHandler<TResult> const*>(&handler));
+            return S_OK;
         }
 
         HRESULT __stdcall get_Completed(::IUnknown** handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Completed());
-                return S_OK;
-            }
-            catch (...)
-            {
-                *handler = nullptr;
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            *handler = detach_abi(this->shim().Completed());
+            return S_OK;
         }
 
         HRESULT __stdcall GetResults(arg_out<TResult> results) noexcept final
@@ -251,60 +170,30 @@ namespace winrt::impl
     {
         HRESULT __stdcall put_Progress(::IUnknown* handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Progress(*reinterpret_cast<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            this->shim().Progress(*reinterpret_cast<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress> const*>(&handler));
+            return S_OK;
         }
 
         HRESULT __stdcall get_Progress(::IUnknown** handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Progress());
-                return S_OK;
-            }
-            catch (...)
-            {
-                *handler = nullptr;
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            *handler = detach_abi(this->shim().Progress());
+            return S_OK;
         }
 
         HRESULT __stdcall put_Completed(::IUnknown* handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const*>(&handler));
-                return S_OK;
-            }
-            catch (...)
-            {
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            this->shim().Completed(*reinterpret_cast<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> const*>(&handler));
+            return S_OK;
         }
 
         HRESULT __stdcall get_Completed(::IUnknown** handler) noexcept final
         {
-            try
-            {
-                typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Completed());
-                return S_OK;
-            }
-            catch (...)
-            {
-                *handler = nullptr;
-                return to_hresult();
-            }
+            typename D::abi_guard guard(this->shim());
+            *handler = detach_abi(this->shim().Completed());
+            return S_OK;
         }
 
         HRESULT __stdcall GetResults(arg_out<TResult> results) noexcept final

@@ -380,6 +380,12 @@
     <ClInclude Include="strings\write\write_component_project_filters.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\write\write_interface_produce_method_noexcept.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_version_assert.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">
