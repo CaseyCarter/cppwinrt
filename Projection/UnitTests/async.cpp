@@ -90,8 +90,6 @@ TEST_CASE("async, NoSuspend_IAsyncAction")
     REQUIRE(objectMatches);
     REQUIRE(statusMatches);
 
-    REQUIRE_TERMINATE(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
-
     async.Close();
     async.Cancel();
     REQUIRE(async.Status() == AsyncStatus::Completed);
@@ -119,8 +117,6 @@ TEST_CASE("async, NoSuspend_IAsyncActionWithProgress")
     REQUIRE(completed);
     REQUIRE(objectMatches);
     REQUIRE(statusMatches);
-
-    REQUIRE_TERMINATE(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Close();
     async.Cancel();
@@ -150,8 +146,6 @@ TEST_CASE("async, NoSuspend_IAsyncOperation")
     REQUIRE(objectMatches);
     REQUIRE(statusMatches);
 
-    REQUIRE_TERMINATE(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
-
     async.Close();
     async.Cancel();
     REQUIRE(async.Status() == AsyncStatus::Completed);
@@ -179,8 +173,6 @@ TEST_CASE("async, NoSuspend_IAsyncOperationWithProgress")
     REQUIRE(completed);
     REQUIRE(objectMatches);
     REQUIRE(statusMatches);
-
-    REQUIRE_TERMINATE(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Close();
     async.Cancel();
@@ -250,8 +242,6 @@ TEST_CASE("async, Suspend_IAsyncAction")
         SetEvent(event.get()); // signal completion
     });
 
-    REQUIRE_TERMINATE(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
-
     SetEvent(event.get()); // signal async to run
     REQUIRE(WaitForSingleObject(event.get(), INFINITE) == WAIT_OBJECT_0); // wait for async to complete
     REQUIRE(completed);
@@ -276,8 +266,6 @@ TEST_CASE("async, Suspend_IAsyncActionWithProgress")
         REQUIRE(status == AsyncStatus::Completed);
         SetEvent(event.get()); // signal completion
     });
-
-    REQUIRE_TERMINATE(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Progress([&](const IAsyncActionWithProgress<double> & sender, double value)
     {
@@ -311,8 +299,6 @@ TEST_CASE("async, Suspend_IAsyncOperation")
         SetEvent(event.get()); // signal completion
     });
 
-    REQUIRE_TERMINATE(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
-
     SetEvent(event.get()); // signal async to run
     REQUIRE(WaitForSingleObject(event.get(), INFINITE) == WAIT_OBJECT_0); // wait for async to complete
     REQUIRE(async.GetResults() == 123);
@@ -338,8 +324,6 @@ TEST_CASE("async, Suspend_IAsyncOperationWithProgress")
         REQUIRE(status == AsyncStatus::Completed);
         SetEvent(event.get()); // signal completion
     });
-
-    REQUIRE_TERMINATE(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Progress([&](const IAsyncOperationWithProgress<uint64_t, uint64_t> & sender, uint64_t value)
     {

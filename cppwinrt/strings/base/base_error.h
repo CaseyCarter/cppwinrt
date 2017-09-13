@@ -481,7 +481,7 @@ WINRT_EXPORT namespace winrt
         if (result < 0)
 #endif
         {
-            WINRT_TERMINATE
+            std::terminate();
         }
     }
 }

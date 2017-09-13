@@ -35,8 +35,6 @@ namespace
 
         change(); // <-- invalidate
 
-        REQUIRE_TERMINATE(first.HasCurrent(), hresult_changed_state);
-        REQUIRE_TERMINATE(first.Current(), hresult_changed_state);
         REQUIRE_THROWS_AS(first.MoveNext(), hresult_changed_state);
         REQUIRE_THROWS_AS(first.GetMany(array), hresult_changed_state);
     }

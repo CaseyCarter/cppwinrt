@@ -1,10 +1,5 @@
 #pragma once
 
-#include <winerror.h>
-extern HRESULT winrt_test_terminate_hresult;
-#define WINRT_TERMINATE winrt_test_terminate_hresult = result;
-#define REQUIRE_TERMINATE(expression, exception) { expression; REQUIRE(winrt_test_terminate_hresult == exception().code()); };
-
 #define WIN32_LEAN_AND_MEAN 
 #define NOMINMAX
 #define WINRT_NATVIS
