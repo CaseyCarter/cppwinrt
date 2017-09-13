@@ -63,7 +63,7 @@ namespace winrt::impl
             {
                 if (m_current == m_end)
                 {
-                    throw hresult_out_of_bounds();
+                    std::terminate();
                 }
 
                 return collection_traits<value_type>::copy(*m_current);
@@ -176,7 +176,7 @@ namespace winrt::impl
             {
                 if (m_current == m_end)
                 {
-                    throw hresult_out_of_bounds();
+                    std::terminate();
                 }
 
                 return collection_traits<value_type>::copy(*m_current);
