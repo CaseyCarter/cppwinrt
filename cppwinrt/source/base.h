@@ -1,6 +1,5 @@
 #pragma once
 
-#pragma comment(lib, "windowsapp")
 #include "base_dependencies.h"
 #include "base_macros.h"
 
