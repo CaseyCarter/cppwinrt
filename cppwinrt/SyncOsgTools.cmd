@@ -8,14 +8,22 @@ goto :eof
 
 set cppwinrt=%~dp0
 set synced=0
-for %%i in (c d e f g r) do call :try_sync %%i
-if %synced%==0 echo ERROR: Couldn't find or sync osgtools cppwinrt repo
+if %1.==. (
+for %%i in (c d e f g h i j k l m n o p q r s t u v w x y z) do call :try_sync %%i:
+) else (
+call :try_sync %1
+)
+if %synced%==0 (
+echo ERROR: Couldn't find or sync osgtools cppwinrt repo
+echo Usage: %~n0 [^<repo root^>]
+echo        where ^<repo root^> is the parent folder of the OSGTools repo
+)
 endlocal && cd %cd%
 exit /B %ERRORLEVEL%
 
 :try_sync
 if not %synced%==0 goto :eof
-pushd %1:\OSGTools\src\Microsoft\Internal\Windows\Tools\CppWinRT >nul 2>&1
+pushd %1\OSGTools\src\Microsoft\Internal\Windows\Tools\CppWinRT >nul 2>&1
 if not "%ERRORLEVEL%"=="0" goto :eof
 del /s /q . >nul 2>&1
 copy %cppwinrt% . >nul 2>&1
