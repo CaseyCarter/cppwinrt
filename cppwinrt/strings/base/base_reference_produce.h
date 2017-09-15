@@ -83,121 +83,121 @@ namespace winrt::impl
     template <typename T>
     struct reference_traits
     {
-        static Windows::Foundation::IInspectable make(T const & val) { return winrt::make<impl::reference<T>>(val); }
+        static auto make(T const & value) { return winrt::make<impl::reference<T>>(value); }
     };
 
     template <>
-    struct reference_traits <uint8_t>
+    struct reference_traits<uint8_t>
     {
-        static Windows::Foundation::IInspectable make(uint8_t val) { return Windows::Foundation::PropertyValue::CreateUInt8(val); }
+        static auto make(uint8_t value) { return Windows::Foundation::PropertyValue::CreateUInt8(value); }
     };
 
     template <>
-    struct reference_traits <uint16_t>
+    struct reference_traits<uint16_t>
     {
-        static Windows::Foundation::IInspectable make(uint16_t val) { return Windows::Foundation::PropertyValue::CreateUInt16(val); }
+        static auto make(uint16_t value) { return Windows::Foundation::PropertyValue::CreateUInt16(value); }
     };
 
     template <>
-    struct reference_traits <int16_t>
+    struct reference_traits<int16_t>
     {
-        static Windows::Foundation::IInspectable make(int16_t val) { return Windows::Foundation::PropertyValue::CreateInt16(val); }
+        static auto make(int16_t value) { return Windows::Foundation::PropertyValue::CreateInt16(value); }
     };
 
     template <>
-    struct reference_traits <uint32_t>
+    struct reference_traits<uint32_t>
     {
-        static Windows::Foundation::IInspectable make(uint32_t val) { return Windows::Foundation::PropertyValue::CreateUInt32(val); }
+        static auto make(uint32_t value) { return Windows::Foundation::PropertyValue::CreateUInt32(value); }
     };
 
     template <>
-    struct reference_traits <int32_t>
+    struct reference_traits<int32_t>
     {
-        static Windows::Foundation::IInspectable make(int32_t val) { return Windows::Foundation::PropertyValue::CreateInt32(val); }
+        static auto make(int32_t value) { return Windows::Foundation::PropertyValue::CreateInt32(value); }
     };
 
     template <>
-    struct reference_traits <uint64_t>
+    struct reference_traits<uint64_t>
     {
-        static Windows::Foundation::IInspectable make(uint64_t val) { return Windows::Foundation::PropertyValue::CreateUInt64(val); }
+        static auto make(uint64_t value) { return Windows::Foundation::PropertyValue::CreateUInt64(value); }
     };
 
     template <>
-    struct reference_traits <int64_t>
+    struct reference_traits<int64_t>
     {
-        static Windows::Foundation::IInspectable make(int64_t val) { return Windows::Foundation::PropertyValue::CreateInt64(val); }
+        static auto make(int64_t value) { return Windows::Foundation::PropertyValue::CreateInt64(value); }
     };
 
     template <>
-    struct reference_traits <float>
+    struct reference_traits<float>
     {
-        static Windows::Foundation::IInspectable make(float val) { return Windows::Foundation::PropertyValue::CreateSingle(val); }
+        static auto make(float value) { return Windows::Foundation::PropertyValue::CreateSingle(value); }
     };
 
     template <>
-    struct reference_traits <double>
+    struct reference_traits<double>
     {
-        static Windows::Foundation::IInspectable make(double val) { return Windows::Foundation::PropertyValue::CreateDouble(val); }
+        static auto make(double value) { return Windows::Foundation::PropertyValue::CreateDouble(value); }
     };
 
     template <>
-    struct reference_traits <char16_t>
+    struct reference_traits<char16_t>
     {
-        static Windows::Foundation::IInspectable make(char16_t val) { return Windows::Foundation::PropertyValue::CreateChar16(val); }
+        static auto make(char16_t value) { return Windows::Foundation::PropertyValue::CreateChar16(value); }
     };
 
     template <>
-    struct reference_traits <bool>
+    struct reference_traits<bool>
     {
-        static Windows::Foundation::IInspectable make(bool val) { return Windows::Foundation::PropertyValue::CreateBoolean(val); }
+        static auto make(bool value) { return Windows::Foundation::PropertyValue::CreateBoolean(value); }
     };
 
     template <>
-    struct reference_traits <hstring>
+    struct reference_traits<hstring>
     {
-        static Windows::Foundation::IInspectable make(hstring const & val) { return Windows::Foundation::PropertyValue::CreateString(val); }
+        static auto make(hstring const & value) { return Windows::Foundation::PropertyValue::CreateString(value); }
     };
 
     template <>
-    struct reference_traits <Windows::Foundation::IInspectable>
+    struct reference_traits<Windows::Foundation::IInspectable>
     {
-        static Windows::Foundation::IInspectable make(Windows::Foundation::IInspectable const & val) { return Windows::Foundation::PropertyValue::CreateInspectable(val); }
+        static auto make(Windows::Foundation::IInspectable const & value) { return Windows::Foundation::PropertyValue::CreateInspectable(value); }
     };
 
     template <>
-    struct reference_traits <GUID>
+    struct reference_traits<GUID>
     {
-        static Windows::Foundation::IInspectable make(GUID const & val) { return Windows::Foundation::PropertyValue::CreateGuid(val); }
+        static auto make(GUID const & value) { return Windows::Foundation::PropertyValue::CreateGuid(value); }
     };
 
     template <>
-    struct reference_traits <Windows::Foundation::DateTime>
+    struct reference_traits<Windows::Foundation::DateTime>
     {
-        static Windows::Foundation::IInspectable make(Windows::Foundation::DateTime val) { return Windows::Foundation::PropertyValue::CreateDateTime(val); }
+        static auto make(Windows::Foundation::DateTime value) { return Windows::Foundation::PropertyValue::CreateDateTime(value); }
     };
 
     template <>
-    struct reference_traits <Windows::Foundation::TimeSpan>
+    struct reference_traits<Windows::Foundation::TimeSpan>
     {
-        static Windows::Foundation::IInspectable make(Windows::Foundation::TimeSpan val) { return Windows::Foundation::PropertyValue::CreateTimeSpan(val); }
+        static auto make(Windows::Foundation::TimeSpan value) { return Windows::Foundation::PropertyValue::CreateTimeSpan(value); }
     };
 
     template <>
-    struct reference_traits  <Windows::Foundation::Point>
+    struct reference_traits<Windows::Foundation::Point>
     {
-        static Windows::Foundation::IInspectable make(Windows::Foundation::Point const & val) { return Windows::Foundation::PropertyValue::CreatePoint(val); }
+        static auto make(Windows::Foundation::Point const & value) { return Windows::Foundation::PropertyValue::CreatePoint(value); }
     };
 
     template <>
-    struct reference_traits <Windows::Foundation::Size>
+    struct reference_traits<Windows::Foundation::Size>
     {
-        static Windows::Foundation::IInspectable make(Windows::Foundation::Size const & val) { return Windows::Foundation::PropertyValue::CreateSize(val); }
+        static auto make(Windows::Foundation::Size const & value) { return Windows::Foundation::PropertyValue::CreateSize(value); }
     };
 
     template <>
-    struct reference_traits <Windows::Foundation::Rect>
+    struct reference_traits<Windows::Foundation::Rect>
     {
-        static Windows::Foundation::IInspectable make(Windows::Foundation::Rect const & val) { return Windows::Foundation::PropertyValue::CreateRect(val); }
+        static auto make(Windows::Foundation::Rect const & value) { return Windows::Foundation::PropertyValue::CreateRect(value); }
     };
 }
 
@@ -206,13 +206,19 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     template <typename T>
     struct IReference :
         IInspectable,
-        impl::consume_t<IReference<T>>
+        impl::consume_t<IReference<T>>,
+        impl::require<IReference<T>, IPropertyValue>
     {
         IReference<T>(std::nullptr_t = nullptr) noexcept {}
 
-        IReference<T>(T const & val)
+        IReference<T>(T const & value) : IReference<T>(impl::reference_traits<T>::make(value))
         {
-            this->m_ptr = detach_abi((impl::reference_traits<T>::make(val)).template as<IReference<T>>());
+        }
+
+    private:
+
+        IReference<T>(IInspectable const& value) : IReference<T>(value.as<IReference<T>>())
+        {
         }
     };
 }
