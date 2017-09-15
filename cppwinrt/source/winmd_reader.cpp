@@ -378,23 +378,26 @@ namespace cppwinrt::meta
             std::vector<required> values;
             append_required(values, class_token, {});
 
-            if (values.empty() || direct)
+            if (values.empty())
             {
                 return values;
             }
 
-            for (type const* base = class_token.get_base_type(); base && (!component_mode || base->is_reference); base = base->token.get_base_type())
+            if (!direct)
             {
-                if (component_mode)
+                for (type const* base = class_token.get_base_type(); base && (!component_mode || base->is_reference); base = base->token.get_base_type())
                 {
-                    for (token interface_token : base->token.get_direct_override_interfaces())
+                    if (component_mode)
                     {
-                        values.push_back({ interface_token.get_name(), interface_token, {} });
+                        for (token interface_token : base->token.get_direct_override_interfaces())
+                        {
+                            values.push_back({ interface_token.get_name(), interface_token, {} });
+                        }
                     }
-                }
-                else
-                {
-                    append_required(values, base->token, {});
+                    else
+                    {
+                        append_required(values, base->token, {});
+                    }
                 }
             }
 
