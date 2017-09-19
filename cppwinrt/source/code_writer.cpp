@@ -3006,33 +3006,30 @@ void t()
         out.save_as(project_path);
     }
 
-    void write_component_project_filters_sources(output& out, std::vector<meta::type const*> const& types)
-    {
-        for (meta::type const* type : types)
-        {
-            out.write(R"(
-    <ClCompile Include="%.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>)",
-                get_relative_component_name(*type));
-        }
-    }
-
     void write_component_project_filters_includes(output& out, std::vector<meta::type const*> const& types)
     {
         for (meta::type const* type : types)
         {
-            std::string_view filename = get_relative_component_name(*type);
             out.write(R"(
     <ClInclude Include="%.g.h">
       <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="%.h">
-      <Filter>Generated</Filter>
     </ClInclude>)",
-                filename,
-                filename);
+                get_relative_component_name(*type));
         }
+    }
+
+    void write_component_project_filters_natvis(output& out, std::string const& project_name)
+    {
+        if (!settings::create_natvis)
+        {
+            return;
+        }
+        out.write(R"(
+  <ItemGroup>
+    <Natvis Include="%.natvis">
+      <Filter>Generated</Filter>
+    </Natvis>
+  </ItemGroup>)", project_name);
     }
 
     void write_component_project_filters(std::vector<meta::type const*> const& types)
@@ -3050,8 +3047,8 @@ void t()
 
         output out;
         out.write(strings::write_component_project_filters,
-            bind_output(write_component_project_filters_sources, types),
             bind_output(write_component_project_filters_includes, types),
+            bind_output(write_component_project_filters_natvis, project_name),
             CreateGuid()
         );
 
