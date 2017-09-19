@@ -1886,12 +1886,22 @@ namespace cppwinrt
 
             for (meta::method const& method : factory.get_methods())
             {
+                // Constructors can have arbitrary params, which is perfect for implementing via variadics.
+                // WinRT wants composable ctor params to be at the beginning, with the inner and outer params last.
+                // In order to preserve variadic template param deduction, our composable_factory takes the ctor params last.
+                meta::method reordered_method = method;
+                if (reordered_method.params.size() < 2)
+                {
+                    throw meta::meta_error{ "Invalid composable ctor: " + factory.get_name() + "." + reordered_method.get_name()};
+                }
+                std::rotate(reordered_method.params.begin(), reordered_method.params.end() - 2, reordered_method.params.end());
+                
                 out.write(strings::write_component_factory_forwarding_composable,
                     default_interface.get_name(),
                     method.get_name(),
                     bind_output(write_component_params, method, empty_generic_params),
                     default_interface.get_name(),
-                    bind_output(write_args, method));
+                    bind_output(write_args, reordered_method));
             }
         }
         void write_component_factory_forwarding_statics(output& out, meta::token const factory)

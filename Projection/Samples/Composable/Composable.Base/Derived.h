@@ -8,6 +8,7 @@ namespace winrt::Composable::Base::implementation
     struct Derived : DerivedT<Derived>
     {
         Derived() = default;
+        explicit Derived(winrt::hstring const&) {}
 
         hstring DerivedMethod();
         hstring CallVirtualPublicDerivedMethod();

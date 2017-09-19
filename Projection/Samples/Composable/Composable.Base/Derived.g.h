@@ -49,6 +49,11 @@ struct DerivedT : impl::module_lock, implements<D, Windows::Foundation::IActivat
     {
         return impl::composable_factory<T>::template CreateInstance<Composable::Base::IDerived>(outer, inner);
     }
+
+    Composable::Base::IDerived CreateInstanceWithName(hstring const& name, Windows::Foundation::IInspectable const& outer, Windows::Foundation::IInspectable& inner)
+    {
+        return impl::composable_factory<T>::template CreateInstance<Composable::Base::IDerived>(outer, inner, name);
+    }
 };
 
 }

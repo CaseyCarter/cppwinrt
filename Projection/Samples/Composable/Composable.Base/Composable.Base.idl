@@ -62,6 +62,7 @@ namespace Composable.Base
     interface IDerivedFactory : IInspectable
     {
         HRESULT CreateInstance([in] IInspectable* outer, [out] IInspectable** inner, [out, retval] Composable.Base.Derived** instance);
+        HRESULT CreateInstanceWithName([in] HSTRING name, [in] IInspectable* outer, [out] IInspectable** inner, [out, retval] Composable.Base.Derived** instance);
     }
 
     [composable(Composable.Base.IDerivedFactory, public, 1.0)]

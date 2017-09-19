@@ -170,7 +170,7 @@ namespace cppwinrt
         DWORD index{ 0 };
         ULONG version_parts[4]{ 0 };
         std::array<wchar_t, MAX_PATH> kit_root;
-        while (RegEnumKeyW(key.get(), index++, kit_root.data(), kit_root.size()) == ERROR_SUCCESS)
+        while (RegEnumKeyW(key.get(), index++, kit_root.data(), static_cast<DWORD>(kit_root.size())) == ERROR_SUCCESS)
         {
             if (!std::regex_search(kit_root.data(), versionMatch, versionRx))
             {
