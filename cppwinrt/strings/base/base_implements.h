@@ -212,9 +212,9 @@ WINRT_EXPORT namespace winrt
     }
 
     template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value && !impl::has_class_type<D>::value>* = nullptr>
-    auto make(Args&& ... args)
+    impl::com_ref<I> make(Args&& ... args)
     {
-        std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, I>, I, com_ptr<I>> result{ nullptr };
+        impl::com_ref<I> result{ nullptr };
         *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args) ...));
         return result;
     }

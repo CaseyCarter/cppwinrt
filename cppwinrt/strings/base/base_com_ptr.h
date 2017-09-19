@@ -14,18 +14,21 @@ WINRT_EXPORT namespace winrt
 
 namespace winrt::impl
 {
+    template <typename T>
+    using com_ref = std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>, T, com_ptr<T>>;
+
     template <typename To, typename From>
-    auto as(From* ptr)
+    com_ref<To> as(From* ptr)
     {
-        std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, To>, To, com_ptr<To>> temp{ nullptr };
+        com_ref<To> temp{ nullptr };
         check_hresult(ptr->QueryInterface(guid_of<To>(), reinterpret_cast<void**>(put_abi(temp))));
         return temp;
     }
 
     template <typename To, typename From>
-    auto try_as(From* ptr) noexcept
+    com_ref<To> try_as(From* ptr) noexcept
     {
-        std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, To>, To, com_ptr<To>> temp{ nullptr };
+        com_ref<To> temp{ nullptr };
         ptr->QueryInterface(guid_of<To>(), reinterpret_cast<void**>(put_abi(temp)));
         return temp;
     }

@@ -29,11 +29,11 @@ namespace winrt::impl
     };
 
     template <typename Class, typename Interface>
-    Interface get_activation_factory()
+    com_ref<Interface> get_activation_factory()
     {
         param::hstring classId(string_data(impl::name_v<Class>));
 
-        Interface factory;
+        com_ref<Interface> factory;
         check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), guid_of<Interface>(), reinterpret_cast<void**>(put_abi(factory))));
         return factory;
     }
@@ -90,7 +90,7 @@ namespace winrt::impl
     template <typename Class, typename Interface>
     struct factory_cache_entry
     {
-        Interface get()
+        com_ref<Interface> get()
         {
             {
                 shared_lock_guard const guard(m_lock);
@@ -101,7 +101,7 @@ namespace winrt::impl
                 }
             }
 
-            Interface factory = get_activation_factory<Class, Interface>();
+            com_ref<Interface> factory = get_activation_factory<Class, Interface>();
 
             if (!factory.template try_as<IAgileObject>())
             {
@@ -130,7 +130,7 @@ namespace winrt::impl
 
         void* m_next{ nullptr };
         lock m_lock;
-        Interface m_factory;
+        com_ref<Interface> m_factory;
     };
 }
 
@@ -168,7 +168,7 @@ WINRT_EXPORT namespace winrt
     }
 
     template <typename Class, typename Interface = Windows::Foundation::IActivationFactory>
-    Interface get_activation_factory()
+    impl::com_ref<Interface> get_activation_factory()
     {
         static impl::factory_cache_entry<Class, Interface> factory;
         return factory.get();
