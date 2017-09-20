@@ -2665,6 +2665,10 @@ namespace cppwinrt
         {
             for (meta::factory_attribute const& attribute : type.token.get_factory_attributes())
             {
+                if (!attribute.type)
+                {
+                    continue;
+                }
                 auto& factory = *attribute.type;
                 out.write(
                 R"({

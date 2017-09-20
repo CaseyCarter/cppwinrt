@@ -414,7 +414,13 @@ namespace cppwinrt::meta
                 return values;
             }
 
-            std::string default_name = class_token.get_default().get_name();
+            auto default_interface = class_token.get_default();
+            if (!default_interface)
+            {
+                values.clear();
+                return values;
+            }
+            std::string default_name = default_interface.get_name();
 
             std::vector<required>::iterator position = std::find_if(values.begin(), values.end(),
                 [&](required const& value)
