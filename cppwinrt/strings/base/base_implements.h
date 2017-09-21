@@ -718,7 +718,7 @@ namespace winrt::impl
 
         HRESULT __stdcall NonDelegatingQueryInterface(const GUID& id, void** object) noexcept
         {
-            if (id == guid_of<Windows::Foundation::IInspectable>() || id == guid_of<Windows::Foundation::IInspectable>())
+            if (id == guid_of<Windows::Foundation::IInspectable>() || id == guid_of<Windows::Foundation::IUnknown>())
             {
                 ::IInspectable* result = to_abi<impl::INonDelegatingInspectable>(this);
                 NonDelegatingAddRef();
