@@ -239,8 +239,8 @@ namespace winrt::impl
 
     private:
 
-        lock m_swap;
-        lock m_change;
+        mutex m_swap;
+        mutex m_change;
     };
 
     template <typename Delegate>

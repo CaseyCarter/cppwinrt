@@ -42,19 +42,20 @@ namespace winrt::impl
             return;
         }
 
-        lock x;
+        mutex m;
         condition_variable cv;
         bool completed = false;
-
         async.Completed([&](Async const&, Windows::Foundation::AsyncStatus)
         {
-            lock_guard const guard(x);
-            completed = true;
-            cv.wake_one();
+            {
+                lock_guard const guard(m);
+                completed = true;
+            }
+            cv.notify_one();
         });
 
-        lock_guard const guard(x);
-        cv.wait_while(x, [&] { return !completed; });
+        lock_guard guard(m);
+        cv.wait(m, [&] { return completed; }); 
     }
 
     template <typename D>

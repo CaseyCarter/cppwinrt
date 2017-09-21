@@ -41,7 +41,7 @@ namespace cppwinrt
         {
             std::set<std::string> _complex_namespaces;
             std::set<std::string> _projected_namespaces;
-            lock _lock;
+            winrt::impl::mutex _lock;
 
             void record_complex_struct_namespace(std::string const& ns)
             {

@@ -339,7 +339,7 @@ namespace winrt::impl
             AsyncStatus status;
 
             {
-                lock_guard const guard(m_lock);
+                std::lock_guard<mutex> const guard(m_lock);
 
                 if (m_completed_assigned)
                 {
@@ -365,7 +365,7 @@ namespace winrt::impl
 
         CompletedHandler Completed() noexcept
         {
-            lock_guard const guard(m_lock);
+            std::lock_guard<mutex> const guard(m_lock);
             return m_completed;
         }
 
@@ -376,7 +376,7 @@ namespace winrt::impl
 
         AsyncStatus Status() noexcept
         {
-            lock_guard const guard(m_lock);
+            std::lock_guard<mutex> const guard(m_lock);
             return m_status;
         }
 
@@ -384,7 +384,7 @@ namespace winrt::impl
         {
             try
             {
-                lock_guard const guard(m_lock);
+                std::lock_guard<mutex> const guard(m_lock);
                 rethrow_if_failed();
                 return S_OK;
             }
@@ -396,7 +396,7 @@ namespace winrt::impl
 
         void Cancel() noexcept
         {
-            lock_guard const guard(m_lock);
+            std::lock_guard<mutex> const guard(m_lock);
 
             if (m_status == AsyncStatus::Started)
             {
@@ -406,7 +406,7 @@ namespace winrt::impl
 
         void Close()
         {
-            lock_guard const guard(m_lock);
+            std::lock_guard<mutex> const guard(m_lock);
 
             if (m_status == AsyncStatus::Started)
             {
@@ -461,7 +461,7 @@ namespace winrt::impl
             AsyncStatus status;
 
             {
-                lock_guard const guard(m_lock);
+                std::lock_guard<mutex> const guard(m_lock);
                 WINRT_ASSERT(m_status == AsyncStatus::Started || m_status == AsyncStatus::Canceled);
                 m_exception = std::current_exception();
 
@@ -499,7 +499,7 @@ namespace winrt::impl
         }
 
         std::optional<std::exception_ptr> m_exception;
-        lock m_lock;
+        mutex m_lock;
         CompletedHandler m_completed;
         AsyncStatus m_status{ AsyncStatus::Started };
         bool m_completed_assigned{ false };

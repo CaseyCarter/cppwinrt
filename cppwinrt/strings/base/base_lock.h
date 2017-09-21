@@ -1,83 +1,91 @@
 
 namespace winrt::impl
 {
-    struct lock
+    struct mutex
     {
-        lock(lock const&) = delete;
-        lock& operator=(lock const&) = delete;
-        lock() noexcept = default;
+        mutex(mutex const&) = delete;
+        mutex& operator=(mutex const&) = delete;
+        mutex() noexcept = default;
 
-        void enter() noexcept
+        void lock() noexcept
         {
             AcquireSRWLockExclusive(&m_lock);
         }
 
-        void enter_shared() noexcept
+        void lock_shared() noexcept
         {
             AcquireSRWLockShared(&m_lock);
         }
 
-        bool try_enter() noexcept
+        bool try_lock() noexcept
         {
             return 0 != TryAcquireSRWLockExclusive(&m_lock);
         }
 
-        void exit() noexcept
+        bool try_lock_shared() noexcept
+        {
+            return 0 != TryAcquireSRWLockShared(&m_lock);
+        }
+
+        void unlock() noexcept
         {
             __analysis_assume_lock_acquired(m_lock);
             ReleaseSRWLockExclusive(&m_lock);
         }
 
-        void exit_shared() noexcept
+        void unlock_shared() noexcept
         {
             __analysis_assume_lock_acquired(m_lock);
             ReleaseSRWLockShared(&m_lock);
         }
+
+    private:
+        friend struct condition_variable;
 
         PSRWLOCK get() noexcept
         {
             return&m_lock;
         }
 
-    private:
-
-        SRWLOCK m_lock{};
+        SRWLOCK m_lock{SRWLOCK_INIT};
     };
+
+    using shared_mutex = mutex;
 
     struct lock_guard
     {
-        explicit lock_guard(lock& lock) noexcept :
+        explicit lock_guard(mutex& lock) noexcept :
             m_lock(lock)
         {
-            m_lock.enter();
+            m_lock.lock();
         }
 
         ~lock_guard() noexcept
         {
-            m_lock.exit();
+            m_lock.unlock();
         }
 
     private:
 
-        lock& m_lock;
+        mutex& m_lock;
     };
 
     struct shared_lock_guard
     {
-        explicit shared_lock_guard(lock& lock) noexcept :
+        explicit shared_lock_guard(shared_mutex& lock) noexcept :
             m_lock(lock)
         {
-            m_lock.enter_shared();
+            m_lock.lock_shared();
         }
 
         ~shared_lock_guard() noexcept
         {
-            m_lock.exit_shared();
+            m_lock.unlock_shared();
         }
 
     private:
 
-        lock& m_lock;
+        shared_mutex& m_lock;
     };
 
     struct condition_variable
@@ -87,26 +95,26 @@ namespace winrt::impl
         condition_variable() noexcept = default;
 
         template <typename T>
-        void wait_while(lock& x, T predicate)
+        void wait(mutex& x, T predicate)
         {
-            while (predicate())
+            while (!predicate())
             {
                 WINRT_VERIFY(SleepConditionVariableSRW(&m_cv, x.get(), INFINITE, 0));
             }
         }
 
-        void wake_one() noexcept
+        void notify_one() noexcept
         {
             WakeConditionVariable(&m_cv);
         }
 
-        void wake_all() noexcept
+        void notify_all() noexcept
         {
             WakeAllConditionVariable(&m_cv);
         }
 
     private:
 
-        CONDITION_VARIABLE m_cv{};
+        CONDITION_VARIABLE m_cv{CONDITION_VARIABLE_INIT};
     };
 }
