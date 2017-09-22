@@ -52,9 +52,10 @@ namespace winrt::impl
 
     using shared_mutex = mutex;
 
+    template <typename T = mutex>
     struct lock_guard
     {
-        explicit lock_guard(mutex& lock) noexcept :
+        explicit lock_guard(T& lock) noexcept :
             m_lock(lock)
         {
             m_lock.lock();
@@ -67,7 +68,7 @@ namespace winrt::impl
 
     private:
 
-        mutex& m_lock;
+        T& m_lock;
     };
 
     struct shared_lock_guard

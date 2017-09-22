@@ -45,13 +45,13 @@ namespace cppwinrt
 
             void record_complex_struct_namespace(std::string const& ns)
             {
-                lock_guard const guard(_lock);
+                lock_guard<> const guard(_lock);
                 _complex_namespaces.emplace(ns);
             }
 
             void record_projected_namespace(std::string const& ns)
             {
-                lock_guard const guard(_lock);
+                lock_guard<> const guard(_lock);
                 _projected_namespaces.emplace(ns);
             }
 

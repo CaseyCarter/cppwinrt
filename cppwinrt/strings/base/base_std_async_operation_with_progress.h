@@ -12,19 +12,19 @@ WINRT_EXPORT namespace std::experimental
 
             void Progress(ProgressHandler const& handler)
             {
-                winrt::impl::lock_guard const guard(this->m_lock);
+                winrt::impl::lock_guard<> const guard(this->m_lock);
                 m_progress = handler;
             }
 
             ProgressHandler Progress()
             {
-                winrt::impl::lock_guard const guard(this->m_lock);
+                winrt::impl::lock_guard<> const guard(this->m_lock);
                 return m_progress;
             }
 
             TResult GetResults()
             {
-                winrt::impl::lock_guard const guard(this->m_lock);
+                winrt::impl::lock_guard<> const guard(this->m_lock);
 
                 if (this->m_status == AsyncStatus::Completed)
                 {
@@ -42,7 +42,7 @@ WINRT_EXPORT namespace std::experimental
                 AsyncStatus status;
 
                 {
-                    winrt::impl::lock_guard const guard(this->m_lock);
+                    winrt::impl::lock_guard<> const guard(this->m_lock);
 
                     if (this->m_status == AsyncStatus::Started)
                     {

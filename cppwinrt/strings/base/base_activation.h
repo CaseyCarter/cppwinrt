@@ -42,7 +42,7 @@ namespace winrt::impl
     {
         void clear() noexcept
         {
-            std::lock_guard<mutex> const guard(m_lock);
+            lock_guard<> const guard(m_lock);
             m_factory = nullptr;
         }
 
@@ -59,14 +59,14 @@ namespace winrt::impl
         void add(factory_cache_typeless_entry* entry) noexcept
         {
             WINRT_ASSERT(entry);
-            std::lock_guard<mutex> const guard(m_lock);
+            lock_guard<> const guard(m_lock);
             entry->next = m_begin;
             m_begin = entry;
         }
 
         void clear() noexcept
         {
-            std::lock_guard<mutex> const guard(m_lock);
+            lock_guard<> const guard(m_lock);
 
             while (m_begin != nullptr)
             {
@@ -109,7 +109,7 @@ namespace winrt::impl
                 return factory;
             }
 
-            std::lock_guard<shared_mutex> const guard(m_lock);
+            lock_guard<shared_mutex> const guard(m_lock);
 
             if (!m_factory)
             {
@@ -122,7 +122,7 @@ namespace winrt::impl
 
         void clear() noexcept
         {
-            std::lock_guard<shared_mutex> const guard(m_lock);
+            lock_guard<shared_mutex> const guard(m_lock);
             m_factory = nullptr;
         }
 

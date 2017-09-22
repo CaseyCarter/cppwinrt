@@ -227,14 +227,14 @@ namespace winrt::impl
 
     struct locked_event_traits
     {
-        lock_guard get_swap_guard() noexcept
+        lock_guard<> get_swap_guard() noexcept
         {
-            return lock_guard(m_swap);
+            return lock_guard<>(m_swap);
         }
 
-        lock_guard get_change_guard() noexcept
+        lock_guard<> get_change_guard() noexcept
         {
-            return lock_guard(m_change);
+            return lock_guard<>(m_change);
         }
 
     private:

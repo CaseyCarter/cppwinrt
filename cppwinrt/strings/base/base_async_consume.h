@@ -48,13 +48,13 @@ namespace winrt::impl
         async.Completed([&](Async const&, Windows::Foundation::AsyncStatus)
         {
             {
-                lock_guard const guard(m);
+                lock_guard<> const guard(m);
                 completed = true;
             }
             cv.notify_one();
         });
 
-        lock_guard guard(m);
+        lock_guard<> guard(m);
         cv.wait(m, [&] { return completed; }); 
     }
 
