@@ -301,20 +301,13 @@ WINRT_EXPORT namespace winrt
 
         void clear() noexcept
         {
-            if (this->m_data)
-            {
-                if constexpr (!std::is_trivially_destructible_v<value_type>)
-                {
-                    for (value_type& v : *this)
-                    {
-                        v.~value_type();
-                    }
-                }
+            if (this->m_data == nullptr) { return; }
 
-                CoTaskMemFree(this->m_data);
-                this->m_data = nullptr;
-                this->m_size = 0;
-            }
+            std::destroy(this->begin(), this->end());
+
+            CoTaskMemFree(this->m_data);
+            this->m_data = nullptr;
+            this->m_size = 0;
         }
 
         friend auto impl_put(com_array& value) noexcept

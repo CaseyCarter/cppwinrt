@@ -56,10 +56,7 @@ namespace winrt::impl
 
         ~event_array() noexcept
         {
-            for (reference element : *this)
-            {
-                element.~T();
-            }
+            std::destroy(begin(), end());
         }
 
     private:
