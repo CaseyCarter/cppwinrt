@@ -139,9 +139,9 @@ namespace cppwinrt
                 add_winmds_from_xml(winmd_specs, version, sdk_path, path);
             }
         }
-        catch (winrt::hresult_error const& e)
+        catch (winrt::hresult_error const&)
         {
-            throw invalid_usage{ L"Could not find Windows SDK: ", std::wstring(e.message()), e.code() };
+            throw invalid_usage{ L"Could not resolve metadata specification: ", version };
         }
     }
 

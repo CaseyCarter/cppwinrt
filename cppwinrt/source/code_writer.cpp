@@ -2817,15 +2817,10 @@ void t()
         }
     }
 
-    void write_component_header(std::vector<meta::type const*> const& types, std::set<std::string> const& projected_namespaces)
+    void write_component_header(std::vector<meta::type const*> const& types)
     {
         output out;
         write_warning(out, strings::write_edit_warning_header);
-
-        for (auto& ns : projected_namespaces)
-        {
-            write_projection_include(out, ns, ".h");
-        }
 
         out.write_impl_namespace();
         out.write(strings::write_component_lock_declaration);
@@ -2944,7 +2939,7 @@ void t()
         out.save_as(pch_source);
     }
 
-    void write_component_pch_header()
+    void write_component_pch_header(std::set<std::string> const& ref_namespaces, std::set<std::string> const& projected_namespaces)
     {
         std::experimental::filesystem::path pch_header = settings::output / "pch.h";
         if (!settings::overwrite && exists(pch_header.string()))
@@ -2953,6 +2948,14 @@ void t()
         }
         output out;
         out.write(strings::write_component_pch_header);
+        for (auto& ns : ref_namespaces)
+        {
+            write_projection_include(out, ns, ".h");
+        }
+        for (auto& ns : projected_namespaces)
+        {
+            write_projection_include(out, ns, ".h");
+        }
         out.save_as(pch_header);
     }
 
@@ -3243,7 +3246,7 @@ void t()
         }
     }
 
-    void write_component_class_generated_header(meta::type const& type)
+    void write_component_class_generated_header(meta::type const& type, reference_writer const& ref_writer)
     {
         std::string const filename = get_component_filename(type) + ".g.h";
 
@@ -3252,6 +3255,8 @@ void t()
         out.write("\n#include \"module.h\"\n");
 
         meta::type const* base_type = type.token.get_base_type();
+
+        ref_writer.write_includes(out);
 
         if (base_type && base_type->is_filtered())
         {

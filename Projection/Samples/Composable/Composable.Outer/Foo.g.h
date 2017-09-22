@@ -3,6 +3,7 @@
 #pragma once
 
 #include "module.h"
+#include "winrt/Composable.Base.h"
 
 namespace winrt::Composable::Outer::implementation {
 

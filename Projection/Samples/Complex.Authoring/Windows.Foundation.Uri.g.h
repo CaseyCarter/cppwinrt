@@ -3,6 +3,7 @@
 #pragma once
 
 #include "module.h"
+#include "winrt/Windows.Foundation.Collections.h"
 
 namespace winrt::Windows::Foundation::implementation {
 

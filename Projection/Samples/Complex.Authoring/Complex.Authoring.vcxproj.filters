@@ -43,6 +43,8 @@
     <ClCompile Include="Windows.Foundation.Uri.cpp">
       <Filter>Generated</Filter>
     </ClCompile>
+    <ClCompile Include="module.cpp" />
+    <ClCompile Include="pch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Language.g.h">
@@ -129,10 +131,21 @@
     <ClInclude Include="Windows.Foundation.Uri.h">
       <Filter>Generated</Filter>
     </ClInclude>
+    <ClInclude Include="module.h" />
+    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Generated">
       <UniqueIdentifier>{9d466ba3-e000-4651-9284-c371191d599e}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="Complex.Authoring.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Complex.Authoring.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="module.def" />
   </ItemGroup>
 </Project>

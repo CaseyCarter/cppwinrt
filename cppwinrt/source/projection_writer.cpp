@@ -59,7 +59,7 @@ namespace cppwinrt
             {
                 output out;
 
-                // if componennt, intersect recorded headers with complex struct headers (exclude platform),
+                // if component, intersect recorded headers with complex struct headers (exclude platform),
                 // and #include complex_structs.h from platform projection
                 if (settings::component)
                 {
@@ -235,6 +235,7 @@ namespace cppwinrt
                     output out;
                     write_logo(out);
                     write_projection_include(out, "base.h");
+                    write_warning_push(out);
                     if (settings::skip_base_headers)
                     {
                         write_version_assert(out);
@@ -247,7 +248,6 @@ namespace cppwinrt
                     }
 
                     namespace_recorder.write_complex_struct_includes(out);
-                    write_warning_push(out);
                     ref_writer.write_includes(out, definition_ext, "impl/");
                     ref_writer.write_parent_include(out);
                     out.write_impl_namespace();

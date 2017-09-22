@@ -229,15 +229,24 @@ namespace cppwinrt::meta
     type const* find_type(std::string_view full_name, type_category* category = nullptr);
 
     template <typename ... Container>
-    generator<type> get_projected_types(Container const& ... container)
+    generator<type> get_projected_types(bool exclude_references, Container const& ... container)
     {
         for (type const& type : get_container_values(container ...))
         {
-            if (type.is_reference)
+            if (type.is_reference && exclude_references)
             {
                 continue;
             }
 
+            co_yield type;
+        }
+    }
+
+    template <typename ... Container>
+    generator<type> get_projected_types(Container const& ... container)
+    {
+        for (type const& type : get_projected_types(true, container ...))
+        {
             co_yield type;
         }
     }

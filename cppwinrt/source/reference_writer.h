@@ -7,11 +7,13 @@ namespace cppwinrt
     struct reference_writer
     {
         reference_writer(
-            std::string const& namespace_name,
-            meta::namespace_types const& namespace_types
+            std::string_view namespace_name,
+            meta::namespace_types const& namespace_types,
+            bool exclude_references = true
         ) :
             _namespace_name(namespace_name),
-            _namespace_types(namespace_types)
+            _namespace_types(namespace_types),
+            _exclude_references(exclude_references)
         {
             record();
         }
@@ -59,9 +61,20 @@ namespace cppwinrt
             write_projection_include(out, parent_namespace, ".h");
         }
 
+        std::set<std::string> const& get_method_namespaces() const noexcept
+        {
+            return _method_namespaces;
+        }
+
+        std::set<std::string> const& get_required_namespaces() const noexcept
+        {
+            return _required_namespaces;
+        }
+
     private:
-        std::string const& _namespace_name;
+        std::string _namespace_name;
         meta::namespace_types const& _namespace_types;
+        bool _exclude_references;
         bool _types_found{};
 
         std::set<std::string> _method_namespaces;
@@ -82,7 +95,7 @@ namespace cppwinrt
                 record_namespace(_method_namespaces, _methods_forwards, token);
             };
 
-            for (meta::type const & type : get_projected_types(_namespace_types.interfaces, _namespace_types.classes))
+            for (meta::type const & type : get_projected_types(_exclude_references, _namespace_types.interfaces, _namespace_types.classes))
             {
                 _types_found = true;
 
@@ -92,14 +105,14 @@ namespace cppwinrt
                 }
             }
 
-            for (meta::type const & type : get_projected_types(_namespace_types.delegates))
+            for (meta::type const & type : get_projected_types(_exclude_references, _namespace_types.delegates))
             {
                 _types_found = true;
                 
                 type.token.get_delegate(record_method_namespace);
             }
 
-            for (meta::type const & type : get_projected_types(_namespace_types.structs))
+            for (meta::type const & type : get_projected_types(_exclude_references, _namespace_types.structs))
             {
                 _types_found = true;
 
@@ -127,13 +140,13 @@ namespace cppwinrt
                 }
             }
 
-            auto enums = get_projected_types(_namespace_types.enums);
+            auto enums = get_projected_types(_exclude_references, _namespace_types.enums);
             if(enums.begin() != enums.end())
             {
                 _types_found = true;
             }
 
-            for (meta::type const & type : get_projected_types(_namespace_types.classes))
+            for (meta::type const & type : get_projected_types(_exclude_references, _namespace_types.classes))
             {
                 meta::token default_interface = type.token.get_default();
 
@@ -148,7 +161,7 @@ namespace cppwinrt
                 }
             }
 
-            for (meta::type const & type : get_projected_types(_namespace_types.interfaces))
+            for (meta::type const & type : get_projected_types(_exclude_references, _namespace_types.interfaces))
             {
                 for (auto& required_interface : type.token.get_interface_required())
                 {
