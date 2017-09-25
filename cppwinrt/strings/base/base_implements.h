@@ -1025,64 +1025,59 @@ WINRT_EXPORT namespace winrt
         }
 
     private:
-        template <int = 0>
+        template <typename First, typename ... Rest>
         void copy_guids(GUID* ids) const noexcept
         {
-            base_type::copy_guids_nested(ids);
+            ids;
+            if constexpr (!impl::is_cloaked_v<First>)
+            {
+                *ids++ = guid_of<First>();
+            }
+            if constexpr (sizeof...(Rest) > 0)
+            {
+                copy_guids<Rest ...>(ids);
+            }
+            else
+            {
+                base_type::copy_guids_nested(ids);
+            }
         }
 
         template <typename First, typename ... Rest>
-        void copy_guids(GUID* ids, std::enable_if_t<impl::is_cloaked_v<First>>* = nullptr) const noexcept
-        {
-            copy_guids<Rest ...>(ids);
-        }
-
-        template <typename First, typename ... Rest>
-        void copy_guids(GUID* ids, std::enable_if_t<!impl::is_cloaked_v<First>>* = nullptr) const noexcept
-        {
-            *ids++ = guid_of<First>();
-            copy_guids<Rest ...>(ids);
-        }
-
-        template <int = 0>
         void* find_interface(GUID const& id) const noexcept
         {
-            return base_type::find_interface_nested(id);
+            if constexpr (!impl::is_marker_v<First> && !impl::is_implements_v<First>)
+            {
+                if (id == guid_of<First>())
+                {
+                    return to_abi<First>(this);
+                }
+            }
+            if constexpr (sizeof...(Rest) > 0)
+            {
+                return find_interface<Rest ...>(id);
+            }
+            else
+            {
+                return base_type::find_interface_nested(id);
+            }
         }
 
         template <typename First, typename ... Rest>
-        void* find_interface(GUID const& id, std::enable_if_t<impl::is_marker_v<First> || impl::is_implements_v<First>>* = nullptr) const noexcept
+        ::IInspectable* find_inspectable() const noexcept
         {
-            return find_interface<Rest ...>(id);
-        }
-
-        template <typename First, typename ... Rest>
-        void* find_interface(GUID const& id, std::enable_if_t<!impl::is_marker_v<First> && !impl::is_implements_v<First>>* = nullptr) const noexcept
-        {
-            if (id == guid_of<First>())
+            if constexpr (std::is_base_of_v<::IInspectable, abi_t<First>>)
             {
                 return to_abi<First>(this);
             }
-
-            return find_interface<Rest ...>(id);
-        }
-
-        template <int = 0>
-        ::IInspectable* find_inspectable() const noexcept
-        {
-            return base_type::find_inspectable_nested();
-        }
-
-        template <typename First, typename ... Rest>
-        ::IInspectable* find_inspectable(std::enable_if_t<std::is_base_of_v<::IInspectable, abi_t<First>>>* = nullptr) const noexcept
-        {
-            return to_abi<First>(this);
-        }
-
-        template <typename First, typename ... Rest>
-        ::IInspectable* find_inspectable(std::enable_if_t<!std::is_base_of_v<::IInspectable, abi_t<First>>>* = nullptr) const noexcept
-        {
-            return find_inspectable<Rest ...>();
+            else if constexpr (sizeof...(Rest) > 0)
+            {
+                return find_inspectable<Rest ...>();
+            }
+            else
+            {
+                return base_type::find_inspectable_nested();
+            }
         }
 
         ::IUnknown* get_unknown() const noexcept override
