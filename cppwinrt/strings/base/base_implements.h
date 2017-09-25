@@ -523,9 +523,6 @@ namespace winrt::impl
         std::atomic<uint32_t> m_weak{ 1 };
     };
 
-    template <typename ... I>
-    using is_agile = std::negation<std::disjunction<std::is_same<non_agile, I> ...>>;
-
     template <bool>
     struct WINRT_EBO root_implements_composing_outer
     {
@@ -822,7 +819,7 @@ namespace winrt::impl
         void abi_enter() noexcept {}
         void abi_exit() noexcept {}
 
-        using is_agile = impl::is_agile<I ...>;
+        using is_agile = std::negation<std::disjunction<std::is_same<non_agile, I> ...>>;
         using is_factory = std::disjunction<std::is_same<abi_t<Windows::Foundation::IActivationFactory>, abi_t<I>> ...>;
         using is_inspectable = std::disjunction<std::is_base_of<::IInspectable, abi_t<I>> ...>;
         using is_weak_ref_source = std::conjunction<is_inspectable, std::negation<is_factory>, std::negation<std::disjunction<std::is_same<no_weak_ref, I> ...>>>;
