@@ -57,8 +57,6 @@ namespace cppwinrt
 
             void write_complex_struct_header(projection_paths const& paths)
             {
-                output out;
-
                 // if component, intersect recorded headers with complex struct headers (exclude platform),
                 // and #include complex_structs.h from platform projection
                 if (settings::component)
@@ -72,11 +70,16 @@ namespace cppwinrt
                     }
                 }
 
+                if (_complex_namespaces.empty())
+                {
+                    return;
+                }
+
+                output out;
                 for (auto& ns : _complex_namespaces)
                 {
                     write_projection_include(out, "impl/", ns, ".0.h");
                 }
-
                 out.save_as(paths._impl / (get_complex_struct_name() + ".h"));
             }
 
@@ -85,7 +88,10 @@ namespace cppwinrt
                 write_projection_include(out, "impl/complex_structs.h");
                 if (settings::component)
                 {
-                    write_projection_include(out, "impl/", get_complex_struct_name(), ".h");
+                    auto component_complex_structs = "impl/" + get_complex_struct_name() + ".h";
+                    out.write("#if __has_include(\"%\"", component_complex_structs);
+                    write_projection_include(out, component_complex_structs);
+                    out.write("#endif");
                 }
             }
 
@@ -345,7 +351,10 @@ namespace cppwinrt
         wait_all(writers).get();
 
         namespace_recorder.write_complex_struct_header(paths);
-        write_module();
+        if (!settings::component)
+        {
+            write_module();
+        }
 
         if (settings::create_tests)
         {

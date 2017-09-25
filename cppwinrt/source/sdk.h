@@ -1,6 +1,7 @@
 #pragma once
 
 #include <regex>
+#include <stdlib.h>
 
 namespace cppwinrt
 {
@@ -106,51 +107,11 @@ namespace cppwinrt
         }
     }
 
-    inline void add_winmds_from_sdk(std::vector<std::wstring>& winmd_specs, std::wstring version)
-    {
-        try
-        {
-            std::experimental::filesystem::path const sdk_path = get_sdk_path();
-            bool const include_extensions = version.back() == L'+';
-
-            if (include_extensions)
-            {
-                version.pop_back();
-            }
-
-            std::experimental::filesystem::path path = sdk_path;
-            path /= L"Platforms\\UAP";
-            path /= version;
-            path /= L"Platform.xml";
-
-            add_winmds_from_xml(winmd_specs, version, sdk_path, path);
-
-            if (!include_extensions)
-            {
-                return;
-            }
-
-            for (std::experimental::filesystem::directory_entry const& item :
-                std::experimental::filesystem::directory_iterator(sdk_path / L"Extension SDKs"))
-            {
-                path = item.path() / version;
-                path /= L"SDKManifest.xml";
-
-                add_winmds_from_xml(winmd_specs, version, sdk_path, path);
-            }
-        }
-        catch (winrt::hresult_error const&)
-        {
-            throw invalid_usage{ L"Could not resolve metadata specification: ", version };
-        }
-    }
-
     std::wstring detect_sdk_version()
     {
         std::array<wchar_t, MAX_PATH> module_path;
         auto size = GetModuleFileNameW(nullptr, module_path.data(), static_cast<DWORD>(module_path.size()));
         check_win32_bool(size);
-        
         std::wregex versionRx(LR"((\d+\.\d+\.\d+\.\d+))");
         std::wcmatch versionMatch;
         if (std::regex_search(module_path.data(), versionMatch, versionRx))
@@ -201,4 +162,58 @@ namespace cppwinrt
 
         return sdk_version;
     }
+
+    inline void add_winmds_from_sdk(std::vector<std::wstring>& winmd_specs, std::wstring version, bool is_ref)
+    {
+        try
+        {
+            std::experimental::filesystem::path const sdk_path = get_sdk_path();
+            bool const include_extensions = version.back() == L'+';
+
+            if (include_extensions)
+            {
+                version.pop_back();
+            }
+
+            if (version == L"sdk")
+            {
+                version = detect_sdk_version();
+                if (version.empty())
+                {
+                    throw invalid_usage{ L"Could not determine current SDK version." };
+                }
+            }
+
+            if (is_ref)
+            {
+                settings::platform_version = version;
+            }
+
+            std::experimental::filesystem::path path = sdk_path;
+            path /= L"Platforms\\UAP";
+            path /= version;
+            path /= L"Platform.xml";
+
+            add_winmds_from_xml(winmd_specs, version, sdk_path, path);
+
+            if (!include_extensions)
+            {
+                return;
+            }
+
+            for (std::experimental::filesystem::directory_entry const& item :
+                std::experimental::filesystem::directory_iterator(sdk_path / L"Extension SDKs"))
+            {
+                path = item.path() / version;
+                path /= L"SDKManifest.xml";
+
+                add_winmds_from_xml(winmd_specs, version, sdk_path, path);
+            }
+        }
+        catch (winrt::hresult_error const&)
+        {
+            throw invalid_usage{ L"Could not resolve metadata specification: ", version };
+        }
+    }
+
 }

@@ -100,7 +100,7 @@ namespace
         brackets,
     };
 
-    void add_winmd_spec(std::vector<std::wstring>& winmd_specs, std::wstring const& winmd_spec, std::wstring& platform_version)
+    void add_winmd_spec(std::vector<std::wstring>& winmd_specs, std::wstring const& winmd_spec, bool is_ref)
     {
         if (_wcsicmp(winmd_spec.c_str(), L"local") == 0)
         {
@@ -116,8 +116,7 @@ namespace
             return;
         }
 
-        add_winmds_from_sdk(winmd_specs, winmd_spec);
-        platform_version = winmd_spec;
+        add_winmds_from_sdk(winmd_specs, winmd_spec, is_ref);
     }
 
     bool parse_usage(int const argc, wchar_t** argv)
@@ -209,14 +208,11 @@ namespace
                 {
                     settings::component_name = path(arg).filename().replace_extension().string();
                 }
-                {
-                    std::wstring unused;
-                    add_winmd_spec(usage::inputs, arg, unused);
-                }
+                add_winmd_spec(usage::inputs, arg, false);
                 break;
             case option::ref: 
                 settings::skip_base_headers = true;
-                add_winmd_spec(usage::refs, arg, settings::platform_version);
+                add_winmd_spec(usage::refs, arg, true);
                 if (settings::platform_version.empty())
                 {
                     settings::platform_version = detect_sdk_version();
@@ -323,7 +319,10 @@ namespace
         if (settings::verbose)
         {
             printf(" out:  %ls\n", settings::output.c_str());
-            printf(" sdk:  %ls\n", settings::platform_version.c_str());
+            if (!usage::refs.empty())
+            {
+                printf(" sdk:  %ls\n", settings::platform_version.c_str());
+            }
         }
 
         meta::build_index();

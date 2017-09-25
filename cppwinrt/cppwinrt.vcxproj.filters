@@ -422,7 +422,9 @@
     <Text Include="strings\print\print_usage.txt">
       <Filter>strings\print</Filter>
     </Text>
-    <Text Include="strings\print\print_usage_details.txt" />
+    <Text Include="strings\print\print_usage_details.txt">
+      <Filter>strings\print</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="source\version.rc" />

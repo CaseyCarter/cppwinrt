@@ -4,15 +4,9 @@
     <ClCompile Include="module.cpp">
       <Filter>Generated</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="module.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
       <Filter>Generated</Filter>
     </ClInclude>%
   </ItemGroup>

@@ -11,5 +11,5 @@ Examples:
 	...
 >cppwinrt.exe -in @desktop.rsp -out c:\desktop
 
-3. Generate a filtered component projection, referencing the Desktop SDK above:
->cppwinrt.exe -component -in comp.winmd -filter Component.Namespace. -ref @desktop.rsp 
+3. Generate a filtered component projection, referencing the current SDK:
+>cppwinrt.exe -v -c -r sdk -n Windows.System.Diagnostics -f Windows.System.Diagnostics.System -o wsd

@@ -3257,6 +3257,8 @@ void t()
         meta::type const* base_type = type.token.get_base_type();
 
         ref_writer.write_includes(out);
+        std::string type_ns{ type.name_space() };
+        write_projection_include(out, type_ns, ".h");
 
         if (base_type && base_type->is_filtered())
         {
