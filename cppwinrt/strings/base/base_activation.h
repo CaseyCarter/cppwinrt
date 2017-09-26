@@ -31,7 +31,7 @@ namespace winrt::impl
     template <typename Class, typename Interface>
     com_ref<Interface> get_activation_factory()
     {
-        param::hstring classId(string_data(impl::name_v<Class>));
+        param::hstring classId{ name_of<Class>() };
 
         com_ref<Interface> factory;
         check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), guid_of<Interface>(), reinterpret_cast<void**>(put_abi(factory))));

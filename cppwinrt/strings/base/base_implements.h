@@ -176,7 +176,7 @@ namespace winrt::impl
     {
         static hstring get()
         {
-            return hstring{ impl::string_data(impl::name_v<I>) };
+            return hstring{ name_of<I>() };
         }
     };
 

@@ -199,14 +199,23 @@ namespace winrt::impl
     }
 
     template <typename T, size_t Size>
-    constexpr auto & string_data(constexpr_string<T, Size> const & value) noexcept
+    constexpr std::wstring_view string_data(constexpr_string<T, Size> const & value) noexcept
     {
-        return value.m_elems;
+        return { value.m_elems, Size - 1 };
     }
 
     template <typename T, size_t Size>
-    constexpr auto & string_data(T const (&value)[Size]) noexcept
+    constexpr std::wstring_view string_data(T const (&value)[Size]) noexcept
     {
-        return value;
+        return { value, Size - 1 };
+    }
+}
+
+namespace winrt
+{
+    template <typename T>
+    inline constexpr std::wstring_view name_of() noexcept
+    {
+        return impl::string_data(impl::name_v<T>);
     }
 }
