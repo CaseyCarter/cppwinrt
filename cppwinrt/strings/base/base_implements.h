@@ -1025,7 +1025,6 @@ WINRT_EXPORT namespace winrt
         template <typename First, typename ... Rest>
         void copy_guids(GUID* ids) const noexcept
         {
-            ids;
             if constexpr (!impl::is_cloaked_v<First>)
             {
                 *ids++ = guid_of<First>();

@@ -47,7 +47,7 @@ namespace winrt::impl
             return&m_lock;
         }
 
-        SRWLOCK m_lock{SRWLOCK_INIT};
+        SRWLOCK m_lock{};
     };
 
     using shared_mutex = mutex;
@@ -116,6 +116,6 @@ namespace winrt::impl
 
     private:
 
-        CONDITION_VARIABLE m_cv{CONDITION_VARIABLE_INIT};
+        CONDITION_VARIABLE m_cv{};
     };
 }
