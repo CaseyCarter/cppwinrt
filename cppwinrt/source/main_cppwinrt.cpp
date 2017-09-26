@@ -367,20 +367,19 @@ int wmain(int argc, wchar_t** argv)
     try
     {
         run_cppwinrt(argc, argv);
+        return 0;
     }
     catch (winrt::hresult_error const& e)
     {
         print_error(strings::print_hresult_error, e.code(), e.message().c_str());
-        return 1;
     }
     catch (std::exception const& e)
     {
         print_error(strings::print_exception, E_FAIL, e.what());
-        return 1;
     }
     catch (invalid_usage const& e)
     {
         print_error(strings::print_invalid_usage, e.code, e.message.c_str(), e.arg.c_str());
-        return 1;
     }
+    return 1;
 }

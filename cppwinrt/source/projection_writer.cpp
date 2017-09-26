@@ -89,9 +89,9 @@ namespace cppwinrt
                 if (settings::component)
                 {
                     auto component_complex_structs = "impl/" + get_complex_struct_name() + ".h";
-                    out.write("#if __has_include(\"%\"", component_complex_structs);
+                    out.write("#if __has_include(\"%\")\n", component_complex_structs);
                     write_projection_include(out, component_complex_structs);
-                    out.write("#endif");
+                    out.write("#endif\n");
                 }
             }
 
