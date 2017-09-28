@@ -103,7 +103,8 @@ namespace cppwinrt
             {
                 if (c == '.')
                 {
-                    append("::");
+                    append(':');
+                    append(':');
                 }
                 else
                 {

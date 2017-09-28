@@ -309,29 +309,51 @@ namespace cppwinrt::meta
             return {};
         }
 
-        void append_required(std::vector<required>& values, token derived, std::vector<std::string> const& generic_params)
+        enum class interface_filter
         {
+            all,
+            overridable,
+            non_overridable,
+            none,
+        };
+
+        enum class base_filter
+        {
+            all,
+            reference_only,
+            none,
+        };
+
+        void append_required(std::vector<required>& values, token derived, std::vector<std::string> const& generic_params, interface_filter filter)
+        {
+            WINRT_ASSERT(filter != interface_filter::none);
             for (token impl_token : derived.get_definition().EnumInterfaceImpls())
             {
-                token token = impl_token.GetInterfaceImplProps();
-
-                if (token.is_type_spec())
+                const bool is_override = impl_token.has_attribute(L"Windows.Foundation.Metadata.OverridableAttribute");
+                if (filter == interface_filter::all ||
+                    (filter == interface_filter::overridable && is_override) ||
+                    (filter == interface_filter::non_overridable && !is_override))
                 {
-                    if (generic_params.empty())
+                    const token token = impl_token.GetInterfaceImplProps();
+
+                    if (token.is_type_spec())
                     {
-                        values.push_back({ token.get_name(generic_params), token, token.get_generic_params() });
+                        if (generic_params.empty())
+                        {
+                            values.push_back({ token.get_name(generic_params), token, token.get_generic_params() });
+                        }
+                        else
+                        {
+                            values.push_back({ token.get_name(generic_params), token, generic_params });
+                        }
+
+                        append_required(values, token, token.get_signature().get_generic_params(generic_params), filter);
                     }
                     else
                     {
                         values.push_back({ token.get_name(generic_params), token, generic_params });
+                        append_required(values, token, generic_params, filter);
                     }
-
-                    append_required(values, token, token.get_signature().get_generic_params(generic_params));
-                }
-                else
-                {
-                    values.push_back({ token.get_name(generic_params), token, generic_params });
-                    append_required(values, token, generic_params);
                 }
             }
         }
@@ -373,31 +395,21 @@ namespace cppwinrt::meta
             values.erase(std::unique(values.begin(), values.end()), values.end());
         }
 
-        std::vector<required> get_class_required_base(token class_token, bool component_mode = false, bool direct = false)
+        std::vector<required> get_class_required_base(token class_token, interface_filter self_interfaces, interface_filter base_interfaces, base_filter base_types)
         {
             std::vector<required> values;
-            append_required(values, class_token, {});
-
-            if (values.empty())
+            if (self_interfaces != interface_filter::none)
             {
-                return values;
+                append_required(values, class_token, {}, self_interfaces);
             }
 
-            if (!direct)
+            if (base_interfaces != interface_filter::none && base_types != base_filter::none)
             {
-                for (type const* base = class_token.get_base_type(); base && (!component_mode || base->is_reference); base = base->token.get_base_type())
+                for (type const* base = class_token.get_base_type();
+                    base && !(base_types == base_filter::reference_only && !base->is_reference);
+                    base = base->token.get_base_type())
                 {
-                    if (component_mode)
-                    {
-                        for (token interface_token : base->token.get_direct_override_interfaces())
-                        {
-                            values.push_back({ interface_token.get_name(), interface_token, {} });
-                        }
-                    }
-                    else
-                    {
-                        append_required(values, base->token, {});
-                    }
+                    append_required(values, base->token, {}, base_interfaces);
                 }
             }
 
@@ -405,9 +417,9 @@ namespace cppwinrt::meta
             return values;
         }
 
-        std::vector<required> get_class_required_impl(token class_token, bool component_mode, bool direct = false)
+        std::vector<required> get_class_required_impl(token class_token, interface_filter self_interfaces, interface_filter base_interfaces, base_filter base_types)
         {
-            std::vector<required> values = get_class_required_base(class_token, component_mode, direct);
+            std::vector<required> values = get_class_required_base(class_token, self_interfaces, base_interfaces, base_types);
 
             if (values.empty())
             {
@@ -428,7 +440,10 @@ namespace cppwinrt::meta
                 return value.name == default_name;
             });
 
-            std::rotate(values.begin(), position, position + 1);
+            if (position != values.end())
+            {
+                std::rotate(values.begin(), position, position + 1);
+            }
             return values;
         }
 
@@ -1347,24 +1362,24 @@ namespace cppwinrt::meta
         return composable_attributes;
     }
 
-    std::vector<token> token::get_direct_override_interfaces() const
+    std::vector<required> token::get_direct_override_interfaces() const
     {
-        std::vector<token> interfaces;
-        add_override_interfaces(interfaces, *this);
-        return interfaces;
+        return get_class_required_impl(*this, interface_filter::overridable, interface_filter::none, base_filter::none);
     }
 
-    std::vector<token> token::get_all_override_interfaces() const
+    std::vector<required> token::get_all_override_interfaces() const
     {
-        std::vector<token> interfaces;
-        add_override_interfaces(interfaces, *this);
+        return get_class_required_impl(*this, interface_filter::overridable, interface_filter::overridable, base_filter::all);
+    }
 
-        for (token base = get_base(); base; base = base.get_base())
-        {
-            add_override_interfaces(interfaces, base);
-        }
+    std::vector<required> token::get_all_nonoverride_interfaces() const
+    {
+        return get_class_required_impl(*this, interface_filter::non_overridable, interface_filter::non_overridable, base_filter::all);
+    }
 
-        return interfaces;
+    std::vector<required> token::get_component_class_override_fallbacks() const
+    {
+        return get_class_required_impl(*this, interface_filter::none, interface_filter::overridable, base_filter::reference_only);
     }
 
     generator<using_pair> token::get_interface_usings() const
@@ -1752,29 +1767,34 @@ namespace cppwinrt::meta
     std::vector<required> token::get_interface_required() const
     {
         std::vector<required> values;
-        append_required(values, *this, get_generic_params());
+        append_required(values, *this, get_generic_params(), interface_filter::all);
         sort_unique(values);
         return values;
     }
 
     std::vector<required> token::get_class_required() const
     {
-        return get_class_required_impl(*this, false);
+        return get_class_required_impl(*this, interface_filter::all, interface_filter::all, base_filter::all);
     }
 
-    std::vector<required> token::get_component_class_required() const
+    std::vector<required> token::get_component_class_generated_interfaces() const
     {
-        return get_class_required_impl(*this, true);
+        return get_class_required_impl(*this, interface_filter::all, interface_filter::overridable, base_filter::reference_only);
     }
 
-    std::vector<required> token::get_component_class_required_direct() const
+    std::vector<required> token::get_component_class_interfaces() const
     {
-        return get_class_required_impl(*this, true, true);
+        return get_class_required_impl(*this, interface_filter::all, interface_filter::none, base_filter::none);
+    }
+
+    std::vector<required> token::get_component_class_generated_required() const
+    {
+        return get_class_required_impl(*this, interface_filter::none, interface_filter::non_overridable, base_filter::reference_only);
     }
 
     std::vector<required> token::get_class_required_excluding_default() const
     {
-        std::vector<required> values = get_class_required_base(*this);
+        std::vector<required> values = get_class_required_base(*this, interface_filter::all, interface_filter::all, base_filter::all);
 
         if (values.empty())
         {

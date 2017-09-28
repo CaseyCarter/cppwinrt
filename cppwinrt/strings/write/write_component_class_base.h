@@ -1,9 +1,9 @@
 
 template <typename D, typename ... I>
-struct %_base : %implements<D@%, I ...>%
+struct %_base : %implements<D@%, I ...>%%%
 {
     using class_type = @;
-
+    @
     operator class_type() const noexcept
     {
         class_type result{ nullptr };

@@ -43,7 +43,9 @@
     <ClInclude Include="strings\base\base_collections_consume.h" />
     <ClInclude Include="strings\base\base_collections_input.h" />
     <ClInclude Include="strings\base\base_collections_input_iterable.h" />
+    <ClInclude Include="strings\base\base_collections_input_map.h" />
     <ClInclude Include="strings\base\base_collections_input_map_view.h" />
+    <ClInclude Include="strings\base\base_collections_input_vector.h" />
     <ClInclude Include="strings\base\base_collections_input_vector_view.h" />
     <ClInclude Include="strings\base\base_collections_map.h" />
     <ClInclude Include="strings\base\base_collections_produce.h" />

@@ -120,13 +120,16 @@ namespace cppwinrt::meta
         std::vector<required> get_interface_required() const;
         std::vector<required> get_class_required() const;
         std::vector<required> get_class_required_excluding_default() const;
-        std::vector<required> get_component_class_required() const;
-        std::vector<required> get_component_class_required_direct() const;
+        std::vector<required> get_component_class_generated_interfaces() const;
+        std::vector<required> get_component_class_interfaces() const;
         std::vector<std::string> get_generic_params() const;
         std::vector<factory_attribute> get_factory_attributes() const;
         std::vector<composable_attribute> get_composable_attributes() const;
-        std::vector<token> get_direct_override_interfaces() const;
-        std::vector<token> get_all_override_interfaces() const;
+        std::vector<required> get_direct_override_interfaces() const;
+        std::vector<required> get_all_override_interfaces() const;
+        std::vector<required> get_all_nonoverride_interfaces() const;
+        std::vector<required> get_component_class_override_fallbacks() const;
+        std::vector<required> get_component_class_generated_required() const;
         generator<using_pair> get_interface_usings() const;
         generator<using_pair> get_class_usings() const;
 
@@ -163,6 +166,10 @@ namespace cppwinrt::meta
         token token;
         std::vector<std::string> generic_params;
     };
+
+    bool operator==(required const& left, required const& right) noexcept;
+    bool operator!=(required const& left, required const& right) noexcept;
+    bool operator<(required const& left, required const& right) noexcept;
 
     struct method
     {

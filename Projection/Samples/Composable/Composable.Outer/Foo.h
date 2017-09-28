@@ -9,6 +9,8 @@ namespace winrt::Composable::Outer::implementation
         Foo() = default;
 
         hstring FooMethod();
+
+        void TestRequired() const;
     };
 }
 

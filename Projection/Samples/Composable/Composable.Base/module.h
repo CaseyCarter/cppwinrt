@@ -11,20 +11,6 @@ struct module_lock
 };
 
 template <typename T, typename D>
-struct WINRT_EBO produce_dispatch_to_super<T, D, Composable::Base::IRootOverrides>
-    : produce_dispatch_to_super_base<T, D, Composable::Base::IRootOverrides>
-{
-    hstring VirtualPublicRootMethod()
-    {
-        Composable::Base::IRootOverrides super = this->shim_super();
-        if (super)
-        {
-            return super.VirtualPublicRootMethod();
-        }
-        return this->shim().VirtualPublicRootMethod();
-    }
-};
-template <typename T, typename D>
 struct WINRT_EBO produce_dispatch_to_super<T, D, Composable::Base::IDerivedOverrides>
     : produce_dispatch_to_super_base<T, D, Composable::Base::IDerivedOverrides>
 {
@@ -36,6 +22,20 @@ struct WINRT_EBO produce_dispatch_to_super<T, D, Composable::Base::IDerivedOverr
             return super.VirtualPublicDerivedMethod();
         }
         return this->shim().VirtualPublicDerivedMethod();
+    }
+};
+template <typename T, typename D>
+struct WINRT_EBO produce_dispatch_to_super<T, D, Composable::Base::IRootOverrides>
+    : produce_dispatch_to_super_base<T, D, Composable::Base::IRootOverrides>
+{
+    hstring VirtualPublicRootMethod()
+    {
+        Composable::Base::IRootOverrides super = this->shim_super();
+        if (super)
+        {
+            return super.VirtualPublicRootMethod();
+        }
+        return this->shim().VirtualPublicRootMethod();
     }
 };
 }

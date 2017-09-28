@@ -7,4 +7,9 @@ namespace winrt::Composable::Outer::implementation
     {
         throw hresult_not_implemented();
     }
+
+    void Foo::TestRequired() const
+    {
+        this->RootMethod();
+    }
 }

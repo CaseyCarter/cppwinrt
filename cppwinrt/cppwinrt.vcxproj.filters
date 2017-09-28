@@ -386,6 +386,12 @@
     <ClInclude Include="strings\write\write_version_assert.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\base\base_collections_input_map.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_collections_input_vector.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">

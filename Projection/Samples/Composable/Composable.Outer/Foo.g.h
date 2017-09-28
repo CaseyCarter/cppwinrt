@@ -4,15 +4,18 @@
 
 #include "module.h"
 #include "winrt/Composable.Base.h"
+#include "winrt/Composable.Outer.h"
 
 namespace winrt::Composable::Outer::implementation {
 
 template <typename D, typename ... I>
 struct Foo_base : impl::module_lock, implements<D, Composable::Outer::IFoo, Composable::Base::IRootOverrides, composing, I ...>,
+    impl::require<Foo, Composable::Base::IRoot>,
+    impl::base<Foo, Composable::Base::Root>,
     Composable::Base::IRootOverridesT<D>
 {
     using class_type = Composable::Outer::Foo;
-
+    using composable_base = Composable::Base::Root;
     operator class_type() const noexcept
     {
         class_type result{ nullptr };
@@ -28,9 +31,6 @@ struct Foo_base : impl::module_lock, implements<D, Composable::Outer::IFoo, Comp
     {
         get_activation_factory<Composable::Base::Root, Composable::Base::IRootFactory>().CreateInstance(*this, this->m_inner);
     }
-protected:
-    using dispatch = impl::dispatch_to_super<D, Composable::Base::IRootOverrides>;
-    auto super() noexcept { return dispatch::super(static_cast<D&>(*this)); }
 };
 
 }
@@ -53,7 +53,6 @@ struct FooT : impl::module_lock, implements<D, Windows::Foundation::IActivationF
 
 }
 
-#pragma warning(suppress: 4067)
 #if defined(WINRT_FORCE_INCLUDE_FOO_XAML_G_H) || __has_include("Foo.xaml.g.h")
 
 #include "Foo.xaml.g.h"

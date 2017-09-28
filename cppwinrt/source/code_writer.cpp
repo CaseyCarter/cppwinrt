@@ -7,6 +7,7 @@
 #include "settings.h"
 
 using namespace std::experimental::filesystem;
+using namespace std::string_view_literals;
 
 namespace cppwinrt
 {
@@ -330,12 +331,12 @@ namespace cppwinrt
                 return;
             }
 
-            static std::string_view const optional("Windows.Foundation.IReference");
-            static std::string_view const iterable("Windows.Foundation.Collections.IIterable");
-            static std::string_view const vector_view("Windows.Foundation.Collections.IVectorView");
-            static std::string_view const map_view("Windows.Foundation.Collections.IMapView");
-            static std::string_view const vector("Windows.Foundation.Collections.IVector");
-            static std::string_view const map("Windows.Foundation.Collections.IMap");
+            constexpr std::string_view optional("Windows.Foundation.IReference"sv);
+            constexpr std::string_view iterable("Windows.Foundation.Collections.IIterable"sv);
+            constexpr std::string_view vector_view("Windows.Foundation.Collections.IVectorView"sv);
+            constexpr std::string_view map_view("Windows.Foundation.Collections.IMapView"sv);
+            constexpr std::string_view vector("Windows.Foundation.Collections.IVector"sv);
+            constexpr std::string_view map("Windows.Foundation.Collections.IMap"sv);
 
             std::string signature_name = signature.get_name(generic_params);
 
@@ -1007,10 +1008,8 @@ namespace cppwinrt
                 bind_output(write_interface_produce_methods, type));
         }
 
-        void write_interface_require(output& out, meta::type const& type)
+        void write_interface_require(output& out, meta::type const& type, std::vector<meta::required> const& required)
         {
-            std::vector<meta::required> required = type.token.get_interface_required();
-
             if (required.empty())
             {
                 return;
@@ -1026,41 +1025,22 @@ namespace cppwinrt
             out.write('>');
         }
 
-        void write_class_require(output& out, meta::type const& type)
+        void write_class_base(output& out, meta::type const& type, bool reference_only)
         {
-            std::vector<meta::required> required = type.token.get_class_required_excluding_default();
+            meta::type const* base = type.token.get_base_type();
 
-            if (required.empty())
-            {
-                return;
-            }
-
-            out.write(",\n    impl::require<%", type.name());
-
-            for (meta::required const& r : required)
-            {
-                out.write(", @", r.name);
-            }
-
-            out.write('>');
-        }
-
-        void write_class_base(output& out, meta::type const& type)
-        {
-            meta::token base = type.token.get_base();
-
-            if (!base)
+            if (!base || (reference_only && !base->is_reference))
             {
                 return;
             }
 
             out.write(",\n    impl::base<%, @",
                 type.name(),
-                base.get_name());
+                base->full_name());
 
-            for (meta::token next = base.get_base(); next; next = next.get_base())
+            for (meta::type const* next = base->token.get_base_type(); next && (!reference_only || next->is_reference); next = next->token.get_base_type())
             {
-                out.write(", @", next.get_name());
+                out.write(", @", next->full_name());
             }
 
             out.write('>');
@@ -1106,7 +1086,7 @@ namespace cppwinrt
                 bind_output(write_deprecated, type.token),
                 type.name(),
                 type.name(),
-                bind_output(write_interface_require, type),
+                bind_output(write_interface_require, type, type.token.get_interface_required()),
                 type.name(),
                 bind_output(write_interface_usings, type));
         }
@@ -1468,8 +1448,8 @@ namespace cppwinrt
                     bind_output(write_deprecated, type.token),
                     type.name(),
                     default_interface.get_name(),
-                    bind_output(write_class_base, type),
-                    bind_output(write_class_require, type),
+                    bind_output(write_class_base, type, false),
+                    bind_output(write_interface_require, type, type.token.get_class_required_excluding_default()),
                     type.name(),
                     bind_output(write_constructor_declarations, type),
                     bind_output(write_class_usings, type, default_interface),
@@ -1538,21 +1518,31 @@ namespace cppwinrt
         {
             std::string value = token.get_name();
 
-            size_t position = value.rfind('.') + 1;
+            size_t position = value.rfind('.');
 
             if (position == std::string::npos)
             {
                 return value;
             }
 
-            return value.substr(position);
+            return value.substr(position + 1);
         }
 
-        void write_interface_override_method_definitions(output& out, meta::token const token)
+        std::string_view get_simple_name(meta::required const& required)
         {
-            for (meta::method const& method : token.get_methods())
+            size_t position = required.name.rfind('.');
+            if (position == std::string::npos)
             {
-                std::string const simple_name = get_simple_name(token);
+                return required.name;
+            }
+            return std::string_view(required.name).substr(position + 1);
+        }
+
+        void write_interface_override_method_definitions(output& out, meta::required const& required)
+        {
+            for (meta::method const& method : required.token.get_methods())
+            {
+                std::string_view const simple_name = get_simple_name(required);
                 std::string const method_name = method.get_name();
 
                 out.write(strings::write_interface_override_method_definition,
@@ -1566,9 +1556,9 @@ namespace cppwinrt
             }
         }
 
-        void write_interface_override_method_declarations(output& out, meta::token const token)
+        void write_interface_override_method_declarations(output& out, meta::required const& required)
         {
-            for (meta::method const& method : token.get_methods())
+            for (meta::method const& method : required.token.get_methods())
             {
                 out.write("    @ %(%) const;\n",
                     method.return_type.signature.get_name(),
@@ -1577,15 +1567,15 @@ namespace cppwinrt
             }
         }
 
-        void write_interface_override(output& out, meta::token const token)
+        void write_interface_override(output& out, meta::required const& required)
         {
-            std::string simple_name = get_simple_name(token);
+            std::string_view simple_name = get_simple_name(required);
 
             out.write(strings::write_interface_override,
                 simple_name,
                 simple_name,
-                token.get_name(),
-                bind_output(write_interface_override_method_declarations, token));
+                required.name,
+                bind_output(write_interface_override_method_declarations, required));
         }
 
         void write_class_override_constructors(output& out, meta::token const token, std::string_view ctor_name)
@@ -1661,38 +1651,22 @@ namespace cppwinrt
             return false;
         }
 
-        std::vector<meta::token> get_component_implemented_override_interfaces(meta::type const& type, bool ignore_self = false)
-        {
-            std::vector<meta::token> override_interfaces;
-            for (meta::type const* current = &type; current; current = current->token.get_base_type())
-            {
-                if (!current->is_filtered() || (!ignore_self && current == &type))
-                {
-                    for (meta::token t : current->token.get_direct_override_interfaces())
-                    {
-                        override_interfaces.push_back(t);
-                    }
-                }
-            }
-            return override_interfaces;
-        }
-
-        void write_override_fallbacks(output& out, std::vector<meta::token> const& tokens)
+        void write_override_fallbacks(output& out, std::vector<meta::required> const& interfaces)
         {
             bool first = true;
 
-            for (meta::token const token : tokens)
+            for (meta::required const& required : interfaces)
             {
                 if (first)
                 {
                     first = false;
                     char const* str = R"xyz(,
     @T<D>)xyz";
-                    out.write(str, token.get_name());
+                    out.write(str, required.name);
                 }
                 else
                 {
-                    out.write(", @T<D>", token.get_name());
+                    out.write(", @T<D>", required.name);
                 }
             }
         }
@@ -1704,34 +1678,23 @@ namespace cppwinrt
                 return;
             }
 
-            std::vector<meta::token> const override_interfaces = type.token.get_all_override_interfaces();
+            std::vector<meta::required> const override_interfaces = type.token.get_all_override_interfaces();
+            std::vector<meta::required> const required_interfaces = type.token.get_all_nonoverride_interfaces();
 
-            std::vector<meta::required> required_interfaces;
-
-            for (meta::required required : type.token.get_class_required())
-            {
-                required.token = required.token.get_definition();
-
-                if (std::find(override_interfaces.begin(), override_interfaces.end(), required.token) == override_interfaces.end())
-                {
-                    required_interfaces.push_back(required);
-                }
-            }
-
-            auto comma_names = [](const std::vector<meta::token>& names)
+            auto comma_names = [](const std::vector<meta::required>& names)
             {
                 std::string result;
 
-                for (meta::token const token : names)
+                for (meta::required const& required : names)
                 {
                     result += ", ";
-                    result += token.get_name();
+                    result += required.name;
                 }
 
                 return result;
             };
 
-            auto overrides_names = [&comma_names](const std::vector<meta::token>& names)
+            auto overrides_names = [&comma_names](const std::vector<meta::required>& names)
             {
                 if (names.empty())
                 {
@@ -1797,19 +1760,23 @@ namespace cppwinrt
 
         void write_component_class_override_dispatch_base(output& out, meta::type const& type)
         {
-            std::vector<meta::token> overrides = type.token.get_all_override_interfaces();
+            if (!is_composable(type.token))
+            {
+                return;
+            }
+            std::vector<meta::required> overrides = type.token.get_all_override_interfaces();
             if (overrides.empty())
             {
                 return;
             }
 
-            auto comma_names = [](std::vector<meta::token> const& tokens)
+            auto comma_names = [](std::vector<meta::required> const& requireds)
             {
                 std::string result;
-                for (meta::token const token : tokens)
+                for (meta::required const required : requireds)
                 {
                     result += ", ";
-                    result += token.get_name();
+                    result += required.name;
                 }
                 return result;
             };
@@ -1820,7 +1787,7 @@ namespace cppwinrt
 
         void write_component_instance_interfaces(output& out, meta::type const& type)
         {
-            for (meta::required required : type.token.get_component_class_required())
+            for (meta::required required : type.token.get_component_class_generated_interfaces())
             {
                 out.write(", @", required.name);
             }
@@ -1974,32 +1941,32 @@ namespace cppwinrt
         {
             WINRT_ASSERT(type.token.get_default());
             meta::token inner_type{};
-            std::vector<meta::token> fallback_overrides;
+            std::string composable_base_name;
+            std::string base_name;
 
             meta::type const* base_type = type.token.get_base_type();
             if (base_type)
             {
-                fallback_overrides = get_component_implemented_override_interfaces(*base_type, true);
-                if (!base_type->is_filtered())
+                if (base_type->is_reference)
                 {
                     inner_type = base_type->token;
+                    composable_base_name = "using composable_base = " + std::string(base_type->full_name()) + ";";
+                }
+                else
+                {
+                    base_name = ", ";
+                    base_name += base_type->name_space();
+                    base_name += "::implementation::";
+                    base_name += base_type->name();
                 }
             }
 
+            std::vector<meta::required> const fallback_overrides = type.token.get_component_class_override_fallbacks();
+
             std::string module_lock;
-            if (!base_type || !base_type->is_filtered())
+            if (!base_type || base_type->is_reference)
             {
                 module_lock = "impl::module_lock, ";
-            }
-
-            std::string base_name;
-
-            if (base_type && base_type->is_filtered())
-            {
-                base_name = ", ";
-                base_name += base_type->name_space();
-                base_name += "::implementation::";
-                base_name += base_type->name();
             }
 
             out.write(strings::write_component_class_base,
@@ -2007,16 +1974,19 @@ namespace cppwinrt
                 module_lock,
                 base_name,
                 bind_output(write_component_instance_interfaces, type),
+                bind_output(write_interface_require, type, type.token.get_component_class_generated_required()),
+                bind_output(write_class_base, type, true),
                 bind_output(write_override_fallbacks, fallback_overrides),
                 type.full_name(),
+                composable_base_name,
                 type.full_name(),
                 bind_output(write_class_override_constructors, inner_type, std::string(type.name()) + "_base"),
                 bind_output(write_component_class_override_dispatch_base, type));
         }
 
-        void write_component_produce_override_dispatch_methods(output& out, meta::token const token)
+        void write_component_produce_override_dispatch_methods(output& out, meta::required const& required)
         {
-            for (meta::method const& method : token.get_methods())
+            for (meta::method const& method : required.token.get_methods())
             {
                 std::string const method_name = method.get_name();
 
@@ -2024,7 +1994,7 @@ namespace cppwinrt
                     method.return_type.signature.get_name(),
                     method_name,
                     bind_output(write_component_params, method, empty_generic_params),
-                    token.get_name(),
+                    required.name,
                     method_name,
                     bind_output(write_args, method),
                     method_name,
@@ -2034,20 +2004,20 @@ namespace cppwinrt
 
         void write_component_produce_override_dispatch(output& out, std::vector<meta::type const*> const& types)
         {
-            std::vector<meta::token> override_interfaces;
+            std::vector<meta::required> override_interfaces;
 
             for (meta::type const* type : types)
             {
-                std::vector<meta::token> current = type->token.get_all_override_interfaces();
+                std::vector<meta::required> current = type->token.get_all_override_interfaces();
                 override_interfaces.insert(override_interfaces.end(), current.begin(), current.end());
             }
 
             std::sort(override_interfaces.begin(), override_interfaces.end());
             override_interfaces.erase(std::unique(override_interfaces.begin(), override_interfaces.end()), override_interfaces.end());
 
-            for (meta::token const override_interface : override_interfaces)
+            for (meta::required const& override_interface : override_interfaces)
             {
-                std::string override_interface_name = override_interface.get_name();
+                std::string override_interface_name = override_interface.name;
 
                 out.write(strings::write_component_produce_override_dispatch,
                     override_interface_name,
@@ -2764,9 +2734,9 @@ void t()
     {
         for (meta::type const& type : get_projected_types(types.classes))
         {
-            for (meta::token const token : type.token.get_direct_override_interfaces())
+            for (meta::required const& required : type.token.get_direct_override_interfaces())
             {
-                write_interface_override(out, token);
+                write_interface_override(out, required);
             }
         }
     }
@@ -2775,9 +2745,9 @@ void t()
     {
         for (meta::type const& type : get_projected_types(types.classes))
         {
-            for (meta::token const token : type.token.get_direct_override_interfaces())
+            for (meta::required const& required : type.token.get_direct_override_interfaces())
             {
-                write_interface_override_method_definitions(out, token);
+                write_interface_override_method_definitions(out, required);
             }
         }
     }
@@ -2975,7 +2945,7 @@ void t()
     {
         for (auto& input : settings::inputs)
         {
-            out.write(input.string(), ";");
+            out.write(input.string() + ";");
         }
     }
 
@@ -3153,7 +3123,7 @@ void t()
             }
         }
 
-        std::vector<meta::required> interfaces = type.token.get_component_class_required_direct();
+        std::vector<meta::required> interfaces = type.token.get_component_class_interfaces();
 
         if (!interfaces.empty())
         {
@@ -3223,7 +3193,7 @@ void t()
             }
         }
 
-        std::vector<meta::required> interfaces = type.token.get_component_class_required_direct();
+        std::vector<meta::required> interfaces = type.token.get_component_class_interfaces();
 
         for (meta::required const& required : interfaces)
         {

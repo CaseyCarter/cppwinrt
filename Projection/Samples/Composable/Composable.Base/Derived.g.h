@@ -3,6 +3,7 @@
 #pragma once
 
 #include "module.h"
+#include "winrt/Composable.Base.h"
 #include "Root.h"
 
 namespace winrt::Composable::Base::implementation {
@@ -11,7 +12,7 @@ template <typename D, typename ... I>
 struct Derived_base : implements<D, Composable::Base::implementation::Root, Composable::Base::IDerived, Composable::Base::IDerivedOverrides, composable, I ...>
 {
     using class_type = Composable::Base::Derived;
-
+    
     operator class_type() const noexcept
     {
         class_type result{ nullptr };
@@ -58,7 +59,6 @@ struct DerivedT : impl::module_lock, implements<D, Windows::Foundation::IActivat
 
 }
 
-#pragma warning(suppress: 4067)
 #if defined(WINRT_FORCE_INCLUDE_DERIVED_XAML_G_H) || __has_include("Derived.xaml.g.h")
 
 #include "Derived.xaml.g.h"

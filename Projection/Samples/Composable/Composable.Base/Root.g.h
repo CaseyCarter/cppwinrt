@@ -3,6 +3,7 @@
 #pragma once
 
 #include "module.h"
+#include "winrt/Composable.Base.h"
 
 namespace winrt::Composable::Base::implementation {
 
@@ -10,7 +11,7 @@ template <typename D, typename ... I>
 struct Root_base : impl::module_lock, implements<D, Composable::Base::IRoot, Composable::Base::IRootOverrides, composable, I ...>
 {
     using class_type = Composable::Base::Root;
-
+    
     operator class_type() const noexcept
     {
         class_type result{ nullptr };
@@ -52,7 +53,6 @@ struct RootT : impl::module_lock, implements<D, Windows::Foundation::IActivation
 
 }
 
-#pragma warning(suppress: 4067)
 #if defined(WINRT_FORCE_INCLUDE_ROOT_XAML_G_H) || __has_include("Root.xaml.g.h")
 
 #include "Root.xaml.g.h"
