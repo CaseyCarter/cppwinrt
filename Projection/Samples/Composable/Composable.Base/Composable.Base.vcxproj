@@ -71,19 +71,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
-    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);..\..\..</ExecutablePath>
+    <ExecutablePath>..\..\..;$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
-    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);..\..\..</ExecutablePath>
+    <ExecutablePath>..\..\..;$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
-    <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);..\..\..</ExecutablePath>
+    <ExecutablePath>..\..\..;$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <CustomBuildAfterTargets>Midl</CustomBuildAfterTargets>
-    <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);..\..\..</ExecutablePath>
+    <ExecutablePath>..\..\..;$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH)</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -106,7 +106,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.15063.0 -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -139,7 +139,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.15063.0 -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -176,7 +176,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.15063.0 -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -213,7 +213,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -natvis -out $(ProjectDir)</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.15063.0 -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
