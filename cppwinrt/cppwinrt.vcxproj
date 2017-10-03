@@ -152,6 +152,7 @@
     <ClInclude Include="strings\write\write_std_hash.h" />
     <ClInclude Include="strings\write\write_struct_abi.h" />
     <ClInclude Include="strings\write\write_struct_definition.h" />
+    <ClInclude Include="strings\write\write_struct_type_trait.h" />
     <ClInclude Include="strings\write\write_version_assert.h" />
   </ItemGroup>
   <ItemGroup>

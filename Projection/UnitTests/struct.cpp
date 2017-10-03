@@ -79,38 +79,11 @@ struct TestReference : implements<TestReference, IReference<uint64_t>>
     }
 };
 
-struct TestHttpProgress
-{
-    winrt::Windows::Web::Http::HttpProgress m_value {};
-
-    void abi_in(abi_t<Windows::Web::Http::HttpProgress> value)
-    {
-        copy_from_abi(m_value, value);
-    }
-
-    void abi_out(abi_t<Windows::Web::Http::HttpProgress> * value)
-    {
-        copy_to_abi(m_value, *value);
-    }
-
-    void in(winrt::Windows::Web::Http::HttpProgress const & value)
-    {
-        abi_in(get_abi(value));
-    }
-
-    winrt::Windows::Web::Http::HttpProgress out()
-    {
-        winrt::Windows::Web::Http::HttpProgress value {};
-        abi_out(put_abi(value));
-        return value;
-    }
-};
-
 TEST_CASE("struct, HttpProgress")
 {
-    TestHttpProgress object;
+    IReference<HttpProgress> object = HttpProgress{};
 
-    HttpProgress value = object.out();
+    HttpProgress value = object.Value();
     REQUIRE(value.BytesSent == 0);
     REQUIRE(value.TotalBytesToSend == nullptr);
 
@@ -123,10 +96,10 @@ TEST_CASE("struct, HttpProgress")
 
         REQUIRE(!destroyed);
 
-        object.in(local);
+        object = local;
     }
 
-    value = object.out();
+    value = object.Value();
     REQUIRE(value.BytesSent == 10);
     REQUIRE(value.TotalBytesToSend.Value() == 200);
 
@@ -136,7 +109,7 @@ TEST_CASE("struct, HttpProgress")
 
     // Last outstanding reference.
     REQUIRE(!destroyed);
-    object.m_value = {};
+    object = nullptr;
 
     REQUIRE(destroyed);
 }

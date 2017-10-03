@@ -19,7 +19,6 @@ namespace cppwinrt
 
     void write_forwards(output& out, meta::namespace_types const& types);
     void write_abi(output& out, meta::namespace_types const& types);
-    bool write_struct_abi(output& out, meta::namespace_types const& types);
     void write_consume(output& out, meta::namespace_types const& types);
     void write_produce(output& out, meta::namespace_types const& types);
 
@@ -27,6 +26,7 @@ namespace cppwinrt
     void write_delegate_definitions(output& out, meta::namespace_types const& types);
     void write_class_definitions(output& out, meta::namespace_types const& types);
     void write_struct_definitions(output& out, meta::namespace_types const& types);
+    void write_struct_type_traits(output& out, meta::namespace_types const& types);
     void write_interface_member_definitions(output& out, meta::namespace_types const& types);
     void write_class_member_definitions(output& out, meta::namespace_types const& types);
 

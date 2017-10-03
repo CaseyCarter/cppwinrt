@@ -50,6 +50,7 @@ namespace cppwinrt::meta
         std::string get_name() const;
         std::string get_name(std::vector<std::string> const& generic_params) const;
         std::string get_abi_name() const;
+        std::pair<uint32_t, uint32_t> get_struct_size(std::pair<uint32_t, uint32_t>* max_alignment) const;
         CorElementType get_category() const;
         signature next(token_callback callback = {}) const;
     };
@@ -117,6 +118,8 @@ namespace cppwinrt::meta
         generator<std::string> get_method_names() const;
         generator<enumerator> get_enumerators() const;
         std::vector<field> get_fields(token_callback callback = {}) const;
+        std::pair<uint32_t, uint32_t> get_struct_size(std::pair<uint32_t, uint32_t>* max_alignment = nullptr) const;
+
         std::vector<required> get_interface_required() const;
         std::vector<required> get_class_required() const;
         std::vector<required> get_class_required_excluding_default() const;

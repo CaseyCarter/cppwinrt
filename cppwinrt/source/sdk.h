@@ -59,7 +59,7 @@ namespace cppwinrt
 
         winrt::check_hresult(SHCreateStreamOnFile(
             path.c_str(),
-            STGM_READ, winrt::put_abi(stream)));
+            STGM_READ, stream.put()));
 
         winrt::com_ptr<IXmlReader> reader;
 
@@ -68,7 +68,7 @@ namespace cppwinrt
             reinterpret_cast<void**>(put_abi(reader)),
             0));
 
-        winrt::check_hresult(reader->SetInput(get_abi(stream)));
+        winrt::check_hresult(reader->SetInput(stream.get()));
         XmlNodeType node_type = XmlNodeType_None;
 
         while (S_OK == reader->Read(&node_type))

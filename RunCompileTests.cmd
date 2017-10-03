@@ -23,7 +23,6 @@ pushd %TestLocation%
 echo // RunCompileTests.cmd generated PCH > pch.h
 echo #define WIN32_LEAN_AND_MEAN >> pch.h
 echo #include "winrt\base.h" >> pch.h
-echo #include "winrt\impl\complex_structs.h" >> pch.h
 echo #include "winrt\Windows.Foundation.h" >> pch.h
 echo #include "winrt\Windows.Foundation.Collections.h" >> pch.h
 echo.>> pch.h

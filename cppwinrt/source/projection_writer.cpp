@@ -39,66 +39,13 @@ namespace cppwinrt
 
         struct namespace_recorder
         {
-            std::set<std::string> _complex_namespaces;
             std::set<std::string> _projected_namespaces;
             winrt::impl::mutex _lock;
-
-            void record_complex_struct_namespace(std::string const& ns)
-            {
-                lock_guard<> const guard(_lock);
-                _complex_namespaces.emplace(ns);
-            }
 
             void record_projected_namespace(std::string const& ns)
             {
                 lock_guard<> const guard(_lock);
                 _projected_namespaces.emplace(ns);
-            }
-
-            void write_complex_struct_header(projection_paths const& paths)
-            {
-                // if component, intersect recorded headers with complex struct headers (exclude platform),
-                // and #include complex_structs.h from platform projection
-                if (settings::component)
-                {
-                    for (auto iter = _complex_namespaces.begin(); iter != _complex_namespaces.end(); ++iter)
-                    {
-                        if (std::find(_projected_namespaces.begin(), _projected_namespaces.end(), *iter) == _projected_namespaces.end())
-                        {
-                            _complex_namespaces.erase(iter);
-                        }
-                    }
-                }
-
-                if (_complex_namespaces.empty())
-                {
-                    return;
-                }
-
-                output out;
-                for (auto& ns : _complex_namespaces)
-                {
-                    write_projection_include(out, "impl/", ns, ".0.h");
-                }
-                out.save_as(paths._impl / (get_complex_struct_name() + ".h"));
-            }
-
-            static void write_complex_struct_includes(output& out)
-            {
-                write_projection_include(out, "impl/complex_structs.h");
-                if (settings::component)
-                {
-                    auto component_complex_structs = "impl/" + get_complex_struct_name() + ".h";
-                    out.write("#if __has_include(\"%\")\n", component_complex_structs);
-                    write_projection_include(out, component_complex_structs);
-                    out.write("#endif\n");
-                }
-            }
-
-            static std::string get_complex_struct_name()
-            {
-                return settings::component ? 
-                    settings::component_name + "_complex_structs" : "complex_structs";
             }
         };
 
@@ -200,10 +147,6 @@ namespace cppwinrt
                     write_names(out, namespace_types);
                     write_guids(out, namespace_types);
                     write_default_interfaces(out, namespace_types);
-                    if (write_struct_abi(out, namespace_types))
-                    {
-                        namespace_recorder.record_complex_struct_namespace(namespace_name);
-                    }
                     write_consume(out, namespace_types);
                     write_abi(out, namespace_types);
                     out.write_close_namespace();
@@ -229,7 +172,14 @@ namespace cppwinrt
                     ref_writer.write_struct_includes(out, definition_ext, "impl/");
                     out.write_meta_namespace(namespace_name);
                     write_delegate_definitions(out, namespace_types);
+
                     write_struct_definitions(out, namespace_types);
+                    out.write_close_namespace();
+                    out.write_impl_namespace();
+                    write_struct_type_traits(out, namespace_types);
+                    out.write_close_namespace();
+
+                    out.write_meta_namespace(namespace_name);
                     write_class_definitions(out, namespace_types);
                     write_interface_overrides(out, namespace_types);
                     out.write_close_namespace();
@@ -253,7 +203,6 @@ namespace cppwinrt
                         write_projection_include(out, "Windows.Foundation.Collections.h");
                     }
 
-                    namespace_recorder.write_complex_struct_includes(out);
                     ref_writer.write_includes(out, definition_ext, "impl/");
                     ref_writer.write_parent_include(out);
                     out.write_impl_namespace();
@@ -350,7 +299,6 @@ namespace cppwinrt
         writers.resize(num_writers);
         wait_all(writers).get();
 
-        namespace_recorder.write_complex_struct_header(paths);
         if (!settings::component)
         {
             write_module();

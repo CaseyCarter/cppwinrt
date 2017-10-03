@@ -7,7 +7,7 @@ namespace winrt::impl
         using type = T;
     };
 
-    template <typename T>
+    template <typename T, typename Enable = void>
     struct abi
     {
         using type = T;
@@ -120,6 +120,32 @@ namespace winrt::impl
     {
         return accessors<T>::put_size(object);
     }
+
+    template <uint32_t Size>
+    struct struct_base
+    {
+        uint8_t padding[Size];
+    };
+
+    template <uint32_t Size32, uint32_t Size64 = Size32>
+    using struct_of =
+#ifdef WINRT_64
+        struct_base<Size64>;
+#else
+        struct_base<Size32>;
+#endif
+
+    template <typename T>
+    struct is_struct
+    {
+        static constexpr bool value{ false };
+    };
+
+    template <typename T>
+    struct abi<T, std::enable_if_t<is_struct<T>::value>>
+    {
+        using type = struct_of<sizeof(T)>;
+    };
 }
 
 WINRT_EXPORT namespace winrt

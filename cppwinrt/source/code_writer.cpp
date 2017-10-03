@@ -162,32 +162,6 @@ namespace cppwinrt
             return false;
         }
 
-        void write_struct_abi_fields(output& out, std::vector<meta::field> const& fields)
-        {
-            for (meta::field const& field : fields)
-            {
-                out.write("    @ %;\n",
-                    field.type.get_abi_name(),
-                    field.name);
-            }
-        }
-
-        bool write_struct_abi(output& out, meta::type const& type)
-        {
-            std::vector<meta::field> fields = type.token.get_fields();
-
-            if (!is_complex_struct(fields))
-            {
-                return false;
-            }
-
-            out.write(strings::write_struct_abi,
-                type.full_name(),
-                bind_output(write_struct_abi_fields, fields));
-
-            return true;
-        }
-
         void write_abi_param(output& out, meta::param const& param, bool is_return = false)
         {
             meta::signature signature = param.signature;
@@ -1478,9 +1452,15 @@ namespace cppwinrt
         void write_struct_definition(output& out, meta::type const& type)
         {
             out.write(strings::write_struct_definition,
-                bind_output(write_deprecated, type.token),
-                type.name(),
-                bind_output(write_struct_fields, type));
+                      bind_output(write_deprecated, type.token),
+                      type.name(),
+                      bind_output(write_struct_fields, type));
+        }
+
+        void write_struct_type_trait(output& out, meta::type const& type)
+        {
+            out.write(strings::write_struct_type_trait,
+                type.full_name());
         }
 
         void write_shims(output& out, meta::type const& type)
@@ -2465,21 +2445,6 @@ namespace cppwinrt
         }
     }
 
-    bool write_struct_abi(output& out, meta::namespace_types const& types)
-    {
-        bool struct_written = false;
-
-        for (meta::type const& type : get_projected_types(types.structs))
-        {
-            if (write_struct_abi(out, type))
-            {
-                struct_written = true;
-            }
-        }
-
-        return struct_written;
-    }
-
     void write_consume(output& out, meta::namespace_types const& types)
     {
         for (meta::type const& type : get_projected_types(types.interfaces))
@@ -2711,6 +2676,14 @@ void t()
         for (meta::type const& type : get_projected_types(types.structs))
         {
             write_struct_definition(out, type);
+        }
+    }
+
+    void write_struct_type_traits(output& out, meta::namespace_types const& types)
+    {
+        for (meta::type const& type : get_projected_types(types.structs))
+        {
+            write_struct_type_trait(out, type);
         }
     }
 

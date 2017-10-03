@@ -2,6 +2,8 @@
 
 #pragma comment(lib, "shlwapi")
 
+#define NOMINMAX
+
 #include <cor.h>
 #include <corerror.h>
 #include <corhdr.h>

@@ -309,6 +309,55 @@ namespace cppwinrt::meta
             return {};
         }
 
+        std::pair<uint32_t, uint32_t> read_size(IMetaDataImport2* db, PCCOR_SIGNATURE& cursor, std::pair<uint32_t, uint32_t>* max_alignment)
+        {
+            CorElementType category = CorSigUncompressElementType(cursor);
+            bool by_ref{};
+
+            if (category == ELEMENT_TYPE_CMOD_REQD || category == ELEMENT_TYPE_CMOD_OPT)
+            {
+                CorSigUncompressToken(cursor);
+                category = CorSigUncompressElementType(cursor);
+            }
+
+            if (category == ELEMENT_TYPE_BYREF)
+            {
+                by_ref = true;
+                category = CorSigUncompressElementType(cursor);
+            }
+
+            switch (category)
+            {
+            case ELEMENT_TYPE_BOOLEAN: return { 1, 1 };
+            case ELEMENT_TYPE_CHAR:    return { 2, 2 };
+            case ELEMENT_TYPE_I1:      return { 1, 1 };
+            case ELEMENT_TYPE_U1:      return { 1, 1 };
+            case ELEMENT_TYPE_I2:      return { 2, 2 };
+            case ELEMENT_TYPE_U2:      return { 2, 2 };
+            case ELEMENT_TYPE_I4:      return { 4, 4 };
+            case ELEMENT_TYPE_U4:      return { 4, 4 };
+            case ELEMENT_TYPE_I8:      return { 8, 8 };
+            case ELEMENT_TYPE_U8:      return { 8, 8 };
+            case ELEMENT_TYPE_R4:      return { 4, 4 };
+            case ELEMENT_TYPE_R8:      return { 8, 8 };
+            case ELEMENT_TYPE_STRING:  return { 4, 8 };
+            }
+
+            if (category == ELEMENT_TYPE_VALUETYPE)
+            {
+                return token{ CorSigUncompressToken(cursor), db }.get_struct_size(max_alignment);
+            }
+
+            if (category == ELEMENT_TYPE_GENERICINST)
+            {
+                return { 4, 8 };
+            }
+
+            WINRT_ASSERT(false);
+            return {};
+        }
+
+
         enum class interface_filter
         {
             all,
@@ -621,6 +670,29 @@ namespace cppwinrt::meta
         return false;
     }
 
+    bool is_meta_struct(std::string_view match)
+    {
+        if (is_foundation_type(match))
+        {
+            return false;
+        }
+
+        std::string name_space(match.data(), match.rfind('.'));
+        match = match.substr(name_space.size() + 1);
+
+        namespace_types const& types = index.at(name_space);
+
+        for (type const& type : types.structs)
+        {
+            if (type.name() == match)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     type const* find_type(std::string_view match, type_category* category)
     {
         std::string name_space(match.data(), match.rfind('.'));
@@ -796,16 +868,34 @@ namespace cppwinrt::meta
             return "::IUnknown*";
         }
 
-        if (category == ELEMENT_TYPE_VALUETYPE)
-        {
-            std::string name("abi_t<");
-            name += token{ CorSigUncompressToken(cursor), db }.get_name();
-            name += '>';
-            return name;
-        }
+        WINRT_ASSERT(category == ELEMENT_TYPE_VALUETYPE);
 
-        WINRT_ASSERT(false);
-        return {};
+        token token{ CorSigUncompressToken(cursor), db };
+        std::string const token_name = token.get_name();
+
+        if (is_meta_struct(token_name))
+        {
+            std::pair<uint32_t, uint32_t> sizes = token.get_struct_size();
+
+            if (sizes.first == sizes.second)
+            {
+                return "struct_of<" + std::to_string(sizes.first) + ">";
+            }
+            else
+            {
+                return "struct_of<" + std::to_string(sizes.first) + "," + std::to_string(sizes.second) + ">";
+            }
+        }
+        else
+        {
+            return token_name;
+        }
+    }
+
+    std::pair<uint32_t, uint32_t> signature::get_struct_size(std::pair<uint32_t, uint32_t>* max_alignment) const
+    {
+        PCCOR_SIGNATURE cursor = data;
+        return read_size(db, cursor, max_alignment);
     }
 
     CorElementType signature::get_category() const
@@ -1762,6 +1852,89 @@ namespace cppwinrt::meta
         }
 
         return fields;
+    }
+
+    uint32_t round_up(uint32_t value, uint32_t multiple)
+    {
+        if (multiple == 0)
+        {
+            return value;
+        }
+
+        uint32_t remainder = value % multiple;
+
+        if (remainder == 0)
+        {
+            return value;
+        }
+
+        return value + multiple - remainder;
+    }
+
+    std::pair<uint32_t, uint32_t> token::get_struct_size(std::pair<uint32_t, uint32_t>* max_alignment) const
+    {
+        std::string const name = get_name();
+
+        // I don't love this special handling of GUID, but we'll need a larger refactor of GUID type handling
+        // to resolve this. This only came up because internal types use GUID parameters whereas public types
+        // are not permitted to do so by convention.
+
+        if (name == "GUID")
+        {
+            if (max_alignment != nullptr)
+            {
+                *max_alignment = { 4, 4 };
+            }
+
+            return { 16, 16 };
+        }
+
+        type_category category;
+        type const* type = find_type(name, &category);
+
+        if (category == type_category::enum_v)
+        {
+            return { 4, 4 };
+        }
+
+        WINRT_ASSERT(category == type_category::struct_v);
+
+        std::pair<uint32_t, uint32_t> sum;
+        std::pair<uint32_t, uint32_t> alignment;
+
+        for (field const& field : type->token.get_fields())
+        {
+            // Size of next field.
+            std::pair<uint32_t, uint32_t> inner_alignment;
+            std::pair<uint32_t, uint32_t> const size = field.type.get_struct_size(&inner_alignment);
+
+            // Maximum alignment needed to calculate effective struct alignment.
+            if (inner_alignment.first == 0)
+            {
+                inner_alignment = size;
+            }
+
+            alignment.first = std::max(alignment.first, inner_alignment.first);
+            alignment.second = std::max(alignment.second, inner_alignment.second);
+
+            // Padding for next field.
+            sum.first += (sum.first % inner_alignment.first == 0) ? 0 : (inner_alignment.first - (sum.first % inner_alignment.first));
+            sum.second += (sum.second % inner_alignment.second == 0) ? 0 : (inner_alignment.second - (sum.second % inner_alignment.second));
+
+            // Size of field itself
+            sum.first += size.first;
+            sum.second += size.second;
+        }
+
+        sum.first = round_up(sum.first, alignment.first);
+        sum.second = round_up(sum.second, alignment.second);
+
+        if (max_alignment != nullptr)
+        {
+            *max_alignment = alignment;
+        }
+
+        return sum;
     }
 
     std::vector<required> token::get_interface_required() const
