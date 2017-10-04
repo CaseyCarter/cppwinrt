@@ -461,7 +461,7 @@ namespace winrt::impl
     template <typename TResult, typename TProgress>
     struct name<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
     {
-        static constexpr auto value{ L"Windows.Foundation.AsyncOperationProgressHandler`2<" + make_constexpr_string(name_v<TResult>) + L"," + make_constexpr_string(name_v<TProgress>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.AsyncOperationProgressHandler`2<" + make_constexpr_string(name_v<TResult>) + L", " + make_constexpr_string(name_v<TProgress>) + L">" };
     };
 
     template <typename TResult, typename TProgress>
@@ -480,7 +480,7 @@ namespace winrt::impl
     template <typename TResult, typename TProgress>
     struct name<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
     {
-        static constexpr auto value{ L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<" + make_constexpr_string(name_v<TResult>) + L"," + make_constexpr_string(name_v<TProgress>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<" + make_constexpr_string(name_v<TResult>) + L", " + make_constexpr_string(name_v<TProgress>) + L">" };
     };
 
     template <typename TResult, typename TProgress>
@@ -573,7 +573,7 @@ namespace winrt::impl
     template <typename TResult, typename TProgress>
     struct name<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
     {
-        static constexpr auto value{ L"Windows.Foundation.IAsyncOperationWithProgress`2<" + make_constexpr_string(name_v<TResult>) + L"," + make_constexpr_string(name_v<TProgress>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.IAsyncOperationWithProgress`2<" + make_constexpr_string(name_v<TResult>) + L", " + make_constexpr_string(name_v<TProgress>) + L">" };
     };
 
     template <typename TResult, typename TProgress>

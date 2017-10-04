@@ -30,11 +30,6 @@ namespace winrt::impl
         static constexpr GUID value{ 0x00000000,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
     };
 
-    template <> struct name<Windows::Foundation::IUnknown>
-    {
-        static constexpr auto & value{ L"Windows.Foundation.IUnknown" };
-    };
-
     template <> struct category<Windows::Foundation::IUnknown>
     {
         using type = interface_category;
@@ -47,7 +42,7 @@ namespace winrt::impl
 
     template <> struct name<Windows::Foundation::IInspectable>
     {
-        static constexpr auto & value{ L"Windows.Foundation.IInspectable" };
+        static constexpr auto & value{ L"Object" };
         static constexpr auto & data{ "cinterface(IInspectable)" };
     };
 

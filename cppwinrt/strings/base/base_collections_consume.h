@@ -702,7 +702,7 @@ namespace winrt::impl
     template <typename K, typename V>
     struct name<wfc::MapChangedEventHandler<K, V>>
     {
-        static constexpr auto value{ L"Windows.Foundation.Collections.MapChangedEventHandler`2<" + make_constexpr_string(name_v<K>) + L"," + make_constexpr_string(name_v<V>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.Collections.MapChangedEventHandler`2<" + make_constexpr_string(name_v<K>) + L", " + make_constexpr_string(name_v<V>) + L">" };
     };
 
     template <typename K, typename V>
@@ -816,7 +816,7 @@ namespace winrt::impl
     template <typename K, typename V>
     struct name<wfc::IKeyValuePair<K, V>>
     {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IKeyValuePair`2<" + make_constexpr_string(name_v<K>) + L"," + make_constexpr_string(name_v<V>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.Collections.IKeyValuePair`2<" + make_constexpr_string(name_v<K>) + L", " + make_constexpr_string(name_v<V>) + L">" };
     };
 
     template <typename K, typename V>
@@ -835,7 +835,7 @@ namespace winrt::impl
     template <typename K, typename V>
     struct name<wfc::IMapView<K, V>>
     {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IMapView`2<" + make_constexpr_string(name_v<K>) + L"," + make_constexpr_string(name_v<V>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.Collections.IMapView`2<" + make_constexpr_string(name_v<K>) + L", " + make_constexpr_string(name_v<V>) + L">" };
     };
 
     template <typename K, typename V>
@@ -854,7 +854,7 @@ namespace winrt::impl
     template <typename K, typename V>
     struct name<wfc::IMap<K, V>>
     {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IMap`2<" + make_constexpr_string(name_v<K>) + L"," + make_constexpr_string(name_v<V>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.Collections.IMap`2<" + make_constexpr_string(name_v<K>) + L", " + make_constexpr_string(name_v<V>) + L">" };
     };
 
     template <typename K, typename V>
@@ -873,7 +873,7 @@ namespace winrt::impl
     template <typename K, typename V>
     struct name<wfc::IObservableMap<K, V>>
     {
-        static constexpr auto value{ L"Windows.Foundation.Collections.IObservableMap`2<" + make_constexpr_string(name_v<K>) + L"," + make_constexpr_string(name_v<V>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.Collections.IObservableMap`2<" + make_constexpr_string(name_v<K>) + L", " + make_constexpr_string(name_v<V>) + L">" };
     };
 
     template <typename K, typename V>

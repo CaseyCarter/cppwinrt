@@ -51,6 +51,7 @@
     <ClCompile Include="implements_nested.cpp" />
     <ClCompile Include="char16.cpp" />
     <ClCompile Include="error_chaining.cpp" />
+    <ClCompile Include="constexpr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />
