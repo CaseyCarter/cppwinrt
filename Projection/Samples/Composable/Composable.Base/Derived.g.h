@@ -9,7 +9,7 @@
 namespace winrt::Composable::Base::implementation {
 
 template <typename D, typename ... I>
-struct Derived_base : implements<D, Composable::Base::implementation::Root, Composable::Base::IDerived, Composable::Base::IDerivedOverrides, composable, I ...>
+struct WINRT_EBO Derived_base : implements<D, Composable::Base::implementation::Root, Composable::Base::IDerived, Composable::Base::IDerivedOverrides, composable, I ...>
 {
     using class_type = Composable::Base::Derived;
     

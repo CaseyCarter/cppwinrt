@@ -8,7 +8,7 @@
 namespace winrt::Composable::Base::implementation {
 
 template <typename D, typename ... I>
-struct Root_base : impl::module_lock, implements<D, Composable::Base::IRoot, Composable::Base::IRootOverrides, composable, I ...>
+struct WINRT_EBO Root_base : impl::module_lock, implements<D, Composable::Base::IRoot, Composable::Base::IRootOverrides, composable, I ...>
 {
     using class_type = Composable::Base::Root;
     

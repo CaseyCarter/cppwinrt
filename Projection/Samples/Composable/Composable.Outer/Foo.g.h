@@ -9,9 +9,9 @@
 namespace winrt::Composable::Outer::implementation {
 
 template <typename D, typename ... I>
-struct Foo_base : impl::module_lock, implements<D, Composable::Outer::IFoo, Composable::Base::IRootOverrides, composing, I ...>,
-    impl::require<Foo, Composable::Base::IRoot>,
-    impl::base<Foo, Composable::Base::Root>,
+struct WINRT_EBO Foo_base : impl::module_lock, implements<D, Composable::Outer::IFoo, Composable::Base::IRootOverrides, composing, I ...>,
+    impl::require<D, Composable::Base::IRoot>,
+    impl::base<D, Composable::Base::Root>,
     Composable::Base::IRootOverridesT<D>
 {
     using class_type = Composable::Outer::Foo;

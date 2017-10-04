@@ -982,14 +982,14 @@ namespace cppwinrt
                 bind_output(write_interface_produce_methods, type));
         }
 
-        void write_interface_require(output& out, meta::type const& type, std::vector<meta::required> const& required)
+        void write_interface_require(output& out, std::string_view name, std::vector<meta::required> const& required)
         {
             if (required.empty())
             {
                 return;
             }
 
-            out.write(",\n    impl::require<%", type.name());
+            out.write(",\n    impl::require<%", name);
 
             for (meta::required const& r : required)
             {
@@ -999,7 +999,7 @@ namespace cppwinrt
             out.write('>');
         }
 
-        void write_class_base(output& out, meta::type const& type, bool reference_only)
+        void write_class_base(output& out, meta::type const& type, bool reference_only, std::string_view name)
         {
             meta::type const* base = type.token.get_base_type();
 
@@ -1009,7 +1009,7 @@ namespace cppwinrt
             }
 
             out.write(",\n    impl::base<%, @",
-                type.name(),
+                name,
                 base->full_name());
 
             for (meta::type const* next = base->token.get_base_type(); next && (!reference_only || next->is_reference); next = next->token.get_base_type())
@@ -1060,7 +1060,7 @@ namespace cppwinrt
                 bind_output(write_deprecated, type.token),
                 type.name(),
                 type.name(),
-                bind_output(write_interface_require, type, type.token.get_interface_required()),
+                bind_output(write_interface_require, type.name(), type.token.get_interface_required()),
                 type.name(),
                 bind_output(write_interface_usings, type));
         }
@@ -1422,8 +1422,8 @@ namespace cppwinrt
                     bind_output(write_deprecated, type.token),
                     type.name(),
                     default_interface.get_name(),
-                    bind_output(write_class_base, type, false),
-                    bind_output(write_interface_require, type, type.token.get_class_required_excluding_default()),
+                    bind_output(write_class_base, type, false, type.name()),
+                    bind_output(write_interface_require, type.name(), type.token.get_class_required_excluding_default()),
                     type.name(),
                     bind_output(write_constructor_declarations, type),
                     bind_output(write_class_usings, type, default_interface),
@@ -1954,8 +1954,8 @@ namespace cppwinrt
                 module_lock,
                 base_name,
                 bind_output(write_component_instance_interfaces, type),
-                bind_output(write_interface_require, type, type.token.get_component_class_generated_required()),
-                bind_output(write_class_base, type, true),
+                bind_output(write_interface_require, "D"sv, type.token.get_component_class_generated_required()),
+                bind_output(write_class_base, type, true, "D"sv),
                 bind_output(write_override_fallbacks, fallback_overrides),
                 type.full_name(),
                 composable_base_name,
