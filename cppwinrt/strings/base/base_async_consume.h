@@ -1,7 +1,7 @@
 
 WINRT_EXPORT namespace winrt::Windows::Foundation
 {
-    enum class AsyncStatus
+    enum class AsyncStatus : int32_t
     {
         Started,
         Completed,

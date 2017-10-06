@@ -1,4 +1,4 @@
 
-enum class %%
+enum class %% : int32_t
 {
 %};

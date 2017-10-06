@@ -1,7 +1,7 @@
 
 WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
 {
-    enum class CollectionChange
+    enum class CollectionChange : int32_t
     {
         Reset,
         ItemInserted,

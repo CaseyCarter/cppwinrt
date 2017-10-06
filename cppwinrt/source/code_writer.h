@@ -18,6 +18,7 @@ namespace cppwinrt
     void write_default_interfaces(output& out, meta::namespace_types const& types);
 
     void write_forwards(output& out, meta::namespace_types const& types);
+    void write_enum_flags(output& out, meta::namespace_types const& types);
     void write_abi(output& out, meta::namespace_types const& types);
     void write_consume(output& out, meta::namespace_types const& types);
     void write_produce(output& out, meta::namespace_types const& types);

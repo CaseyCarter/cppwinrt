@@ -1,6 +1,4 @@
 
-enum class %% : unsigned
+enum class %% : uint32_t
 {
 %};
-
-DEFINE_ENUM_FLAG_OPERATORS(%)

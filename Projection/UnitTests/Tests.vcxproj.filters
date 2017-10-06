@@ -52,6 +52,7 @@
     <ClCompile Include="char16.cpp" />
     <ClCompile Include="error_chaining.cpp" />
     <ClCompile Include="constexpr.cpp" />
+    <ClCompile Include="enum_flags.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />

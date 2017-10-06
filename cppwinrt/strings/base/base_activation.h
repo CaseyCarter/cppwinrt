@@ -146,7 +146,7 @@ WINRT_EXPORT namespace winrt
         };
     }
 
-    enum class apartment_type
+    enum class apartment_type : int32_t
     {
         single_threaded,
         multi_threaded

@@ -119,8 +119,7 @@ namespace cppwinrt
             out.write(strings::write_enumeration_flag,
                 bind_output(write_deprecated, type.token),
                 type.name(),
-                bind_output(write_enumerators_flag, type.token),
-                type.name());
+                bind_output(write_enumerators_flag, type.token));
         }
 
         void write_enum(output& out, meta::type const& type)
@@ -132,6 +131,15 @@ namespace cppwinrt
             else
             {
                 write_enumeration(out, type);
+            }
+        }
+
+        void write_enum_flag(output& out, meta::type const& type)
+        {
+            if (type.token.is_flags())
+            {
+                out.write(strings::write_enumeration_flag_specialization,
+                    type.full_name());
             }
         }
 
@@ -2421,6 +2429,14 @@ namespace cppwinrt
             }
 
             out.write("struct %;\n", type.name());
+        }
+    }
+
+    void write_enum_flags(output& out, meta::namespace_types const& types)
+    {
+        for (meta::type const& type : get_projected_types(types.enums))
+        {
+            write_enum_flag(out, type);
         }
     }
 

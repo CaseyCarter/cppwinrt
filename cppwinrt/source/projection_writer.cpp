@@ -143,6 +143,7 @@ namespace cppwinrt
                     out.write_close_namespace();
                     out.write_impl_namespace();
                     out.write('\n');
+                    write_enum_flags(out, namespace_types);
                     write_categories(out, namespace_types);
                     write_names(out, namespace_types);
                     write_guids(out, namespace_types);

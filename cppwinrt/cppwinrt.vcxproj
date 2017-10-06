@@ -129,6 +129,7 @@
     <ClInclude Include="strings\write\write_edit_warning_source.h" />
     <ClInclude Include="strings\write\write_enumeration.h" />
     <ClInclude Include="strings\write\write_enumeration_flag.h" />
+    <ClInclude Include="strings\write\write_enumeration_flag_specialization.h" />
     <ClInclude Include="strings\write\write_interface_abi.h" />
     <ClInclude Include="strings\write\write_interface_consume.h" />
     <ClInclude Include="strings\write\write_interface_definition.h" />
