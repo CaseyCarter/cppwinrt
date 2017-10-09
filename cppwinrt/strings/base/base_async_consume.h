@@ -207,7 +207,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionCompletedHandler, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept override
+            HRESULT __stdcall Invoke(::IUnknown* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept final
             {
                 try
                 {
@@ -230,7 +230,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationCompletedHandler<TResult>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, Windows::Foundation::AsyncStatus args) noexcept override
+            HRESULT __stdcall Invoke(::IUnknown* sender, Windows::Foundation::AsyncStatus args) noexcept final
             {
                 try
                 {
@@ -250,7 +250,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionProgressHandler<TProgress>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, arg_in<TProgress> args) noexcept override
+            HRESULT __stdcall Invoke(::IUnknown* sender, arg_in<TProgress> args) noexcept final
             {
                 try
                 {
@@ -270,7 +270,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, Windows::Foundation::AsyncStatus args) noexcept override
+            HRESULT __stdcall Invoke(::IUnknown* sender, Windows::Foundation::AsyncStatus args) noexcept final
             {
                 try
                 {
@@ -290,7 +290,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, arg_in<TProgress> args) noexcept override
+            HRESULT __stdcall Invoke(::IUnknown* sender, arg_in<TProgress> args) noexcept final
             {
                 try
                 {
@@ -310,7 +310,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, Windows::Foundation::AsyncStatus args) noexcept override
+            HRESULT __stdcall Invoke(::IUnknown* sender, Windows::Foundation::AsyncStatus args) noexcept final
             {
                 try
                 {

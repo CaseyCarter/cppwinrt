@@ -79,7 +79,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::EventHandler<T>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, arg_in<T> args) noexcept override
+            HRESULT __stdcall Invoke(::IUnknown* sender, arg_in<T> args) noexcept final
             {
                 try
                 {
@@ -109,7 +109,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::TypedEventHandler<TSender, TArgs>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(arg_in<TSender> sender, arg_in<TArgs> args) noexcept override
+            HRESULT __stdcall Invoke(arg_in<TSender> sender, arg_in<TArgs> args) noexcept final
             {
                 try
                 {

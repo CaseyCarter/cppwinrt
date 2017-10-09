@@ -1,5 +1,5 @@
 
-    HRESULT __stdcall %(%) noexcept override
+    HRESULT __stdcall %(%) noexcept final
     {
         try
         {
