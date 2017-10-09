@@ -32,6 +32,7 @@
     <ClCompile Include="constexpr.cpp" />
     <ClCompile Include="enum_flags.cpp" />
     <ClCompile Include="error_chaining.cpp" />
+    <ClCompile Include="foundation.cpp" />
     <ClCompile Include="implements_nested.cpp" />
     <ClCompile Include="param_hstring.cpp" />
     <ClCompile Include="param_iterable.cpp" />

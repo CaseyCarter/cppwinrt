@@ -8,11 +8,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         Point() noexcept = default;
 
-        Point(float X, float Y) noexcept
+        constexpr Point(float X, float Y) noexcept
             : X(X), Y(Y)
         {}
 
-        Point(Numerics::float2 const& value) noexcept
+        constexpr Point(Numerics::float2 const& value) noexcept
             : X(value.x), Y(value.y)
         {}
 
@@ -22,6 +22,16 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         }
     };
 
+    constexpr inline bool operator==(Point const& left, Point const& right) noexcept
+    {
+        return left.X == right.X && left.Y == right.Y;
+    }
+
+    constexpr inline bool operator!=(Point const& left, Point const& right) noexcept
+    {
+        return !(left == right);
+    }
+
     struct Size
     {
         float Width;
@@ -29,11 +39,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         Size() noexcept = default;
 
-        Size(float Width, float Height) noexcept
+        constexpr Size(float Width, float Height) noexcept
             : Width(Width), Height(Height)
         {}
 
-        Size(Numerics::float2 const& value) noexcept
+        constexpr Size(Numerics::float2 const& value) noexcept
             : Width(value.x), Height(value.y)
         {}
 
@@ -43,13 +53,43 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         }
     };
 
+    constexpr inline bool operator==(Size const& left, Size const& right) noexcept
+    {
+        return left.Width == right.Width && left.Height == right.Height;
+    }
+
+    constexpr inline bool operator!=(Size const& left, Size const& right) noexcept
+    {
+        return !(left == right);
+    }
+
     struct Rect
     {
         float X;
         float Y;
         float Width;
         float Height;
+
+        Rect() noexcept = default;
+
+        constexpr Rect(float X, float Y, float Width, float Height) noexcept :
+            X(X), Y(Y), Width(Width), Height(Height)
+        {}
+
+        constexpr Rect(Point const& point, Size const& size)  noexcept :
+            X(point.X), Y(point.Y), Width(size.Width), Height(size.Height)
+        {}
     };
+
+    constexpr inline bool operator==(Rect const& left, Rect const& right) noexcept
+    {
+        return left.X == right.X && left.Y == right.Y && left.Width == right.Width && left.Height == right.Height;
+    }
+
+    constexpr inline bool operator!=(Rect const& left, Rect const& right) noexcept
+    {
+        return !(left == right);
+    }
 }
 
 namespace winrt::impl
