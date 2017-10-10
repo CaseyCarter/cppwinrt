@@ -4,18 +4,20 @@
 
 #include "module.h"
 #include "winrt/Windows.Foundation.Collections.h"
+#include "winrt/Windows.Foundation.h"
 
 namespace winrt::Windows::Foundation::implementation {
 
 template <typename D, typename ... I>
-struct Uri_base : impl::module_lock, implements<D, Windows::Foundation::IUriRuntimeClass, Windows::Foundation::IStringable, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri, I ...>
+struct WINRT_EBO Uri_base : impl::module_lock, implements<D, Windows::Foundation::IUriRuntimeClass, Windows::Foundation::IStringable, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri, I ...>
 {
     using class_type = Windows::Foundation::Uri;
-
+    
     operator class_type() const noexcept
     {
+        static_assert(std::is_same_v<typename D::first_interface, impl::default_interface_t<class_type>>);
         class_type result{ nullptr };
-        attach_abi(result, detach_abi(static_cast<typename D::first_interface>(*this)));
+        attach_abi(result, detach_abi(static_cast<impl::default_interface_t<class_type>>(*this)));
         return result;
     }
 
@@ -30,7 +32,7 @@ struct Uri_base : impl::module_lock, implements<D, Windows::Foundation::IUriRunt
 namespace winrt::Windows::Foundation::factory_implementation {
 
 template <typename D, typename T, typename ... I>
-struct UriT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Windows::Foundation::IUriEscapeStatics, Windows::Foundation::IUriRuntimeClassFactory, I ...>
+struct WINRT_EBO UriT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Windows::Foundation::IUriEscapeStatics, Windows::Foundation::IUriRuntimeClassFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -65,7 +67,6 @@ struct UriT : impl::module_lock, implements<D, Windows::Foundation::IActivationF
 
 }
 
-#pragma warning(suppress: 4067)
 #if defined(WINRT_FORCE_INCLUDE_URI_XAML_G_H) || __has_include("Windows.Foundation.Uri.xaml.g.h")
 
 #include "Windows.Foundation.Uri.xaml.g.h"

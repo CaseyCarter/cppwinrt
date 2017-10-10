@@ -18,8 +18,9 @@ struct WINRT_EBO Foo_base : impl::module_lock, implements<D, Composable::Outer::
     using composable_base = Composable::Base::Root;
     operator class_type() const noexcept
     {
+        static_assert(std::is_same_v<typename D::first_interface, impl::default_interface_t<class_type>>);
         class_type result{ nullptr };
-        attach_abi(result, detach_abi(static_cast<typename D::first_interface>(*this)));
+        attach_abi(result, detach_abi(static_cast<impl::default_interface_t<class_type>>(*this)));
         return result;
     }
 
@@ -38,7 +39,7 @@ struct WINRT_EBO Foo_base : impl::module_lock, implements<D, Composable::Outer::
 namespace winrt::Composable::Outer::factory_implementation {
 
 template <typename D, typename T, typename ... I>
-struct FooT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+struct WINRT_EBO FooT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {

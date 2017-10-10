@@ -3,11 +3,12 @@
 #pragma once
 
 #include "module.h"
+#include "winrt/Complex.Authoring.Factory.h"
 
 namespace winrt::Complex::Authoring::Factory::factory_implementation {
 
 template <typename D, typename T, typename ... I>
-struct StaticFactoryT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::Factory::IStaticFactory, I ...>
+struct WINRT_EBO StaticFactoryT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::Factory::IStaticFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {

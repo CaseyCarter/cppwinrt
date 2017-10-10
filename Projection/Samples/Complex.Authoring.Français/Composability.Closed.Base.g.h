@@ -8,14 +8,15 @@
 namespace winrt::Complex::Authoring::Composability::Closed::implementation {
 
 template <typename D, typename ... I>
-struct Base_base : impl::module_lock, implements<D, Complex::Authoring::Composability::Closed::IBase, I ...>
+struct WINRT_EBO Base_base : impl::module_lock, implements<D, Complex::Authoring::Composability::Closed::IBase, I ...>
 {
     using class_type = Complex::Authoring::Composability::Closed::Base;
-
+    
     operator class_type() const noexcept
     {
+        static_assert(std::is_same_v<typename D::first_interface, impl::default_interface_t<class_type>>);
         class_type result{ nullptr };
-        attach_abi(result, detach_abi(static_cast<typename D::first_interface>(*this)));
+        attach_abi(result, detach_abi(static_cast<impl::default_interface_t<class_type>>(*this)));
         return result;
     }
 

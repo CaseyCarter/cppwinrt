@@ -3,18 +3,20 @@
 #pragma once
 
 #include "module.h"
+#include "winrt/Complex.Authoring.h"
 
 namespace winrt::Complex::Authoring::implementation {
 
 template <typename D, typename ... I>
-struct Simple_base : impl::module_lock, implements<D, Complex::Authoring::ISimple, I ...>
+struct WINRT_EBO Simple_base : impl::module_lock, implements<D, Complex::Authoring::ISimple, I ...>
 {
     using class_type = Complex::Authoring::Simple;
-
+    
     operator class_type() const noexcept
     {
+        static_assert(std::is_same_v<typename D::first_interface, impl::default_interface_t<class_type>>);
         class_type result{ nullptr };
-        attach_abi(result, detach_abi(static_cast<typename D::first_interface>(*this)));
+        attach_abi(result, detach_abi(static_cast<impl::default_interface_t<class_type>>(*this)));
         return result;
     }
 
@@ -29,7 +31,7 @@ struct Simple_base : impl::module_lock, implements<D, Complex::Authoring::ISimpl
 namespace winrt::Complex::Authoring::factory_implementation {
 
 template <typename D, typename T, typename ... I>
-struct SimpleT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+struct WINRT_EBO SimpleT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -44,7 +46,6 @@ struct SimpleT : impl::module_lock, implements<D, Windows::Foundation::IActivati
 
 }
 
-#pragma warning(suppress: 4067)
 #if defined(WINRT_FORCE_INCLUDE_SIMPLE_XAML_G_H) || __has_include("Simple.xaml.g.h")
 
 #include "Simple.xaml.g.h"

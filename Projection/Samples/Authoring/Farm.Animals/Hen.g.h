@@ -3,18 +3,20 @@
 #pragma once
 
 #include "module.h"
+#include "winrt/Farm.Animals.h"
 
 namespace winrt::Farm::Animals::implementation {
 
 template <typename D, typename ... I>
-struct Hen_base : impl::module_lock, implements<D, Farm::Animals::IHen, I ...>
+struct WINRT_EBO Hen_base : impl::module_lock, implements<D, Farm::Animals::IHen, I ...>
 {
     using class_type = Farm::Animals::Hen;
-
+    
     operator class_type() const noexcept
     {
+        static_assert(std::is_same_v<typename D::first_interface, impl::default_interface_t<class_type>>);
         class_type result{ nullptr };
-        attach_abi(result, detach_abi(static_cast<typename D::first_interface>(*this)));
+        attach_abi(result, detach_abi(static_cast<impl::default_interface_t<class_type>>(*this)));
         return result;
     }
 
@@ -29,7 +31,7 @@ struct Hen_base : impl::module_lock, implements<D, Farm::Animals::IHen, I ...>
 namespace winrt::Farm::Animals::factory_implementation {
 
 template <typename D, typename T, typename ... I>
-struct HenT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+struct WINRT_EBO HenT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -44,7 +46,6 @@ struct HenT : impl::module_lock, implements<D, Windows::Foundation::IActivationF
 
 }
 
-#pragma warning(suppress: 4067)
 #if defined(WINRT_FORCE_INCLUDE_HEN_XAML_G_H) || __has_include("Hen.xaml.g.h")
 
 #include "Hen.xaml.g.h"

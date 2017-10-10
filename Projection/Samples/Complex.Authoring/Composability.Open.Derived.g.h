@@ -3,19 +3,21 @@
 #pragma once
 
 #include "module.h"
+#include "winrt/Complex.Authoring.Composability.Open.h"
 #include "Composability.Open.Base.h"
 
 namespace winrt::Complex::Authoring::Composability::Open::implementation {
 
 template <typename D, typename ... I>
-struct Derived_base : implements<D, Complex::Authoring::Composability::Open::implementation::Base, Complex::Authoring::Composability::Open::IDerived, composable, I ...>
+struct WINRT_EBO Derived_base : implements<D, Complex::Authoring::Composability::Open::IDerived, composable, Complex::Authoring::Composability::Open::implementation::Base, I ...>
 {
     using class_type = Complex::Authoring::Composability::Open::Derived;
-
+    
     operator class_type() const noexcept
     {
+        static_assert(std::is_same_v<typename D::first_interface, impl::default_interface_t<class_type>>);
         class_type result{ nullptr };
-        attach_abi(result, detach_abi(static_cast<typename D::first_interface>(*this)));
+        attach_abi(result, detach_abi(static_cast<impl::default_interface_t<class_type>>(*this)));
         return result;
     }
 
@@ -30,7 +32,7 @@ struct Derived_base : implements<D, Complex::Authoring::Composability::Open::imp
 namespace winrt::Complex::Authoring::Composability::Open::factory_implementation {
 
 template <typename D, typename T, typename ... I>
-struct DerivedT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::Composability::Open::IDerivedFactory, I ...>
+struct WINRT_EBO DerivedT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::Composability::Open::IDerivedFactory, I ...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -50,7 +52,6 @@ struct DerivedT : impl::module_lock, implements<D, Windows::Foundation::IActivat
 
 }
 
-#pragma warning(suppress: 4067)
 #if defined(WINRT_FORCE_INCLUDE_DERIVED_XAML_G_H) || __has_include("Composability.Open.Derived.xaml.g.h")
 
 #include "Composability.Open.Derived.xaml.g.h"

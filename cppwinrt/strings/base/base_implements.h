@@ -222,6 +222,7 @@ WINRT_EXPORT namespace winrt
     template <typename D, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value && impl::has_class_type<D>::value>* = nullptr>
     auto make(Args&& ... args)
     {
+        static_assert(std::is_same_v<typename D::first_interface, impl::default_interface_t<typename D::class_type>>);
         typename D::class_type result{ nullptr };
         *put_abi(result) = to_abi<typename D::first_interface>(new D(std::forward<Args>(args) ...));
         return result;
