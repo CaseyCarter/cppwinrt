@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{9a12733b-46e9-470e-a7eb-4dbe87f7e3a7}</ProjectGuid>
     <RootNamespace>ComposableOuter</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -244,13 +244,13 @@
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Composable.Outer.idl">
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnableWindowsRuntime>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableWindowsRuntime>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnableWindowsRuntime>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableWindowsRuntime>
       <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Composable.Outer.winmd</MetadataFileName>
       <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Composable.Outer.winmd</MetadataFileName>

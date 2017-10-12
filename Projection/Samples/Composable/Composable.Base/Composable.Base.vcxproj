@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{079B3738-37CD-4705-9C86-43AF7E9E577C}</ProjectGuid>
     <RootNamespace>ComposableBase</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -106,7 +106,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.15063.0 -natvis -out $(ProjectDir)</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.16299.0 -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -139,7 +139,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.15063.0 -natvis -out $(ProjectDir)</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.16299.0 -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -176,7 +176,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.15063.0 -natvis -out $(ProjectDir)</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.16299.0 -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -213,7 +213,7 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.15063.0 -natvis -out $(ProjectDir)</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Composable.Base.winmd -ref 10.0.16299.0 -natvis -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
@@ -244,10 +244,10 @@
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Composable.Base.idl">
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnableWindowsRuntime>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableWindowsRuntime>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnableWindowsRuntime>

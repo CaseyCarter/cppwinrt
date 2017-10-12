@@ -23,7 +23,7 @@
     <ProjectGuid>{559A7CF4-DC5F-4D62-BA6B-0C2B025593F8}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>FarmAnimals</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -234,11 +234,11 @@
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Farm.Animals.idl">
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</EnableWindowsRuntime>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableWindowsRuntime>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnableWindowsRuntime>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableWindowsRuntime>

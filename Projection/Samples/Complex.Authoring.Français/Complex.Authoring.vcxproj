@@ -23,7 +23,7 @@
     <ProjectGuid>{12032a77-a717-4327-a465-c1f46405376c}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ComplexAuthoring</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -92,7 +92,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Complex.Authoring.winmd -ref 10.0.15063.0 -out $(ProjectDir) -filter Windows.Foundation.Uri Complex.Authoring -natvis</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Complex.Authoring.winmd -ref 10.0.16299.0 -out $(ProjectDir) -filter Windows.Foundation.Uri Complex.Authoring -natvis</Command>
       <Message>C++/WinRT compiler</Message>
       <Outputs>winrt/Complex.Authoring.h;module.h</Outputs>
       <Inputs>Complex.Authoring.winmd</Inputs>
@@ -274,10 +274,10 @@
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableWindowsRuntime>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</EnableWindowsRuntime>
       <EnableWindowsRuntime Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</EnableWindowsRuntime>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
-      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
+      <AdditionalMetadataDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(FrameworkSdkDir)References\10.0.16299.0\Windows.Foundation.FoundationContract\3.0.0.0</AdditionalMetadataDirectories>
       <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Complex.Authoring.winmd</MetadataFileName>
       <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Complex.Authoring.winmd</MetadataFileName>
       <MetadataFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Complex.Authoring.winmd</MetadataFileName>
