@@ -8,8 +8,6 @@
     <AppContainerApplication>true</AppContainerApplication>
     <ApplicationType>Windows Store</ApplicationType>
     <ApplicationTypeRevision>8.2</ApplicationTypeRevision>
-    <TargetPlatformVersion>10.0.10166.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10166.0</TargetPlatformMinVersion>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.16299.0</WindowsTargetPlatformMinVersion>
   </PropertyGroup>
