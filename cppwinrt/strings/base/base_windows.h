@@ -207,13 +207,18 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         void impl_release() noexcept
         {
-            auto temp = m_ptr;
-
-            if (temp)
+            if (m_ptr)
             {
-                m_ptr = nullptr;
-                temp->Release();
+                impl_decref();
             }
+        }
+
+        __declspec(noinline) void impl_decref() noexcept
+        {
+            WINRT_ASSERT(m_ptr != nullptr);
+            auto temp = m_ptr;
+            m_ptr = nullptr;
+            temp->Release();
         }
     };
 }

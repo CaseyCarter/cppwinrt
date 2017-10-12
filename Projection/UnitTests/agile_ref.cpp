@@ -5,6 +5,9 @@ using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::System::Threading;
 
+// Optimized coroutines with multiple suspend points are messing up move semantics
+// DevDiv bug 504923 https://devdiv.visualstudio.com/DevDiv/_workitems?id=504923&_a=edit
+#pragma optimize("", off)
 std::future<void> test_agile_ref()
 {
     Uri object(L"http://host/path");

@@ -213,13 +213,18 @@ WINRT_EXPORT namespace winrt
 
         void release() noexcept
         {
-            type* temp = m_ptr;
-
-            if (temp)
+            if (m_ptr)
             {
-                m_ptr = nullptr;
-                temp->Release();
+                impl_decref();
             }
+        }
+
+        __declspec(noinline) void impl_decref() noexcept
+        {
+            WINRT_ASSERT(m_ptr != nullptr);
+            type* temp = m_ptr;
+            m_ptr = nullptr;
+            temp->Release();
         }
 
         template <typename U>
