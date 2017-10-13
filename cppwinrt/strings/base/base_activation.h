@@ -92,6 +92,10 @@ namespace winrt::impl
     {
         com_ref<Interface> get()
         {
+#ifdef WINRT_DIAGNOSTICS
+            get_diagnostics_info().add_factory<Class>();
+#endif
+
             {
                 shared_lock_guard const guard(m_lock);
 
@@ -105,7 +109,11 @@ namespace winrt::impl
 
             if (!factory.template try_as<IAgileObject>())
             {
+#ifdef WINRT_DIAGNOSTICS
+                get_diagnostics_info().non_agile_factory<Class>();
+#else
                 WINRT_TRACE("Warning non-agile factory: %ls\n", name_v<Class>);
+#endif
                 return factory;
             }
 

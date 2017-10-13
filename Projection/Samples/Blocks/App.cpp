@@ -145,7 +145,57 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
     }
 };
 
+#ifdef WINRT_DIAGNOSTICS
+fire_and_forget dump_diagnostics_interfaces()
+{
+    using namespace std::chrono;
+
+    while (true)
+    {
+        co_await 5s;
+
+        auto info = detach_diagnostics_info();
+
+        if (!info.factories.empty())
+        {
+            WINRT_TRACE("Factories:\n");
+
+            for (auto&&[name, info] : info.factories)
+            {
+                WINRT_TRACE("%4d %.*ls", info.requests, static_cast<int>(name.size()), name.data());
+
+                if (!info.is_agile)
+                {
+                    WINRT_TRACE(" [Warning non-agile factory]");
+                }
+
+                WINRT_TRACE("\n");
+            }
+        }
+
+        if (!info.queries.empty())
+        {
+            WINRT_TRACE("Queries:\n");
+
+            for (auto&&[name, count] : info.queries)
+            {
+                WINRT_TRACE("%4d %.*ls\n", count, static_cast<int>(name.size()), name.data());
+            }
+        }
+
+        if (!info.factories.empty() || !info.queries.empty())
+        {
+            WINRT_TRACE("\n");
+        }
+    }
+}
+#endif
+
 int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
+#ifdef WINRT_DIAGNOSTICS
+    dump_diagnostics_interfaces();
+#endif
+
     CoreApplication::Run(App());
 }

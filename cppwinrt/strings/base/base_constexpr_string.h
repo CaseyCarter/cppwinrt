@@ -205,6 +205,12 @@ namespace winrt::impl
     }
 
     template <typename T, size_t Size>
+    constexpr std::wstring_view string_data(std::array<T, Size> const & value) noexcept
+    {
+        return { value.data(), Size };
+    }
+
+    template <typename T, size_t Size>
     constexpr std::wstring_view string_data(T const (&value)[Size]) noexcept
     {
         return { value, Size - 1 };

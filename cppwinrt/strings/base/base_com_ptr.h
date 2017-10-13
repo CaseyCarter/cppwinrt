@@ -20,6 +20,10 @@ namespace winrt::impl
     template <typename To, typename From>
     com_ref<To> as(From* ptr)
     {
+#ifdef WINRT_DIAGNOSTICS
+        get_diagnostics_info().add_query<To>();
+#endif
+
         com_ref<To> temp{ nullptr };
         check_hresult(ptr->QueryInterface(guid_of<To>(), reinterpret_cast<void**>(put_abi(temp))));
         return temp;
@@ -28,6 +32,10 @@ namespace winrt::impl
     template <typename To, typename From>
     com_ref<To> try_as(From* ptr) noexcept
     {
+#ifdef WINRT_DIAGNOSTICS
+        get_diagnostics_info().add_query<To>();
+#endif
+
         com_ref<To> temp{ nullptr };
         ptr->QueryInterface(guid_of<To>(), reinterpret_cast<void**>(put_abi(temp)));
         return temp;

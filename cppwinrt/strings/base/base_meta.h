@@ -41,12 +41,6 @@ namespace winrt::impl
     using default_interface_t = typename default_interface<T>::type;
 
     template <typename T>
-    struct name;
-
-    template <typename T>
-    constexpr auto & name_v = name<T>::value;
-
-    template <typename T>
     struct category;
 
     template <typename T>
