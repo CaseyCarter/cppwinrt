@@ -14,3 +14,5 @@
 
 #include <random>
 #include <queue>
+
+WINRT_WARNING_PUSH

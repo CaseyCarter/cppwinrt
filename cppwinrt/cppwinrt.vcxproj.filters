@@ -392,8 +392,10 @@
     <ClInclude Include="strings\base\base_collections_input_vector.h">
       <Filter>strings\base</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_struct_type_trait.h" />
     <ClInclude Include="strings\write\write_enumeration_flag_specialization.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_struct_type_trait.h">
       <Filter>strings\write</Filter>
     </ClInclude>
   </ItemGroup>
