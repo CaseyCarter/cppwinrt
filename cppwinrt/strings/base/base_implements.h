@@ -196,7 +196,7 @@ WINRT_EXPORT namespace winrt
     template <typename D, typename I>
     D* from_abi(I const& from) noexcept
     {
-        return&static_cast<impl::produce<D, I>*>(get_abi(from))->shim();
+        return &static_cast<impl::produce<D, impl::default_interface_t<I>>*>(get_abi(from))->shim();
     }
 
     template <typename I, typename D, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, I>>* = nullptr>

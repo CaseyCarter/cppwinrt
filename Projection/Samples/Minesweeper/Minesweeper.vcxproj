@@ -131,6 +131,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -159,6 +160,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -187,6 +189,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -215,6 +218,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -243,6 +247,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -271,6 +276,7 @@
       <WarningLevel>Level4</WarningLevel>
       <CompileAsWinRT>false</CompileAsWinRT>
       <LanguageStandard>stdcpplatest</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <PostBuildEvent>
       <Command>
