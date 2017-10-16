@@ -1,36 +1,14 @@
 #include "pch.h"
 #include "catch.hpp"
 
-// These tests ensure that the IReference interface can be implemented with a T that has:
-//   - A non-trivial destructor
-//   - A distinct ABI/projected representation
-
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::UI::Xaml::Interop;
 
-namespace
-{
-    template<typename T>
-    struct Reference : implements<Reference<T>, IReference<T>>
-    {
-        T m_value;
-
-        Reference(const T & value)
-            : m_value(value)
-        {}
-
-        T Value()
-        {
-            return m_value;
-        }
-    };
-}
-
 TEST_CASE("IReference<Rect>")
 {
     Point original{ 1, 2 };
-    IReference<Point> ref = make<Reference<Point>>(original);
+    IReference<Point> ref = original;
     Point value = ref.Value();
     REQUIRE(original.X == value.X);
     REQUIRE(original.Y == value.Y);
@@ -39,8 +17,31 @@ TEST_CASE("IReference<Rect>")
 TEST_CASE("IReference<TypeName>")
 {
     TypeName original{ L"TestName", TypeKind::Custom };
-    IReference<TypeName> ref = make<Reference<TypeName>>(original);
+    IReference<TypeName> ref = original;
     TypeName value = ref.Value();
     REQUIRE(original.Name == value.Name);
     REQUIRE(original.Kind == value.Kind);
+
+    REQUIRE(!ref.IsNumericScalar());
+    REQUIRE_THROWS_AS(ref.GetUInt8() == 2, hresult_not_implemented);
+    REQUIRE_THROWS_AS(ref.GetUInt16() == 2, hresult_not_implemented);
+    REQUIRE_THROWS_AS(ref.GetInt16() == 2, hresult_not_implemented);
+    REQUIRE_THROWS_AS(ref.GetUInt32() == 2, hresult_not_implemented);
+    REQUIRE_THROWS_AS(ref.GetInt32() == 2, hresult_not_implemented);
+    REQUIRE_THROWS_AS(ref.GetUInt64() == 2, hresult_not_implemented);
+    REQUIRE_THROWS_AS(ref.GetInt64() == 2, hresult_not_implemented);
+}
+
+TEST_CASE("IReference<TypeKind>")
+{
+    IReference<TypeKind> ref = TypeKind::Custom;
+    REQUIRE(ref.Value() == TypeKind::Custom);
+    REQUIRE(ref.IsNumericScalar());
+    REQUIRE(ref.GetUInt8() == 2);
+    REQUIRE(ref.GetUInt16() == 2);
+    REQUIRE(ref.GetInt16() == 2);
+    REQUIRE(ref.GetUInt32() == 2);
+    REQUIRE(ref.GetInt32() == 2);
+    REQUIRE(ref.GetUInt64() == 2);
+    REQUIRE(ref.GetInt64() == 2);
 }

@@ -36,14 +36,46 @@ namespace winrt::impl
             return Windows::Foundation::PropertyType::OtherType;
         }
 
-        bool IsNumericScalar() { throw hresult_not_implemented(); }
-        uint8_t GetUInt8() { throw hresult_not_implemented(); }
-        int16_t GetInt16() { throw hresult_not_implemented(); }
-        uint16_t GetUInt16() { throw hresult_not_implemented(); }
-        int32_t GetInt32() { throw hresult_not_implemented(); }
-        uint32_t GetUInt32() { throw hresult_not_implemented(); }
-        int64_t GetInt64() { throw hresult_not_implemented(); }
-        uint64_t GetUInt64() { throw hresult_not_implemented(); }
+        static constexpr bool IsNumericScalar() noexcept
+        {
+            return std::is_arithmetic_v<T> || std::is_enum_v<T>;
+        }
+
+        uint8_t GetUInt8() const
+        {
+            return to_scalar<uint8_t>();
+        }
+
+        int16_t GetInt16() const
+        {
+            return to_scalar<int16_t>();
+        }
+
+        uint16_t GetUInt16() const
+        {
+            return to_scalar<uint16_t>();
+        }
+
+        int32_t GetInt32() const
+        {
+            return to_scalar<int32_t>();
+        }
+
+        uint32_t GetUInt32() const
+        {
+            return to_scalar<uint32_t>();
+        }
+
+        int64_t GetInt64() const
+        {
+            return to_scalar<int64_t>();
+        }
+
+        uint64_t GetUInt64() const
+        {
+            return to_scalar<uint64_t>();
+        }
+
         float GetSingle() { throw hresult_not_implemented(); }
         double GetDouble() { throw hresult_not_implemented(); }
         char16_t GetChar16() { throw hresult_not_implemented(); }
@@ -76,6 +108,19 @@ namespace winrt::impl
         void GetRectArray(com_array<Windows::Foundation::Rect> &) { throw hresult_not_implemented(); }
 
     private:
+
+        template <typename To>
+        To to_scalar() const
+        {
+            if constexpr (IsNumericScalar())
+            {
+                return static_cast<To>(m_value);
+            }
+            else
+            {
+                throw hresult_not_implemented();
+            }
+        }
 
         T m_value;
     };
