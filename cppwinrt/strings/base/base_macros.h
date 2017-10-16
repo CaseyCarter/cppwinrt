@@ -37,14 +37,6 @@ void WINRT_TRACE(char const* const message, Args ... args) noexcept
 #define WINRT_CHECKED_ITERATORS
 #endif
 
-#ifndef FORMAT_MESSAGE_ALLOCATE_BUFFER
-#define FORMAT_MESSAGE_ALLOCATE_BUFFER 0x00000100
-#endif
-
-#ifndef __IAgileReference_INTERFACE_DEFINED__
-#define WINRT_NO_AGILE_REFERENCE
-#endif
-
 #define _WINDOWS_NUMERICS_NAMESPACE_ winrt::Windows::Foundation::Numerics
 #define _WINDOWS_NUMERICS_BEGIN_NAMESPACE_ namespace winrt::Windows::Foundation::Numerics
 #define _WINDOWS_NUMERICS_END_NAMESPACE_

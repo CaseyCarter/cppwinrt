@@ -268,8 +268,6 @@ namespace winrt::impl
         }
     };
 
-#ifndef WINRT_NO_AGILE_REFERENCE
-
     template <typename Delegate>
     struct agile_event_traits : locked_event_traits
     {
@@ -287,8 +285,6 @@ namespace winrt::impl
             return event_token{ reinterpret_cast<int64_t>(get_abi(delegate.get())) };
         }
     };
-
-#endif
 
     template <typename Delegate>
     struct non_agile_event_traits : locked_event_traits
@@ -311,12 +307,8 @@ namespace winrt::impl
 
 WINRT_EXPORT namespace winrt
 {
-#ifndef WINRT_NO_AGILE_REFERENCE
-
     template <typename Delegate>
     using agile_event = impl::event<impl::agile_event_traits<Delegate>>;
-
-#endif
 
     template <typename Delegate>
     using non_agile_event = impl::event<impl::non_agile_event_traits<Delegate>>;

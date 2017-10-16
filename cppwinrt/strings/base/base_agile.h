@@ -1,6 +1,4 @@
 
-#ifndef WINRT_NO_AGILE_REFERENCE
-
 WINRT_EXPORT namespace winrt
 {
     template <typename T>
@@ -10,13 +8,6 @@ WINRT_EXPORT namespace winrt
 
         agile_ref(T const& object)
         {
-#ifdef WINRT_DEBUG
-            if (object.template try_as<IAgileObject>())
-            {
-                WINRT_TRACE("winrt::agile_ref - wrapping an agile object is unnecessary.\n");
-            }
-#endif
-
             check_hresult(RoGetAgileReference(AGILEREFERENCE_DEFAULT,
                 guid_of<T>(),
                 winrt::get_abi(object),
@@ -46,5 +37,3 @@ WINRT_EXPORT namespace winrt
         return object;
     }
 }
-
-#endif
