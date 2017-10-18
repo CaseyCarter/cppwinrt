@@ -77,13 +77,16 @@
     <ClCompile Include="Release.cpp" />
     <ClCompile Include="struct.cpp" />
     <ClCompile Include="weak.cpp" />
+    <ClCompile Include="xaml_typename.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />
+    <ClInclude Include="guid_compare.h" />
     <ClInclude Include="map.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="produce_IPropertyValue.h" />
     <ClInclude Include="range_iterable.h" />
+    <ClInclude Include="string_view_compare.h" />
     <ClInclude Include="vector.h" />
     <ClInclude Include="vector_iterable.h" />
   </ItemGroup>

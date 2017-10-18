@@ -3509,8 +3509,7 @@ void t()
 
             out.write_close_namespace();
         }
-
-        if (namespace_name == "Windows.Foundation.Collections")
+        else if (namespace_name == "Windows.Foundation.Collections")
         {
             static const struct
             {
@@ -3546,6 +3545,10 @@ void t()
             }
 
             out.write_close_namespace();
+        }
+        else if (namespace_name == "Windows.UI.Xaml.Interop")
+        {
+            out.write(strings::base_xaml_typename);
         }
     }
 }

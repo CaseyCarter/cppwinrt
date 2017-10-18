@@ -67,7 +67,6 @@
     <ClInclude Include="strings\base\base_lock.h" />
     <ClInclude Include="strings\base\base_macros.h" />
     <ClInclude Include="strings\base\base_meta.h" />
-    <ClInclude Include="strings\base\base_modern.h" />
     <ClInclude Include="strings\base\base_module.h" />
     <ClInclude Include="strings\base\base_natvis.h" />
     <ClInclude Include="strings\base\base_reference.h" />
@@ -85,6 +84,7 @@
     <ClInclude Include="strings\base\base_warnings.h" />
     <ClInclude Include="strings\base\base_weak.h" />
     <ClInclude Include="strings\base\base_windows.h" />
+    <ClInclude Include="strings\base\base_xaml_typename.h" />
     <ClInclude Include="strings\strings.h" />
     <ClInclude Include="strings\write\write_class_definition.h" />
     <ClInclude Include="strings\write\write_class_override.h" />

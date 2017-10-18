@@ -99,6 +99,19 @@ namespace winrt::impl
     };
 
     template <>
+    struct name<int8_t>
+    {
+        static constexpr auto & value{ L"Int8" };
+        static constexpr auto & data{ "i1" };
+    };
+
+    template <>
+    struct category<int8_t>
+    {
+        using type = basic_category;
+    };
+
+    template <>
     struct name<int16_t>
     {
         static constexpr auto & value { L"Int16" };

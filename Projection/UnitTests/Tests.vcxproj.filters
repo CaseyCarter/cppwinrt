@@ -54,6 +54,7 @@
     <ClCompile Include="constexpr.cpp" />
     <ClCompile Include="enum_flags.cpp" />
     <ClCompile Include="foundation.cpp" />
+    <ClCompile Include="xaml_typename.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />
@@ -63,5 +64,7 @@
     <ClInclude Include="range_iterable.h" />
     <ClInclude Include="vector.h" />
     <ClInclude Include="vector_iterable.h" />
+    <ClInclude Include="guid_compare.h" />
+    <ClInclude Include="string_view_compare.h" />
   </ItemGroup>
 </Project>

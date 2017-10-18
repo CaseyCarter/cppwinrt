@@ -26,6 +26,7 @@
 #include "winrt\Windows.System.Threading.h"
 #include "winrt\Windows.UI.Core.h"
 #include "winrt\Windows.UI.Xaml.Controls.h"
+#include "winrt\Windows.UI.Xaml.Interop.h"
 #include "winrt\Windows.Web.AtomPub.h"
 #include "winrt\Windows.Web.Http.Headers.h"
 #include "winrt\Windows.Web.Syndication.h"

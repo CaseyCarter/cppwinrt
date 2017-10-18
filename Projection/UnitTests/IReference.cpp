@@ -1,25 +1,17 @@
 #include "pch.h"
 #include "catch.hpp"
+#include "guid_compare.h"
 
-#include <chrono>
+#pragma warning(disable:4471) // a forward declaration of an unscoped enumeration must have an underlying type
+#include <windows.foundation.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::UI::Xaml::Interop;
 using namespace Windows::Web::Http::Headers;
 
-using namespace std::literals::chrono_literals;
-
 namespace
 {
-    constexpr bool guid_equal(GUID const& lhs, GUID const& rhs)
-    {
-        return std::tie(lhs.Data1, lhs.Data2, lhs.Data3,
-                lhs.Data4[0], lhs.Data4[1], lhs.Data4[2], lhs.Data4[3], lhs.Data4[4], lhs.Data4[5], lhs.Data4[6], lhs.Data4[7]) ==
-            std::tie(rhs.Data1, rhs.Data2, rhs.Data3,
-                rhs.Data4[0], rhs.Data4[1], rhs.Data4[2], rhs.Data4[3], rhs.Data4[4], rhs.Data4[5], rhs.Data4[6], rhs.Data4[7]);
-    }
-
     // I used midlrt to generate IReference<T> pinterfaces for the Numerics types and "manually" obtain their GUIDs.
     constexpr GUID ireference_matrix3x2 { 0x76358cfd, 0x2cbd, 0x525b,{ 0xa4, 0x9e, 0x90, 0xee, 0x18, 0x24, 0x7b, 0x71 } };
     constexpr GUID ireference_matrix4x4 { 0xdacbffdc, 0x68ef, 0x5fd0,{ 0xb6, 0x57, 0x78, 0x2d, 0x0a, 0xc9, 0x80, 0x7e } };
@@ -37,6 +29,23 @@ static_assert(guid_equal(guid_of<IReference<Numerics::float3x2>>(), ireference_m
 static_assert(guid_equal(guid_of<IReference<Numerics::float4x4>>(), ireference_matrix4x4));
 static_assert(guid_equal(guid_of<IReference<Numerics::plane>>(), ireference_plane));
 static_assert(guid_equal(guid_of<IReference<Numerics::quaternion>>(), ireference_quaternion));
+
+static_assert(guid_equal(guid_of<IReference<bool>>(), __uuidof(::ABI::Windows::Foundation::IReference<bool>)));
+static_assert(guid_equal(guid_of<IReference<uint8_t>>(), __uuidof(::ABI::Windows::Foundation::IReference<uint8_t>)));
+static_assert(guid_equal(guid_of<IReference<int16_t>>(), __uuidof(::ABI::Windows::Foundation::IReference<int16_t>)));
+static_assert(guid_equal(guid_of<IReference<uint32_t>>(), __uuidof(::ABI::Windows::Foundation::IReference<uint32_t>)));
+static_assert(guid_equal(guid_of<IReference<int32_t>>(), __uuidof(::ABI::Windows::Foundation::IReference<int32_t>)));
+static_assert(guid_equal(guid_of<IReference<uint64_t>>(), __uuidof(::ABI::Windows::Foundation::IReference<uint64_t>)));
+static_assert(guid_equal(guid_of<IReference<int64_t>>(), __uuidof(::ABI::Windows::Foundation::IReference<int64_t>)));
+static_assert(guid_equal(guid_of<IReference<float>>(), __uuidof(::ABI::Windows::Foundation::IReference<float>)));
+static_assert(guid_equal(guid_of<IReference<double>>(), __uuidof(::ABI::Windows::Foundation::IReference<double>)));
+static_assert(guid_equal(guid_of<IReference<GUID>>(), __uuidof(::ABI::Windows::Foundation::IReference<GUID>)));
+
+static_assert(guid_equal(guid_of<IReference<winrt::Windows::Foundation::Point>>(), __uuidof(::ABI::Windows::Foundation::IReference<::ABI::Windows::Foundation::Point>)));
+static_assert(guid_equal(guid_of<IReference<winrt::Windows::Foundation::Rect>>(), __uuidof(::ABI::Windows::Foundation::IReference<::ABI::Windows::Foundation::Rect>)));
+
+static_assert(guid_equal(guid_of<IReference<winrt::Windows::Foundation::DateTime>>(), __uuidof(::ABI::Windows::Foundation::IReference<::ABI::Windows::Foundation::DateTime>)));
+static_assert(guid_equal(guid_of<IReference<winrt::Windows::Foundation::TimeSpan>>(), __uuidof(::ABI::Windows::Foundation::IReference<::ABI::Windows::Foundation::TimeSpan>)));
 
 struct my_struct
 {
