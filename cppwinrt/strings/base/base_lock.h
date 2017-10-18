@@ -1,6 +1,8 @@
 
 namespace winrt::impl
 {
+    struct condition_variable;
+
     struct mutex
     {
         mutex(mutex const&) = delete;
@@ -40,7 +42,7 @@ namespace winrt::impl
         }
 
     private:
-        friend struct condition_variable;
+        friend condition_variable;
 
         PSRWLOCK get() noexcept
         {
