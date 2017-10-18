@@ -140,7 +140,6 @@
     <ClInclude Include="strings\write\write_interface_override_method_definition.h" />
     <ClInclude Include="strings\write\write_interface_produce.h" />
     <ClInclude Include="strings\write\write_interface_produce_method.h" />
-    <ClInclude Include="strings\write\write_interface_produce_method_noexcept.h" />
     <ClInclude Include="strings\write\write_logo.h" />
     <ClInclude Include="strings\write\write_natvis.h" />
     <ClInclude Include="strings\write\write_produce_tests.h" />

@@ -55,6 +55,7 @@
     <ClCompile Include="enum_flags.cpp" />
     <ClCompile Include="foundation.cpp" />
     <ClCompile Include="xaml_typename.cpp" />
+    <ClCompile Include="properties.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />

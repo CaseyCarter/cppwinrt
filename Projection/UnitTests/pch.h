@@ -16,6 +16,7 @@
 #include "winrt\Windows.Devices.Perception.Provider.h"
 #include "winrt\Windows.Devices.Sms.h"
 #include "winrt\Windows.Graphics.Display.h"
+#include "winrt\Windows.Graphics.Effects.h"
 #include "winrt\Windows.Management.Deployment.h"
 #include "winrt\Windows.Media.Audio.h"
 #include "winrt\Windows.Media.Core.h"
