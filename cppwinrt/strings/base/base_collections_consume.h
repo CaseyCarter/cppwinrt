@@ -44,17 +44,17 @@ namespace winrt::impl
     template <typename D>
     struct consume_IVectorChangedEventArgs
     {
-        wfc::CollectionChange CollectionChange() const noexcept
+        wfc::CollectionChange CollectionChange() const
         {
             wfc::CollectionChange value{};
-            check_terminate((*(abi_t<wfc::IVectorChangedEventArgs>**)&static_cast<wfc::IVectorChangedEventArgs const&>(static_cast<D const&>(*this)))->get_CollectionChange(&value));
+            check_hresult((*(abi_t<wfc::IVectorChangedEventArgs>**)&static_cast<wfc::IVectorChangedEventArgs const&>(static_cast<D const&>(*this)))->get_CollectionChange(&value));
             return value;
         }
 
-        uint32_t Index() const noexcept
+        uint32_t Index() const
         {
             uint32_t index{};
-            check_terminate((*(abi_t<wfc::IVectorChangedEventArgs>**)&static_cast<wfc::IVectorChangedEventArgs const&>(static_cast<D const&>(*this)))->get_Index(&index));
+            check_hresult((*(abi_t<wfc::IVectorChangedEventArgs>**)&static_cast<wfc::IVectorChangedEventArgs const&>(static_cast<D const&>(*this)))->get_Index(&index));
             return index;
         }
     };
@@ -62,17 +62,17 @@ namespace winrt::impl
     template <typename D, typename K>
     struct consume_IMapChangedEventArgs
     {
-        wfc::CollectionChange CollectionChange() const noexcept
+        wfc::CollectionChange CollectionChange() const
         {
             wfc::CollectionChange value{};
-            check_terminate((*(abi_t<wfc::IMapChangedEventArgs<K>>**)&static_cast<wfc::IMapChangedEventArgs<K> const&>(static_cast<D const&>(*this)))->get_CollectionChange(&value));
+            check_hresult((*(abi_t<wfc::IMapChangedEventArgs<K>>**)&static_cast<wfc::IMapChangedEventArgs<K> const&>(static_cast<D const&>(*this)))->get_CollectionChange(&value));
             return value;
         }
 
-        K Key() const noexcept
+        K Key() const
         {
             K result{ empty_value<K>() };
-            check_terminate((*(abi_t<wfc::IMapChangedEventArgs<K>>**)&static_cast<wfc::IMapChangedEventArgs<K> const&>(static_cast<D const&>(*this)))->get_Key(put_abi(result)));
+            check_hresult((*(abi_t<wfc::IMapChangedEventArgs<K>>**)&static_cast<wfc::IMapChangedEventArgs<K> const&>(static_cast<D const&>(*this)))->get_Key(put_abi(result)));
             return result;
         }
     };
@@ -80,17 +80,17 @@ namespace winrt::impl
     template <typename D, typename T>
     struct consume_IIterator
     {
-        T Current() const noexcept
+        T Current() const
         {
             T result{ empty_value<T>() };
-            check_terminate((*(abi_t<wfc::IIterator<T>>**)&static_cast<wfc::IIterator<T> const&>(static_cast<D const&>(*this)))->get_Current(put_abi(result)));
+            check_hresult((*(abi_t<wfc::IIterator<T>>**)&static_cast<wfc::IIterator<T> const&>(static_cast<D const&>(*this)))->get_Current(put_abi(result)));
             return result;
         }
 
-        bool HasCurrent() const noexcept
+        bool HasCurrent() const
         {
             bool temp{};
-            check_terminate((*(abi_t<wfc::IIterator<T>>**)&static_cast<wfc::IIterator<T> const&>(static_cast<D const&>(*this)))->get_HasCurrent(put_abi(temp)));
+            check_hresult((*(abi_t<wfc::IIterator<T>>**)&static_cast<wfc::IIterator<T> const&>(static_cast<D const&>(*this)))->get_HasCurrent(put_abi(temp)));
             return temp;
         }
 
@@ -118,7 +118,7 @@ namespace winrt::impl
             return*this;
         }
 
-        T operator*() const noexcept
+        T operator*() const
         {
             return Current();
         }
@@ -145,10 +145,10 @@ namespace winrt::impl
             return result;
         }
 
-        uint32_t Size() const noexcept
+        uint32_t Size() const
         {
             uint32_t size{};
-            check_terminate((*(abi_t<wfc::IVectorView<T>>**)&static_cast<wfc::IVectorView<T> const&>(static_cast<D const&>(*this)))->get_Size(&size));
+            check_hresult((*(abi_t<wfc::IVectorView<T>>**)&static_cast<wfc::IVectorView<T> const&>(static_cast<D const&>(*this)))->get_Size(&size));
             return size;
         }
 
@@ -177,10 +177,10 @@ namespace winrt::impl
             return result;
         }
 
-        uint32_t Size() const noexcept
+        uint32_t Size() const
         {
             uint32_t size = 0;
-            check_terminate((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->get_Size(&size));
+            check_hresult((*(abi_t<wfc::IVector<T>>**)&static_cast<wfc::IVector<T> const&>(static_cast<D const&>(*this)))->get_Size(&size));
             return size;
         }
 
@@ -267,26 +267,26 @@ namespace winrt::impl
     template <typename D, typename K, typename V>
     struct consume_IKeyValuePair
     {
-        K Key() const noexcept
+        K Key() const
         {
             K result{ empty_value<K>() };
-            check_terminate((*(abi_t<wfc::IKeyValuePair<K, V>>**)&static_cast<wfc::IKeyValuePair<K, V> const&>(static_cast<D const&>(*this)))->get_Key(put_abi(result)));
+            check_hresult((*(abi_t<wfc::IKeyValuePair<K, V>>**)&static_cast<wfc::IKeyValuePair<K, V> const&>(static_cast<D const&>(*this)))->get_Key(put_abi(result)));
             return result;
         }
 
-        V Value() const noexcept
+        V Value() const
         {
             V result{ empty_value<V>() };
-            check_terminate((*(abi_t<wfc::IKeyValuePair<K, V>>**)&static_cast<wfc::IKeyValuePair<K, V> const&>(static_cast<D const&>(*this)))->get_Value(put_abi(result)));
+            check_hresult((*(abi_t<wfc::IKeyValuePair<K, V>>**)&static_cast<wfc::IKeyValuePair<K, V> const&>(static_cast<D const&>(*this)))->get_Value(put_abi(result)));
             return result;
         }
 
-        bool operator==(wfc::IKeyValuePair<K, V> const& other) const noexcept
+        bool operator==(wfc::IKeyValuePair<K, V> const& other) const
         {
             return Key() == other.Key() && Value() == other.Value();
         }
 
-        bool operator!=(wfc::IKeyValuePair<K, V> const& other) const noexcept
+        bool operator!=(wfc::IKeyValuePair<K, V> const& other) const
         {
             return !(*this == other);
         }
@@ -302,10 +302,10 @@ namespace winrt::impl
             return result;
         }
 
-        uint32_t Size() const noexcept
+        uint32_t Size() const
         {
             uint32_t size{};
-            check_terminate((*(abi_t<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
+            check_hresult((*(abi_t<wfc::IMapView<K, V>>**)&static_cast<wfc::IMapView<K, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
             return size;
         }
 
@@ -331,10 +331,10 @@ namespace winrt::impl
             return result;
         }
 
-        uint32_t Size() const noexcept
+        uint32_t Size() const
         {
             uint32_t size{};
-            check_terminate((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
+            check_hresult((*(abi_t<wfc::IMap<K, V>>**)&static_cast<wfc::IMap<K, V> const&>(static_cast<D const&>(*this)))->get_Size(&size));
             return size;
         }
 
@@ -963,7 +963,7 @@ namespace winrt::impl
     }
 
     template <typename T, std::enable_if_t<has_GetAt<T>::value>* = nullptr>
-    fast_iterator<T> end(T const& collection) noexcept
+    fast_iterator<T> end(T const& collection)
     {
         return fast_iterator<T>(collection, collection.Size());
     }

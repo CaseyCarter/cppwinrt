@@ -18,10 +18,10 @@ namespace winrt::impl
     template <typename D, typename T>
     struct consume_IReference
     {
-        T Value() const noexcept
+        T Value() const
         {
             T result{};
-            check_terminate((*(abi_t<Windows::Foundation::IReference<T>>**)&static_cast<const Windows::Foundation::IReference<T>&>(static_cast<const D&>(*this)))->get_Value(put_abi(result)));
+            check_hresult((*(abi_t<Windows::Foundation::IReference<T>>**)&static_cast<const Windows::Foundation::IReference<T>&>(static_cast<const D&>(*this)))->get_Value(put_abi(result)));
             return result;
         }
     };

@@ -472,16 +472,4 @@ WINRT_EXPORT namespace winrt
             impl::throw_hresult(result);
         }
     }
-
-    __forceinline void check_terminate(HRESULT const result) noexcept
-    {
-#ifdef WINRT_STRICT_HRESULT
-        if (result != S_OK)
-#else
-        if (result < 0)
-#endif
-        {
-            std::terminate();
-        }
-    }
 }
