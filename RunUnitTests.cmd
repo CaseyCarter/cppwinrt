@@ -14,5 +14,6 @@ if ERRORLEVEL 1 exit /B %ERRORLEVEL%
 echo Running Unit Tests...
 pushd %BuildStaging%\UnitTests
 call RunTests.cmd
+set RUN_ERRORLEVEL=%ERRORLEVEL%
 popd
-
+exit /B %RUN_ERRORLEVEL%
