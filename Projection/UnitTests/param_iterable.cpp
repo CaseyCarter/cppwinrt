@@ -19,6 +19,7 @@ namespace
         auto values = make_copy(param);
         REQUIRE(!values.First().HasCurrent());
         REQUIRE(!values.First().MoveNext());
+        REQUIRE_THROWS_AS(values.First().Current(), hresult_out_of_bounds);
 
         std::array<int, 3> copy;
         REQUIRE(0 == values.First().GetMany(copy));
@@ -29,6 +30,7 @@ namespace
         auto values = make_copy(param);
         REQUIRE(!values.First().HasCurrent());
         REQUIRE(!values.First().MoveNext());
+        REQUIRE_THROWS_AS(values.First().Current(), hresult_out_of_bounds);
 
         std::array<IKeyValuePair<int, int>, 3> copy;
         REQUIRE(0 == values.First().GetMany(copy));

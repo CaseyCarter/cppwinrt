@@ -343,7 +343,7 @@ namespace winrt::impl
 
                 if (m_completed_assigned)
                 {
-                    std::terminate();
+                    throw winrt::hresult_illegal_delegate_assignment();
                 }
 
                 m_completed_assigned = true;

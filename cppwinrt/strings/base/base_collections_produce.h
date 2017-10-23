@@ -6,16 +6,30 @@ namespace winrt::impl
     {
         HRESULT __stdcall get_CollectionChange(wfc::CollectionChange* value) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *value = this->shim().CollectionChange();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = this->shim().CollectionChange();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
 
         HRESULT __stdcall get_Index(uint32_t* value) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *value = this->shim().Index();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = this->shim().Index();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
     };
 
@@ -24,16 +38,31 @@ namespace winrt::impl
     {
         HRESULT __stdcall get_Current(arg_out<T> current) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *current = detach_abi(this->shim().Current());
-            return S_OK;
+            try
+            {
+                clear_abi(current);
+                typename D::abi_guard guard(this->shim());
+                *current = detach_abi(this->shim().Current());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
 
         HRESULT __stdcall get_HasCurrent(bool* hasCurrent) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *hasCurrent = this->shim().HasCurrent();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *hasCurrent = this->shim().HasCurrent();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
 
         HRESULT __stdcall MoveNext(bool* hasCurrent) noexcept final
@@ -91,16 +120,32 @@ namespace winrt::impl
     {
         HRESULT __stdcall get_Key(arg_out<K> key) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *key = detach_abi(this->shim().Key());
-            return S_OK;
+            try
+            {
+                clear_abi(key);
+                typename D::abi_guard guard(this->shim());
+                *key = detach_abi(this->shim().Key());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
 
         HRESULT __stdcall get_Value(arg_out<V> value) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().Value());
-            return S_OK;
+            try
+            {
+                clear_abi(value);
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().Value());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
     };
 
@@ -124,9 +169,16 @@ namespace winrt::impl
 
         HRESULT __stdcall get_Size(uint32_t* size) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *size = this->shim().Size();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
 
         HRESULT __stdcall IndexOf(arg_in<T> value, uint32_t* index, bool* found) noexcept final
@@ -180,9 +232,16 @@ namespace winrt::impl
 
         HRESULT __stdcall get_Size(uint32_t* size) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *size = this->shim().Size();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
 
         HRESULT __stdcall GetView(::IUnknown** view) noexcept final
@@ -349,9 +408,16 @@ namespace winrt::impl
 
         HRESULT __stdcall get_Size(uint32_t* size) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *size = this->shim().Size();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
 
         HRESULT __stdcall HasKey(arg_in<K> key, bool* found) noexcept final
@@ -405,9 +471,16 @@ namespace winrt::impl
 
         HRESULT __stdcall get_Size(uint32_t* size) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *size = this->shim().Size();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *size = this->shim().Size();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
 
         HRESULT __stdcall HasKey(arg_in<K> key, bool* found) noexcept final
@@ -487,16 +560,31 @@ namespace winrt::impl
     {
         HRESULT __stdcall get_CollectionChange(wfc::CollectionChange* value) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *value = this->shim().CollectionChange();
-            return S_OK;
+            try
+            {
+                typename D::abi_guard guard(this->shim());
+                *value = this->shim().CollectionChange();
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
 
         HRESULT __stdcall get_Key(arg_out<K> value) noexcept final
         {
-            typename D::abi_guard guard(this->shim());
-            *value = detach_abi(this->shim().Key());
-            return S_OK;
+            try
+            {
+                clear_abi(value);
+                typename D::abi_guard guard(this->shim());
+                *value = detach_abi(this->shim().Key());
+                return S_OK;
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
         }
     };
 

@@ -940,10 +940,10 @@ namespace cppwinrt
                 out.write(strings::write_interface_produce_method,
                     method.get_abi_name(),
                     bind_output(write_abi_params, method),
+                    bind_output(write_produce_cleanup, method),
                     bind_output(write_optional_out_wrappers, method),
                     bind_output(write_interface_produce_upcall, method),
-                    bind_output(write_optional_out_results, method),
-                    bind_output(write_produce_cleanup, method));
+                    bind_output(write_optional_out_results, method));
             }
         }
 
