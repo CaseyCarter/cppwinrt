@@ -56,6 +56,8 @@
     <ClCompile Include="foundation.cpp" />
     <ClCompile Include="xaml_typename.cpp" />
     <ClCompile Include="properties.cpp" />
+    <ClCompile Include="boxing.cpp" />
+    <ClCompile Include="to_hstring.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catch.hpp" />

@@ -8,6 +8,7 @@
 #include <array>
 #include <atomic>
 #include <chrono>
+#include <clocale>
 #include <cstddef>
 #include <iterator>
 #include <map>

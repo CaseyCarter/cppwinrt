@@ -267,3 +267,57 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         }
     };
 }
+
+WINRT_EXPORT namespace winrt
+{
+    template <typename T>
+    inline Windows::Foundation::IInspectable box_value(T const& value)
+    {
+        if constexpr (std::is_base_of_v<Windows::Foundation::IInspectable, T>)
+        {
+            return value;
+        }
+        else
+        {
+            return Windows::Foundation::IReference<T>(value);
+        }
+    }
+
+    template <typename T>
+    inline T unbox_value(Windows::Foundation::IInspectable const& value)
+    {
+        if constexpr (std::is_base_of_v<Windows::Foundation::IInspectable, T>)
+        {
+            return value.as<T>();
+        }
+        else
+        {
+            return value.as<Windows::Foundation::IReference<T>>().Value();
+        }
+    }
+
+    template <typename T, typename U>
+    inline T unbox_value_or(Windows::Foundation::IInspectable const& value, U&& default_value)
+    {
+        if (value)
+        {
+            if constexpr (std::is_base_of_v<Windows::Foundation::IInspectable, T>)
+            {
+                auto boxed = value.try_as<T>();
+                if (boxed)
+                {
+                    return boxed;
+                }
+            }
+            else
+            {
+                auto boxed = value.try_as<Windows::Foundation::IReference<T>>();
+                if (boxed)
+                {
+                    return boxed.Value();
+                }
+            }
+        }
+        return static_cast<T>(std::forward<U>(default_value));
+    }
+}

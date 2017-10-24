@@ -25,6 +25,7 @@
     <ClCompile Include="array.cpp" />
     <ClCompile Include="as.cpp" />
     <ClCompile Include="async.cpp" />
+    <ClCompile Include="boxing.cpp" />
     <ClCompile Include="casts.cpp" />
     <ClCompile Include="char16.cpp" />
     <ClCompile Include="clock.cpp" />
@@ -77,6 +78,7 @@
     <ClCompile Include="Reference.cpp" />
     <ClCompile Include="Release.cpp" />
     <ClCompile Include="struct.cpp" />
+    <ClCompile Include="to_hstring.cpp" />
     <ClCompile Include="weak.cpp" />
     <ClCompile Include="xaml_typename.cpp" />
   </ItemGroup>

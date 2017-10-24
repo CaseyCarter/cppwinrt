@@ -188,6 +188,22 @@ namespace winrt::impl
             return create_string(value.data(), static_cast<uint32_t>(value.size()));
         }
     };
+
+    // Temporary workaround to support locale-independent numeric formatting
+    // until C++17's to_chars arrives
+    struct locale_handle_traits : handle_traits<_locale_t>
+    {
+        static void close(type value) noexcept
+        {
+            _free_locale(value);
+        }
+    };
+
+    inline _locale_t get_default_locale()
+    {
+        static handle<locale_handle_traits> locale_handle{ _create_locale(LC_ALL, "C") };
+        return locale_handle.get();
+    }
 }
 
 WINRT_EXPORT namespace winrt
@@ -195,5 +211,108 @@ WINRT_EXPORT namespace winrt
     inline bool embedded_null(hstring const& value) noexcept
     {
         return impl::embedded_null(get_abi(value));
+    }
+
+    inline hstring to_hstring(uint8_t value)
+    {
+        wchar_t buffer[32];
+        swprintf_s(buffer, L"%hhu", value);
+        return hstring{ buffer };
+    }
+
+    inline hstring to_hstring(int8_t value)
+    {
+        wchar_t buffer[32];
+        swprintf_s(buffer, L"%hhd", value);
+        return hstring{ buffer };
+    }
+
+    inline hstring to_hstring(uint16_t value)
+    {
+        wchar_t buffer[32];
+        swprintf_s(buffer, L"%hu", value);
+        return hstring{ buffer };
+    }
+
+    inline hstring to_hstring(int16_t value)
+    {
+        wchar_t buffer[32];
+        swprintf_s(buffer, L"%hd", value);
+        return hstring{ buffer };
+    }
+
+    inline hstring to_hstring(uint32_t value)
+    {
+        wchar_t buffer[32];
+        swprintf_s(buffer, L"%I32u", value);
+        return hstring{ buffer };
+    }
+
+    inline hstring to_hstring(int32_t value)
+    {
+        wchar_t buffer[32];
+        swprintf_s(buffer, L"%I32d", value);
+        return hstring{ buffer };
+    }
+
+    inline hstring to_hstring(uint64_t value)
+    {
+        wchar_t buffer[32];
+        swprintf_s(buffer, L"%I64u", value);
+        return hstring{ buffer };
+    }
+
+    inline hstring to_hstring(int64_t value)
+    {
+        wchar_t buffer[32];
+        swprintf_s(buffer, L"%I64d", value);
+        return hstring{ buffer };
+    }
+
+    inline hstring to_hstring(float value)
+    {
+        wchar_t buffer[32];
+        _swprintf_s_l(buffer, _countof(buffer), L"%G", impl::get_default_locale(), value);
+        return hstring{ buffer };
+    }
+
+    inline hstring to_hstring(double value)
+    {
+        wchar_t buffer[32];
+        _swprintf_s_l(buffer, _countof(buffer), L"%G", impl::get_default_locale(), value);
+        return hstring{ buffer };
+    }
+
+    inline hstring to_hstring(char16_t value)
+    {
+        wchar_t buffer[2] = { value, 0 };
+        return hstring{ buffer };
+    }
+
+    inline hstring to_hstring(hstring const& value) noexcept
+    {
+        return value;
+    }
+
+    inline hstring to_hstring(bool value)
+    {
+        if (value)
+        {
+            return hstring{ L"true" };
+        }
+        else
+        {
+            return hstring{ L"false" };
+        }
+    }
+
+    inline hstring to_hstring(GUID const& value)
+    {
+        wchar_t buffer[40];
+        //{00000000-0000-0000-0000-000000000000}
+        swprintf_s(buffer, L"{%08x-%04hx-%04hx-%02hhx%02hhx-%02hhx%02hhx%02hhx%02hhx%02hhx%02hhx}",
+            value.Data1, value.Data2, value.Data3, value.Data4[0], value.Data4[1],
+            value.Data4[2], value.Data4[3], value.Data4[4], value.Data4[5], value.Data4[6], value.Data4[7]);
+        return hstring{ buffer };
     }
 }
