@@ -1,0 +1,13 @@
+﻿<!--
+***********************************************************************************************
+Copyright (C) Microsoft Corporation. All rights reserved.
+***********************************************************************************************
+-->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <Target Name="CppWinRTCompileInput" AfterTargets="ComputeReferenceCLInput" Inputs="@(ReferencePath)" Outputs="@(ReferencePath->'$(GeneratedFilesDir)winrt\%(Filename).h')">
+        <Exec Command="cppwinrt -v -in @(ReferencePath->'&quot;%(Fullpath)&quot;',' ') -ref $(WindowsTargetPlatformVersion) -out &quot;$(GeneratedFilesDir).&quot;" />
+    </Target>
+
+</Project>

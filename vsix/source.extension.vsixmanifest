@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="vsix.cppwinrt.f74fc025-416f-41b9-baf4-382f8e49260a" Version="1.1" Language="en-US" Publisher="Microsoft" />
+        <Identity Id="Microsoft.Windows.CppWinRT" Version="1.1" Language="en-US" Publisher="Microsoft" />
+        <PackageId>Microsoft.Windows.CppWinRT</PackageId>
         <DisplayName>C++/WinRT</DisplayName>
         <Description xml:space="preserve">C++/WinRT is a standard C++ language projection for the Windows Runtime implemented solely in header files. It allows you to both author and consume Windows Runtime APIs using any standards-compliant C++ compiler. C++/WinRT is designed to provide C++ developers with first-class access to the modern Windows API.</Description>
         <MoreInfo>https://github.com/Microsoft/cppwinrt/</MoreInfo>
@@ -10,7 +11,7 @@
         <ReleaseNotes>https://github.com/Microsoft/cppwinrt/blob/master/Changelog.md</ReleaseNotes>
         <Tags>WinRT, C++, native</Tags>
     </Metadata>
-    <Installation>
+    <Installation AllUsers="true">
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,)" />
         <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[15.0,)" />
         <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[15.0,)" />

@@ -219,8 +219,12 @@ namespace
                 }
                 break;
             case option::out: 
-                settings::output = arg; 
-                last_option = option::none; 
+                if (arg_str.back() == L'\\')
+                {
+                    arg_str.pop_back();
+                }
+                settings::output = arg_str.c_str();
+                last_option = option::none;
                 break;
             case option::filter: 
                 settings::filters.push_back(to_string(arg));
