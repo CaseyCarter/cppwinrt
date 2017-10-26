@@ -13,4 +13,6 @@ set MsbuildErrorLevel=%ERRORLEVEL%
 
 popd
 
+if %MsbuildErrorLevel%==0 copy %~dp0\cppwinrt\%BuildPlatform%\%BuildConfiguration%\cppwinrt.exe %BuildStaging%
+
 exit /B %MsbuildErrorLevel%
