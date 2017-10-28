@@ -2263,7 +2263,6 @@ namespace cppwinrt
         out.write(strings::base_diagnostics);
         out.write(strings::base_com_ptr);
         out.write(strings::base_string);
-        out.write(strings::base_string_hstring);
         out.write(strings::base_string_input);
         out.write(strings::base_string_operators);
         out.write(strings::base_constexpr_sha1);

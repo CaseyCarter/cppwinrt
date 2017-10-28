@@ -11,7 +11,6 @@
 #include "base_diagnostics.h"
 #include "base_com_ptr.h"
 #include "base_string.h"
-#include "base_string_hstring.h"
 #include "base_string_input.h"
 #include "base_string_operators.h"
 #include "base_constexpr_sha1.h"

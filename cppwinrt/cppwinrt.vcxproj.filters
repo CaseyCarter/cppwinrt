@@ -135,9 +135,6 @@
     <ClInclude Include="strings\base\base_string.h">
       <Filter>strings\base</Filter>
     </ClInclude>
-    <ClInclude Include="strings\base\base_string_hstring.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
     <ClInclude Include="strings\base\base_string_operators.h">
       <Filter>strings\base</Filter>
     </ClInclude>

@@ -527,7 +527,7 @@ TEST_CASE("hstring,unordered_map")
 
 static bool compare_hash(const std::wstring & value)
 {
-    return std::hash<std::wstring>{}(value) == std::hash<winrt::hstring>{}(value);
+    return std::hash<std::wstring>{}(value) == std::hash<winrt::hstring>{}(winrt::hstring(value));
 }
 
 TEST_CASE("hstring,hash")

@@ -78,7 +78,6 @@
     <ClInclude Include="strings\base\base_std_fire_and_forget.h" />
     <ClInclude Include="strings\base\base_std_hash.h" />
     <ClInclude Include="strings\base\base_string.h" />
-    <ClInclude Include="strings\base\base_string_hstring.h" />
     <ClInclude Include="strings\base\base_string_operators.h" />
     <ClInclude Include="strings\base\base_version.h" />
     <ClInclude Include="strings\base\base_warnings.h" />

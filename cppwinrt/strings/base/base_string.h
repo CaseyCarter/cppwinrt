@@ -54,37 +54,128 @@ WINRT_EXPORT namespace winrt
         using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
         hstring(std::nullptr_t = nullptr) noexcept {}
-        hstring(hstring const& value);
-        hstring& operator=(hstring const& value);
+
+        hstring(hstring const& value) :
+            m_handle(impl::duplicate_string(value.m_handle.get()))
+        {}
+
+        hstring& operator=(hstring const& value)
+        {
+            m_handle = impl::duplicate_string(value.m_handle.get());
+            return*this;
+        }
+
         hstring(hstring&&) noexcept = default;
         hstring& operator=(hstring&&) = default;
 
-        hstring(wchar_t const* value);
-        hstring(wchar_t const* value, size_type size);
-        hstring(std::wstring const& value);
+        hstring(wchar_t const* value) :
+            hstring(std::wstring_view(value))
+        {}
 
-        explicit hstring(std::wstring_view const& value);
+        hstring(wchar_t const* value, size_type size) :
+            m_handle(impl::create_string(value, size))
+        {}
 
-        hstring& operator=(std::wstring_view const& value);
+        explicit hstring(std::wstring_view const& value) :
+            hstring(value.data(), static_cast<size_type>(value.size()))
+        {}
 
-        void clear() noexcept;
-        operator std::wstring_view() const noexcept;
+        hstring& operator=(std::wstring_view const& value)
+        {
+            return (*this = hstring{ value });
+        }
 
-        const_reference operator[](size_type pos) const noexcept;
-        const_reference front() const noexcept;
-        const_reference back() const noexcept;
-        const_pointer data() const noexcept;
-        const_pointer c_str() const noexcept;
-        const_iterator begin() const noexcept;
-        const_iterator cbegin() const noexcept;
-        const_iterator end() const noexcept;
-        const_iterator cend() const noexcept;
-        const_reverse_iterator rbegin() const noexcept;
-        const_reverse_iterator crbegin() const noexcept;
-        const_reverse_iterator rend() const noexcept;
-        const_reverse_iterator crend() const noexcept;
-        bool empty() const noexcept;
-        size_type size() const noexcept;
+        void clear() noexcept
+        {
+            m_handle.close();
+        }
+
+        operator std::wstring_view() const noexcept
+        {
+            uint32_t size;
+            wchar_t const* data = WindowsGetStringRawBuffer(m_handle.get(), &size);
+            return std::wstring_view(data, size);
+        }
+
+        const_reference operator[](size_type pos) const noexcept
+        {
+            WINRT_ASSERT(pos < size());
+            return*(begin() + pos);
+        }
+
+        const_reference front() const noexcept
+        {
+            WINRT_ASSERT(!empty());
+            return*begin();
+        }
+
+        const_reference back() const noexcept
+        {
+            WINRT_ASSERT(!empty());
+            return*(end() - 1);
+        }
+
+        const_pointer data() const noexcept
+        {
+            return begin();
+        }
+
+        const_pointer c_str() const noexcept
+        {
+            return begin();
+        }
+
+        const_iterator begin() const noexcept
+        {
+            return WindowsGetStringRawBuffer(m_handle.get(), nullptr);
+        }
+
+        const_iterator cbegin() const noexcept
+        {
+            return begin();
+        }
+
+        const_iterator end() const noexcept
+        {
+            uint32_t length = 0;
+            const_pointer buffer = WindowsGetStringRawBuffer(m_handle.get(), &length);
+            return buffer + length;
+        }
+
+        const_iterator cend() const noexcept
+        {
+            return end();
+        }
+
+        const_reverse_iterator rbegin() const noexcept
+        {
+            return const_reverse_iterator(end());
+        }
+
+        const_reverse_iterator crbegin() const noexcept
+        {
+            return rbegin();
+        }
+
+        const_reverse_iterator rend() const noexcept
+        {
+            return const_reverse_iterator(begin());
+        }
+
+        const_reverse_iterator crend() const noexcept
+        {
+            return rend();
+        }
+
+        bool empty() const noexcept
+        {
+            return 0 == size();
+        }
+
+        size_type size() const noexcept
+        {
+            return WindowsGetStringLen(m_handle.get());
+        }
 
         friend HSTRING impl_get(hstring const& string) noexcept
         {
