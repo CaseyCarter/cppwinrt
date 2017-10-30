@@ -52,22 +52,20 @@
     <ClInclude Include="strings\base\base_collections_vector.h" />
     <ClInclude Include="strings\base\base_composable.h" />
     <ClInclude Include="strings\base\base_com_ptr.h" />
-    <ClInclude Include="strings\base\base_constexpr_guid.h" />
-    <ClInclude Include="strings\base\base_constexpr_sha1.h" />
-    <ClInclude Include="strings\base\base_constexpr_string.h" />
-    <ClInclude Include="strings\base\base_constexpr_traits.h" />
     <ClInclude Include="strings\base\base_delegate.h" />
     <ClInclude Include="strings\base\base_dependencies.h" />
+    <ClInclude Include="strings\base\base_diagnostics.h" />
     <ClInclude Include="strings\base\base_error.h" />
     <ClInclude Include="strings\base\base_event_consume.h" />
     <ClInclude Include="strings\base\base_event_produce.h" />
     <ClInclude Include="strings\base\base_foundation.h" />
     <ClInclude Include="strings\base\base_handle.h" />
+    <ClInclude Include="strings\base\base_identity.h" />
     <ClInclude Include="strings\base\base_implements.h" />
+    <ClInclude Include="strings\base\base_implements_marshal.h" />
     <ClInclude Include="strings\base\base_lock.h" />
     <ClInclude Include="strings\base\base_macros.h" />
     <ClInclude Include="strings\base\base_meta.h" />
-    <ClInclude Include="strings\base\base_module.h" />
     <ClInclude Include="strings\base\base_natvis.h" />
     <ClInclude Include="strings\base\base_reference.h" />
     <ClInclude Include="strings\base\base_reference_produce.h" />
@@ -78,6 +76,7 @@
     <ClInclude Include="strings\base\base_std_fire_and_forget.h" />
     <ClInclude Include="strings\base\base_std_hash.h" />
     <ClInclude Include="strings\base\base_string.h" />
+    <ClInclude Include="strings\base\base_string_input.h" />
     <ClInclude Include="strings\base\base_string_operators.h" />
     <ClInclude Include="strings\base\base_version.h" />
     <ClInclude Include="strings\base\base_warnings.h" />
@@ -149,7 +148,6 @@
     <ClInclude Include="strings\write\write_static_event_declaration.h" />
     <ClInclude Include="strings\write\write_static_event_definition.h" />
     <ClInclude Include="strings\write\write_std_hash.h" />
-    <ClInclude Include="strings\write\write_struct_abi.h" />
     <ClInclude Include="strings\write\write_struct_definition.h" />
     <ClInclude Include="strings\write\write_struct_type_trait.h" />
     <ClInclude Include="strings\write\write_version_assert.h" />
@@ -203,15 +201,15 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ResourceCompile Include="source\version.rc" />
+  </ItemGroup>
+  <ItemGroup>
     <Text Include="strings\print\print_exception.txt" />
     <Text Include="strings\print\print_hresult_error.txt" />
     <Text Include="strings\print\print_invalid_usage.txt" />
     <Text Include="strings\print\print_time.txt" />
     <Text Include="strings\print\print_usage.txt" />
     <Text Include="strings\print\print_usage_details.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="source\version.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

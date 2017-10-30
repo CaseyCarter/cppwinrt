@@ -130,7 +130,7 @@ namespace winrt::impl
     template <typename T>
     struct name<Windows::Foundation::EventHandler<T>>
     {
-        static constexpr auto value{ L"Windows.Foundation.EventHandler`1<" + make_constexpr_string(name_v<T>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.EventHandler`1<" + to_array(name_v<T>) + L">" };
     };
 
     template <typename T>
@@ -149,7 +149,7 @@ namespace winrt::impl
     template <typename TSender, typename TArgs> 
     struct name<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
     {
-        static constexpr auto value{ L"Windows.Foundation.TypedEventHandler`2<" + make_constexpr_string(name_v<TSender>) + L", " + make_constexpr_string(name_v<TArgs>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.TypedEventHandler`2<" + to_array(name_v<TSender>) + L", " + to_array(name_v<TArgs>) + L">" };
     };
 
     template <typename TSender, typename TArgs>

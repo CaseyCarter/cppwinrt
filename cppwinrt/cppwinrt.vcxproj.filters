@@ -21,6 +21,14 @@
     <ClInclude Include="strings\strings.h">
       <Filter>strings</Filter>
     </ClInclude>
+    <ClInclude Include="source\settings.h" />
+    <ClInclude Include="source\component_writer.h" />
+    <ClInclude Include="source\helpers.h" />
+    <ClInclude Include="source\base.h" />
+    <ClInclude Include="source\generator.h" />
+    <ClInclude Include="source\reference_writer.h" />
+    <ClInclude Include="source\sdk.h" />
+    <ClInclude Include="source\projection_writer.h" />
     <ClInclude Include="strings\base\base_activation.h">
       <Filter>strings\base</Filter>
     </ClInclude>
@@ -54,7 +62,13 @@
     <ClInclude Include="strings\base\base_collections_input_iterable.h">
       <Filter>strings\base</Filter>
     </ClInclude>
+    <ClInclude Include="strings\base\base_collections_input_map.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
     <ClInclude Include="strings\base\base_collections_input_map_view.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_collections_input_vector.h">
       <Filter>strings\base</Filter>
     </ClInclude>
     <ClInclude Include="strings\base\base_collections_input_vector_view.h">
@@ -81,6 +95,9 @@
     <ClInclude Include="strings\base\base_dependencies.h">
       <Filter>strings\base</Filter>
     </ClInclude>
+    <ClInclude Include="strings\base\base_diagnostics.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
     <ClInclude Include="strings\base\base_error.h">
       <Filter>strings\base</Filter>
     </ClInclude>
@@ -96,7 +113,13 @@
     <ClInclude Include="strings\base\base_handle.h">
       <Filter>strings\base</Filter>
     </ClInclude>
+    <ClInclude Include="strings\base\base_identity.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
     <ClInclude Include="strings\base\base_implements.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_implements_marshal.h">
       <Filter>strings\base</Filter>
     </ClInclude>
     <ClInclude Include="strings\base\base_lock.h">
@@ -108,10 +131,13 @@
     <ClInclude Include="strings\base\base_meta.h">
       <Filter>strings\base</Filter>
     </ClInclude>
-    <ClInclude Include="strings\base\base_module.h">
+    <ClInclude Include="strings\base\base_natvis.h">
       <Filter>strings\base</Filter>
     </ClInclude>
     <ClInclude Include="strings\base\base_reference.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_reference_produce.h">
       <Filter>strings\base</Filter>
     </ClInclude>
     <ClInclude Include="strings\base\base_std_async_action.h">
@@ -135,7 +161,16 @@
     <ClInclude Include="strings\base\base_string.h">
       <Filter>strings\base</Filter>
     </ClInclude>
+    <ClInclude Include="strings\base\base_string_input.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
     <ClInclude Include="strings\base\base_string_operators.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_version.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\base\base_warnings.h">
       <Filter>strings\base</Filter>
     </ClInclude>
     <ClInclude Include="strings\base\base_weak.h">
@@ -144,36 +179,9 @@
     <ClInclude Include="strings\base\base_windows.h">
       <Filter>strings\base</Filter>
     </ClInclude>
-    <ClInclude Include="source\settings.h" />
-    <ClInclude Include="strings\base\base_constexpr_traits.h">
+    <ClInclude Include="strings\base\base_xaml_typename.h">
       <Filter>strings\base</Filter>
     </ClInclude>
-    <ClInclude Include="strings\base\base_constexpr_guid.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\base\base_constexpr_sha1.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\base\base_constexpr_string.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
-    <ClInclude Include="source\component_writer.h" />
-    <ClInclude Include="strings\base\base_reference_produce.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\base\base_warnings.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\base\base_natvis.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
-    <ClInclude Include="source\helpers.h" />
-    <ClInclude Include="strings\write\write_struct_abi.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="source\base.h" />
-    <ClInclude Include="source\generator.h" />
-    <ClInclude Include="source\reference_writer.h" />
     <ClInclude Include="strings\write\write_class_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -195,6 +203,15 @@
     <ClInclude Include="strings\write\write_component_class_factory_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_header_factory_implementation.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_header_implementation.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_header_static_implementation.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
     <ClInclude Include="strings\write\write_component_class_override_dispatch_base.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -202,6 +219,12 @@
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_component_class_static_definition.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_class_xaml_shim.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_def.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_component_factory_activate_instance.h">
@@ -225,16 +248,31 @@
     <ClInclude Include="strings\write\write_component_lock_declaration.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\write\write_component_pch_header.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_pch_source.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
     <ClInclude Include="strings\write\write_component_produce_override_dispatch.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_component_produce_override_dispatch_method.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\write\write_component_project.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_project_filters.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
     <ClInclude Include="strings\write\write_component_source.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_component_source_empty.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_component_static_class_header.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_composable_constructor_definition.h">
@@ -271,6 +309,9 @@
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_enumeration_flag.h">
+      <Filter>strings\write</Filter>
+    </ClInclude>
+    <ClInclude Include="strings\write\write_enumeration_flag_specialization.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_interface_abi.h">
@@ -333,64 +374,14 @@
     <ClInclude Include="strings\write\write_std_hash.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_struct_abi.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
     <ClInclude Include="strings\write\write_struct_definition.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_static_class_header.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_class_xaml_shim.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_class_header_factory_implementation.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_class_header_implementation.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_class_header_static_implementation.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="source\sdk.h" />
-    <ClInclude Include="strings\base\base_version.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
-    <ClInclude Include="source\projection_writer.h" />
-    <ClInclude Include="strings\write\write_component_project.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_def.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_pch_header.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_pch_source.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_project_filters.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_version_assert.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\base\base_collections_input_map.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\base\base_collections_input_vector.h">
-      <Filter>strings\base</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_enumeration_flag_specialization.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_struct_type_trait.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\base\base_xaml_typename.h">
-      <Filter>strings\base</Filter>
+    <ClInclude Include="strings\write\write_version_assert.h">
+      <Filter>strings\write</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -413,6 +404,9 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ResourceCompile Include="source\version.rc" />
+  </ItemGroup>
+  <ItemGroup>
     <Text Include="strings\print\print_exception.txt">
       <Filter>strings\print</Filter>
     </Text>
@@ -431,8 +425,5 @@
     <Text Include="strings\print\print_usage_details.txt">
       <Filter>strings\print</Filter>
     </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="source\version.rc" />
   </ItemGroup>
 </Project>

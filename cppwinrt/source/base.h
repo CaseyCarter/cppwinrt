@@ -5,7 +5,6 @@
 
 #include "base_meta.h"
 #include "base_identity.h"
-#include "base_constexpr_string.h"
 #include "base_handle.h"
 #include "base_lock.h"
 #include "base_diagnostics.h"
@@ -13,9 +12,6 @@
 #include "base_string.h"
 #include "base_string_input.h"
 #include "base_string_operators.h"
-#include "base_constexpr_sha1.h"
-#include "base_constexpr_guid.h"
-#include "base_constexpr_traits.h"
 #include "base_error.h"
 #include "base_windows.h"
 #include "base_array.h"

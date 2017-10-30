@@ -71,6 +71,11 @@ namespace winrt::impl
         using type = interface_category;
     };
 
+    template <> struct name<::IAgileObject>
+    {
+        static constexpr auto & value{ L"IAgileObject" };
+    };
+
     template <> struct guid<::IMarshal>
     {
         static constexpr GUID value{ 0x00000003,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };

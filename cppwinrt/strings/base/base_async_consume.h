@@ -404,7 +404,7 @@ namespace winrt::impl
     template <typename TResult>
     struct name<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
     {
-        static constexpr auto value{ L"Windows.Foundation.AsyncOperationCompletedHandler`1<" + make_constexpr_string(name_v<TResult>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.AsyncOperationCompletedHandler`1<" + to_array(name_v<TResult>) + L">" };
     };
 
     template <typename TResult>
@@ -423,7 +423,7 @@ namespace winrt::impl
     template <typename TProgress>
     struct name<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
     {
-        static constexpr auto value{ L"Windows.Foundation.AsyncActionWithProgressCompletedHandler`1<" + make_constexpr_string(name_v<TProgress>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.AsyncActionWithProgressCompletedHandler`1<" + to_array(name_v<TProgress>) + L">" };
     };
 
     template <typename TProgress>
@@ -442,7 +442,7 @@ namespace winrt::impl
     template <typename TProgress>
     struct name<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
     {
-        static constexpr auto value{ L"Windows.Foundation.AsyncActionProgressHandler`1<" + make_constexpr_string(name_v<TProgress>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.AsyncActionProgressHandler`1<" + to_array(name_v<TProgress>) + L">" };
     };
 
     template <typename TProgress>
@@ -461,7 +461,7 @@ namespace winrt::impl
     template <typename TResult, typename TProgress>
     struct name<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
     {
-        static constexpr auto value{ L"Windows.Foundation.AsyncOperationProgressHandler`2<" + make_constexpr_string(name_v<TResult>) + L", " + make_constexpr_string(name_v<TProgress>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.AsyncOperationProgressHandler`2<" + to_array(name_v<TResult>) + L", " + to_array(name_v<TProgress>) + L">" };
     };
 
     template <typename TResult, typename TProgress>
@@ -480,7 +480,7 @@ namespace winrt::impl
     template <typename TResult, typename TProgress>
     struct name<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
     {
-        static constexpr auto value{ L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<" + make_constexpr_string(name_v<TResult>) + L", " + make_constexpr_string(name_v<TProgress>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.AsyncOperationWithProgressCompletedHandler`2<" + to_array(name_v<TResult>) + L", " + to_array(name_v<TProgress>) + L">" };
     };
 
     template <typename TResult, typename TProgress>
@@ -535,7 +535,7 @@ namespace winrt::impl
     template <typename TResult>
     struct name<Windows::Foundation::IAsyncOperation<TResult>>
     {
-        static constexpr auto value{ L"Windows.Foundation.IAsyncOperation`1<" + make_constexpr_string(name_v<TResult>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.IAsyncOperation`1<" + to_array(name_v<TResult>) + L">" };
     };
 
     template <typename TResult>
@@ -554,7 +554,7 @@ namespace winrt::impl
     template <typename TProgress>
     struct name<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
     {
-        static constexpr auto value{ L"Windows.Foundation.IAsyncActionWithProgress`1<" + make_constexpr_string(name_v<TProgress>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.IAsyncActionWithProgress`1<" + to_array(name_v<TProgress>) + L">" };
     };
 
     template <typename TProgress>
@@ -573,7 +573,7 @@ namespace winrt::impl
     template <typename TResult, typename TProgress>
     struct name<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
     {
-        static constexpr auto value{ L"Windows.Foundation.IAsyncOperationWithProgress`2<" + make_constexpr_string(name_v<TResult>) + L", " + make_constexpr_string(name_v<TProgress>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.IAsyncOperationWithProgress`2<" + to_array(name_v<TResult>) + L", " + to_array(name_v<TProgress>) + L">" };
     };
 
     template <typename TResult, typename TProgress>

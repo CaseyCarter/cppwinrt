@@ -41,7 +41,7 @@ namespace winrt::impl
     template <typename T> 
     struct name<Windows::Foundation::IReference<T>>
     {
-        static constexpr auto value{ L"Windows.Foundation.IReference`1<" + make_constexpr_string(name_v<T>) + L">" };
+        static constexpr auto value{ L"Windows.Foundation.IReference`1<" + to_array(name_v<T>) + L">" };
     };
 
     template <typename T>

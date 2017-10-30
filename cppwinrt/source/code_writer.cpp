@@ -2257,7 +2257,6 @@ namespace cppwinrt
 
         out.write(strings::base_meta);
         out.write(strings::base_identity);
-        out.write(strings::base_constexpr_string);
         out.write(strings::base_handle);
         out.write(strings::base_lock);
         out.write(strings::base_diagnostics);
@@ -2265,9 +2264,6 @@ namespace cppwinrt
         out.write(strings::base_string);
         out.write(strings::base_string_input);
         out.write(strings::base_string_operators);
-        out.write(strings::base_constexpr_sha1);
-        out.write(strings::base_constexpr_guid);
-        out.write(strings::base_constexpr_traits);
         out.write(strings::base_error);
         out.write(strings::base_windows);
         out.write(strings::base_array);
