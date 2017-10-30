@@ -29,7 +29,7 @@ namespace cppwinrt
             write_forwards(out, _default_forwards);
         }
 
-        void write_includes(output& out, std::string const & ext_h = ".h", std::string const & rel_path = "") const
+        void write_includes(output& out, std::string const& ext_h = ".h", std::string const& rel_path = "") const
         {
             write_includes(out, _method_namespaces, ext_h, rel_path);
             write_includes(out, _required_namespaces, ext_h, rel_path);
@@ -39,7 +39,7 @@ namespace cppwinrt
             }
         }
 
-        void write_struct_includes(output& out, std::string const & ext_h = ".h", std::string const & rel_path = "") const
+        void write_struct_includes(output& out, std::string const& ext_h = ".h", std::string const& rel_path = "") const
         {
             write_includes(out, _struct_namespaces, ext_h, rel_path);
         }
@@ -90,12 +90,12 @@ namespace cppwinrt
 
         void record()
         {
-            auto record_method_namespace = [&](meta::token const & token)
+            auto record_method_namespace = [&](meta::token const& token)
             {
                 record_namespace(_method_namespaces, _methods_forwards, token);
             };
 
-            for (meta::type const & type : get_projected_types(_exclude_references, _namespace_types.interfaces, _namespace_types.classes))
+            for (meta::type const& type : get_projected_types(_exclude_references, _namespace_types.interfaces, _namespace_types.classes))
             {
                 _types_found = true;
 
@@ -105,14 +105,14 @@ namespace cppwinrt
                 }
             }
 
-            for (meta::type const & type : get_projected_types(_exclude_references, _namespace_types.delegates))
+            for (meta::type const& type : get_projected_types(_exclude_references, _namespace_types.delegates))
             {
                 _types_found = true;
                 
                 type.token.get_delegate(record_method_namespace);
             }
 
-            for (meta::type const & type : get_projected_types(_exclude_references, _namespace_types.structs))
+            for (meta::type const& type : get_projected_types(_exclude_references, _namespace_types.structs))
             {
                 _types_found = true;
 
@@ -146,7 +146,7 @@ namespace cppwinrt
                 _types_found = true;
             }
 
-            for (meta::type const & type : get_projected_types(_exclude_references, _namespace_types.classes))
+            for (meta::type const& type : get_projected_types(_exclude_references, _namespace_types.classes))
             {
                 meta::token default_interface = type.token.get_default();
 
@@ -161,7 +161,7 @@ namespace cppwinrt
                 }
             }
 
-            for (meta::type const & type : get_projected_types(_exclude_references, _namespace_types.interfaces))
+            for (meta::type const& type : get_projected_types(_exclude_references, _namespace_types.interfaces))
             {
                 for (auto& required_interface : type.token.get_interface_required())
                 {
@@ -173,7 +173,7 @@ namespace cppwinrt
         void record_namespace(
             std::set<std::string>& ref_set,
             std::map<std::string, std::set<std::string>>& forwards,
-            meta::token const & token)
+            meta::token const& token)
         {
             if (token.is_type_spec())
             {
@@ -243,7 +243,7 @@ namespace cppwinrt
             }
         }
 
-        static void write_includes(output& out, std::set<std::string> const & refs, std::string const & ext_h, std::string const & rel_path = "") 
+        static void write_includes(output& out, std::set<std::string> const& refs, std::string const& ext_h, std::string const& rel_path = "") 
         {
             for (auto& ref : refs)
             {

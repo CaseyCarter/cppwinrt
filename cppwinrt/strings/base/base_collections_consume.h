@@ -997,11 +997,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         {}
 
         template <typename F> VectorChangedEventHandler(F* handler) :
-            VectorChangedEventHandler([=](auto&& ... args) { handler(args ...); })
+            VectorChangedEventHandler([=](auto&&... args) { handler(args...); })
         {}
 
         template <typename O, typename M> VectorChangedEventHandler(O* object, M method) :
-            VectorChangedEventHandler([=](auto&& ... args) { ((*object).*(method))(args ...); })
+            VectorChangedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
         {}
 
         void operator()(IObservableVector<T> const& sender, IVectorChangedEventArgs const& args) const
@@ -1021,11 +1021,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         {}
 
         template <typename F> MapChangedEventHandler(F* handler) :
-            MapChangedEventHandler([=](auto&& ... args) { handler(args ...); })
+            MapChangedEventHandler([=](auto&&... args) { handler(args...); })
         {}
 
         template <typename O, typename M> MapChangedEventHandler(O* object, M method) :
-            MapChangedEventHandler([=](auto&& ... args) { ((*object).*(method))(args ...); })
+            MapChangedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
         {}
 
         void operator()(IObservableMap<K, V> const& sender, IMapChangedEventArgs<K> const& args) const

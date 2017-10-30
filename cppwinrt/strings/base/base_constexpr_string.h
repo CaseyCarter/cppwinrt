@@ -7,7 +7,7 @@ namespace winrt::impl
         using value_type = T;
         using size_type = size_t;
         using reference = value_type &;
-        using const_reference = value_type const &;
+        using const_reference = value_type const&;
 
         constexpr size_type size() const noexcept 
         {
@@ -38,7 +38,7 @@ namespace winrt::impl
         using value_type = T;
         using size_type = size_t;
         using reference = value_type &;
-        using const_reference = value_type const &;
+        using const_reference = value_type const&;
 
         constexpr size_type size() const noexcept
         {
@@ -53,45 +53,45 @@ namespace winrt::impl
         T const * m_elems = nullptr;
     };
 
-    template <typename T, typename D, size_t N1, size_t N2, size_t ... Index, size_t ... Index2>
-    constexpr constexpr_array<T, N1 + N2, D> concat(constexpr_array<T, N1, D> const & left, constexpr_array<T, N2, D> const & right, std::index_sequence<Index ...> const, std::index_sequence<Index2 ...> const) noexcept
+    template <typename T, typename D, size_t N1, size_t N2, size_t... Index, size_t... Index2>
+    constexpr constexpr_array<T, N1 + N2, D> concat(constexpr_array<T, N1, D> const& left, constexpr_array<T, N2, D> const& right, std::index_sequence<Index...> const, std::index_sequence<Index2...> const) noexcept
     {
-        return { { left[Index] ..., right[Index2] ... } };
+        return { { left[Index]..., right[Index2]... } };
     }
 
-    template <typename T, typename D, size_t N, size_t ... Index>
-    constexpr constexpr_array<std::remove_cv_t<T>, N, D> to_array(T const (&value)[N], std::index_sequence<Index ...> const) noexcept
+    template <typename T, typename D, size_t N, size_t... Index>
+    constexpr constexpr_array<std::remove_cv_t<T>, N, D> to_array(T const (&value)[N], std::index_sequence<Index...> const) noexcept
     {
-        return { { value[Index] ... } };    
+        return { { value[Index]... } };    
     }
 
     template <typename T, typename D, size_t N1, size_t N2>
-    constexpr constexpr_array<T, N1 + N2, D> concat(constexpr_array<T, N1, D> const & left, constexpr_array<T, N2, D> const & right) noexcept
+    constexpr constexpr_array<T, N1 + N2, D> concat(constexpr_array<T, N1, D> const& left, constexpr_array<T, N2, D> const& right) noexcept
     {
         return concat(left, right, std::make_index_sequence<N1>(), std::make_index_sequence<N2>());
     }
 
     template <typename T, typename D, size_t N1>
-    constexpr constexpr_array<T, N1, D> concat(constexpr_array<T, N1, D> const & left, constexpr_array<T, 0, D> const &) noexcept
+    constexpr constexpr_array<T, N1, D> concat(constexpr_array<T, N1, D> const& left, constexpr_array<T, 0, D> const&) noexcept
     {
         return left;
     }
 
     template <typename T, typename D, size_t N1, size_t N2>
-    constexpr constexpr_array<T, N1 + N2, D> operator+(constexpr_array<T, N1> const & left, constexpr_array<T, N2, D> const & right) noexcept
+    constexpr constexpr_array<T, N1 + N2, D> operator+(constexpr_array<T, N1> const& left, constexpr_array<T, N2, D> const& right) noexcept
     {
         return concat(left, right, std::make_index_sequence<N1>(), std::make_index_sequence<N2>());
     }
 
     template <typename T, size_t N, typename D>
-    constexpr constexpr_array<T, N + 1, D> operator+(constexpr_array<T, N> const & left, T const & right) noexcept
+    constexpr constexpr_array<T, N + 1, D> operator+(constexpr_array<T, N> const& left, T const& right) noexcept
     {
         constexpr_array<T, 1, D> temp{ right };
         return concat(left, temp, std::make_index_sequence<N>(), std::make_index_sequence<1>());
     }
 
     template <typename T, size_t N, typename D>
-    constexpr constexpr_array<T, N + 1, D> append(constexpr_array<T, N, D> const & left, T const & right) noexcept
+    constexpr constexpr_array<T, N + 1, D> append(constexpr_array<T, N, D> const& left, T const& right) noexcept
     {
         return concat(left, constexpr_array<T, 1, D>{ {right} }, std::make_index_sequence<N>(), std::make_index_sequence<1>());
     }
@@ -120,43 +120,43 @@ namespace winrt::impl
     }
     
     template <typename T, size_t N>
-    constexpr auto make_constexpr_string(constexpr_string<T, N> const & str) noexcept
+    constexpr auto make_constexpr_string(constexpr_string<T, N> const& str) noexcept
     {
         return str;
     }
 
-    template <typename T, size_t N, size_t ... Index>
-    constexpr constexpr_string<T, sizeof ... (Index)> truncate(constexpr_string<T, N> const & value, std::index_sequence<Index ...>) noexcept
+    template <typename T, size_t N, size_t... Index>
+    constexpr constexpr_string<T, sizeof... (Index)> truncate(constexpr_string<T, N> const& value, std::index_sequence<Index...>) noexcept
     {
-        return { { value[Index] ... } };
+        return { { value[Index]... } };
     }
 
     template <size_t L, typename T, size_t N>
-    constexpr constexpr_string<T, L> truncate(constexpr_string<T, N> const & value) noexcept
+    constexpr constexpr_string<T, L> truncate(constexpr_string<T, N> const& value) noexcept
     {
         return truncate(value, std::make_index_sequence<L>());
     }
 
     template <typename T, size_t N1, size_t N2>
-    constexpr auto string_concat(constexpr_string<T, N1> const & left, constexpr_string<T, N2> const & right) noexcept
+    constexpr auto string_concat(constexpr_string<T, N1> const& left, constexpr_string<T, N2> const& right) noexcept
     {
         return append(concat(truncate<N1 - 1>(left), truncate<N2 - 1>(right)), T());
     }
 
     template<typename T, size_t N1, size_t N2>
-    constexpr auto operator+(constexpr_string<T, N1> const & left, constexpr_string<T, N2> const & right) noexcept
+    constexpr auto operator+(constexpr_string<T, N1> const& left, constexpr_string<T, N2> const& right) noexcept
     {
         return string_concat(left, right);
     }
 
     template<typename T, size_t N1, size_t N2>
-    constexpr auto operator+(T const (&left)[N1], constexpr_string<T, N2> const & right) noexcept
+    constexpr auto operator+(T const (&left)[N1], constexpr_string<T, N2> const& right) noexcept
     {
         return string_concat(make_constexpr_string(left), right);
     }
 
     template<typename T, size_t N1, size_t N2>
-    constexpr auto operator+(constexpr_string<T, N1> const & left, T const (&right)[N2]) noexcept
+    constexpr auto operator+(constexpr_string<T, N1> const& left, T const (&right)[N2]) noexcept
     {
         return string_concat(left, make_constexpr_string(right));
     }
@@ -181,31 +181,31 @@ namespace winrt::impl
     }
 
     template <typename T, size_t N1, size_t N2>
-    constexpr bool operator==(constexpr_string<T, N1> const & left, T const (&right)[N2]) noexcept
+    constexpr bool operator==(constexpr_string<T, N1> const& left, T const (&right)[N2]) noexcept
     {
         return string_compare(left.m_elems, right);
     }
 
     template <typename T, size_t N1, size_t N2>
-    constexpr bool operator==(T const (&left)[N1], constexpr_string<T, N2> const & right) noexcept
+    constexpr bool operator==(T const (&left)[N1], constexpr_string<T, N2> const& right) noexcept
     {
         return string_compare(left, right.m_elems);
     }
 
     template <typename T, size_t N1, size_t N2>
-    constexpr bool operator==(constexpr_string<T, N1> const & left, constexpr_string<T, N2> const & right) noexcept
+    constexpr bool operator==(constexpr_string<T, N1> const& left, constexpr_string<T, N2> const& right) noexcept
     {
         return string_compare(left.m_elems, right.m_elems);
     }
 
     template <typename T, size_t Size>
-    constexpr std::wstring_view string_data(constexpr_string<T, Size> const & value) noexcept
+    constexpr std::wstring_view string_data(constexpr_string<T, Size> const& value) noexcept
     {
         return { value.m_elems, Size - 1 };
     }
 
     template <typename T, size_t Size>
-    constexpr std::wstring_view string_data(std::array<T, Size> const & value) noexcept
+    constexpr std::wstring_view string_data(std::array<T, Size> const& value) noexcept
     {
         return { value.data(), Size };
     }

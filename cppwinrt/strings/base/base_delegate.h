@@ -173,11 +173,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         {}
 
         template <typename F> EventHandler(F* handler) :
-            EventHandler([=](auto&& ... args) { handler(args ...); })
+            EventHandler([=](auto&&... args) { handler(args...); })
         {}
 
         template <typename O, typename M> EventHandler(O* object, M method) :
-            EventHandler([=](auto&& ... args) { ((*object).*(method))(args ...); })
+            EventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
         {}
 
         void operator()(IInspectable const& sender, T const& args) const
@@ -197,11 +197,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         {}
 
         template <typename F> TypedEventHandler(F* handler) :
-            TypedEventHandler([=](auto&& ... args) { handler(args ...); })
+            TypedEventHandler([=](auto&&... args) { handler(args...); })
         {}
 
         template <typename O, typename M> TypedEventHandler(O* object, M method) :
-            TypedEventHandler([=](auto&& ... args) { ((*object).*(method))(args ...); })
+            TypedEventHandler([=](auto&&... args) { ((*object).*(method))(args...); })
         {}
 
         void operator()(TSender const& sender, TArgs const& args) const

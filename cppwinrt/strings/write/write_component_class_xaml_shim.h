@@ -7,8 +7,8 @@
 
 namespace winrt::@::implementation
 {
-    template <typename D, typename ... I>
-    using %T = %_base<D, I ...>;
+    template <typename D, typename... I>
+    using %T = %_base<D, I...>;
 }
 
 #endif

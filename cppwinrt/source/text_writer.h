@@ -47,8 +47,8 @@ namespace cppwinrt
             append(value);
         }
 
-        template <typename First, typename ... Rest>
-        void write_segment(std::string_view value, First const& first, Rest const& ... rest)
+        template <typename First, typename... Rest>
+        void write_segment(std::string_view value, First const& first, Rest const&... rest)
         {
             size_t offset = value.find_first_of("^%@");
             WINRT_ASSERT(offset != std::string_view::npos);
@@ -66,7 +66,7 @@ namespace cppwinrt
                 {
                     append('^');
                 }
-                write_segment(value.substr(offset + 1), first, rest ...);
+                write_segment(value.substr(offset + 1), first, rest...);
             }
             else
             {
@@ -78,7 +78,7 @@ namespace cppwinrt
                 {
                     write_code_arg(first);
                 }
-                write_segment(value.substr(offset + 1), rest ...);
+                write_segment(value.substr(offset + 1), rest...);
             }
         }
 
@@ -195,11 +195,11 @@ namespace cppwinrt
             append(value);
         }
 
-        template <typename ... Args>
-        void write(std::string_view value, Args const& ... args)
+        template <typename... Args>
+        void write(std::string_view value, Args const&... args)
         {
-            WINRT_ASSERT(count_placeholders(value) == sizeof ... (Args));
-            write_segment(value, args ...);
+            WINRT_ASSERT(count_placeholders(value) == sizeof... (Args));
+            write_segment(value, args...);
         }
 
         void save_as(std::string const& filename)
@@ -252,12 +252,12 @@ namespace cppwinrt
         }
     };
 
-    template <typename F, typename ... Args>
-    auto bind_output(F writer, Args const& ... args)
+    template <typename F, typename... Args>
+    auto bind_output(F writer, Args const&... args)
     {
         return [&, writer](output& out)
         {
-            writer(out, args ...);
+            writer(out, args...);
         };
     }
 }

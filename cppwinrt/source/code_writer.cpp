@@ -145,7 +145,7 @@ namespace cppwinrt
             }
         }
 
-        bool is_complex_struct(std::vector<meta::field> const & fields)
+        bool is_complex_struct(std::vector<meta::field> const& fields)
         {
             for (meta::field const& field : fields)
             {

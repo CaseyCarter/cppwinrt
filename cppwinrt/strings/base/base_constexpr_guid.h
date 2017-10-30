@@ -57,26 +57,26 @@ namespace winrt::impl
             { value.Data4[0], value.Data4[1], value.Data4[2], value.Data4[3], value.Data4[4], value.Data4[5], value.Data4[6], value.Data4[7] } };
     }
 
-    template <size_t ... GuidIndex, size_t ... SigIndex, size_t Size>
-    constexpr constexpr_array<uint8_t, Size + 15> create_guid_gen_buffer(std::index_sequence<GuidIndex ...>, std::index_sequence<SigIndex ...>, constexpr_array<uint8_t, 16> const & guid, constexpr_string<char, Size> const & sig) noexcept
+    template <size_t... GuidIndex, size_t... SigIndex, size_t Size>
+    constexpr constexpr_array<uint8_t, Size + 15> create_guid_gen_buffer(std::index_sequence<GuidIndex...>, std::index_sequence<SigIndex...>, constexpr_array<uint8_t, 16> const& guid, constexpr_string<char, Size> const& sig) noexcept
     {
-        return constexpr_array<uint8_t, Size + 15>{ {guid[GuidIndex] ..., static_cast<uint8_t>(sig[SigIndex]) ...}};
+        return constexpr_array<uint8_t, Size + 15>{ {guid[GuidIndex]..., static_cast<uint8_t>(sig[SigIndex])...}};
     }
 
     template <size_t Size>
-    constexpr constexpr_array<uint8_t, Size + 15> create_guid_gen_buffer(GUID const & guid, constexpr_string<char, Size> const & str) noexcept
+    constexpr constexpr_array<uint8_t, Size + 15> create_guid_gen_buffer(GUID const& guid, constexpr_string<char, Size> const& str) noexcept
     {
         return create_guid_gen_buffer(std::make_index_sequence<16>{}, std::make_index_sequence<Size - 1>{}, to_byte_array(guid), str);
     }
 
-    constexpr GUID set_named_guid_fields(GUID const & id) noexcept
+    constexpr GUID set_named_guid_fields(GUID const& id) noexcept
     {
         return { id.Data1, id.Data2, static_cast<uint16_t>((id.Data3 & 0x0fff) | (5 << 12)),
         { static_cast<uint8_t>((id.Data4[0] & 0x3f) | 0x80), id.Data4[1], id.Data4[2], id.Data4[3], id.Data4[4], id.Data4[5], id.Data4[6], id.Data4[7] } };
     }
 
     template <size_t Size>
-    constexpr GUID generate_guid(GUID const & namespace_guid, constexpr_string<char, Size> const & source_string) noexcept
+    constexpr GUID generate_guid(GUID const& namespace_guid, constexpr_string<char, Size> const& source_string) noexcept
     {
         auto big_endian_ns_guid = endian_swap(namespace_guid);
         auto buffer = create_guid_gen_buffer(big_endian_ns_guid, source_string);
@@ -86,7 +86,7 @@ namespace winrt::impl
         return set_named_guid_fields(little_endian_guid);
     }
 
-    constexpr bool compare_guids(GUID const & rguid1, GUID const & rguid2) noexcept
+    constexpr bool compare_guids(GUID const& rguid1, GUID const& rguid2) noexcept
     {
         return rguid1.Data1 == rguid2.Data1 && rguid1.Data2 == rguid2.Data2 && rguid1.Data3 == rguid2.Data3 &&
             rguid1.Data4[0] == rguid2.Data4[0] &&
@@ -123,10 +123,10 @@ namespace winrt::impl
     // namespace guid needed by RFC 4122 and used by pinterface guid generation algorithm
     constexpr GUID pinterface_namespace_guid = { 0x11f47ad5, 0x7b73, 0x42c0,{ 0xab, 0xae, 0x87, 0x8b, 0x1e, 0x16, 0xad, 0xee } };
 
-    template <typename TArg, typename ... TRest>
+    template <typename TArg, typename... TRest>
     struct arg_collection
     {
-        constexpr static auto data{ make_constexpr_string(signature<TArg>::data) + ";" + arg_collection<TRest ...>::data };
+        constexpr static auto data{ make_constexpr_string(signature<TArg>::data) + ";" + arg_collection<TRest...>::data };
     };
 
     template <typename TArg>
@@ -135,7 +135,7 @@ namespace winrt::impl
         constexpr static auto data{ make_constexpr_string(signature<TArg>::data) };
     };
 
-    constexpr constexpr_string<char, 39> guid_to_string(GUID const & id) noexcept
+    constexpr constexpr_string<char, 39> guid_to_string(GUID const& id) noexcept
     {
         return "{" + u4_to_hex_string(id.Data1) +
             "-" + u2_to_hex_string(id.Data2) +

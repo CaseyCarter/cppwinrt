@@ -638,11 +638,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         {}
 
         template <typename F> AsyncActionCompletedHandler(F* handler) :
-            AsyncActionCompletedHandler([=](auto&& ... args) { handler(args ...); })
+            AsyncActionCompletedHandler([=](auto&&... args) { handler(args...); })
         {}
 
         template <typename O, typename M> AsyncActionCompletedHandler(O* object, M method) :
-            AsyncActionCompletedHandler([=](auto&& ... args) { ((*object).*(method))(args ...); })
+            AsyncActionCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
         {}
 
         void operator()(IAsyncAction const& sender, AsyncStatus args) const
@@ -662,11 +662,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         {}
 
         template <typename F> AsyncActionProgressHandler(F* handler) :
-            AsyncActionProgressHandler([=](auto&& ... args) { handler(args ...); })
+            AsyncActionProgressHandler([=](auto&&... args) { handler(args...); })
         {}
 
         template <typename O, typename M> AsyncActionProgressHandler(O* object, M method) :
-            AsyncActionProgressHandler([=](auto&& ... args) { ((*object).*(method))(args ...); })
+            AsyncActionProgressHandler([=](auto&&... args) { ((*object).*(method))(args...); })
         {}
 
         void operator()(IAsyncActionWithProgress<TProgress> const& sender, TProgress const& args) const
@@ -686,11 +686,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         {}
 
         template <typename F> AsyncActionWithProgressCompletedHandler(F* handler) :
-            AsyncActionWithProgressCompletedHandler([=](auto&& ... args) { handler(args ...); })
+            AsyncActionWithProgressCompletedHandler([=](auto&&... args) { handler(args...); })
         {}
 
         template <typename O, typename M> AsyncActionWithProgressCompletedHandler(O* object, M method) :
-            AsyncActionWithProgressCompletedHandler([=](auto&& ... args) { ((*object).*(method))(args ...); })
+            AsyncActionWithProgressCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
         {}
 
         void operator()(IAsyncActionWithProgress<TProgress> const& sender, AsyncStatus const args) const
@@ -710,11 +710,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         {}
 
         template <typename F> AsyncOperationProgressHandler(F* handler) :
-            AsyncOperationProgressHandler([=](auto&& ... args) { handler(args ...); })
+            AsyncOperationProgressHandler([=](auto&&... args) { handler(args...); })
         {}
 
         template <typename O, typename M> AsyncOperationProgressHandler(O* object, M method) :
-            AsyncOperationProgressHandler([=](auto&& ... args) { ((*object).*(method))(args ...); })
+            AsyncOperationProgressHandler([=](auto&&... args) { ((*object).*(method))(args...); })
         {}
 
         void operator()(IAsyncOperationWithProgress<TResult, TProgress> const& sender, TProgress const& args) const
@@ -734,11 +734,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         {}
 
         template <typename F> AsyncOperationWithProgressCompletedHandler(F* handler) :
-            AsyncOperationWithProgressCompletedHandler([=](auto&& ... args) { handler(args ...); })
+            AsyncOperationWithProgressCompletedHandler([=](auto&&... args) { handler(args...); })
         {}
 
         template <typename O, typename M> AsyncOperationWithProgressCompletedHandler(O* object, M method) :
-            AsyncOperationWithProgressCompletedHandler([=](auto&& ... args) { ((*object).*(method))(args ...); })
+            AsyncOperationWithProgressCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
         {}
 
         void operator()(IAsyncOperationWithProgress<TResult, TProgress> const& sender, AsyncStatus const args) const
@@ -758,11 +758,11 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         {}
 
         template <typename F> AsyncOperationCompletedHandler(F* handler) :
-            AsyncOperationCompletedHandler([=](auto&& ... args) { handler(args ...); })
+            AsyncOperationCompletedHandler([=](auto&&... args) { handler(args...); })
         {}
 
         template <typename O, typename M> AsyncOperationCompletedHandler(O* object, M method) :
-            AsyncOperationCompletedHandler([=](auto&& ... args) { ((*object).*(method))(args ...); })
+            AsyncOperationCompletedHandler([=](auto&&... args) { ((*object).*(method))(args...); })
         {}
 
         void operator()(IAsyncOperation<TResult> const& sender, AsyncStatus args) const

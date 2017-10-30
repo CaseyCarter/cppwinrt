@@ -1,8 +1,8 @@
 
 WINRT_EXPORT namespace std::experimental
 {
-    template <typename ... Args>
-    struct coroutine_traits<winrt::fire_and_forget, Args ...>
+    template <typename... Args>
+    struct coroutine_traits<winrt::fire_and_forget, Args...>
     {
         struct promise_type
         {

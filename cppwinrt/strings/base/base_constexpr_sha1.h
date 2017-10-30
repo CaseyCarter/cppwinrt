@@ -29,7 +29,7 @@ namespace winrt::impl
     constexpr uint32_t K[4] = { 0x5A827999, 0x6ED9EBA1, 0x8F1BBCDC, 0xCA62C1D6 };
 
     template <size_t Size>
-    constexpr auto process_msg_block(constexpr_array<uint8_t, Size> const & input, uint32_t start_pos, constexpr_array<uint32_t, 5> const & intermediate_hash
+    constexpr auto process_msg_block(constexpr_array<uint8_t, Size> const& input, uint32_t start_pos, constexpr_array<uint32_t, 5> const& intermediate_hash
 #if _MSC_FULL_VER < 191125303
         , constexpr_array<uint32_t, 80> W = {}
 #endif
@@ -117,21 +117,21 @@ namespace winrt::impl
             } };
     }
 
-    template <size_t Size, size_t RemainingSize, size_t ... Index>
-    constexpr constexpr_array<uint8_t, RemainingSize + 1> make_remaining(constexpr_array<uint8_t, Size> const & input, uint32_t start_pos, std::index_sequence<Index ...>) noexcept
+    template <size_t Size, size_t RemainingSize, size_t... Index>
+    constexpr constexpr_array<uint8_t, RemainingSize + 1> make_remaining(constexpr_array<uint8_t, Size> const& input, uint32_t start_pos, std::index_sequence<Index...>) noexcept
     {
-        return constexpr_array<uint8_t, RemainingSize + 1>{ {input[Index + start_pos] ..., 0x80}};
+        return constexpr_array<uint8_t, RemainingSize + 1>{ {input[Index + start_pos]..., 0x80}};
     }
 
     template <size_t Size>
-    constexpr auto make_remaining(constexpr_array<uint8_t, Size> const & input, uint32_t start_pos) noexcept
+    constexpr auto make_remaining(constexpr_array<uint8_t, Size> const& input, uint32_t start_pos) noexcept
     {
         constexpr auto remaining_size = Size % message_block_size;
         return make_remaining<Size, remaining_size>(input, start_pos, std::make_index_sequence<remaining_size>());
     }
 
     template <size_t InputSize, size_t RemainderSize>
-    constexpr auto make_buffer(constexpr_array<uint8_t, RemainderSize> const & remaining_buffer) noexcept
+    constexpr auto make_buffer(constexpr_array<uint8_t, RemainderSize> const& remaining_buffer) noexcept
     {
 #pragma warning(suppress: 6326)
         constexpr auto message_length = (RemainderSize + 8 <= message_block_size) ? message_block_size : message_block_size * 2;
@@ -144,37 +144,37 @@ namespace winrt::impl
     }
 
     template <size_t Size>
-    constexpr constexpr_array<uint32_t, 5> finalize_remaining_buffer(constexpr_array<uint8_t, Size> const & input, constexpr_array<uint32_t, 5> const & intermediate_hash) noexcept
+    constexpr constexpr_array<uint32_t, 5> finalize_remaining_buffer(constexpr_array<uint8_t, Size> const& input, constexpr_array<uint32_t, 5> const& intermediate_hash) noexcept
     {
         throw std::invalid_argument("Size");
         return intermediate_hash;
     }
 
     template <>
-    constexpr constexpr_array<uint32_t, 5> finalize_remaining_buffer<message_block_size>(constexpr_array<uint8_t, message_block_size> const & input, constexpr_array<uint32_t, 5> const & intermediate_hash) noexcept
+    constexpr constexpr_array<uint32_t, 5> finalize_remaining_buffer<message_block_size>(constexpr_array<uint8_t, message_block_size> const& input, constexpr_array<uint32_t, 5> const& intermediate_hash) noexcept
     {
         return process_msg_block(input, 0, intermediate_hash);
     }
 
     template <>
-    constexpr constexpr_array<uint32_t, 5> finalize_remaining_buffer<message_block_size * 2>(constexpr_array<uint8_t, message_block_size * 2> const & input, constexpr_array<uint32_t, 5> const & intermediate_hash) noexcept
+    constexpr constexpr_array<uint32_t, 5> finalize_remaining_buffer<message_block_size * 2>(constexpr_array<uint8_t, message_block_size * 2> const& input, constexpr_array<uint32_t, 5> const& intermediate_hash) noexcept
     {
         return process_msg_block(input, message_block_size, process_msg_block(input, 0, intermediate_hash));
     }
 
     template <size_t Size>
-    constexpr auto finalize_msg(constexpr_array<uint8_t, Size> const & input, uint32_t start_pos, constexpr_array<uint32_t, 5> const & intermediate_hash) noexcept
+    constexpr auto finalize_msg(constexpr_array<uint8_t, Size> const& input, uint32_t start_pos, constexpr_array<uint32_t, 5> const& intermediate_hash) noexcept
     {
         return finalize_remaining_buffer(make_buffer<Size>(make_remaining(input, start_pos)), intermediate_hash);
     }
 
-    template <size_t ... Index>
-    constexpr constexpr_array<uint8_t, hash_size> get_result(constexpr_array<uint32_t, 5> const & intermediate_hash, std::index_sequence<Index ...>) noexcept
+    template <size_t... Index>
+    constexpr constexpr_array<uint8_t, hash_size> get_result(constexpr_array<uint32_t, 5> const& intermediate_hash, std::index_sequence<Index...>) noexcept
     {
-        return constexpr_array<uint8_t, hash_size>{ {static_cast<uint8_t>(intermediate_hash[Index >> 2] >> (8 * (3 - (Index & 0x03)))) ...}};
+        return constexpr_array<uint8_t, hash_size>{ {static_cast<uint8_t>(intermediate_hash[Index >> 2] >> (8 * (3 - (Index & 0x03))))...}};
     }
 
-    constexpr auto get_result(constexpr_array<uint32_t, 5> const & intermediate_hash) noexcept
+    constexpr auto get_result(constexpr_array<uint32_t, 5> const& intermediate_hash) noexcept
     {
         return get_result(intermediate_hash, std::make_index_sequence<hash_size>{});
     }
@@ -185,7 +185,7 @@ namespace winrt::impl
     }
 
     template <size_t Size>
-    constexpr constexpr_array<uint8_t, hash_size> calculate_sha1(constexpr_array<uint8_t, Size> const & input) noexcept
+    constexpr constexpr_array<uint8_t, hash_size> calculate_sha1(constexpr_array<uint8_t, Size> const& input) noexcept
     {
         auto intermediate_hash = initalize_intermediate_hash();
         uint32_t i = 0;

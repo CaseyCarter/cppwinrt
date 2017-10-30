@@ -238,10 +238,10 @@ namespace cppwinrt::meta
     bool is_foundation_type(std::string_view name);
     type const* find_type(std::string_view full_name, type_category* category = nullptr);
 
-    template <typename ... Container>
-    generator<type> get_projected_types(bool exclude_references, Container const& ... container)
+    template <typename... Container>
+    generator<type> get_projected_types(bool exclude_references, Container const&... container)
     {
-        for (type const& type : get_container_values(container ...))
+        for (type const& type : get_container_values(container...))
         {
             if (type.is_reference && exclude_references)
             {
@@ -252,10 +252,10 @@ namespace cppwinrt::meta
         }
     }
 
-    template <typename ... Container>
-    generator<type> get_projected_types(Container const& ... container)
+    template <typename... Container>
+    generator<type> get_projected_types(Container const&... container)
     {
-        for (type const& type : get_projected_types(true, container ...))
+        for (type const& type : get_projected_types(true, container...))
         {
             co_yield type;
         }

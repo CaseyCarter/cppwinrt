@@ -60,11 +60,11 @@ namespace cppwinrt
     void write_natvis(output& out);
     void write_namespace_special(output& out, std::string const& namespace_name);
 
-    template <typename ... Args>
-    void write_projection_include(output& out, Args const& ... include)
+    template <typename... Args>
+    void write_projection_include(output& out, Args const&... include)
     {
         out.write("#include %winrt/", settings::brackets ? '<' : '\"');
-        int ignored[] = { (out.write(include), 0) ... }; ignored;
+        int ignored[] = { (out.write(include), 0)... }; ignored;
         out.write("%\n", settings::brackets ? '>' : '\"');
     }
 

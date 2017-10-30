@@ -14,7 +14,7 @@ WINRT_EXPORT namespace winrt
     template <typename Interface>
     struct cloaked : Interface {};
 
-    template <typename D, typename ... I>
+    template <typename D, typename... I>
     struct implements;
 }
 
@@ -54,7 +54,7 @@ namespace winrt::impl
     constexpr bool is_cloaked_v = is_cloaked<I>::value;
 
 
-    template <typename D, typename ... I>
+    template <typename D, typename... I>
     struct root_implements;
     
     template <typename, typename = std::void_t<>>
@@ -66,31 +66,31 @@ namespace winrt::impl
     template <typename T>
     constexpr bool is_implements_v = is_implements<T>::value;
 
-    template <typename ...>
+    template <typename...>
     struct nested_implements
     {};
 
-    template <typename First, typename ... Rest>
+    template <typename First, typename... Rest>
     struct nested_implements<First, Rest...>
         : std::conditional_t<is_implements_v<First>,
         impl::identity<First>, nested_implements<Rest...>>
     {
-        static_assert(!is_implements_v<First> || !std::disjunction_v<is_implements<Rest> ...>,
+        static_assert(!is_implements_v<First> || !std::disjunction_v<is_implements<Rest>...>,
             "Duplicate nested implements found");
     };
 
-    template <typename D, typename Dummy = std::void_t<>, typename ... I>
+    template <typename D, typename Dummy = std::void_t<>, typename... I>
     struct base_implements_impl
         : impl::identity<root_implements<D, I...>> {};
 
-    template <typename D, typename ... I>
+    template <typename D, typename... I>
     struct base_implements_impl<D, std::void_t<typename nested_implements<I...>::type>, I...>
         : nested_implements<I...> {};
 
-    template <typename D, typename ... I>
+    template <typename D, typename... I>
     using base_implements = base_implements_impl<D, void, I...>;
 
-    template <typename ...>
+    template <typename...>
     struct uncloaked_interfaces;
 
     template <typename I, typename = std::void_t<>>
@@ -101,7 +101,7 @@ namespace winrt::impl
     struct uncloaked_interface_one<I, std::enable_if_t<(is_cloaked_v<I> || is_marker_v<I>) && !is_implements_v<I>>>
         : std::integral_constant<uint32_t, 0> {};
 
-    template <typename D, typename ... I>
+    template <typename D, typename... I>
     struct uncloaked_interface_one<implements<D, I...>>
         : uncloaked_interfaces<I...> {};
 
@@ -109,13 +109,13 @@ namespace winrt::impl
     struct uncloaked_interface_one<T, std::void_t<typename T::implements_type>>
         : uncloaked_interface_one<typename T::implements_type> {};
 
-    template <typename ...>
+    template <typename...>
     struct uncloaked_interfaces
         : std::integral_constant<uint32_t, 0> {};
 
-    template <typename First, typename ... Rest>
-    struct uncloaked_interfaces<First, Rest ...>
-        : std::integral_constant<uint32_t, uncloaked_interface_one<First>::value + uncloaked_interfaces<Rest ...>::value> {};
+    template <typename First, typename... Rest>
+    struct uncloaked_interfaces<First, Rest...>
+        : std::integral_constant<uint32_t, uncloaked_interface_one<First>::value + uncloaked_interfaces<Rest...>::value> {};
 
     template <typename T, typename = std::void_t<>>
     struct extract_interface
@@ -133,12 +133,12 @@ namespace winrt::impl
     struct extract_interface<T, std::enable_if_t<is_marker_v<T>>>
     {};
 
-    template <typename ... >
+    template <typename... >
     struct first_interface
     {};
 
-    template <typename First, typename ... Rest>
-    struct first_interface<First, Rest ...>
+    template <typename First, typename... Rest>
+    struct first_interface<First, Rest...>
         : std::conditional_t<!is_marker_v<First>,
             extract_interface<First>, first_interface<Rest...>
         >
@@ -211,36 +211,36 @@ WINRT_EXPORT namespace winrt
         return const_cast<impl::producer<D, I>*>(from);
     }
 
-    template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value && !impl::has_class_type<D>::value>* = nullptr>
-    impl::com_ref<I> make(Args&& ... args)
+    template <typename D, typename I = typename D::first_interface, typename... Args, std::enable_if_t<!impl::has_composable<D>::value && !impl::has_class_type<D>::value>* = nullptr>
+    impl::com_ref<I> make(Args&&... args)
     {
         impl::com_ref<I> result{ nullptr };
-        *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args) ...));
+        *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args)...));
         return result;
     }
 
-    template <typename D, typename ... Args, std::enable_if_t<!impl::has_composable<D>::value && impl::has_class_type<D>::value>* = nullptr>
-    auto make(Args&& ... args)
+    template <typename D, typename... Args, std::enable_if_t<!impl::has_composable<D>::value && impl::has_class_type<D>::value>* = nullptr>
+    auto make(Args&&... args)
     {
         static_assert(std::is_same_v<typename D::first_interface, impl::default_interface_t<typename D::class_type>>);
         typename D::class_type result{ nullptr };
-        *put_abi(result) = to_abi<typename D::first_interface>(new D(std::forward<Args>(args) ...));
+        *put_abi(result) = to_abi<typename D::first_interface>(new D(std::forward<Args>(args)...));
         return result;
     }
 
-    template <typename D, typename I = typename D::first_interface, typename ... Args, std::enable_if_t<impl::has_composable<D>::value>* = nullptr>
-    auto make(Args&& ... args)
+    template <typename D, typename I = typename D::first_interface, typename... Args, std::enable_if_t<impl::has_composable<D>::value>* = nullptr>
+    auto make(Args&&... args)
     {
         com_ptr<I> result;
-        *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args) ...));
+        *put_abi(result) = to_abi<I>(new D(std::forward<Args>(args)...));
         return result.template as<typename D::composable>();
     }
 
-    template <typename D, typename ... Args>
-    auto make_self(Args&& ... args)
+    template <typename D, typename... Args>
+    auto make_self(Args&&... args)
     {
         com_ptr<D> result;
-        *put_abi(result) = new D(std::forward<Args>(args) ...);
+        *put_abi(result) = new D(std::forward<Args>(args)...);
         return result;
     }
 }
@@ -573,10 +573,10 @@ namespace winrt::impl
         friend struct composable_factory;
     };
 
-    template <typename D, typename ... I>
+    template <typename D, typename... I>
     struct root_implements
-        : root_implements_composing_outer<std::disjunction<std::is_same<composing, I> ...>::value>
-        , root_implements_composable_inner<D, std::disjunction<std::is_same<composable, I> ...>::value>
+        : root_implements_composing_outer<std::disjunction<std::is_same<composing, I>...>::value>
+        , root_implements_composable_inner<D, std::disjunction<std::is_same<composable, I>...>::value>
     {
         using IInspectable = Windows::Foundation::IInspectable;
         using root_implements_type = root_implements;
@@ -820,10 +820,10 @@ namespace winrt::impl
         void abi_enter() noexcept {}
         void abi_exit() noexcept {}
 
-        using is_agile = std::negation<std::disjunction<std::is_same<non_agile, I> ...>>;
-        using is_factory = std::disjunction<std::is_same<abi_t<Windows::Foundation::IActivationFactory>, abi_t<I>> ...>;
-        using is_inspectable = std::disjunction<std::is_base_of<::IInspectable, abi_t<I>> ...>;
-        using is_weak_ref_source = std::conjunction<is_inspectable, std::negation<is_factory>, std::negation<std::disjunction<std::is_same<no_weak_ref, I> ...>>>;
+        using is_agile = std::negation<std::disjunction<std::is_same<non_agile, I>...>>;
+        using is_factory = std::disjunction<std::is_same<abi_t<Windows::Foundation::IActivationFactory>, abi_t<I>>...>;
+        using is_inspectable = std::disjunction<std::is_base_of<::IInspectable, abi_t<I>>...>;
+        using is_weak_ref_source = std::conjunction<is_inspectable, std::negation<is_factory>, std::negation<std::disjunction<std::is_same<no_weak_ref, I>...>>>;
         using weak_ref_t = impl::weak_ref<is_agile::value>;
 
         static_assert(!is_factory::value || (is_factory::value&& is_agile::value), "winrt::implements - activation factories must be agile.");
@@ -962,15 +962,15 @@ namespace winrt::impl
 
 WINRT_EXPORT namespace winrt
 {
-    template <typename D, typename ... I>
-    struct implements : impl::producer<D, impl::uncloak_t<I>> ..., impl::base_implements<D, I...>::type
+    template <typename D, typename... I>
+    struct implements : impl::producer<D, impl::uncloak_t<I>>..., impl::base_implements<D, I...>::type
     {
     protected:
 
         using base_type = typename impl::base_implements<D, I...>::type;
         using root_implements_type = typename base_type::root_implements_type;
 
-        template <typename ... Args>
+        template <typename... Args>
         explicit implements(Args&&... args)
             : base_type(std::forward<Args>(args)...)
         {}
@@ -978,13 +978,13 @@ WINRT_EXPORT namespace winrt
     public:
 
         using implements_type = implements;
-        using first_interface = typename impl::first_interface<impl::uncloak_t<I> ...>::type;
+        using first_interface = typename impl::first_interface<impl::uncloak_t<I>...>::type;
         using IInspectable = Windows::Foundation::IInspectable;
 
         operator IInspectable() const noexcept
         {
             IInspectable result;
-            copy_from_abi(result, find_inspectable<I ...>());
+            copy_from_abi(result, find_inspectable<I...>());
             return result;
         }
 
@@ -1004,7 +1004,7 @@ WINRT_EXPORT namespace winrt
         }
         void* find_interface_nested(GUID const& id) const noexcept override
         {
-            return find_interface<impl::uncloak_t<I> ...>(id);
+            return find_interface<impl::uncloak_t<I>...>(id);
         }
 
         ::IInspectable* find_inspectable_nested() const noexcept override
@@ -1019,11 +1019,11 @@ WINRT_EXPORT namespace winrt
 
         virtual void copy_guids_nested(GUID* ids) const noexcept override
         {
-            return copy_guids<I ...>(ids);
+            return copy_guids<I...>(ids);
         }
 
     private:
-        template <typename First, typename ... Rest>
+        template <typename First, typename... Rest>
         void copy_guids(GUID* ids) const noexcept
         {
             if constexpr (!impl::is_cloaked_v<First>)
@@ -1032,7 +1032,7 @@ WINRT_EXPORT namespace winrt
             }
             if constexpr (sizeof...(Rest) > 0)
             {
-                copy_guids<Rest ...>(ids);
+                copy_guids<Rest...>(ids);
             }
             else
             {
@@ -1040,7 +1040,7 @@ WINRT_EXPORT namespace winrt
             }
         }
 
-        template <typename First, typename ... Rest>
+        template <typename First, typename... Rest>
         void* find_interface(GUID const& id) const noexcept
         {
             if constexpr (!impl::is_marker_v<First> && !impl::is_implements_v<First>)
@@ -1052,7 +1052,7 @@ WINRT_EXPORT namespace winrt
             }
             if constexpr (sizeof...(Rest) > 0)
             {
-                return find_interface<Rest ...>(id);
+                return find_interface<Rest...>(id);
             }
             else
             {
@@ -1060,7 +1060,7 @@ WINRT_EXPORT namespace winrt
             }
         }
 
-        template <typename First, typename ... Rest>
+        template <typename First, typename... Rest>
         ::IInspectable* find_inspectable() const noexcept
         {
             if constexpr (std::is_base_of_v<::IInspectable, abi_t<First>>)
@@ -1069,7 +1069,7 @@ WINRT_EXPORT namespace winrt
             }
             else if constexpr (sizeof...(Rest) > 0)
             {
-                return find_inspectable<Rest ...>();
+                return find_inspectable<Rest...>();
             }
             else
             {
@@ -1087,7 +1087,7 @@ WINRT_EXPORT namespace winrt
             return impl::runtime_class_name<first_interface>::get();
         }
 
-        template <typename D, typename ... I>
+        template <typename D, typename... I>
         friend struct impl::root_implements;
     };
 }

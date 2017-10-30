@@ -46,16 +46,16 @@ namespace cppwinrt
                0 == value.compare(value.size() - match.size(), match.size(), match);
     }
 
-    template <typename First, typename ... Rest>
-    generator<First> get_values(First const& first, Rest const& ... rest)
+    template <typename First, typename... Rest>
+    generator<First> get_values(First const& first, Rest const&... rest)
     {
-        int ignored[] = { (co_yield first, 0), (co_yield rest, 0) ... }; ignored;
+        int ignored[] = { (co_yield first, 0), (co_yield rest, 0)... }; ignored;
     }
 
-    template <typename First, typename ... Rest, typename Value = First::value_type>
-    generator<Value> get_container_values(First const& first, Rest const& ... rest)
+    template <typename First, typename... Rest, typename Value = First::value_type>
+    generator<Value> get_container_values(First const& first, Rest const&... rest)
     {
-        for (First const& current : get_values(first, rest ...))
+        for (First const& current : get_values(first, rest...))
         {
             for (Value const& value : current)
             {
@@ -95,9 +95,9 @@ namespace cppwinrt
         return result;
     }
 
-    template <typename ... Args>
-    void print_error(Args&& ... args)
+    template <typename... Args>
+    void print_error(Args&&... args)
     {
-        fprintf(stderr, std::forward<Args>(args) ...);
+        fprintf(stderr, std::forward<Args>(args)...);
     }
 }

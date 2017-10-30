@@ -1,8 +1,8 @@
 
 WINRT_EXPORT namespace std::experimental
 {
-    template <typename TResult, typename TProgress, typename ... Args>
-    struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>, Args ...>
+    template <typename TResult, typename TProgress, typename... Args>
+    struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>, Args...>
     {
         struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>,
             winrt::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>

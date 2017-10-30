@@ -6,11 +6,11 @@
 #define WINRT_VERIFY WINRT_ASSERT
 #define WINRT_VERIFY_(result, expression) WINRT_ASSERT(result == expression)
 
-template <typename ... Args>
-void WINRT_TRACE(char const* const message, Args ... args) noexcept
+template <typename... Args>
+void WINRT_TRACE(char const* const message, Args... args) noexcept
 {
     char buffer[1024];
-    (void)snprintf(buffer, sizeof(buffer), message, args ...);
+    (void)snprintf(buffer, sizeof(buffer), message, args...);
     OutputDebugStringA(buffer);
 }
 

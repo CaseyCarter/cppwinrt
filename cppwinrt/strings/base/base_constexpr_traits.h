@@ -1,7 +1,7 @@
 
 namespace winrt::impl
 {
-    constexpr size_t bytes_needed(wchar_t const & ch) noexcept
+    constexpr size_t bytes_needed(wchar_t const& ch) noexcept
     {
         if (ch <= 0x7F)
         {
@@ -30,12 +30,12 @@ namespace winrt::impl
     }
 
     template <size_t Size>
-    constexpr size_t utf8_name_length(constexpr_string<wchar_t, Size> const & str) noexcept
+    constexpr size_t utf8_name_length(constexpr_string<wchar_t, Size> const& str) noexcept
     {
         return utf8_name_length(str.elems_);
     }
 
-    constexpr size_t wchar_to_utf8(wchar_t const & ch, char * buf) noexcept
+    constexpr size_t wchar_to_utf8(wchar_t const& ch, char * buf) noexcept
     {
         if (ch <= 0x7F)
         {
@@ -71,7 +71,7 @@ namespace winrt::impl
     }
 
     template <size_t Utf8Size, size_t Size>
-    constexpr auto wchar_string_to_utf8(constexpr_string<wchar_t, Size> const & str) noexcept
+    constexpr auto wchar_string_to_utf8(constexpr_string<wchar_t, Size> const& str) noexcept
     {
         return wchar_string_to_utf8<Utf8Size>(str.elems_);
     }
@@ -267,10 +267,10 @@ namespace winrt::impl
         constexpr static auto data{ "enum(" + name_utf8_v<T> + ";" + signature<enum_type>::data + ")" };
     };
 
-    template <typename ... Fields, typename T>
-    struct category_signature<struct_category<Fields ...>, T>
+    template <typename... Fields, typename T>
+    struct category_signature<struct_category<Fields...>, T>
     {
-        constexpr static auto data { "struct(" + name_utf8_v<T>+ ";" + arg_collection<Fields ...>::data + ")" };
+        constexpr static auto data { "struct(" + name_utf8_v<T>+ ";" + arg_collection<Fields...>::data + ")" };
     };
 
     template <typename T>
@@ -279,10 +279,10 @@ namespace winrt::impl
         constexpr static auto data { "rc(" + name_utf8_v<T> + ";" + signature<default_interface_t<T>>::data + ")" };
     };
 
-    template <typename ... Args, typename T>
-    struct category_signature<pinterface_category<Args ...>, T>
+    template <typename... Args, typename T>
+    struct category_signature<pinterface_category<Args...>, T>
     {
-        constexpr static auto data{ "pinterface(" + guid_to_string(category<T>::value) + ";" + arg_collection<Args ...>::data + ")" };
+        constexpr static auto data{ "pinterface(" + guid_to_string(category<T>::value) + ";" + arg_collection<Args...>::data + ")" };
     };
 
     template <typename T>

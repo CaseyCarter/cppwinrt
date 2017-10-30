@@ -22,7 +22,7 @@ namespace winrt::impl
     template <typename T>
     struct reference : implements<reference<T>, Windows::Foundation::IReference<T>, Windows::Foundation::IPropertyValue>
     {
-        reference(T const & value) : m_value(value)
+        reference(T const& value) : m_value(value)
         {
         }
 
@@ -128,7 +128,7 @@ namespace winrt::impl
     template <typename T>
     struct reference_traits
     {
-        static auto make(T const & value) { return winrt::make<impl::reference<T>>(value); }
+        static auto make(T const& value) { return winrt::make<impl::reference<T>>(value); }
     };
 
     template <>
@@ -200,19 +200,19 @@ namespace winrt::impl
     template <>
     struct reference_traits<hstring>
     {
-        static auto make(hstring const & value) { return Windows::Foundation::PropertyValue::CreateString(value); }
+        static auto make(hstring const& value) { return Windows::Foundation::PropertyValue::CreateString(value); }
     };
 
     template <>
     struct reference_traits<Windows::Foundation::IInspectable>
     {
-        static auto make(Windows::Foundation::IInspectable const & value) { return Windows::Foundation::PropertyValue::CreateInspectable(value); }
+        static auto make(Windows::Foundation::IInspectable const& value) { return Windows::Foundation::PropertyValue::CreateInspectable(value); }
     };
 
     template <>
     struct reference_traits<GUID>
     {
-        static auto make(GUID const & value) { return Windows::Foundation::PropertyValue::CreateGuid(value); }
+        static auto make(GUID const& value) { return Windows::Foundation::PropertyValue::CreateGuid(value); }
     };
 
     template <>
@@ -230,19 +230,19 @@ namespace winrt::impl
     template <>
     struct reference_traits<Windows::Foundation::Point>
     {
-        static auto make(Windows::Foundation::Point const & value) { return Windows::Foundation::PropertyValue::CreatePoint(value); }
+        static auto make(Windows::Foundation::Point const& value) { return Windows::Foundation::PropertyValue::CreatePoint(value); }
     };
 
     template <>
     struct reference_traits<Windows::Foundation::Size>
     {
-        static auto make(Windows::Foundation::Size const & value) { return Windows::Foundation::PropertyValue::CreateSize(value); }
+        static auto make(Windows::Foundation::Size const& value) { return Windows::Foundation::PropertyValue::CreateSize(value); }
     };
 
     template <>
     struct reference_traits<Windows::Foundation::Rect>
     {
-        static auto make(Windows::Foundation::Rect const & value) { return Windows::Foundation::PropertyValue::CreateRect(value); }
+        static auto make(Windows::Foundation::Rect const& value) { return Windows::Foundation::PropertyValue::CreateRect(value); }
     };
 }
 
@@ -256,7 +256,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     {
         IReference<T>(std::nullptr_t = nullptr) noexcept {}
 
-        IReference<T>(T const & value) : IReference<T>(impl::reference_traits<T>::make(value))
+        IReference<T>(T const& value) : IReference<T>(impl::reference_traits<T>::make(value))
         {
         }
 

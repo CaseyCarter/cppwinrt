@@ -174,8 +174,8 @@ namespace winrt::impl
             }
         }
 
-        template<typename ...Arg>
-        void operator()(Arg const& ... args)
+        template<typename...Arg>
+        void operator()(Arg const&... args)
         {
             delegate_array temp_targets;
 
@@ -246,10 +246,10 @@ namespace winrt::impl
         using delegate_type = Delegate;
         using storage_type = Delegate;
 
-        template <typename ... Args>
-        void invoke(storage_type const& delegate, Args const& ... args) const
+        template <typename... Args>
+        void invoke(storage_type const& delegate, Args const&... args) const
         {
-            delegate(args ...);
+            delegate(args...);
         }
 
         event_token get_token(storage_type const& delegate) const noexcept
@@ -274,10 +274,10 @@ namespace winrt::impl
         using delegate_type = Delegate;
         using storage_type = agile_ref<Delegate>;
 
-        template <typename ... Args>
-        void invoke(storage_type const& delegate, Args const& ... args) const
+        template <typename... Args>
+        void invoke(storage_type const& delegate, Args const&... args) const
         {
-            delegate.get()(args ...);
+            delegate.get()(args...);
         }
 
         event_token get_token(storage_type const& delegate) const noexcept
@@ -292,10 +292,10 @@ namespace winrt::impl
         using delegate_type = Delegate;
         using storage_type = Delegate;
 
-        template <typename ... Args>
-        void invoke(storage_type const& delegate, Args const& ... args) const
+        template <typename... Args>
+        void invoke(storage_type const& delegate, Args const&... args) const
         {
-            delegate(args ...);
+            delegate(args...);
         }
 
         event_token get_token(storage_type const& delegate) const noexcept

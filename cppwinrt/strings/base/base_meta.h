@@ -52,10 +52,10 @@ namespace winrt::impl
     struct enum_category;
     struct class_category;
 
-    template <typename ... Args>
+    template <typename... Args>
     struct pinterface_category;
 
-    template <typename ... Fields>
+    template <typename... Fields>
     struct struct_category;
 
     template <typename Category, typename T>
@@ -275,8 +275,8 @@ namespace winrt::impl
         }
     };
 
-    template <typename D, typename ... I>
-    struct WINRT_EBO require : require_one<D, I> ...
+    template <typename D, typename... I>
+    struct WINRT_EBO require : require_one<D, I>...
     {};
 
     template <typename D, typename I>
@@ -295,8 +295,8 @@ namespace winrt::impl
         }
     };
 
-    template <typename D, typename ... I>
-    struct WINRT_EBO base : base_one<D, I> ...
+    template <typename D, typename... I>
+    struct WINRT_EBO base : base_one<D, I>...
     {};
 
     template <typename T>
