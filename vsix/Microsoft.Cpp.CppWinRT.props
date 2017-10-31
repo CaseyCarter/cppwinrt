@@ -6,15 +6,21 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-    <PropertyGroup Label="Globals">
-        <CanReferenceWinRT>true</CanReferenceWinRT>
-        <GeneratedFilesDir Condition=" '$(GeneratedFilesDir)' == ''">Generated Files\</GeneratedFilesDir>
+    <PropertyGroup>
+        <CppWinRT Condition="'$(AppContainerApplication)' != 'true' Or '$(CompileAsWinRT)' == 'false'">true</CppWinRT>
+        <CppWinRT Condition="'$(CppWinRT)' == ''">false</CppWinRT>
     </PropertyGroup>
 
-    <ItemDefinitionGroup>
+    <PropertyGroup Condition="$(CppWinRT)">
+        <CanReferenceWinRT>true</CanReferenceWinRT>
+        <GeneratedFilesDir Condition="'$(GeneratedFilesDir)' == ''">Generated Files\</GeneratedFilesDir>
+    </PropertyGroup>
+
+    <ItemDefinitionGroup Condition="$(CppWinRT)">
         <ClCompile>
             <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(GeneratedFilesDir)</AdditionalIncludeDirectories>
-            <LanguageStandard>stdcpp17</LanguageStandard>
+            <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
+            <LanguageStandard Condition="'$(LanguageStandard)' == ''">stdcpp17</LanguageStandard>
         </ClCompile>
     </ItemDefinitionGroup>
 

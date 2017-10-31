@@ -3,11 +3,32 @@
 Copyright (C) Microsoft Corporation. All rights reserved.
 ***********************************************************************************************
 -->
-
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-    <Target Name="CppWinRTCompileInput" AfterTargets="ComputeReferenceCLInput" Inputs="@(ReferencePath)" Outputs="@(ReferencePath->'$(GeneratedFilesDir)winrt\%(Filename).h')">
+    <PropertyGroup Condition="$(CppWinRT)">
+        <ComputeMIDLGeneratedCompileInputsDependsOn>
+            $(ComputeMIDLGeneratedCompileInputsDependsOn);
+            CppWinRTGenerateComponentProjection;
+            CppWinRTMdMergeMidlOutput;
+        </ComputeMIDLGeneratedCompileInputsDependsOn>
+        <CppWinRTMetadataAssembly Condition="'$(CppWinRTMetadataAssembly)' == ''">$(OutDir)$(RootNamespace)_Merged.winmd</CppWinRTMetadataAssembly>
+    </PropertyGroup>
+
+    <Target Name="CppWinRTGenerateReferenceProjection" Condition="$(CppWinRT)" AfterTargets="ComputeReferenceCLInput" Inputs="@(ReferencePath)" Outputs="@(ReferencePath->'$(GeneratedFilesDir)winrt\%(Filename).h')">
         <Exec Command="cppwinrt -v -in @(ReferencePath->'&quot;%(Fullpath)&quot;',' ') -ref $(WindowsTargetPlatformVersion) -out &quot;$(GeneratedFilesDir).&quot;" />
+    </Target>
+
+    <Target Name="CppWinRTGenerateComponentProjection" Condition="$(CppWinRT)" Inputs="@(Midl->'%(OutputDirectory)%(MetadataFileName)')" Outputs="@(Midl->'$(GeneratedFilesDir)winrt\%(Filename).h')">
+        <Exec Command="cppwinrt -v -comp -name $(RootNamespace) -in @(Midl->'&quot;%(OutputDirectory)%(MetadataFileName)&quot;',' ') -ref $(WindowsTargetPlatformVersion) -out &quot;$(GeneratedFilesDir).&quot;"/>
+    </Target>
+
+    <Target Name="CppWinRTMdMergeMidlOutput" Condition="$(CppWinRT) And ('@(Page)' != '' Or '@(ApplicationDefinition)' != '')" Inputs="@(Midl->'%(MetadataFileName)')" Outputs="$(CppWinRTMetadataAssembly)">
+        <ItemGroup>
+            <MetaDataFiles Include="$(WindowsSDK_MetadataPathVersioned)\Windows.Foundation.*\**\*.winmd" />
+        </ItemGroup>
+        <Copy SourceFiles="@(Midl->'%(MetadataFileName)')" DestinationFolder="$(OutDir)Unmerged\" />
+        <Exec Command="mdmerge.exe -v @(MetaDataFiles->'-metadata_dir &quot;%(RelativeDir).&quot;',' ') -o &quot;$(OutDir)Merged&quot; -i &quot;$(OutDir)Unmerged&quot; -partial -n:1" />
+        <Copy SourceFiles="$(OutDir)Merged\$(RootNamespace).winmd" DestinationFiles="$(CppWinRTMetadataAssembly)" />
     </Target>
 
 </Project>
