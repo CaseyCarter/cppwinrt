@@ -61,3 +61,8 @@ static_assert(false, "Please target platform version 10.0.14393.0 or later.");
 #define WINRT_SHIM(Type) (*(abi_t<Type>**)&static_cast<Type const&>(static_cast<D const&>(*this)))
 
 #undef GetCurrentTime
+
+#ifndef WINRT_EXTERNAL_CATCH_CLAUSE
+#define WINRT_EXTERNAL_CATCH_CLAUSE
+#pragma detect_mismatch("WINRT_EXTERNAL_CATCH_CLAUSE", "")
+#endif
