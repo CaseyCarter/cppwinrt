@@ -972,11 +972,11 @@ namespace cppwinrt
             out.write('>');
         }
 
-        void write_class_base(output& out, meta::type const& type, bool reference_only, std::string_view name)
+        void write_class_base(output& out, meta::type const& type, bool external_only, std::string_view name)
         {
             meta::type const* base = type.token.get_base_type();
 
-            if (!base || (reference_only && !base->is_reference))
+            if (!base || (external_only && !base->is_external()))
             {
                 return;
             }
@@ -985,7 +985,7 @@ namespace cppwinrt
                 name,
                 base->full_name());
 
-            for (meta::type const* next = base->token.get_base_type(); next && (!reference_only || next->is_reference); next = next->token.get_base_type())
+            for (meta::type const* next = base->token.get_base_type(); next && (!external_only || next->is_external()); next = next->token.get_base_type())
             {
                 out.write(", @", next->full_name());
             }
@@ -1886,7 +1886,7 @@ namespace cppwinrt
             meta::type const* base_type = type.token.get_base_type();
             if (base_type)
             {
-                if (base_type->is_reference)
+                if (base_type->is_external())
                 {
                     inner_type = base_type->token;
                     composable_base_name = "using composable_base = " + std::string(base_type->full_name()) + ";";
@@ -1903,7 +1903,7 @@ namespace cppwinrt
             std::vector<meta::required> const fallback_overrides = type.token.get_component_class_override_fallbacks();
 
             std::string module_lock;
-            if (!base_type || base_type->is_reference)
+            if (!base_type || base_type->is_external())
             {
                 module_lock = "impl::module_lock, ";
             }

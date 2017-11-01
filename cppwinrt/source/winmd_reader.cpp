@@ -369,7 +369,7 @@ namespace cppwinrt::meta
         enum class base_filter
         {
             all,
-            reference_only,
+            external_only,
             none,
         };
 
@@ -455,7 +455,7 @@ namespace cppwinrt::meta
             if (base_interfaces != interface_filter::none && base_types != base_filter::none)
             {
                 for (type const* base = class_token.get_base_type();
-                    base && !(base_types == base_filter::reference_only && !base->is_reference);
+                    base && !(base_types == base_filter::external_only && !base->is_external());
                     base = base->token.get_base_type())
                 {
                     append_required(values, base->token, {}, base_interfaces);
@@ -1469,7 +1469,7 @@ namespace cppwinrt::meta
 
     std::vector<required> token::get_component_class_override_fallbacks() const
     {
-        return get_class_required_impl(*this, interface_filter::none, interface_filter::overridable, base_filter::reference_only);
+        return get_class_required_impl(*this, interface_filter::none, interface_filter::overridable, base_filter::external_only);
     }
 
     generator<using_pair> token::get_interface_usings() const
@@ -1952,7 +1952,7 @@ namespace cppwinrt::meta
 
     std::vector<required> token::get_component_class_generated_interfaces() const
     {
-        return get_class_required_impl(*this, interface_filter::all, interface_filter::overridable, base_filter::reference_only);
+        return get_class_required_impl(*this, interface_filter::all, interface_filter::overridable, base_filter::external_only);
     }
 
     std::vector<required> token::get_component_class_interfaces() const
@@ -1962,7 +1962,7 @@ namespace cppwinrt::meta
 
     std::vector<required> token::get_component_class_generated_required() const
     {
-        return get_class_required_impl(*this, interface_filter::none, interface_filter::non_overridable, base_filter::reference_only);
+        return get_class_required_impl(*this, interface_filter::none, interface_filter::non_overridable, base_filter::external_only);
     }
 
     std::vector<required> token::get_class_required_excluding_default() const
@@ -2103,6 +2103,11 @@ namespace cppwinrt::meta
         }
 
         return false;
+    }
+
+    bool type::is_external() const
+    {
+        return is_reference || !is_filtered();
     }
 
     type::type(std::string&& name, meta::token token, bool const reference) :
