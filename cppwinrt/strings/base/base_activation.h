@@ -111,8 +111,6 @@ namespace winrt::impl
             {
 #ifdef WINRT_DIAGNOSTICS
                 get_diagnostics_info().non_agile_factory<Class>();
-#else
-                WINRT_TRACE("Warning non-agile factory: %ls\n", name_v<Class>);
 #endif
                 return factory;
             }

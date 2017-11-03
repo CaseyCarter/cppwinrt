@@ -212,8 +212,6 @@ WINRT_EXPORT namespace winrt
 
         HRESULT to_abi() const noexcept
         {
-            WINRT_TRACE("winrt::hresult_error (0x%8X) %ls\n", code(), message().c_str());
-
             if (m_info)
             {
                 WINRT_SetRestrictedErrorInfo(m_info.get());
