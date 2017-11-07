@@ -11,7 +11,7 @@ using namespace Windows::Foundation;
 // These are some basic implementations of runtime classes used for testing event consumption.
 //
 
-struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference, abi_t<impl::IWeakReference>>
+struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference, impl::abi_t<impl::IWeakReference>>
 {
     IInspectable m_reference; // not actually a weak reference! :)
 
@@ -20,13 +20,13 @@ struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference,
     {
     }
 
-    HRESULT __stdcall Resolve(const GUID & iid, ::IUnknown** objectReference) override
+    HRESULT __stdcall Resolve(const GUID & iid, void** objectReference) override
     {
-        return get_abi(m_reference)->QueryInterface(iid, reinterpret_cast<void **>(objectReference));
+        return get_abi(m_reference)->QueryInterface(iid, objectReference);
     }
 };
 
-struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, abi_t<impl::IWeakReferenceSource>>
+struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, impl::abi_t<impl::IWeakReferenceSource>>
 {
     operator SplashScreen() const noexcept
     {
@@ -116,7 +116,7 @@ struct TestClipboard
     static ContentChanged_revoker ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Foundation::IInspectable> & changeHandler)
     {
         auto factory = GetStatics();
-        return{ factory, &abi_t<Windows::ApplicationModel::DataTransfer::IClipboardStatics>::remove_ContentChanged, factory.ContentChanged(changeHandler) };
+        return{ factory, &impl::abi_t<Windows::ApplicationModel::DataTransfer::IClipboardStatics>::remove_ContentChanged, factory.ContentChanged(changeHandler) };
     }
 
     static void ContentChanged(event_token token)

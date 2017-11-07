@@ -198,7 +198,7 @@ WINRT_EXPORT namespace winrt
                 nullptr,
                 m_code,
                 MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-                reinterpret_cast<wchar_t*>(put_abi(message)),
+                reinterpret_cast<wchar_t*>(message.put()),
                 0,
                 nullptr);
 

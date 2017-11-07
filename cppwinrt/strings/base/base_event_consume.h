@@ -22,7 +22,7 @@ WINRT_EXPORT namespace winrt
     template <typename I>
     struct event_revoker
     {
-        using method_type = HRESULT(__stdcall abi_t<I>::*)(event_token);
+        using method_type = HRESULT(__stdcall impl::abi_t<I>::*)(event_token);
 
         event_revoker() noexcept = default;
         event_revoker(event_revoker const&) = delete;
@@ -50,7 +50,7 @@ WINRT_EXPORT namespace winrt
 
             if (I object = m_object.get())
             {
-                ((*reinterpret_cast<abi_t<I>**>(&object))->*(m_method))(m_token);
+                ((*reinterpret_cast<impl::abi_t<I>**>(&object))->*(m_method))(m_token);
             }
 
             m_object = nullptr;
@@ -71,7 +71,7 @@ WINRT_EXPORT namespace winrt
     template <typename I>
     struct factory_event_revoker
     {
-        using method_type = HRESULT(__stdcall abi_t<I>::*)(event_token);
+        using method_type = HRESULT(__stdcall impl::abi_t<I>::*)(event_token);
 
         factory_event_revoker() noexcept = default;
         factory_event_revoker(factory_event_revoker const&) = delete;
@@ -97,7 +97,7 @@ WINRT_EXPORT namespace winrt
                 return;
             }
 
-            ((*reinterpret_cast<abi_t<I>**>(&m_object))->*(m_method))(m_token);
+            ((*reinterpret_cast<impl::abi_t<I>**>(&m_object))->*(m_method))(m_token);
             m_object = nullptr;
         }
 

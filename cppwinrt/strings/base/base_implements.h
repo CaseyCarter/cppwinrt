@@ -200,13 +200,13 @@ WINRT_EXPORT namespace winrt
     }
 
     template <typename I, typename D, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, I>>* = nullptr>
-    abi_t<I>* to_abi(impl::producer<D, I> const* from) noexcept
+    impl::abi_t<I>* to_abi(impl::producer<D, I> const* from) noexcept
     {
-        return reinterpret_cast<abi_t<I>*>(const_cast<impl::producer<D, I>*>(from));
+        return reinterpret_cast<impl::abi_t<I>*>(const_cast<impl::producer<D, I>*>(from));
     }
 
     template <typename I, typename D, std::enable_if_t<std::is_base_of_v< ::IUnknown, I>>* = nullptr>
-    abi_t<I>* to_abi(impl::producer<D, I> const* from) noexcept
+    impl::abi_t<I>* to_abi(impl::producer<D, I> const* from) noexcept
     {
         return const_cast<impl::producer<D, I>*>(from);
     }
@@ -464,7 +464,7 @@ namespace winrt::impl
             return target;
         }
 
-        HRESULT __stdcall Resolve(GUID const& id, ::IUnknown** objectReference) noexcept override
+        HRESULT __stdcall Resolve(GUID const& id, void** objectReference) noexcept override
         {
             uint32_t target = m_strong.load(std::memory_order_relaxed);
 
@@ -478,7 +478,7 @@ namespace winrt::impl
 
                 if (m_strong.compare_exchange_weak(target, target + 1, std::memory_order_acquire, std::memory_order_relaxed))
                 {
-                    HRESULT hr = m_object->QueryInterface(id, reinterpret_cast<void**>(objectReference));
+                    HRESULT hr = m_object->QueryInterface(id, objectReference);
                     m_strong.fetch_sub(1, std::memory_order_relaxed);
                     return hr;
                 }
@@ -1063,7 +1063,7 @@ WINRT_EXPORT namespace winrt
         template <typename First, typename... Rest>
         ::IInspectable* find_inspectable() const noexcept
         {
-            if constexpr (std::is_base_of_v<::IInspectable, abi_t<First>>)
+            if constexpr (std::is_base_of_v<::IInspectable, impl::abi_t<First>>)
             {
                 return to_abi<First>(this);
             }

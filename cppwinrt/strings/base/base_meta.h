@@ -202,9 +202,6 @@ constexpr auto operator^=(T& left, T const right) noexcept -> std::enable_if_t<w
 WINRT_EXPORT namespace winrt
 {
     template <typename T>
-    using abi_t = impl::abi_t<T>;
-
-    template <typename T>
     inline constexpr GUID const& guid_of() noexcept
     {
 #ifdef __clang__

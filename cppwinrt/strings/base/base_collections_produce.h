@@ -84,7 +84,7 @@ namespace winrt::impl
             try
             {
                 typename D::abi_guard guard(this->shim());
-                *actual = this->shim().GetMany({ reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity });
+                *actual = this->shim().GetMany(array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
                 return S_OK;
             }
             catch (...)
@@ -200,7 +200,7 @@ namespace winrt::impl
             try
             {
                 typename D::abi_guard guard(this->shim());
-                *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity });
+                *actual = this->shim().GetMany(startIndex, array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
                 return S_OK;
             }
             catch (...)
@@ -244,7 +244,7 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall GetView(::IUnknown** view) noexcept final
+        HRESULT __stdcall GetView(void** view) noexcept final
         {
             try
             {
@@ -362,7 +362,7 @@ namespace winrt::impl
             try
             {
                 typename D::abi_guard guard(this->shim());
-                *actual = this->shim().GetMany(startIndex, { reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity });
+                *actual = this->shim().GetMany(startIndex, array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
                 return S_OK;
             }
             catch (...)
@@ -378,7 +378,7 @@ namespace winrt::impl
             try
             {
                 typename D::abi_guard guard(this->shim());
-                this->shim().ReplaceAll({ reinterpret_cast<T const*>(item), reinterpret_cast<T const*>(item) + count });
+                this->shim().ReplaceAll(array_view<T const>(reinterpret_cast<T const*>(item), reinterpret_cast<T const*>(item) + count));
                 return S_OK;
             }
             catch (...)
@@ -591,7 +591,7 @@ namespace winrt::impl
     template <typename D, typename K, typename V>
     struct produce<D, wfc::IObservableMap<K, V>> : produce_base<D, wfc::IObservableMap<K, V>>
     {
-        HRESULT __stdcall add_MapChanged(arg_in<wfc::MapChangedEventHandler<K, V>> handler, event_token* token) noexcept final
+        HRESULT __stdcall add_MapChanged(void* handler, event_token* token) noexcept final
         {
             try
             {
@@ -623,7 +623,7 @@ namespace winrt::impl
     template <typename D, typename T>
     struct produce<D, wfc::IObservableVector<T>> : produce_base<D, wfc::IObservableVector<T>>
     {
-        HRESULT __stdcall add_VectorChanged(arg_in<wfc::VectorChangedEventHandler<T>> handler, event_token* token) noexcept final
+        HRESULT __stdcall add_VectorChanged(void* handler, event_token* token) noexcept final
         {
             try
             {

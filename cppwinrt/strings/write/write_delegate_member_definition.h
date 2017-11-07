@@ -13,5 +13,5 @@ template <typename O, typename M> %::%(O* object, M method) :
 
 inline @ %::operator()(%) const
 {%
-    check_hresult((*(abi_t<%>**)this)->Invoke(%));%
+    check_hresult((*(impl::abi_t<%>**)this)->Invoke(%));%
 }

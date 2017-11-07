@@ -107,22 +107,6 @@ TEST_CASE("com_ptr, Windows::Foundation::IUnknown")
 }
 
 //
-// Tests interop with the IUnknown defined by the Windows SDK.
-//
-TEST_CASE("com_ptr, ::IUnknown interop")
-{
-    IStringable stringable = make<Stringable>(L"Hello world!");
-
-    com_ptr<::IUnknown> a = stringable.as<::IUnknown>();
-
-    com_ptr<Windows::Foundation::IUnknown> b = a.as<abi_t<Windows::Foundation::IUnknown>>();
-
-    stringable = b.as<IStringable>();
-
-    REQUIRE(stringable.ToString() == L"Hello world!");
-}
-
-//
 // Test the convertible constructor and convertible assignment.
 //
 TEST_CASE("convertible")

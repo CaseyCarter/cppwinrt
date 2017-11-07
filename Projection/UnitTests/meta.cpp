@@ -16,7 +16,7 @@ static_assert(std::is_same_v<get_abi_t<int>, int>, "fail");
 static_assert(std::is_same_v<put_abi_t<int>, int *>, "fail");
 
 static_assert(std::is_same_v<get_abi_t<IUriRuntimeClass>, ::IUnknown *>, "fail");
-static_assert(std::is_same_v<put_abi_t<IUriRuntimeClass>, ::IUnknown **>, "fail");
+static_assert(std::is_same_v<put_abi_t<IUriRuntimeClass>, void**>, "fail");
 
 namespace
 {

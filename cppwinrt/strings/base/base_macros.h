@@ -64,5 +64,7 @@ static_assert(false, "Please target platform version 10.0.14393.0 or later.");
 
 #ifndef WINRT_EXTERNAL_CATCH_CLAUSE
 #define WINRT_EXTERNAL_CATCH_CLAUSE
+#ifndef __clang__
 #pragma detect_mismatch("WINRT_EXTERNAL_CATCH_CLAUSE", "")
+#endif
 #endif

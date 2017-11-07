@@ -38,7 +38,7 @@ TEST_CASE("marshal agile")
     com_ptr<IStream> stream;
     check_hresult(CoMarshalInterThreadInterfaceInStream(guid_of<IStringable>(), get_abi(agile), put_abi(stream)));
     IStringable copy;
-    check_hresult(CoUnmarshalInterface(get_abi(stream), guid_of<IStringable>(), reinterpret_cast<void **>(put_abi(copy))));
+    check_hresult(CoUnmarshalInterface(get_abi(stream), guid_of<IStringable>(), put_abi(copy)));
 
     REQUIRE(copy.ToString() == L"Agile");
 }
@@ -53,8 +53,8 @@ TEST_CASE("marshal non-agile")
 TEST_CASE("marshal agile weak-ref")
 {
     IStringable agile = make<Agile>();
-    com_ptr<abi_t<impl::IWeakReferenceSource>> source = agile.as<abi_t<impl::IWeakReferenceSource>>();
-    com_ptr<abi_t<impl::IWeakReference>> ref;
+    com_ptr<impl::IWeakReferenceSource> source = agile.as<impl::IWeakReferenceSource>();
+    com_ptr<impl::IWeakReference> ref;
     check_hresult(source->GetWeakReference(put_abi(ref)));
 
     WINRT_ASSERT(ref.as<IAgileObject>());
@@ -62,8 +62,8 @@ TEST_CASE("marshal agile weak-ref")
 
     com_ptr<IStream> stream;
     check_hresult(CoMarshalInterThreadInterfaceInStream(guid_of<impl::IWeakReference>(), get_abi(ref), put_abi(stream)));
-    com_ptr<abi_t<impl::IWeakReference>> ref_copy;
-    check_hresult(CoUnmarshalInterface(get_abi(stream), guid_of<impl::IWeakReference>(), reinterpret_cast<void **>(put_abi(ref_copy))));
+    com_ptr<impl::IWeakReference> ref_copy;
+    check_hresult(CoUnmarshalInterface(get_abi(stream), guid_of<impl::IWeakReference>(), ref_copy.put_void()));
 
     IStringable copy;
     check_hresult(ref_copy->Resolve(guid_of<IStringable>(), put_abi(copy)));
@@ -74,8 +74,8 @@ TEST_CASE("marshal agile weak-ref")
 TEST_CASE("marshal non-agile weak-ref")
 {
     IStringable non = make<NonAgile>();
-    com_ptr<abi_t<impl::IWeakReferenceSource>> source = non.as<abi_t<impl::IWeakReferenceSource>>();
-    com_ptr<abi_t<impl::IWeakReference>> ref;
+    com_ptr<impl::IWeakReferenceSource> source = non.as<impl::IWeakReferenceSource>();
+    com_ptr<impl::IWeakReference> ref;
     check_hresult(source->GetWeakReference(put_abi(ref)));
 
     WINRT_ASSERT(!ref.try_as<IAgileObject>());

@@ -420,7 +420,7 @@ namespace winrt::impl
     {
         struct __declspec(novtable) type : ::IUnknown
         {
-            virtual HRESULT __stdcall Invoke(::IUnknown* sender, ::IUnknown* args) = 0;
+            virtual HRESULT __stdcall Invoke(void* sender, void* args) = 0;
         };
     };
 
@@ -432,7 +432,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<wfc::VectorChangedEventHandler<T>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, ::IUnknown* args) noexcept final
+            HRESULT __stdcall Invoke(void* sender, void* args) noexcept final
             {
                 try
                 {
@@ -449,7 +449,7 @@ namespace winrt::impl
     {
         struct __declspec(novtable) type : ::IUnknown
         {
-            virtual HRESULT __stdcall Invoke(::IUnknown* sender, ::IUnknown* args) = 0;
+            virtual HRESULT __stdcall Invoke(void* sender, void* args) = 0;
         };
     };
 
@@ -461,7 +461,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<wfc::MapChangedEventHandler<K, V>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, ::IUnknown* args) noexcept final
+            HRESULT __stdcall Invoke(void* sender, void* args) noexcept final
             {
                 try
                 {
@@ -496,7 +496,7 @@ namespace winrt::impl
     {
         struct __declspec(novtable) type : ::IInspectable
         {
-            virtual HRESULT __stdcall First(::IUnknown** first) = 0;
+            virtual HRESULT __stdcall First(void** first) = 0;
         };
     };
 
@@ -531,7 +531,7 @@ namespace winrt::impl
         {
             virtual HRESULT __stdcall GetAt(uint32_t index, arg_out<T> item) = 0;
             virtual HRESULT __stdcall get_Size(uint32_t* size) = 0;
-            virtual HRESULT __stdcall GetView(::IUnknown** view) = 0;
+            virtual HRESULT __stdcall GetView(void** view) = 0;
             virtual HRESULT __stdcall IndexOf(arg_in<T> value, uint32_t* index, bool* found) = 0;
             virtual HRESULT __stdcall SetAt(uint32_t index, arg_in<T> item) = 0;
             virtual HRESULT __stdcall InsertAt(uint32_t index, arg_in<T> item) = 0;
@@ -555,7 +555,7 @@ namespace winrt::impl
     {
         struct __declspec(novtable) type : ::IInspectable
         {
-            virtual HRESULT __stdcall add_VectorChanged(::IUnknown* handler, event_token*  token) = 0;
+            virtual HRESULT __stdcall add_VectorChanged(void* handler, event_token*  token) = 0;
             virtual HRESULT __stdcall remove_VectorChanged(event_token token) = 0;
         };
     };
@@ -590,7 +590,7 @@ namespace winrt::impl
             virtual HRESULT __stdcall Lookup(arg_in<K> key, arg_out<V> value) = 0;
             virtual HRESULT __stdcall get_Size(uint32_t* size) = 0;
             virtual HRESULT __stdcall HasKey(arg_in<K> key, bool* found) = 0;
-            virtual HRESULT __stdcall Split(::IUnknown** firstPartition, ::IUnknown** secondPartition) = 0;
+            virtual HRESULT __stdcall Split(void** firstPartition, void** secondPartition) = 0;
         };
     };
 
@@ -608,7 +608,7 @@ namespace winrt::impl
             virtual HRESULT __stdcall Lookup(arg_in<K> key, arg_out<V> value) = 0;
             virtual HRESULT __stdcall get_Size(uint32_t* size) = 0;
             virtual HRESULT __stdcall HasKey(arg_in<K> key, bool* found) = 0;
-            virtual HRESULT __stdcall GetView(::IUnknown** view) = 0;
+            virtual HRESULT __stdcall GetView(void** view) = 0;
             virtual HRESULT __stdcall Insert(arg_in<K> key, arg_in<V> value, bool* replaced) = 0;
             virtual HRESULT __stdcall Remove(arg_in<K> key) = 0;
             virtual HRESULT __stdcall Clear() = 0;
@@ -626,7 +626,7 @@ namespace winrt::impl
     {
         struct __declspec(novtable) type : ::IInspectable
         {
-            virtual HRESULT __stdcall add_MapChanged(::IUnknown* handler, event_token* token) = 0;
+            virtual HRESULT __stdcall add_MapChanged(void* handler, event_token* token) = 0;
             virtual HRESULT __stdcall remove_MapChanged(event_token token) = 0;
         };
     };
@@ -1006,7 +1006,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
 
         void operator()(IObservableVector<T> const& sender, IVectorChangedEventArgs const& args) const
         {
-            check_hresult((*(abi_t<VectorChangedEventHandler<T>>**)this)->Invoke(get_abi(sender), get_abi(args)));
+            check_hresult((*(impl::abi_t<VectorChangedEventHandler<T>>**)this)->Invoke(get_abi(sender), get_abi(args)));
         }
     };
 
@@ -1030,7 +1030,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
 
         void operator()(IObservableMap<K, V> const& sender, IMapChangedEventArgs<K> const& args) const
         {
-            check_hresult((*(abi_t<MapChangedEventHandler<K, V>>**)this)->Invoke(get_abi(sender), get_abi(args)));
+            check_hresult((*(impl::abi_t<MapChangedEventHandler<K, V>>**)this)->Invoke(get_abi(sender), get_abi(args)));
         }
     };
 

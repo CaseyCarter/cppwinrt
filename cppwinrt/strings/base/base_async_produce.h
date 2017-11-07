@@ -4,7 +4,7 @@ namespace winrt::impl
     template <typename D>
     struct produce<D, Windows::Foundation::IAsyncAction> : produce_base<D, Windows::Foundation::IAsyncAction>
     {
-        HRESULT __stdcall put_Completed(::IUnknown* handler) noexcept final
+        HRESULT __stdcall put_Completed(void* handler) noexcept final
         {
             try
             {
@@ -18,7 +18,7 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall get_Completed(::IUnknown** handler) noexcept final
+        HRESULT __stdcall get_Completed(void** handler) noexcept final
         {
             try
             {
@@ -125,7 +125,7 @@ namespace winrt::impl
     template <typename D, typename TProgress>
     struct produce<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>> : produce_base<D, Windows::Foundation::IAsyncActionWithProgress<TProgress>>
     {
-        HRESULT __stdcall put_Progress(::IUnknown* handler) noexcept final
+        HRESULT __stdcall put_Progress(void* handler) noexcept final
         {
             try
             {
@@ -139,7 +139,7 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall get_Progress(::IUnknown** handler) noexcept final
+        HRESULT __stdcall get_Progress(void** handler) noexcept final
         {
             try
             {
@@ -154,7 +154,7 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall put_Completed(::IUnknown* handler) noexcept final
+        HRESULT __stdcall put_Completed(void* handler) noexcept final
         {
             try
             {
@@ -168,7 +168,7 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall get_Completed(::IUnknown** handler) noexcept final
+        HRESULT __stdcall get_Completed(void** handler) noexcept final
         {
             try
             {
@@ -201,7 +201,7 @@ namespace winrt::impl
     template <typename D, typename TResult>
     struct produce<D, Windows::Foundation::IAsyncOperation<TResult>> : produce_base<D, Windows::Foundation::IAsyncOperation<TResult>>
     {
-        HRESULT __stdcall put_Completed(::IUnknown* handler) noexcept final
+        HRESULT __stdcall put_Completed(void* handler) noexcept final
         {
             try
             {
@@ -215,7 +215,7 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall get_Completed(::IUnknown** handler) noexcept final
+        HRESULT __stdcall get_Completed(void** handler) noexcept final
         {
             try
             {
@@ -249,7 +249,7 @@ namespace winrt::impl
     template <typename D, typename TResult, typename TProgress>
     struct produce<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>> : produce_base<D, Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
     {
-        HRESULT __stdcall put_Progress(::IUnknown* handler) noexcept final
+        HRESULT __stdcall put_Progress(void* handler) noexcept final
         {
             try
             {
@@ -263,7 +263,7 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall get_Progress(::IUnknown** handler) noexcept final
+        HRESULT __stdcall get_Progress(void** handler) noexcept final
         {
             try
             {
@@ -278,7 +278,7 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall put_Completed(::IUnknown* handler) noexcept final
+        HRESULT __stdcall put_Completed(void* handler) noexcept final
         {
             try
             {
@@ -292,7 +292,7 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall get_Completed(::IUnknown** handler) noexcept final
+        HRESULT __stdcall get_Completed(void** handler) noexcept final
         {
             try
             {

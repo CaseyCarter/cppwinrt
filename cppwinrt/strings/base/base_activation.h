@@ -12,7 +12,7 @@ namespace winrt::impl
     template <typename D>
     struct produce<D, Windows::Foundation::IActivationFactory> : produce_base<D, Windows::Foundation::IActivationFactory>
     {
-        HRESULT __stdcall ActivateInstance(::IUnknown** instance) noexcept final
+        HRESULT __stdcall ActivateInstance(void** instance) noexcept final
         {
             try
             {

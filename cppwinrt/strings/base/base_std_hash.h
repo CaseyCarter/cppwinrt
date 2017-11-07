@@ -25,7 +25,7 @@ namespace winrt::impl
         ::IUnknown* abi_value = nullptr;
         if (value)
         {
-            abi_value = get_abi(value.as<Windows::Foundation::IUnknown>());
+            abi_value = get_abi(value.try_as<Windows::Foundation::IUnknown>());
         }
         return std::hash<::IUnknown*>{}(abi_value);
     }

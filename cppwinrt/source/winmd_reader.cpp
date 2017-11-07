@@ -865,7 +865,7 @@ namespace cppwinrt::meta
 
         if (category == ELEMENT_TYPE_CLASS || category == ELEMENT_TYPE_GENERICINST || category == ELEMENT_TYPE_OBJECT)
         {
-            return "::IUnknown*";
+            return "void*";
         }
 
         WINRT_ASSERT(category == ELEMENT_TYPE_VALUETYPE);

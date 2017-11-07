@@ -698,4 +698,18 @@ TEST_CASE("delegate,MapChangedEventHandler")
     }
 }
 
+TEST_CASE("delegate,collection")
+{
+    //
+    // Mostly a compiliation test to ensure that we can create collections of delegates. This is a rare corner case that was 
+    // previously not working.
+    //
+
+    IVector<EventHandler<int>> v = single_threaded_vector<EventHandler<int>>();
+
+    std::array<EventHandler<int>, 10> a;
+
+    REQUIRE(0 == v.GetMany(0, a));
+}
+
 WINRT_WARNING_POP

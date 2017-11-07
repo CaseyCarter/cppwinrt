@@ -144,7 +144,7 @@ TEST_CASE("handle, swap")
 
     REQUIRE(a);
     REQUIRE(b);
-    REQUIRE(a != b);
+    REQUIRE(a.get() != b.get());
 
     HANDLE ga = a.get();
     HANDLE gb = b.get();
@@ -153,34 +153,8 @@ TEST_CASE("handle, swap")
 
     REQUIRE(a);
     REQUIRE(b);
-    REQUIRE(a != b);
+    REQUIRE(a.get() != b.get());
 
     REQUIRE(gb == a.get());
     REQUIRE(ga == b.get());
-}
-
-TEST_CASE("handle, compare")
-{
-    impl::handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
-    impl::handle<test_event_traits> b = CreateEvent(nullptr, true, true, nullptr);
-
-    if (a > b)
-    {
-        swap(a, b);
-    }
-
-    REQUIRE(!(a == b));
-    REQUIRE(a != b);
-
-    REQUIRE(a < b);
-    REQUIRE(!(b < a));
-
-    REQUIRE(b > a);
-    REQUIRE(!(a > b));
-
-    REQUIRE(a <= b);
-    REQUIRE(!(b <= a));
-
-    REQUIRE(b >= a);
-    REQUIRE(!(a >= b));
 }

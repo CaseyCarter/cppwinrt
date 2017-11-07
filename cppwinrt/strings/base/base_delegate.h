@@ -16,7 +16,7 @@ namespace winrt::impl
         {
             if (id == guid_of<T>() || id == guid_of<Windows::Foundation::IUnknown>() || id == guid_of<IAgileObject>())
             {
-                *result = static_cast<winrt::abi_t<T>*>(this);
+                *result = static_cast<abi_t<T>*>(this);
                 AddRef();
                 return S_OK;
             }
@@ -67,7 +67,7 @@ namespace winrt::impl
     {
         struct __declspec(novtable) type : ::IUnknown
         {
-            virtual HRESULT __stdcall Invoke(::IUnknown* sender, arg_in<T> args) = 0;
+            virtual HRESULT __stdcall Invoke(void* sender, arg_in<T> args) = 0;
         };
     };
 
@@ -79,7 +79,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::EventHandler<T>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, arg_in<T> args) noexcept final
+            HRESULT __stdcall Invoke(void* sender, arg_in<T> args) noexcept final
             {
                 try
                 {
@@ -182,7 +182,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         void operator()(IInspectable const& sender, T const& args) const
         {
-            check_hresult((*(abi_t<EventHandler<T>>**)this)->Invoke(get_abi(sender), get_abi(args)));
+            check_hresult((*(impl::abi_t<EventHandler<T>>**)this)->Invoke(get_abi(sender), get_abi(args)));
         }
     };
 
@@ -206,7 +206,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         void operator()(TSender const& sender, TArgs const& args) const
         {
-            check_hresult((*(abi_t<TypedEventHandler<TSender, TArgs>>**)this)->Invoke(get_abi(sender), get_abi(args)));
+            check_hresult((*(impl::abi_t<TypedEventHandler<TSender, TArgs>>**)this)->Invoke(get_abi(sender), get_abi(args)));
         }
     };
 }

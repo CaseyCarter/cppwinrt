@@ -21,7 +21,7 @@ namespace winrt::impl
     {
         struct __declspec(uuid("00000035-0000-0000-C000-000000000046")) __declspec(novtable) type : ::IInspectable
         {
-            virtual HRESULT __stdcall ActivateInstance(::IUnknown** instance) = 0;
+            virtual HRESULT __stdcall ActivateInstance(void** instance) = 0;
         };
     };
 
@@ -238,9 +238,9 @@ namespace winrt::impl
             return *(::IUnknown**)(&object);
         }
 
-        static ::IUnknown** put(T& object) noexcept
+        static void** put(T& object) noexcept
         {
-            return reinterpret_cast<::IUnknown**>(&object);
+            return reinterpret_cast<void**>(&object);
         }
 
         static void attach(T& object, ::IUnknown* value) noexcept
@@ -293,7 +293,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         {
             return false;
         }
-        return get_abi(left.as<IUnknown>()) == get_abi(right.as<IUnknown>());
+        return get_abi(left.try_as<IUnknown>()) == get_abi(right.try_as<IUnknown>());
     }
 
     inline bool operator!=(IUnknown const& left, IUnknown const& right) noexcept
@@ -311,7 +311,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         {
             return get_abi(left) < get_abi(right);
         }
-        return get_abi(left.as<IUnknown>()) < get_abi(right.as<IUnknown>());
+        return get_abi(left.try_as<IUnknown>()) < get_abi(right.try_as<IUnknown>());
     }
 
     inline bool operator>(IUnknown const& left, IUnknown const& right) noexcept
@@ -367,17 +367,19 @@ namespace winrt::impl
     struct arg
     {
         using in = abi_t<T>;
+        using out = in*;
     };
 
     template <typename T>
     struct arg<T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
     {
         using in = ::IUnknown*;
+        using out = void**;
     };
 
     template <typename T>
     using arg_in = typename arg<T>::in;
 
     template <typename T>
-    using arg_out = arg_in<T>*;
+    using arg_out = typename arg<T>::out;
 }

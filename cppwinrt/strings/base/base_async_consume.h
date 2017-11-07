@@ -114,7 +114,7 @@ namespace winrt::impl
     {
         struct type : ::IUnknown
         {
-            virtual HRESULT __stdcall Invoke(::IUnknown* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) = 0;
         };
     };
 
@@ -123,7 +123,7 @@ namespace winrt::impl
     {
         struct type : ::IUnknown
         {
-            virtual HRESULT __stdcall Invoke(::IUnknown* asyncInfo, Windows::Foundation::AsyncStatus status) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) = 0;
         };
     };
 
@@ -132,7 +132,7 @@ namespace winrt::impl
     {
         struct type : ::IUnknown
         {
-            virtual HRESULT __stdcall Invoke(::IUnknown* asyncInfo, arg_in<TProgress> progressInfo) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, arg_in<TProgress> progressInfo) = 0;
         };
     };
 
@@ -141,7 +141,7 @@ namespace winrt::impl
     {
         struct type : ::IUnknown
         {
-            virtual HRESULT __stdcall Invoke(::IUnknown* asyncInfo, Windows::Foundation::AsyncStatus status) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) = 0;
         };
     };
 
@@ -150,7 +150,7 @@ namespace winrt::impl
     {
         struct type : ::IUnknown
         {
-            virtual HRESULT __stdcall Invoke(::IUnknown* asyncInfo, arg_in<TProgress> progressInfo) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, arg_in<TProgress> progressInfo) = 0;
         };
     };
 
@@ -159,7 +159,7 @@ namespace winrt::impl
     {
         struct type : ::IUnknown
         {
-            virtual HRESULT __stdcall Invoke(::IUnknown* asyncInfo, Windows::Foundation::AsyncStatus status) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) = 0;
         };
     };
 
@@ -187,8 +187,8 @@ namespace winrt::impl
     {
         struct type : ::IInspectable
         {
-            virtual HRESULT __stdcall put_Completed(::IUnknown* handler) = 0;
-            virtual HRESULT __stdcall get_Completed(::IUnknown** handler) = 0;
+            virtual HRESULT __stdcall put_Completed(void* handler) = 0;
+            virtual HRESULT __stdcall get_Completed(void** handler) = 0;
             virtual HRESULT __stdcall GetResults() = 0;
         };
     };
@@ -207,7 +207,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionCompletedHandler, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept final
+            HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept final
             {
                 try
                 {
@@ -230,7 +230,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationCompletedHandler<TResult>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, Windows::Foundation::AsyncStatus args) noexcept final
+            HRESULT __stdcall Invoke(void* sender, Windows::Foundation::AsyncStatus args) noexcept final
             {
                 try
                 {
@@ -250,7 +250,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionProgressHandler<TProgress>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, arg_in<TProgress> args) noexcept final
+            HRESULT __stdcall Invoke(void* sender, arg_in<TProgress> args) noexcept final
             {
                 try
                 {
@@ -270,7 +270,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, Windows::Foundation::AsyncStatus args) noexcept final
+            HRESULT __stdcall Invoke(void* sender, Windows::Foundation::AsyncStatus args) noexcept final
             {
                 try
                 {
@@ -290,7 +290,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, arg_in<TProgress> args) noexcept final
+            HRESULT __stdcall Invoke(void* sender, arg_in<TProgress> args) noexcept final
             {
                 try
                 {
@@ -310,7 +310,7 @@ namespace winrt::impl
         {
             type(H&& handler) : implements_delegate<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>, H>(std::forward<H>(handler)) {}
 
-            HRESULT __stdcall Invoke(::IUnknown* sender, Windows::Foundation::AsyncStatus args) noexcept final
+            HRESULT __stdcall Invoke(void* sender, Windows::Foundation::AsyncStatus args) noexcept final
             {
                 try
                 {
@@ -327,8 +327,8 @@ namespace winrt::impl
     {
         struct __declspec(novtable) type : ::IInspectable
         {
-            virtual HRESULT __stdcall put_Completed(::IUnknown* handler) = 0;
-            virtual HRESULT __stdcall get_Completed(::IUnknown** handler) = 0;
+            virtual HRESULT __stdcall put_Completed(void* handler) = 0;
+            virtual HRESULT __stdcall get_Completed(void** handler) = 0;
             virtual HRESULT __stdcall GetResults(arg_out<TResult> results) = 0;
         };
     };
@@ -344,10 +344,10 @@ namespace winrt::impl
     {
         struct __declspec(novtable) type : ::IInspectable
         {
-            virtual HRESULT __stdcall put_Progress(::IUnknown* handler) = 0;
-            virtual HRESULT __stdcall get_Progress(::IUnknown** handler) = 0;
-            virtual HRESULT __stdcall put_Completed(::IUnknown* handler) = 0;
-            virtual HRESULT __stdcall get_Completed(::IUnknown** handler) = 0;
+            virtual HRESULT __stdcall put_Progress(void* handler) = 0;
+            virtual HRESULT __stdcall get_Progress(void** handler) = 0;
+            virtual HRESULT __stdcall put_Completed(void* handler) = 0;
+            virtual HRESULT __stdcall get_Completed(void** handler) = 0;
             virtual HRESULT __stdcall GetResults() = 0;
         };
     };
@@ -363,10 +363,10 @@ namespace winrt::impl
     {
         struct __declspec(novtable) type : ::IInspectable
         {
-            virtual HRESULT __stdcall put_Progress(::IUnknown* handler) = 0;
-            virtual HRESULT __stdcall get_Progress(::IUnknown** handler) = 0;
-            virtual HRESULT __stdcall put_Completed(::IUnknown* handler) = 0;
-            virtual HRESULT __stdcall get_Completed(::IUnknown** handler) = 0;
+            virtual HRESULT __stdcall put_Progress(void* handler) = 0;
+            virtual HRESULT __stdcall get_Progress(void** handler) = 0;
+            virtual HRESULT __stdcall put_Completed(void* handler) = 0;
+            virtual HRESULT __stdcall get_Completed(void** handler) = 0;
             virtual HRESULT __stdcall GetResults(arg_out<TResult> results) = 0;
         };
     };
@@ -647,7 +647,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         void operator()(IAsyncAction const& sender, AsyncStatus args) const
         {
-            check_hresult((*(abi_t<AsyncActionCompletedHandler>**)this)->Invoke(get_abi(sender), args));
+            check_hresult((*(impl::abi_t<AsyncActionCompletedHandler>**)this)->Invoke(get_abi(sender), args));
         }
     };
 
@@ -671,7 +671,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         void operator()(IAsyncActionWithProgress<TProgress> const& sender, TProgress const& args) const
         {
-            check_hresult((*(abi_t<AsyncActionProgressHandler<TProgress>>**)this)->Invoke(get_abi(sender), get_abi(args)));
+            check_hresult((*(impl::abi_t<AsyncActionProgressHandler<TProgress>>**)this)->Invoke(get_abi(sender), get_abi(args)));
         }
     };
 
@@ -695,7 +695,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         void operator()(IAsyncActionWithProgress<TProgress> const& sender, AsyncStatus const args) const
         {
-            check_hresult((*(abi_t<AsyncActionWithProgressCompletedHandler<TProgress>>**)this)->Invoke(get_abi(sender), args));
+            check_hresult((*(impl::abi_t<AsyncActionWithProgressCompletedHandler<TProgress>>**)this)->Invoke(get_abi(sender), args));
         }
     };
 
@@ -719,7 +719,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         void operator()(IAsyncOperationWithProgress<TResult, TProgress> const& sender, TProgress const& args) const
         {
-            check_hresult((*(abi_t<AsyncOperationProgressHandler<TResult, TProgress>>**)this)->Invoke(get_abi(sender), get_abi(args)));
+            check_hresult((*(impl::abi_t<AsyncOperationProgressHandler<TResult, TProgress>>**)this)->Invoke(get_abi(sender), get_abi(args)));
         }
     };
 
@@ -743,7 +743,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         void operator()(IAsyncOperationWithProgress<TResult, TProgress> const& sender, AsyncStatus const args) const
         {
-            check_hresult((*(abi_t<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>**)this)->Invoke(get_abi(sender), args));
+            check_hresult((*(impl::abi_t<AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>**)this)->Invoke(get_abi(sender), args));
         }
     };
 
@@ -767,7 +767,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         void operator()(IAsyncOperation<TResult> const& sender, AsyncStatus args) const
         {
-            check_hresult((*(abi_t<AsyncOperationCompletedHandler<TResult>>**)this)->Invoke(get_abi(sender), args));
+            check_hresult((*(impl::abi_t<AsyncOperationCompletedHandler<TResult>>**)this)->Invoke(get_abi(sender), args));
         }
     };
 }

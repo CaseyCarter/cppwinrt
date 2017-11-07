@@ -62,7 +62,7 @@ WINRT_EXPORT namespace winrt
     template <typename T>
     struct com_ptr
     {
-        using type = abi_t<T>;
+        using type = impl::abi_t<T>;
 
         com_ptr(std::nullptr_t = nullptr) noexcept {}
 

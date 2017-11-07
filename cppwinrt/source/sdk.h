@@ -65,7 +65,7 @@ namespace cppwinrt
 
         winrt::check_hresult(CreateXmlReader(
             __uuidof(IXmlReader),
-            reinterpret_cast<void**>(put_abi(reader)),
+            reader.put_void(),
             0));
 
         winrt::check_hresult(reader->SetInput(stream.get()));

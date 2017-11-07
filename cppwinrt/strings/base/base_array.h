@@ -45,7 +45,7 @@ WINRT_EXPORT namespace winrt
         array_view() noexcept = default;
 
         array_view(pointer first, pointer last) noexcept :
-        m_data(first),
+            m_data(first),
             m_size(static_cast<size_type>(last - first))
         {}
 
@@ -216,13 +216,13 @@ WINRT_EXPORT namespace winrt
 
     protected:
 
-        array_view(pointer data, uint32_t size) noexcept :
+        array_view(pointer data, size_type size) noexcept :
             m_data(data),
             m_size(size)
         {}
 
         pointer m_data{ nullptr };
-        uint32_t m_size{ 0 };
+        size_type m_size{ 0 };
     };
 
     template <typename T>
@@ -329,7 +329,7 @@ WINRT_EXPORT namespace winrt
 
         friend auto impl_detach(com_array& value) noexcept
         {
-            std::pair<uint32_t, impl::arg_in<T>*> result(value.size(), *reinterpret_cast<impl::arg_in<T>**>(&value));
+            std::pair<uint32_t, impl::arg_out<T>> result(value.size(), *reinterpret_cast<impl::arg_out<T>*>(&value));
             value.m_data = nullptr;
             value.m_size = 0;
             return result;
@@ -482,7 +482,7 @@ namespace winrt::impl
     {
         static auto get(array_view<T> object) noexcept
         {
-            return (::IUnknown**)object.data();
+            return (void**)object.data();
         }
     };
 }

@@ -89,40 +89,4 @@ namespace winrt::impl
 
         type m_value = T::invalid();
     };
-
-    template <typename T>
-    bool operator==(handle<T> const& left, handle<T> const& right) noexcept
-    {
-        return left.get() == right.get();
-    }
-
-    template <typename T>
-    bool operator!=(handle<T> const& left, handle<T> const& right) noexcept
-    {
-        return !(left == right);
-    }
-
-    template <typename T>
-    bool operator<(handle<T> const& left, handle<T> const& right) noexcept
-    {
-        return left.get() < right.get();
-    }
-
-    template <typename T>
-    bool operator>(handle<T> const& left, handle<T> const& right) noexcept
-    {
-        return right < left;
-    }
-
-    template <typename T>
-    bool operator<=(handle<T> const& left, handle<T> const& right) noexcept
-    {
-        return !(right < left);
-    }
-
-    template <typename T>
-    bool operator>=(handle<T> const& left, handle<T> const& right) noexcept
-    {
-        return !(left < right);
-    }
 }

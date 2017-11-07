@@ -11,13 +11,13 @@ WINRT_EXPORT namespace winrt
             check_hresult(RoGetAgileReference(AGILEREFERENCE_DEFAULT,
                 guid_of<T>(),
                 winrt::get_abi(object),
-                put_abi(m_ref)));
+                m_ref.put()));
         }
 
         T get() const
         {
             T result = nullptr;
-            check_hresult(m_ref->Resolve(guid_of<T>(), reinterpret_cast<void**>(put_abi(result))));
+            check_hresult(m_ref->Resolve(guid_of<T>(), put_abi(result)));
             return result;
         }
 

@@ -674,7 +674,7 @@ namespace winrt::impl
     template <typename T>
     struct category_signature<delegate_category, T>
     {
-        constexpr static auto data{ "delegate(" + guid_to_string(guid_of<T>()) + ")" };
+        constexpr static auto data{ "delegate(" + to_array<char>(guid_of<T>()) + ")" };
     };
 }
 
