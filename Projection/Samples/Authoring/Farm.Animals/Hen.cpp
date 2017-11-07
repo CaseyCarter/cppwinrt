@@ -13,7 +13,7 @@ namespace winrt::Farm::Animals::implementation
 
     Windows::Foundation::IAsyncOperationWithProgress<Farm::Animals::Egg, uint32_t> Hen::LayEggAsync()
     {
-        auto progress = co_await get_progress_token;
+        auto progress = co_await get_progress_token();
 
         for (uint32_t percent = 10; percent <= 100; percent += 10)
         {

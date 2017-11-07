@@ -306,10 +306,18 @@ WINRT_EXPORT namespace winrt
 #endif
 
     struct get_progress_token_t {};
-    constexpr get_progress_token_t get_progress_token{};
+
+    inline get_progress_token_t get_progress_token() noexcept
+    {
+        return{};
+    }
 
     struct get_cancellation_token_t {};
-    constexpr get_cancellation_token_t get_cancellation_token{};
+
+    inline get_cancellation_token_t get_cancellation_token() noexcept
+    {
+        return{};
+    }
 
     struct fire_and_forget {};
 }

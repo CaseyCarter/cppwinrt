@@ -18,7 +18,7 @@ namespace
     {
         co_await 0s;
 
-        auto cancel = co_await get_cancellation_token;
+        auto cancel = co_await get_cancellation_token();
 
         if (cancel())
         {
@@ -30,7 +30,7 @@ namespace
     {
         co_await 0s;
 
-        auto cancel = co_await get_cancellation_token;
+        auto cancel = co_await get_cancellation_token();
 
         if (cancel())
         {
@@ -42,7 +42,7 @@ namespace
     {
         co_await 0s;
 
-        auto cancel = co_await get_cancellation_token;
+        auto cancel = co_await get_cancellation_token();
 
         if (cancel())
         {
@@ -56,7 +56,7 @@ namespace
     {
         co_await 0s;
 
-        auto cancel = co_await get_cancellation_token;
+        auto cancel = co_await get_cancellation_token();
 
         if (cancel())
         {
@@ -204,7 +204,7 @@ namespace
     IAsyncActionWithProgress<double> Suspend_IAsyncActionWithProgress(HANDLE go)
     {
         co_await resume_on_signal(go);
-        auto progress = co_await get_progress_token;
+        auto progress = co_await get_progress_token();
         progress(789.0);
     }
 
@@ -217,7 +217,7 @@ namespace
     IAsyncOperationWithProgress<uint64_t, uint64_t> Suspend_IAsyncOperationWithProgress(HANDLE go)
     {
         co_await resume_on_signal(go);
-        auto progress = co_await get_progress_token;
+        auto progress = co_await get_progress_token();
         progress(987);
         return 456;
     }
@@ -738,7 +738,7 @@ namespace
     {
         co_await resume_on_signal(go);
 
-        auto cancel = co_await get_cancellation_token;
+        auto cancel = co_await get_cancellation_token();
 
         REQUIRE(cancel());
         SetEvent(go); // signal cancelation
@@ -748,7 +748,7 @@ namespace
     {
         co_await resume_on_signal(go);
 
-        auto cancel = co_await get_cancellation_token;
+        auto cancel = co_await get_cancellation_token();
 
         REQUIRE(cancel());
         SetEvent(go); // signal cancelation
@@ -758,7 +758,7 @@ namespace
     {
         co_await resume_on_signal(go);
 
-        auto cancel = co_await get_cancellation_token;
+        auto cancel = co_await get_cancellation_token();
 
         REQUIRE(cancel());
         SetEvent(go); // signal cancelation
@@ -769,7 +769,7 @@ namespace
     {
         co_await resume_on_signal(go);
 
-        auto cancel = co_await get_cancellation_token;
+        auto cancel = co_await get_cancellation_token();
 
         REQUIRE(cancel());
         SetEvent(go); // signal cancelation

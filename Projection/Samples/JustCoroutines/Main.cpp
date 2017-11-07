@@ -8,7 +8,7 @@ IAsyncOperationWithProgress<int, int> Produce()
 {
     co_await resume_background();
 
-    auto progress = co_await get_progress_token;
+    auto progress = co_await get_progress_token();
 
     int total = 0;
 
