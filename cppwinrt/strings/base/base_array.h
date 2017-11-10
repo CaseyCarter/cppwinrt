@@ -500,7 +500,7 @@ WINRT_EXPORT namespace winrt
         inline com_array<GUID> GetIids(IInspectable const& object)
         {
             com_array<GUID> value;
-            check_hresult((*(::IInspectable**)&object)->GetIids(impl::put_size_abi(value), put_abi(value)));
+            check_hresult((*(impl::IInspectable**)&object)->GetIids(impl::put_size_abi(value), put_abi(value)));
             return value;
         }
     }

@@ -1,4 +1,4 @@
 
-template <> struct abi<@>{ struct type : ::IUnknown
+template <> struct abi<@>{ struct type : IUnknown
 {
 %};};

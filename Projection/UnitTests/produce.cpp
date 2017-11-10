@@ -30,14 +30,14 @@ TEST_CASE("produce_IUnknown")
         // Basic query works for IUnknown.
 
         com_ptr<Windows::Foundation::IUnknown> qi;
-        REQUIRE(S_OK == p->QueryInterface(put_abi(qi)));
+        REQUIRE(S_OK == p->QueryInterface(guid_of<Windows::Foundation::IUnknown>(), qi.put_void()));
         REQUIRE(qi);
     }
     {
         // Query for unsupported interface is rejected.
 
         com_ptr<Windows::Foundation::IInspectable> qi;
-        REQUIRE(E_NOINTERFACE == p->QueryInterface(put_abi(qi)));
+        REQUIRE(E_NOINTERFACE == p->QueryInterface(guid_of<Windows::Foundation::IInspectable>(), qi.put_void()));
         REQUIRE(!qi);
     }
     {
@@ -93,21 +93,21 @@ TEST_CASE("produce_IInspectable")
         // Basic query works for IUnknown.
 
         com_ptr<Windows::Foundation::IUnknown> qi;
-        REQUIRE(S_OK == get_abi(p)->QueryInterface(put_abi(qi)));
+        REQUIRE(S_OK == get_unknown(p)->QueryInterface(guid_of<Windows::Foundation::IUnknown>(), qi.put_void()));
         REQUIRE(qi);
     }
     {
         // Query works for IInspectable.
 
         com_ptr<Windows::Foundation::IInspectable> qi;
-        REQUIRE(S_OK == get_abi(p)->QueryInterface(put_abi(qi)));
+        REQUIRE(S_OK == get_unknown(p)->QueryInterface(guid_of<Windows::Foundation::IInspectable>(), qi.put_void()));
         REQUIRE(qi);
     }
     {
         // Query for unsupported interface is rejected.
 
         com_ptr<IActivationFactory> qi;
-        REQUIRE(E_NOINTERFACE == get_abi(p)->QueryInterface(put_abi(qi)));
+        REQUIRE(E_NOINTERFACE == get_unknown(p)->QueryInterface(guid_of<IActivationFactory>(), qi.put_void()));
         REQUIRE(!qi);
     }
 

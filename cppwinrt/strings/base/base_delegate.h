@@ -65,9 +65,9 @@ namespace winrt::impl
     template <typename T>
     struct abi<Windows::Foundation::EventHandler<T>>
     {
-        struct __declspec(novtable) type : ::IUnknown
+        struct __declspec(novtable) type : IUnknown
         {
-            virtual HRESULT __stdcall Invoke(void* sender, arg_in<T> args) = 0;
+            virtual HRESULT __stdcall Invoke(void* sender, arg_in<T> args) noexcept = 0;
         };
     };
 
@@ -95,9 +95,9 @@ namespace winrt::impl
     template <typename TSender, typename TArgs>
     struct abi<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
     {
-        struct __declspec(novtable) type : ::IUnknown
+        struct __declspec(novtable) type : IUnknown
         {
-            virtual HRESULT __stdcall Invoke(arg_in<TSender> sender, arg_in<TArgs> args) = 0;
+            virtual HRESULT __stdcall Invoke(arg_in<TSender> sender, arg_in<TArgs> args) noexcept = 0;
         };
     };
 

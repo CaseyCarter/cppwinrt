@@ -33,9 +33,9 @@ namespace winrt::impl
             IID iid{};
             if (SUCCEEDED(IIDFromString(iid_str, &iid)))
             {
-                ::IInspectable* pinsp;
-                typedef HRESULT(__stdcall ::IInspectable::*PropertyAccessor)(void*);
-                if (SUCCEEDED(winrt::get_abi(*object)->QueryInterface(iid, (void**)&pinsp)))
+                IInspectable* pinsp;
+                typedef HRESULT(__stdcall IInspectable::* PropertyAccessor)(void*);
+                if (SUCCEEDED(static_cast<IUnknown*>(get_abi(*object))->QueryInterface(iid, reinterpret_cast<void**>(&pinsp))))
                 {
                     auto vtbl = *(PropertyAccessor**)pinsp;
                     static const int IInspectable_vtbl_size = 6;

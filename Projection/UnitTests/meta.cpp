@@ -15,18 +15,27 @@ using put_abi_t = decltype(put_abi(std::declval<T&>()));
 static_assert(std::is_same_v<get_abi_t<int>, int>, "fail");
 static_assert(std::is_same_v<put_abi_t<int>, int *>, "fail");
 
-static_assert(std::is_same_v<get_abi_t<IUriRuntimeClass>, ::IUnknown *>, "fail");
+static_assert(std::is_same_v<get_abi_t<IUriRuntimeClass>, void*>, "fail");
 static_assert(std::is_same_v<put_abi_t<IUriRuntimeClass>, void**>, "fail");
 
 namespace
 {
-    struct __declspec(uuid("0C9DCED5-6436-495F-B422-EBA74DC23CB8")) IFoo : ::IInspectable {};
-    struct __declspec(uuid("B5D6112A-75F6-454C-BE86-8F3AE4155D45")) IFoo2 : ::IInspectable {};
-    struct __declspec(uuid("1E4EA9CB-3146-4C2C-9E50-25065394F541")) IBar : ::IInspectable {};
-    struct __declspec(uuid("2BD9AE4B-9B03-4766-8583-215535BE5125")) IBar2 : ::IInspectable {};
+    using IFoo = IStringable; // ToString
+    using IFoo2 = IClosable; // Close
+    using IBar = IDeferral; // Complete
+    using IBar2 = IMemoryBuffer; // IMemoryBufferReference CreateReference()
 
-    struct Foo : implements<Foo, IFoo, IFoo2> {};
-    struct Bar : implements<Bar, IBar, IBar2> {};
+    struct Foo : implements<Foo, IFoo, IFoo2>
+    {
+        hstring ToString() { return L""; }
+        void Close() {}
+    };
+
+    struct Bar : implements<Bar, IBar, IBar2>
+    {
+        void Complete() {}
+        IMemoryBufferReference CreateReference() { return {}; }
+    };
 
     static_assert(impl::uncloaked_interfaces<composable, composing>() == 0);
     static_assert(impl::uncloaked_interfaces<composable, IFoo, composing, IBar>() == 2);

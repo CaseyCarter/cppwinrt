@@ -9,9 +9,9 @@ namespace winrt::impl
     template <typename T>
     struct abi<Windows::Foundation::IReference<T>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall get_Value(arg_out<T> value) = 0;
+            virtual HRESULT __stdcall get_Value(arg_out<T> value) noexcept = 0;
         };
     };
 

@@ -1,6 +1,13 @@
 
 WINRT_EXPORT namespace winrt::Windows::Foundation
 {
+    enum class TrustLevel
+    {
+        BaseTrust,
+        PartialTrust,
+        FullTrust
+    };
+
     struct IInspectable;
     struct IActivationFactory;
 }
@@ -9,19 +16,33 @@ namespace winrt::impl
 {
     template <> struct abi<Windows::Foundation::IUnknown>
     {
-        using type = ::IUnknown;
+        struct __declspec(novtable) type
+        {
+            virtual HRESULT __stdcall QueryInterface(GUID const& id, void** object) noexcept = 0;
+            virtual ULONG __stdcall AddRef() noexcept = 0;
+            virtual ULONG __stdcall Release() noexcept = 0;
+        };
     };
+
+    using IUnknown = abi_t<Windows::Foundation::IUnknown>;
 
     template <> struct abi<Windows::Foundation::IInspectable>
     {
-        using type = ::IInspectable;
+        struct __declspec(novtable) type : IUnknown
+        {
+            virtual HRESULT __stdcall GetIids(ULONG* count, GUID** ids) noexcept = 0;
+            virtual HRESULT __stdcall GetRuntimeClassName(HSTRING* name) noexcept = 0;
+            virtual HRESULT __stdcall GetTrustLevel(Windows::Foundation::TrustLevel* level) noexcept = 0;
+        };
     };
+
+    using IInspectable = abi_t<Windows::Foundation::IInspectable>;
 
     template <> struct abi<Windows::Foundation::IActivationFactory>
     {
-        struct __declspec(uuid("00000035-0000-0000-C000-000000000046")) __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall ActivateInstance(void** instance) = 0;
+            virtual HRESULT __stdcall ActivateInstance(void** instance) noexcept = 0;
         };
     };
 
@@ -164,7 +185,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
             return static_cast<bool>(to);
         }
 
-        friend ::IUnknown* impl_detach(IUnknown& object) noexcept
+        friend void* impl_detach(IUnknown& object) noexcept
         {
             auto temp = object.m_ptr;
             object.m_ptr = nullptr;
@@ -198,7 +219,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
             }
         }
 
-        ::IUnknown* m_ptr{ nullptr };
+        impl::IUnknown* m_ptr{ nullptr };
 
     private:
 
@@ -233,9 +254,9 @@ namespace winrt::impl
     template <typename T>
     struct accessors<T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
     {
-        static ::IUnknown* get(T const& object) noexcept
+        static void* get(T const& object) noexcept
         {
-            return *(::IUnknown**)(&object);
+            return *(void**)(&object);
         }
 
         static void** put(T& object) noexcept
@@ -243,19 +264,19 @@ namespace winrt::impl
             return reinterpret_cast<void**>(&object);
         }
 
-        static void attach(T& object, ::IUnknown* value) noexcept
+        static void attach(T& object, void* value) noexcept
         {
             object = nullptr;
             *put(object) = value;
         }
 
-        static void copy_from(T& object, ::IUnknown* value) noexcept
+        static void copy_from(T& object, void* value) noexcept
         {
             object = nullptr;
 
             if (value)
             {
-                value->AddRef();
+                static_cast<IUnknown*>(value)->AddRef();
                 *put(object) = value;
             }
         }
@@ -274,7 +295,7 @@ namespace winrt::impl
             }
         }
 
-        static ::IUnknown* detach(T& object) noexcept
+        static void* detach(T& object) noexcept
         {
             return impl_detach(object);
         }
@@ -337,15 +358,20 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     inline hstring GetRuntimeClassName(IInspectable const& object)
     {
         hstring value;
-        check_hresult((*(::IInspectable**)&object)->GetRuntimeClassName(put_abi(value)));
+        check_hresult((*(impl::IInspectable**)&object)->GetRuntimeClassName(put_abi(value)));
         return value;
     }
 
     inline TrustLevel GetTrustLevel(IInspectable const& object)
     {
         TrustLevel value{};
-        check_hresult((*(::IInspectable**)&object)->GetTrustLevel(&value));
+        check_hresult((*(impl::IInspectable**)&object)->GetTrustLevel(&value));
         return value;
+    }
+
+    inline ::IUnknown* get_unknown(Windows::Foundation::IUnknown const& object) noexcept
+    {
+        return static_cast<::IUnknown*>(get_abi(object));
     }
 }
 
@@ -373,7 +399,7 @@ namespace winrt::impl
     template <typename T>
     struct arg<T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
     {
-        using in = ::IUnknown*;
+        using in = void*;
         using out = void**;
     };
 

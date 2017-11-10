@@ -11,22 +11,7 @@ using namespace Windows::Foundation;
 // These are some basic implementations of runtime classes used for testing event consumption.
 //
 
-struct TestSplashScreenWeakReference : implements<TestSplashScreenWeakReference, impl::abi_t<impl::IWeakReference>>
-{
-    IInspectable m_reference; // not actually a weak reference! :)
-
-    TestSplashScreenWeakReference(IInspectable const & reference) :
-        m_reference(reference)
-    {
-    }
-
-    HRESULT __stdcall Resolve(const GUID & iid, void** objectReference) override
-    {
-        return get_abi(m_reference)->QueryInterface(iid, objectReference);
-    }
-};
-
-struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, impl::abi_t<impl::IWeakReferenceSource>>
+struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen>
 {
     operator SplashScreen() const noexcept
     {
@@ -52,20 +37,6 @@ struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, impl::abi_
     void Dismissed(event_token cookie)
     {
         m_dismissed.remove(cookie);
-    }
-
-    HRESULT __stdcall GetWeakReference(impl::IWeakReference ** weakReference) override
-    {
-        try
-        {
-            *weakReference = detach_abi(make<TestSplashScreenWeakReference>(*this));
-            return S_OK;
-        }
-        catch (...)
-        {
-            *weakReference = nullptr;
-            return impl::to_hresult();
-        }
     }
 };
 

@@ -1,5 +1,4 @@
 
-#include <inspectable.h>
 #include <restrictederrorinfo.h>
 #include <winstring.h>
 #include <ctxtcall.h>
@@ -35,6 +34,7 @@ extern "C"
     BOOL    __stdcall WINRT_RoOriginateLanguageException(HRESULT error, HSTRING message, IUnknown* exception);
     void    __stdcall WINRT_RoUninitialize();
     HRESULT __stdcall WINRT_SetRestrictedErrorInfo(IRestrictedErrorInfo* info);
+    HRESULT __stdcall WINRT_RoGetAgileReference(uint32_t options, GUID const& iid, void* object, void** reference);
 }
 
 #ifdef _M_IX86
@@ -44,6 +44,7 @@ extern "C"
 #pragma comment(linker, "/alternatename:_WINRT_RoOriginateLanguageException@12=_RoOriginateLanguageException@12")
 #pragma comment(linker, "/alternatename:_WINRT_RoUninitialize@0=_RoUninitialize@0")
 #pragma comment(linker, "/alternatename:_WINRT_SetRestrictedErrorInfo@4=_SetRestrictedErrorInfo@4")
+#pragma comment(linker, "/alternatename:_WINRT_RoGetAgileReference@16=_RoGetAgileReference@16")
 #else
 #pragma comment(linker, "/alternatename:WINRT_GetRestrictedErrorInfo=GetRestrictedErrorInfo")
 #pragma comment(linker, "/alternatename:WINRT_RoGetActivationFactory=RoGetActivationFactory")
@@ -51,4 +52,5 @@ extern "C"
 #pragma comment(linker, "/alternatename:WINRT_RoOriginateLanguageException=RoOriginateLanguageException")
 #pragma comment(linker, "/alternatename:WINRT_RoUninitialize=RoUninitialize")
 #pragma comment(linker, "/alternatename:WINRT_SetRestrictedErrorInfo=SetRestrictedErrorInfo")
+#pragma comment(linker, "/alternatename:WINRT_RoGetAgileReference=RoGetAgileReference")
 #endif

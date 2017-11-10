@@ -112,67 +112,67 @@ namespace winrt::impl
     template <>
     struct abi<Windows::Foundation::AsyncActionCompletedHandler>
     {
-        struct type : ::IUnknown
+        struct type : IUnknown
         {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus asyncStatus) noexcept = 0;
         };
     };
 
     template <typename TResult>
     struct abi<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
     {
-        struct type : ::IUnknown
+        struct type : IUnknown
         {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) noexcept = 0;
         };
     };
 
     template <typename TProgress>
     struct abi<Windows::Foundation::AsyncActionProgressHandler<TProgress>>
     {
-        struct type : ::IUnknown
+        struct type : IUnknown
         {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, arg_in<TProgress> progressInfo) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, arg_in<TProgress> progressInfo) noexcept = 0;
         };
     };
 
     template <typename TProgress>
     struct abi<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
     {
-        struct type : ::IUnknown
+        struct type : IUnknown
         {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) noexcept = 0;
         };
     };
 
     template <typename TResult, typename TProgress>
     struct abi<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>
     {
-        struct type : ::IUnknown
+        struct type : IUnknown
         {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, arg_in<TProgress> progressInfo) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, arg_in<TProgress> progressInfo) noexcept = 0;
         };
     };
 
     template <typename TResult, typename TProgress>
     struct abi<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
     {
-        struct type : ::IUnknown
+        struct type : IUnknown
         {
-            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) = 0;
+            virtual HRESULT __stdcall Invoke(void* asyncInfo, Windows::Foundation::AsyncStatus status) noexcept = 0;
         };
     };
 
     template <>
     struct abi<Windows::Foundation::IAsyncInfo>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall get_Id(uint32_t* id) = 0;
-            virtual HRESULT __stdcall get_Status(Windows::Foundation::AsyncStatus* status) = 0;
-            virtual HRESULT __stdcall get_ErrorCode(HRESULT* errorCode) = 0;
-            virtual HRESULT __stdcall Cancel() = 0;
-            virtual HRESULT __stdcall Close() = 0;
+            virtual HRESULT __stdcall get_Id(uint32_t* id) noexcept = 0;
+            virtual HRESULT __stdcall get_Status(Windows::Foundation::AsyncStatus* status) noexcept = 0;
+            virtual HRESULT __stdcall get_ErrorCode(HRESULT* errorCode) noexcept = 0;
+            virtual HRESULT __stdcall Cancel() noexcept = 0;
+            virtual HRESULT __stdcall Close() noexcept = 0;
         };
     };
 
@@ -185,11 +185,11 @@ namespace winrt::impl
     template <>
     struct abi<Windows::Foundation::IAsyncAction>
     {
-        struct type : ::IInspectable
+        struct type : IInspectable
         {
-            virtual HRESULT __stdcall put_Completed(void* handler) = 0;
-            virtual HRESULT __stdcall get_Completed(void** handler) = 0;
-            virtual HRESULT __stdcall GetResults() = 0;
+            virtual HRESULT __stdcall put_Completed(void* handler) noexcept = 0;
+            virtual HRESULT __stdcall get_Completed(void** handler) noexcept = 0;
+            virtual HRESULT __stdcall GetResults() noexcept = 0;
         };
     };
 
@@ -325,11 +325,11 @@ namespace winrt::impl
     template <typename TResult>
     struct abi<Windows::Foundation::IAsyncOperation<TResult>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall put_Completed(void* handler) = 0;
-            virtual HRESULT __stdcall get_Completed(void** handler) = 0;
-            virtual HRESULT __stdcall GetResults(arg_out<TResult> results) = 0;
+            virtual HRESULT __stdcall put_Completed(void* handler) noexcept = 0;
+            virtual HRESULT __stdcall get_Completed(void** handler) noexcept = 0;
+            virtual HRESULT __stdcall GetResults(arg_out<TResult> results) noexcept = 0;
         };
     };
 
@@ -342,13 +342,13 @@ namespace winrt::impl
     template <typename TProgress>
     struct abi<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall put_Progress(void* handler) = 0;
-            virtual HRESULT __stdcall get_Progress(void** handler) = 0;
-            virtual HRESULT __stdcall put_Completed(void* handler) = 0;
-            virtual HRESULT __stdcall get_Completed(void** handler) = 0;
-            virtual HRESULT __stdcall GetResults() = 0;
+            virtual HRESULT __stdcall put_Progress(void* handler) noexcept = 0;
+            virtual HRESULT __stdcall get_Progress(void** handler) noexcept = 0;
+            virtual HRESULT __stdcall put_Completed(void* handler) noexcept = 0;
+            virtual HRESULT __stdcall get_Completed(void** handler) noexcept = 0;
+            virtual HRESULT __stdcall GetResults() noexcept = 0;
         };
     };
 
@@ -361,13 +361,13 @@ namespace winrt::impl
     template <typename TResult, typename TProgress>
     struct abi<Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall put_Progress(void* handler) = 0;
-            virtual HRESULT __stdcall get_Progress(void** handler) = 0;
-            virtual HRESULT __stdcall put_Completed(void* handler) = 0;
-            virtual HRESULT __stdcall get_Completed(void** handler) = 0;
-            virtual HRESULT __stdcall GetResults(arg_out<TResult> results) = 0;
+            virtual HRESULT __stdcall put_Progress(void* handler) noexcept = 0;
+            virtual HRESULT __stdcall get_Progress(void** handler) noexcept = 0;
+            virtual HRESULT __stdcall put_Completed(void* handler) noexcept = 0;
+            virtual HRESULT __stdcall get_Completed(void** handler) noexcept = 0;
+            virtual HRESULT __stdcall GetResults(arg_out<TResult> results) noexcept = 0;
         };
     };
 

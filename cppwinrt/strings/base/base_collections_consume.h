@@ -34,10 +34,10 @@ namespace winrt::impl
     template <>
     struct abi<wfc::IVectorChangedEventArgs>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall get_CollectionChange(wfc::CollectionChange* value) = 0;
-            virtual HRESULT __stdcall get_Index(uint32_t* value) = 0;
+            virtual HRESULT __stdcall get_CollectionChange(wfc::CollectionChange* value) noexcept = 0;
+            virtual HRESULT __stdcall get_Index(uint32_t* value) noexcept = 0;
         };
     };
 
@@ -402,10 +402,10 @@ namespace winrt::impl
     template <typename K>
     struct abi<wfc::IMapChangedEventArgs<K>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall get_CollectionChange(wfc::CollectionChange* value) = 0;
-            virtual HRESULT __stdcall get_Key(arg_out<K> value) = 0;
+            virtual HRESULT __stdcall get_CollectionChange(wfc::CollectionChange* value) noexcept = 0;
+            virtual HRESULT __stdcall get_Key(arg_out<K> value) noexcept = 0;
         };
     };
 
@@ -418,9 +418,9 @@ namespace winrt::impl
     template <typename T>
     struct abi<wfc::VectorChangedEventHandler<T>>
     {
-        struct __declspec(novtable) type : ::IUnknown
+        struct __declspec(novtable) type : IUnknown
         {
-            virtual HRESULT __stdcall Invoke(void* sender, void* args) = 0;
+            virtual HRESULT __stdcall Invoke(void* sender, void* args) noexcept = 0;
         };
     };
 
@@ -447,9 +447,9 @@ namespace winrt::impl
     template <typename K, typename V>
     struct abi<wfc::MapChangedEventHandler<K, V>>
     {
-        struct __declspec(novtable) type : ::IUnknown
+        struct __declspec(novtable) type : IUnknown
         {
-            virtual HRESULT __stdcall Invoke(void* sender, void* args) = 0;
+            virtual HRESULT __stdcall Invoke(void* sender, void* args) noexcept = 0;
         };
     };
 
@@ -476,12 +476,12 @@ namespace winrt::impl
     template <typename T>
     struct abi<wfc::IIterator<T>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall get_Current(arg_out<T> current) = 0;
-            virtual HRESULT __stdcall get_HasCurrent(bool* hasCurrent) = 0;
-            virtual HRESULT __stdcall MoveNext(bool* hasCurrent) = 0;
-            virtual HRESULT __stdcall GetMany(uint32_t capacity, arg_out<T> value, uint32_t* actual) = 0;
+            virtual HRESULT __stdcall get_Current(arg_out<T> current) noexcept = 0;
+            virtual HRESULT __stdcall get_HasCurrent(bool* hasCurrent) noexcept = 0;
+            virtual HRESULT __stdcall MoveNext(bool* hasCurrent) noexcept = 0;
+            virtual HRESULT __stdcall GetMany(uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept = 0;
         };
     };
 
@@ -494,9 +494,9 @@ namespace winrt::impl
     template <typename T>
     struct abi<wfc::IIterable<T>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall First(void** first) = 0;
+            virtual HRESULT __stdcall First(void** first) noexcept = 0;
         };
     };
 
@@ -509,12 +509,12 @@ namespace winrt::impl
     template <typename T>
     struct abi<wfc::IVectorView<T>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall GetAt(uint32_t index, arg_out<T> item) = 0;
-            virtual HRESULT __stdcall get_Size(uint32_t* size) = 0;
-            virtual HRESULT __stdcall IndexOf(arg_in<T> value, uint32_t* index, bool* found) = 0;
-            virtual HRESULT __stdcall GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) = 0;
+            virtual HRESULT __stdcall GetAt(uint32_t index, arg_out<T> item) noexcept = 0;
+            virtual HRESULT __stdcall get_Size(uint32_t* size) noexcept = 0;
+            virtual HRESULT __stdcall IndexOf(arg_in<T> value, uint32_t* index, bool* found) noexcept = 0;
+            virtual HRESULT __stdcall GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept = 0;
         };
     };
 
@@ -527,20 +527,20 @@ namespace winrt::impl
     template <typename T>
     struct abi<wfc::IVector<T>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall GetAt(uint32_t index, arg_out<T> item) = 0;
-            virtual HRESULT __stdcall get_Size(uint32_t* size) = 0;
-            virtual HRESULT __stdcall GetView(void** view) = 0;
-            virtual HRESULT __stdcall IndexOf(arg_in<T> value, uint32_t* index, bool* found) = 0;
-            virtual HRESULT __stdcall SetAt(uint32_t index, arg_in<T> item) = 0;
-            virtual HRESULT __stdcall InsertAt(uint32_t index, arg_in<T> item) = 0;
-            virtual HRESULT __stdcall RemoveAt(uint32_t index) = 0;
-            virtual HRESULT __stdcall Append(arg_in<T> item) = 0;
-            virtual HRESULT __stdcall RemoveAtEnd() = 0;
-            virtual HRESULT __stdcall Clear() = 0;
-            virtual HRESULT __stdcall GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) = 0;
-            virtual HRESULT __stdcall ReplaceAll(uint32_t count, arg_out<T> value) = 0;
+            virtual HRESULT __stdcall GetAt(uint32_t index, arg_out<T> item) noexcept = 0;
+            virtual HRESULT __stdcall get_Size(uint32_t* size) noexcept = 0;
+            virtual HRESULT __stdcall GetView(void** view) noexcept = 0;
+            virtual HRESULT __stdcall IndexOf(arg_in<T> value, uint32_t* index, bool* found) noexcept = 0;
+            virtual HRESULT __stdcall SetAt(uint32_t index, arg_in<T> item) noexcept = 0;
+            virtual HRESULT __stdcall InsertAt(uint32_t index, arg_in<T> item) noexcept = 0;
+            virtual HRESULT __stdcall RemoveAt(uint32_t index) noexcept = 0;
+            virtual HRESULT __stdcall Append(arg_in<T> item) noexcept = 0;
+            virtual HRESULT __stdcall RemoveAtEnd() noexcept = 0;
+            virtual HRESULT __stdcall Clear() noexcept = 0;
+            virtual HRESULT __stdcall GetMany(uint32_t startIndex, uint32_t capacity, arg_out<T> value, uint32_t* actual) noexcept = 0;
+            virtual HRESULT __stdcall ReplaceAll(uint32_t count, arg_out<T> value) noexcept = 0;
         };
     };
 
@@ -553,10 +553,10 @@ namespace winrt::impl
     template <typename T>
     struct abi<wfc::IObservableVector<T>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall add_VectorChanged(void* handler, event_token*  token) = 0;
-            virtual HRESULT __stdcall remove_VectorChanged(event_token token) = 0;
+            virtual HRESULT __stdcall add_VectorChanged(void* handler, event_token*  token) noexcept = 0;
+            virtual HRESULT __stdcall remove_VectorChanged(event_token token) noexcept = 0;
         };
     };
 
@@ -569,10 +569,10 @@ namespace winrt::impl
     template <typename K, typename V>
     struct abi<wfc::IKeyValuePair<K, V>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall get_Key(arg_out<K> key) = 0;
-            virtual HRESULT __stdcall get_Value(arg_out<V> value) = 0;
+            virtual HRESULT __stdcall get_Key(arg_out<K> key) noexcept = 0;
+            virtual HRESULT __stdcall get_Value(arg_out<V> value) noexcept = 0;
         };
     };
 
@@ -585,12 +585,12 @@ namespace winrt::impl
     template <typename K, typename V>
     struct abi<wfc::IMapView<K, V>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall Lookup(arg_in<K> key, arg_out<V> value) = 0;
-            virtual HRESULT __stdcall get_Size(uint32_t* size) = 0;
-            virtual HRESULT __stdcall HasKey(arg_in<K> key, bool* found) = 0;
-            virtual HRESULT __stdcall Split(void** firstPartition, void** secondPartition) = 0;
+            virtual HRESULT __stdcall Lookup(arg_in<K> key, arg_out<V> value) noexcept = 0;
+            virtual HRESULT __stdcall get_Size(uint32_t* size) noexcept = 0;
+            virtual HRESULT __stdcall HasKey(arg_in<K> key, bool* found) noexcept = 0;
+            virtual HRESULT __stdcall Split(void** firstPartition, void** secondPartition) noexcept = 0;
         };
     };
 
@@ -603,15 +603,15 @@ namespace winrt::impl
     template <typename K, typename V>
     struct abi<wfc::IMap<K, V>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall Lookup(arg_in<K> key, arg_out<V> value) = 0;
-            virtual HRESULT __stdcall get_Size(uint32_t* size) = 0;
-            virtual HRESULT __stdcall HasKey(arg_in<K> key, bool* found) = 0;
-            virtual HRESULT __stdcall GetView(void** view) = 0;
-            virtual HRESULT __stdcall Insert(arg_in<K> key, arg_in<V> value, bool* replaced) = 0;
-            virtual HRESULT __stdcall Remove(arg_in<K> key) = 0;
-            virtual HRESULT __stdcall Clear() = 0;
+            virtual HRESULT __stdcall Lookup(arg_in<K> key, arg_out<V> value) noexcept = 0;
+            virtual HRESULT __stdcall get_Size(uint32_t* size) noexcept = 0;
+            virtual HRESULT __stdcall HasKey(arg_in<K> key, bool* found) noexcept = 0;
+            virtual HRESULT __stdcall GetView(void** view) noexcept = 0;
+            virtual HRESULT __stdcall Insert(arg_in<K> key, arg_in<V> value, bool* replaced) noexcept = 0;
+            virtual HRESULT __stdcall Remove(arg_in<K> key) noexcept = 0;
+            virtual HRESULT __stdcall Clear() noexcept = 0;
         };
     };
 
@@ -624,10 +624,10 @@ namespace winrt::impl
     template <typename K, typename V>
     struct abi<wfc::IObservableMap<K, V>>
     {
-        struct __declspec(novtable) type : ::IInspectable
+        struct __declspec(novtable) type : IInspectable
         {
-            virtual HRESULT __stdcall add_MapChanged(void* handler, event_token* token) = 0;
-            virtual HRESULT __stdcall remove_MapChanged(event_token token) = 0;
+            virtual HRESULT __stdcall add_MapChanged(void* handler, event_token* token) noexcept = 0;
+            virtual HRESULT __stdcall remove_MapChanged(event_token token) noexcept = 0;
         };
     };
 

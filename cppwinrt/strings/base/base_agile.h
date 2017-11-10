@@ -8,10 +8,10 @@ WINRT_EXPORT namespace winrt
 
         agile_ref(T const& object)
         {
-            check_hresult(RoGetAgileReference(AGILEREFERENCE_DEFAULT,
+            check_hresult(WINRT_RoGetAgileReference(0,
                 guid_of<T>(),
                 winrt::get_abi(object),
-                m_ref.put()));
+                m_ref.put_void()));
         }
 
         T get() const

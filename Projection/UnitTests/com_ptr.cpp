@@ -48,7 +48,7 @@ TEST_CASE("com_ptr, ::IUnknown")
     com_ptr<::IUnknown> a; // default ctor
     com_ptr<::IUnknown> b = nullptr; // nullptr_t ctor
 
-    REQUIRE(S_OK == get_abi(stringable)->QueryInterface(put_abi(b))); // attach
+    REQUIRE(S_OK == get_unknown(stringable)->QueryInterface(put_abi(b))); // attach
 
     com_ptr<::IUnknown> c = b; // copy ctor, AddRef
     b = nullptr;
@@ -84,12 +84,12 @@ TEST_CASE("com_ptr, Windows::Foundation::IUnknown")
     com_ptr<Windows::Foundation::IUnknown> a; // default ctor
     com_ptr<Windows::Foundation::IUnknown> b = nullptr; // nullptr_t ctor
 
-    REQUIRE(S_OK == get_abi(stringable)->QueryInterface(put_abi(b))); // attach
+    REQUIRE(S_OK == get_unknown(stringable)->QueryInterface(guid_of<Windows::Foundation::IUnknown>(), b.put_void())); // attach
 
     com_ptr<Windows::Foundation::IUnknown> c = b; // copy ctor, AddRef
     b = nullptr;
 
-    com_ptr<::IUnknown> d = std::move(c); // move ctor
+    com_ptr<Windows::Foundation::IUnknown> d = std::move(c); // move ctor
     c = std::move(d); // move assign
     d = c; // copy assign, AddRef
 
@@ -156,7 +156,7 @@ TEST_CASE("com_ptr, accessors")
     REQUIRE(!destroyed);
 
     com_ptr<::IUnknown> b;
-    b.copy_from(get_abi(a)); // get
+    b.copy_from(get_unknown(a)); // get
     REQUIRE(a);
 
     com_ptr<::IUnknown> c;
@@ -166,7 +166,7 @@ TEST_CASE("com_ptr, accessors")
     b = nullptr;
     c = nullptr;
 
-    attach_abi(b, detach_abi(a));
+    attach_abi(b, static_cast<::IUnknown*>(detach_abi(a)));
 
     REQUIRE(!a);
     REQUIRE(b);
@@ -200,7 +200,7 @@ static com_ptr<::IUnknown> test_make_unknown()
     IStringable s = make<Stringable>(L"Hello world!");
 
     com_ptr<::IUnknown> result;
-    REQUIRE(S_OK == get_abi(s)->QueryInterface(put_abi(result)));
+    REQUIRE(S_OK == get_unknown(s)->QueryInterface(put_abi(result)));
     return result;
 }
 
@@ -242,7 +242,7 @@ static com_ptr<::IInspectable> test_make_inspectable()
     IStringable s = make<Stringable>(L"Hello world!");
 
     com_ptr<::IInspectable> result;
-    REQUIRE(S_OK == get_abi(s)->QueryInterface(put_abi(result)));
+    REQUIRE(S_OK == get_unknown(s)->QueryInterface(put_abi(result)));
     return result;
 }
 

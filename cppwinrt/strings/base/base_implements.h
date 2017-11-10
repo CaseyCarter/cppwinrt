@@ -43,8 +43,8 @@ namespace winrt::impl
 
     template <typename I>
     struct is_cloaked : std::disjunction<
-        std::is_same<::IInspectable, abi_t<I>>,
-        std::negation<std::is_base_of<::IInspectable, abi_t<I>>>
+        std::is_same<Windows::Foundation::IInspectable, I>,
+        std::negation<std::is_base_of<Windows::Foundation::IInspectable, I>>
     > {};
 
     template <typename I>
@@ -295,9 +295,9 @@ namespace winrt::impl
             return shim().abi_GetRuntimeClassName(name);
         }
 
-        HRESULT __stdcall GetTrustLevel(TrustLevel* trustLevel) noexcept final
+        HRESULT __stdcall GetTrustLevel(Windows::Foundation::TrustLevel* trustLevel) noexcept final
         {
-            *trustLevel = BaseTrust;
+            *trustLevel = Windows::Foundation::TrustLevel::BaseTrust;
             return S_OK;
         }
     };
@@ -325,7 +325,7 @@ namespace winrt::impl
 
     template <> struct abi<INonDelegatingInspectable>
     {
-        using type = ::IInspectable;
+        using type = IInspectable;
     };
 
     template <typename D>
@@ -411,7 +411,7 @@ namespace winrt::impl
     template <bool Agile>
     struct weak_ref : IWeakReference, weak_source_producer<Agile>
     {
-        weak_ref(::IUnknown* object, uint32_t const strong) noexcept :
+        weak_ref(IUnknown* object, uint32_t const strong) noexcept :
             m_object(object),
             m_strong(strong)
         {
@@ -431,7 +431,7 @@ namespace winrt::impl
             {
                 if (id == guid_of<IAgileObject>())
                 {
-                    *object = static_cast<::IUnknown*>(this);
+                    *object = static_cast<IUnknown*>(this);
                     AddRef();
                     return S_OK;
                 }
@@ -519,7 +519,7 @@ namespace winrt::impl
 
         static_assert(sizeof(weak_source_producer<Agile>) == sizeof(weak_source<Agile>));
 
-        ::IUnknown* m_object{};
+        IUnknown* m_object{};
         std::atomic<uint32_t> m_strong{ 1 };
         std::atomic<uint32_t> m_weak{ 1 };
     };
@@ -528,7 +528,7 @@ namespace winrt::impl
     struct WINRT_EBO root_implements_composing_outer
     {
     protected:
-        static constexpr ::IInspectable* m_inner = nullptr;
+        static constexpr IInspectable* m_inner = nullptr;
     };
 
     template <>
@@ -552,7 +552,7 @@ namespace winrt::impl
     struct WINRT_EBO root_implements_composable_inner
     {
     protected:
-        static constexpr ::IInspectable* outer() noexcept { return nullptr; }
+        static constexpr IInspectable* outer() noexcept { return nullptr; }
 
         template <typename T, typename D, typename I>
         friend class produce_dispatch_to_super_base;
@@ -562,9 +562,9 @@ namespace winrt::impl
     struct WINRT_EBO root_implements_composable_inner<D, true> : producer<D, INonDelegatingInspectable>
     {
     protected:
-        ::IInspectable* outer() noexcept { return m_outer; }
+        IInspectable* outer() noexcept { return m_outer; }
     private:
-        ::IInspectable* m_outer = nullptr;
+        IInspectable* m_outer = nullptr;
 
         template <typename T, typename D, typename I>
         friend class produce_dispatch_to_super_base;
@@ -592,7 +592,7 @@ namespace winrt::impl
 
             if (result == E_NOINTERFACE && this->m_inner)
             {
-                result = get_abi(this->m_inner)->QueryInterface(id, object);
+                result = static_cast<impl::IUnknown*>(get_abi(this->m_inner))->QueryInterface(id, object);
             }
 
             return result;
@@ -642,7 +642,7 @@ namespace winrt::impl
             : m_references(references)
         {}
 
-        virtual ~root_implements() {}
+        virtual ~root_implements() noexcept {}
 
         HRESULT __stdcall GetIids(ULONG* count, GUID** array) noexcept
         {
@@ -664,7 +664,7 @@ namespace winrt::impl
             return NonDelegatingGetRuntimeClassName(name);
         }
 
-        HRESULT __stdcall abi_GetTrustLevel(TrustLevel* trustLevel) noexcept
+        HRESULT __stdcall abi_GetTrustLevel(Windows::Foundation::TrustLevel* trustLevel) noexcept
         {
             if (this->outer())
             {
@@ -716,9 +716,9 @@ namespace winrt::impl
 
         HRESULT __stdcall NonDelegatingQueryInterface(const GUID& id, void** object) noexcept
         {
-            if (id == guid_of<Windows::Foundation::IInspectable>() || id == guid_of<Windows::Foundation::IUnknown>())
+            if (id == guid_of<IInspectable>() || id == guid_of<Windows::Foundation::IUnknown>())
             {
-                ::IInspectable* result = to_abi<impl::INonDelegatingInspectable>(this);
+                impl::IInspectable* result = to_abi<impl::INonDelegatingInspectable>(this);
                 NonDelegatingAddRef();
                 *object = result;
                 return S_OK;
@@ -728,7 +728,7 @@ namespace winrt::impl
 
             if (result == E_NOINTERFACE && this->m_inner)
             {
-                result = get_abi(this->m_inner)->QueryInterface(id, object);
+                result = static_cast<impl::IUnknown*>(get_abi(this->m_inner))->QueryInterface(id, object);
             }
 
             return result;
@@ -765,7 +765,7 @@ namespace winrt::impl
             catch (...) { return impl::to_hresult(); }
         }
 
-        HRESULT __stdcall NonDelegatingGetTrustLevel(TrustLevel* trustLevel) noexcept
+        HRESULT __stdcall NonDelegatingGetTrustLevel(Windows::Foundation::TrustLevel* trustLevel) noexcept
         {
             try
             {
@@ -780,7 +780,7 @@ namespace winrt::impl
             return nullptr;
         }
 
-        virtual ::IInspectable* find_inspectable_nested() const noexcept
+        virtual impl::IInspectable* find_inspectable_nested() const noexcept
         {
             return nullptr;
         }
@@ -821,8 +821,8 @@ namespace winrt::impl
         void abi_exit() noexcept {}
 
         using is_agile = std::negation<std::disjunction<std::is_same<non_agile, I>...>>;
-        using is_factory = std::disjunction<std::is_same<abi_t<Windows::Foundation::IActivationFactory>, abi_t<I>>...>;
-        using is_inspectable = std::disjunction<std::is_base_of<::IInspectable, abi_t<I>>...>;
+        using is_factory = std::disjunction<std::is_same<Windows::Foundation::IActivationFactory, I>...>;
+        using is_inspectable = std::disjunction<std::is_base_of<Windows::Foundation::IInspectable, I>...>;
         using is_weak_ref_source = std::conjunction<is_inspectable, std::negation<is_factory>, std::negation<std::disjunction<std::is_same<no_weak_ref, I>...>>>;
         using weak_ref_t = impl::weak_ref<is_agile::value>;
 
@@ -858,7 +858,7 @@ namespace winrt::impl
 
             if constexpr (is_inspectable::value)
             {
-                if (id == __uuidof(::IInspectable))
+                if (id == guid_of<IInspectable>())
                 {
                     *object = find_inspectable_nested();
                     AddRef();
@@ -866,7 +866,7 @@ namespace winrt::impl
                 }
             }
 
-            if (id == __uuidof(::IUnknown))
+            if (id == guid_of<Windows::Foundation::IUnknown>())
             {
                 *object = get_unknown();
                 AddRef();
@@ -875,7 +875,7 @@ namespace winrt::impl
 
             if constexpr (is_weak_ref_source::value)
             {
-                if (id == __uuidof(impl::IWeakReferenceSource))
+                if (id == guid_of<impl::IWeakReferenceSource>())
                 {
                     *object = make_weak_ref();
                     return*object ? S_OK : E_OUTOFMEMORY;
@@ -943,13 +943,13 @@ namespace winrt::impl
             return (reinterpret_cast<uintptr_t>(value) >> 1) | pointer_flag;
         }
 
-        virtual ::IUnknown* get_unknown() const noexcept = 0;
+        virtual IUnknown* get_unknown() const noexcept = 0;
         virtual uint32_t uncloaked_interfaces_nested() const noexcept = 0;
         virtual hstring GetRuntimeClassName() const = 0;
 
-        virtual TrustLevel GetTrustLevel() const noexcept
+        virtual Windows::Foundation::TrustLevel GetTrustLevel() const noexcept
         {
-            return BaseTrust;
+            return Windows::Foundation::TrustLevel::BaseTrust;
         }
 
         template <typename D, typename I>
@@ -1007,7 +1007,7 @@ WINRT_EXPORT namespace winrt
             return find_interface<impl::uncloak_t<I>...>(id);
         }
 
-        ::IInspectable* find_inspectable_nested() const noexcept override
+        impl::IInspectable* find_inspectable_nested() const noexcept override
         {
             return find_inspectable<I...>();
         }
@@ -1061,9 +1061,9 @@ WINRT_EXPORT namespace winrt
         }
 
         template <typename First, typename... Rest>
-        ::IInspectable* find_inspectable() const noexcept
+        impl::IInspectable* find_inspectable() const noexcept
         {
-            if constexpr (std::is_base_of_v<::IInspectable, impl::abi_t<First>>)
+            if constexpr (std::is_base_of_v<IInspectable, First>)
             {
                 return to_abi<First>(this);
             }
@@ -1077,9 +1077,9 @@ WINRT_EXPORT namespace winrt
             }
         }
 
-        ::IUnknown* get_unknown() const noexcept override
+        impl::IUnknown* get_unknown() const noexcept override
         {
-            return to_abi<first_interface>(this);
+            return reinterpret_cast<impl::IUnknown*>(to_abi<first_interface>(this));
         }
 
         hstring GetRuntimeClassName() const override

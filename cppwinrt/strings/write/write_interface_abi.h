@@ -1,4 +1,4 @@
 
-template <> struct abi<@>{ struct type : ::IInspectable
+template <> struct abi<@>{ struct type : IInspectable
 {
 %};};

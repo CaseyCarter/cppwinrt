@@ -3,7 +3,7 @@ namespace winrt::impl
 {
     struct free_threaded_marshaler : ::IMarshal
     {
-        free_threaded_marshaler(::IUnknown* object) noexcept
+        free_threaded_marshaler(impl::IUnknown* object) noexcept
         {
             m_object.copy_from(object);
         }
@@ -107,7 +107,7 @@ namespace winrt::impl
             return unknown ? unknown.try_as<::IMarshal>() : nullptr;
         }
 
-        com_ptr<::IUnknown> m_object;
+        com_ptr<impl::IUnknown> m_object;
         com_ptr<::IMarshal> m_marshaler{ get_marshaler() };
         std::atomic<uint32_t> m_references{ 1 };
     };

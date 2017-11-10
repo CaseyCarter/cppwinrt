@@ -30,7 +30,7 @@ HRESULT __stdcall DllCanUnloadNow()
     return S_OK;
 }
 
-HRESULT __stdcall DllGetActivationFactory(HSTRING classId, ::IUnknown** factory)
+HRESULT __stdcall DllGetActivationFactory(HSTRING classId, void** factory)
 {
     try
     {

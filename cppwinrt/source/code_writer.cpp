@@ -493,7 +493,7 @@ namespace cppwinrt
         {
             for (meta::method const& method : token.get_methods())
             {
-                out.write("    virtual HRESULT __stdcall %(%) = 0;\n",
+                out.write("    virtual HRESULT __stdcall %(%) noexcept = 0;\n",
                     method.get_abi_name(),
                     bind_output(write_abi_params, method));
             }
@@ -502,7 +502,7 @@ namespace cppwinrt
         void write_delegate_abi_method(output& out, meta::token const token)
         {
             meta::method method = token.get_delegate();
-            out.write("    virtual HRESULT __stdcall Invoke(%) = 0;\n", bind_output(write_abi_params, method));
+            out.write("    virtual HRESULT __stdcall Invoke(%) noexcept = 0;\n", bind_output(write_abi_params, method));
         }
 
         void write_abi_arg(output& out, meta::param const& param, bool is_return = false)

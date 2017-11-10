@@ -133,7 +133,7 @@ namespace
 
         check_hresult(factory->CreateSwapChainForCoreWindow(
             device.get(),
-            get_abi(CoreWindow::GetForCurrentThread()),
+            get_unknown(CoreWindow::GetForCurrentThread()),
             &props,
             nullptr, // all or nothing
             swapChain.put()));

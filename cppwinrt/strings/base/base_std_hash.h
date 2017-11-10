@@ -22,12 +22,12 @@ namespace winrt::impl
 
     inline size_t hash_unknown(const Windows::Foundation::IUnknown& value) noexcept
     {
-        ::IUnknown* abi_value = nullptr;
+        void* abi_value = nullptr;
         if (value)
         {
             abi_value = get_abi(value.try_as<Windows::Foundation::IUnknown>());
         }
-        return std::hash<::IUnknown*>{}(abi_value);
+        return std::hash<void*>{}(abi_value);
     }
 
     template<typename T>
