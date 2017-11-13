@@ -64,37 +64,6 @@ namespace cppwinrt
         }
     }
 
-    inline std::string to_string(std::wstring_view source)
-    {
-        std::string result(source.size(), '?');
-
-        auto WideCharToMultiByte = [&]
-        {
-            WINRT_ASSERT(source.size() <= result.size());
-
-            return ::WideCharToMultiByte(
-                CP_UTF8,
-                0,
-                source.data(),
-                static_cast<uint32_t>(source.size()),
-                result.data(),
-                static_cast<uint32_t>(result.size()),
-                nullptr,
-                nullptr);
-        };
-
-        int size = WideCharToMultiByte();
-
-        while (size == 0)
-        {
-            result.resize(result.size() * 2);
-            size = WideCharToMultiByte();
-        }
-
-        result.resize(size);
-        return result;
-    }
-
     template <typename... Args>
     void print_error(Args&&... args)
     {

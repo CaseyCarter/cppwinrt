@@ -524,12 +524,6 @@ TEST_CASE("hresult, trim_hresult_message")
     REQUIRE(e.message() == L":) is \u263A");
 }
 
-TEST_CASE("hresult, to_hstring")
-{
-    REQUIRE(impl::to_hstring("hello") == L"hello");
-    REQUIRE(impl::to_hstring("") == L"");
-}
-
 TEST_CASE("hresult, std abi support")
 {
     try

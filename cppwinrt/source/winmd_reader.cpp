@@ -2,6 +2,8 @@
 #include "winmd_reader.h"
 #include "settings.h"
 
+using namespace winrt;
+
 namespace cppwinrt::meta
 {
     namespace

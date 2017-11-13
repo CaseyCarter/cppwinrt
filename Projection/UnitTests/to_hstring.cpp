@@ -63,6 +63,26 @@ namespace
             double value = 1234567890.123456789;
             REQUIRE(to_hstring(value) == L"1.23457E+09");
         }
+        {
+            REQUIRE(to_hstring("") == L"");
+            REQUIRE(to_hstring("value") == L"value");
+            REQUIRE(to_hstring(std::string("value")) == L"value");
+            REQUIRE(to_hstring(std::string_view("value")) == L"value");
+        }
+        {
+            REQUIRE(to_string(L"") == "");
+            REQUIRE(to_string(L"value") == "value");
+            REQUIRE(to_string(std::wstring(L"value")) == "value");
+            REQUIRE(to_string(std::wstring_view(L"value")) == "value");
+            REQUIRE(to_string(hstring(L"value")) == "value");
+        }
+        {
+            hstring const a = L"This \u260E is a telephone!";
+            std::string const b = to_string(a);
+            REQUIRE(b == u8"This \u260E is a telephone!");
+            hstring const c = to_hstring(b);
+            REQUIRE(a == c);
+        }
     }
 }
 

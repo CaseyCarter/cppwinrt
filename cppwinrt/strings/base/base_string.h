@@ -295,6 +295,45 @@ namespace winrt::impl
         static handle<locale_handle_traits> locale_handle{ _create_locale(LC_ALL, "C") };
         return locale_handle.get();
     }
+
+    struct hstring_builder
+    {
+        hstring_builder(hstring_builder const&) = delete;
+        hstring_builder& operator=(hstring_builder const&) = delete;
+
+        explicit hstring_builder(uint32_t const size)
+        {
+            check_hresult(WindowsPreallocateStringBuffer(size, &m_data, &m_buffer));
+        }
+
+        ~hstring_builder() noexcept
+        {
+            if (m_buffer != nullptr)
+            {
+                WINRT_VERIFY_(S_OK, WindowsDeleteStringBuffer(m_buffer));
+            }
+        }
+
+        wchar_t* data() noexcept
+        {
+            WINRT_ASSERT(m_buffer != nullptr);
+            return m_data;
+        }
+
+        hstring to_hstring()
+        {
+            WINRT_ASSERT(m_buffer != nullptr);
+            hstring result;
+            check_hresult(WindowsPromoteStringBuffer(m_buffer, put_abi(result)));
+            m_buffer = nullptr;
+            return result;
+        }
+
+    private:
+
+        wchar_t* m_data{ nullptr };
+        HSTRING_BUFFER m_buffer{ nullptr };
+    };
 }
 
 WINRT_EXPORT namespace winrt
@@ -405,5 +444,35 @@ WINRT_EXPORT namespace winrt
             value.Data1, value.Data2, value.Data3, value.Data4[0], value.Data4[1],
             value.Data4[2], value.Data4[3], value.Data4[4], value.Data4[5], value.Data4[6], value.Data4[7]);
         return hstring{ buffer };
+    }
+
+    template <typename T, typename = std::enable_if_t<std::is_convertible_v<T, std::string_view>>>
+    hstring to_hstring(T const& value)
+    {
+        std::string_view const view(value);
+        int const size = MultiByteToWideChar(CP_UTF8, 0, view.data(), static_cast<int32_t>(view.size()), nullptr, 0);
+
+        if (size == 0)
+        {
+            return{};
+        }
+
+        impl::hstring_builder result(size);
+        WINRT_VERIFY_(size, MultiByteToWideChar(CP_UTF8, 0, view.data(), static_cast<int32_t>(view.size()), result.data(), size));
+        return result.to_hstring();
+    }
+
+    inline std::string to_string(std::wstring_view value)
+    {
+        int const size = WideCharToMultiByte( CP_UTF8, 0, value.data(), static_cast<int32_t>(value.size()), nullptr, 0, nullptr, nullptr);
+
+        if (size == 0)
+        {
+            return{};
+        }
+
+        std::string result(size, '?');
+        WINRT_VERIFY_(size, WideCharToMultiByte(CP_UTF8, 0, value.data(), static_cast<int32_t>(value.size()), result.data(), size, nullptr, nullptr));
+        return result;
     }
 }
