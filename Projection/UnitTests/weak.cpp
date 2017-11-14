@@ -114,7 +114,7 @@ TEST_CASE("weak,QI")
         REQUIRE(object.as<Windows::Foundation::IInspectable>() == source.as<Windows::Foundation::IInspectable>());
 
         com_ptr<winrt::impl::IWeakReference> ref;
-        REQUIRE(S_OK == source->GetWeakReference(put_abi(ref)));
+        REQUIRE(S_OK == source->GetWeakReference(ref.put()));
         REQUIRE(!ref.try_as<winrt::impl::IWeakReferenceSource>());
         REQUIRE(!ref.try_as<Windows::Foundation::IInspectable>());
         REQUIRE(ref.as<winrt::impl::IWeakReference>() == ref);
@@ -161,13 +161,13 @@ TEST_CASE("weak,lifetime")
         IStringable object = make<Weak>();
         com_ptr<winrt::impl::IWeakReferenceSource> source = object.as<winrt::impl::IWeakReferenceSource>();
         com_ptr<winrt::impl::IWeakReference> ref;
-        check_hresult(source->GetWeakReference(put_abi(ref)));
+        check_hresult(source->GetWeakReference(ref.put()));
     }
     {
         IStringable object = make<Weak>();
         com_ptr<winrt::impl::IWeakReferenceSource> source = object.as<winrt::impl::IWeakReferenceSource>();
         com_ptr<winrt::impl::IWeakReference> ref;
-        check_hresult(source->GetWeakReference(put_abi(ref)));
+        check_hresult(source->GetWeakReference(ref.put()));
         IStringable object2;
         check_hresult(ref->Resolve(guid_of<IStringable>(), put_abi(object2)));
         REQUIRE(object == object2);
@@ -175,7 +175,7 @@ TEST_CASE("weak,lifetime")
     {
         IStringable object = make<Weak>();
         com_ptr<winrt::impl::IWeakReference> ref;
-        check_hresult(object.as<winrt::impl::IWeakReferenceSource>()->GetWeakReference(put_abi(ref)));
+        check_hresult(object.as<winrt::impl::IWeakReferenceSource>()->GetWeakReference(ref.put()));
         IStringable object2;
         check_hresult(ref->Resolve(guid_of<IStringable>(), put_abi(object2)));
         REQUIRE(object == object2);
@@ -185,7 +185,7 @@ TEST_CASE("weak,lifetime")
         com_ptr<winrt::impl::IWeakReferenceSource> source = object.as<winrt::impl::IWeakReferenceSource>();
         object = nullptr;
         com_ptr<winrt::impl::IWeakReference> ref;
-        check_hresult(source->GetWeakReference(put_abi(ref)));
+        check_hresult(source->GetWeakReference(ref.put()));
         check_hresult(ref->Resolve(guid_of<IStringable>(), put_abi(object)));
         REQUIRE(object.ToString() == L"Weak");
     }
@@ -193,7 +193,7 @@ TEST_CASE("weak,lifetime")
         IStringable object = make<Weak>();
         com_ptr<winrt::impl::IWeakReferenceSource> source = object.as<winrt::impl::IWeakReferenceSource>();
         com_ptr<winrt::impl::IWeakReference> ref;
-        check_hresult(source->GetWeakReference(put_abi(ref)));
+        check_hresult(source->GetWeakReference(ref.put()));
         source = nullptr;
         IStringable object2;
         check_hresult(ref->Resolve(guid_of<IStringable>(), put_abi(object2)));
@@ -204,7 +204,7 @@ TEST_CASE("weak,lifetime")
         com_ptr<winrt::impl::IWeakReferenceSource> source = object.as<winrt::impl::IWeakReferenceSource>();
         object = nullptr;
         com_ptr<winrt::impl::IWeakReference> ref;
-        check_hresult(source->GetWeakReference(put_abi(ref)));
+        check_hresult(source->GetWeakReference(ref.put()));
         source = nullptr;
         check_hresult(ref->Resolve(guid_of<IStringable>(), put_abi(object)));
         REQUIRE(object == nullptr);
@@ -241,7 +241,7 @@ TEST_CASE("weak,lifetime")
         IStringable object = make<Weak>();
         com_ptr<winrt::impl::IWeakReferenceSource> source = object.as<winrt::impl::IWeakReferenceSource>();
         com_ptr<winrt::impl::IWeakReference> ref;
-        check_hresult(source->GetWeakReference(put_abi(ref)));
+        check_hresult(source->GetWeakReference(ref.put()));
 
         REQUIRE(object.try_as<IAgileObject>());
         REQUIRE(ref.try_as<IAgileObject>());
@@ -253,7 +253,7 @@ TEST_CASE("weak,lifetime")
         IStringable object = make<WeakNonAgile>();
         com_ptr<winrt::impl::IWeakReferenceSource> source = object.as<winrt::impl::IWeakReferenceSource>();
         com_ptr<winrt::impl::IWeakReference> ref;
-        check_hresult(source->GetWeakReference(put_abi(ref)));
+        check_hresult(source->GetWeakReference(ref.put()));
 
         REQUIRE(!object.try_as<IAgileObject>());
         REQUIRE(!ref.try_as<IAgileObject>());

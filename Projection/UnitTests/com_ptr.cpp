@@ -48,7 +48,7 @@ TEST_CASE("com_ptr, ::IUnknown")
     com_ptr<::IUnknown> a; // default ctor
     com_ptr<::IUnknown> b = nullptr; // nullptr_t ctor
 
-    REQUIRE(S_OK == get_unknown(stringable)->QueryInterface(put_abi(b))); // attach
+    REQUIRE(S_OK == get_unknown(stringable)->QueryInterface(b.put())); // attach
 
     com_ptr<::IUnknown> c = b; // copy ctor, AddRef
     b = nullptr;
@@ -160,7 +160,7 @@ TEST_CASE("com_ptr, accessors")
     REQUIRE(a);
 
     com_ptr<::IUnknown> c;
-    b->QueryInterface(put_abi(c)); // put
+    b->QueryInterface(c.put()); // put
     REQUIRE(c);
 
     b = nullptr;
@@ -200,7 +200,7 @@ static com_ptr<::IUnknown> test_make_unknown()
     IStringable s = make<Stringable>(L"Hello world!");
 
     com_ptr<::IUnknown> result;
-    REQUIRE(S_OK == get_unknown(s)->QueryInterface(put_abi(result)));
+    REQUIRE(S_OK == get_unknown(s)->QueryInterface(result.put()));
     return result;
 }
 
@@ -242,7 +242,7 @@ static com_ptr<::IInspectable> test_make_inspectable()
     IStringable s = make<Stringable>(L"Hello world!");
 
     com_ptr<::IInspectable> result;
-    REQUIRE(S_OK == get_unknown(s)->QueryInterface(put_abi(result)));
+    REQUIRE(S_OK == get_unknown(s)->QueryInterface(result.put()));
     return result;
 }
 

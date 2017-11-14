@@ -78,43 +78,6 @@ namespace winrt::impl
     constexpr GUID const guid_v = guid<default_interface_t<T>>::value;
 #endif
 
-    template <typename T, typename Enable = void>
-    struct accessors
-    {
-        static abi_t<T> get(T const& object) noexcept
-        {
-            return reinterpret_cast<abi_t<T> const&>(object);
-        }
-
-        static abi_t<T>* put(T& object) noexcept
-        {
-            return reinterpret_cast<abi_t<T>*>(&object);
-        }
-
-        static void copy_from(T& object, abi_t<T> const& value) noexcept
-        {
-            object = reinterpret_cast<T const&>(value);
-        }
-
-        static void copy_to(T const& object, abi_t<T>& value) noexcept
-        {
-            reinterpret_cast<T&>(value) = object;
-        }
-
-        static abi_t<T> detach(T& object) noexcept
-        {
-            abi_t<T> result{};
-            reinterpret_cast<T&>(result) = std::move(object);
-            return result;
-        }
-    };
-
-    template <typename T>
-    auto put_size_abi(T& object) noexcept
-    {
-        return accessors<T>::put_size(object);
-    }
-
     template <uint32_t Size>
     struct struct_base
     {
@@ -209,48 +172,6 @@ WINRT_EXPORT namespace winrt
 #else
         return impl::guid<impl::default_interface_t<T>>::value;
 #endif
-    }
-
-    template <typename T>
-    auto get_abi(T const& object) noexcept
-    {
-        return impl::accessors<T>::get(object);
-    }
-
-    template <typename T>
-    auto put_abi(T& object) noexcept
-    {
-        return impl::accessors<T>::put(object);
-    }
-
-    template <typename T, typename V>
-    void attach_abi(T& object, V&& value) noexcept
-    {
-        impl::accessors<T>::attach(object, value);
-    }
-
-    template <typename T, typename V>
-    void copy_from_abi(T& object, V&& value)
-    {
-        impl::accessors<T>::copy_from(object, value);
-    }
-
-    template <typename T, typename V>
-    void copy_to_abi(T const& object, V& value)
-    {
-        impl::accessors<T>::copy_to(object, value);
-    }
-
-    template <typename T>
-    auto detach_abi(T& object)
-    {
-        return impl::accessors<std::decay_t<T>>::detach(object);
-    }
-
-    template <typename T>
-    auto detach_abi(T&& object)
-    {
-        return impl::accessors<T>::detach(object);
     }
 }
 

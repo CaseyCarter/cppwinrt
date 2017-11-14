@@ -201,6 +201,54 @@ WINRT_EXPORT namespace winrt
 
         impl::handle<impl::hstring_traits> m_handle;
     };
+
+    inline HSTRING get_abi(hstring const& object) noexcept
+    {
+        return *(HSTRING*)(&object);
+    }
+
+    inline HSTRING* put_abi(hstring& object) noexcept
+    {
+        WINRT_ASSERT(get_abi(object) == nullptr);
+        return reinterpret_cast<HSTRING*>(&object);
+    }
+
+    inline void attach_abi(hstring& object, HSTRING value) noexcept
+    {
+        object.clear();
+        *put_abi(object) = value;
+    }
+
+    inline HSTRING detach_abi(hstring& object) noexcept
+    {
+        return impl_detach(object);
+    }
+
+    inline void copy_from_abi(hstring& object, HSTRING value)
+    {
+        attach_abi(object, impl::duplicate_string(value));
+    }
+
+    inline void copy_to_abi(hstring const& object, HSTRING& value)
+    {
+        WINRT_ASSERT(value == nullptr);
+        value = impl::duplicate_string(get_abi(object));
+    }
+
+    inline HSTRING detach_abi(std::wstring_view const& value)
+    {
+        return impl::create_string(value.data(), static_cast<uint32_t>(value.size()));
+    }
+}
+
+WINRT_EXPORT namespace winrt::Windows::Foundation
+{
+    inline hstring GetRuntimeClassName(IInspectable const& object)
+    {
+        hstring value;
+        check_hresult((*(impl::IInspectable**)&object)->GetRuntimeClassName(put_abi(value)));
+        return value;
+    }
 }
 
 namespace winrt::impl
@@ -219,65 +267,6 @@ namespace winrt::impl
     template <> struct category<hstring>
     {
         using type = basic_category;
-    };
-
-    template <> struct accessors<hstring>
-    {
-        static HSTRING get(hstring const& object) noexcept
-        {
-            return impl_get(object);
-        }
-
-        static HSTRING* put(hstring& object) noexcept
-        {
-            return impl_put(object);
-        }
-
-        static void attach(hstring& object, HSTRING value) noexcept
-        {
-            object.clear();
-            *put(object) = value;
-        }
-
-        static void copy_from(hstring& object, HSTRING value)
-        {
-            attach(object, duplicate_string(value));
-        }
-
-        static void copy_to(hstring const& object, HSTRING& value)
-        {
-            WINRT_ASSERT(value == nullptr);
-            value = duplicate_string(get(object));
-        }
-
-        static HSTRING detach(hstring& object) noexcept
-        {
-            return impl_detach(object);
-        }
-    };
-
-    template <> struct accessors<wchar_t const*>
-    {
-        static HSTRING detach(wchar_t const* const value)
-        {
-            return create_string(value, string_length(value));
-        }
-    };
-
-    template <> struct accessors<std::wstring>
-    {
-        static HSTRING detach(std::wstring const& value)
-        {
-            return create_string(value.c_str(), static_cast<uint32_t>(value.size()));
-        }
-    };
-
-    template <> struct accessors<std::wstring_view>
-    {
-        static HSTRING detach(std::wstring_view const& value)
-        {
-            return create_string(value.data(), static_cast<uint32_t>(value.size()));
-        }
     };
 
     // Temporary workaround to support locale-independent numeric formatting

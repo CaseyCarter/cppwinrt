@@ -36,7 +36,7 @@ TEST_CASE("marshal agile")
     WINRT_ASSERT(agile.as<IMarshal>());
 
     com_ptr<IStream> stream;
-    check_hresult(CoMarshalInterThreadInterfaceInStream(guid_of<IStringable>(), get_unknown(agile), put_abi(stream)));
+    check_hresult(CoMarshalInterThreadInterfaceInStream(guid_of<IStringable>(), get_unknown(agile), stream.put()));
     IStringable copy;
     check_hresult(CoUnmarshalInterface(get_abi(stream), guid_of<IStringable>(), put_abi(copy)));
 
@@ -55,13 +55,13 @@ TEST_CASE("marshal agile weak-ref")
     IStringable agile = make<Agile>();
     com_ptr<impl::IWeakReferenceSource> source = agile.as<impl::IWeakReferenceSource>();
     com_ptr<impl::IWeakReference> ref;
-    check_hresult(source->GetWeakReference(put_abi(ref)));
+    check_hresult(source->GetWeakReference(ref.put()));
 
     WINRT_ASSERT(ref.as<IAgileObject>());
     WINRT_ASSERT(ref.as<IMarshal>());
 
     com_ptr<IStream> stream;
-    check_hresult(CoMarshalInterThreadInterfaceInStream(guid_of<impl::IWeakReference>(), reinterpret_cast<::IUnknown*>(get_abi(ref)), put_abi(stream)));
+    check_hresult(CoMarshalInterThreadInterfaceInStream(guid_of<impl::IWeakReference>(), reinterpret_cast<::IUnknown*>(get_abi(ref)), stream.put()));
     com_ptr<impl::IWeakReference> ref_copy;
     check_hresult(CoUnmarshalInterface(get_abi(stream), guid_of<impl::IWeakReference>(), ref_copy.put_void()));
 
@@ -76,7 +76,7 @@ TEST_CASE("marshal non-agile weak-ref")
     IStringable non = make<NonAgile>();
     com_ptr<impl::IWeakReferenceSource> source = non.as<impl::IWeakReferenceSource>();
     com_ptr<impl::IWeakReference> ref;
-    check_hresult(source->GetWeakReference(put_abi(ref)));
+    check_hresult(source->GetWeakReference(ref.put()));
 
     WINRT_ASSERT(!ref.try_as<IAgileObject>());
     WINRT_ASSERT(!ref.try_as<IMarshal>());

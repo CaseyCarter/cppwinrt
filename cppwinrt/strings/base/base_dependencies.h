@@ -28,13 +28,13 @@
 
 extern "C"
 {
-    HRESULT __stdcall WINRT_GetRestrictedErrorInfo(IRestrictedErrorInfo** info);
-    HRESULT __stdcall WINRT_RoGetActivationFactory(HSTRING classId, GUID const& iid, void** factory);
-    HRESULT __stdcall WINRT_RoInitialize(uint32_t type);
-    BOOL    __stdcall WINRT_RoOriginateLanguageException(HRESULT error, HSTRING message, IUnknown* exception);
-    void    __stdcall WINRT_RoUninitialize();
-    HRESULT __stdcall WINRT_SetRestrictedErrorInfo(IRestrictedErrorInfo* info);
-    HRESULT __stdcall WINRT_RoGetAgileReference(uint32_t options, GUID const& iid, void* object, void** reference);
+    HRESULT __stdcall WINRT_GetRestrictedErrorInfo(IRestrictedErrorInfo** info) noexcept;
+    HRESULT __stdcall WINRT_RoGetActivationFactory(HSTRING classId, GUID const& iid, void** factory) noexcept;
+    HRESULT __stdcall WINRT_RoInitialize(uint32_t type) noexcept;
+    BOOL    __stdcall WINRT_RoOriginateLanguageException(HRESULT error, HSTRING message, IUnknown* exception) noexcept;
+    void    __stdcall WINRT_RoUninitialize() noexcept;
+    HRESULT __stdcall WINRT_SetRestrictedErrorInfo(IRestrictedErrorInfo* info) noexcept;
+    HRESULT __stdcall WINRT_RoGetAgileReference(uint32_t options, GUID const& iid, void* object, void** reference) noexcept;
 }
 
 #ifdef _M_IX86

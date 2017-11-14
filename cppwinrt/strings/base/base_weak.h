@@ -36,7 +36,7 @@ WINRT_EXPORT namespace winrt
 
         weak_ref(T const& object)
         {
-            check_hresult(object.template as<impl::IWeakReferenceSource>()->GetWeakReference(put_abi(m_ref)));
+            check_hresult(object.template as<impl::IWeakReferenceSource>()->GetWeakReference(m_ref.put()));
         }
 
         T get() const noexcept

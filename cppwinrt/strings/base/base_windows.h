@@ -8,8 +8,51 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         FullTrust
     };
 
+    struct IUnknown;
+    struct IInspectable;
     struct IInspectable;
     struct IActivationFactory;
+}
+
+WINRT_EXPORT namespace winrt
+{
+    void check_hresult(HRESULT result);
+
+    template <typename T>
+    struct com_ptr;
+
+    template <typename T, typename = std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
+    auto get_abi(T const& object) noexcept
+    {
+        return reinterpret_cast<impl::abi_t<T> const&>(object);
+    }
+
+    template <typename T, typename = std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
+    auto put_abi(T& object) noexcept
+    {
+        return reinterpret_cast<impl::abi_t<T>*>(&object);
+    }
+
+    template <typename T, typename V, typename = std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
+    void copy_from_abi(T& object, V&& value)
+    {
+        object = reinterpret_cast<T const&>(value);
+    }
+
+    template <typename T, typename V, typename = std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
+    void copy_to_abi(T const& object, V& value)
+    {
+        reinterpret_cast<T&>(value) = object;
+    }
+
+    template <typename T, typename = std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, std::decay_t<T>> &&
+        !std::is_convertible_v<T, std::wstring_view>>>
+        auto detach_abi(T&& object)
+    {
+        impl::abi_t<T> result{};
+        reinterpret_cast<T&>(result) = std::move(object);
+        return result;
+    }
 }
 
 namespace winrt::impl
@@ -112,6 +155,30 @@ namespace winrt::impl
     {
         template <typename D> using type = consume_IActivationFactory<D>;
     };
+
+    template <typename T>
+    using com_ref = std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>, T, com_ptr<T>>;
+
+    template <typename To, typename From>
+    com_ref<To> as(From* ptr);
+
+    template <typename To, typename From>
+    com_ref<To> try_as(From* ptr) noexcept;
+
+    template <typename T>
+    struct wrapped_type
+    {
+        using type = T;
+    };
+
+    template <typename T>
+    struct wrapped_type<com_ptr<T>>
+    {
+        using type = T;
+    };
+
+    template <typename T>
+    using wrapped_type_t = typename wrapped_type<T>::type;
 }
 
 WINRT_EXPORT namespace winrt::Windows::Foundation
@@ -249,57 +316,60 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     };
 }
 
-namespace winrt::impl
+WINRT_EXPORT namespace winrt
 {
-    template <typename T>
-    struct accessors<T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
+    inline void* get_abi(Windows::Foundation::IUnknown const& object) noexcept
     {
-        static void* get(T const& object) noexcept
-        {
-            return *(void**)(&object);
-        }
+        return *(void**)(&object);
+    }
 
-        static void** put(T& object) noexcept
-        {
-            return reinterpret_cast<void**>(&object);
-        }
+    inline void** put_abi(Windows::Foundation::IUnknown& object) noexcept
+    {
+        WINRT_ASSERT(get_abi(object) == nullptr);
+        return reinterpret_cast<void**>(&object);
+    }
 
-        static void attach(T& object, void* value) noexcept
-        {
-            object = nullptr;
-            *put(object) = value;
-        }
+    inline void attach_abi(Windows::Foundation::IUnknown& object, void* value) noexcept
+    {
+        object = nullptr;
+        *put_abi(object) = value;
+    }
 
-        static void copy_from(T& object, void* value) noexcept
-        {
-            object = nullptr;
+    inline void* detach_abi(Windows::Foundation::IUnknown& object) noexcept
+    {
+        void* temp = get_abi(object);
+        *reinterpret_cast<void**>(&object) = nullptr;
+        return temp;
+    }
 
-            if (value)
-            {
-                static_cast<IUnknown*>(value)->AddRef();
-                *put(object) = value;
-            }
-        }
+    inline void* detach_abi(Windows::Foundation::IUnknown&& object) noexcept
+    {
+        void* temp = get_abi(object);
+        *reinterpret_cast<void**>(&object) = nullptr;
+        return temp;
+    }
 
-        template <typename V>
-        static void copy_to(T const& object, V& value) noexcept
-        {
-            if (object)
-            {
-                value = get(object);
-                value->AddRef();
-            }
-            else
-            {
-                value = nullptr;
-            }
-        }
+    inline void copy_from_abi(Windows::Foundation::IUnknown& object, void* value) noexcept
+    {
+        object = nullptr;
 
-        static void* detach(T& object) noexcept
+        if (value)
         {
-            return impl_detach(object);
+            static_cast<IUnknown*>(value)->AddRef();
+            *put_abi(object) = value;
         }
-    };
+    }
+
+    inline void copy_to_abi(Windows::Foundation::IUnknown const& object, void*& value) noexcept
+    {
+        WINRT_ASSERT(value == nullptr);
+        value = get_abi(object);
+
+        if (value)
+        {
+            static_cast<IUnknown*>(value)->AddRef();
+        }
+    }
 }
 
 WINRT_EXPORT namespace winrt::Windows::Foundation
@@ -355,13 +425,6 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         IInspectable(std::nullptr_t = nullptr) noexcept {}
     };
 
-    inline hstring GetRuntimeClassName(IInspectable const& object)
-    {
-        hstring value;
-        check_hresult((*(impl::IInspectable**)&object)->GetRuntimeClassName(put_abi(value)));
-        return value;
-    }
-
     inline TrustLevel GetTrustLevel(IInspectable const& object)
     {
         TrustLevel value{};
@@ -377,35 +440,34 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
 namespace winrt::impl
 {
-    template <typename T, std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, T>>* = nullptr>
+    template <typename T>
     T empty_value() noexcept
     {
-        return {};
-    }
-
-    template <typename T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>* = nullptr>
-    T empty_value() noexcept
-    {
-        return nullptr;
+        if constexpr (std::is_base_of_v<Windows::Foundation::IUnknown, T>)
+        {
+            return nullptr;
+        }
+        else
+        {
+            return {};
+        }
     }
 
     template <typename T, typename Enable = void>
     struct arg
     {
         using in = abi_t<T>;
-        using out = in*;
     };
 
     template <typename T>
     struct arg<T, std::enable_if_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>>>
     {
         using in = void*;
-        using out = void**;
     };
 
     template <typename T>
     using arg_in = typename arg<T>::in;
 
     template <typename T>
-    using arg_out = typename arg<T>::out;
+    using arg_out = arg_in<T>*;
 }

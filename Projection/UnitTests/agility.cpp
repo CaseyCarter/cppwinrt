@@ -131,7 +131,7 @@ TEST_CASE("TestAgileWeakReference")
     source.as<IMarshal>();
 
     com_ptr<winrt::impl::IWeakReference> ref;
-    check_hresult(source->GetWeakReference(put_abi(ref)));
+    check_hresult(source->GetWeakReference(ref.put()));
 
     // Drop the source object
     REQUIRE(S_OK == ref->Resolve(guid_of<IClosable>(), put_abi(object)));

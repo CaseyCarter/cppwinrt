@@ -1,64 +1,6 @@
 
 WINRT_EXPORT namespace winrt
 {
-    void check_hresult(HRESULT result);
-
-    template <typename T>
-    struct com_ptr;
-
-    namespace Windows::Foundation
-    {
-        struct IUnknown;
-    }
-}
-
-namespace winrt::impl
-{
-    template <typename T>
-    using com_ref = std::conditional_t<std::is_base_of_v<Windows::Foundation::IUnknown, T>, T, com_ptr<T>>;
-
-    template <typename To, typename From>
-    com_ref<To> as(From* ptr)
-    {
-#ifdef WINRT_DIAGNOSTICS
-        get_diagnostics_info().add_query<To>();
-#endif
-
-        com_ref<To> temp{ nullptr };
-        check_hresult(ptr->QueryInterface(guid_of<To>(), reinterpret_cast<void**>(put_abi(temp))));
-        return temp;
-    }
-
-    template <typename To, typename From>
-    com_ref<To> try_as(From* ptr) noexcept
-    {
-#ifdef WINRT_DIAGNOSTICS
-        get_diagnostics_info().add_query<To>();
-#endif
-
-        com_ref<To> temp{ nullptr };
-        ptr->QueryInterface(guid_of<To>(), reinterpret_cast<void**>(put_abi(temp)));
-        return temp;
-    }
-
-    template <typename T>
-    struct wrapped_type
-    {
-        using type = T;
-    };
-
-    template <typename T>
-    struct wrapped_type<com_ptr<T>>
-    {
-        using type = T;
-    };
-
-    template <typename T>
-    using wrapped_type_t = typename wrapped_type<T>::type;
-}
-
-WINRT_EXPORT namespace winrt
-{
     template <typename T>
     struct com_ptr
     {
@@ -240,37 +182,31 @@ WINRT_EXPORT namespace winrt
 
         type* m_ptr{ nullptr };
     };
-}
 
-namespace winrt::impl
-{
     template <typename T>
-    struct accessors<com_ptr<T>>
+    auto get_abi(com_ptr<T> const& object) noexcept
     {
-        static auto get(com_ptr<T> const& object) noexcept
-        {
-            return object.get();
-        }
+        return object.get();
+    }
 
-        static auto put(com_ptr<T>& object) noexcept
-        {
-            return object.put();
-        }
+    template <typename T>
+    auto put_abi(com_ptr<T>& object) noexcept
+    {
+        return object.put_void();
+    }
 
-        static void attach(com_ptr<T>& object, abi_t<T>* value) noexcept
-        {
-            object.attach(value);
-        }
+    template <typename T>
+    void attach_abi(com_ptr<T>& object, impl::abi_t<T>* value) noexcept
+    {
+        object.attach(value);
+    }
 
-        static auto detach(com_ptr<T>& object) noexcept
-        {
-            return object.detach();
-        }
-    };
-}
+    template <typename T>
+    auto detach_abi(com_ptr<T>& object) noexcept
+    {
+        return object.detach();
+    }
 
-WINRT_EXPORT namespace winrt
-{
     template <typename T>
     bool operator==(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
     {
@@ -329,5 +265,32 @@ WINRT_EXPORT namespace winrt
     bool operator>=(com_ptr<T> const& left, com_ptr<T> const& right) noexcept
     {
         return !(left < right);
+    }
+}
+
+namespace winrt::impl
+{
+    template <typename To, typename From>
+    com_ref<To> as(From* ptr)
+    {
+#ifdef WINRT_DIAGNOSTICS
+        get_diagnostics_info().add_query<To>();
+#endif
+
+        com_ref<To> temp{ nullptr };
+        check_hresult(ptr->QueryInterface(guid_of<To>(), put_abi(temp)));
+        return temp;
+    }
+
+    template <typename To, typename From>
+    com_ref<To> try_as(From* ptr) noexcept
+    {
+#ifdef WINRT_DIAGNOSTICS
+        get_diagnostics_info().add_query<To>();
+#endif
+
+        com_ref<To> temp{ nullptr };
+        ptr->QueryInterface(guid_of<To>(), put_abi(temp));
+        return temp;
     }
 }
