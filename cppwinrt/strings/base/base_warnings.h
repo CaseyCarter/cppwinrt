@@ -1,4 +1,24 @@
 
+#ifndef WINRT_HAS_CXX17
+#if defined(_MSVC_LANG)
+#if _MSVC_LANG > 201402
+#define WINRT_HAS_CXX17	1
+#else
+#define WINRT_HAS_CXX17	0
+#endif
+#else
+#if __cplusplus > 201402
+#define WINRT_HAS_CXX17	1
+#els
+#define WINRT_HAS_CXX17	0
+#endif
+#endif
+#endif
+#if !WINRT_HAS_CXX17
+#error C++/WinRT requires language features only available with C++17.
+#endif 
+#undef WINRT_HAS_CXX17
+
 #if defined(_MSC_FULL_VER) && _MSC_FULL_VER < 191125506
 #define WINRT_STRINGIZE_(x) #x
 #define WINRT_STRINGIZE(x) WINRT_STRINGIZE_(x)

@@ -329,6 +329,16 @@ namespace
             }
         }
 
+        settings::generated = settings::output / (settings::component ? "Generated Files" : "");
+        settings::projection = settings::generated / "winrt";
+        settings::impl = settings::projection / "impl";
+        settings::tests = settings::output / "CompileTests";
+        create_directories(settings::impl);
+        if (settings::create_tests)
+        {
+            create_directories(settings::tests);
+        }
+
         meta::build_index();
     }
 

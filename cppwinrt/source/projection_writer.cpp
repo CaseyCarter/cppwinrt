@@ -16,27 +16,6 @@ namespace cppwinrt
 {
     namespace
     {
-        struct projection_paths
-        {
-            path _root;
-            path _public;
-            path _impl;
-            path _tests;
-
-            projection_paths() :
-                _root(settings::output),
-                _public(_root / "winrt"),
-                _impl(_public / "impl"),
-                _tests(_root / "CompileTests")
-            {
-                create_directories(_impl);
-                if (settings::create_tests)
-                {
-                    create_directories(_tests);
-                }
-            }
-        };
-
         struct namespace_recorder
         {
             std::set<std::string> _projected_namespaces;
@@ -81,7 +60,7 @@ namespace cppwinrt
             }
         }
 
-        IAsyncAction create_base_files(projection_paths const& paths)
+        IAsyncAction create_base_files()
         {
             co_await resume_background();
 
@@ -89,12 +68,12 @@ namespace cppwinrt
             {
                 if (!settings::skip_base_headers)
                 {
-                    create_base_header(paths._public);
+                    create_base_header(settings::projection);
                 }
 
                 if (settings::create_natvis)
                 {
-                    create_natvis(paths._public);
+                    create_natvis(settings::projection);
                 }
             }
             catch (...)
@@ -106,7 +85,6 @@ namespace cppwinrt
         void create_projected_namespace(
             std::string const& namespace_name,
             meta::namespace_types const& namespace_types,
-            projection_paths const& paths,
             namespace_recorder& namespace_recorder)
         {
             try
@@ -121,7 +99,7 @@ namespace cppwinrt
                 {
                     output out;
                     write_test(out, namespace_name, namespace_types);
-                    out.save_as(paths._tests / (namespace_name + ".cpp"));
+                    out.save_as(settings::tests / (namespace_name + ".cpp"));
                 }
 
                 static char const * forward_ext = ".0.h";
@@ -151,7 +129,7 @@ namespace cppwinrt
                     write_consume(out, namespace_types);
                     write_abi(out, namespace_types);
                     out.write_close_namespace();
-                    out.save_as(paths._impl / forward_h);
+                    out.save_as(settings::impl / forward_h);
                 }
 
                 // inteface definitions, which reference abi/consume definitions, potentially circularly
@@ -162,7 +140,7 @@ namespace cppwinrt
                     out.write_meta_namespace(namespace_name);
                     write_interface_definitions(out, namespace_types);
                     out.write_close_namespace();
-                    out.save_as(paths._impl / interface_h);
+                    out.save_as(settings::impl / interface_h);
                 }
 
                 // class definitions, which reference interface definitions, potentially circularly
@@ -184,7 +162,7 @@ namespace cppwinrt
                     write_class_definitions(out, namespace_types);
                     write_interface_overrides(out, namespace_types);
                     out.write_close_namespace();
-                    out.save_as(paths._impl / definition_h);
+                    out.save_as(settings::impl / definition_h);
                 }
 
                 // implementations, which require full class definitions
@@ -225,7 +203,7 @@ namespace cppwinrt
                     out.write_close_namespace();
 
                     write_warning_pop(out);
-                    out.save_as(paths._public / (namespace_name + ".h"));
+                    out.save_as(settings::projection / (namespace_name + ".h"));
                     namespace_recorder.record_projected_namespace(namespace_name);
                 }
             }
@@ -238,12 +216,11 @@ namespace cppwinrt
         IAsyncAction create_projected_namespace_async(
             std::string const& namespace_name,
             meta::namespace_types const& namespace_types,
-            projection_paths const& paths,
             namespace_recorder& namespace_recorder)
         {
             co_await resume_background();
 
-            create_projected_namespace(namespace_name, namespace_types, paths, namespace_recorder);
+            create_projected_namespace(namespace_name, namespace_types, namespace_recorder);
         }
 
         template <typename Collection>
@@ -283,8 +260,6 @@ namespace cppwinrt
 
     void write_projection()
     {
-        projection_paths paths;
-
         meta::index_type const& index = meta::get_index();
         size_t num_writers = index.size() + 1;
 
@@ -292,10 +267,10 @@ namespace cppwinrt
 
         std::vector<IAsyncAction> writers(num_writers);
         num_writers = 0;
-        writers[num_writers++] = create_base_files(paths);
+        writers[num_writers++] = create_base_files();
         for (auto&& item : index)
         {
-            writers[num_writers++] = create_projected_namespace_async(item.first, item.second, paths, namespace_recorder);
+            writers[num_writers++] = create_projected_namespace_async(item.first, item.second, namespace_recorder);
         }
         writers.resize(num_writers);
         wait_all(writers).get();

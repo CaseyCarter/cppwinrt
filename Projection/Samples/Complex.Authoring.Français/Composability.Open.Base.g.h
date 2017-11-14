@@ -7,8 +7,8 @@
 
 namespace winrt::Complex::Authoring::Composability::Open::implementation {
 
-template <typename D, typename ... I>
-struct WINRT_EBO Base_base : impl::module_lock, implements<D, Complex::Authoring::Composability::Open::IBase, composable, I ...>
+template <typename D, typename... I>
+struct WINRT_EBO Base_base : impl::module_lock, implements<D, Complex::Authoring::Composability::Open::IBase, composable, I...>
 {
     using class_type = Complex::Authoring::Composability::Open::Base;
     
@@ -30,8 +30,8 @@ struct WINRT_EBO Base_base : impl::module_lock, implements<D, Complex::Authoring
 
 namespace winrt::Complex::Authoring::Composability::Open::factory_implementation {
 
-template <typename D, typename T, typename ... I>
-struct WINRT_EBO BaseT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::Composability::Open::IBaseFactory, I ...>
+template <typename D, typename T, typename... I>
+struct WINRT_EBO BaseT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::Composability::Open::IBaseFactory, I...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -59,8 +59,8 @@ struct WINRT_EBO BaseT : impl::module_lock, implements<D, Windows::Foundation::I
 
 namespace winrt::Complex::Authoring::Composability::Open::implementation
 {
-    template <typename D, typename ... I>
-    using BaseT = Base_base<D, I ...>;
+    template <typename D, typename... I>
+    using BaseT = Base_base<D, I...>;
 }
 
 #endif

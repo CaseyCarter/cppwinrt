@@ -7,8 +7,8 @@
 
 namespace winrt::Complex::Authoring::factory_implementation {
 
-template <typename D, typename T, typename ... I>
-struct WINRT_EBO StaticT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::IStatic, I ...>
+template <typename D, typename T, typename... I>
+struct WINRT_EBO StaticT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Complex::Authoring::IStatic, I...>
 {
     hstring GetRuntimeClassName() const
     {

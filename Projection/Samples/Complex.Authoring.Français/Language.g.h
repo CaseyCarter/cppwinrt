@@ -7,8 +7,8 @@
 
 namespace winrt::Complex::Authoring::implementation {
 
-template <typename D, typename ... I>
-struct WINRT_EBO Language_base : impl::module_lock, implements<D, Complex::Authoring::ILanguage, I ...>
+template <typename D, typename... I>
+struct WINRT_EBO Language_base : impl::module_lock, implements<D, Complex::Authoring::ILanguage, I...>
 {
     using class_type = Complex::Authoring::Language;
     
@@ -30,8 +30,8 @@ struct WINRT_EBO Language_base : impl::module_lock, implements<D, Complex::Autho
 
 namespace winrt::Complex::Authoring::factory_implementation {
 
-template <typename D, typename T, typename ... I>
-struct WINRT_EBO LanguageT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+template <typename D, typename T, typename... I>
+struct WINRT_EBO LanguageT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -54,8 +54,8 @@ struct WINRT_EBO LanguageT : impl::module_lock, implements<D, Windows::Foundatio
 
 namespace winrt::Complex::Authoring::implementation
 {
-    template <typename D, typename ... I>
-    using LanguageT = Language_base<D, I ...>;
+    template <typename D, typename... I>
+    using LanguageT = Language_base<D, I...>;
 }
 
 #endif

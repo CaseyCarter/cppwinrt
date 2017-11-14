@@ -93,7 +93,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..;Generated Files</AdditionalIncludeDirectories>
       <AdditionalOptions> /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -126,7 +126,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..;Generated Files</AdditionalIncludeDirectories>
       <AdditionalOptions> /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -161,7 +161,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..;Generated Files</AdditionalIncludeDirectories>
       <AdditionalOptions> /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -198,7 +198,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..;Generated Files</AdditionalIncludeDirectories>
       <AdditionalOptions> /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>

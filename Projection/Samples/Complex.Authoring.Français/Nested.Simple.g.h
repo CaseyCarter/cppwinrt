@@ -7,8 +7,8 @@
 
 namespace winrt::Complex::Authoring::Nested::implementation {
 
-template <typename D, typename ... I>
-struct WINRT_EBO Simple_base : impl::module_lock, implements<D, Complex::Authoring::Nested::ISimple, I ...>
+template <typename D, typename... I>
+struct WINRT_EBO Simple_base : impl::module_lock, implements<D, Complex::Authoring::Nested::ISimple, I...>
 {
     using class_type = Complex::Authoring::Nested::Simple;
     
@@ -30,8 +30,8 @@ struct WINRT_EBO Simple_base : impl::module_lock, implements<D, Complex::Authori
 
 namespace winrt::Complex::Authoring::Nested::factory_implementation {
 
-template <typename D, typename T, typename ... I>
-struct WINRT_EBO SimpleT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+template <typename D, typename T, typename... I>
+struct WINRT_EBO SimpleT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -54,8 +54,8 @@ struct WINRT_EBO SimpleT : impl::module_lock, implements<D, Windows::Foundation:
 
 namespace winrt::Complex::Authoring::Nested::implementation
 {
-    template <typename D, typename ... I>
-    using SimpleT = Simple_base<D, I ...>;
+    template <typename D, typename... I>
+    using SimpleT = Simple_base<D, I...>;
 }
 
 #endif

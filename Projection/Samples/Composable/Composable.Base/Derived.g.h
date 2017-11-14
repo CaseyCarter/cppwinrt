@@ -8,8 +8,8 @@
 
 namespace winrt::Composable::Base::implementation {
 
-template <typename D, typename ... I>
-struct WINRT_EBO Derived_base : implements<D, Composable::Base::IDerived, Composable::Base::IDerivedOverrides, composable, Composable::Base::implementation::Root, I ...>
+template <typename D, typename... I>
+struct WINRT_EBO Derived_base : implements<D, Composable::Base::IDerived, Composable::Base::IDerivedOverrides, composable, Composable::Base::implementation::Root, I...>
 {
     using class_type = Composable::Base::Derived;
     
@@ -34,8 +34,8 @@ protected:
 
 namespace winrt::Composable::Base::factory_implementation {
 
-template <typename D, typename T, typename ... I>
-struct WINRT_EBO DerivedT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Composable::Base::IDerivedFactory, I ...>
+template <typename D, typename T, typename... I>
+struct WINRT_EBO DerivedT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Composable::Base::IDerivedFactory, I...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -68,8 +68,8 @@ struct WINRT_EBO DerivedT : impl::module_lock, implements<D, Windows::Foundation
 
 namespace winrt::Composable::Base::implementation
 {
-    template <typename D, typename ... I>
-    using DerivedT = Derived_base<D, I ...>;
+    template <typename D, typename... I>
+    using DerivedT = Derived_base<D, I...>;
 }
 
 #endif

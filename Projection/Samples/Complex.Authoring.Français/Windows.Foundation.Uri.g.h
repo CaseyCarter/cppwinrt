@@ -8,8 +8,8 @@
 
 namespace winrt::Windows::Foundation::implementation {
 
-template <typename D, typename ... I>
-struct WINRT_EBO Uri_base : impl::module_lock, implements<D, Windows::Foundation::IUriRuntimeClass, Windows::Foundation::IStringable, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri, I ...>
+template <typename D, typename... I>
+struct WINRT_EBO Uri_base : impl::module_lock, implements<D, Windows::Foundation::IUriRuntimeClass, Windows::Foundation::IStringable, Windows::Foundation::IUriRuntimeClassWithAbsoluteCanonicalUri, I...>
 {
     using class_type = Windows::Foundation::Uri;
     
@@ -31,8 +31,8 @@ struct WINRT_EBO Uri_base : impl::module_lock, implements<D, Windows::Foundation
 
 namespace winrt::Windows::Foundation::factory_implementation {
 
-template <typename D, typename T, typename ... I>
-struct WINRT_EBO UriT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Windows::Foundation::IUriEscapeStatics, Windows::Foundation::IUriRuntimeClassFactory, I ...>
+template <typename D, typename T, typename... I>
+struct WINRT_EBO UriT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Windows::Foundation::IUriEscapeStatics, Windows::Foundation::IUriRuntimeClassFactory, I...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -75,8 +75,8 @@ struct WINRT_EBO UriT : impl::module_lock, implements<D, Windows::Foundation::IA
 
 namespace winrt::Windows::Foundation::implementation
 {
-    template <typename D, typename ... I>
-    using UriT = Uri_base<D, I ...>;
+    template <typename D, typename... I>
+    using UriT = Uri_base<D, I...>;
 }
 
 #endif

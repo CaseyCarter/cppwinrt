@@ -107,7 +107,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await  /D "NDEBUG" %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4100</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..;Generated Files</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -133,7 +133,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4100</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..;Generated Files</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -161,7 +161,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..;Generated Files</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -191,7 +191,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..;Generated Files</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -110,8 +110,6 @@
     <ClInclude Include="strings\write\write_component_pch_source.h" />
     <ClInclude Include="strings\write\write_component_produce_override_dispatch.h" />
     <ClInclude Include="strings\write\write_component_produce_override_dispatch_method.h" />
-    <ClInclude Include="strings\write\write_component_project.h" />
-    <ClInclude Include="strings\write\write_component_project_filters.h" />
     <ClInclude Include="strings\write\write_component_source.h" />
     <ClInclude Include="strings\write\write_component_source_empty.h" />
     <ClInclude Include="strings\write\write_component_static_class_header.h" />

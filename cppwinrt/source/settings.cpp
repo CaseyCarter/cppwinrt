@@ -9,6 +9,10 @@ namespace cppwinrt::settings
     std::vector<path> inputs;
     std::vector<path> refs;
     path output;
+    path generated;
+    path projection;
+    path impl;
+    path tests;
     std::vector<std::string> filters;
     std::wstring platform_version{L"10.0.15063.0"};
     bool component{};

@@ -1,3 +1,3 @@
 EXPORTS
-DllCanUnloadNow         PRIVATE
-DllGetActivationFactory PRIVATE
+DllCanUnloadNow = WINRT_CanUnloadNow                    PRIVATE
+DllGetActivationFactory = WINRT_GetActivationFactory    PRIVATE

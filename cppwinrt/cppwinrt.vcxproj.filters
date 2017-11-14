@@ -260,12 +260,6 @@
     <ClInclude Include="strings\write\write_component_produce_override_dispatch_method.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_component_project.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_project_filters.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
     <ClInclude Include="strings\write\write_component_source.h">
       <Filter>strings\write</Filter>
     </ClInclude>

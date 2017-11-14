@@ -7,8 +7,8 @@
 
 namespace winrt::Farm::Animals::implementation {
 
-template <typename D, typename ... I>
-struct WINRT_EBO Egg_base : impl::module_lock, implements<D, Farm::Animals::IEgg, I ...>
+template <typename D, typename... I>
+struct WINRT_EBO Egg_base : impl::module_lock, implements<D, Farm::Animals::IEgg, I...>
 {
     using class_type = Farm::Animals::Egg;
     
@@ -30,8 +30,8 @@ struct WINRT_EBO Egg_base : impl::module_lock, implements<D, Farm::Animals::IEgg
 
 namespace winrt::Farm::Animals::factory_implementation {
 
-template <typename D, typename T, typename ... I>
-struct WINRT_EBO EggT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Farm::Animals::IEggFactory, I ...>
+template <typename D, typename T, typename... I>
+struct WINRT_EBO EggT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Farm::Animals::IEggFactory, I...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -59,8 +59,8 @@ struct WINRT_EBO EggT : impl::module_lock, implements<D, Windows::Foundation::IA
 
 namespace winrt::Farm::Animals::implementation
 {
-    template <typename D, typename ... I>
-    using EggT = Egg_base<D, I ...>;
+    template <typename D, typename... I>
+    using EggT = Egg_base<D, I...>;
 }
 
 #endif

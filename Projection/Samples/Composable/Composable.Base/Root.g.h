@@ -7,8 +7,8 @@
 
 namespace winrt::Composable::Base::implementation {
 
-template <typename D, typename ... I>
-struct WINRT_EBO Root_base : impl::module_lock, implements<D, Composable::Base::IRoot, Composable::Base::IRootOverrides, composable, I ...>
+template <typename D, typename... I>
+struct WINRT_EBO Root_base : impl::module_lock, implements<D, Composable::Base::IRoot, Composable::Base::IRootOverrides, composable, I...>
 {
     using class_type = Composable::Base::Root;
     
@@ -33,8 +33,8 @@ protected:
 
 namespace winrt::Composable::Base::factory_implementation {
 
-template <typename D, typename T, typename ... I>
-struct WINRT_EBO RootT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Composable::Base::IRootFactory, I ...>
+template <typename D, typename T, typename... I>
+struct WINRT_EBO RootT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, Composable::Base::IRootFactory, I...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -62,8 +62,8 @@ struct WINRT_EBO RootT : impl::module_lock, implements<D, Windows::Foundation::I
 
 namespace winrt::Composable::Base::implementation
 {
-    template <typename D, typename ... I>
-    using RootT = Root_base<D, I ...>;
+    template <typename D, typename... I>
+    using RootT = Root_base<D, I...>;
 }
 
 #endif

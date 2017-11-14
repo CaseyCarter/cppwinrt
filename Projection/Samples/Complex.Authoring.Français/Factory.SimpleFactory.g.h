@@ -7,8 +7,8 @@
 
 namespace winrt::Complex::Authoring::Factory::implementation {
 
-template <typename D, typename ... I>
-struct WINRT_EBO SimpleFactory_base : impl::module_lock, implements<D, Complex::Authoring::Factory::ISimpleFactory, I ...>
+template <typename D, typename... I>
+struct WINRT_EBO SimpleFactory_base : impl::module_lock, implements<D, Complex::Authoring::Factory::ISimpleFactory, I...>
 {
     using class_type = Complex::Authoring::Factory::SimpleFactory;
     
@@ -30,8 +30,8 @@ struct WINRT_EBO SimpleFactory_base : impl::module_lock, implements<D, Complex::
 
 namespace winrt::Complex::Authoring::Factory::factory_implementation {
 
-template <typename D, typename T, typename ... I>
-struct WINRT_EBO SimpleFactoryT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+template <typename D, typename T, typename... I>
+struct WINRT_EBO SimpleFactoryT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -54,8 +54,8 @@ struct WINRT_EBO SimpleFactoryT : impl::module_lock, implements<D, Windows::Foun
 
 namespace winrt::Complex::Authoring::Factory::implementation
 {
-    template <typename D, typename ... I>
-    using SimpleFactoryT = SimpleFactory_base<D, I ...>;
+    template <typename D, typename... I>
+    using SimpleFactoryT = SimpleFactory_base<D, I...>;
 }
 
 #endif

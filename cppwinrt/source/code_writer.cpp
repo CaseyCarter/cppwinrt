@@ -2194,7 +2194,7 @@ namespace cppwinrt
                 bind_output(write_test_includes),
                 bind_output(write_consume_test_functions));
 
-            out.save_as(settings::output / "CompileTests/consume.cpp");
+            out.save_as(settings::tests / "consume.cpp");
         }
 
         void write_produce_tests()
@@ -2205,7 +2205,7 @@ namespace cppwinrt
                 bind_output(write_test_includes),
                 bind_output(write_produce_test_interfaces));
 
-            out.save_as(settings::output / "CompileTests/produce.cpp");
+            out.save_as(settings::tests / "produce.cpp");
         }
 
         std::string_view get_relative_component_name(meta::type const& type)
@@ -2218,6 +2218,13 @@ namespace cppwinrt
             {
                 return type.full_name();
             }
+        }
+
+        std::string get_relative_component_path(meta::type const& type)
+        {
+            std::string name(get_relative_component_name(type));
+            std::replace(name.begin(), name.end(), '.', '\\');
+            return name;
         }
 
         std::string get_component_filename(meta::type const& type)
@@ -2734,16 +2741,22 @@ void t()
         write_component_produce_override_dispatch(out, types);
         out.write_close_namespace();
 
-        out.save_as(settings::output / "module.h");
+        out.save_as(settings::generated / "module.g.h");
     }
 
-    void write_component_class_includes(output& out, std::vector<meta::type const*> const& types)
+    void write_component_class_activator_forwards(output& out, std::vector<meta::type const*> const& types)
     {
         for (meta::type const* type : types)
         {
             if (has_factory_members(type->token))
             {
-                out.write("#include \"%.h\"\n", get_relative_component_name(*type));
+                out.write(R"(namespace winrt::@::factory_implementation
+{
+    IUnknown* make_for_%() noexcept;
+}
+)",                
+                    type->name_space(), 
+                    type->name());
             }
         }
     }
@@ -2774,34 +2787,11 @@ void t()
         else
         {
             out.write(strings::write_component_source,
-                bind_output(write_component_class_includes, types),
+                bind_output(write_component_class_activator_forwards, types),
                 bind_output(write_component_class_activations, types));
         }
 
-        out.save_as(settings::output / "module.cpp");
-    }
-
-    void write_component_project_sources(output& out, std::vector<meta::type const*> const& types)
-    {
-        for (meta::type const* type : types)
-        {
-            out.write(R"(
-    <ClCompile Include="%.cpp" />)",
-                get_relative_component_name(*type));
-        }
-    }
-
-    void write_component_project_includes(output& out, std::vector<meta::type const*> const& types)
-    {
-        for (meta::type const* type : types)
-        {
-            std::string_view filename = get_relative_component_name(*type);
-            out.write(R"(
-    <ClInclude Include="%.g.h" />
-    <ClInclude Include="%.h" />)",
-                filename,
-                filename);
-        }
+        out.save_as(settings::generated / "module.g.cpp");
     }
 
     struct rpc_cstr_traits : winrt::impl::handle_traits<RPC_CSTR>
@@ -2824,7 +2814,7 @@ void t()
 
     void write_component_def()
     {
-        std::experimental::filesystem::path comp_def = settings::output / "module.def";
+        std::experimental::filesystem::path comp_def = settings::generated / "module.def";
         if (!settings::overwrite && exists(comp_def.string()))
         {
             return;
@@ -2866,117 +2856,12 @@ void t()
         out.save_as(pch_header);
     }
 
-    void write_component_project_natvis(output& out, std::string const& project_name)
-    {
-        if (!settings::create_natvis)
-        {
-            return;
-        }
-        out.write(R"(
-  <ItemGroup>
-    <Natvis Include="%.natvis" />
-  </ItemGroup>)", project_name);
-    }
-
     void write_component_winmd_dependencies(output& out)
     {
         for (auto& input : settings::inputs)
         {
             out.write(input.string() + ";");
         }
-    }
-
-    void write_component_project(std::vector<meta::type const*> const& types)
-    {
-        std::string project_name(settings::component ? settings::component_name : "cppwinrt");
-        if (project_name.empty())
-        {
-            return;
-        }
-        std::experimental::filesystem::path project_path = settings::output / (project_name + ".vcxproj");
-        if (exists(project_path.string()))
-        {
-            return;
-        }
-
-        static PCSTR platform_toolset = "v141";
-        std::string platform_version(begin(settings::platform_version), end(settings::platform_version));
-        std::string project_ns = project_name;
-        project_ns.erase(std::remove(project_ns.begin(), project_ns.end(), '.'), project_ns.end());
-        std::string project_exports = project_ns + "_EXPORTS";
-        std::transform(project_ns.begin(), project_ns.end(), project_exports.begin(), [](char c) {return (char)::toupper(c); });
-
-        output out;
-        out.write(strings::write_component_project,
-            CreateGuid(),
-            project_ns,
-            platform_version,    
-            platform_toolset,   
-            platform_toolset,
-            platform_toolset,
-            platform_toolset,
-            GetCommandLineA(),
-            project_name,
-            bind_output(write_component_winmd_dependencies),
-            project_exports,
-            project_exports,
-            project_exports,
-            project_exports,
-            bind_output(write_component_project_sources, types),
-            bind_output(write_component_project_includes, types),
-            bind_output(write_component_project_natvis, project_name)
-        );
-
-        out.save_as(project_path);
-    }
-
-    void write_component_project_filters_includes(output& out, std::vector<meta::type const*> const& types)
-    {
-        for (meta::type const* type : types)
-        {
-            out.write(R"(
-    <ClInclude Include="%.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>)",
-                get_relative_component_name(*type));
-        }
-    }
-
-    void write_component_project_filters_natvis(output& out, std::string const& project_name)
-    {
-        if (!settings::create_natvis)
-        {
-            return;
-        }
-        out.write(R"(
-  <ItemGroup>
-    <Natvis Include="%.natvis">
-      <Filter>Generated</Filter>
-    </Natvis>
-  </ItemGroup>)", project_name);
-    }
-
-    void write_component_project_filters(std::vector<meta::type const*> const& types)
-    {
-        std::string project_name(settings::component ? settings::component_name : "cppwinrt");
-        if (project_name.empty())
-        {
-            return;
-        }
-        std::experimental::filesystem::path filters_path = settings::output / (project_name + ".vcxproj.filters");
-        if (exists(filters_path.string()))
-        {
-            return;
-        }
-
-        output out;
-        out.write(strings::write_component_project_filters,
-            bind_output(write_component_project_filters_includes, types),
-            bind_output(write_component_project_filters_natvis, project_name),
-            CreateGuid()
-        );
-
-        out.save_as(filters_path);
     }
 
     void write_component_class_constructor_declarations(output& out, meta::type const& type, meta::token const factory)
@@ -3155,11 +3040,11 @@ void t()
 
     void write_component_class_generated_header(meta::type const& type, reference_writer const& ref_writer)
     {
-        std::string const filename = get_component_filename(type) + ".g.h";
+        path filepath = settings::generated / (get_relative_component_path(type) + ".g.h");
 
         output out;
         write_warning(out, strings::write_edit_warning_header);
-        out.write("\n#include \"module.h\"\n");
+        out.write("\n#include \"module.g.h\"\n");
 
         meta::type const* base_type = type.token.get_base_type();
 
@@ -3189,7 +3074,9 @@ void t()
                       type.name(),
                       bind_output(write_component_factory_interfaces, type),
                       type.full_name(),
-                      bind_output(write_component_factory_forwarding_methods, type));
+                      bind_output(write_component_factory_forwarding_methods, type),
+                      type.name(),
+                      type.name());
 
             out.write_close_namespace();
         }
@@ -3208,7 +3095,8 @@ void t()
                 type.name());
         }
 
-        out.save_as(filename);
+        create_directories(filepath.parent_path());
+        out.save_as(filepath.string());
     }
 
     void write_component_class_header(meta::type const& type)
@@ -3221,7 +3109,7 @@ void t()
         }
 
         output out;
-        out.write("#pragma once\n\n#include \"%.g.h\"\n\n", get_relative_component_name(type));
+        out.write("#pragma once\n\n#include \"%.g.h\"\n\n", get_relative_component_path(type));
 
         out.write("namespace winrt::@::implementation\n{\n", type.name_space());
 

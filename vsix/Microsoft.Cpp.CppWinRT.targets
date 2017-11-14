@@ -5,30 +5,65 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 -->
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-    <PropertyGroup Condition="$(CppWinRT)">
+    <PropertyGroup Condition="$(CppWinRTEnabled)">
         <ComputeMIDLGeneratedCompileInputsDependsOn>
             $(ComputeMIDLGeneratedCompileInputsDependsOn);
-            CppWinRTGenerateComponentProjection;
-            CppWinRTMdMergeMidlOutput;
+            CppWinRTMakeReferenceProjection;
         </ComputeMIDLGeneratedCompileInputsDependsOn>
-        <CppWinRTMetadataAssembly Condition="'$(CppWinRTMetadataAssembly)' == ''">$(OutDir)$(RootNamespace)_Merged.winmd</CppWinRTMetadataAssembly>
+        <AfterMidlTargets>
+            $(AfterMidlTargets);
+            CppWinRTMakeComponentProjection;
+        </AfterMidlTargets>
+        <MarkupCompilePass2DependsOn>
+          $(MarkupCompilePass2DependsOn)
+          CppWinRTMergeMidlOutput;
+        </MarkupCompilePass2DependsOn>
+        <CppWinRTVerbosity Condition="'$(CppWinRTVerbosity)' == ''">normal</CppWinRTVerbosity>
+        <CppWinRTCommandVerbosity Condition="'$(CppWinRTVerbosity)' == 'high'">-verbose</CppWinRTCommandVerbosity>
     </PropertyGroup>
 
-    <Target Name="CppWinRTGenerateReferenceProjection" Condition="$(CppWinRT)" AfterTargets="ComputeReferenceCLInput" Inputs="@(ReferencePath)" Outputs="@(ReferencePath->'$(GeneratedFilesDir)winrt\%(Filename).h')">
-        <Exec Command="cppwinrt -v -in @(ReferencePath->'&quot;%(Fullpath)&quot;',' ') -ref $(WindowsTargetPlatformVersion) -out &quot;$(GeneratedFilesDir).&quot;" />
+    <!--Only consider explicit WinMD project references-->
+    <Target Name="GetCppWinRTReferences" Condition="$(CppWinRTEnabled)" 
+            DependsOnTargets="ResolveAssemblyReferences" Returns="@(CppWinRTReferences)">
+        <ItemGroup>
+            <CppWinRTReferences Include="@(ReferencePath)" Condition="'%(ReferencePath.Implicit)' != 'true' and '%(ReferencePath.WinMDFile)' == 'true'" />
+        </ItemGroup>
+        <Message Text="CppWinRTReferences: @(CppWinRTReferences)" Importance="$(CppWinRTVerbosity)"/>
+    </Target>
+    
+    <!--Reference projection depends on WinMD project references-->
+    <Target Name="CppWinRTMakeReferenceProjection" Condition="$(CppWinRTEnabled)" 
+            DependsOnTargets="GetCppWinRTReferences" Inputs="@(CppWinRTReferences)" Outputs="@(CppWinRTReferences->'$(GeneratedFilesDir)winrt\%(Filename).h')">
+        <PropertyGroup>
+            <CppWinRTCommand>cppwinrt $(CppWinRTCommandVerbosity) -in @(CppWinRTReferences->'&quot;%(Fullpath)&quot;',' ') -ref $(WindowsTargetPlatformVersion) -out &quot;$(GeneratedFilesDir).&quot;</CppWinRTCommand>
+        </PropertyGroup>
+        <Message Text="$(CppWinRTCommand)" Importance="$(CppWinRTVerbosity)"/>
+        <Exec Command="$(CppWinRTCommand)" />
     </Target>
 
-    <Target Name="CppWinRTGenerateComponentProjection" Condition="$(CppWinRT)" Inputs="@(Midl->'%(OutputDirectory)%(MetadataFileName)')" Outputs="@(Midl->'$(GeneratedFilesDir)winrt\%(Filename).h')">
-        <Exec Command="cppwinrt -v -comp -name $(RootNamespace) -in @(Midl->'&quot;%(OutputDirectory)%(MetadataFileName)&quot;',' ') -ref $(WindowsTargetPlatformVersion) -out &quot;$(GeneratedFilesDir).&quot;"/>
+    <!--Component projection depends on both IDL sources and WinMD project references-->
+    <Target Name="CppWinRTMakeComponentProjection" Condition="$(CppWinRTEnabled)" 
+            DependsOnTargets="Midl;GetCppWinRTReferences" Inputs="@(Midl->'%(OutputDirectory)%(MetadataFileName)');@(CppWinRTReferences)" Outputs="$(GeneratedFilesDir)winrt\$(RootNamespace).h">
+        <PropertyGroup>
+            <CppWinRTCommand>cppwinrt $(CppWinRTCommandVerbosity) -comp -name $(RootNamespace) -in @(Midl->'&quot;%(OutputDirectory)%(MetadataFileName)&quot;',' ') -ref @(CppWinRTReferences->'&quot;%(Fullpath)&quot;',' ') $(WindowsTargetPlatformVersion) -out .</CppWinRTCommand>
+        </PropertyGroup>
+        <Message Text="$(CppWinRTCommand)" Importance="$(CppWinRTVerbosity)"/>
+        <Exec Command="$(CppWinRTCommand)" />
     </Target>
 
-    <Target Name="CppWinRTMdMergeMidlOutput" Condition="$(CppWinRT) And ('@(Page)' != '' Or '@(ApplicationDefinition)' != '')" Inputs="@(Midl->'%(MetadataFileName)')" Outputs="$(CppWinRTMetadataAssembly)">
+    <!--MdMerge should only execute for Xaml projects-->
+    <Target Name="CppWinRTMergeMidlOutput" Condition="$(CppWinRTEnabled) And ('@(Page)' != '' Or '@(ApplicationDefinition)' != '')" 
+            DependsOnTargets="Midl" Inputs="@(Midl->'%(MetadataFileName)')" Outputs="$(Outdir)$(RootNamespace)_Merged.winmd">
         <ItemGroup>
             <MetaDataFiles Include="$(WindowsSDK_MetadataPathVersioned)\Windows.Foundation.*\**\*.winmd" />
         </ItemGroup>
+        <PropertyGroup>
+            <MdMergeCommand>mdmerge.exe -v @(MetaDataFiles->'-metadata_dir &quot;%(RelativeDir).&quot;',' ') -o &quot;$(OutDir)Merged&quot; -i &quot;$(OutDir)Unmerged&quot; -partial -n:1</MdMergeCommand>
+        </PropertyGroup>
         <Copy SourceFiles="@(Midl->'%(MetadataFileName)')" DestinationFolder="$(OutDir)Unmerged\" />
-        <Exec Command="mdmerge.exe -v @(MetaDataFiles->'-metadata_dir &quot;%(RelativeDir).&quot;',' ') -o &quot;$(OutDir)Merged&quot; -i &quot;$(OutDir)Unmerged&quot; -partial -n:1" />
-        <Copy SourceFiles="$(OutDir)Merged\$(RootNamespace).winmd" DestinationFiles="$(CppWinRTMetadataAssembly)" />
+        <Message Text="$(MdMergeCommand)" Importance="$(CppWinRTVerbosity)"/>
+        <Exec Command="$(MdMergeCommand)" />
+        <Copy SourceFiles="$(OutDir)Merged\$(RootNamespace).winmd" DestinationFiles="$(OutDir)$(RootNamespace)_Merged.winmd" />
     </Target>
 
 </Project>

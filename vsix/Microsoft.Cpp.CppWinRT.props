@@ -3,25 +3,35 @@
 Copyright (C) Microsoft Corporation. All rights reserved.
 ***********************************************************************************************
 -->
-
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
+    <!--CppWinRTEnabled indicates whether C++/WinRT is available to the project, whereas 
+        CppWinRTProject identifies the project as requiring C++/WinRT (template-set).-->
     <PropertyGroup>
-        <CppWinRT Condition="'$(AppContainerApplication)' != 'true' Or '$(CompileAsWinRT)' == 'false'">true</CppWinRT>
-        <CppWinRT Condition="'$(CppWinRT)' == ''">false</CppWinRT>
+        <CppWinRTProject Condition="'$(CppWinRTProject)' != 'true'">false</CppWinRTProject>
+        <CppWinRTEnabled Condition="'$(AppContainerApplication)' != 'true' Or $(CppWinRTProject)">true</CppWinRTEnabled>
+        <CppWinRTEnabled Condition="'$(CppWinRTEnabled)' != 'true'">false</CppWinRTEnabled>
     </PropertyGroup>
 
-    <PropertyGroup Condition="$(CppWinRT)">
+    <PropertyGroup Condition="$(CppWinRTEnabled)">
         <CanReferenceWinRT>true</CanReferenceWinRT>
         <GeneratedFilesDir Condition="'$(GeneratedFilesDir)' == ''">Generated Files\</GeneratedFilesDir>
+        <MinimalCoreWin Condition="$(CppWinRTProject) And '$(MinimalCoreWin)' == ''">true</MinimalCoreWin>
+        <!--Ensure that C++/WinRT build support is available for projects requiring it-->
+        <RequiredBundles Condition="$(CppWinRTProject)">$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>
     </PropertyGroup>
 
-    <ItemDefinitionGroup Condition="$(CppWinRT)">
+    <ItemDefinitionGroup Condition="$(CppWinRTEnabled)">
         <ClCompile>
             <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(GeneratedFilesDir)</AdditionalIncludeDirectories>
-            <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
-            <LanguageStandard Condition="'$(LanguageStandard)' == ''">stdcpp17</LanguageStandard>
+            <!--Set explicit compiler defaults for projects requiring C++/WinRT-->
+            <AdditionalOptions Condition="$(CppWinRTProject)">/permissive- /await %(AdditionalOptions)</AdditionalOptions>
+            <CompileAsWinRT Condition="$(CppWinRTProject) And '%(ClCompile.CompileAsWinRT)' == ''">false</CompileAsWinRT>
+            <LanguageStandard Condition="$(CppWinRTProject) And '%(ClCompile.LanguageStandard)' == ''">stdcpp17</LanguageStandard>
         </ClCompile>
+        <Link>
+            <AdditionalDependencies Condition="$(CppWinRTProject)">WindowsApp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
     </ItemDefinitionGroup>
 
 </Project>

@@ -8,8 +8,8 @@
 
 namespace winrt::Complex::Authoring::Composability::Closed::implementation {
 
-template <typename D, typename ... I>
-struct WINRT_EBO Derived_base : implements<D, Complex::Authoring::Composability::Closed::IDerived, Complex::Authoring::Composability::Closed::implementation::Base, I ...>
+template <typename D, typename... I>
+struct WINRT_EBO Derived_base : implements<D, Complex::Authoring::Composability::Closed::IDerived, Complex::Authoring::Composability::Closed::implementation::Base, I...>
 {
     using class_type = Complex::Authoring::Composability::Closed::Derived;
     
@@ -37,8 +37,8 @@ struct WINRT_EBO Derived_base : implements<D, Complex::Authoring::Composability:
 
 namespace winrt::Complex::Authoring::Composability::Closed::implementation
 {
-    template <typename D, typename ... I>
-    using DerivedT = Derived_base<D, I ...>;
+    template <typename D, typename... I>
+    using DerivedT = Derived_base<D, I...>;
 }
 
 #endif

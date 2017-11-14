@@ -8,8 +8,8 @@
 
 namespace winrt::Composable::Outer::implementation {
 
-template <typename D, typename ... I>
-struct WINRT_EBO Foo_base : impl::module_lock, implements<D, Composable::Outer::IFoo, Composable::Base::IRootOverrides, composing, I ...>,
+template <typename D, typename... I>
+struct WINRT_EBO Foo_base : impl::module_lock, implements<D, Composable::Outer::IFoo, Composable::Base::IRootOverrides, composing, I...>,
     impl::require<D, Composable::Base::IRoot>,
     impl::base<D, Composable::Base::Root>,
     Composable::Base::IRootOverridesT<D>
@@ -38,8 +38,8 @@ struct WINRT_EBO Foo_base : impl::module_lock, implements<D, Composable::Outer::
 
 namespace winrt::Composable::Outer::factory_implementation {
 
-template <typename D, typename T, typename ... I>
-struct WINRT_EBO FooT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I ...>
+template <typename D, typename T, typename... I>
+struct WINRT_EBO FooT : impl::module_lock, implements<D, Windows::Foundation::IActivationFactory, I...>
 {
     hstring GetRuntimeClassName() const
     {
@@ -62,8 +62,8 @@ struct WINRT_EBO FooT : impl::module_lock, implements<D, Windows::Foundation::IA
 
 namespace winrt::Composable::Outer::implementation
 {
-    template <typename D, typename ... I>
-    using FooT = Foo_base<D, I ...>;
+    template <typename D, typename... I>
+    using FooT = Foo_base<D, I...>;
 }
 
 #endif

@@ -19,7 +19,7 @@ namespace winrt::impl
 
 using namespace winrt;
 
-HRESULT __stdcall DllCanUnloadNow()
+HRESULT __stdcall WINRT_CanUnloadNow()
 {
     if (impl::s_module_lock)
     {
@@ -30,7 +30,7 @@ HRESULT __stdcall DllCanUnloadNow()
     return S_OK;
 }
 
-HRESULT __stdcall DllGetActivationFactory(HSTRING classId, void** factory)
+HRESULT __stdcall WINRT_GetActivationFactory(HSTRING classId, void** factory)
 {
     try
     {

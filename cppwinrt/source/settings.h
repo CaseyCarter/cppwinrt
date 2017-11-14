@@ -6,6 +6,10 @@ namespace cppwinrt::settings
     extern std::vector<std::experimental::filesystem::path> inputs;
     extern std::vector<std::experimental::filesystem::path> refs;
     extern std::experimental::filesystem::path output;
+    extern std::experimental::filesystem::path generated;
+    extern std::experimental::filesystem::path projection;
+    extern std::experimental::filesystem::path impl;
+    extern std::experimental::filesystem::path tests;
     extern std::wstring platform_version;
     extern bool component;
     extern bool create_tests;
