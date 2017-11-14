@@ -4,6 +4,7 @@ setlocal
 mkdir DevProjection >nul 2>&1
 mklink /d /j DevProjection\Samples %~dp0\Projection\Samples >nul 2>&1
 mklink /d /j DevProjection\UnitTests %~dp0\Projection\UnitTests >nul 2>&1
+mklink /d /j DevProjection\BridgeTests %~dp0\Projection\BridgeTests >nul 2>&1
 mklink /d /j DevProjection\SDKReferences %~dp0\Projection\SDKReferences >nul 2>&1
 
 mkdir DevProjection\WinRT >nul 2>&1

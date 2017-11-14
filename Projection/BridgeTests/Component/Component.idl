@@ -1,0 +1,49 @@
+﻿import "Windows.Foundation.idl";
+
+namespace Component
+{
+    //
+    // The Parameters class covers the interop functions (e.g. get_abi/put_abi/etc)
+    // and the way they are use to convert to and from the ABI in support of 
+    // consumption and production of types.
+    //
+
+    runtimeclass Parameters;
+
+    [version(1.0), uuid(461c8806-8bc2-4622-8eac-b547c39f867e), exclusiveto(Parameters)]
+    interface IParameters : IInspectable
+    {
+        HRESULT SetInt32([in] INT32 value);
+        HRESULT GetInt32([out, retval] INT32* value);
+        HRESULT OutInt32([out] INT32* value);
+
+        HRESULT SetString([in] HSTRING value);
+        HRESULT GetString([out,retval] HSTRING* value);
+        HRESULT OutString([out] HSTRING* value);
+
+        HRESULT SetObject([in] IInspectable* value);
+        HRESULT GetObject([out, retval] IInspectable** value);
+        HRESULT OutObject([out] IInspectable** value);
+
+        HRESULT SetInt32Array([in] UINT32 count, [in][size_is(count)] INT32* value);
+        HRESULT GetInt32Array([out] UINT32* count, [out,retval][size_is(, *count)] INT32** value);
+        HRESULT OutInt32Array([out] UINT32* count, [out][size_is(, *count)] INT32** value);
+        HRESULT CopyInt32Array([in] UINT32 count, [out][size_is(count)] INT32* value);
+
+        HRESULT SetStringArray([in] UINT32 count, [in][size_is(count)] HSTRING* value);
+        HRESULT GetStringArray([out] UINT32* count, [out, retval][size_is(, *count)] HSTRING** value);
+        HRESULT OutStringArray([out] UINT32* count, [out][size_is(, *count)] HSTRING** value);
+        HRESULT CopyStringArray([in] UINT32 count, [out][size_is(count)] HSTRING* value);
+
+        HRESULT SetObjectArray([in] UINT32 count, [in][size_is(count)] IInspectable** value);
+        HRESULT GetObjectArray([out] UINT32* count, [out, retval][size_is(, *count)] IInspectable*** value);
+        HRESULT OutObjectArray([out] UINT32* count, [out][size_is(, *count)] IInspectable*** value);
+        HRESULT CopyObjectArray([in] UINT32 count, [out][size_is(count)] IInspectable** value);
+    };
+
+    [version(1.0), activatable(1.0)]
+    runtimeclass Parameters
+    {
+        [default] interface IParameters;
+    }
+}
