@@ -45,7 +45,7 @@ if %_namespace_spec%==*.*.cpp (
 	)
 )
 
-for /f %%i in ('dir /b %_namespace_spec%') do call :Compile %%~ni.cpp /Yupch.h 
+call :Compile %_namespace_spec% /Yupch.h 
 call :Timer
 popd
 type %test_output%
@@ -58,7 +58,7 @@ goto :eof
 :Compile
 call :Timer
 echo %1
-cl %* /c /nologo /I .. /EHsc /std:c++latest /permissive- /await %_compiler_stats% >>%test_output%
+cl %* /c /MP /nologo /I .. /EHsc /std:c++latest /permissive- /await %_compiler_stats% >>%test_output%
 goto :eof
 rem todo: add clang
 
