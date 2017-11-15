@@ -94,7 +94,7 @@
     <CustomBuildStep>
       <Command>cppwinrt.exe -component -in $(ProjectDir)Component.winmd -ref local -out $(ProjectDir) -verbose</Command>
       <Message>C++/WinRT compiler</Message>
-      <Outputs>winrt/Component.h;module.h</Outputs>
+      <Outputs>Generated Files\module.g.cpp</Outputs>
       <Inputs>Component.winmd</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
