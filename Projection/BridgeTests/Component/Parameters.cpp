@@ -65,7 +65,7 @@ namespace winrt::Component::implementation
 
     void Parameters::CopyInt32Array(array_view<int32_t> value) const
     {
-        uint32_t actual = m_int32_array.size();
+        uint32_t actual = static_cast<uint32_t>(m_int32_array.size());
 
         if (actual > value.size())
         {
@@ -92,7 +92,7 @@ namespace winrt::Component::implementation
 
     void Parameters::CopyStringArray(array_view<hstring> value) const
     {
-        uint32_t actual = m_string_array.size();
+        uint32_t actual = static_cast<uint32_t>(m_string_array.size());
 
         if (actual > value.size())
         {
@@ -119,7 +119,7 @@ namespace winrt::Component::implementation
 
     void Parameters::CopyObjectArray(array_view<Windows::Foundation::IInspectable> value) const
     {
-        uint32_t actual = m_object_array.size();
+        uint32_t actual = static_cast<uint32_t>(m_object_array.size());
 
         if (actual > value.size())
         {
