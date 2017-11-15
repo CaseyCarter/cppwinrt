@@ -2744,19 +2744,13 @@ void t()
         out.save_as(settings::generated / "module.g.h");
     }
 
-    void write_component_class_activator_forwards(output& out, std::vector<meta::type const*> const& types)
+    void write_component_class_includes(output& out, std::vector<meta::type const*> const& types)
     {
         for (meta::type const* type : types)
         {
             if (has_factory_members(type->token))
             {
-                out.write(R"(namespace winrt::@::factory_implementation
-{
-    IUnknown* make_for_%() noexcept;
-}
-)",                
-                    type->name_space(), 
-                    type->name());
+                out.write("#include \"%.h\"\n", get_relative_component_name(*type));
             }
         }
     }
@@ -2787,7 +2781,7 @@ void t()
         else
         {
             out.write(strings::write_component_source,
-                bind_output(write_component_class_activator_forwards, types),
+                bind_output(write_component_class_includes, types),
                 bind_output(write_component_class_activations, types));
         }
 
@@ -3074,9 +3068,7 @@ void t()
                       type.name(),
                       bind_output(write_component_factory_interfaces, type),
                       type.full_name(),
-                      bind_output(write_component_factory_forwarding_methods, type),
-                      type.name(),
-                      type.name());
+                      bind_output(write_component_factory_forwarding_methods, type));
 
             out.write_close_namespace();
         }

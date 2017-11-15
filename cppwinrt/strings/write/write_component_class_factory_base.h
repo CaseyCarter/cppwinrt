@@ -7,8 +7,3 @@ struct WINRT_EBO %T : impl::module_lock, implements<D, Windows::Foundation::IAct
         return L"%";
     }
 %};
-
-void* make_for_%() noexcept
-{
-    return detach_abi(make<%>());
-}

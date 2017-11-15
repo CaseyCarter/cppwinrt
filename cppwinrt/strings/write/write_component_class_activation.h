@@ -1,6 +1,6 @@
 
         if (0 == wcscmp(name, L"%"))
         {
-            *factory = winrt::@::factory_implementation::make_for_%();
+            *factory = detach_abi(make<@::factory_implementation::%>());
             return S_OK;
         }
