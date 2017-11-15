@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "Windows.Foundation.Uri.g.h"
+#include "Windows\Foundation\Uri.g.h"
 
 namespace winrt::Windows::Foundation::implementation
 {

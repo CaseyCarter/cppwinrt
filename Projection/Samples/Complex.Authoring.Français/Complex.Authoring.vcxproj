@@ -92,7 +92,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Complex.Authoring.winmd -ref 10.0.16299.0 -out $(ProjectDir) -filter Windows.Foundation.Uri Complex.Authoring -natvis</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Complex.Authoring.winmd -ref $(WindowsTargetPlatformVersion) -out $(ProjectDir) -filter Windows.Foundation.Uri Complex.Authoring</Command>
       <Message>C++/WinRT compiler</Message>
       <Outputs>winrt/Complex.Authoring.h;module.h</Outputs>
       <Inputs>Complex.Authoring.winmd</Inputs>
@@ -107,11 +107,11 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await  /D "NDEBUG" %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4100</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\..;Generated Files</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\..;Generated Files</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -133,11 +133,11 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4100</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\..;Generated Files</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\..;Generated Files</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -161,13 +161,13 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\..;Generated Files</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\..;Generated Files</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -191,13 +191,13 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4100;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\..;Generated Files</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);..\..;Generated Files</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -211,17 +211,6 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="module.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Language.cpp" />
-    <ClCompile Include="Simple.cpp" />
-    <ClCompile Include="Static.cpp" />
-    <ClCompile Include="Structs.cpp" />
     <ClCompile Include="Composability.Closed.Base.cpp" />
     <ClCompile Include="Composability.Closed.Derived.cpp" />
     <ClCompile Include="Composability.Open.Base.cpp" />
@@ -230,43 +219,26 @@
     <ClCompile Include="Factory.SimpleFactory.cpp" />
     <ClCompile Include="Factory.Static.cpp" />
     <ClCompile Include="Factory.StaticFactory.cpp" />
+    <ClCompile Include="Generated Files\module.g.cpp" />
+    <ClCompile Include="Language.cpp" />
     <ClCompile Include="Nested.Simple.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Simple.cpp" />
+    <ClCompile Include="Static.cpp" />
+    <ClCompile Include="Structs.cpp" />
     <ClCompile Include="Windows.Foundation.Uri.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="module.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Language.g.h" />
-    <ClInclude Include="Language.h" />
-    <ClInclude Include="Simple.g.h" />
-    <ClInclude Include="Simple.h" />
-    <ClInclude Include="Static.g.h" />
-    <ClInclude Include="Static.h" />
-    <ClInclude Include="Structs.g.h" />
-    <ClInclude Include="Structs.h" />
-    <ClInclude Include="Composability.Closed.Base.g.h" />
-    <ClInclude Include="Composability.Closed.Base.h" />
-    <ClInclude Include="Composability.Closed.Derived.g.h" />
-    <ClInclude Include="Composability.Closed.Derived.h" />
-    <ClInclude Include="Composability.Open.Base.g.h" />
-    <ClInclude Include="Composability.Open.Base.h" />
-    <ClInclude Include="Composability.Open.Derived.g.h" />
-    <ClInclude Include="Composability.Open.Derived.h" />
-    <ClInclude Include="Factory.Simple.g.h" />
-    <ClInclude Include="Factory.Simple.h" />
-    <ClInclude Include="Factory.SimpleFactory.g.h" />
-    <ClInclude Include="Factory.SimpleFactory.h" />
-    <ClInclude Include="Factory.Static.g.h" />
-    <ClInclude Include="Factory.Static.h" />
-    <ClInclude Include="Factory.StaticFactory.g.h" />
-    <ClInclude Include="Factory.StaticFactory.h" />
-    <ClInclude Include="Nested.Simple.g.h" />
-    <ClInclude Include="Nested.Simple.h" />
-    <ClInclude Include="Windows.Foundation.Uri.g.h" />
-    <ClInclude Include="Windows.Foundation.Uri.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="module.def" />
+    <None Include="Generated Files\module.def" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Complex.Authoring.idl">
@@ -291,9 +263,6 @@
       <RedirectOutputAndErrors Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </RedirectOutputAndErrors>
     </Midl>
-  </ItemGroup>
-  <ItemGroup>
-    <Natvis Include="Complex.Authoring.natvis" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

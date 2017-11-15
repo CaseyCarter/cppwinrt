@@ -4,5 +4,5 @@
 
 #pragma warning(disable:4100)
 
-#include "module.h"
+#include "module.g.h"
 #include "winrt/Farm.Animals.h"

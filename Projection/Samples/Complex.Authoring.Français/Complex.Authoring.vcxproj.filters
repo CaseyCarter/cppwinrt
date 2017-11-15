@@ -1,151 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Language.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Simple.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Static.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Structs.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Composability.Closed.Base.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Composability.Closed.Derived.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Composability.Open.Base.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Composability.Open.Derived.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Factory.Simple.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Factory.SimpleFactory.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Factory.Static.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Factory.StaticFactory.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Nested.Simple.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="Windows.Foundation.Uri.cpp">
-      <Filter>Generated</Filter>
-    </ClCompile>
-    <ClCompile Include="module.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Generated Files\module.g.cpp" />
+    <ClCompile Include="Composability.Closed.Base.cpp" />
+    <ClCompile Include="Composability.Closed.Derived.cpp" />
+    <ClCompile Include="Composability.Open.Base.cpp" />
+    <ClCompile Include="Composability.Open.Derived.cpp" />
+    <ClCompile Include="Factory.Simple.cpp" />
+    <ClCompile Include="Factory.SimpleFactory.cpp" />
+    <ClCompile Include="Factory.Static.cpp" />
+    <ClCompile Include="Factory.StaticFactory.cpp" />
+    <ClCompile Include="Language.cpp" />
+    <ClCompile Include="Nested.Simple.cpp" />
+    <ClCompile Include="Simple.cpp" />
+    <ClCompile Include="Static.cpp" />
+    <ClCompile Include="Structs.cpp" />
+    <ClCompile Include="Windows.Foundation.Uri.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Language.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Language.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Simple.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Simple.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Static.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Static.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Structs.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Structs.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Composability.Closed.Base.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Composability.Closed.Base.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Composability.Closed.Derived.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Composability.Closed.Derived.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Composability.Open.Base.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Composability.Open.Base.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Composability.Open.Derived.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Composability.Open.Derived.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Factory.Simple.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Factory.Simple.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Factory.SimpleFactory.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Factory.SimpleFactory.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Factory.Static.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Factory.Static.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Factory.StaticFactory.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Factory.StaticFactory.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Nested.Simple.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Nested.Simple.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Windows.Foundation.Uri.g.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
-    <ClInclude Include="Windows.Foundation.Uri.h">
-      <Filter>Generated</Filter>
-    </ClInclude>
     <ClInclude Include="module.h" />
     <ClInclude Include="pch.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Generated">
-      <UniqueIdentifier>{9d466ba3-e000-4651-9284-c371191d599e}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Natvis Include="Complex.Authoring.natvis" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Complex.Authoring.idl" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="module.def" />
+    <None Include="Generated Files\module.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{dfc03a07-ede8-4551-a3b9-075261bae1d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

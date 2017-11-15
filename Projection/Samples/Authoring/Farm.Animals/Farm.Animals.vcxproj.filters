@@ -2,40 +2,28 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="module.cpp">
-      <Filter>generated</Filter>
-    </ClCompile>
     <ClCompile Include="Hen.cpp" />
     <ClCompile Include="Egg.cpp" />
+    <ClCompile Include="Generated Files\module.g.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Hen.g.h">
-      <Filter>generated</Filter>
-    </ClInclude>
-    <ClInclude Include="module.h">
-      <Filter>generated</Filter>
-    </ClInclude>
     <ClInclude Include="Hen.h" />
     <ClInclude Include="Egg.h" />
-    <ClInclude Include="Egg.g.h">
-      <Filter>generated</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="module.def" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="generated">
-      <UniqueIdentifier>{058696a6-0970-4018-8334-c95caf915018}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Farm.Animals.idl" />
   </ItemGroup>
   <ItemGroup>
-    <Natvis Include="Farm.Animals.natvis">
-      <Filter>generated</Filter>
-    </Natvis>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{7adda9c4-8377-47f3-8699-53be83e830d2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Generated Files\module.def">
+      <Filter>Generated Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "Composability.Open.Derived.g.h"
+#include "Composability\Open\Derived.g.h"
 
 namespace winrt::Complex::Authoring::Composability::Open::implementation
 {

@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "Composability.Open.Base.g.h"
+#include "Composability\Open\Base.g.h"
 
 namespace winrt::Complex::Authoring::Composability::Open::implementation
 {

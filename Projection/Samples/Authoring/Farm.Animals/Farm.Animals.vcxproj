@@ -92,7 +92,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Farm.Animals.winmd -ref local -natvis -out $(ProjectDir)</Command>
+      <Command>cppwinrt.exe -component -in $(ProjectDir)Farm.Animals.winmd -ref $(WindowsTargetPlatformVersion) -out $(ProjectDir)</Command>
       <Message>C++/WinRT compiler</Message>
       <Outputs>winrt/Farm.Animals.h;module.h</Outputs>
       <Inputs>Farm.Animals.winmd</Inputs>
@@ -107,11 +107,11 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..;Generated Files</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..;Generated Files;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -133,11 +133,11 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..;Generated Files</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..;Generated Files;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -161,13 +161,13 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..;Generated Files</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..;Generated Files;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -191,13 +191,13 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/std:c++17 /permissive- /await %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4996;4702</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..;Generated Files</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..;Generated Files;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
       <AdditionalDependencies>kernel32.lib;</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -211,9 +211,9 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Generated Files\module.g.cpp" />
     <ClCompile Include="Egg.cpp" />
     <ClCompile Include="Hen.cpp" />
-    <ClCompile Include="module.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -222,15 +222,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Egg.g.h" />
     <ClInclude Include="Egg.h" />
-    <ClInclude Include="Hen.g.h" />
     <ClInclude Include="Hen.h" />
-    <ClInclude Include="module.h" />
     <ClInclude Include="pch.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="module.def" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Farm.Animals.idl">
@@ -257,7 +251,7 @@
     </Midl>
   </ItemGroup>
   <ItemGroup>
-    <Natvis Include="Farm.Animals.natvis" />
+    <None Include="Generated Files\module.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
