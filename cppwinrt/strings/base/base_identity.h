@@ -146,6 +146,7 @@ namespace winrt::impl
     template <typename T>
     struct name
     {
+#pragma warning(suppress: 4307)
         static constexpr auto value{ to_array<wchar_t>(guid_of<T>()) };
     };
 
@@ -681,7 +682,7 @@ namespace winrt::impl
 namespace winrt
 {
     template <typename T>
-    inline constexpr std::wstring_view name_of() noexcept
+    constexpr std::wstring_view name_of() noexcept
     {
         return impl::to_string(impl::name_v<T>);
     }

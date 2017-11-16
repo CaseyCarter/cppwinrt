@@ -1,4 +1,4 @@
 
 inline %::%() :
-    %(activate_instance<%>())
+    %(get_activation_factory<%>().ActivateInstance<%>())
 {}

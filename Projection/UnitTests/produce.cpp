@@ -168,7 +168,7 @@ TEST_CASE("produce_IActivationFactory")
     bool destroyed = false;
     IActivationFactory p = make<produce_IActivationFactory>(destroyed);
 
-    IStringable i = p.ActivateInstance().as<IStringable>();
+    IStringable i = p.ActivateInstance<IStringable>();
     REQUIRE(i.ToString() == L"produce_IActivationFactory_Instance");
 
     REQUIRE(!destroyed);

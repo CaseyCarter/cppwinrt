@@ -9,6 +9,6 @@
         }
         catch (...)
         {
-            return impl::to_hresult();
+            return to_hresult();
         }
     }

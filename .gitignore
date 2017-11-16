@@ -5,6 +5,7 @@
 *.exe
 *.obj
 *_h.h
+*_p.h
 *.c
 *.user
 *.output

@@ -148,7 +148,8 @@ namespace winrt::impl
     template <typename D>
     struct consume_IActivationFactory
     {
-        Windows::Foundation::IInspectable ActivateInstance() const;
+        template <typename T>
+        T ActivateInstance() const;
     };
 
     template <> struct consume<Windows::Foundation::IActivationFactory>

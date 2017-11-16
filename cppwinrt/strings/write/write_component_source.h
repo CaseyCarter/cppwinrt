@@ -34,14 +34,13 @@ HRESULT __stdcall WINRT_GetActivationFactory(HSTRING classId, void** factory)
 {
     try
     {
+        *factory = nullptr;
         wchar_t const* const name = WindowsGetStringRawBuffer(classId, nullptr);
 %
-        *factory = nullptr;
         return hresult_class_not_available().to_abi();
     }
     catch (...)
     {
-        *factory = nullptr;
         return impl::to_hresult();
     }
 }

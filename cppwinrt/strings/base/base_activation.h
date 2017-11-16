@@ -1,12 +1,12 @@
 
 namespace winrt::impl
 {
-    template <typename D>
-    Windows::Foundation::IInspectable consume_IActivationFactory<D>::ActivateInstance() const
+    template <typename D> template <typename T>
+    T consume_IActivationFactory<D>::ActivateInstance() const
     {
         Windows::Foundation::IInspectable instance;
         check_hresult(WINRT_SHIM(Windows::Foundation::IActivationFactory)->ActivateInstance(put_abi(instance)));
-        return instance;
+        return instance.try_as<T>();
     }
 
     template <typename D>
@@ -16,13 +16,13 @@ namespace winrt::impl
         {
             try
             {
+                *instance = nullptr;
                 typename D::abi_guard guard(this->shim());
                 *instance = detach_abi(this->shim().ActivateInstance());
                 return S_OK;
             }
             catch (...)
             {
-                *instance = nullptr;
                 return to_hresult();
             }
         }
@@ -178,12 +178,6 @@ WINRT_EXPORT namespace winrt
     {
         static impl::factory_cache_entry<Class, Interface> factory;
         return factory.get();
-    }
-
-    template <typename Class, typename Instance = Class>
-    Instance activate_instance()
-    {
-        return get_activation_factory<Class>().ActivateInstance().template try_as<Instance>();
     }
 
     inline void clear_factory_cache() noexcept

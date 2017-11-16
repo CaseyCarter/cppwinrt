@@ -14,11 +14,10 @@ namespace
     //
     // This implemenetation uses the simplest abi_enter and abi_exit methods.
     //
-    struct A : implements<A, IActivationFactory, IStringable>
+    struct A : implements<A, IClosable, IStringable>
     {
-        IInspectable ActivateInstance()
+        void Close()
         {
-            return nullptr;
         }
 
         hstring ToString()
@@ -44,13 +43,13 @@ namespace
     {
         com_ptr<A> impl = make_self<A>();
 
-        impl->ActivateInstance();
+        impl->Close();
         impl->ToString();
         REQUIRE(impl->m_enter == 0);
         REQUIRE(impl->m_exit == 0);
 
-        IActivationFactory factory = impl.as<IActivationFactory>();
-        factory.ActivateInstance();
+        IClosable factory = impl.as<IClosable>();
+        factory.Close();
         REQUIRE(impl->m_enter == 1);
         REQUIRE(impl->m_exit == 1);
 
@@ -63,11 +62,10 @@ namespace
     //
     // This implemenetation uses the abi_enter but omits the abi_exit method.
     //
-    struct B : implements<B, IActivationFactory, IStringable>
+    struct B : implements<B, IClosable, IStringable>
     {
-        IInspectable ActivateInstance()
+        void Close()
         {
-            return nullptr;
         }
 
         hstring ToString()
@@ -87,13 +85,13 @@ namespace
     {
         com_ptr<B> impl = make_self<B>();
 
-        impl->ActivateInstance();
+        impl->Close();
         impl->ToString();
 
         REQUIRE(impl->m_enter == 0);
 
-        IActivationFactory factory = impl.as<IActivationFactory>();
-        factory.ActivateInstance();
+        IClosable factory = impl.as<IClosable>();
+        factory.Close();
 
         REQUIRE(impl->m_enter == 1);
 
@@ -106,11 +104,10 @@ namespace
     //
     // This implemenetation throws from the abi_enter method.
     //
-    struct C : implements<C, IActivationFactory, IStringable>
+    struct C : implements<C, IClosable, IStringable>
     {
-        IInspectable ActivateInstance()
+        void Close()
         {
-            return nullptr;
         }
 
         hstring ToString()
@@ -135,11 +132,11 @@ namespace
     {
         com_ptr<C> impl = make_self<C>();
 
-        impl->ActivateInstance();
+        impl->Close();
         impl->ToString();
 
-        IActivationFactory factory = impl.as<IActivationFactory>();
-        REQUIRE_THROWS_AS(factory.ActivateInstance(), hresult_wrong_thread);
+        IClosable factory = impl.as<IClosable>();
+        REQUIRE_THROWS_AS(factory.Close(), hresult_wrong_thread);
 
         IStringable stringable = impl.as<IStringable>();
         REQUIRE_THROWS_AS(stringable.ToString(), hresult_wrong_thread);
@@ -150,11 +147,10 @@ namespace
     //
     // This implemenetation provides a nested abi_guard
     //
-    struct D : implements<D, IActivationFactory, IStringable>
+    struct D : implements<D, IClosable, IStringable>
     {
-        IInspectable ActivateInstance()
+        void Close()
         {
-            return nullptr;
         }
 
         hstring ToString()
@@ -188,14 +184,14 @@ namespace
     {
         com_ptr<D> impl = make_self<D>();
 
-        impl->ActivateInstance();
+        impl->Close();
         impl->ToString();
 
         REQUIRE(impl->m_enter == 0);
         REQUIRE(impl->m_exit == 0);
 
-        IActivationFactory factory = impl.as<IActivationFactory>();
-        factory.ActivateInstance();
+        IClosable factory = impl.as<IClosable>();
+        factory.Close();
 
         REQUIRE(impl->m_enter == 1);
         REQUIRE(impl->m_exit == 1);
@@ -229,11 +225,10 @@ namespace
     //
     // This implemenetation use an abi_guard type alias
     //
-    struct E : implements<E, IActivationFactory, IStringable>
+    struct E : implements<E, IClosable, IStringable>
     {
-        IInspectable ActivateInstance()
+        void Close()
         {
-            return nullptr;
         }
 
         hstring ToString()
@@ -251,14 +246,14 @@ namespace
     {
         com_ptr<E> impl = make_self<E>();
 
-        impl->ActivateInstance();
+        impl->Close();
         impl->ToString();
 
         REQUIRE(impl->m_enter == 0);
         REQUIRE(impl->m_exit == 0);
 
-        IActivationFactory factory = impl.as<IActivationFactory>();
-        factory.ActivateInstance();
+        IClosable factory = impl.as<IClosable>();
+        factory.Close();
 
         REQUIRE(impl->m_enter == 1);
         REQUIRE(impl->m_exit == 1);
@@ -282,11 +277,10 @@ namespace
     //
     // This implemenetation use an abi_guard type alias that thows
     //
-    struct F : implements<F, IActivationFactory, IStringable>
+    struct F : implements<F, IClosable, IStringable>
     {
-        IInspectable ActivateInstance()
+        void Close()
         {
-            return nullptr;
         }
 
         hstring ToString()
@@ -301,11 +295,11 @@ namespace
     {
         com_ptr<F> impl = make_self<F>();
 
-        impl->ActivateInstance();
+        impl->Close();
         impl->ToString();
 
-        IActivationFactory factory = impl.as<IActivationFactory>();
-        REQUIRE_THROWS_AS(factory.ActivateInstance(), hresult_wrong_thread);
+        IClosable factory = impl.as<IClosable>();
+        REQUIRE_THROWS_AS(factory.Close(), hresult_wrong_thread);
 
         IStringable stringable = impl.as<IStringable>();
         REQUIRE_THROWS_AS(stringable.ToString(), hresult_wrong_thread);

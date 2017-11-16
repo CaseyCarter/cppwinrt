@@ -1171,6 +1171,7 @@ namespace cppwinrt
                 type.name(),
                 type.name(),
                 type.name(),
+                type.name(),
                 type.name());
         }
 
