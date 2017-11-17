@@ -9,7 +9,7 @@
       "CheckinFiles": 
       [
         {
-          "source":"version.h",
+          "source":"BA\\2\\s\\cppwinrt\\source\\version.h",
           "path": "/cppwinrt/source",				
           "type": "File"
         }
