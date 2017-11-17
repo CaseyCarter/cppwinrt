@@ -1,5 +1,6 @@
 @echo off
 
+call MakeDevProjection.cmd >nul
 call SetBuildVars.cmd %*
 
 pushd cppwinrt
