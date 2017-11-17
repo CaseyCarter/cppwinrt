@@ -350,6 +350,11 @@ WINRT_EXPORT namespace winrt
         return temp;
     }
 
+    constexpr void* detach_abi(std::nullptr_t) noexcept
+    {
+        return nullptr;
+    }
+
     inline void copy_from_abi(Windows::Foundation::IUnknown& object, void* value) noexcept
     {
         object = nullptr;
