@@ -3,17 +3,14 @@
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Parameters.cpp" />
+    <ClCompile Include="Structures.cpp" />
+    <ClCompile Include="Events.cpp" />
     <ClCompile Include="Generated Files\module.g.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="Structures.cpp" />
-    <ClCompile Include="Events.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Generated Files\module.g.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="Parameters.h" />
     <ClInclude Include="Structures.h" />
     <ClInclude Include="Events.h" />
@@ -27,8 +24,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Generated Files\module.def">
-      <Filter>Generated Files</Filter>
-    </None>
+    <None Include="module.def" />
   </ItemGroup>
 </Project>

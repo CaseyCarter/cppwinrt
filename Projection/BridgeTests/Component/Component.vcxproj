@@ -92,7 +92,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Component.winmd -ref 10.0.16299.0 -out $(ProjectDir) -verbose</Command>
+      <Command>cppwinrt.exe -in $(ProjectDir)Component.winmd -comp $(ProjectDir) -out "$(ProjectDir)Generated Files" -ref 10.0.16299.0 -verbose</Command>
       <Message>C++/WinRT compiler</Message>
       <Outputs>Generated Files\module.g.cpp</Outputs>
       <Inputs>Component.winmd</Inputs>
@@ -111,7 +111,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
       <AdditionalDependencies>windowsapp.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -137,7 +137,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
       <AdditionalDependencies>windowsapp.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -167,7 +167,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
       <AdditionalDependencies>windowsapp.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -197,7 +197,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
       <AdditionalDependencies>windowsapp.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
@@ -224,7 +224,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Events.h" />
-    <ClInclude Include="Generated Files\module.g.h" />
     <ClInclude Include="Parameters.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Structures.h" />
@@ -254,7 +253,7 @@
     </Midl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Generated Files\module.def" />
+    <None Include="module.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
