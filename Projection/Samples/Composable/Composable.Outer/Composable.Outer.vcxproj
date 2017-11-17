@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{9a12733b-46e9-470e-a7eb-4dbe87f7e3a7}</ProjectGuid>
-    <RootNamespace>ComposableOuter</RootNamespace>
+    <RootNamespace>Composable.Outer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -117,13 +117,13 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt -component -in $(ProjectDir)Composable.Outer.winmd -ref $(ProjectDir)..\Composable.Base\Composable.Base.winmd -out $(ProjectDir)</Command>
+      <Command>cppwinrt -component -name $(RootNamespace) -in $(ProjectDir)Composable.Outer.winmd -ref $(ProjectDir)..\Composable.Base\Composable.Base.winmd -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
     </CustomBuildStep>
     <CustomBuildStep>
-      <Outputs>Composable.Outer.h</Outputs>
+      <Outputs>winrt/Composable.Outer.h</Outputs>
     </CustomBuildStep>
     <CustomBuildStep>
       <Inputs>Composable.Outer.winmd</Inputs>
@@ -150,13 +150,13 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt -component -in $(ProjectDir)Composable.Outer.winmd -ref $(ProjectDir)..\Composable.Base\Composable.Base.winmd -out $(ProjectDir)</Command>
+      <Command>cppwinrt -component -name $(RootNamespace) -in $(ProjectDir)Composable.Outer.winmd -ref $(ProjectDir)..\Composable.Base\Composable.Base.winmd -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
     </CustomBuildStep>
     <CustomBuildStep>
-      <Outputs>Composable.Outer.h</Outputs>
+      <Outputs>winrt/Composable.Outer.h</Outputs>
     </CustomBuildStep>
     <CustomBuildStep>
       <Inputs>Composable.Outer.winmd</Inputs>
@@ -187,13 +187,13 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt -component -in $(ProjectDir)Composable.Outer.winmd -ref $(ProjectDir)..\Composable.Base\Composable.Base.winmd -out $(ProjectDir)</Command>
+      <Command>cppwinrt -component -name $(RootNamespace) -in $(ProjectDir)Composable.Outer.winmd -ref $(ProjectDir)..\Composable.Base\Composable.Base.winmd -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
     </CustomBuildStep>
     <CustomBuildStep>
-      <Outputs>Composable.Outer.h</Outputs>
+      <Outputs>winrt/Composable.Outer.h</Outputs>
     </CustomBuildStep>
     <CustomBuildStep>
       <Inputs>Composable.Outer.winmd</Inputs>
@@ -224,13 +224,13 @@
       <Message>Copy implementation dll so App can generate registration data</Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>cppwinrt -component -in $(ProjectDir)Composable.Outer.winmd -ref $(ProjectDir)..\Composable.Base\Composable.Base.winmd -out $(ProjectDir)</Command>
+      <Command>cppwinrt -component -name $(RootNamespace) -in $(ProjectDir)Composable.Outer.winmd -ref $(ProjectDir)..\Composable.Base\Composable.Base.winmd -out $(ProjectDir)</Command>
     </CustomBuildStep>
     <CustomBuildStep>
       <Message>C++/WinRT compiler</Message>
     </CustomBuildStep>
     <CustomBuildStep>
-      <Outputs>Composable.Outer.h</Outputs>
+      <Outputs>winrt/Composable.Outer.h</Outputs>
     </CustomBuildStep>
     <CustomBuildStep>
       <Inputs>Composable.Outer.winmd</Inputs>
