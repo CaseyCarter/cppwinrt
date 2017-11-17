@@ -7,17 +7,17 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
     <PropertyGroup Condition="$(CppWinRTEnabled)">
         <ComputeMIDLGeneratedCompileInputsDependsOn>
-            $(ComputeMIDLGeneratedCompileInputsDependsOn);
-            CppWinRTMakeReferenceProjection;
+          $(ComputeMIDLGeneratedCompileInputsDependsOn);
+          CppWinRTMakeReferenceProjection;
         </ComputeMIDLGeneratedCompileInputsDependsOn>
         <AfterMidlTargets>
-            $(AfterMidlTargets);
-            CppWinRTMakeComponentProjection;
+          $(AfterMidlTargets);
+          CppWinRTMakeComponentProjection;
         </AfterMidlTargets>
-        <MarkupCompilePass2DependsOn>
-          $(MarkupCompilePass2DependsOn)
+        <MarkupCompilePass1DependsOn>
+          $(MarkupCompilePass1DependsOn)
           CppWinRTMergeMidlOutput;
-        </MarkupCompilePass2DependsOn>
+        </MarkupCompilePass1DependsOn>
         <CppWinRTVerbosity Condition="'$(CppWinRTVerbosity)' == ''">normal</CppWinRTVerbosity>
         <CppWinRTCommandVerbosity Condition="'$(CppWinRTVerbosity)' == 'high'">-verbose</CppWinRTCommandVerbosity>
     </PropertyGroup>
@@ -45,7 +45,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
     <Target Name="CppWinRTMakeComponentProjection" Condition="$(CppWinRTEnabled)" 
             DependsOnTargets="Midl;GetCppWinRTReferences" Inputs="@(Midl->'%(OutputDirectory)%(MetadataFileName)');@(CppWinRTReferences)" Outputs="$(GeneratedFilesDir)winrt\$(RootNamespace).h">
         <PropertyGroup>
-            <CppWinRTCommand>cppwinrt $(CppWinRTCommandVerbosity) -comp -name $(RootNamespace) -in @(Midl->'&quot;%(OutputDirectory)%(MetadataFileName)&quot;',' ') -ref @(CppWinRTReferences->'&quot;%(Fullpath)&quot;',' ') $(WindowsTargetPlatformVersion) -out .</CppWinRTCommand>
+            <CppWinRTCommand>cppwinrt $(CppWinRTCommandVerbosity) -comp &quot;$(GeneratedFilesDir)sources&quot; -overwrite -name $(RootNamespace) -in @(Midl->'&quot;%(OutputDirectory)%(MetadataFileName)&quot;',' ') -ref @(CppWinRTReferences->'&quot;%(Fullpath)&quot;',' ') $(WindowsTargetPlatformVersion) -out &quot;$(GeneratedFilesDir).&quot;</CppWinRTCommand>
         </PropertyGroup>
         <Message Text="$(CppWinRTCommand)" Importance="$(CppWinRTVerbosity)"/>
         <Exec Command="$(CppWinRTCommand)" />

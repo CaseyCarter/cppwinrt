@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Generated Files">
-      <UniqueIdentifier>{ef7f39e7-4643-42f7-91f6-5ec883ff7961}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Derived.cpp">
@@ -27,15 +24,12 @@
     <ClCompile Include="Root.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Generated Files\module.g.cpp">
-      <Filter>Generated Files</Filter>
+    <ClCompile Include="module.g.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Derived.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="module.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
@@ -57,8 +51,6 @@
     </Midl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Generated Files\module.def">
-      <Filter>Generated Files</Filter>
-    </None>
+    <None Include="module.def" />
   </ItemGroup>
 </Project>

@@ -224,9 +224,6 @@
     <ClInclude Include="strings\write\write_component_class_xaml_shim.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_component_def.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
     <ClInclude Include="strings\write\write_component_factory_activate_instance.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -246,12 +243,6 @@
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_component_lock_declaration.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_pch_header.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
-    <ClInclude Include="strings\write\write_component_pch_source.h">
       <Filter>strings\write</Filter>
     </ClInclude>
     <ClInclude Include="strings\write\write_component_produce_override_dispatch.h">

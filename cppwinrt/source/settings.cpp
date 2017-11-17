@@ -9,12 +9,12 @@ namespace cppwinrt::settings
     std::vector<path> inputs;
     std::vector<path> refs;
     path output;
-    path generated;
+    path sources;
     path projection;
     path impl;
     path tests;
     std::vector<std::string> filters;
-    std::wstring platform_version{L"10.0.15063.0"};
+    std::wstring platform_version{L"10.0.16299.0"};
     bool component{};
     bool create_tests{};
     bool create_natvis{};

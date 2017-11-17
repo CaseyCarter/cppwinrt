@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="Generated Files\module.g.cpp" />
     <ClCompile Include="Composability.Closed.Base.cpp" />
     <ClCompile Include="Composability.Closed.Derived.cpp" />
     <ClCompile Include="Composability.Open.Base.cpp" />
@@ -17,20 +16,15 @@
     <ClCompile Include="Static.cpp" />
     <ClCompile Include="Structs.cpp" />
     <ClCompile Include="Windows.Foundation.Uri.cpp" />
+    <ClCompile Include="Generated Files\module.g.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="module.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Complex.Authoring.idl" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Generated Files\module.def" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Generated Files">
-      <UniqueIdentifier>{dfc03a07-ede8-4551-a3b9-075261bae1d5}</UniqueIdentifier>
-    </Filter>
+    <None Include="module.def" />
   </ItemGroup>
 </Project>

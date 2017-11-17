@@ -287,7 +287,7 @@ namespace cppwinrt
 
         if (settings::component)
         {
-            write_component_headers(namespace_recorder._projected_namespaces);
+            write_component_headers();
         }
     }
 }

@@ -10,7 +10,7 @@ using namespace std::experimental::filesystem;
 
 namespace cppwinrt
 {
-    void write_component_headers(std::set<std::string> const& projected_namespaces)
+    void write_component_headers()
     {
         meta::index_type const& index = meta::get_index();
         std::vector<meta::type const*> types;
@@ -40,10 +40,6 @@ namespace cppwinrt
 
         write_component_header(types);
         write_component_source(types);
-        write_component_def();
-        write_component_pch_source();
-        write_component_pch_header(ref_namespaces, projected_namespaces);
-
         for (meta::type const* type : types)
         {
             std::string type_ns(type->name_space());

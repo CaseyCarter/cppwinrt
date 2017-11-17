@@ -108,7 +108,7 @@
       <AdditionalOptions> /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)</Command>
@@ -123,7 +123,7 @@
       <Message>C++/WinRT compiler</Message>
     </CustomBuildStep>
     <CustomBuildStep>
-      <Outputs>Composable.Outer.h;module.h</Outputs>
+      <Outputs>Composable.Outer.h</Outputs>
     </CustomBuildStep>
     <CustomBuildStep>
       <Inputs>Composable.Outer.winmd</Inputs>
@@ -141,7 +141,7 @@
       <AdditionalOptions> /d1ReturnUdtEHInline /d2ReturnUdtEHInline %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)</Command>
@@ -156,7 +156,7 @@
       <Message>C++/WinRT compiler</Message>
     </CustomBuildStep>
     <CustomBuildStep>
-      <Outputs>Composable.Outer.h;module.h</Outputs>
+      <Outputs>Composable.Outer.h</Outputs>
     </CustomBuildStep>
     <CustomBuildStep>
       <Inputs>Composable.Outer.winmd</Inputs>
@@ -178,7 +178,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)</Command>
@@ -193,7 +193,7 @@
       <Message>C++/WinRT compiler</Message>
     </CustomBuildStep>
     <CustomBuildStep>
-      <Outputs>Composable.Outer.h;module.h</Outputs>
+      <Outputs>Composable.Outer.h</Outputs>
     </CustomBuildStep>
     <CustomBuildStep>
       <Inputs>Composable.Outer.winmd</Inputs>
@@ -215,7 +215,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>Generated Files\module.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>module.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)</Command>
@@ -230,7 +230,7 @@
       <Message>C++/WinRT compiler</Message>
     </CustomBuildStep>
     <CustomBuildStep>
-      <Outputs>Composable.Outer.h;module.h</Outputs>
+      <Outputs>Composable.Outer.h</Outputs>
     </CustomBuildStep>
     <CustomBuildStep>
       <Inputs>Composable.Outer.winmd</Inputs>
@@ -238,17 +238,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Foo.cpp" />
-    <ClCompile Include="Generated Files\module.g.cpp" />
+    <ClCompile Include="module.g.cpp" />
     <ClCompile Include="pch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Foo.g.h" />
     <ClInclude Include="Foo.h" />
-    <ClInclude Include="module.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Generated Files\module.def" />
+    <None Include="module.def" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Composable.Outer.idl">

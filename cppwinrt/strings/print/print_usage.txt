@@ -8,8 +8,8 @@ Options:
 
   -in     <spec>      Windows metadata to include in projection
   -ref    <spec>      Windows metadata to reference from projection
-  -out    <path>      Location of generated projection files
-  -component          Generate component implementation source files
+  -out    <path>      Location of generated projection and component templates
+  -component [<path>] Generate component templates, and optional implementation
   -filter <prefix>    One or more prefixes to include in component
   -name   <name>      Specify explicit name for component files
   -natvis             Generate a natvis script for debug visualization

@@ -12,6 +12,9 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Hen.h" />
     <ClInclude Include="Egg.h" />
+    <ClInclude Include="Generated Files\module.g.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Farm.Animals.idl" />
@@ -22,8 +25,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Generated Files\module.def">
-      <Filter>Generated Files</Filter>
-    </None>
+    <None Include="module.def" />
   </ItemGroup>
 </Project>

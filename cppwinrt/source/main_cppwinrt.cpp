@@ -173,6 +173,7 @@ namespace
                     throw invalid_usage{ L"Unsupported option: ", arg };
                 case option::component:
                     settings::component = true;
+                    last_option = option::component;
                     break;
                 case option::tests:
                     settings::create_tests = true;
@@ -232,7 +233,10 @@ namespace
             case option::name:
                 settings::component_name = to_string(arg);
                 break;
-            default: 
+            case option::component:
+                settings::sources = path(arg);
+                break;
+            default:
                 throw invalid_usage{ L"Internal error: ", 
                     options[static_cast<size_t>(last_option) - 1].string, HRESULT_FROM_WIN32(ERROR_INTERNAL_ERROR) };
             }
@@ -318,7 +322,6 @@ namespace
         settings::refs = std::move(refs);
 
         settings::output = absolute(settings::output);
-        create_directories(settings::output); // fs::canonical requires the folder to exist...
         settings::output = canonical(settings::output);
         if (settings::verbose)
         {
@@ -329,11 +332,14 @@ namespace
             }
         }
 
-        settings::generated = settings::output / (settings::component ? "Generated Files" : "");
-        settings::projection = settings::generated / "winrt";
+        settings::projection = settings::output / "winrt";
         settings::impl = settings::projection / "impl";
         settings::tests = settings::output / "CompileTests";
         create_directories(settings::impl);
+        if (!settings::sources.empty())
+        {
+            create_directories(settings::sources);
+        }
         if (settings::create_tests)
         {
             create_directories(settings::tests);

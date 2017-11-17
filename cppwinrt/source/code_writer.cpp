@@ -2230,7 +2230,7 @@ namespace cppwinrt
 
         std::string get_component_filename(meta::type const& type)
         {
-            path filename = settings::output;
+            path filename = settings::sources;
             filename /= std::string(get_relative_component_name(type));
             return filename.string();
         }
@@ -2742,7 +2742,7 @@ void t()
         write_component_produce_override_dispatch(out, types);
         out.write_close_namespace();
 
-        out.save_as(settings::generated / "module.g.h");
+        out.save_as(settings::output / "module.g.h");
     }
 
     void write_component_class_includes(output& out, std::vector<meta::type const*> const& types)
@@ -2786,7 +2786,7 @@ void t()
                 bind_output(write_component_class_activations, types));
         }
 
-        out.save_as(settings::generated / "module.g.cpp");
+        out.save_as(settings::output / "module.g.cpp");
     }
 
     struct rpc_cstr_traits : winrt::impl::handle_traits<RPC_CSTR>
@@ -2805,50 +2805,6 @@ void t()
         winrt::impl::handle<rpc_cstr_traits> rpcStr;
         winrt::impl::check_win32(UuidToStringA(&guid, rpcStr.put()));
         return std::string((PCSTR)rpcStr.get());
-    }
-
-    void write_component_def()
-    {
-        std::experimental::filesystem::path comp_def = settings::generated / "module.def";
-        if (!settings::overwrite && exists(comp_def.string()))
-        {
-            return;
-        }
-        output out;
-        out.write(strings::write_component_def);
-        out.save_as(comp_def);
-    }
-
-    void write_component_pch_source()
-    {
-        std::experimental::filesystem::path pch_source = settings::output / "pch.cpp";
-        if (!settings::overwrite && exists(pch_source.string()))
-        {
-            return;
-        }
-        output out;
-        out.write(strings::write_component_pch_source);
-        out.save_as(pch_source);
-    }
-
-    void write_component_pch_header(std::set<std::string> const& ref_namespaces, std::set<std::string> const& projected_namespaces)
-    {
-        std::experimental::filesystem::path pch_header = settings::output / "pch.h";
-        if (!settings::overwrite && exists(pch_header.string()))
-        {
-            return;
-        }
-        output out;
-        out.write(strings::write_component_pch_header);
-        for (auto& ns : ref_namespaces)
-        {
-            write_projection_include(out, ns, ".h");
-        }
-        for (auto& ns : projected_namespaces)
-        {
-            write_projection_include(out, ns, ".h");
-        }
-        out.save_as(pch_header);
     }
 
     void write_component_winmd_dependencies(output& out)
@@ -3035,7 +2991,7 @@ void t()
 
     void write_component_class_generated_header(meta::type const& type, reference_writer const& ref_writer)
     {
-        path filepath = settings::generated / (get_relative_component_path(type) + ".g.h");
+        path filepath = settings::output / (get_relative_component_path(type) + ".g.h");
 
         output out;
         write_warning(out, strings::write_edit_warning_header);
@@ -3094,6 +3050,11 @@ void t()
 
     void write_component_class_header(meta::type const& type)
     {
+        if (settings::sources.empty())
+        {
+            return;
+        }
+
         std::string const filename = get_component_filename(type) + ".h";
 
         if (!settings::overwrite && exists(filename))
@@ -3139,6 +3100,11 @@ void t()
 
     void write_component_class_source(meta::type const& type)
     {
+        if (settings::sources.empty())
+        {
+            return;
+        }
+
         std::string const filename = get_component_filename(type) + ".cpp";
 
         if (!settings::overwrite && exists(filename))
