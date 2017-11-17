@@ -1,0 +1,26 @@
+{
+  "Branch": 
+  [
+    {
+      "collection":"microsoft",
+      "project":"Dart",
+      "repo":"ModernCPP",
+      "name":"dev",
+      "CheckinFiles": 
+      [
+        {
+          "source":"version.h",
+          "path": "/cppwinrt/source",				
+          "type": "File"
+        }
+      ]	
+    }
+  ],
+  "Email":
+  [
+    {
+      "sendTo":"sjones;ryansh;kenny.kerr",
+      "sendOnErrorOnly": "True"
+    }
+  ]
+}
