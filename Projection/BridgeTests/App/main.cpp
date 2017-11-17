@@ -20,5 +20,10 @@ int main(int argc, char * argv[])
         return 1;
     }
 
-    return Catch::Session().run(argc, argv);
+    int const result = Catch::Session().run(argc, argv);
+
+    // The app container tears down the console immediately so this just gives you a moment
+    // to visually check the green status of the tests during debugging and before it disappears.
+    Sleep(1000);
+    return result;
 }

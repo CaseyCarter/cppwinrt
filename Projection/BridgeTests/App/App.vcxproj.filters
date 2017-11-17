@@ -4,6 +4,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Parameters.cpp" />
+    <ClCompile Include="Structures.cpp" />
+    <ClCompile Include="References.cpp" />
+    <ClCompile Include="Events.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

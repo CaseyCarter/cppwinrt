@@ -1400,9 +1400,9 @@ namespace cppwinrt
             }
         }
 
-        void write_struct_fields(output& out, meta::type const& type)
+        void write_struct_fields(output& out, std::vector<meta::field> const& fields)
         {
-            for (meta::field const& field : type.token.get_fields())
+            for (meta::field const& field : fields)
             {
                 out.write("    @ %;\n",
                     field.type.get_name(),
@@ -1410,12 +1410,35 @@ namespace cppwinrt
             }
         }
 
+        void write_struct_equality(output& out, std::vector<meta::field> const& fields)
+        {
+            for (size_t i = 0; i != fields.size(); ++i)
+            {
+                out.write(" left.% == right.%", fields[i].name, fields[i].name);
+
+                if (i + 1 != fields.size())
+                {
+                    out.write(" &&");
+                }
+            }
+        }
+
         void write_struct_definition(output& out, meta::type const& type)
         {
+            std::vector<meta::field> const fields = type.token.get_fields();
+            std::string_view is_noexcept = type.token.has_reference() ? "" : " noexcept";
+
             out.write(strings::write_struct_definition,
-                      bind_output(write_deprecated, type.token),
-                      type.name(),
-                      bind_output(write_struct_fields, type));
+                bind_output(write_deprecated, type.token),
+                type.name(),
+                bind_output(write_struct_fields, fields),
+                type.name(),
+                type.name(),
+                is_noexcept,
+                bind_output(write_struct_equality, fields),
+                type.name(),
+                type.name(),
+                is_noexcept);
         }
 
         void write_struct_type_trait(output& out, meta::type const& type)

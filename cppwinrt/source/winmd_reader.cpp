@@ -566,7 +566,7 @@ namespace cppwinrt::meta
 
             std::string result = to_string({ buffer.data(), actual - 1 });
 
-            for (std::pair<std::string_view, std::string_view > const& pair : enum_renamed_types())
+            for (auto&& pair : enum_renamed_types())
             {
                 if (pair.first == result)
                 {
@@ -588,6 +588,61 @@ namespace cppwinrt::meta
 
                 interfaces.push_back(impl_token.GetInterfaceImplProps().get_definition());
             }
+        }
+
+        bool is_meta_struct(std::string_view match)
+        {
+            if (is_foundation_type(match))
+            {
+                return false;
+            }
+
+            std::string name_space(match.data(), match.rfind('.'));
+            match = match.substr(name_space.size() + 1);
+
+            namespace_types const& types = index.at(name_space);
+
+            for (type const& type : types.structs)
+            {
+                if (type.name() == match)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        bool has_reference(std::vector<meta::field> const& fields)
+        {
+            for (meta::field const& field : fields)
+            {
+                PCCOR_SIGNATURE cursor = field.type.data;
+                CorElementType category = CorSigUncompressElementType(cursor);
+
+                if (category == ELEMENT_TYPE_GENERICINST)
+                {
+                    return true;
+                }
+
+                if (category == ELEMENT_TYPE_VALUETYPE)
+                {
+                    meta::token token{ CorSigUncompressToken(cursor), field.type.db };
+                    std::string const token_name = token.get_name();
+
+                    if (!is_meta_struct(token_name))
+                    {
+                        continue;
+                    }
+
+                    if (has_reference(token.get_definition().get_fields()))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 
@@ -664,29 +719,6 @@ namespace cppwinrt::meta
         for (std::string_view type : get_foundation_types())
         {
             if (type == name)
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    bool is_meta_struct(std::string_view match)
-    {
-        if (is_foundation_type(match))
-        {
-            return false;
-        }
-
-        std::string name_space(match.data(), match.rfind('.'));
-        match = match.substr(name_space.size() + 1);
-
-        namespace_types const& types = index.at(name_space);
-
-        for (type const& type : types.structs)
-        {
-            if (type.name() == match)
             {
                 return true;
             }
@@ -2028,6 +2060,11 @@ namespace cppwinrt::meta
     method token::get_delegate(token_callback callback) const
     {
         return *get_methods(callback).begin();
+    }
+
+    bool token::has_reference() const
+    {
+        return meta::has_reference(get_fields());
     }
 
     bool operator==(token left, token right) noexcept

@@ -4,7 +4,7 @@ namespace Component
 {
     //
     // The Parameters class covers the interop functions (e.g. get_abi/put_abi/etc)
-    // and the way they are use to convert to and from the ABI in support of 
+    // and the way they are used to convert to and from the ABI in support of 
     // consumption and production of types.
     //
 
@@ -45,5 +45,90 @@ namespace Component
     runtimeclass Parameters
     {
         [default] interface IParameters;
-    }
+    };
+
+    //
+    // The Structures class covers various issues with supporting WinRT structs in the projection.
+    //
+
+    runtimeclass Structures;
+    typedef struct SimpleStructure SimpleStructure;
+    typedef struct ComplexStructure ComplexStructure;
+    typedef struct WrapStructure WrapStructure;
+
+    [version(1.0)]
+    struct SimpleStructure
+    {
+        UINT32 Value;
+    };
+
+    [version(1.0)]
+    struct ComplexStructure
+    {
+        HSTRING String;
+        Windows.Foundation.IReference<UINT32>* Object;
+
+        // TODO: Bug in code gen prevents this from working due to ordering of struct definitions
+        // SimpleStructure Simple;
+    };
+
+    [version(1.0)]
+    struct WrapStructure
+    {
+        ComplexStructure Inner;
+    };
+
+    [version(1.0), uuid(f591f768-96d6-48f0-9d20-0b70bc0e41f2), exclusiveto(Structures)]
+    interface IStructures : IInspectable
+    {
+        HRESULT Set([in] WrapStructure value);
+        HRESULT Get([out, retval] WrapStructure* value);
+        HRESULT Out([out] WrapStructure* value);
+        HRESULT Ref([in] WrapStructure const* value);
+
+        HRESULT SetArray([in] UINT32 count, [in][size_is(count)] WrapStructure* value);
+        HRESULT GetArray([out] UINT32* count, [out, retval][size_is(, *count)] WrapStructure** value);
+        HRESULT OutArray([out] UINT32* count, [out][size_is(, *count)] WrapStructure** value);
+        HRESULT CopyArray([in] UINT32 count, [out][size_is(count)] WrapStructure* value);
+    };
+
+    [version(1.0), activatable(1.0)]
+    runtimeclass Structures
+    {
+        [default] interface IStructures;
+    };
+
+    //
+    // The Events class covers various issues with supporting WinRT events and delegates in the projection.
+    //
+
+    runtimeclass Events;
+
+    [version(1.0), uuid(da38922c-3d3a-404f-8477-de9c104c4f34)]
+    delegate HRESULT CustomDelegate([in] int value);
+
+    [version(1.0), uuid(fe92ce62-9f80-48f0-8264-86735adb9f8b)]
+    delegate HRESULT ReturnDelegate([out, retval] HSTRING* value);
+
+    [version(1.0), uuid(6ac35d2c-b2cf-4c36-995c-a9c0764636c9), exclusiveto(Events)]
+    interface IEvents : IInspectable
+    {
+        [eventadd] HRESULT SimpleEvent([in] Windows.Foundation.EventHandler<int>* handler, [out][retval] EventRegistrationToken* cookie);
+        [eventremove] HRESULT SimpleEvent([in] EventRegistrationToken cookie);
+        HRESULT RaiseSimpleEvent([in] int value);
+
+        [eventadd] HRESULT TypedEvent([in] Windows.Foundation.TypedEventHandler<Events*, int>* handler, [out][retval] EventRegistrationToken* cookie);
+        [eventremove] HRESULT TypedEvent([in] EventRegistrationToken cookie);
+        HRESULT RaiseTypedEvent([in] int value);
+
+        [eventadd] HRESULT CustomEvent([in] CustomDelegate* handler, [out][retval] EventRegistrationToken* cookie);
+        [eventremove] HRESULT CustomEvent([in] EventRegistrationToken cookie);
+        HRESULT RaiseCustomEvent([in] int value);
+    };
+
+    [version(1.0), activatable(1.0)]
+    runtimeclass Events
+    {
+        [default] interface IEvents;
+    };
 }

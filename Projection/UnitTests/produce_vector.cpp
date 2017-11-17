@@ -15,21 +15,6 @@ using namespace Windows::Foundation::Collections;
 using namespace Windows::Web::Http;
 using namespace Windows::Data::Json;
 
-namespace winrt { namespace Windows { namespace Web { namespace Http { 
-
-    static bool operator==(const HttpProgress & left, const HttpProgress & right)
-    {
-        return left.Stage == right.Stage &&
-            left.BytesSent == right.BytesSent &&
-            (left.TotalBytesToSend == right.TotalBytesToSend || left.TotalBytesToSend.Value() == right.TotalBytesToSend.Value()) &&
-            left.BytesReceived == right.BytesReceived &&
-            (left.TotalBytesToReceive == right.TotalBytesToReceive || left.TotalBytesToReceive.Value() == right.TotalBytesToReceive.Value()) &&
-            left.Retries == right.Retries;
-    }
-
-}}}}
-
-
 //
 // IVectorChangedEventArgs
 //

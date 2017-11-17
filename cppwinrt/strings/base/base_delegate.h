@@ -71,6 +71,15 @@ namespace winrt::impl
         };
     };
 
+    template <typename TSender, typename TArgs>
+    struct abi<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
+    {
+        struct __declspec(novtable) type : IUnknown
+        {
+            virtual HRESULT __stdcall Invoke(arg_in<TSender> sender, arg_in<TArgs> args) noexcept = 0;
+        };
+    };
+
     template <typename T>
     struct delegate<Windows::Foundation::EventHandler<T>>
     {
@@ -88,16 +97,6 @@ namespace winrt::impl
                 }
                 catch (...) { return to_hresult(); }
             }
-        };
-    };
-
-
-    template <typename TSender, typename TArgs>
-    struct abi<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
-    {
-        struct __declspec(novtable) type : IUnknown
-        {
-            virtual HRESULT __stdcall Invoke(arg_in<TSender> sender, arg_in<TArgs> args) noexcept = 0;
         };
     };
 
@@ -126,11 +125,23 @@ namespace winrt::impl
     {
         static constexpr GUID value{ pinterface_guid<Windows::Foundation::EventHandler<T>>::value };
     };
-    
+
+    template <typename TSender, typename TArgs>
+    struct guid<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
+    {
+        static constexpr GUID value{ pinterface_guid<Windows::Foundation::TypedEventHandler<TSender, TArgs>>::value };
+    };
+
     template <typename T>
     struct name<Windows::Foundation::EventHandler<T>>
     {
         static constexpr auto value{ L"Windows.Foundation.EventHandler`1<" + to_array(name_v<T>) + L">" };
+    };
+
+    template <typename TSender, typename TArgs>
+    struct name<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
+    {
+        static constexpr auto value{ L"Windows.Foundation.TypedEventHandler`2<" + to_array(name_v<TSender>) + L", " + to_array(name_v<TArgs>) + L">" };
     };
 
     template <typename T>
@@ -138,18 +149,6 @@ namespace winrt::impl
     {
         using type = pinterface_category<T>;
         static constexpr GUID value{ 0x9de1c535, 0x6ae1, 0x11e0,{ 0x84, 0xe1, 0x18, 0xa9, 0x05, 0xbc, 0xc5, 0x3f } };
-    };
-
-    template <typename TSender, typename TArgs>
-    struct guid<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
-    {
-        static constexpr GUID value{ pinterface_guid<Windows::Foundation::TypedEventHandler<TSender, TArgs>>::value };
-    };
-    
-    template <typename TSender, typename TArgs> 
-    struct name<Windows::Foundation::TypedEventHandler<TSender, TArgs>>
-    {
-        static constexpr auto value{ L"Windows.Foundation.TypedEventHandler`2<" + to_array(name_v<TSender>) + L", " + to_array(name_v<TArgs>) + L">" };
     };
 
     template <typename TSender, typename TArgs>

@@ -113,6 +113,7 @@ namespace cppwinrt::meta
         token get_extends() const;
         token get_default() const;
         method get_delegate(token_callback callback = {}) const;
+        bool has_reference() const;
 
         generator<method> get_methods(token_callback callback = {}) const;
         generator<std::string> get_method_names() const;

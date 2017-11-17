@@ -53,6 +53,8 @@
       <InProcessServer>
         <Path>App\Component.dll</Path>
         <ActivatableClass ActivatableClassId="Component.Parameters" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Component.Structures" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Component.Events" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>

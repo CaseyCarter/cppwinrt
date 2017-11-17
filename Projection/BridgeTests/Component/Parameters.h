@@ -35,6 +35,7 @@ namespace winrt::Component::implementation
         void OutObjectArray(com_array<Windows::Foundation::IInspectable>& value) const;
         void CopyObjectArray(array_view<Windows::Foundation::IInspectable> value) const;
 
+    private:
         int32_t m_int32{ 0 };
         hstring m_string;
         Windows::Foundation::IInspectable m_object;

@@ -224,6 +224,11 @@ WINRT_EXPORT namespace winrt
         return impl_detach(object);
     }
 
+    inline HSTRING detach_abi(hstring&& object) noexcept
+    {
+        return impl_detach(object);
+    }
+
     inline void copy_from_abi(hstring& object, HSTRING value)
     {
         attach_abi(object, impl::duplicate_string(value));
