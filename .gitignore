@@ -27,6 +27,7 @@ DevProjection
 AppPackages
 Generated\ Files
 
+cppwinrt/source/version.h
 cppwinrt/strings/strings.h
 cppwinrt/strings/strings.cpp
 Projection/Samples/**/winrt
