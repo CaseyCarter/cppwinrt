@@ -1,4 +1,5 @@
-%
+#include "module.g.h"
+
 namespace winrt::impl
 {
     namespace
@@ -17,6 +18,9 @@ namespace winrt::impl
     }
 }
 
+#ifndef WINRT_SUPPRESS_MODULE_EXPORTS
+
+%
 using namespace winrt;
 
 HRESULT __stdcall WINRT_CanUnloadNow()
@@ -44,3 +48,5 @@ HRESULT __stdcall WINRT_GetActivationFactory(HSTRING classId, void** factory)
         return to_hresult();
     }
 }
+
+#endif
