@@ -25,7 +25,6 @@ namespace
 TEST_CASE("param_hstring")
 {
     REQUIRE(outer({}) == L"[]");
-    REQUIRE(outer(nullptr) == L"[]");
     REQUIRE(outer(L"literal") == L"[literal]");
 
     hstring winrt_hstring = L"winrt::hstring";

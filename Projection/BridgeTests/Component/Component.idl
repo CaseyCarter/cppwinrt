@@ -70,6 +70,8 @@ namespace Component
 
         // TODO: Bug in code gen prevents this from working due to ordering of struct definitions
         // SimpleStructure Simple;
+        // ... or ...
+        // Windows.Foundation.IReference<SimpleStructure>* Object;
     };
 
     [version(1.0)]

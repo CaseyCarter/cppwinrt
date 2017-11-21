@@ -292,8 +292,13 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
 WINRT_EXPORT namespace winrt
 {
-    template <typename T>
-    inline Windows::Foundation::IInspectable box_value(T const& value)
+    inline Windows::Foundation::IInspectable box_value(param::hstring const& value)
+    {
+        return Windows::Foundation::IReference<hstring>(*(hstring*)(&value));
+    }
+
+    template <typename T, typename = std::enable_if_t<!std::is_convertible_v<T, param::hstring>>>
+    Windows::Foundation::IInspectable box_value(T const& value)
     {
         if constexpr (std::is_base_of_v<Windows::Foundation::IInspectable, T>)
         {
@@ -306,7 +311,7 @@ WINRT_EXPORT namespace winrt
     }
 
     template <typename T>
-    inline T unbox_value(Windows::Foundation::IInspectable const& value)
+    T unbox_value(Windows::Foundation::IInspectable const& value)
     {
         if constexpr (std::is_base_of_v<Windows::Foundation::IInspectable, T>)
         {
@@ -318,28 +323,41 @@ WINRT_EXPORT namespace winrt
         }
     }
 
-    template <typename T, typename U>
-    inline T unbox_value_or(Windows::Foundation::IInspectable const& value, U&& default_value)
+    template <typename T>
+    hstring unbox_value_or(Windows::Foundation::IInspectable const& value, param::hstring const& default_value)
+    {
+        if (value)
+        {
+            if (auto temp = value.try_as<Windows::Foundation::IReference<hstring>>())
+            {
+                return temp.Value();
+            }
+        }
+
+        return *(hstring*)(&default_value);
+    }
+
+    template <typename T, typename = std::enable_if_t<!std::is_same_v<T, hstring>>>
+    T unbox_value_or(Windows::Foundation::IInspectable const& value, T const& default_value)
     {
         if (value)
         {
             if constexpr (std::is_base_of_v<Windows::Foundation::IInspectable, T>)
             {
-                auto boxed = value.try_as<T>();
-                if (boxed)
+                if (auto temp = value.try_as<T>())
                 {
-                    return boxed;
+                    return temp;
                 }
             }
             else
             {
-                auto boxed = value.try_as<Windows::Foundation::IReference<T>>();
-                if (boxed)
+                if (auto temp = value.try_as<Windows::Foundation::IReference<T>>())
                 {
-                    return boxed.Value();
+                    return temp.Value();
                 }
             }
         }
-        return static_cast<T>(std::forward<U>(default_value));
+
+        return default_value;
     }
 }

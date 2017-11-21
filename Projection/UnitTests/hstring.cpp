@@ -161,7 +161,7 @@ TEST_CASE("hstring,assign,nullptr")
     hstring a(L"abc");
     REQUIRE(a == L"abc");
 
-    a = nullptr;
+    a = {};
     REQUIRE(a.empty());
 }
 
@@ -492,19 +492,6 @@ TEST_CASE("hstring,compare,std::wstring_view")
 TEST_CASE("std::wstring_view,compare,hstring")
 {
     test_compare<std::wstring_view, hstring>();
-}
-
-TEST_CASE("hstring,compare,null")
-{
-    REQUIRE(hstring() == hstring(L""));
-    
-    REQUIRE(hstring() == nullptr);
-    REQUIRE(nullptr == hstring());
-    REQUIRE(hstring(nullptr) == nullptr);
-    REQUIRE(nullptr == hstring(nullptr));
-
-    REQUIRE(hstring(L"") == nullptr);
-    REQUIRE(nullptr == hstring(L""));
 }
 
 TEST_CASE("hstring,map")

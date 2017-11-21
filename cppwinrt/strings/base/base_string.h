@@ -53,7 +53,7 @@ WINRT_EXPORT namespace winrt
         using const_iterator = const_pointer;
         using const_reverse_iterator = std::reverse_iterator<const_iterator>;
 
-        hstring(std::nullptr_t = nullptr) noexcept {}
+        hstring() noexcept {}
 
         hstring(hstring const& value) :
             m_handle(impl::duplicate_string(value.m_handle.get()))

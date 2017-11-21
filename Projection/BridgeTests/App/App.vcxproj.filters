@@ -8,6 +8,7 @@
     <ClCompile Include="References.cpp" />
     <ClCompile Include="Events.cpp" />
     <ClCompile Include="Errors.cpp" />
+    <ClCompile Include="Boxing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
