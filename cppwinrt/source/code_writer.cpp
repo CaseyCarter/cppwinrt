@@ -3060,8 +3060,8 @@ void t()
 
             out.write(strings::write_component_class_xaml_shim,
                 upper,
-                get_relative_component_name(type),
-                get_relative_component_name(type),
+				get_relative_component_path(type),
+				get_relative_component_path(type),
                 type.name_space(),
                 type.name(),
                 type.name());

@@ -1,10 +1,5 @@
-@echo off
+rem @echo off
 setlocal
-
-if exist %~d0\osgtools (
-echo ERROR: Must run this script from source repo
-goto :eof
-)
 
 set cppwinrt=%~dp0
 set synced=0
