@@ -2,6 +2,8 @@
 
 #include <regex>
 #include <stdlib.h>
+#include <xmllite.h>
+#include "settings.h"
 
 namespace cppwinrt
 {
@@ -107,7 +109,7 @@ namespace cppwinrt
         }
     }
 
-    std::wstring detect_sdk_version()
+    inline std::wstring detect_sdk_version()
     {
         std::array<wchar_t, MAX_PATH> module_path;
         auto size = GetModuleFileNameW(nullptr, module_path.data(), static_cast<DWORD>(module_path.size()));

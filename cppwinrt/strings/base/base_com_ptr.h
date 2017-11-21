@@ -68,7 +68,7 @@ WINRT_EXPORT namespace winrt
 
         T& operator*() const noexcept
         {
-            return*m_ptr;
+            return *m_ptr;
         }
 
         type* get() const noexcept

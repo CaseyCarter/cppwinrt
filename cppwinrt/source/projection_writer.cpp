@@ -35,18 +35,6 @@ namespace cppwinrt
             out.save_as(base_path / "base.h");
         }
 
-        void create_natvis(path const& base_path)
-        {
-            std::string natvis_name(settings::component ? settings::component_name : "cppwinrt");
-            if (natvis_name.empty())
-            {
-                return;
-            }
-            output out;
-            write_natvis(out);
-            out.save_as(base_path / (natvis_name + ".natvis"));
-        }
-
         void ReportMetadataError(std::string_view context)
         {
             try
@@ -69,11 +57,6 @@ namespace cppwinrt
                 if (!settings::skip_base_headers)
                 {
                     create_base_header(settings::projection);
-                }
-
-                if (settings::create_natvis)
-                {
-                    create_natvis(settings::projection);
                 }
             }
             catch (...)

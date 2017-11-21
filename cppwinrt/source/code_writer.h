@@ -54,7 +54,6 @@ namespace cppwinrt
     void write_component_class_header(meta::type const& type);
     void write_component_class_source(meta::type const& type);
 
-    void write_natvis(output& out);
     void write_namespace_special(output& out, std::string const& namespace_name);
 
     template <typename... Args>

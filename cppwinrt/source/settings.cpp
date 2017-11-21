@@ -17,7 +17,6 @@ namespace cppwinrt::settings
     std::wstring platform_version{L"10.0.16299.0"};
     bool component{};
     bool create_tests{};
-    bool create_natvis{};
     bool skip_base_headers{};
     bool verbose{};
     bool overwrite{};

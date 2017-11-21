@@ -31,6 +31,7 @@
     <ClInclude Include="source\settings.h" />
     <ClInclude Include="source\text_writer.h" />
     <ClInclude Include="source\version.h" />
+    <ClInclude Include="source\winmd_access.h" />
     <ClInclude Include="source\winmd_reader.h" />
     <ClInclude Include="strings\base\base_activation.h" />
     <ClInclude Include="strings\base\base_agile.h" />
@@ -134,7 +135,6 @@
     <ClInclude Include="strings\write\write_interface_produce.h" />
     <ClInclude Include="strings\write\write_interface_produce_method.h" />
     <ClInclude Include="strings\write\write_logo.h" />
-    <ClInclude Include="strings\write\write_natvis.h" />
     <ClInclude Include="strings\write\write_produce_tests.h" />
     <ClInclude Include="strings\write\write_produce_test_interface.h" />
     <ClInclude Include="strings\write\write_shim_body.h" />
@@ -159,6 +159,7 @@
     </ClCompile>
     <ClCompile Include="source\projection_writer.cpp" />
     <ClCompile Include="source\settings.cpp" />
+    <ClCompile Include="source\winmd_access.cpp" />
     <ClCompile Include="source\winmd_reader.cpp" />
     <ClCompile Include="strings\strings.cpp" />
   </ItemGroup>

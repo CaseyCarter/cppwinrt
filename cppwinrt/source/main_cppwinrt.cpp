@@ -9,28 +9,21 @@
 #include "projection_writer.h"
 #include "helpers.h"
 #include "sdk.h"
+#include "winmd_access.h"
 
 using namespace winrt;
 using namespace cppwinrt;
 using namespace std::chrono;
 using namespace std::experimental::filesystem;
 
+namespace winmd_paths
+{
+    extern std::vector<std::wstring> inputs;
+    extern std::vector<std::wstring> refs;
+}
+
 namespace
 {
-    namespace usage
-    {
-        std::vector<std::wstring> inputs;
-        std::vector<std::wstring> refs;
-    }
-
-    bool is_winmd(path const& filename)
-    {
-        std::wstring extension = filename.extension();
-        std::transform(extension.begin(), extension.end(), extension.begin(), towlower);
-
-        return extension == L".winmd";
-    }
-
     generator<std::wstring> enum_args(int const argc, wchar_t** argv);
 
     generator<std::wstring> enum_response_file(path response_path)
@@ -93,31 +86,11 @@ namespace
         filter,
         name,
         tests,
-        natvis,
         verbose,
         overwrite,
         help,
         brackets,
     };
-
-    void add_winmd_spec(std::vector<std::wstring>& winmd_specs, std::wstring const& winmd_spec, bool is_ref)
-    {
-        if (_wcsicmp(winmd_spec.c_str(), L"local") == 0)
-        {
-            std::array<wchar_t, MAX_PATH> path;
-            check_win32_bool(ExpandEnvironmentStrings(L"%windir%\\System32\\WinMetadata", path.data(), static_cast<DWORD>(path.size())));
-            winmd_specs.emplace_back(path.data());
-            return;
-        }
-
-        if (exists(winmd_spec))
-        {
-            winmd_specs.emplace_back(winmd_spec);
-            return;
-        }
-
-        add_winmds_from_sdk(winmd_specs, winmd_spec, is_ref);
-    }
 
     bool parse_usage(int const argc, wchar_t** argv)
     {
@@ -141,7 +114,6 @@ namespace
             { L"filter", option::filter },
             { L"name", option::name },
             { L"tests", option::tests },
-            { L"natvis", option::natvis },
             { L"verbose", option::verbose },
             { L"overwrite", option::overwrite },
             { L"brackets", option::brackets },
@@ -178,9 +150,6 @@ namespace
                 case option::tests:
                     settings::create_tests = true;
                     break;
-                case option::natvis:
-                    settings::create_natvis = true;
-                    break;
                 case option::verbose:
                     settings::verbose = true;
                     break;
@@ -209,11 +178,11 @@ namespace
                 {
                     settings::component_name = path(arg).filename().replace_extension().string();
                 }
-                add_winmd_spec(usage::inputs, arg, false);
+                add_winmd_spec(winmd_paths::inputs, arg, false);
                 break;
             case option::ref: 
                 settings::skip_base_headers = true;
-                add_winmd_spec(usage::refs, arg, true);
+                add_winmd_spec(winmd_paths::refs, arg, true);
                 if (settings::platform_version.empty())
                 {
                     settings::platform_version = detect_sdk_version();
@@ -243,109 +212,6 @@ namespace
         }
 
         return true;
-    }
-
-    generator<path> enum_winmd_files(std::vector<std::wstring> const& winmd_specs)
-    {
-        for (std::wstring winmd_spec : winmd_specs)
-        {
-            path winmd_path(winmd_spec);
-            winmd_path = absolute(winmd_path);
-            winmd_path = canonical(winmd_path);
-
-            if (is_directory(winmd_path))
-            {
-                for (directory_entry const& item : recursive_directory_iterator(winmd_path))
-                {
-                    path const item_path = item.path();
-
-                    if (is_winmd(item_path))
-                    {
-                        co_yield{ item_path };
-                    }
-                }
-            }
-            else if (is_winmd(winmd_path))
-            {
-                co_yield{ winmd_path };
-            }
-            else
-            {
-                throw invalid_usage{ L"Invalid winmd spec: ", winmd_spec };
-            }
-        }
-    }
-
-    std::vector<path> get_winmd_files(std::vector<std::wstring> const& winmd_specs)
-    {
-        std::vector<path> files;
-        for (auto file : enum_winmd_files(winmd_specs))
-        {
-            std::wstring file_lower = file.wstring();
-            std::transform(file_lower.begin(), file_lower.end(), file_lower.begin(), towlower);
-            files.push_back(file_lower);
-        }
-        std::sort(files.begin(), files.end());
-        files.erase(std::unique(files.begin(), files.end()), files.end());
-        return files;
-    }
-
-    void prepare_metadata()
-    {
-        auto inputs = get_winmd_files(usage::inputs);
-        for(auto const& input: inputs)
-        {
-            if (settings::verbose)
-            {
-                printf(" in:   %ls\n", input.c_str());
-            }
-            meta::open_database(input, false);
-        }
-
-        auto refs = get_winmd_files(usage::refs);
-        refs.erase(std::remove_if(refs.begin(), refs.end(),
-            [&](path const& p)
-            {
-                return std::find(inputs.begin(), inputs.end(), p) != inputs.end();
-            }), 
-            refs.end());
-        for (auto const& ref : refs)
-        {
-            if (settings::verbose)
-            {
-                printf(" ref:  %ls\n", ref.c_str());
-            }
-            meta::open_database(ref, true);
-        }
-
-        settings::inputs = std::move(inputs);
-        settings::refs = std::move(refs);
-
-        settings::output = absolute(settings::output);
-        settings::output = canonical(settings::output);
-        if (settings::verbose)
-        {
-            printf(" out:  %ls\n", settings::output.c_str());
-            if (!usage::refs.empty())
-            {
-                printf(" sdk:  %ls\n", settings::platform_version.c_str());
-            }
-        }
-
-        settings::projection = settings::output / "winrt";
-        settings::impl = settings::projection / "impl";
-        settings::tests = settings::output / "CompileTests";
-        create_directories(settings::impl);
-        if (!settings::sources.empty())
-        {
-            create_directories(settings::sources);
-        }
-        if (settings::create_tests)
-        {
-            create_directories(settings::tests);
-        }
-
-        meta::build_index();
     }
 
     void init_crt()

@@ -7,4 +7,4 @@ set compiler=%~dp0\cppwinrt\%BuildPlatform%\%BuildConfiguration%\cppwinrt.exe
 set output=%~dp0\%BuildStaging%
 
 rd %output%\winrt /S /Q
-%compiler% -in 10.0.16299.0 -verbose -tests -natvis -brackets -out %output%
+%compiler% -in 10.0.16299.0 -verbose -tests -brackets -out %output%

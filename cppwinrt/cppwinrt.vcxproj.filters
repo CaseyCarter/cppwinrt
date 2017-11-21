@@ -11,6 +11,7 @@
     <ClCompile Include="source\settings.cpp" />
     <ClCompile Include="source\component_writer.cpp" />
     <ClCompile Include="source\projection_writer.cpp" />
+    <ClCompile Include="source\winmd_access.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\code_writer.h" />
@@ -332,9 +333,6 @@
     <ClInclude Include="strings\write\write_logo.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_natvis.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
     <ClInclude Include="strings\write\write_produce_test_interface.h">
       <Filter>strings\write</Filter>
     </ClInclude>
@@ -368,6 +366,7 @@
     <ClInclude Include="strings\write\write_version_assert.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="source\winmd_access.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">

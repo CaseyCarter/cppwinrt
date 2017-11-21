@@ -9,7 +9,7 @@ namespace winrt::impl
 {
     struct natvis
     {
-        static auto __stdcall get_val(winrt::Windows::Foundation::IInspectable* object, wchar_t const * iid_str, size_t method)
+        static auto __stdcall abi_val(::IUnknown* object, wchar_t const * iid_str, int method)
         {
             union variant
             {
@@ -35,26 +35,38 @@ namespace winrt::impl
             {
                 IInspectable* pinsp;
                 typedef HRESULT(__stdcall IInspectable::* PropertyAccessor)(void*);
-                if (SUCCEEDED(static_cast<IUnknown*>(get_abi(*object))->QueryInterface(iid, reinterpret_cast<void**>(&pinsp))))
+                if (SUCCEEDED(object->QueryInterface(iid, reinterpret_cast<void**>(&pinsp))))
                 {
                     auto vtbl = *(PropertyAccessor**)pinsp;
                     static const int IInspectable_vtbl_size = 6;
                     auto get_Property = vtbl[method + IInspectable_vtbl_size];
                     (pinsp->*get_Property)(&value);
+                    pinsp->Release();
                 }
             }
             return value;
+        }
+
+        static auto __stdcall get_val(winrt::Windows::Foundation::IInspectable* object, wchar_t const * iid_str, int method)
+        {
+            return abi_val(static_cast<IUnknown*>(winrt::get_abi(*object)), iid_str, method);
         }
     };
 }
 
 extern "C"
 __declspec(selectany)
+decltype(winrt::impl::natvis::abi_val) & WINRT_abi_val = winrt::impl::natvis::abi_val;
+
+extern "C"
+__declspec(selectany)
 decltype(winrt::impl::natvis::get_val) & WINRT_get_val = winrt::impl::natvis::get_val;
 
 #ifdef _M_IX86
+#pragma comment(linker, "/include:_WINRT_abi_val")
 #pragma comment(linker, "/include:_WINRT_get_val")
 #else
+#pragma comment(linker, "/include:WINRT_abi_val")
 #pragma comment(linker, "/include:WINRT_get_val")
 #endif
 

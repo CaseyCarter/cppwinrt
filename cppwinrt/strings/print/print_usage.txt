@@ -12,7 +12,6 @@ Options:
   -component [<path>] Generate component templates, and optional implementation
   -filter <prefix>    One or more prefixes to include in component
   -name   <name>      Specify explicit name for component files
-  -natvis             Generate a natvis script for debug visualization
   -verbose            Show detailed progress information
   -help               Show detailed help with examples
   @<path>             Response file containing command line options
