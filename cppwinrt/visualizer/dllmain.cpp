@@ -37,7 +37,7 @@ extern "C" HRESULT STDAPICALLTYPE DllGetClassObject(REFCLSID rclsid, REFIID riid
         }
         catch (...)
         {
-            return impl::to_hresult();
+            return to_hresult();
         }
     }
 

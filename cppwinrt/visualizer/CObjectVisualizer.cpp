@@ -160,7 +160,7 @@ HRESULT CObjectVisualizer::GetChildren(
     auto interfaces = enum_natvis_interfaces(*type);
     for (const auto& interfaceItem : interfaces.first)
     {
-        childCount += interfaceItem.second.size();
+        childCount += static_cast<UINT32>(interfaceItem.second.size());
     }
 
     winrt::com_ptr<DkmEvaluationResultEnumContext> pEnumContext;

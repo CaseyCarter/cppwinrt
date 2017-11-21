@@ -49,7 +49,7 @@ namespace winrt::impl
 
         static auto __stdcall get_val(winrt::Windows::Foundation::IInspectable* object, wchar_t const * iid_str, int method)
         {
-            return abi_val(static_cast<IUnknown*>(winrt::get_abi(*object)), iid_str, method);
+            return abi_val(get_unknown(*object), iid_str, method);
         }
     };
 }
