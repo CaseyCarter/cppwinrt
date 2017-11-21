@@ -67,6 +67,7 @@ WINRT_EXPORT namespace winrt
 
         hstring(hstring&&) noexcept = default;
         hstring& operator=(hstring&&) = default;
+        hstring(std::nullptr_t) = delete;
 
         hstring(wchar_t const* value) :
             hstring(std::wstring_view(value))

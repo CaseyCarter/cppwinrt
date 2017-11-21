@@ -543,8 +543,6 @@ TEST_CASE("hstring, concat")
     REQUIRE(std::wstring_view{ L"def" } + s == L"defabc");
     REQUIRE(hstring{ L"def" } + s == L"defabc");
 
-    REQUIRE(s + nullptr == L"abc");
-    REQUIRE(nullptr + s == L"abc");
     REQUIRE(s + hstring() == L"abc");
     REQUIRE(hstring() + s == L"abc");
     REQUIRE(s + L"" == L"abc");

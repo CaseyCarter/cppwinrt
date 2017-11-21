@@ -6,6 +6,7 @@ WINRT_EXPORT namespace winrt::param
         hstring() noexcept : m_handle(nullptr) {}
         hstring(hstring const& values) = delete;
         hstring& operator=(hstring const& values) = delete;
+        hstring(std::nullptr_t) = delete;
 
         hstring(winrt::hstring const& value) noexcept : m_handle(get_abi(value))
         {
