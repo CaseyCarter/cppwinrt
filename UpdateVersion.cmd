@@ -5,6 +5,9 @@ rem This script should only be executed for official builds
 git checkout -f %BUILD_SOURCEBRANCHNAME%
 if NOT "%ERRORLEVEL%"=="0" goto wrapup
 
+git pull -f
+if NOT "%ERRORLEVEL%"=="0" goto wrapup
+
 git reset --hard %BUILD_SOURCEVERSION%
 if NOT "%ERRORLEVEL%"=="0" goto wrapup
 
