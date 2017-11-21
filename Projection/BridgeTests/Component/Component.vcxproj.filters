@@ -8,12 +8,14 @@
     <ClCompile Include="Generated Files\module.g.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="Errors.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="Parameters.h" />
     <ClInclude Include="Structures.h" />
     <ClInclude Include="Events.h" />
+    <ClInclude Include="Errors.h" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Component.idl" />

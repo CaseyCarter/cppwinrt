@@ -762,7 +762,7 @@ namespace winrt::impl
                 *name = detach_abi(static_cast<D*>(this)->GetRuntimeClassName());
                 return S_OK;
             }
-            catch (...) { return impl::to_hresult(); }
+            catch (...) { return to_hresult(); }
         }
 
         HRESULT __stdcall NonDelegatingGetTrustLevel(Windows::Foundation::TrustLevel* trustLevel) noexcept
@@ -772,7 +772,7 @@ namespace winrt::impl
                 *trustLevel = static_cast<D*>(this)->GetTrustLevel();
                 return S_OK;
             }
-            catch (...) { return impl::to_hresult(); }
+            catch (...) { return to_hresult(); }
         }
 
         virtual void* find_interface_nested(GUID const&) const noexcept

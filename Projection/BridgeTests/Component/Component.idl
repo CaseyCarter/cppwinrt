@@ -131,4 +131,27 @@ namespace Component
     {
         [default] interface IEvents;
     };
+
+    //
+    // The Errors class allows us to test some error propagation scenarios.
+    //
+
+    runtimeclass Errors;
+
+    [version(1.0), uuid(04fa8f8b-70c0-4b7c-998d-8c44d9614786), exclusiveto(Errors)]
+    interface IErrors : IInspectable
+    {
+        HRESULT Fail([in] HSTRING message);
+        HRESULT Propagate();
+        HRESULT std_bad_alloc();
+        HRESULT std_out_of_range();
+        HRESULT std_invalid_argument();
+        HRESULT std_exception();
+    };
+
+    [version(1.0), activatable(1.0)]
+    runtimeclass Errors
+    {
+        [default] interface IErrors;
+    };
 }

@@ -7,6 +7,7 @@
     <ClCompile Include="Structures.cpp" />
     <ClCompile Include="References.cpp" />
     <ClCompile Include="Events.cpp" />
+    <ClCompile Include="Errors.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

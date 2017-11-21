@@ -41,6 +41,6 @@ HRESULT __stdcall WINRT_GetActivationFactory(HSTRING classId, void** factory)
     }
     catch (...)
     {
-        return impl::to_hresult();
+        return to_hresult();
     }
 }

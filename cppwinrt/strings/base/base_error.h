@@ -203,13 +203,6 @@ WINRT_EXPORT namespace winrt
         hresult_no_interface(from_abi_t) noexcept : hresult_error(E_NOINTERFACE, from_abi) {}
     };
 
-    struct hresult_disconnected : hresult_error
-    {
-        hresult_disconnected() noexcept : hresult_error(RPC_E_DISCONNECTED) {}
-        hresult_disconnected(param::hstring const& message) noexcept : hresult_error(RPC_E_DISCONNECTED, message) {}
-        hresult_disconnected(from_abi_t) noexcept : hresult_error(RPC_E_DISCONNECTED, from_abi) {}
-    };
-
     struct hresult_class_not_available : hresult_error
     {
         hresult_class_not_available() noexcept : hresult_error(CLASS_E_CLASSNOTAVAILABLE) {}
@@ -292,11 +285,6 @@ namespace winrt::impl
             throw hresult_no_interface(hresult_error::from_abi);
         }
 
-        if (result == RPC_E_DISCONNECTED)
-        {
-            throw hresult_disconnected(hresult_error::from_abi);
-        }
-
         if (result == CLASS_E_CLASSNOTAVAILABLE)
         {
             throw hresult_class_not_available(hresult_error::from_abi);
@@ -329,7 +317,10 @@ namespace winrt::impl
 
         throw hresult_error(result, hresult_error::from_abi);
     }
+}
 
+WINRT_EXPORT namespace winrt
+{
     inline __declspec(noinline) HRESULT to_hresult() noexcept
     {
         try
@@ -341,7 +332,7 @@ namespace winrt::impl
             return e.to_abi();
         }
         WINRT_EXTERNAL_CATCH_CLAUSE
-        catch (std::bad_alloc const&)
+            catch (std::bad_alloc const&)
         {
             return E_OUTOFMEMORY;
         }
@@ -358,10 +349,7 @@ namespace winrt::impl
             return hresult_error(E_FAIL, to_hstring(e.what())).to_abi();
         }
     }
-}
 
-WINRT_EXPORT namespace winrt
-{
     [[noreturn]] inline void throw_last_error()
     {
         impl::throw_hresult(HRESULT_FROM_WIN32(GetLastError()));

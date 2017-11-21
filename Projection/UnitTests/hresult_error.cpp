@@ -392,41 +392,6 @@ TEST_CASE("hresult_no_interface")
     }
 }
 
-TEST_CASE("hresult_disconnected")
-{
-    REQUIRE_THROWS_AS(check_hresult(RPC_E_DISCONNECTED), hresult_disconnected);
-
-    try
-    {
-        throw hresult_disconnected(); // default restricted error info message
-    }
-    catch (hresult_disconnected const & e)
-    {
-        REQUIRE(RPC_E_DISCONNECTED == e.code());
-        REQUIRE(L"The object invoked has disconnected from its clients." == e.message());
-    }
-
-    try
-    {
-        throw hresult_disconnected(hresult_error::from_abi); // no restricted error info at all
-    }
-    catch (hresult_disconnected const & e)
-    {
-        REQUIRE(RPC_E_DISCONNECTED == e.code());
-        REQUIRE(L"The object invoked has disconnected from its clients." == e.message());
-    }
-
-    try
-    {
-        throw hresult_disconnected(L"test message"); // custom message for restricted error info message
-    }
-    catch (hresult_disconnected const & e)
-    {
-        REQUIRE(RPC_E_DISCONNECTED == e.code());
-        REQUIRE(L"test message" == e.message());
-    }
-}
-
 TEST_CASE("hresult_class_not_available")
 {
     REQUIRE_THROWS_AS(check_hresult(CLASS_E_CLASSNOTAVAILABLE), hresult_class_not_available);
@@ -470,7 +435,7 @@ TEST_CASE("hresult, bad_alloc")
     }
     catch (...)
     {
-        REQUIRE(E_OUTOFMEMORY == impl::to_hresult());
+        REQUIRE(E_OUTOFMEMORY == to_hresult());
     }
 }
 
@@ -482,7 +447,7 @@ TEST_CASE("hresult, out_of_range")
     }
     catch (...)
     {
-        REQUIRE(E_BOUNDS == impl::to_hresult());
+        REQUIRE(E_BOUNDS == to_hresult());
     }
 }
 
@@ -494,7 +459,7 @@ TEST_CASE("hresult, invalid_argument")
     }
     catch (...)
     {
-        REQUIRE(E_INVALIDARG == impl::to_hresult());
+        REQUIRE(E_INVALIDARG == to_hresult());
     }
 }
 
@@ -506,7 +471,7 @@ TEST_CASE("hresult, exception")
     }
     catch (...)
     {
-        REQUIRE(E_FAIL == impl::to_hresult());
+        REQUIRE(E_FAIL == to_hresult());
     }
 }
 
