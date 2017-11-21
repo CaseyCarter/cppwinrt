@@ -317,7 +317,7 @@ const meta::type* CObjectVisualizer::GetType()
     {
         winrt::com_ptr<DkmString> pValue;
         pRuntimeClassNameVisualized->GetUnderlyingString(pValue.put());
-        std::string className = cppwinrt::to_string(pValue->Value());
+        std::string className = winrt::to_string(pValue->Value());
 
         return meta::find_type(className);
     }
