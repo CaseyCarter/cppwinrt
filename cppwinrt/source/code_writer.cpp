@@ -1829,10 +1829,10 @@ namespace cppwinrt
                 std::rotate(reordered_method.params.begin(), reordered_method.params.end() - 2, reordered_method.params.end());
                 
                 out.write(strings::write_component_factory_forwarding_composable,
-                    default_interface.get_name(),
+                    token.get_name(),
                     method.get_name(),
                     bind_output(write_component_params, method, empty_generic_params),
-                    default_interface.get_name(),
+                    token.get_name(),
                     bind_output(write_args, reordered_method));
             }
         }
