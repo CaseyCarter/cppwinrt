@@ -2247,7 +2247,7 @@ namespace cppwinrt
         std::string get_relative_component_path(meta::type const& type)
         {
             std::string name(get_relative_component_name(type));
-            std::replace(name.begin(), name.end(), '.', '\\');
+            std::replace(name.begin(), name.end(), '.', '/');
             return name;
         }
 
