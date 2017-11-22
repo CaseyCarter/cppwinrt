@@ -24,7 +24,7 @@ namespace winrt::impl
             {
                 *handler = nullptr;
                 typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Completed());
+                *handler = detach_from<Windows::Foundation::AsyncActionCompletedHandler>(this->shim().Completed());
                 return S_OK;
             }
             catch (...)
@@ -145,7 +145,7 @@ namespace winrt::impl
             {
                 *handler = nullptr;
                 typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Progress());
+                *handler = detach_from<Windows::Foundation::AsyncActionProgressHandler<TProgress>>(this->shim().Progress());
                 return S_OK;
             }
             catch (...)
@@ -174,7 +174,7 @@ namespace winrt::impl
             {
                 *handler = nullptr;
                 typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Completed());
+                *handler = detach_from<Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>(this->shim().Completed());
                 return S_OK;
             }
             catch (...)
@@ -221,7 +221,7 @@ namespace winrt::impl
             {
                 *handler = nullptr;
                 typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Completed());
+                *handler = detach_from<Windows::Foundation::AsyncOperationCompletedHandler<TResult>>(this->shim().Completed());
                 return S_OK;
             }
             catch (...)
@@ -234,13 +234,13 @@ namespace winrt::impl
         {
             try
             {
+                clear_abi(results);
                 typename D::abi_guard guard(this->shim());
-                *results = detach_abi(this->shim().GetResults());
+                *results = detach_from<TResult>(this->shim().GetResults());
                 return S_OK;
             }
             catch (...)
             {
-                clear_abi(results);
                 return to_hresult();
             }
         }
@@ -269,7 +269,7 @@ namespace winrt::impl
             {
                 *handler = nullptr;
                 typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Progress());
+                *handler = detach_from<Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>>(this->shim().Progress());
                 return S_OK;
             }
             catch (...)
@@ -298,7 +298,7 @@ namespace winrt::impl
             {
                 *handler = nullptr;
                 typename D::abi_guard guard(this->shim());
-                *handler = detach_abi(this->shim().Completed());
+                *handler = detach_from<Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>(this->shim().Completed());
                 return S_OK;
             }
             catch (...)
@@ -311,13 +311,13 @@ namespace winrt::impl
         {
             try
             {
+                clear_abi(results);
                 typename D::abi_guard guard(this->shim());
-                *results = detach_abi(this->shim().GetResults());
+                *results = detach_from<TResult>(this->shim().GetResults());
                 return S_OK;
             }
             catch (...)
             {
-                clear_abi(results);
                 return to_hresult();
             }
         }

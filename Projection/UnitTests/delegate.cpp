@@ -72,25 +72,6 @@ TEST_CASE("delegate,return")
         }
 
         {
-            ListViewItemToKeyHandler handler = [](Windows::Foundation::IInspectable const &) { return std::wstring(L"std"); };
-
-            hstring result = handler(nullptr);
-
-            REQUIRE(result == L"std");
-        }
-
-        {
-            ListViewItemToKeyHandler handler = [](Windows::Foundation::IInspectable const &)
-            {
-                return std::wstring_view(L"std::wstring_view");
-            };
-
-            hstring result = handler(nullptr);
-
-            REQUIRE(result == L"std::wstring_view");
-        }
-
-        {
             ListViewItemToKeyHandler handler = [](Windows::Foundation::IInspectable const &)
             {
                 return hstring(L"hstring");

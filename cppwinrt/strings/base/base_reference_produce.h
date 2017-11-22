@@ -9,7 +9,7 @@ namespace winrt::impl
             try
             {
                 typename D::abi_guard guard(this->shim());
-                *value = detach_abi(this->shim().Value());
+                *value = detach_from<T>(this->shim().Value());
                 return S_OK;
             }
             catch (...)

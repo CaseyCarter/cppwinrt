@@ -832,8 +832,9 @@ namespace cppwinrt
             }
             else
             {
-                out.write("*% = detach_abi(this->shim().%(%))",
+                out.write("*% = detach_from<@>(this->shim().%(%))",
                     method.return_type.name,
+                    method.return_type.signature.get_name(),
                     method.get_name(),
                     bind_output(write_produce_args, method));
             }
@@ -1070,8 +1071,9 @@ namespace cppwinrt
             }
             else
             {
-                out.write("*% = detach_abi((*this)(%))",
+                out.write("*% = detach_from<@>((*this)(%))",
                     method.return_type.name,
+                    method.return_type.signature.get_name(),
                     bind_output(write_produce_args, method));
             }
         }
@@ -1796,7 +1798,7 @@ namespace cppwinrt
             for (meta::method const& method : factory.get_methods())
             {
                 out.write(strings::write_component_factory_forwarding_constructor,
-                    default_interface.get_name(),
+                    type.full_name(),
                     method.get_name(),
                     bind_output(write_component_params, method, empty_generic_params),
                     bind_output(write_args, method));

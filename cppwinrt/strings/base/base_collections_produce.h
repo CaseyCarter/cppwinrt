@@ -42,7 +42,7 @@ namespace winrt::impl
             {
                 clear_abi(current);
                 typename D::abi_guard guard(this->shim());
-                *current = detach_abi(this->shim().Current());
+                *current = detach_from<T>(this->shim().Current());
                 return S_OK;
             }
             catch (...)
@@ -83,14 +83,13 @@ namespace winrt::impl
         {
             try
             {
+                clear_abi(value);
                 typename D::abi_guard guard(this->shim());
                 *actual = this->shim().GetMany(array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
                 return S_OK;
             }
             catch (...)
             {
-                clear_abi(value);
-                *actual = 0;
                 return to_hresult();
             }
         }
@@ -99,17 +98,17 @@ namespace winrt::impl
     template <typename D, typename T>
     struct produce<D, wfc::IIterable<T>> : produce_base<D, wfc::IIterable<T>>
     {
-        HRESULT __stdcall First(arg_out<wfc::IIterator<T>> first) noexcept final
+        HRESULT __stdcall First(void** first) noexcept final
         {
             try
             {
+                *first = nullptr;
                 typename D::abi_guard guard(this->shim());
-                *first = detach_abi(this->shim().First());
+                *first = detach_from<wfc::IIterator<T>>(this->shim().First());
                 return S_OK;
             }
             catch (...)
             {
-                *first = nullptr;
                 return to_hresult();
             }
         }
@@ -124,7 +123,7 @@ namespace winrt::impl
             {
                 clear_abi(key);
                 typename D::abi_guard guard(this->shim());
-                *key = detach_abi(this->shim().Key());
+                *key = detach_from<K>(this->shim().Key());
                 return S_OK;
             }
             catch (...)
@@ -139,7 +138,7 @@ namespace winrt::impl
             {
                 clear_abi(value);
                 typename D::abi_guard guard(this->shim());
-                *value = detach_abi(this->shim().Value());
+                *value = detach_from<V>(this->shim().Value());
                 return S_OK;
             }
             catch (...)
@@ -156,13 +155,13 @@ namespace winrt::impl
         {
             try
             {
+                clear_abi(item);
                 typename D::abi_guard guard(this->shim());
-                *item = detach_abi(this->shim().GetAt(index));
+                *item = detach_from<T>(this->shim().GetAt(index));
                 return S_OK;
             }
             catch (...)
             {
-                clear_abi(item);
                 return to_hresult();
             }
         }
@@ -199,14 +198,13 @@ namespace winrt::impl
         {
             try
             {
+                clear_abi(value);
                 typename D::abi_guard guard(this->shim());
                 *actual = this->shim().GetMany(startIndex, array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
                 return S_OK;
             }
             catch (...)
             {
-                clear_abi(value);
-                *actual = 0;
                 return to_hresult();
             }
         }
@@ -219,13 +217,13 @@ namespace winrt::impl
         {
             try
             {
+                clear_abi(item);
                 typename D::abi_guard guard(this->shim());
-                *item = detach_abi(this->shim().GetAt(index));
+                *item = detach_from<T>(this->shim().GetAt(index));
                 return S_OK;
             }
             catch (...)
             {
-                clear_abi(item);
                 return to_hresult();
             }
         }
@@ -248,13 +246,13 @@ namespace winrt::impl
         {
             try
             {
+                *view = nullptr;
                 typename D::abi_guard guard(this->shim());
-                *view = detach_abi(this->shim().GetView());
+                *view = detach_from<wfc::IVectorView<T>>(this->shim().GetView());
                 return S_OK;
             }
             catch (...)
             {
-                *view = nullptr;
                 return to_hresult();
             }
         }
@@ -361,14 +359,13 @@ namespace winrt::impl
         {
             try
             {
+                clear_abi(value);
                 typename D::abi_guard guard(this->shim());
                 *actual = this->shim().GetMany(startIndex, array_view<T>(reinterpret_cast<T*>(value), reinterpret_cast<T*>(value) + capacity));
                 return S_OK;
             }
             catch (...)
             {
-                clear_abi(value);
-                *actual = 0;
                 return to_hresult();
             }
         }
@@ -395,13 +392,13 @@ namespace winrt::impl
         {
             try
             {
+                clear_abi(value);
                 typename D::abi_guard guard(this->shim());
-                *value = detach_abi(this->shim().Lookup(*reinterpret_cast<K const*>(&key)));
+                *value = detach_from<V>(this->shim().Lookup(*reinterpret_cast<K const*>(&key)));
                 return S_OK;
             }
             catch (...)
             {
-                clear_abi(value);
                 return to_hresult();
             }
         }
@@ -434,18 +431,18 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall Split(arg_out<wfc::IMapView<K, V>> firstPartition, arg_out<wfc::IMapView<K, V>> secondPartition) noexcept final
+        HRESULT __stdcall Split(void** firstPartition, void** secondPartition) noexcept final
         {
             try
             {
+                *firstPartition = nullptr;
+                *secondPartition = nullptr;
                 typename D::abi_guard guard(this->shim());
                 this->shim().Split(*reinterpret_cast<wfc::IMapView<K, V>*>(firstPartition), *reinterpret_cast<wfc::IMapView<K, V>*>(secondPartition));
                 return S_OK;
             }
             catch (...)
             {
-                *firstPartition = nullptr;
-                *secondPartition = nullptr;
                 return to_hresult();
             }
         }
@@ -458,13 +455,13 @@ namespace winrt::impl
         {
             try
             {
+                clear_abi(value);
                 typename D::abi_guard guard(this->shim());
-                *value = detach_abi(this->shim().Lookup(*reinterpret_cast<K const*>(&key)));
+                *value = detach_from<V>(this->shim().Lookup(*reinterpret_cast<K const*>(&key)));
                 return S_OK;
             }
             catch (...)
             {
-                clear_abi(value);
                 return to_hresult();
             }
         }
@@ -497,17 +494,17 @@ namespace winrt::impl
             }
         }
 
-        HRESULT __stdcall GetView(arg_out<wfc::IMapView<K, V>> view) noexcept final
+        HRESULT __stdcall GetView(void** view) noexcept final
         {
             try
             {
+                *view = nullptr;
                 typename D::abi_guard guard(this->shim());
-                *view = detach_abi(this->shim().GetView());
+                *view = detach_from<wfc::IMapView<K, V>>(this->shim().GetView());
                 return S_OK;
             }
             catch (...)
             {
-                *view = nullptr;
                 return to_hresult();
             }
         }
@@ -578,7 +575,7 @@ namespace winrt::impl
             {
                 clear_abi(value);
                 typename D::abi_guard guard(this->shim());
-                *value = detach_abi(this->shim().Key());
+                *value = detach_from<K>(this->shim().Key());
                 return S_OK;
             }
             catch (...)

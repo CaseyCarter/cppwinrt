@@ -447,6 +447,12 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 namespace winrt::impl
 {
     template <typename T>
+    auto detach_from(T&& object) noexcept
+    {
+        return detach_abi(std::forward<T>(object));
+    }
+
+    template <typename T>
     T empty_value() noexcept
     {
         if constexpr (std::is_base_of_v<Windows::Foundation::IUnknown, T>)

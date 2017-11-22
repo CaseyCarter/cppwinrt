@@ -9,6 +9,8 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="Errors.cpp" />
+    <ClCompile Include="FastInput.cpp" />
+    <ClCompile Include="FastInputVector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -16,6 +18,8 @@
     <ClInclude Include="Structures.h" />
     <ClInclude Include="Events.h" />
     <ClInclude Include="Errors.h" />
+    <ClInclude Include="FastInput.h" />
+    <ClInclude Include="fastinputvector.h" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Component.idl" />

@@ -146,6 +146,7 @@
     <ClCompile Include="Errors.cpp" />
     <ClCompile Include="Boxing.cpp" />
     <ClCompile Include="Events.cpp" />
+    <ClCompile Include="FastInput.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Parameters.cpp" />
     <ClCompile Include="pch.cpp">

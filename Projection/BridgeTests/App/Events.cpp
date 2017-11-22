@@ -89,16 +89,9 @@ TEST_CASE("Events")
 
         d = []
         {
-            return std::wstring_view(L"two");
+            return hstring(L"two");
         };
 
         REQUIRE(d() == L"two");
-
-        d = []
-        {
-            return hstring(L"three");
-        };
-
-        REQUIRE(d() == L"three");
     }
 }

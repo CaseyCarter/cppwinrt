@@ -156,4 +156,61 @@ namespace Component
     {
         [default] interface IErrors;
     };
+
+    //
+    // The FastInput class covers the various optimizations to speed up input parameters
+    // and silently handle C++ standard library input.
+    //
+
+    runtimeclass FastInput;
+
+    [version(1.0), uuid(a2a8d27d-9836-4f21-9a84-066ddb90652d), exclusiveto(FastInput)]
+    interface IFastInput : IInspectable
+    {
+        HRESULT String([in] HSTRING in, [out, retval] HSTRING* out);
+        HRESULT Array([in] UINT32 count, [in][size_is(count)] HSTRING* in, [out, retval] HSTRING* out);
+
+        HRESULT Iterable([in] Windows.Foundation.Collections.IIterable<HSTRING>* in, [out, retval] HSTRING* out);
+        HRESULT VectorView([in] Windows.Foundation.Collections.IVectorView<HSTRING>* in, [out, retval] HSTRING* out);
+        HRESULT Vector([in] Windows.Foundation.Collections.IVector<HSTRING>* in, [out, retval] HSTRING* out);
+        HRESULT ObservableVector([in] Windows.Foundation.Collections.IObservableVector<HSTRING>* in, [out, retval] HSTRING* out);
+
+        HRESULT IterablePair([in] Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, HSTRING>*>* in, [out, retval] HSTRING* out);
+        HRESULT MapView([in] Windows.Foundation.Collections.IMapView<HSTRING, HSTRING>* in, [out, retval] HSTRING* out);
+        HRESULT Map([in] Windows.Foundation.Collections.IMap<HSTRING, HSTRING>* in, [out, retval] HSTRING* out);
+        HRESULT ObservableMap([in] Windows.Foundation.Collections.IObservableMap<HSTRING, HSTRING>* in, [out, retval] HSTRING* out);
+
+        HRESULT IterableAsync([in] Windows.Foundation.Collections.IIterable<HSTRING>* in, [out, retval] Windows.Foundation.IAsyncOperation<HSTRING>** out);
+        HRESULT VectorViewAsync([in] Windows.Foundation.Collections.IVectorView<HSTRING>* in, [out, retval] Windows.Foundation.IAsyncOperation<HSTRING>** out);
+        HRESULT IterablePairAsync([in] Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, HSTRING>*>* in, [out, retval] Windows.Foundation.IAsyncOperation<HSTRING>** out);
+        HRESULT MapViewAsync([in] Windows.Foundation.Collections.IMapView<HSTRING, HSTRING>* in, [out, retval] Windows.Foundation.IAsyncOperation<HSTRING>** out);
+
+        HRESULT UseIterable();
+        HRESULT UseIterablePair();
+    };
+
+    [version(1.0), activatable(1.0)]
+    runtimeclass FastInput
+    {
+        [default] interface IFastInput;
+    };
+
+    runtimeclass FastInputVector;
+
+    [version(1.0), uuid(bb649b98-7582-4970-8adc-e2a13aca24aa), exclusiveto(FastInputVector)]
+    interface IFastInputVectorFactory : IInspectable
+    {
+        HRESULT Create([in] Windows.Foundation.Collections.IVectorView<HSTRING>* in, [out, retval] FastInputVector** out);
+    };
+
+    [version(1.0), activatable(IFastInputVectorFactory, 1.0)]
+    runtimeclass FastInputVector
+    {
+        // Don't confuse this for a high-performance vector. This is for testing fast-input binding support.
+        // The default interface is intentionally not one of the collection intefaces to force them to be convertible for testing.
+        [default] interface Windows.Foundation.IClosable;
+        interface Windows.Foundation.Collections.IVector<HSTRING>;
+        interface Windows.Foundation.Collections.IVectorView<HSTRING>;
+        interface Windows.Foundation.Collections.IObservableVector<HSTRING>;
+    };
 }

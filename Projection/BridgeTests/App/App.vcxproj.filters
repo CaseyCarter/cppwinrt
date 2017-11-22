@@ -9,6 +9,7 @@
     <ClCompile Include="Events.cpp" />
     <ClCompile Include="Errors.cpp" />
     <ClCompile Include="Boxing.cpp" />
+    <ClCompile Include="FastInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
