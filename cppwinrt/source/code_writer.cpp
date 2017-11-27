@@ -383,11 +383,12 @@ namespace cppwinrt
             out.write(" %", param.name);
         }
 
-        void write_component_param_type(output& out, meta::param const& param, std::vector<std::string> const& generic_params)
+        void write_component_param_type(output& out, meta::method const& method, meta::param const& param, std::vector<std::string> const& generic_params)
         {
             meta::signature signature = param.signature;
             CorElementType category = signature.get_category();
             bool by_ref{};
+            bool const async = has_reference_param(method);
 
             if (category == ELEMENT_TYPE_BYREF)
             {
@@ -414,7 +415,12 @@ namespace cppwinrt
             {
                 if (param.is_in())
                 {
-                    out.write("hstring const&");
+                    out.write("hstring const");
+
+                    if (!async)
+                    {
+                        out.write('&');
+                    }
                 }
                 else
                 {
@@ -446,7 +452,12 @@ namespace cppwinrt
 
             if (param.is_in())
             {
-                out.write("@ const&", signature.get_name(generic_params));
+                out.write("@ const", signature.get_name(generic_params));
+
+                if (!async)
+                {
+                    out.write('&');
+                }
             }
             else
             {
@@ -454,9 +465,9 @@ namespace cppwinrt
             }
         }
 
-        void write_component_param(output& out, meta::param const& param, std::vector<std::string> const& generic_params)
+        void write_component_param(output& out, meta::method const& method, meta::param const& param, std::vector<std::string> const& generic_params)
         {
-            write_component_param_type(out, param, generic_params);
+            write_component_param_type(out, method, param, generic_params);
             out.write(" %", param.name);
         }
 
@@ -729,7 +740,7 @@ namespace cppwinrt
                     out.write(", ");
                 }
 
-                write_component_param(out, param, generic_params);
+                write_component_param(out, method, param, generic_params);
             }
         }
 
