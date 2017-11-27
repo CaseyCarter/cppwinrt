@@ -214,6 +214,7 @@
     <ClCompile Include="Errors.cpp" />
     <ClCompile Include="Events.cpp" />
     <ClCompile Include="FastInput.cpp" />
+    <ClCompile Include="FastInputMap.cpp" />
     <ClCompile Include="FastInputVector.cpp" />
     <ClCompile Include="Generated Files\module.g.cpp" />
     <ClCompile Include="Parameters.cpp" />
@@ -229,7 +230,8 @@
     <ClInclude Include="Errors.h" />
     <ClInclude Include="Events.h" />
     <ClInclude Include="FastInput.h" />
-    <ClInclude Include="fastinputvector.h" />
+    <ClInclude Include="FastInputMap.h" />
+    <ClInclude Include="FastInputVector.h" />
     <ClInclude Include="Parameters.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Structures.h" />

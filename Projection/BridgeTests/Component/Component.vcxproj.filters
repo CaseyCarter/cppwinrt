@@ -11,6 +11,7 @@
     <ClCompile Include="Errors.cpp" />
     <ClCompile Include="FastInput.cpp" />
     <ClCompile Include="FastInputVector.cpp" />
+    <ClCompile Include="FastInputMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -19,7 +20,8 @@
     <ClInclude Include="Events.h" />
     <ClInclude Include="Errors.h" />
     <ClInclude Include="FastInput.h" />
-    <ClInclude Include="fastinputvector.h" />
+    <ClInclude Include="FastInputVector.h" />
+    <ClInclude Include="FastInputMap.h" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Component.idl" />

@@ -10,8 +10,6 @@ namespace winrt::Component::implementation
 
         void Close();
         Windows::Foundation::Collections::IIterator<hstring> First();
-        event_token VectorChanged(Windows::Foundation::Collections::VectorChangedEventHandler<hstring> const& vhnd);
-        void VectorChanged(event_token const& token);
         hstring GetAt(uint32_t index);
         uint32_t Size();
         Windows::Foundation::Collections::IVectorView<hstring> GetView();

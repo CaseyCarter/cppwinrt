@@ -58,6 +58,7 @@
         <ActivatableClass ActivatableClassId="Component.Errors" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Component.FastInput" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Component.FastInputVector" ThreadingModel="both" />
+      <ActivatableClass ActivatableClassId="Component.FastInputMap" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>

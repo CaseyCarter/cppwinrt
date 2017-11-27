@@ -98,18 +98,6 @@ TEST_CASE("FastInput")
     }
 
     {
-        FastInputVector convertible({ L"One",L"Two",L"Three" });
-        REQUIRE(fast.ObservableVector(convertible) == L"OneTwoThree");
-        fast.UseIterable();
-
-        IObservableVector<hstring> actual = FastInputVector({ L"One",L"Two",L"Three" });
-        REQUIRE(fast.ObservableVector(actual) == L"OneTwoThree");
-        fast.UseIterable();
-
-        REQUIRE(fast.ObservableVector(nullptr) == L"nullptr");
-    }
-
-    {
         REQUIRE(fast.IterablePair({ { L"A",L"a" },{ L"B",L"b" },{ L"C",L"c" } }) == L"AaBbCc");
         REQUIRE_THROWS_AS(fast.UseIterablePair(), hresult_illegal_method_call);
 
@@ -136,5 +124,129 @@ TEST_CASE("FastInput")
         fast.UseIterablePair();
 
         REQUIRE(fast.IterablePair(nullptr) == L"nullptr");
+    }
+
+    {
+        REQUIRE(fast.MapView({ { L"A",L"a" },{ L"B",L"b" },{ L"C",L"c" } }) == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.MapView(std::map<hstring, hstring>{ { L"A", L"a" }, { L"B",L"b" }, { L"C",L"c" } }) == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.MapView(std::unordered_map<hstring, hstring>{ { L"A", L"a" }, { L"B",L"b" }, { L"C",L"c" } }) == L"AaBbCc");
+        fast.UseIterablePair();
+
+        std::map<hstring, hstring> map{ { { L"A", L"a" },{ L"B",L"b" },{ L"C",L"c" } } };
+        REQUIRE(fast.MapView(map) == L"AaBbCc");
+        REQUIRE_THROWS_AS(fast.UseIterablePair(), hresult_illegal_method_call);
+
+        FastInputMap convertible({ { L"A", L"a" }, { L"B",L"b" }, { L"C",L"c" } });
+        REQUIRE(fast.MapView(convertible) == L"AaBbCc");
+        fast.UseIterablePair();
+
+        IMapView<hstring, hstring> actual = FastInputMap({ { L"A", L"a" },{ L"B",L"b" },{ L"C",L"c" } });
+        REQUIRE(fast.MapView(actual) == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.MapView(nullptr) == L"nullptr");
+    }
+
+    {
+        REQUIRE(fast.Map({ { L"A",L"a" },{ L"B",L"b" },{ L"C",L"c" } }) == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.Map(std::map<hstring, hstring>{ { L"A", L"a" }, { L"B",L"b" }, { L"C",L"c" } }) == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.Map(std::unordered_map<hstring, hstring>{ { L"A", L"a" }, { L"B",L"b" }, { L"C",L"c" } }) == L"AaBbCc");
+        fast.UseIterablePair();
+
+        FastInputMap convertible({ { L"A", L"a" },{ L"B",L"b" },{ L"C",L"c" } });
+        REQUIRE(fast.Map(convertible) == L"AaBbCc");
+        fast.UseIterablePair();
+
+        IMap<hstring, hstring> actual = FastInputMap({ { L"A", L"a" },{ L"B",L"b" },{ L"C",L"c" } });
+        REQUIRE(fast.Map(actual) == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.Map(nullptr) == L"nullptr");
+    }
+
+    {
+        REQUIRE(fast.IterableAsync({ L"One",L"Two",L"Three" }).get() == L"OneTwoThree");
+        fast.UseIterable();
+
+        REQUIRE(fast.IterableAsync(std::vector<hstring>{ L"One", L"Two", L"Three" }).get() == L"OneTwoThree");
+        fast.UseIterable();
+
+        IVector<hstring> convertible = single_threaded_vector<hstring>({ L"One",L"Two",L"Three" });
+        REQUIRE(fast.IterableAsync(convertible).get() == L"OneTwoThree");
+        fast.UseIterable();
+
+        IIterable<hstring> actual = single_threaded_vector<hstring>({ L"One",L"Two",L"Three" });
+        REQUIRE(fast.IterableAsync(actual).get() == L"OneTwoThree");
+        fast.UseIterable();
+
+        REQUIRE(fast.IterableAsync(nullptr).get() == L"nullptr");
+    }
+
+    {
+        REQUIRE(fast.VectorViewAsync({ L"One",L"Two",L"Three" }).get() == L"OneTwoThree");
+        fast.UseIterable();
+
+        REQUIRE(fast.VectorViewAsync(std::vector<hstring>{ L"One", L"Two", L"Three" }).get() == L"OneTwoThree");
+        fast.UseIterable();
+
+        FastInputVector convertible({ L"One",L"Two",L"Three" });
+        REQUIRE(fast.VectorViewAsync(convertible).get() == L"OneTwoThree");
+        fast.UseIterable();
+
+        IVectorView<hstring> actual = single_threaded_vector<hstring>({ L"One",L"Two",L"Three" }).GetView();
+        REQUIRE(fast.VectorViewAsync(actual).get() == L"OneTwoThree");
+        fast.UseIterable();
+
+        REQUIRE(fast.VectorViewAsync(nullptr).get() == L"nullptr");
+    }
+
+    {
+        REQUIRE(fast.IterablePairAsync({ { L"A",L"a" },{ L"B",L"b" },{ L"C",L"c" } }).get() == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.IterablePairAsync(std::map<hstring, hstring>{ { L"A", L"a" }, { L"B",L"b" }, { L"C",L"c" } }).get() == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.IterablePairAsync(std::unordered_map<hstring, hstring>{ { L"A", L"a" }, { L"B",L"b" }, { L"C",L"c" } }).get() == L"AaBbCc");
+        fast.UseIterablePair();
+
+        IMap<hstring, hstring> convertible = single_threaded_map<hstring, hstring>(std::map<hstring, hstring>{ { { L"A", L"a" }, { L"B",L"b" }, { L"C",L"c" } } });
+        REQUIRE(fast.IterablePairAsync(convertible).get() == L"AaBbCc");
+        fast.UseIterablePair();
+
+        IIterable<IKeyValuePair<hstring, hstring>> actual = single_threaded_map<hstring>(std::map<hstring, hstring>{ { { L"A", L"a" }, { L"B",L"b" }, { L"C",L"c" } } });
+        REQUIRE(fast.IterablePairAsync(actual).get() == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.IterablePairAsync(nullptr).get() == L"nullptr");
+    }
+
+    {
+        REQUIRE(fast.MapViewAsync({ { L"A",L"a" },{ L"B",L"b" },{ L"C",L"c" } }).get() == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.MapViewAsync(std::map<hstring, hstring>{ { L"A", L"a" }, { L"B",L"b" }, { L"C",L"c" } }).get() == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.MapViewAsync(std::unordered_map<hstring, hstring>{ { L"A", L"a" }, { L"B",L"b" }, { L"C",L"c" } }).get() == L"AaBbCc");
+        fast.UseIterablePair();
+
+        FastInputMap convertible({ { L"A", L"a" },{ L"B",L"b" },{ L"C",L"c" } });
+        REQUIRE(fast.MapViewAsync(convertible).get() == L"AaBbCc");
+        fast.UseIterablePair();
+
+        IMapView<hstring, hstring> actual = FastInputMap({ { L"A", L"a" },{ L"B",L"b" },{ L"C",L"c" } });
+        REQUIRE(fast.MapViewAsync(actual).get() == L"AaBbCc");
+        fast.UseIterablePair();
+
+        REQUIRE(fast.MapViewAsync(nullptr).get() == L"nullptr");
     }
 }

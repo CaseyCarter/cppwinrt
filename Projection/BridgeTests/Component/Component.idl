@@ -112,6 +112,14 @@ namespace Component
     [version(1.0), uuid(fe92ce62-9f80-48f0-8264-86735adb9f8b)]
     delegate HRESULT ReturnDelegate([out, retval] HSTRING* value);
 
+    [version(1.0), uuid(c5784dcd-8bed-444e-95f2-58f00878615f), exclusiveto(Events)]
+    interface IEventsStatics : IInspectable
+    {
+        [eventadd] HRESULT StaticEvent([in] Windows.Foundation.EventHandler<int>* handler, [out][retval] EventRegistrationToken* cookie);
+        [eventremove] HRESULT StaticEvent([in] EventRegistrationToken cookie);
+        HRESULT RaiseStaticEvent([in] int value);
+    };
+
     [version(1.0), uuid(6ac35d2c-b2cf-4c36-995c-a9c0764636c9), exclusiveto(Events)]
     interface IEvents : IInspectable
     {
@@ -128,7 +136,7 @@ namespace Component
         HRESULT RaiseCustomEvent([in] int value);
     };
 
-    [version(1.0), activatable(1.0)]
+    [version(1.0), activatable(1.0), static(IEventsStatics, 1.0)]
     runtimeclass Events
     {
         [default] interface IEvents;
@@ -173,12 +181,10 @@ namespace Component
         HRESULT Iterable([in] Windows.Foundation.Collections.IIterable<HSTRING>* in, [out, retval] HSTRING* out);
         HRESULT VectorView([in] Windows.Foundation.Collections.IVectorView<HSTRING>* in, [out, retval] HSTRING* out);
         HRESULT Vector([in] Windows.Foundation.Collections.IVector<HSTRING>* in, [out, retval] HSTRING* out);
-        HRESULT ObservableVector([in] Windows.Foundation.Collections.IObservableVector<HSTRING>* in, [out, retval] HSTRING* out);
 
         HRESULT IterablePair([in] Windows.Foundation.Collections.IIterable<Windows.Foundation.Collections.IKeyValuePair<HSTRING, HSTRING>*>* in, [out, retval] HSTRING* out);
         HRESULT MapView([in] Windows.Foundation.Collections.IMapView<HSTRING, HSTRING>* in, [out, retval] HSTRING* out);
         HRESULT Map([in] Windows.Foundation.Collections.IMap<HSTRING, HSTRING>* in, [out, retval] HSTRING* out);
-        HRESULT ObservableMap([in] Windows.Foundation.Collections.IObservableMap<HSTRING, HSTRING>* in, [out, retval] HSTRING* out);
 
         HRESULT IterableAsync([in] Windows.Foundation.Collections.IIterable<HSTRING>* in, [out, retval] Windows.Foundation.IAsyncOperation<HSTRING>** out);
         HRESULT VectorViewAsync([in] Windows.Foundation.Collections.IVectorView<HSTRING>* in, [out, retval] Windows.Foundation.IAsyncOperation<HSTRING>** out);
@@ -211,6 +217,23 @@ namespace Component
         [default] interface Windows.Foundation.IClosable;
         interface Windows.Foundation.Collections.IVector<HSTRING>;
         interface Windows.Foundation.Collections.IVectorView<HSTRING>;
-        interface Windows.Foundation.Collections.IObservableVector<HSTRING>;
+    };
+
+    runtimeclass FastInputMap;
+
+    [version(1.0), uuid(26b63306-8ddc-4ddb-8612-a4ef8fbc3abd), exclusiveto(FastInputMap)]
+    interface IFastInputMapFactory : IInspectable
+    {
+        HRESULT Create([in] Windows.Foundation.Collections.IMapView<HSTRING, HSTRING>* in, [out, retval] FastInputMap** out);
+    };
+
+    [version(1.0), activatable(IFastInputMapFactory, 1.0)]
+    runtimeclass FastInputMap
+    {
+        // Don't confuse this for a high-performance map. This is for testing fast-input binding support.
+        // The default interface is intentionally not one of the collection intefaces to force them to be convertible for testing.
+        [default] interface Windows.Foundation.IClosable;
+        interface Windows.Foundation.Collections.IMap<HSTRING, HSTRING>;
+        interface Windows.Foundation.Collections.IMapView<HSTRING, HSTRING>;
     };
 }

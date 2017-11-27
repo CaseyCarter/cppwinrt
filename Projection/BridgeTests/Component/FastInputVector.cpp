@@ -3,7 +3,9 @@
 
 namespace winrt::Component::implementation
 {
-    FastInputVector::FastInputVector(Windows::Foundation::Collections::IVectorView<hstring> const& in) :
+    using namespace Windows::Foundation::Collections;
+
+    FastInputVector::FastInputVector(IVectorView<hstring> const& in) :
         m_vector(single_threaded_vector<hstring>())
     {
         for (auto&& string : in)
@@ -17,19 +19,9 @@ namespace winrt::Component::implementation
         throw hresult_not_implemented();
     }
 
-    Windows::Foundation::Collections::IIterator<hstring> FastInputVector::First()
+    IIterator<hstring> FastInputVector::First()
     {
         return m_vector.First();
-    }
-
-    event_token FastInputVector::VectorChanged(Windows::Foundation::Collections::VectorChangedEventHandler<hstring> const&)
-    {
-        throw hresult_not_implemented();
-    }
-
-    void FastInputVector::VectorChanged(event_token const&)
-    {
-        throw hresult_not_implemented();
     }
 
     hstring FastInputVector::GetAt(uint32_t index)
@@ -42,7 +34,7 @@ namespace winrt::Component::implementation
         return m_vector.Size();
     }
 
-    Windows::Foundation::Collections::IVectorView<hstring> FastInputVector::GetView()
+    IVectorView<hstring> FastInputVector::GetView()
     {
         return m_vector.GetView();
     }

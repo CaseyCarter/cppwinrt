@@ -51,6 +51,48 @@ TEST_CASE("Events")
     }
 
     {
+        int result = 0;
+
+        auto token = Events::StaticEvent([&result](IInspectable const&, int value)
+        {
+            result = value;
+        });
+
+        REQUIRE(result == 0);
+        Events::RaiseStaticEvent(123);
+        REQUIRE(result == 123);
+
+        Events::StaticEvent(token);
+
+        REQUIRE(result == 123);
+        Events::RaiseStaticEvent(321);
+        REQUIRE(result == 123); // no change
+    }
+
+    {
+        int result = 0;
+
+        auto revoker = Events::StaticEvent(auto_revoke, [&result](IInspectable const&, int value)
+        {
+            result = value;
+        });
+
+        REQUIRE(result == 0);
+        Events::RaiseStaticEvent(123);
+        REQUIRE(result == 123);
+
+        // This validates the operator bool on the revoker, which was previously broken.
+        REQUIRE(revoker);
+        revoker.revoke();
+        REQUIRE(!revoker);
+
+        REQUIRE(result == 123);
+        Events::RaiseStaticEvent(321);
+        REQUIRE(result == 123); // no change
+    }
+
+
+    {
         Events events;
         int result = 0;
 

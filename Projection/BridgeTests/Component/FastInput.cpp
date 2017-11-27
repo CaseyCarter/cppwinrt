@@ -87,17 +87,6 @@ namespace winrt::Component::implementation
         return concat(in);
     }
 
-    hstring FastInput::ObservableVector(IObservableVector<hstring> const& in)
-    {
-        if (!in)
-        {
-            return L"nullptr";
-        }
-
-        m_iterable = in;
-        return concat(in);
-    }
-
     hstring FastInput::IterablePair(IIterable<IKeyValuePair<hstring, hstring>> const& in)
     {
         if (!in)
@@ -131,18 +120,7 @@ namespace winrt::Component::implementation
         return concat_pair(in);
     }
 
-    hstring FastInput::ObservableMap(IObservableMap<hstring, hstring> const& in)
-    {
-        if (!in)
-        {
-            return L"nullptr";
-        }
-
-        m_iterable_pair = in;
-        return concat_pair(in);
-    }
-
-    IAsyncOperation<hstring> FastInput::IterableAsync(IIterable<hstring> const& in)
+    IAsyncOperation<hstring> FastInput::IterableAsync(IIterable<hstring> const in)
     {
         if (!in)
         {
@@ -153,7 +131,7 @@ namespace winrt::Component::implementation
         co_return concat(in);
     }
 
-    IAsyncOperation<hstring> FastInput::VectorViewAsync(IVectorView<hstring> const& in)
+    IAsyncOperation<hstring> FastInput::VectorViewAsync(IVectorView<hstring> const in)
     {
         if (!in)
         {
@@ -164,7 +142,7 @@ namespace winrt::Component::implementation
         co_return concat(in);
     }
 
-    IAsyncOperation<hstring> FastInput::IterablePairAsync(IIterable<IKeyValuePair<hstring, hstring>> const& in)
+    IAsyncOperation<hstring> FastInput::IterablePairAsync(IIterable<IKeyValuePair<hstring, hstring>> const in)
     {
         if (!in)
         {
@@ -175,7 +153,7 @@ namespace winrt::Component::implementation
         co_return concat_pair(in);
     }
 
-    IAsyncOperation<hstring> FastInput::MapViewAsync(IMapView<hstring, hstring> const& in)
+    IAsyncOperation<hstring> FastInput::MapViewAsync(IMapView<hstring, hstring> const in)
     {
         if (!in)
         {
