@@ -2051,9 +2051,9 @@ namespace cppwinrt::meta
     {
         auto const tokens = EnumInterfaceImpls();
 
-        if (tokens.size() == 1)
+        if (tokens.empty())
         {
-            return tokens.front().GetInterfaceImplProps();
+            return {};
         }
 
         for (token impl_token : tokens)
@@ -2064,7 +2064,7 @@ namespace cppwinrt::meta
             }
         }
 
-        return {};
+        return tokens.front().GetInterfaceImplProps();
     }
 
     method token::get_delegate(token_callback callback) const
