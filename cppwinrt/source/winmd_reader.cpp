@@ -1082,20 +1082,23 @@ namespace cppwinrt::meta
         return TypeFromToken(handle) == mdtGenericParam;
     }
 
-    generator<token> token::EnumInterfaceImpls() const
+    std::vector<token> token::EnumInterfaceImpls() const
     {
         WINRT_ASSERT(is_type_def());
         HCORENUM eh{};
         std::array<mdToken, max_token_count> buffer;
         ULONG actual{};
+        std::vector<token> result;
 
         while (S_OK == db->EnumInterfaceImpls(&eh, handle, buffer.data(), max_token_count, &actual))
         {
             for (ULONG i = 0; i != actual; ++i)
             {
-                co_yield{ buffer[i], db };
+                result.push_back({ buffer[i], db });
             }
         }
+
+        return result;
     }
 
     generator<token> token::EnumCustomAttributes() const
@@ -2046,7 +2049,14 @@ namespace cppwinrt::meta
 
     token token::get_default() const
     {
-        for (token impl_token : EnumInterfaceImpls())
+        auto const tokens = EnumInterfaceImpls();
+
+        if (tokens.size() == 1)
+        {
+            return tokens.front().GetInterfaceImplProps();
+        }
+
+        for (token impl_token : tokens)
         {
             if (impl_token.is_default())
             {

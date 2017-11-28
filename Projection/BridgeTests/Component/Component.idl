@@ -44,7 +44,10 @@ namespace Component
     [version(1.0), activatable(1.0)]
     runtimeclass Parameters
     {
-        [default] interface IParameters;
+        // Note that the [default] attribute is intentionally omitted from the following line to reproduce an edge 
+        // case in the internal Windows metadata where a runtime class has a single interface and it is assumed to
+        // be the default interface.
+        interface IParameters;
     };
 
     //

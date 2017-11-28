@@ -137,7 +137,7 @@ namespace cppwinrt::meta
         generator<using_pair> get_interface_usings() const;
         generator<using_pair> get_class_usings() const;
 
-        generator<token> EnumInterfaceImpls() const;
+        std::vector<token> EnumInterfaceImpls() const;
         generator<token> EnumCustomAttributes() const;
         generator<token> EnumMembers() const;
         generator<token> EnumParams() const;
