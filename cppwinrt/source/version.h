@@ -1,2 +1,2 @@
 #pragma once 
-#define CPPWINRT_VERSION_STRING "1.0.171127.3" 
+#define CPPWINRT_VERSION_STRING "1.0.171128.1" 
