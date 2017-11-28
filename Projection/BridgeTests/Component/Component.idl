@@ -71,10 +71,9 @@ namespace Component
         HSTRING String;
         Windows.Foundation.IReference<UINT32>* Object;
 
-        // TODO: Bug in code gen prevents this from working due to ordering of struct definitions
-        // SimpleStructure Simple;
-        // ... or ...
-        // Windows.Foundation.IReference<SimpleStructure>* Object;
+        // Ensures that the SimpleStructure structure is defined first in C++. This covers an edge case currently
+        // only present in the internal Windows metadata.
+        SimpleStructure Simple;
     };
 
     [version(1.0)]

@@ -1413,45 +1413,27 @@ namespace cppwinrt
             }
         }
 
-        void write_struct_fields(output& out, std::vector<meta::field> const& fields)
+        void write_struct_fields(output& out, std::vector<std::pair<std::string, std::string>> const& fields)
         {
-            for (meta::field const& field : fields)
+            for (auto&& field : fields)
             {
                 out.write("    @ %;\n",
-                    field.type.get_name(),
-                    field.name);
+                    field.second,
+                    field.first);
             }
         }
 
-        void write_struct_equality(output& out, std::vector<meta::field> const& fields)
+        void write_struct_equality(output& out, std::vector<std::pair<std::string, std::string>> const& fields)
         {
             for (size_t i = 0; i != fields.size(); ++i)
             {
-                out.write(" left.% == right.%", fields[i].name, fields[i].name);
+                out.write(" left.% == right.%", fields[i].first, fields[i].first);
 
                 if (i + 1 != fields.size())
                 {
                     out.write(" &&");
                 }
             }
-        }
-
-        void write_struct_definition(output& out, meta::type const& type)
-        {
-            std::vector<meta::field> const fields = type.token.get_fields();
-            std::string_view is_noexcept = type.token.has_reference() ? "" : " noexcept";
-
-            out.write(strings::write_struct_definition,
-                bind_output(write_deprecated, type.token),
-                type.name(),
-                bind_output(write_struct_fields, fields),
-                type.name(),
-                type.name(),
-                is_noexcept,
-                bind_output(write_struct_equality, fields),
-                type.name(),
-                type.name(),
-                is_noexcept);
         }
 
         void write_struct_type_trait(output& out, meta::type const& type)
@@ -2681,9 +2663,76 @@ void t()
 
     void write_struct_definitions(output& out, meta::namespace_types const& types)
     {
+        struct complex_struct
+        {
+            complex_struct(meta::type const& type) :
+                type(&type),
+                is_noexcept(!type.token.has_reference())
+            {
+                for (auto&& field : type.token.get_fields())
+                {
+                    fields.emplace_back(field.name, field.type.get_name());
+                }
+            }
+
+            meta::type const* type;
+            std::vector<std::pair<std::string, std::string>> fields;
+            bool is_noexcept{ false };
+        };
+
+        std::vector<complex_struct> structs;
+
         for (meta::type const& type : get_projected_types(types.structs))
         {
-            write_struct_definition(out, type);
+            structs.emplace_back(type);
+        }
+
+        auto depends = [](complex_struct const& left, complex_struct const& right)
+        {
+            for (auto&& field : left.fields)
+            {
+                if (right.type->full_name() == field.second)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        };
+
+        for (size_t left = 0; left < structs.size(); ++left)
+        {
+            for (size_t right = left + 1; right < structs.size(); ++right)
+            {
+                if (depends(structs[left], structs[right]))
+                {
+                    // Left depends on right, therefore move right in front of left.
+                    complex_struct temp = std::move(structs[right]);
+                    structs.erase(structs.begin() + right);
+                    structs.insert(structs.begin() + left, std::move(temp));
+
+                    // Start over from the newly inserted struct.
+                    right = structs.size();
+                    --left;
+                }
+            }
+        }
+
+        for (auto&& type : structs)
+        {
+            std::string_view is_noexcept = type.is_noexcept ? " noexcept" : "";
+
+            out.write(strings::write_struct_definition,
+                bind_output(write_deprecated, type.type->token),
+                type.type->name(),
+                bind_output(write_struct_fields, type.fields),
+                type.type->name(),
+                type.type->name(),
+                is_noexcept,
+                bind_output(write_struct_equality, type.fields),
+                type.type->name(),
+                type.type->name(),
+                is_noexcept);
         }
     }
 
