@@ -8,10 +8,6 @@ namespace winrt::Component::implementation
     {
         Events() = default;
 
-        static event_token StaticEvent(Windows::Foundation::EventHandler<int32_t> const& handler);
-        static void StaticEvent(event_token const& cookie);
-        static void RaiseStaticEvent(int value);
-
         event_token SimpleEvent(Windows::Foundation::EventHandler<int32_t> const& handler);
         void SimpleEvent(event_token const& cookie);
         void RaiseSimpleEvent(int value);
@@ -28,9 +24,6 @@ namespace winrt::Component::implementation
         agile_event<Windows::Foundation::EventHandler<int32_t>> m_simple;
         agile_event<Windows::Foundation::TypedEventHandler<Component::Events, int32_t>> m_typed;
         agile_event<CustomDelegate> m_custom;
-
-        // TODO: need a class template for the static store thing...
-        static agile_event<Windows::Foundation::EventHandler<int32_t>> m_static;
     };
 }
 
@@ -38,5 +31,16 @@ namespace winrt::Component::factory_implementation
 {
     struct Events : EventsT<Events, implementation::Events>
     {
+        Events()
+        {
+            static_lifetime();
+        }
+
+        event_token StaticEvent(Windows::Foundation::EventHandler<int32_t> const& handler);
+        void StaticEvent(event_token const& cookie);
+        void RaiseStaticEvent(int value);
+
+    private:
+        agile_event<Windows::Foundation::EventHandler<int32_t>> m_static;
     };
 }

@@ -145,6 +145,17 @@ namespace winrt::impl
         static constexpr GUID value{ 0x00000003,0x0000,0x0000,{ 0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46 } };
     };
 
+    struct __declspec(novtable) IStaticLifetime : IInspectable
+    {
+        virtual HRESULT __stdcall reserved() noexcept = 0;
+        virtual HRESULT __stdcall GetCollection(void** value) noexcept = 0;
+    };
+
+    template <> struct guid<IStaticLifetime>
+    {
+        static constexpr GUID value{ 0x17b0e613,0x942a,0x422d,{ 0x90,0x4c,0xf9,0x0d,0xc7,0x1a,0x7d,0xae } };
+    };
+
     template <typename D>
     struct consume_IActivationFactory
     {

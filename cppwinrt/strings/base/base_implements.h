@@ -816,12 +816,13 @@ namespace winrt::impl
             }
         }
 
+        using is_factory = std::disjunction<std::is_same<Windows::Foundation::IActivationFactory, I>...>;
+
     private:
         void abi_enter() noexcept {}
         void abi_exit() noexcept {}
 
         using is_agile = std::negation<std::disjunction<std::is_same<non_agile, I>...>>;
-        using is_factory = std::disjunction<std::is_same<Windows::Foundation::IActivationFactory, I>...>;
         using is_inspectable = std::disjunction<std::is_base_of<Windows::Foundation::IInspectable, I>...>;
         using is_weak_ref_source = std::conjunction<is_inspectable, std::negation<is_factory>, std::negation<std::disjunction<std::is_same<no_weak_ref, I>...>>>;
         using weak_ref_t = impl::weak_ref<is_agile::value>;
@@ -969,11 +970,27 @@ WINRT_EXPORT namespace winrt
 
         using base_type = typename impl::base_implements<D, I...>::type;
         using root_implements_type = typename base_type::root_implements_type;
+        using is_factory = typename root_implements_type::is_factory;
 
         template <typename... Args>
         explicit implements(Args&&... args)
             : base_type(std::forward<Args>(args)...)
         {}
+
+        void static_lifetime()
+        {
+            static_assert(is_factory::value);
+
+            param::hstring classId{ L"Windows.ApplicationModel.Core.CoreApplication" };
+            com_ptr<impl::IStaticLifetime> factory;
+            check_hresult(WINRT_RoGetActivationFactory(get_abi(classId), guid_of<impl::IStaticLifetime>(), factory.put_void()));
+
+            Windows::Foundation::IUnknown collection;
+            check_hresult(factory->GetCollection(put_abi(collection)));
+
+            auto map = collection.as<Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::IInspectable>>();
+            map.Insert(GetRuntimeClassName(), *this);
+        }
 
     public:
 
