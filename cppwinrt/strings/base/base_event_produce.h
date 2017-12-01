@@ -96,25 +96,33 @@ namespace winrt::impl
 
         event_token add(delegate_type const& delegate)
         {
-            if (delegate == nullptr)
-            {
-                throw hresult_invalid_argument();
-            }
-
             event_token token{};
             delegate_array temp_targets;
 
             {
                 auto change_guard = this->get_change_guard();
-                delegate_array new_targets = make_event_array<storage_type>((!m_targets) ? 1 : m_targets->size() + 1);
+                delegate_array new_targets = make_event_array<delegate_type>((!m_targets) ? 1 : m_targets->size() + 1);
 
                 if (m_targets)
                 {
                     std::copy_n(m_targets->begin(), m_targets->size(), new_targets->begin());
                 }
 
-                token.value = reinterpret_cast<int64_t>(get_abi(delegate));
-                new_targets->back() = delegate;
+                if (delegate.template try_as<IAgileObject>())
+                {
+                    new_targets->back() = delegate;
+                }
+                else
+                {
+                    WINRT_ASSERT(delegate.template try_as<IMarshal>());
+
+                    new_targets->back() = [delegate = agile_ref<delegate_type>(delegate)](auto&&... args)
+                    {
+                        delegate.get()(args...);
+                    };
+                }
+
+                token = get_token(new_targets->back());
 
                 auto swap_guard = this->get_swap_guard();
                 temp_targets = m_targets;
@@ -142,19 +150,19 @@ namespace winrt::impl
 
                 if (available_slots == 0)
                 {
-                    if (this->get_token(*m_targets->begin()) == token)
+                    if (get_token(*m_targets->begin()) == token)
                     {
                         removed = true;
                     }
                 }
                 else
                 {
-                    new_targets = make_event_array<storage_type>(available_slots);
+                    new_targets = make_event_array<delegate_type>(available_slots);
                     auto new_iterator = new_targets->begin();
 
-                    for (storage_type const& element : *m_targets)
+                    for (delegate_type const& element : *m_targets)
                     {
-                        if (!removed&& token == this->get_token(element))
+                        if (!removed&& token == get_token(element))
                         {
                             removed = true;
                             continue;
@@ -186,13 +194,13 @@ namespace winrt::impl
 
             if (temp_targets)
             {
-                for (storage_type const& element : *temp_targets)
+                for (delegate_type const& element : *temp_targets)
                 {
                     bool remove_delegate = false;
 
                     try
                     {
-                        this->invoke(element, args...);
+                        element(args...);
                     }
                     catch (hresult_error const& e)
                     {
@@ -206,7 +214,7 @@ namespace winrt::impl
 
                     if (remove_delegate)
                     {
-                        remove(this->get_token(element));
+                        remove(get_token(element));
                     }
                 }
             }
@@ -214,16 +222,21 @@ namespace winrt::impl
 
     private:
 
-        using storage_type = typename Traits::storage_type;
-        using delegate_array = com_ptr<event_array<storage_type>>;
+        event_token get_token(delegate_type const& delegate) const noexcept
+        {
+            return event_token{ reinterpret_cast<int64_t>(get_abi(delegate)) };
+        }
+
+        using delegate_array = com_ptr<event_array<delegate_type>>;
 
         delegate_array m_targets;
     };
 
-    struct no_lock_guard {};
-
-    struct locked_event_traits
+    template <typename Delegate>
+    struct event_traits
     {
+        using delegate_type = Delegate;
+
         lock_guard<> get_swap_guard() noexcept
         {
             return lock_guard<>(m_swap);
@@ -240,22 +253,12 @@ namespace winrt::impl
         mutex m_change;
     };
 
+    struct no_lock_guard {};
+
     template <typename Delegate>
     struct single_threaded_event_traits
     {
         using delegate_type = Delegate;
-        using storage_type = Delegate;
-
-        template <typename... Args>
-        void invoke(storage_type const& delegate, Args const&... args) const
-        {
-            delegate(args...);
-        }
-
-        event_token get_token(storage_type const& delegate) const noexcept
-        {
-            return event_token{ reinterpret_cast<int64_t>(get_abi(delegate)) };
-        }
 
         no_lock_guard get_swap_guard() const noexcept
         {
@@ -267,51 +270,12 @@ namespace winrt::impl
             return{};
         }
     };
-
-    template <typename Delegate>
-    struct agile_event_traits : locked_event_traits
-    {
-        using delegate_type = Delegate;
-        using storage_type = agile_ref<Delegate>;
-
-        template <typename... Args>
-        void invoke(storage_type const& delegate, Args const&... args) const
-        {
-            delegate.get()(args...);
-        }
-
-        event_token get_token(storage_type const& delegate) const noexcept
-        {
-            return event_token{ reinterpret_cast<int64_t>(get_abi(delegate.get())) };
-        }
-    };
-
-    template <typename Delegate>
-    struct non_agile_event_traits : locked_event_traits
-    {
-        using delegate_type = Delegate;
-        using storage_type = Delegate;
-
-        template <typename... Args>
-        void invoke(storage_type const& delegate, Args const&... args) const
-        {
-            delegate(args...);
-        }
-
-        event_token get_token(storage_type const& delegate) const noexcept
-        {
-            return event_token{ reinterpret_cast<int64_t>(get_abi(delegate)) };
-        }
-    };
 }
 
 WINRT_EXPORT namespace winrt
 {
     template <typename Delegate>
-    using agile_event = impl::event<impl::agile_event_traits<Delegate>>;
-
-    template <typename Delegate>
-    using non_agile_event = impl::event<impl::non_agile_event_traits<Delegate>>;
+    using event = impl::event<impl::event_traits<Delegate>>;
 
     template <typename Delegate>
     using single_threaded_event = impl::event<impl::single_threaded_event_traits<Delegate>>;

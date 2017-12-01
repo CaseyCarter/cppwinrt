@@ -25,6 +25,13 @@ int main()
 
     GUID guid = guid_of<IVector<IReference<int>>>();
     assert(guid == __uuidof(check_guid));
+
+    event<EventHandler<hstring>> handlers;
     
-    printf("OK\n");
+    handlers.add([](IInspectable const&, hstring const& args)
+    {
+        printf("%ls\n", args.c_str());
+    });
+
+    handlers(nullptr, L"OK!\n");
 }

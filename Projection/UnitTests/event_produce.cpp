@@ -84,12 +84,7 @@ void BasicTest()
 
 TEST_CASE("agile event, basic add/remove/invoke")
 {
-    BasicTest<agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
-}
-
-TEST_CASE("non-agile event, basic add/remove/invoke")
-{
-    BasicTest<non_agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
+    BasicTest<event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }
 
 TEST_CASE("single threaded event, basic add/remove/invoke")
@@ -280,12 +275,7 @@ void ConcurrentAddTest()
 
 TEST_CASE("agile event, add an event when the event source is already being invoked")
 {
-    ConcurrentAddTest<agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
-}
-
-TEST_CASE("non-agile event, add an event when the event source is already being invoked")
-{
-    ConcurrentAddTest<non_agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
+    ConcurrentAddTest<event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }
 
 template <typename T>
@@ -388,10 +378,5 @@ void ConcurrentRemoveTest()
 
 TEST_CASE("agile event, remove an event when the event source is already being invoked")
 {
-    ConcurrentRemoveTest<agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
-}
-
-TEST_CASE("non-agile event, remove an event when the event source is already being invoked")
-{
-    ConcurrentRemoveTest<non_agile_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
+    ConcurrentRemoveTest<event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }

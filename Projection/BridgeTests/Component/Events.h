@@ -21,9 +21,9 @@ namespace winrt::Component::implementation
         void RaiseCustomEvent(int value);
 
     private:
-        agile_event<Windows::Foundation::EventHandler<int32_t>> m_simple;
-        agile_event<Windows::Foundation::TypedEventHandler<Component::Events, int32_t>> m_typed;
-        agile_event<CustomDelegate> m_custom;
+        event<Windows::Foundation::EventHandler<int32_t>> m_simple;
+        event<Windows::Foundation::TypedEventHandler<Component::Events, int32_t>> m_typed;
+        event<CustomDelegate> m_custom;
     };
 }
 
@@ -41,6 +41,6 @@ namespace winrt::Component::factory_implementation
         void RaiseStaticEvent(int value);
 
     private:
-        agile_event<Windows::Foundation::EventHandler<int32_t>> m_static;
+        event<Windows::Foundation::EventHandler<int32_t>> m_static;
     };
 }

@@ -147,7 +147,7 @@ namespace winrt::impl
 
     struct __declspec(novtable) IStaticLifetime : IInspectable
     {
-        virtual HRESULT __stdcall reserved() noexcept = 0;
+        virtual HRESULT __stdcall unused() noexcept = 0;
         virtual HRESULT __stdcall GetCollection(void** value) noexcept = 0;
     };
 

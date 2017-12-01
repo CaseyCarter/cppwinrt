@@ -1,9 +1,109 @@
 #include "pch.h"
 #include "catch.hpp"
+#include <windows.foundation.h>
+
+namespace ABI::Windows::Foundation
+{
+    template <>
+    struct __declspec(uuid("12ECEDAC-1AEE-5BA5-BD66-959A0FB2B1FF"))
+        IEventHandler<int> : IEventHandler_impl<int>
+    {
+    };
+}
 
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Component;
+
+namespace
+{
+    struct NonAgileDelegate : implements<NonAgileDelegate, non_agile, ABI::Windows::Foundation::IEventHandler<int>, IMarshal>
+    {
+        int& result;
+
+        NonAgileDelegate(int& result) : result(result)
+        {
+        }
+
+        HRESULT __stdcall Invoke(::IInspectable*, int value) override
+        {
+            result = value;
+            return S_OK;
+        }
+
+        HRESULT __stdcall GetUnmarshalClass(REFIID riid, void* pv, DWORD dwDestContext, void* pvDestContext, DWORD mshlflags, CLSID* pCid) noexcept final
+        {
+            if (m_marshaler)
+            {
+                return m_marshaler->GetUnmarshalClass(riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
+            }
+
+            return E_OUTOFMEMORY;
+        }
+
+        HRESULT __stdcall GetMarshalSizeMax(REFIID riid, void* pv, DWORD dwDestContext, void* pvDestContext, DWORD mshlflags, DWORD* pSize) noexcept final
+        {
+            if (m_marshaler)
+            {
+                return m_marshaler->GetMarshalSizeMax(riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
+            }
+
+            return E_OUTOFMEMORY;
+        }
+
+        HRESULT __stdcall MarshalInterface(IStream* pStm, REFIID riid, void* pv, DWORD dwDestContext, void* pvDestContext, DWORD mshlflags) noexcept final
+        {
+            if (m_marshaler)
+            {
+                return m_marshaler->MarshalInterface(pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
+            }
+
+            return E_OUTOFMEMORY;
+        }
+
+        HRESULT __stdcall UnmarshalInterface(IStream* pStm, REFIID riid, void** ppv) noexcept final
+        {
+            if (m_marshaler)
+            {
+                return m_marshaler->UnmarshalInterface(pStm, riid, ppv);
+            }
+
+            *ppv = nullptr;
+            return E_OUTOFMEMORY;
+        }
+
+        HRESULT __stdcall ReleaseMarshalData(IStream* pStm) noexcept final
+        {
+            if (m_marshaler)
+            {
+                return m_marshaler->ReleaseMarshalData(pStm);
+            }
+
+            return E_OUTOFMEMORY;
+        }
+
+        HRESULT __stdcall DisconnectObject(DWORD dwReserved) noexcept final
+        {
+            if (m_marshaler)
+            {
+                return m_marshaler->DisconnectObject(dwReserved);
+            }
+
+            return E_OUTOFMEMORY;
+        }
+
+    private:
+
+        static com_ptr<::IMarshal> get_marshaler() noexcept
+        {
+            com_ptr<::IUnknown> unknown;
+            WINRT_VERIFY_(S_OK, CoCreateFreeThreadedMarshaler(nullptr, unknown.put()));
+            return unknown ? unknown.try_as<::IMarshal>() : nullptr;
+        }
+
+        com_ptr<::IMarshal> m_marshaler{ get_marshaler() };
+    };
+}
 
 TEST_CASE("Events")
 {
@@ -11,7 +111,30 @@ TEST_CASE("Events")
         Events events;
         int result = 0;
 
-        auto token = events.SimpleEvent([&result](IInspectable const&, int value)
+        EventHandler<int> delegate;
+        *put_abi(delegate) = make<NonAgileDelegate>(result).detach();
+
+        REQUIRE(!delegate.try_as<IAgileObject>());
+        REQUIRE(delegate.try_as<IMarshal>());
+
+        auto token = events.SimpleEvent(delegate);
+
+        REQUIRE(result == 0);
+        events.RaiseSimpleEvent(123);
+        REQUIRE(result == 123);
+
+        events.SimpleEvent(token);
+
+        REQUIRE(result == 123);
+        events.RaiseSimpleEvent(321);
+        REQUIRE(result == 123); // no change
+    }
+
+    {
+        Events events;
+        int result = 0;
+
+        auto token = events.SimpleEvent([&result](auto&&, int value)
         {
             result = value;
         });
@@ -31,7 +154,7 @@ TEST_CASE("Events")
         Events events;
         int result = 0;
 
-        auto revoker = events.SimpleEvent(auto_revoke, [&result](IInspectable const&, int value)
+        auto revoker = events.SimpleEvent(auto_revoke, [&result](auto&&, int value)
         {
             result = value;
         });
@@ -53,7 +176,7 @@ TEST_CASE("Events")
     {
         int result = 0;
 
-        auto token = Events::StaticEvent([&result](IInspectable const&, int value)
+        auto token = Events::StaticEvent([&result](auto&&, int value)
         {
             result = value;
         });
@@ -72,7 +195,7 @@ TEST_CASE("Events")
     {
         int result = 0;
 
-        auto revoker = Events::StaticEvent(auto_revoke, [&result](IInspectable const&, int value)
+        auto revoker = Events::StaticEvent(auto_revoke, [&result](auto&&, int value)
         {
             result = value;
         });
