@@ -332,7 +332,7 @@ WINRT_EXPORT namespace winrt
             return e.to_abi();
         }
         WINRT_EXTERNAL_CATCH_CLAUSE
-            catch (std::bad_alloc const&)
+        catch (std::bad_alloc const&)
         {
             return E_OUTOFMEMORY;
         }
