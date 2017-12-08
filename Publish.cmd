@@ -9,6 +9,10 @@ rem publish $(BuildPlatform) $(BuildConfiguration) "Projection" \\redmond\osg\Th
 call SetBuildVars.cmd %*
 
 set PublishShare=%4\%BuildPlatform%\%BuildConfiguration%
+
+echo Publish VSIX
+XCOPY vsix\bin\%BuildConfiguration%\cppwinrt.vsix %PublishShare% /D /R /Y /J 
+
 if /i not "%BuildPlatform%" == "x86" goto :skip
 if /i not "%BuildConfiguration%" == "Release" goto :skip
 goto :publish
@@ -38,6 +42,3 @@ XCOPY Projection\Samples stage\Samples /D /S /R /Y /J /I
 XCOPY Projection\UnitTests stage\Tests /D /R /Y /J /I 
 powershell -ExecutionPolicy ByPass -Command "& '%~dp0\zip.ps1' -directory '%~dp0\stage' -name 'projection.zip'"
 echo d | XCOPY projection.zip %PublishShare% /D /R /Y /J 
-
-echo Publish VSIX
-XCOPY vsix\bin\%BuildConfiguration%\cppwinrt.vsix %PublishShare% /D /R /Y /J 

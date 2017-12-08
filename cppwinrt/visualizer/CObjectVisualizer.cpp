@@ -111,7 +111,7 @@ static HRESULT ObjectToString(
 	}
 	else
 	{
-		IF_FAIL_RET(DkmString::Create(L"<Variable uninitialized or information unavailable>", pValue.put()));
+		IF_FAIL_RET(DkmString::Create(L"<Object uninitialized or information unavailable>", pValue.put()));
 	}
 
 	return S_OK;
