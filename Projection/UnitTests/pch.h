@@ -3,6 +3,7 @@
 #define WIN32_LEAN_AND_MEAN 
 #define NOMINMAX
 #define WINRT_NATVIS
+#define _SILENCE_CXX17_UNCAUGHT_EXCEPTION_DEPRECATION_WARNING
 
 #pragma comment(lib, "windowsapp") 
 
