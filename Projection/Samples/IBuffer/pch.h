@@ -10,7 +10,6 @@
 #include "winrt/Windows.UI.Xaml.Controls.Primitives.h"
 #include "winrt/Windows.UI.Xaml.Media.Imaging.h"
 #include "winrt/Windows.Graphics.Imaging.h"
-WINRT_WARNING_PUSH
 
 #pragma warning(push)
 #pragma warning(disable: 4467)

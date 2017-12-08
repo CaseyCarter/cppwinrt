@@ -11,4 +11,3 @@
 #include "winrt/Windows.Media.Ocr.h"
 #include "winrt/Windows.Storage.Pickers.h"
 #include "winrt/Windows.Networking.h"
-WINRT_WARNING_PUSH

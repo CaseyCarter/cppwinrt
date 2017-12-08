@@ -10,4 +10,3 @@
 #include "winrt/Windows.Media.Playback.h"
 #include "winrt/Windows.Storage.Pickers.h"
 #include "winrt/Windows.Graphics.Imaging.h"
-WINRT_WARNING_PUSH

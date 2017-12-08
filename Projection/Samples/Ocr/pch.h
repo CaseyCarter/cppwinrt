@@ -7,6 +7,5 @@
 #include "winrt/Windows.Graphics.Imaging.h"
 #include "winrt/Windows.Media.Ocr.h"
 #include "winrt/Windows.Networking.Sockets.h"
-WINRT_WARNING_PUSH
 
 #include <filesystem>

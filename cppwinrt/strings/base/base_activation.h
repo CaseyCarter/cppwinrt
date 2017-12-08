@@ -90,6 +90,8 @@ namespace winrt::impl
     template <typename Class, typename Interface>
     struct factory_cache_entry
     {
+        factory_cache_entry() {} 
+
         com_ref<Interface> get()
         {
 #ifdef WINRT_DIAGNOSTICS
