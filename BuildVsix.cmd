@@ -2,6 +2,7 @@
 setlocal
 
 call SetBuildVars.cmd %*
+call BuildVisualizer.cmd %*
 
 pushd vsix
 
@@ -15,9 +16,10 @@ powershell -f UpdateVersion.ps1
 )
 
 echo Building VSIX for %BuildConfiguration% %BuildPlatform%...
-copy ..\%BuildStaging%\winrt\cppwinrt.natvis
 msbuild vsix.csproj /nologo /m /p:Configuration=%BuildConfiguration% /p:Platform=%BuildPlatform% 
 set MsbuildErrorLevel=%ERRORLEVEL%
+
+rem TODO: sign vsix
 
 popd
 

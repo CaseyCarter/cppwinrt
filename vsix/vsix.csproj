@@ -102,7 +102,17 @@
       <InstallRoot>VCTargets</InstallRoot>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="cppwinrt.natvis">
+    <Content Include="..\cppwinrt\visualizer\cppwinrt.natvis">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Link>%(Filename)%(Extension)</Link>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="..\cppwinrt\$(Configuration)\cppwinrtvisualizer.vsdconfig">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Link>%(Filename)%(Extension)</Link>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="..\cppwinrt\$(Configuration)\cppwinrtvisualizer.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Link>%(Filename)%(Extension)</Link>
       <IncludeInVSIX>true</IncludeInVSIX>

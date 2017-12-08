@@ -1,16 +1,11 @@
 #pragma once
 
+// CPropertyVisualizer provides the visualization data model for leaf (non-WinRT object) 
+// nodes in the WinRT object graph, forwarding its implementation back to the expression
+// evaluator for external types.
 struct __declspec(uuid("87feab93-47a3-4f55-b48b-a29317fa52da"))
 CPropertyVisualizer : winrt::implements<CPropertyVisualizer, ::IUnknown>
 {
-private:
-    // The DkmVisualizedExpression created for this object.
-    winrt::com_ptr<Microsoft::VisualStudio::Debugger::Evaluation::DkmChildVisualizedExpression> m_pVisualizedExpression;
-
-    // The original evaluation result returned from the expression evaluator.
-    winrt::com_ptr<Microsoft::VisualStudio::Debugger::Evaluation::DkmSuccessEvaluationResult> m_pEEEvaluationResult;
-
-public:
     CPropertyVisualizer(
         _In_ Microsoft::VisualStudio::Debugger::Evaluation::DkmChildVisualizedExpression* pVisualizedExpression,
         _In_ Microsoft::VisualStudio::Debugger::Evaluation::DkmSuccessEvaluationResult* pEEEvaluationResult)
@@ -19,18 +14,9 @@ public:
         m_pEEEvaluationResult = make_com_ptr(pEEEvaluationResult);
     }
 
-public:    
-    // Generate a new DkmChildVisualizedExpression. This will have an instance of CPropertyVisualizer
-    // in its data container
-    static HRESULT CreateVisualizedExpression(
-		_In_ const wchar_t* propName,
-        _In_ const wchar_t* cast,
-        _In_ const wchar_t* iid,
-        _In_ int index,
-		_In_ const wchar_t* type,
-        _In_ Microsoft::VisualStudio::Debugger::Evaluation::DkmVisualizedExpression* pParent,
-        _Deref_out_ Microsoft::VisualStudio::Debugger::Evaluation::DkmChildVisualizedExpression** ppResult
-        );
+	~CPropertyVisualizer()
+	{
+	}
 
     HRESULT GetChildren(
         _In_ UINT32 InitialRequestSize,
@@ -55,4 +41,11 @@ public:
     HRESULT GetUnderlyingString(
         _Deref_out_opt_ Microsoft::VisualStudio::Debugger::DkmString** ppStringValue
         );
+
+private:
+	// The DkmVisualizedExpression created for this object.
+	winrt::com_ptr<Microsoft::VisualStudio::Debugger::Evaluation::DkmChildVisualizedExpression> m_pVisualizedExpression;
+
+	// The original evaluation result returned from the expression evaluator.
+	winrt::com_ptr<Microsoft::VisualStudio::Debugger::Evaluation::DkmSuccessEvaluationResult> m_pEEEvaluationResult;
 };

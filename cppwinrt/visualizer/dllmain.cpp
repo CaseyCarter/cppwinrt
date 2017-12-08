@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "winrtvisualizer.h"
+#include "cppwinrtvisualizer.h"
 
 using namespace winrt;
 

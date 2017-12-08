@@ -134,21 +134,25 @@ void prepare_metadata()
         settings::inputs = std::move(inputs);
         settings::refs = std::move(refs);
 
-        settings::output = absolute(settings::output);
-        settings::output = canonical(settings::output);
-        if (settings::verbose)
-        {
-            printf(" out:  %ls\n", settings::output.c_str());
-            if (!winmd_paths::refs.empty())
-            {
-                printf(" sdk:  %ls\n", settings::platform_version.c_str());
-            }
-        }
+		if (!settings::output.empty())
+		{
+			settings::output = absolute(settings::output);
+			settings::output = canonical(settings::output);
+			if (settings::verbose)
+			{
+				printf(" out:  %ls\n", settings::output.c_str());
+				if (!winmd_paths::refs.empty())
+				{
+					printf(" sdk:  %ls\n", settings::platform_version.c_str());
+				}
+			}
 
-        settings::projection = settings::output / "winrt";
-        settings::impl = settings::projection / "impl";
-        settings::tests = settings::output / "CompileTests";
-        create_directories(settings::impl);
+			settings::projection = settings::output / "winrt";
+			settings::impl = settings::projection / "impl";
+			settings::tests = settings::output / "CompileTests";
+			create_directories(settings::impl);
+		}
+
         if (!settings::sources.empty())
         {
             create_directories(settings::sources);

@@ -21,6 +21,7 @@
     </Dependencies>
     <Assets>
         <Asset Type="NativeVisualizer" Path="cppwinrt.natvis"/>
+        <Asset Type="DebuggerEngineExtension" Path="CppWinrtVisualizer.vsdconfig" />
     </Assets>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,)" DisplayName="Visual Studio core editor" />
