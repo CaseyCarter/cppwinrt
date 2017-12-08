@@ -446,6 +446,15 @@ namespace cppwinrt::meta
             values.erase(std::unique(values.begin(), values.end()), values.end());
         }
 
+        template <typename T, typename C>
+        void sort_unique(std::vector<T>& values, C const& three_way_comparitor)
+        {
+            std::sort(values.begin(), values.end(), 
+                [&](T const& left, T const& right) {return three_way_comparitor(left, right) < 0; });
+            values.erase(std::unique(values.begin(), values.end(),
+                [&](T const& left, T const& right) {return three_way_comparitor(left, right) == 0; }), values.end());
+        }
+
         std::vector<required> get_class_required_base(token class_token, interface_filter self_interfaces, interface_filter base_interfaces, base_filter base_types)
         {
             std::vector<required> values;
@@ -1356,8 +1365,7 @@ namespace cppwinrt::meta
             factory_attributes.push_back({ factory_type, activatable });
         }
 
-        std::sort(factory_attributes.begin(), factory_attributes.end(),
-            [](factory_attribute const& left, factory_attribute const& right)
+        sort_unique(factory_attributes, [](factory_attribute const& left, factory_attribute const& right)
         {
             std::string_view left_name;
             std::string_view right_name;
@@ -1372,7 +1380,7 @@ namespace cppwinrt::meta
                 right_name = right.type->full_name();
             }
 
-            return left_name < right_name;
+            return left_name.compare(right_name);
         });
 
         return factory_attributes;
