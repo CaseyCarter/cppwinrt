@@ -237,20 +237,20 @@ namespace winrt::impl
     {
         using delegate_type = Delegate;
 
-        lock_guard<> get_swap_guard() noexcept
+        slim_lock_guard get_swap_guard() noexcept
         {
-            return lock_guard<>(m_swap);
+            return slim_lock_guard(m_swap);
         }
 
-        lock_guard<> get_change_guard() noexcept
+        slim_lock_guard get_change_guard() noexcept
         {
-            return lock_guard<>(m_change);
+            return slim_lock_guard(m_change);
         }
 
     private:
 
-        mutex m_swap;
-        mutex m_change;
+        slim_mutex m_swap;
+        slim_mutex m_change;
     };
 
     struct no_lock_guard {};

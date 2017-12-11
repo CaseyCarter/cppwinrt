@@ -13,6 +13,8 @@
 *.appx
 *.dll
 *.winmd
+*.g.h
+*.g.cpp
 
 x86
 x64

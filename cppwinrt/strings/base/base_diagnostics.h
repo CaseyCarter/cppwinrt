@@ -23,14 +23,14 @@ namespace winrt::impl
         template <typename T>
         void add_query()
         {
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
             ++m_info.queries[name_of<T>()];
         }
 
         template <typename T>
         void add_factory()
         {
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
             factory_diagnostics_info& factory = m_info.factories[name_of<T>()];
             ++factory.requests;
         }
@@ -38,20 +38,20 @@ namespace winrt::impl
         template <typename T>
         void non_agile_factory()
         {
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
             factory_diagnostics_info& factory = m_info.factories[name_of<T>()];
             factory.is_agile = false;
         }
 
         auto get()
         {
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
             return m_info;
         }
 
         auto detach()
         {
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
             return std::move(m_info);
         }
 

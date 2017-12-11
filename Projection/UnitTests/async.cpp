@@ -221,21 +221,11 @@ namespace
         progress(987);
         return 456;
     }
-
-    struct event_traits : impl::handle_traits<HANDLE>
-    {
-        static void close(type value) noexcept
-        {
-            WINRT_VERIFY(CloseHandle(value));
-        }
-    };
-
-    using event_handle = impl::handle<event_traits>;
 }
 
 TEST_CASE("async, Suspend_IAsyncAction")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncAction async = Suspend_IAsyncAction(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.Close(), hresult_illegal_state_change);
@@ -261,7 +251,7 @@ TEST_CASE("async, Suspend_IAsyncAction")
 
 TEST_CASE("async, Suspend_IAsyncActionWithProgress")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncActionWithProgress<double> async = Suspend_IAsyncActionWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.Close(), hresult_illegal_state_change);
@@ -296,7 +286,7 @@ TEST_CASE("async, Suspend_IAsyncActionWithProgress")
 
 TEST_CASE("async, Suspend_IAsyncOperation")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperation<uint32_t> async = Suspend_IAsyncOperation(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.Close(), hresult_illegal_state_change);
@@ -323,7 +313,7 @@ TEST_CASE("async, Suspend_IAsyncOperation")
 
 TEST_CASE("async, Suspend_IAsyncOperationWithProgress")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperationWithProgress<uint64_t, uint64_t> async = Suspend_IAsyncOperationWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.Close(), hresult_illegal_state_change);
@@ -403,7 +393,7 @@ namespace
 
 TEST_CASE("async, Throw_IAsyncAction")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncAction async = Throw_IAsyncAction(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -443,7 +433,7 @@ TEST_CASE("async, Throw_IAsyncAction")
 
 TEST_CASE("async, Throw_IAsyncAction, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncAction async = Throw_IAsyncAction(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -484,7 +474,7 @@ TEST_CASE("async, Throw_IAsyncAction, 2")
 
 TEST_CASE("async, Throw_IAsyncActionWithProgress")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncActionWithProgress<double> async = Throw_IAsyncActionWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -524,7 +514,7 @@ TEST_CASE("async, Throw_IAsyncActionWithProgress")
 
 TEST_CASE("async, Throw_IAsyncActionWithProgress, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncActionWithProgress<double> async = Throw_IAsyncActionWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -565,7 +555,7 @@ TEST_CASE("async, Throw_IAsyncActionWithProgress, 2")
 
 TEST_CASE("async, Throw_IAsyncOperation")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperation<uint32_t> async = Throw_IAsyncOperation(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -605,7 +595,7 @@ TEST_CASE("async, Throw_IAsyncOperation")
 
 TEST_CASE("async, Throw_IAsyncOperation, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperation<uint32_t> async = Throw_IAsyncOperation(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -646,7 +636,7 @@ TEST_CASE("async, Throw_IAsyncOperation, 2")
 
 TEST_CASE("async, Throw_IAsyncOperationWithProgress")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperationWithProgress<uint64_t, uint64_t> async = Throw_IAsyncOperationWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -686,7 +676,7 @@ TEST_CASE("async, Throw_IAsyncOperationWithProgress")
 
 TEST_CASE("async, Throw_IAsyncOperationWithProgress, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperationWithProgress<uint64_t, uint64_t> async = Throw_IAsyncOperationWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -779,7 +769,7 @@ namespace
 
 TEST_CASE("async, Cancel_IAsyncAction")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncAction async = Cancel_IAsyncAction(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
@@ -809,7 +799,7 @@ TEST_CASE("async, Cancel_IAsyncAction")
 
 TEST_CASE("async, Cancel_IAsyncAction, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncAction async = Cancel_IAsyncAction(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
@@ -839,7 +829,7 @@ TEST_CASE("async, Cancel_IAsyncAction, 2")
 
 TEST_CASE("async, Cancel_IAsyncActionWithProgress")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncActionWithProgress<double> async = Cancel_IAsyncActionWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
@@ -869,7 +859,7 @@ TEST_CASE("async, Cancel_IAsyncActionWithProgress")
 
 TEST_CASE("async, Cancel_IAsyncActionWithProgress, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncActionWithProgress<double> async = Cancel_IAsyncActionWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
@@ -899,7 +889,7 @@ TEST_CASE("async, Cancel_IAsyncActionWithProgress, 2")
 
 TEST_CASE("async, Cancel_IAsyncOperation")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperation<uint32_t> async = Cancel_IAsyncOperation(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
@@ -929,7 +919,7 @@ TEST_CASE("async, Cancel_IAsyncOperation")
 
 TEST_CASE("async, Cancel_IAsyncOperation, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperation<uint32_t> async = Cancel_IAsyncOperation(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
@@ -959,7 +949,7 @@ TEST_CASE("async, Cancel_IAsyncOperation, 2")
 
 TEST_CASE("async, Cancel_IAsyncOperationWithProgress")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperationWithProgress<uint64_t, uint64_t> async = Cancel_IAsyncOperationWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
@@ -989,7 +979,7 @@ TEST_CASE("async, Cancel_IAsyncOperationWithProgress")
 
 TEST_CASE("async, Cancel_IAsyncOperationWithProgress, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperationWithProgress<uint64_t, uint64_t> async = Cancel_IAsyncOperationWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
@@ -1071,7 +1061,7 @@ namespace
 
 TEST_CASE("async, AutoCancel_IAsyncAction")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncAction async = AutoCancel_IAsyncAction(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -1099,7 +1089,7 @@ TEST_CASE("async, AutoCancel_IAsyncAction")
 
 TEST_CASE("async, AutoCancel_IAsyncAction, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncAction async = AutoCancel_IAsyncAction(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -1127,7 +1117,7 @@ TEST_CASE("async, AutoCancel_IAsyncAction, 2")
 
 TEST_CASE("async, AutoCancel_IAsyncActionWithProgress")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncActionWithProgress<double> async = AutoCancel_IAsyncActionWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -1155,7 +1145,7 @@ TEST_CASE("async, AutoCancel_IAsyncActionWithProgress")
 
 TEST_CASE("async, AutoCancel_IAsyncActionWithProgress, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncActionWithProgress<double> async = AutoCancel_IAsyncActionWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -1183,7 +1173,7 @@ TEST_CASE("async, AutoCancel_IAsyncActionWithProgress, 2")
 
 TEST_CASE("async, AutoCancel_IAsyncOperation")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperation<uint32_t> async = AutoCancel_IAsyncOperation(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -1211,7 +1201,7 @@ TEST_CASE("async, AutoCancel_IAsyncOperation")
 
 TEST_CASE("async, AutoCancel_IAsyncOperation, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperation<uint32_t> async = AutoCancel_IAsyncOperation(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -1239,7 +1229,7 @@ TEST_CASE("async, AutoCancel_IAsyncOperation, 2")
 
 TEST_CASE("async, AutoCancel_IAsyncOperationWithProgress")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperationWithProgress<uint64_t, uint64_t> async = AutoCancel_IAsyncOperationWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -1267,7 +1257,7 @@ TEST_CASE("async, AutoCancel_IAsyncOperationWithProgress")
 
 TEST_CASE("async, AutoCancel_IAsyncOperationWithProgress, 2")
 {
-    event_handle event = CreateEvent(nullptr, false, false, nullptr);
+    handle event = CreateEvent(nullptr, false, false, nullptr);
     IAsyncOperationWithProgress<uint64_t, uint64_t> async = AutoCancel_IAsyncOperationWithProgress(event.get());
     REQUIRE(async.Status() == AsyncStatus::Started);
 
@@ -1308,7 +1298,7 @@ TEST_CASE("async, get, no suspend with success")
 
 TEST_CASE("async, get, suspend with success")
 {
-    event_handle event = CreateEvent(nullptr, true, false, nullptr);
+    handle event = CreateEvent(nullptr, true, false, nullptr);
 
     auto a = Suspend_IAsyncAction(event.get());
     auto b = Suspend_IAsyncActionWithProgress(event.get());
@@ -1325,7 +1315,7 @@ TEST_CASE("async, get, suspend with success")
 
 TEST_CASE("async, get, failure")
 {
-    event_handle event = CreateEvent(nullptr, true, false, nullptr);
+    handle event = CreateEvent(nullptr, true, false, nullptr);
     SetEvent(event.get());
 
     auto a = Throw_IAsyncAction(event.get());
@@ -1450,7 +1440,7 @@ namespace
 
 TEST_CASE("async, resume_on_signal")
 {
-    event_handle event = CreateEvent(nullptr, false, true, nullptr);
+    handle event = CreateEvent(nullptr, false, true, nullptr);
     IAsyncAction async = test_resume_on_signal(event.get());
 
     Sleep(50);
@@ -1469,23 +1459,6 @@ TEST_CASE("async, resume_on_signal")
 
 namespace
 {
-    struct file_traits
-    {
-        using type = HANDLE;
-
-        static type invalid() noexcept
-        {
-            return INVALID_HANDLE_VALUE;
-        }
-
-        static void close(type value) noexcept
-        {
-            WINRT_VERIFY(CloseHandle(value));
-        }
-    };
-
-    using file_handle = impl::handle<file_traits>;
-
     IAsyncAction pipe_server()
     {
         // Create the pipe before hitting the suspension point to ensure the pipe is ready for the client.

@@ -25,16 +25,6 @@ namespace cppwinrt
         }
     }
 
-    inline auto check_handle_invalid(HANDLE handle)
-    {
-        if (handle == INVALID_HANDLE_VALUE)
-        {
-            winrt::throw_last_error();
-        }
-
-        return handle;
-    }
-
     inline bool starts_with(std::string_view value, std::string_view match)
     {
         return 0 == value.compare(0, match.size(), match);

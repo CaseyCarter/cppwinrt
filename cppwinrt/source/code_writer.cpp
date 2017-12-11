@@ -2873,20 +2873,26 @@ void t()
         out.save_as(settings::output / "module.g.cpp");
     }
 
-    struct rpc_cstr_traits : winrt::impl::handle_traits<RPC_CSTR>
+    struct rpc_cstr_traits
     {
-        static void close(type& value) noexcept
+        using type = RPC_CSTR;
+
+        static void close(type value) noexcept
         {
             RpcStringFreeA(&value);
         }
+
+        static constexpr type invalid() noexcept
+        {
+            return nullptr;
+        }
     };
 
-    std::string
-    CreateGuid()
+    std::string CreateGuid()
     {
         GUID guid;
         winrt::impl::check_win32(UuidCreate(&guid));
-        winrt::impl::handle<rpc_cstr_traits> rpcStr;
+        winrt::handle_type<rpc_cstr_traits> rpcStr;
         winrt::impl::check_win32(UuidToStringA(&guid, rpcStr.put()));
         return std::string((PCSTR)rpcStr.get());
     }

@@ -1,13 +1,13 @@
 
-namespace winrt::impl
+WINRT_EXPORT namespace winrt
 {
-    struct condition_variable;
+    struct slim_condition_variable;
 
-    struct mutex
+    struct slim_mutex
     {
-        mutex(mutex const&) = delete;
-        mutex& operator=(mutex const&) = delete;
-        mutex() noexcept = default;
+        slim_mutex(slim_mutex const&) = delete;
+        slim_mutex& operator=(slim_mutex const&) = delete;
+        slim_mutex() noexcept = default;
 
         void lock() noexcept
         {
@@ -42,7 +42,7 @@ namespace winrt::impl
         }
 
     private:
-        friend condition_variable;
+        friend slim_condition_variable;
 
         PSRWLOCK get() noexcept
         {
@@ -52,53 +52,48 @@ namespace winrt::impl
         SRWLOCK m_lock{};
     };
 
-    using shared_mutex = mutex;
-
-    template <typename T = mutex>
-    struct lock_guard
+    struct slim_lock_guard
     {
-        explicit lock_guard(T& lock) noexcept :
-            m_lock(lock)
+        explicit slim_lock_guard(slim_mutex& m) noexcept :
+            m_mutex(m)
         {
-            m_lock.lock();
+            m_mutex.lock();
         }
 
-        ~lock_guard() noexcept
+        ~slim_lock_guard() noexcept
         {
-            m_lock.unlock();
+            m_mutex.unlock();
         }
 
     private:
-
-        T& m_lock;
+        slim_mutex & m_mutex;
     };
 
-    struct shared_lock_guard
+    struct slim_shared_lock_guard
     {
-        explicit shared_lock_guard(shared_mutex& lock) noexcept :
-            m_lock(lock)
+        explicit slim_shared_lock_guard(slim_mutex& m) noexcept :
+            m_mutex(m)
         {
-            m_lock.lock_shared();
+            m_mutex.lock_shared();
         }
 
-        ~shared_lock_guard() noexcept
+        ~slim_shared_lock_guard() noexcept
         {
-            m_lock.unlock_shared();
+            m_mutex.unlock_shared();
         }
 
     private:
-
-        shared_mutex& m_lock;
+        slim_mutex & m_mutex;
     };
 
-    struct condition_variable
+    struct slim_condition_variable
     {
-        condition_variable(condition_variable const&) = delete;
-        condition_variable const& operator=(condition_variable const&) = delete;
-        condition_variable() noexcept = default;
+        slim_condition_variable(slim_condition_variable const&) = delete;
+        slim_condition_variable const& operator=(slim_condition_variable const&) = delete;
+        slim_condition_variable() noexcept = default;
 
         template <typename T>
-        void wait(mutex& x, T predicate)
+        void wait(slim_mutex& x, T predicate)
         {
             while (!predicate())
             {
@@ -117,7 +112,6 @@ namespace winrt::impl
         }
 
     private:
-
         CONDITION_VARIABLE m_cv{};
     };
 }

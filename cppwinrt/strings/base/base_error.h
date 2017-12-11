@@ -1,21 +1,37 @@
 
 namespace winrt::impl
 {
-    struct heap_traits : handle_traits<wchar_t*>
+    struct heap_traits
     {
+        using type = wchar_t*;
+
         static void close(type value) noexcept
         {
             WINRT_VERIFY(HeapFree(GetProcessHeap(), 0, value));
         }
+
+        static constexpr type invalid() noexcept
+        {
+            return nullptr;
+        }
     };
 
-    struct bstr_traits : handle_traits<BSTR>
+    struct bstr_traits
     {
+        using type = BSTR;
+
         static void close(type value) noexcept
         {
             SysFreeString(value);
         }
+
+        static constexpr type invalid() noexcept
+        {
+            return nullptr;
+        }
     };
+
+    using bstr_handle = handle_type<bstr_traits>;
 
     inline hstring trim_hresult_message(wchar_t const* const message, uint32_t size) noexcept
     {
@@ -105,9 +121,9 @@ WINRT_EXPORT namespace winrt
             if (m_info)
             {
                 HRESULT code{};
-                impl::handle<impl::bstr_traits> fallback;
-                impl::handle<impl::bstr_traits> message;
-                impl::handle<impl::bstr_traits> unused;
+                impl::bstr_handle fallback;
+                impl::bstr_handle message;
+                impl::bstr_handle unused;
 
                 if (S_OK == m_info->GetErrorDetails(fallback.put(), &code, message.put(), unused.put()))
                 {
@@ -125,7 +141,7 @@ WINRT_EXPORT namespace winrt
                 }
             }
 
-            impl::handle<impl::heap_traits> message;
+            handle_type<impl::heap_traits> message;
 
             uint32_t const size = FormatMessageW(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
                 nullptr,
@@ -155,7 +171,7 @@ WINRT_EXPORT namespace winrt
 
     private:
 
-        impl::handle<impl::bstr_traits> m_debug_reference;
+        impl::bstr_handle m_debug_reference;
         uint32_t const m_debug_magic{ 0xAABBCCDD };
         HRESULT m_code{ E_FAIL };
         com_ptr<IRestrictedErrorInfo> m_info;

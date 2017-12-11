@@ -33,11 +33,18 @@ namespace winrt::impl
         return 0 != result;
     }
 
-    struct hstring_traits : handle_traits<HSTRING>
+    struct hstring_traits
     {
+        using type = HSTRING;
+
         static void close(type value) noexcept
         {
             WINRT_VERIFY_(S_OK, WindowsDeleteString(value));
+        }
+
+        static constexpr type invalid() noexcept
+        {
+            return nullptr;
         }
     };
 }
@@ -200,7 +207,7 @@ WINRT_EXPORT namespace winrt
 
     private:
 
-        impl::handle<impl::hstring_traits> m_handle;
+        handle_type<impl::hstring_traits> m_handle;
     };
 
     inline HSTRING get_abi(hstring const& object) noexcept
@@ -277,17 +284,24 @@ namespace winrt::impl
 
     // Temporary workaround to support locale-independent numeric formatting
     // until C++17's to_chars arrives
-    struct locale_handle_traits : handle_traits<_locale_t>
+    struct locale_handle_traits
     {
+        using type = _locale_t;
+
         static void close(type value) noexcept
         {
             _free_locale(value);
+        }
+
+        static constexpr type invalid() noexcept
+        {
+            return nullptr;
         }
     };
 
     inline _locale_t get_default_locale()
     {
-        static handle<locale_handle_traits> locale_handle{ _create_locale(LC_ALL, "C") };
+        static handle_type<locale_handle_traits> locale_handle{ _create_locale(LC_ALL, "C") };
         return locale_handle.get();
     }
 

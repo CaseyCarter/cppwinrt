@@ -42,7 +42,7 @@ namespace winrt::impl
     {
         void clear() noexcept
         {
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
             m_factory = nullptr;
         }
 
@@ -50,7 +50,7 @@ namespace winrt::impl
 
     private:
 
-        mutex m_lock;
+        slim_mutex m_lock;
         Windows::Foundation::IUnknown m_factory;
     };
 
@@ -59,14 +59,14 @@ namespace winrt::impl
         void add(factory_cache_typeless_entry* entry) noexcept
         {
             WINRT_ASSERT(entry);
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
             entry->next = m_begin;
             m_begin = entry;
         }
 
         void clear() noexcept
         {
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
 
             while (m_begin != nullptr)
             {
@@ -77,7 +77,7 @@ namespace winrt::impl
 
     private:
 
-        mutex m_lock;
+        slim_mutex m_lock;
         factory_cache_typeless_entry* m_begin{ nullptr };
     };
 
@@ -99,7 +99,7 @@ namespace winrt::impl
 #endif
 
             {
-                shared_lock_guard const guard(m_lock);
+                slim_shared_lock_guard const guard(m_lock);
 
                 if (m_factory)
                 {
@@ -117,7 +117,7 @@ namespace winrt::impl
                 return factory;
             }
 
-            lock_guard<shared_mutex> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
 
             if (!m_factory)
             {
@@ -130,14 +130,14 @@ namespace winrt::impl
 
         void clear() noexcept
         {
-            lock_guard<shared_mutex> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
             m_factory = nullptr;
         }
 
     private:
 
         void* m_next{ nullptr };
-        shared_mutex m_lock;
+        slim_mutex m_lock;
         com_ref<Interface> m_factory;
     };
 }

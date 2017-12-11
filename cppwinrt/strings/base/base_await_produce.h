@@ -92,15 +92,22 @@ WINRT_EXPORT namespace winrt
             std::experimental::coroutine_handle<>::from_address(context)();
         }
 
-        struct timer_traits : impl::handle_traits<PTP_TIMER>
+        struct timer_traits
         {
+            using type = PTP_TIMER;
+
             static void close(type value) noexcept
             {
                 CloseThreadpoolTimer(value);
             }
+
+            static constexpr type invalid() noexcept
+            {
+                return nullptr;
+            }
         };
 
-        impl::handle<timer_traits> m_timer;
+        handle_type<timer_traits> m_timer;
         Windows::Foundation::TimeSpan m_duration;
     };
 
@@ -143,15 +150,22 @@ WINRT_EXPORT namespace winrt
             that->m_resume();
         }
 
-        struct wait_traits : impl::handle_traits<PTP_WAIT>
+        struct wait_traits
         {
+            using type = PTP_WAIT;
+
             static void close(type value) noexcept
             {
                 CloseThreadpoolWait(value);
             }
+
+            static constexpr type invalid() noexcept
+            {
+                return nullptr;
+            }
         };
 
-        impl::handle<wait_traits> m_wait;
+        handle_type<wait_traits> m_wait;
         Windows::Foundation::TimeSpan m_timeout{ 0 };
         HANDLE m_handle{};
         uint32_t m_result{};
@@ -287,15 +301,22 @@ WINRT_EXPORT namespace winrt
 
     private:
 
-        struct io_traits : impl::handle_traits<PTP_IO>
+        struct io_traits
         {
+            using type = PTP_IO;
+
             static void close(type value) noexcept
             {
                 CloseThreadpoolIo(value);
             }
+
+            static constexpr type invalid() noexcept
+            {
+                return nullptr;
+            }
         };
 
-        impl::handle<io_traits> m_io;
+        handle_type<io_traits> m_io;
     };
 
 #ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
@@ -347,7 +368,7 @@ namespace winrt::impl
             AsyncStatus status;
 
             {
-                lock_guard<> const guard(m_lock);
+                slim_lock_guard const guard(m_lock);
 
                 if (m_completed_assigned)
                 {
@@ -373,7 +394,7 @@ namespace winrt::impl
 
         CompletedHandler Completed() noexcept
         {
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
             return m_completed;
         }
 
@@ -384,7 +405,7 @@ namespace winrt::impl
 
         AsyncStatus Status() noexcept
         {
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
             return m_status;
         }
 
@@ -392,7 +413,7 @@ namespace winrt::impl
         {
             try
             {
-                lock_guard<> const guard(m_lock);
+                slim_lock_guard const guard(m_lock);
                 rethrow_if_failed();
                 return S_OK;
             }
@@ -404,7 +425,7 @@ namespace winrt::impl
 
         void Cancel() noexcept
         {
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
 
             if (m_status == AsyncStatus::Started)
             {
@@ -414,7 +435,7 @@ namespace winrt::impl
 
         void Close()
         {
-            lock_guard<> const guard(m_lock);
+            slim_lock_guard const guard(m_lock);
 
             if (m_status == AsyncStatus::Started)
             {
@@ -469,7 +490,7 @@ namespace winrt::impl
             AsyncStatus status;
 
             {
-                lock_guard<> const guard(m_lock);
+                slim_lock_guard const guard(m_lock);
                 WINRT_ASSERT(m_status == AsyncStatus::Started || m_status == AsyncStatus::Canceled);
                 m_exception = std::current_exception();
 
@@ -507,7 +528,7 @@ namespace winrt::impl
         }
 
         std::optional<std::exception_ptr> m_exception;
-        mutex m_lock;
+        slim_mutex m_lock;
         CompletedHandler m_completed;
         AsyncStatus m_status{ AsyncStatus::Started };
         bool m_completed_assigned{ false };

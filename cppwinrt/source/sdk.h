@@ -7,15 +7,22 @@
 
 namespace cppwinrt
 {
-    struct registry_traits : winrt::impl::handle_traits<HKEY>
+    struct registry_traits
     {
-        static void close(HKEY value) noexcept
+        using type = HKEY;
+
+        static void close(type value) noexcept
         {
             WINRT_VERIFY_(ERROR_SUCCESS, RegCloseKey(value));
         }
+
+        static constexpr type invalid() noexcept
+        {
+            return nullptr;
+        }
     };
 
-    using registry_key = winrt::impl::handle<registry_traits>;
+    using registry_key = winrt::handle_type<registry_traits>;
 
     inline std::experimental::filesystem::path get_sdk_path()
     {

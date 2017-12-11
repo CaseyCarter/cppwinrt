@@ -204,32 +204,27 @@ namespace cppwinrt
 
         void save_as(std::string const& filename)
         {
-            struct handle
+            winrt::file_handle file
             {
-                HANDLE value;
-
-                ~handle()
-                {
-                    WINRT_VERIFY(CloseHandle(value));
-                }
-            };
-
-            handle file
-            {
-                check_handle_invalid(CreateFileA(filename.c_str(),
+                CreateFileA(filename.c_str(),
                     GENERIC_WRITE,
                     FILE_SHARE_READ,
                     nullptr, // default security
                     CREATE_ALWAYS,
                     FILE_ATTRIBUTE_NORMAL,
-                    nullptr)) // no template
+                    nullptr) // no template
             };
+
+            if (!file)
+            {
+                winrt::throw_last_error();
+            }
 
             DWORD copied = 0;
 
             std::array<uint8_t, 3> byte_order_mark{ 0xEF, 0xBB, 0xBF };
 
-            check_win32_bool(WriteFile(file.value,
+            check_win32_bool(WriteFile(file.get(),
                 byte_order_mark.data(),
                 static_cast<uint32_t>(byte_order_mark.size()),
                 &copied,
@@ -237,7 +232,7 @@ namespace cppwinrt
 
             WINRT_ASSERT(copied == byte_order_mark.size());
 
-            check_win32_bool(WriteFile(file.value,
+            check_win32_bool(WriteFile(file.get(),
                 m_buffer.data(),
                 size(),
                 &copied,

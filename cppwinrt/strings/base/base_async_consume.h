@@ -42,19 +42,19 @@ namespace winrt::impl
             return;
         }
 
-        mutex m;
-        condition_variable cv;
+        slim_mutex m;
+        slim_condition_variable cv;
         bool completed = false;
         async.Completed([&](Async const&, Windows::Foundation::AsyncStatus)
         {
             {
-                lock_guard<> const guard(m);
+                slim_lock_guard const guard(m);
                 completed = true;
             }
             cv.notify_one();
         });
 
-        lock_guard<> guard(m);
+        slim_lock_guard guard(m);
         cv.wait(m, [&] { return completed; }); 
     }
 

@@ -92,14 +92,6 @@ TEST_CASE("single threaded event, basic add/remove/invoke")
     BasicTest<single_threaded_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }
 
-struct event_traits : impl::handle_traits<HANDLE>
-{
-    static void close(type value) noexcept
-    {
-        WINRT_VERIFY(CloseHandle(value));
-    }
-};
-
 struct BlockingHandler
 {
     enum HandlerState
@@ -169,9 +161,9 @@ struct BlockingHandler
     }
 
 private:
-    impl::handle<event_traits> m_continue = CreateEvent(nullptr, false, false, nullptr);
-    impl::handle<event_traits> m_invoking = CreateEvent(nullptr, false, false, nullptr);
-    impl::handle<event_traits> m_invoke_result_set = CreateEvent(nullptr, false, false, nullptr);
+    handle m_continue = CreateEvent(nullptr, false, false, nullptr);
+    handle m_invoking = CreateEvent(nullptr, false, false, nullptr);
+    handle m_invoke_result_set = CreateEvent(nullptr, false, false, nullptr);
     HandlerState m_state{ NotStarted };
 };
 
@@ -203,7 +195,7 @@ void ConcurrentAddTest()
     bool thread3_check_handler2_block = false;
     bool thread3_check_handler2_finished = false;
 
-    impl::handle<event_traits> start_phase_two = CreateEvent(nullptr, false, false, nullptr);
+    handle start_phase_two = CreateEvent(nullptr, false, false, nullptr);
 
     auto invoke_single_handler = ThreadPool::RunAsync([&](auto && ...)
     {
@@ -298,7 +290,7 @@ void ConcurrentRemoveTest()
     bool thread3_check_handler2_finished = false;
     bool thread3_check_handler2_ok = false;
 
-    impl::handle<event_traits> start_phase_two = CreateEvent(nullptr, false, false, nullptr);
+    handle start_phase_two = CreateEvent(nullptr, false, false, nullptr);
 
     auto invoke_two_handlers = ThreadPool::RunAsync([&](auto && ...)
     {

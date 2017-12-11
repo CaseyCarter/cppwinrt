@@ -11,7 +11,7 @@ WINRT_EXPORT namespace std::experimental
 
             void GetResults()
             {
-                winrt::impl::lock_guard<> const guard(this->m_lock);
+                winrt::slim_lock_guard const guard(this->m_lock);
 
                 if (this->m_status == AsyncStatus::Completed)
                 {
@@ -29,7 +29,7 @@ WINRT_EXPORT namespace std::experimental
                 AsyncStatus status;
 
                 {
-                    winrt::impl::lock_guard<> const guard(this->m_lock);
+                    winrt::slim_lock_guard const guard(this->m_lock);
 
                     if (this->m_status == AsyncStatus::Started)
                     {

@@ -9,7 +9,6 @@
 
 using namespace std::experimental::filesystem;
 using namespace winrt;
-using namespace winrt::impl;
 using namespace winrt::Windows::Foundation;
 
 namespace cppwinrt
@@ -19,11 +18,11 @@ namespace cppwinrt
         struct namespace_recorder
         {
             std::set<std::string> _projected_namespaces;
-            winrt::impl::mutex _lock;
+            slim_mutex _lock;
 
             void record_projected_namespace(std::string const& ns)
             {
-                lock_guard<> const guard(_lock);
+                slim_lock_guard const guard(_lock);
                 _projected_namespaces.emplace(ns);
             }
         };

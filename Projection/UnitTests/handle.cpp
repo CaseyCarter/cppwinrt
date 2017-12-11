@@ -7,34 +7,19 @@ using namespace winrt;
 // An example of a full traits class with a non-nullptr invalid value.
 //
 
-struct test_file_traits
-{
-    using type = HANDLE;
-
-    static HANDLE invalid() noexcept
-    {
-        return INVALID_HANDLE_VALUE;
-    }
-
-    static void close(HANDLE value) noexcept
-    {
-        REQUIRE(0 != CloseHandle(value));
-    }
-};
-
 TEST_CASE("handle, file")
 {
     wchar_t path[1024] {};
     REQUIRE(0 != GetModuleFileName(nullptr, path, _countof(path)));
 
-    impl:: handle<test_file_traits> empty;
+    file_handle empty;
     REQUIRE(!empty);
     static_assert(sizeof(empty) == sizeof(HANDLE), "fail");
 
-    impl::handle<test_file_traits> good = CreateFile(path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+    file_handle good = CreateFile(path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
     REQUIRE(good);
 
-    impl::handle<test_file_traits> bad = CreateFile(L"BAD", GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+    file_handle bad = CreateFile(L"BAD", GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
     REQUIRE(!bad);
 }
 
@@ -42,39 +27,24 @@ TEST_CASE("handle, file")
 // An example of a full traits class with a nullptr invalid value.
 //
 
-struct test_event_traits
-{
-    using type = HANDLE;
-
-    constexpr static HANDLE invalid() noexcept
-    {
-        return nullptr;
-    }
-
-    static void close(HANDLE value) noexcept
-    {
-        REQUIRE(0 != CloseHandle(value));
-    }
-};
-
 TEST_CASE("handle, event")
 {
-    impl::handle<test_event_traits> empty;
+    handle empty;
     REQUIRE(!empty);
 
-    impl::handle<test_event_traits> good = CreateEvent(nullptr, true, true, nullptr);
+    handle good = CreateEvent(nullptr, true, true, nullptr);
     REQUIRE(good);
 
-    impl::handle<test_event_traits> bad = CreateEvent(nullptr, true, true, L"BAD\\");
+    handle bad = CreateEvent(nullptr, true, true, L"BAD\\");
     REQUIRE(!bad);
 }
 
 TEST_CASE("handle, move")
 {
-    impl::handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
+    handle a = CreateEvent(nullptr, true, true, nullptr);
     REQUIRE(a);
 
-    impl::handle<test_event_traits> b = std::move(a); // move construct
+    handle b = std::move(a); // move construct
     REQUIRE(!a);
     REQUIRE(b);
 
@@ -85,7 +55,7 @@ TEST_CASE("handle, move")
 
 TEST_CASE("handle, close")
 {
-    impl::handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
+    handle a = CreateEvent(nullptr, true, true, nullptr);
     REQUIRE(a);
 
     a.close();
@@ -96,7 +66,7 @@ TEST_CASE("handle, get")
 {
     HANDLE h = CreateEvent(nullptr, true, true, nullptr);
 
-    impl::handle<test_event_traits> a = h;
+    handle a = h;
 
     REQUIRE(h == a.get());
 }
@@ -111,7 +81,7 @@ static void test_put(HANDLE * value)
 
 TEST_CASE("handle, put")
 {
-    impl::handle<test_event_traits> a;
+    handle a;
     REQUIRE(!a);
 
     test_put(a.put());
@@ -123,7 +93,7 @@ TEST_CASE("handle, detach")
 {
     HANDLE h = CreateEvent(nullptr, true, true, nullptr);
 
-    impl::handle<test_event_traits> a = h;
+    handle a = h;
 
     REQUIRE(h == a.get());
 
@@ -139,8 +109,8 @@ TEST_CASE("handle, detach")
 
 TEST_CASE("handle, swap")
 {
-    impl::handle<test_event_traits> a = CreateEvent(nullptr, true, true, nullptr);
-    impl::handle<test_event_traits> b = CreateEvent(nullptr, true, true, nullptr);
+    handle a = CreateEvent(nullptr, true, true, nullptr);
+    handle b = CreateEvent(nullptr, true, true, nullptr);
 
     REQUIRE(a);
     REQUIRE(b);

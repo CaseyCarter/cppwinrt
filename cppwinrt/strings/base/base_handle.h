@@ -1,33 +1,22 @@
 
-namespace winrt::impl
+WINRT_EXPORT namespace winrt
 {
     template <typename T>
-    struct handle_traits
-    {
-        using type = T;
-
-        constexpr static type invalid() noexcept
-        {
-            return nullptr;
-        }
-    };
-
-    template <typename T>
-    struct handle
+    struct handle_type
     {
         using type = typename T::type;
 
-        handle() noexcept = default;
+        handle_type() noexcept = default;
 
-        handle(type value) noexcept :
+        handle_type(type value) noexcept :
         m_value(value)
         {}
 
-        handle(handle&& other) noexcept :
+        handle_type(handle_type&& other) noexcept :
             m_value(other.detach())
         {}
 
-        handle& operator=(handle&& other) noexcept
+        handle_type& operator=(handle_type&& other) noexcept
         {
             if (this != &other)
             {
@@ -37,7 +26,7 @@ namespace winrt::impl
             return*this;
         }
 
-        ~handle() noexcept
+        ~handle_type() noexcept
         {
             close();
         }
@@ -80,7 +69,7 @@ namespace winrt::impl
             return value;
         }
 
-        friend void swap(handle& left, handle& right) noexcept
+        friend void swap(handle_type& left, handle_type& right) noexcept
         {
             std::swap(left.m_value, right.m_value);
         }
@@ -89,4 +78,38 @@ namespace winrt::impl
 
         type m_value = T::invalid();
     };
+
+    struct handle_traits
+    {
+        using type = HANDLE;
+
+        static void close(type value) noexcept
+        {
+            WINRT_VERIFY_(TRUE, CloseHandle(value));
+        }
+
+        static constexpr type invalid() noexcept
+        {
+            return nullptr;
+        }
+    };
+
+    using handle = handle_type<handle_traits>;
+
+    struct file_handle_traits
+    {
+        using type = HANDLE;
+
+        static void close(type value) noexcept
+        {
+            WINRT_VERIFY_(TRUE, CloseHandle(value));
+        }
+
+        static constexpr type invalid() noexcept
+        {
+            return INVALID_HANDLE_VALUE;
+        }
+    };
+
+    using file_handle = handle_type<file_handle_traits>;
 }
