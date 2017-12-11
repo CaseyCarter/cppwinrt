@@ -10,12 +10,19 @@ WINRT_EXPORT namespace winrt
     struct no_weak_ref : impl::marker {};
     struct composing : impl::marker {};
     struct composable : impl::marker {};
+    struct no_module_lock : impl::marker {};
 
     template <typename Interface>
     struct cloaked : Interface {};
 
     template <typename D, typename... I>
     struct implements;
+
+    inline std::atomic<uint32_t>& get_module_lock() noexcept
+    {
+        static std::atomic<uint32_t> s_lock;
+        return s_lock;
+    }
 }
 
 namespace winrt::impl
@@ -640,9 +647,20 @@ namespace winrt::impl
 
         explicit root_implements(uint32_t references = 1) noexcept
             : m_references(references)
-        {}
+        {
+            if constexpr (use_module_lock::value)
+            {
+                ++get_module_lock();
+            }
+        }
 
-        virtual ~root_implements() noexcept {}
+        virtual ~root_implements() noexcept
+        {
+            if constexpr (use_module_lock::value)
+            {
+                --get_module_lock();
+            }
+        }
 
         HRESULT __stdcall GetIids(ULONG* count, GUID** array) noexcept
         {
@@ -825,6 +843,7 @@ namespace winrt::impl
         using is_agile = std::negation<std::disjunction<std::is_same<non_agile, I>...>>;
         using is_inspectable = std::disjunction<std::is_base_of<Windows::Foundation::IInspectable, I>...>;
         using is_weak_ref_source = std::conjunction<is_inspectable, std::negation<is_factory>, std::negation<std::disjunction<std::is_same<no_weak_ref, I>...>>>;
+        using use_module_lock = std::negation<std::disjunction<std::is_same<no_module_lock, I>...>>;
         using weak_ref_t = impl::weak_ref<is_agile::value>;
 
         static_assert(!is_factory::value || (is_factory::value&& is_agile::value), "winrt::implements - activation factories must be agile.");

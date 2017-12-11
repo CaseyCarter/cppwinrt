@@ -1,6 +1,6 @@
 
 template <typename D, typename... I>
-struct WINRT_EBO %_base : %implements<D%@, I...>%%%
+struct WINRT_EBO %_base : implements<D%@, %I...>%%%
 {
     using class_type = @;
     @

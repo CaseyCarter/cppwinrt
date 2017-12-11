@@ -1920,18 +1920,18 @@ namespace cppwinrt
             }
 
             std::vector<meta::required> const fallback_overrides = type.token.get_component_class_override_fallbacks();
+            std::string no_module_lock;
 
-            std::string module_lock;
-            if (!base_type || base_type->is_external())
+            if (base_type && !base_type->is_external())
             {
-                module_lock = "impl::module_lock, ";
+                no_module_lock = "no_module_lock, ";
             }
 
             out.write(strings::write_component_class_base,
                 type.name(),
-                module_lock,
                 bind_output(write_component_instance_interfaces, type),
                 base_name,
+                no_module_lock,
                 bind_output(write_interface_require, "D"sv, type.token.get_component_class_generated_required()),
                 bind_output(write_class_base, type, true, "D"sv),
                 bind_output(write_override_fallbacks, fallback_overrides),
@@ -2823,7 +2823,6 @@ void t()
         write_warning(out, strings::write_edit_warning_header);
 
         out.write_impl_namespace();
-        out.write(strings::write_component_lock_declaration);
         write_component_produce_override_dispatch(out, types);
         out.write_close_namespace();
 

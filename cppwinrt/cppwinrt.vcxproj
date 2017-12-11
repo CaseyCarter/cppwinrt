@@ -105,7 +105,6 @@
     <ClInclude Include="strings\write\write_component_factory_forwarding_constructor.h" />
     <ClInclude Include="strings\write\write_component_factory_forwarding_static.h" />
     <ClInclude Include="strings\write\write_component_interface_method_definition.h" />
-    <ClInclude Include="strings\write\write_component_lock_declaration.h" />
     <ClInclude Include="strings\write\write_component_produce_override_dispatch.h" />
     <ClInclude Include="strings\write\write_component_produce_override_dispatch_method.h" />
     <ClInclude Include="strings\write\write_component_source.h" />

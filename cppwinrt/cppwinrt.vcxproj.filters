@@ -243,9 +243,6 @@
     <ClInclude Include="strings\write\write_component_interface_method_definition.h">
       <Filter>strings\write</Filter>
     </ClInclude>
-    <ClInclude Include="strings\write\write_component_lock_declaration.h">
-      <Filter>strings\write</Filter>
-    </ClInclude>
     <ClInclude Include="strings\write\write_component_produce_override_dispatch.h">
       <Filter>strings\write</Filter>
     </ClInclude>
