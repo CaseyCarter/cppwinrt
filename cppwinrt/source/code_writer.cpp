@@ -2231,7 +2231,8 @@ namespace cppwinrt
         {
             if (!settings::component_name.empty() && starts_with(type.full_name(), settings::component_name))
             {
-                return type.full_name().substr(settings::component_name.size() + 1);
+                auto rel_name = type.full_name().substr(settings::component_name.size());
+                return rel_name.data() + (rel_name[0] == '.' ? 1 : 0);
             }
             else
             {
