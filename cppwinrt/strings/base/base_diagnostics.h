@@ -57,7 +57,7 @@ namespace winrt::impl
 
     private:
 
-        mutex m_lock;
+        slim_mutex m_lock;
         winrt::diagnostics_info m_info;
     };
 

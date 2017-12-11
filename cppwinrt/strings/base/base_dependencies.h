@@ -12,7 +12,6 @@
 #include <iterator>
 #include <map>
 #include <memory>
-#include <mutex>
 #include <new>
 #include <optional>
 #include <shared_mutex>
