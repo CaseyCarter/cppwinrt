@@ -17,6 +17,7 @@ CWinrtVisualizer::CWinrtVisualizer()
 	//	_Out_opt_       mdTypeDef            *typeDefToken
 	//);
 
+    cppwinrt::settings::no_output = true;
 	add_input_spec(L"local");
 	prepare_metadata();
 }

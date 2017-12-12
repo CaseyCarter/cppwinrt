@@ -18,4 +18,5 @@ namespace cppwinrt::settings
     extern std::vector<std::string> filters;
     extern bool overwrite;
     extern bool brackets;
+    extern bool no_output;
 }

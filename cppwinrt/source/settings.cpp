@@ -21,4 +21,5 @@ namespace cppwinrt::settings
     bool verbose{};
     bool overwrite{};
     bool brackets{};
+    bool no_output{};
 }

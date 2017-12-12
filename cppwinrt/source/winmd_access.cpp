@@ -134,7 +134,7 @@ void prepare_metadata()
         settings::inputs = std::move(inputs);
         settings::refs = std::move(refs);
 
-		if (!settings::output.empty())
+		if (!settings::no_output)
 		{
 			settings::output = absolute(settings::output);
 			settings::output = canonical(settings::output);

@@ -15,9 +15,8 @@
 #include <set>
 #include <variant>
 #include "generator.h"
+#include "settings.h"
 #include "winmd_reader.h"
-#include "code_writer.h"
-#include "sdk.h"
 #include "winmd_access.h"
 
 #ifndef IF_FAIL_RET
