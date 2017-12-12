@@ -11,7 +11,7 @@ call SetBuildVars.cmd %*
 set PublishShare=%4\%BuildPlatform%\%BuildConfiguration%
 
 echo Publish VSIX
-XCOPY vsix\bin\%BuildConfiguration%\cppwinrt.vsix %PublishShare% /D /R /Y /J 
+echo d | XCOPY vsix\bin\%BuildConfiguration%\cppwinrt.vsix %PublishShare% /D /R /Y /J 
 
 if /i not "%BuildPlatform%" == "x86" goto :skip
 if /i not "%BuildConfiguration%" == "Release" goto :skip
