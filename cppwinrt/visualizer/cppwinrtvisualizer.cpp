@@ -8,18 +8,18 @@ using namespace Microsoft::VisualStudio::Debugger::Evaluation;
 
 CWinrtVisualizer::CWinrtVisualizer()
 {
-	// todo: address user-defined types (what about xaml local types?)
-	//HRESULT WINAPI RoGetMetaDataFile(
-	//	_In_      const HSTRING              name,
-	//	_In_opt_        IMetaDataDispenserEx *metaDataDispenser,
-	//	_Out_opt_       HSTRING              *metaDataFilePath,
-	//	_Out_opt_       IMetaDataImport2     **metaDataImport,
-	//	_Out_opt_       mdTypeDef            *typeDefToken
-	//);
+    // todo: address user-defined types (what about xaml local types?)
+    //HRESULT WINAPI RoGetMetaDataFile(
+    //    _In_      const HSTRING              name,
+    //    _In_opt_        IMetaDataDispenserEx *metaDataDispenser,
+    //    _Out_opt_       HSTRING              *metaDataFilePath,
+    //    _Out_opt_       IMetaDataImport2     **metaDataImport,
+    //    _Out_opt_       mdTypeDef            *typeDefToken
+    //);
 
     cppwinrt::settings::no_output = true;
-	add_input_spec(L"local");
-	prepare_metadata();
+    add_input_spec(L"local");
+    prepare_metadata();
 }
 
 HRESULT CWinrtVisualizer::EvaluateVisualizedExpression(
@@ -37,24 +37,24 @@ HRESULT CWinrtVisualizer::EvaluateVisualizedExpression(
         CComBSTR bstrTypeName;
         IF_FAIL_RET(pTypeSymbol->get_name(&bstrTypeName));
 
-		// Visualize top-level C++/WinRT objects containing ABI pointers
-		bool isAbiObject;
+        // Visualize top-level C++/WinRT objects containing ABI pointers
+        bool isAbiObject;
         if (wcscmp(bstrTypeName, L"winrt::Windows::Foundation::IInspectable") == 0)
         {
-			isAbiObject = false;
+            isAbiObject = false;
         }
-		// Visualize nested object properties via raw ABI pointers
-		else if (wcscmp(bstrTypeName, L"winrt::impl::IInspectable") == 0)
+        // Visualize nested object properties via raw ABI pointers
+        else if (wcscmp(bstrTypeName, L"winrt::impl::IInspectable") == 0)
         {
-			isAbiObject = true;
+            isAbiObject = true;
         }
-		else
-		{
-			// unrecognized type
-			return S_OK;
-		}
+        else
+        {
+            // unrecognized type
+            return S_OK;
+        }
 
-		IF_FAIL_RET(CObjectVisualizer::CreateEvaluationResult(pVisualizedExpression, isAbiObject, ppResultObject));
+        IF_FAIL_RET(CObjectVisualizer::CreateEvaluationResult(pVisualizedExpression, isAbiObject, ppResultObject));
 
         return S_OK;
     }
@@ -122,7 +122,7 @@ HRESULT CWinrtVisualizer::GetItems(
 {
     try
     {
-		winrt::com_ptr<CObjectVisualizer> pObjectVisualizer;
+        winrt::com_ptr<CObjectVisualizer> pObjectVisualizer;
         HRESULT hr = pVisualizedExpression->GetDataItem(pObjectVisualizer.put());
         if (SUCCEEDED(hr))
         {
@@ -156,7 +156,7 @@ HRESULT CWinrtVisualizer::SetValueAsString(
 {
     try
     {
-		winrt::com_ptr<CPropertyVisualizer> pPropertyVisualizer;
+        winrt::com_ptr<CPropertyVisualizer> pPropertyVisualizer;
         HRESULT hr = pVisualizedExpression->GetDataItem(pPropertyVisualizer.put());
         if (SUCCEEDED(hr))
         {
@@ -179,7 +179,7 @@ HRESULT CWinrtVisualizer::GetUnderlyingString(
 {
     try
     {
-		winrt::com_ptr<CPropertyVisualizer> pPropertyVisualizer;
+        winrt::com_ptr<CPropertyVisualizer> pPropertyVisualizer;
         HRESULT hr = pVisualizedExpression->GetDataItem(pPropertyVisualizer.put());
         if (SUCCEEDED(hr))
         {

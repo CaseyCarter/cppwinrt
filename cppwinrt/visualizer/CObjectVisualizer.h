@@ -2,12 +2,12 @@
 
 // Metatdata for resolving a runtime class property value
 struct PropertyData {
-	std::wstring iid;
-	int32_t index;
-	std::wstring abiType;
-	std::wstring displayType;
-	std::wstring displayName;
-	bool isObject;
+    std::wstring iid;
+    int32_t index;
+    std::wstring abiType;
+    std::wstring displayType;
+    std::wstring displayName;
+    bool isObject;
 };
 
 // CObjectVisualizer provides the visualization data model for WinRT objects, 
@@ -18,12 +18,12 @@ CObjectVisualizer : winrt::implements<CObjectVisualizer, ::IUnknown>
     CObjectVisualizer(Microsoft::VisualStudio::Debugger::Evaluation::DkmVisualizedExpression* pVisualizedExpression, bool isAbiObject)
     {
         m_pVisualizedExpression = make_com_ptr(pVisualizedExpression);
-		m_isAbiObject = isAbiObject;
+        m_isAbiObject = isAbiObject;
     }
 
-	~CObjectVisualizer()
-	{
-	}
+    ~CObjectVisualizer()
+    {
+    }
 
     static HRESULT CreateEvaluationResult(_In_ Microsoft::VisualStudio::Debugger::Evaluation::DkmVisualizedExpression* pVisualizedExpression, _In_ bool isAbiObject, _Deref_out_ Microsoft::VisualStudio::Debugger::Evaluation::DkmEvaluationResult** ppResultObject);
 
@@ -46,8 +46,8 @@ CObjectVisualizer : winrt::implements<CObjectVisualizer, ::IUnknown>
 
 private:
     HRESULT GetPropertyData();
-	winrt::com_ptr<Microsoft::VisualStudio::Debugger::Evaluation::DkmVisualizedExpression> m_pVisualizedExpression;
-	bool m_isAbiObject;
-	std::vector<PropertyData> m_propertyData;
-	bool m_isStringable{ false };
+    winrt::com_ptr<Microsoft::VisualStudio::Debugger::Evaluation::DkmVisualizedExpression> m_pVisualizedExpression;
+    bool m_isAbiObject;
+    std::vector<PropertyData> m_propertyData;
+    bool m_isStringable{ false };
 };

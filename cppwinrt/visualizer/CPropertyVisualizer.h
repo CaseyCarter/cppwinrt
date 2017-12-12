@@ -14,9 +14,9 @@ CPropertyVisualizer : winrt::implements<CPropertyVisualizer, ::IUnknown>
         m_pEEEvaluationResult = make_com_ptr(pEEEvaluationResult);
     }
 
-	~CPropertyVisualizer()
-	{
-	}
+    ~CPropertyVisualizer()
+    {
+    }
 
     HRESULT GetChildren(
         _In_ UINT32 InitialRequestSize,
@@ -43,9 +43,9 @@ CPropertyVisualizer : winrt::implements<CPropertyVisualizer, ::IUnknown>
         );
 
 private:
-	// The DkmVisualizedExpression created for this object.
-	winrt::com_ptr<Microsoft::VisualStudio::Debugger::Evaluation::DkmChildVisualizedExpression> m_pVisualizedExpression;
+    // The DkmVisualizedExpression created for this object.
+    winrt::com_ptr<Microsoft::VisualStudio::Debugger::Evaluation::DkmChildVisualizedExpression> m_pVisualizedExpression;
 
-	// The original evaluation result returned from the expression evaluator.
-	winrt::com_ptr<Microsoft::VisualStudio::Debugger::Evaluation::DkmSuccessEvaluationResult> m_pEEEvaluationResult;
+    // The original evaluation result returned from the expression evaluator.
+    winrt::com_ptr<Microsoft::VisualStudio::Debugger::Evaluation::DkmSuccessEvaluationResult> m_pEEEvaluationResult;
 };

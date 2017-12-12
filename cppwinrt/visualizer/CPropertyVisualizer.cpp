@@ -78,7 +78,7 @@ HRESULT CPropertyVisualizer::GetItems(
         DkmSuccessEvaluationResult* pCurrSuccessEvaluationResult = (DkmSuccessEvaluationResult*)(pCurrEvaluationResult.get());
 
         winrt::com_ptr<DkmPointerValueHome> pPointerValueHome;
-		auto address = pCurrSuccessEvaluationResult->Address();
+        auto address = pCurrSuccessEvaluationResult->Address();
         IF_FAIL_RET(DkmPointerValueHome::Create(address ? address->Value() : 0, pPointerValueHome.put()));
 
         winrt::com_ptr<DkmChildVisualizedExpression> pChildVisualizedExpression;

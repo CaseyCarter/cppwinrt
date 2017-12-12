@@ -1,9 +1,9 @@
 #pragma once
 
 struct CWinrtVisualizer : winrt::implements<CWinrtVisualizer, 
-	::Microsoft::VisualStudio::Debugger::ComponentInterfaces::IDkmCustomVisualizer>
+    ::Microsoft::VisualStudio::Debugger::ComponentInterfaces::IDkmCustomVisualizer>
 {
-	CWinrtVisualizer();
+    CWinrtVisualizer();
 
     STDMETHOD(EvaluateVisualizedExpression)(
         _In_ Microsoft::VisualStudio::Debugger::Evaluation::DkmVisualizedExpression* pVisualizedExpression,
