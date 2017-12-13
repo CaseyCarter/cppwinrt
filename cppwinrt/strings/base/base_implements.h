@@ -304,8 +304,7 @@ namespace winrt::impl
 
         HRESULT __stdcall GetTrustLevel(Windows::Foundation::TrustLevel* trustLevel) noexcept final
         {
-            *trustLevel = Windows::Foundation::TrustLevel::BaseTrust;
-            return S_OK;
+            return shim().abi_GetTrustLevel(trustLevel);
         }
     };
 
