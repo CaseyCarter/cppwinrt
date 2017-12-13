@@ -33,3 +33,4 @@ cppwinrt/strings/strings.h
 cppwinrt/strings/strings.cpp
 Projection/Samples/**/winrt
 !Projection/Samples/Win2DXaml/packages/**/*.winmd
+vsix/source.extension.vsixmanifest

@@ -9,11 +9,8 @@ pushd vsix
 rem Clean targets
 for /f %%i in ('dir /s /b %BuildConfiguration%') do @rd %%i /s /q >nul
 
-set UpdateVersion=%4
-if not "%UpdateVersion%"=="" (
-echo Updating VSIX manifest version
+echo Updating VSIX manifest version from cppwinrt\source\version.h
 powershell -f UpdateVersion.ps1
-)
 
 echo Building VSIX for %BuildConfiguration% %BuildPlatform%...
 msbuild vsix.csproj /nologo /m /p:Configuration=%BuildConfiguration% /p:Platform=%BuildPlatform% 
