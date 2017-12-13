@@ -19,8 +19,6 @@ echo Building VSIX for %BuildConfiguration% %BuildPlatform%...
 msbuild vsix.csproj /nologo /m /p:Configuration=%BuildConfiguration% /p:Platform=%BuildPlatform% 
 set MsbuildErrorLevel=%ERRORLEVEL%
 
-rem TODO: sign vsix
-
 popd
 
 exit /B %MsbuildErrorLevel%
