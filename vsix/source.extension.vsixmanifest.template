@@ -4,7 +4,7 @@
     <Identity Id="Microsoft.Windows.CppWinRT" Version=">" Language="en-US" Publisher="Microsoft" />
     <PackageId>Microsoft.Windows.CppWinRT</PackageId>
     <DisplayName>C++/WinRT</DisplayName>
-    <Description xml:space="preserve">C++/WinRT is a standard C++ language projection for the Windows Runtime implemented solely in header files. It allows you to both author and consume Windows Runtime APIs using any standards-compliant C++ compiler. C++/WinRT is designed to provide C++ developers with first-class access to the modern Windows API.</Description>
+    <Description xml:space="preserve">Tools for authoring and consuming Windows Runtime classes in standard C++.</Description>
     <MoreInfo>https://github.com/Microsoft/cppwinrt/</MoreInfo>
     <License>LICENSE</License>
     <GettingStartedGuide>https://github.com/Microsoft/cppwinrt/blob/master/Getting%20Started.md</GettingStartedGuide>
