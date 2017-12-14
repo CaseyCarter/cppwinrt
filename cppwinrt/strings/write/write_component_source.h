@@ -3,7 +3,6 @@
 #ifndef WINRT_SUPPRESS_MODULE_EXPORTS
 
 %
-using namespace winrt;
 
 HRESULT __stdcall WINRT_CanUnloadNow()
 {
@@ -14,12 +13,12 @@ HRESULT __stdcall WINRT_CanUnloadNow()
     }
 #endif
 
-    if (get_module_lock())
+    if (winrt::get_module_lock())
     {
         return S_FALSE;
     }
 
-    clear_factory_cache();
+    winrt::clear_factory_cache();
     return S_OK;
 }
 
@@ -33,12 +32,12 @@ HRESULT __stdcall WINRT_GetActivationFactory(HSTRING classId, void** factory)
 #ifdef _WRL_MODULE_H_
         return ::Microsoft::WRL::Module<::Microsoft::WRL::InProc>::GetModule().GetActivationFactory(classId, reinterpret_cast<::IActivationFactory**>(factory));
 #else
-        return hresult_class_not_available().to_abi();
+        return winrt::hresult_class_not_available().to_abi();
 #endif
     }
     catch (...)
     {
-        return to_hresult();
+        return winrt::to_hresult();
     }
 }
 
