@@ -98,6 +98,21 @@ TEST_CASE("weak,none")
     catch (hresult_no_interface const &) {}
 }
 
+TEST_CASE("weak,nullptr")
+{
+    IStringable a = nullptr;
+
+    {
+        weak_ref<IStringable> w = make_weak(a);
+        REQUIRE(!w);
+    }
+
+    {
+        weak_ref<IStringable> w(a);
+        REQUIRE(!w);
+    }
+}
+
 TEST_CASE("weak,QI")
 {
     SECTION("weak")
