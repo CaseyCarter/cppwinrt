@@ -20,7 +20,6 @@ struct Test_GetTrustLevel_Override : implements<Test_GetTrustLevel_Override, Win
 {
     TrustLevel GetTrustLevel()
     {
-        FAIL("Should never get called as GetTrustLevel is not overridable");
         return TrustLevel::FullTrust;
     }
 };
@@ -36,5 +35,5 @@ TEST_CASE("Test_GetTrustLevel_Override")
 {
     Windows::Foundation::IInspectable i = make<Test_GetTrustLevel_Override>();
 
-    REQUIRE(GetTrustLevel(i) == TrustLevel::BaseTrust);
+    REQUIRE(GetTrustLevel(i) == TrustLevel::FullTrust);
 }
