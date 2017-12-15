@@ -10,6 +10,7 @@
     <ClCompile Include="Errors.cpp" />
     <ClCompile Include="Boxing.cpp" />
     <ClCompile Include="FastInput.cpp" />
+    <ClCompile Include="Composable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

@@ -2,7 +2,9 @@
 template <typename D, typename... I>
 struct WINRT_EBO %_base : implements<D%@, %I...>%%%
 {
+    using base_type = %_base;
     using class_type = @;
+    using %_base::implements_type::implements_type;
     @
     operator class_type() const noexcept
     {

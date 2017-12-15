@@ -79,7 +79,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>..\Component\Generated Files;..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Component\Generated Files;..\Composable\Generated Files;..\..</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>CATCH_CONFIG_FAST_COMPILE;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -95,7 +95,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>..\Component\Generated Files;..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Component\Generated Files;..\Composable\Generated Files;..\..</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>CATCH_CONFIG_FAST_COMPILE;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -113,7 +113,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>..\Component\Generated Files;..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Component\Generated Files;..\Composable\Generated Files;..\..</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>CATCH_CONFIG_FAST_COMPILE;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -133,7 +133,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>..\Component\Generated Files;..\..</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Component\Generated Files;..\Composable\Generated Files;..\..</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>CATCH_CONFIG_FAST_COMPILE;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Composable.cpp" />
     <ClCompile Include="Errors.cpp" />
     <ClCompile Include="Boxing.cpp" />
     <ClCompile Include="Events.cpp" />
@@ -164,6 +165,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Component\Component.vcxproj">
       <Project>{559a7cf4-dc5f-4d62-ba6b-0c2b025593f8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Composable\Composable.vcxproj">
+      <Project>{152e4c6e-9a9d-4d5a-b38d-4905d173649a}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

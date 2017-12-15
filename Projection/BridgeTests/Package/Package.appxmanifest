@@ -58,7 +58,14 @@
         <ActivatableClass ActivatableClassId="Component.Errors" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Component.FastInput" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Component.FastInputVector" ThreadingModel="both" />
-      <ActivatableClass ActivatableClassId="Component.FastInputMap" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Component.FastInputMap" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>App\Composable.dll</Path>
+        <ActivatableClass ActivatableClassId="Composable.Base" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Composable.Derived" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>
