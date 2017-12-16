@@ -21,7 +21,7 @@
     <ClCompile Include="Foo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Generated Files\module.g.cpp" />
+    <ClCompile Include="module.g.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
