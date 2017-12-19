@@ -92,7 +92,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <CustomBuildStep>
-      <Command>cppwinrt.exe -component -in $(ProjectDir)Complex.Authoring.winmd -ref $(WindowsTargetPlatformVersion) -out $(ProjectDir) -filter Windows.Foundation.Uri Complex.Authoring</Command>
+      <Command>cppwinrt.exe -component $(ProjectDir) -overwrite -in $(ProjectDir)Complex.Authoring.winmd -ref $(WindowsTargetPlatformVersion) -out $(ProjectDir) -filter Windows.Foundation.Uri Complex.Authoring</Command>
       <Message>C++/WinRT compiler</Message>
       <Outputs>winrt/Complex.Authoring.h</Outputs>
       <Inputs>Complex.Authoring.winmd</Inputs>

@@ -1,10 +1,11 @@
 ﻿#pragma once
 
 #include "Derived.g.h"
+#include "Base.h"
 
 namespace winrt::Composable::implementation
 {
-    struct Derived : DerivedT<Derived>
+    struct Derived : DerivedT<Derived, Base>
     {
         Derived() = default;
         explicit Derived(const hstring& name)

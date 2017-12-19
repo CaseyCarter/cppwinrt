@@ -1,3 +1,3 @@
-    struct % : %T<%>
+    struct % : %T<%@>
     {
 %    };

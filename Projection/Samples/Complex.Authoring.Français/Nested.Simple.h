@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "Nested\Simple.g.h"
+#include "Nested/Simple.g.h"
 
 namespace winrt::Complex::Authoring::Nested::implementation
 {

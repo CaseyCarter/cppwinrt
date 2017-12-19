@@ -1900,7 +1900,8 @@ namespace cppwinrt
             WINRT_ASSERT(type.token.get_default());
             meta::token inner_type{};
             std::string composable_base_name;
-            std::string base_name;
+            std::string base_type_parameter;
+            std::string base_type_argument;
 
             meta::type const* base_type = type.token.get_base_type();
             if (base_type)
@@ -1912,10 +1913,8 @@ namespace cppwinrt
                 }
                 else
                 {
-                    base_name = ", ";
-                    base_name += base_type->name_space();
-                    base_name += "::implementation::";
-                    base_name += base_type->name();
+                    base_type_parameter = ", typename B";
+                    base_type_argument = ", B";
                 }
             }
 
@@ -1928,9 +1927,10 @@ namespace cppwinrt
             }
 
             out.write(strings::write_component_class_base,
+                base_type_parameter,
                 type.name(),
                 bind_output(write_component_instance_interfaces, type),
-                base_name,
+                base_type_argument,
                 no_module_lock,
                 bind_output(write_interface_require, "D"sv, type.token.get_component_class_generated_required()),
                 bind_output(write_class_base, type, true, "D"sv),
@@ -3089,16 +3089,9 @@ void t()
         write_warning(out, strings::write_edit_warning_header);
         out.write("\n#include \"module.g.h\"\n");
 
-        meta::type const* base_type = type.token.get_base_type();
-
         ref_writer.write_includes(out);
         std::string type_ns{ type.name_space() };
         write_projection_include(out, type_ns, ".h");
-
-        if (base_type && base_type->is_filtered())
-        {
-            out.write("#include \"%.h\"\n", get_relative_component_name(*base_type));
-        }
 
         bool const static_class = type.token.is_static();
 
@@ -3154,8 +3147,16 @@ void t()
             return;
         }
 
+        meta::type const* base_type = type.token.get_base_type();
+
         output out;
-        out.write("#pragma once\n\n#include \"%.g.h\"\n\n", get_relative_component_path(type));
+        out.write("#pragma once\n\n#include \"%.g.h\"\n", get_relative_component_path(type));
+
+        if (base_type && !base_type->is_external())
+        {
+            out.write("#include \"%.h\"\n", get_relative_component_name(*base_type));
+        }
+        out.write("\n");
 
         out.write("namespace winrt::@::implementation\n{\n", type.name_space());
 
@@ -3168,10 +3169,20 @@ void t()
         }
         else
         {
+            std::string base_name{};
+            meta::type const* base = type.token.get_base_type();
+            if (base && !base->is_external())
+            {
+                base_name = ", ";
+                base_name += base->name_space();
+                base_name += "::implementation::";
+                base_name += base->name();
+            }
             out.write(strings::write_component_class_header_implementation,
                       type.name(),
                       type.name(),
                       type.name(),
+                      base_name,
                       bind_output(write_component_class_member_declarations, type));
         }
 

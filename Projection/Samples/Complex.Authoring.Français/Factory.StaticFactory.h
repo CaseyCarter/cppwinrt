@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "Factory\StaticFactory.g.h"
+#include "Factory/StaticFactory.g.h"
 
 namespace winrt::Complex::Authoring::Factory::implementation
 {
