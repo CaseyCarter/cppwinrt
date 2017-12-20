@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Microsoft.Windows.CppWinRT" Version=">" Language="en-US" Publisher="Microsoft" />
+    <Identity Id="Microsoft.Windows.CppWinRT" Version="" Language="en-US" Publisher="Microsoft" />
     <PackageId>Microsoft.Windows.CppWinRT</PackageId>
     <DisplayName>C++/WinRT</DisplayName>
     <Description xml:space="preserve">Tools for authoring and consuming Windows Runtime classes in standard C++.</Description>
@@ -25,5 +25,7 @@
   </Assets>
   <Prerequisites>
     <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,)" DisplayName="Visual Studio core editor" />
+    <!--todo: find a way to express UWP C++ SDK option dependency in a version generic/ranged way-->
+    <!--<Prerequisite Id="Microsoft.VisualStudio.Component.Windows10SDK.16299.UWP.Native" Version="[15.0,)" DisplayName="Windows 10 SDK (10.0.16299.0) for UWP: C++" />-->
   </Prerequisites>
 </PackageManifest>

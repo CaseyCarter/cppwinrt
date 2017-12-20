@@ -14,11 +14,12 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <IsProductComponent>true</IsProductComponent>      
     <ProjectGuid>{2F0C4AFA-FEFA-4D37-B824-0426CEB32DBA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CppWinRT</RootNamespace>
-    <AssemblyName>CppWinRT</AssemblyName>
+    <RootNamespace>Microsoft.Windows.CppWinRT</RootNamespace>
+    <AssemblyName>Microsoft.Windows.CppWinRT</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
@@ -62,11 +63,19 @@
       <InstallRoot>VCTargets</InstallRoot>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="Microsoft.Cpp.CppWinRT.targets">
+    <Content Include="Microsoft.Cpp.CppWinRTEnabled.props">
+      <InstallRoot>VCTargets</InstallRoot>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Microsoft.Cpp.CppWinRTProject.props">
       <InstallRoot>VCTargets</InstallRoot>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="ImportAfter\Default\Microsoft.Cpp.CppWinRT.props">
+      <InstallRoot>VCTargets</InstallRoot>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Microsoft.Cpp.CppWinRTEnabled.targets">
       <InstallRoot>VCTargets</InstallRoot>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>

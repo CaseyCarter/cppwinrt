@@ -13,25 +13,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
         <CppWinRTEnabled Condition="'$(CppWinRTEnabled)' != 'true'">false</CppWinRTEnabled>
     </PropertyGroup>
 
-    <PropertyGroup Condition="$(CppWinRTEnabled)">
-        <CanReferenceWinRT>true</CanReferenceWinRT>
-        <GeneratedFilesDir Condition="'$(GeneratedFilesDir)' == ''">Generated Files\</GeneratedFilesDir>
-        <MinimalCoreWin Condition="$(CppWinRTProject) And '$(MinimalCoreWin)' == ''">true</MinimalCoreWin>
-        <!--Ensure that C++/WinRT build support is available for projects requiring it-->
-        <RequiredBundles Condition="$(CppWinRTProject)">$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>
-    </PropertyGroup>
-
-    <ItemDefinitionGroup Condition="$(CppWinRTEnabled)">
-        <ClCompile>
-            <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(GeneratedFilesDir)</AdditionalIncludeDirectories>
-            <!--Set explicit compiler defaults for projects requiring C++/WinRT-->
-            <AdditionalOptions Condition="$(CppWinRTProject)">/permissive- /await %(AdditionalOptions)</AdditionalOptions>
-            <CompileAsWinRT Condition="$(CppWinRTProject) And '%(ClCompile.CompileAsWinRT)' == ''">false</CompileAsWinRT>
-            <LanguageStandard Condition="$(CppWinRTProject) And '%(ClCompile.LanguageStandard)' == ''">stdcpp17</LanguageStandard>
-        </ClCompile>
-        <Link>
-            <AdditionalDependencies Condition="$(CppWinRTProject)">WindowsApp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-        </Link>
-    </ItemDefinitionGroup>
+    <Import Condition="$(CppWinRTEnabled)" Project="$(VCTargetsPath)\Microsoft.Cpp.CppWinRTEnabled.props"/>
+    <Import Condition="$(CppWinRTProject)" Project="$(VCTargetsPath)\Microsoft.Cpp.CppWinRTProject.props"/>
 
 </Project>

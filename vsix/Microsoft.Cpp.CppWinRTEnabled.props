@@ -1,0 +1,21 @@
+﻿<!--
+***********************************************************************************************
+Copyright (C) Microsoft Corporation. All rights reserved.
+***********************************************************************************************
+-->
+<!--Set properties for projects consuming C++/WinRT.  These settings have minimal risk of breaking
+    builds, and so are implicitly enabled via CppWinRTEnabled on existing and new projects alike. -->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <CanReferenceWinRT>true</CanReferenceWinRT>
+        <GeneratedFilesDir Condition="'$(GeneratedFilesDir)' == ''">Generated Files\</GeneratedFilesDir>
+    </PropertyGroup>
+
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(GeneratedFilesDir)</AdditionalIncludeDirectories>
+        </ClCompile>
+    </ItemDefinitionGroup>
+
+</Project>

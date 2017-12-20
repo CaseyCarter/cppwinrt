@@ -1,0 +1,27 @@
+﻿<!--
+***********************************************************************************************
+Copyright (C) Microsoft Corporation. All rights reserved.
+***********************************************************************************************
+-->
+<!--Set compiler and linker options for projects requiring C++/WinRT. As these options can
+    potentially break builds, they must be explicitly enabled via CppWinRTProject, by adding 
+    the property to existing projects or via the new C++/WinRT project templates. -->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <MinimalCoreWin Condition="'$(MinimalCoreWin)' == ''">true</MinimalCoreWin>
+        <RequiredBundles>$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>
+    </PropertyGroup>
+
+    <ItemDefinitionGroup>
+        <ClCompile>
+            <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
+            <CompileAsWinRT Condition="'%(ClCompile.CompileAsWinRT)' == ''">false</CompileAsWinRT>
+            <LanguageStandard Condition="'%(ClCompile.LanguageStandard)' == ''">stdcpp17</LanguageStandard>
+        </ClCompile>
+        <Link>
+            <AdditionalDependencies>WindowsApp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+
+</Project>

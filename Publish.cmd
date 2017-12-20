@@ -10,8 +10,9 @@ call SetBuildVars.cmd %*
 
 set PublishShare=%4\%BuildPlatform%\%BuildConfiguration%
 
-echo Publish VSIX
-echo d | XCOPY vsix\bin\%BuildConfiguration%\cppwinrt.vsix %PublishShare% /D /R /Y /J 
+echo Publish VSIX and ID for VS installer integration
+echo d | XCOPY vsix\bin\%BuildConfiguration%\Microsoft.Windows.CppWinRT.vsix %PublishShare% /D /R /Y /J 
+echo d | XCOPY vsix\bin\%BuildConfiguration%\Microsoft.Windows.CppWinRT.json %PublishShare% /D /R /Y /J 
 
 if /i not "%BuildPlatform%" == "x86" goto :skip
 if /i not "%BuildConfiguration%" == "Release" goto :skip

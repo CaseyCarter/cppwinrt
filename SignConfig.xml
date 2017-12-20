@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <SignConfigXML>
  <job platform="x86" configuration="" dest="__OUTPATHROOT__" jobname="C++/WinRT VSIX" approvers="">
-   <file src="__INPATHROOT__\cppwinrt.vsix" signType="100040160" dest="__OUTPATHROOT__\cppwinrt.vsix" /> 
+   <file src="__INPATHROOT__\Microsoft.Windows.CppWinRT.vsix" signType="100040160" dest="__OUTPATHROOT__\Microsoft.Windows.CppWinRT.vsix" /> 
  </job>
 </SignConfigXML>
