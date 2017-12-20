@@ -12,5 +12,5 @@ goto :eof
 if "!done!"=="1" goto :eof
 set done=1
 echo Installing %1 C++/WinRT for %BuildConfiguration% %BuildPlatform%...
-vsixinstaller.exe %share%\%1\%BuildPlatform%\%BuildConfiguration%\Microsoft.Windows.CppWinRT.vsix
+vsixinstaller.exe %share%\%1\%BuildPlatform%\%BuildConfiguration%\vsix\standalone\Microsoft.Windows.CppWinRT.vsix
 exit /B
