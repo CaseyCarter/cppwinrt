@@ -423,7 +423,7 @@ TEST_CASE("async, Throw_IAsyncAction")
 
     try
     {
-        impl::throw_hresult(async.ErrorCode());
+        throw_hresult(async.ErrorCode());
     }
     catch (hresult_invalid_argument const & e)
     {
@@ -464,7 +464,7 @@ TEST_CASE("async, Throw_IAsyncAction, 2")
 
     try
     {
-        impl::throw_hresult(async.ErrorCode());
+        throw_hresult(async.ErrorCode());
     }
     catch (hresult_invalid_argument const & e)
     {
@@ -504,7 +504,7 @@ TEST_CASE("async, Throw_IAsyncActionWithProgress")
 
     try
     {
-        impl::throw_hresult(async.ErrorCode());
+        throw_hresult(async.ErrorCode());
     }
     catch (hresult_invalid_argument const & e)
     {
@@ -545,7 +545,7 @@ TEST_CASE("async, Throw_IAsyncActionWithProgress, 2")
 
     try
     {
-        impl::throw_hresult(async.ErrorCode());
+        throw_hresult(async.ErrorCode());
     }
     catch (hresult_invalid_argument const & e)
     {
@@ -585,7 +585,7 @@ TEST_CASE("async, Throw_IAsyncOperation")
 
     try
     {
-        impl::throw_hresult(async.ErrorCode());
+        throw_hresult(async.ErrorCode());
     }
     catch (hresult_invalid_argument const & e)
     {
@@ -626,7 +626,7 @@ TEST_CASE("async, Throw_IAsyncOperation, 2")
 
     try
     {
-        impl::throw_hresult(async.ErrorCode());
+        throw_hresult(async.ErrorCode());
     }
     catch (hresult_invalid_argument const & e)
     {
@@ -666,7 +666,7 @@ TEST_CASE("async, Throw_IAsyncOperationWithProgress")
 
     try
     {
-        impl::throw_hresult(async.ErrorCode());
+        throw_hresult(async.ErrorCode());
     }
     catch (hresult_invalid_argument const & e)
     {
@@ -707,7 +707,7 @@ TEST_CASE("async, Throw_IAsyncOperationWithProgress, 2")
 
     try
     {
-        impl::throw_hresult(async.ErrorCode());
+        throw_hresult(async.ErrorCode());
     }
     catch (hresult_invalid_argument const & e)
     {

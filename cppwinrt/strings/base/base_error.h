@@ -262,7 +262,7 @@ WINRT_EXPORT namespace winrt
     };
 }
 
-namespace winrt::impl
+WINRT_EXPORT namespace winrt
 {
     [[noreturn]] inline __declspec(noinline) void throw_hresult(HRESULT const result)
     {
@@ -333,10 +333,7 @@ namespace winrt::impl
 
         throw hresult_error(result, hresult_error::from_abi);
     }
-}
 
-WINRT_EXPORT namespace winrt
-{
     inline __declspec(noinline) HRESULT to_hresult() noexcept
     {
         try
@@ -368,7 +365,7 @@ WINRT_EXPORT namespace winrt
 
     [[noreturn]] inline void throw_last_error()
     {
-        impl::throw_hresult(HRESULT_FROM_WIN32(GetLastError()));
+        throw_hresult(HRESULT_FROM_WIN32(GetLastError()));
     }
 }
 
@@ -382,7 +379,7 @@ WINRT_EXPORT namespace winrt
         if (result < 0)
 #endif
         {
-            impl::throw_hresult(result);
+            throw_hresult(result);
         }
     }
 
@@ -391,7 +388,7 @@ WINRT_EXPORT namespace winrt
     {
         if (result != 0)
         {
-            winrt::impl::throw_hresult(HRESULT_FROM_NT(result));
+            throw_hresult(HRESULT_FROM_NT(result));
         }
     }
 
@@ -400,7 +397,7 @@ WINRT_EXPORT namespace winrt
     {
         if (result != 0)
         {
-            winrt::impl::throw_hresult(HRESULT_FROM_WIN32(result));
+            throw_hresult(HRESULT_FROM_WIN32(result));
         }
     }
 

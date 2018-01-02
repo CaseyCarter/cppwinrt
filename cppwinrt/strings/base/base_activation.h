@@ -166,7 +166,7 @@ WINRT_EXPORT namespace winrt
 
         if (result < 0)
         {
-            impl::throw_hresult(result);
+            throw_hresult(result);
         }
     }
 
