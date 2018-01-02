@@ -11,6 +11,7 @@
     <ClCompile Include="Boxing.cpp" />
     <ClCompile Include="FastInput.cpp" />
     <ClCompile Include="Composable.cpp" />
+    <ClCompile Include="DllGetClassObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

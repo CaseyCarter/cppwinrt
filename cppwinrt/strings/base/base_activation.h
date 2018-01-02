@@ -186,4 +186,12 @@ WINRT_EXPORT namespace winrt
     {
         impl::get_factory_cache().clear();
     }
+
+    template <typename Interface>
+    impl::com_ref<Interface> create_instance(GUID const& clsid, DWORD context = CLSCTX_INPROC_SERVER, ::IUnknown* outer = nullptr)
+    {
+        impl::com_ref<Interface> temp{ nullptr };
+        check_hresult(CoCreateInstance(clsid, outer, context, guid_of<Interface>(), put_abi(temp)));
+        return temp;
+    }
 }

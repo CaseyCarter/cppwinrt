@@ -28,7 +28,7 @@ namespace cppwinrt
     {
         registry_key key;
 
-        winrt::impl::check_win32(RegOpenKeyEx(
+        winrt::check_win32(RegOpenKeyEx(
             HKEY_LOCAL_MACHINE,
             L"SOFTWARE\\Microsoft\\Windows Kits\\Installed Roots",
             0,
@@ -37,7 +37,7 @@ namespace cppwinrt
 
         DWORD path_size = 0;
 
-        winrt::impl::check_win32(RegQueryValueEx(
+        winrt::check_win32(RegQueryValueEx(
             key.get(),
             L"KitsRoot10",
             nullptr,
@@ -47,7 +47,7 @@ namespace cppwinrt
 
         std::wstring root((path_size / sizeof(wchar_t)) - 1, L'?');
 
-        winrt::impl::check_win32(RegQueryValueEx(
+        winrt::check_win32(RegQueryValueEx(
             key.get(),
             L"KitsRoot10",
             nullptr,
@@ -120,7 +120,7 @@ namespace cppwinrt
     {
         std::array<wchar_t, MAX_PATH> module_path;
         auto size = GetModuleFileNameW(nullptr, module_path.data(), static_cast<DWORD>(module_path.size()));
-        check_win32_bool(size);
+        winrt::check_bool(size);
         std::wregex versionRx(LR"((\d+\.\d+\.\d+\.\d+))");
         std::wcmatch versionMatch;
         if (std::regex_search(module_path.data(), versionMatch, versionRx))
@@ -129,7 +129,7 @@ namespace cppwinrt
         }
 
         registry_key key;
-        winrt::impl::check_win32(RegOpenKeyEx(
+        winrt::check_win32(RegOpenKeyEx(
             HKEY_LOCAL_MACHINE,
             L"SOFTWARE\\Microsoft\\Windows Kits\\Installed Roots",
             0,

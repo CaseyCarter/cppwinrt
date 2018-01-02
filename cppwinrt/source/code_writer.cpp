@@ -2893,9 +2893,9 @@ void t()
     std::string CreateGuid()
     {
         GUID guid;
-        winrt::impl::check_win32(UuidCreate(&guid));
+        winrt::check_win32(UuidCreate(&guid));
         winrt::handle_type<rpc_cstr_traits> rpcStr;
-        winrt::impl::check_win32(UuidToStringA(&guid, rpcStr.put()));
+        winrt::check_win32(UuidToStringA(&guid, rpcStr.put()));
         return std::string((PCSTR)rpcStr.get());
     }
 

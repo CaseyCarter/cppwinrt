@@ -219,6 +219,7 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DllGetClassObject.cpp" />
     <ClCompile Include="Errors.cpp" />
     <ClCompile Include="Events.cpp" />
     <ClCompile Include="FastInput.cpp" />

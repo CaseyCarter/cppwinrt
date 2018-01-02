@@ -188,6 +188,42 @@ TEST_CASE("Errors")
     SetLastError(ERROR_CANCELLED);
     REQUIRE_THROWS_AS(throw_last_error(), hresult_canceled);
 
+    SetLastError(ERROR_CANCELLED);
+    REQUIRE_THROWS_AS(check_bool(false), hresult_canceled);
+
+    SetLastError(ERROR_CANCELLED);
+    REQUIRE_THROWS_AS(check_bool(static_cast<BOOLEAN>(false)), hresult_canceled);
+
+    SetLastError(ERROR_CANCELLED);
+    REQUIRE_THROWS_AS(check_bool(static_cast<BOOL>(false)), hresult_canceled);
+
+    // Support for Win32 errors.
+    check_win32(ERROR_SUCCESS);
+    REQUIRE_THROWS_AS(check_win32(ERROR_CANCELLED), hresult_canceled);
+
+    try
+    {
+        check_win32(ERROR_NO_NETWORK);
+        FAIL(L"Previous line should throw");
+    }
+    catch (hresult_error const& e)
+    {
+        REQUIRE(e.code() == HRESULT_FROM_WIN32(ERROR_NO_NETWORK));
+    }
+
+    // Support for NT errors.
+    check_nt(0);
+
+    try
+    {
+        check_nt(STATUS_STACK_OVERFLOW);
+        FAIL(L"Previous line should throw");
+    }
+    catch (hresult_error const& e)
+    {
+        REQUIRE(e.code() == HRESULT_FROM_NT(STATUS_STACK_OVERFLOW));
+    }
+
     // Make sure trimming works.
     hresult_error e(E_FAIL, L":) is \u263A \n \t ");
     REQUIRE(e.message() == L":) is \u263A");

@@ -39,7 +39,7 @@ namespace
             int argc;
             wchar_t** argv;
             argv = CommandLineToArgvW(line_buf.data(), &argc);
-            winrt::impl::check_pointer(argv);
+            winrt::check_pointer(argv);
             for (auto const& arg : enum_args(argc, argv))
             {
                 co_yield arg;

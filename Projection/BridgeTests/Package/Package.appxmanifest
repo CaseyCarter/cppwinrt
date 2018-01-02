@@ -59,6 +59,9 @@
         <ActivatableClass ActivatableClassId="Component.FastInput" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Component.FastInputVector" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="Component.FastInputMap" ThreadingModel="both" />
+
+          <!-- TODO: This doesn't work yet. Waiting on Adam Braden for correct XML. -->
+        <ActivatableClass ActivatableClassId="{C40D08D9-051A-48DB-8DB1-B5902D89D594}" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
     <Extension Category="windows.activatableClass.inProcessServer">

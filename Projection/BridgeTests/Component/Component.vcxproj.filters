@@ -12,6 +12,7 @@
     <ClCompile Include="FastInput.cpp" />
     <ClCompile Include="FastInputVector.cpp" />
     <ClCompile Include="FastInputMap.cpp" />
+    <ClCompile Include="DllGetClassObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

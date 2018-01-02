@@ -76,7 +76,7 @@ WINRT_EXPORT namespace winrt
 
         void await_suspend(std::experimental::coroutine_handle<> handle)
         {
-            m_timer = impl::check_pointer(CreateThreadpoolTimer(callback, handle.address(), nullptr));
+            m_timer = check_pointer(CreateThreadpoolTimer(callback, handle.address(), nullptr));
             int64_t relative_count = -m_duration.count();
             SetThreadpoolTimer(m_timer.get(), reinterpret_cast<PFILETIME>(&relative_count), 0, 0);
         }
@@ -130,7 +130,7 @@ WINRT_EXPORT namespace winrt
         void await_suspend(std::experimental::coroutine_handle<> resume)
         {
             m_resume = resume;
-            m_wait = impl::check_pointer(CreateThreadpoolWait(callback, this, nullptr));
+            m_wait = check_pointer(CreateThreadpoolWait(callback, this, nullptr));
             int64_t relative_count = -m_timeout.count();
             PFILETIME file_time = relative_count != 0 ? reinterpret_cast<PFILETIME>(&relative_count) : nullptr;
             SetThreadpoolWait(m_wait.get(), m_handle, file_time);
@@ -191,7 +191,7 @@ WINRT_EXPORT namespace winrt
     struct resumable_io
     {
         resumable_io(HANDLE object) :
-            m_io(impl::check_pointer(CreateThreadpoolIo(object, awaitable_base::callback, nullptr, nullptr)))
+            m_io(check_pointer(CreateThreadpoolIo(object, awaitable_base::callback, nullptr, nullptr)))
         {
         }
 
@@ -230,7 +230,7 @@ WINRT_EXPORT namespace winrt
                 {
                     if (m_result != ERROR_HANDLE_EOF)
                     {
-                        winrt::impl::check_win32(m_result);
+                        check_win32(m_result);
                     }
                     return static_cast<uint32_t>(m_overlapped.InternalHigh);
                 }
@@ -283,7 +283,7 @@ WINRT_EXPORT namespace winrt
                 {
                     if (m_result != ERROR_HANDLE_EOF)
                     {
-                        winrt::impl::check_win32(m_result);
+                        check_win32(m_result);
                     }
                     return static_cast<uint32_t>(m_overlapped.InternalHigh);
                 }
@@ -372,7 +372,7 @@ namespace winrt::impl
 
                 if (m_completed_assigned)
                 {
-                    throw winrt::hresult_illegal_delegate_assignment();
+                    throw hresult_illegal_delegate_assignment();
                 }
 
                 m_completed_assigned = true;
@@ -439,7 +439,7 @@ namespace winrt::impl
 
             if (m_status == AsyncStatus::Started)
             {
-                throw winrt::hresult_illegal_state_change();
+                throw hresult_illegal_state_change();
             }
         }
 
@@ -498,7 +498,7 @@ namespace winrt::impl
                 {
                     std::rethrow_exception(m_exception.value());
                 }
-                catch (winrt::hresult_canceled const&)
+                catch (hresult_canceled const&)
                 {
                     m_status = AsyncStatus::Canceled;
                 }

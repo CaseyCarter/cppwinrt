@@ -16,15 +16,6 @@ namespace cppwinrt
     {
     }
 
-    template<typename T>
-    void check_win32_bool(T result)
-    {
-        if (!result)
-        {
-            winrt::throw_last_error();
-        }
-    }
-
     inline bool starts_with(std::string_view value, std::string_view match)
     {
         return 0 == value.compare(0, match.size(), match);

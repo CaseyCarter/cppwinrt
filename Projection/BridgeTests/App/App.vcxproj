@@ -83,7 +83,7 @@
       <PreprocessorDefinitions>CATCH_CONFIG_FAST_COMPILE;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>windowsapp.lib</AdditionalDependencies>
+      <AdditionalDependencies>windowsapp.lib;ole32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -99,7 +99,7 @@
       <PreprocessorDefinitions>CATCH_CONFIG_FAST_COMPILE;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>windowsapp.lib</AdditionalDependencies>
+      <AdditionalDependencies>windowsapp.lib;ole32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -119,7 +119,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>windowsapp.lib</AdditionalDependencies>
+      <AdditionalDependencies>windowsapp.lib;ole32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,11 +139,12 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>windowsapp.lib</AdditionalDependencies>
+      <AdditionalDependencies>windowsapp.lib;ole32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Composable.cpp" />
+    <ClCompile Include="DllGetClassObject.cpp" />
     <ClCompile Include="Errors.cpp" />
     <ClCompile Include="Boxing.cpp" />
     <ClCompile Include="Events.cpp" />

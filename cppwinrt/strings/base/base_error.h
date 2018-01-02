@@ -372,29 +372,6 @@ WINRT_EXPORT namespace winrt
     }
 }
 
-namespace winrt::impl
-{
-    template<typename T>
-    T* check_pointer(T* pointer)
-    {
-        if (!pointer)
-        {
-            throw_last_error();
-        }
-
-        return pointer;
-    }
-
-    template<typename T>
-    void check_win32(T result)
-    {
-        if (result != 0 )
-        {
-            winrt::impl::throw_hresult(HRESULT_FROM_WIN32(result));
-        }
-    }
-}
-
 WINRT_EXPORT namespace winrt
 {
     __forceinline void check_hresult(HRESULT const result)
@@ -407,5 +384,43 @@ WINRT_EXPORT namespace winrt
         {
             impl::throw_hresult(result);
         }
+    }
+
+    template<typename T>
+    void check_nt(T result)
+    {
+        if (result != 0)
+        {
+            winrt::impl::throw_hresult(HRESULT_FROM_NT(result));
+        }
+    }
+
+    template<typename T>
+    void check_win32(T result)
+    {
+        if (result != 0)
+        {
+            winrt::impl::throw_hresult(HRESULT_FROM_WIN32(result));
+        }
+    }
+
+    template<typename T>
+    void check_bool(T result)
+    {
+        if (!result)
+        {
+            winrt::throw_last_error();
+        }
+    }
+
+    template<typename T>
+    T* check_pointer(T* pointer)
+    {
+        if (!pointer)
+        {
+            throw_last_error();
+        }
+
+        return pointer;
     }
 }

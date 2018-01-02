@@ -29,7 +29,7 @@ void add_winmd_spec(std::vector<std::wstring>& winmd_specs, std::wstring const& 
     if (_wcsicmp(winmd_spec.c_str(), L"local") == 0)
     {
         std::array<wchar_t, MAX_PATH> path;
-        check_win32_bool(ExpandEnvironmentStrings(L"%windir%\\System32\\WinMetadata", path.data(), static_cast<DWORD>(path.size())));
+        check_bool(ExpandEnvironmentStrings(L"%windir%\\System32\\WinMetadata", path.data(), static_cast<DWORD>(path.size())));
         winmd_specs.emplace_back(path.data());
         return;
     }
