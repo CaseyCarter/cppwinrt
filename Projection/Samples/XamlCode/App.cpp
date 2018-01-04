@@ -46,16 +46,14 @@ struct App : ApplicationT<App>
             return;
         }
 
-        apartment_context ui_thread;
         co_await resume_background();
-
         auto stream = co_await file.OpenAsync(FileAccessMode::Read);
         auto decoder = co_await BitmapDecoder::CreateAsync(stream);
         auto bitmap = co_await decoder.GetSoftwareBitmapAsync();
         auto engine = OcrEngine::TryCreateFromUserProfileLanguages();
         auto result = co_await engine.RecognizeAsync(bitmap);
 
-        co_await ui_thread;
+        co_await resume_foreground(block.Dispatcher());
         block.Text(result.Text());
     }
 };

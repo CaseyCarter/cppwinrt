@@ -3316,5 +3316,9 @@ void t()
         {
             out.write(strings::base_xaml_typename);
         }
+        else if (namespace_name == "Windows.UI.Core")
+        {
+            out.write(strings::base_resume_foreground);
+        }
     }
 }

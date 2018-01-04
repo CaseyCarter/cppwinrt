@@ -70,6 +70,7 @@
     <ClInclude Include="strings\base\base_natvis.h" />
     <ClInclude Include="strings\base\base_reference.h" />
     <ClInclude Include="strings\base\base_reference_produce.h" />
+    <ClInclude Include="strings\base\base_resume_foreground.h" />
     <ClInclude Include="strings\base\base_std_async_action.h" />
     <ClInclude Include="strings\base\base_std_async_action_with_progress.h" />
     <ClInclude Include="strings\base\base_std_async_operation.h" />
