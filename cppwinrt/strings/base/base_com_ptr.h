@@ -10,13 +10,13 @@ WINRT_EXPORT namespace winrt
 
         com_ptr(com_ptr const& other) noexcept : m_ptr(other.m_ptr)
         {
-            addref();
+            add_ref();
         }
 
         template <typename U>
         com_ptr(com_ptr<U> const& other) noexcept : m_ptr(other.m_ptr)
         {
-            addref();
+            add_ref();
         }
 
         template <typename U>
@@ -27,19 +27,19 @@ WINRT_EXPORT namespace winrt
 
         ~com_ptr() noexcept
         {
-            release();
+            release_ref();
         }
 
         com_ptr& operator=(com_ptr const& other) noexcept
         {
-            copy(other.m_ptr);
+            copy_ref(other.m_ptr);
             return*this;
         }
 
         template <typename U>
         com_ptr& operator=(com_ptr<U> const& other) noexcept
         {
-            copy(other.m_ptr);
+            copy_ref(other.m_ptr);
             return*this;
         }
 
@@ -48,7 +48,7 @@ WINRT_EXPORT namespace winrt
         {
             if (m_ptr != other.m_ptr)
             {
-                release();
+                release_ref();
                 m_ptr = other.m_ptr;
                 other.m_ptr = nullptr;
             }
@@ -89,7 +89,7 @@ WINRT_EXPORT namespace winrt
 
         void attach(type* value) noexcept
         {
-            release();
+            release_ref();
             *put() = value;
         }
 
@@ -132,28 +132,28 @@ WINRT_EXPORT namespace winrt
 
         void copy_from(type* other) noexcept
         {
-            copy(other);
+            copy_ref(other);
         }
 
         void copy_to(type** other) const noexcept
         {
-            addref();
+            add_ref();
             *other = m_ptr;
         }
 
     private:
 
-        void copy(type* other) noexcept
+        void copy_ref(type* other) noexcept
         {
             if (m_ptr != other)
             {
-                release();
+                release_ref();
                 m_ptr = other;
-                addref();
+                add_ref();
             }
         }
 
-        void addref() const noexcept
+        void add_ref() const noexcept
         {
             if (m_ptr)
             {
@@ -161,15 +161,15 @@ WINRT_EXPORT namespace winrt
             }
         }
 
-        void release() noexcept
+        void release_ref() noexcept
         {
             if (m_ptr)
             {
-                impl_decref();
+                unconditional_release_ref();
             }
         }
 
-        __declspec(noinline) void impl_decref() noexcept
+        __declspec(noinline) void unconditional_release_ref() noexcept
         {
             WINRT_ASSERT(m_ptr != nullptr);
             type* temp = m_ptr;

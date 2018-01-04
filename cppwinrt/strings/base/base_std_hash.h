@@ -1,7 +1,7 @@
 
 namespace winrt::impl
 {
-    inline size_t hash_data(const void* ptr, size_t numBytes) noexcept
+    inline size_t hash_data(void const* ptr, size_t const bytes) noexcept
     {
 #ifdef WINRT_64
         constexpr size_t fnv_offset_basis = 14695981039346656037ULL;
@@ -11,31 +11,35 @@ namespace winrt::impl
         constexpr size_t fnv_prime = 16777619U;
 #endif
         size_t result = fnv_offset_basis;
-        const uint8_t* const buffer = static_cast<const uint8_t*>(ptr);
-        for (size_t next = 0; next < numBytes; ++next)
+        uint8_t const* const buffer = static_cast<uint8_t const*>(ptr);
+
+        for (size_t next = 0; next < bytes; ++next)
         {
             result ^= buffer[next];
             result *= fnv_prime;
         }
+
         return result;
     }
 
-    inline size_t hash_unknown(const Windows::Foundation::IUnknown& value) noexcept
+    inline size_t hash_unknown(Windows::Foundation::IUnknown const& value) noexcept
     {
         void* abi_value = nullptr;
+
         if (value)
         {
             abi_value = get_abi(value.try_as<Windows::Foundation::IUnknown>());
         }
+
         return std::hash<void*>{}(abi_value);
     }
 
     template<typename T>
-    struct impl_hash_unknown
+    struct hash_base
     {
-        size_t operator()(const T& value) const noexcept
+        size_t operator()(T const& value) const noexcept
         {
-            return winrt::impl::hash_unknown(value);
+            return hash_unknown(value);
         }
     };
 }
@@ -44,7 +48,7 @@ WINRT_EXPORT namespace std
 {
     template<> struct hash<winrt::hstring>
     {
-        size_t operator()(const winrt::hstring& value) const noexcept
+        size_t operator()(winrt::hstring const& value) const noexcept
         {
             uint32_t length = 0;
             const wchar_t* const buffer = WindowsGetStringRawBuffer(get_abi(value), &length);

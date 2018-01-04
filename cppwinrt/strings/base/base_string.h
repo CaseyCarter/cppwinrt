@@ -185,21 +185,6 @@ WINRT_EXPORT namespace winrt
             return WindowsGetStringLen(m_handle.get());
         }
 
-        friend HSTRING impl_get(hstring const& string) noexcept
-        {
-            return string.m_handle.get();
-        }
-
-        friend HSTRING* impl_put(hstring& string) noexcept
-        {
-            return string.m_handle.put();
-        }
-
-        friend HSTRING impl_detach(hstring& string) noexcept
-        {
-            return string.m_handle.detach();
-        }
-
         friend void swap(hstring& left, hstring& right) noexcept
         {
             swap(left.m_handle, right.m_handle);
@@ -229,12 +214,14 @@ WINRT_EXPORT namespace winrt
 
     inline HSTRING detach_abi(hstring& object) noexcept
     {
-        return impl_detach(object);
+        HSTRING temp = get_abi(object);
+        *reinterpret_cast<HSTRING*>(&object) = nullptr;
+        return temp;
     }
 
     inline HSTRING detach_abi(hstring&& object) noexcept
     {
-        return impl_detach(object);
+        return detach_abi(object);
     }
 
     inline void copy_from_abi(hstring& object, HSTRING value)

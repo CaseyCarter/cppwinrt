@@ -310,31 +310,6 @@ WINRT_EXPORT namespace winrt
             this->m_size = 0;
         }
 
-        friend auto impl_put(com_array& value) noexcept
-        {
-            WINRT_ASSERT(!value.m_data);
-            return reinterpret_cast<impl::arg_out<T>*>(&value.m_data);
-        }
-
-        friend auto impl_data(com_array& value) noexcept
-        {
-            return value.m_data;
-        }
-
-        friend void impl_put_size(com_array& value, uint32_t const size) noexcept
-        {
-            WINRT_ASSERT(value.m_data || (!value.m_data&& size == 0));
-            value.m_size = size;
-        }
-
-        friend auto impl_detach(com_array& value) noexcept
-        {
-            std::pair<uint32_t, impl::arg_out<T>> result(value.size(), *reinterpret_cast<impl::arg_out<T>*>(&value));
-            value.m_data = nullptr;
-            value.m_size = 0;
-            return result;
-        }
-
         friend void swap(com_array& left, com_array& right) noexcept
         {
             std::swap(left.m_data, right.m_data);
@@ -377,6 +352,40 @@ WINRT_EXPORT namespace winrt
     template <typename T> bool operator>(array_view<T> const& left, array_view<T> const& right) noexcept { return right < left; }
     template <typename T> bool operator<=(array_view<T> const& left, array_view<T> const& right) noexcept { return !(right < left); }
     template <typename T> bool operator>=(array_view<T> const& left, array_view<T> const& right) noexcept { return !(left < right); }
+
+    template <typename T>
+    static auto get_abi(array_view<T> object) noexcept
+    {
+        if constexpr (std::is_base_of_v<Windows::Foundation::IUnknown, T>)
+        {
+            return (void**)object.data();
+        }
+        else
+        {
+            return reinterpret_cast<impl::arg_out<std::remove_const_t<T>>>(const_cast<std::remove_const_t<T>*>(object.data()));
+        }
+    }
+
+    template<typename T>
+    auto put_abi(com_array<T>& object) noexcept
+    {
+        WINRT_ASSERT(!object.data());
+        return reinterpret_cast<impl::arg_out<T>*>(&object);
+    }
+
+    template <typename T>
+    auto detach_abi(com_array<T>& object) noexcept
+    {
+        std::pair<uint32_t, impl::arg_out<T>> result(object.size(), *reinterpret_cast<impl::arg_out<T>*>(&object));
+        memset(&object, 0, sizeof(com_array<T>));
+        return result;
+    }
+
+    template <typename T>
+    auto detach_abi(com_array<T>&& object) noexcept
+    {
+        return detach_abi(object);
+    }
 }
 
 namespace winrt::impl
@@ -391,15 +400,16 @@ namespace winrt::impl
 
         ~array_size_proxy() noexcept
         {
-            impl_put_size(m_value, m_size);
+            WINRT_ASSERT(m_value.data() || (!m_value.data() && m_size == 0));
+            *reinterpret_cast<uint32_t*>(reinterpret_cast<uintptr_t*>(&m_value) + 1) = m_size;
         }
 
-        operator uint32_t* () noexcept
+        operator uint32_t*() noexcept
         {
-            return&m_size;
+            return &m_size;
         }
 
-        operator unsigned long* () noexcept
+        operator unsigned long*() noexcept
         {
             return reinterpret_cast<unsigned long*>(&m_size);
         }
@@ -410,6 +420,12 @@ namespace winrt::impl
         uint32_t m_size{ 0 };
     };
 
+    template<typename T>
+    array_size_proxy<T> put_size_abi(com_array<T>& object) noexcept
+    {
+        return array_size_proxy<T>(object);
+    }
+
     template <typename T>
     struct com_array_proxy
     {
@@ -418,7 +434,7 @@ namespace winrt::impl
 
         ~com_array_proxy() noexcept
         {
-            std::tie(*m_size, *m_value) = impl_detach(m_temp);
+            std::tie(*m_size, *m_value) = detach_abi(m_temp);
         }
 
         operator com_array<T>&() noexcept
@@ -443,47 +459,10 @@ namespace winrt::impl
         arg_out<T>* m_value;
         com_array<T> m_temp;
     };
-
-    template<typename T>
-    array_size_proxy<T> put_size_abi(com_array<T>& object) noexcept
-    {
-        return array_size_proxy<T>(object);
-    }
 }
 
 WINRT_EXPORT namespace winrt
 {
-    template <typename T>
-    static auto get_abi(array_view<T> object) noexcept
-    {
-        if constexpr (std::is_base_of_v<Windows::Foundation::IUnknown, T>)
-        {
-            return (void**)object.data();
-        }
-        else
-        {
-            return reinterpret_cast<impl::arg_out<std::remove_const_t<T>>>(const_cast<std::remove_const_t<T>*>(object.data()));
-        }
-    }
-
-    template<typename T>
-    auto put_abi(com_array<T>& object) noexcept
-    {
-        return impl_put(object);
-    }
-
-    template <typename T>
-    auto detach_abi(com_array<T>& object) noexcept
-    {
-        return impl_detach(object);
-    }
-
-    template <typename T>
-    auto detach_abi(com_array<T>&& object) noexcept
-    {
-        return impl_detach(object);
-    }
-
     template <typename T>
     auto detach_abi(uint32_t* __valueSize, impl::arg_out<T>* value) noexcept
     {

@@ -105,7 +105,7 @@ WINRT_EXPORT namespace winrt
             WINRT_VERIFY_(TRUE, CloseHandle(value));
         }
 
-        static constexpr type invalid() noexcept
+        static type invalid() noexcept
         {
             return INVALID_HANDLE_VALUE;
         }

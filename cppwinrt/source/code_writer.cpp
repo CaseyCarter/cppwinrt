@@ -2794,6 +2794,8 @@ void t()
 
     void write_std_hashes(output& out, meta::namespace_types const& types)
     {
+        out.write('\n');
+
         for (meta::type const& type : get_projected_types(types.interfaces, types.classes))
         {
             out.write(strings::write_std_hash,

@@ -203,7 +203,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         IUnknown(IUnknown const& other) noexcept : m_ptr(other.m_ptr)
         {
-            impl_addref();
+            add_ref();
         }
 
         IUnknown(IUnknown&& other) noexcept : m_ptr(other.m_ptr)
@@ -213,18 +213,30 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         ~IUnknown() noexcept
         {
-            impl_release();
+            release_ref();
         }
 
         IUnknown& operator=(IUnknown const& other) noexcept
         {
-            impl_copy(other);
+            if (this != &other)
+            {
+                release_ref();
+                m_ptr = other.m_ptr;
+                add_ref();
+            }
+
             return*this;
         }
 
         IUnknown& operator=(IUnknown&& other) noexcept
         {
-            impl_move(std::forward<IUnknown>(other));
+            if (this != &other)
+            {
+                release_ref();
+                m_ptr = other.m_ptr;
+                other.m_ptr = nullptr;
+            }
+
             return*this;
         }
 
@@ -235,7 +247,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
 
         IUnknown& operator=(std::nullptr_t) noexcept
         {
-            impl_release();
+            release_ref();
             return*this;
         }
 
@@ -264,45 +276,14 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
             return static_cast<bool>(to);
         }
 
-        friend void* impl_detach(IUnknown& object) noexcept
-        {
-            auto temp = object.m_ptr;
-            object.m_ptr = nullptr;
-            return temp;
-        }
-
         friend void swap(IUnknown& left, IUnknown& right) noexcept
         {
             std::swap(left.m_ptr, right.m_ptr);
         }
 
-    protected:
-
-        void impl_copy(IUnknown const& other) noexcept
-        {
-            if (this != &other)
-            {
-                impl_release();
-                m_ptr = other.m_ptr;
-                impl_addref();
-            }
-        }
-
-        void impl_move(IUnknown&& other) noexcept
-        {
-            if (this != &other)
-            {
-                impl_release();
-                m_ptr = other.m_ptr;
-                other.m_ptr = nullptr;
-            }
-        }
-
-        impl::IUnknown* m_ptr{ nullptr };
-
     private:
 
-        void impl_addref() const noexcept
+        void add_ref() const noexcept
         {
             if (m_ptr)
             {
@@ -310,21 +291,23 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
             }
         }
 
-        void impl_release() noexcept
+        void release_ref() noexcept
         {
             if (m_ptr)
             {
-                impl_decref();
+                unconditional_release_ref();
             }
         }
 
-        __declspec(noinline) void impl_decref() noexcept
+        __declspec(noinline) void unconditional_release_ref() noexcept
         {
             WINRT_ASSERT(m_ptr != nullptr);
             auto temp = m_ptr;
             m_ptr = nullptr;
             temp->Release();
         }
+
+        impl::IUnknown* m_ptr{ nullptr };
     };
 }
 
