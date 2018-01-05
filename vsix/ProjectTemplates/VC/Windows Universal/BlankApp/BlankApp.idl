@@ -1,0 +1,6 @@
+import "Windows.Foundation.idl";
+
+namespace $projectname$
+{
+    // Define data model runtime classes used by XAML pages here
+}

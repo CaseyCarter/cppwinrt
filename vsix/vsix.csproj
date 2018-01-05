@@ -5,9 +5,6 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <UseCodebase>true</UseCodebase>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>cppwinrt.ico</ApplicationIcon>
-  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
@@ -50,15 +47,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="..\LICENSE">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="..\Getting%20Started.md">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="..\Changelog.md">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="Microsoft.Cpp.CppWinRT.props">
@@ -113,23 +107,71 @@
       <InstallRoot>VCTargets</InstallRoot>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ProjectTemplates\VC\Windows Universal\BlankApp\*">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <IsAssembly>false</IsAssembly>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Universal\BlankApp</VSIXSubPath>
+    </Content>
+    <Content Include="cppwinrt.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Universal\BlankApp</VSIXSubPath>
+    </Content>
+    <Content Include="cppwinrt.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Universal\BlankApp</VSIXSubPath>
+    </Content>
+    <Content Include="ProjectTemplates\VC\Windows Universal\CoreApp\*">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <IsAssembly>false</IsAssembly>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Universal\CoreApp</VSIXSubPath>
+    </Content>
+    <Content Include="cppwinrt.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Universal\CoreApp</VSIXSubPath>
+    </Content>
+    <Content Include="cppwinrt.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Universal\CoreApp</VSIXSubPath>
+    </Content>
+    <Content Include="ProjectTemplates\VC\Windows Universal\WindowsRuntimeComponent\*">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <IsAssembly>false</IsAssembly>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Universal\WindowsRuntimeComponent</VSIXSubPath>
+    </Content>
+    <Content Include="cppwinrt.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Universal\WindowsRuntimeComponent</VSIXSubPath>
+    </Content>
+    <Content Include="cppwinrt.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Universal\WindowsRuntimeComponent</VSIXSubPath>
+    </Content>
+    <Content Include="ProjectTemplates\VC\Windows Desktop\ConsoleApplication\*">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <IsAssembly>false</IsAssembly>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Desktop\ConsoleApplication</VSIXSubPath>
+    </Content>
+    <Content Include="cppwinrt.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Desktop\ConsoleApplication</VSIXSubPath>
+    </Content>
+    <Content Include="cppwinrt.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\VC\Windows Desktop\ConsoleApplication</VSIXSubPath>
+    </Content>
     <Content Include="..\cppwinrt\visualizer\cppwinrt.natvis">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Link>%(Filename)%(Extension)</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="..\cppwinrt\$(Configuration)\cppwinrtvisualizer.vsdconfig">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Link>%(Filename)%(Extension)</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Include="..\cppwinrt\$(Configuration)\cppwinrtvisualizer.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Link>%(Filename)%(Extension)</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <Content Condition=" '$(Configuration)' == 'Debug' " Include="..\cppwinrt\$(Configuration)\cppwinrtvisualizer.pdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Link>%(Filename)%(Extension)</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -139,11 +181,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cppwinrt.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="preview.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="cppwinrt.png">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
   </ItemGroup>

@@ -1,0 +1,23 @@
+import "Windows.Foundation.idl";
+import "Windows.UI.Xaml.Controls.idl";
+
+namespace $projectname$
+{
+    runtimeclass MainPage;
+
+    [version(1.0)]
+    [uuid(07D89D0A-8081-42F6-B899-DF9857037160)]
+    [exclusiveto(MainPage)]
+    interface IMainPage : IInspectable
+    {
+    };
+
+    [activatable(1.0)]
+    [version(1.0)]
+    [marshaling_behavior(agile)]
+    [threading(both)]
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        [default] interface IMainPage;
+    }
+}

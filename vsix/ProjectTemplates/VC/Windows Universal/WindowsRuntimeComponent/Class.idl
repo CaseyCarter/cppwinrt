@@ -1,0 +1,15 @@
+import "Windows.Foundation.idl";
+
+namespace $safeprojectname$
+{
+    [version(1.0), uuid(07D89D0A-8081-42F6-B899-DF9857037160)]
+    interface IClass : IInspectable
+    {
+    };
+
+    [version(1.0), activatable(1.0)]
+    runtimeclass Class
+    {
+        [default] interface IClass;
+    }
+}

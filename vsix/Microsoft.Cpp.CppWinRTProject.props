@@ -2,6 +2,8 @@
 ***********************************************************************************************
 Copyright (C) Microsoft Corporation. All rights reserved.
 ***********************************************************************************************
+Review whether to move all but the forwarder props/targets into the SDK - benefit?
+
 -->
 <!--Set compiler and linker options for projects requiring C++/WinRT. As these options can
     potentially break builds, they must be explicitly enabled via CppWinRTProject, by adding 
@@ -9,18 +11,17 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
     <PropertyGroup>
-        <MinimalCoreWin Condition="'$(MinimalCoreWin)' == ''">true</MinimalCoreWin>
-        <RequiredBundles>$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>
+        <PreferredToolArchitecture>x64</PreferredToolArchitecture>
     </PropertyGroup>
 
     <ItemDefinitionGroup>
         <ClCompile>
-            <AdditionalOptions>/permissive- /await %(AdditionalOptions)</AdditionalOptions>
             <CompileAsWinRT Condition="'%(ClCompile.CompileAsWinRT)' == ''">false</CompileAsWinRT>
             <LanguageStandard Condition="'%(ClCompile.LanguageStandard)' == ''">stdcpp17</LanguageStandard>
+            <AdditionalOptions>/bigobj /await %(AdditionalOptions)</AdditionalOptions>
         </ClCompile>
         <Link>
-            <AdditionalDependencies>WindowsApp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+            <AdditionalDependencies Condition="'$(CppWinRTLibs)' != 'false'">WindowsApp.lib;%(AdditionalDependencies)</AdditionalDependencies>
         </Link>
     </ItemDefinitionGroup>
 
