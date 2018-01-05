@@ -367,6 +367,9 @@
     <ClInclude Include="strings\base\base_resume_foreground.h">
       <Filter>strings\base</Filter>
     </ClInclude>
+    <ClInclude Include="strings\base\base_collections_string.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">

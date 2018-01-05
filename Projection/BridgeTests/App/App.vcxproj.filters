@@ -12,6 +12,7 @@
     <ClCompile Include="FastInput.cpp" />
     <ClCompile Include="Composable.cpp" />
     <ClCompile Include="DllGetClassObject.cpp" />
+    <ClCompile Include="FastStrings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

@@ -50,6 +50,7 @@
     <ClInclude Include="strings\base\base_collections_input_vector_view.h" />
     <ClInclude Include="strings\base\base_collections_map.h" />
     <ClInclude Include="strings\base\base_collections_produce.h" />
+    <ClInclude Include="strings\base\base_collections_string.h" />
     <ClInclude Include="strings\base\base_collections_vector.h" />
     <ClInclude Include="strings\base\base_composable.h" />
     <ClInclude Include="strings\base\base_com_ptr.h" />

@@ -22,6 +22,7 @@
 #include "base_implements_marshal.h"
 #include "base_delegate.h"
 #include "base_collections_consume.h"
+#include "base_collections_string.h"
 #include "base_implements.h"
 #include "base_composable.h"
 #include "base_activation.h"
