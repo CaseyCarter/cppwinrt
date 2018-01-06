@@ -115,7 +115,7 @@ namespace winrt::impl
                 static_cast<D&>(*this) = nullptr;
             }
 
-            return*this;
+            return *this;
         }
 
         T operator*() const

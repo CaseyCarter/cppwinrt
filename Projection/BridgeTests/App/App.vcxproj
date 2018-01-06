@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bindable.cpp" />
     <ClCompile Include="Composable.cpp" />
     <ClCompile Include="DllGetClassObject.cpp" />
     <ClCompile Include="Errors.cpp" />

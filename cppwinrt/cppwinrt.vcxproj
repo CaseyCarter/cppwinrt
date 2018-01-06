@@ -87,6 +87,7 @@
     <ClInclude Include="strings\base\base_windows.h" />
     <ClInclude Include="strings\base\base_xaml_typename.h" />
     <ClInclude Include="strings\strings.h" />
+    <ClInclude Include="strings\write\write_bindable_iterator.h" />
     <ClInclude Include="strings\write\write_class_definition.h" />
     <ClInclude Include="strings\write\write_class_override.h" />
     <ClInclude Include="strings\write\write_class_override_constructor.h" />

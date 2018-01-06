@@ -802,11 +802,20 @@ namespace cppwinrt
                 bind_output(write_delegate_abi_method, type.token));
         }
 
+        void write_interface_method_extensions(output& out, meta::type const& type)
+        {
+            if (type.full_name() == "Windows.UI.Xaml.Interop.IBindableIterator")
+            {
+                out.write(strings::write_bindable_iterator);
+            }
+        }
+
         void write_interface_consume(output& out, meta::type const& type)
         {
             out.write(strings::write_interface_consume,
                 get_impl_name(type.full_name()),
                 bind_output(write_interface_method_declarations, type),
+                bind_output(write_interface_method_extensions, type),
                 type.full_name(),
                 get_impl_name(type.full_name()));
         }
