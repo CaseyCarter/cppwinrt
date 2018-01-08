@@ -30,7 +30,7 @@ TEST_CASE("Test_GetIids")
 {
     Windows::Foundation::IInspectable i = make<Test_GetIids>();
 
-    com_array<GUID> iids = GetIids(i);
+    com_array<GUID> iids = get_interfaces(i);
 
     REQUIRE(iids.size() == 1);
     REQUIRE(iids[0] == guid_of<Windows::Foundation::IStringable>());

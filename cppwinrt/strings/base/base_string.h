@@ -241,16 +241,6 @@ WINRT_EXPORT namespace winrt
     }
 }
 
-WINRT_EXPORT namespace winrt::Windows::Foundation
-{
-    inline hstring GetRuntimeClassName(IInspectable const& object)
-    {
-        hstring value;
-        check_hresult((*(impl::IInspectable**)&object)->GetRuntimeClassName(put_abi(value)));
-        return value;
-    }
-}
-
 namespace winrt::impl
 {
     template <> struct abi<hstring>

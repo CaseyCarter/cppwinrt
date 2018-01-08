@@ -470,13 +470,24 @@ WINRT_EXPORT namespace winrt
         return impl::com_array_proxy<T>(__valueSize, value);
     }
 
-    namespace Windows::Foundation
+    inline hstring get_class_name(Windows::Foundation::IInspectable const& object)
     {
-        inline com_array<GUID> GetIids(IInspectable const& object)
-        {
-            com_array<GUID> value;
-            check_hresult((*(impl::IInspectable**)&object)->GetIids(impl::put_size_abi(value), put_abi(value)));
-            return value;
-        }
+        hstring value;
+        check_hresult((*(impl::IInspectable**)&object)->GetRuntimeClassName(put_abi(value)));
+        return value;
+    }
+
+    inline com_array<GUID> get_interfaces(Windows::Foundation::IInspectable const& object)
+    {
+        com_array<GUID> value;
+        check_hresult((*(impl::IInspectable**)&object)->GetIids(impl::put_size_abi(value), put_abi(value)));
+        return value;
+    }
+
+    inline Windows::Foundation::TrustLevel get_trust_level(Windows::Foundation::IInspectable const& object)
+    {
+        Windows::Foundation::TrustLevel value{};
+        check_hresult((*(impl::IInspectable**)&object)->GetTrustLevel(&value));
+        return value;
     }
 }

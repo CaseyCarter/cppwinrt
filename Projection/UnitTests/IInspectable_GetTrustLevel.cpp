@@ -28,12 +28,12 @@ TEST_CASE("Test_GetTrustLevel_NoOverride")
 {
     Windows::Foundation::IInspectable i = make<Test_GetTrustLevel_NoOverride>();
 
-    REQUIRE(GetTrustLevel(i) == TrustLevel::BaseTrust);
+    REQUIRE(get_trust_level(i) == TrustLevel::BaseTrust);
 }
 
 TEST_CASE("Test_GetTrustLevel_Override")
 {
     Windows::Foundation::IInspectable i = make<Test_GetTrustLevel_Override>();
 
-    REQUIRE(GetTrustLevel(i) == TrustLevel::FullTrust);
+    REQUIRE(get_trust_level(i) == TrustLevel::FullTrust);
 }

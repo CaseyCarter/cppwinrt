@@ -1,8 +1,6 @@
 
 namespace winrt::impl
 {
-    using namespace std::string_view_literals;
-
     template <typename T>
     struct xaml_typename_name
     {

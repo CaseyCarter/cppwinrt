@@ -53,3 +53,8 @@ extern "C"
 #pragma comment(linker, "/alternatename:WINRT_SetRestrictedErrorInfo=SetRestrictedErrorInfo")
 #pragma comment(linker, "/alternatename:WINRT_RoGetAgileReference=RoGetAgileReference")
 #endif
+
+namespace winrt::impl
+{
+    using namespace std::literals;
+}

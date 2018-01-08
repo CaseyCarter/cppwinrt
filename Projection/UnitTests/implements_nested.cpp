@@ -38,7 +38,7 @@ TEST_CASE("implements_nested")
         REQUIRE(stringable.ToString() == L"nested_derived");
 
         Windows::Foundation::IInspectable inspect = *obj;
-        com_array<GUID> actual_iids = Windows::Foundation::GetIids(inspect);
+        com_array<GUID> actual_iids = get_interfaces(inspect);
         com_array<GUID> expected_iids{ guid_of<Windows::Foundation::IClosable>(), guid_of<Windows::Foundation::IStringable>() };
 
         auto guid_compare = [](GUID const& lhs, GUID const& rhs)

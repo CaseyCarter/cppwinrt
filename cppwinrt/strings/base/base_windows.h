@@ -45,8 +45,7 @@ WINRT_EXPORT namespace winrt
         reinterpret_cast<T&>(value) = object;
     }
 
-    template <typename T, typename = std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, std::decay_t<T>> &&
-        !std::is_convertible_v<T, std::wstring_view>>>
+    template <typename T, typename = std::enable_if_t<!std::is_base_of_v<Windows::Foundation::IUnknown, std::decay_t<T>> && !std::is_convertible_v<T, std::wstring_view>>>
         auto detach_abi(T&& object)
     {
         impl::abi_t<T> result{};
@@ -370,6 +369,11 @@ WINRT_EXPORT namespace winrt
             static_cast<IUnknown*>(value)->AddRef();
         }
     }
+
+    inline ::IUnknown* get_unknown(Windows::Foundation::IUnknown const& object) noexcept
+    {
+        return static_cast<::IUnknown*>(get_abi(object));
+    }
 }
 
 WINRT_EXPORT namespace winrt::Windows::Foundation
@@ -424,18 +428,6 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     {
         IInspectable(std::nullptr_t = nullptr) noexcept {}
     };
-
-    inline TrustLevel GetTrustLevel(IInspectable const& object)
-    {
-        TrustLevel value{};
-        check_hresult((*(impl::IInspectable**)&object)->GetTrustLevel(&value));
-        return value;
-    }
-
-    inline ::IUnknown* get_unknown(Windows::Foundation::IUnknown const& object) noexcept
-    {
-        return static_cast<::IUnknown*>(get_abi(object));
-    }
 }
 
 namespace winrt::impl

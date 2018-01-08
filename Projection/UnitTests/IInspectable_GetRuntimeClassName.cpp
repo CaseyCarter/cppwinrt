@@ -28,12 +28,12 @@ TEST_CASE("Test_GetRuntimeClassName_NoOverride")
 {
     Windows::Foundation::IInspectable i = make<Test_GetRuntimeClassName_NoOverride>();
 
-    REQUIRE(GetRuntimeClassName(i) == L"Object");
+    REQUIRE(get_class_name(i) == L"Object");
 }
 
 TEST_CASE("Test_GetRuntimeClassName_Override")
 {
     Windows::Foundation::IInspectable i = make<Test_GetRuntimeClassName_Override>();
 
-    REQUIRE(GetRuntimeClassName(i) == L"GetRuntimeClassName");
+    REQUIRE(get_class_name(i) == L"GetRuntimeClassName");
 }
