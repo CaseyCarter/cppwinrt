@@ -20,7 +20,7 @@
 #include "winmd_access.h"
 
 #ifndef IF_FAIL_RET
-#define IF_FAIL_RET(expr) { HRESULT _hr = (expr); if(FAILED(_hr)) { __debugbreak(); return(_hr); } }
+#define IF_FAIL_RET(expr) { HRESULT _hr = (expr); if(FAILED(_hr)) { return(_hr); } }
 #endif
 
 template<typename T>
