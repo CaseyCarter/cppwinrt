@@ -1,6 +1,6 @@
 ﻿//
 // pch.h
-// Header for standard system include files.
+// Header for platform projection include files
 //
 
 #pragma once
