@@ -2,12 +2,15 @@
 
 namespace cppwinrt
 {
+    struct default_sentinel {};
+
     template <typename T>
     struct generator
     {
         struct promise_type
         {
-            std::variant<T const*, std::exception_ptr> value;
+            T const* value{};
+            std::exception_ptr ex{};
 
             promise_type& get_return_object() noexcept
             {
@@ -43,14 +46,14 @@ namespace cppwinrt
 
             void unhandled_exception() noexcept
             {
-                value = std::current_exception();
+                ex = std::current_exception();
             }
 
             void rethrow_if_failed() const
             {
-                if (value.index() == 1)
+                if (ex)
                 {
-                    std::rethrow_exception(std::get<1>(value));
+                    std::rethrow_exception(ex);
                 }
             }
         };
@@ -61,17 +64,19 @@ namespace cppwinrt
         {
             using iterator_category = std::input_iterator_tag;
             using value_type = T;
-            using difference_type = ptrdiff_t;
+            using difference_type = std::ptrdiff_t;
             using pointer = T const*;
             using reference = T const&;
 
-            handle_type m_handle;
+            handle_type m_handle{};
 
-            iterator(std::nullptr_t) noexcept : m_handle(nullptr)
+            iterator() noexcept = default;
+
+            explicit iterator(handle_type handle_type) noexcept : m_handle(handle_type)
             {
             }
 
-            iterator(handle_type handle_type) noexcept : m_handle(handle_type)
+            iterator(default_sentinel) noexcept : iterator{}
             {
             }
 
@@ -82,14 +87,17 @@ namespace cppwinrt
                 if (m_handle.done())
                 {
                     promise_type& promise = m_handle.promise();
-                    m_handle = nullptr;
+                    m_handle = {};
                     promise.rethrow_if_failed();
                 }
 
                 return *this;
             }
 
-            iterator operator++(int) = delete;
+            void operator++(int)
+            {
+                ++*this;
+            }
 
             bool operator==(iterator const& other) const noexcept
             {
@@ -101,9 +109,19 @@ namespace cppwinrt
                 return !(*this == other);
             }
 
+            bool operator==(default_sentinel) const noexcept
+            {
+                return !m_handle;
+            }
+
+            bool operator!=(default_sentinel) const noexcept
+            {
+                return !(*this == default_sentinel{});
+            }
+
             T const& operator*() const noexcept
             {
-                return *std::get<0>(m_handle.promise().value);
+                return *m_handle.promise().value;
             }
 
             T const* operator->() const noexcept
@@ -114,25 +132,25 @@ namespace cppwinrt
 
         iterator begin()
         {
-            if (!m_handle)
+            if (m_handle)
             {
-                return nullptr;
+                m_handle.resume();
+
+                if (m_handle.done())
+                {
+                    promise_type& promise = m_handle.promise();
+                    m_handle = {};
+                    promise.rethrow_if_failed();
+                }
             }
 
-            m_handle.resume();
 
-            if (m_handle.done())
-            {
-                m_handle.promise().rethrow_if_failed();
-                return nullptr;
-            }
-
-            return m_handle;
+            return iterator{m_handle};
         }
 
-        iterator end() noexcept
+        default_sentinel end() noexcept
         {
-            return nullptr;
+            return {};
         }
 
         generator(promise_type& promise) noexcept : m_handle(handle_type::from_promise(promise))
@@ -143,17 +161,20 @@ namespace cppwinrt
         generator(generator const&) = delete;
         generator &operator=(generator const&) = delete;
 
-        generator(generator&& other) noexcept : m_handle(other.m_handle)
+        generator(generator&& other) noexcept : m_handle(std::exchange(other.m_handle, {}))
         {
-            other.m_handle = nullptr;
         }
 
         generator &operator=(generator&& other) noexcept
         {
             if (this != &other)
             {
-                m_handle = other.m_handle;
-                other.m_handle = nullptr;
+                if (m_handle)
+                {
+                    m_handle.destroy();
+                }
+
+                m_handle = std::exchange(other.m_handle, {});
             }
 
             return *this;
@@ -169,6 +190,6 @@ namespace cppwinrt
 
     private:
 
-        handle_type m_handle{ nullptr };
+        handle_type m_handle{};
     };
 }
