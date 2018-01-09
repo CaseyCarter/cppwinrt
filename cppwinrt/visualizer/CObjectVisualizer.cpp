@@ -15,19 +15,19 @@ static wchar_t const* GetPrimitiveType(CorElementType category)
 {
     switch (category)
     {
-    case ELEMENT_TYPE_BOOLEAN: return L"bool";
-    case ELEMENT_TYPE_CHAR: return L"wchar_t";
-    case ELEMENT_TYPE_I1: return L"int8_t";
-    case ELEMENT_TYPE_I2: return L"int16_t";
-    case ELEMENT_TYPE_I4: return L"int32_t";
-    case ELEMENT_TYPE_I8: return L"int64_t";
-    case ELEMENT_TYPE_U1: return L"uint8_t";
-    case ELEMENT_TYPE_U2: return L"uint16_t";
-    case ELEMENT_TYPE_U4: return L"uint32_t";
-    case ELEMENT_TYPE_U8: return L"uint64_t";
-    case ELEMENT_TYPE_R4: return L"float";
-    case ELEMENT_TYPE_R8: return L"double";
-    case ELEMENT_TYPE_STRING: return L"HSTRING";
+    case ELEMENT_TYPE_BOOLEAN: return L"b";
+    case ELEMENT_TYPE_CHAR: return L"c";
+    case ELEMENT_TYPE_I1: return L"i1";
+    case ELEMENT_TYPE_I2: return L"i2";
+    case ELEMENT_TYPE_I4: return L"i4";
+    case ELEMENT_TYPE_I8: return L"i8";
+    case ELEMENT_TYPE_U1: return L"u1";
+    case ELEMENT_TYPE_U2: return L"u2";
+    case ELEMENT_TYPE_U4: return L"u4";
+    case ELEMENT_TYPE_U8: return L"u8";
+    case ELEMENT_TYPE_R4: return L"r4";
+    case ELEMENT_TYPE_R8: return L"r8";
+    case ELEMENT_TYPE_STRING: return L"s";
     }
     return{};
 }
@@ -44,7 +44,18 @@ static HRESULT EvaluatePropertyExpression(
     bool is64Bit = ((pExpression->RuntimeInstance()->Process()->SystemInformation()->Flags() & DefaultPort::DkmSystemInformationFlags::Is64Bit) != 0);
     swprintf_s(abiAddress, is64Bit ? L"%s0x%I64x" : L"%s0x%08x", isAbiObject ? L"(::IUnknown*)" : L"*(::IUnknown**)", pObject->Address());
     wchar_t wszEvalText[500];
-    swprintf_s(wszEvalText, L"*(%s*)WINRT_abi_val(%s, L\"{%s}\", %i).v", prop.abiType.c_str(), abiAddress, prop.iid.c_str(), prop.index);
+    std::wstring propCast;
+    std::wstring propField;
+    if (prop.abiType.length() > 2)
+    {
+        propField = L"v";
+        propCast = L"*(" + prop.abiType + L"*)";
+    }
+    else
+    {
+        propField = prop.abiType;
+    }
+    swprintf_s(wszEvalText, L"%sWINRT_abi_val(%s, L\"{%s}\", %i).%s", propCast.c_str(), abiAddress, prop.iid.c_str(), prop.index, propField.c_str());
 #ifdef _DEBUG
     OutputDebugStringW(wszEvalText);
     OutputDebugStringW(L"\n");
@@ -101,7 +112,7 @@ static HRESULT ObjectToString(
     _Out_ winrt::com_ptr<DkmString>& pValue
 )
 {
-    if (SUCCEEDED(EvaluatePropertyString({ IID_IStringable, 0, L"HSTRING" }, pExpression, pObject, isAbiObject, pValue)))
+    if (SUCCEEDED(EvaluatePropertyString({ IID_IStringable, 0, L"s" }, pExpression, pObject, isAbiObject, pValue)))
     {
         if (!pValue || pValue->Length() == 0)
         {
@@ -218,9 +229,9 @@ HRESULT CObjectVisualizer::GetPropertyData()
     winrt::com_ptr<DkmString> pValue;
 
     winrt::com_ptr<DkmChildVisualizedExpression> pPropertyVisualized;
-    IF_FAIL_RET(CreateChildVisualizedExpression({ IID_IInspectable, -2, L"HSTRING", L"winrt::hstring" }, m_pVisualizedExpression.get(), m_isAbiObject, pPropertyVisualized.put()));
+    IF_FAIL_RET(CreateChildVisualizedExpression({ IID_IInspectable, -2, L"s", L"winrt::hstring" }, m_pVisualizedExpression.get(), m_isAbiObject, pPropertyVisualized.put()));
     pPropertyVisualized->GetUnderlyingString(pValue.put());
-    //IF_FAIL_RET(EvaluatePropertyString({ IID_IInspectable, -2, L"HSTRING" }, m_pVisualizedExpression.get(), pValue));
+    //IF_FAIL_RET(EvaluatePropertyString({ IID_IInspectable, -2, L"s" }, m_pVisualizedExpression.get(), pValue));
     //if (pValue == nullptr)
     //{
     //    return E_FAIL;
@@ -265,37 +276,42 @@ HRESULT CObjectVisualizer::GetPropertyData()
             {
                 meta::token token = signature.get_token();
                 std::string typeName = token.get_name();
-                std::wstring metadataTypename(typeName.cbegin(), typeName.cend());
-
-                // Types come back from winmd files with '.', need to be '::'
-                // Ex. Windows.Foundation.Uri needs to be Windows::Foundation::Uri
-                wchar_t cppTypename[500];
-                size_t i, j;
-                for (i = 0, j = 0; i < (metadataTypename.length() + 1); i++, j++)
+                
+                if (typeName == "GUID")
                 {
-                    if (metadataTypename[i] == L'.')
-                    {
-                        cppTypename[j++] = L':';
-                        cppTypename[j] = L':';
-                    }
-                    else
-                    {
-                        cppTypename[j] = metadataTypename[i];
-                    }
-                }
-
-                propDisplayType = std::wstring(L"winrt::") + cppTypename;
-                if (category == ELEMENT_TYPE_CLASS)
-                {
-                    propAbiType = L"winrt::impl::IInspectable*";
-                }
-                else if (wcscmp(cppTypename, L"GUID") == 0)
-                {
-                    propAbiType = cppTypename;
+                    propAbiType = L"g";
+                    propDisplayType = L"GUID";
                 }
                 else
                 {
-                    propAbiType = propDisplayType;
+                    std::wstring metadataTypename(typeName.cbegin(), typeName.cend());
+
+                    // Types come back from winmd files with '.', need to be '::'
+                    // Ex. Windows.Foundation.Uri needs to be Windows::Foundation::Uri
+                    wchar_t cppTypename[500];
+                    size_t i, j;
+                    for (i = 0, j = 0; i < (metadataTypename.length() + 1); i++, j++)
+                    {
+                        if (metadataTypename[i] == L'.')
+                        {
+                            cppTypename[j++] = L':';
+                            cppTypename[j] = L':';
+                        }
+                        else
+                        {
+                            cppTypename[j] = metadataTypename[i];
+                        }
+                    }
+
+                    propDisplayType = std::wstring(L"winrt::") + cppTypename;
+                    if (category == ELEMENT_TYPE_CLASS)
+                    {
+                        propAbiType = L"winrt::impl::IInspectable*";
+                    }
+                    else
+                    {
+                        propAbiType = propDisplayType;
+                    }
                 }
             }
             else
