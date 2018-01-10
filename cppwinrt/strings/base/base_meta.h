@@ -173,6 +173,8 @@ WINRT_EXPORT namespace winrt
         return impl::guid<impl::default_interface_t<T>>::value;
 #endif
     }
+
+    struct event_token;
 }
 
 namespace winrt::impl

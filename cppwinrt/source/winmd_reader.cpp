@@ -738,9 +738,19 @@ namespace cppwinrt::meta
 
     type const* find_type(std::string_view match, type_category* category)
     {
-        std::string name_space(match.data(), match.rfind('.'));
-        match = match.substr(name_space.size() + 1);
-        
+        std::string name_space;
+        size_t const pos = match.rfind('.');
+
+        if (std::string_view::npos != pos)
+        {
+            name_space.assign(match.data(), pos);
+            match = match.substr(name_space.size() + 1);
+        }
+        else
+        {
+            throw meta_error{ "Unresolved type: " + std::string(match) };
+        }
+
         try
         {
             namespace_types const& types = index.at(name_space);
@@ -1932,6 +1942,16 @@ namespace cppwinrt::meta
             }
 
             return { 16, 16 };
+        }
+
+        if (name == "HRESULT")
+        {
+            return { 4, 4 };
+        }
+
+        if (name == "event_token")
+        {
+            return { 8, 8 };
         }
 
         type_category category;

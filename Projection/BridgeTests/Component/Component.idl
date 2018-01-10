@@ -63,6 +63,9 @@ namespace Component
     struct SimpleStructure
     {
         UINT32 Value;
+        HRESULT Value2;
+        EventRegistrationToken Value3;
+        GUID Value4;
     };
 
     [version(1.0)]
@@ -70,6 +73,8 @@ namespace Component
     {
         HSTRING String;
         Windows.Foundation.IReference<UINT32>* Object;
+        Windows.Foundation.IReference<EventRegistrationToken>* Object2;
+        Windows.Foundation.IReference<GUID>* Object3;
 
         // Ensures that the SimpleStructure structure is defined first in C++. This covers an edge case currently
         // only present in the internal Windows metadata.

@@ -635,6 +635,30 @@ namespace winrt::impl
         using type = basic_category;
     };
 
+    template <>
+    struct name<HRESULT>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.HResult" };
+    };
+
+    template <>
+    struct category<HRESULT>
+    {
+        using type = struct_category<int32_t>;
+    };
+
+    template <>
+    struct name<event_token>
+    {
+        static constexpr auto & value{ L"Windows.Foundation.EventRegistrationToken" };
+    };
+
+    template <>
+    struct category<event_token>
+    {
+        using type = struct_category<int64_t>;
+    };
+
     template <typename T>
     struct category_signature<basic_category, T>
     {
