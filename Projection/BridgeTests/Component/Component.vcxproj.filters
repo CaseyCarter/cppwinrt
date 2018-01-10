@@ -13,6 +13,7 @@
     <ClCompile Include="FastInputVector.cpp" />
     <ClCompile Include="FastInputMap.cpp" />
     <ClCompile Include="DllGetClassObject.cpp" />
+    <ClCompile Include="CustomBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -23,6 +24,7 @@
     <ClInclude Include="FastInput.h" />
     <ClInclude Include="FastInputVector.h" />
     <ClInclude Include="FastInputMap.h" />
+    <ClInclude Include="CustomBase.h" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="Component.idl" />

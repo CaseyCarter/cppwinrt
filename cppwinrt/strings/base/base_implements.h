@@ -989,10 +989,7 @@ WINRT_EXPORT namespace winrt
         using root_implements_type = typename base_type::root_implements_type;
         using is_factory = typename root_implements_type::is_factory;
 
-        template <typename... Args>
-        explicit implements(Args&&... args)
-            : base_type(std::forward<Args>(args)...)
-        {}
+        using base_type::base_type;
 
         void static_lifetime()
         {
