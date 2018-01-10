@@ -193,18 +193,6 @@ namespace cppwinrt
             out.write(" %", param.name);
         }
 
-        bool has_reference_param(meta::method const& method)
-        {
-            // This function determines whether the method is async with respect to the behavior of its input parameters
-            // in the sense that an input parameter is expected to be read synchronously or might well be held for later
-            // inspection. In that case, we prefer to err on the side of safety and avoid providing no-copy behavior by
-            // default. We use the convention of async methods ending with "Async" because checking whether the method's
-            // return type implements one of the async interfaces (directly or required) is prohibitively expensive.
-            // This may lead to false positives but these rare exceptions are easily dealt with by the developer.
-
-            return is_put_accessor(method) || ends_with(method.raw_name, "Async");
-        }
-
         void write_param_type(output& out, meta::method const& method, meta::param const& param, std::vector<std::string> const& generic_params)
         {
             meta::signature signature = param.signature;
@@ -293,7 +281,7 @@ namespace cppwinrt
                 return;
             }
 
-            bool const async = has_reference_param(method);
+            bool const async = is_put_accessor(method) || ends_with(method.raw_name, "Async");
 
             if (starts_with(signature_name, iterable))
             {
@@ -363,7 +351,7 @@ namespace cppwinrt
             meta::signature signature = param.signature;
             CorElementType category = signature.get_category();
             bool by_ref{};
-            bool const async = has_reference_param(method);
+            bool const async = ends_with(method.raw_name, "Async");
 
             if (category == ELEMENT_TYPE_BYREF)
             {
