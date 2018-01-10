@@ -1,5 +1,7 @@
 // This is a simple smoke test that can be used with both Visual C++ and Clang.
 
+extern "C" void* __enclave_config = nullptr;
+
 #pragma comment(lib, "windowsapp")
 #include "winrt/Windows.Foundation.h"
 

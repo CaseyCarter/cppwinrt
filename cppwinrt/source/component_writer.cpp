@@ -1,10 +1,6 @@
 #include "pch.h"
 #include "code_writer.h"
-#include "settings.h"
-#include "text_writer.h"
 #include "reference_writer.h"
-#include "strings.h"
-#include "version.h"
 
 using namespace std::experimental::filesystem;
 

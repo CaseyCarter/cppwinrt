@@ -5,7 +5,6 @@
 #include "component_writer.h"
 #include "winmd_reader.h"
 #include "settings.h"
-#include "strings.h"
 
 using namespace std::experimental::filesystem;
 using namespace winrt;

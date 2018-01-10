@@ -2,6 +2,7 @@
 
 #include "text_writer.h"
 #include "winmd_reader.h"
+#include "settings.h"
 
 namespace cppwinrt
 {

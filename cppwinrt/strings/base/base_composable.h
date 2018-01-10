@@ -63,8 +63,9 @@ namespace winrt::impl
             friend class dispatch_to_super;
 
             explicit wrapper(D& d) : instance(d) {}
-            wrapper(const wrapper&) = delete;
+
         public:
+            wrapper(const wrapper&) = delete;
             wrapper(wrapper&&) = default;
         };
 

@@ -33,7 +33,7 @@ namespace cppwinrt
         int ignored[] = { (co_yield first, 0), (co_yield rest, 0)... }; ignored;
     }
 
-    template <typename First, typename... Rest, typename Value = First::value_type>
+    template <typename First, typename... Rest, typename Value = typename First::value_type>
     generator<Value> get_container_values(First const& first, Rest const&... rest)
     {
         for (First const& current : get_values(first, rest...))

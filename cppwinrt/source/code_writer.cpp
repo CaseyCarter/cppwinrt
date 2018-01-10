@@ -13,23 +13,13 @@ namespace cppwinrt
 {
     namespace
     {
-        static std::vector<std::string> const empty_generic_params{};
+        std::vector<std::string> const empty_generic_params{};
 
         bool is_event_method(meta::method const& method)
         {
             if (method.is_special())
             {
                 return starts_with(method.raw_name, "add_");
-            }
-
-            return false;
-        }
-
-        bool is_get_accessor(meta::method const& method)
-        {
-            if (method.is_special())
-            {
-                return starts_with(method.raw_name, "get_");
             }
 
             return false;
@@ -143,21 +133,6 @@ namespace cppwinrt
                     type.full_name(),
                     default_interface.get_name());
             }
-        }
-
-        bool is_complex_struct(std::vector<meta::field> const& fields)
-        {
-            for (meta::field const& field : fields)
-            {
-                CorElementType const category = field.type.get_category();
-
-                if (category == ELEMENT_TYPE_STRING || category == ELEMENT_TYPE_GENERICINST)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
 
         void write_abi_param(output& out, meta::param const& param, bool is_return = false)
@@ -1673,7 +1648,7 @@ namespace cppwinrt
                 }
             };
 
-            auto require_names = [&comma_names](const std::vector<meta::required>& names)
+            auto require_names = [](const std::vector<meta::required>& names)
             {
                 std::string result;
 
@@ -1720,11 +1695,6 @@ namespace cppwinrt
             out.write(">");
         }
 
-        void write_edit_warning_header(output& out)
-        {
-            out.write(strings::write_edit_warning_header, CPPWINRT_VERSION_STRING);
-        }
-
         void write_component_class_override_dispatch_base(output& out, meta::type const& type)
         {
             if (!is_composable(type.token))
@@ -1740,7 +1710,7 @@ namespace cppwinrt
             auto comma_names = [](std::vector<meta::required> const& requireds)
             {
                 std::string result;
-                for (meta::required const required : requireds)
+                for (meta::required const& required : requireds)
                 {
                     result += ", ";
                     result += required.name;
@@ -1815,8 +1785,6 @@ namespace cppwinrt
             {
                 return;
             }
-
-            default_interface = default_interface.get_definition();
 
             for (meta::method const& method : factory.get_methods())
             {
@@ -2908,7 +2876,7 @@ void t()
         winrt::check_win32(UuidCreate(&guid));
         winrt::handle_type<rpc_cstr_traits> rpcStr;
         winrt::check_win32(UuidToStringA(&guid, rpcStr.put()));
-        return std::string((PCSTR)rpcStr.get());
+        return reinterpret_cast<char const*>(rpcStr.get());
     }
 
     void write_component_winmd_dependencies(output& out)
@@ -3130,7 +3098,7 @@ void t()
         if (!static_class)
         {
             std::string upper(type.name());
-            std::transform(upper.begin(), upper.end(), upper.begin(), [](char c) {return (char)::toupper(c); });
+            std::transform(upper.begin(), upper.end(), upper.begin(), [](char c) {return static_cast<char>(::toupper(c)); });
 
             out.write(strings::write_component_class_xaml_shim,
                 upper,

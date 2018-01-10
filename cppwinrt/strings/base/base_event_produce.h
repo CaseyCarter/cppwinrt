@@ -97,6 +97,8 @@ namespace winrt::impl
         event_token add(delegate_type const& delegate)
         {
             event_token token{};
+
+            // Extends life of old targets array to release delegates outside of lock.
             delegate_array temp_targets;
 
             {
@@ -134,6 +136,7 @@ namespace winrt::impl
 
         void remove(event_token const token)
         {
+            // Extends life of old targets array to release delegates outside of lock.
             delegate_array temp_targets;
 
             {
@@ -144,7 +147,7 @@ namespace winrt::impl
                     return;
                 }
 
-                uint32_t available_slots = m_targets->size() - 1;
+                uint32_t const available_slots = m_targets->size() - 1;
                 delegate_array new_targets;
                 bool removed = false;
 

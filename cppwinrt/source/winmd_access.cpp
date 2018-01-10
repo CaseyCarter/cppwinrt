@@ -1,14 +1,6 @@
-#pragma once
-
 #include "pch.h"
-#include <fstream>
-#include "text_writer.h"
-#include "code_writer.h"
 #include "winmd_reader.h"
-#include "strings.h"
-#include "version.h"
 #include "settings.h"
-#include "projection_writer.h"
 #include "helpers.h"
 #include "sdk.h"
 #include "winmd_access.h"
@@ -58,7 +50,7 @@ bool is_winmd(std::experimental::filesystem::path const& filename)
 
 generator<std::experimental::filesystem::path> enum_winmd_files(std::vector<std::wstring> const& winmd_specs)
 {
-    for (std::wstring winmd_spec : winmd_specs)
+    for (auto const& winmd_spec : winmd_specs)
     {
         std::experimental::filesystem::path winmd_path(winmd_spec);
         winmd_path = absolute(winmd_path);
@@ -68,7 +60,7 @@ generator<std::experimental::filesystem::path> enum_winmd_files(std::vector<std:
         {
             for (std::experimental::filesystem::directory_entry const& item : std::experimental::filesystem::recursive_directory_iterator(winmd_path))
             {
-                std::experimental::filesystem::path const item_path = item.path();
+                std::experimental::filesystem::path const& item_path = item.path();
 
                 if (is_winmd(item_path))
                 {
@@ -90,11 +82,11 @@ generator<std::experimental::filesystem::path> enum_winmd_files(std::vector<std:
 std::vector<std::experimental::filesystem::path> get_winmd_files(std::vector<std::wstring> const& winmd_specs)
 {
     std::vector<std::experimental::filesystem::path> files;
-    for (auto file : enum_winmd_files(winmd_specs))
+    for (auto const& file : enum_winmd_files(winmd_specs))
     {
         std::wstring file_lower = file.wstring();
         std::transform(file_lower.begin(), file_lower.end(), file_lower.begin(), towlower);
-        files.push_back(file_lower);
+        files.emplace_back(file_lower);
     }
     std::sort(files.begin(), files.end());
     files.erase(std::unique(files.begin(), files.end()), files.end());

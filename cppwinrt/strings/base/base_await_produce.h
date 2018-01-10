@@ -201,8 +201,8 @@ WINRT_EXPORT namespace winrt
             struct awaitable : awaitable_base, F
             {
                 awaitable(PTP_IO io, F callback) noexcept :
-                m_io(io),
-                    F(callback)
+                    F(callback),
+                    m_io(io)
                 {}
 
                 bool await_ready() const noexcept
@@ -247,8 +247,8 @@ WINRT_EXPORT namespace winrt
             struct awaitable : awaitable_base, F
             {
                 awaitable(PTP_IO io, F callback) noexcept :
-                m_io(io),
-                    F(callback)
+                    F(callback),
+                    m_io(io)
                 {}
 
                 bool await_ready() const noexcept

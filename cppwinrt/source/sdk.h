@@ -75,7 +75,7 @@ namespace cppwinrt
         winrt::check_hresult(CreateXmlReader(
             __uuidof(IXmlReader),
             reader.put_void(),
-            0));
+            nullptr));
 
         winrt::check_hresult(reader->SetInput(stream.get()));
         XmlNodeType node_type = XmlNodeType_None;

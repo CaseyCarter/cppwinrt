@@ -214,7 +214,7 @@ WINRT_EXPORT namespace winrt::param
         }
 
         template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
-        vector(Collection const& values) noexcept : m_owned(true)
+        vector(Collection const& values) noexcept
         {
             m_interface = values;
         }

@@ -1,8 +1,5 @@
 #include "pch.h"
 #include <fstream>
-#include "text_writer.h"
-#include "code_writer.h"
-#include "winmd_reader.h"
 #include "strings.h"
 #include "version.h"
 #include "settings.h"
@@ -24,7 +21,7 @@ namespace winmd_paths
 
 namespace
 {
-    generator<std::wstring> enum_args(int const argc, wchar_t** argv);
+    generator<std::wstring> enum_args(int argc, wchar_t** argv);
 
     generator<std::wstring> enum_response_file(path response_path)
     {
@@ -37,8 +34,7 @@ namespace
         while (response_file.getline(line_buf.data(), line_buf.size()))
         {
             int argc;
-            wchar_t** argv;
-            argv = CommandLineToArgvW(line_buf.data(), &argc);
+            wchar_t** argv = CommandLineToArgvW(line_buf.data(), &argc);
             winrt::check_pointer(argv);
             for (auto const& arg : enum_args(argc, argv))
             {

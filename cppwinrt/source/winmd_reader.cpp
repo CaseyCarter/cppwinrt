@@ -141,9 +141,9 @@ namespace cppwinrt::meta
             return dispenser;
         }
 
-        static IMetaDataDispenser* dispenser{ MetaDataGetDispenser() };
-        static std::vector<database> databases;
-        static index_type index;
+        IMetaDataDispenser* dispenser{ MetaDataGetDispenser() };
+        std::vector<database> databases;
+        index_type index;
 
         void load_index_types()
         {
@@ -236,7 +236,6 @@ namespace cppwinrt::meta
         std::string read(IMetaDataImport2* db, PCCOR_SIGNATURE& cursor, std::vector<std::string> const& generic_params)
         {
             CorElementType category = CorSigUncompressElementType(cursor);
-            bool by_ref{};
 
             if (category == ELEMENT_TYPE_CMOD_REQD || category == ELEMENT_TYPE_CMOD_OPT)
             {
@@ -248,7 +247,6 @@ namespace cppwinrt::meta
 
             if (category == ELEMENT_TYPE_BYREF)
             {
-                by_ref = true;
                 category = CorSigUncompressElementType(cursor);
             }
 
@@ -314,7 +312,6 @@ namespace cppwinrt::meta
         std::pair<uint32_t, uint32_t> read_size(IMetaDataImport2* db, PCCOR_SIGNATURE& cursor, std::pair<uint32_t, uint32_t>* max_alignment)
         {
             CorElementType category = CorSigUncompressElementType(cursor);
-            bool by_ref{};
 
             if (category == ELEMENT_TYPE_CMOD_REQD || category == ELEMENT_TYPE_CMOD_OPT)
             {
@@ -324,7 +321,6 @@ namespace cppwinrt::meta
 
             if (category == ELEMENT_TYPE_BYREF)
             {
-                by_ref = true;
                 category = CorSigUncompressElementType(cursor);
             }
 
@@ -584,19 +580,6 @@ namespace cppwinrt::meta
             }
 
             return result;
-        }
-
-        void add_override_interfaces(std::vector<token>& interfaces, token token)
-        {
-            for (meta::token impl_token : token.EnumInterfaceImpls())
-            {
-                if (!impl_token.has_attribute(L"Windows.Foundation.Metadata.OverridableAttribute"))
-                {
-                    continue;
-                }
-
-                interfaces.push_back(impl_token.GetInterfaceImplProps().get_definition());
-            }
         }
 
         bool is_meta_struct(std::string_view match)
@@ -862,7 +845,6 @@ namespace cppwinrt::meta
     {
         PCCOR_SIGNATURE cursor = data;
         CorElementType category = CorSigUncompressElementType(cursor);
-        token result;
 
         if (category == ELEMENT_TYPE_VALUETYPE || category == ELEMENT_TYPE_CLASS)
         {

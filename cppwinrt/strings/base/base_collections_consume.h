@@ -950,9 +950,8 @@ namespace winrt::impl
     }
 
     template <typename T, std::enable_if_t<!has_GetAt<T>::value>* = nullptr>
-    auto end(T const& collection) noexcept -> decltype(collection.First())
+    auto end([[maybe_unused]] T const& collection) noexcept -> decltype(collection.First())
     {
-        collection;
         return {};
     }
 

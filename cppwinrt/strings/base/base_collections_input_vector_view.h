@@ -269,7 +269,7 @@ WINRT_EXPORT namespace winrt::param
         }
 
         template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
-        vector_view(Collection const& values) noexcept : m_owned(true)
+        vector_view(Collection const& values) noexcept
         {
             m_pair.first = values;
         }
@@ -337,7 +337,7 @@ WINRT_EXPORT namespace winrt::param
         }
 
         template <typename Collection, std::enable_if_t<std::is_convertible_v<Collection, interface_type>>* = nullptr>
-        async_vector_view(Collection const& values) noexcept : m_owned(true)
+        async_vector_view(Collection const& values) noexcept
         {
             m_interface = values;
         }
