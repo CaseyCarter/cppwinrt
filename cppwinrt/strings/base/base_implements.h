@@ -644,8 +644,7 @@ namespace winrt::impl
 
     protected:
 
-        explicit root_implements(uint32_t references = 1) noexcept
-            : m_references(references)
+        root_implements() noexcept
         {
             if constexpr (use_module_lock::value)
             {
@@ -725,7 +724,7 @@ namespace winrt::impl
             if (target == 0)
             {
                 std::atomic_thread_fence(std::memory_order_acquire);
-                delete static_cast<D*>(this);
+                delete this;
             }
 
             return target;
@@ -847,7 +846,7 @@ namespace winrt::impl
 
         static_assert(!is_factory::value || (is_factory::value&& is_agile::value), "winrt::implements - activation factories must be agile.");
 
-        std::atomic<std::conditional_t<is_weak_ref_source::value, uintptr_t, uint32_t>> m_references;
+        std::atomic<std::conditional_t<is_weak_ref_source::value, uintptr_t, uint32_t>> m_references{ 1 };
 
         HRESULT query_interface(GUID const& id, void** object) noexcept
         {

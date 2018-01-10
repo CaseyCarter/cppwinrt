@@ -21,7 +21,6 @@
     <ClCompile Include="IInspectable_GetIids.cpp" />
     <ClCompile Include="IInspectable_GetRuntimeClassName.cpp" />
     <ClCompile Include="IInspectable_GetTrustLevel.cpp" />
-    <ClCompile Include="implements_references.cpp" />
     <ClCompile Include="IReference.cpp" />
     <ClCompile Include="IUnknown_QueryInterface.cpp" />
     <ClCompile Include="Main.cpp" />
