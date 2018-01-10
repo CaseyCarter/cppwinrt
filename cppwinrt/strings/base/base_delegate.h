@@ -164,6 +164,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     template <typename T>
     struct WINRT_EBO EventHandler : IUnknown
     {
+        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
         EventHandler(std::nullptr_t = nullptr) noexcept {}
 
         template <typename L>
@@ -188,6 +189,8 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     template <typename TSender, typename TArgs>
     struct WINRT_EBO TypedEventHandler : IUnknown
     {
+        static_assert(impl::has_category_v<TSender>, "TSender must be WinRT type.");
+        static_assert(impl::has_category_v<TArgs>, "TArgs must be WinRT type.");
         TypedEventHandler(std::nullptr_t = nullptr) noexcept {}
 
         template <typename L>

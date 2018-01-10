@@ -983,12 +983,14 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         IInspectable,
         impl::consume_t<IMapChangedEventArgs<K>>
     {
+        static_assert(impl::has_category_v<K>, "K must be WinRT type.");
         IMapChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
     };
 
     template <typename T>
     struct WINRT_EBO VectorChangedEventHandler : IUnknown
     {
+        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
         VectorChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
 
         template <typename L>
@@ -1013,6 +1015,8 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
     template <typename K, typename V>
     struct WINRT_EBO MapChangedEventHandler : IUnknown
     {
+        static_assert(impl::has_category_v<K>, "K must be WinRT type.");
+        static_assert(impl::has_category_v<V>, "V must be WinRT type.");
         MapChangedEventHandler(std::nullptr_t = nullptr) noexcept {}
 
         template <typename L>
@@ -1039,13 +1043,14 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         IInspectable,
         impl::consume_t<IIterator<T>>
     {
+        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
+        IIterator(std::nullptr_t = nullptr) noexcept {}
+
         using iterator_category = std::input_iterator_tag;
         using value_type = T;
         using difference_type = ptrdiff_t;
         using pointer = T*;
         using reference = T&;
-
-        IIterator(std::nullptr_t = nullptr) noexcept {}
     };
 
     template <typename T>
@@ -1053,6 +1058,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         IInspectable,
         impl::consume_t<IIterable<T>>
     {
+        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
         IIterable(std::nullptr_t = nullptr) noexcept {}
     };
 
@@ -1062,6 +1068,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         impl::consume_t<IVectorView<T>>,
         impl::require<IVectorView<T>, IIterable<T>>
     {
+        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
         IVectorView(std::nullptr_t = nullptr) noexcept {}
     };
 
@@ -1071,6 +1078,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         impl::consume_t<IVector<T>>,
         impl::require<IVector<T>, IIterable<T>>
     {
+        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
         IVector(std::nullptr_t = nullptr) noexcept {}
     };
 
@@ -1080,6 +1088,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         impl::consume_t<IObservableVector<T>>,
         impl::require<IObservableVector<T>, IVector<T>, IIterable<T>>
     {
+        static_assert(impl::has_category_v<T>, "T must be WinRT type.");
         IObservableVector(std::nullptr_t = nullptr) noexcept {}
     };
 
@@ -1088,6 +1097,8 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         IInspectable,
         impl::consume_t<IKeyValuePair<K, V>>
     {
+        static_assert(impl::has_category_v<K>, "K must be WinRT type.");
+        static_assert(impl::has_category_v<V>, "V must be WinRT type.");
         IKeyValuePair(std::nullptr_t = nullptr) noexcept {}
     };
 
@@ -1097,6 +1108,8 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         impl::consume_t<IMapView<K, V>>,
         impl::require<IMapView<K, V>, IIterable<IKeyValuePair<K, V>>>
     {
+        static_assert(impl::has_category_v<K>, "K must be WinRT type.");
+        static_assert(impl::has_category_v<V>, "V must be WinRT type.");
         IMapView(std::nullptr_t = nullptr) noexcept {}
     };
 
@@ -1106,6 +1119,8 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         impl::consume_t<IMap<K, V>>,
         impl::require<IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
     {
+        static_assert(impl::has_category_v<K>, "K must be WinRT type.");
+        static_assert(impl::has_category_v<V>, "V must be WinRT type.");
         IMap(std::nullptr_t = nullptr) noexcept {}
     };
 
@@ -1115,6 +1130,8 @@ WINRT_EXPORT namespace winrt::Windows::Foundation::Collections
         impl::consume_t<IObservableMap<K, V>>,
         impl::require<IObservableMap<K, V>, IMap<K, V>, IIterable<IKeyValuePair<K, V>>>
     {
+        static_assert(impl::has_category_v<K>, "K must be WinRT type.");
+        static_assert(impl::has_category_v<V>, "V must be WinRT type.");
         IObservableMap(std::nullptr_t = nullptr) noexcept {}
     };
 }

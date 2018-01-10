@@ -40,17 +40,23 @@ namespace winrt::impl
     template <typename T>
     using default_interface_t = typename default_interface<T>::type;
 
-    template <typename T>
-    struct category;
-
-    template <typename T>
-    using category_t = typename category<T>::type;
-
     struct basic_category;
     struct interface_category;
     struct delegate_category;
     struct enum_category;
     struct class_category;
+
+    template <typename T>
+    struct category
+    {
+        using type = void;
+    };
+
+    template <typename T>
+    using category_t = typename category<T>::type;
+
+    template <typename T>
+    constexpr bool has_category_v = !std::is_same_v<category_t<T>, void>;
 
     template <typename... Args>
     struct pinterface_category;

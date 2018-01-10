@@ -607,6 +607,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         impl::consume_t<IAsyncActionWithProgress<TProgress>>,
         impl::require<IAsyncActionWithProgress<TProgress>, IAsyncInfo>
     {
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
         IAsyncActionWithProgress(std::nullptr_t = nullptr) noexcept {}
     };
 
@@ -616,6 +617,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         impl::consume_t<IAsyncOperation<TResult>>,
         impl::require<IAsyncOperation<TResult>, IAsyncInfo>
     {
+        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
         IAsyncOperation(std::nullptr_t = nullptr) noexcept {}
     };
 
@@ -625,6 +627,8 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
         impl::consume_t<IAsyncOperationWithProgress<TResult, TProgress>>,
         impl::require<IAsyncOperationWithProgress<TResult, TProgress>, IAsyncInfo>
     {
+        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
         IAsyncOperationWithProgress(std::nullptr_t = nullptr) noexcept {}
     };
 
@@ -654,6 +658,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     template <typename TProgress>
     struct WINRT_EBO AsyncActionProgressHandler : IUnknown
     {
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
         AsyncActionProgressHandler(std::nullptr_t = nullptr) noexcept {}
 
         template <typename L>
@@ -678,6 +683,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     template <typename TProgress>
     struct WINRT_EBO AsyncActionWithProgressCompletedHandler : IUnknown
     {
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
         AsyncActionWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
 
         template <typename L>
@@ -702,6 +708,8 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     template <typename TResult, typename TProgress>
     struct WINRT_EBO AsyncOperationProgressHandler : IUnknown
     {
+        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
         AsyncOperationProgressHandler(std::nullptr_t = nullptr) noexcept {}
 
         template <typename L>
@@ -726,6 +734,8 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     template <typename TResult, typename TProgress>
     struct WINRT_EBO AsyncOperationWithProgressCompletedHandler : IUnknown
     {
+        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
+        static_assert(impl::has_category_v<TProgress>, "TProgress must be WinRT type.");
         AsyncOperationWithProgressCompletedHandler(std::nullptr_t = nullptr) noexcept {}
 
         template <typename L>
@@ -750,6 +760,7 @@ WINRT_EXPORT namespace winrt::Windows::Foundation
     template <typename TResult>
     struct WINRT_EBO AsyncOperationCompletedHandler : IUnknown
     {
+        static_assert(impl::has_category_v<TResult>, "TResult must be WinRT type.");
         AsyncOperationCompletedHandler(std::nullptr_t = nullptr) noexcept {}
 
         template <typename L>
