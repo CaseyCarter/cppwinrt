@@ -64,17 +64,41 @@ static HRESULT EvaluatePropertyExpression(
     winrt::com_ptr<DkmString> pEvalText;
     IF_FAIL_RET(DkmString::Create(DkmSourceString(wszEvalText), pEvalText.put()));
 
+    auto evalFlags = DkmEvaluationFlags::TreatAsExpression | DkmEvaluationFlags::ForceEvaluationNow | DkmEvaluationFlags::ForceRealFuncEval;
+
+    auto inspectionContext = pExpression->InspectionContext();
     winrt::com_ptr<DkmLanguageExpression> pLanguageExpression;
     IF_FAIL_RET(DkmLanguageExpression::Create(
-        pExpression->InspectionContext()->Language(),
-        DkmEvaluationFlags::TreatAsExpression,
+        inspectionContext->Language(),
+        evalFlags,
         pEvalText.get(),
         DkmDataItem::Null(),
         pLanguageExpression.put()
     ));
 
+    winrt::com_ptr<DkmInspectionContext> pInspectionContext;
+    if ( (pExpression->InspectionContext()->EvaluationFlags() & evalFlags) != evalFlags)
+    {
+        DkmInspectionContext::Create(
+            inspectionContext->InspectionSession(),
+            inspectionContext->RuntimeInstance(),
+            inspectionContext->Thread(),
+            inspectionContext->Timeout(),
+            evalFlags,
+            inspectionContext->FuncEvalFlags(),
+            inspectionContext->Radix(),
+            inspectionContext->Language(),
+            inspectionContext->ReturnValue(),
+            pInspectionContext.put()
+        );
+    }
+    else
+    {
+        pInspectionContext.copy_from(inspectionContext);
+    }
+
     IF_FAIL_RET(pExpression->EvaluateExpressionCallback(
-        pExpression->InspectionContext(),
+        pInspectionContext.get(),
         pLanguageExpression.get(),
         pExpression->StackFrame(),
         pEvaluationResult.put()
