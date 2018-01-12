@@ -87,11 +87,6 @@ TEST_CASE("agile event, basic add/remove/invoke")
     BasicTest<event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
 }
 
-TEST_CASE("single threaded event, basic add/remove/invoke")
-{
-    BasicTest<single_threaded_event<TypedEventHandler<DisplayInformation, Windows::Foundation::IInspectable>>>();
-}
-
 struct BlockingHandler
 {
     enum HandlerState

@@ -75,19 +75,22 @@ namespace winrt::impl
     {
         com_ptr<event_array<T>> instance;
         void* raw = ::operator new(sizeof(event_array<T>) + (sizeof(T)* capacity));
-        #pragma warning(suppress: 6386)
+#pragma warning(suppress: 6386)
         *put_abi(instance) = new(raw) event_array<T>(capacity);
         return instance;
     }
+}
 
-    template <typename Traits>
-    struct event : Traits
+WINRT_EXPORT namespace winrt
+{
+    template <typename Delegate>
+    struct event
     {
-        using delegate_type = typename Traits::delegate_type;
+        using delegate_type = Delegate;
 
         event() = default;
-        event(event<Traits> const&) = delete;
-        event<Traits>& operator =(event<Traits> const&) = delete;
+        event(event<Delegate> const&) = delete;
+        event<Delegate>& operator =(event<Delegate> const&) = delete;
 
         explicit operator bool() const noexcept
         {
@@ -102,8 +105,8 @@ namespace winrt::impl
             delegate_array temp_targets;
 
             {
-                auto change_guard = this->get_change_guard();
-                delegate_array new_targets = make_event_array<delegate_type>((!m_targets) ? 1 : m_targets->size() + 1);
+                slim_lock_guard const change_guard(m_change);
+                delegate_array new_targets = impl::make_event_array<delegate_type>((!m_targets) ? 1 : m_targets->size() + 1);
 
                 if (m_targets)
                 {
@@ -126,7 +129,7 @@ namespace winrt::impl
 
                 token = get_token(new_targets->back());
 
-                auto swap_guard = this->get_swap_guard();
+                slim_lock_guard const swap_guard(m_swap);
                 temp_targets = m_targets;
                 m_targets = new_targets;
             }
@@ -140,7 +143,7 @@ namespace winrt::impl
             delegate_array temp_targets;
 
             {
-                auto change_guard = this->get_change_guard();
+                slim_lock_guard const change_guard(m_change);
 
                 if (!m_targets)
                 {
@@ -160,7 +163,7 @@ namespace winrt::impl
                 }
                 else
                 {
-                    new_targets = make_event_array<delegate_type>(available_slots);
+                    new_targets = impl::make_event_array<delegate_type>(available_slots);
                     auto new_iterator = new_targets->begin();
 
                     for (delegate_type const& element : *m_targets)
@@ -178,7 +181,7 @@ namespace winrt::impl
 
                 if (removed)
                 {
-                    auto swap_guard = this->get_swap_guard();
+                    slim_lock_guard const swap_guard(m_swap);
                     temp_targets = m_targets;
                     m_targets = new_targets;
                 }
@@ -191,7 +194,7 @@ namespace winrt::impl
             delegate_array temp_targets;
 
             {
-                auto swap_guard = this->get_swap_guard();
+                slim_lock_guard const swap_guard(m_swap);
                 temp_targets = m_targets;
             }
 
@@ -230,56 +233,10 @@ namespace winrt::impl
             return event_token{ reinterpret_cast<int64_t>(get_abi(delegate)) };
         }
 
-        using delegate_array = com_ptr<event_array<delegate_type>>;
+        using delegate_array = com_ptr<impl::event_array<delegate_type>>;
 
         delegate_array m_targets;
-    };
-
-    template <typename Delegate>
-    struct event_traits
-    {
-        using delegate_type = Delegate;
-
-        slim_lock_guard get_swap_guard() noexcept
-        {
-            return slim_lock_guard(m_swap);
-        }
-
-        slim_lock_guard get_change_guard() noexcept
-        {
-            return slim_lock_guard(m_change);
-        }
-
-    private:
-
         slim_mutex m_swap;
         slim_mutex m_change;
     };
-
-    struct no_lock_guard {};
-
-    template <typename Delegate>
-    struct single_threaded_event_traits
-    {
-        using delegate_type = Delegate;
-
-        no_lock_guard get_swap_guard() const noexcept
-        {
-            return{};
-        }
-
-        no_lock_guard get_change_guard() const noexcept
-        {
-            return{};
-        }
-    };
-}
-
-WINRT_EXPORT namespace winrt
-{
-    template <typename Delegate>
-    using event = impl::event<impl::event_traits<Delegate>>;
-
-    template <typename Delegate>
-    using single_threaded_event = impl::event<impl::single_threaded_event_traits<Delegate>>;
 }
