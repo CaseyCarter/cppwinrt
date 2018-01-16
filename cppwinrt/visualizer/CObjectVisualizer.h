@@ -1,13 +1,34 @@
 #pragma once
 
+enum class PropertyCategory
+{
+    Bool,
+    Char,
+    Int1,
+    Int2,
+    Int4,
+    Int8,
+    Uint1,
+    Uint2,
+    Uint4,
+    Uint8,
+    Real4,
+    Real8,
+    String,
+    Guid,
+    Value,
+    Class,
+};
+
 // Metatdata for resolving a runtime class property value
-struct PropertyData {
+struct PropertyData 
+{
     std::wstring iid;
     int32_t index;
+    PropertyCategory category;
     std::wstring abiType;
     std::wstring displayType;
     std::wstring displayName;
-    bool isObject;
 };
 
 // CObjectVisualizer provides the visualization data model for WinRT objects, 

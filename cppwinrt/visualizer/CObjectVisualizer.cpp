@@ -11,26 +11,28 @@ using namespace Microsoft::VisualStudio::Debugger::Evaluation;
 #define IID_IInspectable L"AF86E2E0-B12D-4C6A-9C5A-D7AA65101E90"
 #define IID_IStringable  L"96369F54-8EB6-48F0-ABCE-C1B211E627C3"
 
-static wchar_t const* GetPrimitiveType(CorElementType category)
+constexpr struct
 {
-    switch (category)
-    {
-    case ELEMENT_TYPE_BOOLEAN: return L"b";
-    case ELEMENT_TYPE_CHAR: return L"c";
-    case ELEMENT_TYPE_I1: return L"i1";
-    case ELEMENT_TYPE_I2: return L"i2";
-    case ELEMENT_TYPE_I4: return L"i4";
-    case ELEMENT_TYPE_I8: return L"i8";
-    case ELEMENT_TYPE_U1: return L"u1";
-    case ELEMENT_TYPE_U2: return L"u2";
-    case ELEMENT_TYPE_U4: return L"u4";
-    case ELEMENT_TYPE_U8: return L"u8";
-    case ELEMENT_TYPE_R4: return L"r4";
-    case ELEMENT_TYPE_R8: return L"r8";
-    case ELEMENT_TYPE_STRING: return L"s";
-    }
-    return{};
+    PCWSTR propField;
+    PCWSTR displayType;
 }
+g_categoryData[] = 
+{
+    { L"b", L"bool" },
+    { L"c", L"wchar_t" },
+    { L"i1", L"int8_t" },
+    { L"i2", L"int16_t" },
+    { L"i4", L"int32_t" },
+    { L"i8", L"int64_t" },
+    { L"u1", L"uint8_t" },
+    { L"u2", L"uint16_t" },
+    { L"u4", L"uint32_t" },
+    { L"u8", L"uint64_t" },
+    { L"r4", L"float" },
+    { L"r8", L"double" },
+    { L"s", L"HSTRING" },
+    { L"g", L"GUID" },
+};
 
 static HRESULT EvaluatePropertyExpression(
     _In_ PropertyData const& prop,
@@ -45,17 +47,17 @@ static HRESULT EvaluatePropertyExpression(
     swprintf_s(abiAddress, is64Bit ? L"%s0x%I64x" : L"%s0x%08x", isAbiObject ? L"(::IUnknown*)" : L"*(::IUnknown**)", pObject->Address());
     wchar_t wszEvalText[500];
     std::wstring propCast;
-    std::wstring propField;
-    if (prop.abiType.length() > 2)
+    PCWSTR propField;
+    if (prop.category < PropertyCategory::Value)
+    {
+        propField = g_categoryData[(int)prop.category].propField;
+    }
+    else
     {
         propField = L"v";
         propCast = L"*(" + prop.abiType + L"*)";
     }
-    else
-    {
-        propField = prop.abiType;
-    }
-    swprintf_s(wszEvalText, L"%sWINRT_abi_val(%s, L\"{%s}\", %i).%s", propCast.c_str(), abiAddress, prop.iid.c_str(), prop.index, propField.c_str());
+    swprintf_s(wszEvalText, L"%sWINRT_abi_val(%s, L\"{%s}\", %i).%s", propCast.c_str(), abiAddress, prop.iid.c_str(), prop.index, propField);
 #ifdef _DEBUG
     OutputDebugStringW(wszEvalText);
     OutputDebugStringW(L"\n");
@@ -136,7 +138,7 @@ static HRESULT ObjectToString(
     _Out_ winrt::com_ptr<DkmString>& pValue
 )
 {
-    if (SUCCEEDED(EvaluatePropertyString({ IID_IStringable, 0, L"s" }, pExpression, pObject, isAbiObject, pValue)))
+    if (SUCCEEDED(EvaluatePropertyString({ IID_IStringable, 0, PropertyCategory::String }, pExpression, pObject, isAbiObject, pValue)))
     {
         if (!pValue || pValue->Length() == 0)
         {
@@ -174,7 +176,7 @@ static HRESULT CreateChildVisualizedExpression(
     winrt::com_ptr<DkmString> pValue;
     winrt::com_ptr<DkmPointerValueHome> pChildPointer;
     bool isNonNullObject = false;
-    if (prop.isObject)
+    if (prop.category == PropertyCategory::Class)
     {
         auto childObjectAddress = pSuccessEvaluationResult->Address()->Value();
         if (childObjectAddress)
@@ -194,8 +196,17 @@ static HRESULT CreateChildVisualizedExpression(
     winrt::com_ptr<DkmString> pDisplayName;
     IF_FAIL_RET(DkmString::Create(prop.displayName.c_str(), pDisplayName.put()));
 
+    PCWSTR displayType;
+    if (prop.category < PropertyCategory::Value)
+    {
+        displayType = g_categoryData[(int)prop.category].displayType;
+    }
+    else
+    {
+        displayType = prop.displayType.c_str();
+    }
     winrt::com_ptr<DkmString> pDisplayType;
-    IF_FAIL_RET(DkmString::Create(prop.displayType.c_str(), pDisplayType.put()));
+    IF_FAIL_RET(DkmString::Create(displayType, pDisplayType.put()));
 
     winrt::com_ptr<DkmSuccessEvaluationResult> pVisualizedResult;
     IF_FAIL_RET(DkmSuccessEvaluationResult::Create(
@@ -253,13 +264,8 @@ HRESULT CObjectVisualizer::GetPropertyData()
     winrt::com_ptr<DkmString> pValue;
 
     winrt::com_ptr<DkmChildVisualizedExpression> pPropertyVisualized;
-    IF_FAIL_RET(CreateChildVisualizedExpression({ IID_IInspectable, -2, L"s", L"winrt::hstring" }, m_pVisualizedExpression.get(), m_isAbiObject, pPropertyVisualized.put()));
+    IF_FAIL_RET(CreateChildVisualizedExpression({ IID_IInspectable, -2, PropertyCategory::String }, m_pVisualizedExpression.get(), m_isAbiObject, pPropertyVisualized.put()));
     pPropertyVisualized->GetUnderlyingString(pValue.put());
-    //IF_FAIL_RET(EvaluatePropertyString({ IID_IInspectable, -2, L"s" }, m_pVisualizedExpression.get(), pValue));
-    //if (pValue == nullptr)
-    //{
-    //    return E_FAIL;
-    //}
     auto runtimeClassName = winrt::to_string(pValue->Value());
     auto type = meta::find_type(runtimeClassName);
     if (type == nullptr)
@@ -294,6 +300,7 @@ HRESULT CObjectVisualizer::GetPropertyData()
             meta::signature const signature = param.signature;
             CorElementType category = signature.get_category();
 
+            PropertyCategory propCategory;
             std::wstring propAbiType;
             std::wstring propDisplayType;
             if ((category == ELEMENT_TYPE_VALUETYPE) || (category == ELEMENT_TYPE_CLASS))
@@ -303,8 +310,7 @@ HRESULT CObjectVisualizer::GetPropertyData()
                 
                 if (typeName == "GUID")
                 {
-                    propAbiType = L"g";
-                    propDisplayType = L"GUID";
+                    propCategory = PropertyCategory::Guid;
                 }
                 else
                 {
@@ -330,28 +336,28 @@ HRESULT CObjectVisualizer::GetPropertyData()
                     propDisplayType = std::wstring(L"winrt::") + cppTypename;
                     if (category == ELEMENT_TYPE_CLASS)
                     {
+                        propCategory = PropertyCategory::Class;
                         propAbiType = L"winrt::impl::IInspectable*";
                     }
                     else
                     {
+                        propCategory = PropertyCategory::Value;
                         propAbiType = propDisplayType;
                     }
                 }
             }
             else
             {
-                auto primitiveType = GetPrimitiveType(category);
-                if (!primitiveType)
+                if( (category < ELEMENT_TYPE_BOOLEAN) || (category > ELEMENT_TYPE_STRING) )
                 {
                     continue;
                 }
-                propAbiType = primitiveType;
-                propDisplayType = category == ELEMENT_TYPE_STRING ? L"winrt::hstring" : propAbiType;
+                propCategory = (PropertyCategory)(category - ELEMENT_TYPE_BOOLEAN);
             }
 
             auto methodName = method.get_name();
             std::wstring propDisplayName(methodName.cbegin(), methodName.cend());
-            m_propertyData.push_back({ propIid, propIndex, propAbiType, propDisplayType, propDisplayName, category == ELEMENT_TYPE_CLASS });
+            m_propertyData.push_back({ propIid, propIndex, propCategory, propAbiType, propDisplayType, propDisplayName });
         }
     }
 
