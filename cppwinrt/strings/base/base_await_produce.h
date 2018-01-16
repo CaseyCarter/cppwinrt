@@ -1,32 +1,81 @@
 
 WINRT_EXPORT namespace winrt
 {
-    struct resume_background
+    inline auto resume_background()
     {
-        bool await_ready() const noexcept
+        struct awaitable
         {
-            return false;
-        }
-
-        void await_resume() const noexcept
-        {
-        }
-
-        void await_suspend(std::experimental::coroutine_handle<> handle) const
-        {
-            if (!TrySubmitThreadpoolCallback(callback, handle.address(), nullptr))
+            bool await_ready() const noexcept
             {
-                throw_last_error();
+                return false;
             }
-        }
 
-    private:
+            void await_resume() const noexcept
+            {
+            }
 
-        static void __stdcall callback(PTP_CALLBACK_INSTANCE, void* context) noexcept
+            void await_suspend(std::experimental::coroutine_handle<> handle) const
+            {
+                if (!TrySubmitThreadpoolCallback(callback, handle.address(), nullptr))
+                {
+                    throw_last_error();
+                }
+            }
+
+        private:
+
+            static void __stdcall callback(PTP_CALLBACK_INSTANCE, void* context) noexcept
+            {
+                std::experimental::coroutine_handle<>::from_address(context)();
+            }
+        };
+
+        return awaitable{};
+    }
+
+    template <typename T>
+    auto resume_background(T&& context)
+    {
+        struct awaitable
         {
-            std::experimental::coroutine_handle<>::from_address(context)();
-        }
-    };
+            awaitable(T&& context) : m_context(std::forward<T>(context))
+            {
+            }
+
+            bool await_ready() const noexcept
+            {
+                return false;
+            }
+
+            void await_resume() const noexcept
+            {
+            }
+
+            void await_suspend(std::experimental::coroutine_handle<> resume)
+            {
+                m_resume = resume;
+
+                if (!TrySubmitThreadpoolCallback(callback, this, nullptr))
+                {
+                    throw_last_error();
+                }
+            }
+
+        private:
+
+            static void __stdcall callback(PTP_CALLBACK_INSTANCE, void* context) noexcept
+            {
+                auto that = static_cast<awaitable*>(context);
+                auto guard = that->m_context();
+                that->m_resume();
+            }
+
+            T&& m_context;
+            std::experimental::coroutine_handle<> m_resume{ nullptr };
+        };
+
+        return awaitable{ std::forward<T>(context) };
+    }
 
     struct apartment_context
     {

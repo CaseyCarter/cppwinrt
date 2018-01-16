@@ -40,6 +40,8 @@
 #include "base_reference.h"
 #include "base_foundation.h"
 #include "base_chrono.h"
+#include "base_security.h"
+
 #include "base_async_consume.h"
 #include "base_async_produce.h"
 #include "base_await_consume.h"

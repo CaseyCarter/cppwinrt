@@ -445,13 +445,8 @@ namespace winrt::impl
 
         com_array_proxy(com_array_proxy const&) noexcept
         {
+            // A Visual C++ compiler bug (550631) requires the copy constructor even though it is never called.
             WINRT_ASSERT(false);
-        }
-
-        com_array_proxy& operator=(com_array_proxy const&) noexcept
-        {
-            WINRT_ASSERT(false);
-            return*this;
         }
 
     private:

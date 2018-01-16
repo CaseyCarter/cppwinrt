@@ -14,6 +14,7 @@
     <ClCompile Include="DllGetClassObject.cpp" />
     <ClCompile Include="FastStrings.cpp" />
     <ClCompile Include="Bindable.cpp" />
+    <ClCompile Include="Security.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />

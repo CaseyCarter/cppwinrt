@@ -2286,6 +2286,8 @@ namespace cppwinrt
         out.write(strings::base_reference);
         out.write(strings::base_foundation);
         out.write(strings::base_chrono);
+        out.write(strings::base_security);
+
         out.write(strings::base_async_consume);
         out.write(strings::base_async_produce);
         out.write(strings::base_await_consume);

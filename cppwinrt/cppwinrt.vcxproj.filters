@@ -373,6 +373,9 @@
     <ClInclude Include="strings\write\write_bindable_iterator.h">
       <Filter>strings\write</Filter>
     </ClInclude>
+    <ClInclude Include="strings\base\base_security.h">
+      <Filter>strings\base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="strings">

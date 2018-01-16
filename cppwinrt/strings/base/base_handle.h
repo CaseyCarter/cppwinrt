@@ -8,13 +8,13 @@ WINRT_EXPORT namespace winrt
 
         handle_type() noexcept = default;
 
-        handle_type(type value) noexcept :
-        m_value(value)
-        {}
+        handle_type(type value) noexcept : m_value(value)
+        {
+        }
 
-        handle_type(handle_type&& other) noexcept :
-            m_value(other.detach())
-        {}
+        handle_type(handle_type&& other) noexcept : m_value(other.detach())
+        {
+        }
 
         handle_type& operator=(handle_type&& other) noexcept
         {
